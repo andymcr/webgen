@@ -6,16 +6,21 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.service.BusinessOperation;
+import uk.ac.man.cs.mdsd.webgen.service.FormalParameter;
 import uk.ac.man.cs.mdsd.webgen.service.OperationResultTypes;
 import uk.ac.man.cs.mdsd.webgen.service.Service;
 import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
@@ -28,6 +33,7 @@ import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.BusinessOperationImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.BusinessOperationImpl#getUses <em>Uses</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.BusinessOperationImpl#getResultType <em>Result Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.BusinessOperationImpl#getResultMimeType <em>Result Mime Type</em>}</li>
@@ -36,6 +42,16 @@ import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
  * @generated
  */
 public class BusinessOperationImpl extends MinimalEObjectImpl.Container implements BusinessOperation {
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FormalParameter> parameters;
+
 	/**
 	 * The cached value of the '{@link #getUses() <em>Uses</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -110,6 +126,18 @@ public class BusinessOperationImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<FormalParameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<FormalParameter>(FormalParameter.class, this, WebGenServicePackage.BUSINESS_OPERATION__PARAMETERS);
+		}
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Service> getUses() {
 		if (uses == null) {
 			uses = new EObjectResolvingEList<Service>(Service.class, this, WebGenServicePackage.BUSINESS_OPERATION__USES);
@@ -165,8 +193,24 @@ public class BusinessOperationImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebGenServicePackage.BUSINESS_OPERATION__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebGenServicePackage.BUSINESS_OPERATION__PARAMETERS:
+				return getParameters();
 			case WebGenServicePackage.BUSINESS_OPERATION__USES:
 				return getUses();
 			case WebGenServicePackage.BUSINESS_OPERATION__RESULT_TYPE:
@@ -186,6 +230,10 @@ public class BusinessOperationImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebGenServicePackage.BUSINESS_OPERATION__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends FormalParameter>)newValue);
+				return;
 			case WebGenServicePackage.BUSINESS_OPERATION__USES:
 				getUses().clear();
 				getUses().addAll((Collection<? extends Service>)newValue);
@@ -208,6 +256,9 @@ public class BusinessOperationImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebGenServicePackage.BUSINESS_OPERATION__PARAMETERS:
+				getParameters().clear();
+				return;
 			case WebGenServicePackage.BUSINESS_OPERATION__USES:
 				getUses().clear();
 				return;
@@ -229,6 +280,8 @@ public class BusinessOperationImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebGenServicePackage.BUSINESS_OPERATION__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 			case WebGenServicePackage.BUSINESS_OPERATION__USES:
 				return uses != null && !uses.isEmpty();
 			case WebGenServicePackage.BUSINESS_OPERATION__RESULT_TYPE:

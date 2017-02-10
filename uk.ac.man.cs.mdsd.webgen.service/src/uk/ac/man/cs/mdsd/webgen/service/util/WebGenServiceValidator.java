@@ -92,10 +92,12 @@ public class WebGenServiceValidator extends EObjectValidator {
 				return validateService((Service)value, diagnostics, context);
 			case WebGenServicePackage.SELECTION:
 				return validateSelection((Selection)value, diagnostics, context);
-			case WebGenServicePackage.SELECTION_PARAMETER:
-				return validateSelectionParameter((SelectionParameter)value, diagnostics, context);
 			case WebGenServicePackage.BUSINESS_OPERATION:
 				return validateBusinessOperation((BusinessOperation)value, diagnostics, context);
+			case WebGenServicePackage.FORMAL_PARAMETER_LIST:
+				return validateFormalParameterList((FormalParameterList)value, diagnostics, context);
+			case WebGenServicePackage.FORMAL_PARAMETER:
+				return validateFormalParameter((FormalParameter)value, diagnostics, context);
 			case WebGenServicePackage.ORDER:
 				return validateOrder((Order)value, diagnostics, context);
 			case WebGenServicePackage.ASC:
@@ -186,8 +188,8 @@ public class WebGenServiceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSelectionParameter(SelectionParameter selectionParameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(selectionParameter, diagnostics, context);
+	public boolean validateBusinessOperation(BusinessOperation businessOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(businessOperation, diagnostics, context);
 	}
 
 	/**
@@ -195,8 +197,17 @@ public class WebGenServiceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateBusinessOperation(BusinessOperation businessOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(businessOperation, diagnostics, context);
+	public boolean validateFormalParameterList(FormalParameterList formalParameterList, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(formalParameterList, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFormalParameter(FormalParameter formalParameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(formalParameter, diagnostics, context);
 	}
 
 	/**

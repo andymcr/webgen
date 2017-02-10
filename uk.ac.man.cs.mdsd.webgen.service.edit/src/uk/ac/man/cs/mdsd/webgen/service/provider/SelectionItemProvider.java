@@ -195,7 +195,7 @@ public class SelectionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebGenServicePackage.Literals.SELECTION__PARAMETERS);
+			childrenFeatures.add(WebGenServicePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
 			childrenFeatures.add(WebGenServicePackage.Literals.SELECTION__FILTER);
 			childrenFeatures.add(WebGenServicePackage.Literals.SELECTION__ORDERING);
 		}
@@ -278,8 +278,8 @@ public class SelectionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebGenServicePackage.Literals.SELECTION__PARAMETERS,
-				 WebGenServiceFactory.eINSTANCE.createSelectionParameter()));
+				(WebGenServicePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
+				 WebGenServiceFactory.eINSTANCE.createFormalParameter()));
 
 		newChildDescriptors.add
 			(createChildParameter

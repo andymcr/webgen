@@ -20,11 +20,12 @@ import uk.ac.man.cs.mdsd.webgen.service.BusinessOperation;
 import uk.ac.man.cs.mdsd.webgen.service.CurrentUserReference;
 import uk.ac.man.cs.mdsd.webgen.service.Desc;
 import uk.ac.man.cs.mdsd.webgen.service.FeatureReference;
+import uk.ac.man.cs.mdsd.webgen.service.FormalParameter;
+import uk.ac.man.cs.mdsd.webgen.service.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.service.OperationResultTypes;
 import uk.ac.man.cs.mdsd.webgen.service.Order;
 import uk.ac.man.cs.mdsd.webgen.service.ParameterReference;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
-import uk.ac.man.cs.mdsd.webgen.service.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.service.Service;
 import uk.ac.man.cs.mdsd.webgen.service.Services;
 import uk.ac.man.cs.mdsd.webgen.service.WebGenServiceFactory;
@@ -65,14 +66,21 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass selectionParameterEClass = null;
+	private EClass businessOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass businessOperationEClass = null;
+	private EClass formalParameterListEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass formalParameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -291,7 +299,7 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelection_Parameters() {
+	public EReference getSelection_Joins() {
 		return (EReference)selectionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -300,7 +308,7 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelection_Joins() {
+	public EReference getSelection_Filter() {
 		return (EReference)selectionEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -309,7 +317,7 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelection_Filter() {
+	public EReference getSelection_Ordering() {
 		return (EReference)selectionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -318,17 +326,8 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelection_Ordering() {
-		return (EReference)selectionEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getSelection_Limit() {
-		return (EAttribute)selectionEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)selectionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -337,43 +336,7 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 	 * @generated
 	 */
 	public EAttribute getSelection_Selected() {
-		return (EAttribute)selectionEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSelectionParameter() {
-		return selectionParameterEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSelectionParameter_FormalFor() {
-		return (EReference)selectionParameterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSelectionParameter_Optional() {
-		return (EAttribute)selectionParameterEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSelectionParameter_DefaultValue() {
-		return (EAttribute)selectionParameterEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)selectionEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -410,6 +373,60 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 	 */
 	public EAttribute getBusinessOperation_ResultMimeType() {
 		return (EAttribute)businessOperationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFormalParameterList() {
+		return formalParameterListEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFormalParameterList_Parameters() {
+		return (EReference)formalParameterListEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFormalParameter() {
+		return formalParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFormalParameter_FormalFor() {
+		return (EReference)formalParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFormalParameter_Optional() {
+		return (EAttribute)formalParameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFormalParameter_DefaultValue() {
+		return (EReference)formalParameterEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -560,22 +577,24 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 		createEReference(selectionEClass, SELECTION__USED_BY);
 		createEAttribute(selectionEClass, SELECTION__DISTINCT);
 		createEReference(selectionEClass, SELECTION__FIELDS);
-		createEReference(selectionEClass, SELECTION__PARAMETERS);
 		createEReference(selectionEClass, SELECTION__JOINS);
 		createEReference(selectionEClass, SELECTION__FILTER);
 		createEReference(selectionEClass, SELECTION__ORDERING);
 		createEAttribute(selectionEClass, SELECTION__LIMIT);
 		createEAttribute(selectionEClass, SELECTION__SELECTED);
 
-		selectionParameterEClass = createEClass(SELECTION_PARAMETER);
-		createEReference(selectionParameterEClass, SELECTION_PARAMETER__FORMAL_FOR);
-		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__OPTIONAL);
-		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__DEFAULT_VALUE);
-
 		businessOperationEClass = createEClass(BUSINESS_OPERATION);
 		createEReference(businessOperationEClass, BUSINESS_OPERATION__USES);
 		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_TYPE);
 		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_MIME_TYPE);
+
+		formalParameterListEClass = createEClass(FORMAL_PARAMETER_LIST);
+		createEReference(formalParameterListEClass, FORMAL_PARAMETER_LIST__PARAMETERS);
+
+		formalParameterEClass = createEClass(FORMAL_PARAMETER);
+		createEReference(formalParameterEClass, FORMAL_PARAMETER__FORMAL_FOR);
+		createEAttribute(formalParameterEClass, FORMAL_PARAMETER__OPTIONAL);
+		createEReference(formalParameterEClass, FORMAL_PARAMETER__DEFAULT_VALUE);
 
 		orderEClass = createEClass(ORDER);
 		createEReference(orderEClass, ORDER__PATH);
@@ -630,6 +649,8 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		selectionEClass.getESuperTypes().add(this.getFormalParameterList());
+		businessOperationEClass.getESuperTypes().add(this.getFormalParameterList());
 		ascEClass.getESuperTypes().add(this.getOrder());
 		descEClass.getESuperTypes().add(this.getOrder());
 		featureReferenceEClass.getESuperTypes().add(theWebGenExpressionPackage.getPath());
@@ -649,22 +670,24 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 		initEReference(getSelection_UsedBy(), this.getService(), this.getService_Selections(), "usedBy", null, 1, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelection_Distinct(), ecorePackage.getEBoolean(), "distinct", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Fields(), thePersistencePackage.getFeature(), null, "fields", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSelection_Parameters(), this.getSelectionParameter(), this.getSelectionParameter_FormalFor(), "parameters", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Joins(), thePersistencePackage.getAssociation(), null, "joins", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Filter(), this.getParameterReference(), null, "filter", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getSelection_Ordering(), this.getOrder(), null, "ordering", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelection_Limit(), ecorePackage.getEInt(), "limit", "0", 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSelection_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(selectionParameterEClass, SelectionParameter.class, "SelectionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSelectionParameter_FormalFor(), this.getSelection(), this.getSelection_Parameters(), "formalFor", null, 1, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSelectionParameter_Optional(), ecorePackage.getEBoolean(), "optional", "false", 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSelectionParameter_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(businessOperationEClass, BusinessOperation.class, "BusinessOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBusinessOperation_Uses(), this.getService(), null, "uses", null, 0, -1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBusinessOperation_ResultType(), this.getOperationResultTypes(), "resultType", null, 1, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBusinessOperation_ResultMimeType(), ecorePackage.getEString(), "resultMimeType", null, 0, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(formalParameterListEClass, FormalParameterList.class, "FormalParameterList", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFormalParameterList_Parameters(), this.getFormalParameter(), null, "parameters", null, 0, -1, FormalParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(formalParameterEClass, FormalParameter.class, "FormalParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFormalParameter_FormalFor(), this.getFormalParameterList(), null, "formalFor", null, 1, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormalParameter_Optional(), ecorePackage.getEBoolean(), "optional", "false", 0, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFormalParameter_DefaultValue(), theWebGenExpressionPackage.getLiteral(), null, "defaultValue", null, 0, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(orderEClass, Order.class, "Order", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOrder_Path(), theWebGenExpressionPackage.getPath(), null, "path", null, 0, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -679,7 +702,7 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 
 		initEClass(parameterReferenceEClass, ParameterReference.class, "ParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameterReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, ParameterReference.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getParameterReference_Parameter(), this.getSelectionParameter(), null, "parameter", null, 1, 1, ParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParameterReference_Parameter(), this.getFormalParameter(), null, "parameter", null, 1, 1, ParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(currentUserReferenceEClass, CurrentUserReference.class, "CurrentUserReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

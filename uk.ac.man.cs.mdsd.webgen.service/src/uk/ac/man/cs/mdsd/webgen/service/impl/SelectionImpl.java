@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -24,10 +23,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 
+import uk.ac.man.cs.mdsd.webgen.service.FormalParameter;
 import uk.ac.man.cs.mdsd.webgen.service.Order;
 import uk.ac.man.cs.mdsd.webgen.service.ParameterReference;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
-import uk.ac.man.cs.mdsd.webgen.service.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.service.Service;
 import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
 
@@ -39,10 +38,10 @@ import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#isDistinct <em>Distinct</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getFields <em>Fields</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getOrdering <em>Ordering</em>}</li>
@@ -53,6 +52,16 @@ import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
  * @generated
  */
 public class SelectionImpl extends MinimalEObjectImpl.Container implements Selection {
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FormalParameter> parameters;
+
 	/**
 	 * The default value of the '{@link #isDistinct() <em>Distinct</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -82,16 +91,6 @@ public class SelectionImpl extends MinimalEObjectImpl.Container implements Selec
 	 * @ordered
 	 */
 	protected EList<Feature> fields;
-
-	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<SelectionParameter> parameters;
 
 	/**
 	 * The cached value of the '{@link #getJoins() <em>Joins</em>}' reference list.
@@ -261,9 +260,9 @@ public class SelectionImpl extends MinimalEObjectImpl.Container implements Selec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SelectionParameter> getParameters() {
+	public EList<FormalParameter> getParameters() {
 		if (parameters == null) {
-			parameters = new EObjectContainmentWithInverseEList<SelectionParameter>(SelectionParameter.class, this, WebGenServicePackage.SELECTION__PARAMETERS, WebGenServicePackage.SELECTION_PARAMETER__FORMAL_FOR);
+			parameters = new EObjectContainmentEList<FormalParameter>(FormalParameter.class, this, WebGenServicePackage.SELECTION__PARAMETERS);
 		}
 		return parameters;
 	}
@@ -382,7 +381,6 @@ public class SelectionImpl extends MinimalEObjectImpl.Container implements Selec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -390,8 +388,6 @@ public class SelectionImpl extends MinimalEObjectImpl.Container implements Selec
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetUsedBy((Service)otherEnd, msgs);
-			case WebGenServicePackage.SELECTION__PARAMETERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParameters()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -404,10 +400,10 @@ public class SelectionImpl extends MinimalEObjectImpl.Container implements Selec
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebGenServicePackage.SELECTION__USED_BY:
-				return basicSetUsedBy(null, msgs);
 			case WebGenServicePackage.SELECTION__PARAMETERS:
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+			case WebGenServicePackage.SELECTION__USED_BY:
+				return basicSetUsedBy(null, msgs);
 			case WebGenServicePackage.SELECTION__FILTER:
 				return basicSetFilter(null, msgs);
 			case WebGenServicePackage.SELECTION__ORDERING:
@@ -438,14 +434,14 @@ public class SelectionImpl extends MinimalEObjectImpl.Container implements Selec
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebGenServicePackage.SELECTION__PARAMETERS:
+				return getParameters();
 			case WebGenServicePackage.SELECTION__USED_BY:
 				return getUsedBy();
 			case WebGenServicePackage.SELECTION__DISTINCT:
 				return isDistinct();
 			case WebGenServicePackage.SELECTION__FIELDS:
 				return getFields();
-			case WebGenServicePackage.SELECTION__PARAMETERS:
-				return getParameters();
 			case WebGenServicePackage.SELECTION__JOINS:
 				return getJoins();
 			case WebGenServicePackage.SELECTION__FILTER:
@@ -469,6 +465,10 @@ public class SelectionImpl extends MinimalEObjectImpl.Container implements Selec
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebGenServicePackage.SELECTION__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends FormalParameter>)newValue);
+				return;
 			case WebGenServicePackage.SELECTION__USED_BY:
 				setUsedBy((Service)newValue);
 				return;
@@ -478,10 +478,6 @@ public class SelectionImpl extends MinimalEObjectImpl.Container implements Selec
 			case WebGenServicePackage.SELECTION__FIELDS:
 				getFields().clear();
 				getFields().addAll((Collection<? extends Feature>)newValue);
-				return;
-			case WebGenServicePackage.SELECTION__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends SelectionParameter>)newValue);
 				return;
 			case WebGenServicePackage.SELECTION__JOINS:
 				getJoins().clear();
@@ -512,6 +508,9 @@ public class SelectionImpl extends MinimalEObjectImpl.Container implements Selec
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebGenServicePackage.SELECTION__PARAMETERS:
+				getParameters().clear();
+				return;
 			case WebGenServicePackage.SELECTION__USED_BY:
 				setUsedBy((Service)null);
 				return;
@@ -520,9 +519,6 @@ public class SelectionImpl extends MinimalEObjectImpl.Container implements Selec
 				return;
 			case WebGenServicePackage.SELECTION__FIELDS:
 				getFields().clear();
-				return;
-			case WebGenServicePackage.SELECTION__PARAMETERS:
-				getParameters().clear();
 				return;
 			case WebGenServicePackage.SELECTION__JOINS:
 				getJoins().clear();
@@ -551,14 +547,14 @@ public class SelectionImpl extends MinimalEObjectImpl.Container implements Selec
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebGenServicePackage.SELECTION__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 			case WebGenServicePackage.SELECTION__USED_BY:
 				return getUsedBy() != null;
 			case WebGenServicePackage.SELECTION__DISTINCT:
 				return distinct != DISTINCT_EDEFAULT;
 			case WebGenServicePackage.SELECTION__FIELDS:
 				return fields != null && !fields.isEmpty();
-			case WebGenServicePackage.SELECTION__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
 			case WebGenServicePackage.SELECTION__JOINS:
 				return joins != null && !joins.isEmpty();
 			case WebGenServicePackage.SELECTION__FILTER:

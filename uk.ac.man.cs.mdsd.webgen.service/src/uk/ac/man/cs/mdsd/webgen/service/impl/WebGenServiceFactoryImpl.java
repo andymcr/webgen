@@ -60,8 +60,8 @@ public class WebGenServiceFactoryImpl extends EFactoryImpl implements WebGenServ
 			case WebGenServicePackage.SERVICES: return createServices();
 			case WebGenServicePackage.SERVICE: return createService();
 			case WebGenServicePackage.SELECTION: return createSelection();
-			case WebGenServicePackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WebGenServicePackage.BUSINESS_OPERATION: return createBusinessOperation();
+			case WebGenServicePackage.FORMAL_PARAMETER: return createFormalParameter();
 			case WebGenServicePackage.ASC: return createAsc();
 			case WebGenServicePackage.DESC: return createDesc();
 			case WebGenServicePackage.FEATURE_REFERENCE: return createFeatureReference();
@@ -137,9 +137,9 @@ public class WebGenServiceFactoryImpl extends EFactoryImpl implements WebGenServ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionParameter createSelectionParameter() {
-		SelectionParameterImpl selectionParameter = new SelectionParameterImpl();
-		return selectionParameter;
+	public BusinessOperation createBusinessOperation() {
+		BusinessOperationImpl businessOperation = new BusinessOperationImpl();
+		return businessOperation;
 	}
 
 	/**
@@ -147,9 +147,9 @@ public class WebGenServiceFactoryImpl extends EFactoryImpl implements WebGenServ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BusinessOperation createBusinessOperation() {
-		BusinessOperationImpl businessOperation = new BusinessOperationImpl();
-		return businessOperation;
+	public FormalParameter createFormalParameter() {
+		FormalParameterImpl formalParameter = new FormalParameterImpl();
+		return formalParameter;
 	}
 
 	/**

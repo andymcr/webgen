@@ -84,18 +84,26 @@ public class WebGenServiceSwitch<T> extends Switch<T> {
 			case WebGenServicePackage.SELECTION: {
 				Selection selection = (Selection)theEObject;
 				T result = caseSelection(selection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebGenServicePackage.SELECTION_PARAMETER: {
-				SelectionParameter selectionParameter = (SelectionParameter)theEObject;
-				T result = caseSelectionParameter(selectionParameter);
+				if (result == null) result = caseFormalParameterList(selection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case WebGenServicePackage.BUSINESS_OPERATION: {
 				BusinessOperation businessOperation = (BusinessOperation)theEObject;
 				T result = caseBusinessOperation(businessOperation);
+				if (result == null) result = caseFormalParameterList(businessOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebGenServicePackage.FORMAL_PARAMETER_LIST: {
+				FormalParameterList formalParameterList = (FormalParameterList)theEObject;
+				T result = caseFormalParameterList(formalParameterList);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebGenServicePackage.FORMAL_PARAMETER: {
+				FormalParameter formalParameter = (FormalParameter)theEObject;
+				T result = caseFormalParameter(formalParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -193,21 +201,6 @@ public class WebGenServiceSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Selection Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Selection Parameter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSelectionParameter(SelectionParameter object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Business Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -219,6 +212,36 @@ public class WebGenServiceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBusinessOperation(BusinessOperation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Formal Parameter List</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Formal Parameter List</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFormalParameterList(FormalParameterList object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Formal Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Formal Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFormalParameter(FormalParameter object) {
 		return null;
 	}
 

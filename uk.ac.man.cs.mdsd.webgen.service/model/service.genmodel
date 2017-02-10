@@ -24,22 +24,24 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference service.ecore#//Selection/usedBy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//Selection/distinct"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Selection/fields"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//Selection/parameters"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Selection/joins"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//Selection/filter"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//Selection/ordering"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//Selection/limit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//Selection/selected"/>
     </genClasses>
-    <genClasses ecoreClass="service.ecore#//SelectionParameter">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference service.ecore#//SelectionParameter/formalFor"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//SelectionParameter/optional"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//SelectionParameter/defaultValue"/>
-    </genClasses>
     <genClasses ecoreClass="service.ecore#//BusinessOperation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//BusinessOperation/uses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//BusinessOperation/resultType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//BusinessOperation/resultMimeType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="service.ecore#//FormalParameterList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//FormalParameterList/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="service.ecore#//FormalParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//FormalParameter/formalFor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//FormalParameter/optional"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//FormalParameter/defaultValue"/>
     </genClasses>
     <genClasses image="false" ecoreClass="service.ecore#//Order">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Order/path"/>

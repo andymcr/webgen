@@ -158,29 +158,6 @@ public class WebGenServiceItemProviderAdapterFactory extends WebGenServiceAdapte
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.service.SelectionParameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SelectionParameterItemProvider selectionParameterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.service.SelectionParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSelectionParameterAdapter() {
-		if (selectionParameterItemProvider == null) {
-			selectionParameterItemProvider = new SelectionParameterItemProvider(this);
-		}
-
-		return selectionParameterItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.service.BusinessOperation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -201,6 +178,29 @@ public class WebGenServiceItemProviderAdapterFactory extends WebGenServiceAdapte
 		}
 
 		return businessOperationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FormalParameterItemProvider formalParameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFormalParameterAdapter() {
+		if (formalParameterItemProvider == null) {
+			formalParameterItemProvider = new FormalParameterItemProvider(this);
+		}
+
+		return formalParameterItemProvider;
 	}
 
 	/**
@@ -447,8 +447,8 @@ public class WebGenServiceItemProviderAdapterFactory extends WebGenServiceAdapte
 		if (servicesItemProvider != null) servicesItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
-		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
 		if (businessOperationItemProvider != null) businessOperationItemProvider.dispose();
+		if (formalParameterItemProvider != null) formalParameterItemProvider.dispose();
 		if (ascItemProvider != null) ascItemProvider.dispose();
 		if (descItemProvider != null) descItemProvider.dispose();
 		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();

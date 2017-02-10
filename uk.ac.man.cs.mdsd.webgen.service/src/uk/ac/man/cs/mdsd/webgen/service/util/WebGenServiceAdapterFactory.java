@@ -83,12 +83,16 @@ public class WebGenServiceAdapterFactory extends AdapterFactoryImpl {
 				return createSelectionAdapter();
 			}
 			@Override
-			public Adapter caseSelectionParameter(SelectionParameter object) {
-				return createSelectionParameterAdapter();
-			}
-			@Override
 			public Adapter caseBusinessOperation(BusinessOperation object) {
 				return createBusinessOperationAdapter();
+			}
+			@Override
+			public Adapter caseFormalParameterList(FormalParameterList object) {
+				return createFormalParameterListAdapter();
+			}
+			@Override
+			public Adapter caseFormalParameter(FormalParameter object) {
+				return createFormalParameterAdapter();
 			}
 			@Override
 			public Adapter caseOrder(Order object) {
@@ -185,20 +189,6 @@ public class WebGenServiceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.SelectionParameter <em>Selection Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.SelectionParameter
-	 * @generated
-	 */
-	public Adapter createSelectionParameterAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.BusinessOperation <em>Business Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -209,6 +199,34 @@ public class WebGenServiceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBusinessOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameterList <em>Formal Parameter List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FormalParameterList
+	 * @generated
+	 */
+	public Adapter createFormalParameterListAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter <em>Formal Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FormalParameter
+	 * @generated
+	 */
+	public Adapter createFormalParameterAdapter() {
 		return null;
 	}
 

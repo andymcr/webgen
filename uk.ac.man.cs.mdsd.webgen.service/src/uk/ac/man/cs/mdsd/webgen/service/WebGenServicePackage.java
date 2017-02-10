@@ -153,6 +153,43 @@ public interface WebGenServicePackage extends EPackage {
 	int SERVICE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameterList <em>Formal Parameter List</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FormalParameterList
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getFormalParameterList()
+	 * @generated
+	 */
+	int FORMAL_PARAMETER_LIST = 4;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER_LIST__PARAMETERS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Formal Parameter List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER_LIST_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Formal Parameter List</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER_LIST_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl <em>Selection</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -163,13 +200,22 @@ public interface WebGenServicePackage extends EPackage {
 	int SELECTION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION__PARAMETERS = FORMAL_PARAMETER_LIST__PARAMETERS;
+
+	/**
 	 * The feature id for the '<em><b>Used By</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__USED_BY = 0;
+	int SELECTION__USED_BY = FORMAL_PARAMETER_LIST_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Distinct</b></em>' attribute.
@@ -178,7 +224,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__DISTINCT = 1;
+	int SELECTION__DISTINCT = FORMAL_PARAMETER_LIST_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Fields</b></em>' reference list.
@@ -187,16 +233,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__FIELDS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION__PARAMETERS = 3;
+	int SELECTION__FIELDS = FORMAL_PARAMETER_LIST_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Joins</b></em>' reference list.
@@ -205,7 +242,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__JOINS = 4;
+	int SELECTION__JOINS = FORMAL_PARAMETER_LIST_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' containment reference.
@@ -214,7 +251,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__FILTER = 5;
+	int SELECTION__FILTER = FORMAL_PARAMETER_LIST_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Ordering</b></em>' containment reference list.
@@ -223,7 +260,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__ORDERING = 6;
+	int SELECTION__ORDERING = FORMAL_PARAMETER_LIST_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Limit</b></em>' attribute.
@@ -232,7 +269,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__LIMIT = 7;
+	int SELECTION__LIMIT = FORMAL_PARAMETER_LIST_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -241,7 +278,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__SELECTED = 8;
+	int SELECTION__SELECTED = FORMAL_PARAMETER_LIST_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Selection</em>' class.
@@ -250,7 +287,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_FEATURE_COUNT = 9;
+	int SELECTION_FEATURE_COUNT = FORMAL_PARAMETER_LIST_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Selection</em>' class.
@@ -259,62 +296,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionParameterImpl <em>Selection Parameter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.SelectionParameterImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getSelectionParameter()
-	 * @generated
-	 */
-	int SELECTION_PARAMETER = 3;
-
-	/**
-	 * The feature id for the '<em><b>Formal For</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_PARAMETER__FORMAL_FOR = 0;
-
-	/**
-	 * The feature id for the '<em><b>Optional</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_PARAMETER__OPTIONAL = 1;
-
-	/**
-	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_PARAMETER__DEFAULT_VALUE = 2;
-
-	/**
-	 * The number of structural features of the '<em>Selection Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_PARAMETER_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Selection Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_PARAMETER_OPERATION_COUNT = 0;
+	int SELECTION_OPERATION_COUNT = FORMAL_PARAMETER_LIST_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.BusinessOperationImpl <em>Business Operation</em>}' class.
@@ -324,7 +306,16 @@ public interface WebGenServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getBusinessOperation()
 	 * @generated
 	 */
-	int BUSINESS_OPERATION = 4;
+	int BUSINESS_OPERATION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_OPERATION__PARAMETERS = FORMAL_PARAMETER_LIST__PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Uses</b></em>' reference list.
@@ -333,7 +324,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION__USES = 0;
+	int BUSINESS_OPERATION__USES = FORMAL_PARAMETER_LIST_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' attribute.
@@ -342,7 +333,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION__RESULT_TYPE = 1;
+	int BUSINESS_OPERATION__RESULT_TYPE = FORMAL_PARAMETER_LIST_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Result Mime Type</b></em>' attribute.
@@ -351,7 +342,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION__RESULT_MIME_TYPE = 2;
+	int BUSINESS_OPERATION__RESULT_MIME_TYPE = FORMAL_PARAMETER_LIST_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Business Operation</em>' class.
@@ -360,7 +351,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION_FEATURE_COUNT = 3;
+	int BUSINESS_OPERATION_FEATURE_COUNT = FORMAL_PARAMETER_LIST_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Business Operation</em>' class.
@@ -369,7 +360,62 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION_OPERATION_COUNT = 0;
+	int BUSINESS_OPERATION_OPERATION_COUNT = FORMAL_PARAMETER_LIST_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.FormalParameterImpl <em>Formal Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.FormalParameterImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getFormalParameter()
+	 * @generated
+	 */
+	int FORMAL_PARAMETER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Formal For</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER__FORMAL_FOR = 0;
+
+	/**
+	 * The feature id for the '<em><b>Optional</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER__OPTIONAL = 1;
+
+	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER__DEFAULT_VALUE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Formal Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Formal Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.OrderImpl <em>Order</em>}' class.
@@ -379,7 +425,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getOrder()
 	 * @generated
 	 */
-	int ORDER = 5;
+	int ORDER = 6;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' reference.
@@ -416,7 +462,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getAsc()
 	 * @generated
 	 */
-	int ASC = 6;
+	int ASC = 7;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' reference.
@@ -453,7 +499,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getDesc()
 	 * @generated
 	 */
-	int DESC = 7;
+	int DESC = 8;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' reference.
@@ -490,7 +536,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getFeatureReference()
 	 * @generated
 	 */
-	int FEATURE_REFERENCE = 8;
+	int FEATURE_REFERENCE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -536,7 +582,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getParameterReference()
 	 * @generated
 	 */
-	int PARAMETER_REFERENCE = 9;
+	int PARAMETER_REFERENCE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -582,7 +628,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getCurrentUserReference()
 	 * @generated
 	 */
-	int CURRENT_USER_REFERENCE = 10;
+	int CURRENT_USER_REFERENCE = 11;
 
 	/**
 	 * The number of structural features of the '<em>Current User Reference</em>' class.
@@ -610,7 +656,7 @@ public interface WebGenServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getOperationResultTypes()
 	 * @generated
 	 */
-	int OPERATION_RESULT_TYPES = 11;
+	int OPERATION_RESULT_TYPES = 12;
 
 
 	/**
@@ -721,17 +767,6 @@ public interface WebGenServicePackage extends EPackage {
 	EReference getSelection_Fields();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getParameters <em>Parameters</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.Selection#getParameters()
-	 * @see #getSelection()
-	 * @generated
-	 */
-	EReference getSelection_Parameters();
-
-	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getJoins <em>Joins</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -787,49 +822,6 @@ public interface WebGenServicePackage extends EPackage {
 	EAttribute getSelection_Selected();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.SelectionParameter <em>Selection Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Selection Parameter</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.SelectionParameter
-	 * @generated
-	 */
-	EClass getSelectionParameter();
-
-	/**
-	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.service.SelectionParameter#getFormalFor <em>Formal For</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Formal For</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.SelectionParameter#getFormalFor()
-	 * @see #getSelectionParameter()
-	 * @generated
-	 */
-	EReference getSelectionParameter_FormalFor();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.service.SelectionParameter#isOptional <em>Optional</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Optional</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.SelectionParameter#isOptional()
-	 * @see #getSelectionParameter()
-	 * @generated
-	 */
-	EAttribute getSelectionParameter_Optional();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.service.SelectionParameter#getDefaultValue <em>Default Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Default Value</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.SelectionParameter#getDefaultValue()
-	 * @see #getSelectionParameter()
-	 * @generated
-	 */
-	EAttribute getSelectionParameter_DefaultValue();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.BusinessOperation <em>Business Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -871,6 +863,70 @@ public interface WebGenServicePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getBusinessOperation_ResultMimeType();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameterList <em>Formal Parameter List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Formal Parameter List</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FormalParameterList
+	 * @generated
+	 */
+	EClass getFormalParameterList();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameterList#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FormalParameterList#getParameters()
+	 * @see #getFormalParameterList()
+	 * @generated
+	 */
+	EReference getFormalParameterList_Parameters();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter <em>Formal Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Formal Parameter</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FormalParameter
+	 * @generated
+	 */
+	EClass getFormalParameter();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getFormalFor <em>Formal For</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Formal For</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getFormalFor()
+	 * @see #getFormalParameter()
+	 * @generated
+	 */
+	EReference getFormalParameter_FormalFor();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#isOptional <em>Optional</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Optional</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FormalParameter#isOptional()
+	 * @see #getFormalParameter()
+	 * @generated
+	 */
+	EAttribute getFormalParameter_Optional();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getDefaultValue <em>Default Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Default Value</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getDefaultValue()
+	 * @see #getFormalParameter()
+	 * @generated
+	 */
+	EReference getFormalParameter_DefaultValue();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.Order <em>Order</em>}'.
@@ -1107,14 +1163,6 @@ public interface WebGenServicePackage extends EPackage {
 		EReference SELECTION__FIELDS = eINSTANCE.getSelection_Fields();
 
 		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SELECTION__PARAMETERS = eINSTANCE.getSelection_Parameters();
-
-		/**
 		 * The meta object literal for the '<em><b>Joins</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1155,40 +1203,6 @@ public interface WebGenServicePackage extends EPackage {
 		EAttribute SELECTION__SELECTED = eINSTANCE.getSelection_Selected();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionParameterImpl <em>Selection Parameter</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.SelectionParameterImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getSelectionParameter()
-		 * @generated
-		 */
-		EClass SELECTION_PARAMETER = eINSTANCE.getSelectionParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Formal For</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SELECTION_PARAMETER__FORMAL_FOR = eINSTANCE.getSelectionParameter_FormalFor();
-
-		/**
-		 * The meta object literal for the '<em><b>Optional</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SELECTION_PARAMETER__OPTIONAL = eINSTANCE.getSelectionParameter_Optional();
-
-		/**
-		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SELECTION_PARAMETER__DEFAULT_VALUE = eINSTANCE.getSelectionParameter_DefaultValue();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.BusinessOperationImpl <em>Business Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1221,6 +1235,58 @@ public interface WebGenServicePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BUSINESS_OPERATION__RESULT_MIME_TYPE = eINSTANCE.getBusinessOperation_ResultMimeType();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameterList <em>Formal Parameter List</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.service.FormalParameterList
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getFormalParameterList()
+		 * @generated
+		 */
+		EClass FORMAL_PARAMETER_LIST = eINSTANCE.getFormalParameterList();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FORMAL_PARAMETER_LIST__PARAMETERS = eINSTANCE.getFormalParameterList_Parameters();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.FormalParameterImpl <em>Formal Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.FormalParameterImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.WebGenServicePackageImpl#getFormalParameter()
+		 * @generated
+		 */
+		EClass FORMAL_PARAMETER = eINSTANCE.getFormalParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Formal For</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FORMAL_PARAMETER__FORMAL_FOR = eINSTANCE.getFormalParameter_FormalFor();
+
+		/**
+		 * The meta object literal for the '<em><b>Optional</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORMAL_PARAMETER__OPTIONAL = eINSTANCE.getFormalParameter_Optional();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FORMAL_PARAMETER__DEFAULT_VALUE = eINSTANCE.getFormalParameter_DefaultValue();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.OrderImpl <em>Order</em>}' class.

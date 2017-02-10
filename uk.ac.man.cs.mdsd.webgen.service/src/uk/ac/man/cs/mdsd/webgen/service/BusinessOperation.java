@@ -4,8 +4,6 @@ package uk.ac.man.cs.mdsd.webgen.service;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Business Operation</b></em>'.
@@ -24,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface BusinessOperation extends EObject {
+public interface BusinessOperation extends FormalParameterList {
 	/**
 	 * Returns the value of the '<em><b>Uses</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.Service}.

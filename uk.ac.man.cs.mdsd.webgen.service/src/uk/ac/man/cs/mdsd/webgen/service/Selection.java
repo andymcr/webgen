@@ -3,9 +3,6 @@
 package uk.ac.man.cs.mdsd.webgen.service;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
-
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 
@@ -21,7 +18,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#isDistinct <em>Distinct</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getFields <em>Fields</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getOrdering <em>Ordering</em>}</li>
@@ -33,7 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
  * @model
  * @generated
  */
-public interface Selection extends EObject {
+public interface Selection extends FormalParameterList {
 	/**
 	 * Returns the value of the '<em><b>Used By</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.service.Service#getSelections <em>Selections</em>}'.
@@ -103,24 +99,6 @@ public interface Selection extends EObject {
 	 * @generated
 	 */
 	EList<Feature> getFields();
-
-	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.SelectionParameter}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.service.SelectionParameter#getFormalFor <em>Formal For</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage#getSelection_Parameters()
-	 * @see uk.ac.man.cs.mdsd.webgen.service.SelectionParameter#getFormalFor
-	 * @model opposite="formalFor" containment="true"
-	 * @generated
-	 */
-	EList<SelectionParameter> getParameters();
 
 	/**
 	 * Returns the value of the '<em><b>Joins</b></em>' reference list.

@@ -49,15 +49,6 @@ public interface WebGenServiceFactory extends EFactory {
 	Selection createSelection();
 
 	/**
-	 * Returns a new object of class '<em>Selection Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Selection Parameter</em>'.
-	 * @generated
-	 */
-	SelectionParameter createSelectionParameter();
-
-	/**
 	 * Returns a new object of class '<em>Business Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,6 +56,15 @@ public interface WebGenServiceFactory extends EFactory {
 	 * @generated
 	 */
 	BusinessOperation createBusinessOperation();
+
+	/**
+	 * Returns a new object of class '<em>Formal Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Formal Parameter</em>'.
+	 * @generated
+	 */
+	FormalParameter createFormalParameter();
 
 	/**
 	 * Returns a new object of class '<em>Asc</em>'.

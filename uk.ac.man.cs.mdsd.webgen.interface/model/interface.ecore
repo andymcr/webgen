@@ -19,6 +19,10 @@
         eType="#//Page" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="menus" upperBound="-1"
         eType="#//Menu" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputTechnology" eType="#//InputTechnologies"
+        defaultValueLiteral="Html"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ajaxTechnology" eType="#//AjaxTechnologies"
+        defaultValueLiteral="None"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultDateFormat" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="jS F Y"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultTimeFormat" ordered="false"
@@ -39,6 +43,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="staticUnitsEditable" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="textEditorURL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InputTechnologies">
+    <eLiterals name="Html"/>
+    <eLiterals name="jQueryUI" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AjaxTechnologies">
+    <eLiterals name="None"/>
+    <eLiterals name="jQuery" value="1"/>
+    <eLiterals name="AngularJS" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PageTopMenuOptions">
     <eLiterals name="NeverInclude"/>
@@ -129,7 +142,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="FilterParameter" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" eType="#//Filter"
         eOpposite="#//Filter/parameters"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="formal" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//FormalParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formal" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.core/model/core.ecore#//FormalParameter"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholder" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -334,7 +347,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeField" eSuperTypes="#//InterfaceField">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" ordered="false"
-        lowerBound="1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.persistence/model/persistence.ecore#//DataType"/>
+        lowerBound="1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.core/model/core.ecore#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="obfuscateFormFields" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="encrypt" ordered="false"

@@ -222,6 +222,10 @@ public class WebGenInterfaceValidator extends EObjectValidator {
 				return validateModelReference((ModelReference)value, diagnostics, context);
 			case WebGenInterfacePackage.ROUTE_PARAMETER_REFERENCE:
 				return validateRouteParameterReference((RouteParameterReference)value, diagnostics, context);
+			case WebGenInterfacePackage.INPUT_TECHNOLOGIES:
+				return validateInputTechnologies((InputTechnologies)value, diagnostics, context);
+			case WebGenInterfacePackage.AJAX_TECHNOLOGIES:
+				return validateAjaxTechnologies((AjaxTechnologies)value, diagnostics, context);
 			case WebGenInterfacePackage.PAGE_TOP_MENU_OPTIONS:
 				return validatePageTopMenuOptions((PageTopMenuOptions)value, diagnostics, context);
 			case WebGenInterfacePackage.COLLECTION_DISPLAY_OPTIONS:
@@ -1826,6 +1830,24 @@ public class WebGenInterfaceValidator extends EObjectValidator {
 	 */
 	public boolean validateRouteParameterReference(RouteParameterReference routeParameterReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(routeParameterReference, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInputTechnologies(InputTechnologies inputTechnologies, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAjaxTechnologies(AjaxTechnologies ajaxTechnologies, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**

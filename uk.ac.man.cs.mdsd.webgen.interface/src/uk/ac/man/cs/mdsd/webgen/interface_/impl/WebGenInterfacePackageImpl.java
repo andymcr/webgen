@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.WebGenExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.image.WebGenImagePackage;
 
 import uk.ac.man.cs.mdsd.webgen.interface_.ActionMenuEntry;
+import uk.ac.man.cs.mdsd.webgen.interface_.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.webgen.interface_.AssociationReference;
 import uk.ac.man.cs.mdsd.webgen.interface_.AuthenticationUnit;
 import uk.ac.man.cs.mdsd.webgen.interface_.CaptchaField;
@@ -53,6 +54,7 @@ import uk.ac.man.cs.mdsd.webgen.interface_.IndexDisplayOption;
 import uk.ac.man.cs.mdsd.webgen.interface_.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.interface_.InlineAction;
 import uk.ac.man.cs.mdsd.webgen.interface_.InlineActionContainer;
+import uk.ac.man.cs.mdsd.webgen.interface_.InputTechnologies;
 import uk.ac.man.cs.mdsd.webgen.interface_.Interface;
 import uk.ac.man.cs.mdsd.webgen.interface_.InterfaceField;
 import uk.ac.man.cs.mdsd.webgen.interface_.LoginUnit;
@@ -542,6 +544,20 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EEnum inputTechnologiesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum ajaxTechnologiesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum pageTopMenuOptionsEEnum = null;
 
 	/**
@@ -664,7 +680,7 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInterface_DefaultDateFormat() {
+	public EAttribute getInterface_InputTechnology() {
 		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -673,7 +689,7 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInterface_DefaultTimeFormat() {
+	public EAttribute getInterface_AjaxTechnology() {
 		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -682,7 +698,7 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInterface_DefaultDateTimeFormat() {
+	public EAttribute getInterface_DefaultDateFormat() {
 		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -691,7 +707,7 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInterface_DefaultMaximumUploadSize() {
+	public EAttribute getInterface_DefaultTimeFormat() {
 		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -700,7 +716,7 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInterface_ResponsiveTopMenu() {
+	public EAttribute getInterface_DefaultDateTimeFormat() {
 		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -709,7 +725,7 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInterface_TopNavigationId() {
+	public EAttribute getInterface_DefaultMaximumUploadSize() {
 		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -718,8 +734,8 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInterface_SideMenu() {
-		return (EReference)interfaceEClass.getEStructuralFeatures().get(8);
+	public EAttribute getInterface_ResponsiveTopMenu() {
+		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -727,7 +743,7 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInterface_SiteTemplate() {
+	public EAttribute getInterface_TopNavigationId() {
 		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -736,8 +752,26 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getInterface_SideMenu() {
+		return (EReference)interfaceEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInterface_SiteTemplate() {
+		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getInterface_StaticUnitsEditable() {
-		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -746,7 +780,7 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 	 * @generated
 	 */
 	public EAttribute getInterface_TextEditorURL() {
-		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -3157,6 +3191,24 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getInputTechnologies() {
+		return inputTechnologiesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getAjaxTechnologies() {
+		return ajaxTechnologiesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPageTopMenuOptions() {
 		return pageTopMenuOptionsEEnum;
 	}
@@ -3210,6 +3262,8 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 		interfaceEClass = createEClass(INTERFACE);
 		createEReference(interfaceEClass, INTERFACE__PAGES);
 		createEReference(interfaceEClass, INTERFACE__MENUS);
+		createEAttribute(interfaceEClass, INTERFACE__INPUT_TECHNOLOGY);
+		createEAttribute(interfaceEClass, INTERFACE__AJAX_TECHNOLOGY);
 		createEAttribute(interfaceEClass, INTERFACE__DEFAULT_DATE_FORMAT);
 		createEAttribute(interfaceEClass, INTERFACE__DEFAULT_TIME_FORMAT);
 		createEAttribute(interfaceEClass, INTERFACE__DEFAULT_DATE_TIME_FORMAT);
@@ -3551,6 +3605,8 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 		createEReference(routeParameterReferenceEClass, ROUTE_PARAMETER_REFERENCE__PARAMETER);
 
 		// Create enums
+		inputTechnologiesEEnum = createEEnum(INPUT_TECHNOLOGIES);
+		ajaxTechnologiesEEnum = createEEnum(AJAX_TECHNOLOGIES);
 		pageTopMenuOptionsEEnum = createEEnum(PAGE_TOP_MENU_OPTIONS);
 		collectionDisplayOptionsEEnum = createEEnum(COLLECTION_DISPLAY_OPTIONS);
 		indexDisplayOptionEEnum = createEEnum(INDEX_DISPLAY_OPTION);
@@ -3667,6 +3723,8 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 		initEClass(interfaceEClass, Interface.class, "Interface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInterface_Pages(), this.getPage(), null, "pages", null, 0, -1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInterface_Menus(), this.getMenu(), null, "menus", null, 0, -1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInterface_InputTechnology(), this.getInputTechnologies(), "inputTechnology", "Html", 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInterface_AjaxTechnology(), this.getAjaxTechnologies(), "ajaxTechnology", "None", 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInterface_DefaultDateFormat(), ecorePackage.getEString(), "defaultDateFormat", "jS F Y", 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getInterface_DefaultTimeFormat(), ecorePackage.getEString(), "defaultTimeFormat", "G.i", 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getInterface_DefaultDateTimeFormat(), ecorePackage.getEString(), "defaultDateTimeFormat", "jS F Y G.i", 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -3723,7 +3781,7 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 
 		initEClass(filterParameterEClass, FilterParameter.class, "FilterParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFilterParameter_PartOf(), this.getFilter(), this.getFilter_Parameters(), "partOf", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFilterParameter_Formal(), theWebGenServicePackage.getFormalParameter(), null, "formal", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFilterParameter_Formal(), theWebGenCorePackage.getFormalParameter(), null, "formal", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFilterParameter_DefaultValue(), ecorePackage.getEString(), "defaultValue", "", 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFilterParameter_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3821,7 +3879,7 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 		initEAttribute(getInterfaceField_ValidationPattern(), ecorePackage.getEString(), "validationPattern", null, 0, 1, InterfaceField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(dataTypeFieldEClass, DataTypeField.class, "DataTypeField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataTypeField_DataType(), theWebGenPersistencePackage.getDataType(), null, "dataType", null, 1, 1, DataTypeField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDataTypeField_DataType(), theWebGenCorePackage.getDataType(), null, "dataType", null, 1, 1, DataTypeField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDataTypeField_ObfuscateFormFields(), ecorePackage.getEBoolean(), "obfuscateFormFields", "false", 0, 1, DataTypeField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDataTypeField_Encrypt(), ecorePackage.getEBoolean(), "encrypt", "false", 0, 1, DataTypeField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDataTypeField_InterfaceType(), ecorePackage.getEString(), "interfaceType", null, 0, 1, DataTypeField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4008,6 +4066,15 @@ public class WebGenInterfacePackageImpl extends EPackageImpl implements WebGenIn
 		initEReference(getRouteParameterReference_Parameter(), theWebGenPersistencePackage.getAttribute(), null, "parameter", null, 1, 1, RouteParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
+		initEEnum(inputTechnologiesEEnum, InputTechnologies.class, "InputTechnologies");
+		addEEnumLiteral(inputTechnologiesEEnum, InputTechnologies.HTML);
+		addEEnumLiteral(inputTechnologiesEEnum, InputTechnologies.JQUERY_UI);
+
+		initEEnum(ajaxTechnologiesEEnum, AjaxTechnologies.class, "AjaxTechnologies");
+		addEEnumLiteral(ajaxTechnologiesEEnum, AjaxTechnologies.NONE);
+		addEEnumLiteral(ajaxTechnologiesEEnum, AjaxTechnologies.JQUERY);
+		addEEnumLiteral(ajaxTechnologiesEEnum, AjaxTechnologies.ANGULAR_JS);
+
 		initEEnum(pageTopMenuOptionsEEnum, PageTopMenuOptions.class, "PageTopMenuOptions");
 		addEEnumLiteral(pageTopMenuOptionsEEnum, PageTopMenuOptions.NEVER_INCLUDE);
 		addEEnumLiteral(pageTopMenuOptionsEEnum, PageTopMenuOptions.ALWAYS_INCLUDE);

@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.webgen.interface_.AjaxTechnologies;
+import uk.ac.man.cs.mdsd.webgen.interface_.InputTechnologies;
 import uk.ac.man.cs.mdsd.webgen.interface_.Interface;
 import uk.ac.man.cs.mdsd.webgen.interface_.Menu;
 import uk.ac.man.cs.mdsd.webgen.interface_.Page;
@@ -33,6 +35,8 @@ import uk.ac.man.cs.mdsd.webgen.interface_.WebGenInterfacePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.impl.InterfaceImpl#getPages <em>Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.impl.InterfaceImpl#getMenus <em>Menus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.impl.InterfaceImpl#getInputTechnology <em>Input Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.impl.InterfaceImpl#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.impl.InterfaceImpl#getDefaultDateFormat <em>Default Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.impl.InterfaceImpl#getDefaultTimeFormat <em>Default Time Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.impl.InterfaceImpl#getDefaultDateTimeFormat <em>Default Date Time Format</em>}</li>
@@ -67,6 +71,46 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
 	 * @ordered
 	 */
 	protected EList<Menu> menus;
+
+	/**
+	 * The default value of the '{@link #getInputTechnology() <em>Input Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final InputTechnologies INPUT_TECHNOLOGY_EDEFAULT = InputTechnologies.HTML;
+
+	/**
+	 * The cached value of the '{@link #getInputTechnology() <em>Input Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected InputTechnologies inputTechnology = INPUT_TECHNOLOGY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAjaxTechnology() <em>Ajax Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAjaxTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final AjaxTechnologies AJAX_TECHNOLOGY_EDEFAULT = AjaxTechnologies.NONE;
+
+	/**
+	 * The cached value of the '{@link #getAjaxTechnology() <em>Ajax Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAjaxTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected AjaxTechnologies ajaxTechnology = AJAX_TECHNOLOGY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDefaultDateFormat() <em>Default Date Format</em>}' attribute.
@@ -299,6 +343,48 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
 			menus = new EObjectContainmentEList<Menu>(Menu.class, this, WebGenInterfacePackage.INTERFACE__MENUS);
 		}
 		return menus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InputTechnologies getInputTechnology() {
+		return inputTechnology;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInputTechnology(InputTechnologies newInputTechnology) {
+		InputTechnologies oldInputTechnology = inputTechnology;
+		inputTechnology = newInputTechnology == null ? INPUT_TECHNOLOGY_EDEFAULT : newInputTechnology;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenInterfacePackage.INTERFACE__INPUT_TECHNOLOGY, oldInputTechnology, inputTechnology));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AjaxTechnologies getAjaxTechnology() {
+		return ajaxTechnology;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAjaxTechnology(AjaxTechnologies newAjaxTechnology) {
+		AjaxTechnologies oldAjaxTechnology = ajaxTechnology;
+		ajaxTechnology = newAjaxTechnology == null ? AJAX_TECHNOLOGY_EDEFAULT : newAjaxTechnology;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenInterfacePackage.INTERFACE__AJAX_TECHNOLOGY, oldAjaxTechnology, ajaxTechnology));
 	}
 
 	/**
@@ -556,6 +642,10 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
 				return getPages();
 			case WebGenInterfacePackage.INTERFACE__MENUS:
 				return getMenus();
+			case WebGenInterfacePackage.INTERFACE__INPUT_TECHNOLOGY:
+				return getInputTechnology();
+			case WebGenInterfacePackage.INTERFACE__AJAX_TECHNOLOGY:
+				return getAjaxTechnology();
 			case WebGenInterfacePackage.INTERFACE__DEFAULT_DATE_FORMAT:
 				return getDefaultDateFormat();
 			case WebGenInterfacePackage.INTERFACE__DEFAULT_TIME_FORMAT:
@@ -597,6 +687,12 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
 			case WebGenInterfacePackage.INTERFACE__MENUS:
 				getMenus().clear();
 				getMenus().addAll((Collection<? extends Menu>)newValue);
+				return;
+			case WebGenInterfacePackage.INTERFACE__INPUT_TECHNOLOGY:
+				setInputTechnology((InputTechnologies)newValue);
+				return;
+			case WebGenInterfacePackage.INTERFACE__AJAX_TECHNOLOGY:
+				setAjaxTechnology((AjaxTechnologies)newValue);
 				return;
 			case WebGenInterfacePackage.INTERFACE__DEFAULT_DATE_FORMAT:
 				setDefaultDateFormat((String)newValue);
@@ -646,6 +742,12 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
 			case WebGenInterfacePackage.INTERFACE__MENUS:
 				getMenus().clear();
 				return;
+			case WebGenInterfacePackage.INTERFACE__INPUT_TECHNOLOGY:
+				setInputTechnology(INPUT_TECHNOLOGY_EDEFAULT);
+				return;
+			case WebGenInterfacePackage.INTERFACE__AJAX_TECHNOLOGY:
+				setAjaxTechnology(AJAX_TECHNOLOGY_EDEFAULT);
+				return;
 			case WebGenInterfacePackage.INTERFACE__DEFAULT_DATE_FORMAT:
 				setDefaultDateFormat(DEFAULT_DATE_FORMAT_EDEFAULT);
 				return;
@@ -692,6 +794,10 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
 				return pages != null && !pages.isEmpty();
 			case WebGenInterfacePackage.INTERFACE__MENUS:
 				return menus != null && !menus.isEmpty();
+			case WebGenInterfacePackage.INTERFACE__INPUT_TECHNOLOGY:
+				return inputTechnology != INPUT_TECHNOLOGY_EDEFAULT;
+			case WebGenInterfacePackage.INTERFACE__AJAX_TECHNOLOGY:
+				return ajaxTechnology != AJAX_TECHNOLOGY_EDEFAULT;
 			case WebGenInterfacePackage.INTERFACE__DEFAULT_DATE_FORMAT:
 				return DEFAULT_DATE_FORMAT_EDEFAULT == null ? defaultDateFormat != null : !DEFAULT_DATE_FORMAT_EDEFAULT.equals(defaultDateFormat);
 			case WebGenInterfacePackage.INTERFACE__DEFAULT_TIME_FORMAT:
@@ -726,7 +832,11 @@ public class InterfaceImpl extends MinimalEObjectImpl.Container implements Inter
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (defaultDateFormat: ");
+		result.append(" (inputTechnology: ");
+		result.append(inputTechnology);
+		result.append(", ajaxTechnology: ");
+		result.append(ajaxTechnology);
+		result.append(", defaultDateFormat: ");
 		result.append(defaultDateFormat);
 		result.append(", defaultTimeFormat: ");
 		result.append(defaultTimeFormat);

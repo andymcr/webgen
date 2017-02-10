@@ -112,6 +112,10 @@ public class WebGenInterfaceFactoryImpl extends EFactoryImpl implements WebGenIn
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case WebGenInterfacePackage.INPUT_TECHNOLOGIES:
+				return createInputTechnologiesFromString(eDataType, initialValue);
+			case WebGenInterfacePackage.AJAX_TECHNOLOGIES:
+				return createAjaxTechnologiesFromString(eDataType, initialValue);
 			case WebGenInterfacePackage.PAGE_TOP_MENU_OPTIONS:
 				return createPageTopMenuOptionsFromString(eDataType, initialValue);
 			case WebGenInterfacePackage.COLLECTION_DISPLAY_OPTIONS:
@@ -131,6 +135,10 @@ public class WebGenInterfaceFactoryImpl extends EFactoryImpl implements WebGenIn
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case WebGenInterfacePackage.INPUT_TECHNOLOGIES:
+				return convertInputTechnologiesToString(eDataType, instanceValue);
+			case WebGenInterfacePackage.AJAX_TECHNOLOGIES:
+				return convertAjaxTechnologiesToString(eDataType, instanceValue);
 			case WebGenInterfacePackage.PAGE_TOP_MENU_OPTIONS:
 				return convertPageTopMenuOptionsToString(eDataType, instanceValue);
 			case WebGenInterfacePackage.COLLECTION_DISPLAY_OPTIONS:
@@ -560,6 +568,46 @@ public class WebGenInterfaceFactoryImpl extends EFactoryImpl implements WebGenIn
 	public RouteParameterReference createRouteParameterReference() {
 		RouteParameterReferenceImpl routeParameterReference = new RouteParameterReferenceImpl();
 		return routeParameterReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InputTechnologies createInputTechnologiesFromString(EDataType eDataType, String initialValue) {
+		InputTechnologies result = InputTechnologies.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertInputTechnologiesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AjaxTechnologies createAjaxTechnologiesFromString(EDataType eDataType, String initialValue) {
+		AjaxTechnologies result = AjaxTechnologies.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertAjaxTechnologiesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

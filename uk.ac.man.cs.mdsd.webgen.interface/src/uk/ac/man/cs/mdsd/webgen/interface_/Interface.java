@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.Interface#getPages <em>Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.Interface#getMenus <em>Menus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.Interface#getInputTechnology <em>Input Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.Interface#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.Interface#getDefaultDateFormat <em>Default Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.Interface#getDefaultTimeFormat <em>Default Time Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.interface_.Interface#getDefaultDateTimeFormat <em>Default Date Time Format</em>}</li>
@@ -66,6 +68,66 @@ public interface Interface extends EObject {
 	 * @generated
 	 */
 	EList<Menu> getMenus();
+
+	/**
+	 * Returns the value of the '<em><b>Input Technology</b></em>' attribute.
+	 * The default value is <code>"Html"</code>.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.interface_.InputTechnologies}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Input Technology</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Input Technology</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.InputTechnologies
+	 * @see #setInputTechnology(InputTechnologies)
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.WebGenInterfacePackage#getInterface_InputTechnology()
+	 * @model default="Html"
+	 * @generated
+	 */
+	InputTechnologies getInputTechnology();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.interface_.Interface#getInputTechnology <em>Input Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Input Technology</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.InputTechnologies
+	 * @see #getInputTechnology()
+	 * @generated
+	 */
+	void setInputTechnology(InputTechnologies value);
+
+	/**
+	 * Returns the value of the '<em><b>Ajax Technology</b></em>' attribute.
+	 * The default value is <code>"None"</code>.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.interface_.AjaxTechnologies}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ajax Technology</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ajax Technology</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.AjaxTechnologies
+	 * @see #setAjaxTechnology(AjaxTechnologies)
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.WebGenInterfacePackage#getInterface_AjaxTechnology()
+	 * @model default="None"
+	 * @generated
+	 */
+	AjaxTechnologies getAjaxTechnology();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.interface_.Interface#getAjaxTechnology <em>Ajax Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ajax Technology</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.AjaxTechnologies
+	 * @see #getAjaxTechnology()
+	 * @generated
+	 */
+	void setAjaxTechnology(AjaxTechnologies value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Date Format</b></em>' attribute.

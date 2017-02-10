@@ -8,6 +8,15 @@
   <foreignModel>interface.ecore</foreignModel>
   <genPackages prefix="WebGenInterface" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
       extensibleProviderFactory="true" ecorePackage="interface.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="interface.ecore#//InputTechnologies">
+      <genEnumLiterals ecoreEnumLiteral="interface.ecore#//InputTechnologies/Html"/>
+      <genEnumLiterals ecoreEnumLiteral="interface.ecore#//InputTechnologies/jQueryUI"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="interface.ecore#//AjaxTechnologies">
+      <genEnumLiterals ecoreEnumLiteral="interface.ecore#//AjaxTechnologies/None"/>
+      <genEnumLiterals ecoreEnumLiteral="interface.ecore#//AjaxTechnologies/jQuery"/>
+      <genEnumLiterals ecoreEnumLiteral="interface.ecore#//AjaxTechnologies/AngularJS"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="interface.ecore#//PageTopMenuOptions">
       <genEnumLiterals ecoreEnumLiteral="interface.ecore#//PageTopMenuOptions/NeverInclude"/>
       <genEnumLiterals ecoreEnumLiteral="interface.ecore#//PageTopMenuOptions/AlwaysInclude"/>
@@ -25,6 +34,8 @@
     <genClasses ecoreClass="interface.ecore#//Interface">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference interface.ecore#//Interface/pages"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference interface.ecore#//Interface/menus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute interface.ecore#//Interface/inputTechnology"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute interface.ecore#//Interface/ajaxTechnology"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute interface.ecore#//Interface/defaultDateFormat"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute interface.ecore#//Interface/defaultTimeFormat"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute interface.ecore#//Interface/defaultDateTimeFormat"/>

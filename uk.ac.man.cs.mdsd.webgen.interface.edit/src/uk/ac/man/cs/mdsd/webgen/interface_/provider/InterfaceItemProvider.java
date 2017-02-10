@@ -25,6 +25,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.interface_.InputTechnologies;
 import uk.ac.man.cs.mdsd.webgen.interface_.Interface;
 import uk.ac.man.cs.mdsd.webgen.interface_.WebGenInterfaceFactory;
 import uk.ac.man.cs.mdsd.webgen.interface_.WebGenInterfacePackage;
@@ -64,6 +65,8 @@ public class InterfaceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addInputTechnologyPropertyDescriptor(object);
+			addAjaxTechnologyPropertyDescriptor(object);
 			addDefaultDateFormatPropertyDescriptor(object);
 			addDefaultTimeFormatPropertyDescriptor(object);
 			addDefaultDateTimeFormatPropertyDescriptor(object);
@@ -76,6 +79,50 @@ public class InterfaceItemProvider
 			addTextEditorURLPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Input Technology feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputTechnologyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Interface_inputTechnology_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Interface_inputTechnology_feature", "_UI_Interface_type"),
+				 WebGenInterfacePackage.Literals.INTERFACE__INPUT_TECHNOLOGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Ajax Technology feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAjaxTechnologyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Interface_ajaxTechnology_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Interface_ajaxTechnology_feature", "_UI_Interface_type"),
+				 WebGenInterfacePackage.Literals.INTERFACE__AJAX_TECHNOLOGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -348,7 +395,8 @@ public class InterfaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Interface)object).getDefaultDateFormat();
+		InputTechnologies labelValue = ((Interface)object).getInputTechnology();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Interface_type") :
 			getString("_UI_Interface_type") + " " + label;
@@ -367,6 +415,8 @@ public class InterfaceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Interface.class)) {
+			case WebGenInterfacePackage.INTERFACE__INPUT_TECHNOLOGY:
+			case WebGenInterfacePackage.INTERFACE__AJAX_TECHNOLOGY:
 			case WebGenInterfacePackage.INTERFACE__DEFAULT_DATE_FORMAT:
 			case WebGenInterfacePackage.INTERFACE__DEFAULT_TIME_FORMAT:
 			case WebGenInterfacePackage.INTERFACE__DEFAULT_DATE_TIME_FORMAT:

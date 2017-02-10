@@ -90,13 +90,31 @@ public interface WebGenInterfacePackage extends EPackage {
 	int INTERFACE__MENUS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Input Technology</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE__INPUT_TECHNOLOGY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Ajax Technology</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE__AJAX_TECHNOLOGY = 3;
+
+	/**
 	 * The feature id for the '<em><b>Default Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__DEFAULT_DATE_FORMAT = 2;
+	int INTERFACE__DEFAULT_DATE_FORMAT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Default Time Format</b></em>' attribute.
@@ -105,7 +123,7 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__DEFAULT_TIME_FORMAT = 3;
+	int INTERFACE__DEFAULT_TIME_FORMAT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Default Date Time Format</b></em>' attribute.
@@ -114,7 +132,7 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__DEFAULT_DATE_TIME_FORMAT = 4;
+	int INTERFACE__DEFAULT_DATE_TIME_FORMAT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Default Maximum Upload Size</b></em>' attribute.
@@ -123,7 +141,7 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__DEFAULT_MAXIMUM_UPLOAD_SIZE = 5;
+	int INTERFACE__DEFAULT_MAXIMUM_UPLOAD_SIZE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Responsive Top Menu</b></em>' attribute.
@@ -132,7 +150,7 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__RESPONSIVE_TOP_MENU = 6;
+	int INTERFACE__RESPONSIVE_TOP_MENU = 8;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -141,7 +159,7 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__TOP_NAVIGATION_ID = 7;
+	int INTERFACE__TOP_NAVIGATION_ID = 9;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -150,7 +168,7 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__SIDE_MENU = 8;
+	int INTERFACE__SIDE_MENU = 10;
 
 	/**
 	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
@@ -159,7 +177,7 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__SITE_TEMPLATE = 9;
+	int INTERFACE__SITE_TEMPLATE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -168,7 +186,7 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__STATIC_UNITS_EDITABLE = 10;
+	int INTERFACE__STATIC_UNITS_EDITABLE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Text Editor URL</b></em>' attribute.
@@ -177,7 +195,7 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE__TEXT_EDITOR_URL = 11;
+	int INTERFACE__TEXT_EDITOR_URL = 13;
 
 	/**
 	 * The number of structural features of the '<em>Interface</em>' class.
@@ -186,7 +204,7 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FEATURE_COUNT = 12;
+	int INTERFACE_FEATURE_COUNT = 14;
 
 	/**
 	 * The number of operations of the '<em>Interface</em>' class.
@@ -10160,6 +10178,26 @@ public interface WebGenInterfacePackage extends EPackage {
 	int ROUTE_PARAMETER_REFERENCE_OPERATION_COUNT = WebGenExpressionPackage.PATH_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.interface_.InputTechnologies <em>Input Technologies</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.InputTechnologies
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.impl.WebGenInterfacePackageImpl#getInputTechnologies()
+	 * @generated
+	 */
+	int INPUT_TECHNOLOGIES = 63;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.interface_.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.AjaxTechnologies
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.impl.WebGenInterfacePackageImpl#getAjaxTechnologies()
+	 * @generated
+	 */
+	int AJAX_TECHNOLOGIES = 64;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.interface_.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10167,7 +10205,7 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.interface_.impl.WebGenInterfacePackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 63;
+	int PAGE_TOP_MENU_OPTIONS = 65;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.interface_.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -10177,7 +10215,7 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.interface_.impl.WebGenInterfacePackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 64;
+	int COLLECTION_DISPLAY_OPTIONS = 66;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.interface_.IndexDisplayOption <em>Index Display Option</em>}' enum.
@@ -10187,7 +10225,7 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.interface_.impl.WebGenInterfacePackageImpl#getIndexDisplayOption()
 	 * @generated
 	 */
-	int INDEX_DISPLAY_OPTION = 65;
+	int INDEX_DISPLAY_OPTION = 67;
 
 
 	/**
@@ -10221,6 +10259,28 @@ public interface WebGenInterfacePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInterface_Menus();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.interface_.Interface#getInputTechnology <em>Input Technology</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Input Technology</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.Interface#getInputTechnology()
+	 * @see #getInterface()
+	 * @generated
+	 */
+	EAttribute getInterface_InputTechnology();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.interface_.Interface#getAjaxTechnology <em>Ajax Technology</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ajax Technology</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.Interface#getAjaxTechnology()
+	 * @see #getInterface()
+	 * @generated
+	 */
+	EAttribute getInterface_AjaxTechnology();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.interface_.Interface#getDefaultDateFormat <em>Default Date Format</em>}'.
@@ -13208,6 +13268,26 @@ public interface WebGenInterfacePackage extends EPackage {
 	EReference getRouteParameterReference_Parameter();
 
 	/**
+	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.interface_.InputTechnologies <em>Input Technologies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Input Technologies</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.InputTechnologies
+	 * @generated
+	 */
+	EEnum getInputTechnologies();
+
+	/**
+	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.interface_.AjaxTechnologies <em>Ajax Technologies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Ajax Technologies</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.interface_.AjaxTechnologies
+	 * @generated
+	 */
+	EEnum getAjaxTechnologies();
+
+	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.interface_.PageTopMenuOptions <em>Page Top Menu Options</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13285,6 +13365,22 @@ public interface WebGenInterfacePackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTERFACE__MENUS = eINSTANCE.getInterface_Menus();
+
+		/**
+		 * The meta object literal for the '<em><b>Input Technology</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERFACE__INPUT_TECHNOLOGY = eINSTANCE.getInterface_InputTechnology();
+
+		/**
+		 * The meta object literal for the '<em><b>Ajax Technology</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERFACE__AJAX_TECHNOLOGY = eINSTANCE.getInterface_AjaxTechnology();
 
 		/**
 		 * The meta object literal for the '<em><b>Default Date Format</b></em>' attribute feature.
@@ -15625,6 +15721,26 @@ public interface WebGenInterfacePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROUTE_PARAMETER_REFERENCE__PARAMETER = eINSTANCE.getRouteParameterReference_Parameter();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.interface_.InputTechnologies <em>Input Technologies</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.interface_.InputTechnologies
+		 * @see uk.ac.man.cs.mdsd.webgen.interface_.impl.WebGenInterfacePackageImpl#getInputTechnologies()
+		 * @generated
+		 */
+		EEnum INPUT_TECHNOLOGIES = eINSTANCE.getInputTechnologies();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.interface_.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.interface_.AjaxTechnologies
+		 * @see uk.ac.man.cs.mdsd.webgen.interface_.impl.WebGenInterfacePackageImpl#getAjaxTechnologies()
+		 * @generated
+		 */
+		EEnum AJAX_TECHNOLOGIES = eINSTANCE.getAjaxTechnologies();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.interface_.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.

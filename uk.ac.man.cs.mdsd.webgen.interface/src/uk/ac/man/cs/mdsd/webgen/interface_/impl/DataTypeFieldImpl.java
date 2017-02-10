@@ -9,10 +9,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.man.cs.mdsd.webgen.core.DataType;
 import uk.ac.man.cs.mdsd.webgen.interface_.DataTypeField;
 import uk.ac.man.cs.mdsd.webgen.interface_.WebGenInterfacePackage;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
 
 /**
  * <!-- begin-user-doc -->

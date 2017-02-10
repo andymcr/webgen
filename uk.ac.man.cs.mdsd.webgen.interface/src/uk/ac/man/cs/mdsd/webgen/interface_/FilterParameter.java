@@ -2,8 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.interface_;
 
+import uk.ac.man.cs.mdsd.webgen.core.FormalParameter;
 import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
-import uk.ac.man.cs.mdsd.webgen.service.FormalParameter;
 
 /**
  * <!-- begin-user-doc -->

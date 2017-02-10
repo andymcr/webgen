@@ -11,12 +11,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import uk.ac.man.cs.mdsd.webgen.core.FormalParameter;
 import uk.ac.man.cs.mdsd.webgen.core.impl.NamedElementImpl;
 import uk.ac.man.cs.mdsd.webgen.interface_.Filter;
 import uk.ac.man.cs.mdsd.webgen.interface_.FilterParameter;
 import uk.ac.man.cs.mdsd.webgen.interface_.WebGenInterfacePackage;
-
-import uk.ac.man.cs.mdsd.webgen.service.FormalParameter;
 
 /**
  * <!-- begin-user-doc -->

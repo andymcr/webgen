@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.man.cs.mdsd.webgen.waf/src" modelPluginID="uk.ac.man.cs.mdsd.webgen.waf"
+    modelName="Waf" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.core/model/core.genmodel#//core ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression ../../uk.ac.man.cs.mdsd.webgen.image/model/image.genmodel#//image ../../uk.ac.man.cs.mdsd.webgen.interface/model/interface.genmodel#//interface ../../uk.ac.man.cs.mdsd.webgen.persistence/model/persistence.genmodel#//persistence ../../uk.ac.man.cs.mdsd.webgen.rest/model/rest.genmodel#//rest ../../uk.ac.man.cs.mdsd.webgen.security/model/security.genmodel#//security ../../uk.ac.man.cs.mdsd.webgen.service/model/service.genmodel#//service"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>waf.ecore</foreignModel>
+  <genPackages prefix="WebGenWaf" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
+      childCreationExtenders="true" ecorePackage="waf.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="waf.ecore#//FrameworkTechnologies">
+      <genEnumLiterals ecoreEnumLiteral="waf.ecore#//FrameworkTechnologies/JSF"/>
+      <genEnumLiterals ecoreEnumLiteral="waf.ecore#//FrameworkTechnologies/CakePHP"/>
+      <genEnumLiterals ecoreEnumLiteral="waf.ecore#//FrameworkTechnologies/CodeIgniter"/>
+      <genEnumLiterals ecoreEnumLiteral="waf.ecore#//FrameworkTechnologies/Kohana"/>
+      <genEnumLiterals ecoreEnumLiteral="waf.ecore#//FrameworkTechnologies/Laravel"/>
+      <genEnumLiterals ecoreEnumLiteral="waf.ecore#//FrameworkTechnologies/Symfony"/>
+    </genEnums>
+    <genClasses ecoreClass="waf.ecore#//WebApplicationFramework">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute waf.ecore#//WebApplicationFramework/siteTitle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute waf.ecore#//WebApplicationFramework/webmasterEmail"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute waf.ecore#//WebApplicationFramework/copyrightText"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute waf.ecore#//WebApplicationFramework/frameworkTechnology"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute waf.ecore#//WebApplicationFramework/captchaSiteKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute waf.ecore#//WebApplicationFramework/captchaSecretKey"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference waf.ecore#//WebApplicationFramework/security"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference waf.ecore#//WebApplicationFramework/persistence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference waf.ecore#//WebApplicationFramework/services"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference waf.ecore#//WebApplicationFramework/api"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference waf.ecore#//WebApplicationFramework/image"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference waf.ecore#//WebApplicationFramework/interface"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute waf.ecore#//WebApplicationFramework/metaDescription"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

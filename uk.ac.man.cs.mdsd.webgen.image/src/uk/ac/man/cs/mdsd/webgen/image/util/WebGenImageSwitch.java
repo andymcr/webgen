@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.image.*;
 
 /**
@@ -75,6 +76,7 @@ public class WebGenImageSwitch<T> extends Switch<T> {
 			case WebGenImagePackage.IMAGE_MANIPULATION: {
 				ImageManipulation imageManipulation = (ImageManipulation)theEObject;
 				T result = caseImageManipulation(imageManipulation);
+				if (result == null) result = caseNamedElement(imageManipulation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -152,6 +154,21 @@ public class WebGenImageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseThumbnailFilter(ThumbnailFilter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 

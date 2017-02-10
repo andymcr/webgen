@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.image.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import uk.ac.man.cs.mdsd.webgen.core.provider.CoreEditPlugin;
 
 /**
  * This is the central singleton for the Image edit plugin.
@@ -38,6 +39,7 @@ public final class ImageEditPlugin extends EMFPlugin {
 	public ImageEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     CoreEditPlugin.INSTANCE,
 		   });
 	}
 

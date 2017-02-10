@@ -3,8 +3,7 @@
 package uk.ac.man.cs.mdsd.webgen.image;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ImageManipulation extends EObject {
+public interface ImageManipulation extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Jpeg Quality</b></em>' attribute.
 	 * The default value is <code>"-1"</code>.

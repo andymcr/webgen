@@ -14,16 +14,11 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.core.provider.NamedElementItemProvider;
 import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.image.WebGenImageFactory;
 import uk.ac.man.cs.mdsd.webgen.image.WebGenImagePackage;
@@ -35,13 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.image.WebGenImagePackage;
  * @generated
  */
 public class ImageManipulationItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -139,8 +128,10 @@ public class ImageManipulationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		ImageManipulation imageManipulation = (ImageManipulation)object;
-		return getString("_UI_ImageManipulation_type") + " " + imageManipulation.getJpegQuality();
+		String label = ((ImageManipulation)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ImageManipulation_type") :
+			getString("_UI_ImageManipulation_type") + " " + label;
 	}
 	
 

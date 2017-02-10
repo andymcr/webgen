@@ -3,6 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.man.cs.mdsd.webgen.image/src" modelPluginID="uk.ac.man.cs.mdsd.webgen.image"
     modelName="Image" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.core/model/core.genmodel#//core"
     operationReflection="true" importOrganizing="true">
   <foreignModel>image.ecore</foreignModel>
   <genPackages prefix="WebGenImage" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"

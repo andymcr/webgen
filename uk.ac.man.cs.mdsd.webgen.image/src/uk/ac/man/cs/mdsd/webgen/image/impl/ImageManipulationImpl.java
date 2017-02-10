@@ -13,11 +13,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.webgen.core.impl.NamedElementImpl;
 import uk.ac.man.cs.mdsd.webgen.image.ImageFilter;
 import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.image.WebGenImagePackage;
@@ -36,7 +35,7 @@ import uk.ac.man.cs.mdsd.webgen.image.WebGenImagePackage;
  *
  * @generated
  */
-public class ImageManipulationImpl extends MinimalEObjectImpl.Container implements ImageManipulation {
+public class ImageManipulationImpl extends NamedElementImpl implements ImageManipulation {
 	/**
 	 * The default value of the '{@link #getJpegQuality() <em>Jpeg Quality</em>}' attribute.
 	 * <!-- begin-user-doc -->

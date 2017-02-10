@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
 import uk.ac.man.cs.mdsd.webgen.image.Image;
 import uk.ac.man.cs.mdsd.webgen.image.ImageFilter;
 import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
@@ -96,6 +97,9 @@ public class WebGenImagePackageImpl extends EPackageImpl implements WebGenImageP
 		WebGenImagePackageImpl theWebGenImagePackage = (WebGenImagePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof WebGenImagePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new WebGenImagePackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		WebGenCorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theWebGenImagePackage.createPackageContents();
@@ -258,11 +262,15 @@ public class WebGenImagePackageImpl extends EPackageImpl implements WebGenImageP
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		WebGenCorePackage theWebGenCorePackage = (WebGenCorePackage)EPackage.Registry.INSTANCE.getEPackage(WebGenCorePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		imageManipulationEClass.getESuperTypes().add(theWebGenCorePackage.getNamedElement());
 		thumbnailFilterEClass.getESuperTypes().add(this.getImageFilter());
 
 		// Initialize classes, features, and operations; add parameters

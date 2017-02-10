@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -105,13 +106,22 @@ public interface WebGenImagePackage extends EPackage {
 	int IMAGE_MANIPULATION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_MANIPULATION__NAME = WebGenCorePackage.NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Jpeg Quality</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_MANIPULATION__JPEG_QUALITY = 0;
+	int IMAGE_MANIPULATION__JPEG_QUALITY = WebGenCorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
@@ -120,7 +130,7 @@ public interface WebGenImagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_MANIPULATION__FILTERS = 1;
+	int IMAGE_MANIPULATION__FILTERS = WebGenCorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Image Manipulation</em>' class.
@@ -129,7 +139,7 @@ public interface WebGenImagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_MANIPULATION_FEATURE_COUNT = 2;
+	int IMAGE_MANIPULATION_FEATURE_COUNT = WebGenCorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Image Manipulation</em>' class.
@@ -138,7 +148,7 @@ public interface WebGenImagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_MANIPULATION_OPERATION_COUNT = 0;
+	int IMAGE_MANIPULATION_OPERATION_COUNT = WebGenCorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.image.impl.ImageFilterImpl <em>Image Filter</em>}' class.

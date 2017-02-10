@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Service -->
       <factory
-            uri="http://www.cs.man.ac.uk/mdsd/2017/Service"
+            uri="http://cs.man.ac.uk/mdsd/2017/Service"
             class="uk.ac.man.cs.mdsd.service.provider.ServiceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

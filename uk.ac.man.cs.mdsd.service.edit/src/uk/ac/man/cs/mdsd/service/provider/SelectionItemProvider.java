@@ -208,7 +208,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ServicePackage.Literals.SELECTION__PARAMETERS);
+			childrenFeatures.add(ServicePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
 			childrenFeatures.add(ServicePackage.Literals.SELECTION__FILTER);
 			childrenFeatures.add(ServicePackage.Literals.SELECTION__ORDERING);
 		}
@@ -293,8 +293,8 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ServicePackage.Literals.SELECTION__PARAMETERS,
-				 ServiceFactory.eINSTANCE.createSelectionParameter()));
+				(ServicePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
+				 ServiceFactory.eINSTANCE.createFormalParameter()));
 
 		newChildDescriptors.add
 			(createChildParameter

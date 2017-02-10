@@ -159,29 +159,6 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.service.SelectionParameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SelectionParameterItemProvider selectionParameterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.service.SelectionParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSelectionParameterAdapter() {
-		if (selectionParameterItemProvider == null) {
-			selectionParameterItemProvider = new SelectionParameterItemProvider(this);
-		}
-
-		return selectionParameterItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.service.Asc} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -320,6 +297,29 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.service.FormalParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FormalParameterItemProvider formalParameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.service.FormalParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFormalParameterAdapter() {
+		if (formalParameterItemProvider == null) {
+			formalParameterItemProvider = new FormalParameterItemProvider(this);
+		}
+
+		return formalParameterItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -421,13 +421,13 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 		if (serviceModelItemProvider != null) serviceModelItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
-		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
+		if (businessOperationItemProvider != null) businessOperationItemProvider.dispose();
+		if (formalParameterItemProvider != null) formalParameterItemProvider.dispose();
 		if (ascItemProvider != null) ascItemProvider.dispose();
 		if (descItemProvider != null) descItemProvider.dispose();
 		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();
 		if (parameterReferenceItemProvider != null) parameterReferenceItemProvider.dispose();
 		if (currentUserReferenceItemProvider != null) currentUserReferenceItemProvider.dispose();
-		if (businessOperationItemProvider != null) businessOperationItemProvider.dispose();
 	}
 
 	/**

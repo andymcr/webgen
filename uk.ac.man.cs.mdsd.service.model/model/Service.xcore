@@ -1,5 +1,5 @@
 @Ecore(
-	nsURI="http://www.cs.man.ac.uk/mdsd/2017/Service",
+	nsURI="http://cs.man.ac.uk/mdsd/2017/Service",
 	nsPrefix="service"
 )
 @GenModel(
@@ -10,9 +10,11 @@
 	editorDirectory="/uk.ac.man.cs.mdsd.service.editor/src")
 package uk.ac.man.cs.mdsd.service
 
+import uk.ac.man.cs.mdsd.expression.Literal
 import uk.ac.man.cs.mdsd.expression.Path
 import uk.ac.man.cs.mdsd.expression.Predicate
 import uk.ac.man.cs.mdsd.orm.Association
+import uk.ac.man.cs.mdsd.orm.DataType
 import uk.ac.man.cs.mdsd.orm.EntityOrView
 import uk.ac.man.cs.mdsd.orm.Feature
 import uk.ac.man.cs.mdsd.orm.NamedElement
@@ -32,10 +34,9 @@ class Service extends NamedElement {
 }
 
 
-class Selection extends NamedElement {
+class Selection extends NamedElement, FormalParameterList {
 	container Service partOf opposite selections
 	boolean distinct
-	contains SelectionParameter[] parameters
 	refers Feature[] fields
 	refers Association[] joins
 	contains Predicate filter
@@ -44,9 +45,25 @@ class Selection extends NamedElement {
 	boolean selected
 }
 
-class SelectionParameter extends NamedElement {
-	boolean optional
-	String defaultValue
+class BusinessOperation extends NamedElement, FormalParameterList {
+	container Service[1] partOf opposite operations
+	refers Service[] uses
+	OperationResultTypes[1] resultType
+	String resultMimeType
+}
+
+enum OperationResultTypes {
+	None
+	File = 1
+}
+
+interface FormalParameterList {
+	contains FormalParameter[] parameters
+}
+
+class FormalParameter extends NamedElement {
+	refers DataType dataType
+	contains Literal defaultValue
 }
 
 abstract class Order {
@@ -66,21 +83,10 @@ class FeatureReference extends Path {
 } 
  
 class ParameterReference extends Path { 
-	refers SelectionParameter[1] parameter 
+	refers FormalParameter[1] parameter 
 } 
 
 class CurrentUserReference extends Path { 
  } 
 
 
-class BusinessOperation extends NamedElement {
-	container Service[1] partOf opposite operations
-	refers Service[] uses
-	OperationResultTypes[1] resultType
-	String resultMimeType
-}
-
-enum OperationResultTypes {
-	None
-	File = 1
-}

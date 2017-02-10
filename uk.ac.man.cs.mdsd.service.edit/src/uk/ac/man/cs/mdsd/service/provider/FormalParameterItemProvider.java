@@ -12,31 +12,32 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 
 import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
 
-import uk.ac.man.cs.mdsd.service.BusinessOperation;
-import uk.ac.man.cs.mdsd.service.ServiceFactory;
+import uk.ac.man.cs.mdsd.service.FormalParameter;
 import uk.ac.man.cs.mdsd.service.ServicePackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.service.BusinessOperation} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.service.FormalParameter} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class BusinessOperationItemProvider extends NamedElementItemProvider {
+public class FormalParameterItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BusinessOperationItemProvider(AdapterFactory adapterFactory) {
+	public FormalParameterItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -51,98 +52,29 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPartOfPropertyDescriptor(object);
-			addUsesPropertyDescriptor(object);
-			addResultTypePropertyDescriptor(object);
-			addResultMimeTypePropertyDescriptor(object);
+			addDataTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Part Of feature.
+	 * This adds a property descriptor for the Data Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPartOfPropertyDescriptor(Object object) {
+	protected void addDataTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_BusinessOperation_partOf_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_partOf_feature", "_UI_BusinessOperation_type"),
-				 ServicePackage.Literals.BUSINESS_OPERATION__PART_OF,
+				 getString("_UI_FormalParameter_dataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FormalParameter_dataType_feature", "_UI_FormalParameter_type"),
+				 ServicePackage.Literals.FORMAL_PARAMETER__DATA_TYPE,
 				 true,
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Uses feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUsesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BusinessOperation_uses_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_uses_feature", "_UI_BusinessOperation_type"),
-				 ServicePackage.Literals.BUSINESS_OPERATION__USES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Result Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResultTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BusinessOperation_resultType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_resultType_feature", "_UI_BusinessOperation_type"),
-				 ServicePackage.Literals.BUSINESS_OPERATION__RESULT_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Result Mime Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResultMimeTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BusinessOperation_resultMimeType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_resultMimeType_feature", "_UI_BusinessOperation_type"),
-				 ServicePackage.Literals.BUSINESS_OPERATION__RESULT_MIME_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -159,7 +91,7 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ServicePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
+			childrenFeatures.add(ServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -178,14 +110,14 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This returns BusinessOperation.gif.
+	 * This returns FormalParameter.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/BusinessOperation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/FormalParameter"));
 	}
 
 	/**
@@ -196,10 +128,10 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((BusinessOperation)object).getName();
+		String label = ((FormalParameter)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_BusinessOperation_type") :
-			getString("_UI_BusinessOperation_type") + " " + label;
+			getString("_UI_FormalParameter_type") :
+			getString("_UI_FormalParameter_type") + " " + label;
 	}
 	
 
@@ -214,12 +146,8 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(BusinessOperation.class)) {
-			case ServicePackage.BUSINESS_OPERATION__RESULT_TYPE:
-			case ServicePackage.BUSINESS_OPERATION__RESULT_MIME_TYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ServicePackage.BUSINESS_OPERATION__PARAMETERS:
+		switch (notification.getFeatureID(FormalParameter.class)) {
+			case ServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -239,8 +167,33 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ServicePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
-				 ServiceFactory.eINSTANCE.createFormalParameter()));
+				(ServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createNullLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createBooleanLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createIntegerLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createStringLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createTimeLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createCurrentTime()));
 	}
 
 	/**

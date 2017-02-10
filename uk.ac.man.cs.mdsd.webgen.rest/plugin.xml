@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated rest -->
+      <package
+            uri="http://cs.man.ac.uk/mdsd/2017/webgen-rest"
+            class="uk.ac.man.cs.mdsd.webgen.rest.WebGenRestPackage"
+            genModel="model/rest.genmodel"/>
+   </extension>
+
+</plugin>

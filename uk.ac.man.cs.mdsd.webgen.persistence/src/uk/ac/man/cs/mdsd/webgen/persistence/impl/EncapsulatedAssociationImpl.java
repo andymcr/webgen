@@ -23,7 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.Entity;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,7 +109,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getTargetEntityX() <em>Target Entity X</em>}' reference.
@@ -119,7 +119,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ASSOCIATION__TARGET_ENTITY_X).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ASSOCIATION__TARGET_ENTITY_X).getSettingDelegate();
 
 	/**
 	 * The default value of the '{@link #getSerializationMaxDepth() <em>Serialization Max Depth</em>}' attribute.
@@ -149,7 +149,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__NAME).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__NAME).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getAssociation() <em>Association</em>}' reference.
@@ -179,7 +179,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
@@ -189,7 +189,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate CARDINALITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__CARDINALITY).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate CARDINALITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__CARDINALITY).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getSourceEntity() <em>Source Entity</em>}' reference.
@@ -199,7 +199,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getTargetEntity() <em>Target Entity</em>}' reference.
@@ -209,7 +209,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +227,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION;
+		return WebGenPersistencePackage.Literals.ENCAPSULATED_ASSOCIATION;
 	}
 
 	/**
@@ -248,7 +248,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 		boolean oldPseudo = pseudo;
 		pseudo = newPseudo;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO, oldPseudo, pseudo));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO, oldPseudo, pseudo));
 	}
 
 	/**
@@ -258,7 +258,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 */
 	public EList<EncapsulatedAssociation> getEncapsulatedBy() {
 		if (encapsulatedBy == null) {
-			encapsulatedBy = new EObjectWithInverseResolvingEList<EncapsulatedAssociation>(EncapsulatedAssociation.class, this, PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY, PersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION);
+			encapsulatedBy = new EObjectWithInverseResolvingEList<EncapsulatedAssociation>(EncapsulatedAssociation.class, this, WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY, WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION);
 		}
 		return encapsulatedBy;
 	}
@@ -281,7 +281,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 		String oldInputClass = inputClass;
 		inputClass = newInputClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS, oldInputClass, inputClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS, oldInputClass, inputClass));
 	}
 
 	/**
@@ -338,7 +338,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 		int oldSerializationMaxDepth = serializationMaxDepth;
 		serializationMaxDepth = newSerializationMaxDepth;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH, oldSerializationMaxDepth, serializationMaxDepth));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH, oldSerializationMaxDepth, serializationMaxDepth));
 	}
 
 	/**
@@ -361,7 +361,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 			association = (Association)eResolveProxy(oldAssociation);
 			if (association != oldAssociation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION, oldAssociation, association));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION, oldAssociation, association));
 			}
 		}
 		return association;
@@ -385,7 +385,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 		Association oldAssociation = association;
 		association = newAssociation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION, oldAssociation, newAssociation);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION, oldAssociation, newAssociation);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -400,14 +400,14 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 		if (newAssociation != association) {
 			NotificationChain msgs = null;
 			if (association != null)
-				msgs = ((InternalEObject)association).eInverseRemove(this, PersistencePackage.ASSOCIATION__ENCAPSULATED_BY, Association.class, msgs);
+				msgs = ((InternalEObject)association).eInverseRemove(this, WebGenPersistencePackage.ASSOCIATION__ENCAPSULATED_BY, Association.class, msgs);
 			if (newAssociation != null)
-				msgs = ((InternalEObject)newAssociation).eInverseAdd(this, PersistencePackage.ASSOCIATION__ENCAPSULATED_BY, Association.class, msgs);
+				msgs = ((InternalEObject)newAssociation).eInverseAdd(this, WebGenPersistencePackage.ASSOCIATION__ENCAPSULATED_BY, Association.class, msgs);
 			msgs = basicSetAssociation(newAssociation, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION, newAssociation, newAssociation));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION, newAssociation, newAssociation));
 	}
 
 	/**
@@ -421,7 +421,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 			encapsulatedTarget = (EncapsulatedAssociation)eResolveProxy(oldEncapsulatedTarget);
 			if (encapsulatedTarget != oldEncapsulatedTarget) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET, oldEncapsulatedTarget, encapsulatedTarget));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET, oldEncapsulatedTarget, encapsulatedTarget));
 			}
 		}
 		return encapsulatedTarget;
@@ -445,7 +445,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 		EncapsulatedAssociation oldEncapsulatedTarget = encapsulatedTarget;
 		encapsulatedTarget = newEncapsulatedTarget;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET, oldEncapsulatedTarget, encapsulatedTarget));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET, oldEncapsulatedTarget, encapsulatedTarget));
 	}
 
 	/**
@@ -520,11 +520,11 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEncapsulatedBy()).basicAdd(otherEnd, msgs);
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				if (association != null)
-					msgs = ((InternalEObject)association).eInverseRemove(this, PersistencePackage.ASSOCIATION__ENCAPSULATED_BY, Association.class, msgs);
+					msgs = ((InternalEObject)association).eInverseRemove(this, WebGenPersistencePackage.ASSOCIATION__ENCAPSULATED_BY, Association.class, msgs);
 				return basicSetAssociation((Association)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -538,9 +538,9 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
 				return ((InternalEList<?>)getEncapsulatedBy()).basicRemove(otherEnd, msgs);
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				return basicSetAssociation(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -554,36 +554,36 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO:
 				return isPseudo();
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
 				return getEncapsulatedBy();
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
 				return getInputClass();
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY_X:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY_X:
 				if (resolve) return getSourceEntityX();
 				return basicGetSourceEntityX();
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X:
 				if (resolve) return getTargetEntityX();
 				return basicGetTargetEntityX();
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				return getSerializationMaxDepth();
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__NAME:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__NAME:
 				return getName();
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				if (resolve) return getAssociation();
 				return basicGetAssociation();
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
 				if (resolve) return getEncapsulatedTarget();
 				return basicGetEncapsulatedTarget();
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION:
 				return isIsSourceAssociation();
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
 				return getCardinality();
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY:
 				if (resolve) return getSourceEntity();
 				return basicGetSourceEntity();
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY:
 				if (resolve) return getTargetEntity();
 				return basicGetTargetEntity();
 		}
@@ -599,26 +599,26 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO:
 				setPseudo((Boolean)newValue);
 				return;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
 				getEncapsulatedBy().clear();
 				getEncapsulatedBy().addAll((Collection<? extends EncapsulatedAssociation>)newValue);
 				return;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
 				setInputClass((String)newValue);
 				return;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				setSerializationMaxDepth((Integer)newValue);
 				return;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)newValue);
 				return;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
 				setEncapsulatedTarget((EncapsulatedAssociation)newValue);
 				return;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
 				setCardinality((Cardinality)newValue);
 				return;
 		}
@@ -633,25 +633,25 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO:
 				setPseudo(PSEUDO_EDEFAULT);
 				return;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
 				getEncapsulatedBy().clear();
 				return;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				setSerializationMaxDepth(SERIALIZATION_MAX_DEPTH_EDEFAULT);
 				return;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)null);
 				return;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
 				setEncapsulatedTarget((EncapsulatedAssociation)null);
 				return;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
 				CARDINALITY__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
 		}
@@ -666,31 +666,31 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO:
 				return pseudo != PSEUDO_EDEFAULT;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
 				return encapsulatedBy != null && !encapsulatedBy.isEmpty();
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY_X:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY_X:
 				return SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X:
 				return TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				return serializationMaxDepth != SERIALIZATION_MAX_DEPTH_EDEFAULT;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__NAME:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__NAME:
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				return association != null;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
 				return encapsulatedTarget != null;
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION:
 				return IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
 				return CARDINALITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY:
 				return SOURCE_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY:
 				return TARGET_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
@@ -705,12 +705,12 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (derivedFeatureID) {
-				case PersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO: return PersistencePackage.ASSOCIATION__PSEUDO;
-				case PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY: return PersistencePackage.ASSOCIATION__ENCAPSULATED_BY;
-				case PersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS: return PersistencePackage.ASSOCIATION__INPUT_CLASS;
-				case PersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY_X: return PersistencePackage.ASSOCIATION__SOURCE_ENTITY_X;
-				case PersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X: return PersistencePackage.ASSOCIATION__TARGET_ENTITY_X;
-				case PersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH: return PersistencePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH;
+				case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO: return WebGenPersistencePackage.ASSOCIATION__PSEUDO;
+				case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY: return WebGenPersistencePackage.ASSOCIATION__ENCAPSULATED_BY;
+				case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS: return WebGenPersistencePackage.ASSOCIATION__INPUT_CLASS;
+				case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY_X: return WebGenPersistencePackage.ASSOCIATION__SOURCE_ENTITY_X;
+				case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X: return WebGenPersistencePackage.ASSOCIATION__TARGET_ENTITY_X;
+				case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH: return WebGenPersistencePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 				default: return -1;
 			}
 		}
@@ -726,12 +726,12 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (baseFeatureID) {
-				case PersistencePackage.ASSOCIATION__PSEUDO: return PersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO;
-				case PersistencePackage.ASSOCIATION__ENCAPSULATED_BY: return PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY;
-				case PersistencePackage.ASSOCIATION__INPUT_CLASS: return PersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS;
-				case PersistencePackage.ASSOCIATION__SOURCE_ENTITY_X: return PersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY_X;
-				case PersistencePackage.ASSOCIATION__TARGET_ENTITY_X: return PersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X;
-				case PersistencePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH: return PersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH;
+				case WebGenPersistencePackage.ASSOCIATION__PSEUDO: return WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO;
+				case WebGenPersistencePackage.ASSOCIATION__ENCAPSULATED_BY: return WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY;
+				case WebGenPersistencePackage.ASSOCIATION__INPUT_CLASS: return WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS;
+				case WebGenPersistencePackage.ASSOCIATION__SOURCE_ENTITY_X: return WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY_X;
+				case WebGenPersistencePackage.ASSOCIATION__TARGET_ENTITY_X: return WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X;
+				case WebGenPersistencePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH: return WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 				default: return -1;
 			}
 		}

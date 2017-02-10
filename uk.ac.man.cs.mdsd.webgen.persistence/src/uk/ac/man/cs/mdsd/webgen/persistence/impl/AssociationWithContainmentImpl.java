@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithContainment;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.ASSOCIATION_WITH_CONTAINMENT;
+		return WebGenPersistencePackage.Literals.ASSOCIATION_WITH_CONTAINMENT;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 		boolean oldSourceVisible = sourceVisible;
 		sourceVisible = newSourceVisible;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE, oldSourceVisible, sourceVisible));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE, oldSourceVisible, sourceVisible));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
+			case WebGenPersistencePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
 				return isSourceVisible();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
+			case WebGenPersistencePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
 				setSourceVisible((Boolean)newValue);
 				return;
 		}
@@ -122,7 +122,7 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
+			case WebGenPersistencePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
 				setSourceVisible(SOURCE_VISIBLE_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
+			case WebGenPersistencePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
 				return sourceVisible != SOURCE_VISIBLE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

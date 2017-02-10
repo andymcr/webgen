@@ -3,9 +3,9 @@
 package uk.ac.man.cs.mdsd.webgen.persistence.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
+import uk.ac.man.cs.mdsd.webgen.core.impl.NamedDisplayElementImpl;
 import uk.ac.man.cs.mdsd.webgen.persistence.EnumerationLiteral;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class EnumerationLiteralImpl extends NamedDisplayElementImpl implements E
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.ENUMERATION_LITERAL;
+		return WebGenPersistencePackage.Literals.ENUMERATION_LITERAL;
 	}
 
 } //EnumerationLiteralImpl

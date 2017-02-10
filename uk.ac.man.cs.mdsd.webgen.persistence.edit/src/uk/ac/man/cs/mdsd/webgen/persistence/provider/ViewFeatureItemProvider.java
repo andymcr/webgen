@@ -22,9 +22,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.ViewFeature;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.ViewFeature} object.
@@ -88,7 +87,7 @@ public class ViewFeatureItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Feature_title_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_title_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__TITLE,
+				 WebGenPersistencePackage.Literals.FEATURE__TITLE,
 				 true,
 				 false,
 				 false,
@@ -110,7 +109,7 @@ public class ViewFeatureItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Feature_collectionAllowAdd_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionAllowAdd_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__COLLECTION_ALLOW_ADD,
+				 WebGenPersistencePackage.Literals.FEATURE__COLLECTION_ALLOW_ADD,
 				 true,
 				 false,
 				 false,
@@ -132,7 +131,7 @@ public class ViewFeatureItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Feature_collectionAllowRemove_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionAllowRemove_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__COLLECTION_ALLOW_REMOVE,
+				 WebGenPersistencePackage.Literals.FEATURE__COLLECTION_ALLOW_REMOVE,
 				 true,
 				 false,
 				 false,
@@ -154,7 +153,7 @@ public class ViewFeatureItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Feature_nullDisplayValue_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_nullDisplayValue_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__NULL_DISPLAY_VALUE,
+				 WebGenPersistencePackage.Literals.FEATURE__NULL_DISPLAY_VALUE,
 				 true,
 				 false,
 				 false,
@@ -176,7 +175,7 @@ public class ViewFeatureItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Feature_encodeUriKey_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_encodeUriKey_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__ENCODE_URI_KEY,
+				 WebGenPersistencePackage.Literals.FEATURE__ENCODE_URI_KEY,
 				 true,
 				 false,
 				 false,
@@ -198,7 +197,7 @@ public class ViewFeatureItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Feature_serializationGroups_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_serializationGroups_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__SERIALIZATION_GROUPS,
+				 WebGenPersistencePackage.Literals.FEATURE__SERIALIZATION_GROUPS,
 				 true,
 				 false,
 				 false,
@@ -220,7 +219,7 @@ public class ViewFeatureItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Feature_serializationExpose_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_serializationExpose_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__SERIALIZATION_EXPOSE,
+				 WebGenPersistencePackage.Literals.FEATURE__SERIALIZATION_EXPOSE,
 				 true,
 				 false,
 				 false,
@@ -242,7 +241,7 @@ public class ViewFeatureItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Feature_headerClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_headerClass_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__HEADER_CLASS,
+				 WebGenPersistencePackage.Literals.FEATURE__HEADER_CLASS,
 				 true,
 				 false,
 				 false,
@@ -264,7 +263,7 @@ public class ViewFeatureItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Feature_displayClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_displayClass_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__DISPLAY_CLASS,
+				 WebGenPersistencePackage.Literals.FEATURE__DISPLAY_CLASS,
 				 true,
 				 false,
 				 false,
@@ -286,7 +285,7 @@ public class ViewFeatureItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Feature_footerClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_footerClass_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__FOOTER_CLASS,
+				 WebGenPersistencePackage.Literals.FEATURE__FOOTER_CLASS,
 				 true,
 				 false,
 				 false,
@@ -322,16 +321,16 @@ public class ViewFeatureItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ViewFeature.class)) {
-			case PersistencePackage.VIEW_FEATURE__TITLE:
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
-			case PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
-			case PersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
-			case PersistencePackage.VIEW_FEATURE__HEADER_CLASS:
-			case PersistencePackage.VIEW_FEATURE__DISPLAY_CLASS:
-			case PersistencePackage.VIEW_FEATURE__FOOTER_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__TITLE:
+			case WebGenPersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.VIEW_FEATURE__HEADER_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__DISPLAY_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

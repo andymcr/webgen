@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
 import uk.ac.man.cs.mdsd.webgen.persistence.DataTypeAttribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -116,7 +116,7 @@ public class DataTypeAttributeImpl extends EntityAttributeImpl implements DataTy
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.DATA_TYPE_ATTRIBUTE;
+		return WebGenPersistencePackage.Literals.DATA_TYPE_ATTRIBUTE;
 	}
 
 	/**
@@ -130,7 +130,7 @@ public class DataTypeAttributeImpl extends EntityAttributeImpl implements DataTy
 			dataType = (DataType)eResolveProxy(oldDataType);
 			if (dataType != oldDataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.DATA_TYPE_ATTRIBUTE__DATA_TYPE, oldDataType, dataType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__DATA_TYPE, oldDataType, dataType));
 			}
 		}
 		return dataType;
@@ -154,7 +154,7 @@ public class DataTypeAttributeImpl extends EntityAttributeImpl implements DataTy
 		DataType oldDataType = dataType;
 		dataType = newDataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.DATA_TYPE_ATTRIBUTE__DATA_TYPE, oldDataType, dataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__DATA_TYPE, oldDataType, dataType));
 	}
 
 	/**
@@ -175,7 +175,7 @@ public class DataTypeAttributeImpl extends EntityAttributeImpl implements DataTy
 		boolean oldObfuscateFormFields = obfuscateFormFields;
 		obfuscateFormFields = newObfuscateFormFields;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS, oldObfuscateFormFields, obfuscateFormFields));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS, oldObfuscateFormFields, obfuscateFormFields));
 	}
 
 	/**
@@ -196,7 +196,7 @@ public class DataTypeAttributeImpl extends EntityAttributeImpl implements DataTy
 		boolean oldCaseInsensitive = caseInsensitive;
 		caseInsensitive = newCaseInsensitive;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE, oldCaseInsensitive, caseInsensitive));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE, oldCaseInsensitive, caseInsensitive));
 	}
 
 	/**
@@ -217,7 +217,7 @@ public class DataTypeAttributeImpl extends EntityAttributeImpl implements DataTy
 		boolean oldEncrypt = encrypt;
 		encrypt = newEncrypt;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.DATA_TYPE_ATTRIBUTE__ENCRYPT, oldEncrypt, encrypt));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__ENCRYPT, oldEncrypt, encrypt));
 	}
 
 	/**
@@ -228,14 +228,14 @@ public class DataTypeAttributeImpl extends EntityAttributeImpl implements DataTy
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__DATA_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__DATA_TYPE:
 				if (resolve) return getDataType();
 				return basicGetDataType();
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 				return isObfuscateFormFields();
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE:
 				return isCaseInsensitive();
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__ENCRYPT:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__ENCRYPT:
 				return isEncrypt();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -249,16 +249,16 @@ public class DataTypeAttributeImpl extends EntityAttributeImpl implements DataTy
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__DATA_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__DATA_TYPE:
 				setDataType((DataType)newValue);
 				return;
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 				setObfuscateFormFields((Boolean)newValue);
 				return;
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE:
 				setCaseInsensitive((Boolean)newValue);
 				return;
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__ENCRYPT:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__ENCRYPT:
 				setEncrypt((Boolean)newValue);
 				return;
 		}
@@ -273,16 +273,16 @@ public class DataTypeAttributeImpl extends EntityAttributeImpl implements DataTy
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__DATA_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__DATA_TYPE:
 				setDataType((DataType)null);
 				return;
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 				setObfuscateFormFields(OBFUSCATE_FORM_FIELDS_EDEFAULT);
 				return;
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE:
 				setCaseInsensitive(CASE_INSENSITIVE_EDEFAULT);
 				return;
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__ENCRYPT:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__ENCRYPT:
 				setEncrypt(ENCRYPT_EDEFAULT);
 				return;
 		}
@@ -297,13 +297,13 @@ public class DataTypeAttributeImpl extends EntityAttributeImpl implements DataTy
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__DATA_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__DATA_TYPE:
 				return dataType != null;
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 				return obfuscateFormFields != OBFUSCATE_FORM_FIELDS_EDEFAULT;
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE:
 				return caseInsensitive != CASE_INSENSITIVE_EDEFAULT;
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__ENCRYPT:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__ENCRYPT:
 				return encrypt != ENCRYPT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

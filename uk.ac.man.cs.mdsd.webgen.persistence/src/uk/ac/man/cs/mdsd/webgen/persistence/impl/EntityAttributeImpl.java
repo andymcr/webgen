@@ -13,7 +13,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.Expression;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.ENTITY_ATTRIBUTE;
+		return WebGenPersistencePackage.Literals.ENTITY_ATTRIBUTE;
 	}
 
 	/**
@@ -244,7 +244,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		Expression oldDefaultValue = defaultValue;
 		defaultValue = newDefaultValue;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE, oldDefaultValue, newDefaultValue);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE, oldDefaultValue, newDefaultValue);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -259,14 +259,14 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		if (newDefaultValue != defaultValue) {
 			NotificationChain msgs = null;
 			if (defaultValue != null)
-				msgs = ((InternalEObject)defaultValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE, null, msgs);
+				msgs = ((InternalEObject)defaultValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebGenPersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE, null, msgs);
 			if (newDefaultValue != null)
-				msgs = ((InternalEObject)newDefaultValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE, null, msgs);
+				msgs = ((InternalEObject)newDefaultValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebGenPersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE, null, msgs);
 			msgs = basicSetDefaultValue(newDefaultValue, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE, newDefaultValue, newDefaultValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE, newDefaultValue, newDefaultValue));
 	}
 
 	/**
@@ -287,7 +287,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		String oldPlaceholder = placeholder;
 		placeholder = newPlaceholder;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER, oldPlaceholder, placeholder));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER, oldPlaceholder, placeholder));
 	}
 
 	/**
@@ -308,7 +308,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		String oldValidationPattern = validationPattern;
 		validationPattern = newValidationPattern;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN, oldValidationPattern, validationPattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN, oldValidationPattern, validationPattern));
 	}
 
 	/**
@@ -329,7 +329,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		String oldInputClass = inputClass;
 		inputClass = newInputClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS, oldInputClass, inputClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS, oldInputClass, inputClass));
 	}
 
 	/**
@@ -350,7 +350,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		boolean oldPrimaryKey = primaryKey;
 		primaryKey = newPrimaryKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY, oldPrimaryKey, primaryKey));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY, oldPrimaryKey, primaryKey));
 	}
 
 	/**
@@ -371,7 +371,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		boolean oldContainerUnique = containerUnique;
 		containerUnique = newContainerUnique;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE, oldContainerUnique, containerUnique));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE, oldContainerUnique, containerUnique));
 	}
 
 	/**
@@ -392,7 +392,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		String oldPersistentType = persistentType;
 		persistentType = newPersistentType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE, oldPersistentType, persistentType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE, oldPersistentType, persistentType));
 	}
 
 	/**
@@ -413,7 +413,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		String oldOrmType = ormType;
 		ormType = newOrmType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE, oldOrmType, ormType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE, oldOrmType, ormType));
 	}
 
 	/**
@@ -434,7 +434,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		String oldInterfaceType = interfaceType;
 		interfaceType = newInterfaceType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE, oldInterfaceType, interfaceType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE, oldInterfaceType, interfaceType));
 	}
 
 	/**
@@ -445,7 +445,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
 				return basicSetDefaultValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -459,23 +459,23 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
 				return getDefaultValue();
-			case PersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
 				return getPlaceholder();
-			case PersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
 				return getValidationPattern();
-			case PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				return getInputClass();
-			case PersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 				return isPrimaryKey();
-			case PersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
 				return isContainerUnique();
-			case PersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
 				return getPersistentType();
-			case PersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
 				return getOrmType();
-			case PersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
 				return getInterfaceType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -489,31 +489,31 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue((Expression)newValue);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
 				setPlaceholder((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
 				setValidationPattern((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				setInputClass((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 				setPrimaryKey((Boolean)newValue);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
 				setContainerUnique((Boolean)newValue);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
 				setPersistentType((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
 				setOrmType((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
 				setInterfaceType((String)newValue);
 				return;
 		}
@@ -528,31 +528,31 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue((Expression)null);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
 				setValidationPattern(VALIDATION_PATTERN_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 				setPrimaryKey(PRIMARY_KEY_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
 				setContainerUnique(CONTAINER_UNIQUE_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
 				setPersistentType(PERSISTENT_TYPE_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
 				setOrmType(ORM_TYPE_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
 				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
 				return;
 		}
@@ -567,23 +567,23 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
 				return defaultValue != null;
-			case PersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
-			case PersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
 				return VALIDATION_PATTERN_EDEFAULT == null ? validationPattern != null : !VALIDATION_PATTERN_EDEFAULT.equals(validationPattern);
-			case PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
-			case PersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 				return primaryKey != PRIMARY_KEY_EDEFAULT;
-			case PersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
 				return containerUnique != CONTAINER_UNIQUE_EDEFAULT;
-			case PersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
 				return PERSISTENT_TYPE_EDEFAULT == null ? persistentType != null : !PERSISTENT_TYPE_EDEFAULT.equals(persistentType);
-			case PersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
 				return ORM_TYPE_EDEFAULT == null ? ormType != null : !ORM_TYPE_EDEFAULT.equals(ormType);
-			case PersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
 				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
 		}
 		return super.eIsSet(featureID);
@@ -603,10 +603,10 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		}
 		if (baseClass == Attribute.class) {
 			switch (derivedFeatureID) {
-				case PersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE: return PersistencePackage.ATTRIBUTE__DEFAULT_VALUE;
-				case PersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER: return PersistencePackage.ATTRIBUTE__PLACEHOLDER;
-				case PersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN: return PersistencePackage.ATTRIBUTE__VALIDATION_PATTERN;
-				case PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS: return PersistencePackage.ATTRIBUTE__INPUT_CLASS;
+				case WebGenPersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE: return WebGenPersistencePackage.ATTRIBUTE__DEFAULT_VALUE;
+				case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER: return WebGenPersistencePackage.ATTRIBUTE__PLACEHOLDER;
+				case WebGenPersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN: return WebGenPersistencePackage.ATTRIBUTE__VALIDATION_PATTERN;
+				case WebGenPersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS: return WebGenPersistencePackage.ATTRIBUTE__INPUT_CLASS;
 				default: return -1;
 			}
 		}
@@ -627,10 +627,10 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		}
 		if (baseClass == Attribute.class) {
 			switch (baseFeatureID) {
-				case PersistencePackage.ATTRIBUTE__DEFAULT_VALUE: return PersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE;
-				case PersistencePackage.ATTRIBUTE__PLACEHOLDER: return PersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER;
-				case PersistencePackage.ATTRIBUTE__VALIDATION_PATTERN: return PersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN;
-				case PersistencePackage.ATTRIBUTE__INPUT_CLASS: return PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS;
+				case WebGenPersistencePackage.ATTRIBUTE__DEFAULT_VALUE: return WebGenPersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE;
+				case WebGenPersistencePackage.ATTRIBUTE__PLACEHOLDER: return WebGenPersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER;
+				case WebGenPersistencePackage.ATTRIBUTE__VALIDATION_PATTERN: return WebGenPersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN;
+				case WebGenPersistencePackage.ATTRIBUTE__INPUT_CLASS: return WebGenPersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS;
 				default: return -1;
 			}
 		}

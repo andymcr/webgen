@@ -5,7 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.ImageAttribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class ImageAttributeImpl extends ResourceAttributeImpl implements ImageAt
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.IMAGE_ATTRIBUTE;
+		return WebGenPersistencePackage.Literals.IMAGE_ATTRIBUTE;
 	}
 
 } //ImageAttributeImpl

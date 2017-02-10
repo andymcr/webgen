@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedFeature;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedFeature} object.
@@ -65,7 +65,7 @@ public class EncapsulatedFeatureItemProvider extends ViewFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EncapsulatedFeature_displayLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EncapsulatedFeature_displayLabel_feature", "_UI_EncapsulatedFeature_type"),
-				 PersistencePackage.Literals.ENCAPSULATED_FEATURE__DISPLAY_LABEL,
+				 WebGenPersistencePackage.Literals.ENCAPSULATED_FEATURE__DISPLAY_LABEL,
 				 true,
 				 false,
 				 false,
@@ -87,7 +87,7 @@ public class EncapsulatedFeatureItemProvider extends ViewFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EncapsulatedFeature_alias_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EncapsulatedFeature_alias_feature", "_UI_EncapsulatedFeature_type"),
-				 PersistencePackage.Literals.ENCAPSULATED_FEATURE__ALIAS,
+				 WebGenPersistencePackage.Literals.ENCAPSULATED_FEATURE__ALIAS,
 				 true,
 				 false,
 				 false,
@@ -109,7 +109,7 @@ public class EncapsulatedFeatureItemProvider extends ViewFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EncapsulatedFeature_columnName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EncapsulatedFeature_columnName_feature", "_UI_EncapsulatedFeature_type"),
-				 PersistencePackage.Literals.ENCAPSULATED_FEATURE__COLUMN_NAME,
+				 WebGenPersistencePackage.Literals.ENCAPSULATED_FEATURE__COLUMN_NAME,
 				 true,
 				 false,
 				 false,
@@ -156,9 +156,9 @@ public class EncapsulatedFeatureItemProvider extends ViewFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EncapsulatedFeature.class)) {
-			case PersistencePackage.ENCAPSULATED_FEATURE__DISPLAY_LABEL:
-			case PersistencePackage.ENCAPSULATED_FEATURE__ALIAS:
-			case PersistencePackage.ENCAPSULATED_FEATURE__COLUMN_NAME:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__DISPLAY_LABEL:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__ALIAS:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__COLUMN_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -15,7 +15,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithContainment#isSourceVisible <em>Source Visible</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociationWithContainment()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociationWithContainment()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface AssociationWithContainment extends EntityAssociation {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source Visible</em>' attribute.
 	 * @see #setSourceVisible(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociationWithContainment_SourceVisible()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociationWithContainment_SourceVisible()
 	 * @model default="true"
 	 * @generated
 	 */

@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelAssociation;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,7 +77,7 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.MODEL_LABEL_ASSOCIATION;
+		return WebGenPersistencePackage.Literals.MODEL_LABEL_ASSOCIATION;
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 			association = (EntityAssociation)eResolveProxy(oldAssociation);
 			if (association != oldAssociation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION, oldAssociation, association));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION, oldAssociation, association));
 			}
 		}
 		return association;
@@ -115,7 +115,7 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 		EntityAssociation oldAssociation = association;
 		association = newAssociation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION, oldAssociation, association));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION, oldAssociation, association));
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 			dynamicLabel = (ModelLabel)eResolveProxy(oldDynamicLabel);
 			if (dynamicLabel != oldDynamicLabel) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
 			}
 		}
 		return dynamicLabel;
@@ -153,7 +153,7 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 		ModelLabel oldDynamicLabel = dynamicLabel;
 		dynamicLabel = newDynamicLabel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
 	}
 
 	/**
@@ -173,13 +173,13 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION:
+			case WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION:
 				if (resolve) return getAssociation();
 				return basicGetAssociation();
-			case PersistencePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
+			case WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
 				if (resolve) return getDynamicLabel();
 				return basicGetDynamicLabel();
-			case PersistencePackage.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+			case WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION:
 				return isIsSourceAssociation();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -193,10 +193,10 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION:
+			case WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION:
 				setAssociation((EntityAssociation)newValue);
 				return;
-			case PersistencePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
+			case WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
 				setDynamicLabel((ModelLabel)newValue);
 				return;
 		}
@@ -211,10 +211,10 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION:
+			case WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION:
 				setAssociation((EntityAssociation)null);
 				return;
-			case PersistencePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
+			case WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
 				setDynamicLabel((ModelLabel)null);
 				return;
 		}
@@ -229,11 +229,11 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION:
+			case WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION:
 				return association != null;
-			case PersistencePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
+			case WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
 				return dynamicLabel != null;
-			case PersistencePackage.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+			case WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION:
 				return IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);

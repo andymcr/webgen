@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -145,7 +145,7 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.DATA_TYPE;
+		return WebGenPersistencePackage.Literals.DATA_TYPE;
 	}
 
 	/**
@@ -166,7 +166,7 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 		String oldPersistentType = persistentType;
 		persistentType = newPersistentType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.DATA_TYPE__PERSISTENT_TYPE, oldPersistentType, persistentType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE__PERSISTENT_TYPE, oldPersistentType, persistentType));
 	}
 
 	/**
@@ -187,7 +187,7 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 		String oldOrmType = ormType;
 		ormType = newOrmType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.DATA_TYPE__ORM_TYPE, oldOrmType, ormType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE__ORM_TYPE, oldOrmType, ormType));
 	}
 
 	/**
@@ -208,7 +208,7 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 		String oldInterfaceType = interfaceType;
 		interfaceType = newInterfaceType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.DATA_TYPE__INTERFACE_TYPE, oldInterfaceType, interfaceType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE__INTERFACE_TYPE, oldInterfaceType, interfaceType));
 	}
 
 	/**
@@ -229,7 +229,7 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 		String oldPlaceholder = placeholder;
 		placeholder = newPlaceholder;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.DATA_TYPE__PLACEHOLDER, oldPlaceholder, placeholder));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE__PLACEHOLDER, oldPlaceholder, placeholder));
 	}
 
 	/**
@@ -250,7 +250,7 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 		String oldValidationPattern = validationPattern;
 		validationPattern = newValidationPattern;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.DATA_TYPE__VALIDATION_PATTERN, oldValidationPattern, validationPattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE__VALIDATION_PATTERN, oldValidationPattern, validationPattern));
 	}
 
 	/**
@@ -261,15 +261,15 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
 				return getPersistentType();
-			case PersistencePackage.DATA_TYPE__ORM_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__ORM_TYPE:
 				return getOrmType();
-			case PersistencePackage.DATA_TYPE__INTERFACE_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__INTERFACE_TYPE:
 				return getInterfaceType();
-			case PersistencePackage.DATA_TYPE__PLACEHOLDER:
+			case WebGenPersistencePackage.DATA_TYPE__PLACEHOLDER:
 				return getPlaceholder();
-			case PersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
 				return getValidationPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -283,19 +283,19 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
 				setPersistentType((String)newValue);
 				return;
-			case PersistencePackage.DATA_TYPE__ORM_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__ORM_TYPE:
 				setOrmType((String)newValue);
 				return;
-			case PersistencePackage.DATA_TYPE__INTERFACE_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__INTERFACE_TYPE:
 				setInterfaceType((String)newValue);
 				return;
-			case PersistencePackage.DATA_TYPE__PLACEHOLDER:
+			case WebGenPersistencePackage.DATA_TYPE__PLACEHOLDER:
 				setPlaceholder((String)newValue);
 				return;
-			case PersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
 				setValidationPattern((String)newValue);
 				return;
 		}
@@ -310,19 +310,19 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
 				setPersistentType(PERSISTENT_TYPE_EDEFAULT);
 				return;
-			case PersistencePackage.DATA_TYPE__ORM_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__ORM_TYPE:
 				setOrmType(ORM_TYPE_EDEFAULT);
 				return;
-			case PersistencePackage.DATA_TYPE__INTERFACE_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__INTERFACE_TYPE:
 				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
 				return;
-			case PersistencePackage.DATA_TYPE__PLACEHOLDER:
+			case WebGenPersistencePackage.DATA_TYPE__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
-			case PersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
 				setValidationPattern(VALIDATION_PATTERN_EDEFAULT);
 				return;
 		}
@@ -337,15 +337,15 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
 				return PERSISTENT_TYPE_EDEFAULT == null ? persistentType != null : !PERSISTENT_TYPE_EDEFAULT.equals(persistentType);
-			case PersistencePackage.DATA_TYPE__ORM_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__ORM_TYPE:
 				return ORM_TYPE_EDEFAULT == null ? ormType != null : !ORM_TYPE_EDEFAULT.equals(ormType);
-			case PersistencePackage.DATA_TYPE__INTERFACE_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__INTERFACE_TYPE:
 				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
-			case PersistencePackage.DATA_TYPE__PLACEHOLDER:
+			case WebGenPersistencePackage.DATA_TYPE__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
-			case PersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
 				return VALIDATION_PATTERN_EDEFAULT == null ? validationPattern != null : !VALIDATION_PATTERN_EDEFAULT.equals(validationPattern);
 		}
 		return super.eIsSet(featureID);

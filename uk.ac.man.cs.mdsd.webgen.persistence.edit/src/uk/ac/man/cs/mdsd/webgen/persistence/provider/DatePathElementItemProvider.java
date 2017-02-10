@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.DatePathElement;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.DatePathElement} object.
@@ -63,7 +63,7 @@ public class DatePathElementItemProvider extends PathElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DatePathElement_format_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DatePathElement_format_feature", "_UI_DatePathElement_type"),
-				 PersistencePackage.Literals.DATE_PATH_ELEMENT__FORMAT,
+				 WebGenPersistencePackage.Literals.DATE_PATH_ELEMENT__FORMAT,
 				 true,
 				 false,
 				 false,
@@ -110,7 +110,7 @@ public class DatePathElementItemProvider extends PathElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DatePathElement.class)) {
-			case PersistencePackage.DATE_PATH_ELEMENT__FORMAT:
+			case WebGenPersistencePackage.DATE_PATH_ELEMENT__FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

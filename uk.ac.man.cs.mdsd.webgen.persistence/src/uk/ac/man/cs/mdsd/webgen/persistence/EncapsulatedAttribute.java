@@ -17,7 +17,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAttribute#getCardinality <em>Cardinality</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedAttribute()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedAttribute()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface EncapsulatedAttribute extends EncapsulatedFeature, Attribute {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedAttribute_Name()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedAttribute_Name()
 	 * @model default="" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.alias.oclIsUndefined() then\r\n\tif self.alias <> \'\' then\r\n\t\tself.alias\r\n\telse\r\n\t\t\'empty alias\'\r\n\tendif\r\nelse if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tif attribute.oclIsKindOf(EntityAttribute) then\r\n\t\tattribute.oclAsType(EntityAttribute).name\r\n\telse\r\n\t\tattribute.oclAsType(EncapsulatedAttribute).name\r\n\tendif\r\nendif endif'"
 	 * @generated
@@ -49,7 +49,7 @@ public interface EncapsulatedAttribute extends EncapsulatedFeature, Attribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attribute</em>' reference.
 	 * @see #setAttribute(Attribute)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedAttribute_Attribute()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedAttribute_Attribute()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -77,7 +77,7 @@ public interface EncapsulatedAttribute extends EncapsulatedFeature, Attribute {
 	 * @return the value of the '<em>Cardinality</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Cardinality
 	 * @see #setCardinality(Cardinality)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedAttribute_Cardinality()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedAttribute_Cardinality()
 	 * @model required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if attribute.oclIsUndefined() then\r\n\tCardinality::Optional\r\nelse \r\n\tif attribute.oclIsKindOf(EntityAttribute) then\r\n\t\tattribute.oclAsType(EntityAttribute).cardinality\r\n\telse\r\n\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality\r\n\tendif\r\nendif'"
 	 * @generated

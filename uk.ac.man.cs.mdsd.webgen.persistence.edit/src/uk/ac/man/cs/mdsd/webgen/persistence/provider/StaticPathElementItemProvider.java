@@ -13,9 +13,8 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.StaticPathElement;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.StaticPathElement} object.
@@ -63,7 +62,7 @@ public class StaticPathElementItemProvider extends PathElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_StaticPathElement_element_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_StaticPathElement_element_feature", "_UI_StaticPathElement_type"),
-				 PersistencePackage.Literals.STATIC_PATH_ELEMENT__ELEMENT,
+				 WebGenPersistencePackage.Literals.STATIC_PATH_ELEMENT__ELEMENT,
 				 true,
 				 false,
 				 false,
@@ -110,7 +109,7 @@ public class StaticPathElementItemProvider extends PathElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StaticPathElement.class)) {
-			case PersistencePackage.STATIC_PATH_ELEMENT__ELEMENT:
+			case WebGenPersistencePackage.STATIC_PATH_ELEMENT__ELEMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

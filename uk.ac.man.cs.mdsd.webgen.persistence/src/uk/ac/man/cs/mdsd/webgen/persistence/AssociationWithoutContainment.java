@@ -16,7 +16,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithoutContainment#isTargetUnique <em>Target Unique</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociationWithoutContainment()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociationWithoutContainment()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='oneToManyAssociationsMustBeBidirectional'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL oneToManyAssociationsMustBeBidirectional='cardinality = Cardinality::Optional and targetCardinality = Cardinality::Required implies bidirectional'"
  * @generated
@@ -35,7 +35,7 @@ public interface AssociationWithoutContainment extends EntityAssociation {
 	 * @return the value of the '<em>Target Cardinality</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Cardinality
 	 * @see #setTargetCardinality(Cardinality)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociationWithoutContainment_TargetCardinality()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociationWithoutContainment_TargetCardinality()
 	 * @model default="Required" required="true"
 	 * @generated
 	 */
@@ -63,7 +63,7 @@ public interface AssociationWithoutContainment extends EntityAssociation {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Unique</em>' attribute.
 	 * @see #setTargetUnique(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociationWithoutContainment_TargetUnique()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociationWithoutContainment_TargetUnique()
 	 * @model default="true" required="true"
 	 * @generated
 	 */

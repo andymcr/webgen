@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Entity#getAssociationEnds <em>Association Ends</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntity()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntity()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='featureNameUniqueWithinEntity'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featureNameUniqueWithinEntity='entityFeatures->isUnique(f | f.name)'"
  * @generated
@@ -34,7 +34,7 @@ public interface Entity extends EntityOrView {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity Features</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntity_EntityFeatures()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntity_EntityFeatures()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getPartOf
 	 * @model opposite="partOf" containment="true"
 	 * @generated
@@ -52,7 +52,7 @@ public interface Entity extends EntityOrView {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Association Ends</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntity_AssociationEnds()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntity_AssociationEnds()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetEntity
 	 * @model opposite="targetEntity"
 	 * @generated

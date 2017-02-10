@@ -7,9 +7,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.StaticPathElement;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +60,7 @@ public class StaticPathElementImpl extends PathElementImpl implements StaticPath
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.STATIC_PATH_ELEMENT;
+		return WebGenPersistencePackage.Literals.STATIC_PATH_ELEMENT;
 	}
 
 	/**
@@ -82,7 +81,7 @@ public class StaticPathElementImpl extends PathElementImpl implements StaticPath
 		String oldElement = element;
 		element = newElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.STATIC_PATH_ELEMENT__ELEMENT, oldElement, element));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.STATIC_PATH_ELEMENT__ELEMENT, oldElement, element));
 	}
 
 	/**
@@ -93,7 +92,7 @@ public class StaticPathElementImpl extends PathElementImpl implements StaticPath
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.STATIC_PATH_ELEMENT__ELEMENT:
+			case WebGenPersistencePackage.STATIC_PATH_ELEMENT__ELEMENT:
 				return getElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +106,7 @@ public class StaticPathElementImpl extends PathElementImpl implements StaticPath
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.STATIC_PATH_ELEMENT__ELEMENT:
+			case WebGenPersistencePackage.STATIC_PATH_ELEMENT__ELEMENT:
 				setElement((String)newValue);
 				return;
 		}
@@ -122,7 +121,7 @@ public class StaticPathElementImpl extends PathElementImpl implements StaticPath
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.STATIC_PATH_ELEMENT__ELEMENT:
+			case WebGenPersistencePackage.STATIC_PATH_ELEMENT__ELEMENT:
 				setElement(ELEMENT_EDEFAULT);
 				return;
 		}
@@ -137,7 +136,7 @@ public class StaticPathElementImpl extends PathElementImpl implements StaticPath
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.STATIC_PATH_ELEMENT__ELEMENT:
+			case WebGenPersistencePackage.STATIC_PATH_ELEMENT__ELEMENT:
 				return ELEMENT_EDEFAULT == null ? element != null : !ELEMENT_EDEFAULT.equals(element);
 		}
 		return super.eIsSet(featureID);

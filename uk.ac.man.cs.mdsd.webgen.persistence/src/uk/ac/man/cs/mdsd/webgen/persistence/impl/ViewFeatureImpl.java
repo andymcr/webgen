@@ -17,10 +17,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.View;
 import uk.ac.man.cs.mdsd.webgen.persistence.ViewFeature;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -252,7 +251,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.VIEW_FEATURE;
+		return WebGenPersistencePackage.Literals.VIEW_FEATURE;
 	}
 
 	/**
@@ -273,7 +272,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		String oldTitle = title;
 		title = newTitle;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__TITLE, oldTitle, title));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_FEATURE__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -294,7 +293,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		boolean oldCollectionAllowAdd = collectionAllowAdd;
 		collectionAllowAdd = newCollectionAllowAdd;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD, oldCollectionAllowAdd, collectionAllowAdd));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD, oldCollectionAllowAdd, collectionAllowAdd));
 	}
 
 	/**
@@ -315,7 +314,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		boolean oldCollectionAllowRemove = collectionAllowRemove;
 		collectionAllowRemove = newCollectionAllowRemove;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
 	}
 
 	/**
@@ -336,7 +335,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		String oldNullDisplayValue = nullDisplayValue;
 		nullDisplayValue = newNullDisplayValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE, oldNullDisplayValue, nullDisplayValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE, oldNullDisplayValue, nullDisplayValue));
 	}
 
 	/**
@@ -357,7 +356,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		boolean oldEncodeUriKey = encodeUriKey;
 		encodeUriKey = newEncodeUriKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY, oldEncodeUriKey, encodeUriKey));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY, oldEncodeUriKey, encodeUriKey));
 	}
 
 	/**
@@ -367,7 +366,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	 */
 	public EList<String> getSerializationGroups() {
 		if (serializationGroups == null) {
-			serializationGroups = new EDataTypeUniqueEList<String>(String.class, this, PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS);
+			serializationGroups = new EDataTypeUniqueEList<String>(String.class, this, WebGenPersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS);
 		}
 		return serializationGroups;
 	}
@@ -390,7 +389,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		boolean oldSerializationExpose = serializationExpose;
 		serializationExpose = newSerializationExpose;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE, oldSerializationExpose, serializationExpose));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE, oldSerializationExpose, serializationExpose));
 	}
 
 	/**
@@ -411,7 +410,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		String oldHeaderClass = headerClass;
 		headerClass = newHeaderClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__HEADER_CLASS, oldHeaderClass, headerClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_FEATURE__HEADER_CLASS, oldHeaderClass, headerClass));
 	}
 
 	/**
@@ -432,7 +431,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		String oldDisplayClass = displayClass;
 		displayClass = newDisplayClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__DISPLAY_CLASS, oldDisplayClass, displayClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_FEATURE__DISPLAY_CLASS, oldDisplayClass, displayClass));
 	}
 
 	/**
@@ -453,7 +452,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		String oldFooterClass = footerClass;
 		footerClass = newFooterClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__FOOTER_CLASS, oldFooterClass, footerClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_FEATURE__FOOTER_CLASS, oldFooterClass, footerClass));
 	}
 
 	/**
@@ -462,7 +461,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	public View getPartOf() {
-		if (eContainerFeatureID() != PersistencePackage.VIEW_FEATURE__PART_OF) return null;
+		if (eContainerFeatureID() != WebGenPersistencePackage.VIEW_FEATURE__PART_OF) return null;
 		return (View)eInternalContainer();
 	}
 
@@ -472,7 +471,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	public NotificationChain basicSetPartOf(View newPartOf, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPartOf, PersistencePackage.VIEW_FEATURE__PART_OF, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newPartOf, WebGenPersistencePackage.VIEW_FEATURE__PART_OF, msgs);
 		return msgs;
 	}
 
@@ -482,19 +481,19 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	 * @generated
 	 */
 	public void setPartOf(View newPartOf) {
-		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != PersistencePackage.VIEW_FEATURE__PART_OF && newPartOf != null)) {
+		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WebGenPersistencePackage.VIEW_FEATURE__PART_OF && newPartOf != null)) {
 			if (EcoreUtil.isAncestor(this, newPartOf))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPartOf != null)
-				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, PersistencePackage.VIEW__VIEW_FEATURES, View.class, msgs);
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebGenPersistencePackage.VIEW__VIEW_FEATURES, View.class, msgs);
 			msgs = basicSetPartOf(newPartOf, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__PART_OF, newPartOf, newPartOf));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_FEATURE__PART_OF, newPartOf, newPartOf));
 	}
 
 	/**
@@ -505,7 +504,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.VIEW_FEATURE__PART_OF:
+			case WebGenPersistencePackage.VIEW_FEATURE__PART_OF:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetPartOf((View)otherEnd, msgs);
@@ -521,7 +520,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.VIEW_FEATURE__PART_OF:
+			case WebGenPersistencePackage.VIEW_FEATURE__PART_OF:
 				return basicSetPartOf(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -535,8 +534,8 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case PersistencePackage.VIEW_FEATURE__PART_OF:
-				return eInternalContainer().eInverseRemove(this, PersistencePackage.VIEW__VIEW_FEATURES, View.class, msgs);
+			case WebGenPersistencePackage.VIEW_FEATURE__PART_OF:
+				return eInternalContainer().eInverseRemove(this, WebGenPersistencePackage.VIEW__VIEW_FEATURES, View.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -549,27 +548,27 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.VIEW_FEATURE__TITLE:
+			case WebGenPersistencePackage.VIEW_FEATURE__TITLE:
 				return getTitle();
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
 				return isCollectionAllowAdd();
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
 				return isCollectionAllowRemove();
-			case PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
 				return getNullDisplayValue();
-			case PersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 				return isEncodeUriKey();
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
 				return getSerializationGroups();
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
 				return isSerializationExpose();
-			case PersistencePackage.VIEW_FEATURE__HEADER_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__HEADER_CLASS:
 				return getHeaderClass();
-			case PersistencePackage.VIEW_FEATURE__DISPLAY_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__DISPLAY_CLASS:
 				return getDisplayClass();
-			case PersistencePackage.VIEW_FEATURE__FOOTER_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__FOOTER_CLASS:
 				return getFooterClass();
-			case PersistencePackage.VIEW_FEATURE__PART_OF:
+			case WebGenPersistencePackage.VIEW_FEATURE__PART_OF:
 				return getPartOf();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -584,38 +583,38 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.VIEW_FEATURE__TITLE:
+			case WebGenPersistencePackage.VIEW_FEATURE__TITLE:
 				setTitle((String)newValue);
 				return;
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
 				setCollectionAllowAdd((Boolean)newValue);
 				return;
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove((Boolean)newValue);
 				return;
-			case PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue((String)newValue);
 				return;
-			case PersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 				setEncodeUriKey((Boolean)newValue);
 				return;
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
 				getSerializationGroups().clear();
 				getSerializationGroups().addAll((Collection<? extends String>)newValue);
 				return;
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
 				setSerializationExpose((Boolean)newValue);
 				return;
-			case PersistencePackage.VIEW_FEATURE__HEADER_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__HEADER_CLASS:
 				setHeaderClass((String)newValue);
 				return;
-			case PersistencePackage.VIEW_FEATURE__DISPLAY_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__DISPLAY_CLASS:
 				setDisplayClass((String)newValue);
 				return;
-			case PersistencePackage.VIEW_FEATURE__FOOTER_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__FOOTER_CLASS:
 				setFooterClass((String)newValue);
 				return;
-			case PersistencePackage.VIEW_FEATURE__PART_OF:
+			case WebGenPersistencePackage.VIEW_FEATURE__PART_OF:
 				setPartOf((View)newValue);
 				return;
 		}
@@ -630,37 +629,37 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.VIEW_FEATURE__TITLE:
+			case WebGenPersistencePackage.VIEW_FEATURE__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
 				setCollectionAllowAdd(COLLECTION_ALLOW_ADD_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
 				getSerializationGroups().clear();
 				return;
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
 				setSerializationExpose(SERIALIZATION_EXPOSE_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_FEATURE__HEADER_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__HEADER_CLASS:
 				setHeaderClass(HEADER_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_FEATURE__DISPLAY_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__DISPLAY_CLASS:
 				setDisplayClass(DISPLAY_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_FEATURE__FOOTER_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__FOOTER_CLASS:
 				setFooterClass(FOOTER_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_FEATURE__PART_OF:
+			case WebGenPersistencePackage.VIEW_FEATURE__PART_OF:
 				setPartOf((View)null);
 				return;
 		}
@@ -675,27 +674,27 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.VIEW_FEATURE__TITLE:
+			case WebGenPersistencePackage.VIEW_FEATURE__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
 				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
 				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
-			case PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
 				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
-			case PersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
 				return serializationGroups != null && !serializationGroups.isEmpty();
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
 				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
-			case PersistencePackage.VIEW_FEATURE__HEADER_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__HEADER_CLASS:
 				return HEADER_CLASS_EDEFAULT == null ? headerClass != null : !HEADER_CLASS_EDEFAULT.equals(headerClass);
-			case PersistencePackage.VIEW_FEATURE__DISPLAY_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__DISPLAY_CLASS:
 				return DISPLAY_CLASS_EDEFAULT == null ? displayClass != null : !DISPLAY_CLASS_EDEFAULT.equals(displayClass);
-			case PersistencePackage.VIEW_FEATURE__FOOTER_CLASS:
+			case WebGenPersistencePackage.VIEW_FEATURE__FOOTER_CLASS:
 				return FOOTER_CLASS_EDEFAULT == null ? footerClass != null : !FOOTER_CLASS_EDEFAULT.equals(footerClass);
-			case PersistencePackage.VIEW_FEATURE__PART_OF:
+			case WebGenPersistencePackage.VIEW_FEATURE__PART_OF:
 				return getPartOf() != null;
 		}
 		return super.eIsSet(featureID);

@@ -16,7 +16,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.DateAttribute#getFormat <em>Format</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDateAttribute()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDateAttribute()
  * @model
  * @generated
  */
@@ -34,7 +34,7 @@ public interface DateAttribute extends EntityAttribute {
 	 * @return the value of the '<em>Details</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.DateDetails
 	 * @see #setDetails(DateDetails)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDateAttribute_Details()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDateAttribute_Details()
 	 * @model default="DateOnly" required="true" ordered="false"
 	 * @generated
 	 */
@@ -61,7 +61,7 @@ public interface DateAttribute extends EntityAttribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Format</em>' attribute.
 	 * @see #setFormat(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDateAttribute_Format()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDateAttribute_Format()
 	 * @model ordered="false"
 	 * @generated
 	 */

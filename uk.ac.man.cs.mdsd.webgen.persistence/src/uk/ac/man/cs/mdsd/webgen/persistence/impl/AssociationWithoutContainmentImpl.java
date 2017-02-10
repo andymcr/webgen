@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithoutContainment;
 import uk.ac.man.cs.mdsd.webgen.persistence.Cardinality;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,7 +83,7 @@ public class AssociationWithoutContainmentImpl extends EntityAssociationImpl imp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.ASSOCIATION_WITHOUT_CONTAINMENT;
+		return WebGenPersistencePackage.Literals.ASSOCIATION_WITHOUT_CONTAINMENT;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class AssociationWithoutContainmentImpl extends EntityAssociationImpl imp
 		Cardinality oldTargetCardinality = targetCardinality;
 		targetCardinality = newTargetCardinality == null ? TARGET_CARDINALITY_EDEFAULT : newTargetCardinality;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY, oldTargetCardinality, targetCardinality));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY, oldTargetCardinality, targetCardinality));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class AssociationWithoutContainmentImpl extends EntityAssociationImpl imp
 		boolean oldTargetUnique = targetUnique;
 		targetUnique = newTargetUnique;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE, oldTargetUnique, targetUnique));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE, oldTargetUnique, targetUnique));
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class AssociationWithoutContainmentImpl extends EntityAssociationImpl imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY:
+			case WebGenPersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY:
 				return getTargetCardinality();
-			case PersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE:
+			case WebGenPersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE:
 				return isTargetUnique();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -152,10 +152,10 @@ public class AssociationWithoutContainmentImpl extends EntityAssociationImpl imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY:
+			case WebGenPersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY:
 				setTargetCardinality((Cardinality)newValue);
 				return;
-			case PersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE:
+			case WebGenPersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE:
 				setTargetUnique((Boolean)newValue);
 				return;
 		}
@@ -170,10 +170,10 @@ public class AssociationWithoutContainmentImpl extends EntityAssociationImpl imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY:
+			case WebGenPersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY:
 				setTargetCardinality(TARGET_CARDINALITY_EDEFAULT);
 				return;
-			case PersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE:
+			case WebGenPersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE:
 				setTargetUnique(TARGET_UNIQUE_EDEFAULT);
 				return;
 		}
@@ -188,9 +188,9 @@ public class AssociationWithoutContainmentImpl extends EntityAssociationImpl imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY:
+			case WebGenPersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY:
 				return targetCardinality != TARGET_CARDINALITY_EDEFAULT;
-			case PersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE:
+			case WebGenPersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE:
 				return targetUnique != TARGET_UNIQUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

@@ -19,7 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.Expression;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Attribute#getInputClass <em>Input Class</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAttribute()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAttribute()
  * @model interface="true" abstract="true"
  * @generated
  */
@@ -34,7 +34,7 @@ public interface Attribute extends Feature, Label {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default Value</em>' containment reference.
 	 * @see #setDefaultValue(Expression)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAttribute_DefaultValue()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAttribute_DefaultValue()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
@@ -60,7 +60,7 @@ public interface Attribute extends Feature, Label {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Placeholder</em>' attribute.
 	 * @see #setPlaceholder(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAttribute_Placeholder()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAttribute_Placeholder()
 	 * @model ordered="false"
 	 * @generated
 	 */
@@ -86,7 +86,7 @@ public interface Attribute extends Feature, Label {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Validation Pattern</em>' attribute.
 	 * @see #setValidationPattern(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAttribute_ValidationPattern()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAttribute_ValidationPattern()
 	 * @model ordered="false"
 	 * @generated
 	 */
@@ -112,7 +112,7 @@ public interface Attribute extends Feature, Label {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Input Class</em>' attribute.
 	 * @see #setInputClass(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAttribute_InputClass()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAttribute_InputClass()
 	 * @model ordered="false"
 	 * @generated
 	 */

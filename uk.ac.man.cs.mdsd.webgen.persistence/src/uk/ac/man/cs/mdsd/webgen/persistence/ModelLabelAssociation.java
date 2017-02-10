@@ -17,7 +17,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelAssociation#isIsSourceAssociation <em>Is Source Association</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabelAssociation()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getModelLabelAssociation()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface ModelLabelAssociation extends ModelLabelFeature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Association</em>' reference.
 	 * @see #setAssociation(EntityAssociation)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabelAssociation_Association()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getModelLabelAssociation_Association()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface ModelLabelAssociation extends ModelLabelFeature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dynamic Label</em>' reference.
 	 * @see #setDynamicLabel(ModelLabel)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabelAssociation_DynamicLabel()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getModelLabelAssociation_DynamicLabel()
 	 * @model
 	 * @generated
 	 */
@@ -83,7 +83,7 @@ public interface ModelLabelAssociation extends ModelLabelFeature {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Source Association</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabelAssociation_IsSourceAssociation()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getModelLabelAssociation_IsSourceAssociation()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tpartOf.labelFor.features->includes(association)'"
 	 * @generated

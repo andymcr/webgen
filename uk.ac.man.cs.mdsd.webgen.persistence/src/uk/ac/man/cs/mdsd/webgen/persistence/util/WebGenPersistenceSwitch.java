@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import uk.ac.man.cs.mdsd.webgen.core.NamedDisplayElement;
+import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.persistence.*;
 
 /**
@@ -69,19 +71,6 @@ public class WebGenPersistenceSwitch<T> extends Switch<T> {
 			case WebGenPersistencePackage.PERSISTENCE: {
 				Persistence persistence = (Persistence)theEObject;
 				T result = casePersistence(persistence);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebGenPersistencePackage.NAMED_ELEMENT: {
-				NamedElement namedElement = (NamedElement)theEObject;
-				T result = caseNamedElement(namedElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebGenPersistencePackage.NAMED_DISPLAY_ELEMENT: {
-				NamedDisplayElement namedDisplayElement = (NamedDisplayElement)theEObject;
-				T result = caseNamedDisplayElement(namedDisplayElement);
-				if (result == null) result = caseNamedElement(namedDisplayElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

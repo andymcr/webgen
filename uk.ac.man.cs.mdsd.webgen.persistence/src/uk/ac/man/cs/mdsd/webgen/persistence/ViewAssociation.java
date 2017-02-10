@@ -2,6 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.webgen.persistence;
 
+import uk.ac.man.cs.mdsd.webgen.core.NamedDisplayElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +17,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ViewAssociation#getCardinality <em>Cardinality</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getViewAssociation()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getViewAssociation()
  * @model
  * @generated
  */
@@ -31,7 +32,7 @@ public interface ViewAssociation extends NamedDisplayElement, ViewFeature, Assoc
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Opposite</em>' reference.
 	 * @see #setOpposite(EncapsulatedAssociation)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getViewAssociation_Opposite()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getViewAssociation_Opposite()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -60,7 +61,7 @@ public interface ViewAssociation extends NamedDisplayElement, ViewFeature, Assoc
 	 * @return the value of the '<em>Cardinality</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Cardinality
 	 * @see #setCardinality(Cardinality)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getViewAssociation_Cardinality()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getViewAssociation_Cardinality()
 	 * @model default="Optional" required="true"
 	 * @generated
 	 */

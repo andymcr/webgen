@@ -32,7 +32,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isImplementsUserInterface <em>Implements User Interface</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='keysFromLocalFeatures'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL keysFromLocalFeatures='allFeatures->includesAll(keys)'"
@@ -49,7 +49,7 @@ public interface EntityOrView extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Singleton Name</em>' attribute.
 	 * @see #setSingletonName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_SingletonName()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_SingletonName()
 	 * @model
 	 * @generated
 	 */
@@ -75,7 +75,7 @@ public interface EntityOrView extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Pluralised Name</em>' attribute.
 	 * @see #setPluralisedName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_PluralisedName()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_PluralisedName()
 	 * @model
 	 * @generated
 	 */
@@ -101,7 +101,7 @@ public interface EntityOrView extends Classifier {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Keys</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_Keys()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_Keys()
 	 * @model
 	 * @generated
 	 */
@@ -117,7 +117,7 @@ public interface EntityOrView extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Table Name</em>' attribute.
 	 * @see #setTableName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_TableName()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_TableName()
 	 * @model
 	 * @generated
 	 */
@@ -144,7 +144,7 @@ public interface EntityOrView extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Auto Key Name</em>' attribute.
 	 * @see #setAutoKeyName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_AutoKeyName()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_AutoKeyName()
 	 * @model default="id"
 	 * @generated
 	 */
@@ -171,7 +171,7 @@ public interface EntityOrView extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Auto Key Persistent Type</em>' attribute.
 	 * @see #setAutoKeyPersistentType(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_AutoKeyPersistentType()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_AutoKeyPersistentType()
 	 * @model default="integer"
 	 * @generated
 	 */
@@ -197,7 +197,7 @@ public interface EntityOrView extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Auto Key Generation Strategy</em>' attribute.
 	 * @see #setAutoKeyGenerationStrategy(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_AutoKeyGenerationStrategy()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_AutoKeyGenerationStrategy()
 	 * @model
 	 * @generated
 	 */
@@ -223,7 +223,7 @@ public interface EntityOrView extends Classifier {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Unique</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_Unique()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_Unique()
 	 * @model
 	 * @generated
 	 */
@@ -239,7 +239,7 @@ public interface EntityOrView extends Classifier {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Container Unique</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_ContainerUnique()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_ContainerUnique()
 	 * @model
 	 * @generated
 	 */
@@ -256,7 +256,7 @@ public interface EntityOrView extends Classifier {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Labels</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_Labels()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_Labels()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getLabelFor
 	 * @model opposite="labelFor" containment="true"
 	 * @generated
@@ -273,7 +273,7 @@ public interface EntityOrView extends Classifier {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Features</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_Features()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_Features()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsTypeOf(Entity) then\r\n\tself.oclAsType(Entity).entityFeatures\r\nelse\r\n\tself.oclAsType(View).viewFeatures\r\nendif'"
 	 * @generated
@@ -290,7 +290,7 @@ public interface EntityOrView extends Classifier {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>All Features</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_AllFeatures()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_AllFeatures()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsTypeOf(Entity) then\r\n\tself.oclAsType(Entity).entityFeatures->union(self.oclAsType(Entity).associationEnds->select(e | e.bidirectional))->asOrderedSet()\r\nelse\r\n\tself.oclAsType(View).viewFeatures\r\nendif'"
 	 * @generated
@@ -307,7 +307,7 @@ public interface EntityOrView extends Classifier {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attributes</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_Attributes()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_Attributes()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='features->select(f | f.oclIsKindOf(Attribute)).oclAsType(Attribute)->asOrderedSet()'"
 	 * @generated
@@ -324,7 +324,7 @@ public interface EntityOrView extends Classifier {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Associations</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_Associations()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_Associations()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='features->select(f | f.oclIsKindOf(Association)).oclAsType(Association)->asOrderedSet()'"
 	 * @generated
@@ -341,7 +341,7 @@ public interface EntityOrView extends Classifier {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>All Associations</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_AllAssociations()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_AllAssociations()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='allFeatures->select(f | f.oclIsKindOf(Association)).oclAsType(Association)->asOrderedSet()'"
 	 * @generated
@@ -359,7 +359,7 @@ public interface EntityOrView extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Serialization Exclude All</em>' attribute.
 	 * @see #setSerializationExcludeAll(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_SerializationExcludeAll()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_SerializationExcludeAll()
 	 * @model default="false"
 	 * @generated
 	 */
@@ -386,7 +386,7 @@ public interface EntityOrView extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Implements User Interface</em>' attribute.
 	 * @see #setImplementsUserInterface(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_ImplementsUserInterface()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_ImplementsUserInterface()
 	 * @model default="false"
 	 * @generated
 	 */

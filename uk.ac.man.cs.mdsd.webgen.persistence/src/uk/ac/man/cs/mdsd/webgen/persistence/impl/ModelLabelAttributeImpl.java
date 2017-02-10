@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelAttribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.MODEL_LABEL_ATTRIBUTE;
+		return WebGenPersistencePackage.Literals.MODEL_LABEL_ATTRIBUTE;
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 			attribute = (Attribute)eResolveProxy(oldAttribute);
 			if (attribute != oldAttribute) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenPersistencePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
 			}
 		}
 		return attribute;
@@ -112,7 +112,7 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 		Attribute oldAttribute = attribute;
 		attribute = newAttribute;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
 	}
 
 	/**
@@ -133,7 +133,7 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 		String oldDateFormat = dateFormat;
 		dateFormat = newDateFormat;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT, oldDateFormat, dateFormat));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT, oldDateFormat, dateFormat));
 	}
 
 	/**
@@ -144,10 +144,10 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
+			case WebGenPersistencePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
 				if (resolve) return getAttribute();
 				return basicGetAttribute();
-			case PersistencePackage.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT:
+			case WebGenPersistencePackage.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT:
 				return getDateFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -161,10 +161,10 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
+			case WebGenPersistencePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)newValue);
 				return;
-			case PersistencePackage.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT:
+			case WebGenPersistencePackage.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT:
 				setDateFormat((String)newValue);
 				return;
 		}
@@ -179,10 +179,10 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
+			case WebGenPersistencePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)null);
 				return;
-			case PersistencePackage.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT:
+			case WebGenPersistencePackage.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
 		}
@@ -197,9 +197,9 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
+			case WebGenPersistencePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
 				return attribute != null;
-			case PersistencePackage.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT:
+			case WebGenPersistencePackage.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 		}
 		return super.eIsSet(featureID);

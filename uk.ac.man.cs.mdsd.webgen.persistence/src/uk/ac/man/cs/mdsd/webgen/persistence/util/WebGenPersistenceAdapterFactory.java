@@ -9,6 +9,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import uk.ac.man.cs.mdsd.webgen.core.NamedDisplayElement;
+import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.persistence.*;
 
 /**
@@ -70,14 +72,6 @@ public class WebGenPersistenceAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePersistence(Persistence object) {
 				return createPersistenceAdapter();
-			}
-			@Override
-			public Adapter caseNamedElement(NamedElement object) {
-				return createNamedElementAdapter();
-			}
-			@Override
-			public Adapter caseNamedDisplayElement(NamedDisplayElement object) {
-				return createNamedDisplayElementAdapter();
 			}
 			@Override
 			public Adapter caseClassifier(Classifier object) {
@@ -224,6 +218,14 @@ public class WebGenPersistenceAdapterFactory extends AdapterFactoryImpl {
 				return createViewAssociationAdapter();
 			}
 			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseNamedDisplayElement(NamedDisplayElement object) {
+				return createNamedDisplayElementAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -258,13 +260,13 @@ public class WebGenPersistenceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.persistence.NamedElement <em>Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.core.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.NamedElement
+	 * @see uk.ac.man.cs.mdsd.webgen.core.NamedElement
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
@@ -272,13 +274,13 @@ public class WebGenPersistenceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.persistence.NamedDisplayElement <em>Named Display Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.core.NamedDisplayElement <em>Named Display Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.NamedDisplayElement
+	 * @see uk.ac.man.cs.mdsd.webgen.core.NamedDisplayElement
 	 * @generated
 	 */
 	public Adapter createNamedDisplayElementAdapter() {

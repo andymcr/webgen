@@ -2,6 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.webgen.persistence;
 
+import uk.ac.man.cs.mdsd.webgen.core.NamedDisplayElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +23,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getColumnName <em>Column Name</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityFeature()
  * @model abstract="true"
  * @generated
  */
@@ -38,7 +39,7 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Part Of</em>' container reference.
 	 * @see #setPartOf(Entity)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature_PartOf()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityFeature_PartOf()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Entity#getEntityFeatures
 	 * @model opposite="entityFeatures" required="true" transient="false"
 	 * @generated
@@ -68,7 +69,7 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * @return the value of the '<em>Cardinality</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Cardinality
 	 * @see #setCardinality(Cardinality)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature_Cardinality()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityFeature_Cardinality()
 	 * @model default="Optional" required="true"
 	 * @generated
 	 */
@@ -96,7 +97,7 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Unique</em>' attribute.
 	 * @see #setUnique(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature_Unique()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityFeature_Unique()
 	 * @model default="true" required="true"
 	 * @generated
 	 */
@@ -123,7 +124,7 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ordered</em>' attribute.
 	 * @see #setOrdered(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature_Ordered()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityFeature_Ordered()
 	 * @model default="false" required="true"
 	 * @generated
 	 */
@@ -151,7 +152,7 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * @return the value of the '<em>Boolean Is Has Choice</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.isHasChoices
 	 * @see #setBooleanIsHasChoice(isHasChoices)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature_BooleanIsHasChoice()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityFeature_BooleanIsHasChoice()
 	 * @model
 	 * @generated
 	 */
@@ -178,7 +179,7 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Singleton Name</em>' attribute.
 	 * @see #setSingletonName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature_SingletonName()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityFeature_SingletonName()
 	 * @model
 	 * @generated
 	 */
@@ -204,7 +205,7 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Pluralised Name</em>' attribute.
 	 * @see #setPluralisedName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature_PluralisedName()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityFeature_PluralisedName()
 	 * @model
 	 * @generated
 	 */
@@ -230,7 +231,7 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Column Name</em>' attribute.
 	 * @see #setColumnName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature_ColumnName()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityFeature_ColumnName()
 	 * @model ordered="false"
 	 * @generated
 	 */

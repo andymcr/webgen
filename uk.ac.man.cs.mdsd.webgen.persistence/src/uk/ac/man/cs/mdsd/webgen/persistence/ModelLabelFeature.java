@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelFeature#getPartOf <em>Part Of</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabelFeature()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getModelLabelFeature()
  * @model abstract="true"
  * @generated
  */
@@ -32,7 +32,7 @@ public interface ModelLabelFeature extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Part Of</em>' container reference.
 	 * @see #setPartOf(ModelLabel)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabelFeature_PartOf()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getModelLabelFeature_PartOf()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getFeatures
 	 * @model opposite="features" required="true" transient="false"
 	 * @generated

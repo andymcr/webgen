@@ -17,11 +17,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
+import uk.ac.man.cs.mdsd.webgen.core.impl.NamedElementImpl;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelFeature;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,7 +85,7 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.MODEL_LABEL;
+		return WebGenPersistencePackage.Literals.MODEL_LABEL;
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 * @generated
 	 */
 	public EntityOrView getLabelFor() {
-		if (eContainerFeatureID() != PersistencePackage.MODEL_LABEL__LABEL_FOR) return null;
+		if (eContainerFeatureID() != WebGenPersistencePackage.MODEL_LABEL__LABEL_FOR) return null;
 		return (EntityOrView)eInternalContainer();
 	}
 
@@ -104,7 +104,7 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 * @generated
 	 */
 	public NotificationChain basicSetLabelFor(EntityOrView newLabelFor, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newLabelFor, PersistencePackage.MODEL_LABEL__LABEL_FOR, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newLabelFor, WebGenPersistencePackage.MODEL_LABEL__LABEL_FOR, msgs);
 		return msgs;
 	}
 
@@ -114,19 +114,19 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 * @generated
 	 */
 	public void setLabelFor(EntityOrView newLabelFor) {
-		if (newLabelFor != eInternalContainer() || (eContainerFeatureID() != PersistencePackage.MODEL_LABEL__LABEL_FOR && newLabelFor != null)) {
+		if (newLabelFor != eInternalContainer() || (eContainerFeatureID() != WebGenPersistencePackage.MODEL_LABEL__LABEL_FOR && newLabelFor != null)) {
 			if (EcoreUtil.isAncestor(this, newLabelFor))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newLabelFor != null)
-				msgs = ((InternalEObject)newLabelFor).eInverseAdd(this, PersistencePackage.ENTITY_OR_VIEW__LABELS, EntityOrView.class, msgs);
+				msgs = ((InternalEObject)newLabelFor).eInverseAdd(this, WebGenPersistencePackage.ENTITY_OR_VIEW__LABELS, EntityOrView.class, msgs);
 			msgs = basicSetLabelFor(newLabelFor, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.MODEL_LABEL__LABEL_FOR, newLabelFor, newLabelFor));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.MODEL_LABEL__LABEL_FOR, newLabelFor, newLabelFor));
 	}
 
 	/**
@@ -147,7 +147,7 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 		String oldFormat = format;
 		format = newFormat;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.MODEL_LABEL__FORMAT, oldFormat, format));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.MODEL_LABEL__FORMAT, oldFormat, format));
 	}
 
 	/**
@@ -157,7 +157,7 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 */
 	public EList<ModelLabelFeature> getFeatures() {
 		if (features == null) {
-			features = new EObjectContainmentWithInverseEList<ModelLabelFeature>(ModelLabelFeature.class, this, PersistencePackage.MODEL_LABEL__FEATURES, PersistencePackage.MODEL_LABEL_FEATURE__PART_OF);
+			features = new EObjectContainmentWithInverseEList<ModelLabelFeature>(ModelLabelFeature.class, this, WebGenPersistencePackage.MODEL_LABEL__FEATURES, WebGenPersistencePackage.MODEL_LABEL_FEATURE__PART_OF);
 		}
 		return features;
 	}
@@ -171,11 +171,11 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL__LABEL_FOR:
+			case WebGenPersistencePackage.MODEL_LABEL__LABEL_FOR:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetLabelFor((EntityOrView)otherEnd, msgs);
-			case PersistencePackage.MODEL_LABEL__FEATURES:
+			case WebGenPersistencePackage.MODEL_LABEL__FEATURES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFeatures()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -189,9 +189,9 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL__LABEL_FOR:
+			case WebGenPersistencePackage.MODEL_LABEL__LABEL_FOR:
 				return basicSetLabelFor(null, msgs);
-			case PersistencePackage.MODEL_LABEL__FEATURES:
+			case WebGenPersistencePackage.MODEL_LABEL__FEATURES:
 				return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -205,8 +205,8 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case PersistencePackage.MODEL_LABEL__LABEL_FOR:
-				return eInternalContainer().eInverseRemove(this, PersistencePackage.ENTITY_OR_VIEW__LABELS, EntityOrView.class, msgs);
+			case WebGenPersistencePackage.MODEL_LABEL__LABEL_FOR:
+				return eInternalContainer().eInverseRemove(this, WebGenPersistencePackage.ENTITY_OR_VIEW__LABELS, EntityOrView.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -219,11 +219,11 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL__LABEL_FOR:
+			case WebGenPersistencePackage.MODEL_LABEL__LABEL_FOR:
 				return getLabelFor();
-			case PersistencePackage.MODEL_LABEL__FORMAT:
+			case WebGenPersistencePackage.MODEL_LABEL__FORMAT:
 				return getFormat();
-			case PersistencePackage.MODEL_LABEL__FEATURES:
+			case WebGenPersistencePackage.MODEL_LABEL__FEATURES:
 				return getFeatures();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -238,13 +238,13 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL__LABEL_FOR:
+			case WebGenPersistencePackage.MODEL_LABEL__LABEL_FOR:
 				setLabelFor((EntityOrView)newValue);
 				return;
-			case PersistencePackage.MODEL_LABEL__FORMAT:
+			case WebGenPersistencePackage.MODEL_LABEL__FORMAT:
 				setFormat((String)newValue);
 				return;
-			case PersistencePackage.MODEL_LABEL__FEATURES:
+			case WebGenPersistencePackage.MODEL_LABEL__FEATURES:
 				getFeatures().clear();
 				getFeatures().addAll((Collection<? extends ModelLabelFeature>)newValue);
 				return;
@@ -260,13 +260,13 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL__LABEL_FOR:
+			case WebGenPersistencePackage.MODEL_LABEL__LABEL_FOR:
 				setLabelFor((EntityOrView)null);
 				return;
-			case PersistencePackage.MODEL_LABEL__FORMAT:
+			case WebGenPersistencePackage.MODEL_LABEL__FORMAT:
 				setFormat(FORMAT_EDEFAULT);
 				return;
-			case PersistencePackage.MODEL_LABEL__FEATURES:
+			case WebGenPersistencePackage.MODEL_LABEL__FEATURES:
 				getFeatures().clear();
 				return;
 		}
@@ -281,11 +281,11 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL__LABEL_FOR:
+			case WebGenPersistencePackage.MODEL_LABEL__LABEL_FOR:
 				return getLabelFor() != null;
-			case PersistencePackage.MODEL_LABEL__FORMAT:
+			case WebGenPersistencePackage.MODEL_LABEL__FORMAT:
 				return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
-			case PersistencePackage.MODEL_LABEL__FEATURES:
+			case WebGenPersistencePackage.MODEL_LABEL__FEATURES:
 				return features != null && !features.isEmpty();
 		}
 		return super.eIsSet(featureID);

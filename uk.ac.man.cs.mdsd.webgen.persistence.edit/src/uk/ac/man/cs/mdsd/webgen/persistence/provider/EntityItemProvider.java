@@ -16,8 +16,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.Entity;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistenceFactory;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.Entity} object.
@@ -65,7 +65,7 @@ public class EntityItemProvider extends EntityOrViewItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Entity_associationEnds_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_associationEnds_feature", "_UI_Entity_type"),
-				 PersistencePackage.Literals.ENTITY__ASSOCIATION_ENDS,
+				 WebGenPersistencePackage.Literals.ENTITY__ASSOCIATION_ENDS,
 				 true,
 				 false,
 				 true,
@@ -86,7 +86,7 @@ public class EntityItemProvider extends EntityOrViewItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PersistencePackage.Literals.ENTITY__ENTITY_FEATURES);
+			childrenFeatures.add(WebGenPersistencePackage.Literals.ENTITY__ENTITY_FEATURES);
 		}
 		return childrenFeatures;
 	}
@@ -142,7 +142,7 @@ public class EntityItemProvider extends EntityOrViewItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Entity.class)) {
-			case PersistencePackage.ENTITY__ENTITY_FEATURES:
+			case WebGenPersistencePackage.ENTITY__ENTITY_FEATURES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -162,43 +162,43 @@ public class EntityItemProvider extends EntityOrViewItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
-				 PersistenceFactory.eINSTANCE.createDataTypeAttribute()));
+				(WebGenPersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createDataTypeAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
-				 PersistenceFactory.eINSTANCE.createDateAttribute()));
+				(WebGenPersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createDateAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
-				 PersistenceFactory.eINSTANCE.createUrlAttribute()));
+				(WebGenPersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createUrlAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
-				 PersistenceFactory.eINSTANCE.createFileAttribute()));
+				(WebGenPersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createFileAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
-				 PersistenceFactory.eINSTANCE.createImageAttribute()));
+				(WebGenPersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createImageAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
-				 PersistenceFactory.eINSTANCE.createLocationAttribute()));
+				(WebGenPersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createLocationAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
-				 PersistenceFactory.eINSTANCE.createAssociationWithoutContainment()));
+				(WebGenPersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createAssociationWithoutContainment()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
-				 PersistenceFactory.eINSTANCE.createAssociationWithContainment()));
+				(WebGenPersistencePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createAssociationWithContainment()));
 	}
 
 }

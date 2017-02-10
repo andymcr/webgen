@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelAssociation;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelAssociation} object.
@@ -65,7 +65,7 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 				 getResourceLocator(),
 				 getString("_UI_ModelLabelAssociation_association_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_association_feature", "_UI_ModelLabelAssociation_type"),
-				 PersistencePackage.Literals.MODEL_LABEL_ASSOCIATION__ASSOCIATION,
+				 WebGenPersistencePackage.Literals.MODEL_LABEL_ASSOCIATION__ASSOCIATION,
 				 true,
 				 false,
 				 true,
@@ -87,7 +87,7 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 				 getResourceLocator(),
 				 getString("_UI_ModelLabelAssociation_dynamicLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_dynamicLabel_feature", "_UI_ModelLabelAssociation_type"),
-				 PersistencePackage.Literals.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL,
+				 WebGenPersistencePackage.Literals.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL,
 				 true,
 				 false,
 				 true,
@@ -109,7 +109,7 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 				 getResourceLocator(),
 				 getString("_UI_ModelLabelAssociation_isSourceAssociation_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_isSourceAssociation_feature", "_UI_ModelLabelAssociation_type"),
-				 PersistencePackage.Literals.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION,
+				 WebGenPersistencePackage.Literals.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION,
 				 false,
 				 false,
 				 false,
@@ -154,7 +154,7 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ModelLabelAssociation.class)) {
-			case PersistencePackage.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+			case WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

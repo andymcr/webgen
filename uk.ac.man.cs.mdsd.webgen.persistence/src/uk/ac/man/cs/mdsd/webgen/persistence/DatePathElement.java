@@ -15,7 +15,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.DatePathElement#getFormat <em>Format</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDatePathElement()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDatePathElement()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface DatePathElement extends PathElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Format</em>' attribute.
 	 * @see #setFormat(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDatePathElement_Format()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDatePathElement_Format()
 	 * @model required="true"
 	 * @generated
 	 */

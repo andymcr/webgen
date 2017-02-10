@@ -16,12 +16,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
+import uk.ac.man.cs.mdsd.webgen.core.impl.NamedDisplayElementImpl;
 import uk.ac.man.cs.mdsd.webgen.persistence.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.persistence.Entity;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.isHasChoices;
 
 /**
@@ -401,7 +401,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.ENTITY_FEATURE;
+		return WebGenPersistencePackage.Literals.ENTITY_FEATURE;
 	}
 
 	/**
@@ -422,7 +422,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		String oldTitle = title;
 		title = newTitle;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__TITLE, oldTitle, title));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -443,7 +443,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		boolean oldCollectionAllowAdd = collectionAllowAdd;
 		collectionAllowAdd = newCollectionAllowAdd;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD, oldCollectionAllowAdd, collectionAllowAdd));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD, oldCollectionAllowAdd, collectionAllowAdd));
 	}
 
 	/**
@@ -464,7 +464,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		boolean oldCollectionAllowRemove = collectionAllowRemove;
 		collectionAllowRemove = newCollectionAllowRemove;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
 	}
 
 	/**
@@ -485,7 +485,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		String oldNullDisplayValue = nullDisplayValue;
 		nullDisplayValue = newNullDisplayValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE, oldNullDisplayValue, nullDisplayValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE, oldNullDisplayValue, nullDisplayValue));
 	}
 
 	/**
@@ -506,7 +506,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		boolean oldEncodeUriKey = encodeUriKey;
 		encodeUriKey = newEncodeUriKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY, oldEncodeUriKey, encodeUriKey));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY, oldEncodeUriKey, encodeUriKey));
 	}
 
 	/**
@@ -516,7 +516,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 */
 	public EList<String> getSerializationGroups() {
 		if (serializationGroups == null) {
-			serializationGroups = new EDataTypeUniqueEList<String>(String.class, this, PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS);
+			serializationGroups = new EDataTypeUniqueEList<String>(String.class, this, WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS);
 		}
 		return serializationGroups;
 	}
@@ -539,7 +539,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		boolean oldSerializationExpose = serializationExpose;
 		serializationExpose = newSerializationExpose;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE, oldSerializationExpose, serializationExpose));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE, oldSerializationExpose, serializationExpose));
 	}
 
 	/**
@@ -560,7 +560,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		String oldHeaderClass = headerClass;
 		headerClass = newHeaderClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__HEADER_CLASS, oldHeaderClass, headerClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__HEADER_CLASS, oldHeaderClass, headerClass));
 	}
 
 	/**
@@ -581,7 +581,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		String oldDisplayClass = displayClass;
 		displayClass = newDisplayClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS, oldDisplayClass, displayClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS, oldDisplayClass, displayClass));
 	}
 
 	/**
@@ -602,7 +602,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		String oldFooterClass = footerClass;
 		footerClass = newFooterClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__FOOTER_CLASS, oldFooterClass, footerClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__FOOTER_CLASS, oldFooterClass, footerClass));
 	}
 
 	/**
@@ -611,7 +611,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * @generated
 	 */
 	public Entity getPartOf() {
-		if (eContainerFeatureID() != PersistencePackage.ENTITY_FEATURE__PART_OF) return null;
+		if (eContainerFeatureID() != WebGenPersistencePackage.ENTITY_FEATURE__PART_OF) return null;
 		return (Entity)eInternalContainer();
 	}
 
@@ -621,7 +621,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * @generated
 	 */
 	public NotificationChain basicSetPartOf(Entity newPartOf, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPartOf, PersistencePackage.ENTITY_FEATURE__PART_OF, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newPartOf, WebGenPersistencePackage.ENTITY_FEATURE__PART_OF, msgs);
 		return msgs;
 	}
 
@@ -631,19 +631,19 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * @generated
 	 */
 	public void setPartOf(Entity newPartOf) {
-		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != PersistencePackage.ENTITY_FEATURE__PART_OF && newPartOf != null)) {
+		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WebGenPersistencePackage.ENTITY_FEATURE__PART_OF && newPartOf != null)) {
 			if (EcoreUtil.isAncestor(this, newPartOf))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPartOf != null)
-				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, PersistencePackage.ENTITY__ENTITY_FEATURES, Entity.class, msgs);
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebGenPersistencePackage.ENTITY__ENTITY_FEATURES, Entity.class, msgs);
 			msgs = basicSetPartOf(newPartOf, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__PART_OF, newPartOf, newPartOf));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__PART_OF, newPartOf, newPartOf));
 	}
 
 	/**
@@ -664,7 +664,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		Cardinality oldCardinality = cardinality;
 		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__CARDINALITY, oldCardinality, cardinality));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__CARDINALITY, oldCardinality, cardinality));
 	}
 
 	/**
@@ -685,7 +685,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		boolean oldUnique = unique;
 		unique = newUnique;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__UNIQUE, oldUnique, unique));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__UNIQUE, oldUnique, unique));
 	}
 
 	/**
@@ -706,7 +706,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		boolean oldOrdered = ordered;
 		ordered = newOrdered;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__ORDERED, oldOrdered, ordered));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__ORDERED, oldOrdered, ordered));
 	}
 
 	/**
@@ -727,7 +727,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		isHasChoices oldBooleanIsHasChoice = booleanIsHasChoice;
 		booleanIsHasChoice = newBooleanIsHasChoice == null ? BOOLEAN_IS_HAS_CHOICE_EDEFAULT : newBooleanIsHasChoice;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE, oldBooleanIsHasChoice, booleanIsHasChoice));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE, oldBooleanIsHasChoice, booleanIsHasChoice));
 	}
 
 	/**
@@ -748,7 +748,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		String oldSingletonName = singletonName;
 		singletonName = newSingletonName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__SINGLETON_NAME, oldSingletonName, singletonName));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__SINGLETON_NAME, oldSingletonName, singletonName));
 	}
 
 	/**
@@ -769,7 +769,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		String oldPluralisedName = pluralisedName;
 		pluralisedName = newPluralisedName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__PLURALISED_NAME, oldPluralisedName, pluralisedName));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__PLURALISED_NAME, oldPluralisedName, pluralisedName));
 	}
 
 	/**
@@ -790,7 +790,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		String oldColumnName = columnName;
 		columnName = newColumnName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__COLUMN_NAME, oldColumnName, columnName));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_FEATURE__COLUMN_NAME, oldColumnName, columnName));
 	}
 
 	/**
@@ -801,7 +801,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_FEATURE__PART_OF:
+			case WebGenPersistencePackage.ENTITY_FEATURE__PART_OF:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetPartOf((Entity)otherEnd, msgs);
@@ -817,7 +817,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_FEATURE__PART_OF:
+			case WebGenPersistencePackage.ENTITY_FEATURE__PART_OF:
 				return basicSetPartOf(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -831,8 +831,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case PersistencePackage.ENTITY_FEATURE__PART_OF:
-				return eInternalContainer().eInverseRemove(this, PersistencePackage.ENTITY__ENTITY_FEATURES, Entity.class, msgs);
+			case WebGenPersistencePackage.ENTITY_FEATURE__PART_OF:
+				return eInternalContainer().eInverseRemove(this, WebGenPersistencePackage.ENTITY__ENTITY_FEATURES, Entity.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -845,41 +845,41 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_FEATURE__TITLE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__TITLE:
 				return getTitle();
-			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
 				return isCollectionAllowAdd();
-			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 				return isCollectionAllowRemove();
-			case PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
 				return getNullDisplayValue();
-			case PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 				return isEncodeUriKey();
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
 				return getSerializationGroups();
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
 				return isSerializationExpose();
-			case PersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
 				return getHeaderClass();
-			case PersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS:
 				return getDisplayClass();
-			case PersistencePackage.ENTITY_FEATURE__FOOTER_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__FOOTER_CLASS:
 				return getFooterClass();
-			case PersistencePackage.ENTITY_FEATURE__PART_OF:
+			case WebGenPersistencePackage.ENTITY_FEATURE__PART_OF:
 				return getPartOf();
-			case PersistencePackage.ENTITY_FEATURE__CARDINALITY:
+			case WebGenPersistencePackage.ENTITY_FEATURE__CARDINALITY:
 				return getCardinality();
-			case PersistencePackage.ENTITY_FEATURE__UNIQUE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__UNIQUE:
 				return isUnique();
-			case PersistencePackage.ENTITY_FEATURE__ORDERED:
+			case WebGenPersistencePackage.ENTITY_FEATURE__ORDERED:
 				return isOrdered();
-			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				return getBooleanIsHasChoice();
-			case PersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
 				return getSingletonName();
-			case PersistencePackage.ENTITY_FEATURE__PLURALISED_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__PLURALISED_NAME:
 				return getPluralisedName();
-			case PersistencePackage.ENTITY_FEATURE__COLUMN_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLUMN_NAME:
 				return getColumnName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -894,59 +894,59 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_FEATURE__TITLE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__TITLE:
 				setTitle((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
 				setCollectionAllowAdd((Boolean)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove((Boolean)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 				setEncodeUriKey((Boolean)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
 				getSerializationGroups().clear();
 				getSerializationGroups().addAll((Collection<? extends String>)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
 				setSerializationExpose((Boolean)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
 				setHeaderClass((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS:
 				setDisplayClass((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__FOOTER_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__FOOTER_CLASS:
 				setFooterClass((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__PART_OF:
+			case WebGenPersistencePackage.ENTITY_FEATURE__PART_OF:
 				setPartOf((Entity)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__CARDINALITY:
+			case WebGenPersistencePackage.ENTITY_FEATURE__CARDINALITY:
 				setCardinality((Cardinality)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__UNIQUE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__UNIQUE:
 				setUnique((Boolean)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__ORDERED:
+			case WebGenPersistencePackage.ENTITY_FEATURE__ORDERED:
 				setOrdered((Boolean)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				setBooleanIsHasChoice((isHasChoices)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
 				setSingletonName((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__PLURALISED_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__PLURALISED_NAME:
 				setPluralisedName((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__COLUMN_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLUMN_NAME:
 				setColumnName((String)newValue);
 				return;
 		}
@@ -961,58 +961,58 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_FEATURE__TITLE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
 				setCollectionAllowAdd(COLLECTION_ALLOW_ADD_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
 				getSerializationGroups().clear();
 				return;
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
 				setSerializationExpose(SERIALIZATION_EXPOSE_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
 				setHeaderClass(HEADER_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS:
 				setDisplayClass(DISPLAY_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__FOOTER_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__FOOTER_CLASS:
 				setFooterClass(FOOTER_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__PART_OF:
+			case WebGenPersistencePackage.ENTITY_FEATURE__PART_OF:
 				setPartOf((Entity)null);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__CARDINALITY:
+			case WebGenPersistencePackage.ENTITY_FEATURE__CARDINALITY:
 				setCardinality(CARDINALITY_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__UNIQUE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__UNIQUE:
 				setUnique(UNIQUE_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__ORDERED:
+			case WebGenPersistencePackage.ENTITY_FEATURE__ORDERED:
 				setOrdered(ORDERED_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				setBooleanIsHasChoice(BOOLEAN_IS_HAS_CHOICE_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
 				setSingletonName(SINGLETON_NAME_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__PLURALISED_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__PLURALISED_NAME:
 				setPluralisedName(PLURALISED_NAME_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__COLUMN_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLUMN_NAME:
 				setColumnName(COLUMN_NAME_EDEFAULT);
 				return;
 		}
@@ -1027,41 +1027,41 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_FEATURE__TITLE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
 				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
-			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
-			case PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
 				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
-			case PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
 				return serializationGroups != null && !serializationGroups.isEmpty();
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
 				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
-			case PersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
 				return HEADER_CLASS_EDEFAULT == null ? headerClass != null : !HEADER_CLASS_EDEFAULT.equals(headerClass);
-			case PersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS:
 				return DISPLAY_CLASS_EDEFAULT == null ? displayClass != null : !DISPLAY_CLASS_EDEFAULT.equals(displayClass);
-			case PersistencePackage.ENTITY_FEATURE__FOOTER_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__FOOTER_CLASS:
 				return FOOTER_CLASS_EDEFAULT == null ? footerClass != null : !FOOTER_CLASS_EDEFAULT.equals(footerClass);
-			case PersistencePackage.ENTITY_FEATURE__PART_OF:
+			case WebGenPersistencePackage.ENTITY_FEATURE__PART_OF:
 				return getPartOf() != null;
-			case PersistencePackage.ENTITY_FEATURE__CARDINALITY:
+			case WebGenPersistencePackage.ENTITY_FEATURE__CARDINALITY:
 				return cardinality != CARDINALITY_EDEFAULT;
-			case PersistencePackage.ENTITY_FEATURE__UNIQUE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__UNIQUE:
 				return unique != UNIQUE_EDEFAULT;
-			case PersistencePackage.ENTITY_FEATURE__ORDERED:
+			case WebGenPersistencePackage.ENTITY_FEATURE__ORDERED:
 				return ordered != ORDERED_EDEFAULT;
-			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				return booleanIsHasChoice != BOOLEAN_IS_HAS_CHOICE_EDEFAULT;
-			case PersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
 				return SINGLETON_NAME_EDEFAULT == null ? singletonName != null : !SINGLETON_NAME_EDEFAULT.equals(singletonName);
-			case PersistencePackage.ENTITY_FEATURE__PLURALISED_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__PLURALISED_NAME:
 				return PLURALISED_NAME_EDEFAULT == null ? pluralisedName != null : !PLURALISED_NAME_EDEFAULT.equals(pluralisedName);
-			case PersistencePackage.ENTITY_FEATURE__COLUMN_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLUMN_NAME:
 				return COLUMN_NAME_EDEFAULT == null ? columnName != null : !COLUMN_NAME_EDEFAULT.equals(columnName);
 		}
 		return super.eIsSet(featureID);
@@ -1076,16 +1076,16 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Feature.class) {
 			switch (derivedFeatureID) {
-				case PersistencePackage.ENTITY_FEATURE__TITLE: return PersistencePackage.FEATURE__TITLE;
-				case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD: return PersistencePackage.FEATURE__COLLECTION_ALLOW_ADD;
-				case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE: return PersistencePackage.FEATURE__COLLECTION_ALLOW_REMOVE;
-				case PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE: return PersistencePackage.FEATURE__NULL_DISPLAY_VALUE;
-				case PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY: return PersistencePackage.FEATURE__ENCODE_URI_KEY;
-				case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS: return PersistencePackage.FEATURE__SERIALIZATION_GROUPS;
-				case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE: return PersistencePackage.FEATURE__SERIALIZATION_EXPOSE;
-				case PersistencePackage.ENTITY_FEATURE__HEADER_CLASS: return PersistencePackage.FEATURE__HEADER_CLASS;
-				case PersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS: return PersistencePackage.FEATURE__DISPLAY_CLASS;
-				case PersistencePackage.ENTITY_FEATURE__FOOTER_CLASS: return PersistencePackage.FEATURE__FOOTER_CLASS;
+				case WebGenPersistencePackage.ENTITY_FEATURE__TITLE: return WebGenPersistencePackage.FEATURE__TITLE;
+				case WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD: return WebGenPersistencePackage.FEATURE__COLLECTION_ALLOW_ADD;
+				case WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE: return WebGenPersistencePackage.FEATURE__COLLECTION_ALLOW_REMOVE;
+				case WebGenPersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE: return WebGenPersistencePackage.FEATURE__NULL_DISPLAY_VALUE;
+				case WebGenPersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY: return WebGenPersistencePackage.FEATURE__ENCODE_URI_KEY;
+				case WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS: return WebGenPersistencePackage.FEATURE__SERIALIZATION_GROUPS;
+				case WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE: return WebGenPersistencePackage.FEATURE__SERIALIZATION_EXPOSE;
+				case WebGenPersistencePackage.ENTITY_FEATURE__HEADER_CLASS: return WebGenPersistencePackage.FEATURE__HEADER_CLASS;
+				case WebGenPersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS: return WebGenPersistencePackage.FEATURE__DISPLAY_CLASS;
+				case WebGenPersistencePackage.ENTITY_FEATURE__FOOTER_CLASS: return WebGenPersistencePackage.FEATURE__FOOTER_CLASS;
 				default: return -1;
 			}
 		}
@@ -1101,16 +1101,16 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Feature.class) {
 			switch (baseFeatureID) {
-				case PersistencePackage.FEATURE__TITLE: return PersistencePackage.ENTITY_FEATURE__TITLE;
-				case PersistencePackage.FEATURE__COLLECTION_ALLOW_ADD: return PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD;
-				case PersistencePackage.FEATURE__COLLECTION_ALLOW_REMOVE: return PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
-				case PersistencePackage.FEATURE__NULL_DISPLAY_VALUE: return PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE;
-				case PersistencePackage.FEATURE__ENCODE_URI_KEY: return PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY;
-				case PersistencePackage.FEATURE__SERIALIZATION_GROUPS: return PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS;
-				case PersistencePackage.FEATURE__SERIALIZATION_EXPOSE: return PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE;
-				case PersistencePackage.FEATURE__HEADER_CLASS: return PersistencePackage.ENTITY_FEATURE__HEADER_CLASS;
-				case PersistencePackage.FEATURE__DISPLAY_CLASS: return PersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS;
-				case PersistencePackage.FEATURE__FOOTER_CLASS: return PersistencePackage.ENTITY_FEATURE__FOOTER_CLASS;
+				case WebGenPersistencePackage.FEATURE__TITLE: return WebGenPersistencePackage.ENTITY_FEATURE__TITLE;
+				case WebGenPersistencePackage.FEATURE__COLLECTION_ALLOW_ADD: return WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD;
+				case WebGenPersistencePackage.FEATURE__COLLECTION_ALLOW_REMOVE: return WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
+				case WebGenPersistencePackage.FEATURE__NULL_DISPLAY_VALUE: return WebGenPersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE;
+				case WebGenPersistencePackage.FEATURE__ENCODE_URI_KEY: return WebGenPersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY;
+				case WebGenPersistencePackage.FEATURE__SERIALIZATION_GROUPS: return WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS;
+				case WebGenPersistencePackage.FEATURE__SERIALIZATION_EXPOSE: return WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE;
+				case WebGenPersistencePackage.FEATURE__HEADER_CLASS: return WebGenPersistencePackage.ENTITY_FEATURE__HEADER_CLASS;
+				case WebGenPersistencePackage.FEATURE__DISPLAY_CLASS: return WebGenPersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS;
+				case WebGenPersistencePackage.FEATURE__FOOTER_CLASS: return WebGenPersistencePackage.ENTITY_FEATURE__FOOTER_CLASS;
 				default: return -1;
 			}
 		}

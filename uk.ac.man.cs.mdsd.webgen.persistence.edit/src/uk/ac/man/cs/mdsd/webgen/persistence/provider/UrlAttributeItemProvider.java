@@ -13,9 +13,8 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.UrlAttribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.UrlAttribute} object.
@@ -63,7 +62,7 @@ public class UrlAttributeItemProvider extends EntityAttributeItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_UrlAttribute_displayValue_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UrlAttribute_displayValue_feature", "_UI_UrlAttribute_type"),
-				 PersistencePackage.Literals.URL_ATTRIBUTE__DISPLAY_VALUE,
+				 WebGenPersistencePackage.Literals.URL_ATTRIBUTE__DISPLAY_VALUE,
 				 true,
 				 false,
 				 false,
@@ -110,7 +109,7 @@ public class UrlAttributeItemProvider extends EntityAttributeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UrlAttribute.class)) {
-			case PersistencePackage.URL_ATTRIBUTE__DISPLAY_VALUE:
+			case WebGenPersistencePackage.URL_ATTRIBUTE__DISPLAY_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

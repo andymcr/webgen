@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ResourceAttribute#getUploadPath <em>Upload Path</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getResourceAttribute()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getResourceAttribute()
  * @model abstract="true"
  * @generated
  */
@@ -36,7 +36,7 @@ public interface ResourceAttribute extends EntityAttribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Maximum Upload Size</em>' attribute.
 	 * @see #setMaximumUploadSize(int)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getResourceAttribute_MaximumUploadSize()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getResourceAttribute_MaximumUploadSize()
 	 * @model default="-1" ordered="false"
 	 * @generated
 	 */
@@ -62,7 +62,7 @@ public interface ResourceAttribute extends EntityAttribute {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Valid Upload Mime Types</em>' attribute list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getResourceAttribute_ValidUploadMimeTypes()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getResourceAttribute_ValidUploadMimeTypes()
 	 * @model ordered="false"
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface ResourceAttribute extends EntityAttribute {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Valid Upload Extensions</em>' attribute list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getResourceAttribute_ValidUploadExtensions()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getResourceAttribute_ValidUploadExtensions()
 	 * @model ordered="false"
 	 * @generated
 	 */
@@ -94,7 +94,7 @@ public interface ResourceAttribute extends EntityAttribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Uploads Within Website</em>' attribute.
 	 * @see #setUploadsWithinWebsite(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getResourceAttribute_UploadsWithinWebsite()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getResourceAttribute_UploadsWithinWebsite()
 	 * @model ordered="false"
 	 * @generated
 	 */
@@ -120,7 +120,7 @@ public interface ResourceAttribute extends EntityAttribute {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Upload Path</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getResourceAttribute_UploadPath()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getResourceAttribute_UploadPath()
 	 * @model containment="true"
 	 * @generated
 	 */

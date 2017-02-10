@@ -15,7 +15,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,7 +115,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ATTRIBUTE__NAME).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ENCAPSULATED_ATTRIBUTE__NAME).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
@@ -135,7 +135,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate CARDINALITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ATTRIBUTE__CARDINALITY).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate CARDINALITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ENCAPSULATED_ATTRIBUTE__CARDINALITY).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,7 +153,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.ENCAPSULATED_ATTRIBUTE;
+		return WebGenPersistencePackage.Literals.ENCAPSULATED_ATTRIBUTE;
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		Expression oldDefaultValue = defaultValue;
 		defaultValue = newDefaultValue;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE, oldDefaultValue, newDefaultValue);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE, oldDefaultValue, newDefaultValue);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -189,14 +189,14 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		if (newDefaultValue != defaultValue) {
 			NotificationChain msgs = null;
 			if (defaultValue != null)
-				msgs = ((InternalEObject)defaultValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE, null, msgs);
+				msgs = ((InternalEObject)defaultValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE, null, msgs);
 			if (newDefaultValue != null)
-				msgs = ((InternalEObject)newDefaultValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE, null, msgs);
+				msgs = ((InternalEObject)newDefaultValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE, null, msgs);
 			msgs = basicSetDefaultValue(newDefaultValue, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE, newDefaultValue, newDefaultValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE, newDefaultValue, newDefaultValue));
 	}
 
 	/**
@@ -217,7 +217,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		String oldPlaceholder = placeholder;
 		placeholder = newPlaceholder;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER, oldPlaceholder, placeholder));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER, oldPlaceholder, placeholder));
 	}
 
 	/**
@@ -238,7 +238,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		String oldValidationPattern = validationPattern;
 		validationPattern = newValidationPattern;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN, oldValidationPattern, validationPattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN, oldValidationPattern, validationPattern));
 	}
 
 	/**
@@ -259,7 +259,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		String oldInputClass = inputClass;
 		inputClass = newInputClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS, oldInputClass, inputClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS, oldInputClass, inputClass));
 	}
 
 	/**
@@ -282,7 +282,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 			attribute = (Attribute)eResolveProxy(oldAttribute);
 			if (attribute != oldAttribute) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
 			}
 		}
 		return attribute;
@@ -306,7 +306,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		Attribute oldAttribute = attribute;
 		attribute = newAttribute;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
 	}
 
 	/**
@@ -335,7 +335,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
 				return basicSetDefaultValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -349,20 +349,20 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
 				return getDefaultValue();
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER:
 				return getPlaceholder();
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN:
 				return getValidationPattern();
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
 				return getInputClass();
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__NAME:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__NAME:
 				return getName();
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE:
 				if (resolve) return getAttribute();
 				return basicGetAttribute();
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__CARDINALITY:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__CARDINALITY:
 				return getCardinality();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -376,22 +376,22 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue((Expression)newValue);
 				return;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER:
 				setPlaceholder((String)newValue);
 				return;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN:
 				setValidationPattern((String)newValue);
 				return;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
 				setInputClass((String)newValue);
 				return;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)newValue);
 				return;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__CARDINALITY:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__CARDINALITY:
 				setCardinality((Cardinality)newValue);
 				return;
 		}
@@ -406,22 +406,22 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue((Expression)null);
 				return;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN:
 				setValidationPattern(VALIDATION_PATTERN_EDEFAULT);
 				return;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)null);
 				return;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__CARDINALITY:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__CARDINALITY:
 				CARDINALITY__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
 		}
@@ -436,19 +436,19 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
 				return defaultValue != null;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN:
 				return VALIDATION_PATTERN_EDEFAULT == null ? validationPattern != null : !VALIDATION_PATTERN_EDEFAULT.equals(validationPattern);
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__NAME:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__NAME:
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE:
 				return attribute != null;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__CARDINALITY:
+			case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__CARDINALITY:
 				return CARDINALITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
@@ -468,10 +468,10 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		}
 		if (baseClass == Attribute.class) {
 			switch (derivedFeatureID) {
-				case PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE: return PersistencePackage.ATTRIBUTE__DEFAULT_VALUE;
-				case PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER: return PersistencePackage.ATTRIBUTE__PLACEHOLDER;
-				case PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN: return PersistencePackage.ATTRIBUTE__VALIDATION_PATTERN;
-				case PersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS: return PersistencePackage.ATTRIBUTE__INPUT_CLASS;
+				case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE: return WebGenPersistencePackage.ATTRIBUTE__DEFAULT_VALUE;
+				case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER: return WebGenPersistencePackage.ATTRIBUTE__PLACEHOLDER;
+				case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN: return WebGenPersistencePackage.ATTRIBUTE__VALIDATION_PATTERN;
+				case WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS: return WebGenPersistencePackage.ATTRIBUTE__INPUT_CLASS;
 				default: return -1;
 			}
 		}
@@ -492,10 +492,10 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		}
 		if (baseClass == Attribute.class) {
 			switch (baseFeatureID) {
-				case PersistencePackage.ATTRIBUTE__DEFAULT_VALUE: return PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE;
-				case PersistencePackage.ATTRIBUTE__PLACEHOLDER: return PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER;
-				case PersistencePackage.ATTRIBUTE__VALIDATION_PATTERN: return PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN;
-				case PersistencePackage.ATTRIBUTE__INPUT_CLASS: return PersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS;
+				case WebGenPersistencePackage.ATTRIBUTE__DEFAULT_VALUE: return WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE;
+				case WebGenPersistencePackage.ATTRIBUTE__PLACEHOLDER: return WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER;
+				case WebGenPersistencePackage.ATTRIBUTE__VALIDATION_PATTERN: return WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN;
+				case WebGenPersistencePackage.ATTRIBUTE__INPUT_CLASS: return WebGenPersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS;
 				default: return -1;
 			}
 		}

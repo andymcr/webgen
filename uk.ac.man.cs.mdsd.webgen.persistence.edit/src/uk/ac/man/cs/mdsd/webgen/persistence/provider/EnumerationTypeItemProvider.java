@@ -15,8 +15,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.EnumerationType;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistenceFactory;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.EnumerationType} object.
@@ -62,7 +62,7 @@ public class EnumerationTypeItemProvider extends DataTypeItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PersistencePackage.Literals.ENUMERATION_TYPE__ENUMERATIONS);
+			childrenFeatures.add(WebGenPersistencePackage.Literals.ENUMERATION_TYPE__ENUMERATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -118,7 +118,7 @@ public class EnumerationTypeItemProvider extends DataTypeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EnumerationType.class)) {
-			case PersistencePackage.ENUMERATION_TYPE__ENUMERATIONS:
+			case WebGenPersistencePackage.ENUMERATION_TYPE__ENUMERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -138,8 +138,8 @@ public class EnumerationTypeItemProvider extends DataTypeItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ENUMERATION_TYPE__ENUMERATIONS,
-				 PersistenceFactory.eINSTANCE.createEnumerationLiteral()));
+				(WebGenPersistencePackage.Literals.ENUMERATION_TYPE__ENUMERATIONS,
+				 WebGenPersistenceFactory.eINSTANCE.createEnumerationLiteral()));
 	}
 
 }

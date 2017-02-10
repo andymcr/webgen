@@ -15,7 +15,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.UrlAttribute#getDisplayValue <em>Display Value</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getUrlAttribute()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getUrlAttribute()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface UrlAttribute extends EntityAttribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Display Value</em>' attribute.
 	 * @see #setDisplayValue(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getUrlAttribute_DisplayValue()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getUrlAttribute_DisplayValue()
 	 * @model
 	 * @generated
 	 */

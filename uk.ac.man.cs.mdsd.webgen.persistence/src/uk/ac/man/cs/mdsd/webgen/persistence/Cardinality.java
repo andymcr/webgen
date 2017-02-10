@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Cardinality</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getCardinality()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getCardinality()
  * @model
  * @generated
  */

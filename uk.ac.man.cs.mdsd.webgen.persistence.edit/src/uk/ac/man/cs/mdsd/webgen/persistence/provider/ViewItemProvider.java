@@ -14,10 +14,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.View;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistenceFactory;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.View} object.
@@ -65,7 +64,7 @@ public class ViewItemProvider extends EntityOrViewItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_View_encapsulates_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_View_encapsulates_feature", "_UI_View_type"),
-				 PersistencePackage.Literals.VIEW__ENCAPSULATES,
+				 WebGenPersistencePackage.Literals.VIEW__ENCAPSULATES,
 				 true,
 				 false,
 				 true,
@@ -86,7 +85,7 @@ public class ViewItemProvider extends EntityOrViewItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PersistencePackage.Literals.VIEW__VIEW_FEATURES);
+			childrenFeatures.add(WebGenPersistencePackage.Literals.VIEW__VIEW_FEATURES);
 		}
 		return childrenFeatures;
 	}
@@ -142,7 +141,7 @@ public class ViewItemProvider extends EntityOrViewItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(View.class)) {
-			case PersistencePackage.VIEW__VIEW_FEATURES:
+			case WebGenPersistencePackage.VIEW__VIEW_FEATURES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -162,23 +161,23 @@ public class ViewItemProvider extends EntityOrViewItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.VIEW__VIEW_FEATURES,
-				 PersistenceFactory.eINSTANCE.createEncapsulatedFeature()));
+				(WebGenPersistencePackage.Literals.VIEW__VIEW_FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createEncapsulatedFeature()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.VIEW__VIEW_FEATURES,
-				 PersistenceFactory.eINSTANCE.createEncapsulatedAttribute()));
+				(WebGenPersistencePackage.Literals.VIEW__VIEW_FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createEncapsulatedAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.VIEW__VIEW_FEATURES,
-				 PersistenceFactory.eINSTANCE.createEncapsulatedAssociation()));
+				(WebGenPersistencePackage.Literals.VIEW__VIEW_FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createEncapsulatedAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.VIEW__VIEW_FEATURES,
-				 PersistenceFactory.eINSTANCE.createViewAssociation()));
+				(WebGenPersistencePackage.Literals.VIEW__VIEW_FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createViewAssociation()));
 	}
 
 }

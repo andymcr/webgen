@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getClassifiers <em>Classifiers</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getPersistence()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getPersistence()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='classifierNameUnique'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL classifierNameUnique='classifiers->isUnique(name)'"
  * @generated
@@ -34,7 +34,7 @@ public interface Persistence extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Classifiers</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getPersistence_Classifiers()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getPersistence_Classifiers()
 	 * @model containment="true"
 	 * @generated
 	 */

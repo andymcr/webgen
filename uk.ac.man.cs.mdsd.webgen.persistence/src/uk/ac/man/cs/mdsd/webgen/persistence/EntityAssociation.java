@@ -26,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetFooterClass <em>Target Footer Class</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAssociation()
  * @model abstract="true"
  * @generated
  */
@@ -42,7 +42,7 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Keys</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_Keys()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAssociation_Keys()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.AssociationKey#getKeyFor
 	 * @model opposite="keyFor" containment="true"
 	 * @generated
@@ -60,7 +60,7 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Entity</em>' reference.
 	 * @see #setTargetEntity(Entity)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_TargetEntity()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAssociation_TargetEntity()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Entity#getAssociationEnds
 	 * @model opposite="associationEnds" required="true"
 	 * @generated
@@ -88,7 +88,7 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bidirectional</em>' attribute.
 	 * @see #setBidirectional(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_Bidirectional()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAssociation_Bidirectional()
 	 * @model default="false" required="true"
 	 * @generated
 	 */
@@ -114,7 +114,7 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Pivot Table Name</em>' attribute.
 	 * @see #setPivotTableName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_PivotTableName()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAssociation_PivotTableName()
 	 * @model
 	 * @generated
 	 */
@@ -140,7 +140,7 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Feature Name</em>' attribute.
 	 * @see #setTargetFeatureName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_TargetFeatureName()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAssociation_TargetFeatureName()
 	 * @model
 	 * @generated
 	 */
@@ -166,7 +166,7 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Primary Key</em>' attribute.
 	 * @see #setTargetPrimaryKey(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_TargetPrimaryKey()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAssociation_TargetPrimaryKey()
 	 * @model
 	 * @generated
 	 */
@@ -192,7 +192,7 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Display Label</em>' attribute.
 	 * @see #setTargetDisplayLabel(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_TargetDisplayLabel()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAssociation_TargetDisplayLabel()
 	 * @model
 	 * @generated
 	 */
@@ -218,7 +218,7 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Header Class</em>' attribute.
 	 * @see #setTargetHeaderClass(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_TargetHeaderClass()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAssociation_TargetHeaderClass()
 	 * @model
 	 * @generated
 	 */
@@ -245,7 +245,7 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Input Class</em>' attribute.
 	 * @see #setTargetInputClass(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_TargetInputClass()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAssociation_TargetInputClass()
 	 * @model default="input_association"
 	 * @generated
 	 */
@@ -271,7 +271,7 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Display Class</em>' attribute.
 	 * @see #setTargetDisplayClass(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_TargetDisplayClass()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAssociation_TargetDisplayClass()
 	 * @model
 	 * @generated
 	 */
@@ -297,7 +297,7 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Footer Class</em>' attribute.
 	 * @see #setTargetFooterClass(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_TargetFooterClass()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAssociation_TargetFooterClass()
 	 * @model
 	 * @generated
 	 */

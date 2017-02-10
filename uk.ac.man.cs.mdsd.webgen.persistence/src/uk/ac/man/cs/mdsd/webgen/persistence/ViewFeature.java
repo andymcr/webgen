@@ -15,7 +15,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ViewFeature#getPartOf <em>Part Of</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getViewFeature()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getViewFeature()
  * @model abstract="true"
  * @generated
  */
@@ -31,7 +31,7 @@ public interface ViewFeature extends Feature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Part Of</em>' container reference.
 	 * @see #setPartOf(View)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getViewFeature_PartOf()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getViewFeature_PartOf()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.View#getViewFeatures
 	 * @model opposite="viewFeatures" required="true" transient="false"
 	 * @generated

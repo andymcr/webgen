@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithContainment;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithContainment} object.
@@ -63,7 +63,7 @@ public class AssociationWithContainmentItemProvider extends EntityAssociationIte
 				 getResourceLocator(),
 				 getString("_UI_AssociationWithContainment_sourceVisible_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationWithContainment_sourceVisible_feature", "_UI_AssociationWithContainment_type"),
-				 PersistencePackage.Literals.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE,
+				 WebGenPersistencePackage.Literals.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE,
 				 true,
 				 false,
 				 false,
@@ -110,7 +110,7 @@ public class AssociationWithContainmentItemProvider extends EntityAssociationIte
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AssociationWithContainment.class)) {
-			case PersistencePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
+			case WebGenPersistencePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

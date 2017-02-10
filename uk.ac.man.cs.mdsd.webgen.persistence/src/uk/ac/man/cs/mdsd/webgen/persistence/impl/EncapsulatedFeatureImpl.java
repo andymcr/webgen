@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedFeature;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -103,7 +103,7 @@ public class EncapsulatedFeatureImpl extends ViewFeatureImpl implements Encapsul
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.ENCAPSULATED_FEATURE;
+		return WebGenPersistencePackage.Literals.ENCAPSULATED_FEATURE;
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class EncapsulatedFeatureImpl extends ViewFeatureImpl implements Encapsul
 		String oldDisplayLabel = displayLabel;
 		displayLabel = newDisplayLabel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_FEATURE__DISPLAY_LABEL, oldDisplayLabel, displayLabel));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_FEATURE__DISPLAY_LABEL, oldDisplayLabel, displayLabel));
 	}
 
 	/**
@@ -145,7 +145,7 @@ public class EncapsulatedFeatureImpl extends ViewFeatureImpl implements Encapsul
 		String oldAlias = alias;
 		alias = newAlias;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_FEATURE__ALIAS, oldAlias, alias));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_FEATURE__ALIAS, oldAlias, alias));
 	}
 
 	/**
@@ -166,7 +166,7 @@ public class EncapsulatedFeatureImpl extends ViewFeatureImpl implements Encapsul
 		String oldColumnName = columnName;
 		columnName = newColumnName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_FEATURE__COLUMN_NAME, oldColumnName, columnName));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENCAPSULATED_FEATURE__COLUMN_NAME, oldColumnName, columnName));
 	}
 
 	/**
@@ -177,11 +177,11 @@ public class EncapsulatedFeatureImpl extends ViewFeatureImpl implements Encapsul
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_FEATURE__DISPLAY_LABEL:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__DISPLAY_LABEL:
 				return getDisplayLabel();
-			case PersistencePackage.ENCAPSULATED_FEATURE__ALIAS:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__ALIAS:
 				return getAlias();
-			case PersistencePackage.ENCAPSULATED_FEATURE__COLUMN_NAME:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__COLUMN_NAME:
 				return getColumnName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -195,13 +195,13 @@ public class EncapsulatedFeatureImpl extends ViewFeatureImpl implements Encapsul
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_FEATURE__DISPLAY_LABEL:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__DISPLAY_LABEL:
 				setDisplayLabel((String)newValue);
 				return;
-			case PersistencePackage.ENCAPSULATED_FEATURE__ALIAS:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__ALIAS:
 				setAlias((String)newValue);
 				return;
-			case PersistencePackage.ENCAPSULATED_FEATURE__COLUMN_NAME:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__COLUMN_NAME:
 				setColumnName((String)newValue);
 				return;
 		}
@@ -216,13 +216,13 @@ public class EncapsulatedFeatureImpl extends ViewFeatureImpl implements Encapsul
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_FEATURE__DISPLAY_LABEL:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__DISPLAY_LABEL:
 				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
 				return;
-			case PersistencePackage.ENCAPSULATED_FEATURE__ALIAS:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__ALIAS:
 				setAlias(ALIAS_EDEFAULT);
 				return;
-			case PersistencePackage.ENCAPSULATED_FEATURE__COLUMN_NAME:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__COLUMN_NAME:
 				setColumnName(COLUMN_NAME_EDEFAULT);
 				return;
 		}
@@ -237,11 +237,11 @@ public class EncapsulatedFeatureImpl extends ViewFeatureImpl implements Encapsul
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENCAPSULATED_FEATURE__DISPLAY_LABEL:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__DISPLAY_LABEL:
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
-			case PersistencePackage.ENCAPSULATED_FEATURE__ALIAS:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__ALIAS:
 				return ALIAS_EDEFAULT == null ? alias != null : !ALIAS_EDEFAULT.equals(alias);
-			case PersistencePackage.ENCAPSULATED_FEATURE__COLUMN_NAME:
+			case WebGenPersistencePackage.ENCAPSULATED_FEATURE__COLUMN_NAME:
 				return COLUMN_NAME_EDEFAULT == null ? columnName != null : !COLUMN_NAME_EDEFAULT.equals(columnName);
 		}
 		return super.eIsSet(featureID);

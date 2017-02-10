@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.persistence.Entity;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.ENTITY;
+		return WebGenPersistencePackage.Literals.ENTITY;
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	 */
 	public EList<EntityFeature> getEntityFeatures() {
 		if (entityFeatures == null) {
-			entityFeatures = new EObjectContainmentWithInverseEList<EntityFeature>(EntityFeature.class, this, PersistencePackage.ENTITY__ENTITY_FEATURES, PersistencePackage.ENTITY_FEATURE__PART_OF);
+			entityFeatures = new EObjectContainmentWithInverseEList<EntityFeature>(EntityFeature.class, this, WebGenPersistencePackage.ENTITY__ENTITY_FEATURES, WebGenPersistencePackage.ENTITY_FEATURE__PART_OF);
 		}
 		return entityFeatures;
 	}
@@ -93,7 +93,7 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	 */
 	public EList<EntityAssociation> getAssociationEnds() {
 		if (associationEnds == null) {
-			associationEnds = new EObjectWithInverseResolvingEList<EntityAssociation>(EntityAssociation.class, this, PersistencePackage.ENTITY__ASSOCIATION_ENDS, PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY);
+			associationEnds = new EObjectWithInverseResolvingEList<EntityAssociation>(EntityAssociation.class, this, WebGenPersistencePackage.ENTITY__ASSOCIATION_ENDS, WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY);
 		}
 		return associationEnds;
 	}
@@ -107,9 +107,9 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY__ENTITY_FEATURES:
+			case WebGenPersistencePackage.ENTITY__ENTITY_FEATURES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEntityFeatures()).basicAdd(otherEnd, msgs);
-			case PersistencePackage.ENTITY__ASSOCIATION_ENDS:
+			case WebGenPersistencePackage.ENTITY__ASSOCIATION_ENDS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAssociationEnds()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -123,9 +123,9 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY__ENTITY_FEATURES:
+			case WebGenPersistencePackage.ENTITY__ENTITY_FEATURES:
 				return ((InternalEList<?>)getEntityFeatures()).basicRemove(otherEnd, msgs);
-			case PersistencePackage.ENTITY__ASSOCIATION_ENDS:
+			case WebGenPersistencePackage.ENTITY__ASSOCIATION_ENDS:
 				return ((InternalEList<?>)getAssociationEnds()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -139,9 +139,9 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY__ENTITY_FEATURES:
+			case WebGenPersistencePackage.ENTITY__ENTITY_FEATURES:
 				return getEntityFeatures();
-			case PersistencePackage.ENTITY__ASSOCIATION_ENDS:
+			case WebGenPersistencePackage.ENTITY__ASSOCIATION_ENDS:
 				return getAssociationEnds();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -156,11 +156,11 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY__ENTITY_FEATURES:
+			case WebGenPersistencePackage.ENTITY__ENTITY_FEATURES:
 				getEntityFeatures().clear();
 				getEntityFeatures().addAll((Collection<? extends EntityFeature>)newValue);
 				return;
-			case PersistencePackage.ENTITY__ASSOCIATION_ENDS:
+			case WebGenPersistencePackage.ENTITY__ASSOCIATION_ENDS:
 				getAssociationEnds().clear();
 				getAssociationEnds().addAll((Collection<? extends EntityAssociation>)newValue);
 				return;
@@ -176,10 +176,10 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY__ENTITY_FEATURES:
+			case WebGenPersistencePackage.ENTITY__ENTITY_FEATURES:
 				getEntityFeatures().clear();
 				return;
-			case PersistencePackage.ENTITY__ASSOCIATION_ENDS:
+			case WebGenPersistencePackage.ENTITY__ASSOCIATION_ENDS:
 				getAssociationEnds().clear();
 				return;
 		}
@@ -194,9 +194,9 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY__ENTITY_FEATURES:
+			case WebGenPersistencePackage.ENTITY__ENTITY_FEATURES:
 				return entityFeatures != null && !entityFeatures.isEmpty();
-			case PersistencePackage.ENTITY__ASSOCIATION_ENDS:
+			case WebGenPersistencePackage.ENTITY__ASSOCIATION_ENDS:
 				return associationEnds != null && !associationEnds.isEmpty();
 		}
 		return super.eIsSet(featureID);

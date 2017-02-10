@@ -15,7 +15,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.StaticPathElement#getElement <em>Element</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getStaticPathElement()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getStaticPathElement()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface StaticPathElement extends PathElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Element</em>' attribute.
 	 * @see #setElement(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getStaticPathElement_Element()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getStaticPathElement_Element()
 	 * @model required="true"
 	 * @generated
 	 */

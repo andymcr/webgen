@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.PathElement;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.ResourceAttribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -126,7 +126,7 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.RESOURCE_ATTRIBUTE;
+		return WebGenPersistencePackage.Literals.RESOURCE_ATTRIBUTE;
 	}
 
 	/**
@@ -147,7 +147,7 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 		int oldMaximumUploadSize = maximumUploadSize;
 		maximumUploadSize = newMaximumUploadSize;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE, oldMaximumUploadSize, maximumUploadSize));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE, oldMaximumUploadSize, maximumUploadSize));
 	}
 
 	/**
@@ -157,7 +157,7 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 	 */
 	public EList<String> getValidUploadMimeTypes() {
 		if (validUploadMimeTypes == null) {
-			validUploadMimeTypes = new EDataTypeUniqueEList<String>(String.class, this, PersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES);
+			validUploadMimeTypes = new EDataTypeUniqueEList<String>(String.class, this, WebGenPersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES);
 		}
 		return validUploadMimeTypes;
 	}
@@ -169,7 +169,7 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 	 */
 	public EList<String> getValidUploadExtensions() {
 		if (validUploadExtensions == null) {
-			validUploadExtensions = new EDataTypeUniqueEList<String>(String.class, this, PersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS);
+			validUploadExtensions = new EDataTypeUniqueEList<String>(String.class, this, WebGenPersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS);
 		}
 		return validUploadExtensions;
 	}
@@ -192,7 +192,7 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 		boolean oldUploadsWithinWebsite = uploadsWithinWebsite;
 		uploadsWithinWebsite = newUploadsWithinWebsite;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE, oldUploadsWithinWebsite, uploadsWithinWebsite));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE, oldUploadsWithinWebsite, uploadsWithinWebsite));
 	}
 
 	/**
@@ -202,7 +202,7 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 	 */
 	public EList<PathElement> getUploadPath() {
 		if (uploadPath == null) {
-			uploadPath = new EObjectContainmentEList<PathElement>(PathElement.class, this, PersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH);
+			uploadPath = new EObjectContainmentEList<PathElement>(PathElement.class, this, WebGenPersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH);
 		}
 		return uploadPath;
 	}
@@ -215,7 +215,7 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
 				return ((InternalEList<?>)getUploadPath()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -229,15 +229,15 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE:
 				return getMaximumUploadSize();
-			case PersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES:
 				return getValidUploadMimeTypes();
-			case PersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS:
 				return getValidUploadExtensions();
-			case PersistencePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
 				return isUploadsWithinWebsite();
-			case PersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
 				return getUploadPath();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -252,21 +252,21 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE:
 				setMaximumUploadSize((Integer)newValue);
 				return;
-			case PersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES:
 				getValidUploadMimeTypes().clear();
 				getValidUploadMimeTypes().addAll((Collection<? extends String>)newValue);
 				return;
-			case PersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS:
 				getValidUploadExtensions().clear();
 				getValidUploadExtensions().addAll((Collection<? extends String>)newValue);
 				return;
-			case PersistencePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
 				setUploadsWithinWebsite((Boolean)newValue);
 				return;
-			case PersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
 				getUploadPath().clear();
 				getUploadPath().addAll((Collection<? extends PathElement>)newValue);
 				return;
@@ -282,19 +282,19 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE:
 				setMaximumUploadSize(MAXIMUM_UPLOAD_SIZE_EDEFAULT);
 				return;
-			case PersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES:
 				getValidUploadMimeTypes().clear();
 				return;
-			case PersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS:
 				getValidUploadExtensions().clear();
 				return;
-			case PersistencePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
 				setUploadsWithinWebsite(UPLOADS_WITHIN_WEBSITE_EDEFAULT);
 				return;
-			case PersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
 				getUploadPath().clear();
 				return;
 		}
@@ -309,15 +309,15 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE:
 				return maximumUploadSize != MAXIMUM_UPLOAD_SIZE_EDEFAULT;
-			case PersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES:
 				return validUploadMimeTypes != null && !validUploadMimeTypes.isEmpty();
-			case PersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS:
 				return validUploadExtensions != null && !validUploadExtensions.isEmpty();
-			case PersistencePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
 				return uploadsWithinWebsite != UPLOADS_WITHIN_WEBSITE_EDEFAULT;
-			case PersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
 				return uploadPath != null && !uploadPath.isEmpty();
 		}
 		return super.eIsSet(featureID);

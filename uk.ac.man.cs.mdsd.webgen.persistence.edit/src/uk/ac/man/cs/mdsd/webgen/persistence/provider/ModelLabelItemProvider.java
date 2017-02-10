@@ -9,16 +9,18 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
+import uk.ac.man.cs.mdsd.webgen.core.provider.NamedElementItemProvider;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistenceFactory;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel} object.
@@ -66,7 +68,7 @@ public class ModelLabelItemProvider extends NamedElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ModelLabel_format_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabel_format_feature", "_UI_ModelLabel_type"),
-				 PersistencePackage.Literals.MODEL_LABEL__FORMAT,
+				 WebGenPersistencePackage.Literals.MODEL_LABEL__FORMAT,
 				 true,
 				 false,
 				 false,
@@ -87,7 +89,7 @@ public class ModelLabelItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PersistencePackage.Literals.MODEL_LABEL__FEATURES);
+			childrenFeatures.add(WebGenPersistencePackage.Literals.MODEL_LABEL__FEATURES);
 		}
 		return childrenFeatures;
 	}
@@ -143,10 +145,10 @@ public class ModelLabelItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ModelLabel.class)) {
-			case PersistencePackage.MODEL_LABEL__FORMAT:
+			case WebGenPersistencePackage.MODEL_LABEL__FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case PersistencePackage.MODEL_LABEL__FEATURES:
+			case WebGenPersistencePackage.MODEL_LABEL__FEATURES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -166,13 +168,24 @@ public class ModelLabelItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.MODEL_LABEL__FEATURES,
-				 PersistenceFactory.eINSTANCE.createModelLabelAttribute()));
+				(WebGenPersistencePackage.Literals.MODEL_LABEL__FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createModelLabelAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.MODEL_LABEL__FEATURES,
-				 PersistenceFactory.eINSTANCE.createModelLabelAssociation()));
+				(WebGenPersistencePackage.Literals.MODEL_LABEL__FEATURES,
+				 WebGenPersistenceFactory.eINSTANCE.createModelLabelAssociation()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

@@ -24,8 +24,8 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistenceFactory;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence} object.
@@ -78,7 +78,7 @@ public class PersistenceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PersistencePackage.Literals.PERSISTENCE__CLASSIFIERS);
+			childrenFeatures.add(WebGenPersistencePackage.Literals.PERSISTENCE__CLASSIFIERS);
 		}
 		return childrenFeatures;
 	}
@@ -131,7 +131,7 @@ public class PersistenceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Persistence.class)) {
-			case PersistencePackage.PERSISTENCE__CLASSIFIERS:
+			case WebGenPersistencePackage.PERSISTENCE__CLASSIFIERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -151,23 +151,23 @@ public class PersistenceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
-				 PersistenceFactory.eINSTANCE.createDataType()));
+				(WebGenPersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
+				 WebGenPersistenceFactory.eINSTANCE.createDataType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
-				 PersistenceFactory.eINSTANCE.createEnumerationType()));
+				(WebGenPersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
+				 WebGenPersistenceFactory.eINSTANCE.createEnumerationType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
-				 PersistenceFactory.eINSTANCE.createEntity()));
+				(WebGenPersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
+				 WebGenPersistenceFactory.eINSTANCE.createEntity()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
-				 PersistenceFactory.eINSTANCE.createView()));
+				(WebGenPersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
+				 WebGenPersistenceFactory.eINSTANCE.createView()));
 	}
 
 	/**

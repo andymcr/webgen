@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithoutContainment;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithoutContainment} object.
@@ -64,7 +64,7 @@ public class AssociationWithoutContainmentItemProvider extends EntityAssociation
 				 getResourceLocator(),
 				 getString("_UI_AssociationWithoutContainment_targetCardinality_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationWithoutContainment_targetCardinality_feature", "_UI_AssociationWithoutContainment_type"),
-				 PersistencePackage.Literals.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY,
+				 WebGenPersistencePackage.Literals.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY,
 				 true,
 				 false,
 				 false,
@@ -86,7 +86,7 @@ public class AssociationWithoutContainmentItemProvider extends EntityAssociation
 				 getResourceLocator(),
 				 getString("_UI_AssociationWithoutContainment_targetUnique_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationWithoutContainment_targetUnique_feature", "_UI_AssociationWithoutContainment_type"),
-				 PersistencePackage.Literals.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE,
+				 WebGenPersistencePackage.Literals.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE,
 				 true,
 				 false,
 				 false,
@@ -133,8 +133,8 @@ public class AssociationWithoutContainmentItemProvider extends EntityAssociation
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AssociationWithoutContainment.class)) {
-			case PersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY:
-			case PersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE:
+			case WebGenPersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY:
+			case WebGenPersistencePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

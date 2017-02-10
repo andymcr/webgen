@@ -10,7 +10,7 @@
       <!-- @generated persistence -->
       <factory
             uri="http://cs.man.ac.uk/mdsd/2017/webgen-persistence"
-            class="uk.ac.man.cs.mdsd.webgen.persistence.provider.PersistenceItemProviderAdapterFactory"
+            class="uk.ac.man.cs.mdsd.webgen.persistence.provider.WebGenPersistenceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

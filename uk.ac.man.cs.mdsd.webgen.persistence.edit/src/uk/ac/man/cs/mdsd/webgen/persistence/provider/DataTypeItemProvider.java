@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.DataType} object.
@@ -67,7 +67,7 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DataType_persistentType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_persistentType_feature", "_UI_DataType_type"),
-				 PersistencePackage.Literals.DATA_TYPE__PERSISTENT_TYPE,
+				 WebGenPersistencePackage.Literals.DATA_TYPE__PERSISTENT_TYPE,
 				 true,
 				 false,
 				 false,
@@ -89,7 +89,7 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DataType_ormType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_ormType_feature", "_UI_DataType_type"),
-				 PersistencePackage.Literals.DATA_TYPE__ORM_TYPE,
+				 WebGenPersistencePackage.Literals.DATA_TYPE__ORM_TYPE,
 				 true,
 				 false,
 				 false,
@@ -111,7 +111,7 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DataType_interfaceType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_interfaceType_feature", "_UI_DataType_type"),
-				 PersistencePackage.Literals.DATA_TYPE__INTERFACE_TYPE,
+				 WebGenPersistencePackage.Literals.DATA_TYPE__INTERFACE_TYPE,
 				 true,
 				 false,
 				 false,
@@ -133,7 +133,7 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DataType_placeholder_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_placeholder_feature", "_UI_DataType_type"),
-				 PersistencePackage.Literals.DATA_TYPE__PLACEHOLDER,
+				 WebGenPersistencePackage.Literals.DATA_TYPE__PLACEHOLDER,
 				 true,
 				 false,
 				 false,
@@ -155,7 +155,7 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DataType_validationPattern_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_validationPattern_feature", "_UI_DataType_type"),
-				 PersistencePackage.Literals.DATA_TYPE__VALIDATION_PATTERN,
+				 WebGenPersistencePackage.Literals.DATA_TYPE__VALIDATION_PATTERN,
 				 true,
 				 false,
 				 false,
@@ -202,11 +202,11 @@ public class DataTypeItemProvider extends ClassifierItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataType.class)) {
-			case PersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
-			case PersistencePackage.DATA_TYPE__ORM_TYPE:
-			case PersistencePackage.DATA_TYPE__INTERFACE_TYPE:
-			case PersistencePackage.DATA_TYPE__PLACEHOLDER:
-			case PersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__ORM_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__INTERFACE_TYPE:
+			case WebGenPersistencePackage.DATA_TYPE__PLACEHOLDER:
+			case WebGenPersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

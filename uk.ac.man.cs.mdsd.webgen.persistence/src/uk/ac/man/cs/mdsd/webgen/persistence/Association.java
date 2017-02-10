@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Association#getSerializationMaxDepth <em>Serialization Max Depth</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociation()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociation()
  * @model interface="true" abstract="true"
  * @generated
  */
@@ -37,7 +37,7 @@ public interface Association extends Feature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Pseudo</em>' attribute.
 	 * @see #setPseudo(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociation_Pseudo()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociation_Pseudo()
 	 * @model default="false"
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public interface Association extends Feature {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Encapsulated By</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociation_EncapsulatedBy()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociation_EncapsulatedBy()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAssociation#getAssociation
 	 * @model opposite="association"
 	 * @generated
@@ -81,7 +81,7 @@ public interface Association extends Feature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Input Class</em>' attribute.
 	 * @see #setInputClass(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociation_InputClass()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociation_InputClass()
 	 * @model
 	 * @generated
 	 */
@@ -106,7 +106,7 @@ public interface Association extends Feature {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source Entity X</em>' reference.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociation_SourceEntityX()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociation_SourceEntityX()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsKindOf(EntityAssociation) then\r\n\tself.oclAsType(EntityAssociation).partOf\r\nelse if self.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tself.oclAsType(EncapsulatedAssociation).sourceEntity\r\nelse\r\n\tself.oclAsType(ViewAssociation).partOf\r\nendif endif'"
 	 * @generated
@@ -122,7 +122,7 @@ public interface Association extends Feature {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Entity X</em>' reference.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociation_TargetEntityX()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociation_TargetEntityX()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsKindOf(EntityAssociation) then\r\n\tself.oclAsType(EntityAssociation).targetEntity\r\nelse if self.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tself.oclAsType(EncapsulatedAssociation).targetEntity\r\nelse\r\n\t-- TODO get other end\r\n\tself.oclAsType(ViewAssociation).partOf\r\nendif endif'"
 	 * @generated
@@ -140,7 +140,7 @@ public interface Association extends Feature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Serialization Max Depth</em>' attribute.
 	 * @see #setSerializationMaxDepth(int)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociation_SerializationMaxDepth()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociation_SerializationMaxDepth()
 	 * @model default="1"
 	 * @generated
 	 */

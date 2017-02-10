@@ -18,7 +18,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.DataTypeAttribute#isEncrypt <em>Encrypt</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDataTypeAttribute()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataTypeAttribute()
  * @model
  * @generated
  */
@@ -33,7 +33,7 @@ public interface DataTypeAttribute extends EntityAttribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data Type</em>' reference.
 	 * @see #setDataType(DataType)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDataTypeAttribute_DataType()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataTypeAttribute_DataType()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
@@ -60,7 +60,7 @@ public interface DataTypeAttribute extends EntityAttribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Obfuscate Form Fields</em>' attribute.
 	 * @see #setObfuscateFormFields(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDataTypeAttribute_ObfuscateFormFields()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataTypeAttribute_ObfuscateFormFields()
 	 * @model default="false" ordered="false"
 	 * @generated
 	 */
@@ -87,7 +87,7 @@ public interface DataTypeAttribute extends EntityAttribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Case Insensitive</em>' attribute.
 	 * @see #setCaseInsensitive(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDataTypeAttribute_CaseInsensitive()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataTypeAttribute_CaseInsensitive()
 	 * @model default="false" ordered="false"
 	 * @generated
 	 */
@@ -114,7 +114,7 @@ public interface DataTypeAttribute extends EntityAttribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Encrypt</em>' attribute.
 	 * @see #setEncrypt(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDataTypeAttribute_Encrypt()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataTypeAttribute_Encrypt()
 	 * @model default="false" ordered="false"
 	 * @generated
 	 */

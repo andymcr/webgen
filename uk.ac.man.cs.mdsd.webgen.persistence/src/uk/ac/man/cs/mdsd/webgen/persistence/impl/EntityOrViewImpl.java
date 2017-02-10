@@ -24,7 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -224,7 +224,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate FEATURES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENTITY_OR_VIEW__FEATURES).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate FEATURES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__FEATURES).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getAllFeatures() <em>All Features</em>}' reference list.
@@ -234,7 +234,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate ALL_FEATURES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENTITY_OR_VIEW__ALL_FEATURES).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate ALL_FEATURES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__ALL_FEATURES).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getAttributes() <em>Attributes</em>}' reference list.
@@ -244,7 +244,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate ATTRIBUTES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENTITY_OR_VIEW__ATTRIBUTES).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate ATTRIBUTES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__ATTRIBUTES).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getAssociations() <em>Associations</em>}' reference list.
@@ -254,7 +254,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate ASSOCIATIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENTITY_OR_VIEW__ASSOCIATIONS).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate ASSOCIATIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__ASSOCIATIONS).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getAllAssociations() <em>All Associations</em>}' reference list.
@@ -264,7 +264,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate ALL_ASSOCIATIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENTITY_OR_VIEW__ALL_ASSOCIATIONS).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate ALL_ASSOCIATIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__ALL_ASSOCIATIONS).getSettingDelegate();
 
 	/**
 	 * The default value of the '{@link #isSerializationExcludeAll() <em>Serialization Exclude All</em>}' attribute.
@@ -322,7 +322,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.ENTITY_OR_VIEW;
+		return WebGenPersistencePackage.Literals.ENTITY_OR_VIEW;
 	}
 
 	/**
@@ -343,7 +343,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		String oldSingletonName = singletonName;
 		singletonName = newSingletonName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_OR_VIEW__SINGLETON_NAME, oldSingletonName, singletonName));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_OR_VIEW__SINGLETON_NAME, oldSingletonName, singletonName));
 	}
 
 	/**
@@ -364,7 +364,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		String oldPluralisedName = pluralisedName;
 		pluralisedName = newPluralisedName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_OR_VIEW__PLURALISED_NAME, oldPluralisedName, pluralisedName));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_OR_VIEW__PLURALISED_NAME, oldPluralisedName, pluralisedName));
 	}
 
 	/**
@@ -374,7 +374,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 */
 	public EList<Feature> getKeys() {
 		if (keys == null) {
-			keys = new EObjectResolvingEList<Feature>(Feature.class, this, PersistencePackage.ENTITY_OR_VIEW__KEYS);
+			keys = new EObjectResolvingEList<Feature>(Feature.class, this, WebGenPersistencePackage.ENTITY_OR_VIEW__KEYS);
 		}
 		return keys;
 	}
@@ -397,7 +397,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		String oldTableName = tableName;
 		tableName = newTableName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_OR_VIEW__TABLE_NAME, oldTableName, tableName));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_OR_VIEW__TABLE_NAME, oldTableName, tableName));
 	}
 
 	/**
@@ -418,7 +418,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		String oldAutoKeyName = autoKeyName;
 		autoKeyName = newAutoKeyName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME, oldAutoKeyName, autoKeyName));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME, oldAutoKeyName, autoKeyName));
 	}
 
 	/**
@@ -439,7 +439,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		String oldAutoKeyPersistentType = autoKeyPersistentType;
 		autoKeyPersistentType = newAutoKeyPersistentType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE, oldAutoKeyPersistentType, autoKeyPersistentType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE, oldAutoKeyPersistentType, autoKeyPersistentType));
 	}
 
 	/**
@@ -460,7 +460,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		String oldAutoKeyGenerationStrategy = autoKeyGenerationStrategy;
 		autoKeyGenerationStrategy = newAutoKeyGenerationStrategy;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY, oldAutoKeyGenerationStrategy, autoKeyGenerationStrategy));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY, oldAutoKeyGenerationStrategy, autoKeyGenerationStrategy));
 	}
 
 	/**
@@ -470,7 +470,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 */
 	public EList<Feature> getUnique() {
 		if (unique == null) {
-			unique = new EObjectResolvingEList<Feature>(Feature.class, this, PersistencePackage.ENTITY_OR_VIEW__UNIQUE);
+			unique = new EObjectResolvingEList<Feature>(Feature.class, this, WebGenPersistencePackage.ENTITY_OR_VIEW__UNIQUE);
 		}
 		return unique;
 	}
@@ -482,7 +482,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 */
 	public EList<Feature> getContainerUnique() {
 		if (containerUnique == null) {
-			containerUnique = new EObjectResolvingEList<Feature>(Feature.class, this, PersistencePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE);
+			containerUnique = new EObjectResolvingEList<Feature>(Feature.class, this, WebGenPersistencePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE);
 		}
 		return containerUnique;
 	}
@@ -494,7 +494,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 */
 	public EList<ModelLabel> getLabels() {
 		if (labels == null) {
-			labels = new EObjectContainmentWithInverseEList<ModelLabel>(ModelLabel.class, this, PersistencePackage.ENTITY_OR_VIEW__LABELS, PersistencePackage.MODEL_LABEL__LABEL_FOR);
+			labels = new EObjectContainmentWithInverseEList<ModelLabel>(ModelLabel.class, this, WebGenPersistencePackage.ENTITY_OR_VIEW__LABELS, WebGenPersistencePackage.MODEL_LABEL__LABEL_FOR);
 		}
 		return labels;
 	}
@@ -567,7 +567,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		boolean oldSerializationExcludeAll = serializationExcludeAll;
 		serializationExcludeAll = newSerializationExcludeAll;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL, oldSerializationExcludeAll, serializationExcludeAll));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL, oldSerializationExcludeAll, serializationExcludeAll));
 	}
 
 	/**
@@ -588,7 +588,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		boolean oldImplementsUserInterface = implementsUserInterface;
 		implementsUserInterface = newImplementsUserInterface;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE, oldImplementsUserInterface, implementsUserInterface));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE, oldImplementsUserInterface, implementsUserInterface));
 	}
 
 	/**
@@ -600,7 +600,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_OR_VIEW__LABELS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__LABELS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLabels()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -614,7 +614,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_OR_VIEW__LABELS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__LABELS:
 				return ((InternalEList<?>)getLabels()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -628,39 +628,39 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
 				return getSingletonName();
-			case PersistencePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
 				return getPluralisedName();
-			case PersistencePackage.ENTITY_OR_VIEW__KEYS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__KEYS:
 				return getKeys();
-			case PersistencePackage.ENTITY_OR_VIEW__TABLE_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__TABLE_NAME:
 				return getTableName();
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 				return getAutoKeyName();
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
 				return getAutoKeyPersistentType();
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
 				return getAutoKeyGenerationStrategy();
-			case PersistencePackage.ENTITY_OR_VIEW__UNIQUE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__UNIQUE:
 				return getUnique();
-			case PersistencePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE:
 				return getContainerUnique();
-			case PersistencePackage.ENTITY_OR_VIEW__LABELS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__LABELS:
 				return getLabels();
-			case PersistencePackage.ENTITY_OR_VIEW__FEATURES:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__FEATURES:
 				return getFeatures();
-			case PersistencePackage.ENTITY_OR_VIEW__ALL_FEATURES:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__ALL_FEATURES:
 				return getAllFeatures();
-			case PersistencePackage.ENTITY_OR_VIEW__ATTRIBUTES:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__ATTRIBUTES:
 				return getAttributes();
-			case PersistencePackage.ENTITY_OR_VIEW__ASSOCIATIONS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__ASSOCIATIONS:
 				return getAssociations();
-			case PersistencePackage.ENTITY_OR_VIEW__ALL_ASSOCIATIONS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__ALL_ASSOCIATIONS:
 				return getAllAssociations();
-			case PersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
 				return isSerializationExcludeAll();
-			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				return isImplementsUserInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -675,44 +675,44 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
 				setSingletonName((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
 				setPluralisedName((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__KEYS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__KEYS:
 				getKeys().clear();
 				getKeys().addAll((Collection<? extends Feature>)newValue);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__TABLE_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__TABLE_NAME:
 				setTableName((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 				setAutoKeyName((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
 				setAutoKeyPersistentType((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
 				setAutoKeyGenerationStrategy((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__UNIQUE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__UNIQUE:
 				getUnique().clear();
 				getUnique().addAll((Collection<? extends Feature>)newValue);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE:
 				getContainerUnique().clear();
 				getContainerUnique().addAll((Collection<? extends Feature>)newValue);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__LABELS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__LABELS:
 				getLabels().clear();
 				getLabels().addAll((Collection<? extends ModelLabel>)newValue);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
 				setSerializationExcludeAll((Boolean)newValue);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				setImplementsUserInterface((Boolean)newValue);
 				return;
 		}
@@ -727,40 +727,40 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
 				setSingletonName(SINGLETON_NAME_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
 				setPluralisedName(PLURALISED_NAME_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__KEYS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__KEYS:
 				getKeys().clear();
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__TABLE_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__TABLE_NAME:
 				setTableName(TABLE_NAME_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 				setAutoKeyName(AUTO_KEY_NAME_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
 				setAutoKeyPersistentType(AUTO_KEY_PERSISTENT_TYPE_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
 				setAutoKeyGenerationStrategy(AUTO_KEY_GENERATION_STRATEGY_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__UNIQUE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__UNIQUE:
 				getUnique().clear();
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE:
 				getContainerUnique().clear();
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__LABELS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__LABELS:
 				getLabels().clear();
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
 				setSerializationExcludeAll(SERIALIZATION_EXCLUDE_ALL_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				setImplementsUserInterface(IMPLEMENTS_USER_INTERFACE_EDEFAULT);
 				return;
 		}
@@ -775,39 +775,39 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
 				return SINGLETON_NAME_EDEFAULT == null ? singletonName != null : !SINGLETON_NAME_EDEFAULT.equals(singletonName);
-			case PersistencePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
 				return PLURALISED_NAME_EDEFAULT == null ? pluralisedName != null : !PLURALISED_NAME_EDEFAULT.equals(pluralisedName);
-			case PersistencePackage.ENTITY_OR_VIEW__KEYS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__KEYS:
 				return keys != null && !keys.isEmpty();
-			case PersistencePackage.ENTITY_OR_VIEW__TABLE_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__TABLE_NAME:
 				return TABLE_NAME_EDEFAULT == null ? tableName != null : !TABLE_NAME_EDEFAULT.equals(tableName);
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 				return AUTO_KEY_NAME_EDEFAULT == null ? autoKeyName != null : !AUTO_KEY_NAME_EDEFAULT.equals(autoKeyName);
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
 				return AUTO_KEY_PERSISTENT_TYPE_EDEFAULT == null ? autoKeyPersistentType != null : !AUTO_KEY_PERSISTENT_TYPE_EDEFAULT.equals(autoKeyPersistentType);
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
 				return AUTO_KEY_GENERATION_STRATEGY_EDEFAULT == null ? autoKeyGenerationStrategy != null : !AUTO_KEY_GENERATION_STRATEGY_EDEFAULT.equals(autoKeyGenerationStrategy);
-			case PersistencePackage.ENTITY_OR_VIEW__UNIQUE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__UNIQUE:
 				return unique != null && !unique.isEmpty();
-			case PersistencePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE:
 				return containerUnique != null && !containerUnique.isEmpty();
-			case PersistencePackage.ENTITY_OR_VIEW__LABELS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__LABELS:
 				return labels != null && !labels.isEmpty();
-			case PersistencePackage.ENTITY_OR_VIEW__FEATURES:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__FEATURES:
 				return FEATURES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENTITY_OR_VIEW__ALL_FEATURES:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__ALL_FEATURES:
 				return ALL_FEATURES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENTITY_OR_VIEW__ATTRIBUTES:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__ATTRIBUTES:
 				return ATTRIBUTES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENTITY_OR_VIEW__ASSOCIATIONS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__ASSOCIATIONS:
 				return ASSOCIATIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENTITY_OR_VIEW__ALL_ASSOCIATIONS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__ALL_ASSOCIATIONS:
 				return ALL_ASSOCIATIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
 				return serializationExcludeAll != SERIALIZATION_EXCLUDE_ALL_EDEFAULT;
-			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				return implementsUserInterface != IMPLEMENTS_USER_INTERFACE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

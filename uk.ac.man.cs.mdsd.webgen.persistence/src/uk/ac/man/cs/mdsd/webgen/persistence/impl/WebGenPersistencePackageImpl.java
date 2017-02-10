@@ -11,6 +11,8 @@ import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
+import uk.ac.man.cs.mdsd.webgen.expression.WebGenExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.AssociationKey;
 import uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithContainment;
@@ -43,8 +45,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelFeature;
-import uk.ac.man.cs.mdsd.webgen.persistence.NamedDisplayElement;
-import uk.ac.man.cs.mdsd.webgen.persistence.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.persistence.PathElement;
 import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
@@ -73,20 +73,6 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 	 * @generated
 	 */
 	private EClass persistenceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass namedElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass namedDisplayElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -422,7 +408,8 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		isInited = true;
 
 		// Initialize simple dependencies
-		CriteriaPackage.eINSTANCE.eClass();
+		WebGenCorePackage.eINSTANCE.eClass();
+		WebGenExpressionPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theWebGenPersistencePackage.createPackageContents();
@@ -464,42 +451,6 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 	 */
 	public EReference getPersistence_Classifiers() {
 		return (EReference)persistenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getNamedElement() {
-		return namedElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNamedElement_Name() {
-		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getNamedDisplayElement() {
-		return namedDisplayElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNamedDisplayElement_DisplayLabel() {
-		return (EAttribute)namedDisplayElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1955,12 +1906,6 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		persistenceEClass = createEClass(PERSISTENCE);
 		createEReference(persistenceEClass, PERSISTENCE__CLASSIFIERS);
 
-		namedElementEClass = createEClass(NAMED_ELEMENT);
-		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
-
-		namedDisplayElementEClass = createEClass(NAMED_DISPLAY_ELEMENT);
-		createEAttribute(namedDisplayElementEClass, NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL);
-
 		classifierEClass = createEClass(CLASSIFIER);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
@@ -2182,28 +2127,28 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CriteriaPackage theCriteriaPackage = (CriteriaPackage)EPackage.Registry.INSTANCE.getEPackage(CriteriaPackage.eNS_URI);
+		WebGenCorePackage theWebGenCorePackage = (WebGenCorePackage)EPackage.Registry.INSTANCE.getEPackage(WebGenCorePackage.eNS_URI);
+		WebGenExpressionPackage theWebGenExpressionPackage = (WebGenExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(WebGenExpressionPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		namedDisplayElementEClass.getESuperTypes().add(this.getNamedElement());
-		classifierEClass.getESuperTypes().add(this.getNamedDisplayElement());
+		classifierEClass.getESuperTypes().add(theWebGenCorePackage.getNamedDisplayElement());
 		dataTypeEClass.getESuperTypes().add(this.getClassifier());
 		enumerationTypeEClass.getESuperTypes().add(this.getDataType());
-		enumerationLiteralEClass.getESuperTypes().add(this.getNamedDisplayElement());
+		enumerationLiteralEClass.getESuperTypes().add(theWebGenCorePackage.getNamedDisplayElement());
 		entityOrViewEClass.getESuperTypes().add(this.getClassifier());
 		attributeEClass.getESuperTypes().add(this.getFeature());
 		attributeEClass.getESuperTypes().add(this.getLabel());
 		associationEClass.getESuperTypes().add(this.getFeature());
-		modelLabelEClass.getESuperTypes().add(this.getNamedElement());
+		modelLabelEClass.getESuperTypes().add(theWebGenCorePackage.getNamedElement());
 		modelLabelEClass.getESuperTypes().add(this.getLabel());
 		modelLabelAttributeEClass.getESuperTypes().add(this.getModelLabelFeature());
 		modelLabelAssociationEClass.getESuperTypes().add(this.getModelLabelFeature());
 		entityEClass.getESuperTypes().add(this.getEntityOrView());
-		entityFeatureEClass.getESuperTypes().add(this.getNamedDisplayElement());
+		entityFeatureEClass.getESuperTypes().add(theWebGenCorePackage.getNamedDisplayElement());
 		entityFeatureEClass.getESuperTypes().add(this.getFeature());
 		entityAttributeEClass.getESuperTypes().add(this.getEntityFeature());
 		entityAttributeEClass.getESuperTypes().add(this.getAttribute());
@@ -2227,19 +2172,13 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		encapsulatedAttributeEClass.getESuperTypes().add(this.getAttribute());
 		encapsulatedAssociationEClass.getESuperTypes().add(this.getEncapsulatedFeature());
 		encapsulatedAssociationEClass.getESuperTypes().add(this.getAssociation());
-		viewAssociationEClass.getESuperTypes().add(this.getNamedDisplayElement());
+		viewAssociationEClass.getESuperTypes().add(theWebGenCorePackage.getNamedDisplayElement());
 		viewAssociationEClass.getESuperTypes().add(this.getViewFeature());
 		viewAssociationEClass.getESuperTypes().add(this.getAssociation());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(persistenceEClass, Persistence.class, "Persistence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPersistence_Classifiers(), this.getClassifier(), null, "classifiers", null, 0, -1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(namedDisplayElementEClass, NamedDisplayElement.class, "NamedDisplayElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamedDisplayElement_DisplayLabel(), ecorePackage.getEString(), "displayLabel", null, 0, 1, NamedDisplayElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(classifierEClass, Classifier.class, "Classifier", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2287,7 +2226,7 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		initEAttribute(getFeature_FooterClass(), ecorePackage.getEString(), "footerClass", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttribute_DefaultValue(), theCriteriaPackage.getExpression(), null, "defaultValue", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAttribute_DefaultValue(), theWebGenExpressionPackage.getExpression(), null, "defaultValue", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAttribute_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAttribute_ValidationPattern(), ecorePackage.getEString(), "validationPattern", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAttribute_InputClass(), ecorePackage.getEString(), "inputClass", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2490,12 +2429,6 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 			 "constraints", "classifierNameUnique"
 		   });	
 		addAnnotation
-		  (namedElementEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "nameNeedsAtLeastOneCharacter"
-		   });	
-		addAnnotation
 		  (entityOrViewEClass, 
 		   source, 
 		   new String[] {
@@ -2534,12 +2467,6 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		   source, 
 		   new String[] {
 			 "classifierNameUnique", "classifiers->isUnique(name)"
-		   });	
-		addAnnotation
-		  (namedElementEClass, 
-		   source, 
-		   new String[] {
-			 "nameNeedsAtLeastOneCharacter", "not name.oclIsUndefined() implies name.size() > 0"
 		   });	
 		addAnnotation
 		  (entityOrViewEClass, 

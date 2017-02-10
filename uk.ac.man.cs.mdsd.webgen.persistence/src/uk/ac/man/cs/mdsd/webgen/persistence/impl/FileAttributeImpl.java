@@ -5,7 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.FileAttribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class FileAttributeImpl extends ResourceAttributeImpl implements FileAttr
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.FILE_ATTRIBUTE;
+		return WebGenPersistencePackage.Literals.FILE_ATTRIBUTE;
 	}
 
 } //FileAttributeImpl

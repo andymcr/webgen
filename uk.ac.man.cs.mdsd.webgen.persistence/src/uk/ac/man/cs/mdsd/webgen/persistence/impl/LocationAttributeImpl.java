@@ -5,7 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.LocationAttribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class LocationAttributeImpl extends EntityAttributeImpl implements Locati
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.LOCATION_ATTRIBUTE;
+		return WebGenPersistencePackage.Literals.LOCATION_ATTRIBUTE;
 	}
 
 } //LocationAttributeImpl

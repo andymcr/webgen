@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
+import uk.ac.man.cs.mdsd.webgen.core.util.WebGenCoreValidator;
 import uk.ac.man.cs.mdsd.webgen.persistence.*;
 
 /**
@@ -57,6 +58,14 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WebGenCoreValidator webGenCoreValidator;
+
+	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,6 +73,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 	 */
 	public WebGenPersistenceValidator() {
 		super();
+		webGenCoreValidator = WebGenCoreValidator.INSTANCE;
 	}
 
 	/**
@@ -88,10 +98,6 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		switch (classifierID) {
 			case WebGenPersistencePackage.PERSISTENCE:
 				return validatePersistence((Persistence)value, diagnostics, context);
-			case WebGenPersistencePackage.NAMED_ELEMENT:
-				return validateNamedElement((NamedElement)value, diagnostics, context);
-			case WebGenPersistencePackage.NAMED_DISPLAY_ELEMENT:
-				return validateNamedDisplayElement((NamedDisplayElement)value, diagnostics, context);
 			case WebGenPersistencePackage.CLASSIFIER:
 				return validateClassifier((Classifier)value, diagnostics, context);
 			case WebGenPersistencePackage.DATA_TYPE:
@@ -232,73 +238,6 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateNamedElement(NamedElement namedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(namedElement, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(namedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(namedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(namedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(namedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(namedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(namedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(namedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(namedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(namedElement, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the nameNeedsAtLeastOneCharacter constraint of '<em>Named Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String NAMED_ELEMENT__NAME_NEEDS_AT_LEAST_ONE_CHARACTER__EEXPRESSION = "not name.oclIsUndefined() implies name.size() > 0";
-
-	/**
-	 * Validates the nameNeedsAtLeastOneCharacter constraint of '<em>Named Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateNamedElement_nameNeedsAtLeastOneCharacter(NamedElement namedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebGenPersistencePackage.Literals.NAMED_ELEMENT,
-				 namedElement,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "nameNeedsAtLeastOneCharacter",
-				 NAMED_ELEMENT__NAME_NEEDS_AT_LEAST_ONE_CHARACTER__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateNamedDisplayElement(NamedDisplayElement namedDisplayElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(namedDisplayElement, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(namedDisplayElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(namedDisplayElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(namedDisplayElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(namedDisplayElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(namedDisplayElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(namedDisplayElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(namedDisplayElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(namedDisplayElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(namedDisplayElement, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateClassifier(Classifier classifier, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(classifier, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(classifier, diagnostics, context);
@@ -309,7 +248,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(classifier, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(classifier, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(classifier, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(classifier, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(classifier, diagnostics, context);
 		return result;
 	}
 
@@ -328,7 +267,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(dataType, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dataType, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(dataType, diagnostics, context);
 		return result;
 	}
 
@@ -347,7 +286,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(enumerationType, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(enumerationType, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(enumerationType, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(enumerationType, diagnostics, context);
 		return result;
 	}
 
@@ -366,7 +305,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(enumerationLiteral, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(enumerationLiteral, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(enumerationLiteral, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(enumerationLiteral, diagnostics, context);
 		return result;
 	}
 
@@ -385,7 +324,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(entityOrView, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entityOrView, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entityOrView, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entityOrView, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(entityOrView, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntityOrView_keysFromLocalFeatures(entityOrView, diagnostics, context);
 		return result;
 	}
@@ -470,7 +409,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(modelLabel, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(modelLabel, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(modelLabel, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(modelLabel, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(modelLabel, diagnostics, context);
 		return result;
 	}
 
@@ -516,7 +455,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(entity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entity, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(entity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntityOrView_keysFromLocalFeatures(entity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntity_featureNameUniqueWithinEntity(entity, diagnostics, context);
 		return result;
@@ -566,7 +505,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(entityFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entityFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entityFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entityFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(entityFeature, diagnostics, context);
 		return result;
 	}
 
@@ -585,7 +524,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(entityAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entityAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entityAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entityAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(entityAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(entityAttribute, diagnostics, context);
 		return result;
 	}
@@ -634,7 +573,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(dataTypeAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dataTypeAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dataTypeAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(dataTypeAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(dataTypeAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(dataTypeAttribute, diagnostics, context);
 		return result;
 	}
@@ -654,7 +593,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(dateAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dateAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dateAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(dateAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(dateAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(dateAttribute, diagnostics, context);
 		return result;
 	}
@@ -674,7 +613,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(urlAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(urlAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(urlAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(urlAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(urlAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(urlAttribute, diagnostics, context);
 		return result;
 	}
@@ -694,7 +633,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(resourceAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(resourceAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(resourceAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(resourceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(resourceAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(resourceAttribute, diagnostics, context);
 		return result;
 	}
@@ -741,7 +680,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(fileAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fileAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fileAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(fileAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(fileAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(fileAttribute, diagnostics, context);
 		return result;
 	}
@@ -761,7 +700,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(imageAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(imageAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(imageAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(imageAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(imageAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(imageAttribute, diagnostics, context);
 		return result;
 	}
@@ -781,7 +720,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(locationAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(locationAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(locationAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(locationAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(locationAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(locationAttribute, diagnostics, context);
 		return result;
 	}
@@ -801,7 +740,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(entityAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entityAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entityAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(entityAssociation, diagnostics, context);
 		return result;
 	}
 
@@ -820,7 +759,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(associationWithoutContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(associationWithoutContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(associationWithoutContainment, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(associationWithoutContainment, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(associationWithoutContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssociationWithoutContainment_oneToManyAssociationsMustBeBidirectional(associationWithoutContainment, diagnostics, context);
 		return result;
 	}
@@ -869,7 +808,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(associationWithContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(associationWithContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(associationWithContainment, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(associationWithContainment, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(associationWithContainment, diagnostics, context);
 		return result;
 	}
 
@@ -897,7 +836,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(view, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(view, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(view, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(view, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(view, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntityOrView_keysFromLocalFeatures(view, diagnostics, context);
 		return result;
 	}
@@ -953,7 +892,7 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(viewAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(viewAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(viewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(viewAssociation, diagnostics, context);
 		return result;
 	}
 

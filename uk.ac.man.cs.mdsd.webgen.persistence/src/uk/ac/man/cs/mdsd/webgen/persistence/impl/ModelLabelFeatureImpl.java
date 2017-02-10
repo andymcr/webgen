@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelFeature;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,7 +47,7 @@ public abstract class ModelLabelFeatureImpl extends MinimalEObjectImpl.Container
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.MODEL_LABEL_FEATURE;
+		return WebGenPersistencePackage.Literals.MODEL_LABEL_FEATURE;
 	}
 
 	/**
@@ -56,7 +56,7 @@ public abstract class ModelLabelFeatureImpl extends MinimalEObjectImpl.Container
 	 * @generated
 	 */
 	public ModelLabel getPartOf() {
-		if (eContainerFeatureID() != PersistencePackage.MODEL_LABEL_FEATURE__PART_OF) return null;
+		if (eContainerFeatureID() != WebGenPersistencePackage.MODEL_LABEL_FEATURE__PART_OF) return null;
 		return (ModelLabel)eInternalContainer();
 	}
 
@@ -66,7 +66,7 @@ public abstract class ModelLabelFeatureImpl extends MinimalEObjectImpl.Container
 	 * @generated
 	 */
 	public NotificationChain basicSetPartOf(ModelLabel newPartOf, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPartOf, PersistencePackage.MODEL_LABEL_FEATURE__PART_OF, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newPartOf, WebGenPersistencePackage.MODEL_LABEL_FEATURE__PART_OF, msgs);
 		return msgs;
 	}
 
@@ -76,19 +76,19 @@ public abstract class ModelLabelFeatureImpl extends MinimalEObjectImpl.Container
 	 * @generated
 	 */
 	public void setPartOf(ModelLabel newPartOf) {
-		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != PersistencePackage.MODEL_LABEL_FEATURE__PART_OF && newPartOf != null)) {
+		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WebGenPersistencePackage.MODEL_LABEL_FEATURE__PART_OF && newPartOf != null)) {
 			if (EcoreUtil.isAncestor(this, newPartOf))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPartOf != null)
-				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, PersistencePackage.MODEL_LABEL__FEATURES, ModelLabel.class, msgs);
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebGenPersistencePackage.MODEL_LABEL__FEATURES, ModelLabel.class, msgs);
 			msgs = basicSetPartOf(newPartOf, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.MODEL_LABEL_FEATURE__PART_OF, newPartOf, newPartOf));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.MODEL_LABEL_FEATURE__PART_OF, newPartOf, newPartOf));
 	}
 
 	/**
@@ -99,7 +99,7 @@ public abstract class ModelLabelFeatureImpl extends MinimalEObjectImpl.Container
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
+			case WebGenPersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetPartOf((ModelLabel)otherEnd, msgs);
@@ -115,7 +115,7 @@ public abstract class ModelLabelFeatureImpl extends MinimalEObjectImpl.Container
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
+			case WebGenPersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
 				return basicSetPartOf(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -129,8 +129,8 @@ public abstract class ModelLabelFeatureImpl extends MinimalEObjectImpl.Container
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case PersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
-				return eInternalContainer().eInverseRemove(this, PersistencePackage.MODEL_LABEL__FEATURES, ModelLabel.class, msgs);
+			case WebGenPersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
+				return eInternalContainer().eInverseRemove(this, WebGenPersistencePackage.MODEL_LABEL__FEATURES, ModelLabel.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -143,7 +143,7 @@ public abstract class ModelLabelFeatureImpl extends MinimalEObjectImpl.Container
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
+			case WebGenPersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
 				return getPartOf();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -157,7 +157,7 @@ public abstract class ModelLabelFeatureImpl extends MinimalEObjectImpl.Container
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
+			case WebGenPersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
 				setPartOf((ModelLabel)newValue);
 				return;
 		}
@@ -172,7 +172,7 @@ public abstract class ModelLabelFeatureImpl extends MinimalEObjectImpl.Container
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
+			case WebGenPersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
 				setPartOf((ModelLabel)null);
 				return;
 		}
@@ -187,7 +187,7 @@ public abstract class ModelLabelFeatureImpl extends MinimalEObjectImpl.Container
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
+			case WebGenPersistencePackage.MODEL_LABEL_FEATURE__PART_OF:
 				return getPartOf() != null;
 		}
 		return super.eIsSet(featureID);

@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.Classifier;
 import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +60,7 @@ public class PersistenceImpl extends MinimalEObjectImpl.Container implements Per
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.PERSISTENCE;
+		return WebGenPersistencePackage.Literals.PERSISTENCE;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class PersistenceImpl extends MinimalEObjectImpl.Container implements Per
 	 */
 	public EList<Classifier> getClassifiers() {
 		if (classifiers == null) {
-			classifiers = new EObjectContainmentEList<Classifier>(Classifier.class, this, PersistencePackage.PERSISTENCE__CLASSIFIERS);
+			classifiers = new EObjectContainmentEList<Classifier>(Classifier.class, this, WebGenPersistencePackage.PERSISTENCE__CLASSIFIERS);
 		}
 		return classifiers;
 	}
@@ -83,7 +83,7 @@ public class PersistenceImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.PERSISTENCE__CLASSIFIERS:
+			case WebGenPersistencePackage.PERSISTENCE__CLASSIFIERS:
 				return ((InternalEList<?>)getClassifiers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -97,7 +97,7 @@ public class PersistenceImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.PERSISTENCE__CLASSIFIERS:
+			case WebGenPersistencePackage.PERSISTENCE__CLASSIFIERS:
 				return getClassifiers();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -112,7 +112,7 @@ public class PersistenceImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.PERSISTENCE__CLASSIFIERS:
+			case WebGenPersistencePackage.PERSISTENCE__CLASSIFIERS:
 				getClassifiers().clear();
 				getClassifiers().addAll((Collection<? extends Classifier>)newValue);
 				return;
@@ -128,7 +128,7 @@ public class PersistenceImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.PERSISTENCE__CLASSIFIERS:
+			case WebGenPersistencePackage.PERSISTENCE__CLASSIFIERS:
 				getClassifiers().clear();
 				return;
 		}
@@ -143,7 +143,7 @@ public class PersistenceImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.PERSISTENCE__CLASSIFIERS:
+			case WebGenPersistencePackage.PERSISTENCE__CLASSIFIERS:
 				return classifiers != null && !classifiers.isEmpty();
 		}
 		return super.eIsSet(featureID);

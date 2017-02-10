@@ -21,7 +21,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAssociation#getTargetEntity <em>Target Entity</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedAssociation()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedAssociation()
  * @model
  * @generated
  */
@@ -35,7 +35,7 @@ public interface EncapsulatedAssociation extends EncapsulatedFeature, Associatio
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedAssociation_Name()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedAssociation_Name()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not alias.oclIsUndefined() then\r\n\tif alias <> \'\' then\r\n\t\talias\r\n\telse\r\n\t\t\'empty alias\'\r\n\tendif\r\nelse if association.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).name\r\n\telse\r\n\t\tif isSourceAssociation then\r\n\t\t\tif self.association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tself.association.oclAsType(EntityAssociation).name\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\t\tendif\r\n\t\telse\r\n\t\t\tif self.association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tself.association.oclAsType(EntityAssociation).targetFeatureName\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).opposite.name\r\n\t\t\tendif\r\n\t\tendif\r\n\tendif\r\nendif endif'"
 	 * @generated
@@ -53,7 +53,7 @@ public interface EncapsulatedAssociation extends EncapsulatedFeature, Associatio
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Association</em>' reference.
 	 * @see #setAssociation(Association)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedAssociation_Association()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedAssociation_Association()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Association#getEncapsulatedBy
 	 * @model opposite="encapsulatedBy" required="true"
 	 * @generated
@@ -80,7 +80,7 @@ public interface EncapsulatedAssociation extends EncapsulatedFeature, Associatio
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Encapsulated Target</em>' reference.
 	 * @see #setEncapsulatedTarget(EncapsulatedAssociation)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedAssociation_EncapsulatedTarget()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedAssociation_EncapsulatedTarget()
 	 * @model
 	 * @generated
 	 */
@@ -105,7 +105,7 @@ public interface EncapsulatedAssociation extends EncapsulatedFeature, Associatio
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Source Association</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedAssociation_IsSourceAssociation()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedAssociation_IsSourceAssociation()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tpartOf.encapsulates->collect(eov | eov.features)->includes(association)'"
 	 * @generated
@@ -124,7 +124,7 @@ public interface EncapsulatedAssociation extends EncapsulatedFeature, Associatio
 	 * @return the value of the '<em>Cardinality</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Cardinality
 	 * @see #setCardinality(Cardinality)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedAssociation_Cardinality()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedAssociation_Cardinality()
 	 * @model required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tCardinality::Optional\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality\r\n\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\tif isSourceAssociation then\r\n\t\t\tassociation.oclAsType(ViewAssociation).cardinality\r\n\t\telse\r\n\t\t\tassociation.oclAsType(ViewAssociation).opposite.cardinality\r\n\t\tendif\r\n\telse\r\n\t\tif isSourceAssociation then\r\n\t\t\tassociation.oclAsType(EntityAssociation).cardinality\r\n\t\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\tCardinality::Required\r\n\t\telse\r\n\t\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality \r\n\t\tendif endif\r\n\tendif endif\r\nendif'"
 	 * @generated
@@ -151,7 +151,7 @@ public interface EncapsulatedAssociation extends EncapsulatedFeature, Associatio
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source Entity</em>' reference.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedAssociation_SourceEntity()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedAssociation_SourceEntity()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\telse\r\n\t\tif isSourceAssociation then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity \r\n\t\tendif\r\n\tendif\r\nendif'"
 	 * @generated
@@ -167,7 +167,7 @@ public interface EncapsulatedAssociation extends EncapsulatedFeature, Associatio
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Entity</em>' reference.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedAssociation_TargetEntity()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedAssociation_TargetEntity()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\telse\r\n\t\tif isSourceAssociation then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity \r\n\t\telse\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\tendif\r\n\tendif\r\nendif'"
 	 * @generated

@@ -9,7 +9,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  * <!-- end-user-doc -->
  *
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getImageAttribute()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getImageAttribute()
  * @model
  * @generated
  */

@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.DataTypeAttribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.DataTypeAttribute} object.
@@ -66,7 +66,7 @@ public class DataTypeAttributeItemProvider extends EntityAttributeItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DataTypeAttribute_dataType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypeAttribute_dataType_feature", "_UI_DataTypeAttribute_type"),
-				 PersistencePackage.Literals.DATA_TYPE_ATTRIBUTE__DATA_TYPE,
+				 WebGenPersistencePackage.Literals.DATA_TYPE_ATTRIBUTE__DATA_TYPE,
 				 true,
 				 false,
 				 true,
@@ -88,7 +88,7 @@ public class DataTypeAttributeItemProvider extends EntityAttributeItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DataTypeAttribute_obfuscateFormFields_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypeAttribute_obfuscateFormFields_feature", "_UI_DataTypeAttribute_type"),
-				 PersistencePackage.Literals.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS,
+				 WebGenPersistencePackage.Literals.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS,
 				 true,
 				 false,
 				 false,
@@ -110,7 +110,7 @@ public class DataTypeAttributeItemProvider extends EntityAttributeItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DataTypeAttribute_caseInsensitive_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypeAttribute_caseInsensitive_feature", "_UI_DataTypeAttribute_type"),
-				 PersistencePackage.Literals.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE,
+				 WebGenPersistencePackage.Literals.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE,
 				 true,
 				 false,
 				 false,
@@ -132,7 +132,7 @@ public class DataTypeAttributeItemProvider extends EntityAttributeItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DataTypeAttribute_encrypt_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypeAttribute_encrypt_feature", "_UI_DataTypeAttribute_type"),
-				 PersistencePackage.Literals.DATA_TYPE_ATTRIBUTE__ENCRYPT,
+				 WebGenPersistencePackage.Literals.DATA_TYPE_ATTRIBUTE__ENCRYPT,
 				 true,
 				 false,
 				 false,
@@ -179,9 +179,9 @@ public class DataTypeAttributeItemProvider extends EntityAttributeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataTypeAttribute.class)) {
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE:
-			case PersistencePackage.DATA_TYPE_ATTRIBUTE__ENCRYPT:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE:
+			case WebGenPersistencePackage.DATA_TYPE_ATTRIBUTE__ENCRYPT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

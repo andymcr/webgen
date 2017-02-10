@@ -3,6 +3,7 @@
 package uk.ac.man.cs.mdsd.webgen.persistence;
 
 import org.eclipse.emf.common.util.EList;
+import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getFeatures <em>Features</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabel()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getModelLabel()
  * @model
  * @generated
  */
@@ -34,7 +35,7 @@ public interface ModelLabel extends NamedElement, Label {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Label For</em>' container reference.
 	 * @see #setLabelFor(EntityOrView)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabel_LabelFor()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getModelLabel_LabelFor()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#getLabels
 	 * @model opposite="labels" required="true" transient="false"
 	 * @generated
@@ -61,7 +62,7 @@ public interface ModelLabel extends NamedElement, Label {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Format</em>' attribute.
 	 * @see #setFormat(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabel_Format()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getModelLabel_Format()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -88,7 +89,7 @@ public interface ModelLabel extends NamedElement, Label {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Features</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabel_Features()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getModelLabel_Features()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelFeature#getPartOf
 	 * @model opposite="partOf" containment="true"
 	 * @generated

@@ -17,8 +17,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistenceFactory;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation} object.
@@ -81,7 +81,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Association_pseudo_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Association_pseudo_feature", "_UI_Association_type"),
-				 PersistencePackage.Literals.ASSOCIATION__PSEUDO,
+				 WebGenPersistencePackage.Literals.ASSOCIATION__PSEUDO,
 				 true,
 				 false,
 				 false,
@@ -103,7 +103,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Association_encapsulatedBy_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Association_encapsulatedBy_feature", "_UI_Association_type"),
-				 PersistencePackage.Literals.ASSOCIATION__ENCAPSULATED_BY,
+				 WebGenPersistencePackage.Literals.ASSOCIATION__ENCAPSULATED_BY,
 				 true,
 				 false,
 				 true,
@@ -125,7 +125,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Association_inputClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Association_inputClass_feature", "_UI_Association_type"),
-				 PersistencePackage.Literals.ASSOCIATION__INPUT_CLASS,
+				 WebGenPersistencePackage.Literals.ASSOCIATION__INPUT_CLASS,
 				 true,
 				 false,
 				 false,
@@ -147,7 +147,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Association_sourceEntityX_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Association_sourceEntityX_feature", "_UI_Association_type"),
-				 PersistencePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X,
+				 WebGenPersistencePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X,
 				 false,
 				 false,
 				 false,
@@ -169,7 +169,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Association_targetEntityX_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Association_targetEntityX_feature", "_UI_Association_type"),
-				 PersistencePackage.Literals.ASSOCIATION__TARGET_ENTITY_X,
+				 WebGenPersistencePackage.Literals.ASSOCIATION__TARGET_ENTITY_X,
 				 false,
 				 false,
 				 false,
@@ -191,7 +191,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Association_serializationMaxDepth_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Association_serializationMaxDepth_feature", "_UI_Association_type"),
-				 PersistencePackage.Literals.ASSOCIATION__SERIALIZATION_MAX_DEPTH,
+				 WebGenPersistencePackage.Literals.ASSOCIATION__SERIALIZATION_MAX_DEPTH,
 				 true,
 				 false,
 				 false,
@@ -213,7 +213,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAssociation_targetEntity_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_targetEntity_feature", "_UI_EntityAssociation_type"),
-				 PersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_ENTITY,
+				 WebGenPersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_ENTITY,
 				 true,
 				 false,
 				 true,
@@ -235,7 +235,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAssociation_bidirectional_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_bidirectional_feature", "_UI_EntityAssociation_type"),
-				 PersistencePackage.Literals.ENTITY_ASSOCIATION__BIDIRECTIONAL,
+				 WebGenPersistencePackage.Literals.ENTITY_ASSOCIATION__BIDIRECTIONAL,
 				 true,
 				 false,
 				 false,
@@ -257,7 +257,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAssociation_pivotTableName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_pivotTableName_feature", "_UI_EntityAssociation_type"),
-				 PersistencePackage.Literals.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME,
+				 WebGenPersistencePackage.Literals.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME,
 				 true,
 				 false,
 				 false,
@@ -279,7 +279,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAssociation_targetFeatureName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_targetFeatureName_feature", "_UI_EntityAssociation_type"),
-				 PersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME,
+				 WebGenPersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME,
 				 true,
 				 false,
 				 false,
@@ -301,7 +301,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAssociation_targetPrimaryKey_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_targetPrimaryKey_feature", "_UI_EntityAssociation_type"),
-				 PersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY,
+				 WebGenPersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY,
 				 true,
 				 false,
 				 false,
@@ -323,7 +323,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAssociation_targetDisplayLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_targetDisplayLabel_feature", "_UI_EntityAssociation_type"),
-				 PersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL,
+				 WebGenPersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL,
 				 true,
 				 false,
 				 false,
@@ -345,7 +345,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAssociation_targetHeaderClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_targetHeaderClass_feature", "_UI_EntityAssociation_type"),
-				 PersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS,
+				 WebGenPersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS,
 				 true,
 				 false,
 				 false,
@@ -367,7 +367,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAssociation_targetInputClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_targetInputClass_feature", "_UI_EntityAssociation_type"),
-				 PersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS,
+				 WebGenPersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS,
 				 true,
 				 false,
 				 false,
@@ -389,7 +389,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAssociation_targetDisplayClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_targetDisplayClass_feature", "_UI_EntityAssociation_type"),
-				 PersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS,
+				 WebGenPersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS,
 				 true,
 				 false,
 				 false,
@@ -411,7 +411,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAssociation_targetFooterClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_targetFooterClass_feature", "_UI_EntityAssociation_type"),
-				 PersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS,
+				 WebGenPersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS,
 				 true,
 				 false,
 				 false,
@@ -432,7 +432,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PersistencePackage.Literals.ENTITY_ASSOCIATION__KEYS);
+			childrenFeatures.add(WebGenPersistencePackage.Literals.ENTITY_ASSOCIATION__KEYS);
 		}
 		return childrenFeatures;
 	}
@@ -477,21 +477,21 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityAssociation.class)) {
-			case PersistencePackage.ENTITY_ASSOCIATION__PSEUDO:
-			case PersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
-			case PersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
-			case PersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
-			case PersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS:
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS:
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__KEYS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__KEYS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -511,8 +511,8 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ENTITY_ASSOCIATION__KEYS,
-				 PersistenceFactory.eINSTANCE.createAssociationKey()));
+				(WebGenPersistencePackage.Literals.ENTITY_ASSOCIATION__KEYS,
+				 WebGenPersistenceFactory.eINSTANCE.createAssociationKey()));
 	}
 
 }

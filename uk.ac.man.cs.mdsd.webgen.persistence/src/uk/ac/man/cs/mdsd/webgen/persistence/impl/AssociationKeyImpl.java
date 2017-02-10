@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import uk.ac.man.cs.mdsd.webgen.persistence.AssociationKey;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -91,7 +91,7 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.ASSOCIATION_KEY;
+		return WebGenPersistencePackage.Literals.ASSOCIATION_KEY;
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public EntityAssociation getKeyFor() {
-		if (eContainerFeatureID() != PersistencePackage.ASSOCIATION_KEY__KEY_FOR) return null;
+		if (eContainerFeatureID() != WebGenPersistencePackage.ASSOCIATION_KEY__KEY_FOR) return null;
 		return (EntityAssociation)eInternalContainer();
 	}
 
@@ -110,7 +110,7 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public NotificationChain basicSetKeyFor(EntityAssociation newKeyFor, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newKeyFor, PersistencePackage.ASSOCIATION_KEY__KEY_FOR, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newKeyFor, WebGenPersistencePackage.ASSOCIATION_KEY__KEY_FOR, msgs);
 		return msgs;
 	}
 
@@ -120,19 +120,19 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public void setKeyFor(EntityAssociation newKeyFor) {
-		if (newKeyFor != eInternalContainer() || (eContainerFeatureID() != PersistencePackage.ASSOCIATION_KEY__KEY_FOR && newKeyFor != null)) {
+		if (newKeyFor != eInternalContainer() || (eContainerFeatureID() != WebGenPersistencePackage.ASSOCIATION_KEY__KEY_FOR && newKeyFor != null)) {
 			if (EcoreUtil.isAncestor(this, newKeyFor))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newKeyFor != null)
-				msgs = ((InternalEObject)newKeyFor).eInverseAdd(this, PersistencePackage.ENTITY_ASSOCIATION__KEYS, EntityAssociation.class, msgs);
+				msgs = ((InternalEObject)newKeyFor).eInverseAdd(this, WebGenPersistencePackage.ENTITY_ASSOCIATION__KEYS, EntityAssociation.class, msgs);
 			msgs = basicSetKeyFor(newKeyFor, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ASSOCIATION_KEY__KEY_FOR, newKeyFor, newKeyFor));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ASSOCIATION_KEY__KEY_FOR, newKeyFor, newKeyFor));
 	}
 
 	/**
@@ -146,7 +146,7 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 			sourceFeature = (EntityFeature)eResolveProxy(oldSourceFeature);
 			if (sourceFeature != oldSourceFeature) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.ASSOCIATION_KEY__SOURCE_FEATURE, oldSourceFeature, sourceFeature));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenPersistencePackage.ASSOCIATION_KEY__SOURCE_FEATURE, oldSourceFeature, sourceFeature));
 			}
 		}
 		return sourceFeature;
@@ -170,7 +170,7 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 		EntityFeature oldSourceFeature = sourceFeature;
 		sourceFeature = newSourceFeature;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ASSOCIATION_KEY__SOURCE_FEATURE, oldSourceFeature, sourceFeature));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ASSOCIATION_KEY__SOURCE_FEATURE, oldSourceFeature, sourceFeature));
 	}
 
 	/**
@@ -184,7 +184,7 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 			targetFeature = (EntityFeature)eResolveProxy(oldTargetFeature);
 			if (targetFeature != oldTargetFeature) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE, oldTargetFeature, targetFeature));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenPersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE, oldTargetFeature, targetFeature));
 			}
 		}
 		return targetFeature;
@@ -208,7 +208,7 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 		EntityFeature oldTargetFeature = targetFeature;
 		targetFeature = newTargetFeature;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE, oldTargetFeature, targetFeature));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE, oldTargetFeature, targetFeature));
 	}
 
 	/**
@@ -229,7 +229,7 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 		String oldTargetColumnName = targetColumnName;
 		targetColumnName = newTargetColumnName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME, oldTargetColumnName, targetColumnName));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME, oldTargetColumnName, targetColumnName));
 	}
 
 	/**
@@ -240,7 +240,7 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_KEY__KEY_FOR:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__KEY_FOR:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetKeyFor((EntityAssociation)otherEnd, msgs);
@@ -256,7 +256,7 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_KEY__KEY_FOR:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__KEY_FOR:
 				return basicSetKeyFor(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -270,8 +270,8 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case PersistencePackage.ASSOCIATION_KEY__KEY_FOR:
-				return eInternalContainer().eInverseRemove(this, PersistencePackage.ENTITY_ASSOCIATION__KEYS, EntityAssociation.class, msgs);
+			case WebGenPersistencePackage.ASSOCIATION_KEY__KEY_FOR:
+				return eInternalContainer().eInverseRemove(this, WebGenPersistencePackage.ENTITY_ASSOCIATION__KEYS, EntityAssociation.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -284,15 +284,15 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_KEY__KEY_FOR:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__KEY_FOR:
 				return getKeyFor();
-			case PersistencePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
 				if (resolve) return getSourceFeature();
 				return basicGetSourceFeature();
-			case PersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE:
 				if (resolve) return getTargetFeature();
 				return basicGetTargetFeature();
-			case PersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
 				return getTargetColumnName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -306,16 +306,16 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_KEY__KEY_FOR:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__KEY_FOR:
 				setKeyFor((EntityAssociation)newValue);
 				return;
-			case PersistencePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
 				setSourceFeature((EntityFeature)newValue);
 				return;
-			case PersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE:
 				setTargetFeature((EntityFeature)newValue);
 				return;
-			case PersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
 				setTargetColumnName((String)newValue);
 				return;
 		}
@@ -330,16 +330,16 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_KEY__KEY_FOR:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__KEY_FOR:
 				setKeyFor((EntityAssociation)null);
 				return;
-			case PersistencePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
 				setSourceFeature((EntityFeature)null);
 				return;
-			case PersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE:
 				setTargetFeature((EntityFeature)null);
 				return;
-			case PersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
 				setTargetColumnName(TARGET_COLUMN_NAME_EDEFAULT);
 				return;
 		}
@@ -354,13 +354,13 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ASSOCIATION_KEY__KEY_FOR:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__KEY_FOR:
 				return getKeyFor() != null;
-			case PersistencePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
 				return sourceFeature != null;
-			case PersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE:
 				return targetFeature != null;
-			case PersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
 				return TARGET_COLUMN_NAME_EDEFAULT == null ? targetColumnName != null : !TARGET_COLUMN_NAME_EDEFAULT.equals(targetColumnName);
 		}
 		return super.eIsSet(featureID);

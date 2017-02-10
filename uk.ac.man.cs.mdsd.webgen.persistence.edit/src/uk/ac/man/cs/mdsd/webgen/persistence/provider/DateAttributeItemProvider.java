@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.DateAttribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.DateAttribute} object.
@@ -64,7 +64,7 @@ public class DateAttributeItemProvider extends EntityAttributeItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DateAttribute_details_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DateAttribute_details_feature", "_UI_DateAttribute_type"),
-				 PersistencePackage.Literals.DATE_ATTRIBUTE__DETAILS,
+				 WebGenPersistencePackage.Literals.DATE_ATTRIBUTE__DETAILS,
 				 true,
 				 false,
 				 false,
@@ -86,7 +86,7 @@ public class DateAttributeItemProvider extends EntityAttributeItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_DateAttribute_format_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DateAttribute_format_feature", "_UI_DateAttribute_type"),
-				 PersistencePackage.Literals.DATE_ATTRIBUTE__FORMAT,
+				 WebGenPersistencePackage.Literals.DATE_ATTRIBUTE__FORMAT,
 				 true,
 				 false,
 				 false,
@@ -133,8 +133,8 @@ public class DateAttributeItemProvider extends EntityAttributeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DateAttribute.class)) {
-			case PersistencePackage.DATE_ATTRIBUTE__DETAILS:
-			case PersistencePackage.DATE_ATTRIBUTE__FORMAT:
+			case WebGenPersistencePackage.DATE_ATTRIBUTE__DETAILS:
+			case WebGenPersistencePackage.DATE_ATTRIBUTE__FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

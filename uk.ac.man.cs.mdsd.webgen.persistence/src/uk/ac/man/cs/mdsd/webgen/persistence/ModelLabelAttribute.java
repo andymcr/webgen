@@ -16,7 +16,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelAttribute#getDateFormat <em>Date Format</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabelAttribute()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getModelLabelAttribute()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface ModelLabelAttribute extends ModelLabelFeature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attribute</em>' reference.
 	 * @see #setAttribute(Attribute)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabelAttribute_Attribute()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getModelLabelAttribute_Attribute()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -57,7 +57,7 @@ public interface ModelLabelAttribute extends ModelLabelFeature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Date Format</em>' attribute.
 	 * @see #setDateFormat(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabelAttribute_DateFormat()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getModelLabelAttribute_DateFormat()
 	 * @model ordered="false"
 	 * @generated
 	 */

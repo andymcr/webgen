@@ -15,10 +15,9 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.ResourceAttribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistenceFactory;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.ResourceAttribute} object.
@@ -69,7 +68,7 @@ public class ResourceAttributeItemProvider extends EntityAttributeItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ResourceAttribute_maximumUploadSize_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ResourceAttribute_maximumUploadSize_feature", "_UI_ResourceAttribute_type"),
-				 PersistencePackage.Literals.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE,
+				 WebGenPersistencePackage.Literals.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE,
 				 true,
 				 false,
 				 false,
@@ -91,7 +90,7 @@ public class ResourceAttributeItemProvider extends EntityAttributeItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ResourceAttribute_validUploadMimeTypes_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ResourceAttribute_validUploadMimeTypes_feature", "_UI_ResourceAttribute_type"),
-				 PersistencePackage.Literals.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES,
+				 WebGenPersistencePackage.Literals.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES,
 				 true,
 				 false,
 				 false,
@@ -113,7 +112,7 @@ public class ResourceAttributeItemProvider extends EntityAttributeItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ResourceAttribute_validUploadExtensions_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ResourceAttribute_validUploadExtensions_feature", "_UI_ResourceAttribute_type"),
-				 PersistencePackage.Literals.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS,
+				 WebGenPersistencePackage.Literals.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS,
 				 true,
 				 false,
 				 false,
@@ -135,7 +134,7 @@ public class ResourceAttributeItemProvider extends EntityAttributeItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_ResourceAttribute_uploadsWithinWebsite_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ResourceAttribute_uploadsWithinWebsite_feature", "_UI_ResourceAttribute_type"),
-				 PersistencePackage.Literals.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE,
+				 WebGenPersistencePackage.Literals.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE,
 				 true,
 				 false,
 				 false,
@@ -156,7 +155,7 @@ public class ResourceAttributeItemProvider extends EntityAttributeItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PersistencePackage.Literals.RESOURCE_ATTRIBUTE__UPLOAD_PATH);
+			childrenFeatures.add(WebGenPersistencePackage.Literals.RESOURCE_ATTRIBUTE__UPLOAD_PATH);
 		}
 		return childrenFeatures;
 	}
@@ -201,13 +200,13 @@ public class ResourceAttributeItemProvider extends EntityAttributeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ResourceAttribute.class)) {
-			case PersistencePackage.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE:
-			case PersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES:
-			case PersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS:
-			case PersistencePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case PersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
+			case WebGenPersistencePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -227,13 +226,13 @@ public class ResourceAttributeItemProvider extends EntityAttributeItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.RESOURCE_ATTRIBUTE__UPLOAD_PATH,
-				 PersistenceFactory.eINSTANCE.createStaticPathElement()));
+				(WebGenPersistencePackage.Literals.RESOURCE_ATTRIBUTE__UPLOAD_PATH,
+				 WebGenPersistenceFactory.eINSTANCE.createStaticPathElement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.RESOURCE_ATTRIBUTE__UPLOAD_PATH,
-				 PersistenceFactory.eINSTANCE.createDatePathElement()));
+				(WebGenPersistencePackage.Literals.RESOURCE_ATTRIBUTE__UPLOAD_PATH,
+				 WebGenPersistenceFactory.eINSTANCE.createDatePathElement()));
 	}
 
 }

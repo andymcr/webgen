@@ -19,16 +19,16 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
+import uk.ac.man.cs.mdsd.webgen.core.impl.NamedDisplayElementImpl;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.View;
 import uk.ac.man.cs.mdsd.webgen.persistence.ViewAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.ViewFeature;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -310,7 +310,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getTargetEntityX() <em>Target Entity X</em>}' reference.
@@ -320,7 +320,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ASSOCIATION__TARGET_ENTITY_X).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ASSOCIATION__TARGET_ENTITY_X).getSettingDelegate();
 
 	/**
 	 * The default value of the '{@link #getSerializationMaxDepth() <em>Serialization Max Depth</em>}' attribute.
@@ -388,7 +388,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.VIEW_ASSOCIATION;
+		return WebGenPersistencePackage.Literals.VIEW_ASSOCIATION;
 	}
 
 	/**
@@ -409,7 +409,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		String oldTitle = title;
 		title = newTitle;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__TITLE, oldTitle, title));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -430,7 +430,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		boolean oldCollectionAllowAdd = collectionAllowAdd;
 		collectionAllowAdd = newCollectionAllowAdd;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD, oldCollectionAllowAdd, collectionAllowAdd));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD, oldCollectionAllowAdd, collectionAllowAdd));
 	}
 
 	/**
@@ -451,7 +451,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		boolean oldCollectionAllowRemove = collectionAllowRemove;
 		collectionAllowRemove = newCollectionAllowRemove;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
 	}
 
 	/**
@@ -472,7 +472,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		String oldNullDisplayValue = nullDisplayValue;
 		nullDisplayValue = newNullDisplayValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE, oldNullDisplayValue, nullDisplayValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE, oldNullDisplayValue, nullDisplayValue));
 	}
 
 	/**
@@ -493,7 +493,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		boolean oldEncodeUriKey = encodeUriKey;
 		encodeUriKey = newEncodeUriKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY, oldEncodeUriKey, encodeUriKey));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY, oldEncodeUriKey, encodeUriKey));
 	}
 
 	/**
@@ -503,7 +503,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 */
 	public EList<String> getSerializationGroups() {
 		if (serializationGroups == null) {
-			serializationGroups = new EDataTypeUniqueEList<String>(String.class, this, PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS);
+			serializationGroups = new EDataTypeUniqueEList<String>(String.class, this, WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS);
 		}
 		return serializationGroups;
 	}
@@ -526,7 +526,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		boolean oldSerializationExpose = serializationExpose;
 		serializationExpose = newSerializationExpose;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE, oldSerializationExpose, serializationExpose));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE, oldSerializationExpose, serializationExpose));
 	}
 
 	/**
@@ -547,7 +547,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		String oldHeaderClass = headerClass;
 		headerClass = newHeaderClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS, oldHeaderClass, headerClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS, oldHeaderClass, headerClass));
 	}
 
 	/**
@@ -568,7 +568,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		String oldDisplayClass = displayClass;
 		displayClass = newDisplayClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS, oldDisplayClass, displayClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS, oldDisplayClass, displayClass));
 	}
 
 	/**
@@ -589,7 +589,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		String oldFooterClass = footerClass;
 		footerClass = newFooterClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS, oldFooterClass, footerClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS, oldFooterClass, footerClass));
 	}
 
 	/**
@@ -598,7 +598,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @generated
 	 */
 	public View getPartOf() {
-		if (eContainerFeatureID() != PersistencePackage.VIEW_ASSOCIATION__PART_OF) return null;
+		if (eContainerFeatureID() != WebGenPersistencePackage.VIEW_ASSOCIATION__PART_OF) return null;
 		return (View)eInternalContainer();
 	}
 
@@ -608,7 +608,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @generated
 	 */
 	public NotificationChain basicSetPartOf(View newPartOf, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPartOf, PersistencePackage.VIEW_ASSOCIATION__PART_OF, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newPartOf, WebGenPersistencePackage.VIEW_ASSOCIATION__PART_OF, msgs);
 		return msgs;
 	}
 
@@ -618,19 +618,19 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @generated
 	 */
 	public void setPartOf(View newPartOf) {
-		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != PersistencePackage.VIEW_ASSOCIATION__PART_OF && newPartOf != null)) {
+		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WebGenPersistencePackage.VIEW_ASSOCIATION__PART_OF && newPartOf != null)) {
 			if (EcoreUtil.isAncestor(this, newPartOf))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPartOf != null)
-				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, PersistencePackage.VIEW__VIEW_FEATURES, View.class, msgs);
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebGenPersistencePackage.VIEW__VIEW_FEATURES, View.class, msgs);
 			msgs = basicSetPartOf(newPartOf, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__PART_OF, newPartOf, newPartOf));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__PART_OF, newPartOf, newPartOf));
 	}
 
 	/**
@@ -651,7 +651,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		boolean oldPseudo = pseudo;
 		pseudo = newPseudo;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__PSEUDO, oldPseudo, pseudo));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__PSEUDO, oldPseudo, pseudo));
 	}
 
 	/**
@@ -661,7 +661,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 */
 	public EList<EncapsulatedAssociation> getEncapsulatedBy() {
 		if (encapsulatedBy == null) {
-			encapsulatedBy = new EObjectWithInverseResolvingEList<EncapsulatedAssociation>(EncapsulatedAssociation.class, this, PersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY, PersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION);
+			encapsulatedBy = new EObjectWithInverseResolvingEList<EncapsulatedAssociation>(EncapsulatedAssociation.class, this, WebGenPersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY, WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION);
 		}
 		return encapsulatedBy;
 	}
@@ -684,7 +684,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		String oldInputClass = inputClass;
 		inputClass = newInputClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS, oldInputClass, inputClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS, oldInputClass, inputClass));
 	}
 
 	/**
@@ -741,7 +741,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		int oldSerializationMaxDepth = serializationMaxDepth;
 		serializationMaxDepth = newSerializationMaxDepth;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH, oldSerializationMaxDepth, serializationMaxDepth));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH, oldSerializationMaxDepth, serializationMaxDepth));
 	}
 
 	/**
@@ -755,7 +755,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			opposite = (EncapsulatedAssociation)eResolveProxy(oldOpposite);
 			if (opposite != oldOpposite) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.VIEW_ASSOCIATION__OPPOSITE, oldOpposite, opposite));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenPersistencePackage.VIEW_ASSOCIATION__OPPOSITE, oldOpposite, opposite));
 			}
 		}
 		return opposite;
@@ -779,7 +779,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		EncapsulatedAssociation oldOpposite = opposite;
 		opposite = newOpposite;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__OPPOSITE, oldOpposite, opposite));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__OPPOSITE, oldOpposite, opposite));
 	}
 
 	/**
@@ -800,7 +800,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		Cardinality oldCardinality = cardinality;
 		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__CARDINALITY, oldCardinality, cardinality));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.VIEW_ASSOCIATION__CARDINALITY, oldCardinality, cardinality));
 	}
 
 	/**
@@ -812,11 +812,11 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.VIEW_ASSOCIATION__PART_OF:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__PART_OF:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetPartOf((View)otherEnd, msgs);
-			case PersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEncapsulatedBy()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -830,9 +830,9 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.VIEW_ASSOCIATION__PART_OF:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__PART_OF:
 				return basicSetPartOf(null, msgs);
-			case PersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
 				return ((InternalEList<?>)getEncapsulatedBy()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -846,8 +846,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case PersistencePackage.VIEW_ASSOCIATION__PART_OF:
-				return eInternalContainer().eInverseRemove(this, PersistencePackage.VIEW__VIEW_FEATURES, View.class, msgs);
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__PART_OF:
+				return eInternalContainer().eInverseRemove(this, WebGenPersistencePackage.VIEW__VIEW_FEATURES, View.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -860,46 +860,46 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.VIEW_ASSOCIATION__TITLE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__TITLE:
 				return getTitle();
-			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
 				return isCollectionAllowAdd();
-			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
 				return isCollectionAllowRemove();
-			case PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
 				return getNullDisplayValue();
-			case PersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 				return isEncodeUriKey();
-			case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
 				return getSerializationGroups();
-			case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
 				return isSerializationExpose();
-			case PersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS:
 				return getHeaderClass();
-			case PersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
 				return getDisplayClass();
-			case PersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
 				return getFooterClass();
-			case PersistencePackage.VIEW_ASSOCIATION__PART_OF:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__PART_OF:
 				return getPartOf();
-			case PersistencePackage.VIEW_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__PSEUDO:
 				return isPseudo();
-			case PersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
 				return getEncapsulatedBy();
-			case PersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS:
 				return getInputClass();
-			case PersistencePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X:
 				if (resolve) return getSourceEntityX();
 				return basicGetSourceEntityX();
-			case PersistencePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X:
 				if (resolve) return getTargetEntityX();
 				return basicGetTargetEntityX();
-			case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				return getSerializationMaxDepth();
-			case PersistencePackage.VIEW_ASSOCIATION__OPPOSITE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__OPPOSITE:
 				if (resolve) return getOpposite();
 				return basicGetOpposite();
-			case PersistencePackage.VIEW_ASSOCIATION__CARDINALITY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__CARDINALITY:
 				return getCardinality();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -914,57 +914,57 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.VIEW_ASSOCIATION__TITLE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__TITLE:
 				setTitle((String)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
 				setCollectionAllowAdd((Boolean)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove((Boolean)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
 				setNullDisplayValue((String)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 				setEncodeUriKey((Boolean)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
 				getSerializationGroups().clear();
 				getSerializationGroups().addAll((Collection<? extends String>)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
 				setSerializationExpose((Boolean)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS:
 				setHeaderClass((String)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
 				setDisplayClass((String)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
 				setFooterClass((String)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__PART_OF:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__PART_OF:
 				setPartOf((View)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__PSEUDO:
 				setPseudo((Boolean)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
 				getEncapsulatedBy().clear();
 				getEncapsulatedBy().addAll((Collection<? extends EncapsulatedAssociation>)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS:
 				setInputClass((String)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				setSerializationMaxDepth((Integer)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__OPPOSITE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__OPPOSITE:
 				setOpposite((EncapsulatedAssociation)newValue);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__CARDINALITY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__CARDINALITY:
 				setCardinality((Cardinality)newValue);
 				return;
 		}
@@ -979,55 +979,55 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.VIEW_ASSOCIATION__TITLE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
 				setCollectionAllowAdd(COLLECTION_ALLOW_ADD_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
 				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
 				getSerializationGroups().clear();
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
 				setSerializationExpose(SERIALIZATION_EXPOSE_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS:
 				setHeaderClass(HEADER_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
 				setDisplayClass(DISPLAY_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
 				setFooterClass(FOOTER_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__PART_OF:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__PART_OF:
 				setPartOf((View)null);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__PSEUDO:
 				setPseudo(PSEUDO_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
 				getEncapsulatedBy().clear();
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				setSerializationMaxDepth(SERIALIZATION_MAX_DEPTH_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__OPPOSITE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__OPPOSITE:
 				setOpposite((EncapsulatedAssociation)null);
 				return;
-			case PersistencePackage.VIEW_ASSOCIATION__CARDINALITY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__CARDINALITY:
 				setCardinality(CARDINALITY_EDEFAULT);
 				return;
 		}
@@ -1042,43 +1042,43 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.VIEW_ASSOCIATION__TITLE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
 				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
-			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
 				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
-			case PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
 				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
-			case PersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
-			case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
 				return serializationGroups != null && !serializationGroups.isEmpty();
-			case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
 				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
-			case PersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS:
 				return HEADER_CLASS_EDEFAULT == null ? headerClass != null : !HEADER_CLASS_EDEFAULT.equals(headerClass);
-			case PersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
 				return DISPLAY_CLASS_EDEFAULT == null ? displayClass != null : !DISPLAY_CLASS_EDEFAULT.equals(displayClass);
-			case PersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
 				return FOOTER_CLASS_EDEFAULT == null ? footerClass != null : !FOOTER_CLASS_EDEFAULT.equals(footerClass);
-			case PersistencePackage.VIEW_ASSOCIATION__PART_OF:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__PART_OF:
 				return getPartOf() != null;
-			case PersistencePackage.VIEW_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__PSEUDO:
 				return pseudo != PSEUDO_EDEFAULT;
-			case PersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
 				return encapsulatedBy != null && !encapsulatedBy.isEmpty();
-			case PersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
-			case PersistencePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X:
 				return SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X:
 				return TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				return serializationMaxDepth != SERIALIZATION_MAX_DEPTH_EDEFAULT;
-			case PersistencePackage.VIEW_ASSOCIATION__OPPOSITE:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__OPPOSITE:
 				return opposite != null;
-			case PersistencePackage.VIEW_ASSOCIATION__CARDINALITY:
+			case WebGenPersistencePackage.VIEW_ASSOCIATION__CARDINALITY:
 				return cardinality != CARDINALITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -1093,33 +1093,33 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Feature.class) {
 			switch (derivedFeatureID) {
-				case PersistencePackage.VIEW_ASSOCIATION__TITLE: return PersistencePackage.FEATURE__TITLE;
-				case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD: return PersistencePackage.FEATURE__COLLECTION_ALLOW_ADD;
-				case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE: return PersistencePackage.FEATURE__COLLECTION_ALLOW_REMOVE;
-				case PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE: return PersistencePackage.FEATURE__NULL_DISPLAY_VALUE;
-				case PersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY: return PersistencePackage.FEATURE__ENCODE_URI_KEY;
-				case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS: return PersistencePackage.FEATURE__SERIALIZATION_GROUPS;
-				case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE: return PersistencePackage.FEATURE__SERIALIZATION_EXPOSE;
-				case PersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS: return PersistencePackage.FEATURE__HEADER_CLASS;
-				case PersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS: return PersistencePackage.FEATURE__DISPLAY_CLASS;
-				case PersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS: return PersistencePackage.FEATURE__FOOTER_CLASS;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__TITLE: return WebGenPersistencePackage.FEATURE__TITLE;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD: return WebGenPersistencePackage.FEATURE__COLLECTION_ALLOW_ADD;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE: return WebGenPersistencePackage.FEATURE__COLLECTION_ALLOW_REMOVE;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE: return WebGenPersistencePackage.FEATURE__NULL_DISPLAY_VALUE;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY: return WebGenPersistencePackage.FEATURE__ENCODE_URI_KEY;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS: return WebGenPersistencePackage.FEATURE__SERIALIZATION_GROUPS;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE: return WebGenPersistencePackage.FEATURE__SERIALIZATION_EXPOSE;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS: return WebGenPersistencePackage.FEATURE__HEADER_CLASS;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS: return WebGenPersistencePackage.FEATURE__DISPLAY_CLASS;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS: return WebGenPersistencePackage.FEATURE__FOOTER_CLASS;
 				default: return -1;
 			}
 		}
 		if (baseClass == ViewFeature.class) {
 			switch (derivedFeatureID) {
-				case PersistencePackage.VIEW_ASSOCIATION__PART_OF: return PersistencePackage.VIEW_FEATURE__PART_OF;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__PART_OF: return WebGenPersistencePackage.VIEW_FEATURE__PART_OF;
 				default: return -1;
 			}
 		}
 		if (baseClass == Association.class) {
 			switch (derivedFeatureID) {
-				case PersistencePackage.VIEW_ASSOCIATION__PSEUDO: return PersistencePackage.ASSOCIATION__PSEUDO;
-				case PersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY: return PersistencePackage.ASSOCIATION__ENCAPSULATED_BY;
-				case PersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS: return PersistencePackage.ASSOCIATION__INPUT_CLASS;
-				case PersistencePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X: return PersistencePackage.ASSOCIATION__SOURCE_ENTITY_X;
-				case PersistencePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X: return PersistencePackage.ASSOCIATION__TARGET_ENTITY_X;
-				case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH: return PersistencePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__PSEUDO: return WebGenPersistencePackage.ASSOCIATION__PSEUDO;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY: return WebGenPersistencePackage.ASSOCIATION__ENCAPSULATED_BY;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS: return WebGenPersistencePackage.ASSOCIATION__INPUT_CLASS;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X: return WebGenPersistencePackage.ASSOCIATION__SOURCE_ENTITY_X;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X: return WebGenPersistencePackage.ASSOCIATION__TARGET_ENTITY_X;
+				case WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH: return WebGenPersistencePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 				default: return -1;
 			}
 		}
@@ -1135,33 +1135,33 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Feature.class) {
 			switch (baseFeatureID) {
-				case PersistencePackage.FEATURE__TITLE: return PersistencePackage.VIEW_ASSOCIATION__TITLE;
-				case PersistencePackage.FEATURE__COLLECTION_ALLOW_ADD: return PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD;
-				case PersistencePackage.FEATURE__COLLECTION_ALLOW_REMOVE: return PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
-				case PersistencePackage.FEATURE__NULL_DISPLAY_VALUE: return PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE;
-				case PersistencePackage.FEATURE__ENCODE_URI_KEY: return PersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY;
-				case PersistencePackage.FEATURE__SERIALIZATION_GROUPS: return PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS;
-				case PersistencePackage.FEATURE__SERIALIZATION_EXPOSE: return PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE;
-				case PersistencePackage.FEATURE__HEADER_CLASS: return PersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS;
-				case PersistencePackage.FEATURE__DISPLAY_CLASS: return PersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS;
-				case PersistencePackage.FEATURE__FOOTER_CLASS: return PersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS;
+				case WebGenPersistencePackage.FEATURE__TITLE: return WebGenPersistencePackage.VIEW_ASSOCIATION__TITLE;
+				case WebGenPersistencePackage.FEATURE__COLLECTION_ALLOW_ADD: return WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD;
+				case WebGenPersistencePackage.FEATURE__COLLECTION_ALLOW_REMOVE: return WebGenPersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
+				case WebGenPersistencePackage.FEATURE__NULL_DISPLAY_VALUE: return WebGenPersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE;
+				case WebGenPersistencePackage.FEATURE__ENCODE_URI_KEY: return WebGenPersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY;
+				case WebGenPersistencePackage.FEATURE__SERIALIZATION_GROUPS: return WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS;
+				case WebGenPersistencePackage.FEATURE__SERIALIZATION_EXPOSE: return WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE;
+				case WebGenPersistencePackage.FEATURE__HEADER_CLASS: return WebGenPersistencePackage.VIEW_ASSOCIATION__HEADER_CLASS;
+				case WebGenPersistencePackage.FEATURE__DISPLAY_CLASS: return WebGenPersistencePackage.VIEW_ASSOCIATION__DISPLAY_CLASS;
+				case WebGenPersistencePackage.FEATURE__FOOTER_CLASS: return WebGenPersistencePackage.VIEW_ASSOCIATION__FOOTER_CLASS;
 				default: return -1;
 			}
 		}
 		if (baseClass == ViewFeature.class) {
 			switch (baseFeatureID) {
-				case PersistencePackage.VIEW_FEATURE__PART_OF: return PersistencePackage.VIEW_ASSOCIATION__PART_OF;
+				case WebGenPersistencePackage.VIEW_FEATURE__PART_OF: return WebGenPersistencePackage.VIEW_ASSOCIATION__PART_OF;
 				default: return -1;
 			}
 		}
 		if (baseClass == Association.class) {
 			switch (baseFeatureID) {
-				case PersistencePackage.ASSOCIATION__PSEUDO: return PersistencePackage.VIEW_ASSOCIATION__PSEUDO;
-				case PersistencePackage.ASSOCIATION__ENCAPSULATED_BY: return PersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY;
-				case PersistencePackage.ASSOCIATION__INPUT_CLASS: return PersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS;
-				case PersistencePackage.ASSOCIATION__SOURCE_ENTITY_X: return PersistencePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X;
-				case PersistencePackage.ASSOCIATION__TARGET_ENTITY_X: return PersistencePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X;
-				case PersistencePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH: return PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH;
+				case WebGenPersistencePackage.ASSOCIATION__PSEUDO: return WebGenPersistencePackage.VIEW_ASSOCIATION__PSEUDO;
+				case WebGenPersistencePackage.ASSOCIATION__ENCAPSULATED_BY: return WebGenPersistencePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY;
+				case WebGenPersistencePackage.ASSOCIATION__INPUT_CLASS: return WebGenPersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS;
+				case WebGenPersistencePackage.ASSOCIATION__SOURCE_ENTITY_X: return WebGenPersistencePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X;
+				case WebGenPersistencePackage.ASSOCIATION__TARGET_ENTITY_X: return WebGenPersistencePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X;
+				case WebGenPersistencePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH: return WebGenPersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 				default: return -1;
 			}
 		}

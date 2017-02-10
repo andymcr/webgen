@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.DateAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.DateDetails;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,7 +83,7 @@ public class DateAttributeImpl extends EntityAttributeImpl implements DateAttrib
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.DATE_ATTRIBUTE;
+		return WebGenPersistencePackage.Literals.DATE_ATTRIBUTE;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class DateAttributeImpl extends EntityAttributeImpl implements DateAttrib
 		DateDetails oldDetails = details;
 		details = newDetails == null ? DETAILS_EDEFAULT : newDetails;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.DATE_ATTRIBUTE__DETAILS, oldDetails, details));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATE_ATTRIBUTE__DETAILS, oldDetails, details));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class DateAttributeImpl extends EntityAttributeImpl implements DateAttrib
 		String oldFormat = format;
 		format = newFormat;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.DATE_ATTRIBUTE__FORMAT, oldFormat, format));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATE_ATTRIBUTE__FORMAT, oldFormat, format));
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class DateAttributeImpl extends EntityAttributeImpl implements DateAttrib
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.DATE_ATTRIBUTE__DETAILS:
+			case WebGenPersistencePackage.DATE_ATTRIBUTE__DETAILS:
 				return getDetails();
-			case PersistencePackage.DATE_ATTRIBUTE__FORMAT:
+			case WebGenPersistencePackage.DATE_ATTRIBUTE__FORMAT:
 				return getFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -152,10 +152,10 @@ public class DateAttributeImpl extends EntityAttributeImpl implements DateAttrib
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.DATE_ATTRIBUTE__DETAILS:
+			case WebGenPersistencePackage.DATE_ATTRIBUTE__DETAILS:
 				setDetails((DateDetails)newValue);
 				return;
-			case PersistencePackage.DATE_ATTRIBUTE__FORMAT:
+			case WebGenPersistencePackage.DATE_ATTRIBUTE__FORMAT:
 				setFormat((String)newValue);
 				return;
 		}
@@ -170,10 +170,10 @@ public class DateAttributeImpl extends EntityAttributeImpl implements DateAttrib
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.DATE_ATTRIBUTE__DETAILS:
+			case WebGenPersistencePackage.DATE_ATTRIBUTE__DETAILS:
 				setDetails(DETAILS_EDEFAULT);
 				return;
-			case PersistencePackage.DATE_ATTRIBUTE__FORMAT:
+			case WebGenPersistencePackage.DATE_ATTRIBUTE__FORMAT:
 				setFormat(FORMAT_EDEFAULT);
 				return;
 		}
@@ -188,9 +188,9 @@ public class DateAttributeImpl extends EntityAttributeImpl implements DateAttrib
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.DATE_ATTRIBUTE__DETAILS:
+			case WebGenPersistencePackage.DATE_ATTRIBUTE__DETAILS:
 				return details != DETAILS_EDEFAULT;
-			case PersistencePackage.DATE_ATTRIBUTE__FORMAT:
+			case WebGenPersistencePackage.DATE_ATTRIBUTE__FORMAT:
 				return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
 		}
 		return super.eIsSet(featureID);

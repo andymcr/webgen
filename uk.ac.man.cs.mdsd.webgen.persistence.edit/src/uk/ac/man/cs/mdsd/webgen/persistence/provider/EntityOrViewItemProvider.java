@@ -17,8 +17,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistenceFactory;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView} object.
@@ -81,7 +81,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_singletonName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_singletonName_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__SINGLETON_NAME,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__SINGLETON_NAME,
 				 true,
 				 false,
 				 false,
@@ -103,7 +103,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_pluralisedName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_pluralisedName_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__PLURALISED_NAME,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__PLURALISED_NAME,
 				 true,
 				 false,
 				 false,
@@ -125,7 +125,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_keys_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_keys_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__KEYS,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__KEYS,
 				 true,
 				 false,
 				 true,
@@ -147,7 +147,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_tableName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_tableName_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__TABLE_NAME,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__TABLE_NAME,
 				 true,
 				 false,
 				 false,
@@ -169,7 +169,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_autoKeyName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_autoKeyName_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__AUTO_KEY_NAME,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__AUTO_KEY_NAME,
 				 true,
 				 false,
 				 false,
@@ -191,7 +191,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_autoKeyPersistentType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_autoKeyPersistentType_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE,
 				 true,
 				 false,
 				 false,
@@ -213,7 +213,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_autoKeyGenerationStrategy_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_autoKeyGenerationStrategy_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY,
 				 true,
 				 false,
 				 false,
@@ -235,7 +235,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_unique_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_unique_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__UNIQUE,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__UNIQUE,
 				 true,
 				 false,
 				 true,
@@ -257,7 +257,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_containerUnique_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_containerUnique_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__CONTAINER_UNIQUE,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__CONTAINER_UNIQUE,
 				 true,
 				 false,
 				 true,
@@ -279,7 +279,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_features_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_features_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__FEATURES,
 				 false,
 				 false,
 				 false,
@@ -301,7 +301,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_allFeatures_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_allFeatures_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__ALL_FEATURES,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__ALL_FEATURES,
 				 false,
 				 false,
 				 false,
@@ -323,7 +323,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_attributes_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_attributes_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__ATTRIBUTES,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__ATTRIBUTES,
 				 false,
 				 false,
 				 false,
@@ -345,7 +345,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_associations_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_associations_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__ASSOCIATIONS,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__ASSOCIATIONS,
 				 false,
 				 false,
 				 false,
@@ -367,7 +367,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_allAssociations_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_allAssociations_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__ALL_ASSOCIATIONS,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__ALL_ASSOCIATIONS,
 				 false,
 				 false,
 				 false,
@@ -389,7 +389,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_serializationExcludeAll_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_serializationExcludeAll_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL,
 				 true,
 				 false,
 				 false,
@@ -411,7 +411,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_implementsUserInterface_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_implementsUserInterface_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE,
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE,
 				 true,
 				 false,
 				 false,
@@ -432,7 +432,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PersistencePackage.Literals.ENTITY_OR_VIEW__LABELS);
+			childrenFeatures.add(WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__LABELS);
 		}
 		return childrenFeatures;
 	}
@@ -477,17 +477,17 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityOrView.class)) {
-			case PersistencePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
-			case PersistencePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
-			case PersistencePackage.ENTITY_OR_VIEW__TABLE_NAME:
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
-			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
-			case PersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
-			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__TABLE_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__LABELS:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__LABELS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -507,8 +507,8 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ENTITY_OR_VIEW__LABELS,
-				 PersistenceFactory.eINSTANCE.createModelLabel()));
+				(WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__LABELS,
+				 WebGenPersistenceFactory.eINSTANCE.createModelLabel()));
 	}
 
 }

@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.View#getViewFeatures <em>View Features</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getView()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getView()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface View extends EntityOrView {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Encapsulates</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getView_Encapsulates()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getView_Encapsulates()
 	 * @model
 	 * @generated
 	 */
@@ -49,7 +49,7 @@ public interface View extends EntityOrView {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View Features</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getView_ViewFeatures()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getView_ViewFeatures()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.ViewFeature#getPartOf
 	 * @model opposite="partOf" containment="true"
 	 * @generated

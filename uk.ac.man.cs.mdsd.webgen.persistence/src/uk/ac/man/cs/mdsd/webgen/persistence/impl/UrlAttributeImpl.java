@@ -7,9 +7,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.UrlAttribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +60,7 @@ public class UrlAttributeImpl extends EntityAttributeImpl implements UrlAttribut
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.URL_ATTRIBUTE;
+		return WebGenPersistencePackage.Literals.URL_ATTRIBUTE;
 	}
 
 	/**
@@ -82,7 +81,7 @@ public class UrlAttributeImpl extends EntityAttributeImpl implements UrlAttribut
 		String oldDisplayValue = displayValue;
 		displayValue = newDisplayValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.URL_ATTRIBUTE__DISPLAY_VALUE, oldDisplayValue, displayValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.URL_ATTRIBUTE__DISPLAY_VALUE, oldDisplayValue, displayValue));
 	}
 
 	/**
@@ -93,7 +92,7 @@ public class UrlAttributeImpl extends EntityAttributeImpl implements UrlAttribut
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.URL_ATTRIBUTE__DISPLAY_VALUE:
+			case WebGenPersistencePackage.URL_ATTRIBUTE__DISPLAY_VALUE:
 				return getDisplayValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +106,7 @@ public class UrlAttributeImpl extends EntityAttributeImpl implements UrlAttribut
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.URL_ATTRIBUTE__DISPLAY_VALUE:
+			case WebGenPersistencePackage.URL_ATTRIBUTE__DISPLAY_VALUE:
 				setDisplayValue((String)newValue);
 				return;
 		}
@@ -122,7 +121,7 @@ public class UrlAttributeImpl extends EntityAttributeImpl implements UrlAttribut
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.URL_ATTRIBUTE__DISPLAY_VALUE:
+			case WebGenPersistencePackage.URL_ATTRIBUTE__DISPLAY_VALUE:
 				setDisplayValue(DISPLAY_VALUE_EDEFAULT);
 				return;
 		}
@@ -137,7 +136,7 @@ public class UrlAttributeImpl extends EntityAttributeImpl implements UrlAttribut
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.URL_ATTRIBUTE__DISPLAY_VALUE:
+			case WebGenPersistencePackage.URL_ATTRIBUTE__DISPLAY_VALUE:
 				return DISPLAY_VALUE_EDEFAULT == null ? displayValue != null : !DISPLAY_VALUE_EDEFAULT.equals(displayValue);
 		}
 		return super.eIsSet(featureID);

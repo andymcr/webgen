@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -96,89 +97,6 @@ public interface WebGenPersistencePackage extends EPackage {
 	int PERSISTENCE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.NamedElementImpl <em>Named Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.NamedElementImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getNamedElement()
-	 * @generated
-	 */
-	int NAMED_ELEMENT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT__NAME = 0;
-
-	/**
-	 * The number of structural features of the '<em>Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.NamedDisplayElementImpl <em>Named Display Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.NamedDisplayElementImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getNamedDisplayElement()
-	 * @generated
-	 */
-	int NAMED_DISPLAY_ELEMENT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_DISPLAY_ELEMENT__NAME = NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Named Display Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_DISPLAY_ELEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Named Display Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_DISPLAY_ELEMENT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ClassifierImpl <em>Classifier</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -186,7 +104,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getClassifier()
 	 * @generated
 	 */
-	int CLASSIFIER = 3;
+	int CLASSIFIER = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -195,7 +113,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__NAME = NAMED_DISPLAY_ELEMENT__NAME;
+	int CLASSIFIER__NAME = WebGenCorePackage.NAMED_DISPLAY_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -204,7 +122,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__DISPLAY_LABEL = NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
+	int CLASSIFIER__DISPLAY_LABEL = WebGenCorePackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
 
 	/**
 	 * The number of structural features of the '<em>Classifier</em>' class.
@@ -213,7 +131,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+	int CLASSIFIER_FEATURE_COUNT = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Classifier</em>' class.
@@ -222,7 +140,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER_OPERATION_COUNT = NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
+	int CLASSIFIER_OPERATION_COUNT = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -232,7 +150,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getDataType()
 	 * @generated
 	 */
-	int DATA_TYPE = 4;
+	int DATA_TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -323,7 +241,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getEnumerationType()
 	 * @generated
 	 */
-	int ENUMERATION_TYPE = 5;
+	int ENUMERATION_TYPE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -423,7 +341,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getEnumerationLiteral()
 	 * @generated
 	 */
-	int ENUMERATION_LITERAL = 6;
+	int ENUMERATION_LITERAL = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -432,7 +350,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_LITERAL__NAME = NAMED_DISPLAY_ELEMENT__NAME;
+	int ENUMERATION_LITERAL__NAME = WebGenCorePackage.NAMED_DISPLAY_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -441,7 +359,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_LITERAL__DISPLAY_LABEL = NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
+	int ENUMERATION_LITERAL__DISPLAY_LABEL = WebGenCorePackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
 
 	/**
 	 * The number of structural features of the '<em>Enumeration Literal</em>' class.
@@ -450,7 +368,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_LITERAL_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+	int ENUMERATION_LITERAL_FEATURE_COUNT = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Enumeration Literal</em>' class.
@@ -459,7 +377,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_LITERAL_OPERATION_COUNT = NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
+	int ENUMERATION_LITERAL_OPERATION_COUNT = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl <em>Entity Or View</em>}' class.
@@ -469,7 +387,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getEntityOrView()
 	 * @generated
 	 */
-	int ENTITY_OR_VIEW = 7;
+	int ENTITY_OR_VIEW = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -668,7 +586,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getFeature()
 	 * @generated
 	 */
-	int FEATURE = 8;
+	int FEATURE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -786,7 +704,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 9;
+	int ATTRIBUTE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -940,7 +858,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getAssociation()
 	 * @generated
 	 */
-	int ASSOCIATION = 10;
+	int ASSOCIATION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1112,7 +1030,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getLabel()
 	 * @generated
 	 */
-	int LABEL = 11;
+	int LABEL = 9;
 
 	/**
 	 * The number of structural features of the '<em>Label</em>' class.
@@ -1140,7 +1058,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getModelLabel()
 	 * @generated
 	 */
-	int MODEL_LABEL = 12;
+	int MODEL_LABEL = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1149,7 +1067,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL__NAME = NAMED_ELEMENT__NAME;
+	int MODEL_LABEL__NAME = WebGenCorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Label For</b></em>' container reference.
@@ -1158,7 +1076,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL__LABEL_FOR = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int MODEL_LABEL__LABEL_FOR = WebGenCorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -1167,7 +1085,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL__FORMAT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int MODEL_LABEL__FORMAT = WebGenCorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
@@ -1176,7 +1094,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL__FEATURES = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MODEL_LABEL__FEATURES = WebGenCorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Model Label</em>' class.
@@ -1185,7 +1103,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int MODEL_LABEL_FEATURE_COUNT = WebGenCorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Model Label</em>' class.
@@ -1194,7 +1112,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int MODEL_LABEL_OPERATION_COUNT = WebGenCorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ModelLabelFeatureImpl <em>Model Label Feature</em>}' class.
@@ -1204,7 +1122,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getModelLabelFeature()
 	 * @generated
 	 */
-	int MODEL_LABEL_FEATURE = 13;
+	int MODEL_LABEL_FEATURE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1241,7 +1159,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getModelLabelAttribute()
 	 * @generated
 	 */
-	int MODEL_LABEL_ATTRIBUTE = 14;
+	int MODEL_LABEL_ATTRIBUTE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1296,7 +1214,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getModelLabelAssociation()
 	 * @generated
 	 */
-	int MODEL_LABEL_ASSOCIATION = 15;
+	int MODEL_LABEL_ASSOCIATION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1360,7 +1278,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 16;
+	int ENTITY = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1577,7 +1495,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getEntityFeature()
 	 * @generated
 	 */
-	int ENTITY_FEATURE = 17;
+	int ENTITY_FEATURE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1586,7 +1504,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__NAME = NAMED_DISPLAY_ELEMENT__NAME;
+	int ENTITY_FEATURE__NAME = WebGenCorePackage.NAMED_DISPLAY_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -1595,7 +1513,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__DISPLAY_LABEL = NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
+	int ENTITY_FEATURE__DISPLAY_LABEL = WebGenCorePackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1604,7 +1522,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__TITLE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+	int ENTITY_FEATURE__TITLE = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
@@ -1613,7 +1531,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__COLLECTION_ALLOW_ADD = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int ENTITY_FEATURE__COLLECTION_ALLOW_ADD = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
@@ -1622,7 +1540,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -1631,7 +1549,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__NULL_DISPLAY_VALUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int ENTITY_FEATURE__NULL_DISPLAY_VALUE = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -1640,7 +1558,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__ENCODE_URI_KEY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int ENTITY_FEATURE__ENCODE_URI_KEY = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
@@ -1649,7 +1567,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__SERIALIZATION_GROUPS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int ENTITY_FEATURE__SERIALIZATION_GROUPS = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
@@ -1658,7 +1576,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__SERIALIZATION_EXPOSE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int ENTITY_FEATURE__SERIALIZATION_EXPOSE = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -1667,7 +1585,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int ENTITY_FEATURE__HEADER_CLASS = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -1676,7 +1594,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__DISPLAY_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int ENTITY_FEATURE__DISPLAY_CLASS = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -1685,7 +1603,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int ENTITY_FEATURE__FOOTER_CLASS = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1694,7 +1612,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int ENTITY_FEATURE__PART_OF = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -1703,7 +1621,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int ENTITY_FEATURE__CARDINALITY = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
@@ -1712,7 +1630,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__UNIQUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int ENTITY_FEATURE__UNIQUE = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
@@ -1721,7 +1639,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__ORDERED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int ENTITY_FEATURE__ORDERED = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
@@ -1730,7 +1648,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
@@ -1739,7 +1657,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
+	int ENTITY_FEATURE__SINGLETON_NAME = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
@@ -1748,7 +1666,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
+	int ENTITY_FEATURE__PLURALISED_NAME = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -1757,7 +1675,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__COLUMN_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
+	int ENTITY_FEATURE__COLUMN_NAME = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of structural features of the '<em>Entity Feature</em>' class.
@@ -1766,7 +1684,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
+	int ENTITY_FEATURE_FEATURE_COUNT = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The number of operations of the '<em>Entity Feature</em>' class.
@@ -1775,7 +1693,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_OPERATION_COUNT = NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
+	int ENTITY_FEATURE_OPERATION_COUNT = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl <em>Entity Attribute</em>}' class.
@@ -1785,7 +1703,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getEntityAttribute()
 	 * @generated
 	 */
-	int ENTITY_ATTRIBUTE = 18;
+	int ENTITY_ATTRIBUTE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2074,7 +1992,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getDataTypeAttribute()
 	 * @generated
 	 */
-	int DATA_TYPE_ATTRIBUTE = 19;
+	int DATA_TYPE_ATTRIBUTE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2399,7 +2317,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getDateAttribute()
 	 * @generated
 	 */
-	int DATE_ATTRIBUTE = 20;
+	int DATE_ATTRIBUTE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2706,7 +2624,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getUrlAttribute()
 	 * @generated
 	 */
-	int URL_ATTRIBUTE = 21;
+	int URL_ATTRIBUTE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3004,7 +2922,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getResourceAttribute()
 	 * @generated
 	 */
-	int RESOURCE_ATTRIBUTE = 22;
+	int RESOURCE_ATTRIBUTE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3338,7 +3256,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getPathElement()
 	 * @generated
 	 */
-	int PATH_ELEMENT = 23;
+	int PATH_ELEMENT = 21;
 
 	/**
 	 * The number of structural features of the '<em>Path Element</em>' class.
@@ -3366,7 +3284,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getStaticPathElement()
 	 * @generated
 	 */
-	int STATIC_PATH_ELEMENT = 24;
+	int STATIC_PATH_ELEMENT = 22;
 
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' attribute.
@@ -3403,7 +3321,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getDatePathElement()
 	 * @generated
 	 */
-	int DATE_PATH_ELEMENT = 25;
+	int DATE_PATH_ELEMENT = 23;
 
 	/**
 	 * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -3440,7 +3358,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getFileAttribute()
 	 * @generated
 	 */
-	int FILE_ATTRIBUTE = 26;
+	int FILE_ATTRIBUTE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3774,7 +3692,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getImageAttribute()
 	 * @generated
 	 */
-	int IMAGE_ATTRIBUTE = 27;
+	int IMAGE_ATTRIBUTE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4108,7 +4026,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getLocationAttribute()
 	 * @generated
 	 */
-	int LOCATION_ATTRIBUTE = 28;
+	int LOCATION_ATTRIBUTE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4397,7 +4315,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getEntityAssociation()
 	 * @generated
 	 */
-	int ENTITY_ASSOCIATION = 29;
+	int ENTITY_ASSOCIATION = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4758,7 +4676,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getAssociationWithoutContainment()
 	 * @generated
 	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT = 30;
+	int ASSOCIATION_WITHOUT_CONTAINMENT = 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5137,7 +5055,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getAssociationWithContainment()
 	 * @generated
 	 */
-	int ASSOCIATION_WITH_CONTAINMENT = 31;
+	int ASSOCIATION_WITH_CONTAINMENT = 29;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5507,7 +5425,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getAssociationKey()
 	 * @generated
 	 */
-	int ASSOCIATION_KEY = 32;
+	int ASSOCIATION_KEY = 30;
 
 	/**
 	 * The feature id for the '<em><b>Key For</b></em>' container reference.
@@ -5571,7 +5489,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getView()
 	 * @generated
 	 */
-	int VIEW = 33;
+	int VIEW = 31;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5788,7 +5706,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getViewFeature()
 	 * @generated
 	 */
-	int VIEW_FEATURE = 34;
+	int VIEW_FEATURE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -5915,7 +5833,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getEncapsulatedFeature()
 	 * @generated
 	 */
-	int ENCAPSULATED_FEATURE = 35;
+	int ENCAPSULATED_FEATURE = 33;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -6069,7 +5987,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getEncapsulatedAttribute()
 	 * @generated
 	 */
-	int ENCAPSULATED_ATTRIBUTE = 36;
+	int ENCAPSULATED_ATTRIBUTE = 34;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -6286,7 +6204,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getEncapsulatedAssociation()
 	 * @generated
 	 */
-	int ENCAPSULATED_ASSOCIATION = 37;
+	int ENCAPSULATED_ASSOCIATION = 35;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -6557,7 +6475,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getViewAssociation()
 	 * @generated
 	 */
-	int VIEW_ASSOCIATION = 38;
+	int VIEW_ASSOCIATION = 36;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6566,7 +6484,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__NAME = NAMED_DISPLAY_ELEMENT__NAME;
+	int VIEW_ASSOCIATION__NAME = WebGenCorePackage.NAMED_DISPLAY_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -6575,7 +6493,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__DISPLAY_LABEL = NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
+	int VIEW_ASSOCIATION__DISPLAY_LABEL = WebGenCorePackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -6584,7 +6502,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__TITLE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+	int VIEW_ASSOCIATION__TITLE = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
@@ -6593,7 +6511,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
@@ -6602,7 +6520,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -6611,7 +6529,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__NULL_DISPLAY_VALUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int VIEW_ASSOCIATION__NULL_DISPLAY_VALUE = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -6620,7 +6538,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__ENCODE_URI_KEY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int VIEW_ASSOCIATION__ENCODE_URI_KEY = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
@@ -6629,7 +6547,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SERIALIZATION_GROUPS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int VIEW_ASSOCIATION__SERIALIZATION_GROUPS = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
@@ -6638,7 +6556,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SERIALIZATION_EXPOSE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int VIEW_ASSOCIATION__SERIALIZATION_EXPOSE = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -6647,7 +6565,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int VIEW_ASSOCIATION__HEADER_CLASS = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -6656,7 +6574,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__DISPLAY_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int VIEW_ASSOCIATION__DISPLAY_CLASS = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -6665,7 +6583,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int VIEW_ASSOCIATION__FOOTER_CLASS = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -6674,7 +6592,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int VIEW_ASSOCIATION__PART_OF = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
@@ -6683,7 +6601,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PSEUDO = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int VIEW_ASSOCIATION__PSEUDO = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Encapsulated By</b></em>' reference list.
@@ -6692,7 +6610,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__ENCAPSULATED_BY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int VIEW_ASSOCIATION__ENCAPSULATED_BY = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -6701,7 +6619,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int VIEW_ASSOCIATION__INPUT_CLASS = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Source Entity X</b></em>' reference.
@@ -6710,7 +6628,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity X</b></em>' reference.
@@ -6719,7 +6637,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__TARGET_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
+	int VIEW_ASSOCIATION__TARGET_ENTITY_X = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Max Depth</b></em>' attribute.
@@ -6728,7 +6646,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
+	int VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Opposite</b></em>' reference.
@@ -6737,7 +6655,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__OPPOSITE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
+	int VIEW_ASSOCIATION__OPPOSITE = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -6746,7 +6664,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
+	int VIEW_ASSOCIATION__CARDINALITY = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The number of structural features of the '<em>View Association</em>' class.
@@ -6755,7 +6673,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 19;
+	int VIEW_ASSOCIATION_FEATURE_COUNT = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The number of operations of the '<em>View Association</em>' class.
@@ -6764,7 +6682,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION_OPERATION_COUNT = NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
+	int VIEW_ASSOCIATION_OPERATION_COUNT = WebGenCorePackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies <em>Database Technologies</em>}' enum.
@@ -6774,7 +6692,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getDatabaseTechnologies()
 	 * @generated
 	 */
-	int DATABASE_TECHNOLOGIES = 39;
+	int DATABASE_TECHNOLOGIES = 37;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies <em>Orm Technologies</em>}' enum.
@@ -6784,7 +6702,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getOrmTechnologies()
 	 * @generated
 	 */
-	int ORM_TECHNOLOGIES = 40;
+	int ORM_TECHNOLOGIES = 38;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Cardinality <em>Cardinality</em>}' enum.
@@ -6794,7 +6712,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 41;
+	int CARDINALITY = 39;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.isHasChoices <em>is Has Choices</em>}' enum.
@@ -6804,7 +6722,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getisHasChoices()
 	 * @generated
 	 */
-	int IS_HAS_CHOICES = 42;
+	int IS_HAS_CHOICES = 40;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.DateDetails <em>Date Details</em>}' enum.
@@ -6814,7 +6732,7 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getDateDetails()
 	 * @generated
 	 */
-	int DATE_DETAILS = 43;
+	int DATE_DETAILS = 41;
 
 
 	/**
@@ -6837,48 +6755,6 @@ public interface WebGenPersistencePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPersistence_Classifiers();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.persistence.NamedElement <em>Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Named Element</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.NamedElement
-	 * @generated
-	 */
-	EClass getNamedElement();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.NamedElement#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.NamedElement#getName()
-	 * @see #getNamedElement()
-	 * @generated
-	 */
-	EAttribute getNamedElement_Name();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.persistence.NamedDisplayElement <em>Named Display Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Named Display Element</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.NamedDisplayElement
-	 * @generated
-	 */
-	EClass getNamedDisplayElement();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.NamedDisplayElement#getDisplayLabel <em>Display Label</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Display Label</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.NamedDisplayElement#getDisplayLabel()
-	 * @see #getNamedDisplayElement()
-	 * @generated
-	 */
-	EAttribute getNamedDisplayElement_DisplayLabel();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.persistence.Classifier <em>Classifier</em>}'.
@@ -8617,42 +8493,6 @@ public interface WebGenPersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PERSISTENCE__CLASSIFIERS = eINSTANCE.getPersistence_Classifiers();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.NamedElementImpl <em>Named Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.NamedElementImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getNamedElement()
-		 * @generated
-		 */
-		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.NamedDisplayElementImpl <em>Named Display Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.NamedDisplayElementImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.WebGenPersistencePackageImpl#getNamedDisplayElement()
-		 * @generated
-		 */
-		EClass NAMED_DISPLAY_ELEMENT = eINSTANCE.getNamedDisplayElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Display Label</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL = eINSTANCE.getNamedDisplayElement_DisplayLabel();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ClassifierImpl <em>Classifier</em>}' class.

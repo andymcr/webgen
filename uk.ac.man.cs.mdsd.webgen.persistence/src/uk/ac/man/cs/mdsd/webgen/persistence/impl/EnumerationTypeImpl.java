@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.EnumerationLiteral;
 import uk.ac.man.cs.mdsd.webgen.persistence.EnumerationType;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,7 +58,7 @@ public class EnumerationTypeImpl extends DataTypeImpl implements EnumerationType
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.ENUMERATION_TYPE;
+		return WebGenPersistencePackage.Literals.ENUMERATION_TYPE;
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class EnumerationTypeImpl extends DataTypeImpl implements EnumerationType
 	 */
 	public EList<EnumerationLiteral> getEnumerations() {
 		if (enumerations == null) {
-			enumerations = new EObjectContainmentEList<EnumerationLiteral>(EnumerationLiteral.class, this, PersistencePackage.ENUMERATION_TYPE__ENUMERATIONS);
+			enumerations = new EObjectContainmentEList<EnumerationLiteral>(EnumerationLiteral.class, this, WebGenPersistencePackage.ENUMERATION_TYPE__ENUMERATIONS);
 		}
 		return enumerations;
 	}
@@ -81,7 +81,7 @@ public class EnumerationTypeImpl extends DataTypeImpl implements EnumerationType
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ENUMERATION_TYPE__ENUMERATIONS:
+			case WebGenPersistencePackage.ENUMERATION_TYPE__ENUMERATIONS:
 				return ((InternalEList<?>)getEnumerations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -95,7 +95,7 @@ public class EnumerationTypeImpl extends DataTypeImpl implements EnumerationType
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.ENUMERATION_TYPE__ENUMERATIONS:
+			case WebGenPersistencePackage.ENUMERATION_TYPE__ENUMERATIONS:
 				return getEnumerations();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -110,7 +110,7 @@ public class EnumerationTypeImpl extends DataTypeImpl implements EnumerationType
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.ENUMERATION_TYPE__ENUMERATIONS:
+			case WebGenPersistencePackage.ENUMERATION_TYPE__ENUMERATIONS:
 				getEnumerations().clear();
 				getEnumerations().addAll((Collection<? extends EnumerationLiteral>)newValue);
 				return;
@@ -126,7 +126,7 @@ public class EnumerationTypeImpl extends DataTypeImpl implements EnumerationType
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENUMERATION_TYPE__ENUMERATIONS:
+			case WebGenPersistencePackage.ENUMERATION_TYPE__ENUMERATIONS:
 				getEnumerations().clear();
 				return;
 		}
@@ -141,7 +141,7 @@ public class EnumerationTypeImpl extends DataTypeImpl implements EnumerationType
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENUMERATION_TYPE__ENUMERATIONS:
+			case WebGenPersistencePackage.ENUMERATION_TYPE__ENUMERATIONS:
 				return enumerations != null && !enumerations.isEmpty();
 		}
 		return super.eIsSet(featureID);

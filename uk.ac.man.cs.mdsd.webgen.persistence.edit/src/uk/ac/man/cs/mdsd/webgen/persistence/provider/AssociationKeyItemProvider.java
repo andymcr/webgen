@@ -24,7 +24,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.AssociationKey;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.AssociationKey} object.
@@ -81,7 +81,7 @@ public class AssociationKeyItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AssociationKey_sourceFeature_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationKey_sourceFeature_feature", "_UI_AssociationKey_type"),
-				 PersistencePackage.Literals.ASSOCIATION_KEY__SOURCE_FEATURE,
+				 WebGenPersistencePackage.Literals.ASSOCIATION_KEY__SOURCE_FEATURE,
 				 true,
 				 false,
 				 true,
@@ -103,7 +103,7 @@ public class AssociationKeyItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AssociationKey_targetFeature_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationKey_targetFeature_feature", "_UI_AssociationKey_type"),
-				 PersistencePackage.Literals.ASSOCIATION_KEY__TARGET_FEATURE,
+				 WebGenPersistencePackage.Literals.ASSOCIATION_KEY__TARGET_FEATURE,
 				 true,
 				 false,
 				 true,
@@ -125,7 +125,7 @@ public class AssociationKeyItemProvider
 				 getResourceLocator(),
 				 getString("_UI_AssociationKey_targetColumnName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationKey_targetColumnName_feature", "_UI_AssociationKey_type"),
-				 PersistencePackage.Literals.ASSOCIATION_KEY__TARGET_COLUMN_NAME,
+				 WebGenPersistencePackage.Literals.ASSOCIATION_KEY__TARGET_COLUMN_NAME,
 				 true,
 				 false,
 				 false,
@@ -172,7 +172,7 @@ public class AssociationKeyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AssociationKey.class)) {
-			case PersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
+			case WebGenPersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

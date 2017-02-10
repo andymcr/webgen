@@ -2,6 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.webgen.persistence;
 
+import uk.ac.man.cs.mdsd.webgen.core.NamedDisplayElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -9,7 +10,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  * <!-- end-user-doc -->
  *
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEnumerationLiteral()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEnumerationLiteral()
  * @model
  * @generated
  */

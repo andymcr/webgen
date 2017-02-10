@@ -17,7 +17,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.expression.WebGenExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute} object.
@@ -72,7 +72,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Attribute_placeholder_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_placeholder_feature", "_UI_Attribute_type"),
-				 PersistencePackage.Literals.ATTRIBUTE__PLACEHOLDER,
+				 WebGenPersistencePackage.Literals.ATTRIBUTE__PLACEHOLDER,
 				 true,
 				 false,
 				 false,
@@ -94,7 +94,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Attribute_validationPattern_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_validationPattern_feature", "_UI_Attribute_type"),
-				 PersistencePackage.Literals.ATTRIBUTE__VALIDATION_PATTERN,
+				 WebGenPersistencePackage.Literals.ATTRIBUTE__VALIDATION_PATTERN,
 				 true,
 				 false,
 				 false,
@@ -116,7 +116,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Attribute_inputClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_inputClass_feature", "_UI_Attribute_type"),
-				 PersistencePackage.Literals.ATTRIBUTE__INPUT_CLASS,
+				 WebGenPersistencePackage.Literals.ATTRIBUTE__INPUT_CLASS,
 				 true,
 				 false,
 				 false,
@@ -138,7 +138,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAttribute_primaryKey_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_primaryKey_feature", "_UI_EntityAttribute_type"),
-				 PersistencePackage.Literals.ENTITY_ATTRIBUTE__PRIMARY_KEY,
+				 WebGenPersistencePackage.Literals.ENTITY_ATTRIBUTE__PRIMARY_KEY,
 				 true,
 				 false,
 				 false,
@@ -160,7 +160,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAttribute_containerUnique_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_containerUnique_feature", "_UI_EntityAttribute_type"),
-				 PersistencePackage.Literals.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE,
+				 WebGenPersistencePackage.Literals.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE,
 				 true,
 				 false,
 				 false,
@@ -182,7 +182,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAttribute_persistentType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_persistentType_feature", "_UI_EntityAttribute_type"),
-				 PersistencePackage.Literals.ENTITY_ATTRIBUTE__PERSISTENT_TYPE,
+				 WebGenPersistencePackage.Literals.ENTITY_ATTRIBUTE__PERSISTENT_TYPE,
 				 true,
 				 false,
 				 false,
@@ -204,7 +204,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAttribute_ormType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_ormType_feature", "_UI_EntityAttribute_type"),
-				 PersistencePackage.Literals.ENTITY_ATTRIBUTE__ORM_TYPE,
+				 WebGenPersistencePackage.Literals.ENTITY_ATTRIBUTE__ORM_TYPE,
 				 true,
 				 false,
 				 false,
@@ -226,7 +226,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityAttribute_interfaceType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_interfaceType_feature", "_UI_EntityAttribute_type"),
-				 PersistencePackage.Literals.ENTITY_ATTRIBUTE__INTERFACE_TYPE,
+				 WebGenPersistencePackage.Literals.ENTITY_ATTRIBUTE__INTERFACE_TYPE,
 				 true,
 				 false,
 				 false,
@@ -247,7 +247,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE);
+			childrenFeatures.add(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -292,17 +292,17 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityAttribute.class)) {
-			case PersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
-			case PersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
-			case PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
-			case PersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
-			case PersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
-			case PersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
-			case PersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
-			case PersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
+			case WebGenPersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -322,72 +322,72 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createBooleanLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createTimeLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				(WebGenPersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 

@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getFooterClass <em>Footer Class</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getFeature()
  * @model interface="true" abstract="true"
  * @generated
  */
@@ -42,7 +42,7 @@ public interface Feature extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_Title()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getFeature_Title()
 	 * @model
 	 * @generated
 	 */
@@ -69,7 +69,7 @@ public interface Feature extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Collection Allow Add</em>' attribute.
 	 * @see #setCollectionAllowAdd(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_CollectionAllowAdd()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getFeature_CollectionAllowAdd()
 	 * @model default="false"
 	 * @generated
 	 */
@@ -96,7 +96,7 @@ public interface Feature extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Collection Allow Remove</em>' attribute.
 	 * @see #setCollectionAllowRemove(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_CollectionAllowRemove()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getFeature_CollectionAllowRemove()
 	 * @model default="false"
 	 * @generated
 	 */
@@ -122,7 +122,7 @@ public interface Feature extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Null Display Value</em>' attribute.
 	 * @see #setNullDisplayValue(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_NullDisplayValue()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getFeature_NullDisplayValue()
 	 * @model
 	 * @generated
 	 */
@@ -149,7 +149,7 @@ public interface Feature extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Encode Uri Key</em>' attribute.
 	 * @see #setEncodeUriKey(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_EncodeUriKey()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getFeature_EncodeUriKey()
 	 * @model default="false"
 	 * @generated
 	 */
@@ -175,7 +175,7 @@ public interface Feature extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Serialization Groups</em>' attribute list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_SerializationGroups()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getFeature_SerializationGroups()
 	 * @model default=""
 	 * @generated
 	 */
@@ -192,7 +192,7 @@ public interface Feature extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Serialization Expose</em>' attribute.
 	 * @see #setSerializationExpose(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_SerializationExpose()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getFeature_SerializationExpose()
 	 * @model default="true"
 	 * @generated
 	 */
@@ -218,7 +218,7 @@ public interface Feature extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Header Class</em>' attribute.
 	 * @see #setHeaderClass(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_HeaderClass()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getFeature_HeaderClass()
 	 * @model
 	 * @generated
 	 */
@@ -244,7 +244,7 @@ public interface Feature extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Display Class</em>' attribute.
 	 * @see #setDisplayClass(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_DisplayClass()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getFeature_DisplayClass()
 	 * @model
 	 * @generated
 	 */
@@ -270,7 +270,7 @@ public interface Feature extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Footer Class</em>' attribute.
 	 * @see #setFooterClass(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_FooterClass()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getFeature_FooterClass()
 	 * @model
 	 * @generated
 	 */

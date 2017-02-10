@@ -19,7 +19,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.DataType#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDataType()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataType()
  * @model
  * @generated
  */
@@ -34,7 +34,7 @@ public interface DataType extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Persistent Type</em>' attribute.
 	 * @see #setPersistentType(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDataType_PersistentType()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataType_PersistentType()
 	 * @model
 	 * @generated
 	 */
@@ -60,7 +60,7 @@ public interface DataType extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Orm Type</em>' attribute.
 	 * @see #setOrmType(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDataType_OrmType()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataType_OrmType()
 	 * @model
 	 * @generated
 	 */
@@ -86,7 +86,7 @@ public interface DataType extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Type</em>' attribute.
 	 * @see #setInterfaceType(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDataType_InterfaceType()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataType_InterfaceType()
 	 * @model
 	 * @generated
 	 */
@@ -112,7 +112,7 @@ public interface DataType extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Placeholder</em>' attribute.
 	 * @see #setPlaceholder(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDataType_Placeholder()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataType_Placeholder()
 	 * @model ordered="false"
 	 * @generated
 	 */
@@ -138,7 +138,7 @@ public interface DataType extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Validation Pattern</em>' attribute.
 	 * @see #setValidationPattern(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDataType_ValidationPattern()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataType_ValidationPattern()
 	 * @model ordered="false"
 	 * @generated
 	 */

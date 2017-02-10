@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.DatePathElement;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public class DatePathElementImpl extends PathElementImpl implements DatePathElem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.DATE_PATH_ELEMENT;
+		return WebGenPersistencePackage.Literals.DATE_PATH_ELEMENT;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class DatePathElementImpl extends PathElementImpl implements DatePathElem
 		String oldFormat = format;
 		format = newFormat;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.DATE_PATH_ELEMENT__FORMAT, oldFormat, format));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATE_PATH_ELEMENT__FORMAT, oldFormat, format));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class DatePathElementImpl extends PathElementImpl implements DatePathElem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.DATE_PATH_ELEMENT__FORMAT:
+			case WebGenPersistencePackage.DATE_PATH_ELEMENT__FORMAT:
 				return getFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public class DatePathElementImpl extends PathElementImpl implements DatePathElem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.DATE_PATH_ELEMENT__FORMAT:
+			case WebGenPersistencePackage.DATE_PATH_ELEMENT__FORMAT:
 				setFormat((String)newValue);
 				return;
 		}
@@ -122,7 +122,7 @@ public class DatePathElementImpl extends PathElementImpl implements DatePathElem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.DATE_PATH_ELEMENT__FORMAT:
+			case WebGenPersistencePackage.DATE_PATH_ELEMENT__FORMAT:
 				setFormat(FORMAT_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public class DatePathElementImpl extends PathElementImpl implements DatePathElem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.DATE_PATH_ELEMENT__FORMAT:
+			case WebGenPersistencePackage.DATE_PATH_ELEMENT__FORMAT:
 				return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
 		}
 		return super.eIsSet(featureID);

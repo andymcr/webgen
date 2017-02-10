@@ -9,13 +9,15 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
+import uk.ac.man.cs.mdsd.webgen.core.provider.NamedDisplayElementItemProvider;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature} object.
@@ -79,7 +81,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Feature_title_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_title_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__TITLE,
+				 WebGenPersistencePackage.Literals.FEATURE__TITLE,
 				 true,
 				 false,
 				 false,
@@ -101,7 +103,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Feature_collectionAllowAdd_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionAllowAdd_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__COLLECTION_ALLOW_ADD,
+				 WebGenPersistencePackage.Literals.FEATURE__COLLECTION_ALLOW_ADD,
 				 true,
 				 false,
 				 false,
@@ -123,7 +125,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Feature_collectionAllowRemove_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionAllowRemove_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__COLLECTION_ALLOW_REMOVE,
+				 WebGenPersistencePackage.Literals.FEATURE__COLLECTION_ALLOW_REMOVE,
 				 true,
 				 false,
 				 false,
@@ -145,7 +147,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Feature_nullDisplayValue_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_nullDisplayValue_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__NULL_DISPLAY_VALUE,
+				 WebGenPersistencePackage.Literals.FEATURE__NULL_DISPLAY_VALUE,
 				 true,
 				 false,
 				 false,
@@ -167,7 +169,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Feature_encodeUriKey_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_encodeUriKey_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__ENCODE_URI_KEY,
+				 WebGenPersistencePackage.Literals.FEATURE__ENCODE_URI_KEY,
 				 true,
 				 false,
 				 false,
@@ -189,7 +191,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Feature_serializationGroups_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_serializationGroups_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__SERIALIZATION_GROUPS,
+				 WebGenPersistencePackage.Literals.FEATURE__SERIALIZATION_GROUPS,
 				 true,
 				 false,
 				 false,
@@ -211,7 +213,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Feature_serializationExpose_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_serializationExpose_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__SERIALIZATION_EXPOSE,
+				 WebGenPersistencePackage.Literals.FEATURE__SERIALIZATION_EXPOSE,
 				 true,
 				 false,
 				 false,
@@ -233,7 +235,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Feature_headerClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_headerClass_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__HEADER_CLASS,
+				 WebGenPersistencePackage.Literals.FEATURE__HEADER_CLASS,
 				 true,
 				 false,
 				 false,
@@ -255,7 +257,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Feature_displayClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_displayClass_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__DISPLAY_CLASS,
+				 WebGenPersistencePackage.Literals.FEATURE__DISPLAY_CLASS,
 				 true,
 				 false,
 				 false,
@@ -277,7 +279,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Feature_footerClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_footerClass_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__FOOTER_CLASS,
+				 WebGenPersistencePackage.Literals.FEATURE__FOOTER_CLASS,
 				 true,
 				 false,
 				 false,
@@ -299,7 +301,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityFeature_cardinality_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_cardinality_feature", "_UI_EntityFeature_type"),
-				 PersistencePackage.Literals.ENTITY_FEATURE__CARDINALITY,
+				 WebGenPersistencePackage.Literals.ENTITY_FEATURE__CARDINALITY,
 				 true,
 				 false,
 				 false,
@@ -321,7 +323,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityFeature_unique_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_unique_feature", "_UI_EntityFeature_type"),
-				 PersistencePackage.Literals.ENTITY_FEATURE__UNIQUE,
+				 WebGenPersistencePackage.Literals.ENTITY_FEATURE__UNIQUE,
 				 true,
 				 false,
 				 false,
@@ -343,7 +345,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityFeature_ordered_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_ordered_feature", "_UI_EntityFeature_type"),
-				 PersistencePackage.Literals.ENTITY_FEATURE__ORDERED,
+				 WebGenPersistencePackage.Literals.ENTITY_FEATURE__ORDERED,
 				 true,
 				 false,
 				 false,
@@ -365,7 +367,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityFeature_booleanIsHasChoice_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_booleanIsHasChoice_feature", "_UI_EntityFeature_type"),
-				 PersistencePackage.Literals.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE,
+				 WebGenPersistencePackage.Literals.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE,
 				 true,
 				 false,
 				 false,
@@ -387,7 +389,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityFeature_singletonName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_singletonName_feature", "_UI_EntityFeature_type"),
-				 PersistencePackage.Literals.ENTITY_FEATURE__SINGLETON_NAME,
+				 WebGenPersistencePackage.Literals.ENTITY_FEATURE__SINGLETON_NAME,
 				 true,
 				 false,
 				 false,
@@ -409,7 +411,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityFeature_pluralisedName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_pluralisedName_feature", "_UI_EntityFeature_type"),
-				 PersistencePackage.Literals.ENTITY_FEATURE__PLURALISED_NAME,
+				 WebGenPersistencePackage.Literals.ENTITY_FEATURE__PLURALISED_NAME,
 				 true,
 				 false,
 				 false,
@@ -431,7 +433,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EntityFeature_columnName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_columnName_feature", "_UI_EntityFeature_type"),
-				 PersistencePackage.Literals.ENTITY_FEATURE__COLUMN_NAME,
+				 WebGenPersistencePackage.Literals.ENTITY_FEATURE__COLUMN_NAME,
 				 true,
 				 false,
 				 false,
@@ -467,23 +469,23 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityFeature.class)) {
-			case PersistencePackage.ENTITY_FEATURE__TITLE:
-			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
-			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
-			case PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
-			case PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
-			case PersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
-			case PersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS:
-			case PersistencePackage.ENTITY_FEATURE__FOOTER_CLASS:
-			case PersistencePackage.ENTITY_FEATURE__CARDINALITY:
-			case PersistencePackage.ENTITY_FEATURE__UNIQUE:
-			case PersistencePackage.ENTITY_FEATURE__ORDERED:
-			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
-			case PersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
-			case PersistencePackage.ENTITY_FEATURE__PLURALISED_NAME:
-			case PersistencePackage.ENTITY_FEATURE__COLUMN_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__TITLE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__FOOTER_CLASS:
+			case WebGenPersistencePackage.ENTITY_FEATURE__CARDINALITY:
+			case WebGenPersistencePackage.ENTITY_FEATURE__UNIQUE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__ORDERED:
+			case WebGenPersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
+			case WebGenPersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__PLURALISED_NAME:
+			case WebGenPersistencePackage.ENTITY_FEATURE__COLUMN_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -500,6 +502,17 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

@@ -19,7 +19,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#getInterfaceType <em>Interface Type</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAttribute()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAttribute()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='primaryKeyRequired'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL primaryKeyRequired='primaryKey implies cardinality <> Cardinality::Optional'"
@@ -36,7 +36,7 @@ public interface EntityAttribute extends EntityFeature, Attribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Primary Key</em>' attribute.
 	 * @see #setPrimaryKey(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAttribute_PrimaryKey()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAttribute_PrimaryKey()
 	 * @model
 	 * @generated
 	 */
@@ -62,7 +62,7 @@ public interface EntityAttribute extends EntityFeature, Attribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Container Unique</em>' attribute.
 	 * @see #setContainerUnique(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAttribute_ContainerUnique()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAttribute_ContainerUnique()
 	 * @model
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface EntityAttribute extends EntityFeature, Attribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Persistent Type</em>' attribute.
 	 * @see #setPersistentType(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAttribute_PersistentType()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAttribute_PersistentType()
 	 * @model
 	 * @generated
 	 */
@@ -114,7 +114,7 @@ public interface EntityAttribute extends EntityFeature, Attribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Orm Type</em>' attribute.
 	 * @see #setOrmType(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAttribute_OrmType()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAttribute_OrmType()
 	 * @model
 	 * @generated
 	 */
@@ -140,7 +140,7 @@ public interface EntityAttribute extends EntityFeature, Attribute {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Type</em>' attribute.
 	 * @see #setInterfaceType(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAttribute_InterfaceType()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityAttribute_InterfaceType()
 	 * @model
 	 * @generated
 	 */

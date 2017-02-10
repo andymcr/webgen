@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getPathElement()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getPathElement()
  * @model abstract="true"
  * @generated
  */

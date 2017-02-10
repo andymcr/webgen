@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelAttribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelAttribute} object.
@@ -64,7 +64,7 @@ public class ModelLabelAttributeItemProvider extends ModelLabelFeatureItemProvid
 				 getResourceLocator(),
 				 getString("_UI_ModelLabelAttribute_attribute_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAttribute_attribute_feature", "_UI_ModelLabelAttribute_type"),
-				 PersistencePackage.Literals.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE,
+				 WebGenPersistencePackage.Literals.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE,
 				 true,
 				 false,
 				 true,
@@ -86,7 +86,7 @@ public class ModelLabelAttributeItemProvider extends ModelLabelFeatureItemProvid
 				 getResourceLocator(),
 				 getString("_UI_ModelLabelAttribute_dateFormat_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAttribute_dateFormat_feature", "_UI_ModelLabelAttribute_type"),
-				 PersistencePackage.Literals.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT,
+				 WebGenPersistencePackage.Literals.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT,
 				 true,
 				 false,
 				 false,
@@ -133,7 +133,7 @@ public class ModelLabelAttributeItemProvider extends ModelLabelFeatureItemProvid
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ModelLabelAttribute.class)) {
-			case PersistencePackage.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT:
+			case WebGenPersistencePackage.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -17,7 +17,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedFeature#getColumnName <em>Column Name</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedFeature()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedFeature()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface EncapsulatedFeature extends ViewFeature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Display Label</em>' attribute.
 	 * @see #setDisplayLabel(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedFeature_DisplayLabel()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedFeature_DisplayLabel()
 	 * @model
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface EncapsulatedFeature extends ViewFeature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Alias</em>' attribute.
 	 * @see #setAlias(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedFeature_Alias()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedFeature_Alias()
 	 * @model
 	 * @generated
 	 */
@@ -84,7 +84,7 @@ public interface EncapsulatedFeature extends ViewFeature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Column Name</em>' attribute.
 	 * @see #setColumnName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEncapsulatedFeature_ColumnName()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEncapsulatedFeature_ColumnName()
 	 * @model ordered="false"
 	 * @generated
 	 */

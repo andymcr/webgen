@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.PathElement;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +33,7 @@ public abstract class PathElementImpl extends MinimalEObjectImpl.Container imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.PATH_ELEMENT;
+		return WebGenPersistencePackage.Literals.PATH_ELEMENT;
 	}
 
 } //PathElementImpl

@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAssociation;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAssociation} object.
@@ -75,7 +75,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 getResourceLocator(),
 				 getString("_UI_Association_pseudo_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Association_pseudo_feature", "_UI_Association_type"),
-				 PersistencePackage.Literals.ASSOCIATION__PSEUDO,
+				 WebGenPersistencePackage.Literals.ASSOCIATION__PSEUDO,
 				 true,
 				 false,
 				 false,
@@ -97,7 +97,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 getResourceLocator(),
 				 getString("_UI_Association_encapsulatedBy_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Association_encapsulatedBy_feature", "_UI_Association_type"),
-				 PersistencePackage.Literals.ASSOCIATION__ENCAPSULATED_BY,
+				 WebGenPersistencePackage.Literals.ASSOCIATION__ENCAPSULATED_BY,
 				 true,
 				 false,
 				 true,
@@ -119,7 +119,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 getResourceLocator(),
 				 getString("_UI_Association_inputClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Association_inputClass_feature", "_UI_Association_type"),
-				 PersistencePackage.Literals.ASSOCIATION__INPUT_CLASS,
+				 WebGenPersistencePackage.Literals.ASSOCIATION__INPUT_CLASS,
 				 true,
 				 false,
 				 false,
@@ -141,7 +141,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 getResourceLocator(),
 				 getString("_UI_Association_sourceEntityX_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Association_sourceEntityX_feature", "_UI_Association_type"),
-				 PersistencePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X,
+				 WebGenPersistencePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X,
 				 false,
 				 false,
 				 false,
@@ -163,7 +163,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 getResourceLocator(),
 				 getString("_UI_Association_targetEntityX_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Association_targetEntityX_feature", "_UI_Association_type"),
-				 PersistencePackage.Literals.ASSOCIATION__TARGET_ENTITY_X,
+				 WebGenPersistencePackage.Literals.ASSOCIATION__TARGET_ENTITY_X,
 				 false,
 				 false,
 				 false,
@@ -185,7 +185,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 getResourceLocator(),
 				 getString("_UI_Association_serializationMaxDepth_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Association_serializationMaxDepth_feature", "_UI_Association_type"),
-				 PersistencePackage.Literals.ASSOCIATION__SERIALIZATION_MAX_DEPTH,
+				 WebGenPersistencePackage.Literals.ASSOCIATION__SERIALIZATION_MAX_DEPTH,
 				 true,
 				 false,
 				 false,
@@ -207,7 +207,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 getResourceLocator(),
 				 getString("_UI_EncapsulatedAssociation_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EncapsulatedAssociation_name_feature", "_UI_EncapsulatedAssociation_type"),
-				 PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__NAME,
+				 WebGenPersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__NAME,
 				 false,
 				 false,
 				 false,
@@ -229,7 +229,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 getResourceLocator(),
 				 getString("_UI_EncapsulatedAssociation_association_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EncapsulatedAssociation_association_feature", "_UI_EncapsulatedAssociation_type"),
-				 PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__ASSOCIATION,
+				 WebGenPersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__ASSOCIATION,
 				 true,
 				 false,
 				 true,
@@ -251,7 +251,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 getResourceLocator(),
 				 getString("_UI_EncapsulatedAssociation_encapsulatedTarget_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EncapsulatedAssociation_encapsulatedTarget_feature", "_UI_EncapsulatedAssociation_type"),
-				 PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET,
+				 WebGenPersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET,
 				 true,
 				 false,
 				 true,
@@ -273,7 +273,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 getResourceLocator(),
 				 getString("_UI_EncapsulatedAssociation_isSourceAssociation_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EncapsulatedAssociation_isSourceAssociation_feature", "_UI_EncapsulatedAssociation_type"),
-				 PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION,
+				 WebGenPersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION,
 				 false,
 				 false,
 				 false,
@@ -295,7 +295,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 getResourceLocator(),
 				 getString("_UI_EncapsulatedAssociation_cardinality_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EncapsulatedAssociation_cardinality_feature", "_UI_EncapsulatedAssociation_type"),
-				 PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__CARDINALITY,
+				 WebGenPersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__CARDINALITY,
 				 true,
 				 false,
 				 false,
@@ -317,7 +317,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 getResourceLocator(),
 				 getString("_UI_EncapsulatedAssociation_sourceEntity_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EncapsulatedAssociation_sourceEntity_feature", "_UI_EncapsulatedAssociation_type"),
-				 PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY,
+				 WebGenPersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY,
 				 false,
 				 false,
 				 false,
@@ -339,7 +339,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 getResourceLocator(),
 				 getString("_UI_EncapsulatedAssociation_targetEntity_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EncapsulatedAssociation_targetEntity_feature", "_UI_EncapsulatedAssociation_type"),
-				 PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY,
+				 WebGenPersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY,
 				 false,
 				 false,
 				 false,
@@ -386,12 +386,12 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EncapsulatedAssociation.class)) {
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO:
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__NAME:
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION:
-			case PersistencePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__NAME:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+			case WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

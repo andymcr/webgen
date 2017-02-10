@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import uk.ac.man.cs.mdsd.webgen.core.provider.CoreEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
 
 /**
@@ -39,6 +40,7 @@ public final class PersistenceEditPlugin extends EMFPlugin {
 	public PersistenceEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     CoreEditPlugin.INSTANCE,
 		     ExpressionEditPlugin.INSTANCE,
 		   });
 	}

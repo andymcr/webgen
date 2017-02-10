@@ -25,7 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.Entity;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,7 +115,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getTargetEntityX() <em>Target Entity X</em>}' reference.
@@ -125,7 +125,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ASSOCIATION__TARGET_ENTITY_X).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebGenPersistencePackage.Literals.ASSOCIATION__TARGET_ENTITY_X).getSettingDelegate();
 
 	/**
 	 * The default value of the '{@link #getSerializationMaxDepth() <em>Serialization Max Depth</em>}' attribute.
@@ -363,7 +363,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.ENTITY_ASSOCIATION;
+		return WebGenPersistencePackage.Literals.ENTITY_ASSOCIATION;
 	}
 
 	/**
@@ -384,7 +384,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		boolean oldPseudo = pseudo;
 		pseudo = newPseudo;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__PSEUDO, oldPseudo, pseudo));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__PSEUDO, oldPseudo, pseudo));
 	}
 
 	/**
@@ -394,7 +394,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 */
 	public EList<EncapsulatedAssociation> getEncapsulatedBy() {
 		if (encapsulatedBy == null) {
-			encapsulatedBy = new EObjectWithInverseResolvingEList<EncapsulatedAssociation>(EncapsulatedAssociation.class, this, PersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY, PersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION);
+			encapsulatedBy = new EObjectWithInverseResolvingEList<EncapsulatedAssociation>(EncapsulatedAssociation.class, this, WebGenPersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY, WebGenPersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION);
 		}
 		return encapsulatedBy;
 	}
@@ -417,7 +417,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		String oldInputClass = inputClass;
 		inputClass = newInputClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS, oldInputClass, inputClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS, oldInputClass, inputClass));
 	}
 
 	/**
@@ -474,7 +474,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		int oldSerializationMaxDepth = serializationMaxDepth;
 		serializationMaxDepth = newSerializationMaxDepth;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH, oldSerializationMaxDepth, serializationMaxDepth));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH, oldSerializationMaxDepth, serializationMaxDepth));
 	}
 
 	/**
@@ -484,7 +484,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 */
 	public EList<AssociationKey> getKeys() {
 		if (keys == null) {
-			keys = new EObjectContainmentWithInverseEList<AssociationKey>(AssociationKey.class, this, PersistencePackage.ENTITY_ASSOCIATION__KEYS, PersistencePackage.ASSOCIATION_KEY__KEY_FOR);
+			keys = new EObjectContainmentWithInverseEList<AssociationKey>(AssociationKey.class, this, WebGenPersistencePackage.ENTITY_ASSOCIATION__KEYS, WebGenPersistencePackage.ASSOCIATION_KEY__KEY_FOR);
 		}
 		return keys;
 	}
@@ -500,7 +500,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 			targetEntity = (Entity)eResolveProxy(oldTargetEntity);
 			if (targetEntity != oldTargetEntity) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY, oldTargetEntity, targetEntity));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY, oldTargetEntity, targetEntity));
 			}
 		}
 		return targetEntity;
@@ -524,7 +524,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		Entity oldTargetEntity = targetEntity;
 		targetEntity = newTargetEntity;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY, oldTargetEntity, newTargetEntity);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY, oldTargetEntity, newTargetEntity);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -539,14 +539,14 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		if (newTargetEntity != targetEntity) {
 			NotificationChain msgs = null;
 			if (targetEntity != null)
-				msgs = ((InternalEObject)targetEntity).eInverseRemove(this, PersistencePackage.ENTITY__ASSOCIATION_ENDS, Entity.class, msgs);
+				msgs = ((InternalEObject)targetEntity).eInverseRemove(this, WebGenPersistencePackage.ENTITY__ASSOCIATION_ENDS, Entity.class, msgs);
 			if (newTargetEntity != null)
-				msgs = ((InternalEObject)newTargetEntity).eInverseAdd(this, PersistencePackage.ENTITY__ASSOCIATION_ENDS, Entity.class, msgs);
+				msgs = ((InternalEObject)newTargetEntity).eInverseAdd(this, WebGenPersistencePackage.ENTITY__ASSOCIATION_ENDS, Entity.class, msgs);
 			msgs = basicSetTargetEntity(newTargetEntity, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY, newTargetEntity, newTargetEntity));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY, newTargetEntity, newTargetEntity));
 	}
 
 	/**
@@ -567,7 +567,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		boolean oldBidirectional = bidirectional;
 		bidirectional = newBidirectional;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL, oldBidirectional, bidirectional));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL, oldBidirectional, bidirectional));
 	}
 
 	/**
@@ -588,7 +588,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		String oldPivotTableName = pivotTableName;
 		pivotTableName = newPivotTableName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME, oldPivotTableName, pivotTableName));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME, oldPivotTableName, pivotTableName));
 	}
 
 	/**
@@ -609,7 +609,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		String oldTargetFeatureName = targetFeatureName;
 		targetFeatureName = newTargetFeatureName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME, oldTargetFeatureName, targetFeatureName));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME, oldTargetFeatureName, targetFeatureName));
 	}
 
 	/**
@@ -630,7 +630,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		boolean oldTargetPrimaryKey = targetPrimaryKey;
 		targetPrimaryKey = newTargetPrimaryKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY, oldTargetPrimaryKey, targetPrimaryKey));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY, oldTargetPrimaryKey, targetPrimaryKey));
 	}
 
 	/**
@@ -651,7 +651,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		String oldTargetDisplayLabel = targetDisplayLabel;
 		targetDisplayLabel = newTargetDisplayLabel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL, oldTargetDisplayLabel, targetDisplayLabel));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL, oldTargetDisplayLabel, targetDisplayLabel));
 	}
 
 	/**
@@ -672,7 +672,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		String oldTargetHeaderClass = targetHeaderClass;
 		targetHeaderClass = newTargetHeaderClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS, oldTargetHeaderClass, targetHeaderClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS, oldTargetHeaderClass, targetHeaderClass));
 	}
 
 	/**
@@ -693,7 +693,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		String oldTargetInputClass = targetInputClass;
 		targetInputClass = newTargetInputClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS, oldTargetInputClass, targetInputClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS, oldTargetInputClass, targetInputClass));
 	}
 
 	/**
@@ -714,7 +714,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		String oldTargetDisplayClass = targetDisplayClass;
 		targetDisplayClass = newTargetDisplayClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS, oldTargetDisplayClass, targetDisplayClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS, oldTargetDisplayClass, targetDisplayClass));
 	}
 
 	/**
@@ -735,7 +735,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		String oldTargetFooterClass = targetFooterClass;
 		targetFooterClass = newTargetFooterClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS, oldTargetFooterClass, targetFooterClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS, oldTargetFooterClass, targetFooterClass));
 	}
 
 	/**
@@ -747,13 +747,13 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEncapsulatedBy()).basicAdd(otherEnd, msgs);
-			case PersistencePackage.ENTITY_ASSOCIATION__KEYS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__KEYS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getKeys()).basicAdd(otherEnd, msgs);
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				if (targetEntity != null)
-					msgs = ((InternalEObject)targetEntity).eInverseRemove(this, PersistencePackage.ENTITY__ASSOCIATION_ENDS, Entity.class, msgs);
+					msgs = ((InternalEObject)targetEntity).eInverseRemove(this, WebGenPersistencePackage.ENTITY__ASSOCIATION_ENDS, Entity.class, msgs);
 				return basicSetTargetEntity((Entity)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -767,11 +767,11 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
 				return ((InternalEList<?>)getEncapsulatedBy()).basicRemove(otherEnd, msgs);
-			case PersistencePackage.ENTITY_ASSOCIATION__KEYS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__KEYS:
 				return ((InternalEList<?>)getKeys()).basicRemove(otherEnd, msgs);
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				return basicSetTargetEntity(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -785,42 +785,42 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__PSEUDO:
 				return isPseudo();
-			case PersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
 				return getEncapsulatedBy();
-			case PersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 				return getInputClass();
-			case PersistencePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X:
 				if (resolve) return getSourceEntityX();
 				return basicGetSourceEntityX();
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X:
 				if (resolve) return getTargetEntityX();
 				return basicGetTargetEntityX();
-			case PersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				return getSerializationMaxDepth();
-			case PersistencePackage.ENTITY_ASSOCIATION__KEYS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__KEYS:
 				return getKeys();
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				if (resolve) return getTargetEntity();
 				return basicGetTargetEntity();
-			case PersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
 				return isBidirectional();
-			case PersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				return getPivotTableName();
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				return getTargetFeatureName();
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
 				return isTargetPrimaryKey();
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
 				return getTargetDisplayLabel();
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
 				return getTargetHeaderClass();
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS:
 				return getTargetInputClass();
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS:
 				return getTargetDisplayClass();
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS:
 				return getTargetFooterClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -835,51 +835,51 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__PSEUDO:
 				setPseudo((Boolean)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
 				getEncapsulatedBy().clear();
 				getEncapsulatedBy().addAll((Collection<? extends EncapsulatedAssociation>)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 				setInputClass((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				setSerializationMaxDepth((Integer)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__KEYS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__KEYS:
 				getKeys().clear();
 				getKeys().addAll((Collection<? extends AssociationKey>)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				setTargetEntity((Entity)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
 				setBidirectional((Boolean)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				setPivotTableName((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				setTargetFeatureName((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
 				setTargetPrimaryKey((Boolean)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
 				setTargetDisplayLabel((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
 				setTargetHeaderClass((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS:
 				setTargetInputClass((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS:
 				setTargetDisplayClass((String)newValue);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS:
 				setTargetFooterClass((String)newValue);
 				return;
 		}
@@ -894,49 +894,49 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__PSEUDO:
 				setPseudo(PSEUDO_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
 				getEncapsulatedBy().clear();
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				setSerializationMaxDepth(SERIALIZATION_MAX_DEPTH_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__KEYS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__KEYS:
 				getKeys().clear();
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				setTargetEntity((Entity)null);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
 				setBidirectional(BIDIRECTIONAL_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				setPivotTableName(PIVOT_TABLE_NAME_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				setTargetFeatureName(TARGET_FEATURE_NAME_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
 				setTargetPrimaryKey(TARGET_PRIMARY_KEY_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
 				setTargetDisplayLabel(TARGET_DISPLAY_LABEL_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
 				setTargetHeaderClass(TARGET_HEADER_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS:
 				setTargetInputClass(TARGET_INPUT_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS:
 				setTargetDisplayClass(TARGET_DISPLAY_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS:
 				setTargetFooterClass(TARGET_FOOTER_CLASS_EDEFAULT);
 				return;
 		}
@@ -951,39 +951,39 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.ENTITY_ASSOCIATION__PSEUDO:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__PSEUDO:
 				return pseudo != PSEUDO_EDEFAULT;
-			case PersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
 				return encapsulatedBy != null && !encapsulatedBy.isEmpty();
-			case PersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
-			case PersistencePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X:
 				return SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X:
 				return TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				return serializationMaxDepth != SERIALIZATION_MAX_DEPTH_EDEFAULT;
-			case PersistencePackage.ENTITY_ASSOCIATION__KEYS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__KEYS:
 				return keys != null && !keys.isEmpty();
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				return targetEntity != null;
-			case PersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
 				return bidirectional != BIDIRECTIONAL_EDEFAULT;
-			case PersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				return PIVOT_TABLE_NAME_EDEFAULT == null ? pivotTableName != null : !PIVOT_TABLE_NAME_EDEFAULT.equals(pivotTableName);
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				return TARGET_FEATURE_NAME_EDEFAULT == null ? targetFeatureName != null : !TARGET_FEATURE_NAME_EDEFAULT.equals(targetFeatureName);
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
 				return targetPrimaryKey != TARGET_PRIMARY_KEY_EDEFAULT;
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
 				return TARGET_DISPLAY_LABEL_EDEFAULT == null ? targetDisplayLabel != null : !TARGET_DISPLAY_LABEL_EDEFAULT.equals(targetDisplayLabel);
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
 				return TARGET_HEADER_CLASS_EDEFAULT == null ? targetHeaderClass != null : !TARGET_HEADER_CLASS_EDEFAULT.equals(targetHeaderClass);
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS:
 				return TARGET_INPUT_CLASS_EDEFAULT == null ? targetInputClass != null : !TARGET_INPUT_CLASS_EDEFAULT.equals(targetInputClass);
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS:
 				return TARGET_DISPLAY_CLASS_EDEFAULT == null ? targetDisplayClass != null : !TARGET_DISPLAY_CLASS_EDEFAULT.equals(targetDisplayClass);
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS:
+			case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS:
 				return TARGET_FOOTER_CLASS_EDEFAULT == null ? targetFooterClass != null : !TARGET_FOOTER_CLASS_EDEFAULT.equals(targetFooterClass);
 		}
 		return super.eIsSet(featureID);
@@ -998,12 +998,12 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (derivedFeatureID) {
-				case PersistencePackage.ENTITY_ASSOCIATION__PSEUDO: return PersistencePackage.ASSOCIATION__PSEUDO;
-				case PersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY: return PersistencePackage.ASSOCIATION__ENCAPSULATED_BY;
-				case PersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS: return PersistencePackage.ASSOCIATION__INPUT_CLASS;
-				case PersistencePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X: return PersistencePackage.ASSOCIATION__SOURCE_ENTITY_X;
-				case PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X: return PersistencePackage.ASSOCIATION__TARGET_ENTITY_X;
-				case PersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH: return PersistencePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH;
+				case WebGenPersistencePackage.ENTITY_ASSOCIATION__PSEUDO: return WebGenPersistencePackage.ASSOCIATION__PSEUDO;
+				case WebGenPersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY: return WebGenPersistencePackage.ASSOCIATION__ENCAPSULATED_BY;
+				case WebGenPersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS: return WebGenPersistencePackage.ASSOCIATION__INPUT_CLASS;
+				case WebGenPersistencePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X: return WebGenPersistencePackage.ASSOCIATION__SOURCE_ENTITY_X;
+				case WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X: return WebGenPersistencePackage.ASSOCIATION__TARGET_ENTITY_X;
+				case WebGenPersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH: return WebGenPersistencePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 				default: return -1;
 			}
 		}
@@ -1019,12 +1019,12 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (baseFeatureID) {
-				case PersistencePackage.ASSOCIATION__PSEUDO: return PersistencePackage.ENTITY_ASSOCIATION__PSEUDO;
-				case PersistencePackage.ASSOCIATION__ENCAPSULATED_BY: return PersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY;
-				case PersistencePackage.ASSOCIATION__INPUT_CLASS: return PersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS;
-				case PersistencePackage.ASSOCIATION__SOURCE_ENTITY_X: return PersistencePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X;
-				case PersistencePackage.ASSOCIATION__TARGET_ENTITY_X: return PersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X;
-				case PersistencePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH: return PersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH;
+				case WebGenPersistencePackage.ASSOCIATION__PSEUDO: return WebGenPersistencePackage.ENTITY_ASSOCIATION__PSEUDO;
+				case WebGenPersistencePackage.ASSOCIATION__ENCAPSULATED_BY: return WebGenPersistencePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY;
+				case WebGenPersistencePackage.ASSOCIATION__INPUT_CLASS: return WebGenPersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS;
+				case WebGenPersistencePackage.ASSOCIATION__SOURCE_ENTITY_X: return WebGenPersistencePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X;
+				case WebGenPersistencePackage.ASSOCIATION__TARGET_ENTITY_X: return WebGenPersistencePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X;
+				case WebGenPersistencePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH: return WebGenPersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 				default: return -1;
 			}
 		}

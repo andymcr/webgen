@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Database Technologies</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getDatabaseTechnologies()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDatabaseTechnologies()
  * @model
  * @generated
  */

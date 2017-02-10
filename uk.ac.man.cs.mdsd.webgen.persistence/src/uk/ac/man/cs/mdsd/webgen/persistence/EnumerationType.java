@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EnumerationType#getEnumerations <em>Enumerations</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEnumerationType()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEnumerationType()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface EnumerationType extends DataType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Enumerations</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEnumerationType_Enumerations()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEnumerationType_Enumerations()
 	 * @model containment="true"
 	 * @generated
 	 */

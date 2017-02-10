@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.AssociationKey#getTargetColumnName <em>Target Column Name</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociationKey()
+ * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociationKey()
  * @model
  * @generated
  */
@@ -35,7 +35,7 @@ public interface AssociationKey extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Key For</em>' container reference.
 	 * @see #setKeyFor(EntityAssociation)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociationKey_KeyFor()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociationKey_KeyFor()
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getKeys
 	 * @model opposite="keys" required="true" transient="false"
 	 * @generated
@@ -62,7 +62,7 @@ public interface AssociationKey extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source Feature</em>' reference.
 	 * @see #setSourceFeature(EntityFeature)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociationKey_SourceFeature()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociationKey_SourceFeature()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface AssociationKey extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Feature</em>' reference.
 	 * @see #setTargetFeature(EntityFeature)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociationKey_TargetFeature()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociationKey_TargetFeature()
 	 * @model
 	 * @generated
 	 */
@@ -114,7 +114,7 @@ public interface AssociationKey extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Column Name</em>' attribute.
 	 * @see #setTargetColumnName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAssociationKey_TargetColumnName()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getAssociationKey_TargetColumnName()
 	 * @model
 	 * @generated
 	 */

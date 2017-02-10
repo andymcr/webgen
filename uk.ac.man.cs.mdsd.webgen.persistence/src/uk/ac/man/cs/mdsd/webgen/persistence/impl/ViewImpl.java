@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.View;
 import uk.ac.man.cs.mdsd.webgen.persistence.ViewFeature;
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.VIEW;
+		return WebGenPersistencePackage.Literals.VIEW;
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	 */
 	public EList<EntityOrView> getEncapsulates() {
 		if (encapsulates == null) {
-			encapsulates = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, PersistencePackage.VIEW__ENCAPSULATES);
+			encapsulates = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebGenPersistencePackage.VIEW__ENCAPSULATES);
 		}
 		return encapsulates;
 	}
@@ -93,7 +93,7 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	 */
 	public EList<ViewFeature> getViewFeatures() {
 		if (viewFeatures == null) {
-			viewFeatures = new EObjectContainmentWithInverseEList<ViewFeature>(ViewFeature.class, this, PersistencePackage.VIEW__VIEW_FEATURES, PersistencePackage.VIEW_FEATURE__PART_OF);
+			viewFeatures = new EObjectContainmentWithInverseEList<ViewFeature>(ViewFeature.class, this, WebGenPersistencePackage.VIEW__VIEW_FEATURES, WebGenPersistencePackage.VIEW_FEATURE__PART_OF);
 		}
 		return viewFeatures;
 	}
@@ -107,7 +107,7 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.VIEW__VIEW_FEATURES:
+			case WebGenPersistencePackage.VIEW__VIEW_FEATURES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getViewFeatures()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -121,7 +121,7 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PersistencePackage.VIEW__VIEW_FEATURES:
+			case WebGenPersistencePackage.VIEW__VIEW_FEATURES:
 				return ((InternalEList<?>)getViewFeatures()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -135,9 +135,9 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.VIEW__ENCAPSULATES:
+			case WebGenPersistencePackage.VIEW__ENCAPSULATES:
 				return getEncapsulates();
-			case PersistencePackage.VIEW__VIEW_FEATURES:
+			case WebGenPersistencePackage.VIEW__VIEW_FEATURES:
 				return getViewFeatures();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -152,11 +152,11 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.VIEW__ENCAPSULATES:
+			case WebGenPersistencePackage.VIEW__ENCAPSULATES:
 				getEncapsulates().clear();
 				getEncapsulates().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
-			case PersistencePackage.VIEW__VIEW_FEATURES:
+			case WebGenPersistencePackage.VIEW__VIEW_FEATURES:
 				getViewFeatures().clear();
 				getViewFeatures().addAll((Collection<? extends ViewFeature>)newValue);
 				return;
@@ -172,10 +172,10 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.VIEW__ENCAPSULATES:
+			case WebGenPersistencePackage.VIEW__ENCAPSULATES:
 				getEncapsulates().clear();
 				return;
-			case PersistencePackage.VIEW__VIEW_FEATURES:
+			case WebGenPersistencePackage.VIEW__VIEW_FEATURES:
 				getViewFeatures().clear();
 				return;
 		}
@@ -190,9 +190,9 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.VIEW__ENCAPSULATES:
+			case WebGenPersistencePackage.VIEW__ENCAPSULATES:
 				return encapsulates != null && !encapsulates.isEmpty();
-			case PersistencePackage.VIEW__VIEW_FEATURES:
+			case WebGenPersistencePackage.VIEW__VIEW_FEATURES:
 				return viewFeatures != null && !viewFeatures.isEmpty();
 		}
 		return super.eIsSet(featureID);

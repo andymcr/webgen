@@ -13,7 +13,7 @@ import uk.ac.man.cs.mdsd.orm.DataType;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
-import uk.ac.man.cs.mdsd.service.SelectionParameter;
+import uk.ac.man.cs.mdsd.service.FormalParameter;
 
 import uk.ac.man.cs.mdsd.waf.FilterParameter;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -43,7 +43,7 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * @generated
 	 * @ordered
 	 */
-	protected SelectionParameter formal;
+	protected FormalParameter formal;
 
 	/**
 	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
@@ -119,10 +119,10 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionParameter getFormal() {
+	public FormalParameter getFormal() {
 		if (formal != null && formal.eIsProxy()) {
 			InternalEObject oldFormal = (InternalEObject)formal;
-			formal = (SelectionParameter)eResolveProxy(oldFormal);
+			formal = (FormalParameter)eResolveProxy(oldFormal);
 			if (formal != oldFormal) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.FILTER_PARAMETER__FORMAL, oldFormal, formal));
@@ -136,7 +136,7 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionParameter basicGetFormal() {
+	public FormalParameter basicGetFormal() {
 		return formal;
 	}
 
@@ -145,8 +145,8 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFormal(SelectionParameter newFormal) {
-		SelectionParameter oldFormal = formal;
+	public void setFormal(FormalParameter newFormal) {
+		FormalParameter oldFormal = formal;
 		formal = newFormal;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.FILTER_PARAMETER__FORMAL, oldFormal, formal));
@@ -263,7 +263,7 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WafPackage.FILTER_PARAMETER__FORMAL:
-				setFormal((SelectionParameter)newValue);
+				setFormal((FormalParameter)newValue);
 				return;
 			case WafPackage.FILTER_PARAMETER__DATA_TYPE:
 				setDataType((DataType)newValue);
@@ -287,7 +287,7 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WafPackage.FILTER_PARAMETER__FORMAL:
-				setFormal((SelectionParameter)null);
+				setFormal((FormalParameter)null);
 				return;
 			case WafPackage.FILTER_PARAMETER__DATA_TYPE:
 				setDataType((DataType)null);

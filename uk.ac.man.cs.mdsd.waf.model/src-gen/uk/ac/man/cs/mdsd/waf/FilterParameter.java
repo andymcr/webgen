@@ -5,7 +5,7 @@ package uk.ac.man.cs.mdsd.waf;
 import uk.ac.man.cs.mdsd.orm.DataType;
 import uk.ac.man.cs.mdsd.orm.NamedElement;
 
-import uk.ac.man.cs.mdsd.service.SelectionParameter;
+import uk.ac.man.cs.mdsd.service.FormalParameter;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,12 +36,12 @@ public interface FilterParameter extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Formal</em>' reference.
-	 * @see #setFormal(SelectionParameter)
+	 * @see #setFormal(FormalParameter)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFilterParameter_Formal()
 	 * @model
 	 * @generated
 	 */
-	SelectionParameter getFormal();
+	FormalParameter getFormal();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.FilterParameter#getFormal <em>Formal</em>}' reference.
@@ -51,7 +51,7 @@ public interface FilterParameter extends NamedElement {
 	 * @see #getFormal()
 	 * @generated
 	 */
-	void setFormal(SelectionParameter value);
+	void setFormal(FormalParameter value);
 
 	/**
 	 * Returns the value of the '<em><b>Data Type</b></em>' reference.

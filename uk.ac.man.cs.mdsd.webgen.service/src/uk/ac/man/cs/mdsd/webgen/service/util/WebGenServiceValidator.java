@@ -104,10 +104,6 @@ public class WebGenServiceValidator extends EObjectValidator {
 				return validateSelection((Selection)value, diagnostics, context);
 			case WebGenServicePackage.BUSINESS_OPERATION:
 				return validateBusinessOperation((BusinessOperation)value, diagnostics, context);
-			case WebGenServicePackage.FORMAL_PARAMETER_LIST:
-				return validateFormalParameterList((FormalParameterList)value, diagnostics, context);
-			case WebGenServicePackage.FORMAL_PARAMETER:
-				return validateFormalParameter((FormalParameter)value, diagnostics, context);
 			case WebGenServicePackage.ORDER:
 				return validateOrder((Order)value, diagnostics, context);
 			case WebGenServicePackage.ASC:
@@ -229,34 +225,6 @@ public class WebGenServiceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(businessOperation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(businessOperation, diagnostics, context);
 		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(businessOperation, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateFormalParameterList(FormalParameterList formalParameterList, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(formalParameterList, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateFormalParameter(FormalParameter formalParameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(formalParameter, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(formalParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(formalParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(formalParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(formalParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(formalParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(formalParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(formalParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(formalParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(formalParameter, diagnostics, context);
 		return result;
 	}
 

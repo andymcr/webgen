@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.persistence;
 
+import uk.ac.man.cs.mdsd.webgen.core.DataType;
+
 
 /**
  * <!-- begin-user-doc -->

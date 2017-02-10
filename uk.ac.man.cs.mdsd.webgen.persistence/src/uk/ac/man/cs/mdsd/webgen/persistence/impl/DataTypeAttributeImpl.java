@@ -8,8 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
+import uk.ac.man.cs.mdsd.webgen.core.DataType;
 import uk.ac.man.cs.mdsd.webgen.persistence.DataTypeAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 

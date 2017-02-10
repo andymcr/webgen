@@ -19,8 +19,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithContainment;
 import uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithoutContainment;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.Cardinality;
-import uk.ac.man.cs.mdsd.webgen.persistence.Classifier;
-import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
 import uk.ac.man.cs.mdsd.webgen.persistence.DataTypeAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies;
 import uk.ac.man.cs.mdsd.webgen.persistence.DateAttribute;
@@ -34,8 +32,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.persistence.EnumerationLiteral;
-import uk.ac.man.cs.mdsd.webgen.persistence.EnumerationType;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 import uk.ac.man.cs.mdsd.webgen.persistence.FileAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.ImageAttribute;
@@ -73,34 +69,6 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 	 * @generated
 	 */
 	private EClass persistenceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass classifierEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dataTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass enumerationTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass enumerationLiteralEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -409,7 +377,6 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 
 		// Initialize simple dependencies
 		WebGenCorePackage.eINSTANCE.eClass();
-		WebGenExpressionPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theWebGenPersistencePackage.createPackageContents();
@@ -541,96 +508,6 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 	 */
 	public EAttribute getPersistence_TimestampUpdate() {
 		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getClassifier() {
-		return classifierEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDataType() {
-		return dataTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDataType_PersistentType() {
-		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDataType_OrmType() {
-		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDataType_InterfaceType() {
-		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDataType_Placeholder() {
-		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDataType_ValidationPattern() {
-		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEnumerationType() {
-		return enumerationTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEnumerationType_Enumerations() {
-		return (EReference)enumerationTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEnumerationLiteral() {
-		return enumerationLiteralEClass;
 	}
 
 	/**
@@ -793,6 +670,15 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 	 */
 	public EAttribute getEntityOrView_ImplementsUserInterface() {
 		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityOrView_AllowTypeCustomisation() {
+		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -2006,20 +1892,6 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		createEAttribute(persistenceEClass, PERSISTENCE__TIMESTAMP_CREATION);
 		createEAttribute(persistenceEClass, PERSISTENCE__TIMESTAMP_UPDATE);
 
-		classifierEClass = createEClass(CLASSIFIER);
-
-		dataTypeEClass = createEClass(DATA_TYPE);
-		createEAttribute(dataTypeEClass, DATA_TYPE__PERSISTENT_TYPE);
-		createEAttribute(dataTypeEClass, DATA_TYPE__ORM_TYPE);
-		createEAttribute(dataTypeEClass, DATA_TYPE__INTERFACE_TYPE);
-		createEAttribute(dataTypeEClass, DATA_TYPE__PLACEHOLDER);
-		createEAttribute(dataTypeEClass, DATA_TYPE__VALIDATION_PATTERN);
-
-		enumerationTypeEClass = createEClass(ENUMERATION_TYPE);
-		createEReference(enumerationTypeEClass, ENUMERATION_TYPE__ENUMERATIONS);
-
-		enumerationLiteralEClass = createEClass(ENUMERATION_LITERAL);
-
 		entityOrViewEClass = createEClass(ENTITY_OR_VIEW);
 		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__SINGLETON_NAME);
 		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__PLURALISED_NAME);
@@ -2038,6 +1910,7 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__ALL_ASSOCIATIONS);
 		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL);
 		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE);
+		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__ALLOW_TYPE_CUSTOMISATION);
 
 		featureEClass = createEClass(FEATURE);
 		createEAttribute(featureEClass, FEATURE__TITLE);
@@ -2235,11 +2108,7 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		classifierEClass.getESuperTypes().add(theWebGenCorePackage.getNamedDisplayElement());
-		dataTypeEClass.getESuperTypes().add(this.getClassifier());
-		enumerationTypeEClass.getESuperTypes().add(this.getDataType());
-		enumerationLiteralEClass.getESuperTypes().add(theWebGenCorePackage.getNamedDisplayElement());
-		entityOrViewEClass.getESuperTypes().add(this.getClassifier());
+		entityOrViewEClass.getESuperTypes().add(theWebGenCorePackage.getClassifier());
 		attributeEClass.getESuperTypes().add(this.getFeature());
 		attributeEClass.getESuperTypes().add(this.getLabel());
 		associationEClass.getESuperTypes().add(this.getFeature());
@@ -2278,7 +2147,7 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(persistenceEClass, Persistence.class, "Persistence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPersistence_Classifiers(), this.getClassifier(), null, "classifiers", null, 0, -1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPersistence_Classifiers(), theWebGenCorePackage.getClassifier(), null, "classifiers", null, 0, -1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersistence_DatabaseTechnology(), this.getDatabaseTechnologies(), "databaseTechnology", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersistence_OrmTechnology(), this.getOrmTechnologies(), "ormTechnology", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersistence_DatabaseHost(), ecorePackage.getEString(), "databaseHost", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2289,20 +2158,6 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		initEAttribute(getPersistence_DatabasePrefix(), ecorePackage.getEString(), "databasePrefix", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersistence_TimestampCreation(), ecorePackage.getEBoolean(), "timestampCreation", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersistence_TimestampUpdate(), ecorePackage.getEBoolean(), "timestampUpdate", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(classifierEClass, Classifier.class, "Classifier", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataType_PersistentType(), ecorePackage.getEString(), "persistentType", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataType_OrmType(), ecorePackage.getEString(), "ormType", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataType_InterfaceType(), ecorePackage.getEString(), "interfaceType", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDataType_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDataType_ValidationPattern(), ecorePackage.getEString(), "validationPattern", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(enumerationTypeEClass, EnumerationType.class, "EnumerationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnumerationType_Enumerations(), this.getEnumerationLiteral(), null, "enumerations", null, 0, -1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(enumerationLiteralEClass, EnumerationLiteral.class, "EnumerationLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(entityOrViewEClass, EntityOrView.class, "EntityOrView", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityOrView_SingletonName(), ecorePackage.getEString(), "singletonName", null, 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2322,6 +2177,7 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		initEReference(getEntityOrView_AllAssociations(), this.getAssociation(), null, "allAssociations", null, 0, -1, EntityOrView.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityOrView_SerializationExcludeAll(), ecorePackage.getEBoolean(), "serializationExcludeAll", "false", 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityOrView_ImplementsUserInterface(), ecorePackage.getEBoolean(), "implementsUserInterface", "false", 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityOrView_AllowTypeCustomisation(), ecorePackage.getEBoolean(), "allowTypeCustomisation", null, 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureEClass, Feature.class, "Feature", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFeature_Title(), ecorePackage.getEString(), "title", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2390,7 +2246,7 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		initEAttribute(getEntityAttribute_InterfaceType(), ecorePackage.getEString(), "interfaceType", null, 0, 1, EntityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeAttributeEClass, DataTypeAttribute.class, "DataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataTypeAttribute_DataType(), this.getDataType(), null, "dataType", null, 1, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDataTypeAttribute_DataType(), theWebGenCorePackage.getDataType(), null, "dataType", null, 1, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDataTypeAttribute_ObfuscateFormFields(), ecorePackage.getEBoolean(), "obfuscateFormFields", "false", 0, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDataTypeAttribute_CaseInsensitive(), ecorePackage.getEBoolean(), "caseInsensitive", "false", 0, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDataTypeAttribute_Encrypt(), ecorePackage.getEBoolean(), "encrypt", "false", 0, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

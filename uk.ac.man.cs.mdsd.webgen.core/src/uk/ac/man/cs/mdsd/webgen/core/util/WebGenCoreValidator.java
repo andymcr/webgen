@@ -90,6 +90,18 @@ public class WebGenCoreValidator extends EObjectValidator {
 				return validateNamedElement((NamedElement)value, diagnostics, context);
 			case WebGenCorePackage.NAMED_DISPLAY_ELEMENT:
 				return validateNamedDisplayElement((NamedDisplayElement)value, diagnostics, context);
+			case WebGenCorePackage.CLASSIFIER:
+				return validateClassifier((Classifier)value, diagnostics, context);
+			case WebGenCorePackage.DATA_TYPE:
+				return validateDataType((DataType)value, diagnostics, context);
+			case WebGenCorePackage.ENUMERATION_TYPE:
+				return validateEnumerationType((EnumerationType)value, diagnostics, context);
+			case WebGenCorePackage.ENUMERATION_LITERAL:
+				return validateEnumerationLiteral((EnumerationLiteral)value, diagnostics, context);
+			case WebGenCorePackage.FORMAL_PARAMETER_LIST:
+				return validateFormalParameterList((FormalParameterList)value, diagnostics, context);
+			case WebGenCorePackage.FORMAL_PARAMETER:
+				return validateFormalParameter((FormalParameter)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -158,6 +170,110 @@ public class WebGenCoreValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(namedDisplayElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(namedDisplayElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(namedDisplayElement, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateClassifier(Classifier classifier, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(classifier, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(classifier, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(classifier, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(classifier, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(classifier, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(classifier, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(classifier, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(classifier, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(classifier, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(classifier, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDataType(DataType dataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(dataType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dataType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(dataType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEnumerationType(EnumerationType enumerationType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(enumerationType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(enumerationType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(enumerationType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEnumerationLiteral(EnumerationLiteral enumerationLiteral, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(enumerationLiteral, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(enumerationLiteral, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(enumerationLiteral, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFormalParameterList(FormalParameterList formalParameterList, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(formalParameterList, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFormalParameter(FormalParameter formalParameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(formalParameter, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(formalParameter, diagnostics, context);
 		return result;
 	}
 

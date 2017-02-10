@@ -98,14 +98,6 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 		switch (classifierID) {
 			case WebGenPersistencePackage.PERSISTENCE:
 				return validatePersistence((Persistence)value, diagnostics, context);
-			case WebGenPersistencePackage.CLASSIFIER:
-				return validateClassifier((Classifier)value, diagnostics, context);
-			case WebGenPersistencePackage.DATA_TYPE:
-				return validateDataType((DataType)value, diagnostics, context);
-			case WebGenPersistencePackage.ENUMERATION_TYPE:
-				return validateEnumerationType((EnumerationType)value, diagnostics, context);
-			case WebGenPersistencePackage.ENUMERATION_LITERAL:
-				return validateEnumerationLiteral((EnumerationLiteral)value, diagnostics, context);
 			case WebGenPersistencePackage.ENTITY_OR_VIEW:
 				return validateEntityOrView((EntityOrView)value, diagnostics, context);
 			case WebGenPersistencePackage.FEATURE:
@@ -231,82 +223,6 @@ public class WebGenPersistenceValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateClassifier(Classifier classifier, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(classifier, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(classifier, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(classifier, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(classifier, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(classifier, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(classifier, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(classifier, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(classifier, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(classifier, diagnostics, context);
-		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(classifier, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDataType(DataType dataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(dataType, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dataType, diagnostics, context);
-		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(dataType, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateEnumerationType(EnumerationType enumerationType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(enumerationType, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(enumerationType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(enumerationType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(enumerationType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(enumerationType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(enumerationType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(enumerationType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(enumerationType, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(enumerationType, diagnostics, context);
-		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(enumerationType, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateEnumerationLiteral(EnumerationLiteral enumerationLiteral, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(enumerationLiteral, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(enumerationLiteral, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(enumerationLiteral, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(enumerationLiteral, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(enumerationLiteral, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(enumerationLiteral, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(enumerationLiteral, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(enumerationLiteral, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(enumerationLiteral, diagnostics, context);
-		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(enumerationLiteral, diagnostics, context);
-		return result;
 	}
 
 	/**

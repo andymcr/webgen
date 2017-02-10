@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.persistence.impl;
+package uk.ac.man.cs.mdsd.webgen.core.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -8,8 +8,8 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
-import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.core.DataType;
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,11 +19,11 @@ import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.DataTypeImpl#getPersistentType <em>Persistent Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.DataTypeImpl#getOrmType <em>Orm Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.DataTypeImpl#getInterfaceType <em>Interface Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.DataTypeImpl#getPlaceholder <em>Placeholder</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.DataTypeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.impl.DataTypeImpl#getPersistentType <em>Persistent Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.impl.DataTypeImpl#getOrmType <em>Orm Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.impl.DataTypeImpl#getInterfaceType <em>Interface Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.impl.DataTypeImpl#getPlaceholder <em>Placeholder</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.impl.DataTypeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
  *
  * @generated
@@ -145,7 +145,7 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WebGenPersistencePackage.Literals.DATA_TYPE;
+		return WebGenCorePackage.Literals.DATA_TYPE;
 	}
 
 	/**
@@ -166,7 +166,7 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 		String oldPersistentType = persistentType;
 		persistentType = newPersistentType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE__PERSISTENT_TYPE, oldPersistentType, persistentType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenCorePackage.DATA_TYPE__PERSISTENT_TYPE, oldPersistentType, persistentType));
 	}
 
 	/**
@@ -187,7 +187,7 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 		String oldOrmType = ormType;
 		ormType = newOrmType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE__ORM_TYPE, oldOrmType, ormType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenCorePackage.DATA_TYPE__ORM_TYPE, oldOrmType, ormType));
 	}
 
 	/**
@@ -208,7 +208,7 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 		String oldInterfaceType = interfaceType;
 		interfaceType = newInterfaceType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE__INTERFACE_TYPE, oldInterfaceType, interfaceType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenCorePackage.DATA_TYPE__INTERFACE_TYPE, oldInterfaceType, interfaceType));
 	}
 
 	/**
@@ -229,7 +229,7 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 		String oldPlaceholder = placeholder;
 		placeholder = newPlaceholder;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE__PLACEHOLDER, oldPlaceholder, placeholder));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenCorePackage.DATA_TYPE__PLACEHOLDER, oldPlaceholder, placeholder));
 	}
 
 	/**
@@ -250,7 +250,7 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 		String oldValidationPattern = validationPattern;
 		validationPattern = newValidationPattern;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.DATA_TYPE__VALIDATION_PATTERN, oldValidationPattern, validationPattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenCorePackage.DATA_TYPE__VALIDATION_PATTERN, oldValidationPattern, validationPattern));
 	}
 
 	/**
@@ -261,15 +261,15 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebGenPersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
+			case WebGenCorePackage.DATA_TYPE__PERSISTENT_TYPE:
 				return getPersistentType();
-			case WebGenPersistencePackage.DATA_TYPE__ORM_TYPE:
+			case WebGenCorePackage.DATA_TYPE__ORM_TYPE:
 				return getOrmType();
-			case WebGenPersistencePackage.DATA_TYPE__INTERFACE_TYPE:
+			case WebGenCorePackage.DATA_TYPE__INTERFACE_TYPE:
 				return getInterfaceType();
-			case WebGenPersistencePackage.DATA_TYPE__PLACEHOLDER:
+			case WebGenCorePackage.DATA_TYPE__PLACEHOLDER:
 				return getPlaceholder();
-			case WebGenPersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
+			case WebGenCorePackage.DATA_TYPE__VALIDATION_PATTERN:
 				return getValidationPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -283,19 +283,19 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebGenPersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
+			case WebGenCorePackage.DATA_TYPE__PERSISTENT_TYPE:
 				setPersistentType((String)newValue);
 				return;
-			case WebGenPersistencePackage.DATA_TYPE__ORM_TYPE:
+			case WebGenCorePackage.DATA_TYPE__ORM_TYPE:
 				setOrmType((String)newValue);
 				return;
-			case WebGenPersistencePackage.DATA_TYPE__INTERFACE_TYPE:
+			case WebGenCorePackage.DATA_TYPE__INTERFACE_TYPE:
 				setInterfaceType((String)newValue);
 				return;
-			case WebGenPersistencePackage.DATA_TYPE__PLACEHOLDER:
+			case WebGenCorePackage.DATA_TYPE__PLACEHOLDER:
 				setPlaceholder((String)newValue);
 				return;
-			case WebGenPersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
+			case WebGenCorePackage.DATA_TYPE__VALIDATION_PATTERN:
 				setValidationPattern((String)newValue);
 				return;
 		}
@@ -310,19 +310,19 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebGenPersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
+			case WebGenCorePackage.DATA_TYPE__PERSISTENT_TYPE:
 				setPersistentType(PERSISTENT_TYPE_EDEFAULT);
 				return;
-			case WebGenPersistencePackage.DATA_TYPE__ORM_TYPE:
+			case WebGenCorePackage.DATA_TYPE__ORM_TYPE:
 				setOrmType(ORM_TYPE_EDEFAULT);
 				return;
-			case WebGenPersistencePackage.DATA_TYPE__INTERFACE_TYPE:
+			case WebGenCorePackage.DATA_TYPE__INTERFACE_TYPE:
 				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
 				return;
-			case WebGenPersistencePackage.DATA_TYPE__PLACEHOLDER:
+			case WebGenCorePackage.DATA_TYPE__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
-			case WebGenPersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
+			case WebGenCorePackage.DATA_TYPE__VALIDATION_PATTERN:
 				setValidationPattern(VALIDATION_PATTERN_EDEFAULT);
 				return;
 		}
@@ -337,15 +337,15 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebGenPersistencePackage.DATA_TYPE__PERSISTENT_TYPE:
+			case WebGenCorePackage.DATA_TYPE__PERSISTENT_TYPE:
 				return PERSISTENT_TYPE_EDEFAULT == null ? persistentType != null : !PERSISTENT_TYPE_EDEFAULT.equals(persistentType);
-			case WebGenPersistencePackage.DATA_TYPE__ORM_TYPE:
+			case WebGenCorePackage.DATA_TYPE__ORM_TYPE:
 				return ORM_TYPE_EDEFAULT == null ? ormType != null : !ORM_TYPE_EDEFAULT.equals(ormType);
-			case WebGenPersistencePackage.DATA_TYPE__INTERFACE_TYPE:
+			case WebGenCorePackage.DATA_TYPE__INTERFACE_TYPE:
 				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
-			case WebGenPersistencePackage.DATA_TYPE__PLACEHOLDER:
+			case WebGenCorePackage.DATA_TYPE__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
-			case WebGenPersistencePackage.DATA_TYPE__VALIDATION_PATTERN:
+			case WebGenCorePackage.DATA_TYPE__VALIDATION_PATTERN:
 				return VALIDATION_PATTERN_EDEFAULT == null ? validationPattern != null : !VALIDATION_PATTERN_EDEFAULT.equals(validationPattern);
 		}
 		return super.eIsSet(featureID);

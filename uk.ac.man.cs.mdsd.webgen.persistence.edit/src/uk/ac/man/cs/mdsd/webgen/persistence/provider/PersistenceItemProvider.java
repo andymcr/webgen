@@ -25,6 +25,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCoreFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
 import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistenceFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
@@ -399,22 +400,22 @@ public class PersistenceItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebGenPersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
-				 WebGenPersistenceFactory.eINSTANCE.createDataType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebGenPersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
-				 WebGenPersistenceFactory.eINSTANCE.createEnumerationType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebGenPersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
 				 WebGenPersistenceFactory.eINSTANCE.createEntity()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebGenPersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
 				 WebGenPersistenceFactory.eINSTANCE.createView()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebGenPersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
+				 WebGenCoreFactory.eINSTANCE.createDataType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebGenPersistencePackage.Literals.PERSISTENCE__CLASSIFIERS,
+				 WebGenCoreFactory.eINSTANCE.createEnumerationType()));
 	}
 
 	/**

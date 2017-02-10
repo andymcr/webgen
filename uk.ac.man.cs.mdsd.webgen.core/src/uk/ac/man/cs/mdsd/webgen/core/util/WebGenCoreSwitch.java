@@ -79,6 +79,54 @@ public class WebGenCoreSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebGenCorePackage.CLASSIFIER: {
+				Classifier classifier = (Classifier)theEObject;
+				T result = caseClassifier(classifier);
+				if (result == null) result = caseNamedDisplayElement(classifier);
+				if (result == null) result = caseNamedElement(classifier);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebGenCorePackage.DATA_TYPE: {
+				DataType dataType = (DataType)theEObject;
+				T result = caseDataType(dataType);
+				if (result == null) result = caseClassifier(dataType);
+				if (result == null) result = caseNamedDisplayElement(dataType);
+				if (result == null) result = caseNamedElement(dataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebGenCorePackage.ENUMERATION_TYPE: {
+				EnumerationType enumerationType = (EnumerationType)theEObject;
+				T result = caseEnumerationType(enumerationType);
+				if (result == null) result = caseDataType(enumerationType);
+				if (result == null) result = caseClassifier(enumerationType);
+				if (result == null) result = caseNamedDisplayElement(enumerationType);
+				if (result == null) result = caseNamedElement(enumerationType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebGenCorePackage.ENUMERATION_LITERAL: {
+				EnumerationLiteral enumerationLiteral = (EnumerationLiteral)theEObject;
+				T result = caseEnumerationLiteral(enumerationLiteral);
+				if (result == null) result = caseNamedDisplayElement(enumerationLiteral);
+				if (result == null) result = caseNamedElement(enumerationLiteral);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebGenCorePackage.FORMAL_PARAMETER_LIST: {
+				FormalParameterList formalParameterList = (FormalParameterList)theEObject;
+				T result = caseFormalParameterList(formalParameterList);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebGenCorePackage.FORMAL_PARAMETER: {
+				FormalParameter formalParameter = (FormalParameter)theEObject;
+				T result = caseFormalParameter(formalParameter);
+				if (result == null) result = caseNamedElement(formalParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -110,6 +158,96 @@ public class WebGenCoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedDisplayElement(NamedDisplayElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Classifier</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Classifier</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseClassifier(Classifier object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataType(DataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enumeration Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enumeration Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnumerationType(EnumerationType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enumeration Literal</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enumeration Literal</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnumerationLiteral(EnumerationLiteral object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Formal Parameter List</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Formal Parameter List</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFormalParameterList(FormalParameterList object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Formal Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Formal Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFormalParameter(FormalParameter object) {
 		return null;
 	}
 

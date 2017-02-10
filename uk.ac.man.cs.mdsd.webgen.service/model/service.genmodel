@@ -35,14 +35,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//BusinessOperation/resultType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//BusinessOperation/resultMimeType"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="service.ecore#//FormalParameterList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//FormalParameterList/parameters"/>
-    </genClasses>
-    <genClasses ecoreClass="service.ecore#//FormalParameter">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//FormalParameter/formalFor"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//FormalParameter/dataType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//FormalParameter/defaultValue"/>
-    </genClasses>
     <genClasses image="false" ecoreClass="service.ecore#//Order">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Order/path"/>
     </genClasses>

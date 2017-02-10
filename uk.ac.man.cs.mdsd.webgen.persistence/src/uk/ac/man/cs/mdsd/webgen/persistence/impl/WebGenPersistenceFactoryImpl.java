@@ -58,9 +58,6 @@ public class WebGenPersistenceFactoryImpl extends EFactoryImpl implements WebGen
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case WebGenPersistencePackage.PERSISTENCE: return createPersistence();
-			case WebGenPersistencePackage.DATA_TYPE: return createDataType();
-			case WebGenPersistencePackage.ENUMERATION_TYPE: return createEnumerationType();
-			case WebGenPersistencePackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
 			case WebGenPersistencePackage.MODEL_LABEL: return createModelLabel();
 			case WebGenPersistencePackage.MODEL_LABEL_ATTRIBUTE: return createModelLabelAttribute();
 			case WebGenPersistencePackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
@@ -140,36 +137,6 @@ public class WebGenPersistenceFactoryImpl extends EFactoryImpl implements WebGen
 	public Persistence createPersistence() {
 		PersistenceImpl persistence = new PersistenceImpl();
 		return persistence;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataType createDataType() {
-		DataTypeImpl dataType = new DataTypeImpl();
-		return dataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EnumerationType createEnumerationType() {
-		EnumerationTypeImpl enumerationType = new EnumerationTypeImpl();
-		return enumerationType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EnumerationLiteral createEnumerationLiteral() {
-		EnumerationLiteralImpl enumerationLiteral = new EnumerationLiteralImpl();
-		return enumerationLiteral;
 	}
 
 	/**

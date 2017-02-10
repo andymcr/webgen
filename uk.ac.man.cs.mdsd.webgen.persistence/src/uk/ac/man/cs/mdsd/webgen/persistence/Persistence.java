@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.webgen.core.Classifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +37,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Persistence extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Classifiers</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.Classifier}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.core.Classifier}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Classifiers</em>' containment reference list isn't clear,

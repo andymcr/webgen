@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.core.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
 
 /**
  * This is the central singleton for the Core edit plugin.
@@ -38,6 +39,7 @@ public final class CoreEditPlugin extends EMFPlugin {
 	public CoreEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     ExpressionEditPlugin.INSTANCE,
 		   });
 	}
 

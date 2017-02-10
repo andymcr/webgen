@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.persistence.provider;
+package uk.ac.man.cs.mdsd.webgen.core.provider;
 
 
 import java.util.Collection;
@@ -14,12 +14,12 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.persistence.EnumerationType;
-import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistenceFactory;
-import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.core.EnumerationType;
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCoreFactory;
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.EnumerationType} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.core.EnumerationType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -62,7 +62,7 @@ public class EnumerationTypeItemProvider extends DataTypeItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebGenPersistencePackage.Literals.ENUMERATION_TYPE__ENUMERATIONS);
+			childrenFeatures.add(WebGenCorePackage.Literals.ENUMERATION_TYPE__ENUMERATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -118,7 +118,7 @@ public class EnumerationTypeItemProvider extends DataTypeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EnumerationType.class)) {
-			case WebGenPersistencePackage.ENUMERATION_TYPE__ENUMERATIONS:
+			case WebGenCorePackage.ENUMERATION_TYPE__ENUMERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -138,8 +138,8 @@ public class EnumerationTypeItemProvider extends DataTypeItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebGenPersistencePackage.Literals.ENUMERATION_TYPE__ENUMERATIONS,
-				 WebGenPersistenceFactory.eINSTANCE.createEnumerationLiteral()));
+				(WebGenCorePackage.Literals.ENUMERATION_TYPE__ENUMERATIONS,
+				 WebGenCoreFactory.eINSTANCE.createEnumerationLiteral()));
 	}
 
 }

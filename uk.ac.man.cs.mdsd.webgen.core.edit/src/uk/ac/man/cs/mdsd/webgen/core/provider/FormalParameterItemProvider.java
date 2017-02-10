@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.service.provider;
+package uk.ac.man.cs.mdsd.webgen.core.provider;
 
 
 import java.util.Collection;
@@ -9,29 +9,23 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.core.provider.NamedElementItemProvider;
+import uk.ac.man.cs.mdsd.webgen.core.FormalParameter;
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
 import uk.ac.man.cs.mdsd.webgen.expression.WebGenExpressionFactory;
 
-import uk.ac.man.cs.mdsd.webgen.service.FormalParameter;
-import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
-
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.core.FormalParameter} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FormalParameterItemProvider 
-	extends NamedElementItemProvider {
+public class FormalParameterItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -72,7 +66,7 @@ public class FormalParameterItemProvider
 				 getResourceLocator(),
 				 getString("_UI_FormalParameter_formalFor_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FormalParameter_formalFor_feature", "_UI_FormalParameter_type"),
-				 WebGenServicePackage.Literals.FORMAL_PARAMETER__FORMAL_FOR,
+				 WebGenCorePackage.Literals.FORMAL_PARAMETER__FORMAL_FOR,
 				 true,
 				 false,
 				 true,
@@ -94,7 +88,7 @@ public class FormalParameterItemProvider
 				 getResourceLocator(),
 				 getString("_UI_FormalParameter_dataType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FormalParameter_dataType_feature", "_UI_FormalParameter_type"),
-				 WebGenServicePackage.Literals.FORMAL_PARAMETER__DATA_TYPE,
+				 WebGenCorePackage.Literals.FORMAL_PARAMETER__DATA_TYPE,
 				 true,
 				 false,
 				 true,
@@ -115,7 +109,7 @@ public class FormalParameterItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebGenServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE);
+			childrenFeatures.add(WebGenCorePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -171,7 +165,7 @@ public class FormalParameterItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FormalParameter.class)) {
-			case WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
+			case WebGenCorePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -191,44 +185,33 @@ public class FormalParameterItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebGenServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
+				(WebGenCorePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebGenServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
+				(WebGenCorePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createBooleanLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebGenServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
+				(WebGenCorePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebGenServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
+				(WebGenCorePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebGenServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
+				(WebGenCorePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createTimeLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebGenServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
+				(WebGenCorePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
 				 WebGenExpressionFactory.eINSTANCE.createCurrentTime()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

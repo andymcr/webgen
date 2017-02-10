@@ -3,6 +3,7 @@
 package uk.ac.man.cs.mdsd.webgen.service;
 
 import org.eclipse.emf.common.util.EList;
+import uk.ac.man.cs.mdsd.webgen.core.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;

@@ -112,75 +112,6 @@ public class WebGenPersistenceItemProviderAdapterFactory extends WebGenPersisten
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.persistence.DataType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DataTypeItemProvider dataTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.DataType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDataTypeAdapter() {
-		if (dataTypeItemProvider == null) {
-			dataTypeItemProvider = new DataTypeItemProvider(this);
-		}
-
-		return dataTypeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.persistence.EnumerationType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EnumerationTypeItemProvider enumerationTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.EnumerationType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEnumerationTypeAdapter() {
-		if (enumerationTypeItemProvider == null) {
-			enumerationTypeItemProvider = new EnumerationTypeItemProvider(this);
-		}
-
-		return enumerationTypeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.persistence.EnumerationLiteral} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EnumerationLiteralItemProvider enumerationLiteralItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.EnumerationLiteral}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEnumerationLiteralAdapter() {
-		if (enumerationLiteralItemProvider == null) {
-			enumerationLiteralItemProvider = new EnumerationLiteralItemProvider(this);
-		}
-
-		return enumerationLiteralItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -767,9 +698,6 @@ public class WebGenPersistenceItemProviderAdapterFactory extends WebGenPersisten
 	 */
 	public void dispose() {
 		if (persistenceItemProvider != null) persistenceItemProvider.dispose();
-		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
-		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
-		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
 		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
 		if (modelLabelAttributeItemProvider != null) modelLabelAttributeItemProvider.dispose();
 		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();

@@ -31,33 +31,6 @@ public interface WebGenPersistenceFactory extends EFactory {
 	Persistence createPersistence();
 
 	/**
-	 * Returns a new object of class '<em>Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Type</em>'.
-	 * @generated
-	 */
-	DataType createDataType();
-
-	/**
-	 * Returns a new object of class '<em>Enumeration Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Enumeration Type</em>'.
-	 * @generated
-	 */
-	EnumerationType createEnumerationType();
-
-	/**
-	 * Returns a new object of class '<em>Enumeration Literal</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Enumeration Literal</em>'.
-	 * @generated
-	 */
-	EnumerationLiteral createEnumerationLiteral();
-
-	/**
 	 * Returns a new object of class '<em>Model Label</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

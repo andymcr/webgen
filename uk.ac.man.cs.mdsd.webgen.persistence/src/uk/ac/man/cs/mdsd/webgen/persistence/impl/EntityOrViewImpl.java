@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.webgen.core.impl.ClassifierImpl;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
@@ -51,6 +52,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl#getAllAssociations <em>All Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl#isSerializationExcludeAll <em>Serialization Exclude All</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl#isImplementsUserInterface <em>Implements User Interface</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl#isAllowTypeCustomisation <em>Allow Type Customisation</em>}</li>
  * </ul>
  *
  * @generated
@@ -305,6 +307,26 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @ordered
 	 */
 	protected boolean implementsUserInterface = IMPLEMENTS_USER_INTERFACE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isAllowTypeCustomisation() <em>Allow Type Customisation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAllowTypeCustomisation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ALLOW_TYPE_CUSTOMISATION_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isAllowTypeCustomisation() <em>Allow Type Customisation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAllowTypeCustomisation()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean allowTypeCustomisation = ALLOW_TYPE_CUSTOMISATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -596,6 +618,27 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isAllowTypeCustomisation() {
+		return allowTypeCustomisation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAllowTypeCustomisation(boolean newAllowTypeCustomisation) {
+		boolean oldAllowTypeCustomisation = allowTypeCustomisation;
+		allowTypeCustomisation = newAllowTypeCustomisation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenPersistencePackage.ENTITY_OR_VIEW__ALLOW_TYPE_CUSTOMISATION, oldAllowTypeCustomisation, allowTypeCustomisation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -662,6 +705,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return isSerializationExcludeAll();
 			case WebGenPersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				return isImplementsUserInterface();
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__ALLOW_TYPE_CUSTOMISATION:
+				return isAllowTypeCustomisation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -715,6 +760,9 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 			case WebGenPersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				setImplementsUserInterface((Boolean)newValue);
 				return;
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__ALLOW_TYPE_CUSTOMISATION:
+				setAllowTypeCustomisation((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -763,6 +811,9 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 			case WebGenPersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				setImplementsUserInterface(IMPLEMENTS_USER_INTERFACE_EDEFAULT);
 				return;
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__ALLOW_TYPE_CUSTOMISATION:
+				setAllowTypeCustomisation(ALLOW_TYPE_CUSTOMISATION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -809,6 +860,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return serializationExcludeAll != SERIALIZATION_EXCLUDE_ALL_EDEFAULT;
 			case WebGenPersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				return implementsUserInterface != IMPLEMENTS_USER_INTERFACE_EDEFAULT;
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__ALLOW_TYPE_CUSTOMISATION:
+				return allowTypeCustomisation != ALLOW_TYPE_CUSTOMISATION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -839,6 +892,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		result.append(serializationExcludeAll);
 		result.append(", implementsUserInterface: ");
 		result.append(implementsUserInterface);
+		result.append(", allowTypeCustomisation: ");
+		result.append(allowTypeCustomisation);
 		result.append(')');
 		return result.toString();
 	}

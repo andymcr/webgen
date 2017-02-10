@@ -18,12 +18,10 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
 import uk.ac.man.cs.mdsd.webgen.core.impl.NamedElementImpl;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
-
-import uk.ac.man.cs.mdsd.webgen.service.FormalParameter;
-import uk.ac.man.cs.mdsd.webgen.service.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.service.Order;
 import uk.ac.man.cs.mdsd.webgen.service.ParameterReference;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
@@ -60,7 +58,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<FormalParameter> parameters;
+	protected EList<uk.ac.man.cs.mdsd.webgen.core.FormalParameter> parameters;
 
 	/**
 	 * The default value of the '{@link #isDistinct() <em>Distinct</em>}' attribute.
@@ -260,9 +258,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FormalParameter> getParameters() {
+	public EList<uk.ac.man.cs.mdsd.webgen.core.FormalParameter> getParameters() {
 		if (parameters == null) {
-			parameters = new EObjectContainmentEList<FormalParameter>(FormalParameter.class, this, WebGenServicePackage.SELECTION__PARAMETERS);
+			parameters = new EObjectContainmentEList<uk.ac.man.cs.mdsd.webgen.core.FormalParameter>(uk.ac.man.cs.mdsd.webgen.core.FormalParameter.class, this, WebGenServicePackage.SELECTION__PARAMETERS);
 		}
 		return parameters;
 	}
@@ -467,7 +465,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		switch (featureID) {
 			case WebGenServicePackage.SELECTION__PARAMETERS:
 				getParameters().clear();
-				getParameters().addAll((Collection<? extends FormalParameter>)newValue);
+				getParameters().addAll((Collection<? extends uk.ac.man.cs.mdsd.webgen.core.FormalParameter>)newValue);
 				return;
 			case WebGenServicePackage.SELECTION__USED_BY:
 				setUsedBy((Service)newValue);
@@ -576,9 +574,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == FormalParameterList.class) {
+		if (baseClass == uk.ac.man.cs.mdsd.webgen.core.FormalParameterList.class) {
 			switch (derivedFeatureID) {
-				case WebGenServicePackage.SELECTION__PARAMETERS: return WebGenServicePackage.FORMAL_PARAMETER_LIST__PARAMETERS;
+				case WebGenServicePackage.SELECTION__PARAMETERS: return WebGenCorePackage.FORMAL_PARAMETER_LIST__PARAMETERS;
 				default: return -1;
 			}
 		}
@@ -592,9 +590,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == FormalParameterList.class) {
+		if (baseClass == uk.ac.man.cs.mdsd.webgen.core.FormalParameterList.class) {
 			switch (baseFeatureID) {
-				case WebGenServicePackage.FORMAL_PARAMETER_LIST__PARAMETERS: return WebGenServicePackage.SELECTION__PARAMETERS;
+				case WebGenCorePackage.FORMAL_PARAMETER_LIST__PARAMETERS: return WebGenServicePackage.SELECTION__PARAMETERS;
 				default: return -1;
 			}
 		}

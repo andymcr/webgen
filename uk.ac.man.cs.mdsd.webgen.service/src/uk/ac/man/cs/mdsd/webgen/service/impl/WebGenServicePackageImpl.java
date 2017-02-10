@@ -19,8 +19,6 @@ import uk.ac.man.cs.mdsd.webgen.service.BusinessOperation;
 import uk.ac.man.cs.mdsd.webgen.service.CurrentUserReference;
 import uk.ac.man.cs.mdsd.webgen.service.Desc;
 import uk.ac.man.cs.mdsd.webgen.service.FeatureReference;
-import uk.ac.man.cs.mdsd.webgen.service.FormalParameter;
-import uk.ac.man.cs.mdsd.webgen.service.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.service.OperationResultTypes;
 import uk.ac.man.cs.mdsd.webgen.service.Order;
 import uk.ac.man.cs.mdsd.webgen.service.ParameterReference;
@@ -66,20 +64,6 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 	 * @generated
 	 */
 	private EClass businessOperationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass formalParameterListEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass formalParameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -379,60 +363,6 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFormalParameterList() {
-		return formalParameterListEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFormalParameterList_Parameters() {
-		return (EReference)formalParameterListEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFormalParameter() {
-		return formalParameterEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFormalParameter_FormalFor() {
-		return (EReference)formalParameterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFormalParameter_DataType() {
-		return (EReference)formalParameterEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFormalParameter_DefaultValue() {
-		return (EReference)formalParameterEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getOrder() {
 		return orderEClass;
 	}
@@ -587,14 +517,6 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_TYPE);
 		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_MIME_TYPE);
 
-		formalParameterListEClass = createEClass(FORMAL_PARAMETER_LIST);
-		createEReference(formalParameterListEClass, FORMAL_PARAMETER_LIST__PARAMETERS);
-
-		formalParameterEClass = createEClass(FORMAL_PARAMETER);
-		createEReference(formalParameterEClass, FORMAL_PARAMETER__FORMAL_FOR);
-		createEReference(formalParameterEClass, FORMAL_PARAMETER__DATA_TYPE);
-		createEReference(formalParameterEClass, FORMAL_PARAMETER__DEFAULT_VALUE);
-
 		orderEClass = createEClass(ORDER);
 		createEReference(orderEClass, ORDER__PATH);
 
@@ -651,10 +573,9 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 		// Add supertypes to classes
 		serviceEClass.getESuperTypes().add(theWebGenCorePackage.getNamedElement());
 		selectionEClass.getESuperTypes().add(theWebGenCorePackage.getNamedElement());
-		selectionEClass.getESuperTypes().add(this.getFormalParameterList());
+		selectionEClass.getESuperTypes().add(theWebGenCorePackage.getFormalParameterList());
 		businessOperationEClass.getESuperTypes().add(theWebGenCorePackage.getNamedElement());
-		businessOperationEClass.getESuperTypes().add(this.getFormalParameterList());
-		formalParameterEClass.getESuperTypes().add(theWebGenCorePackage.getNamedElement());
+		businessOperationEClass.getESuperTypes().add(theWebGenCorePackage.getFormalParameterList());
 		ascEClass.getESuperTypes().add(this.getOrder());
 		descEClass.getESuperTypes().add(this.getOrder());
 		featureReferenceEClass.getESuperTypes().add(theWebGenExpressionPackage.getPath());
@@ -685,14 +606,6 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 		initEAttribute(getBusinessOperation_ResultType(), this.getOperationResultTypes(), "resultType", null, 1, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBusinessOperation_ResultMimeType(), ecorePackage.getEString(), "resultMimeType", null, 0, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(formalParameterListEClass, FormalParameterList.class, "FormalParameterList", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFormalParameterList_Parameters(), this.getFormalParameter(), null, "parameters", null, 0, -1, FormalParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(formalParameterEClass, FormalParameter.class, "FormalParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFormalParameter_FormalFor(), this.getFormalParameterList(), null, "formalFor", null, 1, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFormalParameter_DataType(), theWebGenPersistencePackage.getDataType(), null, "dataType", null, 0, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFormalParameter_DefaultValue(), theWebGenExpressionPackage.getLiteral(), null, "defaultValue", null, 0, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(orderEClass, Order.class, "Order", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOrder_Path(), theWebGenExpressionPackage.getPath(), null, "path", null, 0, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -706,7 +619,7 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 
 		initEClass(parameterReferenceEClass, ParameterReference.class, "ParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameterReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, ParameterReference.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getParameterReference_Parameter(), this.getFormalParameter(), null, "parameter", null, 1, 1, ParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParameterReference_Parameter(), theWebGenCorePackage.getFormalParameter(), null, "parameter", null, 1, 1, ParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(currentUserReferenceEClass, CurrentUserReference.class, "CurrentUserReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

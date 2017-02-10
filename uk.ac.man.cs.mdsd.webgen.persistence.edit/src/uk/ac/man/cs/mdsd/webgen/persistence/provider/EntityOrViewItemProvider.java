@@ -9,13 +9,16 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.core.provider.ClassifierItemProvider;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistenceFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
@@ -64,6 +67,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			addAllAssociationsPropertyDescriptor(object);
 			addSerializationExcludeAllPropertyDescriptor(object);
 			addImplementsUserInterfacePropertyDescriptor(object);
+			addAllowTypeCustomisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -421,6 +425,28 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Allow Type Customisation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllowTypeCustomisationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_allowTypeCustomisation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_allowTypeCustomisation_feature", "_UI_EntityOrView_type"),
+				 WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__ALLOW_TYPE_CUSTOMISATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -485,6 +511,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			case WebGenPersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
 			case WebGenPersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
 			case WebGenPersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
+			case WebGenPersistencePackage.ENTITY_OR_VIEW__ALLOW_TYPE_CUSTOMISATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebGenPersistencePackage.ENTITY_OR_VIEW__LABELS:
@@ -509,6 +536,17 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			(createChildParameter
 				(WebGenPersistencePackage.Literals.ENTITY_OR_VIEW__LABELS,
 				 WebGenPersistenceFactory.eINSTANCE.createModelLabel()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

@@ -1,11 +1,11 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.persistence.impl;
+package uk.ac.man.cs.mdsd.webgen.core.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import uk.ac.man.cs.mdsd.webgen.core.impl.NamedDisplayElementImpl;
-import uk.ac.man.cs.mdsd.webgen.persistence.Classifier;
-import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
+
+import uk.ac.man.cs.mdsd.webgen.core.Classifier;
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public abstract class ClassifierImpl extends NamedDisplayElementImpl implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WebGenPersistencePackage.Literals.CLASSIFIER;
+		return WebGenCorePackage.Literals.CLASSIFIER;
 	}
 
 } //ClassifierImpl

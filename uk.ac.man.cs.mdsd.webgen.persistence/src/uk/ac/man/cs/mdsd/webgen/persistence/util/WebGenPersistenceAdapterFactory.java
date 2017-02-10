@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import uk.ac.man.cs.mdsd.webgen.core.Classifier;
 import uk.ac.man.cs.mdsd.webgen.core.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.persistence.*;
@@ -72,22 +73,6 @@ public class WebGenPersistenceAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePersistence(Persistence object) {
 				return createPersistenceAdapter();
-			}
-			@Override
-			public Adapter caseClassifier(Classifier object) {
-				return createClassifierAdapter();
-			}
-			@Override
-			public Adapter caseDataType(DataType object) {
-				return createDataTypeAdapter();
-			}
-			@Override
-			public Adapter caseEnumerationType(EnumerationType object) {
-				return createEnumerationTypeAdapter();
-			}
-			@Override
-			public Adapter caseEnumerationLiteral(EnumerationLiteral object) {
-				return createEnumerationLiteralAdapter();
 			}
 			@Override
 			public Adapter caseEntityOrView(EntityOrView object) {
@@ -226,6 +211,10 @@ public class WebGenPersistenceAdapterFactory extends AdapterFactoryImpl {
 				return createNamedDisplayElementAdapter();
 			}
 			@Override
+			public Adapter caseClassifier(Classifier object) {
+				return createClassifierAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -288,58 +277,16 @@ public class WebGenPersistenceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.persistence.Classifier <em>Classifier</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.core.Classifier <em>Classifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Classifier
+	 * @see uk.ac.man.cs.mdsd.webgen.core.Classifier
 	 * @generated
 	 */
 	public Adapter createClassifierAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.persistence.DataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.DataType
-	 * @generated
-	 */
-	public Adapter createDataTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.persistence.EnumerationType <em>Enumeration Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EnumerationType
-	 * @generated
-	 */
-	public Adapter createEnumerationTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.persistence.EnumerationLiteral <em>Enumeration Literal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EnumerationLiteral
-	 * @generated
-	 */
-	public Adapter createEnumerationLiteralAdapter() {
 		return null;
 	}
 

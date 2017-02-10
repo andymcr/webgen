@@ -58,15 +58,6 @@ public interface WebGenServiceFactory extends EFactory {
 	BusinessOperation createBusinessOperation();
 
 	/**
-	 * Returns a new object of class '<em>Formal Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Formal Parameter</em>'.
-	 * @generated
-	 */
-	FormalParameter createFormalParameter();
-
-	/**
 	 * Returns a new object of class '<em>Asc</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

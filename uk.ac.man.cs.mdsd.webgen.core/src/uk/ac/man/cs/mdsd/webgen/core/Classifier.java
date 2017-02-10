@@ -1,8 +1,7 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.persistence;
+package uk.ac.man.cs.mdsd.webgen.core;
 
-import uk.ac.man.cs.mdsd.webgen.core.NamedDisplayElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -10,7 +9,7 @@ import uk.ac.man.cs.mdsd.webgen.core.NamedDisplayElement;
  * <!-- end-user-doc -->
  *
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getClassifier()
+ * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getClassifier()
  * @model abstract="true"
  * @generated
  */

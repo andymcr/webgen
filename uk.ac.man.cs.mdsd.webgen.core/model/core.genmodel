@@ -3,6 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.man.cs.mdsd.webgen.core/src" modelPluginID="uk.ac.man.cs.mdsd.webgen.core"
     modelName="Core" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression"
     operationReflection="true" importOrganizing="true">
   <foreignModel>core.ecore</foreignModel>
   <genPackages prefix="WebGenCore" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
@@ -12,6 +13,26 @@
     </genClasses>
     <genClasses image="false" ecoreClass="core.ecore#//NamedDisplayElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//NamedDisplayElement/displayLabel"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="core.ecore#//Classifier"/>
+    <genClasses ecoreClass="core.ecore#//DataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//DataType/persistentType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//DataType/ormType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//DataType/interfaceType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//DataType/placeholder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//DataType/validationPattern"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//EnumerationType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//EnumerationType/enumerations"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//EnumerationLiteral"/>
+    <genClasses image="false" ecoreClass="core.ecore#//FormalParameterList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//FormalParameterList/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="core.ecore#//FormalParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference core.ecore#//FormalParameter/formalFor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference core.ecore#//FormalParameter/dataType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//FormalParameter/defaultValue"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

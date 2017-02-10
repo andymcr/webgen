@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.service.impl;
+package uk.ac.man.cs.mdsd.webgen.core.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -9,13 +9,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import uk.ac.man.cs.mdsd.webgen.core.impl.NamedElementImpl;
-import uk.ac.man.cs.mdsd.webgen.expression.Literal;
 
-import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
-import uk.ac.man.cs.mdsd.webgen.service.FormalParameter;
-import uk.ac.man.cs.mdsd.webgen.service.FormalParameterList;
-import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
+import uk.ac.man.cs.mdsd.webgen.core.DataType;
+import uk.ac.man.cs.mdsd.webgen.core.FormalParameter;
+import uk.ac.man.cs.mdsd.webgen.core.FormalParameterList;
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,9 +23,9 @@ import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.FormalParameterImpl#getFormalFor <em>Formal For</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.FormalParameterImpl#getDataType <em>Data Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.FormalParameterImpl#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.impl.FormalParameterImpl#getFormalFor <em>Formal For</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.impl.FormalParameterImpl#getDataType <em>Data Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.impl.FormalParameterImpl#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,7 +59,7 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	 * @generated
 	 * @ordered
 	 */
-	protected Literal defaultValue;
+	protected uk.ac.man.cs.mdsd.webgen.expression.Literal defaultValue;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +77,7 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WebGenServicePackage.Literals.FORMAL_PARAMETER;
+		return WebGenCorePackage.Literals.FORMAL_PARAMETER;
 	}
 
 	/**
@@ -93,7 +91,7 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 			formalFor = (FormalParameterList)eResolveProxy(oldFormalFor);
 			if (formalFor != oldFormalFor) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenServicePackage.FORMAL_PARAMETER__FORMAL_FOR, oldFormalFor, formalFor));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenCorePackage.FORMAL_PARAMETER__FORMAL_FOR, oldFormalFor, formalFor));
 			}
 		}
 		return formalFor;
@@ -117,7 +115,7 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 		FormalParameterList oldFormalFor = formalFor;
 		formalFor = newFormalFor;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebGenServicePackage.FORMAL_PARAMETER__FORMAL_FOR, oldFormalFor, formalFor));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenCorePackage.FORMAL_PARAMETER__FORMAL_FOR, oldFormalFor, formalFor));
 	}
 
 	/**
@@ -131,7 +129,7 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 			dataType = (DataType)eResolveProxy(oldDataType);
 			if (dataType != oldDataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenServicePackage.FORMAL_PARAMETER__DATA_TYPE, oldDataType, dataType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenCorePackage.FORMAL_PARAMETER__DATA_TYPE, oldDataType, dataType));
 			}
 		}
 		return dataType;
@@ -155,7 +153,7 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 		DataType oldDataType = dataType;
 		dataType = newDataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebGenServicePackage.FORMAL_PARAMETER__DATA_TYPE, oldDataType, dataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenCorePackage.FORMAL_PARAMETER__DATA_TYPE, oldDataType, dataType));
 	}
 
 	/**
@@ -163,7 +161,7 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Literal getDefaultValue() {
+	public uk.ac.man.cs.mdsd.webgen.expression.Literal getDefaultValue() {
 		return defaultValue;
 	}
 
@@ -172,11 +170,11 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDefaultValue(Literal newDefaultValue, NotificationChain msgs) {
-		Literal oldDefaultValue = defaultValue;
+	public NotificationChain basicSetDefaultValue(uk.ac.man.cs.mdsd.webgen.expression.Literal newDefaultValue, NotificationChain msgs) {
+		uk.ac.man.cs.mdsd.webgen.expression.Literal oldDefaultValue = defaultValue;
 		defaultValue = newDefaultValue;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE, oldDefaultValue, newDefaultValue);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebGenCorePackage.FORMAL_PARAMETER__DEFAULT_VALUE, oldDefaultValue, newDefaultValue);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -187,18 +185,18 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDefaultValue(Literal newDefaultValue) {
+	public void setDefaultValue(uk.ac.man.cs.mdsd.webgen.expression.Literal newDefaultValue) {
 		if (newDefaultValue != defaultValue) {
 			NotificationChain msgs = null;
 			if (defaultValue != null)
-				msgs = ((InternalEObject)defaultValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE, null, msgs);
+				msgs = ((InternalEObject)defaultValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebGenCorePackage.FORMAL_PARAMETER__DEFAULT_VALUE, null, msgs);
 			if (newDefaultValue != null)
-				msgs = ((InternalEObject)newDefaultValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE, null, msgs);
+				msgs = ((InternalEObject)newDefaultValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebGenCorePackage.FORMAL_PARAMETER__DEFAULT_VALUE, null, msgs);
 			msgs = basicSetDefaultValue(newDefaultValue, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE, newDefaultValue, newDefaultValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenCorePackage.FORMAL_PARAMETER__DEFAULT_VALUE, newDefaultValue, newDefaultValue));
 	}
 
 	/**
@@ -209,7 +207,7 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
+			case WebGenCorePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				return basicSetDefaultValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -223,13 +221,13 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebGenServicePackage.FORMAL_PARAMETER__FORMAL_FOR:
+			case WebGenCorePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				if (resolve) return getFormalFor();
 				return basicGetFormalFor();
-			case WebGenServicePackage.FORMAL_PARAMETER__DATA_TYPE:
+			case WebGenCorePackage.FORMAL_PARAMETER__DATA_TYPE:
 				if (resolve) return getDataType();
 				return basicGetDataType();
-			case WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
+			case WebGenCorePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				return getDefaultValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -243,14 +241,14 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebGenServicePackage.FORMAL_PARAMETER__FORMAL_FOR:
+			case WebGenCorePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				setFormalFor((FormalParameterList)newValue);
 				return;
-			case WebGenServicePackage.FORMAL_PARAMETER__DATA_TYPE:
+			case WebGenCorePackage.FORMAL_PARAMETER__DATA_TYPE:
 				setDataType((DataType)newValue);
 				return;
-			case WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
-				setDefaultValue((Literal)newValue);
+			case WebGenCorePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
+				setDefaultValue((uk.ac.man.cs.mdsd.webgen.expression.Literal)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -264,14 +262,14 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebGenServicePackage.FORMAL_PARAMETER__FORMAL_FOR:
+			case WebGenCorePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				setFormalFor((FormalParameterList)null);
 				return;
-			case WebGenServicePackage.FORMAL_PARAMETER__DATA_TYPE:
+			case WebGenCorePackage.FORMAL_PARAMETER__DATA_TYPE:
 				setDataType((DataType)null);
 				return;
-			case WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
-				setDefaultValue((Literal)null);
+			case WebGenCorePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
+				setDefaultValue((uk.ac.man.cs.mdsd.webgen.expression.Literal)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -285,11 +283,11 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebGenServicePackage.FORMAL_PARAMETER__FORMAL_FOR:
+			case WebGenCorePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				return formalFor != null;
-			case WebGenServicePackage.FORMAL_PARAMETER__DATA_TYPE:
+			case WebGenCorePackage.FORMAL_PARAMETER__DATA_TYPE:
 				return dataType != null;
-			case WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
+			case WebGenCorePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				return defaultValue != null;
 		}
 		return super.eIsSet(featureID);

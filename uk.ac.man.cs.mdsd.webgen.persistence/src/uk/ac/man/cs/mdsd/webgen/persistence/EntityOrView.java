@@ -3,6 +3,7 @@
 package uk.ac.man.cs.mdsd.webgen.persistence;
 
 import org.eclipse.emf.common.util.EList;
+import uk.ac.man.cs.mdsd.webgen.core.Classifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +31,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#getAllAssociations <em>All Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isSerializationExcludeAll <em>Serialization Exclude All</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isImplementsUserInterface <em>Implements User Interface</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isAllowTypeCustomisation <em>Allow Type Customisation</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView()
@@ -401,5 +403,31 @@ public interface EntityOrView extends Classifier {
 	 * @generated
 	 */
 	void setImplementsUserInterface(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Allow Type Customisation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Allow Type Customisation</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Allow Type Customisation</em>' attribute.
+	 * @see #setAllowTypeCustomisation(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEntityOrView_AllowTypeCustomisation()
+	 * @model
+	 * @generated
+	 */
+	boolean isAllowTypeCustomisation();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isAllowTypeCustomisation <em>Allow Type Customisation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Allow Type Customisation</em>' attribute.
+	 * @see #isAllowTypeCustomisation()
+	 * @generated
+	 */
+	void setAllowTypeCustomisation(boolean value);
 
 } // EntityOrView

@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.persistence.provider;
+package uk.ac.man.cs.mdsd.webgen.core.provider;
 
 
 import java.util.Collection;
@@ -9,14 +9,12 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import uk.ac.man.cs.mdsd.webgen.core.provider.NamedDisplayElementItemProvider;
-import uk.ac.man.cs.mdsd.webgen.persistence.Classifier;
+
+import uk.ac.man.cs.mdsd.webgen.core.Classifier;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.Classifier} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.core.Classifier} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -85,17 +83,6 @@ public class ClassifierItemProvider extends NamedDisplayElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

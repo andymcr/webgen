@@ -1,10 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.service;
-
-import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
-import uk.ac.man.cs.mdsd.webgen.expression.Literal;
-import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
+package uk.ac.man.cs.mdsd.webgen.core;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,12 +11,12 @@ import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getFormalFor <em>Formal For</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getDataType <em>Data Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.FormalParameter#getFormalFor <em>Formal For</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.FormalParameter#getDataType <em>Data Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.FormalParameter#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage#getFormalParameter()
+ * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getFormalParameter()
  * @model
  * @generated
  */
@@ -35,14 +31,14 @@ public interface FormalParameter extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Formal For</em>' reference.
 	 * @see #setFormalFor(FormalParameterList)
-	 * @see uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage#getFormalParameter_FormalFor()
+	 * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getFormalParameter_FormalFor()
 	 * @model required="true"
 	 * @generated
 	 */
 	FormalParameterList getFormalFor();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getFormalFor <em>Formal For</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.core.FormalParameter#getFormalFor <em>Formal For</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Formal For</em>' reference.
@@ -61,14 +57,14 @@ public interface FormalParameter extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data Type</em>' reference.
 	 * @see #setDataType(DataType)
-	 * @see uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage#getFormalParameter_DataType()
+	 * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getFormalParameter_DataType()
 	 * @model
 	 * @generated
 	 */
 	DataType getDataType();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getDataType <em>Data Type</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.core.FormalParameter#getDataType <em>Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Data Type</em>' reference.
@@ -86,21 +82,21 @@ public interface FormalParameter extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Default Value</em>' containment reference.
-	 * @see #setDefaultValue(Literal)
-	 * @see uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage#getFormalParameter_DefaultValue()
+	 * @see #setDefaultValue(uk.ac.man.cs.mdsd.webgen.expression.Literal)
+	 * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getFormalParameter_DefaultValue()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Literal getDefaultValue();
+	uk.ac.man.cs.mdsd.webgen.expression.Literal getDefaultValue();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getDefaultValue <em>Default Value</em>}' containment reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.core.FormalParameter#getDefaultValue <em>Default Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Default Value</em>' containment reference.
 	 * @see #getDefaultValue()
 	 * @generated
 	 */
-	void setDefaultValue(Literal value);
+	void setDefaultValue(uk.ac.man.cs.mdsd.webgen.expression.Literal value);
 
 } // FormalParameter

@@ -72,6 +72,98 @@ public class WebGenCoreItemProviderAdapterFactory extends WebGenCoreAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.core.DataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataTypeItemProvider dataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.core.DataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDataTypeAdapter() {
+		if (dataTypeItemProvider == null) {
+			dataTypeItemProvider = new DataTypeItemProvider(this);
+		}
+
+		return dataTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.core.EnumerationType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnumerationTypeItemProvider enumerationTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.core.EnumerationType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnumerationTypeAdapter() {
+		if (enumerationTypeItemProvider == null) {
+			enumerationTypeItemProvider = new EnumerationTypeItemProvider(this);
+		}
+
+		return enumerationTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.core.EnumerationLiteral} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnumerationLiteralItemProvider enumerationLiteralItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.core.EnumerationLiteral}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnumerationLiteralAdapter() {
+		if (enumerationLiteralItemProvider == null) {
+			enumerationLiteralItemProvider = new EnumerationLiteralItemProvider(this);
+		}
+
+		return enumerationLiteralItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.core.FormalParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FormalParameterItemProvider formalParameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.core.FormalParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFormalParameterAdapter() {
+		if (formalParameterItemProvider == null) {
+			formalParameterItemProvider = new FormalParameterItemProvider(this);
+		}
+
+		return formalParameterItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -170,6 +262,10 @@ public class WebGenCoreItemProviderAdapterFactory extends WebGenCoreAdapterFacto
 	 * @generated
 	 */
 	public void dispose() {
+		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
+		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
+		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
+		if (formalParameterItemProvider != null) formalParameterItemProvider.dispose();
 	}
 
 }

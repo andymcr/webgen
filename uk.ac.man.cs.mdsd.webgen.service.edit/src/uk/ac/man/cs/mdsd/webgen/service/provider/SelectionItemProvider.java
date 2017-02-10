@@ -19,6 +19,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCoreFactory;
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
 import uk.ac.man.cs.mdsd.webgen.core.provider.NamedElementItemProvider;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.service.WebGenServiceFactory;
@@ -184,7 +186,7 @@ public class SelectionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebGenServicePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
+			childrenFeatures.add(WebGenCorePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
 			childrenFeatures.add(WebGenServicePackage.Literals.SELECTION__FILTER);
 			childrenFeatures.add(WebGenServicePackage.Literals.SELECTION__ORDERING);
 		}
@@ -269,8 +271,8 @@ public class SelectionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebGenServicePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
-				 WebGenServiceFactory.eINSTANCE.createFormalParameter()));
+				(WebGenCorePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
+				 WebGenCoreFactory.eINSTANCE.createFormalParameter()));
 
 		newChildDescriptors.add
 			(createChildParameter

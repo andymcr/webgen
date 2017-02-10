@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import uk.ac.man.cs.mdsd.webgen.core.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.expression.Expression;
 import uk.ac.man.cs.mdsd.webgen.expression.Path;
@@ -96,19 +97,6 @@ public class WebGenServiceSwitch<T> extends Switch<T> {
 				T result = caseBusinessOperation(businessOperation);
 				if (result == null) result = caseNamedElement(businessOperation);
 				if (result == null) result = caseFormalParameterList(businessOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebGenServicePackage.FORMAL_PARAMETER_LIST: {
-				FormalParameterList formalParameterList = (FormalParameterList)theEObject;
-				T result = caseFormalParameterList(formalParameterList);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebGenServicePackage.FORMAL_PARAMETER: {
-				FormalParameter formalParameter = (FormalParameter)theEObject;
-				T result = caseFormalParameter(formalParameter);
-				if (result == null) result = caseNamedElement(formalParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -232,21 +220,6 @@ public class WebGenServiceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFormalParameterList(FormalParameterList object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Formal Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Formal Parameter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFormalParameter(FormalParameter object) {
 		return null;
 	}
 

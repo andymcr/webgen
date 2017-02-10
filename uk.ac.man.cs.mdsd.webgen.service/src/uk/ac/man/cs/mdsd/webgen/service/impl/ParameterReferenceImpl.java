@@ -10,8 +10,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import uk.ac.man.cs.mdsd.webgen.service.FormalParameter;
 import uk.ac.man.cs.mdsd.webgen.service.ParameterReference;
 import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
 
@@ -48,7 +46,7 @@ public class ParameterReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected FormalParameter parameter;
+	protected uk.ac.man.cs.mdsd.webgen.core.FormalParameter parameter;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,10 +81,10 @@ public class ParameterReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FormalParameter getParameter() {
+	public uk.ac.man.cs.mdsd.webgen.core.FormalParameter getParameter() {
 		if (parameter != null && parameter.eIsProxy()) {
 			InternalEObject oldParameter = (InternalEObject)parameter;
-			parameter = (FormalParameter)eResolveProxy(oldParameter);
+			parameter = (uk.ac.man.cs.mdsd.webgen.core.FormalParameter)eResolveProxy(oldParameter);
 			if (parameter != oldParameter) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenServicePackage.PARAMETER_REFERENCE__PARAMETER, oldParameter, parameter));
@@ -100,7 +98,7 @@ public class ParameterReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FormalParameter basicGetParameter() {
+	public uk.ac.man.cs.mdsd.webgen.core.FormalParameter basicGetParameter() {
 		return parameter;
 	}
 
@@ -109,8 +107,8 @@ public class ParameterReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParameter(FormalParameter newParameter) {
-		FormalParameter oldParameter = parameter;
+	public void setParameter(uk.ac.man.cs.mdsd.webgen.core.FormalParameter newParameter) {
+		uk.ac.man.cs.mdsd.webgen.core.FormalParameter oldParameter = parameter;
 		parameter = newParameter;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebGenServicePackage.PARAMETER_REFERENCE__PARAMETER, oldParameter, parameter));
@@ -142,7 +140,7 @@ public class ParameterReferenceImpl extends MinimalEObjectImpl.Container impleme
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebGenServicePackage.PARAMETER_REFERENCE__PARAMETER:
-				setParameter((FormalParameter)newValue);
+				setParameter((uk.ac.man.cs.mdsd.webgen.core.FormalParameter)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -157,7 +155,7 @@ public class ParameterReferenceImpl extends MinimalEObjectImpl.Container impleme
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebGenServicePackage.PARAMETER_REFERENCE__PARAMETER:
-				setParameter((FormalParameter)null);
+				setParameter((uk.ac.man.cs.mdsd.webgen.core.FormalParameter)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import uk.ac.man.cs.mdsd.webgen.core.Classifier;
 import uk.ac.man.cs.mdsd.webgen.core.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.persistence.*;
@@ -71,41 +72,6 @@ public class WebGenPersistenceSwitch<T> extends Switch<T> {
 			case WebGenPersistencePackage.PERSISTENCE: {
 				Persistence persistence = (Persistence)theEObject;
 				T result = casePersistence(persistence);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebGenPersistencePackage.CLASSIFIER: {
-				Classifier classifier = (Classifier)theEObject;
-				T result = caseClassifier(classifier);
-				if (result == null) result = caseNamedDisplayElement(classifier);
-				if (result == null) result = caseNamedElement(classifier);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebGenPersistencePackage.DATA_TYPE: {
-				DataType dataType = (DataType)theEObject;
-				T result = caseDataType(dataType);
-				if (result == null) result = caseClassifier(dataType);
-				if (result == null) result = caseNamedDisplayElement(dataType);
-				if (result == null) result = caseNamedElement(dataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebGenPersistencePackage.ENUMERATION_TYPE: {
-				EnumerationType enumerationType = (EnumerationType)theEObject;
-				T result = caseEnumerationType(enumerationType);
-				if (result == null) result = caseDataType(enumerationType);
-				if (result == null) result = caseClassifier(enumerationType);
-				if (result == null) result = caseNamedDisplayElement(enumerationType);
-				if (result == null) result = caseNamedElement(enumerationType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebGenPersistencePackage.ENUMERATION_LITERAL: {
-				EnumerationLiteral enumerationLiteral = (EnumerationLiteral)theEObject;
-				T result = caseEnumerationLiteral(enumerationLiteral);
-				if (result == null) result = caseNamedDisplayElement(enumerationLiteral);
-				if (result == null) result = caseNamedElement(enumerationLiteral);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -476,51 +442,6 @@ public class WebGenPersistenceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseClassifier(Classifier object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDataType(DataType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Enumeration Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Enumeration Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEnumerationType(EnumerationType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Enumeration Literal</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Enumeration Literal</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEnumerationLiteral(EnumerationLiteral object) {
 		return null;
 	}
 

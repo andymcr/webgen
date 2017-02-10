@@ -56,9 +56,53 @@ public class WebGenCoreFactoryImpl extends EFactoryImpl implements WebGenCoreFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case WebGenCorePackage.DATA_TYPE: return createDataType();
+			case WebGenCorePackage.ENUMERATION_TYPE: return createEnumerationType();
+			case WebGenCorePackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
+			case WebGenCorePackage.FORMAL_PARAMETER: return createFormalParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType createDataType() {
+		DataTypeImpl dataType = new DataTypeImpl();
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EnumerationType createEnumerationType() {
+		EnumerationTypeImpl enumerationType = new EnumerationTypeImpl();
+		return enumerationType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EnumerationLiteral createEnumerationLiteral() {
+		EnumerationLiteralImpl enumerationLiteral = new EnumerationLiteralImpl();
+		return enumerationLiteral;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FormalParameter createFormalParameter() {
+		FormalParameterImpl formalParameter = new FormalParameterImpl();
+		return formalParameter;
 	}
 
 	/**

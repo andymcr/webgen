@@ -22,6 +22,42 @@ public interface WebGenCoreFactory extends EFactory {
 	WebGenCoreFactory eINSTANCE = uk.ac.man.cs.mdsd.webgen.core.impl.WebGenCoreFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Data Type</em>'.
+	 * @generated
+	 */
+	DataType createDataType();
+
+	/**
+	 * Returns a new object of class '<em>Enumeration Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Enumeration Type</em>'.
+	 * @generated
+	 */
+	EnumerationType createEnumerationType();
+
+	/**
+	 * Returns a new object of class '<em>Enumeration Literal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Enumeration Literal</em>'.
+	 * @generated
+	 */
+	EnumerationLiteral createEnumerationLiteral();
+
+	/**
+	 * Returns a new object of class '<em>Formal Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Formal Parameter</em>'.
+	 * @generated
+	 */
+	FormalParameter createFormalParameter();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

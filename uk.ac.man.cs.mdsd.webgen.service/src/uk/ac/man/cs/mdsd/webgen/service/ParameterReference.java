@@ -2,6 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.webgen.service;
 
+import uk.ac.man.cs.mdsd.webgen.core.FormalParameter;
 import uk.ac.man.cs.mdsd.webgen.expression.Path;
 
 /**

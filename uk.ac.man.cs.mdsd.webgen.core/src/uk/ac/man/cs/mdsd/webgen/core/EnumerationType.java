@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.persistence;
+package uk.ac.man.cs.mdsd.webgen.core;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -13,17 +13,17 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EnumerationType#getEnumerations <em>Enumerations</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.EnumerationType#getEnumerations <em>Enumerations</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEnumerationType()
+ * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getEnumerationType()
  * @model
  * @generated
  */
 public interface EnumerationType extends DataType {
 	/**
 	 * Returns the value of the '<em><b>Enumerations</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.EnumerationLiteral}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.core.EnumerationLiteral}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Enumerations</em>' containment reference list isn't clear,
@@ -31,7 +31,7 @@ public interface EnumerationType extends DataType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Enumerations</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getEnumerationType_Enumerations()
+	 * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getEnumerationType_Enumerations()
 	 * @model containment="true"
 	 * @generated
 	 */

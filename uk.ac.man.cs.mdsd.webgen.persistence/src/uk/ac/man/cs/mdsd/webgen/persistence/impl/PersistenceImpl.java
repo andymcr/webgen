@@ -17,8 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.Classifier;
+import uk.ac.man.cs.mdsd.webgen.core.Classifier;
 import uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies;
 import uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;

@@ -18,9 +18,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCoreFactory;
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
 import uk.ac.man.cs.mdsd.webgen.core.provider.NamedElementItemProvider;
 import uk.ac.man.cs.mdsd.webgen.service.BusinessOperation;
-import uk.ac.man.cs.mdsd.webgen.service.WebGenServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
 
 /**
@@ -137,7 +138,7 @@ public class BusinessOperationItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebGenServicePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
+			childrenFeatures.add(WebGenCorePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -217,8 +218,8 @@ public class BusinessOperationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebGenServicePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
-				 WebGenServiceFactory.eINSTANCE.createFormalParameter()));
+				(WebGenCorePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
+				 WebGenCoreFactory.eINSTANCE.createFormalParameter()));
 	}
 
 	/**

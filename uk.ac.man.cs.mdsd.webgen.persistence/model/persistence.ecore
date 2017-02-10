@@ -15,7 +15,8 @@
       <details key="classifierNameUnique" value="classifiers->isUnique(name)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="classifiers" upperBound="-1"
-        eType="#//Classifier" containment="true"/>
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.core/model/core.ecore#//Classifier"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseTechnology" eType="#//DatabaseTechnologies"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ormTechnology" eType="#//OrmTechnologies"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseHost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -39,22 +40,7 @@
     <eLiterals name="DoctrineORM" value="4"/>
     <eLiterals name="DoctrineODM" value="5" literal="DoctrineODM"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.core/model/core.ecore#//NamedDisplayElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DataType" eSuperTypes="#//Classifier">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="persistentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ormType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholder" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="validationPattern" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnumerationType" eSuperTypes="#//DataType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enumerations" upperBound="-1"
-        eType="#//EnumerationLiteral" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.core/model/core.ecore#//NamedDisplayElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EntityOrView" abstract="true" eSuperTypes="#//Classifier">
+  <eClassifiers xsi:type="ecore:EClass" name="EntityOrView" abstract="true" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.core/model/core.ecore#//Classifier">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="keysFromLocalFeatures"/>
     </eAnnotations>
@@ -113,6 +99,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="implementsUserInterface"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="allowTypeCustomisation"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -249,7 +237,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeAttribute" eSuperTypes="#//EntityAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" ordered="false"
-        lowerBound="1" eType="#//DataType"/>
+        lowerBound="1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.core/model/core.ecore#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="obfuscateFormFields" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="caseInsensitive" ordered="false"

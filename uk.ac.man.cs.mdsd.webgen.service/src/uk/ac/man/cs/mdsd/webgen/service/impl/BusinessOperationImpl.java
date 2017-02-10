@@ -17,10 +17,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.eclipse.emf.ecore.util.InternalEList;
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
 import uk.ac.man.cs.mdsd.webgen.core.impl.NamedElementImpl;
 import uk.ac.man.cs.mdsd.webgen.service.BusinessOperation;
-import uk.ac.man.cs.mdsd.webgen.service.FormalParameter;
-import uk.ac.man.cs.mdsd.webgen.service.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.service.OperationResultTypes;
 import uk.ac.man.cs.mdsd.webgen.service.Service;
 import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
@@ -50,7 +49,7 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<FormalParameter> parameters;
+	protected EList<uk.ac.man.cs.mdsd.webgen.core.FormalParameter> parameters;
 
 	/**
 	 * The cached value of the '{@link #getUses() <em>Uses</em>}' reference list.
@@ -126,9 +125,9 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FormalParameter> getParameters() {
+	public EList<uk.ac.man.cs.mdsd.webgen.core.FormalParameter> getParameters() {
 		if (parameters == null) {
-			parameters = new EObjectContainmentEList<FormalParameter>(FormalParameter.class, this, WebGenServicePackage.BUSINESS_OPERATION__PARAMETERS);
+			parameters = new EObjectContainmentEList<uk.ac.man.cs.mdsd.webgen.core.FormalParameter>(uk.ac.man.cs.mdsd.webgen.core.FormalParameter.class, this, WebGenServicePackage.BUSINESS_OPERATION__PARAMETERS);
 		}
 		return parameters;
 	}
@@ -232,7 +231,7 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 		switch (featureID) {
 			case WebGenServicePackage.BUSINESS_OPERATION__PARAMETERS:
 				getParameters().clear();
-				getParameters().addAll((Collection<? extends FormalParameter>)newValue);
+				getParameters().addAll((Collection<? extends uk.ac.man.cs.mdsd.webgen.core.FormalParameter>)newValue);
 				return;
 			case WebGenServicePackage.BUSINESS_OPERATION__USES:
 				getUses().clear();
@@ -299,9 +298,9 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == FormalParameterList.class) {
+		if (baseClass == uk.ac.man.cs.mdsd.webgen.core.FormalParameterList.class) {
 			switch (derivedFeatureID) {
-				case WebGenServicePackage.BUSINESS_OPERATION__PARAMETERS: return WebGenServicePackage.FORMAL_PARAMETER_LIST__PARAMETERS;
+				case WebGenServicePackage.BUSINESS_OPERATION__PARAMETERS: return WebGenCorePackage.FORMAL_PARAMETER_LIST__PARAMETERS;
 				default: return -1;
 			}
 		}
@@ -315,9 +314,9 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == FormalParameterList.class) {
+		if (baseClass == uk.ac.man.cs.mdsd.webgen.core.FormalParameterList.class) {
 			switch (baseFeatureID) {
-				case WebGenServicePackage.FORMAL_PARAMETER_LIST__PARAMETERS: return WebGenServicePackage.BUSINESS_OPERATION__PARAMETERS;
+				case WebGenCorePackage.FORMAL_PARAMETER_LIST__PARAMETERS: return WebGenServicePackage.BUSINESS_OPERATION__PARAMETERS;
 				default: return -1;
 			}
 		}

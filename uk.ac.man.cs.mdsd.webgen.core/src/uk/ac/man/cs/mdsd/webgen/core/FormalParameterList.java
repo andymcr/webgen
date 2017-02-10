@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.service;
+package uk.ac.man.cs.mdsd.webgen.core;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -15,17 +15,17 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameterList#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.FormalParameterList#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage#getFormalParameterList()
+ * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getFormalParameterList()
  * @model interface="true" abstract="true"
  * @generated
  */
 public interface FormalParameterList extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.core.FormalParameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
@@ -33,7 +33,7 @@ public interface FormalParameterList extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage#getFormalParameterList_Parameters()
+	 * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getFormalParameterList_Parameters()
 	 * @model containment="true"
 	 * @generated
 	 */

@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.persistence;
+package uk.ac.man.cs.mdsd.webgen.core;
 
 
 /**
@@ -12,14 +12,14 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.DataType#getPersistentType <em>Persistent Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.DataType#getOrmType <em>Orm Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.DataType#getInterfaceType <em>Interface Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.DataType#getPlaceholder <em>Placeholder</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.DataType#getValidationPattern <em>Validation Pattern</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.DataType#getPersistentType <em>Persistent Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.DataType#getOrmType <em>Orm Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.DataType#getInterfaceType <em>Interface Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.DataType#getPlaceholder <em>Placeholder</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.core.DataType#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataType()
+ * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getDataType()
  * @model
  * @generated
  */
@@ -34,14 +34,14 @@ public interface DataType extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Persistent Type</em>' attribute.
 	 * @see #setPersistentType(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataType_PersistentType()
+	 * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getDataType_PersistentType()
 	 * @model
 	 * @generated
 	 */
 	String getPersistentType();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.DataType#getPersistentType <em>Persistent Type</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.core.DataType#getPersistentType <em>Persistent Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Persistent Type</em>' attribute.
@@ -60,14 +60,14 @@ public interface DataType extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Orm Type</em>' attribute.
 	 * @see #setOrmType(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataType_OrmType()
+	 * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getDataType_OrmType()
 	 * @model
 	 * @generated
 	 */
 	String getOrmType();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.DataType#getOrmType <em>Orm Type</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.core.DataType#getOrmType <em>Orm Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Orm Type</em>' attribute.
@@ -86,14 +86,14 @@ public interface DataType extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Type</em>' attribute.
 	 * @see #setInterfaceType(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataType_InterfaceType()
+	 * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getDataType_InterfaceType()
 	 * @model
 	 * @generated
 	 */
 	String getInterfaceType();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.DataType#getInterfaceType <em>Interface Type</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.core.DataType#getInterfaceType <em>Interface Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Interface Type</em>' attribute.
@@ -112,14 +112,14 @@ public interface DataType extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Placeholder</em>' attribute.
 	 * @see #setPlaceholder(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataType_Placeholder()
+	 * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getDataType_Placeholder()
 	 * @model ordered="false"
 	 * @generated
 	 */
 	String getPlaceholder();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.DataType#getPlaceholder <em>Placeholder</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.core.DataType#getPlaceholder <em>Placeholder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Placeholder</em>' attribute.
@@ -138,14 +138,14 @@ public interface DataType extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Validation Pattern</em>' attribute.
 	 * @see #setValidationPattern(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage#getDataType_ValidationPattern()
+	 * @see uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage#getDataType_ValidationPattern()
 	 * @model ordered="false"
 	 * @generated
 	 */
 	String getValidationPattern();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.DataType#getValidationPattern <em>Validation Pattern</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.core.DataType#getValidationPattern <em>Validation Pattern</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Validation Pattern</em>' attribute.

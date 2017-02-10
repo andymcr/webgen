@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated waf -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="uk.ac.man.cs.mdsd.webgen.waf.presentation.WebGenWafModelWizardID"
+            name="%_UI_WebGenWafModelWizard_label"
+            class="uk.ac.man.cs.mdsd.webgen.waf.presentation.WebGenWafModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/WebGenWafModelFile.gif">
+         <description>%_UI_WebGenWafModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated waf -->
+      <editor
+            id="uk.ac.man.cs.mdsd.webgen.waf.presentation.WebGenWafEditorID"
+            name="%_UI_WebGenWafEditor_label"
+            icon="icons/full/obj16/WebGenWafModelFile.gif"
+            extensions="webgen"
+            class="uk.ac.man.cs.mdsd.webgen.waf.presentation.WebGenWafEditor"
+            contributorClass="uk.ac.man.cs.mdsd.webgen.waf.presentation.WebGenWafActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

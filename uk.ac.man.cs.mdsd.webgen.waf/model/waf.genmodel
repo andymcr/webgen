@@ -7,7 +7,7 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>waf.ecore</foreignModel>
   <genPackages prefix="WebGenWaf" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
-      childCreationExtenders="true" ecorePackage="waf.ecore#/">
+      childCreationExtenders="true" fileExtensions="webgen" ecorePackage="waf.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="waf.ecore#//FrameworkTechnologies">
       <genEnumLiterals ecoreEnumLiteral="waf.ecore#//FrameworkTechnologies/JSF"/>
       <genEnumLiterals ecoreEnumLiteral="waf.ecore#//FrameworkTechnologies/CakePHP"/>

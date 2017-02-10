@@ -14,12 +14,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.webgen.core.impl.NamedElementImpl;
 import uk.ac.man.cs.mdsd.webgen.service.BusinessOperation;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.service.Service;
@@ -40,7 +39,7 @@ import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
  *
  * @generated
  */
-public class ServiceImpl extends MinimalEObjectImpl.Container implements Service {
+public class ServiceImpl extends NamedElementImpl implements Service {
 	/**
 	 * The cached value of the '{@link #getServes() <em>Serves</em>}' reference.
 	 * <!-- begin-user-doc -->

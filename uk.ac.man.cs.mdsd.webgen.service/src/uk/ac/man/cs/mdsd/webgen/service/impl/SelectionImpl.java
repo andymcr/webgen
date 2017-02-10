@@ -13,17 +13,17 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.webgen.core.impl.NamedElementImpl;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 
 import uk.ac.man.cs.mdsd.webgen.service.FormalParameter;
+import uk.ac.man.cs.mdsd.webgen.service.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.service.Order;
 import uk.ac.man.cs.mdsd.webgen.service.ParameterReference;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
@@ -51,7 +51,7 @@ import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
  *
  * @generated
  */
-public class SelectionImpl extends MinimalEObjectImpl.Container implements Selection {
+public class SelectionImpl extends NamedElementImpl implements Selection {
 	/**
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -567,6 +567,38 @@ public class SelectionImpl extends MinimalEObjectImpl.Container implements Selec
 				return selected != SELECTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == FormalParameterList.class) {
+			switch (derivedFeatureID) {
+				case WebGenServicePackage.SELECTION__PARAMETERS: return WebGenServicePackage.FORMAL_PARAMETER_LIST__PARAMETERS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == FormalParameterList.class) {
+			switch (baseFeatureID) {
+				case WebGenServicePackage.FORMAL_PARAMETER_LIST__PARAMETERS: return WebGenServicePackage.SELECTION__PARAMETERS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

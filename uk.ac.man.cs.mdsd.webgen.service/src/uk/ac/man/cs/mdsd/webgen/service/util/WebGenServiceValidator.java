@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
+import uk.ac.man.cs.mdsd.webgen.core.util.WebGenCoreValidator;
 import uk.ac.man.cs.mdsd.webgen.service.*;
 
 /**
@@ -57,6 +58,14 @@ public class WebGenServiceValidator extends EObjectValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WebGenCoreValidator webGenCoreValidator;
+
+	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,6 +73,7 @@ public class WebGenServiceValidator extends EObjectValidator {
 	 */
 	public WebGenServiceValidator() {
 		super();
+		webGenCoreValidator = WebGenCoreValidator.INSTANCE;
 	}
 
 	/**
@@ -171,7 +181,17 @@ public class WebGenServiceValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateService(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(service, diagnostics, context);
+		if (!validate_NoCircularContainment(service, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(service, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(service, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -180,7 +200,17 @@ public class WebGenServiceValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSelection(Selection selection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(selection, diagnostics, context);
+		if (!validate_NoCircularContainment(selection, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(selection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(selection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(selection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(selection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(selection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(selection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(selection, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(selection, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(selection, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -189,7 +219,17 @@ public class WebGenServiceValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateBusinessOperation(BusinessOperation businessOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(businessOperation, diagnostics, context);
+		if (!validate_NoCircularContainment(businessOperation, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(businessOperation, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -207,7 +247,17 @@ public class WebGenServiceValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateFormalParameter(FormalParameter formalParameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(formalParameter, diagnostics, context);
+		if (!validate_NoCircularContainment(formalParameter, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= webGenCoreValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(formalParameter, diagnostics, context);
+		return result;
 	}
 
 	/**

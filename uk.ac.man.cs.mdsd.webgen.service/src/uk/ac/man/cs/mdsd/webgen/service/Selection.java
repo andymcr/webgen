@@ -3,6 +3,7 @@
 package uk.ac.man.cs.mdsd.webgen.service;
 
 import org.eclipse.emf.common.util.EList;
+import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 
@@ -29,7 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
  * @model
  * @generated
  */
-public interface Selection extends FormalParameterList {
+public interface Selection extends NamedElement, FormalParameterList {
 	/**
 	 * Returns the value of the '<em><b>Used By</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.service.Service#getSelections <em>Selections</em>}'.

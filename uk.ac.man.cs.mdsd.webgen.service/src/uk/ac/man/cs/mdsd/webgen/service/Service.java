@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.service;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Service extends EObject {
+public interface Service extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Serves</b></em>' reference.
 	 * <!-- begin-user-doc -->

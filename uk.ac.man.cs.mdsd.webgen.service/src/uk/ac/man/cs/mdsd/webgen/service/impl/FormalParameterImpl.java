@@ -9,8 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
+import uk.ac.man.cs.mdsd.webgen.core.impl.NamedElementImpl;
 import uk.ac.man.cs.mdsd.webgen.expression.Literal;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
@@ -33,7 +32,7 @@ import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
  *
  * @generated
  */
-public class FormalParameterImpl extends MinimalEObjectImpl.Container implements FormalParameter {
+public class FormalParameterImpl extends NamedElementImpl implements FormalParameter {
 	/**
 	 * The cached value of the '{@link #getFormalFor() <em>Formal For</em>}' reference.
 	 * <!-- begin-user-doc -->

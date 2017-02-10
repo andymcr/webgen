@@ -6,6 +6,7 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import uk.ac.man.cs.mdsd.webgen.core.provider.CoreEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.provider.PersistenceEditPlugin;
@@ -42,6 +43,7 @@ public final class ServiceEditPlugin extends EMFPlugin {
 	public ServiceEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     CoreEditPlugin.INSTANCE,
 		     ExpressionEditPlugin.INSTANCE,
 		     PersistenceEditPlugin.INSTANCE,
 		   });

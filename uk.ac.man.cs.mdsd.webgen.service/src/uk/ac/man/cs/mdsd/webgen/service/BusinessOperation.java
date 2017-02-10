@@ -3,6 +3,7 @@
 package uk.ac.man.cs.mdsd.webgen.service;
 
 import org.eclipse.emf.common.util.EList;
+import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface BusinessOperation extends FormalParameterList {
+public interface BusinessOperation extends NamedElement, FormalParameterList {
 	/**
 	 * Returns the value of the '<em><b>Uses</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.Service}.

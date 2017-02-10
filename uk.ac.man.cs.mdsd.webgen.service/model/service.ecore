@@ -17,7 +17,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
         eType="#//Service" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Service">
+  <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="serves" lowerBound="1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selections" upperBound="-1"
@@ -25,7 +25,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
         eType="#//BusinessOperation" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Selection" eSuperTypes="#//FormalParameterList">
+  <eClassifiers xsi:type="ecore:EClass" name="Selection" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.core/model/core.ecore#//NamedElement #//FormalParameterList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="usedBy" lowerBound="1"
         eType="#//Service" eOpposite="#//Service/selections"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="distinct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -41,7 +41,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BusinessOperation" eSuperTypes="#//FormalParameterList">
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessOperation" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.core/model/core.ecore#//NamedElement #//FormalParameterList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Service"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="resultType" lowerBound="1"
         eType="#//OperationResultTypes"/>
@@ -52,7 +52,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//FormalParameter" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FormalParameter">
+  <eClassifiers xsi:type="ecore:EClass" name="FormalParameter" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="formalFor" lowerBound="1"
         eType="#//FormalParameterList"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.persistence/model/persistence.ecore#//DataType"/>

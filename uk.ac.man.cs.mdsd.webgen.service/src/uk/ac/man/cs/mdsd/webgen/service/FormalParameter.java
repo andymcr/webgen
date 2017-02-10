@@ -2,8 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.webgen.service;
 
-import org.eclipse.emf.ecore.EObject;
-
+import uk.ac.man.cs.mdsd.webgen.core.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.expression.Literal;
 import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
 
@@ -25,7 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
  * @model
  * @generated
  */
-public interface FormalParameter extends EObject {
+public interface FormalParameter extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Formal For</b></em>' reference.
 	 * <!-- begin-user-doc -->

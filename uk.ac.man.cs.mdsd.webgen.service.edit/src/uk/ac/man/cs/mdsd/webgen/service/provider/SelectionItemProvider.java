@@ -15,16 +15,11 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.core.provider.NamedElementItemProvider;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.service.WebGenServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
@@ -36,13 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
  * @generated
  */
 public class SelectionItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -234,8 +223,10 @@ public class SelectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Selection selection = (Selection)object;
-		return getString("_UI_Selection_type") + " " + selection.isDistinct();
+		String label = ((Selection)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Selection_type") :
+			getString("_UI_Selection_type") + " " + label;
 	}
 	
 

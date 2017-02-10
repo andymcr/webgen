@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import uk.ac.man.cs.mdsd.webgen.core.WebGenCorePackage;
 import uk.ac.man.cs.mdsd.webgen.expression.WebGenExpressionPackage;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
@@ -178,6 +179,7 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 		isInited = true;
 
 		// Initialize simple dependencies
+		WebGenCorePackage.eINSTANCE.eClass();
 		PersistencePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -641,6 +643,7 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		WebGenCorePackage theWebGenCorePackage = (WebGenCorePackage)EPackage.Registry.INSTANCE.getEPackage(WebGenCorePackage.eNS_URI);
 		PersistencePackage thePersistencePackage = (PersistencePackage)EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI);
 		WebGenExpressionPackage theWebGenExpressionPackage = (WebGenExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(WebGenExpressionPackage.eNS_URI);
 
@@ -649,8 +652,12 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		serviceEClass.getESuperTypes().add(theWebGenCorePackage.getNamedElement());
+		selectionEClass.getESuperTypes().add(theWebGenCorePackage.getNamedElement());
 		selectionEClass.getESuperTypes().add(this.getFormalParameterList());
+		businessOperationEClass.getESuperTypes().add(theWebGenCorePackage.getNamedElement());
 		businessOperationEClass.getESuperTypes().add(this.getFormalParameterList());
+		formalParameterEClass.getESuperTypes().add(theWebGenCorePackage.getNamedElement());
 		ascEClass.getESuperTypes().add(this.getOrder());
 		descEClass.getESuperTypes().add(this.getOrder());
 		featureReferenceEClass.getESuperTypes().add(theWebGenExpressionPackage.getPath());

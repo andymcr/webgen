@@ -382,13 +382,13 @@ public interface WebGenServicePackage extends EPackage {
 	int FORMAL_PARAMETER__FORMAL_FOR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Optional</b></em>' attribute.
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORMAL_PARAMETER__OPTIONAL = 1;
+	int FORMAL_PARAMETER__DATA_TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
@@ -907,15 +907,15 @@ public interface WebGenServicePackage extends EPackage {
 	EReference getFormalParameter_FormalFor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#isOptional <em>Optional</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getDataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Optional</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.FormalParameter#isOptional()
+	 * @return the meta object for the reference '<em>Data Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getDataType()
 	 * @see #getFormalParameter()
 	 * @generated
 	 */
-	EAttribute getFormalParameter_Optional();
+	EReference getFormalParameter_DataType();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getDefaultValue <em>Default Value</em>}'.
@@ -1273,12 +1273,12 @@ public interface WebGenServicePackage extends EPackage {
 		EReference FORMAL_PARAMETER__FORMAL_FOR = eINSTANCE.getFormalParameter_FormalFor();
 
 		/**
-		 * The meta object literal for the '<em><b>Optional</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FORMAL_PARAMETER__OPTIONAL = eINSTANCE.getFormalParameter_Optional();
+		EReference FORMAL_PARAMETER__DATA_TYPE = eINSTANCE.getFormalParameter_DataType();
 
 		/**
 		 * The meta object literal for the '<em><b>Default Value</b></em>' containment reference feature.

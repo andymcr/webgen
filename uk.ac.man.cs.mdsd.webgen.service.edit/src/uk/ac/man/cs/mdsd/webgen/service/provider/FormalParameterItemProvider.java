@@ -21,7 +21,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -66,7 +65,7 @@ public class FormalParameterItemProvider
 			super.getPropertyDescriptors(object);
 
 			addFormalForPropertyDescriptor(object);
-			addOptionalPropertyDescriptor(object);
+			addDataTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -94,23 +93,23 @@ public class FormalParameterItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Optional feature.
+	 * This adds a property descriptor for the Data Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOptionalPropertyDescriptor(Object object) {
+	protected void addDataTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_FormalParameter_optional_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FormalParameter_optional_feature", "_UI_FormalParameter_type"),
-				 WebGenServicePackage.Literals.FORMAL_PARAMETER__OPTIONAL,
+				 getString("_UI_FormalParameter_dataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FormalParameter_dataType_feature", "_UI_FormalParameter_type"),
+				 WebGenServicePackage.Literals.FORMAL_PARAMETER__DATA_TYPE,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -164,8 +163,7 @@ public class FormalParameterItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		FormalParameter formalParameter = (FormalParameter)object;
-		return getString("_UI_FormalParameter_type") + " " + formalParameter.isOptional();
+		return getString("_UI_FormalParameter_type");
 	}
 	
 
@@ -181,9 +179,6 @@ public class FormalParameterItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FormalParameter.class)) {
-			case WebGenServicePackage.FORMAL_PARAMETER__OPTIONAL:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

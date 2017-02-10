@@ -40,7 +40,7 @@
     </genClasses>
     <genClasses ecoreClass="service.ecore#//FormalParameter">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//FormalParameter/formalFor"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//FormalParameter/optional"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//FormalParameter/dataType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//FormalParameter/defaultValue"/>
     </genClasses>
     <genClasses image="false" ecoreClass="service.ecore#//Order">

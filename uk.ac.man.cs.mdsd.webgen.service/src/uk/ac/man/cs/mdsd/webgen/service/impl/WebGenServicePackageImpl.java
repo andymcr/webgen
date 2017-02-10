@@ -416,8 +416,8 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFormalParameter_Optional() {
-		return (EAttribute)formalParameterEClass.getEStructuralFeatures().get(1);
+	public EReference getFormalParameter_DataType() {
+		return (EReference)formalParameterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -593,7 +593,7 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 
 		formalParameterEClass = createEClass(FORMAL_PARAMETER);
 		createEReference(formalParameterEClass, FORMAL_PARAMETER__FORMAL_FOR);
-		createEAttribute(formalParameterEClass, FORMAL_PARAMETER__OPTIONAL);
+		createEReference(formalParameterEClass, FORMAL_PARAMETER__DATA_TYPE);
 		createEReference(formalParameterEClass, FORMAL_PARAMETER__DEFAULT_VALUE);
 
 		orderEClass = createEClass(ORDER);
@@ -686,7 +686,7 @@ public class WebGenServicePackageImpl extends EPackageImpl implements WebGenServ
 
 		initEClass(formalParameterEClass, FormalParameter.class, "FormalParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFormalParameter_FormalFor(), this.getFormalParameterList(), null, "formalFor", null, 1, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFormalParameter_Optional(), ecorePackage.getEBoolean(), "optional", "false", 0, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFormalParameter_DataType(), thePersistencePackage.getDataType(), null, "dataType", null, 0, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFormalParameter_DefaultValue(), theWebGenExpressionPackage.getLiteral(), null, "defaultValue", null, 0, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(orderEClass, Order.class, "Order", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

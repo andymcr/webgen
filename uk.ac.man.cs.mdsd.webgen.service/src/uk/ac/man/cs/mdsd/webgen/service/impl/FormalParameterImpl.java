@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uk.ac.man.cs.mdsd.webgen.expression.Literal;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
 import uk.ac.man.cs.mdsd.webgen.service.FormalParameter;
 import uk.ac.man.cs.mdsd.webgen.service.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
@@ -26,7 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.FormalParameterImpl#getFormalFor <em>Formal For</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.FormalParameterImpl#isOptional <em>Optional</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.FormalParameterImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.FormalParameterImpl#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
  *
@@ -44,24 +45,14 @@ public class FormalParameterImpl extends MinimalEObjectImpl.Container implements
 	protected FormalParameterList formalFor;
 
 	/**
-	 * The default value of the '{@link #isOptional() <em>Optional</em>}' attribute.
+	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isOptional()
+	 * @see #getDataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean OPTIONAL_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isOptional() <em>Optional</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOptional()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean optional = OPTIONAL_EDEFAULT;
+	protected DataType dataType;
 
 	/**
 	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' containment reference.
@@ -135,8 +126,16 @@ public class FormalParameterImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isOptional() {
-		return optional;
+	public DataType getDataType() {
+		if (dataType != null && dataType.eIsProxy()) {
+			InternalEObject oldDataType = (InternalEObject)dataType;
+			dataType = (DataType)eResolveProxy(oldDataType);
+			if (dataType != oldDataType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebGenServicePackage.FORMAL_PARAMETER__DATA_TYPE, oldDataType, dataType));
+			}
+		}
+		return dataType;
 	}
 
 	/**
@@ -144,11 +143,20 @@ public class FormalParameterImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOptional(boolean newOptional) {
-		boolean oldOptional = optional;
-		optional = newOptional;
+	public DataType basicGetDataType() {
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDataType(DataType newDataType) {
+		DataType oldDataType = dataType;
+		dataType = newDataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebGenServicePackage.FORMAL_PARAMETER__OPTIONAL, oldOptional, optional));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenServicePackage.FORMAL_PARAMETER__DATA_TYPE, oldDataType, dataType));
 	}
 
 	/**
@@ -219,8 +227,9 @@ public class FormalParameterImpl extends MinimalEObjectImpl.Container implements
 			case WebGenServicePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				if (resolve) return getFormalFor();
 				return basicGetFormalFor();
-			case WebGenServicePackage.FORMAL_PARAMETER__OPTIONAL:
-				return isOptional();
+			case WebGenServicePackage.FORMAL_PARAMETER__DATA_TYPE:
+				if (resolve) return getDataType();
+				return basicGetDataType();
 			case WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				return getDefaultValue();
 		}
@@ -238,8 +247,8 @@ public class FormalParameterImpl extends MinimalEObjectImpl.Container implements
 			case WebGenServicePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				setFormalFor((FormalParameterList)newValue);
 				return;
-			case WebGenServicePackage.FORMAL_PARAMETER__OPTIONAL:
-				setOptional((Boolean)newValue);
+			case WebGenServicePackage.FORMAL_PARAMETER__DATA_TYPE:
+				setDataType((DataType)newValue);
 				return;
 			case WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				setDefaultValue((Literal)newValue);
@@ -259,8 +268,8 @@ public class FormalParameterImpl extends MinimalEObjectImpl.Container implements
 			case WebGenServicePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				setFormalFor((FormalParameterList)null);
 				return;
-			case WebGenServicePackage.FORMAL_PARAMETER__OPTIONAL:
-				setOptional(OPTIONAL_EDEFAULT);
+			case WebGenServicePackage.FORMAL_PARAMETER__DATA_TYPE:
+				setDataType((DataType)null);
 				return;
 			case WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				setDefaultValue((Literal)null);
@@ -279,28 +288,12 @@ public class FormalParameterImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case WebGenServicePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				return formalFor != null;
-			case WebGenServicePackage.FORMAL_PARAMETER__OPTIONAL:
-				return optional != OPTIONAL_EDEFAULT;
+			case WebGenServicePackage.FORMAL_PARAMETER__DATA_TYPE:
+				return dataType != null;
 			case WebGenServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				return defaultValue != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (optional: ");
-		result.append(optional);
-		result.append(')');
-		return result.toString();
 	}
 
 } //FormalParameterImpl

@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.service;
 import org.eclipse.emf.ecore.EObject;
 
 import uk.ac.man.cs.mdsd.webgen.expression.Literal;
+import uk.ac.man.cs.mdsd.webgen.persistence.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +17,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.Literal;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getFormalFor <em>Formal For</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#isOptional <em>Optional</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
  *
@@ -52,31 +53,30 @@ public interface FormalParameter extends EObject {
 	void setFormalFor(FormalParameterList value);
 
 	/**
-	 * Returns the value of the '<em><b>Optional</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
+	 * Returns the value of the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Optional</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Data Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Optional</em>' attribute.
-	 * @see #setOptional(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage#getFormalParameter_Optional()
-	 * @model default="false"
+	 * @return the value of the '<em>Data Type</em>' reference.
+	 * @see #setDataType(DataType)
+	 * @see uk.ac.man.cs.mdsd.webgen.service.WebGenServicePackage#getFormalParameter_DataType()
+	 * @model
 	 * @generated
 	 */
-	boolean isOptional();
+	DataType getDataType();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#isOptional <em>Optional</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.FormalParameter#getDataType <em>Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Optional</em>' attribute.
-	 * @see #isOptional()
+	 * @param value the new value of the '<em>Data Type</em>' reference.
+	 * @see #getDataType()
 	 * @generated
 	 */
-	void setOptional(boolean value);
+	void setDataType(DataType value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Value</b></em>' containment reference.

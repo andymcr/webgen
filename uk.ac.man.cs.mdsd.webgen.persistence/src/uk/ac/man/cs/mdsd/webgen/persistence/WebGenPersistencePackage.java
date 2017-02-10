@@ -79,13 +79,103 @@ public interface WebGenPersistencePackage extends EPackage {
 	int PERSISTENCE__CLASSIFIERS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Database Technology</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSISTENCE__DATABASE_TECHNOLOGY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Orm Technology</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSISTENCE__ORM_TECHNOLOGY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Database Host</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSISTENCE__DATABASE_HOST = 3;
+
+	/**
+	 * The feature id for the '<em><b>Database Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSISTENCE__DATABASE_PORT = 4;
+
+	/**
+	 * The feature id for the '<em><b>Database Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSISTENCE__DATABASE_NAME = 5;
+
+	/**
+	 * The feature id for the '<em><b>Database Username</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSISTENCE__DATABASE_USERNAME = 6;
+
+	/**
+	 * The feature id for the '<em><b>Database Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSISTENCE__DATABASE_PASSWORD = 7;
+
+	/**
+	 * The feature id for the '<em><b>Database Prefix</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSISTENCE__DATABASE_PREFIX = 8;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp Creation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSISTENCE__TIMESTAMP_CREATION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp Update</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSISTENCE__TIMESTAMP_UPDATE = 10;
+
+	/**
 	 * The number of structural features of the '<em>Persistence</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE_FEATURE_COUNT = 1;
+	int PERSISTENCE_FEATURE_COUNT = 11;
 
 	/**
 	 * The number of operations of the '<em>Persistence</em>' class.
@@ -6757,6 +6847,116 @@ public interface WebGenPersistencePackage extends EPackage {
 	EReference getPersistence_Classifiers();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseTechnology <em>Database Technology</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Database Technology</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseTechnology()
+	 * @see #getPersistence()
+	 * @generated
+	 */
+	EAttribute getPersistence_DatabaseTechnology();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getOrmTechnology <em>Orm Technology</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Orm Technology</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getOrmTechnology()
+	 * @see #getPersistence()
+	 * @generated
+	 */
+	EAttribute getPersistence_OrmTechnology();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseHost <em>Database Host</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Database Host</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseHost()
+	 * @see #getPersistence()
+	 * @generated
+	 */
+	EAttribute getPersistence_DatabaseHost();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabasePort <em>Database Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Database Port</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabasePort()
+	 * @see #getPersistence()
+	 * @generated
+	 */
+	EAttribute getPersistence_DatabasePort();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseName <em>Database Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Database Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseName()
+	 * @see #getPersistence()
+	 * @generated
+	 */
+	EAttribute getPersistence_DatabaseName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseUsername <em>Database Username</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Database Username</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseUsername()
+	 * @see #getPersistence()
+	 * @generated
+	 */
+	EAttribute getPersistence_DatabaseUsername();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabasePassword <em>Database Password</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Database Password</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabasePassword()
+	 * @see #getPersistence()
+	 * @generated
+	 */
+	EAttribute getPersistence_DatabasePassword();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabasePrefix <em>Database Prefix</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Database Prefix</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabasePrefix()
+	 * @see #getPersistence()
+	 * @generated
+	 */
+	EAttribute getPersistence_DatabasePrefix();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#isTimestampCreation <em>Timestamp Creation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Timestamp Creation</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#isTimestampCreation()
+	 * @see #getPersistence()
+	 * @generated
+	 */
+	EAttribute getPersistence_TimestampCreation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#isTimestampUpdate <em>Timestamp Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Timestamp Update</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#isTimestampUpdate()
+	 * @see #getPersistence()
+	 * @generated
+	 */
+	EAttribute getPersistence_TimestampUpdate();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.persistence.Classifier <em>Classifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8493,6 +8693,86 @@ public interface WebGenPersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PERSISTENCE__CLASSIFIERS = eINSTANCE.getPersistence_Classifiers();
+
+		/**
+		 * The meta object literal for the '<em><b>Database Technology</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSISTENCE__DATABASE_TECHNOLOGY = eINSTANCE.getPersistence_DatabaseTechnology();
+
+		/**
+		 * The meta object literal for the '<em><b>Orm Technology</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSISTENCE__ORM_TECHNOLOGY = eINSTANCE.getPersistence_OrmTechnology();
+
+		/**
+		 * The meta object literal for the '<em><b>Database Host</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSISTENCE__DATABASE_HOST = eINSTANCE.getPersistence_DatabaseHost();
+
+		/**
+		 * The meta object literal for the '<em><b>Database Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSISTENCE__DATABASE_PORT = eINSTANCE.getPersistence_DatabasePort();
+
+		/**
+		 * The meta object literal for the '<em><b>Database Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSISTENCE__DATABASE_NAME = eINSTANCE.getPersistence_DatabaseName();
+
+		/**
+		 * The meta object literal for the '<em><b>Database Username</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSISTENCE__DATABASE_USERNAME = eINSTANCE.getPersistence_DatabaseUsername();
+
+		/**
+		 * The meta object literal for the '<em><b>Database Password</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSISTENCE__DATABASE_PASSWORD = eINSTANCE.getPersistence_DatabasePassword();
+
+		/**
+		 * The meta object literal for the '<em><b>Database Prefix</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSISTENCE__DATABASE_PREFIX = eINSTANCE.getPersistence_DatabasePrefix();
+
+		/**
+		 * The meta object literal for the '<em><b>Timestamp Creation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSISTENCE__TIMESTAMP_CREATION = eINSTANCE.getPersistence_TimestampCreation();
+
+		/**
+		 * The meta object literal for the '<em><b>Timestamp Update</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSISTENCE__TIMESTAMP_UPDATE = eINSTANCE.getPersistence_TimestampUpdate();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ClassifierImpl <em>Classifier</em>}' class.

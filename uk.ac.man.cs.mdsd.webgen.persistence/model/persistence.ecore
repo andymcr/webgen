@@ -16,6 +16,16 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="classifiers" upperBound="-1"
         eType="#//Classifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseTechnology" eType="#//DatabaseTechnologies"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ormTechnology" eType="#//OrmTechnologies"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseHost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databasePort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseUsername" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databasePassword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databasePrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestampCreation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestampUpdate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DatabaseTechnologies">
     <eLiterals name="MySql"/>

@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,6 +21,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -62,8 +64,238 @@ public class PersistenceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDatabaseTechnologyPropertyDescriptor(object);
+			addOrmTechnologyPropertyDescriptor(object);
+			addDatabaseHostPropertyDescriptor(object);
+			addDatabasePortPropertyDescriptor(object);
+			addDatabaseNamePropertyDescriptor(object);
+			addDatabaseUsernamePropertyDescriptor(object);
+			addDatabasePasswordPropertyDescriptor(object);
+			addDatabasePrefixPropertyDescriptor(object);
+			addTimestampCreationPropertyDescriptor(object);
+			addTimestampUpdatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Database Technology feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDatabaseTechnologyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Persistence_databaseTechnology_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databaseTechnology_feature", "_UI_Persistence_type"),
+				 WebGenPersistencePackage.Literals.PERSISTENCE__DATABASE_TECHNOLOGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Orm Technology feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOrmTechnologyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Persistence_ormTechnology_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_ormTechnology_feature", "_UI_Persistence_type"),
+				 WebGenPersistencePackage.Literals.PERSISTENCE__ORM_TECHNOLOGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Database Host feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDatabaseHostPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Persistence_databaseHost_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databaseHost_feature", "_UI_Persistence_type"),
+				 WebGenPersistencePackage.Literals.PERSISTENCE__DATABASE_HOST,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Database Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDatabasePortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Persistence_databasePort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databasePort_feature", "_UI_Persistence_type"),
+				 WebGenPersistencePackage.Literals.PERSISTENCE__DATABASE_PORT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Database Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDatabaseNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Persistence_databaseName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databaseName_feature", "_UI_Persistence_type"),
+				 WebGenPersistencePackage.Literals.PERSISTENCE__DATABASE_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Database Username feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDatabaseUsernamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Persistence_databaseUsername_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databaseUsername_feature", "_UI_Persistence_type"),
+				 WebGenPersistencePackage.Literals.PERSISTENCE__DATABASE_USERNAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Database Password feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDatabasePasswordPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Persistence_databasePassword_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databasePassword_feature", "_UI_Persistence_type"),
+				 WebGenPersistencePackage.Literals.PERSISTENCE__DATABASE_PASSWORD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Database Prefix feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDatabasePrefixPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Persistence_databasePrefix_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databasePrefix_feature", "_UI_Persistence_type"),
+				 WebGenPersistencePackage.Literals.PERSISTENCE__DATABASE_PREFIX,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Timestamp Creation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTimestampCreationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Persistence_timestampCreation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_timestampCreation_feature", "_UI_Persistence_type"),
+				 WebGenPersistencePackage.Literals.PERSISTENCE__TIMESTAMP_CREATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Timestamp Update feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTimestampUpdatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Persistence_timestampUpdate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_timestampUpdate_feature", "_UI_Persistence_type"),
+				 WebGenPersistencePackage.Literals.PERSISTENCE__TIMESTAMP_UPDATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -115,7 +347,10 @@ public class PersistenceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Persistence_type");
+		String label = ((Persistence)object).getDatabaseName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Persistence_type") :
+			getString("_UI_Persistence_type") + " " + label;
 	}
 	
 
@@ -131,6 +366,18 @@ public class PersistenceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Persistence.class)) {
+			case WebGenPersistencePackage.PERSISTENCE__DATABASE_TECHNOLOGY:
+			case WebGenPersistencePackage.PERSISTENCE__ORM_TECHNOLOGY:
+			case WebGenPersistencePackage.PERSISTENCE__DATABASE_HOST:
+			case WebGenPersistencePackage.PERSISTENCE__DATABASE_PORT:
+			case WebGenPersistencePackage.PERSISTENCE__DATABASE_NAME:
+			case WebGenPersistencePackage.PERSISTENCE__DATABASE_USERNAME:
+			case WebGenPersistencePackage.PERSISTENCE__DATABASE_PASSWORD:
+			case WebGenPersistencePackage.PERSISTENCE__DATABASE_PREFIX:
+			case WebGenPersistencePackage.PERSISTENCE__TIMESTAMP_CREATION:
+			case WebGenPersistencePackage.PERSISTENCE__TIMESTAMP_UPDATE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case WebGenPersistencePackage.PERSISTENCE__CLASSIFIERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

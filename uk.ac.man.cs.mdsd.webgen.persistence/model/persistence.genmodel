@@ -36,6 +36,16 @@
     </genEnums>
     <genClasses ecoreClass="persistence.ecore#//Persistence">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence.ecore#//Persistence/classifiers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databaseTechnology"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/ormTechnology"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databaseHost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databasePort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databaseName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databaseUsername"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databasePassword"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databasePrefix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/timestampCreation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/timestampUpdate"/>
     </genClasses>
     <genClasses image="false" ecoreClass="persistence.ecore#//Classifier"/>
     <genClasses ecoreClass="persistence.ecore#//DataType">

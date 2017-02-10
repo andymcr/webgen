@@ -458,6 +458,96 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPersistence_DatabaseTechnology() {
+		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPersistence_OrmTechnology() {
+		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPersistence_DatabaseHost() {
+		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPersistence_DatabasePort() {
+		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPersistence_DatabaseName() {
+		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPersistence_DatabaseUsername() {
+		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPersistence_DatabasePassword() {
+		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPersistence_DatabasePrefix() {
+		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPersistence_TimestampCreation() {
+		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPersistence_TimestampUpdate() {
+		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getClassifier() {
 		return classifierEClass;
 	}
@@ -1905,6 +1995,16 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		// Create classes and their features
 		persistenceEClass = createEClass(PERSISTENCE);
 		createEReference(persistenceEClass, PERSISTENCE__CLASSIFIERS);
+		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_TECHNOLOGY);
+		createEAttribute(persistenceEClass, PERSISTENCE__ORM_TECHNOLOGY);
+		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_HOST);
+		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_PORT);
+		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_NAME);
+		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_USERNAME);
+		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_PASSWORD);
+		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_PREFIX);
+		createEAttribute(persistenceEClass, PERSISTENCE__TIMESTAMP_CREATION);
+		createEAttribute(persistenceEClass, PERSISTENCE__TIMESTAMP_UPDATE);
 
 		classifierEClass = createEClass(CLASSIFIER);
 
@@ -2179,6 +2279,16 @@ public class WebGenPersistencePackageImpl extends EPackageImpl implements WebGen
 		// Initialize classes, features, and operations; add parameters
 		initEClass(persistenceEClass, Persistence.class, "Persistence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPersistence_Classifiers(), this.getClassifier(), null, "classifiers", null, 0, -1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPersistence_DatabaseTechnology(), this.getDatabaseTechnologies(), "databaseTechnology", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPersistence_OrmTechnology(), this.getOrmTechnologies(), "ormTechnology", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPersistence_DatabaseHost(), ecorePackage.getEString(), "databaseHost", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPersistence_DatabasePort(), ecorePackage.getEString(), "databasePort", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPersistence_DatabaseName(), ecorePackage.getEString(), "databaseName", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPersistence_DatabaseUsername(), ecorePackage.getEString(), "databaseUsername", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPersistence_DatabasePassword(), ecorePackage.getEString(), "databasePassword", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPersistence_DatabasePrefix(), ecorePackage.getEString(), "databasePrefix", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPersistence_TimestampCreation(), ecorePackage.getEBoolean(), "timestampCreation", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPersistence_TimestampUpdate(), ecorePackage.getEBoolean(), "timestampUpdate", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(classifierEClass, Classifier.class, "Classifier", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -163,9 +163,6 @@ import uk.ac.man.cs.mdsd.webgen.core.provider.WebGenCoreItemProviderAdapterFacto
 import uk.ac.man.cs.mdsd.webgen.expression.provider.WebGenExpressionItemProviderAdapterFactory;
 
 import uk.ac.man.cs.mdsd.webgen.image.provider.WebGenImageItemProviderAdapterFactory;
-
-import uk.ac.man.cs.mdsd.webgen.interface_.provider.WebGenInterfaceItemProviderAdapterFactory;
-
 import uk.ac.man.cs.mdsd.webgen.persistence.provider.WebGenPersistenceItemProviderAdapterFactory;
 
 import uk.ac.man.cs.mdsd.webgen.rest.provider.WebGenRestItemProviderAdapterFactory;
@@ -173,6 +170,7 @@ import uk.ac.man.cs.mdsd.webgen.rest.provider.WebGenRestItemProviderAdapterFacto
 import uk.ac.man.cs.mdsd.webgen.security.provider.WebGenSecurityItemProviderAdapterFactory;
 
 import uk.ac.man.cs.mdsd.webgen.service.provider.WebGenServiceItemProviderAdapterFactory;
+import uk.ac.man.cs.mdsd.webgen.webui.provider.WebGenWebUIItemProviderAdapterFactory;
 
 
 /**
@@ -721,7 +719,7 @@ public class WebGenWafEditor
 		adapterFactory.addAdapterFactory(new WebGenCoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new WebGenExpressionItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new WebGenImageItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new WebGenInterfaceItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new WebGenWebUIItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new WebGenPersistenceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new WebGenRestItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new WebGenSecurityItemProviderAdapterFactory());
@@ -1332,7 +1330,7 @@ public class WebGenWafEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public Object getAdapter(Class key) {
 		if (key.equals(IContentOutlinePage.class)) {

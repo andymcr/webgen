@@ -11,9 +11,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import uk.ac.man.cs.mdsd.webgen.image.WebGenImagePackage;
-
-import uk.ac.man.cs.mdsd.webgen.interface_.WebGenInterfacePackage;
-
 import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 
 import uk.ac.man.cs.mdsd.webgen.rest.WebGenRestPackage;
@@ -25,6 +22,7 @@ import uk.ac.man.cs.mdsd.webgen.waf.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework;
 import uk.ac.man.cs.mdsd.webgen.waf.WebGenWafFactory;
 import uk.ac.man.cs.mdsd.webgen.waf.WebGenWafPackage;
+import uk.ac.man.cs.mdsd.webgen.webui.WebGenWebUIPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,7 +92,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 		isInited = true;
 
 		// Initialize simple dependencies
-		WebGenInterfacePackage.eINSTANCE.eClass();
+		WebGenWebUIPackage.eINSTANCE.eClass();
 		WebGenRestPackage.eINSTANCE.eClass();
 		WebGenSecurityPackage.eINSTANCE.eClass();
 
@@ -226,7 +224,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebApplicationFramework_Interface() {
+	public EReference getWebApplicationFramework_WebUI() {
 		return (EReference)webApplicationFrameworkEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -288,7 +286,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 		createEReference(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__SERVICES);
 		createEReference(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__API);
 		createEReference(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__IMAGE);
-		createEReference(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__INTERFACE);
+		createEReference(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__WEB_UI);
 		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__META_DESCRIPTION);
 
 		// Create enums
@@ -324,7 +322,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 		WebGenServicePackage theWebGenServicePackage = (WebGenServicePackage)EPackage.Registry.INSTANCE.getEPackage(WebGenServicePackage.eNS_URI);
 		WebGenRestPackage theWebGenRestPackage = (WebGenRestPackage)EPackage.Registry.INSTANCE.getEPackage(WebGenRestPackage.eNS_URI);
 		WebGenImagePackage theWebGenImagePackage = (WebGenImagePackage)EPackage.Registry.INSTANCE.getEPackage(WebGenImagePackage.eNS_URI);
-		WebGenInterfacePackage theWebGenInterfacePackage = (WebGenInterfacePackage)EPackage.Registry.INSTANCE.getEPackage(WebGenInterfacePackage.eNS_URI);
+		WebGenWebUIPackage theWebGenWebUIPackage = (WebGenWebUIPackage)EPackage.Registry.INSTANCE.getEPackage(WebGenWebUIPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -345,7 +343,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 		initEReference(getWebApplicationFramework_Services(), theWebGenServicePackage.getServices(), null, "services", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebApplicationFramework_Api(), theWebGenRestPackage.getAPI(), null, "api", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebApplicationFramework_Image(), theWebGenImagePackage.getImage(), null, "image", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWebApplicationFramework_Interface(), theWebGenInterfacePackage.getInterface(), null, "interface", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebApplicationFramework_WebUI(), theWebGenWebUIPackage.getWebUI(), null, "webUI", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebApplicationFramework_MetaDescription(), ecorePackage.getEString(), "metaDescription", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals

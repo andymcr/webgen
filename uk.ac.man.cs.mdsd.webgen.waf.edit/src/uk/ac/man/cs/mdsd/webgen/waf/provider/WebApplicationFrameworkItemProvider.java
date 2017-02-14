@@ -23,9 +23,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import uk.ac.man.cs.mdsd.webgen.interface_.WebGenInterfaceFactory;
-
 import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistenceFactory;
 
 import uk.ac.man.cs.mdsd.webgen.rest.WebGenRestFactory;
@@ -35,6 +32,7 @@ import uk.ac.man.cs.mdsd.webgen.service.WebGenServiceFactory;
 
 import uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework;
 import uk.ac.man.cs.mdsd.webgen.waf.WebGenWafPackage;
+import uk.ac.man.cs.mdsd.webgen.webui.WebGenWebUIFactory;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework} object.
@@ -275,7 +273,7 @@ public class WebApplicationFrameworkItemProvider
 			childrenFeatures.add(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__PERSISTENCE);
 			childrenFeatures.add(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__SERVICES);
 			childrenFeatures.add(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__API);
-			childrenFeatures.add(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__INTERFACE);
+			childrenFeatures.add(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__WEB_UI);
 		}
 		return childrenFeatures;
 	}
@@ -344,7 +342,7 @@ public class WebApplicationFrameworkItemProvider
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__PERSISTENCE:
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SERVICES:
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__API:
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__INTERFACE:
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -384,8 +382,8 @@ public class WebApplicationFrameworkItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__INTERFACE,
-				 WebGenInterfaceFactory.eINSTANCE.createInterface()));
+				(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__WEB_UI,
+				 WebGenWebUIFactory.eINSTANCE.createWebUI()));
 	}
 
 	/**

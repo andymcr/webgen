@@ -12,9 +12,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uk.ac.man.cs.mdsd.webgen.image.Image;
-
-import uk.ac.man.cs.mdsd.webgen.interface_.Interface;
-
 import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
 
 import uk.ac.man.cs.mdsd.webgen.rest.API;
@@ -25,6 +22,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Services;
 import uk.ac.man.cs.mdsd.webgen.waf.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework;
 import uk.ac.man.cs.mdsd.webgen.waf.WebGenWafPackage;
+import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,7 +43,7 @@ import uk.ac.man.cs.mdsd.webgen.waf.WebGenWafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getApi <em>Api</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getImage <em>Image</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getInterface <em>Interface</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getWebUI <em>Web UI</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getMetaDescription <em>Meta Description</em>}</li>
  * </ul>
  *
@@ -223,14 +221,14 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 	protected Image image;
 
 	/**
-	 * The cached value of the '{@link #getInterface() <em>Interface</em>}' containment reference.
+	 * The cached value of the '{@link #getWebUI() <em>Web UI</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInterface()
+	 * @see #getWebUI()
 	 * @generated
 	 * @ordered
 	 */
-	protected Interface interface_;
+	protected WebUI webUI;
 
 	/**
 	 * The default value of the '{@link #getMetaDescription() <em>Meta Description</em>}' attribute.
@@ -612,8 +610,8 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Interface getInterface() {
-		return interface_;
+	public WebUI getWebUI() {
+		return webUI;
 	}
 
 	/**
@@ -621,11 +619,11 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetInterface(Interface newInterface, NotificationChain msgs) {
-		Interface oldInterface = interface_;
-		interface_ = newInterface;
+	public NotificationChain basicSetWebUI(WebUI newWebUI, NotificationChain msgs) {
+		WebUI oldWebUI = webUI;
+		webUI = newWebUI;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__INTERFACE, oldInterface, newInterface);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI, oldWebUI, newWebUI);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -636,18 +634,18 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInterface(Interface newInterface) {
-		if (newInterface != interface_) {
+	public void setWebUI(WebUI newWebUI) {
+		if (newWebUI != webUI) {
 			NotificationChain msgs = null;
-			if (interface_ != null)
-				msgs = ((InternalEObject)interface_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__INTERFACE, null, msgs);
-			if (newInterface != null)
-				msgs = ((InternalEObject)newInterface).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__INTERFACE, null, msgs);
-			msgs = basicSetInterface(newInterface, msgs);
+			if (webUI != null)
+				msgs = ((InternalEObject)webUI).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI, null, msgs);
+			if (newWebUI != null)
+				msgs = ((InternalEObject)newWebUI).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI, null, msgs);
+			msgs = basicSetWebUI(newWebUI, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__INTERFACE, newInterface, newInterface));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI, newWebUI, newWebUI));
 	}
 
 	/**
@@ -687,8 +685,8 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 				return basicSetServices(null, msgs);
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__API:
 				return basicSetApi(null, msgs);
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__INTERFACE:
-				return basicSetInterface(null, msgs);
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI:
+				return basicSetWebUI(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -724,8 +722,8 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__IMAGE:
 				if (resolve) return getImage();
 				return basicGetImage();
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__INTERFACE:
-				return getInterface();
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI:
+				return getWebUI();
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__META_DESCRIPTION:
 				return getMetaDescription();
 		}
@@ -773,8 +771,8 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__IMAGE:
 				setImage((Image)newValue);
 				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__INTERFACE:
-				setInterface((Interface)newValue);
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI:
+				setWebUI((WebUI)newValue);
 				return;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__META_DESCRIPTION:
 				setMetaDescription((String)newValue);
@@ -824,8 +822,8 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__IMAGE:
 				setImage((Image)null);
 				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__INTERFACE:
-				setInterface((Interface)null);
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI:
+				setWebUI((WebUI)null);
 				return;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__META_DESCRIPTION:
 				setMetaDescription(META_DESCRIPTION_EDEFAULT);
@@ -864,8 +862,8 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 				return api != null;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__IMAGE:
 				return image != null;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__INTERFACE:
-				return interface_ != null;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI:
+				return webUI != null;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__META_DESCRIPTION:
 				return META_DESCRIPTION_EDEFAULT == null ? metaDescription != null : !META_DESCRIPTION_EDEFAULT.equals(metaDescription);
 		}

@@ -5,15 +5,13 @@ package uk.ac.man.cs.mdsd.webgen.waf;
 import org.eclipse.emf.ecore.EObject;
 
 import uk.ac.man.cs.mdsd.webgen.image.Image;
-
-import uk.ac.man.cs.mdsd.webgen.interface_.Interface;
-
 import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
 
 import uk.ac.man.cs.mdsd.webgen.rest.API;
 import uk.ac.man.cs.mdsd.webgen.security.Security;
 
 import uk.ac.man.cs.mdsd.webgen.service.Services;
+import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +33,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Services;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getApi <em>Api</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getImage <em>Image</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getInterface <em>Interface</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getWebUI <em>Web UI</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getMetaDescription <em>Meta Description</em>}</li>
  * </ul>
  *
@@ -335,30 +333,30 @@ public interface WebApplicationFramework extends EObject {
 	void setImage(Image value);
 
 	/**
-	 * Returns the value of the '<em><b>Interface</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Web UI</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Interface</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Web UI</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Interface</em>' containment reference.
-	 * @see #setInterface(Interface)
-	 * @see uk.ac.man.cs.mdsd.webgen.waf.WebGenWafPackage#getWebApplicationFramework_Interface()
+	 * @return the value of the '<em>Web UI</em>' containment reference.
+	 * @see #setWebUI(WebUI)
+	 * @see uk.ac.man.cs.mdsd.webgen.waf.WebGenWafPackage#getWebApplicationFramework_WebUI()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Interface getInterface();
+	WebUI getWebUI();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getInterface <em>Interface</em>}' containment reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getWebUI <em>Web UI</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Interface</em>' containment reference.
-	 * @see #getInterface()
+	 * @param value the new value of the '<em>Web UI</em>' containment reference.
+	 * @see #getWebUI()
 	 * @generated
 	 */
-	void setInterface(Interface value);
+	void setWebUI(WebUI value);
 
 	/**
 	 * Returns the value of the '<em><b>Meta Description</b></em>' attribute.

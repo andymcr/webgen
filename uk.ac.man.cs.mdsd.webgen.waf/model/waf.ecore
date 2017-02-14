@@ -28,7 +28,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="api" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.rest/model/rest.ecore#//API"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="image" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.image/model/image.ecore#//Image"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.interface/model/interface.ecore#//Interface"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="webUI" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//WebUI"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="metaDescription" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

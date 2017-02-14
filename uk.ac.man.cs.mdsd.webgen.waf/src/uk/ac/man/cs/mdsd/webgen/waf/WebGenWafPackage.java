@@ -168,13 +168,13 @@ public interface WebGenWafPackage extends EPackage {
 	int WEB_APPLICATION_FRAMEWORK__IMAGE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Interface</b></em>' containment reference.
+	 * The feature id for the '<em><b>Web UI</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_APPLICATION_FRAMEWORK__INTERFACE = 11;
+	int WEB_APPLICATION_FRAMEWORK__WEB_UI = 11;
 
 	/**
 	 * The feature id for the '<em><b>Meta Description</b></em>' attribute.
@@ -346,15 +346,15 @@ public interface WebGenWafPackage extends EPackage {
 	EReference getWebApplicationFramework_Image();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getInterface <em>Interface</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getWebUI <em>Web UI</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Interface</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getInterface()
+	 * @return the meta object for the containment reference '<em>Web UI</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getWebUI()
 	 * @see #getWebApplicationFramework()
 	 * @generated
 	 */
-	EReference getWebApplicationFramework_Interface();
+	EReference getWebApplicationFramework_WebUI();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getMetaDescription <em>Meta Description</em>}'.
@@ -499,12 +499,12 @@ public interface WebGenWafPackage extends EPackage {
 		EReference WEB_APPLICATION_FRAMEWORK__IMAGE = eINSTANCE.getWebApplicationFramework_Image();
 
 		/**
-		 * The meta object literal for the '<em><b>Interface</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Web UI</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WEB_APPLICATION_FRAMEWORK__INTERFACE = eINSTANCE.getWebApplicationFramework_Interface();
+		EReference WEB_APPLICATION_FRAMEWORK__WEB_UI = eINSTANCE.getWebApplicationFramework_WebUI();
 
 		/**
 		 * The meta object literal for the '<em><b>Meta Description</b></em>' attribute feature.

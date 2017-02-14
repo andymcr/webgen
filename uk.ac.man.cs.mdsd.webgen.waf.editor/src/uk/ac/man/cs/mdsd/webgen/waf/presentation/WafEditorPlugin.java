@@ -14,8 +14,6 @@ import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
 
 import uk.ac.man.cs.mdsd.webgen.image.provider.ImageEditPlugin;
 
-import uk.ac.man.cs.mdsd.webgen.interface_.provider.InterfaceEditPlugin;
-
 import uk.ac.man.cs.mdsd.webgen.persistence.provider.PersistenceEditPlugin;
 
 import uk.ac.man.cs.mdsd.webgen.rest.provider.RestEditPlugin;
@@ -23,6 +21,7 @@ import uk.ac.man.cs.mdsd.webgen.rest.provider.RestEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.security.provider.SecurityEditPlugin;
 
 import uk.ac.man.cs.mdsd.webgen.service.provider.ServiceEditPlugin;
+import uk.ac.man.cs.mdsd.webgen.webui.provider.WebUIEditPlugin;
 
 /**
  * This is the central singleton for the Waf editor plugin.
@@ -59,7 +58,7 @@ public final class WafEditorPlugin extends EMFPlugin {
 				CoreEditPlugin.INSTANCE,
 				ExpressionEditPlugin.INSTANCE,
 				ImageEditPlugin.INSTANCE,
-				InterfaceEditPlugin.INSTANCE,
+				WebUIEditPlugin.INSTANCE,
 				PersistenceEditPlugin.INSTANCE,
 				RestEditPlugin.INSTANCE,
 				SecurityEditPlugin.INSTANCE,

@@ -11,7 +11,15 @@
       <package
             uri="http://cs.man.ac.uk/mdsd/2017/webgen-interface"
             class="uk.ac.man.cs.mdsd.webgen.interface_.WebGenInterfacePackage"
-            genModel="model/interface.genmodel"/>
+            genModel="model/webui.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated webui -->
+      <package
+            uri="http://cs.man.ac.uk/mdsd/2017/webgen-interface"
+            class="uk.ac.man.cs.mdsd.webgen.webui.WebGenWebUIPackage"
+            genModel="model/webui.genmodel"/>
    </extension>
 
 </plugin>

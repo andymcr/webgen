@@ -32,24 +32,104 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getSiteTitle <em>Site Title</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getWebmasterEmail <em>Webmaster Email</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getCopyrightText <em>Copyright Text</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getSecurity <em>Security</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getPersistence <em>Persistence</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getSecurity <em>Security</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getApi <em>Api</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getImage <em>Image</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getWebUI <em>Web UI</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getSiteTitle <em>Site Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getWebmasterEmail <em>Webmaster Email</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getCopyrightText <em>Copyright Text</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.impl.WebApplicationFrameworkImpl#getMetaDescription <em>Meta Description</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container implements WebApplicationFramework {
+	/**
+	 * The cached value of the '{@link #getPersistence() <em>Persistence</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPersistence()
+	 * @generated
+	 * @ordered
+	 */
+	protected Persistence persistence;
+
+	/**
+	 * The cached value of the '{@link #getSecurity() <em>Security</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSecurity()
+	 * @generated
+	 * @ordered
+	 */
+	protected Security security;
+
+	/**
+	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServices()
+	 * @generated
+	 * @ordered
+	 */
+	protected Services services;
+
+	/**
+	 * The cached value of the '{@link #getApi() <em>Api</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApi()
+	 * @generated
+	 * @ordered
+	 */
+	protected API api;
+
+	/**
+	 * The cached value of the '{@link #getImage() <em>Image</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImage()
+	 * @generated
+	 * @ordered
+	 */
+	protected Image image;
+
+	/**
+	 * The cached value of the '{@link #getWebUI() <em>Web UI</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWebUI()
+	 * @generated
+	 * @ordered
+	 */
+	protected WebUI webUI;
+
+	/**
+	 * The default value of the '{@link #getFrameworkTechnology() <em>Framework Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFrameworkTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final FrameworkTechnologies FRAMEWORK_TECHNOLOGY_EDEFAULT = FrameworkTechnologies.KOHANA;
+
+	/**
+	 * The cached value of the '{@link #getFrameworkTechnology() <em>Framework Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFrameworkTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected FrameworkTechnologies frameworkTechnology = FRAMEWORK_TECHNOLOGY_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getSiteTitle() <em>Site Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -111,26 +191,6 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 	protected String copyrightText = COPYRIGHT_TEXT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getFrameworkTechnology() <em>Framework Technology</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFrameworkTechnology()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final FrameworkTechnologies FRAMEWORK_TECHNOLOGY_EDEFAULT = FrameworkTechnologies.KOHANA;
-
-	/**
-	 * The cached value of the '{@link #getFrameworkTechnology() <em>Framework Technology</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFrameworkTechnology()
-	 * @generated
-	 * @ordered
-	 */
-	protected FrameworkTechnologies frameworkTechnology = FRAMEWORK_TECHNOLOGY_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getCaptchaSiteKey() <em>Captcha Site Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -169,66 +229,6 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected String captchaSecretKey = CAPTCHA_SECRET_KEY_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSecurity() <em>Security</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSecurity()
-	 * @generated
-	 * @ordered
-	 */
-	protected Security security;
-
-	/**
-	 * The cached value of the '{@link #getPersistence() <em>Persistence</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPersistence()
-	 * @generated
-	 * @ordered
-	 */
-	protected Persistence persistence;
-
-	/**
-	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getServices()
-	 * @generated
-	 * @ordered
-	 */
-	protected Services services;
-
-	/**
-	 * The cached value of the '{@link #getApi() <em>Api</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getApi()
-	 * @generated
-	 * @ordered
-	 */
-	protected API api;
-
-	/**
-	 * The cached value of the '{@link #getImage() <em>Image</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImage()
-	 * @generated
-	 * @ordered
-	 */
-	protected Image image;
-
-	/**
-	 * The cached value of the '{@link #getWebUI() <em>Web UI</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebUI()
-	 * @generated
-	 * @ordered
-	 */
-	protected WebUI webUI;
 
 	/**
 	 * The default value of the '{@link #getMetaDescription() <em>Meta Description</em>}' attribute.
@@ -677,10 +677,10 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SECURITY:
-				return basicSetSecurity(null, msgs);
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__PERSISTENCE:
 				return basicSetPersistence(null, msgs);
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SECURITY:
+				return basicSetSecurity(null, msgs);
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SERVICES:
 				return basicSetServices(null, msgs);
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__API:
@@ -699,22 +699,10 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SITE_TITLE:
-				return getSiteTitle();
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEBMASTER_EMAIL:
-				return getWebmasterEmail();
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__COPYRIGHT_TEXT:
-				return getCopyrightText();
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY:
-				return getFrameworkTechnology();
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SITE_KEY:
-				return getCaptchaSiteKey();
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SECRET_KEY:
-				return getCaptchaSecretKey();
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SECURITY:
-				return getSecurity();
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__PERSISTENCE:
 				return getPersistence();
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SECURITY:
+				return getSecurity();
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SERVICES:
 				return getServices();
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__API:
@@ -724,6 +712,18 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 				return basicGetImage();
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI:
 				return getWebUI();
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY:
+				return getFrameworkTechnology();
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SITE_TITLE:
+				return getSiteTitle();
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEBMASTER_EMAIL:
+				return getWebmasterEmail();
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__COPYRIGHT_TEXT:
+				return getCopyrightText();
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SITE_KEY:
+				return getCaptchaSiteKey();
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SECRET_KEY:
+				return getCaptchaSecretKey();
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__META_DESCRIPTION:
 				return getMetaDescription();
 		}
@@ -738,29 +738,11 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SITE_TITLE:
-				setSiteTitle((String)newValue);
-				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEBMASTER_EMAIL:
-				setWebmasterEmail((String)newValue);
-				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__COPYRIGHT_TEXT:
-				setCopyrightText((String)newValue);
-				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY:
-				setFrameworkTechnology((FrameworkTechnologies)newValue);
-				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SITE_KEY:
-				setCaptchaSiteKey((String)newValue);
-				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SECRET_KEY:
-				setCaptchaSecretKey((String)newValue);
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__PERSISTENCE:
+				setPersistence((Persistence)newValue);
 				return;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SECURITY:
 				setSecurity((Security)newValue);
-				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__PERSISTENCE:
-				setPersistence((Persistence)newValue);
 				return;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SERVICES:
 				setServices((Services)newValue);
@@ -773,6 +755,24 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 				return;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI:
 				setWebUI((WebUI)newValue);
+				return;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY:
+				setFrameworkTechnology((FrameworkTechnologies)newValue);
+				return;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SITE_TITLE:
+				setSiteTitle((String)newValue);
+				return;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEBMASTER_EMAIL:
+				setWebmasterEmail((String)newValue);
+				return;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__COPYRIGHT_TEXT:
+				setCopyrightText((String)newValue);
+				return;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SITE_KEY:
+				setCaptchaSiteKey((String)newValue);
+				return;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SECRET_KEY:
+				setCaptchaSecretKey((String)newValue);
 				return;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__META_DESCRIPTION:
 				setMetaDescription((String)newValue);
@@ -789,29 +789,11 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SITE_TITLE:
-				setSiteTitle(SITE_TITLE_EDEFAULT);
-				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEBMASTER_EMAIL:
-				setWebmasterEmail(WEBMASTER_EMAIL_EDEFAULT);
-				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__COPYRIGHT_TEXT:
-				setCopyrightText(COPYRIGHT_TEXT_EDEFAULT);
-				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY:
-				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
-				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SITE_KEY:
-				setCaptchaSiteKey(CAPTCHA_SITE_KEY_EDEFAULT);
-				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SECRET_KEY:
-				setCaptchaSecretKey(CAPTCHA_SECRET_KEY_EDEFAULT);
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__PERSISTENCE:
+				setPersistence((Persistence)null);
 				return;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SECURITY:
 				setSecurity((Security)null);
-				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__PERSISTENCE:
-				setPersistence((Persistence)null);
 				return;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SERVICES:
 				setServices((Services)null);
@@ -824,6 +806,24 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 				return;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI:
 				setWebUI((WebUI)null);
+				return;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY:
+				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
+				return;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SITE_TITLE:
+				setSiteTitle(SITE_TITLE_EDEFAULT);
+				return;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEBMASTER_EMAIL:
+				setWebmasterEmail(WEBMASTER_EMAIL_EDEFAULT);
+				return;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__COPYRIGHT_TEXT:
+				setCopyrightText(COPYRIGHT_TEXT_EDEFAULT);
+				return;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SITE_KEY:
+				setCaptchaSiteKey(CAPTCHA_SITE_KEY_EDEFAULT);
+				return;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SECRET_KEY:
+				setCaptchaSecretKey(CAPTCHA_SECRET_KEY_EDEFAULT);
 				return;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__META_DESCRIPTION:
 				setMetaDescription(META_DESCRIPTION_EDEFAULT);
@@ -840,22 +840,10 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SITE_TITLE:
-				return SITE_TITLE_EDEFAULT == null ? siteTitle != null : !SITE_TITLE_EDEFAULT.equals(siteTitle);
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEBMASTER_EMAIL:
-				return WEBMASTER_EMAIL_EDEFAULT == null ? webmasterEmail != null : !WEBMASTER_EMAIL_EDEFAULT.equals(webmasterEmail);
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__COPYRIGHT_TEXT:
-				return COPYRIGHT_TEXT_EDEFAULT == null ? copyrightText != null : !COPYRIGHT_TEXT_EDEFAULT.equals(copyrightText);
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY:
-				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SITE_KEY:
-				return CAPTCHA_SITE_KEY_EDEFAULT == null ? captchaSiteKey != null : !CAPTCHA_SITE_KEY_EDEFAULT.equals(captchaSiteKey);
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SECRET_KEY:
-				return CAPTCHA_SECRET_KEY_EDEFAULT == null ? captchaSecretKey != null : !CAPTCHA_SECRET_KEY_EDEFAULT.equals(captchaSecretKey);
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SECURITY:
-				return security != null;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__PERSISTENCE:
 				return persistence != null;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SECURITY:
+				return security != null;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SERVICES:
 				return services != null;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__API:
@@ -864,6 +852,18 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 				return image != null;
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI:
 				return webUI != null;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY:
+				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SITE_TITLE:
+				return SITE_TITLE_EDEFAULT == null ? siteTitle != null : !SITE_TITLE_EDEFAULT.equals(siteTitle);
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEBMASTER_EMAIL:
+				return WEBMASTER_EMAIL_EDEFAULT == null ? webmasterEmail != null : !WEBMASTER_EMAIL_EDEFAULT.equals(webmasterEmail);
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__COPYRIGHT_TEXT:
+				return COPYRIGHT_TEXT_EDEFAULT == null ? copyrightText != null : !COPYRIGHT_TEXT_EDEFAULT.equals(copyrightText);
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SITE_KEY:
+				return CAPTCHA_SITE_KEY_EDEFAULT == null ? captchaSiteKey != null : !CAPTCHA_SITE_KEY_EDEFAULT.equals(captchaSiteKey);
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SECRET_KEY:
+				return CAPTCHA_SECRET_KEY_EDEFAULT == null ? captchaSecretKey != null : !CAPTCHA_SECRET_KEY_EDEFAULT.equals(captchaSecretKey);
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__META_DESCRIPTION:
 				return META_DESCRIPTION_EDEFAULT == null ? metaDescription != null : !META_DESCRIPTION_EDEFAULT.equals(metaDescription);
 		}
@@ -880,14 +880,14 @@ public class WebApplicationFrameworkImpl extends MinimalEObjectImpl.Container im
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (siteTitle: ");
+		result.append(" (frameworkTechnology: ");
+		result.append(frameworkTechnology);
+		result.append(", siteTitle: ");
 		result.append(siteTitle);
 		result.append(", webmasterEmail: ");
 		result.append(webmasterEmail);
 		result.append(", copyrightText: ");
 		result.append(copyrightText);
-		result.append(", frameworkTechnology: ");
-		result.append(frameworkTechnology);
 		result.append(", captchaSiteKey: ");
 		result.append(captchaSiteKey);
 		result.append(", captchaSecretKey: ");

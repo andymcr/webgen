@@ -7,21 +7,9 @@
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="WebApplicationFramework">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="siteTitle" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="webmasterEmail" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="copyrightText" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="frameworkTechnology" ordered="false"
-        lowerBound="1" eType="#//FrameworkTechnologies" defaultValueLiteral="Kohana"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSiteKey" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSecretKey" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="security" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.security/model/security.ecore#//Security"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="persistence" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.persistence/model/persistence.ecore#//Persistence"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="security" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.security/model/security.ecore#//Security"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Services"
         containment="true"/>
@@ -30,6 +18,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="image" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.image/model/image.ecore#//Image"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="webUI" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//WebUI"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="frameworkTechnology" ordered="false"
+        lowerBound="1" eType="#//FrameworkTechnologies" defaultValueLiteral="Kohana"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="siteTitle" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="webmasterEmail" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="copyrightText" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSiteKey" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSecretKey" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="metaDescription" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

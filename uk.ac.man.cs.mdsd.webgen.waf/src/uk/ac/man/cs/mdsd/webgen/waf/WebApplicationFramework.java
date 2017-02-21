@@ -22,18 +22,18 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getSiteTitle <em>Site Title</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getWebmasterEmail <em>Webmaster Email</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getCopyrightText <em>Copyright Text</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getFrameworkTechnology <em>Framework Technology</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getSecurity <em>Security</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getPersistence <em>Persistence</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getSecurity <em>Security</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getApi <em>Api</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getImage <em>Image</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getWebUI <em>Web UI</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getSiteTitle <em>Site Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getWebmasterEmail <em>Webmaster Email</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getCopyrightText <em>Copyright Text</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework#getMetaDescription <em>Meta Description</em>}</li>
  * </ul>
  *

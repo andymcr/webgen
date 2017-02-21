@@ -69,58 +69,13 @@ public interface WebGenWafPackage extends EPackage {
 	int WEB_APPLICATION_FRAMEWORK = 0;
 
 	/**
-	 * The feature id for the '<em><b>Site Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Persistence</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_APPLICATION_FRAMEWORK__SITE_TITLE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Webmaster Email</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_APPLICATION_FRAMEWORK__WEBMASTER_EMAIL = 1;
-
-	/**
-	 * The feature id for the '<em><b>Copyright Text</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_APPLICATION_FRAMEWORK__COPYRIGHT_TEXT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Framework Technology</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY = 3;
-
-	/**
-	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_APPLICATION_FRAMEWORK__CAPTCHA_SITE_KEY = 4;
-
-	/**
-	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_APPLICATION_FRAMEWORK__CAPTCHA_SECRET_KEY = 5;
+	int WEB_APPLICATION_FRAMEWORK__PERSISTENCE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Security</b></em>' containment reference.
@@ -129,16 +84,7 @@ public interface WebGenWafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_APPLICATION_FRAMEWORK__SECURITY = 6;
-
-	/**
-	 * The feature id for the '<em><b>Persistence</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_APPLICATION_FRAMEWORK__PERSISTENCE = 7;
+	int WEB_APPLICATION_FRAMEWORK__SECURITY = 1;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' containment reference.
@@ -147,7 +93,7 @@ public interface WebGenWafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_APPLICATION_FRAMEWORK__SERVICES = 8;
+	int WEB_APPLICATION_FRAMEWORK__SERVICES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Api</b></em>' containment reference.
@@ -156,7 +102,7 @@ public interface WebGenWafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_APPLICATION_FRAMEWORK__API = 9;
+	int WEB_APPLICATION_FRAMEWORK__API = 3;
 
 	/**
 	 * The feature id for the '<em><b>Image</b></em>' reference.
@@ -165,7 +111,7 @@ public interface WebGenWafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_APPLICATION_FRAMEWORK__IMAGE = 10;
+	int WEB_APPLICATION_FRAMEWORK__IMAGE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Web UI</b></em>' containment reference.
@@ -174,7 +120,61 @@ public interface WebGenWafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_APPLICATION_FRAMEWORK__WEB_UI = 11;
+	int WEB_APPLICATION_FRAMEWORK__WEB_UI = 5;
+
+	/**
+	 * The feature id for the '<em><b>Framework Technology</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY = 6;
+
+	/**
+	 * The feature id for the '<em><b>Site Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_APPLICATION_FRAMEWORK__SITE_TITLE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Webmaster Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_APPLICATION_FRAMEWORK__WEBMASTER_EMAIL = 8;
+
+	/**
+	 * The feature id for the '<em><b>Copyright Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_APPLICATION_FRAMEWORK__COPYRIGHT_TEXT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_APPLICATION_FRAMEWORK__CAPTCHA_SITE_KEY = 10;
+
+	/**
+	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_APPLICATION_FRAMEWORK__CAPTCHA_SECRET_KEY = 11;
 
 	/**
 	 * The feature id for the '<em><b>Meta Description</b></em>' attribute.

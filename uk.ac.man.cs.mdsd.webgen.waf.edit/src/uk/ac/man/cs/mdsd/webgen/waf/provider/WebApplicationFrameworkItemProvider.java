@@ -30,6 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.security.WebGenSecurityFactory;
 
 import uk.ac.man.cs.mdsd.webgen.service.WebGenServiceFactory;
 
+import uk.ac.man.cs.mdsd.webgen.waf.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.waf.WebApplicationFramework;
 import uk.ac.man.cs.mdsd.webgen.waf.WebGenWafPackage;
 import uk.ac.man.cs.mdsd.webgen.webui.WebGenWebUIFactory;
@@ -69,13 +70,13 @@ public class WebApplicationFrameworkItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addImagePropertyDescriptor(object);
+			addFrameworkTechnologyPropertyDescriptor(object);
 			addSiteTitlePropertyDescriptor(object);
 			addWebmasterEmailPropertyDescriptor(object);
 			addCopyrightTextPropertyDescriptor(object);
-			addFrameworkTechnologyPropertyDescriptor(object);
 			addCaptchaSiteKeyPropertyDescriptor(object);
 			addCaptchaSecretKeyPropertyDescriptor(object);
-			addImagePropertyDescriptor(object);
 			addMetaDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -269,8 +270,8 @@ public class WebApplicationFrameworkItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__SECURITY);
 			childrenFeatures.add(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__PERSISTENCE);
+			childrenFeatures.add(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__SECURITY);
 			childrenFeatures.add(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__SERVICES);
 			childrenFeatures.add(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__API);
 			childrenFeatures.add(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__WEB_UI);
@@ -310,7 +311,8 @@ public class WebApplicationFrameworkItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((WebApplicationFramework)object).getSiteTitle();
+		FrameworkTechnologies labelValue = ((WebApplicationFramework)object).getFrameworkTechnology();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_WebApplicationFramework_type") :
 			getString("_UI_WebApplicationFramework_type") + " " + label;
@@ -329,17 +331,17 @@ public class WebApplicationFrameworkItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(WebApplicationFramework.class)) {
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY:
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SITE_TITLE:
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEBMASTER_EMAIL:
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__COPYRIGHT_TEXT:
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY:
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SITE_KEY:
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__CAPTCHA_SECRET_KEY:
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__META_DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SECURITY:
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__PERSISTENCE:
+			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SECURITY:
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__SERVICES:
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__API:
 			case WebGenWafPackage.WEB_APPLICATION_FRAMEWORK__WEB_UI:
@@ -362,13 +364,13 @@ public class WebApplicationFrameworkItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__SECURITY,
-				 WebGenSecurityFactory.eINSTANCE.createSecurity()));
+				(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__PERSISTENCE,
+				 WebGenPersistenceFactory.eINSTANCE.createPersistence()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__PERSISTENCE,
-				 WebGenPersistenceFactory.eINSTANCE.createPersistence()));
+				(WebGenWafPackage.Literals.WEB_APPLICATION_FRAMEWORK__SECURITY,
+				 WebGenSecurityFactory.eINSTANCE.createSecurity()));
 
 		newChildDescriptors.add
 			(createChildParameter

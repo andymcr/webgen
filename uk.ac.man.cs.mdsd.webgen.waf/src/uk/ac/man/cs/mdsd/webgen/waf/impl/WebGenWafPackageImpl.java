@@ -126,7 +126,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 	 * @generated
 	 */
 	public EAttribute getWebApplicationFramework_SiteTitle() {
-		return (EAttribute)webApplicationFrameworkEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)webApplicationFrameworkEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -135,7 +135,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 	 * @generated
 	 */
 	public EAttribute getWebApplicationFramework_WebmasterEmail() {
-		return (EAttribute)webApplicationFrameworkEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)webApplicationFrameworkEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -144,7 +144,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 	 * @generated
 	 */
 	public EAttribute getWebApplicationFramework_CopyrightText() {
-		return (EAttribute)webApplicationFrameworkEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)webApplicationFrameworkEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -153,7 +153,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 	 * @generated
 	 */
 	public EAttribute getWebApplicationFramework_FrameworkTechnology() {
-		return (EAttribute)webApplicationFrameworkEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)webApplicationFrameworkEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -162,7 +162,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 	 * @generated
 	 */
 	public EAttribute getWebApplicationFramework_CaptchaSiteKey() {
-		return (EAttribute)webApplicationFrameworkEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)webApplicationFrameworkEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -171,7 +171,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 	 * @generated
 	 */
 	public EAttribute getWebApplicationFramework_CaptchaSecretKey() {
-		return (EAttribute)webApplicationFrameworkEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)webApplicationFrameworkEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -180,7 +180,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 	 * @generated
 	 */
 	public EReference getWebApplicationFramework_Security() {
-		return (EReference)webApplicationFrameworkEClass.getEStructuralFeatures().get(6);
+		return (EReference)webApplicationFrameworkEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -189,7 +189,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 	 * @generated
 	 */
 	public EReference getWebApplicationFramework_Persistence() {
-		return (EReference)webApplicationFrameworkEClass.getEStructuralFeatures().get(7);
+		return (EReference)webApplicationFrameworkEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -198,7 +198,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 	 * @generated
 	 */
 	public EReference getWebApplicationFramework_Services() {
-		return (EReference)webApplicationFrameworkEClass.getEStructuralFeatures().get(8);
+		return (EReference)webApplicationFrameworkEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -207,7 +207,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 	 * @generated
 	 */
 	public EReference getWebApplicationFramework_Api() {
-		return (EReference)webApplicationFrameworkEClass.getEStructuralFeatures().get(9);
+		return (EReference)webApplicationFrameworkEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -216,7 +216,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 	 * @generated
 	 */
 	public EReference getWebApplicationFramework_Image() {
-		return (EReference)webApplicationFrameworkEClass.getEStructuralFeatures().get(10);
+		return (EReference)webApplicationFrameworkEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -225,7 +225,7 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 	 * @generated
 	 */
 	public EReference getWebApplicationFramework_WebUI() {
-		return (EReference)webApplicationFrameworkEClass.getEStructuralFeatures().get(11);
+		return (EReference)webApplicationFrameworkEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -275,18 +275,18 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 
 		// Create classes and their features
 		webApplicationFrameworkEClass = createEClass(WEB_APPLICATION_FRAMEWORK);
-		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__SITE_TITLE);
-		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__WEBMASTER_EMAIL);
-		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__COPYRIGHT_TEXT);
-		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY);
-		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__CAPTCHA_SITE_KEY);
-		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__CAPTCHA_SECRET_KEY);
-		createEReference(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__SECURITY);
 		createEReference(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__PERSISTENCE);
+		createEReference(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__SECURITY);
 		createEReference(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__SERVICES);
 		createEReference(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__API);
 		createEReference(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__IMAGE);
 		createEReference(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__WEB_UI);
+		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__FRAMEWORK_TECHNOLOGY);
+		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__SITE_TITLE);
+		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__WEBMASTER_EMAIL);
+		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__COPYRIGHT_TEXT);
+		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__CAPTCHA_SITE_KEY);
+		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__CAPTCHA_SECRET_KEY);
 		createEAttribute(webApplicationFrameworkEClass, WEB_APPLICATION_FRAMEWORK__META_DESCRIPTION);
 
 		// Create enums
@@ -317,8 +317,8 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		WebGenSecurityPackage theWebGenSecurityPackage = (WebGenSecurityPackage)EPackage.Registry.INSTANCE.getEPackage(WebGenSecurityPackage.eNS_URI);
 		WebGenPersistencePackage theWebGenPersistencePackage = (WebGenPersistencePackage)EPackage.Registry.INSTANCE.getEPackage(WebGenPersistencePackage.eNS_URI);
+		WebGenSecurityPackage theWebGenSecurityPackage = (WebGenSecurityPackage)EPackage.Registry.INSTANCE.getEPackage(WebGenSecurityPackage.eNS_URI);
 		WebGenServicePackage theWebGenServicePackage = (WebGenServicePackage)EPackage.Registry.INSTANCE.getEPackage(WebGenServicePackage.eNS_URI);
 		WebGenRestPackage theWebGenRestPackage = (WebGenRestPackage)EPackage.Registry.INSTANCE.getEPackage(WebGenRestPackage.eNS_URI);
 		WebGenImagePackage theWebGenImagePackage = (WebGenImagePackage)EPackage.Registry.INSTANCE.getEPackage(WebGenImagePackage.eNS_URI);
@@ -332,18 +332,18 @@ public class WebGenWafPackageImpl extends EPackageImpl implements WebGenWafPacka
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(webApplicationFrameworkEClass, WebApplicationFramework.class, "WebApplicationFramework", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWebApplicationFramework_SiteTitle(), ecorePackage.getEString(), "siteTitle", null, 1, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebApplicationFramework_WebmasterEmail(), ecorePackage.getEString(), "webmasterEmail", null, 1, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebApplicationFramework_CopyrightText(), ecorePackage.getEString(), "copyrightText", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getWebApplicationFramework_FrameworkTechnology(), this.getFrameworkTechnologies(), "frameworkTechnology", "Kohana", 1, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getWebApplicationFramework_CaptchaSiteKey(), ecorePackage.getEString(), "captchaSiteKey", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getWebApplicationFramework_CaptchaSecretKey(), ecorePackage.getEString(), "captchaSecretKey", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getWebApplicationFramework_Security(), theWebGenSecurityPackage.getSecurity(), null, "security", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebApplicationFramework_Persistence(), theWebGenPersistencePackage.getPersistence(), null, "persistence", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebApplicationFramework_Security(), theWebGenSecurityPackage.getSecurity(), null, "security", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebApplicationFramework_Services(), theWebGenServicePackage.getServices(), null, "services", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebApplicationFramework_Api(), theWebGenRestPackage.getAPI(), null, "api", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebApplicationFramework_Image(), theWebGenImagePackage.getImage(), null, "image", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebApplicationFramework_WebUI(), theWebGenWebUIPackage.getWebUI(), null, "webUI", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWebApplicationFramework_FrameworkTechnology(), this.getFrameworkTechnologies(), "frameworkTechnology", "Kohana", 1, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getWebApplicationFramework_SiteTitle(), ecorePackage.getEString(), "siteTitle", null, 1, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWebApplicationFramework_WebmasterEmail(), ecorePackage.getEString(), "webmasterEmail", null, 1, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWebApplicationFramework_CopyrightText(), ecorePackage.getEString(), "copyrightText", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getWebApplicationFramework_CaptchaSiteKey(), ecorePackage.getEString(), "captchaSiteKey", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getWebApplicationFramework_CaptchaSecretKey(), ecorePackage.getEString(), "captchaSecretKey", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebApplicationFramework_MetaDescription(), ecorePackage.getEString(), "metaDescription", null, 0, 1, WebApplicationFramework.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals

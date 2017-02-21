@@ -32,7 +32,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaPackage;
-import uk.ac.man.cs.mdsd.criteria.Order;
 import uk.ac.man.cs.mdsd.criteria.PredicateComparisonOperator;
 import uk.ac.man.cs.mdsd.criteria.PredicateEqualityOperator;
 import uk.ac.man.cs.mdsd.criteria.PredicateIsEmpty;
@@ -95,49 +94,26 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.WebApplicationFramework} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WebGenModelItemProvider webGenModelItemProvider;
+	protected WebApplicationFrameworkItemProvider webApplicationFrameworkItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.WebApplicationFramework}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createWebGenModelAdapter() {
-		if (webGenModelItemProvider == null) {
-			webGenModelItemProvider = new WebGenModelItemProvider(this);
+	public Adapter createWebApplicationFrameworkAdapter() {
+		if (webApplicationFrameworkItemProvider == null) {
+			webApplicationFrameworkItemProvider = new WebApplicationFrameworkItemProvider(this);
 		}
 
-		return webGenModelItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected WebsitePropertiesItemProvider websitePropertiesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createWebsitePropertiesAdapter() {
-		if (websitePropertiesItemProvider == null) {
-			websitePropertiesItemProvider = new WebsitePropertiesItemProvider(this);
-		}
-
-		return websitePropertiesItemProvider;
+		return webApplicationFrameworkItemProvider;
 	}
 
 	/**
@@ -184,6 +160,29 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		}
 
 		return casAuthenticationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Persistence} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PersistenceItemProvider persistenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Persistence}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPersistenceAdapter() {
+		if (persistenceItemProvider == null) {
+			persistenceItemProvider = new PersistenceItemProvider(this);
+		}
+
+		return persistenceItemProvider;
 	}
 
 	/**
@@ -253,6 +252,52 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		}
 
 		return enumerationLiteralItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.FormalParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FormalParameterItemProvider formalParameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.FormalParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFormalParameterAdapter() {
+		if (formalParameterItemProvider == null) {
+			formalParameterItemProvider = new FormalParameterItemProvider(this);
+		}
+
+		return formalParameterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Security} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SecurityItemProvider securityItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Security}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSecurityAdapter() {
+		if (securityItemProvider == null) {
+			securityItemProvider = new SecurityItemProvider(this);
+		}
+
+		return securityItemProvider;
 	}
 
 	/**
@@ -716,6 +761,29 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Services} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ServicesItemProvider servicesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Services}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createServicesAdapter() {
+		if (servicesItemProvider == null) {
+			servicesItemProvider = new ServicesItemProvider(this);
+		}
+
+		return servicesItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Service} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -762,29 +830,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SelectionParameterItemProvider selectionParameterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSelectionParameterAdapter() {
-		if (selectionParameterItemProvider == null) {
-			selectionParameterItemProvider = new SelectionParameterItemProvider(this);
-		}
-
-		return selectionParameterItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.BusinessOperation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -805,6 +850,52 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		}
 
 		return businessOperationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Asc} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AscItemProvider ascItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Asc}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAscAdapter() {
+		if (ascItemProvider == null) {
+			ascItemProvider = new AscItemProvider(this);
+		}
+
+		return ascItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Desc} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DescItemProvider descItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Desc}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDescAdapter() {
+		if (descItemProvider == null) {
+			descItemProvider = new DescItemProvider(this);
+		}
+
+		return descItemProvider;
 	}
 
 	/**
@@ -851,6 +942,29 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		}
 
 		return thumbnailFilterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.WebUI} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WebUIItemProvider webUIItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.WebUI}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWebUIAdapter() {
+		if (webUIItemProvider == null) {
+			webUIItemProvider = new WebUIItemProvider(this);
+		}
+
+		return webUIItemProvider;
 	}
 
 	/**
@@ -1843,6 +1957,29 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Image} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImageItemProvider imageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Image}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImageAdapter() {
+		if (imageItemProvider == null) {
+			imageItemProvider = new ImageItemProvider(this);
+		}
+
+		return imageItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CurrentUserReference} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1964,13 +2101,13 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	 * @generated
 	 */
 	public void dispose() {
-		if (webGenModelItemProvider != null) webGenModelItemProvider.dispose();
-		if (websitePropertiesItemProvider != null) websitePropertiesItemProvider.dispose();
-		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
-		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
+		if (webApplicationFrameworkItemProvider != null) webApplicationFrameworkItemProvider.dispose();
 		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
 		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
 		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
+		if (formalParameterItemProvider != null) formalParameterItemProvider.dispose();
+		if (currentUserReferenceItemProvider != null) currentUserReferenceItemProvider.dispose();
+		if (persistenceItemProvider != null) persistenceItemProvider.dispose();
 		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
 		if (modelLabelAttributeItemProvider != null) modelLabelAttributeItemProvider.dispose();
 		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();
@@ -1991,19 +2128,28 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (encapsulatedAttributeItemProvider != null) encapsulatedAttributeItemProvider.dispose();
 		if (encapsulatedAssociationItemProvider != null) encapsulatedAssociationItemProvider.dispose();
 		if (viewAssociationItemProvider != null) viewAssociationItemProvider.dispose();
+		if (securityItemProvider != null) securityItemProvider.dispose();
+		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
+		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
+		if (servicesItemProvider != null) servicesItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
-		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
 		if (businessOperationItemProvider != null) businessOperationItemProvider.dispose();
+		if (ascItemProvider != null) ascItemProvider.dispose();
+		if (descItemProvider != null) descItemProvider.dispose();
+		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();
+		if (parameterReferenceItemProvider != null) parameterReferenceItemProvider.dispose();
+		if (imageItemProvider != null) imageItemProvider.dispose();
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
 		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();
-		if (pageItemProvider != null) pageItemProvider.dispose();
-		if (pageLinkItemProvider != null) pageLinkItemProvider.dispose();
+		if (webUIItemProvider != null) webUIItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
 		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
 		if (menuFeatureItemProvider != null) menuFeatureItemProvider.dispose();
+		if (pageItemProvider != null) pageItemProvider.dispose();
+		if (pageLinkItemProvider != null) pageLinkItemProvider.dispose();
 		if (filterItemProvider != null) filterItemProvider.dispose();
 		if (filterParameterItemProvider != null) filterParameterItemProvider.dispose();
 		if (queryItemProvider != null) queryItemProvider.dispose();
@@ -2037,10 +2183,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
 		if (featureSupportActionItemProvider != null) featureSupportActionItemProvider.dispose();
 		if (modelReferenceItemProvider != null) modelReferenceItemProvider.dispose();
-		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();
 		if (routeParameterReferenceItemProvider != null) routeParameterReferenceItemProvider.dispose();
-		if (parameterReferenceItemProvider != null) parameterReferenceItemProvider.dispose();
-		if (currentUserReferenceItemProvider != null) currentUserReferenceItemProvider.dispose();
 	}
 
 	/**
@@ -2093,7 +2236,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -2103,22 +2246,22 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
 						 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -2128,17 +2271,17 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
 						 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
 
 				return null;
 			}
@@ -2153,7 +2296,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -2163,22 +2306,22 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
 						 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -2188,17 +2331,17 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
 						 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
 
 				return null;
 			}
@@ -2213,7 +2356,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -2223,22 +2366,22 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
 						 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -2248,17 +2391,17 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
 						 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
 
 				return null;
 			}
@@ -2273,7 +2416,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -2283,22 +2426,22 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
 						 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -2308,17 +2451,17 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
 						 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
 
 				return null;
 			}
@@ -2333,7 +2476,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -2343,17 +2486,17 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
 						 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
 
 				return null;
 			}
@@ -2368,7 +2511,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -2378,55 +2521,20 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
 						 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
-
-				return null;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseOrder(Order object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.ORDER__PATH,
 						 WebsiteFactory.eINSTANCE.createModelReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(CriteriaPackage.Literals.ORDER__PATH,
-						 WebsiteFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.ORDER__PATH,
+						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
 						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.ORDER__PATH,
-						 WebsiteFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.ORDER__PATH,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 				return null;
 			}
- 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

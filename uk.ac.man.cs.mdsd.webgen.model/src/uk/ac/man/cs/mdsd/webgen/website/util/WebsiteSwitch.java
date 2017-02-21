@@ -71,35 +71,9 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case WebsitePackage.WEB_GEN_MODEL: {
-				WebGenModel webGenModel = (WebGenModel)theEObject;
-				T result = caseWebGenModel(webGenModel);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.WEBSITE_PROPERTIES: {
-				WebsiteProperties websiteProperties = (WebsiteProperties)theEObject;
-				T result = caseWebsiteProperties(websiteProperties);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.AUTHENTICATION: {
-				Authentication authentication = (Authentication)theEObject;
-				T result = caseAuthentication(authentication);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM: {
-				LocalAuthenticationSystem localAuthenticationSystem = (LocalAuthenticationSystem)theEObject;
-				T result = caseLocalAuthenticationSystem(localAuthenticationSystem);
-				if (result == null) result = caseAuthentication(localAuthenticationSystem);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.CAS_AUTHENTICATION: {
-				CasAuthentication casAuthentication = (CasAuthentication)theEObject;
-				T result = caseCasAuthentication(casAuthentication);
-				if (result == null) result = caseAuthentication(casAuthentication);
+			case WebsitePackage.WEB_APPLICATION_FRAMEWORK: {
+				WebApplicationFramework webApplicationFramework = (WebApplicationFramework)theEObject;
+				T result = caseWebApplicationFramework(webApplicationFramework);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -148,6 +122,33 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				T result = caseEnumerationLiteral(enumerationLiteral);
 				if (result == null) result = caseNamedDisplayElement(enumerationLiteral);
 				if (result == null) result = caseNamedElement(enumerationLiteral);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.FORMAL_PARAMETER_LIST: {
+				FormalParameterList formalParameterList = (FormalParameterList)theEObject;
+				T result = caseFormalParameterList(formalParameterList);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.FORMAL_PARAMETER: {
+				FormalParameter formalParameter = (FormalParameter)theEObject;
+				T result = caseFormalParameter(formalParameter);
+				if (result == null) result = caseNamedElement(formalParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.CURRENT_USER_REFERENCE: {
+				CurrentUserReference currentUserReference = (CurrentUserReference)theEObject;
+				T result = caseCurrentUserReference(currentUserReference);
+				if (result == null) result = casePath(currentUserReference);
+				if (result == null) result = caseExpression(currentUserReference);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.PERSISTENCE: {
+				Persistence persistence = (Persistence)theEObject;
+				T result = casePersistence(persistence);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -457,6 +458,38 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebsitePackage.SECURITY: {
+				Security security = (Security)theEObject;
+				T result = caseSecurity(security);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.AUTHENTICATION: {
+				Authentication authentication = (Authentication)theEObject;
+				T result = caseAuthentication(authentication);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM: {
+				LocalAuthenticationSystem localAuthenticationSystem = (LocalAuthenticationSystem)theEObject;
+				T result = caseLocalAuthenticationSystem(localAuthenticationSystem);
+				if (result == null) result = caseAuthentication(localAuthenticationSystem);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.CAS_AUTHENTICATION: {
+				CasAuthentication casAuthentication = (CasAuthentication)theEObject;
+				T result = caseCasAuthentication(casAuthentication);
+				if (result == null) result = caseAuthentication(casAuthentication);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.SERVICES: {
+				Services services = (Services)theEObject;
+				T result = caseServices(services);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebsitePackage.SERVICE: {
 				Service service = (Service)theEObject;
 				T result = caseService(service);
@@ -468,13 +501,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				Selection selection = (Selection)theEObject;
 				T result = caseSelection(selection);
 				if (result == null) result = caseNamedElement(selection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.SELECTION_PARAMETER: {
-				SelectionParameter selectionParameter = (SelectionParameter)theEObject;
-				T result = caseSelectionParameter(selectionParameter);
-				if (result == null) result = caseNamedElement(selectionParameter);
+				if (result == null) result = caseFormalParameterList(selection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -482,6 +509,49 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				BusinessOperation businessOperation = (BusinessOperation)theEObject;
 				T result = caseBusinessOperation(businessOperation);
 				if (result == null) result = caseNamedElement(businessOperation);
+				if (result == null) result = caseFormalParameterList(businessOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.ORDER: {
+				Order order = (Order)theEObject;
+				T result = caseOrder(order);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.ASC: {
+				Asc asc = (Asc)theEObject;
+				T result = caseAsc(asc);
+				if (result == null) result = caseOrder(asc);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.DESC: {
+				Desc desc = (Desc)theEObject;
+				T result = caseDesc(desc);
+				if (result == null) result = caseOrder(desc);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.FEATURE_REFERENCE: {
+				FeatureReference featureReference = (FeatureReference)theEObject;
+				T result = caseFeatureReference(featureReference);
+				if (result == null) result = casePath(featureReference);
+				if (result == null) result = caseExpression(featureReference);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.PARAMETER_REFERENCE: {
+				ParameterReference parameterReference = (ParameterReference)theEObject;
+				T result = caseParameterReference(parameterReference);
+				if (result == null) result = casePath(parameterReference);
+				if (result == null) result = caseExpression(parameterReference);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.IMAGE: {
+				Image image = (Image)theEObject;
+				T result = caseImage(image);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -505,18 +575,9 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.PAGE: {
-				Page page = (Page)theEObject;
-				T result = casePage(page);
-				if (result == null) result = caseNamedDisplayElement(page);
-				if (result == null) result = caseUnitContainer(page);
-				if (result == null) result = caseNamedElement(page);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.PAGE_LINK: {
-				PageLink pageLink = (PageLink)theEObject;
-				T result = casePageLink(pageLink);
+			case WebsitePackage.WEB_UI: {
+				WebUI webUI = (WebUI)theEObject;
+				T result = caseWebUI(webUI);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -574,6 +635,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				MenuFeature menuFeature = (MenuFeature)theEObject;
 				T result = caseMenuFeature(menuFeature);
 				if (result == null) result = caseMenuEntry(menuFeature);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.PAGE: {
+				Page page = (Page)theEObject;
+				T result = casePage(page);
+				if (result == null) result = caseNamedDisplayElement(page);
+				if (result == null) result = caseUnitContainer(page);
+				if (result == null) result = caseNamedElement(page);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.PAGE_LINK: {
+				PageLink pageLink = (PageLink)theEObject;
+				T result = casePageLink(pageLink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1056,14 +1132,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.FEATURE_REFERENCE: {
-				FeatureReference featureReference = (FeatureReference)theEObject;
-				T result = caseFeatureReference(featureReference);
-				if (result == null) result = casePath(featureReference);
-				if (result == null) result = caseExpression(featureReference);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WebsitePackage.ROUTE_PARAMETER_REFERENCE: {
 				RouteParameterReference routeParameterReference = (RouteParameterReference)theEObject;
 				T result = caseRouteParameterReference(routeParameterReference);
@@ -1072,53 +1140,22 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.PARAMETER_REFERENCE: {
-				ParameterReference parameterReference = (ParameterReference)theEObject;
-				T result = caseParameterReference(parameterReference);
-				if (result == null) result = casePath(parameterReference);
-				if (result == null) result = caseExpression(parameterReference);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.CURRENT_USER_REFERENCE: {
-				CurrentUserReference currentUserReference = (CurrentUserReference)theEObject;
-				T result = caseCurrentUserReference(currentUserReference);
-				if (result == null) result = casePath(currentUserReference);
-				if (result == null) result = caseExpression(currentUserReference);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Web Gen Model</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Web Application Framework</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Web Gen Model</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Web Application Framework</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseWebGenModel(WebGenModel object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Properties</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Properties</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseWebsiteProperties(WebsiteProperties object) {
+	public T caseWebApplicationFramework(WebApplicationFramework object) {
 		return null;
 	}
 
@@ -1164,6 +1201,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCasAuthentication(CasAuthentication object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Persistence</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Persistence</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePersistence(Persistence object) {
 		return null;
 	}
 
@@ -1254,6 +1306,51 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEnumerationLiteral(EnumerationLiteral object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Formal Parameter List</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Formal Parameter List</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFormalParameterList(FormalParameterList object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Formal Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Formal Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFormalParameter(FormalParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Security</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Security</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSecurity(Security object) {
 		return null;
 	}
 
@@ -1419,6 +1516,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseViewAssociation(ViewAssociation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Services</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Services</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServices(Services object) {
 		return null;
 	}
 
@@ -2068,21 +2180,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Selection Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Selection Parameter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSelectionParameter(SelectionParameter object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Business Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -2094,6 +2191,51 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBusinessOperation(BusinessOperation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Order</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Order</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOrder(Order object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Asc</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Asc</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAsc(Asc object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Desc</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Desc</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDesc(Desc object) {
 		return null;
 	}
 
@@ -2139,6 +2281,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseThumbnailFilter(ThumbnailFilter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Web UI</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Web UI</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseWebUI(WebUI object) {
 		return null;
 	}
 
@@ -2799,6 +2956,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseParameterReference(ParameterReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Image</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Image</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImage(Image object) {
 		return null;
 	}
 

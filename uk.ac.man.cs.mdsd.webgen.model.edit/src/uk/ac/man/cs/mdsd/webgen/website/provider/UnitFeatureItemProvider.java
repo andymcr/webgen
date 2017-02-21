@@ -414,7 +414,7 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 WebsiteFactory.eINSTANCE.createModelReference()));
+				 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -424,17 +424,17 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+				 WebsiteFactory.eINSTANCE.createModelReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

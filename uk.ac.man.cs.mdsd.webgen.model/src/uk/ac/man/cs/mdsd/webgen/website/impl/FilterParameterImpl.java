@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import uk.ac.man.cs.mdsd.webgen.website.DataType;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.FilterParameter;
-import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
+import uk.ac.man.cs.mdsd.webgen.website.FormalParameter;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -43,7 +43,7 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * @generated
 	 * @ordered
 	 */
-	protected SelectionParameter formal;
+	protected FormalParameter formal;
 
 	/**
 	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
@@ -160,10 +160,10 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionParameter getFormal() {
+	public FormalParameter getFormal() {
 		if (formal != null && formal.eIsProxy()) {
 			InternalEObject oldFormal = (InternalEObject)formal;
-			formal = (SelectionParameter)eResolveProxy(oldFormal);
+			formal = (FormalParameter)eResolveProxy(oldFormal);
 			if (formal != oldFormal) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.FILTER_PARAMETER__FORMAL, oldFormal, formal));
@@ -177,7 +177,7 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionParameter basicGetFormal() {
+	public FormalParameter basicGetFormal() {
 		return formal;
 	}
 
@@ -186,8 +186,8 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFormal(SelectionParameter newFormal) {
-		SelectionParameter oldFormal = formal;
+	public void setFormal(FormalParameter newFormal) {
+		FormalParameter oldFormal = formal;
 		formal = newFormal;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FILTER_PARAMETER__FORMAL, oldFormal, formal));
@@ -353,7 +353,7 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 				setPartOf((Filter)newValue);
 				return;
 			case WebsitePackage.FILTER_PARAMETER__FORMAL:
-				setFormal((SelectionParameter)newValue);
+				setFormal((FormalParameter)newValue);
 				return;
 			case WebsitePackage.FILTER_PARAMETER__DATA_TYPE:
 				setDataType((DataType)newValue);
@@ -380,7 +380,7 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 				setPartOf((Filter)null);
 				return;
 			case WebsitePackage.FILTER_PARAMETER__FORMAL:
-				setFormal((SelectionParameter)null);
+				setFormal((FormalParameter)null);
 				return;
 			case WebsitePackage.FILTER_PARAMETER__DATA_TYPE:
 				setDataType((DataType)null);

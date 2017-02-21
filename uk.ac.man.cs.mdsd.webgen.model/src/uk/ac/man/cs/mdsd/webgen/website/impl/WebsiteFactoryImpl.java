@@ -61,13 +61,13 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case WebsitePackage.WEB_GEN_MODEL: return createWebGenModel();
-			case WebsitePackage.WEBSITE_PROPERTIES: return createWebsiteProperties();
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
-			case WebsitePackage.CAS_AUTHENTICATION: return createCasAuthentication();
+			case WebsitePackage.WEB_APPLICATION_FRAMEWORK: return createWebApplicationFramework();
 			case WebsitePackage.DATA_TYPE: return createDataType();
 			case WebsitePackage.ENUMERATION_TYPE: return createEnumerationType();
 			case WebsitePackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
+			case WebsitePackage.FORMAL_PARAMETER: return createFormalParameter();
+			case WebsitePackage.CURRENT_USER_REFERENCE: return createCurrentUserReference();
+			case WebsitePackage.PERSISTENCE: return createPersistence();
 			case WebsitePackage.MODEL_LABEL: return createModelLabel();
 			case WebsitePackage.MODEL_LABEL_ATTRIBUTE: return createModelLabelAttribute();
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
@@ -88,19 +88,28 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.ENCAPSULATED_ATTRIBUTE: return createEncapsulatedAttribute();
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION: return createEncapsulatedAssociation();
 			case WebsitePackage.VIEW_ASSOCIATION: return createViewAssociation();
+			case WebsitePackage.SECURITY: return createSecurity();
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
+			case WebsitePackage.CAS_AUTHENTICATION: return createCasAuthentication();
+			case WebsitePackage.SERVICES: return createServices();
 			case WebsitePackage.SERVICE: return createService();
 			case WebsitePackage.SELECTION: return createSelection();
-			case WebsitePackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WebsitePackage.BUSINESS_OPERATION: return createBusinessOperation();
+			case WebsitePackage.ASC: return createAsc();
+			case WebsitePackage.DESC: return createDesc();
+			case WebsitePackage.FEATURE_REFERENCE: return createFeatureReference();
+			case WebsitePackage.PARAMETER_REFERENCE: return createParameterReference();
+			case WebsitePackage.IMAGE: return createImage();
 			case WebsitePackage.IMAGE_MANIPULATION: return createImageManipulation();
 			case WebsitePackage.THUMBNAIL_FILTER: return createThumbnailFilter();
-			case WebsitePackage.PAGE: return createPage();
-			case WebsitePackage.PAGE_LINK: return createPageLink();
+			case WebsitePackage.WEB_UI: return createWebUI();
 			case WebsitePackage.STATIC_MENU: return createStaticMenu();
 			case WebsitePackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
 			case WebsitePackage.DYNAMIC_MENU: return createDynamicMenu();
 			case WebsitePackage.MENU_FEATURE: return createMenuFeature();
+			case WebsitePackage.PAGE: return createPage();
+			case WebsitePackage.PAGE_LINK: return createPageLink();
 			case WebsitePackage.FILTER: return createFilter();
 			case WebsitePackage.FILTER_PARAMETER: return createFilterParameter();
 			case WebsitePackage.QUERY: return createQuery();
@@ -134,10 +143,7 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.DELETE_ACTION: return createDeleteAction();
 			case WebsitePackage.FEATURE_SUPPORT_ACTION: return createFeatureSupportAction();
 			case WebsitePackage.MODEL_REFERENCE: return createModelReference();
-			case WebsitePackage.FEATURE_REFERENCE: return createFeatureReference();
 			case WebsitePackage.ROUTE_PARAMETER_REFERENCE: return createRouteParameterReference();
-			case WebsitePackage.PARAMETER_REFERENCE: return createParameterReference();
-			case WebsitePackage.CURRENT_USER_REFERENCE: return createCurrentUserReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -151,26 +157,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
+				return createFrameworkTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.DATABASE_TECHNOLOGIES:
 				return createDatabaseTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.ORM_TECHNOLOGIES:
 				return createOrmTechnologiesFromString(eDataType, initialValue);
-			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
-				return createFrameworkTechnologiesFromString(eDataType, initialValue);
-			case WebsitePackage.INPUT_TECHNOLOGIES:
-				return createInputTechnologiesFromString(eDataType, initialValue);
-			case WebsitePackage.AJAX_TECHNOLOGIES:
-				return createAjaxTechnologiesFromString(eDataType, initialValue);
-			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
-				return createAuthenticationKeyTypesFromString(eDataType, initialValue);
 			case WebsitePackage.CARDINALITY:
 				return createCardinalityFromString(eDataType, initialValue);
 			case WebsitePackage.IS_HAS_CHOICES:
 				return createisHasChoicesFromString(eDataType, initialValue);
 			case WebsitePackage.DATE_DETAILS:
 				return createDateDetailsFromString(eDataType, initialValue);
+			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
+				return createAuthenticationKeyTypesFromString(eDataType, initialValue);
 			case WebsitePackage.OPERATION_RESULT_TYPES:
 				return createOperationResultTypesFromString(eDataType, initialValue);
+			case WebsitePackage.INPUT_TECHNOLOGIES:
+				return createInputTechnologiesFromString(eDataType, initialValue);
+			case WebsitePackage.AJAX_TECHNOLOGIES:
+				return createAjaxTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.PAGE_TOP_MENU_OPTIONS:
 				return createPageTopMenuOptionsFromString(eDataType, initialValue);
 			case WebsitePackage.COLLECTION_DISPLAY_OPTIONS:
@@ -190,26 +196,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
+				return convertFrameworkTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.DATABASE_TECHNOLOGIES:
 				return convertDatabaseTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.ORM_TECHNOLOGIES:
 				return convertOrmTechnologiesToString(eDataType, instanceValue);
-			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
-				return convertFrameworkTechnologiesToString(eDataType, instanceValue);
-			case WebsitePackage.INPUT_TECHNOLOGIES:
-				return convertInputTechnologiesToString(eDataType, instanceValue);
-			case WebsitePackage.AJAX_TECHNOLOGIES:
-				return convertAjaxTechnologiesToString(eDataType, instanceValue);
-			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
-				return convertAuthenticationKeyTypesToString(eDataType, instanceValue);
 			case WebsitePackage.CARDINALITY:
 				return convertCardinalityToString(eDataType, instanceValue);
 			case WebsitePackage.IS_HAS_CHOICES:
 				return convertisHasChoicesToString(eDataType, instanceValue);
 			case WebsitePackage.DATE_DETAILS:
 				return convertDateDetailsToString(eDataType, instanceValue);
+			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
+				return convertAuthenticationKeyTypesToString(eDataType, instanceValue);
 			case WebsitePackage.OPERATION_RESULT_TYPES:
 				return convertOperationResultTypesToString(eDataType, instanceValue);
+			case WebsitePackage.INPUT_TECHNOLOGIES:
+				return convertInputTechnologiesToString(eDataType, instanceValue);
+			case WebsitePackage.AJAX_TECHNOLOGIES:
+				return convertAjaxTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.PAGE_TOP_MENU_OPTIONS:
 				return convertPageTopMenuOptionsToString(eDataType, instanceValue);
 			case WebsitePackage.COLLECTION_DISPLAY_OPTIONS:
@@ -226,19 +232,9 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public WebGenModel createWebGenModel() {
-		WebGenModelImpl webGenModel = new WebGenModelImpl();
-		return webGenModel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WebsiteProperties createWebsiteProperties() {
-		WebsitePropertiesImpl websiteProperties = new WebsitePropertiesImpl();
-		return websiteProperties;
+	public WebApplicationFramework createWebApplicationFramework() {
+		WebApplicationFrameworkImpl webApplicationFramework = new WebApplicationFrameworkImpl();
+		return webApplicationFramework;
 	}
 
 	/**
@@ -259,6 +255,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public CasAuthentication createCasAuthentication() {
 		CasAuthenticationImpl casAuthentication = new CasAuthenticationImpl();
 		return casAuthentication;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Persistence createPersistence() {
+		PersistenceImpl persistence = new PersistenceImpl();
+		return persistence;
 	}
 
 	/**
@@ -289,6 +295,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public EnumerationLiteral createEnumerationLiteral() {
 		EnumerationLiteralImpl enumerationLiteral = new EnumerationLiteralImpl();
 		return enumerationLiteral;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FormalParameter createFormalParameter() {
+		FormalParameterImpl formalParameter = new FormalParameterImpl();
+		return formalParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Security createSecurity() {
+		SecurityImpl security = new SecurityImpl();
+		return security;
 	}
 
 	/**
@@ -389,6 +415,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public ViewAssociation createViewAssociation() {
 		ViewAssociationImpl viewAssociation = new ViewAssociationImpl();
 		return viewAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Services createServices() {
+		ServicesImpl services = new ServicesImpl();
+		return services;
 	}
 
 	/**
@@ -646,9 +682,9 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionParameter createSelectionParameter() {
-		SelectionParameterImpl selectionParameter = new SelectionParameterImpl();
-		return selectionParameter;
+	public BusinessOperation createBusinessOperation() {
+		BusinessOperationImpl businessOperation = new BusinessOperationImpl();
+		return businessOperation;
 	}
 
 	/**
@@ -656,9 +692,19 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BusinessOperation createBusinessOperation() {
-		BusinessOperationImpl businessOperation = new BusinessOperationImpl();
-		return businessOperation;
+	public Asc createAsc() {
+		AscImpl asc = new AscImpl();
+		return asc;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Desc createDesc() {
+		DescImpl desc = new DescImpl();
+		return desc;
 	}
 
 	/**
@@ -679,6 +725,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public ThumbnailFilter createThumbnailFilter() {
 		ThumbnailFilterImpl thumbnailFilter = new ThumbnailFilterImpl();
 		return thumbnailFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WebUI createWebUI() {
+		WebUIImpl webUI = new WebUIImpl();
+		return webUI;
 	}
 
 	/**
@@ -979,6 +1035,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public ParameterReference createParameterReference() {
 		ParameterReferenceImpl parameterReference = new ParameterReferenceImpl();
 		return parameterReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Image createImage() {
+		ImageImpl image = new ImageImpl();
+		return image;
 	}
 
 	/**

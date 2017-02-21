@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -22,17 +21,17 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
+import uk.ac.man.cs.mdsd.webgen.website.Order;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Order} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class WebGenModelItemProvider 
+public class OrderItemProvider 
 	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -46,7 +45,7 @@ public class WebGenModelItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public WebGenModelItemProvider(AdapterFactory adapterFactory) {
+	public OrderItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,31 +60,8 @@ public class WebGenModelItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAllowTypeCustomisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Allow Type Customisation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAllowTypeCustomisationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebGenModel_allowTypeCustomisation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_allowTypeCustomisation_feature", "_UI_WebGenModel_type"),
-				 WebsitePackage.Literals.WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -100,12 +76,7 @@ public class WebGenModelItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__WEBSITE_PROPERTIES);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__PAGES);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__MENUS);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__IMAGE_MANIPULATIONS);
+			childrenFeatures.add(WebsitePackage.Literals.ORDER__PATH);
 		}
 		return childrenFeatures;
 	}
@@ -124,17 +95,6 @@ public class WebGenModelItemProvider
 	}
 
 	/**
-	 * This returns WebGenModel.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/WebGenModel"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -142,8 +102,9 @@ public class WebGenModelItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_WebGenModel_type");
+		return getString("_UI_Order_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -156,13 +117,8 @@ public class WebGenModelItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(WebGenModel.class)) {
-			case WebsitePackage.WEB_GEN_MODEL__WEBSITE_PROPERTIES:
-			case WebsitePackage.WEB_GEN_MODEL__CLASSIFIERS:
-			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
-			case WebsitePackage.WEB_GEN_MODEL__PAGES:
-			case WebsitePackage.WEB_GEN_MODEL__MENUS:
-			case WebsitePackage.WEB_GEN_MODEL__IMAGE_MANIPULATIONS:
+		switch (notification.getFeatureID(Order.class)) {
+			case WebsitePackage.ORDER__PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -182,53 +138,28 @@ public class WebGenModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__WEBSITE_PROPERTIES,
-				 WebsiteFactory.eINSTANCE.createWebsiteProperties()));
+				(WebsitePackage.Literals.ORDER__PATH,
+				 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
-				 WebsiteFactory.eINSTANCE.createDataType()));
+				(WebsitePackage.Literals.ORDER__PATH,
+				 WebsiteFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
-				 WebsiteFactory.eINSTANCE.createEnumerationType()));
+				(WebsitePackage.Literals.ORDER__PATH,
+				 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
-				 WebsiteFactory.eINSTANCE.createEntity()));
+				(WebsitePackage.Literals.ORDER__PATH,
+				 WebsiteFactory.eINSTANCE.createModelReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
-				 WebsiteFactory.eINSTANCE.createView()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES,
-				 WebsiteFactory.eINSTANCE.createService()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__PAGES,
-				 WebsiteFactory.eINSTANCE.createPage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__MENUS,
-				 WebsiteFactory.eINSTANCE.createStaticMenu()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__MENUS,
-				 WebsiteFactory.eINSTANCE.createDynamicMenu()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__IMAGE_MANIPULATIONS,
-				 WebsiteFactory.eINSTANCE.createImageManipulation()));
+				(WebsitePackage.Literals.ORDER__PATH,
+				 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
 	}
 
 	/**

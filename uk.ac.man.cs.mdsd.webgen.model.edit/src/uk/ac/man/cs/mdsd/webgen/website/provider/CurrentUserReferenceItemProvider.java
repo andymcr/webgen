@@ -78,7 +78,7 @@ public class CurrentUserReferenceItemProvider
 				 false,
 				 false,
 				 null,
-				 getString("_UI_DebugPropertyCategory"),
+				 null,
 				 null));
 	}
 

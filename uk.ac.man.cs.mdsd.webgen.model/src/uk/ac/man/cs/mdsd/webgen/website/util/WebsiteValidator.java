@@ -90,16 +90,8 @@ public class WebsiteValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case WebsitePackage.WEB_GEN_MODEL:
-				return validateWebGenModel((WebGenModel)value, diagnostics, context);
-			case WebsitePackage.WEBSITE_PROPERTIES:
-				return validateWebsiteProperties((WebsiteProperties)value, diagnostics, context);
-			case WebsitePackage.AUTHENTICATION:
-				return validateAuthentication((Authentication)value, diagnostics, context);
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM:
-				return validateLocalAuthenticationSystem((LocalAuthenticationSystem)value, diagnostics, context);
-			case WebsitePackage.CAS_AUTHENTICATION:
-				return validateCasAuthentication((CasAuthentication)value, diagnostics, context);
+			case WebsitePackage.WEB_APPLICATION_FRAMEWORK:
+				return validateWebApplicationFramework((WebApplicationFramework)value, diagnostics, context);
 			case WebsitePackage.NAMED_ELEMENT:
 				return validateNamedElement((NamedElement)value, diagnostics, context);
 			case WebsitePackage.NAMED_DISPLAY_ELEMENT:
@@ -112,6 +104,14 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateEnumerationType((EnumerationType)value, diagnostics, context);
 			case WebsitePackage.ENUMERATION_LITERAL:
 				return validateEnumerationLiteral((EnumerationLiteral)value, diagnostics, context);
+			case WebsitePackage.FORMAL_PARAMETER_LIST:
+				return validateFormalParameterList((FormalParameterList)value, diagnostics, context);
+			case WebsitePackage.FORMAL_PARAMETER:
+				return validateFormalParameter((FormalParameter)value, diagnostics, context);
+			case WebsitePackage.CURRENT_USER_REFERENCE:
+				return validateCurrentUserReference((CurrentUserReference)value, diagnostics, context);
+			case WebsitePackage.PERSISTENCE:
+				return validatePersistence((Persistence)value, diagnostics, context);
 			case WebsitePackage.ENTITY_OR_VIEW:
 				return validateEntityOrView((EntityOrView)value, diagnostics, context);
 			case WebsitePackage.FEATURE:
@@ -176,24 +176,42 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateEncapsulatedAssociation((EncapsulatedAssociation)value, diagnostics, context);
 			case WebsitePackage.VIEW_ASSOCIATION:
 				return validateViewAssociation((ViewAssociation)value, diagnostics, context);
+			case WebsitePackage.SECURITY:
+				return validateSecurity((Security)value, diagnostics, context);
+			case WebsitePackage.AUTHENTICATION:
+				return validateAuthentication((Authentication)value, diagnostics, context);
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM:
+				return validateLocalAuthenticationSystem((LocalAuthenticationSystem)value, diagnostics, context);
+			case WebsitePackage.CAS_AUTHENTICATION:
+				return validateCasAuthentication((CasAuthentication)value, diagnostics, context);
+			case WebsitePackage.SERVICES:
+				return validateServices((Services)value, diagnostics, context);
 			case WebsitePackage.SERVICE:
 				return validateService((Service)value, diagnostics, context);
 			case WebsitePackage.SELECTION:
 				return validateSelection((Selection)value, diagnostics, context);
-			case WebsitePackage.SELECTION_PARAMETER:
-				return validateSelectionParameter((SelectionParameter)value, diagnostics, context);
 			case WebsitePackage.BUSINESS_OPERATION:
 				return validateBusinessOperation((BusinessOperation)value, diagnostics, context);
+			case WebsitePackage.ORDER:
+				return validateOrder((Order)value, diagnostics, context);
+			case WebsitePackage.ASC:
+				return validateAsc((Asc)value, diagnostics, context);
+			case WebsitePackage.DESC:
+				return validateDesc((Desc)value, diagnostics, context);
+			case WebsitePackage.FEATURE_REFERENCE:
+				return validateFeatureReference((FeatureReference)value, diagnostics, context);
+			case WebsitePackage.PARAMETER_REFERENCE:
+				return validateParameterReference((ParameterReference)value, diagnostics, context);
+			case WebsitePackage.IMAGE:
+				return validateImage((Image)value, diagnostics, context);
 			case WebsitePackage.IMAGE_MANIPULATION:
 				return validateImageManipulation((ImageManipulation)value, diagnostics, context);
 			case WebsitePackage.IMAGE_FILTER:
 				return validateImageFilter((ImageFilter)value, diagnostics, context);
 			case WebsitePackage.THUMBNAIL_FILTER:
 				return validateThumbnailFilter((ThumbnailFilter)value, diagnostics, context);
-			case WebsitePackage.PAGE:
-				return validatePage((Page)value, diagnostics, context);
-			case WebsitePackage.PAGE_LINK:
-				return validatePageLink((PageLink)value, diagnostics, context);
+			case WebsitePackage.WEB_UI:
+				return validateWebUI((WebUI)value, diagnostics, context);
 			case WebsitePackage.MENU:
 				return validateMenu((Menu)value, diagnostics, context);
 			case WebsitePackage.MENU_ENTRY:
@@ -208,6 +226,10 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateDynamicMenu((DynamicMenu)value, diagnostics, context);
 			case WebsitePackage.MENU_FEATURE:
 				return validateMenuFeature((MenuFeature)value, diagnostics, context);
+			case WebsitePackage.PAGE:
+				return validatePage((Page)value, diagnostics, context);
+			case WebsitePackage.PAGE_LINK:
+				return validatePageLink((PageLink)value, diagnostics, context);
 			case WebsitePackage.FILTER:
 				return validateFilter((Filter)value, diagnostics, context);
 			case WebsitePackage.FILTER_PARAMETER:
@@ -312,34 +334,28 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateFeatureSupportAction((FeatureSupportAction)value, diagnostics, context);
 			case WebsitePackage.MODEL_REFERENCE:
 				return validateModelReference((ModelReference)value, diagnostics, context);
-			case WebsitePackage.FEATURE_REFERENCE:
-				return validateFeatureReference((FeatureReference)value, diagnostics, context);
 			case WebsitePackage.ROUTE_PARAMETER_REFERENCE:
 				return validateRouteParameterReference((RouteParameterReference)value, diagnostics, context);
-			case WebsitePackage.PARAMETER_REFERENCE:
-				return validateParameterReference((ParameterReference)value, diagnostics, context);
-			case WebsitePackage.CURRENT_USER_REFERENCE:
-				return validateCurrentUserReference((CurrentUserReference)value, diagnostics, context);
+			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
+				return validateFrameworkTechnologies((FrameworkTechnologies)value, diagnostics, context);
 			case WebsitePackage.DATABASE_TECHNOLOGIES:
 				return validateDatabaseTechnologies((DatabaseTechnologies)value, diagnostics, context);
 			case WebsitePackage.ORM_TECHNOLOGIES:
 				return validateOrmTechnologies((OrmTechnologies)value, diagnostics, context);
-			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
-				return validateFrameworkTechnologies((FrameworkTechnologies)value, diagnostics, context);
-			case WebsitePackage.INPUT_TECHNOLOGIES:
-				return validateInputTechnologies((InputTechnologies)value, diagnostics, context);
-			case WebsitePackage.AJAX_TECHNOLOGIES:
-				return validateAjaxTechnologies((AjaxTechnologies)value, diagnostics, context);
-			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
-				return validateAuthenticationKeyTypes((AuthenticationKeyTypes)value, diagnostics, context);
 			case WebsitePackage.CARDINALITY:
 				return validateCardinality((Cardinality)value, diagnostics, context);
 			case WebsitePackage.IS_HAS_CHOICES:
 				return validateisHasChoices((isHasChoices)value, diagnostics, context);
 			case WebsitePackage.DATE_DETAILS:
 				return validateDateDetails((DateDetails)value, diagnostics, context);
+			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
+				return validateAuthenticationKeyTypes((AuthenticationKeyTypes)value, diagnostics, context);
 			case WebsitePackage.OPERATION_RESULT_TYPES:
 				return validateOperationResultTypes((OperationResultTypes)value, diagnostics, context);
+			case WebsitePackage.INPUT_TECHNOLOGIES:
+				return validateInputTechnologies((InputTechnologies)value, diagnostics, context);
+			case WebsitePackage.AJAX_TECHNOLOGIES:
+				return validateAjaxTechnologies((AjaxTechnologies)value, diagnostics, context);
 			case WebsitePackage.PAGE_TOP_MENU_OPTIONS:
 				return validatePageTopMenuOptions((PageTopMenuOptions)value, diagnostics, context);
 			case WebsitePackage.COLLECTION_DISPLAY_OPTIONS:
@@ -356,116 +372,107 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateWebGenModel(WebGenModel webGenModel, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(webGenModel, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(webGenModel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(webGenModel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(webGenModel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(webGenModel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(webGenModel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(webGenModel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(webGenModel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(webGenModel, diagnostics, context);
-		if (result || diagnostics != null) result &= validateWebGenModel_classifierNameUnique(webGenModel, diagnostics, context);
-		if (result || diagnostics != null) result &= validateWebGenModel_pageNameUnique(webGenModel, diagnostics, context);
-		if (result || diagnostics != null) result &= validateWebGenModel_menuNameUnique(webGenModel, diagnostics, context);
+	public boolean validateWebApplicationFramework(WebApplicationFramework webApplicationFramework, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(webApplicationFramework, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(webApplicationFramework, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(webApplicationFramework, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(webApplicationFramework, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(webApplicationFramework, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(webApplicationFramework, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(webApplicationFramework, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(webApplicationFramework, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(webApplicationFramework, diagnostics, context);
+		if (result || diagnostics != null) result &= validateWebApplicationFramework_classifierNameUnique(webApplicationFramework, diagnostics, context);
+		if (result || diagnostics != null) result &= validateWebApplicationFramework_pageNameUnique(webApplicationFramework, diagnostics, context);
+		if (result || diagnostics != null) result &= validateWebApplicationFramework_menuNameUnique(webApplicationFramework, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the classifierNameUnique constraint of '<em>Web Gen Model</em>'.
+	 * The cached validation expression for the classifierNameUnique constraint of '<em>Web Application Framework</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String WEB_GEN_MODEL__CLASSIFIER_NAME_UNIQUE__EEXPRESSION = "classifiers->isUnique(name)";
+	protected static final String WEB_APPLICATION_FRAMEWORK__CLASSIFIER_NAME_UNIQUE__EEXPRESSION = "classifiers->isUnique(name)";
 
 	/**
-	 * Validates the classifierNameUnique constraint of '<em>Web Gen Model</em>'.
+	 * Validates the classifierNameUnique constraint of '<em>Web Application Framework</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateWebGenModel_classifierNameUnique(WebGenModel webGenModel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateWebApplicationFramework_classifierNameUnique(WebApplicationFramework webApplicationFramework, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(WebsitePackage.Literals.WEB_GEN_MODEL,
-				 webGenModel,
+				(WebsitePackage.Literals.WEB_APPLICATION_FRAMEWORK,
+				 webApplicationFramework,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "classifierNameUnique",
-				 WEB_GEN_MODEL__CLASSIFIER_NAME_UNIQUE__EEXPRESSION,
+				 WEB_APPLICATION_FRAMEWORK__CLASSIFIER_NAME_UNIQUE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the pageNameUnique constraint of '<em>Web Gen Model</em>'.
+	 * The cached validation expression for the pageNameUnique constraint of '<em>Web Application Framework</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String WEB_GEN_MODEL__PAGE_NAME_UNIQUE__EEXPRESSION = "pages->isUnique(name)";
+	protected static final String WEB_APPLICATION_FRAMEWORK__PAGE_NAME_UNIQUE__EEXPRESSION = "pages->isUnique(name)";
 
 	/**
-	 * Validates the pageNameUnique constraint of '<em>Web Gen Model</em>'.
+	 * Validates the pageNameUnique constraint of '<em>Web Application Framework</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateWebGenModel_pageNameUnique(WebGenModel webGenModel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateWebApplicationFramework_pageNameUnique(WebApplicationFramework webApplicationFramework, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(WebsitePackage.Literals.WEB_GEN_MODEL,
-				 webGenModel,
+				(WebsitePackage.Literals.WEB_APPLICATION_FRAMEWORK,
+				 webApplicationFramework,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "pageNameUnique",
-				 WEB_GEN_MODEL__PAGE_NAME_UNIQUE__EEXPRESSION,
+				 WEB_APPLICATION_FRAMEWORK__PAGE_NAME_UNIQUE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the menuNameUnique constraint of '<em>Web Gen Model</em>'.
+	 * The cached validation expression for the menuNameUnique constraint of '<em>Web Application Framework</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String WEB_GEN_MODEL__MENU_NAME_UNIQUE__EEXPRESSION = "menus->isUnique(name)";
+	protected static final String WEB_APPLICATION_FRAMEWORK__MENU_NAME_UNIQUE__EEXPRESSION = "menus->isUnique(name)";
 
 	/**
-	 * Validates the menuNameUnique constraint of '<em>Web Gen Model</em>'.
+	 * Validates the menuNameUnique constraint of '<em>Web Application Framework</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateWebGenModel_menuNameUnique(WebGenModel webGenModel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateWebApplicationFramework_menuNameUnique(WebApplicationFramework webApplicationFramework, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(WebsitePackage.Literals.WEB_GEN_MODEL,
-				 webGenModel,
+				(WebsitePackage.Literals.WEB_APPLICATION_FRAMEWORK,
+				 webApplicationFramework,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "menuNameUnique",
-				 WEB_GEN_MODEL__MENU_NAME_UNIQUE__EEXPRESSION,
+				 WEB_APPLICATION_FRAMEWORK__MENU_NAME_UNIQUE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateWebsiteProperties(WebsiteProperties websiteProperties, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(websiteProperties, diagnostics, context);
 	}
 
 	/**
@@ -609,6 +616,118 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(enumerationLiteral, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(enumerationLiteral, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFormalParameterList(FormalParameterList formalParameterList, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(formalParameterList, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFormalParameter(FormalParameter formalParameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(formalParameter, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(formalParameter, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSecurity(Security security, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(security, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(security, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(security, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(security, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(security, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(security, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(security, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(security, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(security, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSecurity_userKeyFromUser(security, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSecurity_userKeyRequiredAttribute(security, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the userKeyFromUser constraint of '<em>Security</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SECURITY__USER_KEY_FROM_USER__EEXPRESSION = "not user.oclIsUndefined() and not userKey.oclIsUndefined() implies\r\n" +
+		"\tuser.features->includes(userKey)";
+
+	/**
+	 * Validates the userKeyFromUser constraint of '<em>Security</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSecurity_userKeyFromUser(Security security, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.SECURITY,
+				 security,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "userKeyFromUser",
+				 SECURITY__USER_KEY_FROM_USER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the userKeyRequiredAttribute constraint of '<em>Security</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SECURITY__USER_KEY_REQUIRED_ATTRIBUTE__EEXPRESSION = "not userKey.oclIsUndefined() implies\r\n" +
+		"\tif userKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
+		"\t\tuserKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n" +
+		"\telse\r\n" +
+		"\t\tuserKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n" +
+		"\tendif";
+
+	/**
+	 * Validates the userKeyRequiredAttribute constraint of '<em>Security</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSecurity_userKeyRequiredAttribute(Security security, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.SECURITY,
+				 security,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "userKeyRequiredAttribute",
+				 SECURITY__USER_KEY_REQUIRED_ATTRIBUTE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -860,6 +979,15 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(viewAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(viewAssociation, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateServices(Services services, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(services, diagnostics, context);
 	}
 
 	/**
@@ -1858,25 +1986,6 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSelectionParameter(SelectionParameter selectionParameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(selectionParameter, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(selectionParameter, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateBusinessOperation(BusinessOperation businessOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(businessOperation, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(businessOperation, diagnostics, context);
@@ -1889,6 +1998,33 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(businessOperation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(businessOperation, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOrder(Order order, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(order, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAsc(Asc asc, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(asc, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDesc(Desc desc, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(desc, diagnostics, context);
 	}
 
 	/**
@@ -1926,6 +2062,15 @@ public class WebsiteValidator extends EObjectValidator {
 	 */
 	public boolean validateThumbnailFilter(ThumbnailFilter thumbnailFilter, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(thumbnailFilter, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateWebUI(WebUI webUI, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(webUI, diagnostics, context);
 	}
 
 	/**
@@ -2913,6 +3058,15 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateImage(Image image, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(image, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateCurrentUserReference(CurrentUserReference currentUserReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(currentUserReference, diagnostics, context);
 	}
@@ -2977,82 +3131,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAuthentication(Authentication authentication, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(authentication, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAuthentication_userKeyFromUser(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAuthentication_userKeyRequiredAttribute(authentication, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the userKeyFromUser constraint of '<em>Authentication</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String AUTHENTICATION__USER_KEY_FROM_USER__EEXPRESSION = "not user.oclIsUndefined() and not userKey.oclIsUndefined() implies\r\n" +
-		"\tuser.features->includes(userKey)";
-
-	/**
-	 * Validates the userKeyFromUser constraint of '<em>Authentication</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAuthentication_userKeyFromUser(Authentication authentication, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.AUTHENTICATION,
-				 authentication,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "userKeyFromUser",
-				 AUTHENTICATION__USER_KEY_FROM_USER__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the userKeyRequiredAttribute constraint of '<em>Authentication</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String AUTHENTICATION__USER_KEY_REQUIRED_ATTRIBUTE__EEXPRESSION = "not userKey.oclIsUndefined() implies\r\n" +
-		"\tif userKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
-		"\t\tuserKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n" +
-		"\telse\r\n" +
-		"\t\tuserKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n" +
-		"\tendif";
-
-	/**
-	 * Validates the userKeyRequiredAttribute constraint of '<em>Authentication</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAuthentication_userKeyRequiredAttribute(Authentication authentication, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.AUTHENTICATION,
-				 authentication,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "userKeyRequiredAttribute",
-				 AUTHENTICATION__USER_KEY_REQUIRED_ATTRIBUTE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return validate_EveryDefaultConstraint(authentication, diagnostics, context);
 	}
 
 	/**
@@ -3070,8 +3149,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(localAuthenticationSystem, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(localAuthenticationSystem, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAuthentication_userKeyFromUser(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAuthentication_userKeyRequiredAttribute(localAuthenticationSystem, diagnostics, context);
 		if (result || diagnostics != null) result &= validateLocalAuthenticationSystem_captchaRequiresKeys(localAuthenticationSystem, diagnostics, context);
 		return result;
 	}
@@ -3111,18 +3188,16 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCasAuthentication(CasAuthentication casAuthentication, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(casAuthentication, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAuthentication_userKeyFromUser(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAuthentication_userKeyRequiredAttribute(casAuthentication, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(casAuthentication, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePersistence(Persistence persistence, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(persistence, diagnostics, context);
 	}
 
 	/**

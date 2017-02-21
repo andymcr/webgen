@@ -3,12 +3,10 @@
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import uk.ac.man.cs.mdsd.webgen.website.CurrentUserReference;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -57,50 +55,24 @@ public class CurrentUserReferenceImpl extends EObjectImpl implements CurrentUser
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public EntityOrView basicGetUserModel() {
 		// TODO: implement this method to return the 'User Model' reference
 		// -> do not perform proxy resolution
 		// Ensure that you remove @generated or mark it @generated NOT
-		final WebGenModel model = getModel(this);
-		if (model.getWebsiteProperties().getAuthentication() != null) {
-			return model.getWebsiteProperties().getAuthentication().getUser();
-		}
-
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public boolean isSetUserModel() {
 		// TODO: implement this method to return whether the 'User Model' reference is set
 		// Ensure that you remove @generated or mark it @generated NOT
-//		throw new UnsupportedOperationException();
-		final WebGenModel model = getModel(this);
-		if (model.getWebsiteProperties().getAuthentication() != null) {
-			return model.getWebsiteProperties().getAuthentication().getUser() != null;
-		}
-
-		return false;
-	}
-
-	/*
-	 * @generated NOT
-	 */
-	private WebGenModel getModel(final EObject eObject) {
-		if (eObject instanceof WebGenModel) {
-			return (WebGenModel) eObject;
-		}
-
-		if (eObject.eContainer() != null) {
-			return getModel(eObject.eContainer());
-		}
-
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	/**

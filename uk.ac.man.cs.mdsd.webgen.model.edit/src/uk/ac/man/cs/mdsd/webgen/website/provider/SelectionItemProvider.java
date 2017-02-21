@@ -210,7 +210,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.SELECTION__PARAMETERS);
+			childrenFeatures.add(WebsitePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
 			childrenFeatures.add(WebsitePackage.Literals.SELECTION__FILTER);
 			childrenFeatures.add(WebsitePackage.Literals.SELECTION__ORDERING);
 		}
@@ -294,8 +294,8 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.SELECTION__PARAMETERS,
-				 WebsiteFactory.eINSTANCE.createSelectionParameter()));
+				(WebsitePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
+				 WebsiteFactory.eINSTANCE.createFormalParameter()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -335,12 +335,12 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.SELECTION__ORDERING,
-				 CriteriaFactory.eINSTANCE.createAsc()));
+				 WebsiteFactory.eINSTANCE.createAsc()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.SELECTION__ORDERING,
-				 CriteriaFactory.eINSTANCE.createDesc()));
+				 WebsiteFactory.eINSTANCE.createDesc()));
 	}
 
 }

@@ -5,12 +5,18 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.BusinessOperation;
+import uk.ac.man.cs.mdsd.webgen.website.FormalParameter;
+import uk.ac.man.cs.mdsd.webgen.website.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.website.OperationResultTypes;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -23,6 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.BusinessOperationImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.BusinessOperationImpl#getUses <em>Uses</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.BusinessOperationImpl#getResultType <em>Result Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.BusinessOperationImpl#getResultMimeType <em>Result Mime Type</em>}</li>
@@ -31,6 +38,15 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class BusinessOperationImpl extends NamedElementImpl implements BusinessOperation {
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FormalParameter> parameters;
 	/**
 	 * The cached value of the '{@link #getUses() <em>Uses</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -102,6 +118,18 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<FormalParameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentWithInverseEList<FormalParameter>(FormalParameter.class, this, WebsitePackage.BUSINESS_OPERATION__PARAMETERS, WebsitePackage.FORMAL_PARAMETER__FORMAL_FOR);
+		}
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public List<Service> getUses() {
 		if (uses == null) {
 			uses = new EObjectResolvingEList<Service>(Service.class, this, WebsitePackage.BUSINESS_OPERATION__USES);
@@ -156,9 +184,40 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.BUSINESS_OPERATION__PARAMETERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParameters()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.BUSINESS_OPERATION__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.BUSINESS_OPERATION__PARAMETERS:
+				return getParameters();
 			case WebsitePackage.BUSINESS_OPERATION__USES:
 				return getUses();
 			case WebsitePackage.BUSINESS_OPERATION__RESULT_TYPE:
@@ -178,6 +237,10 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.BUSINESS_OPERATION__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends FormalParameter>)newValue);
+				return;
 			case WebsitePackage.BUSINESS_OPERATION__USES:
 				getUses().clear();
 				getUses().addAll((Collection<? extends Service>)newValue);
@@ -200,6 +263,9 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.BUSINESS_OPERATION__PARAMETERS:
+				getParameters().clear();
+				return;
 			case WebsitePackage.BUSINESS_OPERATION__USES:
 				getUses().clear();
 				return;
@@ -221,6 +287,8 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.BUSINESS_OPERATION__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 			case WebsitePackage.BUSINESS_OPERATION__USES:
 				return uses != null && !uses.isEmpty();
 			case WebsitePackage.BUSINESS_OPERATION__RESULT_TYPE:
@@ -229,6 +297,38 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 				return RESULT_MIME_TYPE_EDEFAULT == null ? resultMimeType != null : !RESULT_MIME_TYPE_EDEFAULT.equals(resultMimeType);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == FormalParameterList.class) {
+			switch (derivedFeatureID) {
+				case WebsitePackage.BUSINESS_OPERATION__PARAMETERS: return WebsitePackage.FORMAL_PARAMETER_LIST__PARAMETERS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == FormalParameterList.class) {
+			switch (baseFeatureID) {
+				case WebsitePackage.FORMAL_PARAMETER_LIST__PARAMETERS: return WebsitePackage.BUSINESS_OPERATION__PARAMETERS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

@@ -47,12 +47,12 @@ public interface ParameterReference extends Path {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameter</em>' reference.
-	 * @see #setParameter(SelectionParameter)
+	 * @see #setParameter(FormalParameter)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getParameterReference_Parameter()
 	 * @model required="true"
 	 * @generated
 	 */
-	SelectionParameter getParameter();
+	FormalParameter getParameter();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ParameterReference#getParameter <em>Parameter</em>}' reference.
@@ -62,6 +62,6 @@ public interface ParameterReference extends Path {
 	 * @see #getParameter()
 	 * @generated
 	 */
-	void setParameter(SelectionParameter value);
+	void setParameter(FormalParameter value);
 
 } // ParameterReference

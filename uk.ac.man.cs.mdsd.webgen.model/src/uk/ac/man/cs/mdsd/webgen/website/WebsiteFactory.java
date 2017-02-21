@@ -26,22 +26,13 @@ public interface WebsiteFactory extends EFactory {
 	WebsiteFactory eINSTANCE = uk.ac.man.cs.mdsd.webgen.website.impl.WebsiteFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Web Gen Model</em>'.
+	 * Returns a new object of class '<em>Web Application Framework</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Web Gen Model</em>'.
+	 * @return a new object of class '<em>Web Application Framework</em>'.
 	 * @generated
 	 */
-	WebGenModel createWebGenModel();
-
-	/**
-	 * Returns a new object of class '<em>Properties</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Properties</em>'.
-	 * @generated
-	 */
-	WebsiteProperties createWebsiteProperties();
+	WebApplicationFramework createWebApplicationFramework();
 
 	/**
 	 * Returns a new object of class '<em>Local Authentication System</em>'.
@@ -60,6 +51,15 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	CasAuthentication createCasAuthentication();
+
+	/**
+	 * Returns a new object of class '<em>Persistence</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Persistence</em>'.
+	 * @generated
+	 */
+	Persistence createPersistence();
 
 	/**
 	 * Returns a new object of class '<em>Data Type</em>'.
@@ -87,6 +87,24 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	EnumerationLiteral createEnumerationLiteral();
+
+	/**
+	 * Returns a new object of class '<em>Formal Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Formal Parameter</em>'.
+	 * @generated
+	 */
+	FormalParameter createFormalParameter();
+
+	/**
+	 * Returns a new object of class '<em>Security</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Security</em>'.
+	 * @generated
+	 */
+	Security createSecurity();
 
 	/**
 	 * Returns a new object of class '<em>Association Key</em>'.
@@ -177,6 +195,15 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	ViewAssociation createViewAssociation();
+
+	/**
+	 * Returns a new object of class '<em>Services</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Services</em>'.
+	 * @generated
+	 */
+	Services createServices();
 
 	/**
 	 * Returns a new object of class '<em>Data Type Attribute</em>'.
@@ -404,15 +431,6 @@ public interface WebsiteFactory extends EFactory {
 	Selection createSelection();
 
 	/**
-	 * Returns a new object of class '<em>Selection Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Selection Parameter</em>'.
-	 * @generated
-	 */
-	SelectionParameter createSelectionParameter();
-
-	/**
 	 * Returns a new object of class '<em>Business Operation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -420,6 +438,24 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	BusinessOperation createBusinessOperation();
+
+	/**
+	 * Returns a new object of class '<em>Asc</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Asc</em>'.
+	 * @generated
+	 */
+	Asc createAsc();
+
+	/**
+	 * Returns a new object of class '<em>Desc</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Desc</em>'.
+	 * @generated
+	 */
+	Desc createDesc();
 
 	/**
 	 * Returns a new object of class '<em>Image Manipulation</em>'.
@@ -438,6 +474,15 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	ThumbnailFilter createThumbnailFilter();
+
+	/**
+	 * Returns a new object of class '<em>Web UI</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Web UI</em>'.
+	 * @generated
+	 */
+	WebUI createWebUI();
 
 	/**
 	 * Returns a new object of class '<em>Create Unit</em>'.
@@ -708,6 +753,15 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	ParameterReference createParameterReference();
+
+	/**
+	 * Returns a new object of class '<em>Image</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Image</em>'.
+	 * @generated
+	 */
+	Image createImage();
 
 	/**
 	 * Returns a new object of class '<em>Current User Reference</em>'.

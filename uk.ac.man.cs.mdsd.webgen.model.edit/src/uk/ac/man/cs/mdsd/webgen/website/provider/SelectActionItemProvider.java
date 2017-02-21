@@ -75,7 +75,7 @@ public class SelectActionItemProvider extends InlineActionItemProvider {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					final Set<SelectableUnit> targets = new HashSet<SelectableUnit>();
-					for (Page page : getModel(object).getPages()) {
+					for (Page page : getModel(object).getWebUI().getPages()) {
 						for (ContentUnit unit : page.getUnits()) {
 							if (unit instanceof SelectableUnit) {
 								targets.add((SelectableUnit) unit);

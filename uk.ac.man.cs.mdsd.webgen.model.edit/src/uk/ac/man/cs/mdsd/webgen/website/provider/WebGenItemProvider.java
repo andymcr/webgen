@@ -33,8 +33,9 @@ import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.SingletonUnit;
 import uk.ac.man.cs.mdsd.webgen.website.UnitElement;
+import uk.ac.man.cs.mdsd.webgen.website.WebApplicationFramework;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
+
 
 public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	public WebGenItemProvider(AdapterFactory adapterFactory) {
@@ -42,7 +43,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	}
 
 	protected EntityOrView getUser(final Object object) {
-		return getModel(object).getWebsiteProperties().getAuthentication().getUser();
+		return getModel(object).getSecurity().getUser();
 	}
 
 	protected EntityOrView getParentType(final Attribute attribute) {
@@ -276,11 +277,11 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 	}
 
-	protected WebGenModel getModel(final Object object) {
+	protected WebApplicationFramework getModel(final Object object) {
 		Object container = getContext(object);
 		while (container != null) {
-			if (container instanceof WebGenModel) {
-				return (WebGenModel) container;
+			if (container instanceof WebApplicationFramework) {
+				return (WebApplicationFramework) container;
 			}
 			container = getContext(container);
 		}

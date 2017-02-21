@@ -23,7 +23,7 @@ import java.util.List;
  * @model
  * @generated
  */
-public interface BusinessOperation extends NamedElement {
+public interface BusinessOperation extends NamedElement, FormalParameterList {
 
 	/**
 	 * Returns the value of the '<em><b>Uses</b></em>' reference list.

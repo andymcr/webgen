@@ -74,24 +74,8 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	protected WebsiteSwitch<Adapter> modelSwitch =
 		new WebsiteSwitch<Adapter>() {
 			@Override
-			public Adapter caseWebGenModel(WebGenModel object) {
-				return createWebGenModelAdapter();
-			}
-			@Override
-			public Adapter caseWebsiteProperties(WebsiteProperties object) {
-				return createWebsitePropertiesAdapter();
-			}
-			@Override
-			public Adapter caseAuthentication(Authentication object) {
-				return createAuthenticationAdapter();
-			}
-			@Override
-			public Adapter caseLocalAuthenticationSystem(LocalAuthenticationSystem object) {
-				return createLocalAuthenticationSystemAdapter();
-			}
-			@Override
-			public Adapter caseCasAuthentication(CasAuthentication object) {
-				return createCasAuthenticationAdapter();
+			public Adapter caseWebApplicationFramework(WebApplicationFramework object) {
+				return createWebApplicationFrameworkAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
@@ -116,6 +100,22 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEnumerationLiteral(EnumerationLiteral object) {
 				return createEnumerationLiteralAdapter();
+			}
+			@Override
+			public Adapter caseFormalParameterList(FormalParameterList object) {
+				return createFormalParameterListAdapter();
+			}
+			@Override
+			public Adapter caseFormalParameter(FormalParameter object) {
+				return createFormalParameterAdapter();
+			}
+			@Override
+			public Adapter caseCurrentUserReference(CurrentUserReference object) {
+				return createCurrentUserReferenceAdapter();
+			}
+			@Override
+			public Adapter casePersistence(Persistence object) {
+				return createPersistenceAdapter();
 			}
 			@Override
 			public Adapter caseEntityOrView(EntityOrView object) {
@@ -246,6 +246,26 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createViewAssociationAdapter();
 			}
 			@Override
+			public Adapter caseSecurity(Security object) {
+				return createSecurityAdapter();
+			}
+			@Override
+			public Adapter caseAuthentication(Authentication object) {
+				return createAuthenticationAdapter();
+			}
+			@Override
+			public Adapter caseLocalAuthenticationSystem(LocalAuthenticationSystem object) {
+				return createLocalAuthenticationSystemAdapter();
+			}
+			@Override
+			public Adapter caseCasAuthentication(CasAuthentication object) {
+				return createCasAuthenticationAdapter();
+			}
+			@Override
+			public Adapter caseServices(Services object) {
+				return createServicesAdapter();
+			}
+			@Override
 			public Adapter caseService(Service object) {
 				return createServiceAdapter();
 			}
@@ -254,12 +274,32 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createSelectionAdapter();
 			}
 			@Override
-			public Adapter caseSelectionParameter(SelectionParameter object) {
-				return createSelectionParameterAdapter();
-			}
-			@Override
 			public Adapter caseBusinessOperation(BusinessOperation object) {
 				return createBusinessOperationAdapter();
+			}
+			@Override
+			public Adapter caseOrder(Order object) {
+				return createOrderAdapter();
+			}
+			@Override
+			public Adapter caseAsc(Asc object) {
+				return createAscAdapter();
+			}
+			@Override
+			public Adapter caseDesc(Desc object) {
+				return createDescAdapter();
+			}
+			@Override
+			public Adapter caseFeatureReference(FeatureReference object) {
+				return createFeatureReferenceAdapter();
+			}
+			@Override
+			public Adapter caseParameterReference(ParameterReference object) {
+				return createParameterReferenceAdapter();
+			}
+			@Override
+			public Adapter caseImage(Image object) {
+				return createImageAdapter();
 			}
 			@Override
 			public Adapter caseImageManipulation(ImageManipulation object) {
@@ -274,12 +314,8 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createThumbnailFilterAdapter();
 			}
 			@Override
-			public Adapter casePage(Page object) {
-				return createPageAdapter();
-			}
-			@Override
-			public Adapter casePageLink(PageLink object) {
-				return createPageLinkAdapter();
+			public Adapter caseWebUI(WebUI object) {
+				return createWebUIAdapter();
 			}
 			@Override
 			public Adapter caseMenu(Menu object) {
@@ -308,6 +344,14 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseMenuFeature(MenuFeature object) {
 				return createMenuFeatureAdapter();
+			}
+			@Override
+			public Adapter casePage(Page object) {
+				return createPageAdapter();
+			}
+			@Override
+			public Adapter casePageLink(PageLink object) {
+				return createPageLinkAdapter();
 			}
 			@Override
 			public Adapter caseFilter(Filter object) {
@@ -518,20 +562,8 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createModelReferenceAdapter();
 			}
 			@Override
-			public Adapter caseFeatureReference(FeatureReference object) {
-				return createFeatureReferenceAdapter();
-			}
-			@Override
 			public Adapter caseRouteParameterReference(RouteParameterReference object) {
 				return createRouteParameterReferenceAdapter();
-			}
-			@Override
-			public Adapter caseParameterReference(ParameterReference object) {
-				return createParameterReferenceAdapter();
-			}
-			@Override
-			public Adapter caseCurrentUserReference(CurrentUserReference object) {
-				return createCurrentUserReferenceAdapter();
 			}
 			@Override
 			public Adapter caseExpression(Expression object) {
@@ -562,30 +594,16 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel <em>Web Gen Model</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.WebApplicationFramework <em>Web Application Framework</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebApplicationFramework
 	 * @generated
 	 */
-	public Adapter createWebGenModelAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties <em>Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties
-	 * @generated
-	 */
-	public Adapter createWebsitePropertiesAdapter() {
+	public Adapter createWebApplicationFrameworkAdapter() {
 		return null;
 	}
 
@@ -628,6 +646,20 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCasAuthenticationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Persistence <em>Persistence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Persistence
+	 * @generated
+	 */
+	public Adapter createPersistenceAdapter() {
 		return null;
 	}
 
@@ -712,6 +744,48 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEnumerationLiteralAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.FormalParameterList <em>Formal Parameter List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.FormalParameterList
+	 * @generated
+	 */
+	public Adapter createFormalParameterListAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.FormalParameter <em>Formal Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.FormalParameter
+	 * @generated
+	 */
+	public Adapter createFormalParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Security <em>Security</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Security
+	 * @generated
+	 */
+	public Adapter createSecurityAdapter() {
 		return null;
 	}
 
@@ -866,6 +940,20 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createViewAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Services <em>Services</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Services
+	 * @generated
+	 */
+	public Adapter createServicesAdapter() {
 		return null;
 	}
 
@@ -1472,20 +1560,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter <em>Selection Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.SelectionParameter
-	 * @generated
-	 */
-	public Adapter createSelectionParameterAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.BusinessOperation <em>Business Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1496,6 +1570,48 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBusinessOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Order <em>Order</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Order
+	 * @generated
+	 */
+	public Adapter createOrderAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Asc <em>Asc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Asc
+	 * @generated
+	 */
+	public Adapter createAscAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Desc <em>Desc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Desc
+	 * @generated
+	 */
+	public Adapter createDescAdapter() {
 		return null;
 	}
 
@@ -1538,6 +1654,20 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createThumbnailFilterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.WebUI <em>Web UI</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebUI
+	 * @generated
+	 */
+	public Adapter createWebUIAdapter() {
 		return null;
 	}
 
@@ -2154,6 +2284,20 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createParameterReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Image <em>Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Image
+	 * @generated
+	 */
+	public Adapter createImageAdapter() {
 		return null;
 	}
 

@@ -13,7 +13,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  uk.ac.man.cs.mdsd.webgen.model.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.emf.edapt.history,
  org.eclipse.emf.edit.ui;visibility:=reexport,
+ org.eclipse.emf.edapt.migration.ui,
  org.eclipse.ui.ide;visibility:=reexport,
  uk.ac.man.cs.mdsd.criteria.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -280,7 +280,7 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
-				 WebsiteFactory.eINSTANCE.createModelReference()));
+				 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -290,17 +290,17 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
-				 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
-				 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+				 WebsiteFactory.eINSTANCE.createModelReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -15,11 +15,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.Authentication;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.Security;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
-import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,8 +28,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl#getAuthenticates <em>Authenticates</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl#getUser <em>User</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl#getUserKey <em>User Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl#getLoginLabel <em>Login Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl#getLogoutLabel <em>Logout Label</em>}</li>
  * </ul>
@@ -39,24 +35,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  * @generated
  */
 public abstract class AuthenticationImpl extends EObjectImpl implements Authentication {
-	/**
-	 * The cached value of the '{@link #getUser() <em>User</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUser()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntityOrView user;
-	/**
-	 * The cached value of the '{@link #getUserKey() <em>User Key</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected Attribute userKey;
 	/**
 	 * The default value of the '{@link #getLoginLabel() <em>Login Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -118,9 +96,9 @@ public abstract class AuthenticationImpl extends EObjectImpl implements Authenti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public WebsiteProperties getAuthenticates() {
+	public Security getAuthenticates() {
 		if (eContainerFeatureID() != WebsitePackage.AUTHENTICATION__AUTHENTICATES) return null;
-		return (WebsiteProperties)eInternalContainer();
+		return (Security)eInternalContainer();
 	}
 
 	/**
@@ -128,7 +106,7 @@ public abstract class AuthenticationImpl extends EObjectImpl implements Authenti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAuthenticates(WebsiteProperties newAuthenticates, NotificationChain msgs) {
+	public NotificationChain basicSetAuthenticates(Security newAuthenticates, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newAuthenticates, WebsitePackage.AUTHENTICATION__AUTHENTICATES, msgs);
 		return msgs;
 	}
@@ -138,7 +116,7 @@ public abstract class AuthenticationImpl extends EObjectImpl implements Authenti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAuthenticates(WebsiteProperties newAuthenticates) {
+	public void setAuthenticates(Security newAuthenticates) {
 		if (newAuthenticates != eInternalContainer() || (eContainerFeatureID() != WebsitePackage.AUTHENTICATION__AUTHENTICATES && newAuthenticates != null)) {
 			if (EcoreUtil.isAncestor(this, newAuthenticates))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -146,88 +124,12 @@ public abstract class AuthenticationImpl extends EObjectImpl implements Authenti
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newAuthenticates != null)
-				msgs = ((InternalEObject)newAuthenticates).eInverseAdd(this, WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION, WebsiteProperties.class, msgs);
+				msgs = ((InternalEObject)newAuthenticates).eInverseAdd(this, WebsitePackage.SECURITY__AUTHENTICATION, Security.class, msgs);
 			msgs = basicSetAuthenticates(newAuthenticates, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.AUTHENTICATION__AUTHENTICATES, newAuthenticates, newAuthenticates));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView getUser() {
-		if (user != null && user.eIsProxy()) {
-			InternalEObject oldUser = (InternalEObject)user;
-			user = (EntityOrView)eResolveProxy(oldUser);
-			if (user != oldUser) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.AUTHENTICATION__USER, oldUser, user));
-			}
-		}
-		return user;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView basicGetUser() {
-		return user;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUser(EntityOrView newUser) {
-		EntityOrView oldUser = user;
-		user = newUser;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.AUTHENTICATION__USER, oldUser, user));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute getUserKey() {
-		if (userKey != null && userKey.eIsProxy()) {
-			InternalEObject oldUserKey = (InternalEObject)userKey;
-			userKey = (Attribute)eResolveProxy(oldUserKey);
-			if (userKey != oldUserKey) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.AUTHENTICATION__USER_KEY, oldUserKey, userKey));
-			}
-		}
-		return userKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute basicGetUserKey() {
-		return userKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUserKey(Attribute newUserKey) {
-		Attribute oldUserKey = userKey;
-		userKey = newUserKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.AUTHENTICATION__USER_KEY, oldUserKey, userKey));
 	}
 
 	/**
@@ -283,7 +185,7 @@ public abstract class AuthenticationImpl extends EObjectImpl implements Authenti
 			case WebsitePackage.AUTHENTICATION__AUTHENTICATES:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetAuthenticates((WebsiteProperties)otherEnd, msgs);
+				return basicSetAuthenticates((Security)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -311,7 +213,7 @@ public abstract class AuthenticationImpl extends EObjectImpl implements Authenti
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case WebsitePackage.AUTHENTICATION__AUTHENTICATES:
-				return eInternalContainer().eInverseRemove(this, WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION, WebsiteProperties.class, msgs);
+				return eInternalContainer().eInverseRemove(this, WebsitePackage.SECURITY__AUTHENTICATION, Security.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -326,12 +228,6 @@ public abstract class AuthenticationImpl extends EObjectImpl implements Authenti
 		switch (featureID) {
 			case WebsitePackage.AUTHENTICATION__AUTHENTICATES:
 				return getAuthenticates();
-			case WebsitePackage.AUTHENTICATION__USER:
-				if (resolve) return getUser();
-				return basicGetUser();
-			case WebsitePackage.AUTHENTICATION__USER_KEY:
-				if (resolve) return getUserKey();
-				return basicGetUserKey();
 			case WebsitePackage.AUTHENTICATION__LOGIN_LABEL:
 				return getLoginLabel();
 			case WebsitePackage.AUTHENTICATION__LOGOUT_LABEL:
@@ -349,13 +245,7 @@ public abstract class AuthenticationImpl extends EObjectImpl implements Authenti
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebsitePackage.AUTHENTICATION__AUTHENTICATES:
-				setAuthenticates((WebsiteProperties)newValue);
-				return;
-			case WebsitePackage.AUTHENTICATION__USER:
-				setUser((EntityOrView)newValue);
-				return;
-			case WebsitePackage.AUTHENTICATION__USER_KEY:
-				setUserKey((Attribute)newValue);
+				setAuthenticates((Security)newValue);
 				return;
 			case WebsitePackage.AUTHENTICATION__LOGIN_LABEL:
 				setLoginLabel((String)newValue);
@@ -376,13 +266,7 @@ public abstract class AuthenticationImpl extends EObjectImpl implements Authenti
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebsitePackage.AUTHENTICATION__AUTHENTICATES:
-				setAuthenticates((WebsiteProperties)null);
-				return;
-			case WebsitePackage.AUTHENTICATION__USER:
-				setUser((EntityOrView)null);
-				return;
-			case WebsitePackage.AUTHENTICATION__USER_KEY:
-				setUserKey((Attribute)null);
+				setAuthenticates((Security)null);
 				return;
 			case WebsitePackage.AUTHENTICATION__LOGIN_LABEL:
 				setLoginLabel(LOGIN_LABEL_EDEFAULT);
@@ -404,10 +288,6 @@ public abstract class AuthenticationImpl extends EObjectImpl implements Authenti
 		switch (featureID) {
 			case WebsitePackage.AUTHENTICATION__AUTHENTICATES:
 				return getAuthenticates() != null;
-			case WebsitePackage.AUTHENTICATION__USER:
-				return user != null;
-			case WebsitePackage.AUTHENTICATION__USER_KEY:
-				return userKey != null;
 			case WebsitePackage.AUTHENTICATION__LOGIN_LABEL:
 				return LOGIN_LABEL_EDEFAULT == null ? loginLabel != null : !LOGIN_LABEL_EDEFAULT.equals(loginLabel);
 			case WebsitePackage.AUTHENTICATION__LOGOUT_LABEL:

@@ -19,7 +19,6 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#isDistinct <em>Distinct</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getFields <em>Fields</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getOrdering <em>Ordering</em>}</li>
@@ -31,7 +30,7 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
  * @model
  * @generated
  */
-public interface Selection extends NamedElement {
+public interface Selection extends NamedElement, FormalParameterList {
 	/**
 	 * Returns the value of the '<em><b>Used By</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getSelections <em>Selections</em>}'.
@@ -103,24 +102,6 @@ public interface Selection extends NamedElement {
 	List<Feature> getFields();
 
 	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter#getFormalFor <em>Formal For</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Parameters</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelection_Parameters()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.SelectionParameter#getFormalFor
-	 * @model opposite="formalFor" containment="true"
-	 * @generated
-	 */
-	List<SelectionParameter> getParameters();
-
-	/**
 	 * Returns the value of the '<em><b>Joins</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Association}.
 	 * <!-- begin-user-doc -->
@@ -164,7 +145,7 @@ public interface Selection extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Ordering</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.criteria.Order}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Order}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ordering</em>' containment reference list isn't clear,
@@ -176,7 +157,7 @@ public interface Selection extends NamedElement {
 	 * @model containment="true"
 	 * @generated
 	 */
-	List<Order> getOrdering();
+	List<uk.ac.man.cs.mdsd.webgen.website.Order> getOrdering();
 
 	/**
 	 * Returns the value of the '<em><b>Limit</b></em>' attribute.

@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,13 +69,40 @@ public interface WebGenSecurityPackage extends EPackage {
 	int SECURITY = 0;
 
 	/**
+	 * The feature id for the '<em><b>User</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY__USER = 0;
+
+	/**
+	 * The feature id for the '<em><b>User Key</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY__USER_KEY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Authentication</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY__AUTHENTICATION = 2;
+
+	/**
 	 * The number of structural features of the '<em>Security</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_FEATURE_COUNT = 0;
+	int SECURITY_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Security</em>' class.
@@ -336,6 +364,39 @@ public interface WebGenSecurityPackage extends EPackage {
 	EClass getSecurity();
 
 	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.security.Security#getUser <em>User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>User</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.security.Security#getUser()
+	 * @see #getSecurity()
+	 * @generated
+	 */
+	EReference getSecurity_User();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.security.Security#getUserKey <em>User Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>User Key</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.security.Security#getUserKey()
+	 * @see #getSecurity()
+	 * @generated
+	 */
+	EReference getSecurity_UserKey();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.security.Security#getAuthentication <em>Authentication</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Authentication</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.security.Security#getAuthentication()
+	 * @see #getSecurity()
+	 * @generated
+	 */
+	EReference getSecurity_Authentication();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.security.Authentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -516,6 +577,30 @@ public interface WebGenSecurityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SECURITY = eINSTANCE.getSecurity();
+
+		/**
+		 * The meta object literal for the '<em><b>User</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECURITY__USER = eINSTANCE.getSecurity_User();
+
+		/**
+		 * The meta object literal for the '<em><b>User Key</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECURITY__USER_KEY = eINSTANCE.getSecurity_UserKey();
+
+		/**
+		 * The meta object literal for the '<em><b>Authentication</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECURITY__AUTHENTICATION = eINSTANCE.getSecurity_Authentication();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.security.impl.AuthenticationImpl <em>Authentication</em>}' class.

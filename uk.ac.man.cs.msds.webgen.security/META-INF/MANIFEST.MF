@@ -11,5 +11,8 @@ Export-Package: uk.ac.man.cs.mdsd.webgen.security,
  uk.ac.man.cs.mdsd.webgen.security.impl,
  uk.ac.man.cs.mdsd.webgen.security.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ uk.ac.man.cs.mdsd.webgen.core;visibility:=reexport,
+ uk.ac.man.cs.mdsd.webgen.expression;visibility:=reexport,
+ uk.ac.man.cs.mdsd.webgen.persistence;visibility:=reexport
 Bundle-ActivationPolicy: lazy

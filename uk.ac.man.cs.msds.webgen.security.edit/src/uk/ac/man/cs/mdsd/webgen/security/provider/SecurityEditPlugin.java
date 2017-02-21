@@ -5,6 +5,9 @@ package uk.ac.man.cs.mdsd.webgen.security.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import uk.ac.man.cs.mdsd.webgen.core.provider.CoreEditPlugin;
+import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
+import uk.ac.man.cs.mdsd.webgen.persistence.provider.PersistenceEditPlugin;
 
 /**
  * This is the central singleton for the Security edit plugin.
@@ -38,6 +41,9 @@ public final class SecurityEditPlugin extends EMFPlugin {
 	public SecurityEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     CoreEditPlugin.INSTANCE,
+		     ExpressionEditPlugin.INSTANCE,
+		     PersistenceEditPlugin.INSTANCE,
 		   });
 	}
 

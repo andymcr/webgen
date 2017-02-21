@@ -7,8 +7,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.WebGenPersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.security.Authentication;
 import uk.ac.man.cs.mdsd.webgen.security.AuthenticationKeyTypes;
 import uk.ac.man.cs.mdsd.webgen.security.Authorisation;
@@ -113,6 +115,9 @@ public class WebGenSecurityPackageImpl extends EPackageImpl implements WebGenSec
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		WebGenPersistencePackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theWebGenSecurityPackage.createPackageContents();
 
@@ -135,6 +140,33 @@ public class WebGenSecurityPackageImpl extends EPackageImpl implements WebGenSec
 	 */
 	public EClass getSecurity() {
 		return securityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSecurity_User() {
+		return (EReference)securityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSecurity_UserKey() {
+		return (EReference)securityEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSecurity_Authentication() {
+		return (EReference)securityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -292,6 +324,9 @@ public class WebGenSecurityPackageImpl extends EPackageImpl implements WebGenSec
 
 		// Create classes and their features
 		securityEClass = createEClass(SECURITY);
+		createEReference(securityEClass, SECURITY__USER);
+		createEReference(securityEClass, SECURITY__USER_KEY);
+		createEReference(securityEClass, SECURITY__AUTHENTICATION);
 
 		authenticationEClass = createEClass(AUTHENTICATION);
 		createEAttribute(authenticationEClass, AUTHENTICATION__LOGIN_LABEL);
@@ -337,6 +372,9 @@ public class WebGenSecurityPackageImpl extends EPackageImpl implements WebGenSec
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		WebGenPersistencePackage theWebGenPersistencePackage = (WebGenPersistencePackage)EPackage.Registry.INSTANCE.getEPackage(WebGenPersistencePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -347,6 +385,9 @@ public class WebGenSecurityPackageImpl extends EPackageImpl implements WebGenSec
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(securityEClass, Security.class, "Security", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSecurity_User(), theWebGenPersistencePackage.getEntityOrView(), null, "user", null, 0, 1, Security.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSecurity_UserKey(), theWebGenPersistencePackage.getAttribute(), null, "userKey", null, 0, 1, Security.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSecurity_Authentication(), this.getAuthentication(), null, "authentication", null, 0, 1, Security.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuthentication_LoginLabel(), ecorePackage.getEString(), "loginLabel", "Login", 0, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

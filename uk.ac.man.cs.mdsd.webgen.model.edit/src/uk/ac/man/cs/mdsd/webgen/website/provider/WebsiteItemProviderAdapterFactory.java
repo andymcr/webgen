@@ -33,15 +33,16 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaPackage;
 import uk.ac.man.cs.mdsd.criteria.Order;
-import uk.ac.man.cs.mdsd.criteria.PredicateComparisonOperator;
-import uk.ac.man.cs.mdsd.criteria.PredicateEqualityOperator;
-import uk.ac.man.cs.mdsd.criteria.PredicateIsEmpty;
-import uk.ac.man.cs.mdsd.criteria.PredicateIsNull;
-import uk.ac.man.cs.mdsd.criteria.PredicateIsOperator;
-import uk.ac.man.cs.mdsd.criteria.PredicateLikeOperator;
-
 import uk.ac.man.cs.mdsd.criteria.util.CriteriaSwitch;
 
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateComparisonOperator;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateEqualityOperator;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsEmpty;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsNull;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsOperator;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateLikeOperator;
+import uk.ac.man.cs.mdsd.webgen.expression.util.ExpressionSwitch;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 
 import uk.ac.man.cs.mdsd.webgen.website.util.WebsiteAdapterFactory;
@@ -2089,315 +2090,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 			 * @generated
 			 */
 			@Override
-			public Object casePredicateEqualityOperator(PredicateEqualityOperator object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateComparisonOperator(PredicateComparisonOperator object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateIsOperator(PredicateIsOperator object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateLikeOperator(PredicateLikeOperator object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateIsEmpty(PredicateIsEmpty object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
-						 WebsiteFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
-						 WebsiteFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object casePredicateIsNull(PredicateIsNull object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 WebsiteFactory.eINSTANCE.createModelReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 WebsiteFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 WebsiteFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
-
-				return null;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
 			public Object caseOrder(Order object) {
 				newChildDescriptors.add
 					(createChildParameter
@@ -2422,6 +2114,388 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.ORDER__PATH,
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return WebsiteEditPlugin.INSTANCE;
+		}
+	}
+
+	/**
+	 * A child creation extender for the {@link ExpressionPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class ExpressionChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends ExpressionSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateEqualityOperator(PredicateEqualityOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateComparisonOperator(PredicateComparisonOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateIsOperator(PredicateIsOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateLikeOperator(PredicateLikeOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateIsEmpty(PredicateIsEmpty object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 WebsiteFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateIsNull(PredicateIsNull object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						 WebsiteFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
 						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 				return null;

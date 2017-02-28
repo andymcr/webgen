@@ -16,6 +16,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.website.InlineAction;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -276,72 +277,72 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 	/**

@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
@@ -300,37 +301,37 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter

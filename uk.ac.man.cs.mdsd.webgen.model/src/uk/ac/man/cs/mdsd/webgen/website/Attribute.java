@@ -6,7 +6,7 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
-import uk.ac.man.cs.mdsd.criteria.Expression;
+import uk.ac.man.cs.mdsd.webgen.expression.Expression;
 
 
 /**

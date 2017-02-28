@@ -293,7 +293,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true" interface="true"
       eSuperTypes="#//Feature #//Label">
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultValue" ordered="false"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Expression"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholder" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -589,7 +589,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="joins" upperBound="-1"
         eType="#//Association"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filter" ordered="false"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Predicate"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ordering" upperBound="-1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Order"
@@ -834,7 +834,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="forcedValue" ordered="false"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Expression"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullDisplayValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="footer" ordered="false"
@@ -860,7 +860,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultValue" ordered="false"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Expression"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="obfuscateFormFields" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
@@ -988,7 +988,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" ordered="false"
         eType="#//Label"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Predicate"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="confirmDestination" ordered="false"
         eType="#//Page"/>
@@ -1228,9 +1228,9 @@
         lowerBound="1" eType="#//InlineActionContainer" eOpposite="#//InlineActionContainer/actions"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="disable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiresRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Predicate"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="displayWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Predicate"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="displayWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="footer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1261,11 +1261,11 @@
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileExtension" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelReference" eSuperTypes="../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Path">
+  <eClassifiers xsi:type="ecore:EClass" name="ModelReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Path">
     <eStructuralFeatures xsi:type="ecore:EReference" name="unit" ordered="false" lowerBound="1"
         eType="#//DynamicUnit"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FeatureReference" eSuperTypes="../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Path">
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Path">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -1275,7 +1275,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
         eType="#//Feature"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RouteParameterReference" eSuperTypes="../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Path">
+  <eClassifiers xsi:type="ecore:EClass" name="RouteParameterReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Path">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -1285,7 +1285,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
         eType="#//Attribute"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterReference" eSuperTypes="../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Path">
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Path">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -1295,7 +1295,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
         eType="#//SelectionParameter"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CurrentUserReference" eSuperTypes="../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Path">
+  <eClassifiers xsi:type="ecore:EClass" name="CurrentUserReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Path">
     <eStructuralFeatures xsi:type="ecore:EReference" name="userModel" ordered="false"
         lowerBound="1" eType="#//EntityOrView" changeable="false" volatile="true"
         transient="true" unsettable="true" derived="true"/>

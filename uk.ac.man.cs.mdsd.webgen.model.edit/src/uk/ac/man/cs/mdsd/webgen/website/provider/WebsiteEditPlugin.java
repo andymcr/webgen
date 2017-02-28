@@ -10,6 +10,7 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 import uk.ac.man.cs.mdsd.criteria.provider.CriteriaEditPlugin;
+import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
 
 /**
  * This is the central singleton for the Website edit plugin.
@@ -44,6 +45,7 @@ public final class WebsiteEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     CriteriaEditPlugin.INSTANCE,
+		     ExpressionEditPlugin.INSTANCE,
 		   });
 	}
 

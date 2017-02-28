@@ -12,6 +12,8 @@ Export-Package: uk.ac.man.cs.mdsd.webgen.website,
  uk.ac.man.cs.mdsd.webgen.website.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
+ uk.ac.man.cs.mdsd.criteria.model;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
- uk.ac.man.cs.mdsd.criteria.model;visibility:=reexport
+ uk.ac.man.cs.mdsd.webgen.expression;visibility:=reexport,
+ org.eclipse.emf.edapt.history
 Bundle-ActivationPolicy: lazy

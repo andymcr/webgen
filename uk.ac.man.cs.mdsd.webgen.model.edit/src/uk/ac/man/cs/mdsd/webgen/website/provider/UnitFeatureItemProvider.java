@@ -18,6 +18,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.website.UnitFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -439,72 +440,72 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createNullLiteral()));
+				 ExpressionFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createBooleanLiteral()));
+				 ExpressionFactory.eINSTANCE.createBooleanLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createIntegerLiteral()));
+				 ExpressionFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createStringLiteral()));
+				 ExpressionFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createTimeLiteral()));
+				 ExpressionFactory.eINSTANCE.createTimeLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createCurrentTime()));
+				 ExpressionFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createFunction()));
+				 ExpressionFactory.eINSTANCE.createFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 }

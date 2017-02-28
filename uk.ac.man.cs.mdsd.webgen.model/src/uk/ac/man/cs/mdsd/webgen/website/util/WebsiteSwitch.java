@@ -10,8 +10,8 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import uk.ac.man.cs.mdsd.criteria.Expression;
-import uk.ac.man.cs.mdsd.criteria.Path;
+import uk.ac.man.cs.mdsd.webgen.expression.Expression;
+import uk.ac.man.cs.mdsd.webgen.expression.Path;
 import uk.ac.man.cs.mdsd.webgen.website.*;
 
 /**

@@ -5,8 +5,17 @@
 -->
 
 <plugin>
+   <extension
+         point="org.eclipse.emf.edit.childCreationExtenders">
+      <extender
+            class="uk.ac.man.cs.mdsd.webgen.website.provider.WebsiteItemProviderAdapterFactory$ExpressionChildCreationExtender"
+            uri="http://cs,man.ac.uk/mdsd/webgen/expression">
+      </extender>
+   </extension>
+
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated website -->
       <factory
             uri="http://www.cs.man.ac.uk/mdsd/2010/Website"
             class="uk.ac.man.cs.mdsd.webgen.website.provider.WebsiteItemProviderAdapterFactory"

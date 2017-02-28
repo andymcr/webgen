@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import uk.ac.man.cs.mdsd.criteria.CriteriaPackage;
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -16875,7 +16876,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_REFERENCE__UNIT = CriteriaPackage.PATH_FEATURE_COUNT + 0;
+	int MODEL_REFERENCE__UNIT = ExpressionPackage.PATH_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Model Reference</em>' class.
@@ -16884,7 +16885,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_REFERENCE_FEATURE_COUNT = CriteriaPackage.PATH_FEATURE_COUNT + 1;
+	int MODEL_REFERENCE_FEATURE_COUNT = ExpressionPackage.PATH_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureReferenceImpl <em>Feature Reference</em>}' class.
@@ -16903,7 +16904,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_REFERENCE__NAME = CriteriaPackage.PATH_FEATURE_COUNT + 0;
+	int FEATURE_REFERENCE__NAME = ExpressionPackage.PATH_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -16912,7 +16913,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_REFERENCE__FEATURE = CriteriaPackage.PATH_FEATURE_COUNT + 1;
+	int FEATURE_REFERENCE__FEATURE = ExpressionPackage.PATH_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Feature Reference</em>' class.
@@ -16921,7 +16922,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_REFERENCE_FEATURE_COUNT = CriteriaPackage.PATH_FEATURE_COUNT + 2;
+	int FEATURE_REFERENCE_FEATURE_COUNT = ExpressionPackage.PATH_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.RouteParameterReferenceImpl <em>Route Parameter Reference</em>}' class.
@@ -16940,7 +16941,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTE_PARAMETER_REFERENCE__NAME = CriteriaPackage.PATH_FEATURE_COUNT + 0;
+	int ROUTE_PARAMETER_REFERENCE__NAME = ExpressionPackage.PATH_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -16949,7 +16950,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTE_PARAMETER_REFERENCE__PARAMETER = CriteriaPackage.PATH_FEATURE_COUNT + 1;
+	int ROUTE_PARAMETER_REFERENCE__PARAMETER = ExpressionPackage.PATH_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Route Parameter Reference</em>' class.
@@ -16958,7 +16959,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTE_PARAMETER_REFERENCE_FEATURE_COUNT = CriteriaPackage.PATH_FEATURE_COUNT + 2;
+	int ROUTE_PARAMETER_REFERENCE_FEATURE_COUNT = ExpressionPackage.PATH_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ParameterReferenceImpl <em>Parameter Reference</em>}' class.
@@ -16977,7 +16978,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_REFERENCE__NAME = CriteriaPackage.PATH_FEATURE_COUNT + 0;
+	int PARAMETER_REFERENCE__NAME = ExpressionPackage.PATH_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -16986,7 +16987,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_REFERENCE__PARAMETER = CriteriaPackage.PATH_FEATURE_COUNT + 1;
+	int PARAMETER_REFERENCE__PARAMETER = ExpressionPackage.PATH_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Parameter Reference</em>' class.
@@ -16995,7 +16996,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_REFERENCE_FEATURE_COUNT = CriteriaPackage.PATH_FEATURE_COUNT + 2;
+	int PARAMETER_REFERENCE_FEATURE_COUNT = ExpressionPackage.PATH_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.CurrentUserReferenceImpl <em>Current User Reference</em>}' class.
@@ -17014,7 +17015,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CURRENT_USER_REFERENCE__USER_MODEL = CriteriaPackage.PATH_FEATURE_COUNT + 0;
+	int CURRENT_USER_REFERENCE__USER_MODEL = ExpressionPackage.PATH_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Current User Reference</em>' class.
@@ -17023,7 +17024,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CURRENT_USER_REFERENCE_FEATURE_COUNT = CriteriaPackage.PATH_FEATURE_COUNT + 1;
+	int CURRENT_USER_REFERENCE_FEATURE_COUNT = ExpressionPackage.PATH_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies <em>Database Technologies</em>}' enum.

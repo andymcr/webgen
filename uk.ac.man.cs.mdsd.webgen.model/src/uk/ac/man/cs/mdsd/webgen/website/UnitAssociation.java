@@ -3,6 +3,7 @@
 package uk.ac.man.cs.mdsd.webgen.website;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.service.Selection;
 
 
 /**

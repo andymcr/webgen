@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
+import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -233,7 +234,7 @@ public class WebGenModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES,
-				 WebsiteFactory.eINSTANCE.createService()));
+				 ServiceFactory.eINSTANCE.createService()));
 
 		newChildDescriptors.add
 			(createChildParameter

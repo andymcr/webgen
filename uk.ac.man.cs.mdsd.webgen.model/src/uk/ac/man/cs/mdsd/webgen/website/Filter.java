@@ -4,6 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
 
 import java.util.List;
 import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
+import uk.ac.man.cs.mdsd.webgen.service.Selection;
 
 /**
  * <!-- begin-user-doc -->

@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
 import java.util.List;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
+import uk.ac.man.cs.mdsd.webgen.service.Selection;
 
 /**
  * <!-- begin-user-doc -->

@@ -110,12 +110,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateLocalAuthenticationSystem((LocalAuthenticationSystem)value, diagnostics, context);
 			case WebsitePackage.CAS_AUTHENTICATION:
 				return validateCasAuthentication((CasAuthentication)value, diagnostics, context);
-			case WebsitePackage.SERVICE:
-				return validateService((Service)value, diagnostics, context);
-			case WebsitePackage.SELECTION:
-				return validateSelection((Selection)value, diagnostics, context);
-			case WebsitePackage.BUSINESS_OPERATION:
-				return validateBusinessOperation((BusinessOperation)value, diagnostics, context);
 			case WebsitePackage.IMAGE_MANIPULATION:
 				return validateImageManipulation((ImageManipulation)value, diagnostics, context);
 			case WebsitePackage.IMAGE_FILTER:
@@ -264,8 +258,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateAjaxTechnologies((AjaxTechnologies)value, diagnostics, context);
 			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
 				return validateAuthenticationKeyTypes((AuthenticationKeyTypes)value, diagnostics, context);
-			case WebsitePackage.OPERATION_RESULT_TYPES:
-				return validateOperationResultTypes((OperationResultTypes)value, diagnostics, context);
 			case WebsitePackage.PAGE_TOP_MENU_OPTIONS:
 				return validatePageTopMenuOptions((PageTopMenuOptions)value, diagnostics, context);
 			case WebsitePackage.COLLECTION_DISPLAY_OPTIONS:
@@ -1046,63 +1038,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(imageIndexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(imageIndexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(imageIndexUnit, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateService(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(service, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(service, diagnostics, context);
-		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(service, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateSelection(Selection selection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(selection, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(selection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(selection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(selection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(selection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(selection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(selection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(selection, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(selection, diagnostics, context);
-		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(selection, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateBusinessOperation(BusinessOperation businessOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(businessOperation, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(businessOperation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(businessOperation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(businessOperation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(businessOperation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(businessOperation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(businessOperation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(businessOperation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(businessOperation, diagnostics, context);
-		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(businessOperation, diagnostics, context);
 		return result;
 	}
 
@@ -2320,15 +2255,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateAuthentication_userKeyFromUser(casAuthentication, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAuthentication_userKeyRequiredAttribute(casAuthentication, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateOperationResultTypes(OperationResultTypes operationResultTypes, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
 	}
 
 	/**

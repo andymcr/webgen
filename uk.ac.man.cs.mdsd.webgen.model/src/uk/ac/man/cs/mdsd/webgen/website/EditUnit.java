@@ -8,6 +8,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
 
 import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
+import uk.ac.man.cs.mdsd.webgen.service.Selection;
 
 
 /**

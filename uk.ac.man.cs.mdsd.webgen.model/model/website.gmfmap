@@ -2703,7 +2703,7 @@
         href="website.ecore#//WebGenModel/services"/>
     <ownedChild>
       <domainMetaElement
-          href="website.ecore#//Service"/>
+          href="../../uk.ac.man.cs.msds.webgen.service/model/service.ecore#//Service"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
@@ -2719,10 +2719,10 @@
       <children
           compartment="//@nodes.8/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//Service/selections"/>
+            href="../../uk.ac.man.cs.msds.webgen.service/model/service.ecore#//Service/selections"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//Selection"/>
+              href="../../uk.ac.man.cs.msds.webgen.service/model/service.ecore#//Selection"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -2740,10 +2740,10 @@
       <children
           compartment="//@nodes.8/@ownedChild/@compartments.1">
         <containmentFeature
-            href="website.ecore#//Service/operations"/>
+            href="../../uk.ac.man.cs.msds.webgen.service/model/service.ecore#//Service/operations"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//BusinessOperation"/>
+              href="../../uk.ac.man.cs.msds.webgen.service/model/service.ecore#//BusinessOperation"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel

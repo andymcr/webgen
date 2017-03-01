@@ -65,9 +65,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.WEBSITE_PROPERTIES: return createWebsiteProperties();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
 			case WebsitePackage.CAS_AUTHENTICATION: return createCasAuthentication();
-			case WebsitePackage.SERVICE: return createService();
-			case WebsitePackage.SELECTION: return createSelection();
-			case WebsitePackage.BUSINESS_OPERATION: return createBusinessOperation();
 			case WebsitePackage.IMAGE_MANIPULATION: return createImageManipulation();
 			case WebsitePackage.THUMBNAIL_FILTER: return createThumbnailFilter();
 			case WebsitePackage.PAGE: return createPage();
@@ -135,8 +132,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return createAjaxTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
 				return createAuthenticationKeyTypesFromString(eDataType, initialValue);
-			case WebsitePackage.OPERATION_RESULT_TYPES:
-				return createOperationResultTypesFromString(eDataType, initialValue);
 			case WebsitePackage.PAGE_TOP_MENU_OPTIONS:
 				return createPageTopMenuOptionsFromString(eDataType, initialValue);
 			case WebsitePackage.COLLECTION_DISPLAY_OPTIONS:
@@ -164,8 +159,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return convertAjaxTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
 				return convertAuthenticationKeyTypesToString(eDataType, instanceValue);
-			case WebsitePackage.OPERATION_RESULT_TYPES:
-				return convertOperationResultTypesToString(eDataType, instanceValue);
 			case WebsitePackage.PAGE_TOP_MENU_OPTIONS:
 				return convertPageTopMenuOptionsToString(eDataType, instanceValue);
 			case WebsitePackage.COLLECTION_DISPLAY_OPTIONS:
@@ -345,36 +338,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public UnitSupportAction createUnitSupportAction() {
 		UnitSupportActionImpl unitSupportAction = new UnitSupportActionImpl();
 		return unitSupportAction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Service createService() {
-		ServiceImpl service = new ServiceImpl();
-		return service;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Selection createSelection() {
-		SelectionImpl selection = new SelectionImpl();
-		return selection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BusinessOperation createBusinessOperation() {
-		BusinessOperationImpl businessOperation = new BusinessOperationImpl();
-		return businessOperation;
 	}
 
 	/**
@@ -784,26 +747,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * @generated
 	 */
 	public String convertAuthenticationKeyTypesToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OperationResultTypes createOperationResultTypesFromString(EDataType eDataType, String initialValue) {
-		OperationResultTypes result = OperationResultTypes.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertOperationResultTypesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

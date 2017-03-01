@@ -27,10 +27,9 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
+import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.FeatureReference;
 import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
-import uk.ac.man.cs.mdsd.webgen.website.Selection;
-import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -183,7 +182,7 @@ public class FeatureReferenceItemProvider
 
 	protected Set<EntityOrView> getEntitiesAndViews(final Selection selection) {
 		final Set<EntityOrView> entitiesAndViews = new HashSet<EntityOrView>();
-		entitiesAndViews.add(((Service) selection.eContainer()).getServes());
+		entitiesAndViews.add(selection.getUsedBy().getServes());
 		final Set<Association> joins = new HashSet<Association>(selection.getJoins());
 		while (!joins.isEmpty()) {
 			final Set<Association> handled = new HashSet<Association>();

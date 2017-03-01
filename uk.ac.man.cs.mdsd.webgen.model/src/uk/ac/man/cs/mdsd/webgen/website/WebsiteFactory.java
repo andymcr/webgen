@@ -179,33 +179,6 @@ public interface WebsiteFactory extends EFactory {
 	UnitSupportAction createUnitSupportAction();
 
 	/**
-	 * Returns a new object of class '<em>Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service</em>'.
-	 * @generated
-	 */
-	Service createService();
-
-	/**
-	 * Returns a new object of class '<em>Selection</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Selection</em>'.
-	 * @generated
-	 */
-	Selection createSelection();
-
-	/**
-	 * Returns a new object of class '<em>Business Operation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Business Operation</em>'.
-	 * @generated
-	 */
-	BusinessOperation createBusinessOperation();
-
-	/**
 	 * Returns a new object of class '<em>Image Manipulation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

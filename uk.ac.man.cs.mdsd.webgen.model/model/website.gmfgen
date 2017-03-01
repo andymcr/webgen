@@ -5902,10 +5902,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3150"
+        visualID="3284"
         editPartClassName="SelectionEditPart"
         itemSemanticEditPolicyClassName="SelectionItemSemanticEditPolicy"
-        notationViewFactoryClassName="SelectionViewFactory"
         canonicalEditPolicyClassName="SelectionCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="SelectionGraphicalNodeEditPolicy"
         createCommandClassName="SelectionCreateCommand"
@@ -5929,17 +5928,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/Selection"/>
+            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/Selection"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Service/selections"/>
+            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/Service/selections"/>
         <childMetaFeature
-            href="website.genmodel#//website/Service/selections"/>
+            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/Service/selections"/>
       </modelFacet>
       <labels
-          visualID="5158"
+          visualID="5297"
           editPartClassName="SelectionNameEditPart"
           itemSemanticEditPolicyClassName="SelectionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="SelectionNameViewFactory"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -5956,7 +5954,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3260"
+        visualID="3285"
         editPartClassName="BusinessOperationEditPart"
         itemSemanticEditPolicyClassName="BusinessOperationItemSemanticEditPolicy"
         canonicalEditPolicyClassName="BusinessOperationCanonicalEditPolicy"
@@ -5975,21 +5973,17 @@
         <attributes
             xsi:type="gmfgen:StyleAttributes"
             fixedBackground="true"/>
-        <attributes
-            xsi:type="gmfgen:DefaultSizeAttributes"
-            width="200"
-            height="50"/>
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/BusinessOperation"/>
+            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/BusinessOperation"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Service/operations"/>
+            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/Service/operations"/>
         <childMetaFeature
-            href="website.genmodel#//website/Service/operations"/>
+            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/Service/operations"/>
       </modelFacet>
       <labels
-          visualID="5268"
+          visualID="5298"
           editPartClassName="BusinessOperationNameEditPart"
           itemSemanticEditPolicyClassName="BusinessOperationNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -6448,10 +6442,9 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2004"
+        visualID="2017"
         editPartClassName="ServiceEditPart"
         itemSemanticEditPolicyClassName="ServiceItemSemanticEditPolicy"
-        notationViewFactoryClassName="ServiceViewFactory"
         canonicalEditPolicyClassName="ServiceCanonicalEditPolicy"
         compartments="//@diagram/@compartments.47 //@diagram/@compartments.48"
         graphicalNodeEditPolicyClassName="ServiceGraphicalNodeEditPolicy"
@@ -6477,17 +6470,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/Service"/>
+            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/Service"/>
         <containmentMetaFeature
             href="website.genmodel#//website/WebGenModel/services"/>
         <childMetaFeature
             href="website.genmodel#//website/WebGenModel/services"/>
       </modelFacet>
       <labels
-          visualID="5005"
+          visualID="5299"
           editPartClassName="ServiceNameEditPart"
           itemSemanticEditPolicyClassName="ServiceNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ServiceNameViewFactory"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -7613,15 +7605,13 @@
       </viewmap>
     </compartments>
     <compartments
-        visualID="7006"
-        editPartClassName="ServiceFeaturesCompartmentEditPart"
-        itemSemanticEditPolicyClassName="ServiceFeaturesCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="ServiceIncludedFeaturesCompartmentViewFactory"
-        canonicalEditPolicyClassName="ServiceFeaturesCompartmentCanonicalEditPolicy"
+        visualID="7143"
+        editPartClassName="ServiceSelectionsCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ServiceSelectionsCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ServiceSelectionsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.109"
         title="SelectionsCompartment"
         canCollapse="false"
-        hideIfEmpty="false"
         needsTitle="false"
         node="//@diagram/@topLevelNodes.8">
       <diagramRunTimeClass
@@ -7631,14 +7621,13 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7133"
+        visualID="7144"
         editPartClassName="ServiceOperationsCompartmentEditPart"
         itemSemanticEditPolicyClassName="ServiceOperationsCompartmentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ServiceOperationsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.110"
         title="OperationsCompartment"
         canCollapse="false"
-        hideIfEmpty="false"
         needsTitle="false"
         node="//@diagram/@topLevelNodes.8">
       <diagramRunTimeClass
@@ -7646,11 +7635,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="OperationsFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class OperationsFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public OperationsFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setLineWidth(5);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
-      </viewmap>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class OperationsFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public OperationsFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setLineWidth(5);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
     </compartments>
     <palette>
       <groups

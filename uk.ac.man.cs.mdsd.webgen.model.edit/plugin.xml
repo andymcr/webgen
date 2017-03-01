@@ -13,23 +13,18 @@
       </extender>
    </extension>
 
-   <extension point="org.eclipse.emf.edit.childCreationExtenders">
-      <extender
-            uri="http://www.cs.man.ac.uk/mdsd/2013/Criteria"
-            class="uk.ac.man.cs.mdsd.webgen.website.provider.WebsiteItemProviderAdapterFactory$CriteriaChildCreationExtender"/>
-   </extension>
-   <extension
-         point="org.eclipse.emf.edit.childCreationExtenders">
-      <extender
-            class="uk.ac.man.cs.mdsd.webgen.website.provider.WebsiteItemProviderAdapterFactory$BaseChildCreationExtender"
-            uri="http://cs.man.ac.uk/mdsd/webgen/base">
-      </extender>
-   </extension>
    <extension
          point="org.eclipse.emf.edit.childCreationExtenders">
       <extender
             class="uk.ac.man.cs.mdsd.webgen.website.provider.WebsiteItemProviderAdapterFactory$PersistenceChildCreationExtender"
             uri="http://cs.man.ac.uk/mdsd/webgen/persistence">
+      </extender>
+   </extension>
+   <extension
+         point="org.eclipse.emf.edit.childCreationExtenders">
+      <extender
+            class="uk.ac.man.cs.mdsd.webgen.website.provider.WebsiteItemProviderAdapterFactory$ServiceChildCreationExtender"
+            uri="http://cs.man.ac.uk/mdsd/webgen/service">
       </extender>
    </extension>
 

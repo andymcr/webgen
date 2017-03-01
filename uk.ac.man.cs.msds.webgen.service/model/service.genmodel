@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.man.cs.msds.webgen.service/src" modelPluginID="uk.ac.man.cs.msds.webgen.service"
+    modelName="Service" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>service.ecore</foreignModel>
+  <genPackages prefix="Service" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
+      extensibleProviderFactory="true" ecorePackage="service.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="service.ecore#//OperationResultTypes">
+      <genEnumLiterals ecoreEnumLiteral="service.ecore#//OperationResultTypes/None"/>
+      <genEnumLiterals ecoreEnumLiteral="service.ecore#//OperationResultTypes/File"/>
+    </genEnums>
+    <genClasses ecoreClass="service.ecore#//Service">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Service/serves"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//Service/selections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//Service/operations"/>
+    </genClasses>
+    <genClasses ecoreClass="service.ecore#//Selection">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference service.ecore#//Selection/usedBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//Selection/distinct"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Selection/fields"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Selection/joins"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//Selection/filter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//Selection/ordering"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//Selection/limit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//Selection/selected"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="service.ecore#//Order">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
+          ecoreFeature="ecore:EReference service.ecore#//Order/path"/>
+    </genClasses>
+    <genClasses ecoreClass="service.ecore#//Asc"/>
+    <genClasses ecoreClass="service.ecore#//Desc"/>
+    <genClasses ecoreClass="service.ecore#//BusinessOperation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//BusinessOperation/uses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//BusinessOperation/resultType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//BusinessOperation/resultMimeType"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

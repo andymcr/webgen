@@ -25,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getAlternative <em>Alternative</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getCaptionClass <em>Caption Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getPageDisplayedOn <em>Page Displayed On</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getContentUnit()
@@ -244,5 +245,32 @@ public interface ContentUnit extends NamedDisplayElement {
 	 * @generated
 	 */
 	void setCaptionClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Page Displayed On</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Page Displayed On</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Page Displayed On</em>' reference.
+	 * @see #setPageDisplayedOn(Page)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getContentUnit_PageDisplayedOn()
+	 * @model required="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if displayedOn.oclIsTypeOf(Page) then\r\n\tdisplayedOn.oclAsType(Page)\r\nelse\r\n\tdisplayedOn.oclAsType(UnitAssociation).displayedOn.pageDisplaytedOn()\r\nendif'"
+	 * @generated
+	 */
+	Page getPageDisplayedOn();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getPageDisplayedOn <em>Page Displayed On</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Page Displayed On</em>' reference.
+	 * @see #getPageDisplayedOn()
+	 * @generated
+	 */
+	void setPageDisplayedOn(Page value);
 
 } // ContentUnit

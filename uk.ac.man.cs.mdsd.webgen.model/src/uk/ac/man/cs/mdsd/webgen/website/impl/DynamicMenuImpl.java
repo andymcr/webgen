@@ -6,9 +6,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -27,7 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *
  * @generated
  */
-public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
+public class DynamicMenuImpl extends GlobalMenuImpl implements DynamicMenu {
 	/**
 	 * The cached value of the '{@link #getEntityOrView() <em>Entity Or View</em>}' reference.
 	 * <!-- begin-user-doc -->

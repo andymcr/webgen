@@ -142,8 +142,8 @@ public class ImageUnitItemProvider
 						if (unit.getSelectionType() != null) {
 							return unit.getSelectionType().getAssociations();
 						}
-						return getSelections((CollectionUnit) object);
 					}
+
 					return Collections.emptySet();
 				}
 		});
@@ -167,8 +167,8 @@ public class ImageUnitItemProvider
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof CollectionUnit) {
-						return getSelections((CollectionUnit) object);
+					if (object instanceof ImageUnit) {
+						return getSelections((ImageUnit) object);
 					}
 					return Collections.emptySet();
 				}

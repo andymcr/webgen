@@ -9,11 +9,13 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedDisplayElementImpl;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
+import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -33,6 +35,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getAlternative <em>Alternative</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getPageDisplayedOn <em>Page Displayed On</em>}</li>
  * </ul>
  *
  * @generated
@@ -177,6 +180,16 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * @ordered
 	 */
 	protected String captionClass = CAPTION_CLASS_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #getPageDisplayedOn() <em>Page Displayed On</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPageDisplayedOn()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PAGE_DISPLAYED_ON__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.CONTENT_UNIT__PAGE_DISPLAYED_ON).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -390,6 +403,33 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Page getPageDisplayedOn() {
+		return (Page)PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Page basicGetPageDisplayedOn() {
+		return (Page)PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPageDisplayedOn(Page newPageDisplayedOn) {
+		PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPageDisplayedOn);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -453,6 +493,9 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return isOmitCaption();
 			case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS:
 				return getCaptionClass();
+			case WebsitePackage.CONTENT_UNIT__PAGE_DISPLAYED_ON:
+				if (resolve) return getPageDisplayedOn();
+				return basicGetPageDisplayedOn();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -488,6 +531,9 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return;
 			case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS:
 				setCaptionClass((String)newValue);
+				return;
+			case WebsitePackage.CONTENT_UNIT__PAGE_DISPLAYED_ON:
+				setPageDisplayedOn((Page)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -525,6 +571,9 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS:
 				setCaptionClass(CAPTION_CLASS_EDEFAULT);
 				return;
+			case WebsitePackage.CONTENT_UNIT__PAGE_DISPLAYED_ON:
+				setPageDisplayedOn((Page)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -553,6 +602,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return omitCaption != OMIT_CAPTION_EDEFAULT;
 			case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS:
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
+			case WebsitePackage.CONTENT_UNIT__PAGE_DISPLAYED_ON:
+				return PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

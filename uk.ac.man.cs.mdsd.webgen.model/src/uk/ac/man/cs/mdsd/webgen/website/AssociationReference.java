@@ -3,6 +3,8 @@
 package uk.ac.man.cs.mdsd.webgen.website;
 
 import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.webgen.persistence.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 
 /**
  * <!-- begin-user-doc -->

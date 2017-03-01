@@ -3,6 +3,7 @@
 package uk.ac.man.cs.mdsd.webgen.website;
 
 import java.util.List;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +34,7 @@ import java.util.List;
 public interface DynamicUnit extends ContentUnit {
 	/**
 	 * Returns the value of the '<em><b>Entities</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entities</em>' reference list isn't clear,

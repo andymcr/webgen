@@ -8,6 +8,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
 
 import java.util.List;
 import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +31,6 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
 public interface Service extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Serves</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy <em>Served By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Serves</em>' reference isn't clear,
@@ -40,8 +40,7 @@ public interface Service extends NamedElement {
 	 * @return the value of the '<em>Serves</em>' reference.
 	 * @see #setServes(EntityOrView)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getService_Serves()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy
-	 * @model opposite="servedBy" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	EntityOrView getServes();

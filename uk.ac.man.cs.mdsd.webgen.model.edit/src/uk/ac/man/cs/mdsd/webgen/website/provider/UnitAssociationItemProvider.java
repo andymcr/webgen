@@ -19,13 +19,14 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -215,7 +216,9 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 					if (object instanceof UnitAssociation) {
 						final UnitAssociation association = (UnitAssociation) object;
 						if (association.getAssociation() != null) {
-							return getSelections(association.getTargetEntity());
+							final WebGenModel model
+								= association.getDisplayedOn().getPageDisplayedOn().getPartOf();
+							return getSelections(model, association.getTargetEntity());
 						}
 					}
 					return Collections.emptySet();
@@ -410,10 +413,12 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		return associations;
 	}
 
-	protected Set<Selection> getSelections(final EntityOrView entityOrView) {
+	protected Set<Selection> getSelections(final WebGenModel model, final EntityOrView entity) {
 		final Set<Selection> selections = new HashSet<Selection>();
-		for (Service service : entityOrView.getServedBy()) {
-			selections.addAll(service.getSelections());
+		for (Service service : model.getServices()) {
+			if (service.getServes() == entity) {
+				selections.addAll(service.getSelections());
+			}
 		}
 
 		return selections;

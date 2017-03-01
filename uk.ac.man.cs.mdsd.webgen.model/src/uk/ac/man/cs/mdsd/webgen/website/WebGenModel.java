@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import uk.ac.man.cs.mdsd.webgen.base.Classifier;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +28,7 @@ import uk.ac.man.cs.mdsd.webgen.base.Classifier;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getMenus <em>Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getAllowTypeCustomisation <em>Allow Type Customisation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getImageManipulations <em>Image Manipulations</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getGlobalMenu <em>Global Menu</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel()
@@ -96,6 +98,7 @@ public interface WebGenModel extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Pages</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Page}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Page#getPartOf <em>Part Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pages</em>' containment reference list isn't clear,
@@ -104,7 +107,8 @@ public interface WebGenModel extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Pages</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_Pages()
-	 * @model containment="true"
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Page#getPartOf
+	 * @model opposite="partOf" containment="true"
 	 * @generated
 	 */
 	List<Page> getPages();
@@ -127,7 +131,7 @@ public interface WebGenModel extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Allow Type Customisation</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Allow Type Customisation</em>' reference list isn't clear,
@@ -156,5 +160,33 @@ public interface WebGenModel extends EObject {
 	 * @generated
 	 */
 	List<ImageManipulation> getImageManipulations();
+
+	/**
+	 * Returns the value of the '<em><b>Global Menu</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.GlobalMenu#getMenuFor <em>Menu For</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Global Menu</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Global Menu</em>' reference.
+	 * @see #setGlobalMenu(GlobalMenu)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_GlobalMenu()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.GlobalMenu#getMenuFor
+	 * @model opposite="menuFor"
+	 * @generated
+	 */
+	GlobalMenu getGlobalMenu();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getGlobalMenu <em>Global Menu</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Global Menu</em>' reference.
+	 * @see #getGlobalMenu()
+	 * @generated
+	 */
+	void setGlobalMenu(GlobalMenu value);
 
 } // WebGenModel

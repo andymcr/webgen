@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationReference;
 import uk.ac.man.cs.mdsd.webgen.website.ChildPath;
 import uk.ac.man.cs.mdsd.webgen.website.ChildPathAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**

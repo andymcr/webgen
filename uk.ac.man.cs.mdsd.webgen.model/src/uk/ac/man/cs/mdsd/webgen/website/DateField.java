@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.DateDetails;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +27,7 @@ public interface DateField extends InterfaceField {
 	/**
 	 * Returns the value of the '<em><b>Details</b></em>' attribute.
 	 * The default value is <code>"DateOnly"</code>.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.DateDetails}.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.persistence.DateDetails}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Details</em>' attribute isn't clear,
@@ -33,7 +35,7 @@ public interface DateField extends InterfaceField {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Details</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.DateDetails
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.DateDetails
 	 * @see #setDetails(DateDetails)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDateField_Details()
 	 * @model default="DateOnly" required="true" ordered="false"
@@ -46,7 +48,7 @@ public interface DateField extends InterfaceField {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Details</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.DateDetails
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.DateDetails
 	 * @see #getDetails()
 	 * @generated
 	 */

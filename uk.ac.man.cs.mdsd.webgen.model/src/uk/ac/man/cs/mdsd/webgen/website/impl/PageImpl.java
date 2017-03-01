@@ -20,15 +20,17 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedDisplayElementImpl;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
-import uk.ac.man.cs.mdsd.webgen.website.Menu;
+import uk.ac.man.cs.mdsd.webgen.website.ContextMenu;
 import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.PageLink;
 import uk.ac.man.cs.mdsd.webgen.website.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.webgen.website.UnitContainer;
+import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -40,6 +42,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getUnits <em>Units</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getChildPages <em>Child Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#isAuthenticated <em>Authenticated</em>}</li>
@@ -192,7 +195,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @generated
 	 * @ordered
 	 */
-	protected Menu sideMenu;
+	protected ContextMenu sideMenu;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -305,6 +308,47 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public WebGenModel getPartOf() {
+		if (eContainerFeatureID() != WebsitePackage.PAGE__PART_OF) return null;
+		return (WebGenModel)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPartOf(WebGenModel newPartOf, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newPartOf, WebsitePackage.PAGE__PART_OF, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPartOf(WebGenModel newPartOf) {
+		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WebsitePackage.PAGE__PART_OF && newPartOf != null)) {
+			if (EcoreUtil.isAncestor(this, newPartOf))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newPartOf != null)
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebsitePackage.WEB_GEN_MODEL__PAGES, WebGenModel.class, msgs);
+			msgs = basicSetPartOf(newPartOf, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.PAGE__PART_OF, newPartOf, newPartOf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getNavigationLabel() {
 		return navigationLabel;
 	}
@@ -326,10 +370,10 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Menu getSideMenu() {
+	public ContextMenu getSideMenu() {
 		if (sideMenu != null && sideMenu.eIsProxy()) {
 			InternalEObject oldSideMenu = (InternalEObject)sideMenu;
-			sideMenu = (Menu)eResolveProxy(oldSideMenu);
+			sideMenu = (ContextMenu)eResolveProxy(oldSideMenu);
 			if (sideMenu != oldSideMenu) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.PAGE__SIDE_MENU, oldSideMenu, sideMenu));
@@ -343,7 +387,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Menu basicGetSideMenu() {
+	public ContextMenu basicGetSideMenu() {
 		return sideMenu;
 	}
 
@@ -352,11 +396,33 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSideMenu(Menu newSideMenu) {
-		Menu oldSideMenu = sideMenu;
+	public NotificationChain basicSetSideMenu(ContextMenu newSideMenu, NotificationChain msgs) {
+		ContextMenu oldSideMenu = sideMenu;
 		sideMenu = newSideMenu;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.PAGE__SIDE_MENU, oldSideMenu, sideMenu));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.PAGE__SIDE_MENU, oldSideMenu, newSideMenu);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSideMenu(ContextMenu newSideMenu) {
+		if (newSideMenu != sideMenu) {
+			NotificationChain msgs = null;
+			if (sideMenu != null)
+				msgs = ((InternalEObject)sideMenu).eInverseRemove(this, WebsitePackage.CONTEXT_MENU__CONTEXT, ContextMenu.class, msgs);
+			if (newSideMenu != null)
+				msgs = ((InternalEObject)newSideMenu).eInverseAdd(this, WebsitePackage.CONTEXT_MENU__CONTEXT, ContextMenu.class, msgs);
+			msgs = basicSetSideMenu(newSideMenu, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.PAGE__SIDE_MENU, newSideMenu, newSideMenu));
 	}
 
 	/**
@@ -475,8 +541,16 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 		switch (featureID) {
 			case WebsitePackage.PAGE__UNITS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUnits()).basicAdd(otherEnd, msgs);
+			case WebsitePackage.PAGE__PART_OF:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetPartOf((WebGenModel)otherEnd, msgs);
 			case WebsitePackage.PAGE__CHILD_PAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildPages()).basicAdd(otherEnd, msgs);
+			case WebsitePackage.PAGE__SIDE_MENU:
+				if (sideMenu != null)
+					msgs = ((InternalEObject)sideMenu).eInverseRemove(this, WebsitePackage.CONTEXT_MENU__CONTEXT, ContextMenu.class, msgs);
+				return basicSetSideMenu((ContextMenu)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -491,12 +565,30 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 		switch (featureID) {
 			case WebsitePackage.PAGE__UNITS:
 				return ((InternalEList<?>)getUnits()).basicRemove(otherEnd, msgs);
+			case WebsitePackage.PAGE__PART_OF:
+				return basicSetPartOf(null, msgs);
 			case WebsitePackage.PAGE__PARENT_PAGE:
 				return basicSetParentPage(null, msgs);
 			case WebsitePackage.PAGE__CHILD_PAGES:
 				return ((InternalEList<?>)getChildPages()).basicRemove(otherEnd, msgs);
+			case WebsitePackage.PAGE__SIDE_MENU:
+				return basicSetSideMenu(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case WebsitePackage.PAGE__PART_OF:
+				return eInternalContainer().eInverseRemove(this, WebsitePackage.WEB_GEN_MODEL__PAGES, WebGenModel.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -509,6 +601,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 		switch (featureID) {
 			case WebsitePackage.PAGE__UNITS:
 				return getUnits();
+			case WebsitePackage.PAGE__PART_OF:
+				return getPartOf();
 			case WebsitePackage.PAGE__PARENT_PAGE:
 				return getParentPage();
 			case WebsitePackage.PAGE__CHILD_PAGES:
@@ -545,6 +639,9 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				getUnits().clear();
 				getUnits().addAll((Collection<? extends ContentUnit>)newValue);
 				return;
+			case WebsitePackage.PAGE__PART_OF:
+				setPartOf((WebGenModel)newValue);
+				return;
 			case WebsitePackage.PAGE__PARENT_PAGE:
 				setParentPage((PageLink)newValue);
 				return;
@@ -568,7 +665,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				setNavigationLabel((String)newValue);
 				return;
 			case WebsitePackage.PAGE__SIDE_MENU:
-				setSideMenu((Menu)newValue);
+				setSideMenu((ContextMenu)newValue);
 				return;
 			case WebsitePackage.PAGE__STYLE_CLASS:
 				setStyleClass((String)newValue);
@@ -587,6 +684,9 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 		switch (featureID) {
 			case WebsitePackage.PAGE__UNITS:
 				getUnits().clear();
+				return;
+			case WebsitePackage.PAGE__PART_OF:
+				setPartOf((WebGenModel)null);
 				return;
 			case WebsitePackage.PAGE__PARENT_PAGE:
 				setParentPage((PageLink)null);
@@ -610,7 +710,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				setNavigationLabel(NAVIGATION_LABEL_EDEFAULT);
 				return;
 			case WebsitePackage.PAGE__SIDE_MENU:
-				setSideMenu((Menu)null);
+				setSideMenu((ContextMenu)null);
 				return;
 			case WebsitePackage.PAGE__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
@@ -629,6 +729,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 		switch (featureID) {
 			case WebsitePackage.PAGE__UNITS:
 				return units != null && !units.isEmpty();
+			case WebsitePackage.PAGE__PART_OF:
+				return getPartOf() != null;
 			case WebsitePackage.PAGE__PARENT_PAGE:
 				return parentPage != null;
 			case WebsitePackage.PAGE__CHILD_PAGES:

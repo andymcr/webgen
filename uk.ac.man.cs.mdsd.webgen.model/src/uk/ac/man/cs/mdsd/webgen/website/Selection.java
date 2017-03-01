@@ -8,6 +8,8 @@ import uk.ac.man.cs.mdsd.criteria.Order;
 import uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList;
 import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
+import uk.ac.man.cs.mdsd.webgen.persistence.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 
 /**
  * <!-- begin-user-doc -->
@@ -89,7 +91,7 @@ public interface Selection extends NamedElement, FormaLParameterList {
 
 	/**
 	 * Returns the value of the '<em><b>Fields</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Feature}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.Feature}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fields</em>' reference list isn't clear,
@@ -105,7 +107,7 @@ public interface Selection extends NamedElement, FormaLParameterList {
 
 	/**
 	 * Returns the value of the '<em><b>Joins</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Association}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.Association}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Joins</em>' reference list isn't clear,

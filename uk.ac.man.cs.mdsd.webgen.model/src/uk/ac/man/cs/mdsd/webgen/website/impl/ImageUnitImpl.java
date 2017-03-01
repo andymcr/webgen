@@ -12,11 +12,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.FeaturePath;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.ImageManipulation;
@@ -570,7 +571,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 */
 	public List<Filter> getFilters() {
 		if (filters == null) {
-			filters = new EObjectContainmentEList<Filter>(Filter.class, this, WebsitePackage.IMAGE_UNIT__FILTERS);
+			filters = new EObjectContainmentWithInverseEList<Filter>(Filter.class, this, WebsitePackage.IMAGE_UNIT__FILTERS, WebsitePackage.FILTER__FILTER_FOR);
 		}
 		return filters;
 	}
@@ -1046,6 +1047,21 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		transitionTime = newTransitionTime;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.IMAGE_UNIT__TRANSITION_TIME, oldTransitionTime, transitionTime));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.IMAGE_UNIT__FILTERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFilters()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

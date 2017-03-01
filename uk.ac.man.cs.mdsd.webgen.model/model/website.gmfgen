@@ -154,7 +154,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3252"
+        visualID="3274"
         editPartClassName="DataTypeAttributeEditPart"
         itemSemanticEditPolicyClassName="DataTypeAttributeItemSemanticEditPolicy"
         canonicalEditPolicyClassName="DataTypeAttributeCanonicalEditPolicy"
@@ -180,14 +180,14 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/DataTypeAttribute"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/DataTypeAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
       </modelFacet>
       <labels
-          visualID="5260"
+          visualID="5285"
           editPartClassName="DataTypeAttributeNameEditPart"
           itemSemanticEditPolicyClassName="DataTypeAttributeNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -206,7 +206,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3253"
+        visualID="3275"
         editPartClassName="DateAttributeEditPart"
         itemSemanticEditPolicyClassName="DateAttributeItemSemanticEditPolicy"
         canonicalEditPolicyClassName="DateAttributeCanonicalEditPolicy"
@@ -232,14 +232,14 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/DateAttribute"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/DateAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
       </modelFacet>
       <labels
-          visualID="5261"
+          visualID="5286"
           editPartClassName="DateAttributeNameEditPart"
           itemSemanticEditPolicyClassName="DateAttributeNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -258,7 +258,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3254"
+        visualID="3276"
         editPartClassName="UrlAttributeEditPart"
         itemSemanticEditPolicyClassName="UrlAttributeItemSemanticEditPolicy"
         canonicalEditPolicyClassName="UrlAttributeCanonicalEditPolicy"
@@ -284,14 +284,14 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/UrlAttribute"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/UrlAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
       </modelFacet>
       <labels
-          visualID="5262"
+          visualID="5287"
           editPartClassName="UrlAttributeNameEditPart"
           itemSemanticEditPolicyClassName="UrlAttributeNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -310,7 +310,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3255"
+        visualID="3277"
         editPartClassName="FileAttributeEditPart"
         itemSemanticEditPolicyClassName="FileAttributeItemSemanticEditPolicy"
         canonicalEditPolicyClassName="FileAttributeCanonicalEditPolicy"
@@ -336,14 +336,14 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/FileAttribute"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/FileAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
       </modelFacet>
       <labels
-          visualID="5263"
+          visualID="5288"
           editPartClassName="FileAttributeNameEditPart"
           itemSemanticEditPolicyClassName="FileAttributeNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -362,7 +362,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3256"
+        visualID="3278"
         editPartClassName="ImageAttributeEditPart"
         itemSemanticEditPolicyClassName="ImageAttributeItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ImageAttributeCanonicalEditPolicy"
@@ -384,14 +384,14 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/ImageAttribute"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/ImageAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
       </modelFacet>
       <labels
-          visualID="5264"
+          visualID="5289"
           editPartClassName="ImageAttributeNameEditPart"
           itemSemanticEditPolicyClassName="ImageAttributeNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -410,7 +410,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3257"
+        visualID="3279"
         editPartClassName="LocationAttributeEditPart"
         itemSemanticEditPolicyClassName="LocationAttributeItemSemanticEditPolicy"
         canonicalEditPolicyClassName="LocationAttributeCanonicalEditPolicy"
@@ -436,14 +436,14 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/LocationAttribute"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/LocationAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
       </modelFacet>
       <labels
-          visualID="5265"
+          visualID="5290"
           editPartClassName="LocationAttributeNameEditPart"
           itemSemanticEditPolicyClassName="LocationAttributeNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -462,7 +462,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3247"
+        visualID="3280"
         editPartClassName="ModelLabelEditPart"
         itemSemanticEditPolicyClassName="ModelLabelItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ModelLabelCanonicalEditPolicy"
@@ -489,14 +489,14 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/ModelLabel"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/ModelLabel"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/EntityOrView/labels"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/EntityOrView/labels"/>
         <childMetaFeature
-            href="website.genmodel#//website/EntityOrView/labels"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/EntityOrView/labels"/>
       </modelFacet>
       <labels
-          visualID="5255"
+          visualID="5291"
           editPartClassName="ModelLabelNameEditPart"
           itemSemanticEditPolicyClassName="ModelLabelNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -515,7 +515,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3248"
+        visualID="3281"
         editPartClassName="ModelLabel2EditPart"
         itemSemanticEditPolicyClassName="ModelLabel2ItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ModelLabel2CanonicalEditPolicy"
@@ -542,14 +542,14 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/ModelLabel"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/ModelLabel"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/EntityOrView/labels"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/EntityOrView/labels"/>
         <childMetaFeature
-            href="website.genmodel#//website/EntityOrView/labels"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/EntityOrView/labels"/>
       </modelFacet>
       <labels
-          visualID="5256"
+          visualID="5293"
           editPartClassName="ModelLabelName2EditPart"
           itemSemanticEditPolicyClassName="ModelLabelName2ItemSemanticEditPolicy"
           elementIcon="true">
@@ -568,7 +568,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3258"
+        visualID="3282"
         editPartClassName="EncapsulatedAttributeEditPart"
         itemSemanticEditPolicyClassName="EncapsulatedAttributeItemSemanticEditPolicy"
         canonicalEditPolicyClassName="EncapsulatedAttributeCanonicalEditPolicy"
@@ -594,14 +594,14 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/EncapsulatedAttribute"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/EncapsulatedAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/View/viewFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/View/viewFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/View/viewFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/View/viewFeatures"/>
       </modelFacet>
       <labels
-          visualID="5266"
+          visualID="5294"
           editPartClassName="EncapsulatedAttributeNameEditPart"
           itemSemanticEditPolicyClassName="EncapsulatedAttributeNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -615,12 +615,12 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/EncapsulatedAttribute/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/EncapsulatedAttribute/name"/>
         </modelFacet>
       </labels>
     </childNodes>
     <childNodes
-        visualID="3259"
+        visualID="3283"
         editPartClassName="EncapsulatedAssociationEditPart"
         itemSemanticEditPolicyClassName="EncapsulatedAssociationItemSemanticEditPolicy"
         canonicalEditPolicyClassName="EncapsulatedAssociationCanonicalEditPolicy"
@@ -646,14 +646,14 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/EncapsulatedAssociation"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/EncapsulatedAssociation"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/View/viewFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/View/viewFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/View/viewFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/View/viewFeatures"/>
       </modelFacet>
       <labels
-          visualID="5267"
+          visualID="5295"
           editPartClassName="EncapsulatedAssociationNameEditPart"
           itemSemanticEditPolicyClassName="EncapsulatedAssociationNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -667,7 +667,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/EncapsulatedAssociation/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/EncapsulatedAssociation/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -6228,10 +6228,9 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2003"
+        visualID="2015"
         editPartClassName="EntityEditPart"
         itemSemanticEditPolicyClassName="EntityItemSemanticEditPolicy"
-        notationViewFactoryClassName="EntityViewFactory"
         canonicalEditPolicyClassName="EntityCanonicalEditPolicy"
         compartments="//@diagram/@compartments.3 //@diagram/@compartments.4"
         graphicalNodeEditPolicyClassName="EntityGraphicalNodeEditPolicy"
@@ -6257,17 +6256,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/Entity"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity"/>
         <containmentMetaFeature
             href="website.genmodel#//website/WebGenModel/classifiers"/>
         <childMetaFeature
             href="website.genmodel#//website/WebGenModel/classifiers"/>
       </modelFacet>
       <labels
-          visualID="5004"
+          visualID="5292"
           editPartClassName="EntityNameEditPart"
           itemSemanticEditPolicyClassName="EntityNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="EntityNameViewFactory"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -6284,7 +6282,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2010"
+        visualID="2016"
         editPartClassName="ViewEditPart"
         itemSemanticEditPolicyClassName="ViewItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ViewCanonicalEditPolicy"
@@ -6312,14 +6310,14 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/View"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/View"/>
         <containmentMetaFeature
             href="website.genmodel#//website/WebGenModel/classifiers"/>
         <childMetaFeature
             href="website.genmodel#//website/WebGenModel/classifiers"/>
       </modelFacet>
       <labels
-          visualID="5246"
+          visualID="5296"
           editPartClassName="ViewNameEditPart"
           itemSemanticEditPolicyClassName="ViewNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -6506,10 +6504,9 @@
       </labels>
     </topLevelNodes>
     <links
-        visualID="4001"
+        visualID="4005"
         editPartClassName="AssociationWithoutContainmentEditPart"
         itemSemanticEditPolicyClassName="AssociationWithoutContainmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="AssociationWithoutContainmentViewFactory"
         createCommandClassName="AssociationWithoutContainmentCreateCommand"
         reorientCommandClassName="AssociationWithoutContainmentReorientCommand">
       <diagramRunTimeClass
@@ -6524,19 +6521,18 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="website.genmodel#//website/AssociationWithoutContainment"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/AssociationWithoutContainment"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
         <targetMetaFeature
-            href="website.genmodel#//website/EntityAssociation/targetEntity"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/EntityAssociation/targetEntity"/>
       </modelFacet>
       <labels
-          visualID="6001"
+          visualID="6005"
           editPartClassName="AssociationWithoutContainmentNameEditPart"
-          itemSemanticEditPolicyClassName="AssociationWithoutContainmentNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="AssociationWithoutContainmentNameViewFactory">
+          itemSemanticEditPolicyClassName="AssociationWithoutContainmentNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -6555,10 +6551,9 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="6002"
+          visualID="6006"
           editPartClassName="AssociationWithoutContainmentCardinalityTargetCardinEditPart"
           itemSemanticEditPolicyClassName="AssociationWithoutContainmentCardinalityTargetCardinItemSemanticEditPolicy"
-          notationViewFactoryClassName="AssociationWithoutContainmentCardinalityTargetCardinalityViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -6577,17 +6572,16 @@
             editorPattern=""
             editPattern="">
           <metaFeatures
-              href="website.genmodel#//website/EntityFeature/cardinality"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/EntityFeature/cardinality"/>
           <metaFeatures
-              href="website.genmodel#//website/AssociationWithoutContainment/targetCardinality"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/AssociationWithoutContainment/targetCardinality"/>
         </modelFacet>
       </labels>
     </links>
     <links
-        visualID="4002"
+        visualID="4006"
         editPartClassName="AssociationWithContainmentEditPart"
         itemSemanticEditPolicyClassName="AssociationWithContainmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="AssociationWithContainmentViewFactory"
         createCommandClassName="AssociationWithContainmentCreateCommand"
         reorientCommandClassName="AssociationWithContainmentReorientCommand">
       <diagramRunTimeClass
@@ -6602,19 +6596,18 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="website.genmodel#//website/AssociationWithContainment"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/AssociationWithContainment"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/Entity/entityFeatures"/>
         <targetMetaFeature
-            href="website.genmodel#//website/EntityAssociation/targetEntity"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/EntityAssociation/targetEntity"/>
       </modelFacet>
       <labels
-          visualID="6003"
+          visualID="6007"
           editPartClassName="AssociationWithContainmentNameEditPart"
-          itemSemanticEditPolicyClassName="AssociationWithContainmentNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="AssociationWithContainmentNameViewFactory">
+          itemSemanticEditPolicyClassName="AssociationWithContainmentNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -6633,10 +6626,9 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="6004"
+          visualID="6008"
           editPartClassName="AssociationWithContainmentCardinalityEditPart"
           itemSemanticEditPolicyClassName="AssociationWithContainmentCardinalityItemSemanticEditPolicy"
-          notationViewFactoryClassName="AssociationWithContainmentCardinalityViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -6654,12 +6646,12 @@
             viewPattern="{0}..Required"
             editPattern="">
           <metaFeatures
-              href="website.genmodel#//website/EntityFeature/cardinality"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/EntityFeature/cardinality"/>
         </modelFacet>
       </labels>
     </links>
     <links
-        visualID="4004"
+        visualID="4007"
         editPartClassName="ViewAssociationEditPart"
         itemSemanticEditPolicyClassName="ViewAssociationItemSemanticEditPolicy"
         createCommandClassName="ViewAssociationCreateCommand"
@@ -6676,13 +6668,13 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="website.genmodel#//website/ViewAssociation"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/ViewAssociation"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/View/viewFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/View/viewFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/View/viewFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/View/viewFeatures"/>
         <targetMetaFeature
-            href="website.genmodel#//website/ViewAssociation/opposite"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence/ViewAssociation/opposite"/>
       </modelFacet>
     </links>
     <links
@@ -6782,15 +6774,13 @@
       </viewmap>
     </compartments>
     <compartments
-        visualID="7001"
+        visualID="7139"
         editPartClassName="EntityAttributeCompartmentEditPart"
         itemSemanticEditPolicyClassName="EntityAttributeCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="EntityAttributeCompartmentViewFactory"
         canonicalEditPolicyClassName="EntityAttributeCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5 //@diagram/@childNodes.6 //@diagram/@childNodes.7 //@diagram/@childNodes.8"
         title="AttributeCompartment"
         canCollapse="false"
-        hideIfEmpty="false"
         needsTitle="false"
         node="//@diagram/@topLevelNodes.4">
       <diagramRunTimeClass
@@ -6806,7 +6796,7 @@
       </viewmap>
     </compartments>
     <compartments
-        visualID="7118"
+        visualID="7140"
         editPartClassName="EntityModelLabelsCompartmentEditPart"
         itemSemanticEditPolicyClassName="EntityModelLabelsCompartmentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="EntityModelLabelsCompartmentCanonicalEditPolicy"
@@ -6822,7 +6812,7 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7119"
+        visualID="7141"
         editPartClassName="ViewAttributeCompartmentEditPart"
         itemSemanticEditPolicyClassName="ViewAttributeCompartmentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ViewAttributeCompartmentCanonicalEditPolicy"
@@ -6844,7 +6834,7 @@
       </viewmap>
     </compartments>
     <compartments
-        visualID="7120"
+        visualID="7142"
         editPartClassName="ViewModelLabelsCompartmentEditPart"
         itemSemanticEditPolicyClassName="ViewModelLabelsCompartmentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ViewModelLabelsCompartmentCanonicalEditPolicy"

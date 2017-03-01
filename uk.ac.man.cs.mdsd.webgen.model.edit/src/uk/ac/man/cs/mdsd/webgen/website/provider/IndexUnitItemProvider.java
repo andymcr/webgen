@@ -24,9 +24,9 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
+import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -144,13 +144,13 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof CollectionUnit) {
-						final CollectionUnit unit = (CollectionUnit) object;
+					if (object instanceof IndexUnit) {
+						final IndexUnit unit = (IndexUnit) object;
 						if (unit.getSelectionType() != null) {
 							return unit.getSelectionType().getAssociations();
 						}
-						return getSelections((CollectionUnit) object);
 					}
+
 					return Collections.emptySet();
 				}
 		});
@@ -674,11 +674,12 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 
 	protected Set<Selection> getSelections(final IndexUnit unit) {
 		final Set<Selection> selections = new HashSet<Selection>();
-		if (unit.getContentType().size() > 0) {
-			selections.addAll(getSelections(unit.getContentType().get(0)));
+		final WebGenModel model = unit.getPageDisplayedOn().getPartOf();
+		if (!unit.getContentType().isEmpty()) {
+			selections.addAll(getSelections(model, unit.getContentType().get(0)));
 		}
 		if (unit.getSelectionType() != null) {
-			selections.addAll(getSelections(unit.getSelectionType()));
+			selections.addAll(getSelections(model, unit.getSelectionType()));
 		}
 
 		return selections;

@@ -17,8 +17,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
-import uk.ac.man.cs.mdsd.webgen.website.LocationAttribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.LocationAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.MapUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 

@@ -72,6 +72,7 @@ public class RegistrationUnitItemProvider
 			addAlternativePropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
 			addCaptionClassPropertyDescriptor(object);
+			addPageDisplayedOnPropertyDescriptor(object);
 			addEntitiesPropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
@@ -283,6 +284,28 @@ public class RegistrationUnitItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_StylePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Page Displayed On feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPageDisplayedOnPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_pageDisplayedOn_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_pageDisplayedOn_feature", "_UI_ContentUnit_type"),
+				 WebsitePackage.Literals.CONTENT_UNIT__PAGE_DISPLAYED_ON,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
 				 null));
 	}
 

@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
+import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -63,6 +64,7 @@ public class WebGenModelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAllowTypeCustomisationPropertyDescriptor(object);
+			addGlobalMenuPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -81,6 +83,28 @@ public class WebGenModelItemProvider
 				 getString("_UI_WebGenModel_allowTypeCustomisation_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_allowTypeCustomisation_feature", "_UI_WebGenModel_type"),
 				 WebsitePackage.Literals.WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Global Menu feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGlobalMenuPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebGenModel_globalMenu_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_globalMenu_feature", "_UI_WebGenModel_type"),
+				 WebsitePackage.Literals.WEB_GEN_MODEL__GLOBAL_MENU,
 				 true,
 				 false,
 				 true,
@@ -189,22 +213,22 @@ public class WebGenModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
-				 WebsiteFactory.eINSTANCE.createEntity()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
-				 WebsiteFactory.eINSTANCE.createView()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
 				 BaseFactory.eINSTANCE.createDataType()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
 				 BaseFactory.eINSTANCE.createEnumerationType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
+				 PersistenceFactory.eINSTANCE.createEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
+				 PersistenceFactory.eINSTANCE.createView()));
 
 		newChildDescriptors.add
 			(createChildParameter

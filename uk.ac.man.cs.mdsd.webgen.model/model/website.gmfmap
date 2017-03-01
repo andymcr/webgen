@@ -153,7 +153,7 @@
         href="website.ecore#//WebGenModel/classifiers"/>
     <ownedChild>
       <domainMetaElement
-          href="website.ecore#//Entity"/>
+          href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Entity"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
@@ -169,10 +169,10 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Entity/entityFeatures"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//DataTypeAttribute"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//DataTypeAttribute"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -190,10 +190,10 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Entity/entityFeatures"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//DateAttribute"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//DateAttribute"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -211,10 +211,10 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Entity/entityFeatures"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//UrlAttribute"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//UrlAttribute"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -232,10 +232,10 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Entity/entityFeatures"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//FileAttribute"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//FileAttribute"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -253,10 +253,10 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Entity/entityFeatures"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//ImageAttribute"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//ImageAttribute"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -274,10 +274,10 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//Entity/entityFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Entity/entityFeatures"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//LocationAttribute"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//LocationAttribute"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -295,10 +295,10 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.1">
         <containmentFeature
-            href="website.ecore#//EntityOrView/labels"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView/labels"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//ModelLabel"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//ModelLabel"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -330,7 +330,7 @@
         href="website.ecore#//WebGenModel/classifiers"/>
     <ownedChild>
       <domainMetaElement
-          href="website.ecore#//View"/>
+          href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//View"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
@@ -346,10 +346,10 @@
       <children
           compartment="//@nodes.5/@ownedChild/@compartments.1">
         <containmentFeature
-            href="website.ecore#//EntityOrView/labels"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView/labels"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//ModelLabel"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//ModelLabel"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -367,16 +367,16 @@
       <children
           compartment="//@nodes.5/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//View/viewFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//View/viewFeatures"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//EncapsulatedAttribute"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EncapsulatedAttribute"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
                 href="website.gmfgraph#AttributeNameLabel"/>
             <features
-                href="website.ecore#//EncapsulatedAttribute/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EncapsulatedAttribute/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -388,16 +388,16 @@
       <children
           compartment="//@nodes.5/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//View/viewFeatures"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//View/viewFeatures"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//EncapsulatedAssociation"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EncapsulatedAssociation"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
                 href="website.gmfgraph#AttributeNameLabel"/>
             <features
-                href="website.ecore#//EncapsulatedAssociation/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EncapsulatedAssociation/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2772,7 +2772,7 @@
   </nodes>
   <links>
     <domainMetaElement
-        href="website.ecore#//AssociationWithoutContainment"/>
+        href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//AssociationWithoutContainment"/>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
@@ -2789,12 +2789,12 @@
       <diagramLabel
           href="website.gmfgraph#AssociationWithoutContainmentMultiplicityLabel"/>
       <features
-          href="website.ecore#//EntityFeature/cardinality"/>
+          href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityFeature/cardinality"/>
       <features
-          href="website.ecore#//AssociationWithoutContainment/targetCardinality"/>
+          href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//AssociationWithoutContainment/targetCardinality"/>
     </labelMappings>
     <containmentFeature
-        href="website.ecore#//Entity/entityFeatures"/>
+        href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Entity/entityFeatures"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="website.gmftool#//@palette/@tools.6/@tools.11"/>
@@ -2802,11 +2802,11 @@
         href="website.gmfgraph#UncontainedAssociation"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="website.ecore#//EntityAssociation/targetEntity"/>
+        href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityAssociation/targetEntity"/>
   </links>
   <links>
     <domainMetaElement
-        href="website.ecore#//AssociationWithContainment"/>
+        href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//AssociationWithContainment"/>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
@@ -2822,10 +2822,10 @@
       <diagramLabel
           href="website.gmfgraph#AssociationWithContainmentMultiplicityLabel"/>
       <features
-          href="website.ecore#//EntityFeature/cardinality"/>
+          href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityFeature/cardinality"/>
     </labelMappings>
     <containmentFeature
-        href="website.ecore#//Entity/entityFeatures"/>
+        href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Entity/entityFeatures"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="website.gmftool#//@palette/@tools.6/@tools.12"/>
@@ -2833,13 +2833,13 @@
         href="website.gmfgraph#ContainedAssociation"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="website.ecore#//EntityAssociation/targetEntity"/>
+        href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityAssociation/targetEntity"/>
   </links>
   <links>
     <domainMetaElement
-        href="website.ecore#//ViewAssociation"/>
+        href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//ViewAssociation"/>
     <containmentFeature
-        href="website.ecore#//View/viewFeatures"/>
+        href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//View/viewFeatures"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="website.gmftool#//@palette/@tools.6/@tools.15"/>
@@ -2847,7 +2847,7 @@
         href="website.gmfgraph#ViewAssociation"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="website.ecore#//ViewAssociation/opposite"/>
+        href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//ViewAssociation/opposite"/>
   </links>
   <links>
     <domainMetaElement

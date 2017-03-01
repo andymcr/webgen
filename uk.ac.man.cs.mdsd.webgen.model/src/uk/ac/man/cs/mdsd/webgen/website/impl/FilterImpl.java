@@ -16,9 +16,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedDisplayElementImpl;
+import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.FilterParameter;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
@@ -32,6 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FilterImpl#getFilterFor <em>Filter For</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FilterImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FilterImpl#getSelection <em>Selection</em>}</li>
  * </ul>
@@ -76,6 +79,47 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.FILTER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CollectionUnit getFilterFor() {
+		if (eContainerFeatureID() != WebsitePackage.FILTER__FILTER_FOR) return null;
+		return (CollectionUnit)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetFilterFor(CollectionUnit newFilterFor, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newFilterFor, WebsitePackage.FILTER__FILTER_FOR, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFilterFor(CollectionUnit newFilterFor) {
+		if (newFilterFor != eInternalContainer() || (eContainerFeatureID() != WebsitePackage.FILTER__FILTER_FOR && newFilterFor != null)) {
+			if (EcoreUtil.isAncestor(this, newFilterFor))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newFilterFor != null)
+				msgs = ((InternalEObject)newFilterFor).eInverseAdd(this, WebsitePackage.COLLECTION_UNIT__FILTERS, CollectionUnit.class, msgs);
+			msgs = basicSetFilterFor(newFilterFor, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FILTER__FILTER_FOR, newFilterFor, newFilterFor));
 	}
 
 	/**
@@ -137,6 +181,10 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebsitePackage.FILTER__FILTER_FOR:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetFilterFor((CollectionUnit)otherEnd, msgs);
 			case WebsitePackage.FILTER__PARAMETERS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParameters()).basicAdd(otherEnd, msgs);
 		}
@@ -151,6 +199,8 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebsitePackage.FILTER__FILTER_FOR:
+				return basicSetFilterFor(null, msgs);
 			case WebsitePackage.FILTER__PARAMETERS:
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
@@ -163,8 +213,24 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case WebsitePackage.FILTER__FILTER_FOR:
+				return eInternalContainer().eInverseRemove(this, WebsitePackage.COLLECTION_UNIT__FILTERS, CollectionUnit.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.FILTER__FILTER_FOR:
+				return getFilterFor();
 			case WebsitePackage.FILTER__PARAMETERS:
 				return getParameters();
 			case WebsitePackage.FILTER__SELECTION:
@@ -183,6 +249,9 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.FILTER__FILTER_FOR:
+				setFilterFor((CollectionUnit)newValue);
+				return;
 			case WebsitePackage.FILTER__PARAMETERS:
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends FilterParameter>)newValue);
@@ -202,6 +271,9 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.FILTER__FILTER_FOR:
+				setFilterFor((CollectionUnit)null);
+				return;
 			case WebsitePackage.FILTER__PARAMETERS:
 				getParameters().clear();
 				return;
@@ -220,6 +292,8 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.FILTER__FILTER_FOR:
+				return getFilterFor() != null;
 			case WebsitePackage.FILTER__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
 			case WebsitePackage.FILTER__SELECTION:

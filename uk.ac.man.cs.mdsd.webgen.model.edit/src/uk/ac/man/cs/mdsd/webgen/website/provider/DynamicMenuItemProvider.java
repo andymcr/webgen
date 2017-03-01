@@ -15,11 +15,12 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
+import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -29,7 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class DynamicMenuItemProvider
-	extends MenuItemProvider {
+	extends GlobalMenuItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -195,10 +196,12 @@ public class DynamicMenuItemProvider
 		return labels;
 	}
 
-	protected Set<Selection> getSelections(final EntityOrView entityOrView) {
+	protected Set<Selection> getSelections(final WebGenModel model, final EntityOrView entity) {
 		final Set<Selection> selections = new HashSet<Selection>();
-		for (Service service : entityOrView.getServedBy()) {
-			selections.addAll(service.getSelections());
+		for (Service service : model.getServices()) {
+			if (service.getServes() == entity) {
+				selections.addAll(service.getSelections());
+			}
 		}
 
 		return selections;
@@ -206,7 +209,7 @@ public class DynamicMenuItemProvider
 
 	protected Set<Selection> getSelections(final DynamicMenu menu) {
 		if (menu.getEntityOrView() != null) {
-			return getSelections(menu.getEntityOrView());
+			return getSelections(menu.getMenuFor(), menu.getEntityOrView());
 		}
 
 		return Collections.emptySet();

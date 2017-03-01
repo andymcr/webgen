@@ -14,6 +14,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Filter#getFilterFor <em>Filter For</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Filter#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Filter#getSelection <em>Selection</em>}</li>
  * </ul>
@@ -23,6 +24,34 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  * @generated
  */
 public interface Filter extends NamedDisplayElement {
+	/**
+	 * Returns the value of the '<em><b>Filter For</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.CollectionUnit#getFilters <em>Filters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Filter For</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Filter For</em>' container reference.
+	 * @see #setFilterFor(CollectionUnit)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFilter_FilterFor()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.CollectionUnit#getFilters
+	 * @model opposite="filters" required="true" transient="false"
+	 * @generated
+	 */
+	CollectionUnit getFilterFor();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Filter#getFilterFor <em>Filter For</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Filter For</em>' container reference.
+	 * @see #getFilterFor()
+	 * @generated
+	 */
+	void setFilterFor(CollectionUnit value);
+
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter}.

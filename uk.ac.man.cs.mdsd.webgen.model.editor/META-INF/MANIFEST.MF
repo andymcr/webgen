@@ -11,9 +11,15 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: uk.ac.man.cs.mdsd.webgen.website.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- uk.ac.man.cs.mdsd.webgen.model.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
- uk.ac.man.cs.mdsd.criteria.edit;visibility:=reexport
+ uk.ac.man.cs.mdsd.webgen.base.edit;visibility:=reexport,
+ uk.ac.man.cs.mdsd.criteria.edit;visibility:=reexport,
+ uk.ac.man.cs.mdsd.webgen.expression.edit;visibility:=reexport,
+ uk.ac.man.cs.mdsd.webgen.presistence.edit;visibility:=reexport,
+ uk.ac.man.cs.mdsd.webgen.model.edit;visibility:=reexport,
+ org.eclipse.emf.edapt.migration
 Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.emf.edapt.migration.execution,
+ org.eclipse.emf.edapt.spi.history;version="1.2.1"

@@ -12,13 +12,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies;
+import uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.Authentication;
-import uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.InputTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.Menu;
-import uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
 

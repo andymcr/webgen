@@ -65,26 +65,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.WEBSITE_PROPERTIES: return createWebsiteProperties();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
 			case WebsitePackage.CAS_AUTHENTICATION: return createCasAuthentication();
-			case WebsitePackage.MODEL_LABEL: return createModelLabel();
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE: return createModelLabelAttribute();
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
-			case WebsitePackage.ENTITY: return createEntity();
-			case WebsitePackage.DATA_TYPE_ATTRIBUTE: return createDataTypeAttribute();
-			case WebsitePackage.DATE_ATTRIBUTE: return createDateAttribute();
-			case WebsitePackage.URL_ATTRIBUTE: return createUrlAttribute();
-			case WebsitePackage.STATIC_PATH_ELEMENT: return createStaticPathElement();
-			case WebsitePackage.DATE_PATH_ELEMENT: return createDatePathElement();
-			case WebsitePackage.FILE_ATTRIBUTE: return createFileAttribute();
-			case WebsitePackage.IMAGE_ATTRIBUTE: return createImageAttribute();
-			case WebsitePackage.LOCATION_ATTRIBUTE: return createLocationAttribute();
-			case WebsitePackage.ASSOCIATION_WITHOUT_CONTAINMENT: return createAssociationWithoutContainment();
-			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT: return createAssociationWithContainment();
-			case WebsitePackage.ASSOCIATION_KEY: return createAssociationKey();
-			case WebsitePackage.VIEW: return createView();
-			case WebsitePackage.ENCAPSULATED_FEATURE: return createEncapsulatedFeature();
-			case WebsitePackage.ENCAPSULATED_ATTRIBUTE: return createEncapsulatedAttribute();
-			case WebsitePackage.ENCAPSULATED_ASSOCIATION: return createEncapsulatedAssociation();
-			case WebsitePackage.VIEW_ASSOCIATION: return createViewAssociation();
 			case WebsitePackage.SERVICE: return createService();
 			case WebsitePackage.SELECTION: return createSelection();
 			case WebsitePackage.BUSINESS_OPERATION: return createBusinessOperation();
@@ -147,10 +127,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case WebsitePackage.DATABASE_TECHNOLOGIES:
-				return createDatabaseTechnologiesFromString(eDataType, initialValue);
-			case WebsitePackage.ORM_TECHNOLOGIES:
-				return createOrmTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
 				return createFrameworkTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.INPUT_TECHNOLOGIES:
@@ -159,12 +135,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return createAjaxTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
 				return createAuthenticationKeyTypesFromString(eDataType, initialValue);
-			case WebsitePackage.CARDINALITY:
-				return createCardinalityFromString(eDataType, initialValue);
-			case WebsitePackage.IS_HAS_CHOICES:
-				return createisHasChoicesFromString(eDataType, initialValue);
-			case WebsitePackage.DATE_DETAILS:
-				return createDateDetailsFromString(eDataType, initialValue);
 			case WebsitePackage.OPERATION_RESULT_TYPES:
 				return createOperationResultTypesFromString(eDataType, initialValue);
 			case WebsitePackage.PAGE_TOP_MENU_OPTIONS:
@@ -186,10 +156,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case WebsitePackage.DATABASE_TECHNOLOGIES:
-				return convertDatabaseTechnologiesToString(eDataType, instanceValue);
-			case WebsitePackage.ORM_TECHNOLOGIES:
-				return convertOrmTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
 				return convertFrameworkTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.INPUT_TECHNOLOGIES:
@@ -198,12 +164,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return convertAjaxTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
 				return convertAuthenticationKeyTypesToString(eDataType, instanceValue);
-			case WebsitePackage.CARDINALITY:
-				return convertCardinalityToString(eDataType, instanceValue);
-			case WebsitePackage.IS_HAS_CHOICES:
-				return convertisHasChoicesToString(eDataType, instanceValue);
-			case WebsitePackage.DATE_DETAILS:
-				return convertDateDetailsToString(eDataType, instanceValue);
 			case WebsitePackage.OPERATION_RESULT_TYPES:
 				return convertOperationResultTypesToString(eDataType, instanceValue);
 			case WebsitePackage.PAGE_TOP_MENU_OPTIONS:
@@ -255,206 +215,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public CasAuthentication createCasAuthentication() {
 		CasAuthenticationImpl casAuthentication = new CasAuthenticationImpl();
 		return casAuthentication;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AssociationKey createAssociationKey() {
-		AssociationKeyImpl associationKey = new AssociationKeyImpl();
-		return associationKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelLabel createModelLabel() {
-		ModelLabelImpl modelLabel = new ModelLabelImpl();
-		return modelLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelLabelAttribute createModelLabelAttribute() {
-		ModelLabelAttributeImpl modelLabelAttribute = new ModelLabelAttributeImpl();
-		return modelLabelAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelLabelAssociation createModelLabelAssociation() {
-		ModelLabelAssociationImpl modelLabelAssociation = new ModelLabelAssociationImpl();
-		return modelLabelAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Entity createEntity() {
-		EntityImpl entity = new EntityImpl();
-		return entity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public View createView() {
-		ViewImpl view = new ViewImpl();
-		return view;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EncapsulatedFeature createEncapsulatedFeature() {
-		EncapsulatedFeatureImpl encapsulatedFeature = new EncapsulatedFeatureImpl();
-		return encapsulatedFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EncapsulatedAttribute createEncapsulatedAttribute() {
-		EncapsulatedAttributeImpl encapsulatedAttribute = new EncapsulatedAttributeImpl();
-		return encapsulatedAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EncapsulatedAssociation createEncapsulatedAssociation() {
-		EncapsulatedAssociationImpl encapsulatedAssociation = new EncapsulatedAssociationImpl();
-		return encapsulatedAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ViewAssociation createViewAssociation() {
-		ViewAssociationImpl viewAssociation = new ViewAssociationImpl();
-		return viewAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataTypeAttribute createDataTypeAttribute() {
-		DataTypeAttributeImpl dataTypeAttribute = new DataTypeAttributeImpl();
-		return dataTypeAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DateAttribute createDateAttribute() {
-		DateAttributeImpl dateAttribute = new DateAttributeImpl();
-		return dateAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UrlAttribute createUrlAttribute() {
-		UrlAttributeImpl urlAttribute = new UrlAttributeImpl();
-		return urlAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StaticPathElement createStaticPathElement() {
-		StaticPathElementImpl staticPathElement = new StaticPathElementImpl();
-		return staticPathElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DatePathElement createDatePathElement() {
-		DatePathElementImpl datePathElement = new DatePathElementImpl();
-		return datePathElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FileAttribute createFileAttribute() {
-		FileAttributeImpl fileAttribute = new FileAttributeImpl();
-		return fileAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ImageAttribute createImageAttribute() {
-		ImageAttributeImpl imageAttribute = new ImageAttributeImpl();
-		return imageAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LocationAttribute createLocationAttribute() {
-		LocationAttributeImpl locationAttribute = new LocationAttributeImpl();
-		return locationAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AssociationWithoutContainment createAssociationWithoutContainment() {
-		AssociationWithoutContainmentImpl associationWithoutContainment = new AssociationWithoutContainmentImpl();
-		return associationWithoutContainment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AssociationWithContainment createAssociationWithContainment() {
-		AssociationWithContainmentImpl associationWithContainment = new AssociationWithContainmentImpl();
-		return associationWithContainment;
 	}
 
 	/**
@@ -952,46 +712,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DatabaseTechnologies createDatabaseTechnologiesFromString(EDataType eDataType, String initialValue) {
-		DatabaseTechnologies result = DatabaseTechnologies.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertDatabaseTechnologiesToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OrmTechnologies createOrmTechnologiesFromString(EDataType eDataType, String initialValue) {
-		OrmTechnologies result = OrmTechnologies.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertOrmTechnologiesToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public FrameworkTechnologies createFrameworkTechnologiesFromString(EDataType eDataType, String initialValue) {
 		FrameworkTechnologies result = FrameworkTechnologies.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -1064,66 +784,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * @generated
 	 */
 	public String convertAuthenticationKeyTypesToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Cardinality createCardinalityFromString(EDataType eDataType, String initialValue) {
-		Cardinality result = Cardinality.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertCardinalityToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public isHasChoices createisHasChoicesFromString(EDataType eDataType, String initialValue) {
-		isHasChoices result = isHasChoices.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertisHasChoicesToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DateDetails createDateDetailsFromString(EDataType eDataType, String initialValue) {
-		DateDetails result = DateDetails.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertDateDetailsToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

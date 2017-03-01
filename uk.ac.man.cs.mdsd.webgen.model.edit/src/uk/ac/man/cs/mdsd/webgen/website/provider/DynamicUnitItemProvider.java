@@ -4,8 +4,8 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -19,15 +19,16 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.Association;
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.SingletonUnit;
+import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -339,8 +340,8 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 WebsiteFactory.eINSTANCE.createUnitSupportAction()));
 	}
 
-	protected Set<EntityOrView> getContentType(final DynamicUnit unit) {
-		final Set<EntityOrView> contentType = new HashSet<EntityOrView>();
+	protected List<EntityOrView> getContentType(final DynamicUnit unit) {
+		final List<EntityOrView> contentType = new LinkedList<EntityOrView>();
 
 		if (unit instanceof SingletonUnit) {
 			final SingletonUnit singleton = (SingletonUnit) unit;
@@ -391,10 +392,12 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		return labels;
 	}
 
-	protected Set<Selection> getSelections(final EntityOrView entityOrView) {
+	protected Set<Selection> getSelections(final WebGenModel model, final EntityOrView entity) {
 		final Set<Selection> selections = new HashSet<Selection>();
-		for (Service service : entityOrView.getServedBy()) {
-			selections.addAll(service.getSelections());
+		for (Service service : model.getServices()) {
+			if (service.getServes() == entity) {
+				selections.addAll(service.getSelections());
+			}
 		}
 
 		return selections;
@@ -402,19 +405,13 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 
 	protected Set<Selection> getSelections(final DynamicUnit unit) {
 		final Set<Selection> selections = new HashSet<Selection>();
-		for (EntityOrView entityOrView : unit.getEntities()) {
-			selections.addAll(getSelections(entityOrView));
+		final List<EntityOrView> contentType = getContentType(unit);
+		if (!contentType.isEmpty()) {
+			final WebGenModel model = unit.getPageDisplayedOn().getPartOf();
+			selections.addAll(getSelections(model, contentType.get(0)));
 		}
 
 		return selections;
-	}
-
-	protected Set<Selection> getSelections(final CollectionUnit unit) {
-		if (unit.getContentType().size() > 0) {
-			return getSelections(unit.getContentType().get(0));
-		}
-
-		return Collections.emptySet();
 	}
 
 }

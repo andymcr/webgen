@@ -3,6 +3,7 @@
 package uk.ac.man.cs.mdsd.webgen.website;
 
 import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 
 /**
  * <!-- begin-user-doc -->

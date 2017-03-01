@@ -3,6 +3,8 @@
 package uk.ac.man.cs.mdsd.webgen.website;
 
 import java.util.List;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +39,7 @@ import java.util.List;
 public interface CollectionUnit extends SelectableUnit {
 	/**
 	 * Returns the value of the '<em><b>Content Type</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Type</em>' reference list isn't clear,
@@ -106,6 +108,7 @@ public interface CollectionUnit extends SelectableUnit {
 	/**
 	 * Returns the value of the '<em><b>Filters</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Filter}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Filter#getFilterFor <em>Filter For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Filters</em>' containment reference list isn't clear,
@@ -114,7 +117,8 @@ public interface CollectionUnit extends SelectableUnit {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Filters</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getCollectionUnit_Filters()
-	 * @model containment="true"
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Filter#getFilterFor
+	 * @model opposite="filterFor" containment="true"
 	 * @generated
 	 */
 	List<Filter> getFilters();

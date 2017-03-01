@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import uk.ac.man.cs.mdsd.criteria.provider.CriteriaEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.base.provider.BaseEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
+import uk.ac.man.cs.mdsd.webgen.persistence.provider.PersistenceEditPlugin;
 
 /**
  * This is the central singleton for the Website edit plugin.
@@ -48,6 +49,7 @@ public final class WebsiteEditPlugin extends EMFPlugin {
 		     BaseEditPlugin.INSTANCE,
 		     CriteriaEditPlugin.INSTANCE,
 		     ExpressionEditPlugin.INSTANCE,
+		     PersistenceEditPlugin.INSTANCE,
 		   });
 	}
 

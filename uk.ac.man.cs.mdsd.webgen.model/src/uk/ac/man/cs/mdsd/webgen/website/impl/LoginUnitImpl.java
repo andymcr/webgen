@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -25,10 +26,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.LoginUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.UnitContainer;
@@ -54,6 +55,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getAlternative <em>Alternative</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getPageDisplayedOn <em>Page Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getSupportActions <em>Support Actions</em>}</li>
@@ -253,6 +255,16 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * @ordered
 	 */
 	protected String captionClass = CAPTION_CLASS_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #getPageDisplayedOn() <em>Page Displayed On</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPageDisplayedOn()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PAGE_DISPLAYED_ON__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.CONTENT_UNIT__PAGE_DISPLAYED_ON).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
@@ -768,6 +780,33 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Page getPageDisplayedOn() {
+		return (Page)PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Page basicGetPageDisplayedOn() {
+		return (Page)PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPageDisplayedOn(Page newPageDisplayedOn) {
+		PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPageDisplayedOn);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public List<EntityOrView> getEntities() {
 		if (entities == null) {
 			entities = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.LOGIN_UNIT__ENTITIES);
@@ -1147,6 +1186,9 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return isOmitCaption();
 			case WebsitePackage.LOGIN_UNIT__CAPTION_CLASS:
 				return getCaptionClass();
+			case WebsitePackage.LOGIN_UNIT__PAGE_DISPLAYED_ON:
+				if (resolve) return getPageDisplayedOn();
+				return basicGetPageDisplayedOn();
 			case WebsitePackage.LOGIN_UNIT__ENTITIES:
 				return getEntities();
 			case WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS:
@@ -1220,6 +1262,9 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return;
 			case WebsitePackage.LOGIN_UNIT__CAPTION_CLASS:
 				setCaptionClass((String)newValue);
+				return;
+			case WebsitePackage.LOGIN_UNIT__PAGE_DISPLAYED_ON:
+				setPageDisplayedOn((Page)newValue);
 				return;
 			case WebsitePackage.LOGIN_UNIT__ENTITIES:
 				getEntities().clear();
@@ -1311,6 +1356,9 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__CAPTION_CLASS:
 				setCaptionClass(CAPTION_CLASS_EDEFAULT);
 				return;
+			case WebsitePackage.LOGIN_UNIT__PAGE_DISPLAYED_ON:
+				setPageDisplayedOn((Page)null);
+				return;
 			case WebsitePackage.LOGIN_UNIT__ENTITIES:
 				getEntities().clear();
 				return;
@@ -1388,6 +1436,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return omitCaption != OMIT_CAPTION_EDEFAULT;
 			case WebsitePackage.LOGIN_UNIT__CAPTION_CLASS:
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
+			case WebsitePackage.LOGIN_UNIT__PAGE_DISPLAYED_ON:
+				return PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.LOGIN_UNIT__ENTITIES:
 				return entities != null && !entities.isEmpty();
 			case WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS:
@@ -1451,6 +1501,7 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				case WebsitePackage.LOGIN_UNIT__ALTERNATIVE: return WebsitePackage.CONTENT_UNIT__ALTERNATIVE;
 				case WebsitePackage.LOGIN_UNIT__OMIT_CAPTION: return WebsitePackage.CONTENT_UNIT__OMIT_CAPTION;
 				case WebsitePackage.LOGIN_UNIT__CAPTION_CLASS: return WebsitePackage.CONTENT_UNIT__CAPTION_CLASS;
+				case WebsitePackage.LOGIN_UNIT__PAGE_DISPLAYED_ON: return WebsitePackage.CONTENT_UNIT__PAGE_DISPLAYED_ON;
 				default: return -1;
 			}
 		}
@@ -1509,6 +1560,7 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				case WebsitePackage.CONTENT_UNIT__ALTERNATIVE: return WebsitePackage.LOGIN_UNIT__ALTERNATIVE;
 				case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION: return WebsitePackage.LOGIN_UNIT__OMIT_CAPTION;
 				case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS: return WebsitePackage.LOGIN_UNIT__CAPTION_CLASS;
+				case WebsitePackage.CONTENT_UNIT__PAGE_DISPLAYED_ON: return WebsitePackage.LOGIN_UNIT__PAGE_DISPLAYED_ON;
 				default: return -1;
 			}
 		}

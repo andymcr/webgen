@@ -21,11 +21,13 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.base.provider.NamedDisplayElementItemProvider;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
+import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
-import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
+import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -81,8 +83,7 @@ public class FilterItemProvider extends NamedDisplayElementItemProvider {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof Filter) {
-						return getSelections(
-								(IndexUnit) ((Filter) object).eContainer());
+						return getSelections(((Filter) object).getFilterFor());
 					}
 					return Collections.emptySet();
 				}
@@ -192,22 +193,25 @@ public class FilterItemProvider extends NamedDisplayElementItemProvider {
 		return WebsiteEditPlugin.INSTANCE;
 	}
 
-	protected Set<Selection> getSelections(final EntityOrView entityOrView) {
+	protected Set<Selection> getSelections(final WebGenModel model, final EntityOrView entity) {
 		final Set<Selection> selections = new HashSet<Selection>();
-		for (Service service : entityOrView.getServedBy()) {
-			selections.addAll(service.getSelections());
+		for (Service service : model.getServices()) {
+			if (service.getServes() == entity) {
+				selections.addAll(service.getSelections());
+			}
 		}
 
 		return selections;
 	}
 
-	protected Set<Selection> getSelections(final IndexUnit unit) {
+	protected Set<Selection> getSelections(final CollectionUnit unit) {
 		final Set<Selection> selections = new HashSet<Selection>();
-		if (unit.getContentType().size() > 0) {
-			selections.addAll(getSelections(unit.getContentType().get(0)));
+		final WebGenModel model = ((DynamicUnit) unit).getPageDisplayedOn().getPartOf();
+		if (!unit.getContentType().isEmpty()) {
+			selections.addAll(getSelections(model, unit.getContentType().get(0)));
 		}
 		if (unit.getSelectionType() != null) {
-			selections.addAll(getSelections(unit.getSelectionType()));
+			selections.addAll(getSelections(model, unit.getSelectionType()));
 		}
 
 		return selections;

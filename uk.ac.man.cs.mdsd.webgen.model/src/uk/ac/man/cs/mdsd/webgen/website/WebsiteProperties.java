@@ -7,6 +7,8 @@
 package uk.ac.man.cs.mdsd.webgen.website;
 
 import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies;
+import uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies;
 
 /**
  * <!-- begin-user-doc -->
@@ -432,7 +434,7 @@ public interface WebsiteProperties extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Database Technology</b></em>' attribute.
 	 * The default value is <code>"MySql"</code>.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies}.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Database Technology</em>' attribute isn't clear,
@@ -440,7 +442,7 @@ public interface WebsiteProperties extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Database Technology</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies
 	 * @see #setDatabaseTechnology(DatabaseTechnologies)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_DatabaseTechnology()
 	 * @model default="MySql" required="true" ordered="false"
@@ -453,7 +455,7 @@ public interface WebsiteProperties extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Database Technology</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies
 	 * @see #getDatabaseTechnology()
 	 * @generated
 	 */
@@ -618,7 +620,7 @@ public interface WebsiteProperties extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Orm Technology</b></em>' attribute.
 	 * The default value is <code>"Kohana"</code>.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies}.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Orm Technology</em>' attribute isn't clear,
@@ -626,7 +628,7 @@ public interface WebsiteProperties extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Orm Technology</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies
 	 * @see #setOrmTechnology(OrmTechnologies)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_OrmTechnology()
 	 * @model default="Kohana"
@@ -639,7 +641,7 @@ public interface WebsiteProperties extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Orm Technology</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies
 	 * @see #getOrmTechnology()
 	 * @generated
 	 */

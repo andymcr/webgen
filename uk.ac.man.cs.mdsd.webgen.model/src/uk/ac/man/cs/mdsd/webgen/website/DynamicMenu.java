@@ -2,6 +2,9 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.persistence.Label;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +25,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL entriesMustBeFromSource='true' onlyIncludeFeaturesOnce='true' mustSelectSingleton='not selection.oclIsUndefined() implies selection.limit = 1' titleFromEntityOrView='not title.oclIsUndefined() and not entityOrView.oclIsUndefined() implies\r\n\tentityOrView.features->includes(title)' canOnlyTitleWithSingletons='not title.oclIsUndefined() implies\r\n\tif title.oclIsKindOf(EntityFeature) then\r\n\t\ttitle.oclAsType(EntityFeature).cardinality <> Cardinality::Many\r\n\telse if title.oclIsKindOf(EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n\telse if title.oclIsKindOf(EncapsulatedAssociation) then\r\n\t\ttitle.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n\telse\r\n\t\tfalse\r\n\tendif endif endif'"
  * @generated
  */
-public interface DynamicMenu extends Menu {
+public interface DynamicMenu extends GlobalMenu {
 
 	/**
 	 * Returns the value of the '<em><b>Entity Or View</b></em>' reference.

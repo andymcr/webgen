@@ -23,8 +23,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedElementImpl;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.BusinessOperation;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -125,33 +125,11 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetServes(EntityOrView newServes, NotificationChain msgs) {
+	public void setServes(EntityOrView newServes) {
 		EntityOrView oldServes = serves;
 		serves = newServes;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE__SERVES, oldServes, newServes);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setServes(EntityOrView newServes) {
-		if (newServes != serves) {
-			NotificationChain msgs = null;
-			if (serves != null)
-				msgs = ((InternalEObject)serves).eInverseRemove(this, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY, EntityOrView.class, msgs);
-			if (newServes != null)
-				msgs = ((InternalEObject)newServes).eInverseAdd(this, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY, EntityOrView.class, msgs);
-			msgs = basicSetServes(newServes, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE__SERVES, newServes, newServes));
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE__SERVES, oldServes, serves));
 	}
 
 	/**
@@ -187,10 +165,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.SERVICE__SERVES:
-				if (serves != null)
-					msgs = ((InternalEObject)serves).eInverseRemove(this, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY, EntityOrView.class, msgs);
-				return basicSetServes((EntityOrView)otherEnd, msgs);
 			case WebsitePackage.SERVICE__SELECTIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSelections()).basicAdd(otherEnd, msgs);
 		}
@@ -205,8 +179,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.SERVICE__SERVES:
-				return basicSetServes(null, msgs);
 			case WebsitePackage.SERVICE__SELECTIONS:
 				return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.SERVICE__OPERATIONS:

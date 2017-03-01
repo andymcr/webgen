@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
@@ -854,7 +854,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 */
 	public List<Filter> getFilters() {
 		if (filters == null) {
-			filters = new EObjectContainmentEList<Filter>(Filter.class, this, WebsitePackage.INDEX_UNIT__FILTERS);
+			filters = new EObjectContainmentWithInverseEList<Filter>(Filter.class, this, WebsitePackage.INDEX_UNIT__FILTERS, WebsitePackage.FILTER__FILTER_FOR);
 		}
 		return filters;
 	}
@@ -969,6 +969,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebsitePackage.INDEX_UNIT__FILTERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFilters()).basicAdd(otherEnd, msgs);
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getActions()).basicAdd(otherEnd, msgs);
 		}

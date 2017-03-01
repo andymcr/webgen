@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.man.cs.mdsd.webgen.presistence/src" modelPluginID="uk.ac.man.cs.mdsd.webgen.presistence"
+    modelName="Persistence" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>persistence.ecore</foreignModel>
+  <genPackages prefix="Persistence" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
+      extensibleProviderFactory="true" ecorePackage="persistence.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="persistence.ecore#//DatabaseTechnologies">
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//DatabaseTechnologies/MySql"/>
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//DatabaseTechnologies/Oracle"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="persistence.ecore#//OrmTechnologies">
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//OrmTechnologies/JPA"/>
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//OrmTechnologies/DataMapper"/>
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//OrmTechnologies/Idiorm"/>
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//OrmTechnologies/Kohana"/>
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//OrmTechnologies/DoctrineORM"/>
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//OrmTechnologies/DoctrineODM"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="persistence.ecore#//Cardinality">
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//Cardinality/Optional"/>
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//Cardinality/Required"/>
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//Cardinality/Many"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="persistence.ecore#//isHasChoices">
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//isHasChoices/isA"/>
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//isHasChoices/hasA"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="persistence.ecore#//DateDetails">
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//DateDetails/DateOnly"/>
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//DateDetails/TimeOnly"/>
+      <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//DateDetails/DateAndTime"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="persistence.ecore#//EntityOrView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/singletonName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/pluralisedName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//EntityOrView/keys"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/tableName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/autoKeyName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/autoKeyPersistentType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/autoKeyGenerationStrategy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//EntityOrView/unique"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//EntityOrView/containerUnique"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence.ecore#//EntityOrView/labels"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//EntityOrView/features"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//EntityOrView/allFeatures"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//EntityOrView/attributes"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//EntityOrView/associations"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//EntityOrView/allAssociations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/serializationExcludeAll"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/implementsUserInterface"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="persistence.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/collectionAllowAdd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/collectionAllowRemove"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/nullDisplayValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/encodeUriKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/serializationGroups"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/serializationExpose"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/headerClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/displayClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/footerClass"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="persistence.ecore#//Attribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence.ecore#//Attribute/defaultValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Attribute/placeholder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Attribute/validationPattern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Attribute/inputClass"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="persistence.ecore#//Association">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Association/pseudo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//Association/encapsulatedBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Association/inputClass"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//Association/sourceEntityX"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//Association/targetEntityX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//Association/serializationMaxDepth"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="persistence.ecore#//Label"/>
+    <genClasses ecoreClass="persistence.ecore#//ModelLabel">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//ModelLabel/labelFor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//ModelLabel/format"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence.ecore#//ModelLabel/features"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="persistence.ecore#//ModelLabelFeature">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//ModelLabelFeature/partOf"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//ModelLabelAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//ModelLabelAttribute/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//ModelLabelAttribute/dateFormat"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//ModelLabelAssociation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//ModelLabelAssociation/association"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//ModelLabelAssociation/dynamicLabel"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//ModelLabelAssociation/isSourceAssociation"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//Entity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence.ecore#//Entity/entityFeatures"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//Entity/associationEnds"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="persistence.ecore#//EntityFeature">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//EntityFeature/partOf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/cardinality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/unique"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/ordered"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/booleanIsHasChoice"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/singletonName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/pluralisedName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/columnName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="persistence.ecore#//EntityAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAttribute/primaryKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAttribute/containerUnique"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAttribute/persistentType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAttribute/ormType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAttribute/interfaceType"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//DataTypeAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//DataTypeAttribute/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//DataTypeAttribute/obfuscateFormFields"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//DataTypeAttribute/caseInsensitive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//DataTypeAttribute/encrypt"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//DateAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//DateAttribute/details"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//DateAttribute/format"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//UrlAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//UrlAttribute/displayValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="persistence.ecore#//ResourceAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//ResourceAttribute/maximumUploadSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//ResourceAttribute/validUploadMimeTypes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//ResourceAttribute/validUploadExtensions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//ResourceAttribute/uploadsWithinWebsite"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence.ecore#//ResourceAttribute/uploadPath"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="persistence.ecore#//PathElement"/>
+    <genClasses ecoreClass="persistence.ecore#//StaticPathElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//StaticPathElement/element"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//DatePathElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//DatePathElement/format"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//FileAttribute"/>
+    <genClasses ecoreClass="persistence.ecore#//ImageAttribute"/>
+    <genClasses ecoreClass="persistence.ecore#//LocationAttribute"/>
+    <genClasses image="false" ecoreClass="persistence.ecore#//EntityAssociation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence.ecore#//EntityAssociation/keys"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//EntityAssociation/targetEntity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAssociation/bidirectional"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAssociation/pivotTableName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAssociation/targetFeatureName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAssociation/targetPrimaryKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAssociation/targetDisplayLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAssociation/targetHeaderClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAssociation/targetInputClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAssociation/targetDisplayClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAssociation/targetFooterClass"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//AssociationWithoutContainment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//AssociationWithoutContainment/targetCardinality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//AssociationWithoutContainment/targetUnique"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//AssociationWithContainment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//AssociationWithContainment/sourceVisible"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//AssociationKey">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//AssociationKey/keyFor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//AssociationKey/sourceFeature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//AssociationKey/targetFeature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//AssociationKey/targetColumnName"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//View">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//View/encapsulates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence.ecore#//View/viewFeatures"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="persistence.ecore#//ViewFeature">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//ViewFeature/partOf"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//EncapsulatedFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EncapsulatedFeature/displayLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EncapsulatedFeature/alias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EncapsulatedFeature/columnName"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//EncapsulatedAttribute">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EncapsulatedAttribute/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//EncapsulatedAttribute/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EncapsulatedAttribute/cardinality"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//EncapsulatedAssociation">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EncapsulatedAssociation/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//EncapsulatedAssociation/association"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//EncapsulatedAssociation/encapsulatedTarget"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EncapsulatedAssociation/isSourceAssociation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EncapsulatedAssociation/cardinality"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//EncapsulatedAssociation/sourceEntity"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//EncapsulatedAssociation/targetEntity"/>
+    </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//ViewAssociation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//ViewAssociation/opposite"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//ViewAssociation/cardinality"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

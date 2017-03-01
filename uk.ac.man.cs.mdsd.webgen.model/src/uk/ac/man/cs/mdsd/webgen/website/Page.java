@@ -18,6 +18,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#getChildPages <em>Child Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#isAuthenticated <em>Authenticated</em>}</li>
@@ -35,6 +36,34 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  * @generated
  */
 public interface Page extends NamedDisplayElement, UnitContainer {
+	/**
+	 * Returns the value of the '<em><b>Part Of</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPages <em>Pages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Part Of</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Part Of</em>' container reference.
+	 * @see #setPartOf(WebGenModel)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getPage_PartOf()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPages
+	 * @model opposite="pages" required="true" transient="false"
+	 * @generated
+	 */
+	WebGenModel getPartOf();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Page#getPartOf <em>Part Of</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Part Of</em>' container reference.
+	 * @see #getPartOf()
+	 * @generated
+	 */
+	void setPartOf(WebGenModel value);
+
 	/**
 	 * Returns the value of the '<em><b>Parent Page</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -107,6 +136,7 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Side Menu</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.ContextMenu#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Side Menu</em>' reference isn't clear,
@@ -114,12 +144,13 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Side Menu</em>' reference.
-	 * @see #setSideMenu(Menu)
+	 * @see #setSideMenu(ContextMenu)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getPage_SideMenu()
-	 * @model ordered="false"
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ContextMenu#getContext
+	 * @model opposite="context" ordered="false"
 	 * @generated
 	 */
-	Menu getSideMenu();
+	ContextMenu getSideMenu();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Page#getSideMenu <em>Side Menu</em>}' reference.
@@ -129,7 +160,7 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * @see #getSideMenu()
 	 * @generated
 	 */
-	void setSideMenu(Menu value);
+	void setSideMenu(ContextMenu value);
 
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.

@@ -61,15 +61,15 @@
         href="website.ecore#//WebGenModel/classifiers"/>
     <ownedChild>
       <domainMetaElement
-          href="website.ecore#//DataType"/>
+          href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//DataType"/>
       <domainSpecialization
-          body="not self.oclIsTypeOf(EnumerationType)"/>
+          body="self.oclIsTypeOf(DataType)"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
             href="website.gmfgraph#DataTypeNameLabel"/>
         <features
-            href="website.ecore#//NamedElement/name"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -89,7 +89,7 @@
         <diagramLabel
             href="website.gmfgraph#MenuNameLabel"/>
         <features
-            href="website.ecore#//NamedElement/name"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -107,13 +107,13 @@
         href="website.ecore#//WebGenModel/classifiers"/>
     <ownedChild>
       <domainMetaElement
-          href="website.ecore#//EnumerationType"/>
+          href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//EnumerationType"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
             href="website.gmfgraph#EnumerationTypeNameLabel"/>
         <features
-            href="website.ecore#//NamedElement/name"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -123,16 +123,16 @@
       <children
           compartment="//@nodes.3/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//EnumerationType/enumerations"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//EnumerationType/enumerations"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//EnumerationLiteral"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//EnumerationLiteral"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
                 href="website.gmfgraph#EnumerationLiteralLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -159,7 +159,7 @@
         <diagramLabel
             href="website.gmfgraph#EntityNameLabel"/>
         <features
-            href="website.ecore#//NamedElement/name"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -178,7 +178,7 @@
             <diagramLabel
                 href="website.gmfgraph#AttributeNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -199,7 +199,7 @@
             <diagramLabel
                 href="website.gmfgraph#AttributeNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -220,7 +220,7 @@
             <diagramLabel
                 href="website.gmfgraph#AttributeNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -241,7 +241,7 @@
             <diagramLabel
                 href="website.gmfgraph#AttributeNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -262,7 +262,7 @@
             <diagramLabel
                 href="website.gmfgraph#AttributeNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -283,7 +283,7 @@
             <diagramLabel
                 href="website.gmfgraph#AttributeNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -304,7 +304,7 @@
             <diagramLabel
                 href="website.gmfgraph#ModelLabelLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -336,7 +336,7 @@
         <diagramLabel
             href="website.gmfgraph#ViewNameLabel"/>
         <features
-            href="website.ecore#//NamedElement/name"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -355,7 +355,7 @@
             <diagramLabel
                 href="website.gmfgraph#ModelLabelLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -429,7 +429,7 @@
         <diagramLabel
             href="website.gmfgraph#PageNameLabel"/>
         <features
-            href="website.ecore#//NamedElement/name"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -448,7 +448,7 @@
             <diagramLabel
                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -490,7 +490,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//FeaturePathAssociation/name"/>
+                    href="website.ecore#//AssociationReference/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -511,7 +511,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -532,7 +532,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -560,7 +560,7 @@
             <diagramLabel
                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -602,7 +602,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//FeaturePathAssociation/name"/>
+                    href="website.ecore#//AssociationReference/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -617,12 +617,11 @@
                   <domainMetaElement
                       href="website.ecore#//CreateUpdateUnit"/>
                   <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping"
-                      readOnly="true">
+                      xsi:type="gmfmap:FeatureLabelMapping">
                     <diagramLabel
                         href="website.gmfgraph#InterfaceUnitNameLabel"/>
                     <features
-                        href="website.ecore#//NamedElement/name"/>
+                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
@@ -677,7 +676,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -698,7 +697,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -737,7 +736,7 @@
             <diagramLabel
                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -776,7 +775,7 @@
                     <diagramLabel
                         href="website.gmfgraph#ActionNameLabel"/>
                     <features
-                        href="website.ecore#//NamedElement/name"/>
+                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
@@ -805,7 +804,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//FeaturePathAssociation/name"/>
+                    href="website.ecore#//AssociationReference/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -824,7 +823,7 @@
                     <diagramLabel
                         href="website.gmfgraph#InterfaceUnitNameLabel"/>
                     <features
-                        href="website.ecore#//NamedElement/name"/>
+                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
@@ -866,7 +865,7 @@
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
-                            href="website.ecore#//FeaturePathAssociation/name"/>
+                            href="website.ecore#//AssociationReference/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -885,7 +884,7 @@
                             <diagramLabel
                                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
                             <features
-                                href="website.ecore#//NamedElement/name"/>
+                                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                           </labelMappings>
                           <tool
                               xsi:type="gmftool:CreationTool"
@@ -933,7 +932,7 @@
                             <diagramLabel
                                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
                             <features
-                                href="website.ecore#//NamedElement/name"/>
+                                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                           </labelMappings>
                           <tool
                               xsi:type="gmftool:CreationTool"
@@ -995,7 +994,7 @@
                     <diagramLabel
                         href="website.gmfgraph#InterfaceUnitNameLabel"/>
                     <features
-                        href="website.ecore#//NamedElement/name"/>
+                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
@@ -1037,7 +1036,7 @@
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
-                            href="website.ecore#//FeaturePathAssociation/name"/>
+                            href="website.ecore#//AssociationReference/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -1056,7 +1055,7 @@
                             <diagramLabel
                                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
                             <features
-                                href="website.ecore#//NamedElement/name"/>
+                                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                           </labelMappings>
                           <tool
                               xsi:type="gmftool:CreationTool"
@@ -1098,7 +1097,7 @@
                                 <diagramLabel
                                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                                 <features
-                                    href="website.ecore#//FeaturePathAssociation/name"/>
+                                    href="website.ecore#//AssociationReference/name"/>
                               </labelMappings>
                               <tool
                                   xsi:type="gmftool:CreationTool"
@@ -1117,7 +1116,7 @@
                                     <diagramLabel
                                         href="website.gmfgraph#InterfaceUnitNameLabel"/>
                                     <features
-                                        href="website.ecore#//NamedElement/name"/>
+                                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                                   </labelMappings>
                                   <tool
                                       xsi:type="gmftool:CreationTool"
@@ -1159,7 +1158,7 @@
                                         <diagramLabel
                                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                                         <features
-                                            href="website.ecore#//FeaturePathAssociation/name"/>
+                                            href="website.ecore#//AssociationReference/name"/>
                                       </labelMappings>
                                       <tool
                                           xsi:type="gmftool:CreationTool"
@@ -1187,7 +1186,7 @@
                                     <diagramLabel
                                         href="website.gmfgraph#InterfaceUnitNameLabel"/>
                                     <features
-                                        href="website.ecore#//NamedElement/name"/>
+                                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                                   </labelMappings>
                                   <tool
                                       xsi:type="gmftool:CreationTool"
@@ -1229,7 +1228,7 @@
                                         <diagramLabel
                                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                                         <features
-                                            href="website.ecore#//FeaturePathAssociation/name"/>
+                                            href="website.ecore#//AssociationReference/name"/>
                                       </labelMappings>
                                       <tool
                                           xsi:type="gmftool:CreationTool"
@@ -1271,7 +1270,7 @@
                             <diagramLabel
                                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
                             <features
-                                href="website.ecore#//NamedElement/name"/>
+                                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                           </labelMappings>
                           <tool
                               xsi:type="gmftool:CreationTool"
@@ -1313,7 +1312,7 @@
                                 <diagramLabel
                                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                                 <features
-                                    href="website.ecore#//FeaturePathAssociation/name"/>
+                                    href="website.ecore#//AssociationReference/name"/>
                               </labelMappings>
                               <tool
                                   xsi:type="gmftool:CreationTool"
@@ -1332,7 +1331,7 @@
                                     <diagramLabel
                                         href="website.gmfgraph#InterfaceUnitNameLabel"/>
                                     <features
-                                        href="website.ecore#//NamedElement/name"/>
+                                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                                   </labelMappings>
                                   <tool
                                       xsi:type="gmftool:CreationTool"
@@ -1374,7 +1373,7 @@
                                         <diagramLabel
                                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                                         <features
-                                            href="website.ecore#//FeaturePathAssociation/name"/>
+                                            href="website.ecore#//AssociationReference/name"/>
                                       </labelMappings>
                                       <tool
                                           xsi:type="gmftool:CreationTool"
@@ -1402,7 +1401,7 @@
                                     <diagramLabel
                                         href="website.gmfgraph#InterfaceUnitNameLabel"/>
                                     <features
-                                        href="website.ecore#//NamedElement/name"/>
+                                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                                   </labelMappings>
                                   <tool
                                       xsi:type="gmftool:CreationTool"
@@ -1444,7 +1443,7 @@
                                         <diagramLabel
                                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                                         <features
-                                            href="website.ecore#//FeaturePathAssociation/name"/>
+                                            href="website.ecore#//AssociationReference/name"/>
                                       </labelMappings>
                                       <tool
                                           xsi:type="gmftool:CreationTool"
@@ -1493,7 +1492,7 @@
                         <diagramLabel
                             href="website.gmfgraph#ActionNameLabel"/>
                         <features
-                            href="website.ecore#//NamedElement/name"/>
+                            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -1514,7 +1513,7 @@
                         <diagramLabel
                             href="website.gmfgraph#ActionNameLabel"/>
                         <features
-                            href="website.ecore#//NamedElement/name"/>
+                            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -1547,7 +1546,7 @@
                     <diagramLabel
                         href="website.gmfgraph#InterfaceUnitNameLabel"/>
                     <features
-                        href="website.ecore#//NamedElement/name"/>
+                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
@@ -1566,7 +1565,7 @@
                         <diagramLabel
                             href="website.gmfgraph#ActionNameLabel"/>
                         <features
-                            href="website.ecore#//NamedElement/name"/>
+                            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -1587,7 +1586,7 @@
                         <diagramLabel
                             href="website.gmfgraph#ActionNameLabel"/>
                         <features
-                            href="website.ecore#//NamedElement/name"/>
+                            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -1608,7 +1607,7 @@
                         <diagramLabel
                             href="website.gmfgraph#ActionNameLabel"/>
                         <features
-                            href="website.ecore#//NamedElement/name"/>
+                            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -1636,7 +1635,7 @@
                     <diagramLabel
                         href="website.gmfgraph#ActionNameLabel"/>
                     <features
-                        href="website.ecore#//NamedElement/name"/>
+                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
@@ -1669,7 +1668,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -1690,7 +1689,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -1711,7 +1710,7 @@
                 <diagramLabel
                     href="website.gmfgraph#ActionNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -1744,7 +1743,7 @@
             <diagramLabel
                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -1783,7 +1782,7 @@
                     <diagramLabel
                         href="website.gmfgraph#ActionNameLabel"/>
                     <features
-                        href="website.ecore#//NamedElement/name"/>
+                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
@@ -1812,7 +1811,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//FeaturePathAssociation/name"/>
+                    href="website.ecore#//AssociationReference/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -1831,7 +1830,7 @@
                     <diagramLabel
                         href="website.gmfgraph#InterfaceUnitNameLabel"/>
                     <features
-                        href="website.ecore#//NamedElement/name"/>
+                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
@@ -1872,7 +1871,7 @@
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
-                            href="website.ecore#//FeaturePathAssociation/name"/>
+                            href="website.ecore#//AssociationReference/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -1900,7 +1899,7 @@
                     <diagramLabel
                         href="website.gmfgraph#InterfaceUnitNameLabel"/>
                     <features
-                        href="website.ecore#//NamedElement/name"/>
+                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
@@ -1940,7 +1939,7 @@
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
-                            href="website.ecore#//FeaturePathAssociation/name"/>
+                            href="website.ecore#//AssociationReference/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -1968,7 +1967,7 @@
                     <diagramLabel
                         href="website.gmfgraph#ActionNameLabel"/>
                     <features
-                        href="website.ecore#//NamedElement/name"/>
+                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
@@ -2001,7 +2000,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2022,7 +2021,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2043,7 +2042,7 @@
                 <diagramLabel
                     href="website.gmfgraph#ActionNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2064,7 +2063,7 @@
                 <diagramLabel
                     href="website.gmfgraph#ActionNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2085,7 +2084,7 @@
                 <diagramLabel
                     href="website.gmfgraph#ActionNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2118,7 +2117,7 @@
             <diagramLabel
                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2139,7 +2138,7 @@
             <diagramLabel
                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2181,7 +2180,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//FeaturePathAssociation/name"/>
+                    href="website.ecore#//AssociationReference/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2202,7 +2201,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2223,7 +2222,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2251,7 +2250,7 @@
             <diagramLabel
                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2272,7 +2271,7 @@
             <diagramLabel
                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2314,7 +2313,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//FeaturePathAssociation/name"/>
+                    href="website.ecore#//AssociationReference/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2333,7 +2332,7 @@
                     <diagramLabel
                         href="website.gmfgraph#InterfaceUnitNameLabel"/>
                     <features
-                        href="website.ecore#//NamedElement/name"/>
+                        href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
@@ -2375,7 +2374,7 @@
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
-                            href="website.ecore#//FeaturePathAssociation/name"/>
+                            href="website.ecore#//AssociationReference/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -2396,7 +2395,7 @@
                         <diagramLabel
                             href="website.gmfgraph#ActionNameLabel"/>
                         <features
-                            href="website.ecore#//NamedElement/name"/>
+                            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -2417,7 +2416,7 @@
                         <diagramLabel
                             href="website.gmfgraph#ActionNameLabel"/>
                         <features
-                            href="website.ecore#//NamedElement/name"/>
+                            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -2457,7 +2456,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2478,7 +2477,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2506,7 +2505,7 @@
             <diagramLabel
                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2525,7 +2524,7 @@
                 <diagramLabel
                     href="website.gmfgraph#ActionNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2546,7 +2545,7 @@
                 <diagramLabel
                     href="website.gmfgraph#ActionNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2567,7 +2566,7 @@
                 <diagramLabel
                     href="website.gmfgraph#ActionNameLabel"/>
                 <features
-                    href="website.ecore#//NamedElement/name"/>
+                    href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2595,7 +2594,7 @@
             <diagramLabel
                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2616,7 +2615,7 @@
             <diagramLabel
                 href="website.gmfgraph#InterfaceUnitNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2643,7 +2642,7 @@
         <diagramLabel
             href="website.gmfgraph#MenuNameLabel"/>
         <features
-            href="website.ecore#//NamedElement/name"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -2662,7 +2661,7 @@
             <diagramLabel
                 href="website.gmfgraph#MenuEntryNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2683,7 +2682,7 @@
             <diagramLabel
                 href="website.gmfgraph#MenuEntryNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2710,7 +2709,7 @@
         <diagramLabel
             href="website.gmfgraph#ServiceNameLabel"/>
         <features
-            href="website.ecore#//NamedElement/name"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -2729,7 +2728,7 @@
             <diagramLabel
                 href="website.gmfgraph#SelectionNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2750,7 +2749,7 @@
             <diagramLabel
                 href="website.gmfgraph#OperationNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2779,7 +2778,7 @@
       <diagramLabel
           href="website.gmfgraph#AssociationWithoutContainmentNameLabel"/>
       <features
-          href="website.ecore#//NamedElement/name"/>
+          href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"
@@ -2813,7 +2812,7 @@
       <diagramLabel
           href="website.gmfgraph#AssociationWithContainmentNameLabel"/>
       <features
-          href="website.ecore#//NamedElement/name"/>
+          href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"

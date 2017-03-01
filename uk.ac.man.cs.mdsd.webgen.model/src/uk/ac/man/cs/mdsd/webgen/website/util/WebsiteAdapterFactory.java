@@ -13,6 +13,10 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import uk.ac.man.cs.mdsd.webgen.base.Classifier;
+import uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList;
+import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
+import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.expression.Expression;
 import uk.ac.man.cs.mdsd.webgen.expression.Path;
 import uk.ac.man.cs.mdsd.webgen.website.*;
@@ -92,30 +96,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCasAuthentication(CasAuthentication object) {
 				return createCasAuthenticationAdapter();
-			}
-			@Override
-			public Adapter caseNamedElement(NamedElement object) {
-				return createNamedElementAdapter();
-			}
-			@Override
-			public Adapter caseNamedDisplayElement(NamedDisplayElement object) {
-				return createNamedDisplayElementAdapter();
-			}
-			@Override
-			public Adapter caseClassifier(Classifier object) {
-				return createClassifierAdapter();
-			}
-			@Override
-			public Adapter caseDataType(DataType object) {
-				return createDataTypeAdapter();
-			}
-			@Override
-			public Adapter caseEnumerationType(EnumerationType object) {
-				return createEnumerationTypeAdapter();
-			}
-			@Override
-			public Adapter caseEnumerationLiteral(EnumerationLiteral object) {
-				return createEnumerationLiteralAdapter();
 			}
 			@Override
 			public Adapter caseEntityOrView(EntityOrView object) {
@@ -252,10 +232,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSelection(Selection object) {
 				return createSelectionAdapter();
-			}
-			@Override
-			public Adapter caseSelectionParameter(SelectionParameter object) {
-				return createSelectionParameterAdapter();
 			}
 			@Override
 			public Adapter caseBusinessOperation(BusinessOperation object) {
@@ -534,6 +510,22 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createCurrentUserReferenceAdapter();
 			}
 			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseNamedDisplayElement(NamedDisplayElement object) {
+				return createNamedDisplayElementAdapter();
+			}
+			@Override
+			public Adapter caseClassifier(Classifier object) {
+				return createClassifierAdapter();
+			}
+			@Override
+			public Adapter caseFormaLParameterList(FormaLParameterList object) {
+				return createFormaLParameterListAdapter();
+			}
+			@Override
 			public Adapter caseExpression(Expression object) {
 				return createExpressionAdapter();
 			}
@@ -632,13 +624,13 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.NamedElement <em>Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.NamedElement
+	 * @see uk.ac.man.cs.mdsd.webgen.base.NamedElement
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
@@ -646,13 +638,13 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement <em>Named Display Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement <em>Named Display Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement
+	 * @see uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement
 	 * @generated
 	 */
 	public Adapter createNamedDisplayElementAdapter() {
@@ -660,13 +652,13 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Classifier <em>Classifier</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.Classifier <em>Classifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Classifier
+	 * @see uk.ac.man.cs.mdsd.webgen.base.Classifier
 	 * @generated
 	 */
 	public Adapter createClassifierAdapter() {
@@ -674,44 +666,16 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.DataType <em>Data Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList <em>Forma LParameter List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.DataType
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList
 	 * @generated
 	 */
-	public Adapter createDataTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.EnumerationType <em>Enumeration Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.EnumerationType
-	 * @generated
-	 */
-	public Adapter createEnumerationTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.EnumerationLiteral <em>Enumeration Literal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.EnumerationLiteral
-	 * @generated
-	 */
-	public Adapter createEnumerationLiteralAdapter() {
+	public Adapter createFormaLParameterListAdapter() {
 		return null;
 	}
 
@@ -1468,20 +1432,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSelectionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter <em>Selection Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.SelectionParameter
-	 * @generated
-	 */
-	public Adapter createSelectionParameterAdapter() {
 		return null;
 	}
 

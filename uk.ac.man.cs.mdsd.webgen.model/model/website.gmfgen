@@ -102,10 +102,9 @@
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3028"
+        visualID="3273"
         editPartClassName="EnumerationLiteralEditPart"
         itemSemanticEditPolicyClassName="EnumerationLiteralItemSemanticEditPolicy"
-        notationViewFactoryClassName="EnumerationLiteralViewFactory"
         canonicalEditPolicyClassName="EnumerationLiteralCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EnumerationLiteralGraphicalNodeEditPolicy"
         createCommandClassName="EnumerationLiteralCreateCommand"
@@ -129,17 +128,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/EnumerationLiteral"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/EnumerationLiteral"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/EnumerationType/enumerations"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/EnumerationType/enumerations"/>
         <childMetaFeature
-            href="website.genmodel#//website/EnumerationType/enumerations"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/EnumerationType/enumerations"/>
       </modelFacet>
       <labels
-          visualID="5033"
+          visualID="5283"
           editPartClassName="EnumerationLiteralNameEditPart"
           itemSemanticEditPolicyClassName="EnumerationLiteralNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="EnumerationLiteralNameViewFactory"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -151,7 +149,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -203,7 +201,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -255,7 +253,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -307,7 +305,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -359,7 +357,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -407,7 +405,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -459,7 +457,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -512,7 +510,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -565,7 +563,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -725,7 +723,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -891,7 +889,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -946,7 +944,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1002,7 +1000,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1157,7 +1155,6 @@
           visualID="5257"
           editPartClassName="CreateUpdateUnitName2EditPart"
           itemSemanticEditPolicyClassName="CreateUpdateUnitName2ItemSemanticEditPolicy"
-          readOnly="true"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -1169,7 +1166,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1280,7 +1277,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1335,7 +1332,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1427,7 +1424,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1538,7 +1535,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1650,7 +1647,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1818,7 +1815,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1930,7 +1927,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2042,7 +2039,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2210,7 +2207,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2378,7 +2375,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2545,7 +2542,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2712,7 +2709,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2880,7 +2877,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3047,7 +3044,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3212,7 +3209,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3266,7 +3263,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3320,7 +3317,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3374,7 +3371,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3428,7 +3425,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3463,7 +3460,7 @@
           xsi:type="gmfgen:FeatureLabelModelFacet"
           parser="//@labelParsers/@implementations.0">
         <metaFeatures
-            href="website.genmodel#//website/NamedElement/name"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
       </labelModelFacet>
     </childNodes>
     <childNodes
@@ -3516,7 +3513,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3571,7 +3568,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3626,7 +3623,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3680,7 +3677,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3736,7 +3733,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3847,7 +3844,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3959,7 +3956,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4125,7 +4122,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4288,7 +4285,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4343,7 +4340,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4398,7 +4395,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4452,7 +4449,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4506,7 +4503,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4558,7 +4555,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4613,7 +4610,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4669,7 +4666,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4835,7 +4832,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4890,7 +4887,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4945,7 +4942,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5001,7 +4998,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5169,7 +5166,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5330,7 +5327,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5382,7 +5379,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5437,7 +5434,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5492,7 +5489,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5546,7 +5543,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5598,7 +5595,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5650,7 +5647,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5685,7 +5682,7 @@
           xsi:type="gmfgen:FeatureLabelModelFacet"
           parser="//@labelParsers/@implementations.0">
         <metaFeatures
-            href="website.genmodel#//website/NamedElement/name"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
       </labelModelFacet>
     </childNodes>
     <childNodes
@@ -5737,7 +5734,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5790,7 +5787,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5844,7 +5841,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5900,7 +5897,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5954,7 +5951,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -6006,7 +6003,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -6067,10 +6064,9 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2002"
+        visualID="2013"
         editPartClassName="DataTypeEditPart"
         itemSemanticEditPolicyClassName="DataTypeItemSemanticEditPolicy"
-        notationViewFactoryClassName="DataTypeViewFactory"
         canonicalEditPolicyClassName="DataTypeCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DataTypeGraphicalNodeEditPolicy"
         createCommandClassName="DataTypeCreateCommand">
@@ -6096,17 +6092,16 @@
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.0">
         <metaClass
-            href="website.genmodel#//website/DataType"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/DataType"/>
         <containmentMetaFeature
             href="website.genmodel#//website/WebGenModel/classifiers"/>
         <childMetaFeature
             href="website.genmodel#//website/WebGenModel/classifiers"/>
       </modelFacet>
       <labels
-          visualID="5002"
+          visualID="5282"
           editPartClassName="DataTypeNameEditPart"
           itemSemanticEditPolicyClassName="DataTypeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="DataTypeNameViewFactory"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -6118,7 +6113,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -6174,15 +6169,14 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2006"
+        visualID="2014"
         editPartClassName="EnumerationTypeEditPart"
         itemSemanticEditPolicyClassName="EnumerationTypeItemSemanticEditPolicy"
-        notationViewFactoryClassName="EnumerationTypeViewFactory"
         canonicalEditPolicyClassName="EnumerationTypeCanonicalEditPolicy"
         compartments="//@diagram/@compartments.2"
         graphicalNodeEditPolicyClassName="EnumerationTypeGraphicalNodeEditPolicy"
@@ -6208,17 +6202,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/EnumerationType"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/EnumerationType"/>
         <containmentMetaFeature
             href="website.genmodel#//website/WebGenModel/classifiers"/>
         <childMetaFeature
             href="website.genmodel#//website/WebGenModel/classifiers"/>
       </modelFacet>
       <labels
-          visualID="5032"
+          visualID="5284"
           editPartClassName="EnumerationTypeNameEditPart"
           itemSemanticEditPolicyClassName="EnumerationTypeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="EnumerationTypeNameViewFactory"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -6230,7 +6223,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -6286,7 +6279,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -6340,7 +6333,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -6396,7 +6389,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -6452,7 +6445,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -6508,7 +6501,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
@@ -6558,7 +6551,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -6636,7 +6629,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base/NamedElement/name"/>
         </modelFacet>
       </labels>
       <labels
@@ -6767,15 +6760,13 @@
       </viewmap>
     </compartments>
     <compartments
-        visualID="7016"
+        visualID="7138"
         editPartClassName="EnumerationTypeEnumerationsCompartmentEditPart"
         itemSemanticEditPolicyClassName="EnumerationTypeEnumerationsCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="EnumerationTypeEnumerationsCompartmentViewFactory"
         canonicalEditPolicyClassName="EnumerationTypeEnumerationsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.2"
         title="EnumerationsCompartment"
         canCollapse="false"
-        hideIfEmpty="false"
         needsTitle="false"
         node="//@diagram/@topLevelNodes.3">
       <diagramRunTimeClass
@@ -8484,7 +8475,7 @@
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="not self.oclIsTypeOf(EnumerationType)"/>
+          body="self.oclIsTypeOf(DataType)"/>
     </providers>
   </expressionProviders>
   <labelParsers

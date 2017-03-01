@@ -9,7 +9,9 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -24,6 +26,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
+import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -667,6 +670,18 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
 				 WebsiteFactory.eINSTANCE.createFeatureSupportAction()));
+	}
+
+	protected Set<Selection> getSelections(final IndexUnit unit) {
+		final Set<Selection> selections = new HashSet<Selection>();
+		if (unit.getContentType().size() > 0) {
+			selections.addAll(getSelections(unit.getContentType().get(0)));
+		}
+		if (unit.getSelectionType() != null) {
+			selections.addAll(getSelections(unit.getSelectionType()));
+		}
+
+		return selections;
 	}
 
 }

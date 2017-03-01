@@ -10,6 +10,10 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import uk.ac.man.cs.mdsd.webgen.base.Classifier;
+import uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList;
+import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
+import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.expression.Expression;
 import uk.ac.man.cs.mdsd.webgen.expression.Path;
 import uk.ac.man.cs.mdsd.webgen.website.*;
@@ -100,54 +104,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				CasAuthentication casAuthentication = (CasAuthentication)theEObject;
 				T result = caseCasAuthentication(casAuthentication);
 				if (result == null) result = caseAuthentication(casAuthentication);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.NAMED_ELEMENT: {
-				NamedElement namedElement = (NamedElement)theEObject;
-				T result = caseNamedElement(namedElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.NAMED_DISPLAY_ELEMENT: {
-				NamedDisplayElement namedDisplayElement = (NamedDisplayElement)theEObject;
-				T result = caseNamedDisplayElement(namedDisplayElement);
-				if (result == null) result = caseNamedElement(namedDisplayElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.CLASSIFIER: {
-				Classifier classifier = (Classifier)theEObject;
-				T result = caseClassifier(classifier);
-				if (result == null) result = caseNamedDisplayElement(classifier);
-				if (result == null) result = caseNamedElement(classifier);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.DATA_TYPE: {
-				DataType dataType = (DataType)theEObject;
-				T result = caseDataType(dataType);
-				if (result == null) result = caseClassifier(dataType);
-				if (result == null) result = caseNamedDisplayElement(dataType);
-				if (result == null) result = caseNamedElement(dataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.ENUMERATION_TYPE: {
-				EnumerationType enumerationType = (EnumerationType)theEObject;
-				T result = caseEnumerationType(enumerationType);
-				if (result == null) result = caseDataType(enumerationType);
-				if (result == null) result = caseClassifier(enumerationType);
-				if (result == null) result = caseNamedDisplayElement(enumerationType);
-				if (result == null) result = caseNamedElement(enumerationType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.ENUMERATION_LITERAL: {
-				EnumerationLiteral enumerationLiteral = (EnumerationLiteral)theEObject;
-				T result = caseEnumerationLiteral(enumerationLiteral);
-				if (result == null) result = caseNamedDisplayElement(enumerationLiteral);
-				if (result == null) result = caseNamedElement(enumerationLiteral);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -468,13 +424,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				Selection selection = (Selection)theEObject;
 				T result = caseSelection(selection);
 				if (result == null) result = caseNamedElement(selection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.SELECTION_PARAMETER: {
-				SelectionParameter selectionParameter = (SelectionParameter)theEObject;
-				T result = caseSelectionParameter(selectionParameter);
-				if (result == null) result = caseNamedElement(selectionParameter);
+				if (result == null) result = caseFormaLParameterList(selection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1213,47 +1163,17 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Forma LParameter List</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Forma LParameter List</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataType(DataType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Enumeration Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Enumeration Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEnumerationType(EnumerationType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Enumeration Literal</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Enumeration Literal</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEnumerationLiteral(EnumerationLiteral object) {
+	public T caseFormaLParameterList(FormaLParameterList object) {
 		return null;
 	}
 
@@ -2064,21 +1984,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSelection(Selection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Selection Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Selection Parameter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSelectionParameter(SelectionParameter object) {
 		return null;
 	}
 

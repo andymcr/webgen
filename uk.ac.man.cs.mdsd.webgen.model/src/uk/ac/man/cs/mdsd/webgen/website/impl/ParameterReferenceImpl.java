@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import uk.ac.man.cs.mdsd.webgen.base.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.website.ParameterReference;
-import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**

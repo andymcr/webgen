@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import uk.ac.man.cs.mdsd.webgen.base.impl.NamedElementImpl;
 import uk.ac.man.cs.mdsd.webgen.website.BusinessOperation;
 import uk.ac.man.cs.mdsd.webgen.website.OperationResultTypes;
 import uk.ac.man.cs.mdsd.webgen.website.Service;

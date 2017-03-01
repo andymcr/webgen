@@ -5,11 +5,14 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -17,8 +20,12 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.base.provider.NamedDisplayElementItemProvider;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
+import uk.ac.man.cs.mdsd.webgen.website.Selection;
+import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -172,6 +179,38 @@ public class FilterItemProvider extends NamedDisplayElementItemProvider {
 			(createChildParameter
 				(WebsitePackage.Literals.FILTER__PARAMETERS,
 				 WebsiteFactory.eINSTANCE.createFilterParameter()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return WebsiteEditPlugin.INSTANCE;
+	}
+
+	protected Set<Selection> getSelections(final EntityOrView entityOrView) {
+		final Set<Selection> selections = new HashSet<Selection>();
+		for (Service service : entityOrView.getServedBy()) {
+			selections.addAll(service.getSelections());
+		}
+
+		return selections;
+	}
+
+	protected Set<Selection> getSelections(final IndexUnit unit) {
+		final Set<Selection> selections = new HashSet<Selection>();
+		if (unit.getContentType().size() > 0) {
+			selections.addAll(getSelections(unit.getContentType().get(0)));
+		}
+		if (unit.getSelectionType() != null) {
+			selections.addAll(getSelections(unit.getSelectionType()));
+		}
+
+		return selections;
 	}
 
 }

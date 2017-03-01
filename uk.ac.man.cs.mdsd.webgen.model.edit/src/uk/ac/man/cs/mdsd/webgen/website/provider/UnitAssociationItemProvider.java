@@ -19,7 +19,12 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
+import uk.ac.man.cs.mdsd.webgen.website.Selection;
+import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -393,6 +398,25 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			(createChildParameter
 				(WebsitePackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
 				 WebsiteFactory.eINSTANCE.createChildPathAssociation()));
+	}
+
+	protected Set<Association> getAssociations(final DynamicUnit unit) {
+		final Set<Association> associations = new HashSet<Association>();
+
+		for (EntityOrView entity : getContentType(unit)) {
+			associations.addAll(entity.getAllAssociations());
+		}
+
+		return associations;
+	}
+
+	protected Set<Selection> getSelections(final EntityOrView entityOrView) {
+		final Set<Selection> selections = new HashSet<Selection>();
+		for (Service service : entityOrView.getServedBy()) {
+			selections.addAll(service.getSelections());
+		}
+
+		return selections;
 	}
 
 }

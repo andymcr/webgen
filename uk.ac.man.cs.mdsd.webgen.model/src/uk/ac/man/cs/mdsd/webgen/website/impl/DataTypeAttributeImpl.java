@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import uk.ac.man.cs.mdsd.webgen.website.DataType;
+import uk.ac.man.cs.mdsd.webgen.base.DataType;
 import uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 

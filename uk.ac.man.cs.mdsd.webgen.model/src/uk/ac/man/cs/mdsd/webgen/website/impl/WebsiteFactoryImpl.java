@@ -65,9 +65,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.WEBSITE_PROPERTIES: return createWebsiteProperties();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
 			case WebsitePackage.CAS_AUTHENTICATION: return createCasAuthentication();
-			case WebsitePackage.DATA_TYPE: return createDataType();
-			case WebsitePackage.ENUMERATION_TYPE: return createEnumerationType();
-			case WebsitePackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
 			case WebsitePackage.MODEL_LABEL: return createModelLabel();
 			case WebsitePackage.MODEL_LABEL_ATTRIBUTE: return createModelLabelAttribute();
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
@@ -90,7 +87,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.VIEW_ASSOCIATION: return createViewAssociation();
 			case WebsitePackage.SERVICE: return createService();
 			case WebsitePackage.SELECTION: return createSelection();
-			case WebsitePackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WebsitePackage.BUSINESS_OPERATION: return createBusinessOperation();
 			case WebsitePackage.IMAGE_MANIPULATION: return createImageManipulation();
 			case WebsitePackage.THUMBNAIL_FILTER: return createThumbnailFilter();
@@ -259,36 +255,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public CasAuthentication createCasAuthentication() {
 		CasAuthenticationImpl casAuthentication = new CasAuthenticationImpl();
 		return casAuthentication;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataType createDataType() {
-		DataTypeImpl dataType = new DataTypeImpl();
-		return dataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EnumerationType createEnumerationType() {
-		EnumerationTypeImpl enumerationType = new EnumerationTypeImpl();
-		return enumerationType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EnumerationLiteral createEnumerationLiteral() {
-		EnumerationLiteralImpl enumerationLiteral = new EnumerationLiteralImpl();
-		return enumerationLiteral;
 	}
 
 	/**
@@ -639,16 +605,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public Selection createSelection() {
 		SelectionImpl selection = new SelectionImpl();
 		return selection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SelectionParameter createSelectionParameter() {
-		SelectionParameterImpl selectionParameter = new SelectionParameterImpl();
-		return selectionParameter;
 	}
 
 	/**

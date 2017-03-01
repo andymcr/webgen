@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.man.cs.mdsd.webgen.model/src" modelPluginID="uk.ac.man.cs.mdsd.webgen.model"
     modelName="Website" modelPluginClass="" suppressEMFTypes="true" booleanFlagsField=""
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    providerRootExtendsClass="WebGenItemProvider" usedGenPackages="../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.genmodel#//criteria ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression"
+    providerRootExtendsClass="WebGenItemProvider" usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.genmodel#//criteria ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression"
     interfaceNamePattern="">
   <foreignModel>website.ecore</foreignModel>
   <genPackages prefix="Website" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
@@ -156,25 +156,6 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/forgottenPasswordUnit"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//CasAuthentication"/>
-    <genClasses image="false" ecoreClass="website.ecore#//NamedElement">
-      <genFeatures createChild="false" propertyCategory="Model" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//NamedElement/name"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="website.ecore#//NamedDisplayElement">
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//NamedDisplayElement/displayLabel"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="website.ecore#//Classifier"/>
-    <genClasses ecoreClass="website.ecore#//DataType">
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//DataType/persistentType"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//DataType/ormType"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//DataType/interfaceType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//DataType/placeholder"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//DataType/validationPattern"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//EnumerationType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//EnumerationType/enumerations"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//EnumerationLiteral"/>
     <genClasses image="false" ecoreClass="website.ecore#//EntityOrView">
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/singletonName"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/pluralisedName"/>
@@ -392,8 +373,6 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//Selection/distinct"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//Selection/fields"/>
-      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
-          ecoreFeature="ecore:EReference website.ecore#//Selection/parameters"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//Selection/joins"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
@@ -402,11 +381,6 @@
           ecoreFeature="ecore:EReference website.ecore#//Selection/ordering"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//Selection/limit"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//Selection/selected"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//SelectionParameter">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//SelectionParameter/formalFor"/>
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//SelectionParameter/optional"/>
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//SelectionParameter/defaultValue"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//BusinessOperation">
       <genFeatures notify="false" createChild="false" propertyCategory="Business"

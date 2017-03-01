@@ -22,11 +22,14 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.criteria.Order;
+import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList;
+import uk.ac.man.cs.mdsd.webgen.base.SelectionParameter;
+import uk.ac.man.cs.mdsd.webgen.base.impl.NamedElementImpl;
 import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
-import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -38,10 +41,10 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#isDistinct <em>Distinct</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getFields <em>Fields</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getOrdering <em>Ordering</em>}</li>
@@ -52,6 +55,16 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class SelectionImpl extends NamedElementImpl implements Selection {
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SelectionParameter> parameters;
+
 	/**
 	 * The default value of the '{@link #isDistinct() <em>Distinct</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -81,16 +94,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @ordered
 	 */
 	protected EList<Feature> fields;
-
-	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<SelectionParameter> parameters;
 
 	/**
 	 * The cached value of the '{@link #getJoins() <em>Joins</em>}' reference list.
@@ -260,9 +263,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<SelectionParameter> getParameters() {
+	public EList<SelectionParameter> getParameters() {
 		if (parameters == null) {
-			parameters = new EObjectContainmentWithInverseEList<SelectionParameter>(SelectionParameter.class, this, WebsitePackage.SELECTION__PARAMETERS, WebsitePackage.SELECTION_PARAMETER__FORMAL_FOR);
+			parameters = new EObjectContainmentWithInverseEList<SelectionParameter>(SelectionParameter.class, this, WebsitePackage.SELECTION__PARAMETERS, BasePackage.SELECTION_PARAMETER__FORMAL_FOR);
 		}
 		return parameters;
 	}
@@ -385,12 +388,12 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__PARAMETERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParameters()).basicAdd(otherEnd, msgs);
 			case WebsitePackage.SELECTION__USED_BY:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetUsedBy((Service)otherEnd, msgs);
-			case WebsitePackage.SELECTION__PARAMETERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParameters()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -403,10 +406,10 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.SELECTION__USED_BY:
-				return basicSetUsedBy(null, msgs);
 			case WebsitePackage.SELECTION__PARAMETERS:
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+			case WebsitePackage.SELECTION__USED_BY:
+				return basicSetUsedBy(null, msgs);
 			case WebsitePackage.SELECTION__FILTER:
 				return basicSetFilter(null, msgs);
 			case WebsitePackage.SELECTION__ORDERING:
@@ -437,14 +440,14 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__PARAMETERS:
+				return getParameters();
 			case WebsitePackage.SELECTION__USED_BY:
 				return getUsedBy();
 			case WebsitePackage.SELECTION__DISTINCT:
 				return isDistinct();
 			case WebsitePackage.SELECTION__FIELDS:
 				return getFields();
-			case WebsitePackage.SELECTION__PARAMETERS:
-				return getParameters();
 			case WebsitePackage.SELECTION__JOINS:
 				return getJoins();
 			case WebsitePackage.SELECTION__FILTER:
@@ -468,6 +471,10 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends SelectionParameter>)newValue);
+				return;
 			case WebsitePackage.SELECTION__USED_BY:
 				setUsedBy((Service)newValue);
 				return;
@@ -477,10 +484,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case WebsitePackage.SELECTION__FIELDS:
 				getFields().clear();
 				getFields().addAll((Collection<? extends Feature>)newValue);
-				return;
-			case WebsitePackage.SELECTION__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends SelectionParameter>)newValue);
 				return;
 			case WebsitePackage.SELECTION__JOINS:
 				getJoins().clear();
@@ -511,6 +514,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__PARAMETERS:
+				getParameters().clear();
+				return;
 			case WebsitePackage.SELECTION__USED_BY:
 				setUsedBy((Service)null);
 				return;
@@ -519,9 +525,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return;
 			case WebsitePackage.SELECTION__FIELDS:
 				getFields().clear();
-				return;
-			case WebsitePackage.SELECTION__PARAMETERS:
-				getParameters().clear();
 				return;
 			case WebsitePackage.SELECTION__JOINS:
 				getJoins().clear();
@@ -550,14 +553,14 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 			case WebsitePackage.SELECTION__USED_BY:
 				return getUsedBy() != null;
 			case WebsitePackage.SELECTION__DISTINCT:
 				return distinct != DISTINCT_EDEFAULT;
 			case WebsitePackage.SELECTION__FIELDS:
 				return fields != null && !fields.isEmpty();
-			case WebsitePackage.SELECTION__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
 			case WebsitePackage.SELECTION__JOINS:
 				return joins != null && !joins.isEmpty();
 			case WebsitePackage.SELECTION__FILTER:
@@ -570,6 +573,38 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return selected != SELECTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == FormaLParameterList.class) {
+			switch (derivedFeatureID) {
+				case WebsitePackage.SELECTION__PARAMETERS: return BasePackage.FORMA_LPARAMETER_LIST__PARAMETERS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == FormaLParameterList.class) {
+			switch (baseFeatureID) {
+				case BasePackage.FORMA_LPARAMETER_LIST__PARAMETERS: return WebsitePackage.SELECTION__PARAMETERS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

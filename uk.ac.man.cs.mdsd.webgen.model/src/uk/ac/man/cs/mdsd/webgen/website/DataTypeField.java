@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import uk.ac.man.cs.mdsd.webgen.base.DataType;
+
 
 /**
  * <!-- begin-user-doc -->

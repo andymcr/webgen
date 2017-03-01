@@ -5,7 +5,10 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -13,6 +16,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.Label;
+import uk.ac.man.cs.mdsd.webgen.website.Selection;
+import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -178,6 +185,31 @@ public class DynamicMenuItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	protected Set<Label> getLabels(final EntityOrView entityOrView) {
+		final Set<Label> labels = new HashSet<Label>();
+		labels.addAll(entityOrView.getAttributes());
+		labels.addAll(entityOrView.getLabels());
+
+		return labels;
+	}
+
+	protected Set<Selection> getSelections(final EntityOrView entityOrView) {
+		final Set<Selection> selections = new HashSet<Selection>();
+		for (Service service : entityOrView.getServedBy()) {
+			selections.addAll(service.getSelections());
+		}
+
+		return selections;
+	}
+
+	protected Set<Selection> getSelections(final DynamicMenu menu) {
+		if (menu.getEntityOrView() != null) {
+			return getSelections(menu.getEntityOrView());
+		}
+
+		return Collections.emptySet();
 	}
 
 }

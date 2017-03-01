@@ -9,6 +9,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.webgen.base.Classifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,7 +63,7 @@ public interface WebGenModel extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Classifiers</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Classifier}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.base.Classifier}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Classifiers</em>' containment reference list isn't clear,

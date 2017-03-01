@@ -4,7 +4,9 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -16,9 +18,11 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
-
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
+import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
+import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.SingletonUnit;
 import uk.ac.man.cs.mdsd.webgen.website.UnitFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -506,6 +510,30 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+	}
+
+	protected Set<EntityOrView> getContentType(final DynamicUnit unit) {
+		final Set<EntityOrView> contentType = new HashSet<EntityOrView>();
+
+		if (unit instanceof SingletonUnit) {
+			final SingletonUnit singleton = (SingletonUnit) unit;
+			if (singleton.getContentType() != null) {
+				contentType.add(singleton.getContentType());
+				return contentType;
+			}
+		}
+
+		if (unit instanceof CollectionUnit) {
+			final CollectionUnit collection = (CollectionUnit) unit;
+			if (collection.getContentType().size() > 0) {
+				contentType.addAll(collection.getContentType());
+				return contentType;
+			}
+		}
+
+		contentType.addAll(unit.getEntities());
+
+		return contentType;
 	}
 
 }

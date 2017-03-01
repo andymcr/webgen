@@ -62,33 +62,6 @@ public interface WebsiteFactory extends EFactory {
 	CasAuthentication createCasAuthentication();
 
 	/**
-	 * Returns a new object of class '<em>Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Type</em>'.
-	 * @generated
-	 */
-	DataType createDataType();
-
-	/**
-	 * Returns a new object of class '<em>Enumeration Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Enumeration Type</em>'.
-	 * @generated
-	 */
-	EnumerationType createEnumerationType();
-
-	/**
-	 * Returns a new object of class '<em>Enumeration Literal</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Enumeration Literal</em>'.
-	 * @generated
-	 */
-	EnumerationLiteral createEnumerationLiteral();
-
-	/**
 	 * Returns a new object of class '<em>Association Key</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -402,15 +375,6 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	Selection createSelection();
-
-	/**
-	 * Returns a new object of class '<em>Selection Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Selection Parameter</em>'.
-	 * @generated
-	 */
-	SelectionParameter createSelectionParameter();
 
 	/**
 	 * Returns a new object of class '<em>Business Operation</em>'.

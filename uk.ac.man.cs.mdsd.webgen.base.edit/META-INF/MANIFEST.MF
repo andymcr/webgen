@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: uk.ac.man.cs.mdsd.webgen.base.edit;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: uk.ac.man.cs.mdsd.webgen.base.provider.BaseEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: uk.ac.man.cs.mdsd.webgen.base.provider
+Require-Bundle: org.eclipse.core.runtime,
+ uk.ac.man.cs.mdsd.webgen.base;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ uk.ac.man.cs.mdsd.webgen.expression.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

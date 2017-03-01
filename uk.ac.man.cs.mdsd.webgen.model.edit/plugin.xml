@@ -9,7 +9,20 @@
          point="org.eclipse.emf.edit.childCreationExtenders">
       <extender
             class="uk.ac.man.cs.mdsd.webgen.website.provider.WebsiteItemProviderAdapterFactory$ExpressionChildCreationExtender"
-            uri="http://cs,man.ac.uk/mdsd/webgen/expression">
+            uri="http://cs.man.ac.uk/mdsd/webgen/expression">
+      </extender>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <extender
+            uri="http://www.cs.man.ac.uk/mdsd/2013/Criteria"
+            class="uk.ac.man.cs.mdsd.webgen.website.provider.WebsiteItemProviderAdapterFactory$CriteriaChildCreationExtender"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.edit.childCreationExtenders">
+      <extender
+            class="uk.ac.man.cs.mdsd.webgen.website.provider.WebsiteItemProviderAdapterFactory$BaseChildCreationExtender"
+            uri="http://cs.man.ac.uk/mdsd/webgen/base">
       </extender>
    </extension>
 
@@ -25,12 +38,6 @@
                org.eclipse.emf.edit.provider.ITreeItemContentProvider
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.edit.childCreationExtenders">
-      <extender
-            uri="http://www.cs.man.ac.uk/mdsd/2013/Criteria"
-            class="uk.ac.man.cs.mdsd.webgen.website.provider.WebsiteItemProviderAdapterFactory$CriteriaChildCreationExtender"/>
    </extension>
 
 </plugin>

@@ -10,7 +10,7 @@ import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -20,6 +20,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.SelectAction;
 import uk.ac.man.cs.mdsd.webgen.website.SelectableUnit;
+import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -204,6 +205,26 @@ public class SelectActionItemProvider extends InlineActionItemProvider {
 				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
+	}
+
+	protected Object getContext(final Object object) {
+		if (object instanceof EObject) {
+			return ((EObject) object).eContainer();
+		} else {
+			return null;
+		}
+	}
+
+	protected WebGenModel getModel(final Object object) {
+		Object container = getContext(object);
+		while (container != null) {
+			if (container instanceof WebGenModel) {
+				return (WebGenModel) container;
+			}
+			container = getContext(container);
+		}
+
+		return null;
 	}
 
 }

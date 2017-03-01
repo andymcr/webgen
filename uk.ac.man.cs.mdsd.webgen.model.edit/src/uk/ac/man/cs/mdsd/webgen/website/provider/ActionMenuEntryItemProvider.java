@@ -16,6 +16,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 import uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -68,12 +69,12 @@ public class ActionMenuEntryItemProvider extends MenuEntryItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_NamedElement_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 WebsitePackage.Literals.NAMED_ELEMENT__NAME,
+				 BasePackage.Literals.NAMED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
+				 null,
 				 null));
 	}
 
@@ -90,12 +91,12 @@ public class ActionMenuEntryItemProvider extends MenuEntryItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_NamedDisplayElement_displayLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NamedDisplayElement_displayLabel_feature", "_UI_NamedDisplayElement_type"),
-				 WebsitePackage.Literals.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL,
+				 BasePackage.Literals.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
+				 null,
 				 null));
 	}
 

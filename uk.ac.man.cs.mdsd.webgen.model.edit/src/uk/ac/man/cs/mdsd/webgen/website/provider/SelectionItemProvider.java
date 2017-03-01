@@ -12,6 +12,7 @@ import java.util.Set;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -20,12 +21,15 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
+import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
+import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.base.provider.NamedElementItemProvider;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
-import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
+import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -211,7 +215,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.SELECTION__PARAMETERS);
+			childrenFeatures.add(BasePackage.Literals.FORMA_LPARAMETER_LIST__PARAMETERS);
 			childrenFeatures.add(WebsitePackage.Literals.SELECTION__FILTER);
 			childrenFeatures.add(WebsitePackage.Literals.SELECTION__ORDERING);
 		}
@@ -295,8 +299,8 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.SELECTION__PARAMETERS,
-				 WebsiteFactory.eINSTANCE.createSelectionParameter()));
+				(BasePackage.Literals.FORMA_LPARAMETER_LIST__PARAMETERS,
+				 BaseFactory.eINSTANCE.createSelectionParameter()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -342,6 +346,38 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(WebsitePackage.Literals.SELECTION__ORDERING,
 				 CriteriaFactory.eINSTANCE.createDesc()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return WebsiteEditPlugin.INSTANCE;
+	}
+
+	protected Set<EntityOrView> getEntitiesAndViews(final Selection selection) {
+		final Set<EntityOrView> entitiesAndViews = new HashSet<EntityOrView>();
+		entitiesAndViews.add(((Service) selection.eContainer()).getServes());
+		final Set<Association> joins = new HashSet<Association>(selection.getJoins());
+		while (!joins.isEmpty()) {
+			final Set<Association> handled = new HashSet<Association>();
+			for (Association join : joins) {
+				if (entitiesAndViews.contains(join.getSourceEntityX())) {
+					entitiesAndViews.add(join.getTargetEntityX());
+					handled.add(join);
+				} else if (entitiesAndViews.contains(join.getTargetEntityX())) {
+					entitiesAndViews.add(join.getSourceEntityX());
+					handled.add(join);
+				}
+			}
+			joins.removeAll(handled);
+		}
+
+		return entitiesAndViews;
 	}
 
 }

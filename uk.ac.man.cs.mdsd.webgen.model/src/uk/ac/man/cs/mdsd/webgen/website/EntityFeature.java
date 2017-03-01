@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Entity Feature</b></em>'.

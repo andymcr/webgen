@@ -14,9 +14,6 @@ import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.ChildPathAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ChildPathAttribute;
-import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
-import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
-import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
@@ -27,11 +24,9 @@ import uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
-import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.SingletonUnit;
 import uk.ac.man.cs.mdsd.webgen.website.UnitElement;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
@@ -76,14 +71,6 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 	}
 
-	protected Set<Label> getLabels(final EntityOrView entityOrView) {
-		final Set<Label> labels = new HashSet<Label>();
-		labels.addAll(entityOrView.getAttributes());
-		labels.addAll(entityOrView.getLabels());
-
-		return labels;
-	}
-
 	protected List<Feature> getFeatures(final Service service) {
 		if (service.getServes() != null) {
 			return service.getServes().getFeatures();
@@ -94,27 +81,6 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 
 	protected List<Association> getAssociations(final Service service) {
 		return service.getServes().getAllAssociations();
-	}
-
-	protected Set<EntityOrView> getEntitiesAndViews(final Selection selection) {
-		final Set<EntityOrView> entitiesAndViews = new HashSet<EntityOrView>();
-		entitiesAndViews.add(((Service) selection.eContainer()).getServes());
-		final Set<Association> joins = new HashSet<Association>(selection.getJoins());
-		while (!joins.isEmpty()) {
-			final Set<Association> handled = new HashSet<Association>();
-			for (Association join : joins) {
-				if (entitiesAndViews.contains(join.getSourceEntityX())) {
-					entitiesAndViews.add(join.getTargetEntityX());
-					handled.add(join);
-				} else if (entitiesAndViews.contains(join.getTargetEntityX())) {
-					entitiesAndViews.add(join.getSourceEntityX());
-					handled.add(join);
-				}
-			}
-			joins.removeAll(handled);
-		}
-
-		return entitiesAndViews;
 	}
 
 	protected Set<EntityOrView> getEntitiesAndViews(final InlineActionContainer container) {
@@ -130,50 +96,6 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 
 		return entitiesAndViews;
-	}
-
-	protected Set<EntityOrView> getContentType(final DynamicUnit unit) {
-		final Set<EntityOrView> contentType = new HashSet<EntityOrView>();
-
-		if (unit instanceof SingletonUnit) {
-			final SingletonUnit singleton = (SingletonUnit) unit;
-			if (singleton.getContentType() != null) {
-				contentType.add(singleton.getContentType());
-				return contentType;
-			}
-		}
-
-		if (unit instanceof CollectionUnit) {
-			final CollectionUnit collection = (CollectionUnit) unit;
-			if (collection.getContentType().size() > 0) {
-				contentType.addAll(collection.getContentType());
-				return contentType;
-			}
-		}
-
-		contentType.addAll(unit.getEntities());
-
-		return contentType;
-	}
-
-	protected Set<Attribute> getAttributes(final DynamicUnit unit) {
-		final Set<Attribute> attributes = new HashSet<Attribute>();
-
-		for (EntityOrView entity : getContentType(unit)) {
-			attributes.addAll(entity.getAttributes());
-		}
-
-		return attributes;
-	}
-
-	protected Set<Association> getAssociations(final DynamicUnit unit) {
-		final Set<Association> associations = new HashSet<Association>();
-
-		for (EntityOrView entity : getContentType(unit)) {
-			associations.addAll(entity.getAllAssociations());
-		}
-
-		return associations;
 	}
 
 	protected List<Attribute> getAttributes(final ChildPathAttribute attribute) {
@@ -221,51 +143,6 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 
 		return Collections.emptyList();
-	}
-
-	protected Set<Selection> getSelections(final EntityOrView entityOrView) {
-		final Set<Selection> selections = new HashSet<Selection>();
-		for (Service service : entityOrView.getServedBy()) {
-			selections.addAll(service.getSelections());
-		}
-
-		return selections;
-	}
-	protected Set<Selection> getSelections(final DynamicMenu menu) {
-		if (menu.getEntityOrView() != null) {
-			return getSelections(menu.getEntityOrView());
-		}
-
-		return Collections.emptySet();
-	}
-
-	protected Set<Selection> getSelections(final DynamicUnit unit) {
-		final Set<Selection> selections = new HashSet<Selection>();
-		for (EntityOrView entityOrView : unit.getEntities()) {
-			selections.addAll(getSelections(entityOrView));
-		}
-
-		return selections;
-	}
-
-	protected Set<Selection> getSelections(final CollectionUnit unit) {
-		if (unit.getContentType().size() > 0) {
-			return getSelections(unit.getContentType().get(0));
-		}
-
-		return Collections.emptySet();
-	}
-
-	protected Set<Selection> getSelections(final IndexUnit unit) {
-		final Set<Selection> selections = new HashSet<Selection>();
-		if (unit.getContentType().size() > 0) {
-			selections.addAll(getSelections(unit.getContentType().get(0)));
-		}
-		if (unit.getSelectionType() != null) {
-			selections.addAll(getSelections(unit.getSelectionType()));
-		}
-
-		return selections;
 	}
 
 	protected Object getContext(final Object object) {

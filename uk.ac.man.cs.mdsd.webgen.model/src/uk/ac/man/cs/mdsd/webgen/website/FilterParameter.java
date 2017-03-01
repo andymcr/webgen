@@ -2,6 +2,10 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import uk.ac.man.cs.mdsd.webgen.base.DataType;
+import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
+import uk.ac.man.cs.mdsd.webgen.base.SelectionParameter;
+
 
 /**
  * <!-- begin-user-doc -->

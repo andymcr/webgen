@@ -22,6 +22,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -188,22 +189,22 @@ public class WebGenModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
-				 WebsiteFactory.eINSTANCE.createDataType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
-				 WebsiteFactory.eINSTANCE.createEnumerationType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
 				 WebsiteFactory.eINSTANCE.createEntity()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
 				 WebsiteFactory.eINSTANCE.createView()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
+				 BaseFactory.eINSTANCE.createDataType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
+				 BaseFactory.eINSTANCE.createEnumerationType()));
 
 		newChildDescriptors.add
 			(createChildParameter

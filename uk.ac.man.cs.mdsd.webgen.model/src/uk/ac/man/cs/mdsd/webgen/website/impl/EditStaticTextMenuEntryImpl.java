@@ -8,9 +8,10 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
+import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.website.EditStaticTextMenuEntry;
-import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
-import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -206,13 +207,13 @@ public class EditStaticTextMenuEntryImpl extends MenuEntryImpl implements EditSt
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
-				case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__NAME: return WebsitePackage.NAMED_ELEMENT__NAME;
+				case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__NAME: return BasePackage.NAMED_ELEMENT__NAME;
 				default: return -1;
 			}
 		}
 		if (baseClass == NamedDisplayElement.class) {
 			switch (derivedFeatureID) {
-				case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL: return WebsitePackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
+				case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL: return BasePackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
 				default: return -1;
 			}
 		}
@@ -228,13 +229,13 @@ public class EditStaticTextMenuEntryImpl extends MenuEntryImpl implements EditSt
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
-				case WebsitePackage.NAMED_ELEMENT__NAME: return WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__NAME;
+				case BasePackage.NAMED_ELEMENT__NAME: return WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__NAME;
 				default: return -1;
 			}
 		}
 		if (baseClass == NamedDisplayElement.class) {
 			switch (baseFeatureID) {
-				case WebsitePackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL: return WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL;
+				case BasePackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL: return WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL;
 				default: return -1;
 			}
 		}

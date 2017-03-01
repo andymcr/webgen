@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated expression -->
       <factory
-            uri="http://cs,man.ac.uk/mdsd/webgen/expression"
+            uri="http://cs.man.ac.uk/mdsd/webgen/expression"
             class="uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

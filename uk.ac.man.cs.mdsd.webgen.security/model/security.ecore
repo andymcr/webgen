@@ -65,9 +65,5 @@
         defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CasAuthentication" eSuperTypes="#//Authentication"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CurrentUserReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="userModel" ordered="false"
-        lowerBound="1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView"
-        changeable="false" volatile="true" transient="true" unsettable="true" derived="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CurrentUserReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable"/>
 </ecore:EPackage>

@@ -324,15 +324,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCurrentUserReference_UserModel() {
-		return (EReference)currentUserReferenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getAuthenticationKeyTypes() {
 		return authenticationKeyTypesEEnum;
 	}
@@ -388,7 +379,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		casAuthenticationEClass = createEClass(CAS_AUTHENTICATION);
 
 		currentUserReferenceEClass = createEClass(CURRENT_USER_REFERENCE);
-		createEReference(currentUserReferenceEClass, CURRENT_USER_REFERENCE__USER_MODEL);
 
 		// Create enums
 		authenticationKeyTypesEEnum = createEEnum(AUTHENTICATION_KEY_TYPES);
@@ -454,7 +444,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		initEClass(casAuthenticationEClass, CasAuthentication.class, "CasAuthentication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(currentUserReferenceEClass, CurrentUserReference.class, "CurrentUserReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCurrentUserReference_UserModel(), thePersistencePackage.getEntityOrView(), null, "userModel", null, 1, 1, CurrentUserReference.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(authenticationKeyTypesEEnum, AuthenticationKeyTypes.class, "AuthenticationKeyTypes");

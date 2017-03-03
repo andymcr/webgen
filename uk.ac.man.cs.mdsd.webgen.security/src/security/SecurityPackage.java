@@ -399,22 +399,13 @@ public interface SecurityPackage extends EPackage {
 	int CURRENT_USER_REFERENCE = 4;
 
 	/**
-	 * The feature id for the '<em><b>User Model</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CURRENT_USER_REFERENCE__USER_MODEL = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Current User Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CURRENT_USER_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
+	int CURRENT_USER_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Current User Reference</em>' class.
@@ -641,17 +632,6 @@ public interface SecurityPackage extends EPackage {
 	EClass getCurrentUserReference();
 
 	/**
-	 * Returns the meta object for the reference '{@link security.CurrentUserReference#getUserModel <em>User Model</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>User Model</em>'.
-	 * @see security.CurrentUserReference#getUserModel()
-	 * @see #getCurrentUserReference()
-	 * @generated
-	 */
-	EReference getCurrentUserReference_UserModel();
-
-	/**
 	 * Returns the meta object for enum '{@link security.AuthenticationKeyTypes <em>Authentication Key Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -845,14 +825,6 @@ public interface SecurityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CURRENT_USER_REFERENCE = eINSTANCE.getCurrentUserReference();
-
-		/**
-		 * The meta object literal for the '<em><b>User Model</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CURRENT_USER_REFERENCE__USER_MODEL = eINSTANCE.getCurrentUserReference_UserModel();
 
 		/**
 		 * The meta object literal for the '{@link security.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.

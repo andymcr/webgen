@@ -11,10 +11,14 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import security.provider.SecurityEditPlugin;
 import uk.ac.man.cs.mdsd.criteria.provider.CriteriaEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.base.provider.BaseEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
+import uk.ac.man.cs.mdsd.webgen.image.provider.ImageEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.persistence.provider.PersistenceEditPlugin;
+import uk.ac.man.cs.mdsd.webgen.service.provider.ServiceEditPlugin;
+import uk.ac.man.cs.mdsd.webgen.webui.provider.WebuiEditPlugin;
 
 /**
  * This is the central singleton for the Website editor plugin.
@@ -49,9 +53,12 @@ public final class WebsiteEditorPlugin extends EMFPlugin {
 		super
 			(new ResourceLocator [] {
 				BaseEditPlugin.INSTANCE,
-				CriteriaEditPlugin.INSTANCE,
 				ExpressionEditPlugin.INSTANCE,
+				ImageEditPlugin.INSTANCE,
 				PersistenceEditPlugin.INSTANCE,
+				SecurityEditPlugin.INSTANCE,
+				ServiceEditPlugin.INSTANCE,
+				WebuiEditPlugin.INSTANCE,
 			});
 	}
 

@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.man.cs.mdsd.webgen.base/src" modelPluginID="uk.ac.man.cs.mdsd.webgen.base"
     modelName="Base" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence"
+    usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression"
     operationReflection="true" importOrganizing="true">
   <foreignModel>base.ecore</foreignModel>
   <genPackages prefix="Base" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
@@ -26,16 +26,17 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference base.ecore#//EnumerationType/enumerations"/>
     </genClasses>
     <genClasses ecoreClass="base.ecore#//EnumerationLiteral"/>
-    <genClasses image="false" ecoreClass="base.ecore#//FormaLParameterList">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference base.ecore#//FormaLParameterList/parameters"/>
+    <genClasses image="false" ecoreClass="base.ecore#//FormalParameterList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference base.ecore#//FormalParameterList/parameters"/>
     </genClasses>
     <genClasses ecoreClass="base.ecore#//SelectionParameter">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference base.ecore#//SelectionParameter/formalFor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//SelectionParameter/optional"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//SelectionParameter/defaultValue"/>
     </genClasses>
-    <genClasses ecoreClass="base.ecore#//CurrentUserReference">
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference base.ecore#//CurrentUserReference/userModel"/>
+    <genClasses ecoreClass="base.ecore#//ParameterReference">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//ParameterReference/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference base.ecore#//ParameterReference/parameter"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

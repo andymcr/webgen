@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import security.Authentication;
 import uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies;
 import uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies;
-import uk.ac.man.cs.mdsd.webgen.website.Authentication;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.InputTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -970,9 +970,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		if (newAuthentication != authentication) {
 			NotificationChain msgs = null;
 			if (authentication != null)
-				msgs = ((InternalEObject)authentication).eInverseRemove(this, WebsitePackage.AUTHENTICATION__AUTHENTICATES, Authentication.class, msgs);
+				msgs = ((InternalEObject)authentication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION, null, msgs);
 			if (newAuthentication != null)
-				msgs = ((InternalEObject)newAuthentication).eInverseAdd(this, WebsitePackage.AUTHENTICATION__AUTHENTICATES, Authentication.class, msgs);
+				msgs = ((InternalEObject)newAuthentication).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION, null, msgs);
 			msgs = basicSetAuthentication(newAuthentication, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -1541,22 +1541,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		staticUnitsEditable = newStaticUnitsEditable;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE, oldStaticUnitsEditable, staticUnitsEditable));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION:
-				if (authentication != null)
-					msgs = ((InternalEObject)authentication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION, null, msgs);
-				return basicSetAuthentication((Authentication)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

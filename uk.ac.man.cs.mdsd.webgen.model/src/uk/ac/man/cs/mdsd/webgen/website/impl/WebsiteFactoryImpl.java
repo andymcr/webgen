@@ -63,13 +63,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 		switch (eClass.getClassifierID()) {
 			case WebsitePackage.WEB_GEN_MODEL: return createWebGenModel();
 			case WebsitePackage.WEBSITE_PROPERTIES: return createWebsiteProperties();
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
-			case WebsitePackage.CAS_AUTHENTICATION: return createCasAuthentication();
 			case WebsitePackage.MODEL_REFERENCE: return createModelReference();
-			case WebsitePackage.FEATURE_REFERENCE: return createFeatureReference();
 			case WebsitePackage.ROUTE_PARAMETER_REFERENCE: return createRouteParameterReference();
-			case WebsitePackage.PARAMETER_REFERENCE: return createParameterReference();
-			case WebsitePackage.CURRENT_USER_REFERENCE: return createCurrentUserReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -89,8 +84,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return createInputTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.AJAX_TECHNOLOGIES:
 				return createAjaxTechnologiesFromString(eDataType, initialValue);
-			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
-				return createAuthenticationKeyTypesFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -110,8 +103,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return convertInputTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.AJAX_TECHNOLOGIES:
 				return convertAjaxTechnologiesToString(eDataType, instanceValue);
-			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
-				return convertAuthenticationKeyTypesToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -142,26 +133,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LocalAuthenticationSystem createLocalAuthenticationSystem() {
-		LocalAuthenticationSystemImpl localAuthenticationSystem = new LocalAuthenticationSystemImpl();
-		return localAuthenticationSystem;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CasAuthentication createCasAuthentication() {
-		CasAuthenticationImpl casAuthentication = new CasAuthenticationImpl();
-		return casAuthentication;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ModelReference createModelReference() {
 		ModelReferenceImpl modelReference = new ModelReferenceImpl();
 		return modelReference;
@@ -172,39 +143,9 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureReference createFeatureReference() {
-		FeatureReferenceImpl featureReference = new FeatureReferenceImpl();
-		return featureReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public RouteParameterReference createRouteParameterReference() {
 		RouteParameterReferenceImpl routeParameterReference = new RouteParameterReferenceImpl();
 		return routeParameterReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ParameterReference createParameterReference() {
-		ParameterReferenceImpl parameterReference = new ParameterReferenceImpl();
-		return parameterReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CurrentUserReference createCurrentUserReference() {
-		CurrentUserReferenceImpl currentUserReference = new CurrentUserReferenceImpl();
-		return currentUserReference;
 	}
 
 	/**
@@ -264,26 +205,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * @generated
 	 */
 	public String convertAjaxTechnologiesToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AuthenticationKeyTypes createAuthenticationKeyTypesFromString(EDataType eDataType, String initialValue) {
-		AuthenticationKeyTypes result = AuthenticationKeyTypes.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertAuthenticationKeyTypesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

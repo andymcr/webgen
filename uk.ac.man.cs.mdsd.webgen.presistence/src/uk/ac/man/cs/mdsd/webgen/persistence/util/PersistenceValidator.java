@@ -163,6 +163,8 @@ public class PersistenceValidator extends EObjectValidator {
 				return validateEncapsulatedAssociation((EncapsulatedAssociation)value, diagnostics, context);
 			case PersistencePackage.VIEW_ASSOCIATION:
 				return validateViewAssociation((ViewAssociation)value, diagnostics, context);
+			case PersistencePackage.FEATURE_REFERENCE:
+				return validateFeatureReference((FeatureReference)value, diagnostics, context);
 			case PersistencePackage.DATABASE_TECHNOLOGIES:
 				return validateDatabaseTechnologies((DatabaseTechnologies)value, diagnostics, context);
 			case PersistencePackage.ORM_TECHNOLOGIES:
@@ -768,6 +770,15 @@ public class PersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(viewAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(viewAssociation, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFeatureReference(FeatureReference featureReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(featureReference, diagnostics, context);
 	}
 
 	/**

@@ -94,16 +94,16 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 				return createEnumerationLiteralAdapter();
 			}
 			@Override
-			public Adapter caseFormaLParameterList(FormaLParameterList object) {
-				return createFormaLParameterListAdapter();
+			public Adapter caseFormalParameterList(FormalParameterList object) {
+				return createFormalParameterListAdapter();
 			}
 			@Override
 			public Adapter caseSelectionParameter(SelectionParameter object) {
 				return createSelectionParameterAdapter();
 			}
 			@Override
-			public Adapter caseCurrentUserReference(CurrentUserReference object) {
-				return createCurrentUserReferenceAdapter();
+			public Adapter caseParameterReference(ParameterReference object) {
+				return createParameterReferenceAdapter();
 			}
 			@Override
 			public Adapter caseExpression(Expression object) {
@@ -218,16 +218,16 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList <em>Forma LParameter List</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameterList <em>Formal Parameter List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameterList
 	 * @generated
 	 */
-	public Adapter createFormaLParameterListAdapter() {
+	public Adapter createFormalParameterListAdapter() {
 		return null;
 	}
 
@@ -246,16 +246,16 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference <em>Current User Reference</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.ParameterReference <em>Parameter Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference
+	 * @see uk.ac.man.cs.mdsd.webgen.base.ParameterReference
 	 * @generated
 	 */
-	public Adapter createCurrentUserReferenceAdapter() {
+	public Adapter createParameterReferenceAdapter() {
 		return null;
 	}
 

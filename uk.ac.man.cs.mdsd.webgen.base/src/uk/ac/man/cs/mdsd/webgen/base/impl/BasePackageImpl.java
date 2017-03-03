@@ -13,19 +13,17 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 import uk.ac.man.cs.mdsd.webgen.base.Classifier;
-import uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference;
 import uk.ac.man.cs.mdsd.webgen.base.DataType;
 import uk.ac.man.cs.mdsd.webgen.base.EnumerationLiteral;
 import uk.ac.man.cs.mdsd.webgen.base.EnumerationType;
-import uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList;
+import uk.ac.man.cs.mdsd.webgen.base.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
+import uk.ac.man.cs.mdsd.webgen.base.ParameterReference;
 import uk.ac.man.cs.mdsd.webgen.base.SelectionParameter;
 
 import uk.ac.man.cs.mdsd.webgen.base.util.BaseValidator;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
-import uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,7 +79,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass formaLParameterListEClass = null;
+	private EClass formalParameterListEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,7 +93,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass currentUserReferenceEClass = null;
+	private EClass parameterReferenceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -143,16 +141,14 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		isInited = true;
 
-		// Obtain or create and register interdependencies
-		PersistencePackageImpl thePersistencePackage = (PersistencePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI) instanceof PersistencePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI) : PersistencePackage.eINSTANCE);
+		// Initialize simple dependencies
+		ExpressionPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theBasePackage.createPackageContents();
-		thePersistencePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theBasePackage.initializePackageContents();
-		thePersistencePackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -303,8 +299,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFormaLParameterList() {
-		return formaLParameterListEClass;
+	public EClass getFormalParameterList() {
+		return formalParameterListEClass;
 	}
 
 	/**
@@ -312,8 +308,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFormaLParameterList_Parameters() {
-		return (EReference)formaLParameterListEClass.getEStructuralFeatures().get(0);
+	public EReference getFormalParameterList_Parameters() {
+		return (EReference)formalParameterListEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -357,8 +353,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCurrentUserReference() {
-		return currentUserReferenceEClass;
+	public EClass getParameterReference() {
+		return parameterReferenceEClass;
 	}
 
 	/**
@@ -366,8 +362,17 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCurrentUserReference_UserModel() {
-		return (EReference)currentUserReferenceEClass.getEStructuralFeatures().get(0);
+	public EAttribute getParameterReference_Name() {
+		return (EAttribute)parameterReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParameterReference_Parameter() {
+		return (EReference)parameterReferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -418,16 +423,17 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		enumerationLiteralEClass = createEClass(ENUMERATION_LITERAL);
 
-		formaLParameterListEClass = createEClass(FORMA_LPARAMETER_LIST);
-		createEReference(formaLParameterListEClass, FORMA_LPARAMETER_LIST__PARAMETERS);
+		formalParameterListEClass = createEClass(FORMAL_PARAMETER_LIST);
+		createEReference(formalParameterListEClass, FORMAL_PARAMETER_LIST__PARAMETERS);
 
 		selectionParameterEClass = createEClass(SELECTION_PARAMETER);
 		createEReference(selectionParameterEClass, SELECTION_PARAMETER__FORMAL_FOR);
 		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__OPTIONAL);
 		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__DEFAULT_VALUE);
 
-		currentUserReferenceEClass = createEClass(CURRENT_USER_REFERENCE);
-		createEReference(currentUserReferenceEClass, CURRENT_USER_REFERENCE__USER_MODEL);
+		parameterReferenceEClass = createEClass(PARAMETER_REFERENCE);
+		createEAttribute(parameterReferenceEClass, PARAMETER_REFERENCE__NAME);
+		createEReference(parameterReferenceEClass, PARAMETER_REFERENCE__PARAMETER);
 	}
 
 	/**
@@ -455,7 +461,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		// Obtain other dependent packages
 		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
-		PersistencePackage thePersistencePackage = (PersistencePackage)EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -468,7 +473,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		enumerationTypeEClass.getESuperTypes().add(this.getDataType());
 		enumerationLiteralEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		selectionParameterEClass.getESuperTypes().add(this.getNamedElement());
-		currentUserReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
+		parameterReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -491,16 +496,17 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		initEClass(enumerationLiteralEClass, EnumerationLiteral.class, "EnumerationLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(formaLParameterListEClass, FormaLParameterList.class, "FormaLParameterList", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFormaLParameterList_Parameters(), this.getSelectionParameter(), this.getSelectionParameter_FormalFor(), "parameters", null, 0, -1, FormaLParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(formalParameterListEClass, FormalParameterList.class, "FormalParameterList", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFormalParameterList_Parameters(), this.getSelectionParameter(), this.getSelectionParameter_FormalFor(), "parameters", null, 0, -1, FormalParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionParameterEClass, SelectionParameter.class, "SelectionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSelectionParameter_FormalFor(), this.getFormaLParameterList(), this.getFormaLParameterList_Parameters(), "formalFor", null, 1, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSelectionParameter_FormalFor(), this.getFormalParameterList(), this.getFormalParameterList_Parameters(), "formalFor", null, 1, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelectionParameter_Optional(), ecorePackage.getEBoolean(), "optional", "false", 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelectionParameter_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(currentUserReferenceEClass, CurrentUserReference.class, "CurrentUserReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCurrentUserReference_UserModel(), thePersistencePackage.getEntityOrView(), null, "userModel", null, 1, 1, CurrentUserReference.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEClass(parameterReferenceEClass, ParameterReference.class, "ParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getParameterReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, ParameterReference.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getParameterReference_Parameter(), this.getSelectionParameter(), null, "parameter", null, 1, 1, ParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -541,6 +547,12 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		   source, 
 		   new String[] {
 			 "nameNeedsAtLeastOneCharacter", "not name.oclIsUndefined() implies name.size() > 0"
+		   });	
+		addAnnotation
+		  (getParameterReference_Name(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if parameter.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tparameter.name\r\nendif"
 		   });
 	}
 

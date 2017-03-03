@@ -2,8 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
-import uk.ac.man.cs.mdsd.webgen.expression.Path;
-
+import uk.ac.man.cs.mdsd.webgen.expression.Variable;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 
 /**
@@ -23,7 +22,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
  * @model
  * @generated
  */
-public interface RouteParameterReference extends Path {
+public interface RouteParameterReference extends Variable {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

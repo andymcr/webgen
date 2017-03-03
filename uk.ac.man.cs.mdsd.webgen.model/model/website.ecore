@@ -66,8 +66,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="authentication" eType="#//Authentication"
-        containment="true" eOpposite="#//Authentication/authenticates"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="authentication" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.security/model/security.ecore#//Authentication"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="testProjectName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultDateFormat" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="jS F Y"/>
@@ -115,80 +115,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="staticUnitsEditable" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Authentication" abstract="true">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="userKeyFromUser userKeyRequiredAttribute"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="userKeyFromUser" value="not user.oclIsUndefined() and not userKey.oclIsUndefined() implies&#xD;&#xA;&#x9;user.features->includes(userKey)"/>
-      <details key="userKeyRequiredAttribute" value="not userKey.oclIsUndefined() implies&#xD;&#xA;&#x9;if userKey.oclIsTypeOf(EncapsulatedAttribute) then&#xD;&#xA;&#x9;&#x9;userKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;userKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required&#xD;&#xA;&#x9;endif"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="authenticates" lowerBound="1"
-        eType="#//WebsiteProperties" eOpposite="#//WebsiteProperties/authentication"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="user" ordered="false" lowerBound="1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="userKey" ordered="false"
-        lowerBound="1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="loginLabel" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="Login"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logoutLabel" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="Logout"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="AuthenticationKeyTypes">
-    <eLiterals name="Email"/>
-    <eLiterals name="ScreenName" value="1"/>
-    <eLiterals name="Username" value="2"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LocalAuthenticationSystem" eSuperTypes="#//Authentication">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="captchaRequiresKeys"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="captchaRequiresKeys" value="useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="authentication" ordered="false"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="authenticationKey" lowerBound="1"
-        eType="#//AuthenticationKeyTypes"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useCaptcha" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="allowRememberMe" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="allowSelfRegistration"
-        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trackLoginAttempts" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useEmailActivation" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sendWelcomeEmail" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="registrationUnit" ordered="false"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//RegistrationUnit"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="loginUnit" ordered="false"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//LoginUnit"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="forgottenPasswordUnit"
-        ordered="false" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//ForgottenPasswordUnit"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CasAuthentication" eSuperTypes="#//Authentication"/>
   <eClassifiers xsi:type="ecore:EClass" name="ModelReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="unit" ordered="false" lowerBound="1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//DynamicUnit"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FeatureReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" volatile="true" derived="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if feature.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;if feature.oclIsKindOf(EntityFeature) then&#xD;&#xA;&#x9;&#x9;feature.oclAsType(EntityFeature).name&#xD;&#xA;&#x9;else if feature.oclIsKindOf(EncapsulatedAttribute) then&#xD;&#xA;&#x9;&#x9;feature.oclAsType(EncapsulatedAttribute).name&#xD;&#xA;&#x9;else if feature.oclIsKindOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;feature.oclAsType(EncapsulatedAssociation).name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;feature.oclAsType(ViewAssociation).name&#xD;&#xA;&#x9;endif endif endif&#xD;&#xA;endif"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Feature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RouteParameterReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -199,15 +128,5 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Attribute"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" volatile="true" derived="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if parameter.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;parameter.name&#xD;&#xA;endif"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//SelectionParameter"/>
   </eClassifiers>
 </ecore:EPackage>

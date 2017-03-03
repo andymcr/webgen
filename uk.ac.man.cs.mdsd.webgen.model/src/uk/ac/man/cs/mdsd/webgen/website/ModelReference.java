@@ -2,7 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
-import uk.ac.man.cs.mdsd.webgen.expression.Path;
+import uk.ac.man.cs.mdsd.webgen.expression.Variable;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 
 /**
@@ -21,7 +21,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
  * @model
  * @generated
  */
-public interface ModelReference extends Path {
+public interface ModelReference extends Variable {
 	/**
 	 * Returns the value of the '<em><b>Unit</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -9,6 +9,7 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import security.provider.SecurityEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.base.provider.BaseEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.image.provider.ImageEditPlugin;
@@ -50,10 +51,11 @@ public final class WebsiteEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     BaseEditPlugin.INSTANCE,
 		     ExpressionEditPlugin.INSTANCE,
+		     ImageEditPlugin.INSTANCE,
 		     PersistenceEditPlugin.INSTANCE,
+		     SecurityEditPlugin.INSTANCE,
 		     ServiceEditPlugin.INSTANCE,
 		     WebuiEditPlugin.INSTANCE,
-		     ImageEditPlugin.INSTANCE,
 		   });
 	}
 

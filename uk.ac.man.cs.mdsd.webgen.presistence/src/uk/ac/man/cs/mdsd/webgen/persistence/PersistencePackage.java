@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -6393,6 +6394,52 @@ public interface PersistencePackage extends EPackage {
 	int VIEW_ASSOCIATION_OPERATION_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.FeatureReferenceImpl <em>Feature Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.FeatureReferenceImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getFeatureReference()
+	 * @generated
+	 */
+	int FEATURE_REFERENCE = 33;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_REFERENCE__NAME = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_REFERENCE__FEATURE = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Feature Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Feature Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_REFERENCE_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies <em>Database Technologies</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6400,7 +6447,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getDatabaseTechnologies()
 	 * @generated
 	 */
-	int DATABASE_TECHNOLOGIES = 33;
+	int DATABASE_TECHNOLOGIES = 34;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies <em>Orm Technologies</em>}' enum.
@@ -6410,7 +6457,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getOrmTechnologies()
 	 * @generated
 	 */
-	int ORM_TECHNOLOGIES = 34;
+	int ORM_TECHNOLOGIES = 35;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Cardinality <em>Cardinality</em>}' enum.
@@ -6420,7 +6467,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 35;
+	int CARDINALITY = 36;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.isHasChoices <em>is Has Choices</em>}' enum.
@@ -6430,7 +6477,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getisHasChoices()
 	 * @generated
 	 */
-	int IS_HAS_CHOICES = 36;
+	int IS_HAS_CHOICES = 37;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.DateDetails <em>Date Details</em>}' enum.
@@ -6440,7 +6487,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getDateDetails()
 	 * @generated
 	 */
-	int DATE_DETAILS = 37;
+	int DATE_DETAILS = 38;
 
 
 	/**
@@ -7995,6 +8042,38 @@ public interface PersistencePackage extends EPackage {
 	EAttribute getViewAssociation_Cardinality();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.persistence.FeatureReference <em>Feature Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Reference</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.FeatureReference
+	 * @generated
+	 */
+	EClass getFeatureReference();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.FeatureReference#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.FeatureReference#getName()
+	 * @see #getFeatureReference()
+	 * @generated
+	 */
+	EAttribute getFeatureReference_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.persistence.FeatureReference#getFeature <em>Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.FeatureReference#getFeature()
+	 * @see #getFeatureReference()
+	 * @generated
+	 */
+	EReference getFeatureReference_Feature();
+
+	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies <em>Database Technologies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9284,6 +9363,32 @@ public interface PersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VIEW_ASSOCIATION__CARDINALITY = eINSTANCE.getViewAssociation_Cardinality();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.FeatureReferenceImpl <em>Feature Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.FeatureReferenceImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getFeatureReference()
+		 * @generated
+		 */
+		EClass FEATURE_REFERENCE = eINSTANCE.getFeatureReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE_REFERENCE__NAME = eINSTANCE.getFeatureReference_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_REFERENCE__FEATURE = eINSTANCE.getFeatureReference_Feature();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies <em>Database Technologies</em>}' enum.

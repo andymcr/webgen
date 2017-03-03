@@ -44,24 +44,6 @@ public interface WebsiteFactory extends EFactory {
 	WebsiteProperties createWebsiteProperties();
 
 	/**
-	 * Returns a new object of class '<em>Local Authentication System</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Local Authentication System</em>'.
-	 * @generated
-	 */
-	LocalAuthenticationSystem createLocalAuthenticationSystem();
-
-	/**
-	 * Returns a new object of class '<em>Cas Authentication</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Cas Authentication</em>'.
-	 * @generated
-	 */
-	CasAuthentication createCasAuthentication();
-
-	/**
 	 * Returns a new object of class '<em>Model Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -71,15 +53,6 @@ public interface WebsiteFactory extends EFactory {
 	ModelReference createModelReference();
 
 	/**
-	 * Returns a new object of class '<em>Feature Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Feature Reference</em>'.
-	 * @generated
-	 */
-	FeatureReference createFeatureReference();
-
-	/**
 	 * Returns a new object of class '<em>Route Parameter Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,24 +60,6 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	RouteParameterReference createRouteParameterReference();
-
-	/**
-	 * Returns a new object of class '<em>Parameter Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Parameter Reference</em>'.
-	 * @generated
-	 */
-	ParameterReference createParameterReference();
-
-	/**
-	 * Returns a new object of class '<em>Current User Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Current User Reference</em>'.
-	 * @generated
-	 */
-	CurrentUserReference createCurrentUserReference();
 
 	/**
 	 * Returns the package supported by this factory.

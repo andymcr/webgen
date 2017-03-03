@@ -6,7 +6,6 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
-import uk.ac.man.cs.mdsd.webgen.persistence.provider.PersistenceEditPlugin;
 
 /**
  * This is the central singleton for the Base edit plugin.
@@ -41,7 +40,6 @@ public final class BaseEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     ExpressionEditPlugin.INSTANCE,
-		     PersistenceEditPlugin.INSTANCE,
 		   });
 	}
 

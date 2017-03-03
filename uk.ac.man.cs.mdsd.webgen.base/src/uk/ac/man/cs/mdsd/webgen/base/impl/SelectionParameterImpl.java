@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
-import uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList;
+import uk.ac.man.cs.mdsd.webgen.base.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.base.SelectionParameter;
 
 /**
@@ -96,9 +96,9 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FormaLParameterList getFormalFor() {
+	public FormalParameterList getFormalFor() {
 		if (eContainerFeatureID() != BasePackage.SELECTION_PARAMETER__FORMAL_FOR) return null;
-		return (FormaLParameterList)eInternalContainer();
+		return (FormalParameterList)eInternalContainer();
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetFormalFor(FormaLParameterList newFormalFor, NotificationChain msgs) {
+	public NotificationChain basicSetFormalFor(FormalParameterList newFormalFor, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newFormalFor, BasePackage.SELECTION_PARAMETER__FORMAL_FOR, msgs);
 		return msgs;
 	}
@@ -116,7 +116,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFormalFor(FormaLParameterList newFormalFor) {
+	public void setFormalFor(FormalParameterList newFormalFor) {
 		if (newFormalFor != eInternalContainer() || (eContainerFeatureID() != BasePackage.SELECTION_PARAMETER__FORMAL_FOR && newFormalFor != null)) {
 			if (EcoreUtil.isAncestor(this, newFormalFor))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -124,7 +124,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newFormalFor != null)
-				msgs = ((InternalEObject)newFormalFor).eInverseAdd(this, BasePackage.FORMA_LPARAMETER_LIST__PARAMETERS, FormaLParameterList.class, msgs);
+				msgs = ((InternalEObject)newFormalFor).eInverseAdd(this, BasePackage.FORMAL_PARAMETER_LIST__PARAMETERS, FormalParameterList.class, msgs);
 			msgs = basicSetFormalFor(newFormalFor, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -185,7 +185,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 			case BasePackage.SELECTION_PARAMETER__FORMAL_FOR:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetFormalFor((FormaLParameterList)otherEnd, msgs);
+				return basicSetFormalFor((FormalParameterList)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -213,7 +213,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case BasePackage.SELECTION_PARAMETER__FORMAL_FOR:
-				return eInternalContainer().eInverseRemove(this, BasePackage.FORMA_LPARAMETER_LIST__PARAMETERS, FormaLParameterList.class, msgs);
+				return eInternalContainer().eInverseRemove(this, BasePackage.FORMAL_PARAMETER_LIST__PARAMETERS, FormalParameterList.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -245,7 +245,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.SELECTION_PARAMETER__FORMAL_FOR:
-				setFormalFor((FormaLParameterList)newValue);
+				setFormalFor((FormalParameterList)newValue);
 				return;
 			case BasePackage.SELECTION_PARAMETER__OPTIONAL:
 				setOptional((Boolean)newValue);
@@ -266,7 +266,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.SELECTION_PARAMETER__FORMAL_FOR:
-				setFormalFor((FormaLParameterList)null);
+				setFormalFor((FormalParameterList)null);
 				return;
 			case BasePackage.SELECTION_PARAMETER__OPTIONAL:
 				setOptional(OPTIONAL_EDEFAULT);

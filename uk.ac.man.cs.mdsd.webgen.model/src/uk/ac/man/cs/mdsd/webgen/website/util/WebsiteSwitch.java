@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import uk.ac.man.cs.mdsd.webgen.expression.Expression;
-import uk.ac.man.cs.mdsd.webgen.expression.Path;
+import uk.ac.man.cs.mdsd.webgen.expression.Variable;
 import uk.ac.man.cs.mdsd.webgen.website.*;
 
 /**
@@ -83,63 +83,19 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.AUTHENTICATION: {
-				Authentication authentication = (Authentication)theEObject;
-				T result = caseAuthentication(authentication);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM: {
-				LocalAuthenticationSystem localAuthenticationSystem = (LocalAuthenticationSystem)theEObject;
-				T result = caseLocalAuthenticationSystem(localAuthenticationSystem);
-				if (result == null) result = caseAuthentication(localAuthenticationSystem);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.CAS_AUTHENTICATION: {
-				CasAuthentication casAuthentication = (CasAuthentication)theEObject;
-				T result = caseCasAuthentication(casAuthentication);
-				if (result == null) result = caseAuthentication(casAuthentication);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WebsitePackage.MODEL_REFERENCE: {
 				ModelReference modelReference = (ModelReference)theEObject;
 				T result = caseModelReference(modelReference);
-				if (result == null) result = casePath(modelReference);
+				if (result == null) result = caseVariable(modelReference);
 				if (result == null) result = caseExpression(modelReference);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.FEATURE_REFERENCE: {
-				FeatureReference featureReference = (FeatureReference)theEObject;
-				T result = caseFeatureReference(featureReference);
-				if (result == null) result = casePath(featureReference);
-				if (result == null) result = caseExpression(featureReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case WebsitePackage.ROUTE_PARAMETER_REFERENCE: {
 				RouteParameterReference routeParameterReference = (RouteParameterReference)theEObject;
 				T result = caseRouteParameterReference(routeParameterReference);
-				if (result == null) result = casePath(routeParameterReference);
+				if (result == null) result = caseVariable(routeParameterReference);
 				if (result == null) result = caseExpression(routeParameterReference);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.PARAMETER_REFERENCE: {
-				ParameterReference parameterReference = (ParameterReference)theEObject;
-				T result = caseParameterReference(parameterReference);
-				if (result == null) result = casePath(parameterReference);
-				if (result == null) result = caseExpression(parameterReference);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.CURRENT_USER_REFERENCE: {
-				CurrentUserReference currentUserReference = (CurrentUserReference)theEObject;
-				T result = caseCurrentUserReference(currentUserReference);
-				if (result == null) result = casePath(currentUserReference);
-				if (result == null) result = caseExpression(currentUserReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -178,51 +134,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Authentication</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Authentication</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAuthentication(Authentication object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Local Authentication System</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Local Authentication System</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLocalAuthenticationSystem(LocalAuthenticationSystem object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Cas Authentication</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Cas Authentication</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCasAuthentication(CasAuthentication object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Model Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -234,21 +145,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseModelReference(ModelReference object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFeatureReference(FeatureReference object) {
 		return null;
 	}
 
@@ -268,36 +164,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Parameter Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Parameter Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseParameterReference(ParameterReference object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Current User Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Current User Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCurrentUserReference(CurrentUserReference object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -313,17 +179,17 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Path</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Path</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePath(Path object) {
+	public T caseVariable(Variable object) {
 		return null;
 	}
 

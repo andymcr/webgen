@@ -7,6 +7,7 @@
 package uk.ac.man.cs.mdsd.webgen.website;
 
 import org.eclipse.emf.ecore.EObject;
+import security.Authentication;
 import uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies;
 import uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.webui.Menu;
@@ -272,7 +273,6 @@ public interface WebsiteProperties extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Authentication</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Authentication#getAuthenticates <em>Authenticates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Authentication</em>' attribute isn't clear,
@@ -282,8 +282,7 @@ public interface WebsiteProperties extends EObject {
 	 * @return the value of the '<em>Authentication</em>' containment reference.
 	 * @see #setAuthentication(Authentication)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_Authentication()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Authentication#getAuthenticates
-	 * @model opposite="authenticates" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Authentication getAuthentication();

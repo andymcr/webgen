@@ -181,26 +181,26 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.base.ParameterReference} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CurrentUserReferenceItemProvider currentUserReferenceItemProvider;
+	protected ParameterReferenceItemProvider parameterReferenceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.base.ParameterReference}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCurrentUserReferenceAdapter() {
-		if (currentUserReferenceItemProvider == null) {
-			currentUserReferenceItemProvider = new CurrentUserReferenceItemProvider(this);
+	public Adapter createParameterReferenceAdapter() {
+		if (parameterReferenceItemProvider == null) {
+			parameterReferenceItemProvider = new ParameterReferenceItemProvider(this);
 		}
 
-		return currentUserReferenceItemProvider;
+		return parameterReferenceItemProvider;
 	}
 
 	/**
@@ -333,7 +333,7 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
 		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
-		if (currentUserReferenceItemProvider != null) currentUserReferenceItemProvider.dispose();
+		if (parameterReferenceItemProvider != null) parameterReferenceItemProvider.dispose();
 	}
 
 }

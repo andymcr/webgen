@@ -98,12 +98,12 @@ public class BaseValidator extends EObjectValidator {
 				return validateEnumerationType((EnumerationType)value, diagnostics, context);
 			case BasePackage.ENUMERATION_LITERAL:
 				return validateEnumerationLiteral((EnumerationLiteral)value, diagnostics, context);
-			case BasePackage.FORMA_LPARAMETER_LIST:
-				return validateFormaLParameterList((FormaLParameterList)value, diagnostics, context);
+			case BasePackage.FORMAL_PARAMETER_LIST:
+				return validateFormalParameterList((FormalParameterList)value, diagnostics, context);
 			case BasePackage.SELECTION_PARAMETER:
 				return validateSelectionParameter((SelectionParameter)value, diagnostics, context);
-			case BasePackage.CURRENT_USER_REFERENCE:
-				return validateCurrentUserReference((CurrentUserReference)value, diagnostics, context);
+			case BasePackage.PARAMETER_REFERENCE:
+				return validateParameterReference((ParameterReference)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -256,8 +256,8 @@ public class BaseValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFormaLParameterList(FormaLParameterList formaLParameterList, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(formaLParameterList, diagnostics, context);
+	public boolean validateFormalParameterList(FormalParameterList formalParameterList, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(formalParameterList, diagnostics, context);
 	}
 
 	/**
@@ -284,8 +284,8 @@ public class BaseValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCurrentUserReference(CurrentUserReference currentUserReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(currentUserReference, diagnostics, context);
+	public boolean validateParameterReference(ParameterReference parameterReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(parameterReference, diagnostics, context);
 	}
 
 	/**

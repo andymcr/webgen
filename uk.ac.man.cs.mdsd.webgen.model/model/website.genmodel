@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.man.cs.mdsd.webgen.model/src" modelPluginID="uk.ac.man.cs.mdsd.webgen.model"
     modelName="Website" modelPluginClass="" suppressEMFTypes="true" booleanFlagsField=""
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    providerRootExtendsClass="WebGenItemProvider" usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence ../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.genmodel#//webui ../../uk.ac.man.cs.mdsd.webgen.image/model/image.genmodel#//image"
+    providerRootExtendsClass="WebGenItemProvider" usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression ../../uk.ac.man.cs.mdsd.webgen.image/model/image.genmodel#//image ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence ../../uk.ac.man.cs.mdsd.webgen.security/model/security.genmodel#//security ../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.genmodel#//webui"
     interfaceNamePattern="">
   <foreignModel>website.ecore</foreignModel>
   <genPackages prefix="Website" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
@@ -24,11 +24,6 @@
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/None"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/jQuery"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/AngularJS"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="website.ecore#//AuthenticationKeyTypes">
-      <genEnumLiterals ecoreEnumLiteral="website.ecore#//AuthenticationKeyTypes/Email"/>
-      <genEnumLiterals ecoreEnumLiteral="website.ecore#//AuthenticationKeyTypes/ScreenName"/>
-      <genEnumLiterals ecoreEnumLiteral="website.ecore#//AuthenticationKeyTypes/Username"/>
     </genEnums>
     <genClasses ecoreClass="website.ecore#//WebGenModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/websiteProperties"/>
@@ -85,55 +80,14 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/siteTemplate"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/staticUnitsEditable"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="website.ecore#//Authentication">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//Authentication/authenticates"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
-          propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Authentication/user"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
-          propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Authentication/userKey"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Authentication/loginLabel"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Authentication/logoutLabel"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//LocalAuthenticationSystem">
-      <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/authentication"/>
-      <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/authenticationKey"/>
-      <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/useCaptcha"/>
-      <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/allowRememberMe"/>
-      <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/allowSelfRegistration"/>
-      <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/trackLoginAttempts"/>
-      <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/useEmailActivation"/>
-      <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/sendWelcomeEmail"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/registrationUnit"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/loginUnit"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/forgottenPasswordUnit"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//CasAuthentication"/>
     <genClasses ecoreClass="website.ecore#//ModelReference">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//ModelReference/unit"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//FeatureReference">
-      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//FeatureReference/name"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//FeatureReference/feature"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//RouteParameterReference">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//RouteParameterReference/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//RouteParameterReference/parameter"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//ParameterReference">
-      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ParameterReference/name"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertyDescription=""
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ParameterReference/parameter"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//CurrentUserReference">
-      <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="Debug"
-          ecoreFeature="ecore:EReference website.ecore#//CurrentUserReference/userModel"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -94,30 +94,16 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateWebGenModel((WebGenModel)value, diagnostics, context);
 			case WebsitePackage.WEBSITE_PROPERTIES:
 				return validateWebsiteProperties((WebsiteProperties)value, diagnostics, context);
-			case WebsitePackage.AUTHENTICATION:
-				return validateAuthentication((Authentication)value, diagnostics, context);
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM:
-				return validateLocalAuthenticationSystem((LocalAuthenticationSystem)value, diagnostics, context);
-			case WebsitePackage.CAS_AUTHENTICATION:
-				return validateCasAuthentication((CasAuthentication)value, diagnostics, context);
 			case WebsitePackage.MODEL_REFERENCE:
 				return validateModelReference((ModelReference)value, diagnostics, context);
-			case WebsitePackage.FEATURE_REFERENCE:
-				return validateFeatureReference((FeatureReference)value, diagnostics, context);
 			case WebsitePackage.ROUTE_PARAMETER_REFERENCE:
 				return validateRouteParameterReference((RouteParameterReference)value, diagnostics, context);
-			case WebsitePackage.PARAMETER_REFERENCE:
-				return validateParameterReference((ParameterReference)value, diagnostics, context);
-			case WebsitePackage.CURRENT_USER_REFERENCE:
-				return validateCurrentUserReference((CurrentUserReference)value, diagnostics, context);
 			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
 				return validateFrameworkTechnologies((FrameworkTechnologies)value, diagnostics, context);
 			case WebsitePackage.INPUT_TECHNOLOGIES:
 				return validateInputTechnologies((InputTechnologies)value, diagnostics, context);
 			case WebsitePackage.AJAX_TECHNOLOGIES:
 				return validateAjaxTechnologies((AjaxTechnologies)value, diagnostics, context);
-			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
-				return validateAuthenticationKeyTypes((AuthenticationKeyTypes)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -254,35 +240,8 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFeatureReference(FeatureReference featureReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(featureReference, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateRouteParameterReference(RouteParameterReference routeParameterReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(routeParameterReference, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateParameterReference(ParameterReference parameterReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(parameterReference, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCurrentUserReference(CurrentUserReference currentUserReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(currentUserReference, diagnostics, context);
 	}
 
 	/**
@@ -310,169 +269,6 @@ public class WebsiteValidator extends EObjectValidator {
 	 */
 	public boolean validateAjaxTechnologies(AjaxTechnologies ajaxTechnologies, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAuthenticationKeyTypes(AuthenticationKeyTypes authenticationKeyTypes, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAuthentication(Authentication authentication, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(authentication, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAuthentication_userKeyFromUser(authentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAuthentication_userKeyRequiredAttribute(authentication, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the userKeyFromUser constraint of '<em>Authentication</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String AUTHENTICATION__USER_KEY_FROM_USER__EEXPRESSION = "not user.oclIsUndefined() and not userKey.oclIsUndefined() implies\r\n" +
-		"\tuser.features->includes(userKey)";
-
-	/**
-	 * Validates the userKeyFromUser constraint of '<em>Authentication</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAuthentication_userKeyFromUser(Authentication authentication, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.AUTHENTICATION,
-				 authentication,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "userKeyFromUser",
-				 AUTHENTICATION__USER_KEY_FROM_USER__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the userKeyRequiredAttribute constraint of '<em>Authentication</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String AUTHENTICATION__USER_KEY_REQUIRED_ATTRIBUTE__EEXPRESSION = "not userKey.oclIsUndefined() implies\r\n" +
-		"\tif userKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
-		"\t\tuserKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n" +
-		"\telse\r\n" +
-		"\t\tuserKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n" +
-		"\tendif";
-
-	/**
-	 * Validates the userKeyRequiredAttribute constraint of '<em>Authentication</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAuthentication_userKeyRequiredAttribute(Authentication authentication, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.AUTHENTICATION,
-				 authentication,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "userKeyRequiredAttribute",
-				 AUTHENTICATION__USER_KEY_REQUIRED_ATTRIBUTE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLocalAuthenticationSystem(LocalAuthenticationSystem localAuthenticationSystem, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(localAuthenticationSystem, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAuthentication_userKeyFromUser(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAuthentication_userKeyRequiredAttribute(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLocalAuthenticationSystem_captchaRequiresKeys(localAuthenticationSystem, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the captchaRequiresKeys constraint of '<em>Local Authentication System</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_REQUIRES_KEYS__EEXPRESSION = "useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()";
-
-	/**
-	 * Validates the captchaRequiresKeys constraint of '<em>Local Authentication System</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLocalAuthenticationSystem_captchaRequiresKeys(LocalAuthenticationSystem localAuthenticationSystem, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM,
-				 localAuthenticationSystem,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "captchaRequiresKeys",
-				 LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_REQUIRES_KEYS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCasAuthentication(CasAuthentication casAuthentication, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(casAuthentication, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAuthentication_userKeyFromUser(casAuthentication, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAuthentication_userKeyRequiredAttribute(casAuthentication, diagnostics, context);
-		return result;
 	}
 
 	/**

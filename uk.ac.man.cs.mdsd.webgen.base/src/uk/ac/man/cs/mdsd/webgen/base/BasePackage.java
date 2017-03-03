@@ -424,14 +424,14 @@ public interface BasePackage extends EPackage {
 	int ENUMERATION_LITERAL_OPERATION_COUNT = NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList <em>Forma LParameter List</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameterList <em>Formal Parameter List</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList
-	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getFormaLParameterList()
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameterList
+	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getFormalParameterList()
 	 * @generated
 	 */
-	int FORMA_LPARAMETER_LIST = 6;
+	int FORMAL_PARAMETER_LIST = 6;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -440,25 +440,25 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORMA_LPARAMETER_LIST__PARAMETERS = 0;
+	int FORMAL_PARAMETER_LIST__PARAMETERS = 0;
 
 	/**
-	 * The number of structural features of the '<em>Forma LParameter List</em>' class.
+	 * The number of structural features of the '<em>Formal Parameter List</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORMA_LPARAMETER_LIST_FEATURE_COUNT = 1;
+	int FORMAL_PARAMETER_LIST_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Forma LParameter List</em>' class.
+	 * The number of operations of the '<em>Formal Parameter List</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORMA_LPARAMETER_LIST_OPERATION_COUNT = 0;
+	int FORMAL_PARAMETER_LIST_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.SelectionParameterImpl <em>Selection Parameter</em>}' class.
@@ -526,41 +526,50 @@ public interface BasePackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.CurrentUserReferenceImpl <em>Current User Reference</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.ParameterReferenceImpl <em>Parameter Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.CurrentUserReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getCurrentUserReference()
+	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.ParameterReferenceImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getParameterReference()
 	 * @generated
 	 */
-	int CURRENT_USER_REFERENCE = 8;
+	int PARAMETER_REFERENCE = 8;
 
 	/**
-	 * The feature id for the '<em><b>User Model</b></em>' reference.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CURRENT_USER_REFERENCE__USER_MODEL = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
+	int PARAMETER_REFERENCE__NAME = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Current User Reference</em>' class.
+	 * The feature id for the '<em><b>Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CURRENT_USER_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
+	int PARAMETER_REFERENCE__PARAMETER = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Current User Reference</em>' class.
+	 * The number of structural features of the '<em>Parameter Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CURRENT_USER_REFERENCE_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
+	int PARAMETER_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Parameter Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_REFERENCE_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -712,25 +721,25 @@ public interface BasePackage extends EPackage {
 	EClass getEnumerationLiteral();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList <em>Forma LParameter List</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameterList <em>Formal Parameter List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Forma LParameter List</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList
+	 * @return the meta object for class '<em>Formal Parameter List</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameterList
 	 * @generated
 	 */
-	EClass getFormaLParameterList();
+	EClass getFormalParameterList();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList#getParameters <em>Parameters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameterList#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList#getParameters()
-	 * @see #getFormaLParameterList()
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameterList#getParameters()
+	 * @see #getFormalParameterList()
 	 * @generated
 	 */
-	EReference getFormaLParameterList_Parameters();
+	EReference getFormalParameterList_Parameters();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.base.SelectionParameter <em>Selection Parameter</em>}'.
@@ -776,25 +785,36 @@ public interface BasePackage extends EPackage {
 	EAttribute getSelectionParameter_DefaultValue();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference <em>Current User Reference</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.base.ParameterReference <em>Parameter Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Current User Reference</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference
+	 * @return the meta object for class '<em>Parameter Reference</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.ParameterReference
 	 * @generated
 	 */
-	EClass getCurrentUserReference();
+	EClass getParameterReference();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference#getUserModel <em>User Model</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.base.ParameterReference#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>User Model</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference#getUserModel()
-	 * @see #getCurrentUserReference()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.ParameterReference#getName()
+	 * @see #getParameterReference()
 	 * @generated
 	 */
-	EReference getCurrentUserReference_UserModel();
+	EAttribute getParameterReference_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.base.ParameterReference#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parameter</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.ParameterReference#getParameter()
+	 * @see #getParameterReference()
+	 * @generated
+	 */
+	EReference getParameterReference_Parameter();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -944,14 +964,14 @@ public interface BasePackage extends EPackage {
 		EClass ENUMERATION_LITERAL = eINSTANCE.getEnumerationLiteral();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList <em>Forma LParameter List</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameterList <em>Formal Parameter List</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList
-		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getFormaLParameterList()
+		 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameterList
+		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getFormalParameterList()
 		 * @generated
 		 */
-		EClass FORMA_LPARAMETER_LIST = eINSTANCE.getFormaLParameterList();
+		EClass FORMAL_PARAMETER_LIST = eINSTANCE.getFormalParameterList();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
@@ -959,7 +979,7 @@ public interface BasePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FORMA_LPARAMETER_LIST__PARAMETERS = eINSTANCE.getFormaLParameterList_Parameters();
+		EReference FORMAL_PARAMETER_LIST__PARAMETERS = eINSTANCE.getFormalParameterList_Parameters();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.SelectionParameterImpl <em>Selection Parameter</em>}' class.
@@ -996,22 +1016,30 @@ public interface BasePackage extends EPackage {
 		EAttribute SELECTION_PARAMETER__DEFAULT_VALUE = eINSTANCE.getSelectionParameter_DefaultValue();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.CurrentUserReferenceImpl <em>Current User Reference</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.ParameterReferenceImpl <em>Parameter Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.CurrentUserReferenceImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getCurrentUserReference()
+		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.ParameterReferenceImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getParameterReference()
 		 * @generated
 		 */
-		EClass CURRENT_USER_REFERENCE = eINSTANCE.getCurrentUserReference();
+		EClass PARAMETER_REFERENCE = eINSTANCE.getParameterReference();
 
 		/**
-		 * The meta object literal for the '<em><b>User Model</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CURRENT_USER_REFERENCE__USER_MODEL = eINSTANCE.getCurrentUserReference_UserModel();
+		EAttribute PARAMETER_REFERENCE__NAME = eINSTANCE.getParameterReference_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARAMETER_REFERENCE__PARAMETER = eINSTANCE.getParameterReference_Parameter();
 
 	}
 

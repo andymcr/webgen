@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.man.cs.mdsd.webgen.image/src" modelPluginID="uk.ac.man.cs.mdsd.webgen.image"
+    modelName="Image" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>image.ecore</foreignModel>
+  <genPackages prefix="Image" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
+      extensibleProviderFactory="true" ecorePackage="image.ecore#/">
+    <genClasses ecoreClass="image.ecore#//ImageManipulation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute image.ecore#//ImageManipulation/jpegQuality"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference image.ecore#//ImageManipulation/filters"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="image.ecore#//ImageFilter"/>
+    <genClasses ecoreClass="image.ecore#//ThumbnailFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute image.ecore#//ThumbnailFilter/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute image.ecore#//ThumbnailFilter/height"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

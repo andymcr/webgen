@@ -116,9 +116,9 @@ public class BaseSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BasePackage.FORMA_LPARAMETER_LIST: {
-				FormaLParameterList formaLParameterList = (FormaLParameterList)theEObject;
-				T result = caseFormaLParameterList(formaLParameterList);
+			case BasePackage.FORMAL_PARAMETER_LIST: {
+				FormalParameterList formalParameterList = (FormalParameterList)theEObject;
+				T result = caseFormalParameterList(formalParameterList);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -129,11 +129,11 @@ public class BaseSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BasePackage.CURRENT_USER_REFERENCE: {
-				CurrentUserReference currentUserReference = (CurrentUserReference)theEObject;
-				T result = caseCurrentUserReference(currentUserReference);
-				if (result == null) result = caseVariable(currentUserReference);
-				if (result == null) result = caseExpression(currentUserReference);
+			case BasePackage.PARAMETER_REFERENCE: {
+				ParameterReference parameterReference = (ParameterReference)theEObject;
+				T result = caseParameterReference(parameterReference);
+				if (result == null) result = caseVariable(parameterReference);
+				if (result == null) result = caseExpression(parameterReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -232,17 +232,17 @@ public class BaseSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Forma LParameter List</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Formal Parameter List</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Forma LParameter List</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Formal Parameter List</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFormaLParameterList(FormaLParameterList object) {
+	public T caseFormalParameterList(FormalParameterList object) {
 		return null;
 	}
 
@@ -262,17 +262,17 @@ public class BaseSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Current User Reference</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Current User Reference</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter Reference</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCurrentUserReference(CurrentUserReference object) {
+	public T caseParameterReference(ParameterReference object) {
 		return null;
 	}
 

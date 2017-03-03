@@ -205,5 +205,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//ViewAssociation/opposite"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//ViewAssociation/cardinality"/>
     </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//FeatureReference">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//FeatureReference/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//FeatureReference/feature"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -164,10 +164,14 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import uk.ac.man.cs.mdsd.webgen.website.provider.WebsiteItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import security.provider.SecurityItemProviderAdapterFactory;
 import uk.ac.man.cs.mdsd.criteria.provider.CriteriaItemProviderAdapterFactory;
 import uk.ac.man.cs.mdsd.webgen.base.provider.BaseItemProviderAdapterFactory;
 import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionItemProviderAdapterFactory;
+import uk.ac.man.cs.mdsd.webgen.image.provider.ImageItemProviderAdapterFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.provider.PersistenceItemProviderAdapterFactory;
+import uk.ac.man.cs.mdsd.webgen.service.provider.ServiceItemProviderAdapterFactory;
+import uk.ac.man.cs.mdsd.webgen.webui.provider.WebuiItemProviderAdapterFactory;
 
 
 /**
@@ -714,9 +718,12 @@ public class WebsiteEditor
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new WebsiteItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BaseItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new CriteriaItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ExpressionItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ImageItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new PersistenceItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SecurityItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ServiceItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new WebuiItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

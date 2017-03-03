@@ -23,7 +23,7 @@ package uk.ac.man.cs.mdsd.webgen.base;
 public interface SelectionParameter extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Formal For</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList#getParameters <em>Parameters</em>}'.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameterList#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Formal For</em>' container reference isn't clear,
@@ -31,13 +31,13 @@ public interface SelectionParameter extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Formal For</em>' container reference.
-	 * @see #setFormalFor(FormaLParameterList)
+	 * @see #setFormalFor(FormalParameterList)
 	 * @see uk.ac.man.cs.mdsd.webgen.base.BasePackage#getSelectionParameter_FormalFor()
-	 * @see uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList#getParameters
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameterList#getParameters
 	 * @model opposite="parameters" required="true" transient="false"
 	 * @generated
 	 */
-	FormaLParameterList getFormalFor();
+	FormalParameterList getFormalFor();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.base.SelectionParameter#getFormalFor <em>Formal For</em>}' container reference.
@@ -47,7 +47,7 @@ public interface SelectionParameter extends NamedElement {
 	 * @see #getFormalFor()
 	 * @generated
 	 */
-	void setFormalFor(FormaLParameterList value);
+	void setFormalFor(FormalParameterList value);
 
 	/**
 	 * Returns the value of the '<em><b>Optional</b></em>' attribute.

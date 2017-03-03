@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -479,71 +478,6 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES_FEATURE_COUNT = 35;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelReferenceImpl <em>Model Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ModelReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getModelReference()
-	 * @generated
-	 */
-	int MODEL_REFERENCE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Unit</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_REFERENCE__UNIT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Model Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.RouteParameterReferenceImpl <em>Route Parameter Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.RouteParameterReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getRouteParameterReference()
-	 * @generated
-	 */
-	int ROUTE_PARAMETER_REFERENCE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROUTE_PARAMETER_REFERENCE__NAME = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROUTE_PARAMETER_REFERENCE__PARAMETER = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Route Parameter Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROUTE_PARAMETER_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies <em>Framework Technologies</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -551,7 +485,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 4;
+	int FRAMEWORK_TECHNOLOGIES = 2;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.InputTechnologies <em>Input Technologies</em>}' enum.
@@ -561,7 +495,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInputTechnologies()
 	 * @generated
 	 */
-	int INPUT_TECHNOLOGIES = 5;
+	int INPUT_TECHNOLOGIES = 3;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -571,7 +505,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 6;
+	int AJAX_TECHNOLOGIES = 4;
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel <em>Web Gen Model</em>}'.
@@ -1056,59 +990,6 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebsiteProperties_StaticUnitsEditable();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelReference <em>Model Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model Reference</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelReference
-	 * @generated
-	 */
-	EClass getModelReference();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ModelReference#getUnit <em>Unit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Unit</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelReference#getUnit()
-	 * @see #getModelReference()
-	 * @generated
-	 */
-	EReference getModelReference_Unit();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.RouteParameterReference <em>Route Parameter Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Route Parameter Reference</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.RouteParameterReference
-	 * @generated
-	 */
-	EClass getRouteParameterReference();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.RouteParameterReference#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.RouteParameterReference#getName()
-	 * @see #getRouteParameterReference()
-	 * @generated
-	 */
-	EAttribute getRouteParameterReference_Name();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.RouteParameterReference#getParameter <em>Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Parameter</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.RouteParameterReference#getParameter()
-	 * @see #getRouteParameterReference()
-	 * @generated
-	 */
-	EReference getRouteParameterReference_Parameter();
-
-	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies <em>Framework Technologies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1515,50 +1396,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = eINSTANCE.getWebsiteProperties_StaticUnitsEditable();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelReferenceImpl <em>Model Reference</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ModelReferenceImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getModelReference()
-		 * @generated
-		 */
-		EClass MODEL_REFERENCE = eINSTANCE.getModelReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Unit</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL_REFERENCE__UNIT = eINSTANCE.getModelReference_Unit();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.RouteParameterReferenceImpl <em>Route Parameter Reference</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.RouteParameterReferenceImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getRouteParameterReference()
-		 * @generated
-		 */
-		EClass ROUTE_PARAMETER_REFERENCE = eINSTANCE.getRouteParameterReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROUTE_PARAMETER_REFERENCE__NAME = eINSTANCE.getRouteParameterReference_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROUTE_PARAMETER_REFERENCE__PARAMETER = eINSTANCE.getRouteParameterReference_Parameter();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies <em>Framework Technologies</em>}' enum.

@@ -80,14 +80,5 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/siteTemplate"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/staticUnitsEditable"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//ModelReference">
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//ModelReference/unit"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//RouteParameterReference">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//RouteParameterReference/name"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//RouteParameterReference/parameter"/>
-    </genClasses>
   </genPackages>
 </genmodel:GenModel>

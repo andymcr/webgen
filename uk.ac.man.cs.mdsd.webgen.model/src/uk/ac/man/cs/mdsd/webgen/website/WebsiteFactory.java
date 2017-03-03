@@ -44,24 +44,6 @@ public interface WebsiteFactory extends EFactory {
 	WebsiteProperties createWebsiteProperties();
 
 	/**
-	 * Returns a new object of class '<em>Model Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Reference</em>'.
-	 * @generated
-	 */
-	ModelReference createModelReference();
-
-	/**
-	 * Returns a new object of class '<em>Route Parameter Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Route Parameter Reference</em>'.
-	 * @generated
-	 */
-	RouteParameterReference createRouteParameterReference();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

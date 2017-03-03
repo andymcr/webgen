@@ -13,8 +13,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import uk.ac.man.cs.mdsd.webgen.expression.Expression;
-import uk.ac.man.cs.mdsd.webgen.expression.Variable;
 import uk.ac.man.cs.mdsd.webgen.website.*;
 
 /**
@@ -82,22 +80,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createWebsitePropertiesAdapter();
 			}
 			@Override
-			public Adapter caseModelReference(ModelReference object) {
-				return createModelReferenceAdapter();
-			}
-			@Override
-			public Adapter caseRouteParameterReference(RouteParameterReference object) {
-				return createRouteParameterReferenceAdapter();
-			}
-			@Override
-			public Adapter caseExpression(Expression object) {
-				return createExpressionAdapter();
-			}
-			@Override
-			public Adapter caseVariable(Variable object) {
-				return createVariableAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -142,62 +124,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createWebsitePropertiesAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelReference <em>Model Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelReference
-	 * @generated
-	 */
-	public Adapter createModelReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.RouteParameterReference <em>Route Parameter Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.RouteParameterReference
-	 * @generated
-	 */
-	public Adapter createRouteParameterReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.expression.Expression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.expression.Expression
-	 * @generated
-	 */
-	public Adapter createExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.expression.Variable <em>Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.expression.Variable
-	 * @generated
-	 */
-	public Adapter createVariableAdapter() {
 		return null;
 	}
 

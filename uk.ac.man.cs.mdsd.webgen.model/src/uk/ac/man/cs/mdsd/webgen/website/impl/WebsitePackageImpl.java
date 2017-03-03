@@ -17,15 +17,12 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import security.SecurityPackage;
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
-import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.image.ImagePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 import uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.InputTechnologies;
-import uk.ac.man.cs.mdsd.webgen.website.ModelReference;
-import uk.ac.man.cs.mdsd.webgen.website.RouteParameterReference;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -54,20 +51,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EClass websitePropertiesEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass modelReferenceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass routeParameterReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -565,51 +548,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getModelReference() {
-		return modelReferenceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getModelReference_Unit() {
-		return (EReference)modelReferenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getRouteParameterReference() {
-		return routeParameterReferenceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRouteParameterReference_Name() {
-		return (EAttribute)routeParameterReferenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRouteParameterReference_Parameter() {
-		return (EReference)routeParameterReferenceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getFrameworkTechnologies() {
 		return frameworkTechnologiesEEnum;
 	}
@@ -706,13 +644,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__SITE_TEMPLATE);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE);
 
-		modelReferenceEClass = createEClass(MODEL_REFERENCE);
-		createEReference(modelReferenceEClass, MODEL_REFERENCE__UNIT);
-
-		routeParameterReferenceEClass = createEClass(ROUTE_PARAMETER_REFERENCE);
-		createEAttribute(routeParameterReferenceEClass, ROUTE_PARAMETER_REFERENCE__NAME);
-		createEReference(routeParameterReferenceEClass, ROUTE_PARAMETER_REFERENCE__PARAMETER);
-
 		// Create enums
 		frameworkTechnologiesEEnum = createEEnum(FRAMEWORK_TECHNOLOGIES);
 		inputTechnologiesEEnum = createEEnum(INPUT_TECHNOLOGIES);
@@ -749,15 +680,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		PersistencePackage thePersistencePackage = (PersistencePackage)EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI);
 		ImagePackage theImagePackage = (ImagePackage)EPackage.Registry.INSTANCE.getEPackage(ImagePackage.eNS_URI);
 		SecurityPackage theSecurityPackage = (SecurityPackage)EPackage.Registry.INSTANCE.getEPackage(SecurityPackage.eNS_URI);
-		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		modelReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
-		routeParameterReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(webGenModelEClass, WebGenModel.class, "WebGenModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -805,13 +733,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getWebsiteProperties_SideMenu(), theWebuiPackage.getMenu(), null, "sideMenu", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_SiteTemplate(), ecorePackage.getEString(), "siteTemplate", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_StaticUnitsEditable(), ecorePackage.getEBoolean(), "staticUnitsEditable", "false", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(modelReferenceEClass, ModelReference.class, "ModelReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelReference_Unit(), theWebuiPackage.getDynamicUnit(), null, "unit", null, 1, 1, ModelReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(routeParameterReferenceEClass, RouteParameterReference.class, "RouteParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRouteParameterReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, RouteParameterReference.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getRouteParameterReference_Parameter(), thePersistencePackage.getAttribute(), null, "parameter", null, 1, 1, RouteParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(frameworkTechnologiesEEnum, FrameworkTechnologies.class, "FrameworkTechnologies");
@@ -880,12 +801,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "classifierNameUnique", "classifiers->isUnique(name)",
 			 "pageNameUnique", "pages->isUnique(name)",
 			 "menuNameUnique", "menus->isUnique(name)"
-		   });	
-		addAnnotation
-		  (getRouteParameterReference_Name(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if parameter.oclIsUndefined() then\r\n\t\'\'\r\nelse if parameter.oclIsKindOf(EntityAttribute) then\r\n\tparameter.oclAsType(EntityAttribute).name\r\nelse\r\n\tparameter.oclAsType(EncapsulatedAttribute).name\r\nendif endif"
 		   });
 	}
 

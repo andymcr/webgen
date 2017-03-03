@@ -63,8 +63,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 		switch (eClass.getClassifierID()) {
 			case WebsitePackage.WEB_GEN_MODEL: return createWebGenModel();
 			case WebsitePackage.WEBSITE_PROPERTIES: return createWebsiteProperties();
-			case WebsitePackage.MODEL_REFERENCE: return createModelReference();
-			case WebsitePackage.ROUTE_PARAMETER_REFERENCE: return createRouteParameterReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -126,26 +124,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public WebsiteProperties createWebsiteProperties() {
 		WebsitePropertiesImpl websiteProperties = new WebsitePropertiesImpl();
 		return websiteProperties;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelReference createModelReference() {
-		ModelReferenceImpl modelReference = new ModelReferenceImpl();
-		return modelReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RouteParameterReference createRouteParameterReference() {
-		RouteParameterReferenceImpl routeParameterReference = new RouteParameterReferenceImpl();
-		return routeParameterReference;
 	}
 
 	/**

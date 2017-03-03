@@ -94,10 +94,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateWebGenModel((WebGenModel)value, diagnostics, context);
 			case WebsitePackage.WEBSITE_PROPERTIES:
 				return validateWebsiteProperties((WebsiteProperties)value, diagnostics, context);
-			case WebsitePackage.MODEL_REFERENCE:
-				return validateModelReference((ModelReference)value, diagnostics, context);
-			case WebsitePackage.ROUTE_PARAMETER_REFERENCE:
-				return validateRouteParameterReference((RouteParameterReference)value, diagnostics, context);
 			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
 				return validateFrameworkTechnologies((FrameworkTechnologies)value, diagnostics, context);
 			case WebsitePackage.INPUT_TECHNOLOGIES:
@@ -224,24 +220,6 @@ public class WebsiteValidator extends EObjectValidator {
 	 */
 	public boolean validateWebsiteProperties(WebsiteProperties websiteProperties, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(websiteProperties, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateModelReference(ModelReference modelReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(modelReference, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateRouteParameterReference(RouteParameterReference routeParameterReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(routeParameterReference, diagnostics, context);
 	}
 
 	/**

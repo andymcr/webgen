@@ -457,7 +457,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		// Add supertypes to classes
 		serviceEClass.getESuperTypes().add(theBasePackage.getNamedElement());
 		selectionEClass.getESuperTypes().add(theBasePackage.getNamedElement());
-		selectionEClass.getESuperTypes().add(theBasePackage.getFormaLParameterList());
+		selectionEClass.getESuperTypes().add(theBasePackage.getFormalParameterList());
 		ascEClass.getESuperTypes().add(this.getOrder());
 		descEClass.getESuperTypes().add(this.getOrder());
 		businessOperationEClass.getESuperTypes().add(theBasePackage.getNamedElement());

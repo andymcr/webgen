@@ -6,8 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-
-import uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList;
+import uk.ac.man.cs.mdsd.webgen.base.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
 
 import uk.ac.man.cs.mdsd.webgen.service.*;
@@ -86,7 +85,7 @@ public class ServiceSwitch<T> extends Switch<T> {
 				Selection selection = (Selection)theEObject;
 				T result = caseSelection(selection);
 				if (result == null) result = caseNamedElement(selection);
-				if (result == null) result = caseFormaLParameterList(selection);
+				if (result == null) result = caseFormalParameterList(selection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -242,17 +241,17 @@ public class ServiceSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Forma LParameter List</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Formal Parameter List</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Forma LParameter List</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Formal Parameter List</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFormaLParameterList(FormaLParameterList object) {
+	public T caseFormalParameterList(FormalParameterList object) {
 		return null;
 	}
 

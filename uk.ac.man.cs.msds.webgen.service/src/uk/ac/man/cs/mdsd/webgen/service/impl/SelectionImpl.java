@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
-import uk.ac.man.cs.mdsd.webgen.base.FormaLParameterList;
+import uk.ac.man.cs.mdsd.webgen.base.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.base.SelectionParameter;
 
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedElementImpl;
@@ -585,9 +585,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == FormaLParameterList.class) {
+		if (baseClass == FormalParameterList.class) {
 			switch (derivedFeatureID) {
-				case ServicePackage.SELECTION__PARAMETERS: return BasePackage.FORMA_LPARAMETER_LIST__PARAMETERS;
+				case ServicePackage.SELECTION__PARAMETERS: return BasePackage.FORMAL_PARAMETER_LIST__PARAMETERS;
 				default: return -1;
 			}
 		}
@@ -601,9 +601,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == FormaLParameterList.class) {
+		if (baseClass == FormalParameterList.class) {
 			switch (baseFeatureID) {
-				case BasePackage.FORMA_LPARAMETER_LIST__PARAMETERS: return ServicePackage.SELECTION__PARAMETERS;
+				case BasePackage.FORMAL_PARAMETER_LIST__PARAMETERS: return ServicePackage.SELECTION__PARAMETERS;
 				default: return -1;
 			}
 		}

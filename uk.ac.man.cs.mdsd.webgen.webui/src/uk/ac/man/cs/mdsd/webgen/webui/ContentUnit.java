@@ -254,7 +254,7 @@ public interface ContentUnit extends NamedDisplayElement {
 	 * @see #setPageDisplayedOn(Page)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getContentUnit_PageDisplayedOn()
 	 * @model required="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if displayedOn.oclIsTypeOf(Page) then\r\n\tdisplayedOn.oclAsType(Page)\r\nelse\r\n\tdisplayedOn.oclAsType(UnitAssociation).displayedOn.pageDisplaytedOn()\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if displayedOn.oclIsTypeOf(Page) then\r\n\tdisplayedOn.oclAsType(Page)\r\nelse\r\n\tdisplayedOn.oclAsType(UnitAssociation).displayedOn.pageDisplayedOn\r\nendif'"
 	 * @generated
 	 */
 	Page getPageDisplayedOn();

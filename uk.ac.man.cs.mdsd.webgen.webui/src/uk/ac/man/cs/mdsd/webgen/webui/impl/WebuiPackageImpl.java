@@ -4095,7 +4095,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		  (getContentUnit_PageDisplayedOn(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if displayedOn.oclIsTypeOf(Page) then\r\n\tdisplayedOn.oclAsType(Page)\r\nelse\r\n\tdisplayedOn.oclAsType(UnitAssociation).displayedOn.pageDisplaytedOn()\r\nendif"
+			 "derivation", "if displayedOn.oclIsTypeOf(Page) then\r\n\tdisplayedOn.oclAsType(Page)\r\nelse\r\n\tdisplayedOn.oclAsType(UnitAssociation).displayedOn.pageDisplayedOn\r\nendif"
 		   });	
 		addAnnotation
 		  (dynamicUnitEClass, 

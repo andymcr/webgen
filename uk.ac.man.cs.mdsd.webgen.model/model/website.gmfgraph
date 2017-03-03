@@ -559,9 +559,7 @@
           cornerHeight="10">
         <layout
             xsi:type="gmfgraph:FlowLayout"
-            vertical="true"
             matchMinorSize="true"
-            forceSingleLine="true"
             majorAlignment="CENTER"
             minorAlignment="CENTER"
             majorSpacing="10"

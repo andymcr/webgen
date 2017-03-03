@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 
+import uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
@@ -45,6 +46,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelFeature;
 import uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.persistence.PathElement;
+import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.ResourceAttribute;
@@ -64,6 +66,13 @@ import uk.ac.man.cs.mdsd.webgen.persistence.util.PersistenceValidator;
  * @generated
  */
 public class PersistencePackageImpl extends EPackageImpl implements PersistencePackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass persistenceEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -369,15 +378,16 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 
 		isInited = true;
 
-		// Initialize simple dependencies
-		BasePackage.eINSTANCE.eClass();
-		ExpressionPackage.eINSTANCE.eClass();
+		// Obtain or create and register interdependencies
+		BasePackageImpl theBasePackage = (BasePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI) instanceof BasePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI) : BasePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thePersistencePackage.createPackageContents();
+		theBasePackage.createPackageContents();
 
 		// Initialize created meta-data
 		thePersistencePackage.initializePackageContents();
+		theBasePackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -395,6 +405,15 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(PersistencePackage.eNS_URI, thePersistencePackage);
 		return thePersistencePackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPersistence() {
+		return persistenceEClass;
 	}
 
 	/**
@@ -1757,6 +1776,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		isCreated = true;
 
 		// Create classes and their features
+		persistenceEClass = createEClass(PERSISTENCE);
+
 		entityOrViewEClass = createEClass(ENTITY_OR_VIEW);
 		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__SINGLETON_NAME);
 		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__PLURALISED_NAME);
@@ -2010,6 +2031,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		viewAssociationEClass.getESuperTypes().add(this.getAssociation());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(persistenceEClass, Persistence.class, "Persistence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(entityOrViewEClass, EntityOrView.class, "EntityOrView", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityOrView_SingletonName(), ecorePackage.getEString(), "singletonName", null, 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityOrView_PluralisedName(), ecorePackage.getEString(), "pluralisedName", null, 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

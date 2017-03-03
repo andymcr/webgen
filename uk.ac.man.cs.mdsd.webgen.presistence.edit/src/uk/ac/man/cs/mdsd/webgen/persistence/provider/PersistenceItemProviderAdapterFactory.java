@@ -89,6 +89,29 @@ public class PersistenceItemProviderAdapterFactory extends PersistenceAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PersistenceItemProvider persistenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPersistenceAdapter() {
+		if (persistenceItemProvider == null) {
+			persistenceItemProvider = new PersistenceItemProvider(this);
+		}
+
+		return persistenceItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -674,6 +697,7 @@ public class PersistenceItemProviderAdapterFactory extends PersistenceAdapterFac
 	 * @generated
 	 */
 	public void dispose() {
+		if (persistenceItemProvider != null) persistenceItemProvider.dispose();
 		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
 		if (modelLabelAttributeItemProvider != null) modelLabelAttributeItemProvider.dispose();
 		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();

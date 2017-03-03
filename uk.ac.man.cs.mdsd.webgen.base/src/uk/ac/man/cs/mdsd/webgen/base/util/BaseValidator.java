@@ -102,6 +102,8 @@ public class BaseValidator extends EObjectValidator {
 				return validateFormaLParameterList((FormaLParameterList)value, diagnostics, context);
 			case BasePackage.SELECTION_PARAMETER:
 				return validateSelectionParameter((SelectionParameter)value, diagnostics, context);
+			case BasePackage.CURRENT_USER_REFERENCE:
+				return validateCurrentUserReference((CurrentUserReference)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -275,6 +277,15 @@ public class BaseValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(selectionParameter, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(selectionParameter, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCurrentUserReference(CurrentUserReference currentUserReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(currentUserReference, diagnostics, context);
 	}
 
 	/**

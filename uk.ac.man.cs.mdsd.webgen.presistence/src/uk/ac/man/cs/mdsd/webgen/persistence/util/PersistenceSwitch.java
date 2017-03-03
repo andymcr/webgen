@@ -70,6 +70,12 @@ public class PersistenceSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case PersistencePackage.PERSISTENCE: {
+				Persistence persistence = (Persistence)theEObject;
+				T result = casePersistence(persistence);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case PersistencePackage.ENTITY_OR_VIEW: {
 				EntityOrView entityOrView = (EntityOrView)theEObject;
 				T result = caseEntityOrView(entityOrView);
@@ -378,6 +384,21 @@ public class PersistenceSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Persistence</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Persistence</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePersistence(Persistence object) {
+		return null;
 	}
 
 	/**

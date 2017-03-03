@@ -181,6 +181,29 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CurrentUserReferenceItemProvider currentUserReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCurrentUserReferenceAdapter() {
+		if (currentUserReferenceItemProvider == null) {
+			currentUserReferenceItemProvider = new CurrentUserReferenceItemProvider(this);
+		}
+
+		return currentUserReferenceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -310,6 +333,7 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
 		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
+		if (currentUserReferenceItemProvider != null) currentUserReferenceItemProvider.dispose();
 	}
 
 }

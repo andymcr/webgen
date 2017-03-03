@@ -36,7 +36,7 @@
     <genClasses ecoreClass="expression.ecore#//Function">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//Function/name"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="expression.ecore#//Path"/>
+    <genClasses image="false" ecoreClass="expression.ecore#//Variable"/>
     <genClasses image="false" ecoreClass="expression.ecore#//Predicate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//Predicate/negated"/>
     </genClasses>

@@ -10,9 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import uk.ac.man.cs.mdsd.webgen.expression.Path;
-
+import uk.ac.man.cs.mdsd.webgen.expression.Variable;
 import uk.ac.man.cs.mdsd.webgen.service.Order;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 
@@ -38,7 +36,7 @@ public abstract class OrderImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected Path path;
+	protected Variable path;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -64,7 +62,7 @@ public abstract class OrderImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Path getPath() {
+	public Variable getPath() {
 		return path;
 	}
 
@@ -73,8 +71,8 @@ public abstract class OrderImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPath(Path newPath, NotificationChain msgs) {
-		Path oldPath = path;
+	public NotificationChain basicSetPath(Variable newPath, NotificationChain msgs) {
+		Variable oldPath = path;
 		path = newPath;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ServicePackage.ORDER__PATH, oldPath, newPath);
@@ -88,7 +86,7 @@ public abstract class OrderImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPath(Path newPath) {
+	public void setPath(Variable newPath) {
 		if (newPath != path) {
 			NotificationChain msgs = null;
 			if (path != null)
@@ -139,7 +137,7 @@ public abstract class OrderImpl extends MinimalEObjectImpl.Container implements 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ServicePackage.ORDER__PATH:
-				setPath((Path)newValue);
+				setPath((Variable)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -154,7 +152,7 @@ public abstract class OrderImpl extends MinimalEObjectImpl.Container implements 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ServicePackage.ORDER__PATH:
-				setPath((Path)null);
+				setPath((Variable)null);
 				return;
 		}
 		super.eUnset(featureID);

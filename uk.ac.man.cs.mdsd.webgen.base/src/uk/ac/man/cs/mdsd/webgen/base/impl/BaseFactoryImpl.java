@@ -60,6 +60,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 			case BasePackage.ENUMERATION_TYPE: return createEnumerationType();
 			case BasePackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
 			case BasePackage.SELECTION_PARAMETER: return createSelectionParameter();
+			case BasePackage.CURRENT_USER_REFERENCE: return createCurrentUserReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -103,6 +104,16 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	public SelectionParameter createSelectionParameter() {
 		SelectionParameterImpl selectionParameter = new SelectionParameterImpl();
 		return selectionParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CurrentUserReference createCurrentUserReference() {
+		CurrentUserReferenceImpl currentUserReference = new CurrentUserReferenceImpl();
+		return currentUserReference;
 	}
 
 	/**

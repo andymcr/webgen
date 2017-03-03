@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -525,6 +526,44 @@ public interface BasePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.CurrentUserReferenceImpl <em>Current User Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.CurrentUserReferenceImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getCurrentUserReference()
+	 * @generated
+	 */
+	int CURRENT_USER_REFERENCE = 8;
+
+	/**
+	 * The feature id for the '<em><b>User Model</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_USER_REFERENCE__USER_MODEL = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Current User Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_USER_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Current User Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_USER_REFERENCE_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.base.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -737,6 +776,27 @@ public interface BasePackage extends EPackage {
 	EAttribute getSelectionParameter_DefaultValue();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference <em>Current User Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Current User Reference</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference
+	 * @generated
+	 */
+	EClass getCurrentUserReference();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference#getUserModel <em>User Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>User Model</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference#getUserModel()
+	 * @see #getCurrentUserReference()
+	 * @generated
+	 */
+	EReference getCurrentUserReference_UserModel();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -934,6 +994,24 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SELECTION_PARAMETER__DEFAULT_VALUE = eINSTANCE.getSelectionParameter_DefaultValue();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.CurrentUserReferenceImpl <em>Current User Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.CurrentUserReferenceImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getCurrentUserReference()
+		 * @generated
+		 */
+		EClass CURRENT_USER_REFERENCE = eINSTANCE.getCurrentUserReference();
+
+		/**
+		 * The meta object literal for the '<em><b>User Model</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CURRENT_USER_REFERENCE__USER_MODEL = eINSTANCE.getCurrentUserReference_UserModel();
 
 	}
 

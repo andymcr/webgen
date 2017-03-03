@@ -23,11 +23,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
+import uk.ac.man.cs.mdsd.webgen.image.ImageFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
 import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
+import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel} object.
@@ -65,7 +67,6 @@ public class WebGenModelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAllowTypeCustomisationPropertyDescriptor(object);
-			addGlobalMenuPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -84,28 +85,6 @@ public class WebGenModelItemProvider
 				 getString("_UI_WebGenModel_allowTypeCustomisation_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_allowTypeCustomisation_feature", "_UI_WebGenModel_type"),
 				 WebsitePackage.Literals.WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Global Menu feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGlobalMenuPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebGenModel_globalMenu_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_globalMenu_feature", "_UI_WebGenModel_type"),
-				 WebsitePackage.Literals.WEB_GEN_MODEL__GLOBAL_MENU,
 				 true,
 				 false,
 				 true,
@@ -239,22 +218,22 @@ public class WebGenModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__PAGES,
-				 WebsiteFactory.eINSTANCE.createPage()));
+				 WebuiFactory.eINSTANCE.createPage()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__MENUS,
-				 WebsiteFactory.eINSTANCE.createStaticMenu()));
+				 WebuiFactory.eINSTANCE.createStaticMenu()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__MENUS,
-				 WebsiteFactory.eINSTANCE.createDynamicMenu()));
+				 WebuiFactory.eINSTANCE.createDynamicMenu()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__IMAGE_MANIPULATIONS,
-				 WebsiteFactory.eINSTANCE.createImageManipulation()));
+				 ImageFactory.eINSTANCE.createImageManipulation()));
 	}
 
 	/**

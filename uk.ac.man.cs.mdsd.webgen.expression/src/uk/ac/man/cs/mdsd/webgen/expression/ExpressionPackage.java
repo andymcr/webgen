@@ -364,32 +364,32 @@ public interface ExpressionPackage extends EPackage {
 	int FUNCTION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.expression.Path <em>Path</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.expression.Variable <em>Variable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.expression.Path
-	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPath()
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.Variable
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getVariable()
 	 * @generated
 	 */
-	int PATH = 9;
+	int VARIABLE = 9;
 
 	/**
-	 * The number of structural features of the '<em>Path</em>' class.
+	 * The number of structural features of the '<em>Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATH_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+	int VARIABLE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Path</em>' class.
+	 * The number of operations of the '<em>Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATH_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+	int VARIABLE_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.expression.impl.PredicateImpl <em>Predicate</em>}' class.
@@ -981,14 +981,14 @@ public interface ExpressionPackage extends EPackage {
 	EAttribute getFunction_Name();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.expression.Path <em>Path</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.expression.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Path</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.expression.Path
+	 * @return the meta object for class '<em>Variable</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.Variable
 	 * @generated
 	 */
-	EClass getPath();
+	EClass getVariable();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.expression.Predicate <em>Predicate</em>}'.
@@ -1406,14 +1406,14 @@ public interface ExpressionPackage extends EPackage {
 		EAttribute FUNCTION__NAME = eINSTANCE.getFunction_Name();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.expression.Path <em>Path</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.expression.Variable <em>Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.expression.Path
-		 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPath()
+		 * @see uk.ac.man.cs.mdsd.webgen.expression.Variable
+		 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getVariable()
 		 * @generated
 		 */
-		EClass PATH = eINSTANCE.getPath();
+		EClass VARIABLE = eINSTANCE.getVariable();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.expression.impl.PredicateImpl <em>Predicate</em>}' class.

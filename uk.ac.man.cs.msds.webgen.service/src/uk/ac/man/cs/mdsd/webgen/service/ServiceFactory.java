@@ -22,6 +22,15 @@ public interface ServiceFactory extends EFactory {
 	ServiceFactory eINSTANCE = uk.ac.man.cs.mdsd.webgen.service.impl.ServiceFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Services</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Services</em>'.
+	 * @generated
+	 */
+	Services createServices();
+
+	/**
 	 * Returns a new object of class '<em>Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

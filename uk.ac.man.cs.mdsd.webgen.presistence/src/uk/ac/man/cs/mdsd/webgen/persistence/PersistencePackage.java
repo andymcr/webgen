@@ -60,6 +60,34 @@ public interface PersistencePackage extends EPackage {
 	PersistencePackage eINSTANCE = uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistenceImpl <em>Persistence</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistenceImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getPersistence()
+	 * @generated
+	 */
+	int PERSISTENCE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Persistence</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSISTENCE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Persistence</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSISTENCE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl <em>Entity Or View</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,7 +95,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEntityOrView()
 	 * @generated
 	 */
-	int ENTITY_OR_VIEW = 0;
+	int ENTITY_OR_VIEW = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -266,7 +294,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getFeature()
 	 * @generated
 	 */
-	int FEATURE = 1;
+	int FEATURE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -384,7 +412,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 2;
+	int ATTRIBUTE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -538,7 +566,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getAssociation()
 	 * @generated
 	 */
-	int ASSOCIATION = 3;
+	int ASSOCIATION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -710,7 +738,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getLabel()
 	 * @generated
 	 */
-	int LABEL = 4;
+	int LABEL = 5;
 
 	/**
 	 * The number of structural features of the '<em>Label</em>' class.
@@ -738,7 +766,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getModelLabel()
 	 * @generated
 	 */
-	int MODEL_LABEL = 5;
+	int MODEL_LABEL = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -802,7 +830,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getModelLabelFeature()
 	 * @generated
 	 */
-	int MODEL_LABEL_FEATURE = 6;
+	int MODEL_LABEL_FEATURE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -839,7 +867,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getModelLabelAttribute()
 	 * @generated
 	 */
-	int MODEL_LABEL_ATTRIBUTE = 7;
+	int MODEL_LABEL_ATTRIBUTE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -894,7 +922,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getModelLabelAssociation()
 	 * @generated
 	 */
-	int MODEL_LABEL_ASSOCIATION = 8;
+	int MODEL_LABEL_ASSOCIATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -958,7 +986,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 9;
+	int ENTITY = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1175,7 +1203,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEntityFeature()
 	 * @generated
 	 */
-	int ENTITY_FEATURE = 10;
+	int ENTITY_FEATURE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1383,7 +1411,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEntityAttribute()
 	 * @generated
 	 */
-	int ENTITY_ATTRIBUTE = 11;
+	int ENTITY_ATTRIBUTE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1672,7 +1700,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getDataTypeAttribute()
 	 * @generated
 	 */
-	int DATA_TYPE_ATTRIBUTE = 12;
+	int DATA_TYPE_ATTRIBUTE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1997,7 +2025,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getDateAttribute()
 	 * @generated
 	 */
-	int DATE_ATTRIBUTE = 13;
+	int DATE_ATTRIBUTE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2304,7 +2332,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getUrlAttribute()
 	 * @generated
 	 */
-	int URL_ATTRIBUTE = 14;
+	int URL_ATTRIBUTE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2602,7 +2630,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getResourceAttribute()
 	 * @generated
 	 */
-	int RESOURCE_ATTRIBUTE = 15;
+	int RESOURCE_ATTRIBUTE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2936,7 +2964,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getPathElement()
 	 * @generated
 	 */
-	int PATH_ELEMENT = 16;
+	int PATH_ELEMENT = 17;
 
 	/**
 	 * The number of structural features of the '<em>Path Element</em>' class.
@@ -2964,7 +2992,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getStaticPathElement()
 	 * @generated
 	 */
-	int STATIC_PATH_ELEMENT = 17;
+	int STATIC_PATH_ELEMENT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' attribute.
@@ -3001,7 +3029,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getDatePathElement()
 	 * @generated
 	 */
-	int DATE_PATH_ELEMENT = 18;
+	int DATE_PATH_ELEMENT = 19;
 
 	/**
 	 * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -3038,7 +3066,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getFileAttribute()
 	 * @generated
 	 */
-	int FILE_ATTRIBUTE = 19;
+	int FILE_ATTRIBUTE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3372,7 +3400,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getImageAttribute()
 	 * @generated
 	 */
-	int IMAGE_ATTRIBUTE = 20;
+	int IMAGE_ATTRIBUTE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3706,7 +3734,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getLocationAttribute()
 	 * @generated
 	 */
-	int LOCATION_ATTRIBUTE = 21;
+	int LOCATION_ATTRIBUTE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3995,7 +4023,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEntityAssociation()
 	 * @generated
 	 */
-	int ENTITY_ASSOCIATION = 22;
+	int ENTITY_ASSOCIATION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4356,7 +4384,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getAssociationWithoutContainment()
 	 * @generated
 	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT = 23;
+	int ASSOCIATION_WITHOUT_CONTAINMENT = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4735,7 +4763,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getAssociationWithContainment()
 	 * @generated
 	 */
-	int ASSOCIATION_WITH_CONTAINMENT = 24;
+	int ASSOCIATION_WITH_CONTAINMENT = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5105,7 +5133,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getAssociationKey()
 	 * @generated
 	 */
-	int ASSOCIATION_KEY = 25;
+	int ASSOCIATION_KEY = 26;
 
 	/**
 	 * The feature id for the '<em><b>Key For</b></em>' container reference.
@@ -5169,7 +5197,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getView()
 	 * @generated
 	 */
-	int VIEW = 26;
+	int VIEW = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5386,7 +5414,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getViewFeature()
 	 * @generated
 	 */
-	int VIEW_FEATURE = 27;
+	int VIEW_FEATURE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -5513,7 +5541,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEncapsulatedFeature()
 	 * @generated
 	 */
-	int ENCAPSULATED_FEATURE = 28;
+	int ENCAPSULATED_FEATURE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -5667,7 +5695,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEncapsulatedAttribute()
 	 * @generated
 	 */
-	int ENCAPSULATED_ATTRIBUTE = 29;
+	int ENCAPSULATED_ATTRIBUTE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -5884,7 +5912,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEncapsulatedAssociation()
 	 * @generated
 	 */
-	int ENCAPSULATED_ASSOCIATION = 30;
+	int ENCAPSULATED_ASSOCIATION = 31;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -6155,7 +6183,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getViewAssociation()
 	 * @generated
 	 */
-	int VIEW_ASSOCIATION = 31;
+	int VIEW_ASSOCIATION = 32;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6372,7 +6400,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getDatabaseTechnologies()
 	 * @generated
 	 */
-	int DATABASE_TECHNOLOGIES = 32;
+	int DATABASE_TECHNOLOGIES = 33;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies <em>Orm Technologies</em>}' enum.
@@ -6382,7 +6410,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getOrmTechnologies()
 	 * @generated
 	 */
-	int ORM_TECHNOLOGIES = 33;
+	int ORM_TECHNOLOGIES = 34;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Cardinality <em>Cardinality</em>}' enum.
@@ -6392,7 +6420,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 34;
+	int CARDINALITY = 35;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.isHasChoices <em>is Has Choices</em>}' enum.
@@ -6402,7 +6430,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getisHasChoices()
 	 * @generated
 	 */
-	int IS_HAS_CHOICES = 35;
+	int IS_HAS_CHOICES = 36;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.DateDetails <em>Date Details</em>}' enum.
@@ -6412,8 +6440,18 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getDateDetails()
 	 * @generated
 	 */
-	int DATE_DETAILS = 36;
+	int DATE_DETAILS = 37;
 
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence <em>Persistence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Persistence</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence
+	 * @generated
+	 */
+	EClass getPersistence();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView <em>Entity Or View</em>}'.
@@ -8029,6 +8067,16 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistenceImpl <em>Persistence</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistenceImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getPersistence()
+		 * @generated
+		 */
+		EClass PERSISTENCE = eINSTANCE.getPersistence();
+
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl <em>Entity Or View</em>}' class.
 		 * <!-- begin-user-doc -->

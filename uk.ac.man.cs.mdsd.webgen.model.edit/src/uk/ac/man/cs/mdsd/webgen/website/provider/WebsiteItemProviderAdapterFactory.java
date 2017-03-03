@@ -42,11 +42,17 @@ import uk.ac.man.cs.mdsd.webgen.expression.util.ExpressionSwitch;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.util.PersistenceSwitch;
+import uk.ac.man.cs.mdsd.webgen.service.Order;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 import uk.ac.man.cs.mdsd.webgen.service.util.ServiceSwitch;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 
 import uk.ac.man.cs.mdsd.webgen.website.util.WebsiteAdapterFactory;
+import uk.ac.man.cs.mdsd.webgen.webui.ActionMenuEntry;
+import uk.ac.man.cs.mdsd.webgen.webui.UnitElement;
+import uk.ac.man.cs.mdsd.webgen.webui.UnitFeature;
+import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
+import uk.ac.man.cs.mdsd.webgen.webui.util.WebuiSwitch;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -186,949 +192,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		}
 
 		return casAuthenticationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ImageManipulation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ImageManipulationItemProvider imageManipulationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ImageManipulation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createImageManipulationAdapter() {
-		if (imageManipulationItemProvider == null) {
-			imageManipulationItemProvider = new ImageManipulationItemProvider(this);
-		}
-
-		return imageManipulationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ThumbnailFilter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ThumbnailFilterItemProvider thumbnailFilterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ThumbnailFilter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createThumbnailFilterAdapter() {
-		if (thumbnailFilterItemProvider == null) {
-			thumbnailFilterItemProvider = new ThumbnailFilterItemProvider(this);
-		}
-
-		return thumbnailFilterItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Page} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PageItemProvider pageItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Page}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPageAdapter() {
-		if (pageItemProvider == null) {
-			pageItemProvider = new PageItemProvider(this);
-		}
-
-		return pageItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.PageLink} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PageLinkItemProvider pageLinkItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.PageLink}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPageLinkAdapter() {
-		if (pageLinkItemProvider == null) {
-			pageLinkItemProvider = new PageLinkItemProvider(this);
-		}
-
-		return pageLinkItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.StaticMenu} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StaticMenuItemProvider staticMenuItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.StaticMenu}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStaticMenuAdapter() {
-		if (staticMenuItemProvider == null) {
-			staticMenuItemProvider = new StaticMenuItemProvider(this);
-		}
-
-		return staticMenuItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActionMenuEntryItemProvider actionMenuEntryItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActionMenuEntryAdapter() {
-		if (actionMenuEntryItemProvider == null) {
-			actionMenuEntryItemProvider = new ActionMenuEntryItemProvider(this);
-		}
-
-		return actionMenuEntryItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.EditStaticTextMenuEntry} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EditStaticTextMenuEntryItemProvider editStaticTextMenuEntryItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.EditStaticTextMenuEntry}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEditStaticTextMenuEntryAdapter() {
-		if (editStaticTextMenuEntryItemProvider == null) {
-			editStaticTextMenuEntryItemProvider = new EditStaticTextMenuEntryItemProvider(this);
-		}
-
-		return editStaticTextMenuEntryItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.DynamicMenu} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DynamicMenuItemProvider dynamicMenuItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.DynamicMenu}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDynamicMenuAdapter() {
-		if (dynamicMenuItemProvider == null) {
-			dynamicMenuItemProvider = new DynamicMenuItemProvider(this);
-		}
-
-		return dynamicMenuItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.MenuFeature} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MenuFeatureItemProvider menuFeatureItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.MenuFeature}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMenuFeatureAdapter() {
-		if (menuFeatureItemProvider == null) {
-			menuFeatureItemProvider = new MenuFeatureItemProvider(this);
-		}
-
-		return menuFeatureItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Filter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FilterItemProvider filterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Filter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFilterAdapter() {
-		if (filterItemProvider == null) {
-			filterItemProvider = new FilterItemProvider(this);
-		}
-
-		return filterItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FilterParameterItemProvider filterParameterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFilterParameterAdapter() {
-		if (filterParameterItemProvider == null) {
-			filterParameterItemProvider = new FilterParameterItemProvider(this);
-		}
-
-		return filterParameterItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Query} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected QueryItemProvider queryItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Query}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createQueryAdapter() {
-		if (queryItemProvider == null) {
-			queryItemProvider = new QueryItemProvider(this);
-		}
-
-		return queryItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.QueryParameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected QueryParameterItemProvider queryParameterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.QueryParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createQueryParameterAdapter() {
-		if (queryParameterItemProvider == null) {
-			queryParameterItemProvider = new QueryParameterItemProvider(this);
-		}
-
-		return queryParameterItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.StaticUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StaticUnitItemProvider staticUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.StaticUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStaticUnitAdapter() {
-		if (staticUnitItemProvider == null) {
-			staticUnitItemProvider = new StaticUnitItemProvider(this);
-		}
-
-		return staticUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CreateSitemapUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CreateSitemapUnitItemProvider createSitemapUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CreateSitemapUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCreateSitemapUnitAdapter() {
-		if (createSitemapUnitItemProvider == null) {
-			createSitemapUnitItemProvider = new CreateSitemapUnitItemProvider(this);
-		}
-
-		return createSitemapUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.UnitElement} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UnitElementItemProvider unitElementItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.UnitElement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUnitElementAdapter() {
-		if (unitElementItemProvider == null) {
-			unitElementItemProvider = new UnitElementItemProvider(this);
-		}
-
-		return unitElementItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UnitAssociationItemProvider unitAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUnitAssociationAdapter() {
-		if (unitAssociationItemProvider == null) {
-			unitAssociationItemProvider = new UnitAssociationItemProvider(this);
-		}
-
-		return unitAssociationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ImageIndexUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ImageIndexUnitItemProvider imageIndexUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ImageIndexUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createImageIndexUnitAdapter() {
-		if (imageIndexUnitItemProvider == null) {
-			imageIndexUnitItemProvider = new ImageIndexUnitItemProvider(this);
-		}
-
-		return imageIndexUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.DataTypeField} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DataTypeFieldItemProvider dataTypeFieldItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.DataTypeField}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDataTypeFieldAdapter() {
-		if (dataTypeFieldItemProvider == null) {
-			dataTypeFieldItemProvider = new DataTypeFieldItemProvider(this);
-		}
-
-		return dataTypeFieldItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.DateField} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DateFieldItemProvider dateFieldItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.DateField}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDateFieldAdapter() {
-		if (dateFieldItemProvider == null) {
-			dateFieldItemProvider = new DateFieldItemProvider(this);
-		}
-
-		return dateFieldItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CaptchaField} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CaptchaFieldItemProvider captchaFieldItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CaptchaField}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCaptchaFieldAdapter() {
-		if (captchaFieldItemProvider == null) {
-			captchaFieldItemProvider = new CaptchaFieldItemProvider(this);
-		}
-
-		return captchaFieldItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UnitSupportActionItemProvider unitSupportActionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUnitSupportActionAdapter() {
-		if (unitSupportActionItemProvider == null) {
-			unitSupportActionItemProvider = new UnitSupportActionItemProvider(this);
-		}
-
-		return unitSupportActionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CreateUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CreateUnitItemProvider createUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CreateUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCreateUnitAdapter() {
-		if (createUnitItemProvider == null) {
-			createUnitItemProvider = new CreateUnitItemProvider(this);
-		}
-
-		return createUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CreateUpdateUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CreateUpdateUnitItemProvider createUpdateUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CreateUpdateUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCreateUpdateUnitAdapter() {
-		if (createUpdateUnitItemProvider == null) {
-			createUpdateUnitItemProvider = new CreateUpdateUnitItemProvider(this);
-		}
-
-		return createUpdateUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.UpdateUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UpdateUnitItemProvider updateUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.UpdateUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUpdateUnitAdapter() {
-		if (updateUnitItemProvider == null) {
-			updateUnitItemProvider = new UpdateUnitItemProvider(this);
-		}
-
-		return updateUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.MapUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MapUnitItemProvider mapUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.MapUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMapUnitAdapter() {
-		if (mapUnitItemProvider == null) {
-			mapUnitItemProvider = new MapUnitItemProvider(this);
-		}
-
-		return mapUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.DetailsUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DetailsUnitItemProvider detailsUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.DetailsUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDetailsUnitAdapter() {
-		if (detailsUnitItemProvider == null) {
-			detailsUnitItemProvider = new DetailsUnitItemProvider(this);
-		}
-
-		return detailsUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IndexUnitItemProvider indexUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createIndexUnitAdapter() {
-		if (indexUnitItemProvider == null) {
-			indexUnitItemProvider = new IndexUnitItemProvider(this);
-		}
-
-		return indexUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.SearchUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SearchUnitItemProvider searchUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.SearchUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSearchUnitAdapter() {
-		if (searchUnitItemProvider == null) {
-			searchUnitItemProvider = new SearchUnitItemProvider(this);
-		}
-
-		return searchUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FeaturePathAttributeItemProvider featurePathAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFeaturePathAttributeAdapter() {
-		if (featurePathAttributeItemProvider == null) {
-			featurePathAttributeItemProvider = new FeaturePathAttributeItemProvider(this);
-		}
-
-		return featurePathAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FeaturePathAssociationItemProvider featurePathAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFeaturePathAssociationAdapter() {
-		if (featurePathAssociationItemProvider == null) {
-			featurePathAssociationItemProvider = new FeaturePathAssociationItemProvider(this);
-		}
-
-		return featurePathAssociationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ChildPathAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChildPathAttributeItemProvider childPathAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ChildPathAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createChildPathAttributeAdapter() {
-		if (childPathAttributeItemProvider == null) {
-			childPathAttributeItemProvider = new ChildPathAttributeItemProvider(this);
-		}
-
-		return childPathAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ChildPathAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChildPathAssociationItemProvider childPathAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ChildPathAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createChildPathAssociationAdapter() {
-		if (childPathAssociationItemProvider == null) {
-			childPathAssociationItemProvider = new ChildPathAssociationItemProvider(this);
-		}
-
-		return childPathAssociationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.SliderUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SliderUnitItemProvider sliderUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.SliderUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSliderUnitAdapter() {
-		if (sliderUnitItemProvider == null) {
-			sliderUnitItemProvider = new SliderUnitItemProvider(this);
-		}
-
-		return sliderUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.GalleryUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected GalleryUnitItemProvider galleryUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.GalleryUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createGalleryUnitAdapter() {
-		if (galleryUnitItemProvider == null) {
-			galleryUnitItemProvider = new GalleryUnitItemProvider(this);
-		}
-
-		return galleryUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.RegistrationUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RegistrationUnitItemProvider registrationUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.RegistrationUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRegistrationUnitAdapter() {
-		if (registrationUnitItemProvider == null) {
-			registrationUnitItemProvider = new RegistrationUnitItemProvider(this);
-		}
-
-		return registrationUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.LoginUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected LoginUnitItemProvider loginUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.LoginUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createLoginUnitAdapter() {
-		if (loginUnitItemProvider == null) {
-			loginUnitItemProvider = new LoginUnitItemProvider(this);
-		}
-
-		return loginUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ForgottenPasswordUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ForgottenPasswordUnitItemProvider forgottenPasswordUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ForgottenPasswordUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createForgottenPasswordUnitAdapter() {
-		if (forgottenPasswordUnitItemProvider == null) {
-			forgottenPasswordUnitItemProvider = new ForgottenPasswordUnitItemProvider(this);
-		}
-
-		return forgottenPasswordUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.SelectAction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SelectActionItemProvider selectActionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.SelectAction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSelectActionAdapter() {
-		if (selectActionItemProvider == null) {
-			selectActionItemProvider = new SelectActionItemProvider(this);
-		}
-
-		return selectActionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.DeleteAction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DeleteActionItemProvider deleteActionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.DeleteAction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDeleteActionAdapter() {
-		if (deleteActionItemProvider == null) {
-			deleteActionItemProvider = new DeleteActionItemProvider(this);
-		}
-
-		return deleteActionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FeatureSupportActionItemProvider featureSupportActionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFeatureSupportActionAdapter() {
-		if (featureSupportActionItemProvider == null) {
-			featureSupportActionItemProvider = new FeatureSupportActionItemProvider(this);
-		}
-
-		return featureSupportActionItemProvider;
 	}
 
 	/**
@@ -1349,47 +412,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (websitePropertiesItemProvider != null) websitePropertiesItemProvider.dispose();
 		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
-		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
-		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();
-		if (pageItemProvider != null) pageItemProvider.dispose();
-		if (pageLinkItemProvider != null) pageLinkItemProvider.dispose();
-		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
-		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
-		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
-		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
-		if (menuFeatureItemProvider != null) menuFeatureItemProvider.dispose();
-		if (filterItemProvider != null) filterItemProvider.dispose();
-		if (filterParameterItemProvider != null) filterParameterItemProvider.dispose();
-		if (queryItemProvider != null) queryItemProvider.dispose();
-		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
-		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
-		if (createSitemapUnitItemProvider != null) createSitemapUnitItemProvider.dispose();
-		if (unitElementItemProvider != null) unitElementItemProvider.dispose();
-		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
-		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
-		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
-		if (captchaFieldItemProvider != null) captchaFieldItemProvider.dispose();
-		if (unitSupportActionItemProvider != null) unitSupportActionItemProvider.dispose();
-		if (createUnitItemProvider != null) createUnitItemProvider.dispose();
-		if (createUpdateUnitItemProvider != null) createUpdateUnitItemProvider.dispose();
-		if (updateUnitItemProvider != null) updateUnitItemProvider.dispose();
-		if (mapUnitItemProvider != null) mapUnitItemProvider.dispose();
-		if (detailsUnitItemProvider != null) detailsUnitItemProvider.dispose();
-		if (indexUnitItemProvider != null) indexUnitItemProvider.dispose();
-		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
-		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
-		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
-		if (childPathAttributeItemProvider != null) childPathAttributeItemProvider.dispose();
-		if (childPathAssociationItemProvider != null) childPathAssociationItemProvider.dispose();
-		if (imageIndexUnitItemProvider != null) imageIndexUnitItemProvider.dispose();
-		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
-		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();
-		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();
-		if (loginUnitItemProvider != null) loginUnitItemProvider.dispose();
-		if (forgottenPasswordUnitItemProvider != null) forgottenPasswordUnitItemProvider.dispose();
-		if (selectActionItemProvider != null) selectActionItemProvider.dispose();
-		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
-		if (featureSupportActionItemProvider != null) featureSupportActionItemProvider.dispose();
 		if (modelReferenceItemProvider != null) modelReferenceItemProvider.dispose();
 		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();
 		if (routeParameterReferenceItemProvider != null) routeParameterReferenceItemProvider.dispose();
@@ -1932,7 +954,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 			 * @generated
 			 */
 			@Override
-			public Object caseOrder(uk.ac.man.cs.mdsd.webgen.service.Order object) {
+			public Object caseOrder(Order object) {
 				newChildDescriptors.add
 					(createChildParameter
 						(ServicePackage.Literals.ORDER__PATH,
@@ -1956,6 +978,147 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ServicePackage.Literals.ORDER__PATH,
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return WebsiteEditPlugin.INSTANCE;
+		}
+	}
+
+	/**
+	 * A child creation extender for the {@link WebuiPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class WebuiChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends WebuiSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseUnitFeature(UnitFeature object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+						 WebsiteFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+						 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseUnitElement(UnitElement object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+						 WebsiteFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+						 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+						 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
 						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 				return null;

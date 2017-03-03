@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.AuthenticationKeyTypes;
-import uk.ac.man.cs.mdsd.webgen.website.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem;
-import uk.ac.man.cs.mdsd.webgen.website.LoginUnit;
-import uk.ac.man.cs.mdsd.webgen.website.RegistrationUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
+import uk.ac.man.cs.mdsd.webgen.webui.ForgottenPasswordUnit;
+import uk.ac.man.cs.mdsd.webgen.webui.LoginUnit;
+import uk.ac.man.cs.mdsd.webgen.webui.RegistrationUnit;
 
 /**
  * <!-- begin-user-doc -->

@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
-import uk.ac.man.cs.mdsd.webgen.expression.Path;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsNull;
+import uk.ac.man.cs.mdsd.webgen.expression.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +36,7 @@ public class PredicateIsNullImpl extends PredicateImpl implements PredicateIsNul
 	 * @generated
 	 * @ordered
 	 */
-	protected Path feature;
+	protected Variable feature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +62,7 @@ public class PredicateIsNullImpl extends PredicateImpl implements PredicateIsNul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Path getFeature() {
+	public Variable getFeature() {
 		return feature;
 	}
 
@@ -71,8 +71,8 @@ public class PredicateIsNullImpl extends PredicateImpl implements PredicateIsNul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetFeature(Path newFeature, NotificationChain msgs) {
-		Path oldFeature = feature;
+	public NotificationChain basicSetFeature(Variable newFeature, NotificationChain msgs) {
+		Variable oldFeature = feature;
 		feature = newFeature;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpressionPackage.PREDICATE_IS_NULL__FEATURE, oldFeature, newFeature);
@@ -86,7 +86,7 @@ public class PredicateIsNullImpl extends PredicateImpl implements PredicateIsNul
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFeature(Path newFeature) {
+	public void setFeature(Variable newFeature) {
 		if (newFeature != feature) {
 			NotificationChain msgs = null;
 			if (feature != null)
@@ -137,7 +137,7 @@ public class PredicateIsNullImpl extends PredicateImpl implements PredicateIsNul
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ExpressionPackage.PREDICATE_IS_NULL__FEATURE:
-				setFeature((Path)newValue);
+				setFeature((Variable)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,7 +152,7 @@ public class PredicateIsNullImpl extends PredicateImpl implements PredicateIsNul
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ExpressionPackage.PREDICATE_IS_NULL__FEATURE:
-				setFeature((Path)null);
+				setFeature((Variable)null);
 				return;
 		}
 		super.eUnset(featureID);

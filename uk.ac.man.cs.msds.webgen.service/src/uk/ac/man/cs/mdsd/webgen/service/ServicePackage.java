@@ -60,6 +60,34 @@ public interface ServicePackage extends EPackage {
 	ServicePackage eINSTANCE = uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServicesImpl <em>Services</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicesImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getServices()
+	 * @generated
+	 */
+	int SERVICES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Services</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICES_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Services</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICES_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl <em>Service</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,7 +95,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getService()
 	 * @generated
 	 */
-	int SERVICE = 0;
+	int SERVICE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -131,7 +159,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getSelection()
 	 * @generated
 	 */
-	int SELECTION = 1;
+	int SELECTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -249,7 +277,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getOrder()
 	 * @generated
 	 */
-	int ORDER = 2;
+	int ORDER = 3;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
@@ -286,7 +314,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getAsc()
 	 * @generated
 	 */
-	int ASC = 3;
+	int ASC = 4;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
@@ -323,7 +351,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getDesc()
 	 * @generated
 	 */
-	int DESC = 4;
+	int DESC = 5;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
@@ -360,7 +388,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getBusinessOperation()
 	 * @generated
 	 */
-	int BUSINESS_OPERATION = 5;
+	int BUSINESS_OPERATION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -424,8 +452,18 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getOperationResultTypes()
 	 * @generated
 	 */
-	int OPERATION_RESULT_TYPES = 6;
+	int OPERATION_RESULT_TYPES = 7;
 
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.Services <em>Services</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Services</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Services
+	 * @generated
+	 */
+	EClass getServices();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.Service <em>Service</em>}'.
@@ -685,6 +723,16 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServicesImpl <em>Services</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicesImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getServices()
+		 * @generated
+		 */
+		EClass SERVICES = eINSTANCE.getServices();
+
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl <em>Service</em>}' class.
 		 * <!-- begin-user-doc -->

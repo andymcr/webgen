@@ -42,4 +42,9 @@
         defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CurrentUserReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userModel" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView"
+        changeable="false" volatile="true" transient="true" unsettable="true" derived="true"/>
+  </eClassifiers>
 </ecore:EPackage>

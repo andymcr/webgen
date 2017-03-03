@@ -22,6 +22,15 @@ public interface PersistenceFactory extends EFactory {
 	PersistenceFactory eINSTANCE = uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistenceFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Persistence</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Persistence</em>'.
+	 * @generated
+	 */
+	Persistence createPersistence();
+
+	/**
 	 * Returns a new object of class '<em>Model Label</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -19,7 +19,6 @@ import uk.ac.man.cs.mdsd.webgen.expression.Function;
 import uk.ac.man.cs.mdsd.webgen.expression.IntegerLiteral;
 import uk.ac.man.cs.mdsd.webgen.expression.Literal;
 import uk.ac.man.cs.mdsd.webgen.expression.NullLiteral;
-import uk.ac.man.cs.mdsd.webgen.expression.Path;
 import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateBooleanOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateComparisonOperator;
@@ -30,6 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateLikeOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.StringLiteral;
 import uk.ac.man.cs.mdsd.webgen.expression.TimeLiteral;
+import uk.ac.man.cs.mdsd.webgen.expression.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -98,7 +98,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pathEClass = null;
+	private EClass variableEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -361,8 +361,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPath() {
-		return pathEClass;
+	public EClass getVariable() {
+		return variableEClass;
 	}
 
 	/**
@@ -633,7 +633,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		functionEClass = createEClass(FUNCTION);
 		createEAttribute(functionEClass, FUNCTION__NAME);
 
-		pathEClass = createEClass(PATH);
+		variableEClass = createEClass(VARIABLE);
 
 		predicateEClass = createEClass(PREDICATE);
 		createEAttribute(predicateEClass, PREDICATE__NEGATED);
@@ -706,7 +706,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		timeLiteralEClass.getESuperTypes().add(this.getLiteral());
 		currentTimeEClass.getESuperTypes().add(this.getLiteral());
 		functionEClass.getESuperTypes().add(this.getExpression());
-		pathEClass.getESuperTypes().add(this.getExpression());
+		variableEClass.getESuperTypes().add(this.getExpression());
 		predicateEClass.getESuperTypes().add(this.getExpression());
 		predicateBooleanOperatorEClass.getESuperTypes().add(this.getPredicate());
 		predicateEqualityOperatorEClass.getESuperTypes().add(this.getPredicate());
@@ -741,7 +741,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFunction_Name(), ecorePackage.getEString(), "name", null, 1, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(pathEClass, Path.class, "Path", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(predicateEClass, Predicate.class, "Predicate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPredicate_Negated(), ecorePackage.getEBoolean(), "negated", "false", 0, 1, Predicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -768,10 +768,10 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		initEReference(getPredicateLikeOperator_Right(), this.getExpression(), null, "right", null, 1, 1, PredicateLikeOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(predicateIsEmptyEClass, PredicateIsEmpty.class, "PredicateIsEmpty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPredicateIsEmpty_Feature(), this.getPath(), null, "feature", null, 0, 1, PredicateIsEmpty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPredicateIsEmpty_Feature(), this.getVariable(), null, "feature", null, 0, 1, PredicateIsEmpty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(predicateIsNullEClass, PredicateIsNull.class, "PredicateIsNull", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPredicateIsNull_Feature(), this.getPath(), null, "feature", null, 0, 1, PredicateIsNull.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPredicateIsNull_Feature(), this.getVariable(), null, "feature", null, 0, 1, PredicateIsNull.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(booleanOperatorEEnum, BooleanOperator.class, "BooleanOperator");

@@ -103,8 +103,8 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 				return createFunctionAdapter();
 			}
 			@Override
-			public Adapter casePath(Path object) {
-				return createPathAdapter();
+			public Adapter caseVariable(Variable object) {
+				return createVariableAdapter();
 			}
 			@Override
 			public Adapter casePredicate(Predicate object) {
@@ -201,16 +201,16 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.expression.Path <em>Path</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.expression.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.expression.Path
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.Variable
 	 * @generated
 	 */
-	public Adapter createPathAdapter() {
+	public Adapter createVariableAdapter() {
 		return null;
 	}
 

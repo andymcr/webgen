@@ -97,6 +97,8 @@ public class PersistenceValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
+			case PersistencePackage.PERSISTENCE:
+				return validatePersistence((Persistence)value, diagnostics, context);
 			case PersistencePackage.ENTITY_OR_VIEW:
 				return validateEntityOrView((EntityOrView)value, diagnostics, context);
 			case PersistencePackage.FEATURE:
@@ -174,6 +176,15 @@ public class PersistenceValidator extends EObjectValidator {
 			default:
 				return true;
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePersistence(Persistence persistence, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(persistence, diagnostics, context);
 	}
 
 	/**

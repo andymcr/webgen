@@ -72,6 +72,10 @@ public class PersistenceAdapterFactory extends AdapterFactoryImpl {
 	protected PersistenceSwitch<Adapter> modelSwitch =
 		new PersistenceSwitch<Adapter>() {
 			@Override
+			public Adapter casePersistence(Persistence object) {
+				return createPersistenceAdapter();
+			}
+			@Override
 			public Adapter caseEntityOrView(EntityOrView object) {
 				return createEntityOrViewAdapter();
 			}
@@ -230,6 +234,20 @@ public class PersistenceAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence <em>Persistence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence
+	 * @generated
+	 */
+	public Adapter createPersistenceAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView <em>Entity Or View</em>}'.

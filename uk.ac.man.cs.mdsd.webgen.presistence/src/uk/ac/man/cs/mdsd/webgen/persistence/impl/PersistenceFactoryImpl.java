@@ -57,6 +57,7 @@ public class PersistenceFactoryImpl extends EFactoryImpl implements PersistenceF
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case PersistencePackage.PERSISTENCE: return createPersistence();
 			case PersistencePackage.MODEL_LABEL: return createModelLabel();
 			case PersistencePackage.MODEL_LABEL_ATTRIBUTE: return createModelLabelAttribute();
 			case PersistencePackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
@@ -126,6 +127,16 @@ public class PersistenceFactoryImpl extends EFactoryImpl implements PersistenceF
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Persistence createPersistence() {
+		PersistenceImpl persistence = new PersistenceImpl();
+		return persistence;
 	}
 
 	/**

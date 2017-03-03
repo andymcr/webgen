@@ -25,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.service.Service;
 import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
+import uk.ac.man.cs.mdsd.webgen.service.Services;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,6 +34,13 @@ import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
  * @generated
  */
 public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass servicesEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,9 +136,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		isInited = true;
 
-		// Initialize simple dependencies
-		PersistencePackage.eINSTANCE.eClass();
-
 		// Create package meta-data objects
 		theServicePackage.createPackageContents();
 
@@ -144,6 +149,15 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ServicePackage.eNS_URI, theServicePackage);
 		return theServicePackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getServices() {
+		return servicesEClass;
 	}
 
 	/**
@@ -372,6 +386,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		isCreated = true;
 
 		// Create classes and their features
+		servicesEClass = createEClass(SERVICES);
+
 		serviceEClass = createEClass(SERVICE);
 		createEReference(serviceEClass, SERVICE__SERVES);
 		createEReference(serviceEClass, SERVICE__SELECTIONS);
@@ -444,6 +460,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		businessOperationEClass.getESuperTypes().add(theBasePackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(servicesEClass, Services.class, "Services", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getService_Serves(), thePersistencePackage.getEntityOrView(), null, "serves", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Selections(), this.getSelection(), this.getSelection_UsedBy(), "selections", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -460,7 +478,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		initEAttribute(getSelection_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(orderEClass, Order.class, "Order", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOrder_Path(), theExpressionPackage.getPath(), null, "path", null, 1, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOrder_Path(), theExpressionPackage.getVariable(), null, "path", null, 1, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ascEClass, Asc.class, "Asc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

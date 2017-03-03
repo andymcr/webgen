@@ -34,6 +34,7 @@
       <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//DateDetails/TimeOnly"/>
       <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//DateDetails/DateAndTime"/>
     </genEnums>
+    <genClasses ecoreClass="persistence.ecore#//Persistence"/>
     <genClasses image="false" ecoreClass="persistence.ecore#//EntityOrView">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/singletonName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/pluralisedName"/>

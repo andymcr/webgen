@@ -3,6 +3,9 @@
 package uk.ac.man.cs.mdsd.webgen.website;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.webui.ForgottenPasswordUnit;
+import uk.ac.man.cs.mdsd.webgen.webui.LoginUnit;
+import uk.ac.man.cs.mdsd.webgen.webui.RegistrationUnit;
 
 
 

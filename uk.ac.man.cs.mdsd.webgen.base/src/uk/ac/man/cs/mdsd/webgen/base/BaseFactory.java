@@ -58,6 +58,15 @@ public interface BaseFactory extends EFactory {
 	SelectionParameter createSelectionParameter();
 
 	/**
+	 * Returns a new object of class '<em>Current User Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Current User Reference</em>'.
+	 * @generated
+	 */
+	CurrentUserReference createCurrentUserReference();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

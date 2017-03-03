@@ -11,8 +11,10 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import uk.ac.man.cs.mdsd.webgen.base.provider.BaseEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
+import uk.ac.man.cs.mdsd.webgen.image.provider.ImageEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.persistence.provider.PersistenceEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.service.provider.ServiceEditPlugin;
+import uk.ac.man.cs.mdsd.webgen.webui.provider.WebuiEditPlugin;
 
 /**
  * This is the central singleton for the Website edit plugin.
@@ -50,6 +52,8 @@ public final class WebsiteEditPlugin extends EMFPlugin {
 		     ExpressionEditPlugin.INSTANCE,
 		     PersistenceEditPlugin.INSTANCE,
 		     ServiceEditPlugin.INSTANCE,
+		     WebuiEditPlugin.INSTANCE,
+		     ImageEditPlugin.INSTANCE,
 		   });
 	}
 

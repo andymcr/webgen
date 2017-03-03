@@ -89,6 +89,29 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.service.Services} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ServicesItemProvider servicesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.service.Services}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createServicesAdapter() {
+		if (servicesItemProvider == null) {
+			servicesItemProvider = new ServicesItemProvider(this);
+		}
+
+		return servicesItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.service.Service} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -329,6 +352,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 	 * @generated
 	 */
 	public void dispose() {
+		if (servicesItemProvider != null) servicesItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
 		if (ascItemProvider != null) ascItemProvider.dispose();

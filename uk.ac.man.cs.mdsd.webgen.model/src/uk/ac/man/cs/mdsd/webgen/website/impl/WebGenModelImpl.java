@@ -21,20 +21,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.base.Classifier;
+import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.service.Service;
-import uk.ac.man.cs.mdsd.webgen.website.GlobalMenu;
-import uk.ac.man.cs.mdsd.webgen.website.ImageManipulation;
-import uk.ac.man.cs.mdsd.webgen.website.Menu;
-import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
+import uk.ac.man.cs.mdsd.webgen.webui.Menu;
+import uk.ac.man.cs.mdsd.webgen.webui.Page;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,7 +49,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getMenus <em>Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getAllowTypeCustomisation <em>Allow Type Customisation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getImageManipulations <em>Image Manipulations</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getGlobalMenu <em>Global Menu</em>}</li>
  * </ul>
  *
  * @generated
@@ -126,16 +123,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * @ordered
 	 */
 	protected EList<ImageManipulation> imageManipulations;
-
-	/**
-	 * The cached value of the '{@link #getGlobalMenu() <em>Global Menu</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGlobalMenu()
-	 * @generated
-	 * @ordered
-	 */
-	protected GlobalMenu globalMenu;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,7 +217,7 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 */
 	public List<Page> getPages() {
 		if (pages == null) {
-			pages = new EObjectContainmentWithInverseEList<Page>(Page.class, this, WebsitePackage.WEB_GEN_MODEL__PAGES, WebsitePackage.PAGE__PART_OF);
+			pages = new EObjectContainmentEList<Page>(Page.class, this, WebsitePackage.WEB_GEN_MODEL__PAGES);
 		}
 		return pages;
 	}
@@ -276,85 +263,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GlobalMenu getGlobalMenu() {
-		if (globalMenu != null && globalMenu.eIsProxy()) {
-			InternalEObject oldGlobalMenu = (InternalEObject)globalMenu;
-			globalMenu = (GlobalMenu)eResolveProxy(oldGlobalMenu);
-			if (globalMenu != oldGlobalMenu) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEB_GEN_MODEL__GLOBAL_MENU, oldGlobalMenu, globalMenu));
-			}
-		}
-		return globalMenu;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GlobalMenu basicGetGlobalMenu() {
-		return globalMenu;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetGlobalMenu(GlobalMenu newGlobalMenu, NotificationChain msgs) {
-		GlobalMenu oldGlobalMenu = globalMenu;
-		globalMenu = newGlobalMenu;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_GEN_MODEL__GLOBAL_MENU, oldGlobalMenu, newGlobalMenu);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setGlobalMenu(GlobalMenu newGlobalMenu) {
-		if (newGlobalMenu != globalMenu) {
-			NotificationChain msgs = null;
-			if (globalMenu != null)
-				msgs = ((InternalEObject)globalMenu).eInverseRemove(this, WebsitePackage.GLOBAL_MENU__MENU_FOR, GlobalMenu.class, msgs);
-			if (newGlobalMenu != null)
-				msgs = ((InternalEObject)newGlobalMenu).eInverseAdd(this, WebsitePackage.GLOBAL_MENU__MENU_FOR, GlobalMenu.class, msgs);
-			msgs = basicSetGlobalMenu(newGlobalMenu, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_GEN_MODEL__GLOBAL_MENU, newGlobalMenu, newGlobalMenu));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case WebsitePackage.WEB_GEN_MODEL__PAGES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPages()).basicAdd(otherEnd, msgs);
-			case WebsitePackage.WEB_GEN_MODEL__GLOBAL_MENU:
-				if (globalMenu != null)
-					msgs = ((InternalEObject)globalMenu).eInverseRemove(this, WebsitePackage.GLOBAL_MENU__MENU_FOR, GlobalMenu.class, msgs);
-				return basicSetGlobalMenu((GlobalMenu)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -370,8 +278,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 				return ((InternalEList<?>)getMenus()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.WEB_GEN_MODEL__IMAGE_MANIPULATIONS:
 				return ((InternalEList<?>)getImageManipulations()).basicRemove(otherEnd, msgs);
-			case WebsitePackage.WEB_GEN_MODEL__GLOBAL_MENU:
-				return basicSetGlobalMenu(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -398,9 +304,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 				return getAllowTypeCustomisation();
 			case WebsitePackage.WEB_GEN_MODEL__IMAGE_MANIPULATIONS:
 				return getImageManipulations();
-			case WebsitePackage.WEB_GEN_MODEL__GLOBAL_MENU:
-				if (resolve) return getGlobalMenu();
-				return basicGetGlobalMenu();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -441,9 +344,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 				getImageManipulations().clear();
 				getImageManipulations().addAll((Collection<? extends ImageManipulation>)newValue);
 				return;
-			case WebsitePackage.WEB_GEN_MODEL__GLOBAL_MENU:
-				setGlobalMenu((GlobalMenu)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -477,9 +377,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 			case WebsitePackage.WEB_GEN_MODEL__IMAGE_MANIPULATIONS:
 				getImageManipulations().clear();
 				return;
-			case WebsitePackage.WEB_GEN_MODEL__GLOBAL_MENU:
-				setGlobalMenu((GlobalMenu)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -506,8 +403,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 				return allowTypeCustomisation != null && !allowTypeCustomisation.isEmpty();
 			case WebsitePackage.WEB_GEN_MODEL__IMAGE_MANIPULATIONS:
 				return imageManipulations != null && !imageManipulations.isEmpty();
-			case WebsitePackage.WEB_GEN_MODEL__GLOBAL_MENU:
-				return globalMenu != null;
 		}
 		return super.eIsSet(featureID);
 	}

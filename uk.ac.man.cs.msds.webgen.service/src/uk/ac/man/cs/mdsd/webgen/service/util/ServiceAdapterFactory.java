@@ -71,6 +71,10 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 	protected ServiceSwitch<Adapter> modelSwitch =
 		new ServiceSwitch<Adapter>() {
 			@Override
+			public Adapter caseServices(Services object) {
+				return createServicesAdapter();
+			}
+			@Override
 			public Adapter caseService(Service object) {
 				return createServiceAdapter();
 			}
@@ -121,6 +125,20 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.Services <em>Services</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Services
+	 * @generated
+	 */
+	public Adapter createServicesAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.Service <em>Service</em>}'.

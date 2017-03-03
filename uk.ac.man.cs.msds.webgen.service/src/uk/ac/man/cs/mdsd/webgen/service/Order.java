@@ -3,8 +3,7 @@
 package uk.ac.man.cs.mdsd.webgen.service;
 
 import org.eclipse.emf.ecore.EObject;
-
-import uk.ac.man.cs.mdsd.webgen.expression.Path;
+import uk.ac.man.cs.mdsd.webgen.expression.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,13 +31,13 @@ public interface Order extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Path</em>' containment reference.
-	 * @see #setPath(Path)
+	 * @see #setPath(Variable)
 	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getOrder_Path()
 	 * @model containment="true" required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel propertyCategory=''"
 	 * @generated
 	 */
-	Path getPath();
+	Variable getPath();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.Order#getPath <em>Path</em>}' containment reference.
@@ -48,6 +47,6 @@ public interface Order extends EObject {
 	 * @see #getPath()
 	 * @generated
 	 */
-	void setPath(Path value);
+	void setPath(Variable value);
 
 } // Order

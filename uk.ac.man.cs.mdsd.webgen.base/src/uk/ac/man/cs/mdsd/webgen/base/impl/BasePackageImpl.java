@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 import uk.ac.man.cs.mdsd.webgen.base.Classifier;
+import uk.ac.man.cs.mdsd.webgen.base.CurrentUserReference;
 import uk.ac.man.cs.mdsd.webgen.base.DataType;
 import uk.ac.man.cs.mdsd.webgen.base.EnumerationLiteral;
 import uk.ac.man.cs.mdsd.webgen.base.EnumerationType;
@@ -22,6 +23,9 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.base.SelectionParameter;
 
 import uk.ac.man.cs.mdsd.webgen.base.util.BaseValidator;
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +91,13 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	private EClass selectionParameterEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass currentUserReferenceEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -132,11 +143,16 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		PersistencePackageImpl thePersistencePackage = (PersistencePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI) instanceof PersistencePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI) : PersistencePackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theBasePackage.createPackageContents();
+		thePersistencePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theBasePackage.initializePackageContents();
+		thePersistencePackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -341,6 +357,24 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCurrentUserReference() {
+		return currentUserReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCurrentUserReference_UserModel() {
+		return (EReference)currentUserReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BaseFactory getBaseFactory() {
 		return (BaseFactory)getEFactoryInstance();
 	}
@@ -391,6 +425,9 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		createEReference(selectionParameterEClass, SELECTION_PARAMETER__FORMAL_FOR);
 		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__OPTIONAL);
 		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__DEFAULT_VALUE);
+
+		currentUserReferenceEClass = createEClass(CURRENT_USER_REFERENCE);
+		createEReference(currentUserReferenceEClass, CURRENT_USER_REFERENCE__USER_MODEL);
 	}
 
 	/**
@@ -416,6 +453,10 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
+		PersistencePackage thePersistencePackage = (PersistencePackage)EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -427,6 +468,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		enumerationTypeEClass.getESuperTypes().add(this.getDataType());
 		enumerationLiteralEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		selectionParameterEClass.getESuperTypes().add(this.getNamedElement());
+		currentUserReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -456,6 +498,9 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEReference(getSelectionParameter_FormalFor(), this.getFormaLParameterList(), this.getFormaLParameterList_Parameters(), "formalFor", null, 1, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelectionParameter_Optional(), ecorePackage.getEBoolean(), "optional", "false", 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelectionParameter_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(currentUserReferenceEClass, CurrentUserReference.class, "CurrentUserReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCurrentUserReference_UserModel(), thePersistencePackage.getEntityOrView(), null, "userModel", null, 1, 1, CurrentUserReference.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

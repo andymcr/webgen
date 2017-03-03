@@ -29,12 +29,12 @@ public interface PredicateIsEmpty extends Predicate {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Feature</em>' containment reference.
-	 * @see #setFeature(Path)
+	 * @see #setFeature(Variable)
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage#getPredicateIsEmpty_Feature()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Path getFeature();
+	Variable getFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.expression.PredicateIsEmpty#getFeature <em>Feature</em>}' containment reference.
@@ -44,6 +44,6 @@ public interface PredicateIsEmpty extends Predicate {
 	 * @see #getFeature()
 	 * @generated
 	 */
-	void setFeature(Path value);
+	void setFeature(Variable value);
 
 } // PredicateIsEmpty

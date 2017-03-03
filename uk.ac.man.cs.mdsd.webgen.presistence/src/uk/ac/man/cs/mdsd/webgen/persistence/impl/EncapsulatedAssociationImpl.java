@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -101,6 +102,26 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	protected String inputClass = INPUT_CLASS_EDEFAULT;
 
 	/**
+	 * The cached setting delegate for the '{@link #getSourceEntityX() <em>Source Entity X</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceEntityX()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getTargetEntityX() <em>Target Entity X</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetEntityX()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ASSOCIATION__TARGET_ENTITY_X).getSettingDelegate();
+
+	/**
 	 * The default value of the '{@link #getSerializationMaxDepth() <em>Serialization Max Depth</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,14 +142,14 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	protected int serializationMaxDepth = SERIALIZATION_MAX_DEPTH_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__NAME).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getAssociation() <em>Association</em>}' reference.
@@ -151,34 +172,44 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	protected EncapsulatedAssociation encapsulatedTarget;
 
 	/**
-	 * The default value of the '{@link #isIsSourceAssociation() <em>Is Source Association</em>}' attribute.
+	 * The cached setting delegate for the '{@link #isIsSourceAssociation() <em>Is Source Association</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isIsSourceAssociation()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_SOURCE_ASSOCIATION_EDEFAULT = false;
+	protected EStructuralFeature.Internal.SettingDelegate IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION).getSettingDelegate();
 
 	/**
-	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCardinality()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Cardinality CARDINALITY_EDEFAULT = Cardinality.OPTIONAL;
+	protected EStructuralFeature.Internal.SettingDelegate CARDINALITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__CARDINALITY).getSettingDelegate();
 
 	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getSourceEntity() <em>Source Entity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
+	 * @see #getSourceEntity()
 	 * @generated
 	 * @ordered
 	 */
-	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
+	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getTargetEntity() <em>Target Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,8 +290,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 */
 	public EntityOrView getSourceEntityX() {
-		EntityOrView sourceEntityX = basicGetSourceEntityX();
-		return sourceEntityX != null && sourceEntityX.eIsProxy() ? (EntityOrView)eResolveProxy((InternalEObject)sourceEntityX) : sourceEntityX;
+		return (EntityOrView)SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -269,10 +299,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 */
 	public EntityOrView basicGetSourceEntityX() {
-		// TODO: implement this method to return the 'Source Entity X' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (EntityOrView)SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -281,8 +308,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 */
 	public EntityOrView getTargetEntityX() {
-		EntityOrView targetEntityX = basicGetTargetEntityX();
-		return targetEntityX != null && targetEntityX.eIsProxy() ? (EntityOrView)eResolveProxy((InternalEObject)targetEntityX) : targetEntityX;
+		return (EntityOrView)TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -291,10 +317,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 */
 	public EntityOrView basicGetTargetEntityX() {
-		// TODO: implement this method to return the 'Target Entity X' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (EntityOrView)TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -324,9 +347,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 */
 	public String getName() {
-		// TODO: implement this method to return the 'Name' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -433,9 +454,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 */
 	public boolean isIsSourceAssociation() {
-		// TODO: implement this method to return the 'Is Source Association' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (Boolean)IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -444,7 +463,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 */
 	public Cardinality getCardinality() {
-		return cardinality;
+		return (Cardinality)CARDINALITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -453,10 +472,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 */
 	public void setCardinality(Cardinality newCardinality) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY, oldCardinality, cardinality));
+		CARDINALITY__ESETTING_DELEGATE.dynamicSet(this, null, 0, newCardinality);
 	}
 
 	/**
@@ -465,8 +481,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 */
 	public Entity getSourceEntity() {
-		Entity sourceEntity = basicGetSourceEntity();
-		return sourceEntity != null && sourceEntity.eIsProxy() ? (Entity)eResolveProxy((InternalEObject)sourceEntity) : sourceEntity;
+		return (Entity)SOURCE_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -475,10 +490,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 */
 	public Entity basicGetSourceEntity() {
-		// TODO: implement this method to return the 'Source Entity' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (Entity)SOURCE_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -487,8 +499,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 */
 	public Entity getTargetEntity() {
-		Entity targetEntity = basicGetTargetEntity();
-		return targetEntity != null && targetEntity.eIsProxy() ? (Entity)eResolveProxy((InternalEObject)targetEntity) : targetEntity;
+		return (Entity)TARGET_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -497,10 +508,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @generated
 	 */
 	public Entity basicGetTargetEntity() {
-		// TODO: implement this method to return the 'Target Entity' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (Entity)TARGET_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -644,7 +652,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 				setEncapsulatedTarget((EncapsulatedAssociation)null);
 				return;
 			case PersistencePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
-				setCardinality(CARDINALITY_EDEFAULT);
+				CARDINALITY__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
 		}
 		super.eUnset(featureID);
@@ -665,25 +673,25 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 			case PersistencePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
 			case PersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY_X:
-				return basicGetSourceEntityX() != null;
+				return SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X:
-				return basicGetTargetEntityX() != null;
+				return TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PersistencePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				return serializationMaxDepth != SERIALIZATION_MAX_DEPTH_EDEFAULT;
 			case PersistencePackage.ENCAPSULATED_ASSOCIATION__NAME:
-				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				return association != null;
 			case PersistencePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
 				return encapsulatedTarget != null;
 			case PersistencePackage.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION:
-				return isIsSourceAssociation() != IS_SOURCE_ASSOCIATION_EDEFAULT;
+				return IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PersistencePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
-				return cardinality != CARDINALITY_EDEFAULT;
+				return CARDINALITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PersistencePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY:
-				return basicGetSourceEntity() != null;
+				return SOURCE_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PersistencePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY:
-				return basicGetTargetEntity() != null;
+				return TARGET_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -746,8 +754,6 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 		result.append(inputClass);
 		result.append(", serializationMaxDepth: ");
 		result.append(serializationMaxDepth);
-		result.append(", cardinality: ");
-		result.append(cardinality);
 		result.append(')');
 		return result.toString();
 	}

@@ -133,32 +133,47 @@ public class SecurityValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the userKeyFromUser constraint of '<em>Authentication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String AUTHENTICATION__USER_KEY_FROM_USER__EEXPRESSION = "not user.oclIsUndefined() and not userKey.oclIsUndefined() implies\r\n" +
+		"\tuser.features->includes(userKey)";
+
+	/**
 	 * Validates the userKeyFromUser constraint of '<em>Authentication</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateAuthentication_userKeyFromUser(Authentication authentication, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "userKeyFromUser", getObjectLabel(authentication, context) },
-						 new Object[] { authentication },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(SecurityPackage.Literals.AUTHENTICATION,
+				 authentication,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "userKeyFromUser",
+				 AUTHENTICATION__USER_KEY_FROM_USER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
+
+	/**
+	 * The cached validation expression for the userKeyRequiredAttribute constraint of '<em>Authentication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String AUTHENTICATION__USER_KEY_REQUIRED_ATTRIBUTE__EEXPRESSION = "not userKey.oclIsUndefined() implies\r\n" +
+		"\tif userKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
+		"\t\tuserKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n" +
+		"\telse\r\n" +
+		"\t\tuserKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n" +
+		"\tendif";
 
 	/**
 	 * Validates the userKeyRequiredAttribute constraint of '<em>Authentication</em>'.
@@ -167,25 +182,18 @@ public class SecurityValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAuthentication_userKeyRequiredAttribute(Authentication authentication, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "userKeyRequiredAttribute", getObjectLabel(authentication, context) },
-						 new Object[] { authentication },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(SecurityPackage.Literals.AUTHENTICATION,
+				 authentication,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "userKeyRequiredAttribute",
+				 AUTHENTICATION__USER_KEY_REQUIRED_ATTRIBUTE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -210,31 +218,32 @@ public class SecurityValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the captchaRequiresKeys constraint of '<em>Local Authentication System</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_REQUIRES_KEYS__EEXPRESSION = "useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()";
+
+	/**
 	 * Validates the captchaRequiresKeys constraint of '<em>Local Authentication System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateLocalAuthenticationSystem_captchaRequiresKeys(LocalAuthenticationSystem localAuthenticationSystem, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "captchaRequiresKeys", getObjectLabel(localAuthenticationSystem, context) },
-						 new Object[] { localAuthenticationSystem },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(SecurityPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM,
+				 localAuthenticationSystem,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "captchaRequiresKeys",
+				 LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_REQUIRES_KEYS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

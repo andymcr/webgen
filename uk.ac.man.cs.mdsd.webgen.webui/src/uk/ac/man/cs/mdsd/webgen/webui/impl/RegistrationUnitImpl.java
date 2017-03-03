@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -254,6 +255,16 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected String captionClass = CAPTION_CLASS_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #getPageDisplayedOn() <em>Page Displayed On</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPageDisplayedOn()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PAGE_DISPLAYED_ON__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebuiPackage.Literals.CONTENT_UNIT__PAGE_DISPLAYED_ON).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
@@ -750,8 +761,7 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public Page getPageDisplayedOn() {
-		Page pageDisplayedOn = basicGetPageDisplayedOn();
-		return pageDisplayedOn != null && pageDisplayedOn.eIsProxy() ? (Page)eResolveProxy((InternalEObject)pageDisplayedOn) : pageDisplayedOn;
+		return (Page)PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -760,10 +770,7 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public Page basicGetPageDisplayedOn() {
-		// TODO: implement this method to return the 'Page Displayed On' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (Page)PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -772,9 +779,7 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public void setPageDisplayedOn(Page newPageDisplayedOn) {
-		// TODO: implement this method to set the 'Page Displayed On' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPageDisplayedOn);
 	}
 
 	/**
@@ -1383,7 +1388,7 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 			case WebuiPackage.REGISTRATION_UNIT__CAPTION_CLASS:
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
 			case WebuiPackage.REGISTRATION_UNIT__PAGE_DISPLAYED_ON:
-				return basicGetPageDisplayedOn() != null;
+				return PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebuiPackage.REGISTRATION_UNIT__ENTITIES:
 				return entities != null && !entities.isEmpty();
 			case WebuiPackage.REGISTRATION_UNIT__DISPLAY_FIELDS:

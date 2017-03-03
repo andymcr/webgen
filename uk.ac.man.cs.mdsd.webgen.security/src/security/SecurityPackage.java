@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
  * <!-- end-user-doc -->
  * @see security.SecurityFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface SecurityPackage extends EPackage {

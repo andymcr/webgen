@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -30,14 +31,14 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  */
 public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implements FeatureReference {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.FEATURE_REFERENCE__NAME).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
@@ -74,9 +75,7 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public String getName() {
-		// TODO: implement this method to return the 'Name' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -173,7 +172,7 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PersistencePackage.FEATURE_REFERENCE__NAME:
-				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PersistencePackage.FEATURE_REFERENCE__FEATURE:
 				return feature != null;
 		}

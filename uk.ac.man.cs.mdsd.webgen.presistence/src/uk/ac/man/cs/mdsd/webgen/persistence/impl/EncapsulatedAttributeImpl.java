@@ -6,6 +6,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -109,14 +110,14 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	protected String inputClass = INPUT_CLASS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = "";
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ATTRIBUTE__NAME).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
@@ -129,24 +130,14 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	protected Attribute attribute;
 
 	/**
-	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCardinality()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Cardinality CARDINALITY_EDEFAULT = Cardinality.OPTIONAL;
-
-	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
+	protected EStructuralFeature.Internal.SettingDelegate CARDINALITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENCAPSULATED_ATTRIBUTE__CARDINALITY).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,9 +270,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	 * @generated
 	 */
 	public String getName() {
-		// TODO: implement this method to return the 'Name' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -328,7 +317,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	 * @generated
 	 */
 	public Cardinality getCardinality() {
-		return cardinality;
+		return (Cardinality)CARDINALITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -337,10 +326,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	 * @generated
 	 */
 	public void setCardinality(Cardinality newCardinality) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ATTRIBUTE__CARDINALITY, oldCardinality, cardinality));
+		CARDINALITY__ESETTING_DELEGATE.dynamicSet(this, null, 0, newCardinality);
 	}
 
 	/**
@@ -438,7 +424,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 				setAttribute((Attribute)null);
 				return;
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__CARDINALITY:
-				setCardinality(CARDINALITY_EDEFAULT);
+				CARDINALITY__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
 		}
 		super.eUnset(featureID);
@@ -461,11 +447,11 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__NAME:
-				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE:
 				return attribute != null;
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__CARDINALITY:
-				return cardinality != CARDINALITY_EDEFAULT;
+				return CARDINALITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -534,8 +520,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		result.append(validationPattern);
 		result.append(", inputClass: ");
 		result.append(inputClass);
-		result.append(", cardinality: ");
-		result.append(cardinality);
 		result.append(')');
 		return result.toString();
 	}

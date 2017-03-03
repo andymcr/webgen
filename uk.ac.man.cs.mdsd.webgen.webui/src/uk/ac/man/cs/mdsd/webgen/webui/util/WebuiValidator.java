@@ -311,31 +311,32 @@ public class WebuiValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the onlyStaticEntries constraint of '<em>Static Menu</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STATIC_MENU__ONLY_STATIC_ENTRIES__EEXPRESSION = "entries->select(e | e.oclIsKindOf(MenuFeature))->isEmpty()";
+
+	/**
 	 * Validates the onlyStaticEntries constraint of '<em>Static Menu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateStaticMenu_onlyStaticEntries(StaticMenu staticMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "onlyStaticEntries", getObjectLabel(staticMenu, context) },
-						 new Object[] { staticMenu },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.STATIC_MENU,
+				 staticMenu,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "onlyStaticEntries",
+				 STATIC_MENU__ONLY_STATIC_ENTRIES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -420,32 +421,41 @@ public class WebuiValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the entriesMustBeFromSource constraint of '<em>Dynamic Menu</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DYNAMIC_MENU__ENTRIES_MUST_BE_FROM_SOURCE__EEXPRESSION = "true";
+
+	/**
 	 * Validates the entriesMustBeFromSource constraint of '<em>Dynamic Menu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateDynamicMenu_entriesMustBeFromSource(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "entriesMustBeFromSource", getObjectLabel(dynamicMenu, context) },
-						 new Object[] { dynamicMenu },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.DYNAMIC_MENU,
+				 dynamicMenu,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "entriesMustBeFromSource",
+				 DYNAMIC_MENU__ENTRIES_MUST_BE_FROM_SOURCE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
+
+	/**
+	 * The cached validation expression for the onlyIncludeFeaturesOnce constraint of '<em>Dynamic Menu</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DYNAMIC_MENU__ONLY_INCLUDE_FEATURES_ONCE__EEXPRESSION = "true";
 
 	/**
 	 * Validates the onlyIncludeFeaturesOnce constraint of '<em>Dynamic Menu</em>'.
@@ -454,26 +464,27 @@ public class WebuiValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDynamicMenu_onlyIncludeFeaturesOnce(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "onlyIncludeFeaturesOnce", getObjectLabel(dynamicMenu, context) },
-						 new Object[] { dynamicMenu },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.DYNAMIC_MENU,
+				 dynamicMenu,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "onlyIncludeFeaturesOnce",
+				 DYNAMIC_MENU__ONLY_INCLUDE_FEATURES_ONCE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
+
+	/**
+	 * The cached validation expression for the mustSelectSingleton constraint of '<em>Dynamic Menu</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DYNAMIC_MENU__MUST_SELECT_SINGLETON__EEXPRESSION = "not selection.oclIsUndefined() implies selection.limit = 1";
 
 	/**
 	 * Validates the mustSelectSingleton constraint of '<em>Dynamic Menu</em>'.
@@ -482,26 +493,28 @@ public class WebuiValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDynamicMenu_mustSelectSingleton(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "mustSelectSingleton", getObjectLabel(dynamicMenu, context) },
-						 new Object[] { dynamicMenu },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.DYNAMIC_MENU,
+				 dynamicMenu,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "mustSelectSingleton",
+				 DYNAMIC_MENU__MUST_SELECT_SINGLETON__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
+
+	/**
+	 * The cached validation expression for the titleFromEntityOrView constraint of '<em>Dynamic Menu</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DYNAMIC_MENU__TITLE_FROM_ENTITY_OR_VIEW__EEXPRESSION = "not title.oclIsUndefined() and not entityOrView.oclIsUndefined() implies\r\n" +
+		"\tentityOrView.features->includes(title)";
 
 	/**
 	 * Validates the titleFromEntityOrView constraint of '<em>Dynamic Menu</em>'.
@@ -510,26 +523,36 @@ public class WebuiValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDynamicMenu_titleFromEntityOrView(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "titleFromEntityOrView", getObjectLabel(dynamicMenu, context) },
-						 new Object[] { dynamicMenu },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.DYNAMIC_MENU,
+				 dynamicMenu,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "titleFromEntityOrView",
+				 DYNAMIC_MENU__TITLE_FROM_ENTITY_OR_VIEW__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
+
+	/**
+	 * The cached validation expression for the canOnlyTitleWithSingletons constraint of '<em>Dynamic Menu</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DYNAMIC_MENU__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION = "not title.oclIsUndefined() implies\r\n" +
+		"\tif title.oclIsKindOf(EntityFeature) then\r\n" +
+		"\t\ttitle.oclAsType(EntityFeature).cardinality <> Cardinality::Many\r\n" +
+		"\telse if title.oclIsKindOf(EncapsulatedAttribute) then\r\n" +
+		"\t\ttitle.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\telse if title.oclIsKindOf(EncapsulatedAssociation) then\r\n" +
+		"\t\ttitle.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n" +
+		"\telse\r\n" +
+		"\t\tfalse\r\n" +
+		"\tendif endif endif";
 
 	/**
 	 * Validates the canOnlyTitleWithSingletons constraint of '<em>Dynamic Menu</em>'.
@@ -538,25 +561,18 @@ public class WebuiValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDynamicMenu_canOnlyTitleWithSingletons(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "canOnlyTitleWithSingletons", getObjectLabel(dynamicMenu, context) },
-						 new Object[] { dynamicMenu },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.DYNAMIC_MENU,
+				 dynamicMenu,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "canOnlyTitleWithSingletons",
+				 DYNAMIC_MENU__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -607,31 +623,32 @@ public class WebuiValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the contentUnitNameUniqueWithinPage constraint of '<em>Page</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PAGE__CONTENT_UNIT_NAME_UNIQUE_WITHIN_PAGE__EEXPRESSION = "units->isUnique(name)";
+
+	/**
 	 * Validates the contentUnitNameUniqueWithinPage constraint of '<em>Page</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validatePage_contentUnitNameUniqueWithinPage(Page page, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "contentUnitNameUniqueWithinPage", getObjectLabel(page, context) },
-						 new Object[] { page },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.PAGE,
+				 page,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "contentUnitNameUniqueWithinPage",
+				 PAGE__CONTENT_UNIT_NAME_UNIQUE_WITHIN_PAGE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -768,31 +785,55 @@ public class WebuiValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the featuresMustBeFromContentType constraint of '<em>Dynamic Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_CONTENT_TYPE__EEXPRESSION = "let entities : OrderedSet(EntityOrView)\r\n" +
+		"\t= if self.oclIsKindOf(SingletonUnit) then\r\n" +
+		"\t\t\tOrderedSet{self.oclAsType(SingletonUnit).contentType}\r\n" +
+		"\t\telse if self.oclIsKindOf(CollectionUnit) then\r\n" +
+		"\t\t\tself.oclAsType(CollectionUnit).contentType\r\n" +
+		"\t\telse\r\n" +
+		"\t\t\tself.entities\r\n" +
+		"\t\tendif endif\r\n" +
+		"\tin let eovFeatures : Collection(Feature)\r\n" +
+		"\t\t= entities->collect(eov | eov.allFeatures)\r\n" +
+		"\t\tin displayFields\r\n" +
+		"\t\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n" +
+		"\t\t\t->select(f | \r\n" +
+		"\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
+		"\t\t\t\t\tnot f.oclAsType(UnitElement).attribute.oclIsUndefined()\r\n" +
+		"\t\t\t\telse\r\n" +
+		"\t\t\t\t\tnot f.oclAsType(UnitAssociation).association.oclIsUndefined()\r\n" +
+		"\t\t\t\tendif)\r\n" +
+		"\t\t\t->forAll(f | \r\n" +
+		"\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
+		"\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitElement).attribute)\r\n" +
+		"\t\t\t\telse\r\n" +
+		"\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitAssociation).association)\r\n" +
+		"\t\t\t\tendif)";
+
+	/**
 	 * Validates the featuresMustBeFromContentType constraint of '<em>Dynamic Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateDynamicUnit_featuresMustBeFromContentType(DynamicUnit dynamicUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "featuresMustBeFromContentType", getObjectLabel(dynamicUnit, context) },
-						 new Object[] { dynamicUnit },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.DYNAMIC_UNIT,
+				 dynamicUnit,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "featuresMustBeFromContentType",
+				 DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_CONTENT_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -826,32 +867,41 @@ public class WebuiValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the atMostOneSelectAction constraint of '<em>Unit Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String UNIT_FEATURE__AT_MOST_ONE_SELECT_ACTION__EEXPRESSION = "actions->select(a | a.oclIsKindOf(SelectAction))->size() < 2";
+
+	/**
 	 * Validates the atMostOneSelectAction constraint of '<em>Unit Feature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateUnitFeature_atMostOneSelectAction(UnitFeature unitFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "atMostOneSelectAction", getObjectLabel(unitFeature, context) },
-						 new Object[] { unitFeature },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.UNIT_FEATURE,
+				 unitFeature,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "atMostOneSelectAction",
+				 UNIT_FEATURE__AT_MOST_ONE_SELECT_ACTION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
+
+	/**
+	 * The cached validation expression for the noDeleteActions constraint of '<em>Unit Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String UNIT_FEATURE__NO_DELETE_ACTIONS__EEXPRESSION = "actions->select(a | a.oclIsKindOf(DeleteAction))->isEmpty()";
 
 	/**
 	 * Validates the noDeleteActions constraint of '<em>Unit Feature</em>'.
@@ -860,25 +910,18 @@ public class WebuiValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateUnitFeature_noDeleteActions(UnitFeature unitFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "noDeleteActions", getObjectLabel(unitFeature, context) },
-						 new Object[] { unitFeature },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.UNIT_FEATURE,
+				 unitFeature,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "noDeleteActions",
+				 UNIT_FEATURE__NO_DELETE_ACTIONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -925,31 +968,33 @@ public class WebuiValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the selectionValidChoice constraint of '<em>Unit Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String UNIT_ASSOCIATION__SELECTION_VALID_CHOICE__EEXPRESSION = "not selection.oclIsUndefined() implies\r\n" +
+		"\ttargetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)";
+
+	/**
 	 * Validates the selectionValidChoice constraint of '<em>Unit Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateUnitAssociation_selectionValidChoice(UnitAssociation unitAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "selectionValidChoice", getObjectLabel(unitAssociation, context) },
-						 new Object[] { unitAssociation },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.UNIT_ASSOCIATION,
+				 unitAssociation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "selectionValidChoice",
+				 UNIT_ASSOCIATION__SELECTION_VALID_CHOICE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1206,32 +1251,49 @@ public class WebuiValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the canOnlyTitleWithSingletons constraint of '<em>Data Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DATA_UNIT__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION = "not title.oclIsUndefined() implies \r\n" +
+		"\tif title.oclIsKindOf(EntityAttribute) then\r\n" +
+		"\t\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\telse if title.oclIsKindOf(EncapsulatedAttribute) then\r\n" +
+		"\t\ttitle.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\telse\r\n" +
+		"\t\ttrue\r\n" +
+		"\tendif endif";
+
+	/**
 	 * Validates the canOnlyTitleWithSingletons constraint of '<em>Data Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateDataUnit_canOnlyTitleWithSingletons(DataUnit dataUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "canOnlyTitleWithSingletons", getObjectLabel(dataUnit, context) },
-						 new Object[] { dataUnit },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.DATA_UNIT,
+				 dataUnit,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "canOnlyTitleWithSingletons",
+				 DATA_UNIT__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
+
+	/**
+	 * The cached validation expression for the selectionValidChoice constraint of '<em>Data Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DATA_UNIT__SELECTION_VALID_CHOICE__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
+		"\tentities->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(defaultSelection)";
 
 	/**
 	 * Validates the selectionValidChoice constraint of '<em>Data Unit</em>'.
@@ -1240,25 +1302,18 @@ public class WebuiValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDataUnit_selectionValidChoice(DataUnit dataUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "selectionValidChoice", getObjectLabel(dataUnit, context) },
-						 new Object[] { dataUnit },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.DATA_UNIT,
+				 dataUnit,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "selectionValidChoice",
+				 DATA_UNIT__SELECTION_VALID_CHOICE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1285,31 +1340,33 @@ public class WebuiValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the selectionMustBeSingleton constraint of '<em>Details Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DETAILS_UNIT__SELECTION_MUST_BE_SINGLETON__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
+		"\tdefaultSelection.limit = 1";
+
+	/**
 	 * Validates the selectionMustBeSingleton constraint of '<em>Details Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateDetailsUnit_selectionMustBeSingleton(DetailsUnit detailsUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "selectionMustBeSingleton", getObjectLabel(detailsUnit, context) },
-						 new Object[] { detailsUnit },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.DETAILS_UNIT,
+				 detailsUnit,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "selectionMustBeSingleton",
+				 DETAILS_UNIT__SELECTION_MUST_BE_SINGLETON__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1337,31 +1394,33 @@ public class WebuiValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the selectionMustNotBeSingleton constraint of '<em>Index Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String INDEX_UNIT__SELECTION_MUST_NOT_BE_SINGLETON__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
+		"\tdefaultSelection.limit <> 1";
+
+	/**
 	 * Validates the selectionMustNotBeSingleton constraint of '<em>Index Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateIndexUnit_selectionMustNotBeSingleton(IndexUnit indexUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "selectionMustNotBeSingleton", getObjectLabel(indexUnit, context) },
-						 new Object[] { indexUnit },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.INDEX_UNIT,
+				 indexUnit,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "selectionMustNotBeSingleton",
+				 INDEX_UNIT__SELECTION_MUST_NOT_BE_SINGLETON__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1628,31 +1687,32 @@ public class WebuiValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the atMostOneDeleteAction constraint of '<em>Inline Action Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String INLINE_ACTION_CONTAINER__AT_MOST_ONE_DELETE_ACTION__EEXPRESSION = "actions->select(a | a.oclIsKindOf(DeleteAction))->size() < 2";
+
+	/**
 	 * Validates the atMostOneDeleteAction constraint of '<em>Inline Action Container</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateInlineActionContainer_atMostOneDeleteAction(InlineActionContainer inlineActionContainer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "atMostOneDeleteAction", getObjectLabel(inlineActionContainer, context) },
-						 new Object[] { inlineActionContainer },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.INLINE_ACTION_CONTAINER,
+				 inlineActionContainer,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "atMostOneDeleteAction",
+				 INLINE_ACTION_CONTAINER__AT_MOST_ONE_DELETE_ACTION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1714,31 +1774,53 @@ public class WebuiValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the canOnlyDeleteSingletons constraint of '<em>Delete Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELETE_ACTION__CAN_ONLY_DELETE_SINGLETONS__EEXPRESSION = "if usedBy.oclIsKindOf(UnitElement) then\r\n" +
+		"\tlet attribute : Attribute\r\n" +
+		"\t\t= usedBy.oclAsType(UnitElement).attribute\r\n" +
+		"\t\tin if attribute.oclIsKindOf(EntityAttribute) then\r\n" +
+		"\t\t\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\telse\r\n" +
+		"\t\t\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\tendif\r\n" +
+		"else if usedBy.oclIsKindOf(UnitAssociation) then\r\n" +
+		"\tlet association : Association\r\n" +
+		"\t\t= usedBy.oclAsType(UnitAssociation).association\r\n" +
+		"\t\tin if association.oclIsKindOf(EntityAssociation) then\r\n" +
+		"\t\t\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\telse if association.oclIsKindOf(EncapsulatedAssociation) then\r\n" +
+		"\t\t\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\telse\r\n" +
+		"\t\t\t\tfalse -- association.oclAsType(ViewAssociation)\r\n" +
+		"\t\t\tendif endif\r\n" +
+		"else\r\n" +
+		"\tusedBy.oclIsKindOf(CollectionUnit)\r\n" +
+		"endif endif\r\n" +
+		"";
+
+	/**
 	 * Validates the canOnlyDeleteSingletons constraint of '<em>Delete Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateDeleteAction_canOnlyDeleteSingletons(DeleteAction deleteAction, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "canOnlyDeleteSingletons", getObjectLabel(deleteAction, context) },
-						 new Object[] { deleteAction },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebuiPackage.Literals.DELETE_ACTION,
+				 deleteAction,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "canOnlyDeleteSingletons",
+				 DELETE_ACTION__CAN_ONLY_DELETE_SINGLETONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

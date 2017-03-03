@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -51,14 +52,14 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	protected ModelLabel dynamicLabel;
 
 	/**
-	 * The default value of the '{@link #isIsSourceAssociation() <em>Is Source Association</em>}' attribute.
+	 * The cached setting delegate for the '{@link #isIsSourceAssociation() <em>Is Source Association</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isIsSourceAssociation()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_SOURCE_ASSOCIATION_EDEFAULT = false;
+	protected EStructuralFeature.Internal.SettingDelegate IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,9 +162,7 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	 * @generated
 	 */
 	public boolean isIsSourceAssociation() {
-		// TODO: implement this method to return the 'Is Source Association' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (Boolean)IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -235,7 +234,7 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 			case PersistencePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
 				return dynamicLabel != null;
 			case PersistencePackage.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION:
-				return isIsSourceAssociation() != IS_SOURCE_ASSOCIATION_EDEFAULT;
+				return IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -6,6 +6,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -40,14 +41,14 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  */
 public class ChildPathAssociationImpl extends ChildPathImpl implements ChildPathAssociation {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebuiPackage.Literals.ASSOCIATION_REFERENCE__NAME).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getAssociation() <em>Association</em>}' reference.
@@ -80,14 +81,34 @@ public class ChildPathAssociationImpl extends ChildPathImpl implements ChildPath
 	protected ChildPath childFeature;
 
 	/**
-	 * The default value of the '{@link #isIsSourceAssociation() <em>Is Source Association</em>}' attribute.
+	 * The cached setting delegate for the '{@link #isIsSourceAssociation() <em>Is Source Association</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isIsSourceAssociation()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_SOURCE_ASSOCIATION_EDEFAULT = false;
+	protected EStructuralFeature.Internal.SettingDelegate IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebuiPackage.Literals.CHILD_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getSourceEntity() <em>Source Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebuiPackage.Literals.CHILD_PATH_ASSOCIATION__SOURCE_ENTITY).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getTargetEntity() <em>Target Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebuiPackage.Literals.CHILD_PATH_ASSOCIATION__TARGET_ENTITY).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,9 +135,7 @@ public class ChildPathAssociationImpl extends ChildPathImpl implements ChildPath
 	 * @generated
 	 */
 	public String getName() {
-		// TODO: implement this method to return the 'Name' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -244,9 +263,7 @@ public class ChildPathAssociationImpl extends ChildPathImpl implements ChildPath
 	 * @generated
 	 */
 	public boolean isIsSourceAssociation() {
-		// TODO: implement this method to return the 'Is Source Association' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (Boolean)IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -255,8 +272,7 @@ public class ChildPathAssociationImpl extends ChildPathImpl implements ChildPath
 	 * @generated
 	 */
 	public EntityOrView getSourceEntity() {
-		EntityOrView sourceEntity = basicGetSourceEntity();
-		return sourceEntity != null && sourceEntity.eIsProxy() ? (EntityOrView)eResolveProxy((InternalEObject)sourceEntity) : sourceEntity;
+		return (EntityOrView)SOURCE_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -265,10 +281,7 @@ public class ChildPathAssociationImpl extends ChildPathImpl implements ChildPath
 	 * @generated
 	 */
 	public EntityOrView basicGetSourceEntity() {
-		// TODO: implement this method to return the 'Source Entity' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (EntityOrView)SOURCE_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -277,8 +290,7 @@ public class ChildPathAssociationImpl extends ChildPathImpl implements ChildPath
 	 * @generated
 	 */
 	public EntityOrView getTargetEntity() {
-		EntityOrView targetEntity = basicGetTargetEntity();
-		return targetEntity != null && targetEntity.eIsProxy() ? (EntityOrView)eResolveProxy((InternalEObject)targetEntity) : targetEntity;
+		return (EntityOrView)TARGET_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -287,10 +299,7 @@ public class ChildPathAssociationImpl extends ChildPathImpl implements ChildPath
 	 * @generated
 	 */
 	public EntityOrView basicGetTargetEntity() {
-		// TODO: implement this method to return the 'Target Entity' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (EntityOrView)TARGET_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -404,7 +413,7 @@ public class ChildPathAssociationImpl extends ChildPathImpl implements ChildPath
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case WebuiPackage.CHILD_PATH_ASSOCIATION__NAME:
-				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebuiPackage.CHILD_PATH_ASSOCIATION__ASSOCIATION:
 				return association != null;
 			case WebuiPackage.CHILD_PATH_ASSOCIATION__VALUE_DISPLAY:
@@ -412,11 +421,11 @@ public class ChildPathAssociationImpl extends ChildPathImpl implements ChildPath
 			case WebuiPackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE:
 				return childFeature != null;
 			case WebuiPackage.CHILD_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION:
-				return isIsSourceAssociation() != IS_SOURCE_ASSOCIATION_EDEFAULT;
+				return IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebuiPackage.CHILD_PATH_ASSOCIATION__SOURCE_ENTITY:
-				return basicGetSourceEntity() != null;
+				return SOURCE_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebuiPackage.CHILD_PATH_ASSOCIATION__TARGET_ENTITY:
-				return basicGetTargetEntity() != null;
+				return TARGET_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

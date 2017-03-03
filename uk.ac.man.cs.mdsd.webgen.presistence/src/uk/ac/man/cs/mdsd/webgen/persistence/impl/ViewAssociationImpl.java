@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -302,6 +303,26 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @ordered
 	 */
 	protected String inputClass = INPUT_CLASS_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #getSourceEntityX() <em>Source Entity X</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceEntityX()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getTargetEntityX() <em>Target Entity X</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetEntityX()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ASSOCIATION__TARGET_ENTITY_X).getSettingDelegate();
 
 	/**
 	 * The default value of the '{@link #getSerializationMaxDepth() <em>Serialization Max Depth</em>}' attribute.
@@ -674,8 +695,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @generated
 	 */
 	public EntityOrView getSourceEntityX() {
-		EntityOrView sourceEntityX = basicGetSourceEntityX();
-		return sourceEntityX != null && sourceEntityX.eIsProxy() ? (EntityOrView)eResolveProxy((InternalEObject)sourceEntityX) : sourceEntityX;
+		return (EntityOrView)SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -684,10 +704,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @generated
 	 */
 	public EntityOrView basicGetSourceEntityX() {
-		// TODO: implement this method to return the 'Source Entity X' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (EntityOrView)SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -696,8 +713,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @generated
 	 */
 	public EntityOrView getTargetEntityX() {
-		EntityOrView targetEntityX = basicGetTargetEntityX();
-		return targetEntityX != null && targetEntityX.eIsProxy() ? (EntityOrView)eResolveProxy((InternalEObject)targetEntityX) : targetEntityX;
+		return (EntityOrView)TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -706,10 +722,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @generated
 	 */
 	public EntityOrView basicGetTargetEntityX() {
-		// TODO: implement this method to return the 'Target Entity X' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (EntityOrView)TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -1060,9 +1073,9 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			case PersistencePackage.VIEW_ASSOCIATION__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
 			case PersistencePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X:
-				return basicGetSourceEntityX() != null;
+				return SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PersistencePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X:
-				return basicGetTargetEntityX() != null;
+				return TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				return serializationMaxDepth != SERIALIZATION_MAX_DEPTH_EDEFAULT;
 			case PersistencePackage.VIEW_ASSOCIATION__OPPOSITE:

@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.man.cs.mdsd.webgen.webui/src" modelPluginID="uk.ac.man.cs.mdsd.webgen.webui"
     modelName="Webui" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression ../../uk.ac.man.cs.mdsd.webgen.image/model/image.genmodel#//image ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence ../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service"
+    usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression ../../uk.ac.man.cs.mdsd.webgen.image/model/image.genmodel#//image ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence ../../uk.ac.man.cs.mdsd.webgen.service/model/service.genmodel#//service"
     operationReflection="true" importOrganizing="true">
   <foreignModel>webui.ecore</foreignModel>
   <genPackages prefix="Webui" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"

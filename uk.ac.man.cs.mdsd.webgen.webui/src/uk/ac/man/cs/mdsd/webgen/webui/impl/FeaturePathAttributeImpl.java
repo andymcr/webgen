@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.webui.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -30,14 +31,14 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  */
 public class FeaturePathAttributeImpl extends FeaturePathImpl implements FeaturePathAttribute {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebuiPackage.Literals.FEATURE_PATH_ATTRIBUTE__NAME).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
@@ -74,9 +75,7 @@ public class FeaturePathAttributeImpl extends FeaturePathImpl implements Feature
 	 * @generated
 	 */
 	public String getName() {
-		// TODO: implement this method to return the 'Name' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -173,7 +172,7 @@ public class FeaturePathAttributeImpl extends FeaturePathImpl implements Feature
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case WebuiPackage.FEATURE_PATH_ATTRIBUTE__NAME:
-				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebuiPackage.FEATURE_PATH_ATTRIBUTE__ATTRIBUTE:
 				return attribute != null;
 		}

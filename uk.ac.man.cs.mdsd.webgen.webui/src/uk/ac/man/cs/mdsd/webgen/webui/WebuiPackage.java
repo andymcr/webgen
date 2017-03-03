@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
  * <!-- end-user-doc -->
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface WebuiPackage extends EPackage {

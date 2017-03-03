@@ -21,7 +21,7 @@
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//Classifier"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
-        eType="ecore:EClass ../../uk.ac.man.cs.msds.webgen.service/model/service.ecore#//Service"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Service"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pages" upperBound="-1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//Page"

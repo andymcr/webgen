@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.man.cs.mdsd.webgen.model/src" modelPluginID="uk.ac.man.cs.mdsd.webgen.model"
     modelName="Website" modelPluginClass="" suppressEMFTypes="true" booleanFlagsField=""
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression ../../uk.ac.man.cs.mdsd.webgen.image/model/image.genmodel#//image ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence ../../uk.ac.man.cs.mdsd.webgen.security/model/security.genmodel#//security ../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.genmodel#//webui"
+    usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression ../../uk.ac.man.cs.mdsd.webgen.image/model/image.genmodel#//image ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence ../../uk.ac.man.cs.mdsd.webgen.security/model/security.genmodel#//security ../../uk.ac.man.cs.mdsd.webgen.service/model/service.genmodel#//service ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.genmodel#//webui"
     interfaceNamePattern="">
   <foreignModel>website.ecore</foreignModel>
   <genPackages prefix="Website" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"

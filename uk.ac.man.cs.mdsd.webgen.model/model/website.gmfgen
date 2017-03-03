@@ -696,11 +696,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/Selection"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.service/model/service.genmodel#//service/Selection"/>
         <containmentMetaFeature
-            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/Service/selections"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.service/model/service.genmodel#//service/Service/selections"/>
         <childMetaFeature
-            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/Service/selections"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.service/model/service.genmodel#//service/Service/selections"/>
       </modelFacet>
       <labels
           visualID="5297"
@@ -744,11 +744,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/BusinessOperation"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.service/model/service.genmodel#//service/BusinessOperation"/>
         <containmentMetaFeature
-            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/Service/operations"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.service/model/service.genmodel#//service/Service/operations"/>
         <childMetaFeature
-            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/Service/operations"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.service/model/service.genmodel#//service/Service/operations"/>
       </modelFacet>
       <labels
           visualID="5298"
@@ -6137,7 +6137,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../uk.ac.man.cs.msds.webgen.service/model/service.genmodel#//service/Service"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.service/model/service.genmodel#//service/Service"/>
         <containmentMetaFeature
             href="website.genmodel#//website/WebGenModel/services"/>
         <childMetaFeature

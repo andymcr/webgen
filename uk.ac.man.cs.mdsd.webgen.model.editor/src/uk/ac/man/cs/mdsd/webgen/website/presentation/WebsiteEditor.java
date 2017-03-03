@@ -165,7 +165,6 @@ import uk.ac.man.cs.mdsd.webgen.website.provider.WebsiteItemProviderAdapterFacto
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import security.provider.SecurityItemProviderAdapterFactory;
-import uk.ac.man.cs.mdsd.criteria.provider.CriteriaItemProviderAdapterFactory;
 import uk.ac.man.cs.mdsd.webgen.base.provider.BaseItemProviderAdapterFactory;
 import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionItemProviderAdapterFactory;
 import uk.ac.man.cs.mdsd.webgen.image.provider.ImageItemProviderAdapterFactory;

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.man.cs.mdsd.webgen.security/src" modelPluginID="uk.ac.man.cs.mdsd.webgen.security"
+    modelName="Security" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>security.ecore</foreignModel>
+  <genPackages prefix="Security" disposableProviderFactory="true" ecorePackage="security.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="security.ecore#//AuthenticationKeyTypes">
+      <genEnumLiterals ecoreEnumLiteral="security.ecore#//AuthenticationKeyTypes/Email"/>
+      <genEnumLiterals ecoreEnumLiteral="security.ecore#//AuthenticationKeyTypes/ScreenName"/>
+      <genEnumLiterals ecoreEnumLiteral="security.ecore#//AuthenticationKeyTypes/Username"/>
+    </genEnums>
+    <genClasses ecoreClass="security.ecore#//Security">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference security.ecore#//Security/authentication"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="security.ecore#//Authentication">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference security.ecore#//Authentication/security"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference security.ecore#//Authentication/user"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference security.ecore#//Authentication/userKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//Authentication/loginLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//Authentication/logoutLabel"/>
+    </genClasses>
+    <genClasses ecoreClass="security.ecore#//LocalAuthenticationSystem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference security.ecore#//LocalAuthenticationSystem/authentication"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//LocalAuthenticationSystem/authenticationKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//LocalAuthenticationSystem/useCaptcha"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//LocalAuthenticationSystem/allowRememberMe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//LocalAuthenticationSystem/allowSelfRegistration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//LocalAuthenticationSystem/trackLoginAttempts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//LocalAuthenticationSystem/useEmailActivation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//LocalAuthenticationSystem/sendWelcomeEmail"/>
+    </genClasses>
+    <genClasses ecoreClass="security.ecore#//CasAuthentication"/>
+    <genClasses ecoreClass="security.ecore#//CurrentUserReference">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference security.ecore#//CurrentUserReference/userModel"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

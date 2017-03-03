@@ -100,12 +100,6 @@
         queryText="true"/>
   </nodeTraces>
   <childNodeTraces
-      visualID="3029"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'LocalAuthenticationSystem') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'WebsiteProperties') and _containmentMF_.name = 'authentication')"/>
-  <childNodeTraces
-      visualID="3055"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'CasAuthentication') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'WebsiteProperties') and _containmentMF_.name = 'authentication')"/>
-  <childNodeTraces
       visualID="3273"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://cs.man.ac.uk/mdsd/webgen/base' and _eClass_.name = 'EnumerationLiteral') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://cs.man.ac.uk/mdsd/webgen/base' and _eClass_.name = 'EnumerationType') and _containmentMF_.name = 'enumerations')">
     <nodeLabelTraces
@@ -970,6 +964,12 @@
         visualID="5394"
         queryText="true"/>
   </childNodeTraces>
+  <childNodeTraces
+      visualID="3382"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://cs.man.ac.uk/mdsd/webgen/security' and _eClass_.name = 'LocalAuthenticationSystem') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'WebsiteProperties') and _containmentMF_.name = 'authentication')"/>
+  <childNodeTraces
+      visualID="3383"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://cs.man.ac.uk/mdsd/webgen/security' and _eClass_.name = 'CasAuthentication') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'WebsiteProperties') and _containmentMF_.name = 'authentication')"/>
   <linkTraces
       visualID="4005"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://cs.man.ac.uk/mdsd/webgen/persistence' and _eClass_.name = 'AssociationWithoutContainment')">

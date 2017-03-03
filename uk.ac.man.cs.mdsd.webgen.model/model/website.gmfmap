@@ -27,7 +27,7 @@
             href="website.ecore#//WebsiteProperties/authentication"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//CasAuthentication"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.security/model/security.ecore#//LocalAuthenticationSystem"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="website.gmftool#//@palette/@tools.5/@tools.0"/>
@@ -41,7 +41,7 @@
             href="website.ecore#//WebsiteProperties/authentication"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//LocalAuthenticationSystem"/>
+              href="../../uk.ac.man.cs.mdsd.webgen.security/model/security.ecore#//CasAuthentication"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="website.gmftool#//@palette/@tools.5/@tools.1"/>

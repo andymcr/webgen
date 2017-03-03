@@ -20,7 +20,7 @@ Require-Bundle: org.eclipse.core.runtime,
  uk.ac.man.cs.mdsd.webgen.image.edit;visibility:=reexport,
  uk.ac.man.cs.mdsd.webgen.presistence.edit;visibility:=reexport,
  uk.ac.man.cs.mdsd.webgen.security.edit;visibility:=reexport,
- uk.ac.man.cs.msds.webgen.service.edit;visibility:=reexport,
+ uk.ac.man.cs.mdsd.webgen.service.edit;visibility:=reexport,
  uk.ac.man.cs.mdsd.webgen.webui.edit;visibility:=reexport,
  uk.ac.man.cs.mdsd.webgen.model.edit;visibility:=reexport,
  org.eclipse.emf.edapt.migration

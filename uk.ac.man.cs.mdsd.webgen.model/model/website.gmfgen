@@ -32,45 +32,9 @@
     <domainDiagramElement
         href="website.genmodel#//website/WebGenModel"/>
     <childNodes
-        visualID="3055"
-        editPartClassName="CasAuthenticationEditPart"
-        itemSemanticEditPolicyClassName="CasAuthenticationItemSemanticEditPolicy"
-        notationViewFactoryClassName="CasAuthenticationViewFactory"
-        canonicalEditPolicyClassName="CasAuthenticationCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="CasAuthenticationGraphicalNodeEditPolicy"
-        createCommandClassName="CasAuthenticationCreateCommand"
-        containers="//@diagram/@compartments.0">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="CasAuthenticationEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="AuthenticationFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AuthenticationFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AuthenticationFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 245, 222, 179);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
-        <attributes
-            xsi:type="gmfgen:DefaultSizeAttributes"
-            width="80"
-            height="20"/>
-      </viewmap>
-      <modelFacet>
-        <metaClass
-            href="website.genmodel#//website/CasAuthentication"/>
-        <containmentMetaFeature
-            href="website.genmodel#//website/WebsiteProperties/authentication"/>
-        <childMetaFeature
-            href="website.genmodel#//website/WebsiteProperties/authentication"/>
-      </modelFacet>
-    </childNodes>
-    <childNodes
-        visualID="3029"
+        visualID="3382"
         editPartClassName="LocalAuthenticationSystemEditPart"
         itemSemanticEditPolicyClassName="LocalAuthenticationSystemItemSemanticEditPolicy"
-        notationViewFactoryClassName="LocalAuthenticationSystemViewFactory"
         canonicalEditPolicyClassName="LocalAuthenticationSystemCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="LocalAuthenticationSystemGraphicalNodeEditPolicy"
         createCommandClassName="LocalAuthenticationSystemCreateCommand"
@@ -94,7 +58,41 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/LocalAuthenticationSystem"/>
+            href="../../uk.ac.man.cs.mdsd.webgen.security/model/security.genmodel#//security/LocalAuthenticationSystem"/>
+        <containmentMetaFeature
+            href="website.genmodel#//website/WebsiteProperties/authentication"/>
+        <childMetaFeature
+            href="website.genmodel#//website/WebsiteProperties/authentication"/>
+      </modelFacet>
+    </childNodes>
+    <childNodes
+        visualID="3383"
+        editPartClassName="CasAuthenticationEditPart"
+        itemSemanticEditPolicyClassName="CasAuthenticationItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="CasAuthenticationCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="CasAuthenticationGraphicalNodeEditPolicy"
+        createCommandClassName="CasAuthenticationCreateCommand"
+        containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="CasAuthenticationEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="AuthenticationFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AuthenticationFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AuthenticationFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 245, 222, 179);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="80"
+            height="20"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../uk.ac.man.cs.mdsd.webgen.security/model/security.genmodel#//security/CasAuthentication"/>
         <containmentMetaFeature
             href="website.genmodel#//website/WebsiteProperties/authentication"/>
         <childMetaFeature

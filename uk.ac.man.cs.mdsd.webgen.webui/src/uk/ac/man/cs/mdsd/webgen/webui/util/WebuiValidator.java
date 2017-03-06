@@ -3,7 +3,6 @@
 package uk.ac.man.cs.mdsd.webgen.webui.util;
 
 import java.util.Map;
-
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -223,6 +222,8 @@ public class WebuiValidator extends EObjectValidator {
 				return validateDeleteAction((DeleteAction)value, diagnostics, context);
 			case WebuiPackage.FEATURE_SUPPORT_ACTION:
 				return validateFeatureSupportAction((FeatureSupportAction)value, diagnostics, context);
+			case WebuiPackage.FEATURE_REFERENCE:
+				return validateFeatureReference((FeatureReference)value, diagnostics, context);
 			case WebuiPackage.PAGE_TOP_MENU_OPTIONS:
 				return validatePageTopMenuOptions((PageTopMenuOptions)value, diagnostics, context);
 			case WebuiPackage.COLLECTION_DISPLAY_OPTIONS:
@@ -544,12 +545,12 @@ public class WebuiValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String DYNAMIC_MENU__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION = "not title.oclIsUndefined() implies\r\n" +
-		"\tif title.oclIsKindOf(EntityFeature) then\r\n" +
-		"\t\ttitle.oclAsType(EntityFeature).cardinality <> Cardinality::Many\r\n" +
-		"\telse if title.oclIsKindOf(EncapsulatedAttribute) then\r\n" +
-		"\t\ttitle.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
-		"\telse if title.oclIsKindOf(EncapsulatedAssociation) then\r\n" +
-		"\t\ttitle.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n" +
+		"\tif title.oclIsKindOf(persistence::EntityFeature) then\r\n" +
+		"\t\ttitle.oclAsType(persistence::EntityFeature).cardinality <> persistence::Cardinality::Many\r\n" +
+		"\telse if title.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n" +
+		"\t\ttitle.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n" +
+		"\telse if title.oclIsKindOf(persistence::EncapsulatedAssociation) then\r\n" +
+		"\t\ttitle.oclAsType(persistence::EncapsulatedAssociation).cardinality <> persistence::Cardinality::Many\r\n" +
 		"\telse\r\n" +
 		"\t\tfalse\r\n" +
 		"\tendif endif endif";
@@ -790,7 +791,7 @@ public class WebuiValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_CONTENT_TYPE__EEXPRESSION = "let entities : OrderedSet(EntityOrView)\r\n" +
+	protected static final String DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_CONTENT_TYPE__EEXPRESSION = "let entities : OrderedSet(persistence::EntityOrView)\r\n" +
 		"\t= if self.oclIsKindOf(SingletonUnit) then\r\n" +
 		"\t\t\tOrderedSet{self.oclAsType(SingletonUnit).contentType}\r\n" +
 		"\t\telse if self.oclIsKindOf(CollectionUnit) then\r\n" +
@@ -798,7 +799,7 @@ public class WebuiValidator extends EObjectValidator {
 		"\t\telse\r\n" +
 		"\t\t\tself.entities\r\n" +
 		"\t\tendif endif\r\n" +
-		"\tin let eovFeatures : Collection(Feature)\r\n" +
+		"\tin let eovFeatures : Collection(persistence::Feature)\r\n" +
 		"\t\t= entities->collect(eov | eov.allFeatures)\r\n" +
 		"\t\tin displayFields\r\n" +
 		"\t\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n" +
@@ -974,7 +975,10 @@ public class WebuiValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String UNIT_ASSOCIATION__SELECTION_VALID_CHOICE__EEXPRESSION = "not selection.oclIsUndefined() implies\r\n" +
-		"\ttargetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)";
+		"\tdisplayedOn.pageDisplayedOn.webUI.services.services\r\n" +
+		"\t\t->select(s : service::Service | s.serves = targetEntity)\r\n" +
+		"\t\t->collect(s : service::Service | s.selections)\r\n" +
+		"\t\t->includes(selection)";
 
 	/**
 	 * Validates the selectionValidChoice constraint of '<em>Unit Association</em>'.
@@ -1257,10 +1261,10 @@ public class WebuiValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String DATA_UNIT__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION = "not title.oclIsUndefined() implies \r\n" +
-		"\tif title.oclIsKindOf(EntityAttribute) then\r\n" +
-		"\t\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
-		"\telse if title.oclIsKindOf(EncapsulatedAttribute) then\r\n" +
-		"\t\ttitle.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\tif title.oclIsKindOf(persistence::EntityAttribute) then\r\n" +
+		"\t\ttitle.oclAsType(persistence::EntityAttribute).cardinality <> persistence::Cardinality::Many\r\n" +
+		"\telse if title.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n" +
+		"\t\ttitle.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n" +
 		"\telse\r\n" +
 		"\t\ttrue\r\n" +
 		"\tendif endif";
@@ -1293,7 +1297,10 @@ public class WebuiValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String DATA_UNIT__SELECTION_VALID_CHOICE__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
-		"\tentities->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(defaultSelection)";
+		"\tpageDisplayedOn.webUI.services.services\r\n" +
+		"\t\t->select(s : service::Service | entities->includes(s.serves))\r\n" +
+		"\t\t->collect(s : service::Service | s.selections)\r\n" +
+		"\t\t->includes(defaultSelection)";
 
 	/**
 	 * Validates the selectionValidChoice constraint of '<em>Data Unit</em>'.
@@ -1780,20 +1787,20 @@ public class WebuiValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String DELETE_ACTION__CAN_ONLY_DELETE_SINGLETONS__EEXPRESSION = "if usedBy.oclIsKindOf(UnitElement) then\r\n" +
-		"\tlet attribute : Attribute\r\n" +
+		"\tlet attribute : persistence::Attribute\r\n" +
 		"\t\t= usedBy.oclAsType(UnitElement).attribute\r\n" +
-		"\t\tin if attribute.oclIsKindOf(EntityAttribute) then\r\n" +
-		"\t\t\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\t\tin if attribute.oclIsKindOf(persistence::EntityAttribute) then\r\n" +
+		"\t\t\t\tattribute.oclAsType(persistence::EntityAttribute).cardinality <> persistence::Cardinality::Many\r\n" +
 		"\t\t\telse\r\n" +
-		"\t\t\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\t\tattribute.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n" +
 		"\t\t\tendif\r\n" +
 		"else if usedBy.oclIsKindOf(UnitAssociation) then\r\n" +
-		"\tlet association : Association\r\n" +
+		"\tlet association : persistence::Association\r\n" +
 		"\t\t= usedBy.oclAsType(UnitAssociation).association\r\n" +
-		"\t\tin if association.oclIsKindOf(EntityAssociation) then\r\n" +
-		"\t\t\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n" +
-		"\t\t\telse if association.oclIsKindOf(EncapsulatedAssociation) then\r\n" +
-		"\t\t\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n" +
+		"\t\tin if association.oclIsKindOf(persistence::EntityAssociation) then\r\n" +
+		"\t\t\t\tassociation.oclAsType(persistence::EntityAssociation).cardinality <> persistence::Cardinality::Many\r\n" +
+		"\t\t\telse if association.oclIsKindOf(persistence::EncapsulatedAssociation) then\r\n" +
+		"\t\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).cardinality <> persistence::Cardinality::Many\r\n" +
 		"\t\t\telse\r\n" +
 		"\t\t\t\tfalse -- association.oclAsType(ViewAssociation)\r\n" +
 		"\t\t\tendif endif\r\n" +
@@ -1840,6 +1847,15 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(featureSupportAction, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(featureSupportAction, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFeatureReference(FeatureReference featureReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(featureReference, diagnostics, context);
 	}
 
 	/**

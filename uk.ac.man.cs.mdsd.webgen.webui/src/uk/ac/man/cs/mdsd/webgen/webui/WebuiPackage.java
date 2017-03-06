@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,7 +72,7 @@ public interface WebuiPackage extends EPackage {
 	int WEB_UI = 0;
 
 	/**
-	 * The feature id for the '<em><b>Services</b></em>' reference list.
+	 * The feature id for the '<em><b>Services</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -10431,6 +10432,52 @@ public interface WebuiPackage extends EPackage {
 	int FEATURE_SUPPORT_ACTION_OPERATION_COUNT = INLINE_ACTION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FeatureReferenceImpl <em>Feature Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FeatureReferenceImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeatureReference()
+	 * @generated
+	 */
+	int FEATURE_REFERENCE = 63;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_REFERENCE__NAME = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_REFERENCE__FEATURE = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Feature Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Feature Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_REFERENCE_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10438,7 +10485,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 63;
+	int PAGE_TOP_MENU_OPTIONS = 64;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -10448,7 +10495,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 64;
+	int COLLECTION_DISPLAY_OPTIONS = 65;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.IndexDisplayOption <em>Index Display Option</em>}' enum.
@@ -10458,7 +10505,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getIndexDisplayOption()
 	 * @generated
 	 */
-	int INDEX_DISPLAY_OPTION = 65;
+	int INDEX_DISPLAY_OPTION = 66;
 
 
 	/**
@@ -10472,10 +10519,10 @@ public interface WebuiPackage extends EPackage {
 	EClass getWebUI();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getServices <em>Services</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getServices <em>Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Services</em>'.
+	 * @return the meta object for the reference '<em>Services</em>'.
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getServices()
 	 * @see #getWebUI()
 	 * @generated
@@ -13424,6 +13471,38 @@ public interface WebuiPackage extends EPackage {
 	EAttribute getFeatureSupportAction_FileExtension();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureReference <em>Feature Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Reference</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.FeatureReference
+	 * @generated
+	 */
+	EClass getFeatureReference();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureReference#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.FeatureReference#getName()
+	 * @see #getFeatureReference()
+	 * @generated
+	 */
+	EAttribute getFeatureReference_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureReference#getFeature <em>Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.FeatureReference#getFeature()
+	 * @see #getFeatureReference()
+	 * @generated
+	 */
+	EReference getFeatureReference_Feature();
+
+	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions <em>Page Top Menu Options</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13487,7 +13566,7 @@ public interface WebuiPackage extends EPackage {
 		EClass WEB_UI = eINSTANCE.getWebUI();
 
 		/**
-		 * The meta object literal for the '<em><b>Services</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Services</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -15801,6 +15880,32 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FEATURE_SUPPORT_ACTION__FILE_EXTENSION = eINSTANCE.getFeatureSupportAction_FileExtension();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FeatureReferenceImpl <em>Feature Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FeatureReferenceImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeatureReference()
+		 * @generated
+		 */
+		EClass FEATURE_REFERENCE = eINSTANCE.getFeatureReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE_REFERENCE__NAME = eINSTANCE.getFeatureReference_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_REFERENCE__FEATURE = eINSTANCE.getFeatureReference_Feature();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.

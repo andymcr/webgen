@@ -10,9 +10,6 @@ import org.eclipse.emf.ecore.util.Switch;
 import uk.ac.man.cs.mdsd.webgen.base.Classifier;
 import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
-
-import uk.ac.man.cs.mdsd.webgen.expression.Expression;
-import uk.ac.man.cs.mdsd.webgen.expression.Variable;
 import uk.ac.man.cs.mdsd.webgen.persistence.*;
 
 /**
@@ -381,14 +378,6 @@ public class PersistenceSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAssociation(viewAssociation);
 				if (result == null) result = caseNamedElement(viewAssociation);
 				if (result == null) result = caseFeature(viewAssociation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PersistencePackage.FEATURE_REFERENCE: {
-				FeatureReference featureReference = (FeatureReference)theEObject;
-				T result = caseFeatureReference(featureReference);
-				if (result == null) result = caseVariable(featureReference);
-				if (result == null) result = caseExpression(featureReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -892,21 +881,6 @@ public class PersistenceSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFeatureReference(FeatureReference object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -948,36 +922,6 @@ public class PersistenceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseClassifier(Classifier object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExpression(Expression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVariable(Variable object) {
 		return null;
 	}
 

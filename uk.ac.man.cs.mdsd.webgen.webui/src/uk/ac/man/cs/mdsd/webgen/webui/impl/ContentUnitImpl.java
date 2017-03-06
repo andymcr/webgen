@@ -422,8 +422,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPageDisplayedOn(Page newPageDisplayedOn) {
-		PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPageDisplayedOn);
+	public boolean isSetPageDisplayedOn() {
+		return PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
 
 	/**
@@ -533,9 +533,6 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WebuiPackage.CONTENT_UNIT__CAPTION_CLASS:
 				setCaptionClass((String)newValue);
 				return;
-			case WebuiPackage.CONTENT_UNIT__PAGE_DISPLAYED_ON:
-				setPageDisplayedOn((Page)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -572,9 +569,6 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WebuiPackage.CONTENT_UNIT__CAPTION_CLASS:
 				setCaptionClass(CAPTION_CLASS_EDEFAULT);
 				return;
-			case WebuiPackage.CONTENT_UNIT__PAGE_DISPLAYED_ON:
-				setPageDisplayedOn((Page)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -604,7 +598,7 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WebuiPackage.CONTENT_UNIT__CAPTION_CLASS:
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
 			case WebuiPackage.CONTENT_UNIT__PAGE_DISPLAYED_ON:
-				return PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return isSetPageDisplayedOn();
 		}
 		return super.eIsSet(featureID);
 	}

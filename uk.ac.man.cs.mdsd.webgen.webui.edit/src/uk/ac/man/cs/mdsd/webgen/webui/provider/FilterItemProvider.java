@@ -183,7 +183,7 @@ public class FilterItemProvider extends NamedDisplayElementItemProvider {
 
 	protected Set<Selection> getSelections(final WebUI webUI, final EntityOrView entity) {
 		final Set<Selection> selections = new HashSet<Selection>();
-		for (Service service : webUI.getServices()) {
+		for (Service service : webUI.getServices().getServices()) {
 			if (service.getServes() == entity) {
 				selections.addAll(service.getSelections());
 			}

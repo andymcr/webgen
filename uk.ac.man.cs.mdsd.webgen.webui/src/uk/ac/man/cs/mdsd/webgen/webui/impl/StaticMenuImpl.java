@@ -3,7 +3,6 @@
 package uk.ac.man.cs.mdsd.webgen.webui.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import uk.ac.man.cs.mdsd.webgen.webui.StaticMenu;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 

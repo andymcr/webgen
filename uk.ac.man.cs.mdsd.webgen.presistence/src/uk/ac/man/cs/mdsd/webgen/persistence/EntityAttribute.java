@@ -2,7 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.webgen.persistence;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Entity Attribute</b></em>'.

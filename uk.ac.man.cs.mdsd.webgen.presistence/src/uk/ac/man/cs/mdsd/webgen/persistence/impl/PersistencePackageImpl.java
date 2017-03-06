@@ -34,7 +34,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
-import uk.ac.man.cs.mdsd.webgen.persistence.FeatureReference;
 import uk.ac.man.cs.mdsd.webgen.persistence.FileAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.ImageAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
@@ -295,13 +294,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * @generated
 	 */
 	private EClass viewAssociationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass featureReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1712,33 +1704,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFeatureReference() {
-		return featureReferenceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFeatureReference_Name() {
-		return (EAttribute)featureReferenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFeatureReference_Feature() {
-		return (EReference)featureReferenceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getDatabaseTechnologies() {
 		return databaseTechnologiesEEnum;
 	}
@@ -1984,10 +1949,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		createEReference(viewAssociationEClass, VIEW_ASSOCIATION__OPPOSITE);
 		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__CARDINALITY);
 
-		featureReferenceEClass = createEClass(FEATURE_REFERENCE);
-		createEAttribute(featureReferenceEClass, FEATURE_REFERENCE__NAME);
-		createEReference(featureReferenceEClass, FEATURE_REFERENCE__FEATURE);
-
 		// Create enums
 		databaseTechnologiesEEnum = createEEnum(DATABASE_TECHNOLOGIES);
 		ormTechnologiesEEnum = createEEnum(ORM_TECHNOLOGIES);
@@ -2064,7 +2025,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		viewAssociationEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
 		viewAssociationEClass.getESuperTypes().add(this.getViewFeature());
 		viewAssociationEClass.getESuperTypes().add(this.getAssociation());
-		featureReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(persistenceEClass, Persistence.class, "Persistence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2243,10 +2203,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEClass(viewAssociationEClass, ViewAssociation.class, "ViewAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getViewAssociation_Opposite(), this.getEncapsulatedAssociation(), null, "opposite", null, 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getViewAssociation_Cardinality(), this.getCardinality(), "cardinality", "Optional", 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(featureReferenceEClass, FeatureReference.class, "FeatureReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFeatureReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, FeatureReference.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getFeatureReference_Feature(), this.getFeature(), null, "feature", null, 1, 1, FeatureReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(databaseTechnologiesEEnum, DatabaseTechnologies.class, "DatabaseTechnologies");
@@ -2448,12 +2404,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		   source, 
 		   new String[] {
 			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\telse\r\n\t\tif isSourceAssociation then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity \r\n\t\telse\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\tendif\r\n\tendif\r\nendif"
-		   });	
-		addAnnotation
-		  (getFeatureReference_Name(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if feature.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif feature.oclIsKindOf(EntityFeature) then\r\n\t\tfeature.oclAsType(EntityFeature).name\r\n\telse if feature.oclIsKindOf(EncapsulatedAttribute) then\r\n\t\tfeature.oclAsType(EncapsulatedAttribute).name\r\n\telse if feature.oclIsKindOf(EncapsulatedAssociation) then\r\n\t\tfeature.oclAsType(EncapsulatedAssociation).name\r\n\telse\r\n\t\tfeature.oclAsType(ViewAssociation).name\r\n\tendif endif endif\r\nendif"
 		   });
 	}
 

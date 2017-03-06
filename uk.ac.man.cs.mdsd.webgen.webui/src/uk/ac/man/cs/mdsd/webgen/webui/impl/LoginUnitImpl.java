@@ -3,10 +3,8 @@
 package uk.ac.man.cs.mdsd.webgen.webui.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -15,7 +13,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -799,8 +796,8 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPageDisplayedOn(Page newPageDisplayedOn) {
-		PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPageDisplayedOn);
+	public boolean isSetPageDisplayedOn() {
+		return PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
 
 	/**
@@ -1264,9 +1261,6 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 			case WebuiPackage.LOGIN_UNIT__CAPTION_CLASS:
 				setCaptionClass((String)newValue);
 				return;
-			case WebuiPackage.LOGIN_UNIT__PAGE_DISPLAYED_ON:
-				setPageDisplayedOn((Page)newValue);
-				return;
 			case WebuiPackage.LOGIN_UNIT__ENTITIES:
 				getEntities().clear();
 				getEntities().addAll((Collection<? extends EntityOrView>)newValue);
@@ -1357,9 +1351,6 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 			case WebuiPackage.LOGIN_UNIT__CAPTION_CLASS:
 				setCaptionClass(CAPTION_CLASS_EDEFAULT);
 				return;
-			case WebuiPackage.LOGIN_UNIT__PAGE_DISPLAYED_ON:
-				setPageDisplayedOn((Page)null);
-				return;
 			case WebuiPackage.LOGIN_UNIT__ENTITIES:
 				getEntities().clear();
 				return;
@@ -1438,7 +1429,7 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 			case WebuiPackage.LOGIN_UNIT__CAPTION_CLASS:
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
 			case WebuiPackage.LOGIN_UNIT__PAGE_DISPLAYED_ON:
-				return PAGE_DISPLAYED_ON__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return isSetPageDisplayedOn();
 			case WebuiPackage.LOGIN_UNIT__ENTITIES:
 				return entities != null && !entities.isEmpty();
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:

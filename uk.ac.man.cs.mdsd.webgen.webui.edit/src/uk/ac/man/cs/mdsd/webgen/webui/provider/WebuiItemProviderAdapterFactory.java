@@ -1009,6 +1009,29 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.FeatureReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FeatureReferenceItemProvider featureReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.FeatureReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFeatureReferenceAdapter() {
+		if (featureReferenceItemProvider == null) {
+			featureReferenceItemProvider = new FeatureReferenceItemProvider(this);
+		}
+
+		return featureReferenceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1174,6 +1197,7 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 		if (selectActionItemProvider != null) selectActionItemProvider.dispose();
 		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
 		if (featureSupportActionItemProvider != null) featureSupportActionItemProvider.dispose();
+		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();
 	}
 
 }

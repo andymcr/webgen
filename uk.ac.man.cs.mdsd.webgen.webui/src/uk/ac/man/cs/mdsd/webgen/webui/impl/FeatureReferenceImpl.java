@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.persistence.impl;
+package uk.ac.man.cs.mdsd.webgen.webui.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -12,8 +12,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
-import uk.ac.man.cs.mdsd.webgen.persistence.FeatureReference;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+
+import uk.ac.man.cs.mdsd.webgen.webui.FeatureReference;
+import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,8 +24,8 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.FeatureReferenceImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.FeatureReferenceImpl#getFeature <em>Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FeatureReferenceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FeatureReferenceImpl#getFeature <em>Feature</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,7 +39,7 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.FEATURE_REFERENCE__NAME).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebuiPackage.Literals.FEATURE_REFERENCE__NAME).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
@@ -66,7 +67,7 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PersistencePackage.Literals.FEATURE_REFERENCE;
+		return WebuiPackage.Literals.FEATURE_REFERENCE;
 	}
 
 	/**
@@ -89,7 +90,7 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 			feature = (Feature)eResolveProxy(oldFeature);
 			if (feature != oldFeature) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PersistencePackage.FEATURE_REFERENCE__FEATURE, oldFeature, feature));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.FEATURE_REFERENCE__FEATURE, oldFeature, feature));
 			}
 		}
 		return feature;
@@ -113,7 +114,7 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 		Feature oldFeature = feature;
 		feature = newFeature;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.FEATURE_REFERENCE__FEATURE, oldFeature, feature));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.FEATURE_REFERENCE__FEATURE, oldFeature, feature));
 	}
 
 	/**
@@ -124,9 +125,9 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PersistencePackage.FEATURE_REFERENCE__NAME:
+			case WebuiPackage.FEATURE_REFERENCE__NAME:
 				return getName();
-			case PersistencePackage.FEATURE_REFERENCE__FEATURE:
+			case WebuiPackage.FEATURE_REFERENCE__FEATURE:
 				if (resolve) return getFeature();
 				return basicGetFeature();
 		}
@@ -141,7 +142,7 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PersistencePackage.FEATURE_REFERENCE__FEATURE:
+			case WebuiPackage.FEATURE_REFERENCE__FEATURE:
 				setFeature((Feature)newValue);
 				return;
 		}
@@ -156,7 +157,7 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.FEATURE_REFERENCE__FEATURE:
+			case WebuiPackage.FEATURE_REFERENCE__FEATURE:
 				setFeature((Feature)null);
 				return;
 		}
@@ -171,9 +172,9 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PersistencePackage.FEATURE_REFERENCE__NAME:
+			case WebuiPackage.FEATURE_REFERENCE__NAME:
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.FEATURE_REFERENCE__FEATURE:
+			case WebuiPackage.FEATURE_REFERENCE__FEATURE:
 				return feature != null;
 		}
 		return super.eIsSet(featureID);

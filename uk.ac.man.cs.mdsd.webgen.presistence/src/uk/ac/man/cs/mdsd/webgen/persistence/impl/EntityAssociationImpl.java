@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.AssociationKey;
 import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAssociation;

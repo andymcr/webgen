@@ -2,7 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.webgen.webui;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Static Menu</b></em>'.

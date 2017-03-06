@@ -19,7 +19,6 @@ import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 
 /**
@@ -322,11 +321,6 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
-				 PersistenceFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedDisplayElementImpl;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;

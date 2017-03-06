@@ -377,14 +377,4 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" lowerBound="1"
         eType="#//Cardinality" defaultValueLiteral="Optional"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FeatureReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" volatile="true" derived="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if feature.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;if feature.oclIsKindOf(EntityFeature) then&#xD;&#xA;&#x9;&#x9;feature.oclAsType(EntityFeature).name&#xD;&#xA;&#x9;else if feature.oclIsKindOf(EncapsulatedAttribute) then&#xD;&#xA;&#x9;&#x9;feature.oclAsType(EncapsulatedAttribute).name&#xD;&#xA;&#x9;else if feature.oclIsKindOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;feature.oclAsType(EncapsulatedAssociation).name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;feature.oclAsType(ViewAssociation).name&#xD;&#xA;&#x9;endif endif endif&#xD;&#xA;endif"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
-        eType="#//Feature"/>
-  </eClassifiers>
 </ecore:EPackage>

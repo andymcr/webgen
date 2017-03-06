@@ -45,6 +45,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.EditUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePath;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePathAttribute;
+import uk.ac.man.cs.mdsd.webgen.webui.FeatureReference;
 import uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction;
 import uk.ac.man.cs.mdsd.webgen.webui.Filter;
 import uk.ac.man.cs.mdsd.webgen.webui.FilterParameter;
@@ -536,6 +537,13 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	private EClass featureSupportActionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass featureReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -3112,6 +3120,33 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFeatureReference() {
+		return featureReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeatureReference_Name() {
+		return (EAttribute)featureReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeatureReference_Feature() {
+		return (EReference)featureReferenceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPageTopMenuOptions() {
 		return pageTopMenuOptionsEEnum;
 	}
@@ -3500,6 +3535,10 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__URI_ELEMENT);
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__FILE_EXTENSION);
 
+		featureReferenceEClass = createEClass(FEATURE_REFERENCE);
+		createEAttribute(featureReferenceEClass, FEATURE_REFERENCE__NAME);
+		createEReference(featureReferenceEClass, FEATURE_REFERENCE__FEATURE);
+
 		// Create enums
 		pageTopMenuOptionsEEnum = createEEnum(PAGE_TOP_MENU_OPTIONS);
 		collectionDisplayOptionsEEnum = createEEnum(COLLECTION_DISPLAY_OPTIONS);
@@ -3612,10 +3651,11 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		selectActionEClass.getESuperTypes().add(this.getInlineAction());
 		deleteActionEClass.getESuperTypes().add(this.getInlineAction());
 		featureSupportActionEClass.getESuperTypes().add(this.getInlineAction());
+		featureReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(webUIEClass, WebUI.class, "WebUI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getWebUI_Services(), theServicePackage.getService(), null, "services", null, 0, -1, WebUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebUI_Services(), theServicePackage.getServices(), null, "services", null, 0, 1, WebUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebUI_GlobalMenu(), this.getGlobalMenu(), this.getGlobalMenu_WebUI(), "globalMenu", null, 0, 1, WebUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebUI_Pages(), this.getPage(), this.getPage_WebUI(), "pages", null, 0, -1, WebUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3698,7 +3738,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEAttribute(getContentUnit_Alternative(), ecorePackage.getEString(), "alternative", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_OmitCaption(), ecorePackage.getEBoolean(), "omitCaption", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_CaptionClass(), ecorePackage.getEString(), "captionClass", "unit_caption", 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContentUnit_PageDisplayedOn(), this.getPage(), null, "pageDisplayedOn", null, 1, 1, ContentUnit.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getContentUnit_PageDisplayedOn(), this.getPage(), null, "pageDisplayedOn", null, 1, 1, ContentUnit.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(staticUnitEClass, StaticUnit.class, "StaticUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStaticUnit_Content(), ecorePackage.getEString(), "content", null, 0, 1, StaticUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -3952,6 +3992,10 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEAttribute(getFeatureSupportAction_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeatureSupportAction_FileExtension(), ecorePackage.getEString(), "fileExtension", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(featureReferenceEClass, FeatureReference.class, "FeatureReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFeatureReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, FeatureReference.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getFeatureReference_Feature(), thePersistencePackage.getFeature(), null, "feature", null, 1, 1, FeatureReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(pageTopMenuOptionsEEnum, PageTopMenuOptions.class, "PageTopMenuOptions");
 		addEEnumLiteral(pageTopMenuOptionsEEnum, PageTopMenuOptions.NEVER_INCLUDE);
@@ -4083,7 +4127,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 			 "onlyIncludeFeaturesOnce", "true",
 			 "mustSelectSingleton", "not selection.oclIsUndefined() implies selection.limit = 1",
 			 "titleFromEntityOrView", "not title.oclIsUndefined() and not entityOrView.oclIsUndefined() implies\r\n\tentityOrView.features->includes(title)",
-			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies\r\n\tif title.oclIsKindOf(EntityFeature) then\r\n\t\ttitle.oclAsType(EntityFeature).cardinality <> Cardinality::Many\r\n\telse if title.oclIsKindOf(EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n\telse if title.oclIsKindOf(EncapsulatedAssociation) then\r\n\t\ttitle.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n\telse\r\n\t\tfalse\r\n\tendif endif endif"
+			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies\r\n\tif title.oclIsKindOf(persistence::EntityFeature) then\r\n\t\ttitle.oclAsType(persistence::EntityFeature).cardinality <> persistence::Cardinality::Many\r\n\telse if title.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse if title.oclIsKindOf(persistence::EncapsulatedAssociation) then\r\n\t\ttitle.oclAsType(persistence::EncapsulatedAssociation).cardinality <> persistence::Cardinality::Many\r\n\telse\r\n\t\tfalse\r\n\tendif endif endif"
 		   });	
 		addAnnotation
 		  (pageEClass, 
@@ -4101,7 +4145,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		  (dynamicUnitEClass, 
 		   source, 
 		   new String[] {
-			 "featuresMustBeFromContentType", "let entities : OrderedSet(EntityOrView)\r\n\t= if self.oclIsKindOf(SingletonUnit) then\r\n\t\t\tOrderedSet{self.oclAsType(SingletonUnit).contentType}\r\n\t\telse if self.oclIsKindOf(CollectionUnit) then\r\n\t\t\tself.oclAsType(CollectionUnit).contentType\r\n\t\telse\r\n\t\t\tself.entities\r\n\t\tendif endif\r\n\tin let eovFeatures : Collection(Feature)\r\n\t\t= entities->collect(eov | eov.allFeatures)\r\n\t\tin displayFields\r\n\t\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t\t\t->select(f | \r\n\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\t\tnot f.oclAsType(UnitElement).attribute.oclIsUndefined()\r\n\t\t\t\telse\r\n\t\t\t\t\tnot f.oclAsType(UnitAssociation).association.oclIsUndefined()\r\n\t\t\t\tendif)\r\n\t\t\t->forAll(f | \r\n\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitElement).attribute)\r\n\t\t\t\telse\r\n\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitAssociation).association)\r\n\t\t\t\tendif)"
+			 "featuresMustBeFromContentType", "let entities : OrderedSet(persistence::EntityOrView)\r\n\t= if self.oclIsKindOf(SingletonUnit) then\r\n\t\t\tOrderedSet{self.oclAsType(SingletonUnit).contentType}\r\n\t\telse if self.oclIsKindOf(CollectionUnit) then\r\n\t\t\tself.oclAsType(CollectionUnit).contentType\r\n\t\telse\r\n\t\t\tself.entities\r\n\t\tendif endif\r\n\tin let eovFeatures : Collection(persistence::Feature)\r\n\t\t= entities->collect(eov | eov.allFeatures)\r\n\t\tin displayFields\r\n\t\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t\t\t->select(f | \r\n\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\t\tnot f.oclAsType(UnitElement).attribute.oclIsUndefined()\r\n\t\t\t\telse\r\n\t\t\t\t\tnot f.oclAsType(UnitAssociation).association.oclIsUndefined()\r\n\t\t\t\tendif)\r\n\t\t\t->forAll(f | \r\n\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitElement).attribute)\r\n\t\t\t\telse\r\n\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitAssociation).association)\r\n\t\t\t\tendif)"
 		   });	
 		addAnnotation
 		  (unitFeatureEClass, 
@@ -4114,44 +4158,44 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		  (getUnitElement_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(EncapsulatedAttribute) then\r\n\tattribute.oclAsType(EncapsulatedAttribute).name\r\nelse\r\n\tattribute.oclAsType(EntityAttribute).name\r\nendif endif"
+			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\tattribute.oclAsType(persistence::EncapsulatedAttribute).name\r\nelse\r\n\tattribute.oclAsType(persistence::EntityAttribute).name\r\nendif endif"
 		   });	
 		addAnnotation
 		  (unitAssociationEClass, 
 		   source, 
 		   new String[] {
-			 "selectionValidChoice", "not selection.oclIsUndefined() implies\r\n\ttargetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)"
+			 "selectionValidChoice", "not selection.oclIsUndefined() implies\r\n\tdisplayedOn.pageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | s.serves = targetEntity)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(selection)"
 		   });	
 		addAnnotation
 		  (getUnitAssociation_IsSourceAssociation(), 
 		   source, 
 		   new String[] {
-			 "derivation", "not association.oclIsUndefined() implies\r\n\tlet entities : OrderedSet(EntityOrView)\r\n\t\t= if displayedOn.oclIsKindOf(SingletonUnit) then\r\n\t\t\t\tOrderedSet{displayedOn.oclAsType(SingletonUnit).contentType}\r\n\t\t\telse if displayedOn.oclIsKindOf(CollectionUnit) then\r\n\t\t\t\tdisplayedOn.oclAsType(CollectionUnit).contentType\r\n\t\t\telse\r\n\t\t\t\tdisplayedOn.entities\r\n\t\t\tendif endif\r\n\t\tin entities->collect(e | e.associations)->includes(association)"
+			 "derivation", "not association.oclIsUndefined() implies\r\n\tlet entities : OrderedSet(persistence::EntityOrView)\r\n\t\t= if displayedOn.oclIsKindOf(SingletonUnit) then\r\n\t\t\t\tOrderedSet{displayedOn.oclAsType(SingletonUnit).contentType}\r\n\t\t\telse if displayedOn.oclIsKindOf(CollectionUnit) then\r\n\t\t\t\tdisplayedOn.oclAsType(CollectionUnit).contentType\r\n\t\t\telse\r\n\t\t\t\tdisplayedOn.entities\r\n\t\t\tendif endif\r\n\t\tin entities->collect(e | e.associations)->includes(association)"
 		   });	
 		addAnnotation
 		  (getUnitAssociation_SourceEntity(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\tendif\r\nendif"
+			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (getUnitAssociation_TargetEntity(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif"
+			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (getAssociationReference_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse if association.oclIsKindOf(EntityAssociation) then\r\n\tassociation.oclAsType(EntityAssociation).name\r\nelse if association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\tassociation.oclAsType(EncapsulatedAssociation).name\r\nelse\r\n\tassociation.oclAsType(ViewAssociation).name \r\nendif endif endif\r\n"
+			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse if association.oclIsKindOf(persistence::EntityAssociation) then\r\n\tassociation.oclAsType(persistence::EntityAssociation).name\r\nelse if association.oclIsTypeOf(persistence::EncapsulatedAssociation) then\r\n\tassociation.oclAsType(persistence::EncapsulatedAssociation).name\r\nelse\r\n\tassociation.oclAsType(persistence::ViewAssociation).name \r\nendif endif endif\r\n"
 		   });	
 		addAnnotation
 		  (dataUnitEClass, 
 		   source, 
 		   new String[] {
-			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies \r\n\tif title.oclIsKindOf(EntityAttribute) then\r\n\t\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\telse if title.oclIsKindOf(EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n\telse\r\n\t\ttrue\r\n\tendif endif",
-			 "selectionValidChoice", "not defaultSelection.oclIsUndefined() implies\r\n\tentities->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(defaultSelection)"
+			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies \r\n\tif title.oclIsKindOf(persistence::EntityAttribute) then\r\n\t\ttitle.oclAsType(persistence::EntityAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse if title.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse\r\n\t\ttrue\r\n\tendif endif",
+			 "selectionValidChoice", "not defaultSelection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | entities->includes(s.serves))\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(defaultSelection)"
 		   });	
 		addAnnotation
 		  (detailsUnitEClass, 
@@ -4169,31 +4213,31 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		  (getFeaturePathAttribute_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(EntityAttribute) then\r\n\tattribute.oclAsType(EntityAttribute).name\r\nelse\r\n\tattribute.oclAsType(EncapsulatedAttribute).name\r\nendif endif\r\n"
+			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(persistence::EntityAttribute) then\r\n\tattribute.oclAsType(persistence::EntityAttribute).name\r\nelse\r\n\tattribute.oclAsType(persistence::EncapsulatedAttribute).name\r\nendif endif\r\n"
 		   });	
 		addAnnotation
 		  (getFeaturePathAssociation_IsSourceAssociation(), 
 		   source, 
 		   new String[] {
-			 "derivation", "not association.oclIsUndefined() implies\r\n\tlet unit : DynamicUnit\r\n\t\t= self.eContainer().oclAsType(DynamicUnit)\r\n\t\tin let entities : OrderedSet(EntityOrView)\r\n\t\t\t= if unit.oclIsKindOf(SingletonUnit) then\r\n\t\t\t\t\tOrderedSet{unit.oclAsType(SingletonUnit).contentType}\r\n\t\t\t\telse if unit.oclIsKindOf(CollectionUnit) then\r\n\t\t\t\t\tunit.oclAsType(CollectionUnit).contentType\r\n\t\t\t\telse\r\n\t\t\t\t\tunit.entities\r\n\t\t\t\tendif endif\r\n\t\t\tin entities->collect(eov | eov.associations)->includes(association)"
+			 "derivation", "not association.oclIsUndefined() implies\r\n\tlet unit : DynamicUnit\r\n\t\t= self.eContainer().oclAsType(DynamicUnit)\r\n\t\tin let entities : OrderedSet(persistence::EntityOrView)\r\n\t\t\t= if unit.oclIsKindOf(SingletonUnit) then\r\n\t\t\t\t\tOrderedSet{unit.oclAsType(SingletonUnit).contentType}\r\n\t\t\t\telse if unit.oclIsKindOf(CollectionUnit) then\r\n\t\t\t\t\tunit.oclAsType(CollectionUnit).contentType\r\n\t\t\t\telse\r\n\t\t\t\t\tunit.entities\r\n\t\t\t\tendif endif\r\n\t\t\tin entities->collect(eov | eov.associations)->includes(association)"
 		   });	
 		addAnnotation
 		  (getFeaturePathAssociation_SourceEntity(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\tendif\r\nendif"
+			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (getFeaturePathAssociation_TargetEntity(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif"
+			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (getChildPathAttribute_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(EntityAttribute) then\r\n\tattribute.oclAsType(EntityAttribute).name\r\nelse\r\n\tattribute.oclAsType(EncapsulatedAttribute).name\r\nendif endif\r\n"
+			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(persistence::EntityAttribute) then\r\n\tattribute.oclAsType(persistence::EntityAttribute).name\r\nelse\r\n\tattribute.oclAsType(persistence::EncapsulatedAttribute).name\r\nendif endif"
 		   });	
 		addAnnotation
 		  (getChildPathAssociation_IsSourceAssociation(), 
@@ -4205,13 +4249,13 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		  (getChildPathAssociation_SourceEntity(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\tendif\r\nendif"
+			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (getChildPathAssociation_TargetEntity(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif"
+			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (inlineActionContainerEClass, 
@@ -4223,7 +4267,13 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		  (deleteActionEClass, 
 		   source, 
 		   new String[] {
-			 "canOnlyDeleteSingletons", "if usedBy.oclIsKindOf(UnitElement) then\r\n\tlet attribute : Attribute\r\n\t\t= usedBy.oclAsType(UnitElement).attribute\r\n\t\tin if attribute.oclIsKindOf(EntityAttribute) then\r\n\t\t\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n\t\t\tendif\r\nelse if usedBy.oclIsKindOf(UnitAssociation) then\r\n\tlet association : Association\r\n\t\t= usedBy.oclAsType(UnitAssociation).association\r\n\t\tin if association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n\t\t\telse if association.oclIsKindOf(EncapsulatedAssociation) then\r\n\t\t\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tfalse -- association.oclAsType(ViewAssociation)\r\n\t\t\tendif endif\r\nelse\r\n\tusedBy.oclIsKindOf(CollectionUnit)\r\nendif endif\r\n"
+			 "canOnlyDeleteSingletons", "if usedBy.oclIsKindOf(UnitElement) then\r\n\tlet attribute : persistence::Attribute\r\n\t\t= usedBy.oclAsType(UnitElement).attribute\r\n\t\tin if attribute.oclIsKindOf(persistence::EntityAttribute) then\r\n\t\t\t\tattribute.oclAsType(persistence::EntityAttribute).cardinality <> persistence::Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tattribute.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n\t\t\tendif\r\nelse if usedBy.oclIsKindOf(UnitAssociation) then\r\n\tlet association : persistence::Association\r\n\t\t= usedBy.oclAsType(UnitAssociation).association\r\n\t\tin if association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\t\tassociation.oclAsType(persistence::EntityAssociation).cardinality <> persistence::Cardinality::Many\r\n\t\t\telse if association.oclIsKindOf(persistence::EncapsulatedAssociation) then\r\n\t\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).cardinality <> persistence::Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tfalse -- association.oclAsType(ViewAssociation)\r\n\t\t\tendif endif\r\nelse\r\n\tusedBy.oclIsKindOf(CollectionUnit)\r\nendif endif\r\n"
+		   });	
+		addAnnotation
+		  (getFeatureReference_Name(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if feature.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif feature.oclIsKindOf(persistence::EntityFeature) then\r\n\t\tfeature.oclAsType(persistence::EntityFeature).name\r\n\telse if feature.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\t\tfeature.oclAsType(persistence::EncapsulatedAttribute).name\r\n\telse if feature.oclIsKindOf(persistence::EncapsulatedAssociation) then\r\n\t\tfeature.oclAsType(persistence::EncapsulatedAssociation).name\r\n\telse\r\n\t\tfeature.oclAsType(persistence::ViewAssociation).name\r\n\tendif endif endif\r\nendif"
 		   });
 	}
 

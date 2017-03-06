@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import uk.ac.man.cs.mdsd.webgen.expression.Expression;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;

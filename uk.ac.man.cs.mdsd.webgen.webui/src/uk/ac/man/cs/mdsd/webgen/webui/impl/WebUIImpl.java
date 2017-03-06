@@ -14,13 +14,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import uk.ac.man.cs.mdsd.webgen.service.Service;
-
+import uk.ac.man.cs.mdsd.webgen.service.Services;
 import uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu;
 import uk.ac.man.cs.mdsd.webgen.webui.Page;
 import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
@@ -43,14 +39,14 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  */
 public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	/**
-	 * The cached value of the '{@link #getServices() <em>Services</em>}' reference list.
+	 * The cached value of the '{@link #getServices() <em>Services</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getServices()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Service> services;
+	protected Services services;
 
 	/**
 	 * The cached value of the '{@link #getGlobalMenu() <em>Global Menu</em>}' reference.
@@ -96,11 +92,37 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Service> getServices() {
-		if (services == null) {
-			services = new EObjectResolvingEList<Service>(Service.class, this, WebuiPackage.WEB_UI__SERVICES);
+	public Services getServices() {
+		if (services != null && services.eIsProxy()) {
+			InternalEObject oldServices = (InternalEObject)services;
+			services = (Services)eResolveProxy(oldServices);
+			if (services != oldServices) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.WEB_UI__SERVICES, oldServices, services));
+			}
 		}
 		return services;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Services basicGetServices() {
+		return services;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setServices(Services newServices) {
+		Services oldServices = services;
+		services = newServices;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.WEB_UI__SERVICES, oldServices, services));
 	}
 
 	/**
@@ -219,7 +241,8 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case WebuiPackage.WEB_UI__SERVICES:
-				return getServices();
+				if (resolve) return getServices();
+				return basicGetServices();
 			case WebuiPackage.WEB_UI__GLOBAL_MENU:
 				if (resolve) return getGlobalMenu();
 				return basicGetGlobalMenu();
@@ -239,8 +262,7 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebuiPackage.WEB_UI__SERVICES:
-				getServices().clear();
-				getServices().addAll((Collection<? extends Service>)newValue);
+				setServices((Services)newValue);
 				return;
 			case WebuiPackage.WEB_UI__GLOBAL_MENU:
 				setGlobalMenu((GlobalMenu)newValue);
@@ -262,7 +284,7 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebuiPackage.WEB_UI__SERVICES:
-				getServices().clear();
+				setServices((Services)null);
 				return;
 			case WebuiPackage.WEB_UI__GLOBAL_MENU:
 				setGlobalMenu((GlobalMenu)null);
@@ -283,7 +305,7 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case WebuiPackage.WEB_UI__SERVICES:
-				return services != null && !services.isEmpty();
+				return services != null;
 			case WebuiPackage.WEB_UI__GLOBAL_MENU:
 				return globalMenu != null;
 			case WebuiPackage.WEB_UI__PAGES:

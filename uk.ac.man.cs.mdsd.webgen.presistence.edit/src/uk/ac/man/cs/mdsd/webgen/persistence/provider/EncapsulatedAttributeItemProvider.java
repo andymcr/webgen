@@ -23,7 +23,6 @@ import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.View;
 
@@ -299,11 +298,6 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
-				 PersistenceFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

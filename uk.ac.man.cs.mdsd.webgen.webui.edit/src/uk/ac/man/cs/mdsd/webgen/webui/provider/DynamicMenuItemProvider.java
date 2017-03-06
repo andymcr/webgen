@@ -199,7 +199,7 @@ public class DynamicMenuItemProvider extends GlobalMenuItemProvider {
 	protected Set<Selection> getSelections(final DynamicMenu menu) {
 		final Set<Selection> selections = new HashSet<Selection>();
 		if (menu.getEntityOrView() != null) {
-			for (Service service : menu.getWebUI().getServices()) {
+			for (Service service : menu.getWebUI().getServices().getServices()) {
 				if (service.getServes() == menu.getEntityOrView()) {
 					selections.addAll(service.getSelections());
 				}

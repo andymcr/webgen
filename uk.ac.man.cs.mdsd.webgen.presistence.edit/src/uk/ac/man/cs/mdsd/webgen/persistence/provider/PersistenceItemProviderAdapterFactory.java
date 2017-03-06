@@ -572,29 +572,6 @@ public class PersistenceItemProviderAdapterFactory extends PersistenceAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.persistence.FeatureReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FeatureReferenceItemProvider featureReferenceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.FeatureReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFeatureReferenceAdapter() {
-		if (featureReferenceItemProvider == null) {
-			featureReferenceItemProvider = new FeatureReferenceItemProvider(this);
-		}
-
-		return featureReferenceItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -741,7 +718,6 @@ public class PersistenceItemProviderAdapterFactory extends PersistenceAdapterFac
 		if (encapsulatedAttributeItemProvider != null) encapsulatedAttributeItemProvider.dispose();
 		if (encapsulatedAssociationItemProvider != null) encapsulatedAssociationItemProvider.dispose();
 		if (viewAssociationItemProvider != null) viewAssociationItemProvider.dispose();
-		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();
 	}
 
 }

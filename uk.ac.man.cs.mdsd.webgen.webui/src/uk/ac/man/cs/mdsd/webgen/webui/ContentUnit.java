@@ -251,22 +251,22 @@ public interface ContentUnit extends NamedDisplayElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Page Displayed On</em>' reference.
-	 * @see #setPageDisplayedOn(Page)
+	 * @see #isSetPageDisplayedOn()
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getContentUnit_PageDisplayedOn()
-	 * @model required="true" transient="true" volatile="true" derived="true"
+	 * @model unsettable="true" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if displayedOn.oclIsTypeOf(Page) then\r\n\tdisplayedOn.oclAsType(Page)\r\nelse\r\n\tdisplayedOn.oclAsType(UnitAssociation).displayedOn.pageDisplayedOn\r\nendif'"
 	 * @generated
 	 */
 	Page getPageDisplayedOn();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#getPageDisplayedOn <em>Page Displayed On</em>}' reference.
+	 * Returns whether the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#getPageDisplayedOn <em>Page Displayed On</em>}' reference is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Page Displayed On</em>' reference.
+	 * @return whether the value of the '<em>Page Displayed On</em>' reference is set.
 	 * @see #getPageDisplayedOn()
 	 * @generated
 	 */
-	void setPageDisplayedOn(Page value);
+	boolean isSetPageDisplayedOn();
 
 } // ContentUnit

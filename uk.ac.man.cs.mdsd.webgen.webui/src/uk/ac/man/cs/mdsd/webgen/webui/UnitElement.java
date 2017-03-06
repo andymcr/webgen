@@ -65,7 +65,7 @@ public interface UnitElement extends UnitFeature {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitElement_Name()
 	 * @model changeable="false" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(EncapsulatedAttribute) then\r\n\tattribute.oclAsType(EncapsulatedAttribute).name\r\nelse\r\n\tattribute.oclAsType(EntityAttribute).name\r\nendif endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\tattribute.oclAsType(persistence::EncapsulatedAttribute).name\r\nelse\r\n\tattribute.oclAsType(persistence::EntityAttribute).name\r\nendif endif'"
 	 * @generated
 	 */
 	String getName();

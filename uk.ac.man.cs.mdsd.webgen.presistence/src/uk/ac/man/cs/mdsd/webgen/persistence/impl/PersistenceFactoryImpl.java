@@ -78,7 +78,6 @@ public class PersistenceFactoryImpl extends EFactoryImpl implements PersistenceF
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE: return createEncapsulatedAttribute();
 			case PersistencePackage.ENCAPSULATED_ASSOCIATION: return createEncapsulatedAssociation();
 			case PersistencePackage.VIEW_ASSOCIATION: return createViewAssociation();
-			case PersistencePackage.FEATURE_REFERENCE: return createFeatureReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -338,16 +337,6 @@ public class PersistenceFactoryImpl extends EFactoryImpl implements PersistenceF
 	public ViewAssociation createViewAssociation() {
 		ViewAssociationImpl viewAssociation = new ViewAssociationImpl();
 		return viewAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FeatureReference createFeatureReference() {
-		FeatureReferenceImpl featureReference = new FeatureReferenceImpl();
-		return featureReference;
 	}
 
 	/**

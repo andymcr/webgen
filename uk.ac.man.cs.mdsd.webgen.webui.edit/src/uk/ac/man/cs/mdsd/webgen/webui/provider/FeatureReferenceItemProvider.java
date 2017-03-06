@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.persistence.provider;
+package uk.ac.man.cs.mdsd.webgen.webui.provider;
 
 
 import java.util.Collection;
@@ -26,13 +26,19 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.base.FormalParameterList;
+import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
-import uk.ac.man.cs.mdsd.webgen.persistence.FeatureReference;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.service.Selection;
+import uk.ac.man.cs.mdsd.webgen.webui.FeatureReference;
+import uk.ac.man.cs.mdsd.webgen.webui.IndexUnit;
+import uk.ac.man.cs.mdsd.webgen.webui.InlineActionContainer;
+import uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation;
+import uk.ac.man.cs.mdsd.webgen.webui.UnitElement;
+import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.FeatureReference} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.FeatureReference} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -85,7 +91,7 @@ public class FeatureReferenceItemProvider
 				 getResourceLocator(),
 				 getString("_UI_FeatureReference_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FeatureReference_name_feature", "_UI_FeatureReference_type"),
-				 PersistencePackage.Literals.FEATURE_REFERENCE__NAME,
+				 WebuiPackage.Literals.FEATURE_REFERENCE__NAME,
 				 false,
 				 false,
 				 false,
@@ -106,7 +112,7 @@ public class FeatureReferenceItemProvider
 			getResourceLocator(),
 			getString("_UI_FeatureReference_feature_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_FeatureReference_feature_feature", "_UI_FeatureReference_type"),
-			PersistencePackage.Literals.FEATURE_REFERENCE__FEATURE,
+			WebuiPackage.Literals.FEATURE_REFERENCE__FEATURE,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {
@@ -173,7 +179,7 @@ public class FeatureReferenceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FeatureReference.class)) {
-			case PersistencePackage.FEATURE_REFERENCE__NAME:
+			case WebuiPackage.FEATURE_REFERENCE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -211,11 +217,11 @@ public class FeatureReferenceItemProvider
 		}
 	}
 
-	protected FormalParameterList getSelectionContext(final Object object) {
+	protected Selection getSelectionContext(final Object object) {
 		Object container = getContext(object);
 		while (container != null) {
-			if (container instanceof FormalParameterList) {
-				return (FormalParameterList) container;
+			if (container instanceof Selection) {
+				return (Selection) container;
 			}
 			container = getContext(container);
 		}
@@ -245,6 +251,27 @@ public class FeatureReferenceItemProvider
 		} else if (container instanceof UnitAssociation) {
 			entitiesAndViews.add(getSourceType(
 				((UnitAssociation) container).getAssociation()));
+		}
+
+		return entitiesAndViews;
+	}
+
+	protected Set<EntityOrView> getEntitiesAndViews(final Selection selection) {
+		final Set<EntityOrView> entitiesAndViews = new HashSet<EntityOrView>();
+		entitiesAndViews.add(selection.getUsedBy().getServes());
+		final Set<Association> joins = new HashSet<Association>(selection.getJoins());
+		while (!joins.isEmpty()) {
+			final Set<Association> handled = new HashSet<Association>();
+			for (Association join : joins) {
+				if (entitiesAndViews.contains(join.getSourceEntityX())) {
+					entitiesAndViews.add(join.getTargetEntityX());
+					handled.add(join);
+				} else if (entitiesAndViews.contains(join.getTargetEntityX())) {
+					entitiesAndViews.add(join.getSourceEntityX());
+					handled.add(join);
+				}
+			}
+			joins.removeAll(handled);
 		}
 
 		return entitiesAndViews;

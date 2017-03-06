@@ -23,7 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitAssociation()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='selectionValidChoice'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionValidChoice='not selection.oclIsUndefined() implies\r\n\ttargetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionValidChoice='not selection.oclIsUndefined() implies\r\n\tdisplayedOn.pageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | s.serves = targetEntity)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(selection)'"
  * @generated
  */
 public interface UnitAssociation extends UnitFeature, UnitContainer, AssociationReference {
@@ -38,7 +38,7 @@ public interface UnitAssociation extends UnitFeature, UnitContainer, Association
 	 * @return the value of the '<em>Is Source Association</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitAssociation_IsSourceAssociation()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tlet entities : OrderedSet(EntityOrView)\r\n\t\t= if displayedOn.oclIsKindOf(SingletonUnit) then\r\n\t\t\t\tOrderedSet{displayedOn.oclAsType(SingletonUnit).contentType}\r\n\t\t\telse if displayedOn.oclIsKindOf(CollectionUnit) then\r\n\t\t\t\tdisplayedOn.oclAsType(CollectionUnit).contentType\r\n\t\t\telse\r\n\t\t\t\tdisplayedOn.entities\r\n\t\t\tendif endif\r\n\t\tin entities->collect(e | e.associations)->includes(association)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tlet entities : OrderedSet(persistence::EntityOrView)\r\n\t\t= if displayedOn.oclIsKindOf(SingletonUnit) then\r\n\t\t\t\tOrderedSet{displayedOn.oclAsType(SingletonUnit).contentType}\r\n\t\t\telse if displayedOn.oclIsKindOf(CollectionUnit) then\r\n\t\t\t\tdisplayedOn.oclAsType(CollectionUnit).contentType\r\n\t\t\telse\r\n\t\t\t\tdisplayedOn.entities\r\n\t\t\tendif endif\r\n\t\tin entities->collect(e | e.associations)->includes(association)'"
 	 * @generated
 	 */
 	boolean isIsSourceAssociation();
@@ -54,7 +54,7 @@ public interface UnitAssociation extends UnitFeature, UnitContainer, Association
 	 * @return the value of the '<em>Source Entity</em>' reference.
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitAssociation_SourceEntity()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\tendif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\tendif\r\nendif'"
 	 * @generated
 	 */
 	EntityOrView getSourceEntity();
@@ -70,7 +70,7 @@ public interface UnitAssociation extends UnitFeature, UnitContainer, Association
 	 * @return the value of the '<em>Target Entity</em>' reference.
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitAssociation_TargetEntity()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\tassociation.oclAsType(persistence::EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif'"
 	 * @generated
 	 */
 	EntityOrView getTargetEntity();

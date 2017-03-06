@@ -5,8 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.webui;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
-
-import uk.ac.man.cs.mdsd.webgen.service.Service;
+import uk.ac.man.cs.mdsd.webgen.service.Services;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,20 +27,30 @@ import uk.ac.man.cs.mdsd.webgen.service.Service;
  */
 public interface WebUI extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Services</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.Service}.
+	 * Returns the value of the '<em><b>Services</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Services</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Services</em>' reference list.
+	 * @return the value of the '<em>Services</em>' reference.
+	 * @see #setServices(Services)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getWebUI_Services()
 	 * @model
 	 * @generated
 	 */
-	EList<Service> getServices();
+	Services getServices();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getServices <em>Services</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Services</em>' reference.
+	 * @see #getServices()
+	 * @generated
+	 */
+	void setServices(Services value);
 
 	/**
 	 * Returns the value of the '<em><b>Global Menu</b></em>' reference.

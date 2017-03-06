@@ -354,5 +354,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//FeatureSupportAction/uriElement"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//FeatureSupportAction/fileExtension"/>
     </genClasses>
+    <genClasses ecoreClass="webui.ecore#//FeatureReference">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//FeatureReference/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//FeatureReference/feature"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

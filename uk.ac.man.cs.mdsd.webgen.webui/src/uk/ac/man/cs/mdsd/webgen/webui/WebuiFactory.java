@@ -382,6 +382,15 @@ public interface WebuiFactory extends EFactory {
 	FeatureSupportAction createFeatureSupportAction();
 
 	/**
+	 * Returns a new object of class '<em>Feature Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Feature Reference</em>'.
+	 * @generated
+	 */
+	FeatureReference createFeatureReference();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

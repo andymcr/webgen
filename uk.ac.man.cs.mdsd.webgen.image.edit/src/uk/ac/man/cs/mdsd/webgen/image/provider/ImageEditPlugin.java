@@ -7,6 +7,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import uk.ac.man.cs.mdsd.webgen.base.provider.BaseEditPlugin;
+import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
 
 /**
  * This is the central singleton for the Image edit plugin.
@@ -41,6 +42,7 @@ public final class ImageEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     BaseEditPlugin.INSTANCE,
+		     ExpressionEditPlugin.INSTANCE,
 		   });
 	}
 

@@ -16,7 +16,7 @@
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="userKeyFromUser" value="not user.oclIsUndefined() and not userKey.oclIsUndefined() implies&#xD;&#xA;&#x9;user.features->includes(userKey)"/>
-      <details key="userKeyRequiredAttribute" value="not userKey.oclIsUndefined() implies&#xD;&#xA;&#x9;if userKey.oclIsTypeOf(EncapsulatedAttribute) then&#xD;&#xA;&#x9;&#x9;userKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;userKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required&#xD;&#xA;&#x9;endif"/>
+      <details key="userKeyRequiredAttribute" value="not userKey.oclIsUndefined() implies&#xD;&#xA;&#x9;if userKey.oclIsTypeOf(persistence::EncapsulatedAttribute) then&#xD;&#xA;&#x9;&#x9;userKey.oclAsType(persistence::EncapsulatedAttribute).cardinality = persistence::Cardinality::Required&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;userKey.oclAsType(persistence::EntityAttribute).cardinality = persistence::Cardinality::Required&#xD;&#xA;&#x9;endif"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="security" lowerBound="1"
         eType="#//Security" eOpposite="#//Security/authentication"/>
@@ -39,7 +39,7 @@
       <details key="constraints" value="captchaRequiresKeys"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="captchaRequiresKeys" value="useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()"/>
+      <details key="captchaRequiresKeys" value="-- useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()&#xD;&#xA;true"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="authentication" ordered="false"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView"/>

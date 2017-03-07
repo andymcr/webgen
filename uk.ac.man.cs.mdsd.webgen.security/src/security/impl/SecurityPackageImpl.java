@@ -504,13 +504,13 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		   source, 
 		   new String[] {
 			 "userKeyFromUser", "not user.oclIsUndefined() and not userKey.oclIsUndefined() implies\r\n\tuser.features->includes(userKey)",
-			 "userKeyRequiredAttribute", "not userKey.oclIsUndefined() implies\r\n\tif userKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n\t\tuserKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n\telse\r\n\t\tuserKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n\tendif"
+			 "userKeyRequiredAttribute", "not userKey.oclIsUndefined() implies\r\n\tif userKey.oclIsTypeOf(persistence::EncapsulatedAttribute) then\r\n\t\tuserKey.oclAsType(persistence::EncapsulatedAttribute).cardinality = persistence::Cardinality::Required\r\n\telse\r\n\t\tuserKey.oclAsType(persistence::EntityAttribute).cardinality = persistence::Cardinality::Required\r\n\tendif"
 		   });	
 		addAnnotation
 		  (localAuthenticationSystemEClass, 
 		   source, 
 		   new String[] {
-			 "captchaRequiresKeys", "useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()"
+			 "captchaRequiresKeys", "-- useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()\r\ntrue"
 		   });
 	}
 

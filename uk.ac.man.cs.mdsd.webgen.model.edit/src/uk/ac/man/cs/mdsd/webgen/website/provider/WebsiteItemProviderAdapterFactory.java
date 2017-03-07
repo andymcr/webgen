@@ -4,25 +4,14 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.emf.edit.command.CommandParameter;
-
-import org.eclipse.emf.edit.domain.EditingDomain;
 
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -31,28 +20,7 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
-import uk.ac.man.cs.mdsd.webgen.expression.PredicateComparisonOperator;
-import uk.ac.man.cs.mdsd.webgen.expression.PredicateEqualityOperator;
-import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsEmpty;
-import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsNull;
-import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsOperator;
-import uk.ac.man.cs.mdsd.webgen.expression.PredicateLikeOperator;
-import uk.ac.man.cs.mdsd.webgen.expression.util.ExpressionSwitch;
-import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
-import uk.ac.man.cs.mdsd.webgen.persistence.util.PersistenceSwitch;
-import uk.ac.man.cs.mdsd.webgen.service.Order;
-import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
-import uk.ac.man.cs.mdsd.webgen.service.util.ServiceSwitch;
-import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
-
 import uk.ac.man.cs.mdsd.webgen.website.util.WebsiteAdapterFactory;
-import uk.ac.man.cs.mdsd.webgen.webui.ActionMenuEntry;
-import uk.ac.man.cs.mdsd.webgen.webui.UnitElement;
-import uk.ac.man.cs.mdsd.webgen.webui.UnitFeature;
-import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
-import uk.ac.man.cs.mdsd.webgen.webui.util.WebuiSwitch;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.

@@ -26,7 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
  * @see security.SecurityPackage#getAuthentication()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='userKeyFromUser userKeyRequiredAttribute'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL userKeyFromUser='not user.oclIsUndefined() and not userKey.oclIsUndefined() implies\r\n\tuser.features->includes(userKey)' userKeyRequiredAttribute='not userKey.oclIsUndefined() implies\r\n\tif userKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n\t\tuserKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n\telse\r\n\t\tuserKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n\tendif'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL userKeyFromUser='not user.oclIsUndefined() and not userKey.oclIsUndefined() implies\r\n\tuser.features->includes(userKey)' userKeyRequiredAttribute='not userKey.oclIsUndefined() implies\r\n\tif userKey.oclIsTypeOf(persistence::EncapsulatedAttribute) then\r\n\t\tuserKey.oclAsType(persistence::EncapsulatedAttribute).cardinality = persistence::Cardinality::Required\r\n\telse\r\n\t\tuserKey.oclAsType(persistence::EntityAttribute).cardinality = persistence::Cardinality::Required\r\n\tendif'"
  * @generated
  */
 public interface Authentication extends EObject {

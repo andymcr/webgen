@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import security.SecurityFactory;
 import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
 import uk.ac.man.cs.mdsd.webgen.image.ImageFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
@@ -108,9 +109,12 @@ public class WebGenModelItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__WEBSITE_PROPERTIES);
 			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS);
+			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES_X);
 			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES);
+			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__WEB_UI);
 			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__PAGES);
 			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__MENUS);
+			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__SECURITY);
 			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__IMAGE_MANIPULATIONS);
 		}
 		return childrenFeatures;
@@ -165,9 +169,12 @@ public class WebGenModelItemProvider
 		switch (notification.getFeatureID(WebGenModel.class)) {
 			case WebsitePackage.WEB_GEN_MODEL__WEBSITE_PROPERTIES:
 			case WebsitePackage.WEB_GEN_MODEL__CLASSIFIERS:
+			case WebsitePackage.WEB_GEN_MODEL__SERVICES_X:
 			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
+			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
 			case WebsitePackage.WEB_GEN_MODEL__PAGES:
 			case WebsitePackage.WEB_GEN_MODEL__MENUS:
+			case WebsitePackage.WEB_GEN_MODEL__SECURITY:
 			case WebsitePackage.WEB_GEN_MODEL__IMAGE_MANIPULATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -213,8 +220,18 @@ public class WebGenModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES_X,
+				 ServiceFactory.eINSTANCE.createServices()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES,
 				 ServiceFactory.eINSTANCE.createService()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.WEB_GEN_MODEL__WEB_UI,
+				 WebuiFactory.eINSTANCE.createWebUI()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -230,6 +247,11 @@ public class WebGenModelItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__MENUS,
 				 WebuiFactory.eINSTANCE.createDynamicMenu()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.WEB_GEN_MODEL__SECURITY,
+				 SecurityFactory.eINSTANCE.createSecurity()));
 
 		newChildDescriptors.add
 			(createChildParameter

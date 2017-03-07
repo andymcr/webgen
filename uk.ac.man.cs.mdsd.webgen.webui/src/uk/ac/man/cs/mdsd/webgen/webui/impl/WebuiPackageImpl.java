@@ -3738,7 +3738,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEAttribute(getContentUnit_Alternative(), ecorePackage.getEString(), "alternative", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_OmitCaption(), ecorePackage.getEBoolean(), "omitCaption", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_CaptionClass(), ecorePackage.getEString(), "captionClass", "unit_caption", 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContentUnit_PageDisplayedOn(), this.getPage(), null, "pageDisplayedOn", null, 1, 1, ContentUnit.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getContentUnit_PageDisplayedOn(), this.getPage(), null, "pageDisplayedOn", null, 0, 1, ContentUnit.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(staticUnitEClass, StaticUnit.class, "StaticUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStaticUnit_Content(), ecorePackage.getEString(), "content", null, 0, 1, StaticUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -4219,7 +4219,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		  (getFeaturePathAssociation_IsSourceAssociation(), 
 		   source, 
 		   new String[] {
-			 "derivation", "not association.oclIsUndefined() implies\r\n\tlet unit : DynamicUnit\r\n\t\t= self.eContainer().oclAsType(DynamicUnit)\r\n\t\tin let entities : OrderedSet(persistence::EntityOrView)\r\n\t\t\t= if unit.oclIsKindOf(SingletonUnit) then\r\n\t\t\t\t\tOrderedSet{unit.oclAsType(SingletonUnit).contentType}\r\n\t\t\t\telse if unit.oclIsKindOf(CollectionUnit) then\r\n\t\t\t\t\tunit.oclAsType(CollectionUnit).contentType\r\n\t\t\t\telse\r\n\t\t\t\t\tunit.entities\r\n\t\t\t\tendif endif\r\n\t\t\tin entities->collect(eov | eov.associations)->includes(association)"
+			 "derivation", "-- not association.oclIsUndefined() implies\r\n--\tlet unit : DynamicUnit\r\n--\t\t= self.eContainer().oclAsType(DynamicUnit)\r\n--\t\tin let entities : OrderedSet(persistence::EntityOrView)\r\n--\t\t\t= if unit.oclIsKindOf(SingletonUnit) then\r\n--\t\t\t\t\tOrderedSet{unit.oclAsType(SingletonUnit).contentType}\r\n--\t\t\t\telse if unit.oclIsKindOf(CollectionUnit) then\r\n--\t\t\t\t\tunit.oclAsType(CollectionUnit).contentType\r\n--\t\t\t\telse\r\n--\t\t\t\t\tunit.entities\r\n--\t\t\t\tendif endif\r\n--\t\t\tin entities->collect(eov | eov.associations)->includes(association)\r\ntrue"
 		   });	
 		addAnnotation
 		  (getFeaturePathAssociation_SourceEntity(), 

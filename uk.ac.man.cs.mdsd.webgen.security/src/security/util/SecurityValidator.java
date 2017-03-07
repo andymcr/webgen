@@ -169,10 +169,10 @@ public class SecurityValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String AUTHENTICATION__USER_KEY_REQUIRED_ATTRIBUTE__EEXPRESSION = "not userKey.oclIsUndefined() implies\r\n" +
-		"\tif userKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
-		"\t\tuserKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n" +
+		"\tif userKey.oclIsTypeOf(persistence::EncapsulatedAttribute) then\r\n" +
+		"\t\tuserKey.oclAsType(persistence::EncapsulatedAttribute).cardinality = persistence::Cardinality::Required\r\n" +
 		"\telse\r\n" +
-		"\t\tuserKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n" +
+		"\t\tuserKey.oclAsType(persistence::EntityAttribute).cardinality = persistence::Cardinality::Required\r\n" +
 		"\tendif";
 
 	/**
@@ -223,7 +223,8 @@ public class SecurityValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_REQUIRES_KEYS__EEXPRESSION = "useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()";
+	protected static final String LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_REQUIRES_KEYS__EEXPRESSION = "-- useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()\r\n" +
+		"true";
 
 	/**
 	 * Validates the captchaRequiresKeys constraint of '<em>Local Authentication System</em>'.

@@ -25,8 +25,12 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.base.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAssociation;
+import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAttribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
@@ -275,6 +279,26 @@ public class FeatureReferenceItemProvider
 		}
 
 		return entitiesAndViews;
+	}
+
+	protected EntityOrView getParentType(final Attribute attribute) {
+		if (attribute instanceof EntityAttribute) {
+			return ((EntityAttribute) attribute).getPartOf();
+		} else {
+			return getParentType(
+				((EncapsulatedAttribute) attribute).getAttribute());
+		}
+	}
+
+	protected EntityOrView getSourceType(final Association association) {
+		if (association instanceof EntityAssociation) {
+			return ((EntityAssociation) association).getPartOf();
+		} else if (association instanceof EncapsulatedAssociation) {
+			return ((EncapsulatedAssociation) association).getSourceEntity();
+		} else {
+			// TODO handle view
+			return null;
+		}
 	}
 
 }

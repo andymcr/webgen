@@ -25,7 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
  *
  * @see security.SecurityPackage#getLocalAuthenticationSystem()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='captchaRequiresKeys'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL captchaRequiresKeys='useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL captchaRequiresKeys='-- useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()\r\ntrue'"
  * @generated
  */
 public interface LocalAuthenticationSystem extends Authentication {

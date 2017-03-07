@@ -34,7 +34,7 @@ public interface FeaturePathAssociation extends FeaturePath, AssociationReferenc
 	 * @return the value of the '<em>Is Source Association</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getFeaturePathAssociation_IsSourceAssociation()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tlet unit : DynamicUnit\r\n\t\t= self.eContainer().oclAsType(DynamicUnit)\r\n\t\tin let entities : OrderedSet(persistence::EntityOrView)\r\n\t\t\t= if unit.oclIsKindOf(SingletonUnit) then\r\n\t\t\t\t\tOrderedSet{unit.oclAsType(SingletonUnit).contentType}\r\n\t\t\t\telse if unit.oclIsKindOf(CollectionUnit) then\r\n\t\t\t\t\tunit.oclAsType(CollectionUnit).contentType\r\n\t\t\t\telse\r\n\t\t\t\t\tunit.entities\r\n\t\t\t\tendif endif\r\n\t\t\tin entities->collect(eov | eov.associations)->includes(association)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- not association.oclIsUndefined() implies\r\n--\tlet unit : DynamicUnit\r\n--\t\t= self.eContainer().oclAsType(DynamicUnit)\r\n--\t\tin let entities : OrderedSet(persistence::EntityOrView)\r\n--\t\t\t= if unit.oclIsKindOf(SingletonUnit) then\r\n--\t\t\t\t\tOrderedSet{unit.oclAsType(SingletonUnit).contentType}\r\n--\t\t\t\telse if unit.oclIsKindOf(CollectionUnit) then\r\n--\t\t\t\t\tunit.oclAsType(CollectionUnit).contentType\r\n--\t\t\t\telse\r\n--\t\t\t\t\tunit.entities\r\n--\t\t\t\tendif endif\r\n--\t\t\tin entities->collect(eov | eov.associations)->includes(association)\r\ntrue'"
 	 * @generated
 	 */
 	boolean isIsSourceAssociation();

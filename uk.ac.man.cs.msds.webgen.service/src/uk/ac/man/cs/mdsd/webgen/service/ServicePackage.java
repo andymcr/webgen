@@ -71,13 +71,22 @@ public interface ServicePackage extends EPackage {
 	int SERVICES = 0;
 
 	/**
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICES__SERVICES = 0;
+
+	/**
 	 * The number of structural features of the '<em>Services</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICES_FEATURE_COUNT = 0;
+	int SERVICES_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Services</em>' class.
@@ -467,6 +476,17 @@ public interface ServicePackage extends EPackage {
 	EClass getServices();
 
 	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.service.Services#getServices <em>Services</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Services</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Services#getServices()
+	 * @see #getServices()
+	 * @generated
+	 */
+	EReference getServices_Services();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.Service <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -733,6 +753,14 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EClass SERVICES = eINSTANCE.getServices();
+
+		/**
+		 * The meta object literal for the '<em><b>Services</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICES__SERVICES = eINSTANCE.getServices_Services();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl <em>Service</em>}' class.

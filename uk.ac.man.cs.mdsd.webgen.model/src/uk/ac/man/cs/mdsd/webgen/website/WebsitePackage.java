@@ -90,13 +90,31 @@ public interface WebsitePackage extends EPackage {
 	int WEB_GEN_MODEL__CLASSIFIERS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Services X</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_GEN_MODEL__SERVICES_X = 2;
+
+	/**
 	 * The feature id for the '<em><b>Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__SERVICES = 2;
+	int WEB_GEN_MODEL__SERVICES = 3;
+
+	/**
+	 * The feature id for the '<em><b>Web UI</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_GEN_MODEL__WEB_UI = 4;
 
 	/**
 	 * The feature id for the '<em><b>Pages</b></em>' containment reference list.
@@ -105,7 +123,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__PAGES = 3;
+	int WEB_GEN_MODEL__PAGES = 5;
 
 	/**
 	 * The feature id for the '<em><b>Menus</b></em>' containment reference list.
@@ -114,7 +132,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__MENUS = 4;
+	int WEB_GEN_MODEL__MENUS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Security</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_GEN_MODEL__SECURITY = 7;
 
 	/**
 	 * The feature id for the '<em><b>Allow Type Customisation</b></em>' reference list.
@@ -123,7 +150,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION = 5;
+	int WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Image Manipulations</b></em>' containment reference list.
@@ -132,7 +159,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__IMAGE_MANIPULATIONS = 6;
+	int WEB_GEN_MODEL__IMAGE_MANIPULATIONS = 9;
 
 	/**
 	 * The number of structural features of the '<em>Web Gen Model</em>' class.
@@ -141,7 +168,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL_FEATURE_COUNT = 7;
+	int WEB_GEN_MODEL_FEATURE_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl <em>Properties</em>}' class.
@@ -540,6 +567,17 @@ public interface WebsitePackage extends EPackage {
 	EReference getWebGenModel_Classifiers();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServicesX <em>Services X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Services X</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServicesX()
+	 * @see #getWebGenModel()
+	 * @generated
+	 */
+	EReference getWebGenModel_ServicesX();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServices <em>Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -549,6 +587,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getWebGenModel_Services();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getWebUI <em>Web UI</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Web UI</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getWebUI()
+	 * @see #getWebGenModel()
+	 * @generated
+	 */
+	EReference getWebGenModel_WebUI();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPages <em>Pages</em>}'.
@@ -571,6 +620,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getWebGenModel_Menus();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getSecurity <em>Security</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Security</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getSecurity()
+	 * @see #getWebGenModel()
+	 * @generated
+	 */
+	EReference getWebGenModel_Security();
 
 	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getAllowTypeCustomisation <em>Allow Type Customisation</em>}'.
@@ -1068,12 +1128,28 @@ public interface WebsitePackage extends EPackage {
 		EReference WEB_GEN_MODEL__CLASSIFIERS = eINSTANCE.getWebGenModel_Classifiers();
 
 		/**
+		 * The meta object literal for the '<em><b>Services X</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WEB_GEN_MODEL__SERVICES_X = eINSTANCE.getWebGenModel_ServicesX();
+
+		/**
 		 * The meta object literal for the '<em><b>Services</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference WEB_GEN_MODEL__SERVICES = eINSTANCE.getWebGenModel_Services();
+
+		/**
+		 * The meta object literal for the '<em><b>Web UI</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WEB_GEN_MODEL__WEB_UI = eINSTANCE.getWebGenModel_WebUI();
 
 		/**
 		 * The meta object literal for the '<em><b>Pages</b></em>' containment reference list feature.
@@ -1090,6 +1166,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference WEB_GEN_MODEL__MENUS = eINSTANCE.getWebGenModel_Menus();
+
+		/**
+		 * The meta object literal for the '<em><b>Security</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WEB_GEN_MODEL__SECURITY = eINSTANCE.getWebGenModel_Security();
 
 		/**
 		 * The meta object literal for the '<em><b>Allow Type Customisation</b></em>' reference list feature.

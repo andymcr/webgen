@@ -179,7 +179,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebGenModel_Services() {
+	public EReference getWebGenModel_ServicesX() {
 		return (EReference)webGenModelEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -188,7 +188,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebGenModel_Pages() {
+	public EReference getWebGenModel_Services() {
 		return (EReference)webGenModelEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -197,7 +197,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebGenModel_Menus() {
+	public EReference getWebGenModel_WebUI() {
 		return (EReference)webGenModelEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -206,7 +206,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebGenModel_AllowTypeCustomisation() {
+	public EReference getWebGenModel_Pages() {
 		return (EReference)webGenModelEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -215,8 +215,35 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebGenModel_ImageManipulations() {
+	public EReference getWebGenModel_Menus() {
 		return (EReference)webGenModelEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWebGenModel_Security() {
+		return (EReference)webGenModelEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWebGenModel_AllowTypeCustomisation() {
+		return (EReference)webGenModelEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWebGenModel_ImageManipulations() {
+		return (EReference)webGenModelEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -601,9 +628,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		webGenModelEClass = createEClass(WEB_GEN_MODEL);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__WEBSITE_PROPERTIES);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__CLASSIFIERS);
+		createEReference(webGenModelEClass, WEB_GEN_MODEL__SERVICES_X);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__SERVICES);
+		createEReference(webGenModelEClass, WEB_GEN_MODEL__WEB_UI);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__PAGES);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__MENUS);
+		createEReference(webGenModelEClass, WEB_GEN_MODEL__SECURITY);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__IMAGE_MANIPULATIONS);
 
@@ -677,9 +707,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		BasePackage theBasePackage = (BasePackage)EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
 		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
 		WebuiPackage theWebuiPackage = (WebuiPackage)EPackage.Registry.INSTANCE.getEPackage(WebuiPackage.eNS_URI);
+		SecurityPackage theSecurityPackage = (SecurityPackage)EPackage.Registry.INSTANCE.getEPackage(SecurityPackage.eNS_URI);
 		PersistencePackage thePersistencePackage = (PersistencePackage)EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI);
 		ImagePackage theImagePackage = (ImagePackage)EPackage.Registry.INSTANCE.getEPackage(ImagePackage.eNS_URI);
-		SecurityPackage theSecurityPackage = (SecurityPackage)EPackage.Registry.INSTANCE.getEPackage(SecurityPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -691,9 +721,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(webGenModelEClass, WebGenModel.class, "WebGenModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWebGenModel_WebsiteProperties(), this.getWebsiteProperties(), null, "websiteProperties", null, 1, 1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getWebGenModel_Classifiers(), theBasePackage.getClassifier(), null, "classifiers", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebGenModel_ServicesX(), theServicePackage.getServices(), null, "servicesX", null, 0, 1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebGenModel_Services(), theServicePackage.getService(), null, "services", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebGenModel_WebUI(), theWebuiPackage.getWebUI(), null, "webUI", null, 0, 1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebGenModel_Pages(), theWebuiPackage.getPage(), null, "pages", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebGenModel_Menus(), theWebuiPackage.getMenu(), null, "menus", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebGenModel_Security(), theSecurityPackage.getSecurity(), null, "security", null, 0, 1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebGenModel_AllowTypeCustomisation(), thePersistencePackage.getEntityOrView(), null, "allowTypeCustomisation", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebGenModel_ImageManipulations(), theImagePackage.getImageManipulation(), null, "imageManipulations", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

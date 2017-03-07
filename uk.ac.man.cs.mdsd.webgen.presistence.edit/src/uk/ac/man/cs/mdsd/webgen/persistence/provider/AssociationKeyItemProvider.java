@@ -143,7 +143,7 @@ public class AssociationKeyItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DatabasePropertyCategory"),
 				 null));
 	}
 

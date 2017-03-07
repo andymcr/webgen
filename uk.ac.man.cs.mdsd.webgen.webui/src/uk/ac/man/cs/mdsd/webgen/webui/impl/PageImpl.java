@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedDisplayElementImpl;
@@ -58,16 +59,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @ordered
 	 */
 	protected EList<ContentUnit> units;
-
-	/**
-	 * The cached value of the '{@link #getWebUI() <em>Web UI</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebUI()
-	 * @generated
-	 * @ordered
-	 */
-	protected WebUI webUI;
 
 	/**
 	 * The cached value of the '{@link #getParentPage() <em>Parent Page</em>}' containment reference.
@@ -256,24 +247,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @generated
 	 */
 	public WebUI getWebUI() {
-		if (webUI != null && webUI.eIsProxy()) {
-			InternalEObject oldWebUI = (InternalEObject)webUI;
-			webUI = (WebUI)eResolveProxy(oldWebUI);
-			if (webUI != oldWebUI) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.PAGE__WEB_UI, oldWebUI, webUI));
-			}
-		}
-		return webUI;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WebUI basicGetWebUI() {
-		return webUI;
+		if (eContainerFeatureID() != WebuiPackage.PAGE__WEB_UI) return null;
+		return (WebUI)eInternalContainer();
 	}
 
 	/**
@@ -282,12 +257,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @generated
 	 */
 	public NotificationChain basicSetWebUI(WebUI newWebUI, NotificationChain msgs) {
-		WebUI oldWebUI = webUI;
-		webUI = newWebUI;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebuiPackage.PAGE__WEB_UI, oldWebUI, newWebUI);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newWebUI, WebuiPackage.PAGE__WEB_UI, msgs);
 		return msgs;
 	}
 
@@ -297,10 +267,12 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @generated
 	 */
 	public void setWebUI(WebUI newWebUI) {
-		if (newWebUI != webUI) {
+		if (newWebUI != eInternalContainer() || (eContainerFeatureID() != WebuiPackage.PAGE__WEB_UI && newWebUI != null)) {
+			if (EcoreUtil.isAncestor(this, newWebUI))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (webUI != null)
-				msgs = ((InternalEObject)webUI).eInverseRemove(this, WebuiPackage.WEB_UI__PAGES, WebUI.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newWebUI != null)
 				msgs = ((InternalEObject)newWebUI).eInverseAdd(this, WebuiPackage.WEB_UI__PAGES, WebUI.class, msgs);
 			msgs = basicSetWebUI(newWebUI, msgs);
@@ -563,8 +535,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WebuiPackage.PAGE__UNITS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUnits()).basicAdd(otherEnd, msgs);
 			case WebuiPackage.PAGE__WEB_UI:
-				if (webUI != null)
-					msgs = ((InternalEObject)webUI).eInverseRemove(this, WebuiPackage.WEB_UI__PAGES, WebUI.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetWebUI((WebUI)otherEnd, msgs);
 			case WebuiPackage.PAGE__CHILD_PAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildPages()).basicAdd(otherEnd, msgs);
@@ -604,13 +576,26 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case WebuiPackage.PAGE__WEB_UI:
+				return eInternalContainer().eInverseRemove(this, WebuiPackage.WEB_UI__PAGES, WebUI.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case WebuiPackage.PAGE__UNITS:
 				return getUnits();
 			case WebuiPackage.PAGE__WEB_UI:
-				if (resolve) return getWebUI();
-				return basicGetWebUI();
+				return getWebUI();
 			case WebuiPackage.PAGE__PARENT_PAGE:
 				return getParentPage();
 			case WebuiPackage.PAGE__CHILD_PAGES:
@@ -738,7 +723,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WebuiPackage.PAGE__UNITS:
 				return units != null && !units.isEmpty();
 			case WebuiPackage.PAGE__WEB_UI:
-				return webUI != null;
+				return getWebUI() != null;
 			case WebuiPackage.PAGE__PARENT_PAGE:
 				return parentPage != null;
 			case WebuiPackage.PAGE__CHILD_PAGES:

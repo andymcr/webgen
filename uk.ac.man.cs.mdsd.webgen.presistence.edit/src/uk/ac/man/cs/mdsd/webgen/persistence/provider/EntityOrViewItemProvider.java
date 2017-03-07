@@ -89,7 +89,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_OrmPropertyCategory"),
 				 null));
 	}
 
@@ -111,7 +111,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_OrmPropertyCategory"),
 				 null));
 	}
 
@@ -160,7 +160,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DatabasePropertyCategory"),
 				 null));
 	}
 
@@ -182,7 +182,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DatabasePropertyCategory"),
 				 null));
 	}
 
@@ -204,7 +204,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DatabasePropertyCategory"),
 				 null));
 	}
 
@@ -226,7 +226,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DatabasePropertyCategory"),
 				 null));
 	}
 
@@ -302,7 +302,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -324,7 +324,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -346,7 +346,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -368,7 +368,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -384,13 +384,13 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_allAssociations_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_allAssociations_feature", "_UI_EntityOrView_type"),
+				 getString("_UI_EntityOrView_allAssociations_description"),
 				 PersistencePackage.Literals.ENTITY_OR_VIEW__ALL_ASSOCIATIONS,
 				 false,
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

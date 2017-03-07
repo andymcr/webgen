@@ -68,6 +68,12 @@ public class ImageSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case ImagePackage.IMAGE: {
+				Image image = (Image)theEObject;
+				T result = caseImage(image);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ImagePackage.IMAGE_MANIPULATION: {
 				ImageManipulation imageManipulation = (ImageManipulation)theEObject;
 				T result = caseImageManipulation(imageManipulation);
@@ -90,6 +96,21 @@ public class ImageSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Image</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Image</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImage(Image object) {
+		return null;
 	}
 
 	/**

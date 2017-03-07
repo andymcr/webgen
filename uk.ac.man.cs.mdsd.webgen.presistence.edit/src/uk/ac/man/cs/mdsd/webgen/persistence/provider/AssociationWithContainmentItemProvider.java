@@ -69,7 +69,7 @@ public class AssociationWithContainmentItemProvider extends EntityAssociationIte
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

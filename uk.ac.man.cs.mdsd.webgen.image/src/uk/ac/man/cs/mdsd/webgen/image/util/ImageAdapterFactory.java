@@ -70,6 +70,10 @@ public class ImageAdapterFactory extends AdapterFactoryImpl {
 	protected ImageSwitch<Adapter> modelSwitch =
 		new ImageSwitch<Adapter>() {
 			@Override
+			public Adapter caseImage(Image object) {
+				return createImageAdapter();
+			}
+			@Override
 			public Adapter caseImageManipulation(ImageManipulation object) {
 				return createImageManipulationAdapter();
 			}
@@ -104,6 +108,20 @@ public class ImageAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.image.Image <em>Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.image.Image
+	 * @generated
+	 */
+	public Adapter createImageAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.image.ImageManipulation <em>Manipulation</em>}'.

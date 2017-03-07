@@ -89,6 +89,29 @@ public class ImageItemProviderAdapterFactory extends ImageAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.image.Image} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImageItemProvider imageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.image.Image}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImageAdapter() {
+		if (imageItemProvider == null) {
+			imageItemProvider = new ImageItemProvider(this);
+		}
+
+		return imageItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.image.ImageManipulation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,6 +283,7 @@ public class ImageItemProviderAdapterFactory extends ImageAdapterFactory impleme
 	 * @generated
 	 */
 	public void dispose() {
+		if (imageItemProvider != null) imageItemProvider.dispose();
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
 		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();
 	}

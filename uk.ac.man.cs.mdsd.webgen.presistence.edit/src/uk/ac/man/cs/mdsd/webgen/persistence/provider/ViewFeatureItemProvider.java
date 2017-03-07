@@ -93,7 +93,7 @@ public class ViewFeatureItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -115,7 +115,7 @@ public class ViewFeatureItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_OrmPropertyCategory"),
 				 null));
 	}
 
@@ -137,7 +137,7 @@ public class ViewFeatureItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_OrmPropertyCategory"),
 				 null));
 	}
 
@@ -159,7 +159,7 @@ public class ViewFeatureItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -181,7 +181,7 @@ public class ViewFeatureItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -203,7 +203,7 @@ public class ViewFeatureItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_SerializationPropertyCategory"),
 				 null));
 	}
 
@@ -225,7 +225,7 @@ public class ViewFeatureItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_SerializationPropertyCategory"),
 				 null));
 	}
 
@@ -247,7 +247,7 @@ public class ViewFeatureItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -269,7 +269,7 @@ public class ViewFeatureItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -291,7 +291,7 @@ public class ViewFeatureItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 

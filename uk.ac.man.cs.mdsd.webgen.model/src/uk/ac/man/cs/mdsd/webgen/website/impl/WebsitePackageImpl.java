@@ -170,25 +170,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebGenModel_Classifiers() {
-		return (EReference)webGenModelEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getWebGenModel_ServicesX() {
-		return (EReference)webGenModelEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getWebGenModel_Services() {
 		return (EReference)webGenModelEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -197,7 +179,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebGenModel_WebUI() {
+	public EReference getWebGenModel_Services() {
 		return (EReference)webGenModelEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -206,7 +188,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebGenModel_Pages() {
+	public EReference getWebGenModel_WebUI() {
 		return (EReference)webGenModelEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -215,7 +197,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebGenModel_Menus() {
+	public EReference getWebGenModel_Pages() {
 		return (EReference)webGenModelEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -224,7 +206,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebGenModel_Security() {
+	public EReference getWebGenModel_Menus() {
 		return (EReference)webGenModelEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -233,7 +215,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebGenModel_AllowTypeCustomisation() {
+	public EReference getWebGenModel_Images() {
 		return (EReference)webGenModelEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -242,8 +224,44 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebGenModel_ImageManipulations() {
+	public EReference getWebGenModel_Security() {
 		return (EReference)webGenModelEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWebGenModel_AllowTypeCustomisation() {
+		return (EReference)webGenModelEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWebGenModel_ImageManipulations() {
+		return (EReference)webGenModelEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWebGenModel_Persistence() {
+		return (EReference)webGenModelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWebGenModel_Classifiers() {
+		return (EReference)webGenModelEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -386,7 +404,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DatabaseTechnology() {
+	public EAttribute getWebsiteProperties_FrameworkTechnology() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -395,7 +413,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DatabasePrefix() {
+	public EAttribute getWebsiteProperties_InputTechnology() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(15);
 	}
 
@@ -404,7 +422,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DatabaseHost() {
+	public EAttribute getWebsiteProperties_AjaxTechnology() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -413,7 +431,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DatabaseName() {
+	public EAttribute getWebsiteProperties_CaptchaSiteKey() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -422,7 +440,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DatabasePort() {
+	public EAttribute getWebsiteProperties_CaptchaSecretKey() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(18);
 	}
 
@@ -431,7 +449,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DatabaseUsername() {
+	public EAttribute getWebsiteProperties_TextEditorURL() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(19);
 	}
 
@@ -440,7 +458,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DatabasePassword() {
+	public EAttribute getWebsiteProperties_ResponsiveTopMenu() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(20);
 	}
 
@@ -449,7 +467,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_OrmTechnology() {
+	public EAttribute getWebsiteProperties_TopNavigationId() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(21);
 	}
 
@@ -458,98 +476,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_TimestampCreation() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(22);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWebsiteProperties_TimestampUpdates() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(23);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWebsiteProperties_FrameworkTechnology() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(24);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWebsiteProperties_InputTechnology() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(25);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWebsiteProperties_AjaxTechnology() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(26);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWebsiteProperties_CaptchaSiteKey() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(27);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWebsiteProperties_CaptchaSecretKey() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(28);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWebsiteProperties_TextEditorURL() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(29);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWebsiteProperties_ResponsiveTopMenu() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(30);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWebsiteProperties_TopNavigationId() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(31);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getWebsiteProperties_SideMenu() {
-		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(32);
+		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -558,7 +486,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getWebsiteProperties_SiteTemplate() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(33);
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -567,7 +495,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getWebsiteProperties_StaticUnitsEditable() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(34);
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(24);
 	}
 
 	/**
@@ -627,12 +555,14 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		// Create classes and their features
 		webGenModelEClass = createEClass(WEB_GEN_MODEL);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__WEBSITE_PROPERTIES);
+		createEReference(webGenModelEClass, WEB_GEN_MODEL__PERSISTENCE);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__CLASSIFIERS);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__SERVICES_X);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__SERVICES);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__WEB_UI);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__PAGES);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__MENUS);
+		createEReference(webGenModelEClass, WEB_GEN_MODEL__IMAGES);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__SECURITY);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION);
 		createEReference(webGenModelEClass, WEB_GEN_MODEL__IMAGE_MANIPULATIONS);
@@ -652,16 +582,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DEFAULT_TIME_FORMAT);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE);
-		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY);
-		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DATABASE_PREFIX);
-		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DATABASE_HOST);
-		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DATABASE_NAME);
-		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DATABASE_PORT);
-		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DATABASE_USERNAME);
-		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DATABASE_PASSWORD);
-		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__ORM_TECHNOLOGY);
-		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__TIMESTAMP_CREATION);
-		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__TIMESTAMP_UPDATES);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__INPUT_TECHNOLOGY);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__AJAX_TECHNOLOGY);
@@ -704,12 +624,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		PersistencePackage thePersistencePackage = (PersistencePackage)EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI);
 		BasePackage theBasePackage = (BasePackage)EPackage.Registry.INSTANCE.getEPackage(BasePackage.eNS_URI);
 		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
 		WebuiPackage theWebuiPackage = (WebuiPackage)EPackage.Registry.INSTANCE.getEPackage(WebuiPackage.eNS_URI);
-		SecurityPackage theSecurityPackage = (SecurityPackage)EPackage.Registry.INSTANCE.getEPackage(SecurityPackage.eNS_URI);
-		PersistencePackage thePersistencePackage = (PersistencePackage)EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI);
 		ImagePackage theImagePackage = (ImagePackage)EPackage.Registry.INSTANCE.getEPackage(ImagePackage.eNS_URI);
+		SecurityPackage theSecurityPackage = (SecurityPackage)EPackage.Registry.INSTANCE.getEPackage(SecurityPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -720,15 +640,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(webGenModelEClass, WebGenModel.class, "WebGenModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWebGenModel_WebsiteProperties(), this.getWebsiteProperties(), null, "websiteProperties", null, 1, 1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getWebGenModel_Classifiers(), theBasePackage.getClassifier(), null, "classifiers", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebGenModel_Persistence(), thePersistencePackage.getPersistence(), null, "persistence", null, 0, 1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebGenModel_Classifiers(), theBasePackage.getClassifier(), null, "classifiers", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebGenModel_ServicesX(), theServicePackage.getServices(), null, "servicesX", null, 0, 1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWebGenModel_Services(), theServicePackage.getService(), null, "services", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebGenModel_Services(), theServicePackage.getService(), null, "services", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebGenModel_WebUI(), theWebuiPackage.getWebUI(), null, "webUI", null, 0, 1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWebGenModel_Pages(), theWebuiPackage.getPage(), null, "pages", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWebGenModel_Menus(), theWebuiPackage.getMenu(), null, "menus", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebGenModel_Pages(), theWebuiPackage.getPage(), null, "pages", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebGenModel_Menus(), theWebuiPackage.getMenu(), null, "menus", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebGenModel_Images(), theImagePackage.getImage(), null, "images", null, 0, 1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebGenModel_Security(), theSecurityPackage.getSecurity(), null, "security", null, 0, 1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebGenModel_AllowTypeCustomisation(), thePersistencePackage.getEntityOrView(), null, "allowTypeCustomisation", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWebGenModel_ImageManipulations(), theImagePackage.getImageManipulation(), null, "imageManipulations", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebGenModel_ImageManipulations(), theImagePackage.getImageManipulation(), null, "imageManipulations", null, 0, -1, WebGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(websitePropertiesEClass, WebsiteProperties.class, "WebsiteProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebsiteProperties_SiteTitle(), ecorePackage.getEString(), "siteTitle", null, 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -739,22 +661,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getWebsiteProperties_CopyrightText(), ecorePackage.getEString(), "copyrightText", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_MetaDescription(), ecorePackage.getEString(), "metaDescription", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_ProjectName(), ecorePackage.getEString(), "projectName", null, 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWebsiteProperties_Authentication(), theSecurityPackage.getAuthentication(), null, "authentication", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebsiteProperties_Authentication(), theSecurityPackage.getAuthentication(), null, "authentication", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_TestProjectName(), ecorePackage.getEString(), "testProjectName", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_DefaultDateFormat(), ecorePackage.getEString(), "defaultDateFormat", "jS F Y", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_DefaultTimeFormat(), ecorePackage.getEString(), "defaultTimeFormat", "G.i", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_DefaultDateTimeFormat(), ecorePackage.getEString(), "defaultDateTimeFormat", "jS F Y G.i", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_DefaultMaximumUploadSize(), ecorePackage.getEInt(), "defaultMaximumUploadSize", "2000000", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getWebsiteProperties_DatabaseTechnology(), thePersistencePackage.getDatabaseTechnologies(), "databaseTechnology", "MySql", 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getWebsiteProperties_DatabasePrefix(), ecorePackage.getEString(), "databasePrefix", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebsiteProperties_DatabaseHost(), ecorePackage.getEString(), "databaseHost", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebsiteProperties_DatabaseName(), ecorePackage.getEString(), "databaseName", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebsiteProperties_DatabasePort(), ecorePackage.getEString(), "databasePort", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebsiteProperties_DatabaseUsername(), ecorePackage.getEString(), "databaseUsername", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebsiteProperties_DatabasePassword(), ecorePackage.getEString(), "databasePassword", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebsiteProperties_OrmTechnology(), thePersistencePackage.getOrmTechnologies(), "ormTechnology", "Kohana", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebsiteProperties_TimestampCreation(), ecorePackage.getEBoolean(), "timestampCreation", "true", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebsiteProperties_TimestampUpdates(), ecorePackage.getEBoolean(), "timestampUpdates", "true", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_FrameworkTechnology(), this.getFrameworkTechnologies(), "frameworkTechnology", "Kohana", 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_InputTechnology(), this.getInputTechnologies(), "inputTechnology", "Html", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_AjaxTechnology(), this.getAjaxTechnologies(), "ajaxTechnology", "None", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

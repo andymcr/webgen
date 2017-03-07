@@ -34,7 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  */
 public interface Page extends NamedDisplayElement, UnitContainer {
 	/**
-	 * Returns the value of the '<em><b>Web UI</b></em>' reference.
+	 * Returns the value of the '<em><b>Web UI</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getPages <em>Pages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -42,20 +42,20 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Web UI</em>' reference.
+	 * @return the value of the '<em>Web UI</em>' container reference.
 	 * @see #setWebUI(WebUI)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getPage_WebUI()
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getPages
-	 * @model opposite="pages" required="true"
+	 * @model opposite="pages" required="true" transient="false"
 	 * @generated
 	 */
 	WebUI getWebUI();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getWebUI <em>Web UI</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getWebUI <em>Web UI</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Web UI</em>' reference.
+	 * @param value the new value of the '<em>Web UI</em>' container reference.
 	 * @see #getWebUI()
 	 * @generated
 	 */

@@ -71,7 +71,7 @@ public class DataTypeAttributeItemProvider extends EntityAttributeItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -93,7 +93,7 @@ public class DataTypeAttributeItemProvider extends EntityAttributeItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -115,7 +115,7 @@ public class DataTypeAttributeItemProvider extends EntityAttributeItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -137,7 +137,7 @@ public class DataTypeAttributeItemProvider extends EntityAttributeItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

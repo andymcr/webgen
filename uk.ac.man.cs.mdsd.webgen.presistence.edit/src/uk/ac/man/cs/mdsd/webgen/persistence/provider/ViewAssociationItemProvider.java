@@ -87,7 +87,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -109,7 +109,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_OrmPropertyCategory"),
 				 null));
 	}
 
@@ -131,7 +131,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_OrmPropertyCategory"),
 				 null));
 	}
 
@@ -153,7 +153,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -175,7 +175,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -197,7 +197,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_SerializationPropertyCategory"),
 				 null));
 	}
 
@@ -219,7 +219,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_SerializationPropertyCategory"),
 				 null));
 	}
 
@@ -241,7 +241,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -263,7 +263,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -285,7 +285,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -307,7 +307,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_OrmPropertyCategory"),
 				 null));
 	}
 
@@ -329,7 +329,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -351,7 +351,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -373,7 +373,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -395,7 +395,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -417,7 +417,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI_SerializationPropertyCategory"),
 				 null));
 	}
 

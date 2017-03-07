@@ -86,7 +86,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_OrmPropertyCategory"),
 				 null));
 	}
 
@@ -108,7 +108,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -130,7 +130,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -152,7 +152,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -174,7 +174,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -196,7 +196,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI_SerializationPropertyCategory"),
 				 null));
 	}
 

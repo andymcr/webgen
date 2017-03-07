@@ -13,7 +13,8 @@
       <genEnumLiterals ecoreEnumLiteral="security.ecore#//AuthenticationKeyTypes/Username"/>
     </genEnums>
     <genClasses ecoreClass="security.ecore#//Security">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference security.ecore#//Security/authentication"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference security.ecore#//Security/authentication"/>
     </genClasses>
     <genClasses image="false" ecoreClass="security.ecore#//Authentication">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference security.ecore#//Authentication/security"/>

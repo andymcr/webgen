@@ -90,7 +90,7 @@ public interface WebuiPackage extends EPackage {
 	int WEB_UI__GLOBAL_MENU = 1;
 
 	/**
-	 * The feature id for the '<em><b>Pages</b></em>' reference list.
+	 * The feature id for the '<em><b>Pages</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -99,13 +99,22 @@ public interface WebuiPackage extends EPackage {
 	int WEB_UI__PAGES = 2;
 
 	/**
+	 * The feature id for the '<em><b>Menus</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_UI__MENUS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Web UI</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_UI_FEATURE_COUNT = 3;
+	int WEB_UI_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Web UI</em>' class.
@@ -995,7 +1004,7 @@ public interface WebuiPackage extends EPackage {
 	int PAGE__UNITS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Web UI</b></em>' reference.
+	 * The feature id for the '<em><b>Web UI</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -10541,15 +10550,26 @@ public interface WebuiPackage extends EPackage {
 	EReference getWebUI_GlobalMenu();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getPages <em>Pages</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getPages <em>Pages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Pages</em>'.
+	 * @return the meta object for the containment reference list '<em>Pages</em>'.
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getPages()
 	 * @see #getWebUI()
 	 * @generated
 	 */
 	EReference getWebUI_Pages();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getMenus <em>Menus</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Menus</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getMenus()
+	 * @see #getWebUI()
+	 * @generated
+	 */
+	EReference getWebUI_Menus();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.Menu <em>Menu</em>}'.
@@ -10870,10 +10890,10 @@ public interface WebuiPackage extends EPackage {
 	EClass getPage();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getWebUI <em>Web UI</em>}'.
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getWebUI <em>Web UI</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Web UI</em>'.
+	 * @return the meta object for the container reference '<em>Web UI</em>'.
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.Page#getWebUI()
 	 * @see #getPage()
 	 * @generated
@@ -13582,12 +13602,20 @@ public interface WebuiPackage extends EPackage {
 		EReference WEB_UI__GLOBAL_MENU = eINSTANCE.getWebUI_GlobalMenu();
 
 		/**
-		 * The meta object literal for the '<em><b>Pages</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Pages</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference WEB_UI__PAGES = eINSTANCE.getWebUI_Pages();
+
+		/**
+		 * The meta object literal for the '<em><b>Menus</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WEB_UI__MENUS = eINSTANCE.getWebUI_Menus();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.MenuImpl <em>Menu</em>}' class.
@@ -13854,7 +13882,7 @@ public interface WebuiPackage extends EPackage {
 		EClass PAGE = eINSTANCE.getPage();
 
 		/**
-		 * The meta object literal for the '<em><b>Web UI</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Web UI</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

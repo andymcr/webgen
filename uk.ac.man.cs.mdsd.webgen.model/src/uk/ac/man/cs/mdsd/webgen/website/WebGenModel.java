@@ -11,8 +11,10 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import security.Security;
 import uk.ac.man.cs.mdsd.webgen.base.Classifier;
+import uk.ac.man.cs.mdsd.webgen.image.Image;
 import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
 import uk.ac.man.cs.mdsd.webgen.service.Service;
 import uk.ac.man.cs.mdsd.webgen.service.Services;
 import uk.ac.man.cs.mdsd.webgen.webui.Menu;
@@ -29,12 +31,14 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getWebsiteProperties <em>Website Properties</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPersistence <em>Persistence</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getClassifiers <em>Classifiers</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServicesX <em>Services X</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getWebUI <em>Web UI</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPages <em>Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getMenus <em>Menus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getImages <em>Images</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getSecurity <em>Security</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getAllowTypeCustomisation <em>Allow Type Customisation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getImageManipulations <em>Image Manipulations</em>}</li>
@@ -73,22 +77,6 @@ public interface WebGenModel extends EObject {
 	void setWebsiteProperties(WebsiteProperties value);
 
 	/**
-	 * Returns the value of the '<em><b>Classifiers</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.base.Classifier}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Classifiers</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Classifiers</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_Classifiers()
-	 * @model containment="true"
-	 * @generated
-	 */
-	List<Classifier> getClassifiers();
-
-	/**
 	 * Returns the value of the '<em><b>Services X</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -115,17 +103,17 @@ public interface WebGenModel extends EObject {
 	void setServicesX(Services value);
 
 	/**
-	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Services</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.Service}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Services</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Services</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Services</em>' containment reference list.
+	 * @return the value of the '<em>Services</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_Services()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	List<Service> getServices();
@@ -157,23 +145,23 @@ public interface WebGenModel extends EObject {
 	void setWebUI(WebUI value);
 
 	/**
-	 * Returns the value of the '<em><b>Pages</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Pages</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.Page}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Pages</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Pages</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pages</em>' containment reference list.
+	 * @return the value of the '<em>Pages</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_Pages()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	List<Page> getPages();
 
 	/**
-	 * Returns the value of the '<em><b>Menus</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Menus</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.Menu}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -181,12 +169,38 @@ public interface WebGenModel extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Menus</em>' containment reference list.
+	 * @return the value of the '<em>Menus</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_Menus()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	List<Menu> getMenus();
+
+	/**
+	 * Returns the value of the '<em><b>Images</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Images</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Images</em>' containment reference.
+	 * @see #setImages(Image)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_Images()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Image getImages();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getImages <em>Images</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Images</em>' containment reference.
+	 * @see #getImages()
+	 * @generated
+	 */
+	void setImages(Image value);
 
 	/**
 	 * Returns the value of the '<em><b>Security</b></em>' containment reference.
@@ -231,7 +245,7 @@ public interface WebGenModel extends EObject {
 	List<EntityOrView> getAllowTypeCustomisation();
 
 	/**
-	 * Returns the value of the '<em><b>Image Manipulations</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Image Manipulations</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.image.ImageManipulation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -239,11 +253,53 @@ public interface WebGenModel extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Image Manipulations</em>' containment reference list.
+	 * @return the value of the '<em>Image Manipulations</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_ImageManipulations()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	List<ImageManipulation> getImageManipulations();
+
+	/**
+	 * Returns the value of the '<em><b>Persistence</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Persistence</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Persistence</em>' containment reference.
+	 * @see #setPersistence(Persistence)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_Persistence()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Persistence getPersistence();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPersistence <em>Persistence</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Persistence</em>' containment reference.
+	 * @see #getPersistence()
+	 * @generated
+	 */
+	void setPersistence(Persistence value);
+
+	/**
+	 * Returns the value of the '<em><b>Classifiers</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.base.Classifier}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Classifiers</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Classifiers</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_Classifiers()
+	 * @model
+	 * @generated
+	 */
+	List<Classifier> getClassifiers();
 
 } // WebGenModel

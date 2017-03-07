@@ -22,6 +22,15 @@ public interface ImageFactory extends EFactory {
 	ImageFactory eINSTANCE = uk.ac.man.cs.mdsd.webgen.image.impl.ImageFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Image</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Image</em>'.
+	 * @generated
+	 */
+	Image createImage();
+
+	/**
 	 * Returns a new object of class '<em>Manipulation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

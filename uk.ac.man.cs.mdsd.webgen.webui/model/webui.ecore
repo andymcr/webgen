@@ -11,7 +11,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="globalMenu" eType="#//GlobalMenu"
         eOpposite="#//GlobalMenu/webUI"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pages" upperBound="-1"
-        eType="#//Page" eOpposite="#//Page/webUI"/>
+        eType="#//Page" containment="true" eOpposite="#//Page/webUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="menus" upperBound="-1"
+        eType="#//Menu" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Menu" abstract="true" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedDisplayElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"

@@ -81,13 +81,22 @@ public interface WebsitePackage extends EPackage {
 	int WEB_GEN_MODEL__WEBSITE_PROPERTIES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Classifiers</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Persistence</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__CLASSIFIERS = 1;
+	int WEB_GEN_MODEL__PERSISTENCE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Classifiers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_GEN_MODEL__CLASSIFIERS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Services X</b></em>' containment reference.
@@ -96,16 +105,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__SERVICES_X = 2;
+	int WEB_GEN_MODEL__SERVICES_X = 3;
 
 	/**
-	 * The feature id for the '<em><b>Services</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__SERVICES = 3;
+	int WEB_GEN_MODEL__SERVICES = 4;
 
 	/**
 	 * The feature id for the '<em><b>Web UI</b></em>' containment reference.
@@ -114,25 +123,34 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__WEB_UI = 4;
+	int WEB_GEN_MODEL__WEB_UI = 5;
 
 	/**
-	 * The feature id for the '<em><b>Pages</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Pages</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__PAGES = 5;
+	int WEB_GEN_MODEL__PAGES = 6;
 
 	/**
-	 * The feature id for the '<em><b>Menus</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Menus</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__MENUS = 6;
+	int WEB_GEN_MODEL__MENUS = 7;
+
+	/**
+	 * The feature id for the '<em><b>Images</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_GEN_MODEL__IMAGES = 8;
 
 	/**
 	 * The feature id for the '<em><b>Security</b></em>' containment reference.
@@ -141,7 +159,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__SECURITY = 7;
+	int WEB_GEN_MODEL__SECURITY = 9;
 
 	/**
 	 * The feature id for the '<em><b>Allow Type Customisation</b></em>' reference list.
@@ -150,16 +168,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION = 8;
+	int WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION = 10;
 
 	/**
-	 * The feature id for the '<em><b>Image Manipulations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Image Manipulations</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__IMAGE_MANIPULATIONS = 9;
+	int WEB_GEN_MODEL__IMAGE_MANIPULATIONS = 11;
 
 	/**
 	 * The number of structural features of the '<em>Web Gen Model</em>' class.
@@ -168,7 +186,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL_FEATURE_COUNT = 10;
+	int WEB_GEN_MODEL_FEATURE_COUNT = 12;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl <em>Properties</em>}' class.
@@ -253,7 +271,7 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__PROJECT_NAME = 7;
 
 	/**
-	 * The feature id for the '<em><b>Authentication</b></em>' containment reference.
+	 * The feature id for the '<em><b>Authentication</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -307,103 +325,13 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE = 13;
 
 	/**
-	 * The feature id for the '<em><b>Database Technology</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY = 14;
-
-	/**
-	 * The feature id for the '<em><b>Database Prefix</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__DATABASE_PREFIX = 15;
-
-	/**
-	 * The feature id for the '<em><b>Database Host</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__DATABASE_HOST = 16;
-
-	/**
-	 * The feature id for the '<em><b>Database Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__DATABASE_NAME = 17;
-
-	/**
-	 * The feature id for the '<em><b>Database Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__DATABASE_PORT = 18;
-
-	/**
-	 * The feature id for the '<em><b>Database Username</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__DATABASE_USERNAME = 19;
-
-	/**
-	 * The feature id for the '<em><b>Database Password</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__DATABASE_PASSWORD = 20;
-
-	/**
-	 * The feature id for the '<em><b>Orm Technology</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__ORM_TECHNOLOGY = 21;
-
-	/**
-	 * The feature id for the '<em><b>Timestamp Creation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__TIMESTAMP_CREATION = 22;
-
-	/**
-	 * The feature id for the '<em><b>Timestamp Updates</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__TIMESTAMP_UPDATES = 23;
-
-	/**
 	 * The feature id for the '<em><b>Framework Technology</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 24;
+	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 14;
 
 	/**
 	 * The feature id for the '<em><b>Input Technology</b></em>' attribute.
@@ -412,7 +340,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__INPUT_TECHNOLOGY = 25;
+	int WEBSITE_PROPERTIES__INPUT_TECHNOLOGY = 15;
 
 	/**
 	 * The feature id for the '<em><b>Ajax Technology</b></em>' attribute.
@@ -421,7 +349,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = 26;
+	int WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = 16;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
@@ -430,7 +358,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 27;
+	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 17;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
@@ -439,7 +367,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 28;
+	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 18;
 
 	/**
 	 * The feature id for the '<em><b>Text Editor URL</b></em>' attribute.
@@ -448,7 +376,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 29;
+	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 19;
 
 	/**
 	 * The feature id for the '<em><b>Responsive Top Menu</b></em>' attribute.
@@ -457,7 +385,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU = 30;
+	int WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU = 20;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -466,7 +394,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 31;
+	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 21;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -475,7 +403,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SIDE_MENU = 32;
+	int WEBSITE_PROPERTIES__SIDE_MENU = 22;
 
 	/**
 	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
@@ -484,7 +412,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SITE_TEMPLATE = 33;
+	int WEBSITE_PROPERTIES__SITE_TEMPLATE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -493,7 +421,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 34;
+	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 24;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -502,7 +430,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES_FEATURE_COUNT = 35;
+	int WEBSITE_PROPERTIES_FEATURE_COUNT = 25;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies <em>Framework Technologies</em>}' enum.
@@ -556,17 +484,6 @@ public interface WebsitePackage extends EPackage {
 	EReference getWebGenModel_WebsiteProperties();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getClassifiers <em>Classifiers</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Classifiers</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getClassifiers()
-	 * @see #getWebGenModel()
-	 * @generated
-	 */
-	EReference getWebGenModel_Classifiers();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServicesX <em>Services X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -578,10 +495,10 @@ public interface WebsitePackage extends EPackage {
 	EReference getWebGenModel_ServicesX();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServices <em>Services</em>}'.
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServices <em>Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Services</em>'.
+	 * @return the meta object for the reference list '<em>Services</em>'.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServices()
 	 * @see #getWebGenModel()
 	 * @generated
@@ -600,10 +517,10 @@ public interface WebsitePackage extends EPackage {
 	EReference getWebGenModel_WebUI();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPages <em>Pages</em>}'.
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPages <em>Pages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Pages</em>'.
+	 * @return the meta object for the reference list '<em>Pages</em>'.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPages()
 	 * @see #getWebGenModel()
 	 * @generated
@@ -611,15 +528,26 @@ public interface WebsitePackage extends EPackage {
 	EReference getWebGenModel_Pages();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getMenus <em>Menus</em>}'.
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getMenus <em>Menus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Menus</em>'.
+	 * @return the meta object for the reference list '<em>Menus</em>'.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getMenus()
 	 * @see #getWebGenModel()
 	 * @generated
 	 */
 	EReference getWebGenModel_Menus();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getImages <em>Images</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Images</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getImages()
+	 * @see #getWebGenModel()
+	 * @generated
+	 */
+	EReference getWebGenModel_Images();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getSecurity <em>Security</em>}'.
@@ -644,15 +572,37 @@ public interface WebsitePackage extends EPackage {
 	EReference getWebGenModel_AllowTypeCustomisation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getImageManipulations <em>Image Manipulations</em>}'.
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getImageManipulations <em>Image Manipulations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Image Manipulations</em>'.
+	 * @return the meta object for the reference list '<em>Image Manipulations</em>'.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getImageManipulations()
 	 * @see #getWebGenModel()
 	 * @generated
 	 */
 	EReference getWebGenModel_ImageManipulations();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPersistence <em>Persistence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Persistence</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPersistence()
+	 * @see #getWebGenModel()
+	 * @generated
+	 */
+	EReference getWebGenModel_Persistence();
+
+	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getClassifiers <em>Classifiers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Classifiers</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getClassifiers()
+	 * @see #getWebGenModel()
+	 * @generated
+	 */
+	EReference getWebGenModel_Classifiers();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties <em>Properties</em>}'.
@@ -753,10 +703,10 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebsiteProperties_ProjectName();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAuthentication <em>Authentication</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAuthentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Authentication</em>'.
+	 * @return the meta object for the reference '<em>Authentication</em>'.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAuthentication()
 	 * @see #getWebsiteProperties()
 	 * @generated
@@ -817,116 +767,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWebsiteProperties_DefaultMaximumUploadSize();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabaseTechnology <em>Database Technology</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Database Technology</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabaseTechnology()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_DatabaseTechnology();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabasePrefix <em>Database Prefix</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Database Prefix</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabasePrefix()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_DatabasePrefix();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabaseHost <em>Database Host</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Database Host</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabaseHost()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_DatabaseHost();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabaseName <em>Database Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Database Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabaseName()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_DatabaseName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabasePort <em>Database Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Database Port</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabasePort()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_DatabasePort();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabaseUsername <em>Database Username</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Database Username</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabaseUsername()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_DatabaseUsername();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabasePassword <em>Database Password</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Database Password</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabasePassword()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_DatabasePassword();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getOrmTechnology <em>Orm Technology</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Orm Technology</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getOrmTechnology()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_OrmTechnology();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isTimestampCreation <em>Timestamp Creation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Timestamp Creation</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isTimestampCreation()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_TimestampCreation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isTimestampUpdates <em>Timestamp Updates</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Timestamp Updates</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isTimestampUpdates()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_TimestampUpdates();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getFrameworkTechnology <em>Framework Technology</em>}'.
@@ -1120,14 +960,6 @@ public interface WebsitePackage extends EPackage {
 		EReference WEB_GEN_MODEL__WEBSITE_PROPERTIES = eINSTANCE.getWebGenModel_WebsiteProperties();
 
 		/**
-		 * The meta object literal for the '<em><b>Classifiers</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference WEB_GEN_MODEL__CLASSIFIERS = eINSTANCE.getWebGenModel_Classifiers();
-
-		/**
 		 * The meta object literal for the '<em><b>Services X</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1136,7 +968,7 @@ public interface WebsitePackage extends EPackage {
 		EReference WEB_GEN_MODEL__SERVICES_X = eINSTANCE.getWebGenModel_ServicesX();
 
 		/**
-		 * The meta object literal for the '<em><b>Services</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1152,7 +984,7 @@ public interface WebsitePackage extends EPackage {
 		EReference WEB_GEN_MODEL__WEB_UI = eINSTANCE.getWebGenModel_WebUI();
 
 		/**
-		 * The meta object literal for the '<em><b>Pages</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Pages</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1160,12 +992,20 @@ public interface WebsitePackage extends EPackage {
 		EReference WEB_GEN_MODEL__PAGES = eINSTANCE.getWebGenModel_Pages();
 
 		/**
-		 * The meta object literal for the '<em><b>Menus</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Menus</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference WEB_GEN_MODEL__MENUS = eINSTANCE.getWebGenModel_Menus();
+
+		/**
+		 * The meta object literal for the '<em><b>Images</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WEB_GEN_MODEL__IMAGES = eINSTANCE.getWebGenModel_Images();
 
 		/**
 		 * The meta object literal for the '<em><b>Security</b></em>' containment reference feature.
@@ -1184,12 +1024,28 @@ public interface WebsitePackage extends EPackage {
 		EReference WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION = eINSTANCE.getWebGenModel_AllowTypeCustomisation();
 
 		/**
-		 * The meta object literal for the '<em><b>Image Manipulations</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Image Manipulations</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference WEB_GEN_MODEL__IMAGE_MANIPULATIONS = eINSTANCE.getWebGenModel_ImageManipulations();
+
+		/**
+		 * The meta object literal for the '<em><b>Persistence</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WEB_GEN_MODEL__PERSISTENCE = eINSTANCE.getWebGenModel_Persistence();
+
+		/**
+		 * The meta object literal for the '<em><b>Classifiers</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WEB_GEN_MODEL__CLASSIFIERS = eINSTANCE.getWebGenModel_Classifiers();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl <em>Properties</em>}' class.
@@ -1266,7 +1122,7 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEBSITE_PROPERTIES__PROJECT_NAME = eINSTANCE.getWebsiteProperties_ProjectName();
 
 		/**
-		 * The meta object literal for the '<em><b>Authentication</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Authentication</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1312,86 +1168,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE = eINSTANCE.getWebsiteProperties_DefaultMaximumUploadSize();
-
-		/**
-		 * The meta object literal for the '<em><b>Database Technology</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY = eINSTANCE.getWebsiteProperties_DatabaseTechnology();
-
-		/**
-		 * The meta object literal for the '<em><b>Database Prefix</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__DATABASE_PREFIX = eINSTANCE.getWebsiteProperties_DatabasePrefix();
-
-		/**
-		 * The meta object literal for the '<em><b>Database Host</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__DATABASE_HOST = eINSTANCE.getWebsiteProperties_DatabaseHost();
-
-		/**
-		 * The meta object literal for the '<em><b>Database Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__DATABASE_NAME = eINSTANCE.getWebsiteProperties_DatabaseName();
-
-		/**
-		 * The meta object literal for the '<em><b>Database Port</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__DATABASE_PORT = eINSTANCE.getWebsiteProperties_DatabasePort();
-
-		/**
-		 * The meta object literal for the '<em><b>Database Username</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__DATABASE_USERNAME = eINSTANCE.getWebsiteProperties_DatabaseUsername();
-
-		/**
-		 * The meta object literal for the '<em><b>Database Password</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__DATABASE_PASSWORD = eINSTANCE.getWebsiteProperties_DatabasePassword();
-
-		/**
-		 * The meta object literal for the '<em><b>Orm Technology</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__ORM_TECHNOLOGY = eINSTANCE.getWebsiteProperties_OrmTechnology();
-
-		/**
-		 * The meta object literal for the '<em><b>Timestamp Creation</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__TIMESTAMP_CREATION = eINSTANCE.getWebsiteProperties_TimestampCreation();
-
-		/**
-		 * The meta object literal for the '<em><b>Timestamp Updates</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__TIMESTAMP_UPDATES = eINSTANCE.getWebsiteProperties_TimestampUpdates();
 
 		/**
 		 * The meta object literal for the '<em><b>Framework Technology</b></em>' attribute feature.

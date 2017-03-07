@@ -71,7 +71,7 @@ public interface ServicePackage extends EPackage {
 	int SERVICES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Services</b></em>' reference list.
+	 * The feature id for the '<em><b>Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -476,10 +476,10 @@ public interface ServicePackage extends EPackage {
 	EClass getServices();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.service.Services#getServices <em>Services</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.service.Services#getServices <em>Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Services</em>'.
+	 * @return the meta object for the containment reference list '<em>Services</em>'.
 	 * @see uk.ac.man.cs.mdsd.webgen.service.Services#getServices()
 	 * @see #getServices()
 	 * @generated
@@ -755,7 +755,7 @@ public interface ServicePackage extends EPackage {
 		EClass SERVICES = eINSTANCE.getServices();
 
 		/**
-		 * The meta object literal for the '<em><b>Services</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Services</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

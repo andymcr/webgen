@@ -74,16 +74,6 @@ public class WebsitePropertiesItemProvider
 			addDefaultTimeFormatPropertyDescriptor(object);
 			addDefaultDateTimeFormatPropertyDescriptor(object);
 			addDefaultMaximumUploadSizePropertyDescriptor(object);
-			addDatabaseTechnologyPropertyDescriptor(object);
-			addDatabasePrefixPropertyDescriptor(object);
-			addDatabaseHostPropertyDescriptor(object);
-			addDatabaseNamePropertyDescriptor(object);
-			addDatabasePortPropertyDescriptor(object);
-			addDatabaseUsernamePropertyDescriptor(object);
-			addDatabasePasswordPropertyDescriptor(object);
-			addOrmTechnologyPropertyDescriptor(object);
-			addTimestampCreationPropertyDescriptor(object);
-			addTimestampUpdatesPropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
 			addInputTechnologyPropertyDescriptor(object);
 			addAjaxTechnologyPropertyDescriptor(object);
@@ -289,7 +279,7 @@ public class WebsitePropertiesItemProvider
 				 getString("_UI_WebsiteProperties_authentication_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_authentication_feature", "_UI_WebsiteProperties_type"),
 				 WebsitePackage.Literals.WEBSITE_PROPERTIES__AUTHENTICATION,
-				 false,
+				 true,
 				 false,
 				 false,
 				 null,
@@ -404,226 +394,6 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 getString("_UI_SitePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Technology feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabaseTechnologyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_databaseTechnology_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_databaseTechnology_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Prefix feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabasePrefixPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_databasePrefix_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_databasePrefix_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DATABASE_PREFIX,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Host feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabaseHostPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_databaseHost_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_databaseHost_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DATABASE_HOST,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabaseNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_databaseName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_databaseName_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DATABASE_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Port feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabasePortPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_databasePort_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_databasePort_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DATABASE_PORT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Username feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabaseUsernamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_databaseUsername_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_databaseUsername_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DATABASE_USERNAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Password feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabasePasswordPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_databasePassword_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_databasePassword_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DATABASE_PASSWORD,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Orm Technology feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOrmTechnologyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_ormTechnology_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_ormTechnology_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__ORM_TECHNOLOGY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_FrameworkPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Timestamp Creation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTimestampCreationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_timestampCreation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_timestampCreation_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__TIMESTAMP_CREATION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Timestamp Updates feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTimestampUpdatesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_timestampUpdates_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_timestampUpdates_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__TIMESTAMP_UPDATES,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
 				 null));
 	}
 
@@ -914,22 +684,11 @@ public class WebsitePropertiesItemProvider
 			case WebsitePackage.WEBSITE_PROPERTIES__COPYRIGHT_TEXT:
 			case WebsitePackage.WEBSITE_PROPERTIES__META_DESCRIPTION:
 			case WebsitePackage.WEBSITE_PROPERTIES__PROJECT_NAME:
-			case WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION:
 			case WebsitePackage.WEBSITE_PROPERTIES__TEST_PROJECT_NAME:
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT:
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_TIME_FORMAT:
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT:
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE:
-			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY:
-			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PREFIX:
-			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_HOST:
-			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_NAME:
-			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PORT:
-			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_USERNAME:
-			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PASSWORD:
-			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
-			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_CREATION:
-			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_UPDATES:
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:

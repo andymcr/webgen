@@ -56,11 +56,22 @@ public class ImageFactoryImpl extends EFactoryImpl implements ImageFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case ImagePackage.IMAGE: return createImage();
 			case ImagePackage.IMAGE_MANIPULATION: return createImageManipulation();
 			case ImagePackage.THUMBNAIL_FILTER: return createThumbnailFilter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Image createImage() {
+		ImageImpl image = new ImageImpl();
+		return image;
 	}
 
 	/**

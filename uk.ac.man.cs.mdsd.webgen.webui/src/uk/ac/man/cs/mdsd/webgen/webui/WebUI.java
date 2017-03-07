@@ -19,6 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Services;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenu <em>Global Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getPages <em>Pages</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getMenus <em>Menus</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getWebUI()
@@ -81,7 +82,7 @@ public interface WebUI extends EObject {
 	void setGlobalMenu(GlobalMenu value);
 
 	/**
-	 * Returns the value of the '<em><b>Pages</b></em>' reference list.
+	 * Returns the value of the '<em><b>Pages</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.Page}.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getWebUI <em>Web UI</em>}'.
 	 * <!-- begin-user-doc -->
@@ -90,12 +91,28 @@ public interface WebUI extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pages</em>' reference list.
+	 * @return the value of the '<em>Pages</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getWebUI_Pages()
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.Page#getWebUI
-	 * @model opposite="webUI"
+	 * @model opposite="webUI" containment="true"
 	 * @generated
 	 */
 	EList<Page> getPages();
+
+	/**
+	 * Returns the value of the '<em><b>Menus</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.Menu}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Menus</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Menus</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getWebUI_Menus()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Menu> getMenus();
 
 } // WebUI

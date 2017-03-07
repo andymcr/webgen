@@ -14,10 +14,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.service.Services;
 import uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu;
+import uk.ac.man.cs.mdsd.webgen.webui.Menu;
 import uk.ac.man.cs.mdsd.webgen.webui.Page;
 import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -33,6 +35,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebUIImpl#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebUIImpl#getGlobalMenu <em>Global Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebUIImpl#getPages <em>Pages</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebUIImpl#getMenus <em>Menus</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,7 +62,7 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	protected GlobalMenu globalMenu;
 
 	/**
-	 * The cached value of the '{@link #getPages() <em>Pages</em>}' reference list.
+	 * The cached value of the '{@link #getPages() <em>Pages</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPages()
@@ -67,6 +70,16 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	 * @ordered
 	 */
 	protected EList<Page> pages;
+
+	/**
+	 * The cached value of the '{@link #getMenus() <em>Menus</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMenus()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Menu> menus;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -192,9 +205,21 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	 */
 	public EList<Page> getPages() {
 		if (pages == null) {
-			pages = new EObjectWithInverseResolvingEList<Page>(Page.class, this, WebuiPackage.WEB_UI__PAGES, WebuiPackage.PAGE__WEB_UI);
+			pages = new EObjectContainmentWithInverseEList<Page>(Page.class, this, WebuiPackage.WEB_UI__PAGES, WebuiPackage.PAGE__WEB_UI);
 		}
 		return pages;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Menu> getMenus() {
+		if (menus == null) {
+			menus = new EObjectContainmentEList<Menu>(Menu.class, this, WebuiPackage.WEB_UI__MENUS);
+		}
+		return menus;
 	}
 
 	/**
@@ -228,6 +253,8 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 				return basicSetGlobalMenu(null, msgs);
 			case WebuiPackage.WEB_UI__PAGES:
 				return ((InternalEList<?>)getPages()).basicRemove(otherEnd, msgs);
+			case WebuiPackage.WEB_UI__MENUS:
+				return ((InternalEList<?>)getMenus()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -248,6 +275,8 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 				return basicGetGlobalMenu();
 			case WebuiPackage.WEB_UI__PAGES:
 				return getPages();
+			case WebuiPackage.WEB_UI__MENUS:
+				return getMenus();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -271,6 +300,10 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 				getPages().clear();
 				getPages().addAll((Collection<? extends Page>)newValue);
 				return;
+			case WebuiPackage.WEB_UI__MENUS:
+				getMenus().clear();
+				getMenus().addAll((Collection<? extends Menu>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -292,6 +325,9 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 			case WebuiPackage.WEB_UI__PAGES:
 				getPages().clear();
 				return;
+			case WebuiPackage.WEB_UI__MENUS:
+				getMenus().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -310,6 +346,8 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 				return globalMenu != null;
 			case WebuiPackage.WEB_UI__PAGES:
 				return pages != null && !pages.isEmpty();
+			case WebuiPackage.WEB_UI__MENUS:
+				return menus != null && !menus.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

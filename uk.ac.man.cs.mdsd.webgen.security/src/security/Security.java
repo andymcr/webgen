@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Security extends EObject {
 
 	/**
-	 * Returns the value of the '<em><b>Authentication</b></em>' reference.
+	 * Returns the value of the '<em><b>Authentication</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link security.Authentication#getSecurity <em>Security</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -31,20 +31,20 @@ public interface Security extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Authentication</em>' reference.
+	 * @return the value of the '<em>Authentication</em>' containment reference.
 	 * @see #setAuthentication(Authentication)
 	 * @see security.SecurityPackage#getSecurity_Authentication()
 	 * @see security.Authentication#getSecurity
-	 * @model opposite="security"
+	 * @model opposite="security" containment="true"
 	 * @generated
 	 */
 	Authentication getAuthentication();
 
 	/**
-	 * Sets the value of the '{@link security.Security#getAuthentication <em>Authentication</em>}' reference.
+	 * Sets the value of the '{@link security.Security#getAuthentication <em>Authentication</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Authentication</em>' reference.
+	 * @param value the new value of the '<em>Authentication</em>' containment reference.
 	 * @see #getAuthentication()
 	 * @generated
 	 */

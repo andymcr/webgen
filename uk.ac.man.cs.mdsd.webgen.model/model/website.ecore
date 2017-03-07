@@ -17,29 +17,28 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="websiteProperties" ordered="false"
         lowerBound="1" eType="#//WebsiteProperties" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="classifiers" upperBound="-1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//Classifier"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="persistence" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Persistence"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifiers" upperBound="-1"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//Classifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="servicesX" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Services"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Service"
-        containment="true"/>
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Service"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="webUI" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//WebUI"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pages" upperBound="-1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//Page"
-        containment="true"/>
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//Page"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="menus" upperBound="-1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//Menu"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//Menu"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="images" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.image/model/image.ecore#//Image"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="security" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.security/model/security.ecore#//Security"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="allowTypeCustomisation"
         upperBound="-1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imageManipulations" upperBound="-1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.image/model/image.ecore#//ImageManipulation"
-        containment="true"/>
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.image/model/image.ecore#//ImageManipulation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="FrameworkTechnologies">
     <eLiterals name="JSF"/>
@@ -72,8 +71,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="authentication" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.security/model/security.ecore#//Authentication"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="authentication" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.security/model/security.ecore#//Authentication"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="testProjectName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultDateFormat" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="jS F Y"/>
@@ -85,21 +83,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultMaximumUploadSize"
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="2000000"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseTechnology" ordered="false"
-        lowerBound="1" eType="ecore:EEnum ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//DatabaseTechnologies"
-        defaultValueLiteral="MySql"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databasePrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseHost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databasePort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseUsername" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databasePassword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ormTechnology" eType="ecore:EEnum ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//OrmTechnologies"
-        defaultValueLiteral="Kohana"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestampCreation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestampUpdates" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="frameworkTechnology" ordered="false"
         lowerBound="1" eType="#//FrameworkTechnologies" defaultValueLiteral="Kohana"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputTechnology" eType="#//InputTechnologies"

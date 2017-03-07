@@ -68,9 +68,102 @@ public class WebGenModelItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addClassifiersPropertyDescriptor(object);
+			addServicesPropertyDescriptor(object);
+			addPagesPropertyDescriptor(object);
+			addMenusPropertyDescriptor(object);
 			addAllowTypeCustomisationPropertyDescriptor(object);
+			addImageManipulationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Classifiers feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClassifiersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebGenModel_classifiers_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_classifiers_feature", "_UI_WebGenModel_type"),
+				 WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Services feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addServicesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebGenModel_services_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_services_feature", "_UI_WebGenModel_type"),
+				 WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebGenModel_pages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_pages_feature", "_UI_WebGenModel_type"),
+				 WebsitePackage.Literals.WEB_GEN_MODEL__PAGES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Menus feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMenusPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebGenModel_menus_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_menus_feature", "_UI_WebGenModel_type"),
+				 WebsitePackage.Literals.WEB_GEN_MODEL__MENUS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -96,6 +189,28 @@ public class WebGenModelItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Image Manipulations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImageManipulationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebGenModel_imageManipulations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_imageManipulations_feature", "_UI_WebGenModel_type"),
+				 WebsitePackage.Literals.WEB_GEN_MODEL__IMAGE_MANIPULATIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -108,14 +223,11 @@ public class WebGenModelItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__WEBSITE_PROPERTIES);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS);
+			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__PERSISTENCE);
 			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES_X);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES);
 			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__WEB_UI);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__PAGES);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__MENUS);
+			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__IMAGES);
 			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__SECURITY);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__IMAGE_MANIPULATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -168,14 +280,11 @@ public class WebGenModelItemProvider
 
 		switch (notification.getFeatureID(WebGenModel.class)) {
 			case WebsitePackage.WEB_GEN_MODEL__WEBSITE_PROPERTIES:
-			case WebsitePackage.WEB_GEN_MODEL__CLASSIFIERS:
+			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 			case WebsitePackage.WEB_GEN_MODEL__SERVICES_X:
-			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
 			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
-			case WebsitePackage.WEB_GEN_MODEL__PAGES:
-			case WebsitePackage.WEB_GEN_MODEL__MENUS:
+			case WebsitePackage.WEB_GEN_MODEL__IMAGES:
 			case WebsitePackage.WEB_GEN_MODEL__SECURITY:
-			case WebsitePackage.WEB_GEN_MODEL__IMAGE_MANIPULATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -200,23 +309,8 @@ public class WebGenModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
-				 BaseFactory.eINSTANCE.createDataType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
-				 BaseFactory.eINSTANCE.createEnumerationType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
-				 PersistenceFactory.eINSTANCE.createEntity()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
-				 PersistenceFactory.eINSTANCE.createView()));
+				(WebsitePackage.Literals.WEB_GEN_MODEL__PERSISTENCE,
+				 PersistenceFactory.eINSTANCE.createPersistence()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -225,38 +319,18 @@ public class WebGenModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES,
-				 ServiceFactory.eINSTANCE.createService()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__WEB_UI,
 				 WebuiFactory.eINSTANCE.createWebUI()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__PAGES,
-				 WebuiFactory.eINSTANCE.createPage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__MENUS,
-				 WebuiFactory.eINSTANCE.createStaticMenu()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__MENUS,
-				 WebuiFactory.eINSTANCE.createDynamicMenu()));
+				(WebsitePackage.Literals.WEB_GEN_MODEL__IMAGES,
+				 ImageFactory.eINSTANCE.createImage()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__SECURITY,
 				 SecurityFactory.eINSTANCE.createSecurity()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__IMAGE_MANIPULATIONS,
-				 ImageFactory.eINSTANCE.createImageManipulation()));
 	}
 
 	/**

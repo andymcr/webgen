@@ -31,7 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
  */
 public interface Authentication extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Security</b></em>' reference.
+	 * Returns the value of the '<em><b>Security</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link security.Security#getAuthentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -39,20 +39,20 @@ public interface Authentication extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Security</em>' reference.
+	 * @return the value of the '<em>Security</em>' container reference.
 	 * @see #setSecurity(Security)
 	 * @see security.SecurityPackage#getAuthentication_Security()
 	 * @see security.Security#getAuthentication
-	 * @model opposite="authentication" required="true"
+	 * @model opposite="authentication" required="true" transient="false"
 	 * @generated
 	 */
 	Security getSecurity();
 
 	/**
-	 * Sets the value of the '{@link security.Authentication#getSecurity <em>Security</em>}' reference.
+	 * Sets the value of the '{@link security.Authentication#getSecurity <em>Security</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Security</em>' reference.
+	 * @param value the new value of the '<em>Security</em>' container reference.
 	 * @see #getSecurity()
 	 * @generated
 	 */

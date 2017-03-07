@@ -27,15 +27,18 @@
     </genEnums>
     <genClasses ecoreClass="website.ecore#//WebGenModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/websiteProperties"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/classifiers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/persistence"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/classifiers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/servicesX"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/services"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/services"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/webUI"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/pages"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/menus"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/pages"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/menus"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//WebGenModel/images"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/security"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/allowTypeCustomisation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/imageManipulations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/imageManipulations"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//WebsiteProperties">
       <genFeatures createChild="false" propertyCategory="Site" propertyDescription=""
@@ -49,7 +52,7 @@
           ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/metaDescription"/>
       <genFeatures createChild="false" propertyCategory="Site" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/projectName"/>
-      <genFeatures property="Readonly" createChild="false" propertyCategory="Security"
+      <genFeatures notify="false" createChild="false" propertyCategory="Security"
           propertyDescription="" ecoreFeature="ecore:EReference website.ecore#//WebsiteProperties/authentication"/>
       <genFeatures createChild="false" propertyCategory="Site" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/testProjectName"/>
@@ -58,18 +61,6 @@
           ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/defaultTimeFormat"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/defaultDateTimeFormat"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/defaultMaximumUploadSize"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databaseTechnology"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databasePrefix"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databaseHost"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databaseName"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databasePort"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databaseUsername"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databasePassword"/>
-      <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/ormTechnology"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/timestampCreation"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/timestampUpdates"/>
       <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/frameworkTechnology"/>
       <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/inputTechnology"/>
       <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/ajaxTechnology"/>

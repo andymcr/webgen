@@ -8,7 +8,7 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Security">
     <eStructuralFeatures xsi:type="ecore:EReference" name="authentication" eType="#//Authentication"
-        eOpposite="#//Authentication/security"/>
+        containment="true" eOpposite="#//Authentication/security"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Authentication" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">

@@ -29,7 +29,7 @@ import security.SecurityPackage;
  */
 public class SecurityImpl extends MinimalEObjectImpl.Container implements Security {
 	/**
-	 * The cached value of the '{@link #getAuthentication() <em>Authentication</em>}' reference.
+	 * The cached value of the '{@link #getAuthentication() <em>Authentication</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAuthentication()
@@ -63,23 +63,6 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 	 * @generated
 	 */
 	public Authentication getAuthentication() {
-		if (authentication != null && authentication.eIsProxy()) {
-			InternalEObject oldAuthentication = (InternalEObject)authentication;
-			authentication = (Authentication)eResolveProxy(oldAuthentication);
-			if (authentication != oldAuthentication) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.SECURITY__AUTHENTICATION, oldAuthentication, authentication));
-			}
-		}
-		return authentication;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Authentication basicGetAuthentication() {
 		return authentication;
 	}
 
@@ -127,7 +110,7 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 		switch (featureID) {
 			case SecurityPackage.SECURITY__AUTHENTICATION:
 				if (authentication != null)
-					msgs = ((InternalEObject)authentication).eInverseRemove(this, SecurityPackage.AUTHENTICATION__SECURITY, Authentication.class, msgs);
+					msgs = ((InternalEObject)authentication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SecurityPackage.SECURITY__AUTHENTICATION, null, msgs);
 				return basicSetAuthentication((Authentication)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -156,8 +139,7 @@ public class SecurityImpl extends MinimalEObjectImpl.Container implements Securi
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SecurityPackage.SECURITY__AUTHENTICATION:
-				if (resolve) return getAuthentication();
-				return basicGetAuthentication();
+				return getAuthentication();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

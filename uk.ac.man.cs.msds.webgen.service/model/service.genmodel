@@ -13,7 +13,8 @@
       <genEnumLiterals ecoreEnumLiteral="service.ecore#//OperationResultTypes/File"/>
     </genEnums>
     <genClasses ecoreClass="service.ecore#//Services">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Services/services"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference service.ecore#//Services/services"/>
     </genClasses>
     <genClasses ecoreClass="service.ecore#//Service">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Service/serves"/>

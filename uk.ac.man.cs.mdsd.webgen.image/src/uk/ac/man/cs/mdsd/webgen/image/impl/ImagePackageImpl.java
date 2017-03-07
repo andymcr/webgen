@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 
+import uk.ac.man.cs.mdsd.webgen.image.Image;
 import uk.ac.man.cs.mdsd.webgen.image.ImageFactory;
 import uk.ac.man.cs.mdsd.webgen.image.ImageFilter;
 import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
@@ -24,6 +25,13 @@ import uk.ac.man.cs.mdsd.webgen.image.ThumbnailFilter;
  * @generated
  */
 public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass imageEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,6 +115,24 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ImagePackage.eNS_URI, theImagePackage);
 		return theImagePackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getImage() {
+		return imageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getImage_Manipulations() {
+		return (EReference)imageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -200,6 +226,9 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 		isCreated = true;
 
 		// Create classes and their features
+		imageEClass = createEClass(IMAGE);
+		createEReference(imageEClass, IMAGE__MANIPULATIONS);
+
 		imageManipulationEClass = createEClass(IMAGE_MANIPULATION);
 		createEAttribute(imageManipulationEClass, IMAGE_MANIPULATION__JPEG_QUALITY);
 		createEReference(imageManipulationEClass, IMAGE_MANIPULATION__FILTERS);
@@ -246,6 +275,9 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 		thumbnailFilterEClass.getESuperTypes().add(this.getImageFilter());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getImage_Manipulations(), this.getImageManipulation(), null, "manipulations", null, 0, -1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(imageManipulationEClass, ImageManipulation.class, "ImageManipulation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getImageManipulation_JpegQuality(), ecorePackage.getEInt(), "jpegQuality", "-1", 0, 1, ImageManipulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImageManipulation_Filters(), this.getImageFilter(), null, "filters", null, 0, -1, ImageManipulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

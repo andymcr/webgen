@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import security.Authentication;
 import security.Security;
 import security.SecurityPackage;
@@ -35,16 +36,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
  * @generated
  */
 public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container implements Authentication {
-	/**
-	 * The cached value of the '{@link #getSecurity() <em>Security</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSecurity()
-	 * @generated
-	 * @ordered
-	 */
-	protected Security security;
-
 	/**
 	 * The cached value of the '{@link #getUser() <em>User</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -130,24 +121,8 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	public Security getSecurity() {
-		if (security != null && security.eIsProxy()) {
-			InternalEObject oldSecurity = (InternalEObject)security;
-			security = (Security)eResolveProxy(oldSecurity);
-			if (security != oldSecurity) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SecurityPackage.AUTHENTICATION__SECURITY, oldSecurity, security));
-			}
-		}
-		return security;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Security basicGetSecurity() {
-		return security;
+		if (eContainerFeatureID() != SecurityPackage.AUTHENTICATION__SECURITY) return null;
+		return (Security)eInternalContainer();
 	}
 
 	/**
@@ -156,12 +131,7 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	public NotificationChain basicSetSecurity(Security newSecurity, NotificationChain msgs) {
-		Security oldSecurity = security;
-		security = newSecurity;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SecurityPackage.AUTHENTICATION__SECURITY, oldSecurity, newSecurity);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newSecurity, SecurityPackage.AUTHENTICATION__SECURITY, msgs);
 		return msgs;
 	}
 
@@ -171,10 +141,12 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	public void setSecurity(Security newSecurity) {
-		if (newSecurity != security) {
+		if (newSecurity != eInternalContainer() || (eContainerFeatureID() != SecurityPackage.AUTHENTICATION__SECURITY && newSecurity != null)) {
+			if (EcoreUtil.isAncestor(this, newSecurity))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (security != null)
-				msgs = ((InternalEObject)security).eInverseRemove(this, SecurityPackage.SECURITY__AUTHENTICATION, Security.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newSecurity != null)
 				msgs = ((InternalEObject)newSecurity).eInverseAdd(this, SecurityPackage.SECURITY__AUTHENTICATION, Security.class, msgs);
 			msgs = basicSetSecurity(newSecurity, msgs);
@@ -311,8 +283,8 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SecurityPackage.AUTHENTICATION__SECURITY:
-				if (security != null)
-					msgs = ((InternalEObject)security).eInverseRemove(this, SecurityPackage.SECURITY__AUTHENTICATION, Security.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetSecurity((Security)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -338,11 +310,24 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case SecurityPackage.AUTHENTICATION__SECURITY:
+				return eInternalContainer().eInverseRemove(this, SecurityPackage.SECURITY__AUTHENTICATION, Security.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SecurityPackage.AUTHENTICATION__SECURITY:
-				if (resolve) return getSecurity();
-				return basicGetSecurity();
+				return getSecurity();
 			case SecurityPackage.AUTHENTICATION__USER:
 				if (resolve) return getUser();
 				return basicGetUser();
@@ -420,7 +405,7 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SecurityPackage.AUTHENTICATION__SECURITY:
-				return security != null;
+				return getSecurity() != null;
 			case SecurityPackage.AUTHENTICATION__USER:
 				return user != null;
 			case SecurityPackage.AUTHENTICATION__USER_KEY:

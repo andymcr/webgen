@@ -71,7 +71,7 @@ public interface SecurityPackage extends EPackage {
 	int SECURITY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Authentication</b></em>' reference.
+	 * The feature id for the '<em><b>Authentication</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -108,7 +108,7 @@ public interface SecurityPackage extends EPackage {
 	int AUTHENTICATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Security</b></em>' reference.
+	 * The feature id for the '<em><b>Security</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -181,7 +181,7 @@ public interface SecurityPackage extends EPackage {
 	int LOCAL_AUTHENTICATION_SYSTEM = 2;
 
 	/**
-	 * The feature id for the '<em><b>Security</b></em>' reference.
+	 * The feature id for the '<em><b>Security</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -326,7 +326,7 @@ public interface SecurityPackage extends EPackage {
 	int CAS_AUTHENTICATION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Security</b></em>' reference.
+	 * The feature id for the '<em><b>Security</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -438,10 +438,10 @@ public interface SecurityPackage extends EPackage {
 	EClass getSecurity();
 
 	/**
-	 * Returns the meta object for the reference '{@link security.Security#getAuthentication <em>Authentication</em>}'.
+	 * Returns the meta object for the containment reference '{@link security.Security#getAuthentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Authentication</em>'.
+	 * @return the meta object for the containment reference '<em>Authentication</em>'.
 	 * @see security.Security#getAuthentication()
 	 * @see #getSecurity()
 	 * @generated
@@ -459,10 +459,10 @@ public interface SecurityPackage extends EPackage {
 	EClass getAuthentication();
 
 	/**
-	 * Returns the meta object for the reference '{@link security.Authentication#getSecurity <em>Security</em>}'.
+	 * Returns the meta object for the container reference '{@link security.Authentication#getSecurity <em>Security</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Security</em>'.
+	 * @return the meta object for the container reference '<em>Security</em>'.
 	 * @see security.Authentication#getSecurity()
 	 * @see #getAuthentication()
 	 * @generated
@@ -675,7 +675,7 @@ public interface SecurityPackage extends EPackage {
 		EClass SECURITY = eINSTANCE.getSecurity();
 
 		/**
-		 * The meta object literal for the '<em><b>Authentication</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Authentication</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -693,7 +693,7 @@ public interface SecurityPackage extends EPackage {
 		EClass AUTHENTICATION = eINSTANCE.getAuthentication();
 
 		/**
-		 * The meta object literal for the '<em><b>Security</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Security</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

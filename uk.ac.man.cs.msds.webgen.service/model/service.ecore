@@ -8,7 +8,7 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Services">
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
-        eType="#//Service"/>
+        eType="#//Service" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="serves" lowerBound="1"

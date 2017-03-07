@@ -59,6 +59,43 @@ public interface ImagePackage extends EPackage {
 	ImagePackage eINSTANCE = uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.image.impl.ImageImpl <em>Image</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImageImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getImage()
+	 * @generated
+	 */
+	int IMAGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Manipulations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__MANIPULATIONS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Image</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Image</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.image.impl.ImageManipulationImpl <em>Manipulation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,7 +103,7 @@ public interface ImagePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getImageManipulation()
 	 * @generated
 	 */
-	int IMAGE_MANIPULATION = 0;
+	int IMAGE_MANIPULATION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -121,7 +158,7 @@ public interface ImagePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getImageFilter()
 	 * @generated
 	 */
-	int IMAGE_FILTER = 1;
+	int IMAGE_FILTER = 2;
 
 	/**
 	 * The number of structural features of the '<em>Filter</em>' class.
@@ -149,7 +186,7 @@ public interface ImagePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getThumbnailFilter()
 	 * @generated
 	 */
-	int THUMBNAIL_FILTER = 2;
+	int THUMBNAIL_FILTER = 3;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -187,6 +224,27 @@ public interface ImagePackage extends EPackage {
 	 */
 	int THUMBNAIL_FILTER_OPERATION_COUNT = IMAGE_FILTER_OPERATION_COUNT + 0;
 
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.image.Image <em>Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Image</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.image.Image
+	 * @generated
+	 */
+	EClass getImage();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.image.Image#getManipulations <em>Manipulations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Manipulations</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.image.Image#getManipulations()
+	 * @see #getImage()
+	 * @generated
+	 */
+	EReference getImage_Manipulations();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.image.ImageManipulation <em>Manipulation</em>}'.
@@ -285,6 +343,24 @@ public interface ImagePackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.image.impl.ImageImpl <em>Image</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImageImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getImage()
+		 * @generated
+		 */
+		EClass IMAGE = eINSTANCE.getImage();
+
+		/**
+		 * The meta object literal for the '<em><b>Manipulations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMAGE__MANIPULATIONS = eINSTANCE.getImage_Manipulations();
+
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.image.impl.ImageManipulationImpl <em>Manipulation</em>}' class.
 		 * <!-- begin-user-doc -->

@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Services extends EObject {
 
 	/**
-	 * Returns the value of the '<em><b>Services</b></em>' reference list.
+	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.Service}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -32,9 +32,9 @@ public interface Services extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Services</em>' reference list.
+	 * @return the value of the '<em>Services</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getServices_Services()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Service> getServices();

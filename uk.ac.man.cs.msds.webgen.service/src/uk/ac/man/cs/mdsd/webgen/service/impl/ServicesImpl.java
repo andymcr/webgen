@@ -3,12 +3,15 @@
 package uk.ac.man.cs.mdsd.webgen.service.impl;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.service.Service;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 import uk.ac.man.cs.mdsd.webgen.service.Services;
@@ -28,7 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Services;
  */
 public class ServicesImpl extends MinimalEObjectImpl.Container implements Services {
 	/**
-	 * The cached value of the '{@link #getServices() <em>Services</em>}' reference list.
+	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getServices()
@@ -63,9 +66,23 @@ public class ServicesImpl extends MinimalEObjectImpl.Container implements Servic
 	 */
 	public EList<Service> getServices() {
 		if (services == null) {
-			services = new EObjectResolvingEList<Service>(Service.class, this, ServicePackage.SERVICES__SERVICES);
+			services = new EObjectContainmentEList<Service>(Service.class, this, ServicePackage.SERVICES__SERVICES);
 		}
 		return services;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ServicePackage.SERVICES__SERVICES:
+				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

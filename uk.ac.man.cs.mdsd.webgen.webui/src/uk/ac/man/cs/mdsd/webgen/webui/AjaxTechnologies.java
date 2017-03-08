@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.website;
+package uk.ac.man.cs.mdsd.webgen.webui;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Ajax Technologies</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAjaxTechnologies()
+ * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getAjaxTechnologies()
  * @model
  * @generated
  */
@@ -36,7 +36,9 @@ public enum AjaxTechnologies implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	JQUERY(1, "jQuery", "jQuery"), /**
+	JQUERY(1, "jQuery", "jQuery"),
+
+	/**
 	 * The '<em><b>Angular JS</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

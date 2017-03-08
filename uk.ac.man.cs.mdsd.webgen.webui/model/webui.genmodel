@@ -8,6 +8,15 @@
   <foreignModel>webui.ecore</foreignModel>
   <genPackages prefix="Webui" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
       extensibleProviderFactory="true" ecorePackage="webui.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="webui.ecore#//InputTechnologies">
+      <genEnumLiterals ecoreEnumLiteral="webui.ecore#//InputTechnologies/Html"/>
+      <genEnumLiterals ecoreEnumLiteral="webui.ecore#//InputTechnologies/jQueryUI"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="webui.ecore#//AjaxTechnologies">
+      <genEnumLiterals ecoreEnumLiteral="webui.ecore#//AjaxTechnologies/None"/>
+      <genEnumLiterals ecoreEnumLiteral="webui.ecore#//AjaxTechnologies/jQuery"/>
+      <genEnumLiterals ecoreEnumLiteral="webui.ecore#//AjaxTechnologies/AngularJS"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="webui.ecore#//PageTopMenuOptions">
       <genEnumLiterals ecoreEnumLiteral="webui.ecore#//PageTopMenuOptions/NeverInclude"/>
       <genEnumLiterals ecoreEnumLiteral="webui.ecore#//PageTopMenuOptions/AlwaysInclude"/>
@@ -24,18 +33,24 @@
     </genEnums>
     <genClasses ecoreClass="webui.ecore#//WebUI">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//WebUI/services"/>
+      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference webui.ecore#//WebUI/menus"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//WebUI/globalMenu"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory=""
           propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//WebUI/pages"/>
-      <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
-          ecoreFeature="ecore:EReference webui.ecore#//WebUI/menus"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//WebUI/defaultDateFormat"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//WebUI/defaultTimeFormat"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//WebUI/defaultDateTimeFormat"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//WebUI/defaultMaximumUploadSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//WebUI/inputTechnology"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//WebUI/ajaxTechnology"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//Menu">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//Menu/entries"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//Menu/omitCaption"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//Menu/captionClass"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//Menu/styleClass"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//Menu/layoutClass"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//Menu/omitCaption"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//Menu/captionClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//Menu/styleClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//Menu/layoutClass"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//MenuEntry">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference webui.ecore#//MenuEntry/partOf"/>

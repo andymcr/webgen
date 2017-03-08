@@ -7,17 +7,11 @@
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import security.Authentication;
-import uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies;
-import uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies;
-import uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
-import uk.ac.man.cs.mdsd.webgen.website.InputTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
 import uk.ac.man.cs.mdsd.webgen.webui.Menu;
@@ -38,7 +32,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.Menu;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCopyrightText <em>Copyright Text</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getMetaDescription <em>Meta Description</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getProjectName <em>Project Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTestProjectName <em>Test Project Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDefaultDateFormat <em>Default Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDefaultTimeFormat <em>Default Time Format</em>}</li>
@@ -221,16 +214,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	protected String projectName = PROJECT_NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAuthentication() <em>Authentication</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAuthentication()
-	 * @generated
-	 * @ordered
-	 */
-	protected Authentication authentication;
-
-	/**
 	 * The default value of the '{@link #getTestProjectName() <em>Test Project Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -358,7 +341,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 * @ordered
 	 */
-	protected static final InputTechnologies INPUT_TECHNOLOGY_EDEFAULT = InputTechnologies.HTML;
+	protected static final uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies INPUT_TECHNOLOGY_EDEFAULT = uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies.HTML;
 
 	/**
 	 * The cached value of the '{@link #getInputTechnology() <em>Input Technology</em>}' attribute.
@@ -368,7 +351,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 * @ordered
 	 */
-	protected InputTechnologies inputTechnology = INPUT_TECHNOLOGY_EDEFAULT;
+	protected uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies inputTechnology = INPUT_TECHNOLOGY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAjaxTechnology() <em>Ajax Technology</em>}' attribute.
@@ -378,7 +361,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 * @ordered
 	 */
-	protected static final AjaxTechnologies AJAX_TECHNOLOGY_EDEFAULT = AjaxTechnologies.NONE;
+	protected static final uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies AJAX_TECHNOLOGY_EDEFAULT = uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies.NONE;
 
 	/**
 	 * The cached value of the '{@link #getAjaxTechnology() <em>Ajax Technology</em>}' attribute.
@@ -388,7 +371,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 * @ordered
 	 */
-	protected AjaxTechnologies ajaxTechnology = AJAX_TECHNOLOGY_EDEFAULT;
+	protected uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies ajaxTechnology = AJAX_TECHNOLOGY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCaptchaSiteKey() <em>Captcha Site Key</em>}' attribute.
@@ -732,44 +715,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Authentication getAuthentication() {
-		if (authentication != null && authentication.eIsProxy()) {
-			InternalEObject oldAuthentication = (InternalEObject)authentication;
-			authentication = (Authentication)eResolveProxy(oldAuthentication);
-			if (authentication != oldAuthentication) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION, oldAuthentication, authentication));
-			}
-		}
-		return authentication;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Authentication basicGetAuthentication() {
-		return authentication;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAuthentication(Authentication newAuthentication) {
-		Authentication oldAuthentication = authentication;
-		authentication = newAuthentication;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION, oldAuthentication, authentication));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getTestProjectName() {
 		return testProjectName;
 	}
@@ -896,7 +841,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InputTechnologies getInputTechnology() {
+	public uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies getInputTechnology() {
 		return inputTechnology;
 	}
 
@@ -905,8 +850,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInputTechnology(InputTechnologies newInputTechnology) {
-		InputTechnologies oldInputTechnology = inputTechnology;
+	public void setInputTechnology(uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies newInputTechnology) {
+		uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies oldInputTechnology = inputTechnology;
 		inputTechnology = newInputTechnology == null ? INPUT_TECHNOLOGY_EDEFAULT : newInputTechnology;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY, oldInputTechnology, inputTechnology));
@@ -917,7 +862,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AjaxTechnologies getAjaxTechnology() {
+	public uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies getAjaxTechnology() {
 		return ajaxTechnology;
 	}
 
@@ -926,8 +871,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAjaxTechnology(AjaxTechnologies newAjaxTechnology) {
-		AjaxTechnologies oldAjaxTechnology = ajaxTechnology;
+	public void setAjaxTechnology(uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies newAjaxTechnology) {
+		uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies oldAjaxTechnology = ajaxTechnology;
 		ajaxTechnology = newAjaxTechnology == null ? AJAX_TECHNOLOGY_EDEFAULT : newAjaxTechnology;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY, oldAjaxTechnology, ajaxTechnology));
@@ -1142,9 +1087,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return getMetaDescription();
 			case WebsitePackage.WEBSITE_PROPERTIES__PROJECT_NAME:
 				return getProjectName();
-			case WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION:
-				if (resolve) return getAuthentication();
-				return basicGetAuthentication();
 			case WebsitePackage.WEBSITE_PROPERTIES__TEST_PROJECT_NAME:
 				return getTestProjectName();
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT:
@@ -1214,9 +1156,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__PROJECT_NAME:
 				setProjectName((String)newValue);
 				return;
-			case WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION:
-				setAuthentication((Authentication)newValue);
-				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TEST_PROJECT_NAME:
 				setTestProjectName((String)newValue);
 				return;
@@ -1236,10 +1175,10 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY:
-				setInputTechnology((InputTechnologies)newValue);
+				setInputTechnology((uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
-				setAjaxTechnology((AjaxTechnologies)newValue);
+				setAjaxTechnology((uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
 				setCaptchaSiteKey((String)newValue);
@@ -1300,9 +1239,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__PROJECT_NAME:
 				setProjectName(PROJECT_NAME_EDEFAULT);
-				return;
-			case WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION:
-				setAuthentication((Authentication)null);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TEST_PROJECT_NAME:
 				setTestProjectName(TEST_PROJECT_NAME_EDEFAULT);
@@ -1380,8 +1316,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return META_DESCRIPTION_EDEFAULT == null ? metaDescription != null : !META_DESCRIPTION_EDEFAULT.equals(metaDescription);
 			case WebsitePackage.WEBSITE_PROPERTIES__PROJECT_NAME:
 				return PROJECT_NAME_EDEFAULT == null ? projectName != null : !PROJECT_NAME_EDEFAULT.equals(projectName);
-			case WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION:
-				return authentication != null;
 			case WebsitePackage.WEBSITE_PROPERTIES__TEST_PROJECT_NAME:
 				return TEST_PROJECT_NAME_EDEFAULT == null ? testProjectName != null : !TEST_PROJECT_NAME_EDEFAULT.equals(testProjectName);
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT:

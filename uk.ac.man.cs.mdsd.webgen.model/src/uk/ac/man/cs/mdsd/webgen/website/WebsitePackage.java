@@ -271,22 +271,13 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__PROJECT_NAME = 7;
 
 	/**
-	 * The feature id for the '<em><b>Authentication</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__AUTHENTICATION = 8;
-
-	/**
 	 * The feature id for the '<em><b>Test Project Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TEST_PROJECT_NAME = 9;
+	int WEBSITE_PROPERTIES__TEST_PROJECT_NAME = 8;
 
 	/**
 	 * The feature id for the '<em><b>Default Date Format</b></em>' attribute.
@@ -295,7 +286,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT = 10;
+	int WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Default Time Format</b></em>' attribute.
@@ -304,7 +295,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DEFAULT_TIME_FORMAT = 11;
+	int WEBSITE_PROPERTIES__DEFAULT_TIME_FORMAT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Default Date Time Format</b></em>' attribute.
@@ -313,7 +304,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT = 12;
+	int WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Default Maximum Upload Size</b></em>' attribute.
@@ -322,7 +313,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE = 13;
+	int WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Framework Technology</b></em>' attribute.
@@ -331,7 +322,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 14;
+	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 13;
 
 	/**
 	 * The feature id for the '<em><b>Input Technology</b></em>' attribute.
@@ -340,7 +331,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__INPUT_TECHNOLOGY = 15;
+	int WEBSITE_PROPERTIES__INPUT_TECHNOLOGY = 14;
 
 	/**
 	 * The feature id for the '<em><b>Ajax Technology</b></em>' attribute.
@@ -349,7 +340,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = 16;
+	int WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = 15;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
@@ -358,7 +349,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 17;
+	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 16;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
@@ -367,7 +358,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 18;
+	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 17;
 
 	/**
 	 * The feature id for the '<em><b>Text Editor URL</b></em>' attribute.
@@ -376,7 +367,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 19;
+	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 18;
 
 	/**
 	 * The feature id for the '<em><b>Responsive Top Menu</b></em>' attribute.
@@ -385,7 +376,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU = 20;
+	int WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU = 19;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -394,7 +385,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 21;
+	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 20;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -403,7 +394,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SIDE_MENU = 22;
+	int WEBSITE_PROPERTIES__SIDE_MENU = 21;
 
 	/**
 	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
@@ -412,7 +403,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SITE_TEMPLATE = 23;
+	int WEBSITE_PROPERTIES__SITE_TEMPLATE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -421,7 +412,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 24;
+	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 23;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -430,7 +421,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES_FEATURE_COUNT = 25;
+	int WEBSITE_PROPERTIES_FEATURE_COUNT = 24;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies <em>Framework Technologies</em>}' enum.
@@ -441,26 +432,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	int FRAMEWORK_TECHNOLOGIES = 2;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.InputTechnologies <em>Input Technologies</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.InputTechnologies
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInputTechnologies()
-	 * @generated
-	 */
-	int INPUT_TECHNOLOGIES = 3;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAjaxTechnologies()
-	 * @generated
-	 */
-	int AJAX_TECHNOLOGIES = 4;
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel <em>Web Gen Model</em>}'.
@@ -703,17 +674,6 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebsiteProperties_ProjectName();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAuthentication <em>Authentication</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Authentication</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAuthentication()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EReference getWebsiteProperties_Authentication();
-
-	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTestProjectName <em>Test Project Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -898,26 +858,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getFrameworkTechnologies();
-
-	/**
-	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.website.InputTechnologies <em>Input Technologies</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Input Technologies</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.InputTechnologies
-	 * @generated
-	 */
-	EEnum getInputTechnologies();
-
-	/**
-	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies <em>Ajax Technologies</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Ajax Technologies</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies
-	 * @generated
-	 */
-	EEnum getAjaxTechnologies();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1122,14 +1062,6 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEBSITE_PROPERTIES__PROJECT_NAME = eINSTANCE.getWebsiteProperties_ProjectName();
 
 		/**
-		 * The meta object literal for the '<em><b>Authentication</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference WEBSITE_PROPERTIES__AUTHENTICATION = eINSTANCE.getWebsiteProperties_Authentication();
-
-		/**
 		 * The meta object literal for the '<em><b>Test Project Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1266,26 +1198,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum FRAMEWORK_TECHNOLOGIES = eINSTANCE.getFrameworkTechnologies();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.InputTechnologies <em>Input Technologies</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.InputTechnologies
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInputTechnologies()
-		 * @generated
-		 */
-		EEnum INPUT_TECHNOLOGIES = eINSTANCE.getInputTechnologies();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAjaxTechnologies()
-		 * @generated
-		 */
-		EEnum AJAX_TECHNOLOGIES = eINSTANCE.getAjaxTechnologies();
 
 	}
 

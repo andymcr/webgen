@@ -68,7 +68,6 @@ public class WebsitePropertiesItemProvider
 			addCopyrightTextPropertyDescriptor(object);
 			addMetaDescriptionPropertyDescriptor(object);
 			addProjectNamePropertyDescriptor(object);
-			addAuthenticationPropertyDescriptor(object);
 			addTestProjectNamePropertyDescriptor(object);
 			addDefaultDateFormatPropertyDescriptor(object);
 			addDefaultTimeFormatPropertyDescriptor(object);
@@ -262,28 +261,6 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_SitePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Authentication feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAuthenticationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_authentication_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_authentication_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__AUTHENTICATION,
-				 true,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_SecurityPropertyCategory"),
 				 null));
 	}
 

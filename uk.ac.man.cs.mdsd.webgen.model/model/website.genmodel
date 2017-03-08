@@ -16,15 +16,6 @@
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//FrameworkTechnologies/Laravel"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//FrameworkTechnologies/Symfony"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="website.ecore#//InputTechnologies">
-      <genEnumLiterals ecoreEnumLiteral="website.ecore#//InputTechnologies/Html"/>
-      <genEnumLiterals ecoreEnumLiteral="website.ecore#//InputTechnologies/jQueryUI"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="website.ecore#//AjaxTechnologies">
-      <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/None"/>
-      <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/jQuery"/>
-      <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/AngularJS"/>
-    </genEnums>
     <genClasses ecoreClass="website.ecore#//WebGenModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/websiteProperties"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/persistence"/>
@@ -52,8 +43,6 @@
           ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/metaDescription"/>
       <genFeatures createChild="false" propertyCategory="Site" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/projectName"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Security"
-          propertyDescription="" ecoreFeature="ecore:EReference website.ecore#//WebsiteProperties/authentication"/>
       <genFeatures createChild="false" propertyCategory="Site" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/testProjectName"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/defaultDateFormat"/>

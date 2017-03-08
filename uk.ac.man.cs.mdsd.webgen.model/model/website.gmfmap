@@ -21,47 +21,14 @@
       </labelMappings>
       <diagramNode
           href="website.gmfgraph#Properties"/>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="website.ecore#//WebsiteProperties/authentication"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../uk.ac.man.cs.mdsd.webgen.security/model/security.ecore#//LocalAuthenticationSystem"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.5/@tools.0"/>
-          <diagramNode
-              href="website.gmfgraph#Authentication"/>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="website.ecore#//WebsiteProperties/authentication"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../uk.ac.man.cs.mdsd.webgen.security/model/security.ecore#//CasAuthentication"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.5/@tools.1"/>
-          <diagramNode
-              href="website.gmfgraph#Authentication"/>
-        </ownedChild>
-      </children>
-      <compartments
-          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1">
-        <compartment
-            href="website.gmfgraph#AuthenticationCompartment"/>
-      </compartments>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
-        href="website.ecore#//WebGenModel/classifiers"/>
+        href="website.ecore#//WebGenModel/persistence"/>
     <ownedChild>
       <domainMetaElement
-          href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//DataType"/>
+          href="../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Persistence"/>
       <domainSpecialization
           body="self.oclIsTypeOf(DataType)"/>
       <labelMappings

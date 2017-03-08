@@ -7,9 +7,8 @@
 package uk.ac.man.cs.mdsd.webgen.website;
 
 import org.eclipse.emf.ecore.EObject;
-import security.Authentication;
-import uk.ac.man.cs.mdsd.webgen.persistence.DatabaseTechnologies;
-import uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies;
+import uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies;
+import uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies;
 import uk.ac.man.cs.mdsd.webgen.webui.Menu;
 
 /**
@@ -29,7 +28,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.Menu;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCopyrightText <em>Copyright Text</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getMetaDescription <em>Meta Description</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getProjectName <em>Project Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTestProjectName <em>Test Project Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultDateFormat <em>Default Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultTimeFormat <em>Default Time Format</em>}</li>
@@ -262,32 +260,6 @@ public interface WebsiteProperties extends EObject {
 	void setProjectName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Authentication</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Authentication</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Authentication</em>' reference.
-	 * @see #setAuthentication(Authentication)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_Authentication()
-	 * @model
-	 * @generated
-	 */
-	Authentication getAuthentication();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAuthentication <em>Authentication</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Authentication</em>' reference.
-	 * @see #getAuthentication()
-	 * @generated
-	 */
-	void setAuthentication(Authentication value);
-
-	/**
 	 * Returns the value of the '<em><b>Test Project Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -454,7 +426,7 @@ public interface WebsiteProperties extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Input Technology</b></em>' attribute.
 	 * The default value is <code>"Html"</code>.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.InputTechnologies}.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Input Technology</em>' attribute isn't clear,
@@ -462,7 +434,7 @@ public interface WebsiteProperties extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Input Technology</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.InputTechnologies
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies
 	 * @see #setInputTechnology(InputTechnologies)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_InputTechnology()
 	 * @model default="Html"
@@ -475,7 +447,7 @@ public interface WebsiteProperties extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Input Technology</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.InputTechnologies
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies
 	 * @see #getInputTechnology()
 	 * @generated
 	 */
@@ -484,7 +456,7 @@ public interface WebsiteProperties extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Ajax Technology</b></em>' attribute.
 	 * The default value is <code>"None"</code>.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies}.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ajax Technology</em>' attribute isn't clear,
@@ -492,7 +464,7 @@ public interface WebsiteProperties extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ajax Technology</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies
 	 * @see #setAjaxTechnology(AjaxTechnologies)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_AjaxTechnology()
 	 * @model default="None"
@@ -505,7 +477,7 @@ public interface WebsiteProperties extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Ajax Technology</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies
 	 * @see #getAjaxTechnology()
 	 * @generated
 	 */

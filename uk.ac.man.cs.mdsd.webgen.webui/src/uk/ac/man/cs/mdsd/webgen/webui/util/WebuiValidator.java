@@ -224,6 +224,10 @@ public class WebuiValidator extends EObjectValidator {
 				return validateFeatureSupportAction((FeatureSupportAction)value, diagnostics, context);
 			case WebuiPackage.FEATURE_REFERENCE:
 				return validateFeatureReference((FeatureReference)value, diagnostics, context);
+			case WebuiPackage.INPUT_TECHNOLOGIES:
+				return validateInputTechnologies((InputTechnologies)value, diagnostics, context);
+			case WebuiPackage.AJAX_TECHNOLOGIES:
+				return validateAjaxTechnologies((AjaxTechnologies)value, diagnostics, context);
 			case WebuiPackage.PAGE_TOP_MENU_OPTIONS:
 				return validatePageTopMenuOptions((PageTopMenuOptions)value, diagnostics, context);
 			case WebuiPackage.COLLECTION_DISPLAY_OPTIONS:
@@ -1856,6 +1860,24 @@ public class WebuiValidator extends EObjectValidator {
 	 */
 	public boolean validateFeatureReference(FeatureReference featureReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(featureReference, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInputTechnologies(InputTechnologies inputTechnologies, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAjaxTechnologies(AjaxTechnologies ajaxTechnologies, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**

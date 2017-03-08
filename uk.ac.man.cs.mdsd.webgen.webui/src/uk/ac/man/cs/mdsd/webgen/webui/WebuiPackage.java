@@ -81,13 +81,22 @@ public interface WebuiPackage extends EPackage {
 	int WEB_UI__SERVICES = 0;
 
 	/**
+	 * The feature id for the '<em><b>Menus</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_UI__MENUS = 1;
+
+	/**
 	 * The feature id for the '<em><b>Global Menu</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_UI__GLOBAL_MENU = 1;
+	int WEB_UI__GLOBAL_MENU = 2;
 
 	/**
 	 * The feature id for the '<em><b>Pages</b></em>' containment reference list.
@@ -96,16 +105,61 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_UI__PAGES = 2;
+	int WEB_UI__PAGES = 3;
 
 	/**
-	 * The feature id for the '<em><b>Menus</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Default Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_UI__MENUS = 3;
+	int WEB_UI__DEFAULT_DATE_FORMAT = 4;
+
+	/**
+	 * The feature id for the '<em><b>Default Time Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_UI__DEFAULT_TIME_FORMAT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Default Date Time Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_UI__DEFAULT_DATE_TIME_FORMAT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Default Maximum Upload Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_UI__DEFAULT_MAXIMUM_UPLOAD_SIZE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Input Technology</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_UI__INPUT_TECHNOLOGY = 8;
+
+	/**
+	 * The feature id for the '<em><b>Ajax Technology</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_UI__AJAX_TECHNOLOGY = 9;
 
 	/**
 	 * The number of structural features of the '<em>Web UI</em>' class.
@@ -114,7 +168,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_UI_FEATURE_COUNT = 4;
+	int WEB_UI_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Web UI</em>' class.
@@ -10487,6 +10541,26 @@ public interface WebuiPackage extends EPackage {
 	int FEATURE_REFERENCE_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies <em>Input Technologies</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getInputTechnologies()
+	 * @generated
+	 */
+	int INPUT_TECHNOLOGIES = 64;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getAjaxTechnologies()
+	 * @generated
+	 */
+	int AJAX_TECHNOLOGIES = 65;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10494,7 +10568,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 64;
+	int PAGE_TOP_MENU_OPTIONS = 66;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -10504,7 +10578,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 65;
+	int COLLECTION_DISPLAY_OPTIONS = 67;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.IndexDisplayOption <em>Index Display Option</em>}' enum.
@@ -10514,7 +10588,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getIndexDisplayOption()
 	 * @generated
 	 */
-	int INDEX_DISPLAY_OPTION = 66;
+	int INDEX_DISPLAY_OPTION = 68;
 
 
 	/**
@@ -10559,6 +10633,72 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getWebUI_Pages();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDefaultDateFormat <em>Default Date Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Default Date Format</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDefaultDateFormat()
+	 * @see #getWebUI()
+	 * @generated
+	 */
+	EAttribute getWebUI_DefaultDateFormat();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDefaultTimeFormat <em>Default Time Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Default Time Format</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDefaultTimeFormat()
+	 * @see #getWebUI()
+	 * @generated
+	 */
+	EAttribute getWebUI_DefaultTimeFormat();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDefaultDateTimeFormat <em>Default Date Time Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Default Date Time Format</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDefaultDateTimeFormat()
+	 * @see #getWebUI()
+	 * @generated
+	 */
+	EAttribute getWebUI_DefaultDateTimeFormat();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDefaultMaximumUploadSize <em>Default Maximum Upload Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Default Maximum Upload Size</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDefaultMaximumUploadSize()
+	 * @see #getWebUI()
+	 * @generated
+	 */
+	EAttribute getWebUI_DefaultMaximumUploadSize();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getInputTechnology <em>Input Technology</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Input Technology</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getInputTechnology()
+	 * @see #getWebUI()
+	 * @generated
+	 */
+	EAttribute getWebUI_InputTechnology();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getAjaxTechnology <em>Ajax Technology</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ajax Technology</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getAjaxTechnology()
+	 * @see #getWebUI()
+	 * @generated
+	 */
+	EAttribute getWebUI_AjaxTechnology();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getMenus <em>Menus</em>}'.
@@ -13523,6 +13663,26 @@ public interface WebuiPackage extends EPackage {
 	EReference getFeatureReference_Feature();
 
 	/**
+	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies <em>Input Technologies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Input Technologies</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies
+	 * @generated
+	 */
+	EEnum getInputTechnologies();
+
+	/**
+	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies <em>Ajax Technologies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Ajax Technologies</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies
+	 * @generated
+	 */
+	EEnum getAjaxTechnologies();
+
+	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions <em>Page Top Menu Options</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13608,6 +13768,54 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference WEB_UI__PAGES = eINSTANCE.getWebUI_Pages();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Date Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEB_UI__DEFAULT_DATE_FORMAT = eINSTANCE.getWebUI_DefaultDateFormat();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Time Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEB_UI__DEFAULT_TIME_FORMAT = eINSTANCE.getWebUI_DefaultTimeFormat();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Date Time Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEB_UI__DEFAULT_DATE_TIME_FORMAT = eINSTANCE.getWebUI_DefaultDateTimeFormat();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Maximum Upload Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEB_UI__DEFAULT_MAXIMUM_UPLOAD_SIZE = eINSTANCE.getWebUI_DefaultMaximumUploadSize();
+
+		/**
+		 * The meta object literal for the '<em><b>Input Technology</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEB_UI__INPUT_TECHNOLOGY = eINSTANCE.getWebUI_InputTechnology();
+
+		/**
+		 * The meta object literal for the '<em><b>Ajax Technology</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEB_UI__AJAX_TECHNOLOGY = eINSTANCE.getWebUI_AjaxTechnology();
 
 		/**
 		 * The meta object literal for the '<em><b>Menus</b></em>' containment reference list feature.
@@ -15934,6 +16142,26 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FEATURE_REFERENCE__FEATURE = eINSTANCE.getFeatureReference_Feature();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies <em>Input Technologies</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies
+		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getInputTechnologies()
+		 * @generated
+		 */
+		EEnum INPUT_TECHNOLOGIES = eINSTANCE.getInputTechnologies();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies
+		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getAjaxTechnologies()
+		 * @generated
+		 */
+		EEnum AJAX_TECHNOLOGIES = eINSTANCE.getAjaxTechnologies();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.

@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -64,6 +65,12 @@ public class WebUIItemProvider
 
 			addServicesPropertyDescriptor(object);
 			addGlobalMenuPropertyDescriptor(object);
+			addDefaultDateFormatPropertyDescriptor(object);
+			addDefaultTimeFormatPropertyDescriptor(object);
+			addDefaultDateTimeFormatPropertyDescriptor(object);
+			addDefaultMaximumUploadSizePropertyDescriptor(object);
+			addInputTechnologyPropertyDescriptor(object);
+			addAjaxTechnologyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -113,6 +120,138 @@ public class WebUIItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Default Date Format feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultDateFormatPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebUI_defaultDateFormat_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebUI_defaultDateFormat_feature", "_UI_WebUI_type"),
+				 WebuiPackage.Literals.WEB_UI__DEFAULT_DATE_FORMAT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Time Format feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultTimeFormatPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebUI_defaultTimeFormat_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebUI_defaultTimeFormat_feature", "_UI_WebUI_type"),
+				 WebuiPackage.Literals.WEB_UI__DEFAULT_TIME_FORMAT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Date Time Format feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultDateTimeFormatPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebUI_defaultDateTimeFormat_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebUI_defaultDateTimeFormat_feature", "_UI_WebUI_type"),
+				 WebuiPackage.Literals.WEB_UI__DEFAULT_DATE_TIME_FORMAT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Maximum Upload Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultMaximumUploadSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebUI_defaultMaximumUploadSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebUI_defaultMaximumUploadSize_feature", "_UI_WebUI_type"),
+				 WebuiPackage.Literals.WEB_UI__DEFAULT_MAXIMUM_UPLOAD_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Input Technology feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputTechnologyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebUI_inputTechnology_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebUI_inputTechnology_feature", "_UI_WebUI_type"),
+				 WebuiPackage.Literals.WEB_UI__INPUT_TECHNOLOGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Ajax Technology feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAjaxTechnologyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebUI_ajaxTechnology_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebUI_ajaxTechnology_feature", "_UI_WebUI_type"),
+				 WebuiPackage.Literals.WEB_UI__AJAX_TECHNOLOGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -124,8 +263,8 @@ public class WebUIItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebuiPackage.Literals.WEB_UI__PAGES);
 			childrenFeatures.add(WebuiPackage.Literals.WEB_UI__MENUS);
+			childrenFeatures.add(WebuiPackage.Literals.WEB_UI__PAGES);
 		}
 		return childrenFeatures;
 	}
@@ -162,7 +301,10 @@ public class WebUIItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_WebUI_type");
+		String label = ((WebUI)object).getDefaultDateFormat();
+		return label == null || label.length() == 0 ?
+			getString("_UI_WebUI_type") :
+			getString("_UI_WebUI_type") + " " + label;
 	}
 	
 
@@ -178,8 +320,16 @@ public class WebUIItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(WebUI.class)) {
-			case WebuiPackage.WEB_UI__PAGES:
+			case WebuiPackage.WEB_UI__DEFAULT_DATE_FORMAT:
+			case WebuiPackage.WEB_UI__DEFAULT_TIME_FORMAT:
+			case WebuiPackage.WEB_UI__DEFAULT_DATE_TIME_FORMAT:
+			case WebuiPackage.WEB_UI__DEFAULT_MAXIMUM_UPLOAD_SIZE:
+			case WebuiPackage.WEB_UI__INPUT_TECHNOLOGY:
+			case WebuiPackage.WEB_UI__AJAX_TECHNOLOGY:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case WebuiPackage.WEB_UI__MENUS:
+			case WebuiPackage.WEB_UI__PAGES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -199,11 +349,6 @@ public class WebUIItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.WEB_UI__PAGES,
-				 WebuiFactory.eINSTANCE.createPage()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(WebuiPackage.Literals.WEB_UI__MENUS,
 				 WebuiFactory.eINSTANCE.createStaticMenu()));
 
@@ -211,6 +356,11 @@ public class WebUIItemProvider
 			(createChildParameter
 				(WebuiPackage.Literals.WEB_UI__MENUS,
 				 WebuiFactory.eINSTANCE.createDynamicMenu()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.WEB_UI__PAGES,
+				 WebuiFactory.eINSTANCE.createPage()));
 	}
 
 	/**

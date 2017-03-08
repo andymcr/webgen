@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="Persistence">
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="Entity">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="Data Type Attribute">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="Date Attribute">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="File Attribute">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="Image Attribute">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="Location Attribute">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="URL Attribute">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="Uncontained Association">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="Contained Association">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="View">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="Encapsulated Attribute">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="Encapsulated Association">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="View Association">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+    <tools
+        xsi:type="gmftool:CreationTool"
+        title="Model Label">
+      <smallIcon
+          xsi:type="gmftool:DefaultImage"/>
+      <largeIcon
+          xsi:type="gmftool:DefaultImage"/>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

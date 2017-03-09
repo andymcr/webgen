@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: security,
- security.impl,
- security.util
+Export-Package: uk.ac.man.cs.mdsd.webgen.security,
+ uk.ac.man.cs.mdsd.webgen.security.impl,
+ uk.ac.man.cs.mdsd.webgen.security.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  uk.ac.man.cs.mdsd.webgen.expression;visibility:=reexport,

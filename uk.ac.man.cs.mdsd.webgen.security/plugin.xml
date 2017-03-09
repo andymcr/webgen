@@ -10,7 +10,7 @@
       <!-- @generated security -->
       <package
             uri="http://cs.man.ac.uk/mdsd/webgen/security"
-            class="security.SecurityPackage"
+            class="uk.ac.man.cs.mdsd.webgen.security.SecurityPackage"
             genModel="model/security.genmodel"/>
    </extension>
 

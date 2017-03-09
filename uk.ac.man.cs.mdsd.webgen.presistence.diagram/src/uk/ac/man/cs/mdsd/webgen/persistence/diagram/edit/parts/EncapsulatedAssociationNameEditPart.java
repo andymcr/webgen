@@ -521,6 +521,7 @@ public class EncapsulatedAssociationNameEditPart extends CompartmentEditPart imp
 	/**
 	* @generated
 	*/
+	@SuppressWarnings("rawtypes")
 	@Override
 	public Object getAdapter(Class key) {
 		if (ILabelDelegate.class.equals(key)) {

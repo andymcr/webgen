@@ -198,6 +198,7 @@ public class PersistenceCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	* @generated
 	*/
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
 		Collection<PersistenceLinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
@@ -234,6 +235,7 @@ public class PersistenceCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	* @generated
 	*/
+	@SuppressWarnings("rawtypes")
 	private Collection<PersistenceLinkDescriptor> collectAllLinks(View view, Domain2Notation domain2NotationMap) {
 		if (!PersistenceEditPart.MODEL_ID.equals(PersistenceVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();

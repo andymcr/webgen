@@ -55,7 +55,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="persistence.gmfgraph#AttributeNameLabel"/>
+                href="persistence.gmfgraph#FeatureNameLabel"/>
             <features
                 href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
@@ -63,7 +63,7 @@
               xsi:type="gmftool:CreationTool"
               href="persistence.gmftool#//@palette/@tools.1"/>
           <diagramNode
-              href="persistence.gmfgraph#Attribute"/>
+              href="persistence.gmfgraph#Feature"/>
         </ownedChild>
       </children>
       <children
@@ -76,7 +76,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="persistence.gmfgraph#AttributeNameLabel"/>
+                href="persistence.gmfgraph#FeatureNameLabel"/>
             <features
                 href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
@@ -84,7 +84,7 @@
               xsi:type="gmftool:CreationTool"
               href="persistence.gmftool#//@palette/@tools.2"/>
           <diagramNode
-              href="persistence.gmfgraph#Attribute"/>
+              href="persistence.gmfgraph#Feature"/>
         </ownedChild>
       </children>
       <children
@@ -97,7 +97,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="persistence.gmfgraph#AttributeNameLabel"/>
+                href="persistence.gmfgraph#FeatureNameLabel"/>
             <features
                 href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
@@ -105,7 +105,7 @@
               xsi:type="gmftool:CreationTool"
               href="persistence.gmftool#//@palette/@tools.3"/>
           <diagramNode
-              href="persistence.gmfgraph#Attribute"/>
+              href="persistence.gmfgraph#Feature"/>
         </ownedChild>
       </children>
       <children
@@ -118,7 +118,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="persistence.gmfgraph#AttributeNameLabel"/>
+                href="persistence.gmfgraph#FeatureNameLabel"/>
             <features
                 href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
@@ -126,7 +126,7 @@
               xsi:type="gmftool:CreationTool"
               href="persistence.gmftool#//@palette/@tools.4"/>
           <diagramNode
-              href="persistence.gmfgraph#Attribute"/>
+              href="persistence.gmfgraph#Feature"/>
         </ownedChild>
       </children>
       <children
@@ -139,7 +139,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="persistence.gmfgraph#AttributeNameLabel"/>
+                href="persistence.gmfgraph#FeatureNameLabel"/>
             <features
                 href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
@@ -147,7 +147,7 @@
               xsi:type="gmftool:CreationTool"
               href="persistence.gmftool#//@palette/@tools.5"/>
           <diagramNode
-              href="persistence.gmfgraph#Attribute"/>
+              href="persistence.gmfgraph#Feature"/>
         </ownedChild>
       </children>
       <children
@@ -160,7 +160,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="persistence.gmfgraph#AttributeNameLabel"/>
+                href="persistence.gmfgraph#FeatureNameLabel"/>
             <features
                 href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
@@ -168,7 +168,7 @@
               xsi:type="gmftool:CreationTool"
               href="persistence.gmftool#//@palette/@tools.6"/>
           <diagramNode
-              href="persistence.gmfgraph#Attribute"/>
+              href="persistence.gmfgraph#Feature"/>
         </ownedChild>
       </children>
       <compartments
@@ -179,7 +179,7 @@
       <compartments
           children="//@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.6">
         <compartment
-            href="persistence.gmfgraph#AttributeCompartment"/>
+            href="persistence.gmfgraph#FeatureCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -232,7 +232,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="persistence.gmfgraph#AttributeNameLabel"/>
+                href="persistence.gmfgraph#FeatureNameLabel"/>
             <features
                 href="persistence.ecore#//EncapsulatedAttribute/name"/>
           </labelMappings>
@@ -240,7 +240,7 @@
               xsi:type="gmftool:CreationTool"
               href="persistence.gmftool#//@palette/@tools.10"/>
           <diagramNode
-              href="persistence.gmfgraph#Attribute"/>
+              href="persistence.gmfgraph#Feature"/>
         </ownedChild>
       </children>
       <children
@@ -253,7 +253,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="persistence.gmfgraph#AttributeNameLabel"/>
+                href="persistence.gmfgraph#FeatureNameLabel"/>
             <features
                 href="persistence.ecore#//EncapsulatedAssociation/name"/>
           </labelMappings>
@@ -261,7 +261,7 @@
               xsi:type="gmftool:CreationTool"
               href="persistence.gmftool#//@palette/@tools.11"/>
           <diagramNode
-              href="persistence.gmfgraph#Attribute"/>
+              href="persistence.gmfgraph#Feature"/>
         </ownedChild>
       </children>
       <children
@@ -274,7 +274,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="persistence.gmfgraph#AttributeNameLabel"/>
+                href="persistence.gmfgraph#FeatureNameLabel"/>
             <features
                 href="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement/name"/>
           </labelMappings>
@@ -282,7 +282,7 @@
               xsi:type="gmftool:CreationTool"
               href="persistence.gmftool#//@palette/@tools.12"/>
           <diagramNode
-              href="persistence.gmfgraph#Attribute"/>
+              href="persistence.gmfgraph#Feature"/>
         </ownedChild>
       </children>
       <compartments
@@ -293,7 +293,7 @@
       <compartments
           children="//@nodes.1/@ownedChild/@children.1 //@nodes.1/@ownedChild/@children.2 //@nodes.1/@ownedChild/@children.3">
         <compartment
-            href="persistence.gmfgraph#AttributeCompartment"/>
+            href="persistence.gmfgraph#FeatureCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>

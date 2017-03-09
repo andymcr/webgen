@@ -17,6 +17,7 @@ public class PersistenceDiagramActionBarContributor extends DiagramActionBarCont
 	/**
 	* @generated
 	*/
+	@SuppressWarnings("rawtypes")
 	protected Class getEditorClass() {
 		return PersistenceDiagramEditor.class;
 	}

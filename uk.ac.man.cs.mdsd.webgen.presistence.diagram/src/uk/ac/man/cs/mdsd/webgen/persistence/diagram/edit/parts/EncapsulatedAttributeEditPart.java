@@ -91,14 +91,14 @@ public class EncapsulatedAttributeEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure createNodeShape() {
-		return primaryShape = new AttributeFigure();
+		return primaryShape = new FeatureFigure();
 	}
 
 	/**
 	* @generated
 	*/
-	public AttributeFigure getPrimaryShape() {
-		return (AttributeFigure) primaryShape;
+	public FeatureFigure getPrimaryShape() {
+		return (FeatureFigure) primaryShape;
 	}
 
 	/**
@@ -106,8 +106,7 @@ public class EncapsulatedAttributeEditPart extends ShapeNodeEditPart {
 	*/
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof EncapsulatedAttributeNameEditPart) {
-			((EncapsulatedAttributeNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureAttributeNameLabel());
+			((EncapsulatedAttributeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureFeatureNameLabel());
 			return true;
 		}
 		return false;
@@ -244,19 +243,19 @@ public class EncapsulatedAttributeEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
-	 */
-	public class AttributeFigure extends RectangleFigure {
+	* @generated
+	*/
+	public class FeatureFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureAttributeNameLabel;
+		private WrappingLabel fFigureFeatureNameLabel;
 
 		/**
 		 * @generated
 		 */
-		public AttributeFigure() {
+		public FeatureFigure() {
 			this.setBackgroundColor(THIS_BACK);
 			createContents();
 		}
@@ -266,19 +265,19 @@ public class EncapsulatedAttributeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureAttributeNameLabel = new WrappingLabel();
+			fFigureFeatureNameLabel = new WrappingLabel();
 
-			fFigureAttributeNameLabel.setText("");
+			fFigureFeatureNameLabel.setText("");
 
-			this.add(fFigureAttributeNameLabel);
+			this.add(fFigureFeatureNameLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureAttributeNameLabel() {
-			return fFigureAttributeNameLabel;
+		public WrappingLabel getFigureFeatureNameLabel() {
+			return fFigureFeatureNameLabel;
 		}
 
 	}

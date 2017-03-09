@@ -8,37 +8,6 @@
   <figures
       name="Gallery">
     <descriptors
-        name="AttributeFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="AttributeShapeFigure">
-        <backgroundColor
-            xsi:type="gmfgraph:RGBColor"
-            red="230"
-            green="230"
-            blue="250"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="AttributeNameLabel"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="AttributesFigure">
-      <actualFigure
-          xsi:type="gmfgraph:InvisibleRectangle"
-          name="AttributesShape">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"
-            matchMinorSize="true"
-            majorAlignment="CENTER"
-            minorAlignment="CENTER"
-            majorSpacing="2"
-            minorSpacing="2"/>
-      </actualFigure>
-    </descriptors>
-    <descriptors
         name="ContainedAssociationFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
@@ -58,9 +27,9 @@
             href="../../../plugin/org.eclipse.gmf.graphdef/models/classDiagram.gmfgraph#//@figures.0/@figures.2"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="EntityFigure">
@@ -90,7 +59,38 @@
       </actualFigure>
       <accessors
           accessor="getFigureEntityNameLabel"
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="FeatureFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="FeatureShapeFigure">
+        <backgroundColor
+            xsi:type="gmfgraph:RGBColor"
+            red="230"
+            green="230"
+            blue="250"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="FeatureNameLabel"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="FeaturesFigure">
+      <actualFigure
+          xsi:type="gmfgraph:InvisibleRectangle"
+          name="AttributesShape">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"
+            matchMinorSize="true"
+            majorAlignment="CENTER"
+            minorAlignment="CENTER"
+            majorSpacing="2"
+            minorSpacing="2"/>
+      </actualFigure>
     </descriptors>
     <descriptors
         name="ModelLabelFigure">
@@ -144,16 +144,6 @@
     </descriptors>
   </figures>
   <nodes
-      name="Attribute"
-      figure="AttributeFigure">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="80"
-          dy="20"/>
-    </facets>
-  </nodes>
-  <nodes
       name="Entity"
       figure="EntityFigure">
     <facets
@@ -161,6 +151,16 @@
       <defaultSize
           dx="90"
           dy="80"/>
+    </facets>
+  </nodes>
+  <nodes
+      name="Feature"
+      figure="FeatureFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="80"
+          dy="20"/>
     </facets>
   </nodes>
   <nodes
@@ -190,27 +190,27 @@
       name="ContainedAssoicationConnection"
       figure="ContainedAssociationFigure"/>
   <compartments
-      name="AttributeCompartment"
-      figure="AttributesFigure"/>
+      name="FeatureCompartment"
+      figure="FeaturesFigure"/>
   <compartments
       name="ModelLabelCompartment"
       figure="ModelLabelsFigure"/>
   <labels
-      name="AttributeNameLabel"
-      figure="AttributeFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels
       name="ContainedAssociationMultiplicityLabel"
       figure="ContainedAssociationFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
       name="ContainedAssociationNameLabel"
       figure="ContainedAssociationFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
       name="EntityNameLabel"
       figure="EntityFigure"
-      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels
+      name="FeatureNameLabel"
+      figure="FeatureFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels
       name="ModelLabelNameLabel"
       figure="ModelLabelFigure"

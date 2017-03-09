@@ -8,6 +8,7 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributo
 /**
  * @generated
  */
+@SuppressWarnings("rawtypes")
 public abstract class PersistenceAbstractNavigatorItem extends PlatformObject {
 
 	/**

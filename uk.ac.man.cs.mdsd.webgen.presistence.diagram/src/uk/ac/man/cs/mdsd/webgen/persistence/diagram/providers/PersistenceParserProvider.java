@@ -28,7 +28,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.diagram.edit.parts.EntityNameEditPar
 import uk.ac.man.cs.mdsd.webgen.persistence.diagram.edit.parts.FileAttributeNameEditPart;
 import uk.ac.man.cs.mdsd.webgen.persistence.diagram.edit.parts.ImageAttributeNameEditPart;
 import uk.ac.man.cs.mdsd.webgen.persistence.diagram.edit.parts.LocationAttributeNameEditPart;
-import uk.ac.man.cs.mdsd.webgen.persistence.diagram.edit.parts.ModelLabelEditPart;
 import uk.ac.man.cs.mdsd.webgen.persistence.diagram.edit.parts.ModelLabelName2EditPart;
 import uk.ac.man.cs.mdsd.webgen.persistence.diagram.edit.parts.ModelLabelNameEditPart;
 import uk.ac.man.cs.mdsd.webgen.persistence.diagram.edit.parts.UrlAttributeNameEditPart;

@@ -521,6 +521,7 @@ public class ModelLabelNameEditPart extends CompartmentEditPart implements IText
 	/**
 	* @generated
 	*/
+	@SuppressWarnings("rawtypes")
 	@Override
 	public Object getAdapter(Class key) {
 		if (ILabelDelegate.class.equals(key)) {

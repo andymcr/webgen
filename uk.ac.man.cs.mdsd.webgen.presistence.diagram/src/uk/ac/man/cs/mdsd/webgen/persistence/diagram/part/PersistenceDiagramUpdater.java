@@ -59,11 +59,11 @@ public class PersistenceDiagramUpdater {
 		case EntityModelLabelCompartmentEditPart.VISUAL_ID:
 			return getEntityModelLabelCompartment_7001SemanticChildren(view);
 		case EntityAttributeCompartmentEditPart.VISUAL_ID:
-			return getEntityAttributeCompartment_7002SemanticChildren(view);
+			return getEntityFeatureCompartment_7002SemanticChildren(view);
 		case ViewModelLabelCompartmentEditPart.VISUAL_ID:
 			return getViewModelLabelCompartment_7003SemanticChildren(view);
 		case ViewAttributeCompartmentEditPart.VISUAL_ID:
-			return getViewAttributeCompartment_7004SemanticChildren(view);
+			return getViewFeatureCompartment_7004SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -119,7 +119,7 @@ public class PersistenceDiagramUpdater {
 	/**
 	* @generated
 	*/
-	public static List<PersistenceNodeDescriptor> getEntityAttributeCompartment_7002SemanticChildren(View view) {
+	public static List<PersistenceNodeDescriptor> getEntityFeatureCompartment_7002SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -188,7 +188,7 @@ public class PersistenceDiagramUpdater {
 	/**
 	* @generated
 	*/
-	public static List<PersistenceNodeDescriptor> getViewAttributeCompartment_7004SemanticChildren(View view) {
+	public static List<PersistenceNodeDescriptor> getViewFeatureCompartment_7004SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}

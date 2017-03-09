@@ -33,7 +33,6 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.RelativeBendpoints;
 import org.eclipse.gmf.runtime.notation.Routing;
-import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.notation.datatype.RelativeBendpoint;
@@ -221,6 +220,7 @@ public class PersistenceViewProvider extends AbstractProvider implements IViewPr
 	/**
 	* @generated
 	*/
+	@SuppressWarnings("unchecked")
 	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		diagram.getStyles().add(NotationFactory.eINSTANCE.createDiagramStyle());
@@ -296,6 +296,7 @@ public class PersistenceViewProvider extends AbstractProvider implements IViewPr
 	/**
 	* @generated
 	*/
+	@SuppressWarnings({ "unchecked", "unused" })
 	public Node createEntity_2001(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();

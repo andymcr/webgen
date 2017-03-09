@@ -521,6 +521,7 @@ public class EncapsulatedAttributeNameEditPart extends CompartmentEditPart imple
 	/**
 	* @generated
 	*/
+	@SuppressWarnings("rawtypes")
 	@Override
 	public Object getAdapter(Class key) {
 		if (ILabelDelegate.class.equals(key)) {

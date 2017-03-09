@@ -65,7 +65,7 @@ public class EntityAttributeCompartmentCanonicalEditPolicy extends CanonicalEdit
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<PersistenceNodeDescriptor> childDescriptors = PersistenceDiagramUpdater
-				.getEntityAttributeCompartment_7002SemanticChildren(viewObject);
+				.getEntityFeatureCompartment_7002SemanticChildren(viewObject);
 		for (PersistenceNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -105,7 +105,7 @@ public class EntityAttributeCompartmentCanonicalEditPolicy extends CanonicalEdit
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<PersistenceNodeDescriptor> childDescriptors = PersistenceDiagramUpdater
-				.getEntityAttributeCompartment_7002SemanticChildren((View) getHost().getModel());
+				.getEntityFeatureCompartment_7002SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();

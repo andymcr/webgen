@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfmap:Mapping
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings">
+  <nodes>
+    <ownedChild/>
+  </nodes>
+  <diagram>
+    <diagramCanvas
+        href="menu.gmfgraph#MenuGallery"/>
+    <domainModel
+        href="webui.ecore#/"/>
+    <domainMetaElement
+        href="webui.ecore#//WebUI"/>
+    <palette
+        href="menu.gmftool#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>

@@ -164,11 +164,11 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import uk.ac.man.cs.mdsd.webgen.website.provider.WebsiteItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-import security.provider.SecurityItemProviderAdapterFactory;
 import uk.ac.man.cs.mdsd.webgen.base.provider.BaseItemProviderAdapterFactory;
 import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionItemProviderAdapterFactory;
 import uk.ac.man.cs.mdsd.webgen.image.provider.ImageItemProviderAdapterFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.provider.PersistenceItemProviderAdapterFactory;
+import uk.ac.man.cs.mdsd.webgen.security.provider.SecurityItemProviderAdapterFactory;
 import uk.ac.man.cs.mdsd.webgen.service.provider.ServiceItemProviderAdapterFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.provider.WebuiItemProviderAdapterFactory;
 

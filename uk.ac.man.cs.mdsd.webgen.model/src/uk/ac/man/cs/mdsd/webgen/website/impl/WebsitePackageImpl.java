@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import security.SecurityPackage;
 import uk.ac.man.cs.mdsd.webgen.image.ImagePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.security.SecurityPackage;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;

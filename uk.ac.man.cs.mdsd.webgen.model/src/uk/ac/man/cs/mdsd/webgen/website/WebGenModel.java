@@ -9,11 +9,11 @@ package uk.ac.man.cs.mdsd.webgen.website;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import security.Security;
 import uk.ac.man.cs.mdsd.webgen.image.Image;
 import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
+import uk.ac.man.cs.mdsd.webgen.security.Security;
 import uk.ac.man.cs.mdsd.webgen.service.Services;
 import uk.ac.man.cs.mdsd.webgen.webui.Menu;
 import uk.ac.man.cs.mdsd.webgen.webui.WebUI;

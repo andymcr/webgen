@@ -19,16 +19,10 @@
         lowerBound="1" eType="#//WebsiteProperties" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="persistence" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Persistence"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="classifiers" upperBound="-1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//Classifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="servicesX" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Services"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Service"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="webUI" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//WebUI"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pages" upperBound="-1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//Page"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="menus" upperBound="-1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//Menu"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="images" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.image/model/image.ecore#//Image"

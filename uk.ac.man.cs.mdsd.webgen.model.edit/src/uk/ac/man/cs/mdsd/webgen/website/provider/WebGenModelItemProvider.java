@@ -67,80 +67,11 @@ public class WebGenModelItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addClassifiersPropertyDescriptor(object);
-			addServicesPropertyDescriptor(object);
-			addPagesPropertyDescriptor(object);
 			addMenusPropertyDescriptor(object);
 			addAllowTypeCustomisationPropertyDescriptor(object);
 			addImageManipulationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Classifiers feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addClassifiersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebGenModel_classifiers_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_classifiers_feature", "_UI_WebGenModel_type"),
-				 WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Services feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addServicesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebGenModel_services_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_services_feature", "_UI_WebGenModel_type"),
-				 WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Pages feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPagesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebGenModel_pages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_pages_feature", "_UI_WebGenModel_type"),
-				 WebsitePackage.Literals.WEB_GEN_MODEL__PAGES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

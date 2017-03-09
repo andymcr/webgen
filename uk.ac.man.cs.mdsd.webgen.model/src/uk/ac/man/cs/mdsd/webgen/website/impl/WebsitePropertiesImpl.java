@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
+import uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies;
+import uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies;
 import uk.ac.man.cs.mdsd.webgen.webui.Menu;
 
 /**
@@ -341,7 +343,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 * @ordered
 	 */
-	protected static final uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies INPUT_TECHNOLOGY_EDEFAULT = uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies.HTML;
+	protected static final InputTechnologies INPUT_TECHNOLOGY_EDEFAULT = InputTechnologies.HTML;
 
 	/**
 	 * The cached value of the '{@link #getInputTechnology() <em>Input Technology</em>}' attribute.
@@ -351,7 +353,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 * @ordered
 	 */
-	protected uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies inputTechnology = INPUT_TECHNOLOGY_EDEFAULT;
+	protected InputTechnologies inputTechnology = INPUT_TECHNOLOGY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAjaxTechnology() <em>Ajax Technology</em>}' attribute.
@@ -361,7 +363,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 * @ordered
 	 */
-	protected static final uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies AJAX_TECHNOLOGY_EDEFAULT = uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies.NONE;
+	protected static final AjaxTechnologies AJAX_TECHNOLOGY_EDEFAULT = AjaxTechnologies.NONE;
 
 	/**
 	 * The cached value of the '{@link #getAjaxTechnology() <em>Ajax Technology</em>}' attribute.
@@ -371,7 +373,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 * @ordered
 	 */
-	protected uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies ajaxTechnology = AJAX_TECHNOLOGY_EDEFAULT;
+	protected AjaxTechnologies ajaxTechnology = AJAX_TECHNOLOGY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCaptchaSiteKey() <em>Captcha Site Key</em>}' attribute.
@@ -841,7 +843,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies getInputTechnology() {
+	public InputTechnologies getInputTechnology() {
 		return inputTechnology;
 	}
 
@@ -850,8 +852,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInputTechnology(uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies newInputTechnology) {
-		uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies oldInputTechnology = inputTechnology;
+	public void setInputTechnology(InputTechnologies newInputTechnology) {
+		InputTechnologies oldInputTechnology = inputTechnology;
 		inputTechnology = newInputTechnology == null ? INPUT_TECHNOLOGY_EDEFAULT : newInputTechnology;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY, oldInputTechnology, inputTechnology));
@@ -862,7 +864,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies getAjaxTechnology() {
+	public AjaxTechnologies getAjaxTechnology() {
 		return ajaxTechnology;
 	}
 
@@ -871,8 +873,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAjaxTechnology(uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies newAjaxTechnology) {
-		uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies oldAjaxTechnology = ajaxTechnology;
+	public void setAjaxTechnology(AjaxTechnologies newAjaxTechnology) {
+		AjaxTechnologies oldAjaxTechnology = ajaxTechnology;
 		ajaxTechnology = newAjaxTechnology == null ? AJAX_TECHNOLOGY_EDEFAULT : newAjaxTechnology;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY, oldAjaxTechnology, ajaxTechnology));
@@ -1175,10 +1177,10 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY:
-				setInputTechnology((uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies)newValue);
+				setInputTechnology((InputTechnologies)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
-				setAjaxTechnology((uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies)newValue);
+				setAjaxTechnology((AjaxTechnologies)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
 				setCaptchaSiteKey((String)newValue);

@@ -22,18 +22,15 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import security.Security;
-import uk.ac.man.cs.mdsd.webgen.base.Classifier;
 import uk.ac.man.cs.mdsd.webgen.image.Image;
 import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
-import uk.ac.man.cs.mdsd.webgen.service.Service;
 import uk.ac.man.cs.mdsd.webgen.service.Services;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
 import uk.ac.man.cs.mdsd.webgen.webui.Menu;
-import uk.ac.man.cs.mdsd.webgen.webui.Page;
 import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 
 /**
@@ -46,11 +43,8 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getWebsiteProperties <em>Website Properties</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getPersistence <em>Persistence</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getClassifiers <em>Classifiers</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getServicesX <em>Services X</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getWebUI <em>Web UI</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getPages <em>Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getMenus <em>Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getImages <em>Images</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getSecurity <em>Security</em>}</li>
@@ -82,16 +76,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	protected Persistence persistence;
 
 	/**
-	 * The cached value of the '{@link #getClassifiers() <em>Classifiers</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClassifiers()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Classifier> classifiers;
-
-	/**
 	 * The cached value of the '{@link #getServicesX() <em>Services X</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,16 +86,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	protected Services servicesX;
 
 	/**
-	 * The cached value of the '{@link #getServices() <em>Services</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getServices()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Service> services;
-
-	/**
 	 * The cached value of the '{@link #getWebUI() <em>Web UI</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,16 +94,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * @ordered
 	 */
 	protected WebUI webUI;
-
-	/**
-	 * The cached value of the '{@link #getPages() <em>Pages</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPages()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Page> pages;
 
 	/**
 	 * The cached value of the '{@link #getMenus() <em>Menus</em>}' reference list.
@@ -291,18 +255,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<Service> getServices() {
-		if (services == null) {
-			services = new EObjectResolvingEList<Service>(Service.class, this, WebsitePackage.WEB_GEN_MODEL__SERVICES);
-		}
-		return services;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public WebUI getWebUI() {
 		return webUI;
 	}
@@ -339,18 +291,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_GEN_MODEL__WEB_UI, newWebUI, newWebUI));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public List<Page> getPages() {
-		if (pages == null) {
-			pages = new EObjectResolvingEList<Page>(Page.class, this, WebsitePackage.WEB_GEN_MODEL__PAGES);
-		}
-		return pages;
 	}
 
 	/**
@@ -523,18 +463,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<Classifier> getClassifiers() {
-		if (classifiers == null) {
-			classifiers = new EObjectResolvingEList<Classifier>(Classifier.class, this, WebsitePackage.WEB_GEN_MODEL__CLASSIFIERS);
-		}
-		return classifiers;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -566,16 +494,10 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 				return getWebsiteProperties();
 			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 				return getPersistence();
-			case WebsitePackage.WEB_GEN_MODEL__CLASSIFIERS:
-				return getClassifiers();
 			case WebsitePackage.WEB_GEN_MODEL__SERVICES_X:
 				return getServicesX();
-			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
-				return getServices();
 			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
 				return getWebUI();
-			case WebsitePackage.WEB_GEN_MODEL__PAGES:
-				return getPages();
 			case WebsitePackage.WEB_GEN_MODEL__MENUS:
 				return getMenus();
 			case WebsitePackage.WEB_GEN_MODEL__IMAGES:
@@ -605,23 +527,11 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 				setPersistence((Persistence)newValue);
 				return;
-			case WebsitePackage.WEB_GEN_MODEL__CLASSIFIERS:
-				getClassifiers().clear();
-				getClassifiers().addAll((Collection<? extends Classifier>)newValue);
-				return;
 			case WebsitePackage.WEB_GEN_MODEL__SERVICES_X:
 				setServicesX((Services)newValue);
 				return;
-			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
-				getServices().clear();
-				getServices().addAll((Collection<? extends Service>)newValue);
-				return;
 			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
 				setWebUI((WebUI)newValue);
-				return;
-			case WebsitePackage.WEB_GEN_MODEL__PAGES:
-				getPages().clear();
-				getPages().addAll((Collection<? extends Page>)newValue);
 				return;
 			case WebsitePackage.WEB_GEN_MODEL__MENUS:
 				getMenus().clear();
@@ -659,20 +569,11 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 				setPersistence((Persistence)null);
 				return;
-			case WebsitePackage.WEB_GEN_MODEL__CLASSIFIERS:
-				getClassifiers().clear();
-				return;
 			case WebsitePackage.WEB_GEN_MODEL__SERVICES_X:
 				setServicesX((Services)null);
 				return;
-			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
-				getServices().clear();
-				return;
 			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
 				setWebUI((WebUI)null);
-				return;
-			case WebsitePackage.WEB_GEN_MODEL__PAGES:
-				getPages().clear();
 				return;
 			case WebsitePackage.WEB_GEN_MODEL__MENUS:
 				getMenus().clear();
@@ -705,16 +606,10 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 				return websiteProperties != null;
 			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 				return persistence != null;
-			case WebsitePackage.WEB_GEN_MODEL__CLASSIFIERS:
-				return classifiers != null && !classifiers.isEmpty();
 			case WebsitePackage.WEB_GEN_MODEL__SERVICES_X:
 				return servicesX != null;
-			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
-				return services != null && !services.isEmpty();
 			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
 				return webUI != null;
-			case WebsitePackage.WEB_GEN_MODEL__PAGES:
-				return pages != null && !pages.isEmpty();
 			case WebsitePackage.WEB_GEN_MODEL__MENUS:
 				return menus != null && !menus.isEmpty();
 			case WebsitePackage.WEB_GEN_MODEL__IMAGES:

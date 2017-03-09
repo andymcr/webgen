@@ -90,31 +90,13 @@ public interface WebsitePackage extends EPackage {
 	int WEB_GEN_MODEL__PERSISTENCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Classifiers</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_GEN_MODEL__CLASSIFIERS = 2;
-
-	/**
 	 * The feature id for the '<em><b>Services X</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__SERVICES_X = 3;
-
-	/**
-	 * The feature id for the '<em><b>Services</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_GEN_MODEL__SERVICES = 4;
+	int WEB_GEN_MODEL__SERVICES_X = 2;
 
 	/**
 	 * The feature id for the '<em><b>Web UI</b></em>' containment reference.
@@ -123,16 +105,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__WEB_UI = 5;
-
-	/**
-	 * The feature id for the '<em><b>Pages</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEB_GEN_MODEL__PAGES = 6;
+	int WEB_GEN_MODEL__WEB_UI = 3;
 
 	/**
 	 * The feature id for the '<em><b>Menus</b></em>' reference list.
@@ -141,7 +114,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__MENUS = 7;
+	int WEB_GEN_MODEL__MENUS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Images</b></em>' containment reference.
@@ -150,7 +123,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__IMAGES = 8;
+	int WEB_GEN_MODEL__IMAGES = 5;
 
 	/**
 	 * The feature id for the '<em><b>Security</b></em>' containment reference.
@@ -159,7 +132,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__SECURITY = 9;
+	int WEB_GEN_MODEL__SECURITY = 6;
 
 	/**
 	 * The feature id for the '<em><b>Allow Type Customisation</b></em>' reference list.
@@ -168,7 +141,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION = 10;
+	int WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Image Manipulations</b></em>' reference list.
@@ -177,7 +150,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__IMAGE_MANIPULATIONS = 11;
+	int WEB_GEN_MODEL__IMAGE_MANIPULATIONS = 8;
 
 	/**
 	 * The number of structural features of the '<em>Web Gen Model</em>' class.
@@ -186,7 +159,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL_FEATURE_COUNT = 12;
+	int WEB_GEN_MODEL_FEATURE_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl <em>Properties</em>}' class.
@@ -466,17 +439,6 @@ public interface WebsitePackage extends EPackage {
 	EReference getWebGenModel_ServicesX();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServices <em>Services</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Services</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServices()
-	 * @see #getWebGenModel()
-	 * @generated
-	 */
-	EReference getWebGenModel_Services();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getWebUI <em>Web UI</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -486,17 +448,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getWebGenModel_WebUI();
-
-	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPages <em>Pages</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Pages</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPages()
-	 * @see #getWebGenModel()
-	 * @generated
-	 */
-	EReference getWebGenModel_Pages();
 
 	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getMenus <em>Menus</em>}'.
@@ -563,17 +514,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getWebGenModel_Persistence();
-
-	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getClassifiers <em>Classifiers</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Classifiers</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getClassifiers()
-	 * @see #getWebGenModel()
-	 * @generated
-	 */
-	EReference getWebGenModel_Classifiers();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties <em>Properties</em>}'.
@@ -908,28 +848,12 @@ public interface WebsitePackage extends EPackage {
 		EReference WEB_GEN_MODEL__SERVICES_X = eINSTANCE.getWebGenModel_ServicesX();
 
 		/**
-		 * The meta object literal for the '<em><b>Services</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference WEB_GEN_MODEL__SERVICES = eINSTANCE.getWebGenModel_Services();
-
-		/**
 		 * The meta object literal for the '<em><b>Web UI</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference WEB_GEN_MODEL__WEB_UI = eINSTANCE.getWebGenModel_WebUI();
-
-		/**
-		 * The meta object literal for the '<em><b>Pages</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference WEB_GEN_MODEL__PAGES = eINSTANCE.getWebGenModel_Pages();
 
 		/**
 		 * The meta object literal for the '<em><b>Menus</b></em>' reference list feature.
@@ -978,14 +902,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference WEB_GEN_MODEL__PERSISTENCE = eINSTANCE.getWebGenModel_Persistence();
-
-		/**
-		 * The meta object literal for the '<em><b>Classifiers</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference WEB_GEN_MODEL__CLASSIFIERS = eINSTANCE.getWebGenModel_Classifiers();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl <em>Properties</em>}' class.

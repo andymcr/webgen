@@ -11,7 +11,6 @@
 package uk.ac.man.cs.mdsd.waf
 
 import uk.ac.man.cs.mdsd.expression.Expression
-import uk.ac.man.cs.mdsd.expression.Path
 import uk.ac.man.cs.mdsd.expression.Predicate
 import uk.ac.man.cs.mdsd.orm.Association
 import uk.ac.man.cs.mdsd.orm.Attribute
@@ -515,13 +514,4 @@ class FeatureSupportAction extends InlineAction {
 	String confirmMessage
 	String[1] uriElement
 	String fileExtension
-}
-
-
-class ModelReference extends Path {
-	refers DynamicUnit[1] unit
-}
-
-class RouteParameterReference extends Path {
-	refers Attribute[1] parameter
 }

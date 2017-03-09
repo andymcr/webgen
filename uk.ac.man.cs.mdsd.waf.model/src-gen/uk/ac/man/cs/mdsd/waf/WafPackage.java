@@ -8,8 +8,6 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import uk.ac.man.cs.mdsd.expression.ExpressionPackage;
-
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
 /**
@@ -11804,80 +11802,6 @@ public interface WafPackage extends EPackage {
 	int FEATURE_SUPPORT_ACTION_OPERATION_COUNT = INLINE_ACTION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelReferenceImpl <em>Model Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.ModelReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelReference()
-	 * @generated
-	 */
-	int MODEL_REFERENCE = 68;
-
-	/**
-	 * The feature id for the '<em><b>Unit</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_REFERENCE__UNIT = ExpressionPackage.PATH_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Model Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_REFERENCE_FEATURE_COUNT = ExpressionPackage.PATH_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Model Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_REFERENCE_OPERATION_COUNT = ExpressionPackage.PATH_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.RouteParameterReferenceImpl <em>Route Parameter Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.RouteParameterReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRouteParameterReference()
-	 * @generated
-	 */
-	int ROUTE_PARAMETER_REFERENCE = 69;
-
-	/**
-	 * The feature id for the '<em><b>Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROUTE_PARAMETER_REFERENCE__PARAMETER = ExpressionPackage.PATH_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Route Parameter Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROUTE_PARAMETER_REFERENCE_FEATURE_COUNT = ExpressionPackage.PATH_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Route Parameter Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROUTE_PARAMETER_REFERENCE_OPERATION_COUNT = ExpressionPackage.PATH_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.FrameworkTechnologies <em>Framework Technologies</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11885,7 +11809,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 70;
+	int FRAMEWORK_TECHNOLOGIES = 68;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.InputTechnologies <em>Input Technologies</em>}' enum.
@@ -11895,7 +11819,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInputTechnologies()
 	 * @generated
 	 */
-	int INPUT_TECHNOLOGIES = 71;
+	int INPUT_TECHNOLOGIES = 69;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -11905,7 +11829,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 72;
+	int AJAX_TECHNOLOGIES = 70;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
@@ -11915,7 +11839,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPES = 73;
+	int AUTHENTICATION_KEY_TYPES = 71;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -11925,7 +11849,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 74;
+	int PAGE_TOP_MENU_OPTIONS = 72;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -11935,7 +11859,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 75;
+	int COLLECTION_DISPLAY_OPTIONS = 73;
 
 
 	/**
@@ -15105,48 +15029,6 @@ public interface WafPackage extends EPackage {
 	EAttribute getFeatureSupportAction_FileExtension();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ModelReference <em>Model Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model Reference</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelReference
-	 * @generated
-	 */
-	EClass getModelReference();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.ModelReference#getUnit <em>Unit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Unit</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelReference#getUnit()
-	 * @see #getModelReference()
-	 * @generated
-	 */
-	EReference getModelReference_Unit();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.RouteParameterReference <em>Route Parameter Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Route Parameter Reference</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.RouteParameterReference
-	 * @generated
-	 */
-	EClass getRouteParameterReference();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.RouteParameterReference#getParameter <em>Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Parameter</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.RouteParameterReference#getParameter()
-	 * @see #getRouteParameterReference()
-	 * @generated
-	 */
-	EReference getRouteParameterReference_Parameter();
-
-	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.waf.FrameworkTechnologies <em>Framework Technologies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -17716,42 +17598,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FEATURE_SUPPORT_ACTION__FILE_EXTENSION = eINSTANCE.getFeatureSupportAction_FileExtension();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelReferenceImpl <em>Model Reference</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.ModelReferenceImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelReference()
-		 * @generated
-		 */
-		EClass MODEL_REFERENCE = eINSTANCE.getModelReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Unit</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL_REFERENCE__UNIT = eINSTANCE.getModelReference_Unit();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.RouteParameterReferenceImpl <em>Route Parameter Reference</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.RouteParameterReferenceImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRouteParameterReference()
-		 * @generated
-		 */
-		EClass ROUTE_PARAMETER_REFERENCE = eINSTANCE.getRouteParameterReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROUTE_PARAMETER_REFERENCE__PARAMETER = eINSTANCE.getRouteParameterReference_Parameter();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.FrameworkTechnologies <em>Framework Technologies</em>}' enum.

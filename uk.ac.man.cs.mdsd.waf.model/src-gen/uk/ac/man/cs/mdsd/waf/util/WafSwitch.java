@@ -7,9 +7,6 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import uk.ac.man.cs.mdsd.expression.Expression;
-import uk.ac.man.cs.mdsd.expression.Path;
-
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.orm.NamedElement;
 
@@ -694,22 +691,6 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = caseInlineAction(featureSupportAction);
 				if (result == null) result = caseNamedDisplayElement(featureSupportAction);
 				if (result == null) result = caseNamedElement(featureSupportAction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.MODEL_REFERENCE: {
-				ModelReference modelReference = (ModelReference)theEObject;
-				T result = caseModelReference(modelReference);
-				if (result == null) result = casePath(modelReference);
-				if (result == null) result = caseExpression(modelReference);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.ROUTE_PARAMETER_REFERENCE: {
-				RouteParameterReference routeParameterReference = (RouteParameterReference)theEObject;
-				T result = caseRouteParameterReference(routeParameterReference);
-				if (result == null) result = casePath(routeParameterReference);
-				if (result == null) result = caseExpression(routeParameterReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1738,36 +1719,6 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelReference(ModelReference object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Route Parameter Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Route Parameter Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRouteParameterReference(RouteParameterReference object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1794,36 +1745,6 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedDisplayElement(NamedDisplayElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExpression(Expression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Path</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Path</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePath(Path object) {
 		return null;
 	}
 

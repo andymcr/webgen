@@ -17,7 +17,6 @@ import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
 import uk.ac.man.cs.mdsd.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.waf.InterfaceField;
-import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -465,16 +464,6 @@ public class InterfaceFieldItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
-				 WafFactory.eINSTANCE.createModelReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
-				 WafFactory.eINSTANCE.createRouteParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

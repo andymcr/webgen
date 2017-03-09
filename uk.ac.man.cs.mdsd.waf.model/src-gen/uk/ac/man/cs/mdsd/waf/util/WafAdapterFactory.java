@@ -9,9 +9,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import uk.ac.man.cs.mdsd.expression.Expression;
-import uk.ac.man.cs.mdsd.expression.Path;
-
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.orm.NamedElement;
 
@@ -346,28 +343,12 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createFeatureSupportActionAdapter();
 			}
 			@Override
-			public Adapter caseModelReference(ModelReference object) {
-				return createModelReferenceAdapter();
-			}
-			@Override
-			public Adapter caseRouteParameterReference(RouteParameterReference object) {
-				return createRouteParameterReferenceAdapter();
-			}
-			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
 			}
 			@Override
 			public Adapter caseNamedDisplayElement(NamedDisplayElement object) {
 				return createNamedDisplayElementAdapter();
-			}
-			@Override
-			public Adapter caseExpression(Expression object) {
-				return createExpressionAdapter();
-			}
-			@Override
-			public Adapter casePath(Path object) {
-				return createPathAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -1342,34 +1323,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelReference <em>Model Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelReference
-	 * @generated
-	 */
-	public Adapter createModelReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.RouteParameterReference <em>Route Parameter Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.RouteParameterReference
-	 * @generated
-	 */
-	public Adapter createRouteParameterReferenceAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.orm.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1394,34 +1347,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedDisplayElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.expression.Expression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.expression.Expression
-	 * @generated
-	 */
-	public Adapter createExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.expression.Path <em>Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.expression.Path
-	 * @generated
-	 */
-	public Adapter createPathAdapter() {
 		return null;
 	}
 

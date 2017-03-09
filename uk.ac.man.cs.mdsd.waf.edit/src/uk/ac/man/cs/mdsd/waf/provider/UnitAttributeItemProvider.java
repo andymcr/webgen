@@ -18,7 +18,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.waf.UnitAttribute;
-import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -259,16 +258,6 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
-				 WafFactory.eINSTANCE.createModelReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
-				 WafFactory.eINSTANCE.createRouteParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

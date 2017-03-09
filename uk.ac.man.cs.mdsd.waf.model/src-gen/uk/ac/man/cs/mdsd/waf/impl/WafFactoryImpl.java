@@ -100,8 +100,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.SELECT_ACTION: return createSelectAction();
 			case WafPackage.DELETE_ACTION: return createDeleteAction();
 			case WafPackage.FEATURE_SUPPORT_ACTION: return createFeatureSupportAction();
-			case WafPackage.MODEL_REFERENCE: return createModelReference();
-			case WafPackage.ROUTE_PARAMETER_REFERENCE: return createRouteParameterReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -585,26 +583,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public FeatureSupportAction createFeatureSupportAction() {
 		FeatureSupportActionImpl featureSupportAction = new FeatureSupportActionImpl();
 		return featureSupportAction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelReference createModelReference() {
-		ModelReferenceImpl modelReference = new ModelReferenceImpl();
-		return modelReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RouteParameterReference createRouteParameterReference() {
-		RouteParameterReferenceImpl routeParameterReference = new RouteParameterReferenceImpl();
-		return routeParameterReference;
 	}
 
 	/**

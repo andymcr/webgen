@@ -13,5 +13,5 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL onlyStaticEntries='entries->select(e | e.oclIsKindOf(MenuFeature))->isEmpty()'"
  * @generated
  */
-public interface StaticMenu extends Menu {
+public interface StaticMenu extends GlobalMenu, ContextMenu {
 } // StaticMenu

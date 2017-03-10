@@ -9,9 +9,11 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import uk.ac.man.cs.mdsd.webgen.webui.StaticMenu;
+import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.StaticMenu} object.
@@ -19,7 +21,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.StaticMenu;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StaticMenuItemProvider extends MenuItemProvider {
+public class StaticMenuItemProvider extends GlobalMenuItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -41,8 +43,31 @@ public class StaticMenuItemProvider extends MenuItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addContextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Context feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContextPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContextMenu_context_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContextMenu_context_feature", "_UI_ContextMenu_type"),
+				 WebuiPackage.Literals.CONTEXT_MENU__CONTEXT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

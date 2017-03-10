@@ -3,6 +3,7 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings"
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
@@ -39,7 +40,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="page.gmftool#//@palette/@tools.1/@tools.0"/>
+              href="page.gmftool#//@palette/@tools.2/@tools.0"/>
           <diagramNode
               href="page.gmfgraph#CreateUnit"/>
           <children
@@ -58,7 +59,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.0"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.0"/>
               <diagramNode
                   href="page.gmfgraph#UnitAssociation"/>
             </ownedChild>
@@ -79,7 +80,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.1"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.1"/>
               <diagramNode
                   href="page.gmfgraph#UnitAttribute"/>
             </ownedChild>
@@ -107,7 +108,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="page.gmftool#//@palette/@tools.1/@tools.1"/>
+              href="page.gmftool#//@palette/@tools.2/@tools.1"/>
           <diagramNode
               href="page.gmfgraph#CreateUpdateUnit"/>
           <children
@@ -126,7 +127,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.0"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.0"/>
               <diagramNode
                   href="page.gmfgraph#UnitAssociation"/>
             </ownedChild>
@@ -147,7 +148,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.1"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.1"/>
               <diagramNode
                   href="page.gmfgraph#UnitAttribute"/>
             </ownedChild>
@@ -175,7 +176,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="page.gmftool#//@palette/@tools.1/@tools.2"/>
+              href="page.gmftool#//@palette/@tools.2/@tools.2"/>
           <diagramNode
               href="page.gmfgraph#DetailsUnit"/>
           <children
@@ -194,7 +195,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.0"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.0"/>
               <diagramNode
                   href="page.gmfgraph#UnitAssociation"/>
             </ownedChild>
@@ -215,7 +216,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.1"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.1"/>
               <diagramNode
                   href="page.gmfgraph#UnitAttribute"/>
             </ownedChild>
@@ -243,7 +244,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="page.gmftool#//@palette/@tools.1/@tools.3"/>
+              href="page.gmftool#//@palette/@tools.2/@tools.3"/>
           <diagramNode
               href="page.gmfgraph#GalleryUnit"/>
           <children
@@ -262,7 +263,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.0"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.0"/>
               <diagramNode
                   href="page.gmfgraph#UnitAssociation"/>
             </ownedChild>
@@ -283,7 +284,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.1"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.1"/>
               <diagramNode
                   href="page.gmfgraph#UnitAttribute"/>
             </ownedChild>
@@ -311,7 +312,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="page.gmftool#//@palette/@tools.1/@tools.4"/>
+              href="page.gmftool#//@palette/@tools.2/@tools.4"/>
           <diagramNode
               href="page.gmfgraph#ImageIndexUnit"/>
           <children
@@ -330,7 +331,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.0"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.0"/>
               <diagramNode
                   href="page.gmfgraph#UnitAssociation"/>
             </ownedChild>
@@ -351,7 +352,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.1"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.1"/>
               <diagramNode
                   href="page.gmfgraph#UnitAttribute"/>
             </ownedChild>
@@ -379,7 +380,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="page.gmftool#//@palette/@tools.1/@tools.5"/>
+              href="page.gmftool#//@palette/@tools.2/@tools.5"/>
           <diagramNode
               href="page.gmfgraph#IndexUnit"/>
           <children
@@ -398,7 +399,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.0"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.0"/>
               <diagramNode
                   href="page.gmfgraph#UnitAssociation"/>
             </ownedChild>
@@ -419,7 +420,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.1"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.1"/>
               <diagramNode
                   href="page.gmfgraph#UnitAttribute"/>
             </ownedChild>
@@ -447,7 +448,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="page.gmftool#//@palette/@tools.1/@tools.6"/>
+              href="page.gmftool#//@palette/@tools.2/@tools.6"/>
           <diagramNode
               href="page.gmfgraph#MapUnit"/>
           <children
@@ -466,7 +467,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.0"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.0"/>
               <diagramNode
                   href="page.gmfgraph#UnitAssociation"/>
             </ownedChild>
@@ -487,7 +488,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.1"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.1"/>
               <diagramNode
                   href="page.gmfgraph#UnitAttribute"/>
             </ownedChild>
@@ -515,7 +516,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="page.gmftool#//@palette/@tools.1/@tools.7"/>
+              href="page.gmftool#//@palette/@tools.2/@tools.7"/>
           <diagramNode
               href="page.gmfgraph#SearchUnit"/>
           <children
@@ -534,7 +535,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.0"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.0"/>
               <diagramNode
                   href="page.gmfgraph#UnitAssociation"/>
             </ownedChild>
@@ -555,7 +556,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.1"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.1"/>
               <diagramNode
                   href="page.gmfgraph#UnitAttribute"/>
             </ownedChild>
@@ -583,7 +584,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="page.gmftool#//@palette/@tools.1/@tools.8"/>
+              href="page.gmftool#//@palette/@tools.2/@tools.8"/>
           <diagramNode
               href="page.gmfgraph#SliderUnit"/>
           <children
@@ -602,7 +603,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.0"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.0"/>
               <diagramNode
                   href="page.gmfgraph#UnitAssociation"/>
             </ownedChild>
@@ -623,7 +624,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.1"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.1"/>
               <diagramNode
                   href="page.gmfgraph#UnitAttribute"/>
             </ownedChild>
@@ -651,7 +652,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="page.gmftool#//@palette/@tools.1/@tools.9"/>
+              href="page.gmftool#//@palette/@tools.2/@tools.9"/>
           <diagramNode
               href="page.gmfgraph#StaticUnit"/>
           <compartments>
@@ -676,7 +677,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="page.gmftool#//@palette/@tools.1/@tools.10"/>
+              href="page.gmftool#//@palette/@tools.2/@tools.10"/>
           <diagramNode
               href="page.gmfgraph#UpdateUnit"/>
           <children
@@ -695,7 +696,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.0"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.0"/>
               <diagramNode
                   href="page.gmfgraph#UnitAssociation"/>
             </ownedChild>
@@ -716,7 +717,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="page.gmftool#//@palette/@tools.2/@tools.1"/>
+                  href="page.gmftool#//@palette/@tools.3/@tools.1"/>
               <diagramNode
                   href="page.gmfgraph#UnitAttribute"/>
             </ownedChild>
@@ -735,6 +736,20 @@
       </compartments>
     </ownedChild>
   </nodes>
+  <links>
+    <domainMetaElement
+        href="webui.ecore#//PageLink"/>
+    <containmentFeature
+        href="webui.ecore#//Page/parentPage"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="page.gmftool#//@palette/@tools.1"/>
+    <diagramLink
+        href="page.gmfgraph#ParentPageConnection"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="webui.ecore#//PageLink/targetPage"/>
+  </links>
   <diagram>
     <diagramCanvas
         href="page.gmfgraph#PageCanvas"/>

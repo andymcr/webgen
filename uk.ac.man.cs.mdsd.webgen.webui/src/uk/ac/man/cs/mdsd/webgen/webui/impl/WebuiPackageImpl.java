@@ -3320,6 +3320,9 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		globalMenuEClass = createEClass(GLOBAL_MENU);
 		createEReference(globalMenuEClass, GLOBAL_MENU__WEB_UI);
 
+		contextMenuEClass = createEClass(CONTEXT_MENU);
+		createEReference(contextMenuEClass, CONTEXT_MENU__CONTEXT);
+
 		staticMenuEClass = createEClass(STATIC_MENU);
 
 		actionMenuEntryEClass = createEClass(ACTION_MENU_ENTRY);
@@ -3327,9 +3330,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		createEReference(actionMenuEntryEClass, ACTION_MENU_ENTRY__QUERY);
 
 		editStaticTextMenuEntryEClass = createEClass(EDIT_STATIC_TEXT_MENU_ENTRY);
-
-		contextMenuEClass = createEClass(CONTEXT_MENU);
-		createEReference(contextMenuEClass, CONTEXT_MENU__CONTEXT);
 
 		dynamicMenuEClass = createEClass(DYNAMIC_MENU);
 		createEReference(dynamicMenuEClass, DYNAMIC_MENU__ENTITY_OR_VIEW);
@@ -3688,12 +3688,13 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		// Add supertypes to classes
 		menuEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
 		globalMenuEClass.getESuperTypes().add(this.getMenu());
-		staticMenuEClass.getESuperTypes().add(this.getMenu());
+		contextMenuEClass.getESuperTypes().add(this.getMenu());
+		staticMenuEClass.getESuperTypes().add(this.getGlobalMenu());
+		staticMenuEClass.getESuperTypes().add(this.getContextMenu());
 		actionMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
 		actionMenuEntryEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
 		editStaticTextMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
 		editStaticTextMenuEntryEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
-		contextMenuEClass.getESuperTypes().add(this.getMenu());
 		dynamicMenuEClass.getESuperTypes().add(this.getGlobalMenu());
 		menuFeatureEClass.getESuperTypes().add(this.getMenuEntry());
 		pageEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
@@ -3786,6 +3787,9 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEClass(globalMenuEClass, GlobalMenu.class, "GlobalMenu", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGlobalMenu_WebUI(), this.getWebUI(), this.getWebUI_GlobalMenu(), "webUI", null, 1, 1, GlobalMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(contextMenuEClass, ContextMenu.class, "ContextMenu", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getContextMenu_Context(), this.getPage(), this.getPage_SideMenu(), "context", null, 1, 1, ContextMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(staticMenuEClass, StaticMenu.class, "StaticMenu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(actionMenuEntryEClass, ActionMenuEntry.class, "ActionMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3793,9 +3797,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEReference(getActionMenuEntry_Query(), this.getQuery(), null, "query", null, 0, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(editStaticTextMenuEntryEClass, EditStaticTextMenuEntry.class, "EditStaticTextMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(contextMenuEClass, ContextMenu.class, "ContextMenu", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getContextMenu_Context(), this.getPage(), this.getPage_SideMenu(), "context", null, 1, 1, ContextMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dynamicMenuEClass, DynamicMenu.class, "DynamicMenu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDynamicMenu_EntityOrView(), thePersistencePackage.getEntityOrView(), null, "entityOrView", null, 1, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

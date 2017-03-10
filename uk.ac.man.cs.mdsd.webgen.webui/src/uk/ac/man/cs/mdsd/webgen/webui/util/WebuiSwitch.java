@@ -100,9 +100,20 @@ public class WebuiSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebuiPackage.CONTEXT_MENU: {
+				ContextMenu contextMenu = (ContextMenu)theEObject;
+				T result = caseContextMenu(contextMenu);
+				if (result == null) result = caseMenu(contextMenu);
+				if (result == null) result = caseNamedDisplayElement(contextMenu);
+				if (result == null) result = caseNamedElement(contextMenu);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebuiPackage.STATIC_MENU: {
 				StaticMenu staticMenu = (StaticMenu)theEObject;
 				T result = caseStaticMenu(staticMenu);
+				if (result == null) result = caseGlobalMenu(staticMenu);
+				if (result == null) result = caseContextMenu(staticMenu);
 				if (result == null) result = caseMenu(staticMenu);
 				if (result == null) result = caseNamedDisplayElement(staticMenu);
 				if (result == null) result = caseNamedElement(staticMenu);
@@ -124,15 +135,6 @@ public class WebuiSwitch<T> extends Switch<T> {
 				if (result == null) result = caseMenuEntry(editStaticTextMenuEntry);
 				if (result == null) result = caseNamedDisplayElement(editStaticTextMenuEntry);
 				if (result == null) result = caseNamedElement(editStaticTextMenuEntry);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebuiPackage.CONTEXT_MENU: {
-				ContextMenu contextMenu = (ContextMenu)theEObject;
-				T result = caseContextMenu(contextMenu);
-				if (result == null) result = caseMenu(contextMenu);
-				if (result == null) result = caseNamedDisplayElement(contextMenu);
-				if (result == null) result = caseNamedElement(contextMenu);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

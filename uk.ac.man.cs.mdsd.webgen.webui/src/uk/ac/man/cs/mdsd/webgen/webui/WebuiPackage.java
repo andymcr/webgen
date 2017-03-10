@@ -424,88 +424,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getStaticMenu()
 	 * @generated
 	 */
-	int STATIC_MENU = 4;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MENU__NAME = MENU__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MENU__DISPLAY_LABEL = MENU__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Entries</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MENU__ENTRIES = MENU__ENTRIES;
-
-	/**
-	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MENU__OMIT_CAPTION = MENU__OMIT_CAPTION;
-
-	/**
-	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MENU__CAPTION_CLASS = MENU__CAPTION_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MENU__STYLE_CLASS = MENU__STYLE_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MENU__LAYOUT_CLASS = MENU__LAYOUT_CLASS;
-
-	/**
-	 * The number of structural features of the '<em>Static Menu</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MENU_FEATURE_COUNT = MENU_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Static Menu</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MENU_OPERATION_COUNT = MENU_OPERATION_COUNT + 0;
+	int STATIC_MENU = 5;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ActionMenuEntryImpl <em>Action Menu Entry</em>}' class.
@@ -515,79 +434,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getActionMenuEntry()
 	 * @generated
 	 */
-	int ACTION_MENU_ENTRY = 5;
-
-	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_MENU_ENTRY__PART_OF = MENU_ENTRY__PART_OF;
-
-	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_MENU_ENTRY__REQUIRES_ROLE = MENU_ENTRY__REQUIRES_ROLE;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_MENU_ENTRY__NAME = MENU_ENTRY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_MENU_ENTRY__DISPLAY_LABEL = MENU_ENTRY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Destination</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_MENU_ENTRY__DESTINATION = MENU_ENTRY_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Query</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_MENU_ENTRY__QUERY = MENU_ENTRY_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Action Menu Entry</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_MENU_ENTRY_FEATURE_COUNT = MENU_ENTRY_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Action Menu Entry</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_MENU_ENTRY_OPERATION_COUNT = MENU_ENTRY_OPERATION_COUNT + 0;
+	int ACTION_MENU_ENTRY = 6;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.EditStaticTextMenuEntryImpl <em>Edit Static Text Menu Entry</em>}' class.
@@ -597,61 +444,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getEditStaticTextMenuEntry()
 	 * @generated
 	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY = 6;
-
-	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY__PART_OF = MENU_ENTRY__PART_OF;
-
-	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY__REQUIRES_ROLE = MENU_ENTRY__REQUIRES_ROLE;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY__NAME = MENU_ENTRY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL = MENU_ENTRY_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Edit Static Text Menu Entry</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY_FEATURE_COUNT = MENU_ENTRY_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Edit Static Text Menu Entry</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY_OPERATION_COUNT = MENU_ENTRY_OPERATION_COUNT + 0;
+	int EDIT_STATIC_TEXT_MENU_ENTRY = 7;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ContextMenuImpl <em>Context Menu</em>}' class.
@@ -661,7 +454,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getContextMenu()
 	 * @generated
 	 */
-	int CONTEXT_MENU = 7;
+	int CONTEXT_MENU = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -752,6 +545,231 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTEXT_MENU_OPERATION_COUNT = MENU_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_MENU__NAME = GLOBAL_MENU__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_MENU__DISPLAY_LABEL = GLOBAL_MENU__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Entries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_MENU__ENTRIES = GLOBAL_MENU__ENTRIES;
+
+	/**
+	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_MENU__OMIT_CAPTION = GLOBAL_MENU__OMIT_CAPTION;
+
+	/**
+	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_MENU__CAPTION_CLASS = GLOBAL_MENU__CAPTION_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_MENU__STYLE_CLASS = GLOBAL_MENU__STYLE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_MENU__LAYOUT_CLASS = GLOBAL_MENU__LAYOUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Web UI</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_MENU__WEB_UI = GLOBAL_MENU__WEB_UI;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_MENU__CONTEXT = GLOBAL_MENU_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Static Menu</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_MENU_FEATURE_COUNT = GLOBAL_MENU_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Static Menu</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_MENU_OPERATION_COUNT = GLOBAL_MENU_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_MENU_ENTRY__PART_OF = MENU_ENTRY__PART_OF;
+
+	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_MENU_ENTRY__REQUIRES_ROLE = MENU_ENTRY__REQUIRES_ROLE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_MENU_ENTRY__NAME = MENU_ENTRY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_MENU_ENTRY__DISPLAY_LABEL = MENU_ENTRY_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Destination</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_MENU_ENTRY__DESTINATION = MENU_ENTRY_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Query</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_MENU_ENTRY__QUERY = MENU_ENTRY_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Action Menu Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_MENU_ENTRY_FEATURE_COUNT = MENU_ENTRY_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Action Menu Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_MENU_ENTRY_OPERATION_COUNT = MENU_ENTRY_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_STATIC_TEXT_MENU_ENTRY__PART_OF = MENU_ENTRY__PART_OF;
+
+	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_STATIC_TEXT_MENU_ENTRY__REQUIRES_ROLE = MENU_ENTRY__REQUIRES_ROLE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_STATIC_TEXT_MENU_ENTRY__NAME = MENU_ENTRY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL = MENU_ENTRY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Edit Static Text Menu Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_STATIC_TEXT_MENU_ENTRY_FEATURE_COUNT = MENU_ENTRY_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Edit Static Text Menu Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_STATIC_TEXT_MENU_ENTRY_OPERATION_COUNT = MENU_ENTRY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicMenuImpl <em>Dynamic Menu</em>}' class.

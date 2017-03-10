@@ -104,14 +104,14 @@ public class WebuiValidator extends EObjectValidator {
 				return validateMenuEntry((MenuEntry)value, diagnostics, context);
 			case WebuiPackage.GLOBAL_MENU:
 				return validateGlobalMenu((GlobalMenu)value, diagnostics, context);
+			case WebuiPackage.CONTEXT_MENU:
+				return validateContextMenu((ContextMenu)value, diagnostics, context);
 			case WebuiPackage.STATIC_MENU:
 				return validateStaticMenu((StaticMenu)value, diagnostics, context);
 			case WebuiPackage.ACTION_MENU_ENTRY:
 				return validateActionMenuEntry((ActionMenuEntry)value, diagnostics, context);
 			case WebuiPackage.EDIT_STATIC_TEXT_MENU_ENTRY:
 				return validateEditStaticTextMenuEntry((EditStaticTextMenuEntry)value, diagnostics, context);
-			case WebuiPackage.CONTEXT_MENU:
-				return validateContextMenu((ContextMenu)value, diagnostics, context);
 			case WebuiPackage.DYNAMIC_MENU:
 				return validateDynamicMenu((DynamicMenu)value, diagnostics, context);
 			case WebuiPackage.MENU_FEATURE:

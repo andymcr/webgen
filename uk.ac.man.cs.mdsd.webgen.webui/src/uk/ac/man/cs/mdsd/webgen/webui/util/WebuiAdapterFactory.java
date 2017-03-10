@@ -89,6 +89,10 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 				return createGlobalMenuAdapter();
 			}
 			@Override
+			public Adapter caseContextMenu(ContextMenu object) {
+				return createContextMenuAdapter();
+			}
+			@Override
 			public Adapter caseStaticMenu(StaticMenu object) {
 				return createStaticMenuAdapter();
 			}
@@ -99,10 +103,6 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEditStaticTextMenuEntry(EditStaticTextMenuEntry object) {
 				return createEditStaticTextMenuEntryAdapter();
-			}
-			@Override
-			public Adapter caseContextMenu(ContextMenu object) {
-				return createContextMenuAdapter();
 			}
 			@Override
 			public Adapter caseDynamicMenu(DynamicMenu object) {

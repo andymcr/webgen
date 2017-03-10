@@ -1,176 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
-    name="PageCanvas">
-  <figures
-      name="Gallery">
-    <descriptors
-        name="FieldFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="FieldShape">
-        <backgroundColor
-            xsi:type="gmfgraph:RGBColor"
-            red="230"
-            green="230"
-            blue="250"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="FieldNameLabel"/>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="PageCanvas">
+  <figures name="Gallery">
+    <descriptors name="FieldFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="FieldShape">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="230" green="230" blue="250"/>
+        <children xsi:type="gmfgraph:Label" name="FieldNameLabel"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors
-        name="FieldsFigure">
-      <actualFigure
-          xsi:type="gmfgraph:InvisibleRectangle"
-          name="FieldsShape">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"
-            matchMinorSize="true"
-            majorSpacing="2"
-            minorSpacing="2"/>
+    <descriptors name="FieldsFigure">
+      <actualFigure xsi:type="gmfgraph:InvisibleRectangle" name="FieldsShape">
+        <layout xsi:type="gmfgraph:FlowLayout" matchMinorSize="true" majorSpacing="2" minorSpacing="2"/>
       </actualFigure>
     </descriptors>
-    <descriptors
-        name="PageFigure">
-      <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
-          name="PageShape">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"
-            matchMinorSize="true"/>
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"
-            red="128"
-            blue="128"/>
-        <backgroundColor
-            xsi:type="gmfgraph:RGBColor"
-            red="221"
-            green="160"
-            blue="221"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="PageNameLabel"/>
+    <descriptors name="PageFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="PageShape">
+        <layout xsi:type="gmfgraph:FlowLayout" matchMinorSize="true"/>
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="128" blue="128"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="221" green="160" blue="221"/>
+        <children xsi:type="gmfgraph:Label" name="PageNameLabel"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors
-        name="UnitFigure">
-      <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
-          name="UnitShape">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"
-            matchMinorSize="true"
-            majorSpacing="2"
-            minorSpacing="2"/>
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"
-            red="139"
-            blue="139"/>
-        <backgroundColor
-            xsi:type="gmfgraph:RGBColor"
-            red="216"
-            green="191"
-            blue="216"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="UnitNameLabel"/>
+    <descriptors name="ParentPageFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection">
+        <targetDecoration xsi:type="gmfgraph:PolylineDecoration" href="../../../plugin/org.eclipse.gmf.graphdef/models/classDiagram.gmfgraph#//@figures.0/@figures.2"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors
-        name="UnitsFigure">
-      <actualFigure
-          xsi:type="gmfgraph:InvisibleRectangle"
-          name="UnitsShape">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"
-            matchMinorSize="true"
-            majorSpacing="2"
-            minorSpacing="2"/>
+    <descriptors name="UnitFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="UnitShape">
+        <layout xsi:type="gmfgraph:FlowLayout" matchMinorSize="true" majorSpacing="2" minorSpacing="2"/>
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="139" blue="139"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="216" green="191" blue="216"/>
+        <children xsi:type="gmfgraph:Label" name="UnitNameLabel"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="UnitsFigure">
+      <actualFigure xsi:type="gmfgraph:InvisibleRectangle" name="UnitsShape">
+        <layout xsi:type="gmfgraph:FlowLayout" matchMinorSize="true" majorSpacing="2" minorSpacing="2"/>
       </actualFigure>
     </descriptors>
   </figures>
-  <nodes
-      name="CreateUnit"
-      figure="UnitFigure"/>
-  <nodes
-      name="CreateUpdateUnit"
-      figure="UnitFigure"/>
-  <nodes
-      name="DetailsUnit"
-      figure="UnitFigure"/>
-  <nodes
-      name="GalleryUnit"
-      figure="UnitFigure"/>
-  <nodes
-      name="ImageIndexUnit"
-      figure="UnitFigure"/>
-  <nodes
-      name="IndexUnit"
-      figure="UnitFigure"/>
-  <nodes
-      name="MapUnit"
-      figure="UnitFigure"/>
-  <nodes
-      name="Page"
-      figure="PageFigure"/>
-  <nodes
-      name="SearchUnit"
-      figure="UnitFigure"/>
-  <nodes
-      name="SliderUnit"
-      figure="UnitFigure"/>
-  <nodes
-      name="StaticUnit"
-      figure="UnitFigure"/>
-  <nodes
-      name="UnitAssociation"
-      figure="FieldFigure">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="80"
-          dy="20"/>
+  <nodes name="CreateUnit" figure="UnitFigure"/>
+  <nodes name="CreateUpdateUnit" figure="UnitFigure"/>
+  <nodes name="DetailsUnit" figure="UnitFigure"/>
+  <nodes name="GalleryUnit" figure="UnitFigure"/>
+  <nodes name="ImageIndexUnit" figure="UnitFigure"/>
+  <nodes name="IndexUnit" figure="UnitFigure"/>
+  <nodes name="MapUnit" figure="UnitFigure"/>
+  <nodes name="Page" figure="PageFigure"/>
+  <nodes name="SearchUnit" figure="UnitFigure"/>
+  <nodes name="SliderUnit" figure="UnitFigure"/>
+  <nodes name="StaticUnit" figure="UnitFigure"/>
+  <nodes name="UnitAssociation" figure="FieldFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="80" dy="20"/>
     </facets>
   </nodes>
-  <nodes
-      name="UnitAttribute"
-      figure="FieldFigure">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="80"
-          dy="20"/>
+  <nodes name="UnitAttribute" figure="FieldFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="80" dy="20"/>
     </facets>
   </nodes>
-  <nodes
-      name="UpdateUnit"
-      figure="UnitFigure"/>
-  <compartments
-      name="FieldCompartment"
-      figure="FieldsFigure"/>
-  <compartments
-      name="UnitCompartment"
-      figure="UnitsFigure"/>
-  <labels
-      name="FieldNameLabel"
-      figure="FieldFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels
-      name="PageNameLabel"
-      figure="PageFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
-  <labels
-      name="UnitNameLabel"
-      figure="UnitFigure"
-      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <nodes name="UpdateUnit" figure="UnitFigure"/>
+  <connections name="ParentPageConnection" figure="ParentPageFigure"/>
+  <compartments name="FieldCompartment" figure="FieldsFigure"/>
+  <compartments name="UnitCompartment" figure="UnitsFigure"/>
+  <labels name="FieldNameLabel" figure="FieldFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="PageNameLabel" figure="PageFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="UnitNameLabel" figure="UnitFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
 </gmfgraph:Canvas>

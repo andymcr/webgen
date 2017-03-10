@@ -263,4 +263,7 @@
         visualID="5032"
         queryText="true"/>
   </childNodeTraces>
+  <linkTraces
+      visualID="4001"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://cs.man.ac.uk/mdsd/webgen/webui' and _eClass_.name = 'PageLink')"/>
 </trace:TraceModel>

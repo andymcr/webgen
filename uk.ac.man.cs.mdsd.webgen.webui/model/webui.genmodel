@@ -59,15 +59,15 @@
     <genClasses image="false" ecoreClass="webui.ecore#//GlobalMenu">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//GlobalMenu/webUI"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="webui.ecore#//ContextMenu">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//ContextMenu/context"/>
+    </genClasses>
     <genClasses ecoreClass="webui.ecore#//StaticMenu"/>
     <genClasses ecoreClass="webui.ecore#//ActionMenuEntry">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//ActionMenuEntry/destination"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//ActionMenuEntry/query"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//EditStaticTextMenuEntry"/>
-    <genClasses image="false" ecoreClass="webui.ecore#//ContextMenu">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//ContextMenu/context"/>
-    </genClasses>
     <genClasses ecoreClass="webui.ecore#//DynamicMenu">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//DynamicMenu/entityOrView"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//DynamicMenu/selection"/>

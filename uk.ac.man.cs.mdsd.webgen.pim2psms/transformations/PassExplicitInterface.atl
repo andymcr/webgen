@@ -272,9 +272,9 @@ rule WafModel {
 	to waf : WAF!WafModel (
 		persistence <- orm,
 		business <- service,
-		imageManipulations <- website.imageManipulations,
-		pages <- website.pages,
-		menus <- website.menus,
+		imageManipulations <- website.images.manipulations,
+		pages <- website.webUI.pages,
+		menus <- website.webUI.menus,
 		siteName <- website.websiteProperties.projectName,
 		siteTitle <- website.websiteProperties.siteTitle,
 		developmentVersion <- website.websiteProperties.developmentVersion,
@@ -1309,13 +1309,6 @@ rule Function {
 	from website : Website!Function
 	to waf : WAF!Function (
 		name <- website.name
-	)
-}
-
-rule ModelReference {
-	from website : Website!ModelReference
-	to waf : WAF!ModelReference (
-		unit <- website.unit
 	)
 }
 

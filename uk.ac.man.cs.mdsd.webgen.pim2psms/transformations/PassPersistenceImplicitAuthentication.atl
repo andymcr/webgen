@@ -79,7 +79,7 @@ rule OrmModel {
 		entitiesAndViews <-
 			let website : Website!WebGenModel = thisModule.findWebGenModel()
 			in let authentication : Website!Authentication
-				= website.websiteProperties.authentication
+				= website.security.authentication
 			in partialOrm.entitiesAndViews
 				->union(if authentication.oclIsUndefined()
 							or website.websiteProperties.frameworkTechnology = #Symfony then

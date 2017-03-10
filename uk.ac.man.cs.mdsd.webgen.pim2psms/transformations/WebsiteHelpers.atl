@@ -39,33 +39,39 @@ helper def: findOrmModel() : ORM!OrmModel
 helper def: findWebsiteProperties() : Website!WebsiteProperties
 	= thisModule.findWebGenModel().websiteProperties;
 
+helper def: findWebsitePersistence() : Website!Persistence
+	= thisModule.findWebGenModel().persistence;
+
+helper def: findWebsiteSecurity() : Website!Security
+	= thisModule.findWebGenModel().security;
+
 
 helper context String def: createTableName() : String
-	= let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
-		in if properties.databaseTechnology = #Oracle then
+	= let persistence : Website!Persistence = thisModule.findWebsitePersistence()
+		in if persistence.databaseTechnology = #Oracle then
 				self.toUpper()
 			else
 				self.toLower()
 			endif;
 
 helper context String def: createAttributeColumnName() : String
-	= let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
-		in if properties.databaseTechnology = #Oracle then
+	= let persistence : Website!Persistence = thisModule.findWebsitePersistence()
+		in if persistence.databaseTechnology = #Oracle then
 				self.createName().toUpper()
 			else
 				self.createName().toLower()
 			endif;
 
 helper context String def: createAssociationColumnName() : String
-	= let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
+	= let persistence : Website!Persistence = thisModule.findWebsitePersistence()
 		in let name : String
-				= if properties.ormTechnology = #Kohana 
-							or properties.ormTechnology = #DoctrineORM then
+				= if persistence.ormTechnology = #Kohana 
+							or persistence.ormTechnology = #DoctrineORM then
 						self.createName().concat('_id')
 					else
 						self.createName()
 					endif
-			in if properties.databaseTechnology = #Oracle then
+			in if persistence.databaseTechnology = #Oracle then
 					name.toUpper()
 				else
 					name.toLower()
@@ -94,8 +100,8 @@ helper context Website!DataType def: ormType() : String
 					else
 						self.name
 					endif endif
-			in let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
-				in if properties.ormTechnology = #DoctrineORM then
+			in let persistence : Website!Persistence = thisModule.findWebsitePersistence()
+				in if persistence.ormTechnology = #DoctrineORM then
 						typeName.toLowerCase()
 					else
 						typeName
@@ -134,8 +140,8 @@ helper context Website!Association def: createPivotTableName() : String
 				else
 					self.partOf.name.concat('_').concat(self.targetEntity.name)
 				endif
-		in let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
-			in if properties.databaseTechnology = #Oracle then
+		in let persistence : Website!Persistence = thisModule.findWebsitePersistence()
+			in if persistence.databaseTechnology = #Oracle then
 					name.toUpper()
 				else
 					name.toLower()

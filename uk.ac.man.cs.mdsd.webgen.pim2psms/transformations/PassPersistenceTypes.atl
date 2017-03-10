@@ -27,11 +27,11 @@ helper context Website!Association def: inverseFeatureTypeNoted(noted : Set(Webs
 
 
 rule Website {
-	from website : Website!WebGenModel
+	from website : Website!Persistence
 	to orm : ORM!OrmModel (
-		dataTypes <- website.classifiers->select(c | c.oclIsKindOf(Website!DataType)),
-		entitiesAndViews <- website.classifiers->select(c | c.oclIsKindOf(Website!EntityOrView)),
-		collectionTypes <- website.classifiers
+		dataTypes <- website.dataTypes,
+		entitiesAndViews <- website.entities,
+		collectionTypes <- website.entities
 			->select(c | c.oclIsTypeOf(Website!Entity))
 			->collect(e | e.features)->flatten()
 			->select(f | not f.oclIsKindOf(Website!DateAttribute))
@@ -43,7 +43,7 @@ rule Website {
 					result->including(f)
 				endif)
 			->collect(f | thisModule.CollectionType(f))
-			->union(website.classifiers
+			->union(website.entities
 				->select(c | c.oclIsKindOf(Website!Entity))
 				->collect(e | e.features)->flatten()
 				->select(f | f.oclIsKindOf(Website!AssociationWithoutContainment))
@@ -55,25 +55,18 @@ rule Website {
 						result->including(f)
 					endif)
 				->collect(e | thisModule.InverseCollectionType(e))),
-		databaseTechnology <-
-			if website.websiteProperties.databaseTechnology = #MySql then
-				#MySql
-			else if website.websiteProperties.databaseTechnology = #Oracle then
-				#Oracle
-			else
-				#MySql
-			endif endif,
-		databasePrefix <- website.websiteProperties.databasePrefix,
-		databaseHost <- website.websiteProperties.databaseHost,
-		databasePort <- website.websiteProperties.databasePort,
-		databaseName <- website.websiteProperties.databaseName,
-		databaseUsername <- website.websiteProperties.databaseUsername,
-		databasePassword <- website.websiteProperties.databasePassword,
-		ormTechnology <- website.websiteProperties.ormTechnology,
-		timestampCreation <- website.websiteProperties.timestampCreation,
-		timestampUpdates <- website.websiteProperties.timestampUpdates,
+		databaseTechnology <- website.databaseTechnology,
+		databasePrefix <- website.databasePrefix,
+		databaseHost <- website.databaseHost,
+		databasePort <- website.databasePort,
+		databaseName <- website.databaseName,
+		databaseUsername <- website.databaseUsername,
+		databasePassword <- website.databasePassword,
+		ormTechnology <- website.ormTechnology,
+		timestampCreation <- website.timestampCreation,
+		timestampUpdates <- website.timestampUpdates,
 		hasCustomOrmTypes <-
-			website.classifiers
+			website.entities
 				->select(c | c.oclIsTypeOf(Website!Entity))
 				->collect(e | e.entityFeatures)->flatten()
 				->select(f | f.oclIsKindOf(Website!EntityAttribute))

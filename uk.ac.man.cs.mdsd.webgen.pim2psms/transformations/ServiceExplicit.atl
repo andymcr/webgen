@@ -73,7 +73,7 @@ helper context Website!Selection def: findOrmJoins(xx : Sequence(Website!Associa
 
 
 rule ServiceModel {
-	from website : Website!WebGenModel, orm : ORM!OrmModel
+	from website : Website!Services
 	to service : Service!ServiceModel (
 		services <- website.services
 	)

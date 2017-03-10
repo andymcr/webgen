@@ -14,16 +14,16 @@ rule WafModel {
 	from partialWaf : WAF!WafModel
 	to waf : WAF!WafModel (
 		pages <-
-			let websiteProperties : Website!WebsiteProperties
-				= thisModule.findWebsiteProperties()
+			let security : Website!Security
+				= thisModule.findWebsiteSecurity()
 			in partialWaf.pages
 				->union(
-					if websiteProperties.authentication.oclIsUndefined()
-							or websiteProperties.frameworkTechnology = #Symfony then
+					if security.authentication.oclIsUndefined()
+							or thisModule.findWebsiteProperties().frameworkTechnology = #Symfony then
 						Sequence{}
-					else if websiteProperties.authentication.oclIsTypeOf(Website!LocalAuthenticationSystem) then
+					else if security.authentication.oclIsTypeOf(Website!LocalAuthenticationSystem) then
 						let authentication : Website!LocalAuthenticationSystem
-							= websiteProperties.authentication.oclAsType(Website!LocalAuthenticationSystem)
+							= security.authentication.oclAsType(Website!LocalAuthenticationSystem)
 						in if authentication.loginUnit.oclIsUndefined() then
 								Sequence{thisModule.implicitLoginPage(authentication)}
 							else
@@ -33,12 +33,12 @@ rule WafModel {
 						Sequence{}
 					endif endif)
 				->union(
-					if websiteProperties.authentication.oclIsUndefined()
-							or websiteProperties.frameworkTechnology = #Symfony then
+					if security.authentication.oclIsUndefined()
+							or thisModule.findWebsiteProperties().frameworkTechnology = #Symfony then
 						Sequence{}
-					else if websiteProperties.authentication.oclIsTypeOf(Website!LocalAuthenticationSystem) then
+					else if security.authentication.oclIsTypeOf(Website!LocalAuthenticationSystem) then
 						let authentication : Website!LocalAuthenticationSystem
-							= websiteProperties.authentication.oclAsType(Website!LocalAuthenticationSystem)
+							= security.authentication.oclAsType(Website!LocalAuthenticationSystem)
 						in if authentication.authentication.oclIsUndefined() then
 								if authentication.allowSelfRegistration  then
 									Sequence{
@@ -54,7 +54,7 @@ rule WafModel {
 					else
 						Sequence{}
 					endif endif),
-		authentication <- thisModule.findWebsiteProperties().authentication
+		authentication <- thisModule.findWebsiteSecurity().authentication
 	)
 }
 

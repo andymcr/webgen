@@ -19,20 +19,12 @@ helper context Website!Expression def: isServiceExpression() : Boolean
 		endif endif endif;
 
 
-abstract rule Literal {
-	from website : Website!Literal (website.isServiceExpression())
-	to service : Service!Literal (
-	)
-}
-
--- @extends Literal
 rule NullLiteral {
 	from website : Website!NullLiteral (website.isServiceExpression())
 	to service : Service!NullLiteral (
 	)
 }
 
--- @extends Literal
 rule BooleanLiteral {
 	from website : Website!BooleanLiteral (website.isServiceExpression())
 	to service : Service!BooleanLiteral (
@@ -40,7 +32,6 @@ rule BooleanLiteral {
 	)
 }
 
--- @extends Literal
 rule IntegerLiteral {
 	from website : Website!IntegerLiteral (website.isServiceExpression())
 	to service : Service!IntegerLiteral (
@@ -48,7 +39,6 @@ rule IntegerLiteral {
 	)
 }
 
--- @extends Literal
 rule StringLiteral {
 	from website : Website!StringLiteral (website.isServiceExpression())
 	to service : Service!StringLiteral (
@@ -56,7 +46,6 @@ rule StringLiteral {
 	)
 }
 
--- @extends Literal
 rule TimeLiteral {
 	from website : Website!TimeLiteral (website.isServiceExpression())
 	to service : Service!TimeLiteral (
@@ -64,12 +53,6 @@ rule TimeLiteral {
 	)
 }
 
--- @extends Literal
-rule CurrentTime {
-	from website : Website!CurrentTime (website.isServiceExpression())
-	to service : Service!CurrentTime (
-	)
-}
 
 rule Function {
 	from website : Website!Function
@@ -77,6 +60,20 @@ rule Function {
 		name <- website.name
 	)
 }
+
+
+rule CurrentTime {
+	from website : Website!CurrentTime (website.isServiceExpression())
+	to service : Service!CurrentTime (
+	)
+}
+
+rule CurrentUser {
+	from website : Website!CurrentUser (website.isServiceExpression())
+	to service : Service!CurrentUser (
+	)
+}
+
 
 abstract rule Predicate {
 	from website : Website!Predicate

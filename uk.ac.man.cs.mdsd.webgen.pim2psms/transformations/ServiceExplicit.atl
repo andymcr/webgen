@@ -22,14 +22,17 @@ helper context Website!Expression def: findContainingSelection() : Website!Selec
 			OclUndefined
 		endif endif endif ;
 
-helper context Website!Feature def: findOrmFeature(reference : Website!FeatureReference) : ORM!Feature
+helper context Website!Feature def: findOrmFeature(reference : Website!ServiceFeatureReference) : ORM!Feature
 	= if self.oclIsKindOf(Website!Attribute) then
 			self.findOrmAttribute()
-		else if not reference.findContainingSelection().oclIsUndefined() then
-			self.findOrmAssociation(reference.findContainingSelection().usedBy.serves)
-		else
-			OclUndefined
-		endif endif;
+		else 
+			let selection : Website!Selection = reference.findContainingSelection()
+			in if selection.oclIsUndefined() then
+					OclUndefined
+				else
+					self.findOrmAssociation(reference.findContainingSelection().usedBy.serves)
+				endif
+		endif;
 
 helper context Website!Selection def: entities(xx : Sequence(Website!Association)) : Sequence(Website!EntityOrView)
 	= if xx->isEmpty() then
@@ -161,21 +164,8 @@ rule Desc {
 }
 
 
-helper context Website!Expression def: isServicePath() : Boolean
-	= if self.refImmediateComposite().oclIsUndefined() then
-			false
-		else if self.refImmediateComposite().oclIsKindOf(Website!Order) then
-			true
-		else if self.refImmediateComposite().oclIsKindOf(Website!Selection) then
-			true
-		else if self.refImmediateComposite().oclIsKindOf(Website!Expression) then
-			self.refImmediateComposite().isServicePath()
-		else
-			false
-		endif endif endif endif;
-
-rule FeatureReference {
-	from website : Website!FeatureReference (website.isServicePath())
+rule ServiceFeatureReference {
+	from website : Website!ServiceFeatureReference
 	to service : Service!FeatureReference (
 		feature <-
 			if website.feature.oclIsUndefined() then
@@ -187,15 +177,8 @@ rule FeatureReference {
 }
 
 rule ParameterReference {
-	from website : Website!ParameterReference
+	from website : Website!ParameterReference (website.isServiceExpression())
 	to service : Service!ParameterReference (
 		parameter <- website.parameter
 	)
 }
-
-rule CurrentUserReference {
-	from website : Website!CurrentUserReference
-	to service : Service!CurrentUserReference (
-	)
-}
-

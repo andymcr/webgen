@@ -97,7 +97,7 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 			case WebuiPackage.SELECT_ACTION: return createSelectAction();
 			case WebuiPackage.DELETE_ACTION: return createDeleteAction();
 			case WebuiPackage.FEATURE_SUPPORT_ACTION: return createFeatureSupportAction();
-			case WebuiPackage.FEATURE_REFERENCE: return createFeatureReference();
+			case WebuiPackage.WEBUI_FEATURE_REFERENCE: return createWebuiFeatureReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -554,9 +554,9 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureReference createFeatureReference() {
-		FeatureReferenceImpl featureReference = new FeatureReferenceImpl();
-		return featureReference;
+	public WebuiFeatureReference createWebuiFeatureReference() {
+		WebuiFeatureReferenceImpl webuiFeatureReference = new WebuiFeatureReferenceImpl();
+		return webuiFeatureReference;
 	}
 
 	/**

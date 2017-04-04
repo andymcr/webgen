@@ -325,8 +325,8 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 				return createFeatureSupportActionAdapter();
 			}
 			@Override
-			public Adapter caseFeatureReference(FeatureReference object) {
-				return createFeatureReferenceAdapter();
+			public Adapter caseWebuiFeatureReference(WebuiFeatureReference object) {
+				return createWebuiFeatureReferenceAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
@@ -1247,16 +1247,16 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureReference <em>Feature Reference</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference <em>Feature Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.FeatureReference
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference
 	 * @generated
 	 */
-	public Adapter createFeatureReferenceAdapter() {
+	public Adapter createWebuiFeatureReferenceAdapter() {
 		return null;
 	}
 

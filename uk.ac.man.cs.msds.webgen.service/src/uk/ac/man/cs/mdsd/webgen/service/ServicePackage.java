@@ -318,14 +318,14 @@ public interface ServicePackage extends EPackage {
 	int ORDER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.FeatureReferenceImpl <em>Feature Reference</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceFeatureReferenceImpl <em>Feature Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.FeatureReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getFeatureReference()
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServiceFeatureReferenceImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getServiceFeatureReference()
 	 * @generated
 	 */
-	int FEATURE_REFERENCE = 4;
+	int SERVICE_FEATURE_REFERENCE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -334,7 +334,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_REFERENCE__NAME = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
+	int SERVICE_FEATURE_REFERENCE__NAME = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -343,7 +343,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_REFERENCE__FEATURE = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
+	int SERVICE_FEATURE_REFERENCE__FEATURE = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Feature Reference</em>' class.
@@ -352,7 +352,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 2;
+	int SERVICE_FEATURE_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Feature Reference</em>' class.
@@ -361,7 +361,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_REFERENCE_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
+	int SERVICE_FEATURE_REFERENCE_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.AscImpl <em>Asc</em>}' class.
@@ -696,36 +696,36 @@ public interface ServicePackage extends EPackage {
 	EReference getOrder_Path();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.FeatureReference <em>Feature Reference</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.ServiceFeatureReference <em>Feature Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Feature Reference</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.FeatureReference
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServiceFeatureReference
 	 * @generated
 	 */
-	EClass getFeatureReference();
+	EClass getServiceFeatureReference();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.service.FeatureReference#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.service.ServiceFeatureReference#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.FeatureReference#getName()
-	 * @see #getFeatureReference()
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServiceFeatureReference#getName()
+	 * @see #getServiceFeatureReference()
 	 * @generated
 	 */
-	EAttribute getFeatureReference_Name();
+	EAttribute getServiceFeatureReference_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.service.FeatureReference#getFeature <em>Feature</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.service.ServiceFeatureReference#getFeature <em>Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.FeatureReference#getFeature()
-	 * @see #getFeatureReference()
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServiceFeatureReference#getFeature()
+	 * @see #getServiceFeatureReference()
 	 * @generated
 	 */
-	EReference getFeatureReference_Feature();
+	EReference getServiceFeatureReference_Feature();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.Asc <em>Asc</em>}'.
@@ -968,14 +968,14 @@ public interface ServicePackage extends EPackage {
 		EReference ORDER__PATH = eINSTANCE.getOrder_Path();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.FeatureReferenceImpl <em>Feature Reference</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceFeatureReferenceImpl <em>Feature Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.FeatureReferenceImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getFeatureReference()
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServiceFeatureReferenceImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getServiceFeatureReference()
 		 * @generated
 		 */
-		EClass FEATURE_REFERENCE = eINSTANCE.getFeatureReference();
+		EClass SERVICE_FEATURE_REFERENCE = eINSTANCE.getServiceFeatureReference();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -983,7 +983,7 @@ public interface ServicePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FEATURE_REFERENCE__NAME = eINSTANCE.getFeatureReference_Name();
+		EAttribute SERVICE_FEATURE_REFERENCE__NAME = eINSTANCE.getServiceFeatureReference_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
@@ -991,7 +991,7 @@ public interface ServicePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FEATURE_REFERENCE__FEATURE = eINSTANCE.getFeatureReference_Feature();
+		EReference SERVICE_FEATURE_REFERENCE__FEATURE = eINSTANCE.getServiceFeatureReference_Feature();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.AscImpl <em>Asc</em>}' class.

@@ -55,7 +55,7 @@ public interface ServiceFactory extends EFactory {
 	 * @return a new object of class '<em>Feature Reference</em>'.
 	 * @generated
 	 */
-	FeatureReference createFeatureReference();
+	ServiceFeatureReference createServiceFeatureReference();
 
 	/**
 	 * Returns a new object of class '<em>Asc</em>'.

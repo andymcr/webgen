@@ -60,7 +60,7 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 			case ServicePackage.SERVICES: return createServices();
 			case ServicePackage.SERVICE: return createService();
 			case ServicePackage.SELECTION: return createSelection();
-			case ServicePackage.FEATURE_REFERENCE: return createFeatureReference();
+			case ServicePackage.SERVICE_FEATURE_REFERENCE: return createServiceFeatureReference();
 			case ServicePackage.ASC: return createAsc();
 			case ServicePackage.DESC: return createDesc();
 			case ServicePackage.BUSINESS_OPERATION: return createBusinessOperation();
@@ -134,9 +134,9 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureReference createFeatureReference() {
-		FeatureReferenceImpl featureReference = new FeatureReferenceImpl();
-		return featureReference;
+	public ServiceFeatureReference createServiceFeatureReference() {
+		ServiceFeatureReferenceImpl serviceFeatureReference = new ServiceFeatureReferenceImpl();
+		return serviceFeatureReference;
 	}
 
 	/**

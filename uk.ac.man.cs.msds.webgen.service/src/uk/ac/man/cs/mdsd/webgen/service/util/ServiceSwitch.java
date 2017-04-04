@@ -97,11 +97,11 @@ public class ServiceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ServicePackage.FEATURE_REFERENCE: {
-				FeatureReference featureReference = (FeatureReference)theEObject;
-				T result = caseFeatureReference(featureReference);
-				if (result == null) result = caseVariable(featureReference);
-				if (result == null) result = caseExpression(featureReference);
+			case ServicePackage.SERVICE_FEATURE_REFERENCE: {
+				ServiceFeatureReference serviceFeatureReference = (ServiceFeatureReference)theEObject;
+				T result = caseServiceFeatureReference(serviceFeatureReference);
+				if (result == null) result = caseVariable(serviceFeatureReference);
+				if (result == null) result = caseExpression(serviceFeatureReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -201,7 +201,7 @@ public class ServiceSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFeatureReference(FeatureReference object) {
+	public T caseServiceFeatureReference(ServiceFeatureReference object) {
 		return null;
 	}
 

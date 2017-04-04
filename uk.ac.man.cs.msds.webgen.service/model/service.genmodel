@@ -35,9 +35,9 @@
       <genFeatures property="None" children="true" createChild="true" propertyCategory=""
           ecoreFeature="ecore:EReference service.ecore#//Order/path"/>
     </genClasses>
-    <genClasses ecoreClass="service.ecore#//FeatureReference">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//FeatureReference/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//FeatureReference/feature"/>
+    <genClasses ecoreClass="service.ecore#//ServiceFeatureReference">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//ServiceFeatureReference/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//ServiceFeatureReference/feature"/>
     </genClasses>
     <genClasses ecoreClass="service.ecore#//Asc"/>
     <genClasses ecoreClass="service.ecore#//Desc"/>

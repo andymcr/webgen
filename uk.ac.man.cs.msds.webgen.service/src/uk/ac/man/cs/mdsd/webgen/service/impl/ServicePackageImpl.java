@@ -19,12 +19,12 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.service.Asc;
 import uk.ac.man.cs.mdsd.webgen.service.BusinessOperation;
 import uk.ac.man.cs.mdsd.webgen.service.Desc;
-import uk.ac.man.cs.mdsd.webgen.service.FeatureReference;
 import uk.ac.man.cs.mdsd.webgen.service.OperationResultTypes;
 import uk.ac.man.cs.mdsd.webgen.service.Order;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.service.Service;
 import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
+import uk.ac.man.cs.mdsd.webgen.service.ServiceFeatureReference;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 import uk.ac.man.cs.mdsd.webgen.service.Services;
 
@@ -68,7 +68,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass featureReferenceEClass = null;
+	private EClass serviceFeatureReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -320,8 +320,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFeatureReference() {
-		return featureReferenceEClass;
+	public EClass getServiceFeatureReference() {
+		return serviceFeatureReferenceEClass;
 	}
 
 	/**
@@ -329,8 +329,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeatureReference_Name() {
-		return (EAttribute)featureReferenceEClass.getEStructuralFeatures().get(0);
+	public EAttribute getServiceFeatureReference_Name() {
+		return (EAttribute)serviceFeatureReferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -338,8 +338,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeatureReference_Feature() {
-		return (EReference)featureReferenceEClass.getEStructuralFeatures().get(1);
+	public EReference getServiceFeatureReference_Feature() {
+		return (EReference)serviceFeatureReferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -454,9 +454,9 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		orderEClass = createEClass(ORDER);
 		createEReference(orderEClass, ORDER__PATH);
 
-		featureReferenceEClass = createEClass(FEATURE_REFERENCE);
-		createEAttribute(featureReferenceEClass, FEATURE_REFERENCE__NAME);
-		createEReference(featureReferenceEClass, FEATURE_REFERENCE__FEATURE);
+		serviceFeatureReferenceEClass = createEClass(SERVICE_FEATURE_REFERENCE);
+		createEAttribute(serviceFeatureReferenceEClass, SERVICE_FEATURE_REFERENCE__NAME);
+		createEReference(serviceFeatureReferenceEClass, SERVICE_FEATURE_REFERENCE__FEATURE);
 
 		ascEClass = createEClass(ASC);
 
@@ -507,7 +507,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		serviceEClass.getESuperTypes().add(theBasePackage.getNamedElement());
 		selectionEClass.getESuperTypes().add(theBasePackage.getNamedElement());
 		selectionEClass.getESuperTypes().add(theBasePackage.getFormalParameterList());
-		featureReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
+		serviceFeatureReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
 		ascEClass.getESuperTypes().add(this.getOrder());
 		descEClass.getESuperTypes().add(this.getOrder());
 		businessOperationEClass.getESuperTypes().add(theBasePackage.getNamedElement());
@@ -534,9 +534,9 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		initEClass(orderEClass, Order.class, "Order", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOrder_Path(), theExpressionPackage.getVariable(), null, "path", null, 1, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(featureReferenceEClass, FeatureReference.class, "FeatureReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFeatureReference_Name(), ecorePackage.getEString(), "name", "", 0, 1, FeatureReference.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getFeatureReference_Feature(), thePersistencePackage.getFeature(), null, "feature", null, 1, 1, FeatureReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(serviceFeatureReferenceEClass, ServiceFeatureReference.class, "ServiceFeatureReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getServiceFeatureReference_Name(), ecorePackage.getEString(), "name", "", 0, 1, ServiceFeatureReference.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceFeatureReference_Feature(), thePersistencePackage.getFeature(), null, "feature", null, 1, 1, ServiceFeatureReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ascEClass, Asc.class, "Asc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -589,7 +589,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
-		  (getFeatureReference_Name(), 
+		  (getServiceFeatureReference_Name(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if feature.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif feature.oclIsKindOf(persistence::EntityFeature) then\r\n\t\tfeature.oclAsType(persistence::EntityFeature).name\r\n\telse if feature.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\t\tfeature.oclAsType(persistence::EncapsulatedAttribute).name\r\n\telse if feature.oclIsKindOf(persistence::EncapsulatedAssociation) then\r\n\t\tfeature.oclAsType(persistence::EncapsulatedAssociation).name\r\n\telse\r\n\t\tfeature.oclAsType(persistence::ViewAssociation).name\r\n\tendif endif endif\r\nendif"

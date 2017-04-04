@@ -88,8 +88,8 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 				return createOrderAdapter();
 			}
 			@Override
-			public Adapter caseFeatureReference(FeatureReference object) {
-				return createFeatureReferenceAdapter();
+			public Adapter caseServiceFeatureReference(ServiceFeatureReference object) {
+				return createServiceFeatureReferenceAdapter();
 			}
 			@Override
 			public Adapter caseAsc(Asc object) {
@@ -196,16 +196,16 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.FeatureReference <em>Feature Reference</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.ServiceFeatureReference <em>Feature Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.FeatureReference
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServiceFeatureReference
 	 * @generated
 	 */
-	public Adapter createFeatureReferenceAdapter() {
+	public Adapter createServiceFeatureReferenceAdapter() {
 		return null;
 	}
 

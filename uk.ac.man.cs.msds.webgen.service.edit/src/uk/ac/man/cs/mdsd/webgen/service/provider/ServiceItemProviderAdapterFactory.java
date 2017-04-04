@@ -155,26 +155,26 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.service.FeatureReference} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.service.ServiceFeatureReference} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FeatureReferenceItemProvider featureReferenceItemProvider;
+	protected ServiceFeatureReferenceItemProvider serviceFeatureReferenceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.service.FeatureReference}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.service.ServiceFeatureReference}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFeatureReferenceAdapter() {
-		if (featureReferenceItemProvider == null) {
-			featureReferenceItemProvider = new FeatureReferenceItemProvider(this);
+	public Adapter createServiceFeatureReferenceAdapter() {
+		if (serviceFeatureReferenceItemProvider == null) {
+			serviceFeatureReferenceItemProvider = new ServiceFeatureReferenceItemProvider(this);
 		}
 
-		return featureReferenceItemProvider;
+		return serviceFeatureReferenceItemProvider;
 	}
 
 	/**
@@ -388,12 +388,12 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 ServiceFactory.eINSTANCE.createFeatureReference()));
+						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 ServiceFactory.eINSTANCE.createFeatureReference()));
+						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
 
 				return null;
 			}
@@ -408,12 +408,12 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 ServiceFactory.eINSTANCE.createFeatureReference()));
+						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 ServiceFactory.eINSTANCE.createFeatureReference()));
+						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
 
 				return null;
 			}
@@ -428,12 +428,12 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 ServiceFactory.eINSTANCE.createFeatureReference()));
+						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 ServiceFactory.eINSTANCE.createFeatureReference()));
+						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
 
 				return null;
 			}
@@ -448,12 +448,12 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 ServiceFactory.eINSTANCE.createFeatureReference()));
+						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 ServiceFactory.eINSTANCE.createFeatureReference()));
+						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
 
 				return null;
 			}
@@ -468,7 +468,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
-						 ServiceFactory.eINSTANCE.createFeatureReference()));
+						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
 
 				return null;
 			}
@@ -483,7 +483,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 ServiceFactory.eINSTANCE.createFeatureReference()));
+						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
 
 				return null;
 			}
@@ -570,7 +570,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
-						 ServiceFactory.eINSTANCE.createFeatureReference()));
+						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
 
 				return null;
 			}

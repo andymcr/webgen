@@ -641,11 +641,11 @@ public class WebuiSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebuiPackage.FEATURE_REFERENCE: {
-				FeatureReference featureReference = (FeatureReference)theEObject;
-				T result = caseFeatureReference(featureReference);
-				if (result == null) result = caseVariable(featureReference);
-				if (result == null) result = caseExpression(featureReference);
+			case WebuiPackage.WEBUI_FEATURE_REFERENCE: {
+				WebuiFeatureReference webuiFeatureReference = (WebuiFeatureReference)theEObject;
+				T result = caseWebuiFeatureReference(webuiFeatureReference);
+				if (result == null) result = caseVariable(webuiFeatureReference);
+				if (result == null) result = caseExpression(webuiFeatureReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1609,7 +1609,7 @@ public class WebuiSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFeatureReference(FeatureReference object) {
+	public T caseWebuiFeatureReference(WebuiFeatureReference object) {
 		return null;
 	}
 

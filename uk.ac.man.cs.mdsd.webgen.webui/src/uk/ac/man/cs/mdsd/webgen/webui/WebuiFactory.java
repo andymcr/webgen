@@ -388,7 +388,7 @@ public interface WebuiFactory extends EFactory {
 	 * @return a new object of class '<em>Feature Reference</em>'.
 	 * @generated
 	 */
-	FeatureReference createFeatureReference();
+	WebuiFeatureReference createWebuiFeatureReference();
 
 	/**
 	 * Returns the package supported by this factory.

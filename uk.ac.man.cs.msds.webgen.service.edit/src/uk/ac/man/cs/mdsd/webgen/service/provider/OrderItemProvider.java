@@ -139,7 +139,7 @@ public class OrderItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ServicePackage.Literals.ORDER__PATH,
-				 ServiceFactory.eINSTANCE.createFeatureReference()));
+				 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -222,8 +222,8 @@ public class WebuiValidator extends EObjectValidator {
 				return validateDeleteAction((DeleteAction)value, diagnostics, context);
 			case WebuiPackage.FEATURE_SUPPORT_ACTION:
 				return validateFeatureSupportAction((FeatureSupportAction)value, diagnostics, context);
-			case WebuiPackage.FEATURE_REFERENCE:
-				return validateFeatureReference((FeatureReference)value, diagnostics, context);
+			case WebuiPackage.WEBUI_FEATURE_REFERENCE:
+				return validateWebuiFeatureReference((WebuiFeatureReference)value, diagnostics, context);
 			case WebuiPackage.INPUT_TECHNOLOGIES:
 				return validateInputTechnologies((InputTechnologies)value, diagnostics, context);
 			case WebuiPackage.AJAX_TECHNOLOGIES:
@@ -1858,8 +1858,8 @@ public class WebuiValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFeatureReference(FeatureReference featureReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(featureReference, diagnostics, context);
+	public boolean validateWebuiFeatureReference(WebuiFeatureReference webuiFeatureReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(webuiFeatureReference, diagnostics, context);
 	}
 
 	/**

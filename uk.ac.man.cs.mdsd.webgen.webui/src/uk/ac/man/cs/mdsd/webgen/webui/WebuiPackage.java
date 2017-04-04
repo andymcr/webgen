@@ -10513,14 +10513,14 @@ public interface WebuiPackage extends EPackage {
 	int FEATURE_SUPPORT_ACTION_OPERATION_COUNT = INLINE_ACTION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FeatureReferenceImpl <em>Feature Reference</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiFeatureReferenceImpl <em>Feature Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FeatureReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeatureReference()
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiFeatureReferenceImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getWebuiFeatureReference()
 	 * @generated
 	 */
-	int FEATURE_REFERENCE = 63;
+	int WEBUI_FEATURE_REFERENCE = 63;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10529,7 +10529,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_REFERENCE__NAME = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
+	int WEBUI_FEATURE_REFERENCE__NAME = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -10538,7 +10538,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_REFERENCE__FEATURE = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
+	int WEBUI_FEATURE_REFERENCE__FEATURE = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Feature Reference</em>' class.
@@ -10547,7 +10547,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 2;
+	int WEBUI_FEATURE_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Feature Reference</em>' class.
@@ -10556,7 +10556,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_REFERENCE_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
+	int WEBUI_FEATURE_REFERENCE_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies <em>Input Technologies</em>}' enum.
@@ -13649,36 +13649,36 @@ public interface WebuiPackage extends EPackage {
 	EAttribute getFeatureSupportAction_FileExtension();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureReference <em>Feature Reference</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference <em>Feature Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Feature Reference</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.FeatureReference
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference
 	 * @generated
 	 */
-	EClass getFeatureReference();
+	EClass getWebuiFeatureReference();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureReference#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.FeatureReference#getName()
-	 * @see #getFeatureReference()
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference#getName()
+	 * @see #getWebuiFeatureReference()
 	 * @generated
 	 */
-	EAttribute getFeatureReference_Name();
+	EAttribute getWebuiFeatureReference_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureReference#getFeature <em>Feature</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference#getFeature <em>Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.FeatureReference#getFeature()
-	 * @see #getFeatureReference()
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference#getFeature()
+	 * @see #getWebuiFeatureReference()
 	 * @generated
 	 */
-	EReference getFeatureReference_Feature();
+	EReference getWebuiFeatureReference_Feature();
 
 	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies <em>Input Technologies</em>}'.
@@ -16136,14 +16136,14 @@ public interface WebuiPackage extends EPackage {
 		EAttribute FEATURE_SUPPORT_ACTION__FILE_EXTENSION = eINSTANCE.getFeatureSupportAction_FileExtension();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FeatureReferenceImpl <em>Feature Reference</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiFeatureReferenceImpl <em>Feature Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FeatureReferenceImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeatureReference()
+		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiFeatureReferenceImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getWebuiFeatureReference()
 		 * @generated
 		 */
-		EClass FEATURE_REFERENCE = eINSTANCE.getFeatureReference();
+		EClass WEBUI_FEATURE_REFERENCE = eINSTANCE.getWebuiFeatureReference();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -16151,7 +16151,7 @@ public interface WebuiPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FEATURE_REFERENCE__NAME = eINSTANCE.getFeatureReference_Name();
+		EAttribute WEBUI_FEATURE_REFERENCE__NAME = eINSTANCE.getWebuiFeatureReference_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
@@ -16159,7 +16159,7 @@ public interface WebuiPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FEATURE_REFERENCE__FEATURE = eINSTANCE.getFeatureReference_Feature();
+		EReference WEBUI_FEATURE_REFERENCE__FEATURE = eINSTANCE.getWebuiFeatureReference_Feature();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies <em>Input Technologies</em>}' enum.

@@ -46,7 +46,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.EditUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePath;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePathAttribute;
-import uk.ac.man.cs.mdsd.webgen.webui.FeatureReference;
 import uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction;
 import uk.ac.man.cs.mdsd.webgen.webui.Filter;
 import uk.ac.man.cs.mdsd.webgen.webui.FilterParameter;
@@ -88,6 +87,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.UnitSupportAction;
 import uk.ac.man.cs.mdsd.webgen.webui.UpdateUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
+import uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
 import uk.ac.man.cs.mdsd.webgen.webui.util.WebuiValidator;
@@ -545,7 +545,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass featureReferenceEClass = null;
+	private EClass webuiFeatureReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -3199,8 +3199,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFeatureReference() {
-		return featureReferenceEClass;
+	public EClass getWebuiFeatureReference() {
+		return webuiFeatureReferenceEClass;
 	}
 
 	/**
@@ -3208,8 +3208,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeatureReference_Name() {
-		return (EAttribute)featureReferenceEClass.getEStructuralFeatures().get(0);
+	public EAttribute getWebuiFeatureReference_Name() {
+		return (EAttribute)webuiFeatureReferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -3217,8 +3217,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeatureReference_Feature() {
-		return (EReference)featureReferenceEClass.getEStructuralFeatures().get(1);
+	public EReference getWebuiFeatureReference_Feature() {
+		return (EReference)webuiFeatureReferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3639,9 +3639,9 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__URI_ELEMENT);
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__FILE_EXTENSION);
 
-		featureReferenceEClass = createEClass(FEATURE_REFERENCE);
-		createEAttribute(featureReferenceEClass, FEATURE_REFERENCE__NAME);
-		createEReference(featureReferenceEClass, FEATURE_REFERENCE__FEATURE);
+		webuiFeatureReferenceEClass = createEClass(WEBUI_FEATURE_REFERENCE);
+		createEAttribute(webuiFeatureReferenceEClass, WEBUI_FEATURE_REFERENCE__NAME);
+		createEReference(webuiFeatureReferenceEClass, WEBUI_FEATURE_REFERENCE__FEATURE);
 
 		// Create enums
 		inputTechnologiesEEnum = createEEnum(INPUT_TECHNOLOGIES);
@@ -3758,7 +3758,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		selectActionEClass.getESuperTypes().add(this.getInlineAction());
 		deleteActionEClass.getESuperTypes().add(this.getInlineAction());
 		featureSupportActionEClass.getESuperTypes().add(this.getInlineAction());
-		featureReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
+		webuiFeatureReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(webUIEClass, WebUI.class, "WebUI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4106,9 +4106,9 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEAttribute(getFeatureSupportAction_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeatureSupportAction_FileExtension(), ecorePackage.getEString(), "fileExtension", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(featureReferenceEClass, FeatureReference.class, "FeatureReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFeatureReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, FeatureReference.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getFeatureReference_Feature(), thePersistencePackage.getFeature(), null, "feature", null, 1, 1, FeatureReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(webuiFeatureReferenceEClass, WebuiFeatureReference.class, "WebuiFeatureReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWebuiFeatureReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, WebuiFeatureReference.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getWebuiFeatureReference_Feature(), thePersistencePackage.getFeature(), null, "feature", null, 1, 1, WebuiFeatureReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(inputTechnologiesEEnum, InputTechnologies.class, "InputTechnologies");
@@ -4393,7 +4393,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 			 "canOnlyDeleteSingletons", "if usedBy.oclIsKindOf(UnitElement) then\r\n\tlet attribute : persistence::Attribute\r\n\t\t= usedBy.oclAsType(UnitElement).attribute\r\n\t\tin if attribute.oclIsKindOf(persistence::EntityAttribute) then\r\n\t\t\t\tattribute.oclAsType(persistence::EntityAttribute).cardinality <> persistence::Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tattribute.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n\t\t\tendif\r\nelse if usedBy.oclIsKindOf(UnitAssociation) then\r\n\tlet association : persistence::Association\r\n\t\t= usedBy.oclAsType(UnitAssociation).association\r\n\t\tin if association.oclIsKindOf(persistence::EntityAssociation) then\r\n\t\t\t\tassociation.oclAsType(persistence::EntityAssociation).cardinality <> persistence::Cardinality::Many\r\n\t\t\telse if association.oclIsKindOf(persistence::EncapsulatedAssociation) then\r\n\t\t\t\tassociation.oclAsType(persistence::EncapsulatedAssociation).cardinality <> persistence::Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tfalse -- association.oclAsType(ViewAssociation)\r\n\t\t\tendif endif\r\nelse\r\n\tusedBy.oclIsKindOf(CollectionUnit)\r\nendif endif\r\n"
 		   });	
 		addAnnotation
-		  (getFeatureReference_Name(), 
+		  (getWebuiFeatureReference_Name(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if feature.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif feature.oclIsKindOf(persistence::EntityFeature) then\r\n\t\tfeature.oclAsType(persistence::EntityFeature).name\r\n\telse if feature.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\t\tfeature.oclAsType(persistence::EncapsulatedAttribute).name\r\n\telse if feature.oclIsKindOf(persistence::EncapsulatedAssociation) then\r\n\t\tfeature.oclAsType(persistence::EncapsulatedAssociation).name\r\n\telse\r\n\t\tfeature.oclAsType(persistence::ViewAssociation).name\r\n\tendif endif endif\r\nendif"

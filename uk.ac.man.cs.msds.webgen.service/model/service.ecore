@@ -43,6 +43,17 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" defaultValueLiteral="" unsettable="true"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if feature.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;if feature.oclIsKindOf(persistence::EntityFeature) then&#xD;&#xA;&#x9;&#x9;feature.oclAsType(persistence::EntityFeature).name&#xD;&#xA;&#x9;else if feature.oclIsKindOf(persistence::EncapsulatedAttribute) then&#xD;&#xA;&#x9;&#x9;feature.oclAsType(persistence::EncapsulatedAttribute).name&#xD;&#xA;&#x9;else if feature.oclIsKindOf(persistence::EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;feature.oclAsType(persistence::EncapsulatedAssociation).name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;feature.oclAsType(persistence::ViewAssociation).name&#xD;&#xA;&#x9;endif endif endif&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Feature"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Asc" eSuperTypes="#//Order"/>
   <eClassifiers xsi:type="ecore:EClass" name="Desc" eSuperTypes="#//Order"/>
   <eClassifiers xsi:type="ecore:EClass" name="BusinessOperation" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement">

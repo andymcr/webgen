@@ -12,6 +12,7 @@ import java.util.Set;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -348,6 +349,17 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(ServicePackage.Literals.SELECTION__ORDERING,
 				 ServiceFactory.eINSTANCE.createDesc()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ServiceEditPlugin.INSTANCE;
 	}
 
 	protected Set<EntityOrView> getEntitiesAndViews(final Selection selection) {

@@ -11,6 +11,8 @@ import org.eclipse.emf.ecore.EObject;
 import uk.ac.man.cs.mdsd.webgen.base.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
 
+import uk.ac.man.cs.mdsd.webgen.expression.Expression;
+import uk.ac.man.cs.mdsd.webgen.expression.Variable;
 import uk.ac.man.cs.mdsd.webgen.service.*;
 
 /**
@@ -86,6 +88,10 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 				return createOrderAdapter();
 			}
 			@Override
+			public Adapter caseFeatureReference(FeatureReference object) {
+				return createFeatureReferenceAdapter();
+			}
+			@Override
 			public Adapter caseAsc(Asc object) {
 				return createAscAdapter();
 			}
@@ -104,6 +110,14 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseFormalParameterList(FormalParameterList object) {
 				return createFormalParameterListAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
+			}
+			@Override
+			public Adapter caseVariable(Variable object) {
+				return createVariableAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -182,6 +196,20 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.FeatureReference <em>Feature Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FeatureReference
+	 * @generated
+	 */
+	public Adapter createFeatureReferenceAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.Asc <em>Asc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -248,6 +276,34 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFormalParameterListAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.expression.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.Expression
+	 * @generated
+	 */
+	public Adapter createExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.expression.Variable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.Variable
+	 * @generated
+	 */
+	public Adapter createVariableAdapter() {
 		return null;
 	}
 

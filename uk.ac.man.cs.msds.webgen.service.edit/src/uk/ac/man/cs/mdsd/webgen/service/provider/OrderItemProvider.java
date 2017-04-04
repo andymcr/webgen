@@ -12,8 +12,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -24,6 +22,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
 import uk.ac.man.cs.mdsd.webgen.service.Order;
+import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 
 /**
@@ -140,6 +139,11 @@ public class OrderItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ServicePackage.Literals.ORDER__PATH,
+				 ServiceFactory.eINSTANCE.createFeatureReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.ORDER__PATH,
 				 BaseFactory.eINSTANCE.createParameterReference()));
 	}
 
@@ -151,7 +155,7 @@ public class OrderItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ServiceEditPlugin.INSTANCE;
 	}
 
 }

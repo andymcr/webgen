@@ -18,7 +18,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.waf.UnitAttribute;
-import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -263,11 +262,6 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
-				 WafFactory.eINSTANCE.createCurrentUserReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
 				 ServiceFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
@@ -304,6 +298,11 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 			(createChildParameter
 				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createCurrentTime()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter

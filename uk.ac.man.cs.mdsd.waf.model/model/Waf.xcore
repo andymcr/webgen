@@ -114,9 +114,6 @@ class LocalAuthenticationSystem extends Authentication {
 class CasAuthentication extends Authentication {
 }
 
-class CurrentUserReference extends Variable {
-}
-
 
 abstract class DisplayElement {
 	String[1] displayLabel

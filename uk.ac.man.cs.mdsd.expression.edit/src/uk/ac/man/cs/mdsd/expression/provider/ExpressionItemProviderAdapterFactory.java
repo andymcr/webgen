@@ -227,6 +227,29 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.expression.CurrentUser} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CurrentUserItemProvider currentUserItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.expression.CurrentUser}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCurrentUserAdapter() {
+		if (currentUserItemProvider == null) {
+			currentUserItemProvider = new CurrentUserItemProvider(this);
+		}
+
+		return currentUserItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.expression.Function} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -542,6 +565,7 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 		if (stringLiteralItemProvider != null) stringLiteralItemProvider.dispose();
 		if (timeLiteralItemProvider != null) timeLiteralItemProvider.dispose();
 		if (currentTimeItemProvider != null) currentTimeItemProvider.dispose();
+		if (currentUserItemProvider != null) currentUserItemProvider.dispose();
 		if (functionItemProvider != null) functionItemProvider.dispose();
 		if (predicateBooleanOperatorItemProvider != null) predicateBooleanOperatorItemProvider.dispose();
 		if (predicateEqualityOperatorItemProvider != null) predicateEqualityOperatorItemProvider.dispose();

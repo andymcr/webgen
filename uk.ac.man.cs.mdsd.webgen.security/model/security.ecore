@@ -65,5 +65,4 @@
         defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CasAuthentication" eSuperTypes="#//Authentication"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CurrentUserReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable"/>
 </ecore:EPackage>

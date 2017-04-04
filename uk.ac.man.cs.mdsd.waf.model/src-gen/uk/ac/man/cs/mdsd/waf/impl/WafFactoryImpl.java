@@ -60,7 +60,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.WAF_MODEL: return createWafModel();
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
 			case WafPackage.CAS_AUTHENTICATION: return createCasAuthentication();
-			case WafPackage.CURRENT_USER_REFERENCE: return createCurrentUserReference();
 			case WafPackage.IMAGE_MANIPULATION: return createImageManipulation();
 			case WafPackage.THUMBNAIL_FILTER: return createThumbnailFilter();
 			case WafPackage.STATIC_MENU: return createStaticMenu();
@@ -184,16 +183,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public CasAuthentication createCasAuthentication() {
 		CasAuthenticationImpl casAuthentication = new CasAuthenticationImpl();
 		return casAuthentication;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CurrentUserReference createCurrentUserReference() {
-		CurrentUserReferenceImpl currentUserReference = new CurrentUserReferenceImpl();
-		return currentUserReference;
 	}
 
 	/**

@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.waf.provider;
+package uk.ac.man.cs.mdsd.expression.provider;
 
 
 import java.util.Collection;
@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -20,12 +21,12 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.CurrentUserReference} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.expression.CurrentUser} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CurrentUserReferenceItemProvider 
+public class CurrentUserItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -39,7 +40,7 @@ public class CurrentUserReferenceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CurrentUserReferenceItemProvider(AdapterFactory adapterFactory) {
+	public CurrentUserItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,14 +60,14 @@ public class CurrentUserReferenceItemProvider
 	}
 
 	/**
-	 * This returns CurrentUserReference.gif.
+	 * This returns CurrentUser.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CurrentUserReference"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CurrentUser"));
 	}
 
 	/**
@@ -77,7 +78,7 @@ public class CurrentUserReferenceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_CurrentUserReference_type");
+		return getString("_UI_CurrentUser_type");
 	}
 	
 
@@ -114,7 +115,7 @@ public class CurrentUserReferenceItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return WafEditPlugin.INSTANCE;
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

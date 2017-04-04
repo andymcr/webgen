@@ -1,5 +1,5 @@
 @Ecore(
-	nsURI="http://www.cs.man.ac.uk/mdsd/2016/Expression",
+	nsURI="http://cs.man.ac.uk/mdsd/expression",
 	nsPrefix="expression"
 )
 @GenModel(
@@ -45,16 +45,22 @@ class TimeLiteral extends Literal {
 	String[1] value
 }
 
-class CurrentTime extends Literal {
-	String format
+
+class CurrentTime extends Expression {
 }
+
+class CurrentUser extends Expression {
+}
+
 
 class Function extends Expression {
 	String[1] name
 }
 
+
 interface Variable extends Expression {
 }
+
 
 abstract class Predicate extends Expression {
 	boolean negated = "false"

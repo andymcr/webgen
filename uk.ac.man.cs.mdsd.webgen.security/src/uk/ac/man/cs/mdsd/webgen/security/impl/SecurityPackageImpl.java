@@ -10,15 +10,11 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
-
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 
 import uk.ac.man.cs.mdsd.webgen.security.Authentication;
 import uk.ac.man.cs.mdsd.webgen.security.AuthenticationKeyTypes;
 import uk.ac.man.cs.mdsd.webgen.security.CasAuthentication;
-import uk.ac.man.cs.mdsd.webgen.security.CurrentUserReference;
 import uk.ac.man.cs.mdsd.webgen.security.LocalAuthenticationSystem;
 import uk.ac.man.cs.mdsd.webgen.security.Security;
 import uk.ac.man.cs.mdsd.webgen.security.SecurityFactory;
@@ -60,13 +56,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * @generated
 	 */
 	private EClass casAuthenticationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass currentUserReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -315,15 +304,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCurrentUserReference() {
-		return currentUserReferenceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getAuthenticationKeyTypes() {
 		return authenticationKeyTypesEEnum;
 	}
@@ -378,8 +358,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 
 		casAuthenticationEClass = createEClass(CAS_AUTHENTICATION);
 
-		currentUserReferenceEClass = createEClass(CURRENT_USER_REFERENCE);
-
 		// Create enums
 		authenticationKeyTypesEEnum = createEEnum(AUTHENTICATION_KEY_TYPES);
 	}
@@ -409,7 +387,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 
 		// Obtain other dependent packages
 		PersistencePackage thePersistencePackage = (PersistencePackage)EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI);
-		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -418,7 +395,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		// Add supertypes to classes
 		localAuthenticationSystemEClass.getESuperTypes().add(this.getAuthentication());
 		casAuthenticationEClass.getESuperTypes().add(this.getAuthentication());
-		currentUserReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(securityEClass, Security.class, "Security", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -442,8 +418,6 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		initEAttribute(getLocalAuthenticationSystem_SendWelcomeEmail(), ecorePackage.getEBoolean(), "sendWelcomeEmail", "true", 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(casAuthenticationEClass, CasAuthentication.class, "CasAuthentication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(currentUserReferenceEClass, CurrentUserReference.class, "CurrentUserReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(authenticationKeyTypesEEnum, AuthenticationKeyTypes.class, "AuthenticationKeyTypes");

@@ -49,15 +49,6 @@ public interface WafFactory extends EFactory {
 	CasAuthentication createCasAuthentication();
 
 	/**
-	 * Returns a new object of class '<em>Current User Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Current User Reference</em>'.
-	 * @generated
-	 */
-	CurrentUserReference createCurrentUserReference();
-
-	/**
 	 * Returns a new object of class '<em>Image Manipulation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

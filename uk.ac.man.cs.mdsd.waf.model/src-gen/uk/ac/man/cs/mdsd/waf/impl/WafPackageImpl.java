@@ -36,7 +36,6 @@ import uk.ac.man.cs.mdsd.waf.ContentUnit;
 import uk.ac.man.cs.mdsd.waf.ControlUnit;
 import uk.ac.man.cs.mdsd.waf.CreateUnit;
 import uk.ac.man.cs.mdsd.waf.CreateUpdateUnit;
-import uk.ac.man.cs.mdsd.waf.CurrentUserReference;
 import uk.ac.man.cs.mdsd.waf.DataTypeField;
 import uk.ac.man.cs.mdsd.waf.DataUnit;
 import uk.ac.man.cs.mdsd.waf.DateField;
@@ -131,13 +130,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass casAuthenticationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass currentUserReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1124,15 +1116,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EClass getCasAuthentication() {
 		return casAuthenticationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCurrentUserReference() {
-		return currentUserReferenceEClass;
 	}
 
 	/**
@@ -3483,8 +3466,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		casAuthenticationEClass = createEClass(CAS_AUTHENTICATION);
 
-		currentUserReferenceEClass = createEClass(CURRENT_USER_REFERENCE);
-
 		displayElementEClass = createEClass(DISPLAY_ELEMENT);
 		createEAttribute(displayElementEClass, DISPLAY_ELEMENT__DISPLAY_LABEL);
 
@@ -3841,7 +3822,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		// Add supertypes to classes
 		localAuthenticationSystemEClass.getESuperTypes().add(this.getAuthentication());
 		casAuthenticationEClass.getESuperTypes().add(this.getAuthentication());
-		currentUserReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
 		imageManipulationEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		thumbnailFilterEClass.getESuperTypes().add(this.getImageFilter());
 		menuEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
@@ -3970,8 +3950,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getLocalAuthenticationSystem_ForgottenPasswordUnit(), this.getForgottenPasswordUnit(), this.getForgottenPasswordUnit_AuthenticationSystem(), "forgottenPasswordUnit", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(casAuthenticationEClass, CasAuthentication.class, "CasAuthentication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(currentUserReferenceEClass, CurrentUserReference.class, "CurrentUserReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(displayElementEClass, DisplayElement.class, "DisplayElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDisplayElement_DisplayLabel(), theEcorePackage.getEString(), "displayLabel", null, 1, 1, DisplayElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

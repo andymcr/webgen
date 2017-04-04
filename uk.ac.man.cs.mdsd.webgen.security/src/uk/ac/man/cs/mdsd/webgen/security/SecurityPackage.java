@@ -8,8 +8,6 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -389,34 +387,6 @@ public interface SecurityPackage extends EPackage {
 	int CAS_AUTHENTICATION_OPERATION_COUNT = AUTHENTICATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.security.impl.CurrentUserReferenceImpl <em>Current User Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.security.impl.CurrentUserReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.security.impl.SecurityPackageImpl#getCurrentUserReference()
-	 * @generated
-	 */
-	int CURRENT_USER_REFERENCE = 4;
-
-	/**
-	 * The number of structural features of the '<em>Current User Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CURRENT_USER_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Current User Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CURRENT_USER_REFERENCE_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.security.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -424,7 +394,7 @@ public interface SecurityPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.security.impl.SecurityPackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPES = 5;
+	int AUTHENTICATION_KEY_TYPES = 4;
 
 
 	/**
@@ -622,16 +592,6 @@ public interface SecurityPackage extends EPackage {
 	EClass getCasAuthentication();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.security.CurrentUserReference <em>Current User Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Current User Reference</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.security.CurrentUserReference
-	 * @generated
-	 */
-	EClass getCurrentUserReference();
-
-	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.security.AuthenticationKeyTypes <em>Authentication Key Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -815,16 +775,6 @@ public interface SecurityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CAS_AUTHENTICATION = eINSTANCE.getCasAuthentication();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.security.impl.CurrentUserReferenceImpl <em>Current User Reference</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.security.impl.CurrentUserReferenceImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.security.impl.SecurityPackageImpl#getCurrentUserReference()
-		 * @generated
-		 */
-		EClass CURRENT_USER_REFERENCE = eINSTANCE.getCurrentUserReference();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.security.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.

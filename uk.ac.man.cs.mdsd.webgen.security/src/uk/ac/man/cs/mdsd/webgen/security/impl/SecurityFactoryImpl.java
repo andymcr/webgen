@@ -60,7 +60,6 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 			case SecurityPackage.SECURITY: return createSecurity();
 			case SecurityPackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
 			case SecurityPackage.CAS_AUTHENTICATION: return createCasAuthentication();
-			case SecurityPackage.CURRENT_USER_REFERENCE: return createCurrentUserReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -124,16 +123,6 @@ public class SecurityFactoryImpl extends EFactoryImpl implements SecurityFactory
 	public CasAuthentication createCasAuthentication() {
 		CasAuthenticationImpl casAuthentication = new CasAuthenticationImpl();
 		return casAuthentication;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CurrentUserReference createCurrentUserReference() {
-		CurrentUserReferenceImpl currentUserReference = new CurrentUserReferenceImpl();
-		return currentUserReference;
 	}
 
 	/**

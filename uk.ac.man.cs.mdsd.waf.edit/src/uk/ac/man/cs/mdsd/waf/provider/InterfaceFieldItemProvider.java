@@ -17,7 +17,6 @@ import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
 import uk.ac.man.cs.mdsd.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.waf.InterfaceField;
-import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -469,11 +468,6 @@ public class InterfaceFieldItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
-				 WafFactory.eINSTANCE.createCurrentUserReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
 				 ServiceFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
@@ -510,6 +504,11 @@ public class InterfaceFieldItemProvider
 			(createChildParameter
 				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createCurrentTime()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter

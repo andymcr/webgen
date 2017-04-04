@@ -35,6 +35,5 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//LocalAuthenticationSystem/sendWelcomeEmail"/>
     </genClasses>
     <genClasses ecoreClass="security.ecore#//CasAuthentication"/>
-    <genClasses ecoreClass="security.ecore#//CurrentUserReference"/>
   </genPackages>
 </genmodel:GenModel>

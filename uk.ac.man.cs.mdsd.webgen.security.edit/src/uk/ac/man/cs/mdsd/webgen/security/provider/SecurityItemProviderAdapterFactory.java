@@ -141,29 +141,6 @@ public class SecurityItemProviderAdapterFactory extends SecurityAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.security.CurrentUserReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CurrentUserReferenceItemProvider currentUserReferenceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.security.CurrentUserReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCurrentUserReferenceAdapter() {
-		if (currentUserReferenceItemProvider == null) {
-			currentUserReferenceItemProvider = new CurrentUserReferenceItemProvider(this);
-		}
-
-		return currentUserReferenceItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -265,7 +242,6 @@ public class SecurityItemProviderAdapterFactory extends SecurityAdapterFactory i
 		if (securityItemProvider != null) securityItemProvider.dispose();
 		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
-		if (currentUserReferenceItemProvider != null) currentUserReferenceItemProvider.dispose();
 	}
 
 }

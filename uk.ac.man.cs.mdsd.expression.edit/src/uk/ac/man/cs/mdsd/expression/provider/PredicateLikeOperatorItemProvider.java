@@ -169,6 +169,11 @@ public class PredicateLikeOperatorItemProvider extends PredicateItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+				 ExpressionFactory.eINSTANCE.createCurrentUser()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
 				 ExpressionFactory.eINSTANCE.createFunction()));
 
 		newChildDescriptors.add
@@ -235,6 +240,11 @@ public class PredicateLikeOperatorItemProvider extends PredicateItemProvider {
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
 				 ExpressionFactory.eINSTANCE.createCurrentTime()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+				 ExpressionFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter

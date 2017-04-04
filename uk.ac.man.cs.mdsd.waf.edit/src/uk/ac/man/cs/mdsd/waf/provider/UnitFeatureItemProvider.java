@@ -524,11 +524,6 @@ public class UnitFeatureItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 WafFactory.eINSTANCE.createCurrentUserReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 ServiceFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
@@ -565,6 +560,11 @@ public class UnitFeatureItemProvider
 			(createChildParameter
 				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 ExpressionFactory.eINSTANCE.createCurrentTime()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 ExpressionFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter

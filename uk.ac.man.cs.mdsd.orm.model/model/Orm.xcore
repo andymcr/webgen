@@ -1,5 +1,5 @@
 @Ecore(
-	nsURI="http://www.cs.man.ac.uk/mdsd/2010/ObjectRelationalMapping",
+	nsURI="http://cs.man.ac.uk/mdsd/ObjectRelationalMapping",
 	nsPrefix="orm"
 )
 @Ecore(

@@ -8,6 +8,7 @@ module PassExplicitInterface;
 create waf : WAF from website : Website, orm : ORM, service : Service;
 
 uses WebsiteHelpers;
+uses InterfaceExpression;
 
 
 helper context String def: createName() : String
@@ -205,14 +206,17 @@ helper context Website!Expression def: findContainingSelection() : Website!Selec
 			OclUndefined
 		endif endif endif ;
 
-helper context Website!Feature def: findOrmFeature(reference : Website!FeatureReference) : ORM!Feature
+helper context Website!Feature def: findOrmFeature(reference : Website!WebuiFeatureReference) : ORM!Feature
 	= if self.oclIsKindOf(Website!Attribute) then
 			self.findOrmAttribute()
-		else if not reference.findContainingSelection().oclIsUndefined() then
-			self.findOrmAssociation(reference.findContainingSelection().usedBy.serves)
 		else
-			OclUndefined
-		endif endif;
+			let selection : Website!Selection = reference.findContainingSelection()
+			in if selection.oclIsUndefined() then
+					OclUndefined
+				else
+					self.findOrmAssociation(reference.findContainingSelection().usedBy.serves)
+				endif
+		endif;
 
 helper context Website!AssociationReference def: findOrmAssociation() : ORM!Association
 	= if self.association.oclIsUndefined() then
@@ -1237,83 +1241,8 @@ rule FeatureSupportAction {
 }
 
 
-helper context Website!Expression def: isRelevantExpression() : Boolean
-	= if self.refImmediateComposite().oclIsUndefined() then
-			false
-		else if self.refImmediateComposite().oclIsKindOf(Website!UnitElement) then
-			true
-		else if self.refImmediateComposite().oclIsKindOf(Website!EditUnit) then
-			true
-		else if self.refImmediateComposite().oclIsKindOf(Website!InlineAction) then
-			true
-		else if self.refImmediateComposite().oclIsKindOf(Website!Expression) then
-			self.refImmediateComposite().isRelevantExpression()
-		else
-			false
-		endif endif endif endif endif;
-
-
-abstract rule Literal {
-	from website : Website!Literal (website.isRelevantExpression())
-	to waf : WAF!Literal (
-	)
-}
-
--- @extends Literal
-rule NullLiteral {
-	from website : Website!NullLiteral (website.isRelevantExpression())
-	to waf : WAF!NullLiteral (
-	)
-}
-
--- @extends Literal
-rule BooleanLiteral {
-	from website : Website!BooleanLiteral (website.isRelevantExpression())
-	to waf : WAF!BooleanLiteral (
-		value <- website.value
-	)
-}
-
--- @extends Literal
-rule IntegerLiteral {
-	from website : Website!IntegerLiteral (website.isRelevantExpression())
-	to waf : WAF!IntegerLiteral (
-		value <- website.value
-	)
-}
-
--- @extends Literal
-rule StringLiteral {
-	from website : Website!StringLiteral (website.isRelevantExpression())
-	to waf : WAF!StringLiteral (
-		value <- website.value
-	)
-}
-
--- @extends Literal
-rule TimeLiteral {
-	from website : Website!TimeLiteral (website.isRelevantExpression())
-	to waf : WAF!TimeLiteral (
-		value <- website.value
-	)
-}
-
--- @extends Literal
-rule CurrentTime {
-	from website : Website!CurrentTime (website.isRelevantExpression())
-	to waf : WAF!CurrentTime (
-	)
-}
-
-rule Function {
-	from website : Website!Function
-	to waf : WAF!Function (
-		name <- website.name
-	)
-}
-
-rule FeatureReference {
-	from website : Website!FeatureReference (website.isRelevantExpression())
+rule WebuiFeatureReference {
+	from website : Website!WebuiFeatureReference
 	to waf : WAF!FeatureReference (
 		feature <-
 			if website.feature.oclIsUndefined() then
@@ -1324,71 +1253,3 @@ rule FeatureReference {
 	)
 }
 
-abstract rule Predicate {
-	from website : Website!Predicate
-	to waf : WAF!Predicate (
-		negated <- website.negated
-	)
-}
-
--- @extends Predicate
-rule PredicateBooleanOperator {
-	from website : Website!PredicateBooleanOperator (website.isRelevantExpression())
-	to waf : WAF!PredicateBooleanOperator (
-		expressions <- website.expressions,
-		operator <- website.operator
-	)
-}
-
--- @extends Predicate
-rule PredicateEqualityOperator {
-	from website : Website!PredicateEqualityOperator (website.isRelevantExpression())
-	to waf : WAF!PredicateEqualityOperator (
-		left <- website.left,
-		right <- website.right
-	)
-}
-
--- @extends Predicate
-rule PredicateComparisonOperator {
-	from website : Website!PredicateComparisonOperator (website.isRelevantExpression())
-	to waf : WAF!PredicateComparisonOperator (
-		left <- website.left,
-		operator <- website.operator,
-		right <- website.right
-	)
-}
-
--- @extends Predicate
-rule PredicateIsOperator {
-	from website : Website!PredicateIsOperator (website.isRelevantExpression())
-	to waf : WAF!PredicateIsOperator (
-		left <- website.left,
-		right <- website.right
-	)
-}
-
--- @extends Predicate
-rule PredicateLikeOperator {
-	from website : Website!PredicateLikeOperator (website.isRelevantExpression())
-	to waf : WAF!PredicateLikeOperator (
-		left <- website.left,
-		right <- website.right
-	)
-}
-
--- @extends Predicate
-rule PredicateIsNullOperator {
-	from website : Website!PredicateIsNull (website.isRelevantExpression())
-	to waf : WAF!PredicateIsNull (
-		feature <- website.feature
-	)
-}
-
--- @extends Predicate
-rule PredicateIsEmptyOperator {
-	from website : Website!PredicateIsEmpty (website.isRelevantExpression())
-	to waf : WAF!PredicateIsEmpty (
-		feature <- website.feature
-	)
-}

@@ -1,0 +1,148 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.xecore
+
+module InterfaceExpression;
+create waf : WAF from website : Website;
+
+helper context Website!Expression def: isInterfaceExpression() : Boolean
+	= if self.refImmediateComposite().oclIsUndefined() then
+			false
+		else if self.refImmediateComposite().oclIsKindOf(Website!UnitElement) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!EditUnit) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!InlineAction) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!Expression) then
+			self.refImmediateComposite().isInterfaceExpression()
+		else
+			false
+		endif endif endif endif endif;
+
+
+rule NullLiteral {
+	from website : Website!NullLiteral (website.isInterfaceExpression())
+	to waf : WAF!NullLiteral (
+	)
+}
+
+rule BooleanLiteral {
+	from website : Website!BooleanLiteral (website.isInterfaceExpression())
+	to waf : WAF!BooleanLiteral (
+		value <- website.value
+	)
+}
+
+rule IntegerLiteral {
+	from website : Website!IntegerLiteral (website.isInterfaceExpression())
+	to waf : WAF!IntegerLiteral (
+		value <- website.value
+	)
+}
+
+rule StringLiteral {
+	from website : Website!StringLiteral (website.isInterfaceExpression())
+	to waf : WAF!StringLiteral (
+		value <- website.value
+	)
+}
+
+rule TimeLiteral {
+	from website : Website!TimeLiteral (website.isInterfaceExpression())
+	to waf : WAF!TimeLiteral (
+		value <- website.value
+	)
+}
+
+
+rule CurrentTime {
+	from website : Website!CurrentTime (website.isInterfaceExpression())
+	to waf : WAF!CurrentTime (
+	)
+}
+
+rule CurrentUser {
+	from website : Website!CurrentUser (website.isInterfaceExpression())
+	to waf : WAF!CurrentUser (
+	)
+}
+
+
+rule Function {
+	from website : Website!Function
+	to waf : WAF!Function (
+		name <- website.name
+	)
+}
+
+
+abstract rule Predicate {
+	from website : Website!Predicate
+	to waf : WAF!Predicate (
+		negated <- website.negated
+	)
+}
+
+-- @extends Predicate
+rule PredicateBooleanOperator {
+	from website : Website!PredicateBooleanOperator (website.isInterfaceExpression())
+	to waf : WAF!PredicateBooleanOperator (
+		expressions <- website.expressions,
+		operator <- website.operator
+	)
+}
+
+-- @extends Predicate
+rule PredicateEqualityOperator {
+	from website : Website!PredicateEqualityOperator (website.isInterfaceExpression())
+	to waf : WAF!PredicateEqualityOperator (
+		left <- website.left,
+		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateComparisonOperator {
+	from website : Website!PredicateComparisonOperator (website.isInterfaceExpression())
+	to waf : WAF!PredicateComparisonOperator (
+		left <- website.left,
+		operator <- website.operator,
+		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateIsOperator {
+	from website : Website!PredicateIsOperator (website.isInterfaceExpression())
+	to waf : WAF!PredicateIsOperator (
+		left <- website.left,
+		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateLikeOperator {
+	from website : Website!PredicateLikeOperator (website.isInterfaceExpression())
+	to waf : WAF!PredicateLikeOperator (
+		left <- website.left,
+		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateIsNullOperator {
+	from website : Website!PredicateIsNull (website.isInterfaceExpression())
+	to waf : WAF!PredicateIsNull (
+		feature <- website.feature
+	)
+}
+
+-- @extends Predicate
+rule PredicateIsEmptyOperator {
+	from website : Website!PredicateIsEmpty (website.isInterfaceExpression())
+	to waf : WAF!PredicateIsEmpty (
+		feature <- website.feature
+	)
+}

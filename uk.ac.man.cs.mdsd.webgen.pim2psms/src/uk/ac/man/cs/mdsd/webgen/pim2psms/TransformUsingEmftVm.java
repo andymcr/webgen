@@ -43,7 +43,7 @@ public class TransformUsingEmftVm {
 		if (ormMetamodel == null) {
 			ormMetamodel = EmftvmFactory.eINSTANCE.createMetamodel();
 			ormMetamodel.setResource(resourceSet.getResource(
-				URI.createURI("http://www.cs.man.ac.uk/mdsd/2010/ObjectRelationalMapping"), true));
+				URI.createURI("http://cs.manchester.ac.uk/mdsd/ObjectRelationalMapping"), true));
 		}
 
 		return ormMetamodel;
@@ -53,7 +53,7 @@ public class TransformUsingEmftVm {
 		if (serviceMetamodel == null) {
 			serviceMetamodel = EmftvmFactory.eINSTANCE.createMetamodel();
 			serviceMetamodel.setResource(resourceSet.getResource(
-				URI.createURI("http://www.cs.man.ac.uk/mdsd/2017/Service"), true));
+				URI.createURI("http://cs.manchester.ac.uk/mdsd/service"), true));
 		}
 
 		return serviceMetamodel;
@@ -63,7 +63,7 @@ public class TransformUsingEmftVm {
 		if (wafMetamodel == null) {
 			wafMetamodel = EmftvmFactory.eINSTANCE.createMetamodel();
 			wafMetamodel.setResource(resourceSet.getResource(
-				URI.createURI("http://www.cs.man.ac.uk/mdsd/2015/WebApplicationFramework"), true));
+				URI.createURI("http://cs.manchester.ac.uk/mdsd/WebApplicationFramework"), true));
 		}
 
 		return wafMetamodel;
@@ -179,7 +179,7 @@ public class TransformUsingEmftVm {
 		serviceInputModels.put("orm", ormModel);
 		final String serviceModelName = "service";
 		final Model serviceModel = executePassCreatingOutputModel("ServiceExplicit",
-			serviceModelName, "bl", serviceInputModels, null);
+			serviceModelName, "business", serviceInputModels, null);
 		executeRefiningPass("ServiceImplicit", serviceModelName, serviceModel,
 			serviceInputModels, null);
 		serviceModel.getResource().save(Collections.emptyMap());

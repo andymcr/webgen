@@ -18,20 +18,12 @@ helper context Website!Expression def: isPresistenceExpression() : Boolean
 		endif endif endif;
 
 
-abstract rule Literal {
-	from website : Website!Literal (website.isPresistenceExpression())
-	to orm : ORM!Literal (
-	)
-}
-
--- @extends Literal
 rule NullLiteral {
 	from website : Website!NullLiteral (website.isPresistenceExpression())
 	to orm : ORM!NullLiteral (
 	)
 }
 
--- @extends Literal
 rule BooleanLiteral {
 	from website : Website!BooleanLiteral (website.isPresistenceExpression())
 	to orm : ORM!BooleanLiteral (
@@ -39,7 +31,6 @@ rule BooleanLiteral {
 	)
 }
 
--- @extends Literal
 rule IntegerLiteral {
 	from website : Website!IntegerLiteral (website.isPresistenceExpression())
 	to orm : ORM!IntegerLiteral (
@@ -47,7 +38,6 @@ rule IntegerLiteral {
 	)
 }
 
--- @extends Literal
 rule StringLiteral {
 	from website : Website!StringLiteral (website.isPresistenceExpression())
 	to orm : ORM!StringLiteral (
@@ -55,7 +45,6 @@ rule StringLiteral {
 	)
 }
 
--- @extends Literal
 rule TimeLiteral {
 	from website : Website!TimeLiteral (website.isPresistenceExpression())
 	to orm : ORM!TimeLiteral (
@@ -63,12 +52,19 @@ rule TimeLiteral {
 	)
 }
 
--- @extends Literal
+
 rule CurrentTime {
 	from website : Website!CurrentTime (website.isPresistenceExpression())
 	to orm : ORM!CurrentTime (
 	)
 }
+
+rule CurrentUser {
+	from website : Website!CurrentUser (website.isPresistenceExpression())
+	to orm : ORM!CurrentUser (
+	)
+}
+
 
 abstract rule Predicate {
 	from website : Website!Predicate
@@ -120,6 +116,14 @@ rule PredicateLikeOperator {
 	to orm : ORM!PredicateLikeOperator (
 		left <- website.left,
 		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateIsNullOperator {
+	from website : Website!PredicateIsNull (website.isPresistenceExpression())
+	to orm : ORM!PredicateIsNull (
+		feature <- website.feature
 	)
 }
 

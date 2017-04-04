@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Service -->
       <factory
-            uri="http://www.cs.man.ac.uk/mdsd/2017/Service"
+            uri="http://cs.man.ac.uk/mdsd/service"
             class="uk.ac.man.cs.mdsd.service.provider.ServiceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -22,10 +22,10 @@
    <extension point="org.eclipse.emf.edit.childCreationExtenders">
       <!-- @generated Service -->
       <extender
-            uri="http://www.cs.man.ac.uk/mdsd/2010/ObjectRelationalMapping"
+            uri="http://cs.man.ac.uk/mdsd/ObjectRelationalMapping"
             class="uk.ac.man.cs.mdsd.service.provider.ServiceItemProviderAdapterFactory$OrmChildCreationExtender"/>
       <extender
-            uri="http://www.cs.man.ac.uk/mdsd/2016/Expression"
+            uri="http://cs.man.ac.uk/mdsd/expression"
             class="uk.ac.man.cs.mdsd.service.provider.ServiceItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
    </extension>
 

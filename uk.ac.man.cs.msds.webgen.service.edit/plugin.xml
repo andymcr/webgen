@@ -19,4 +19,14 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated service -->
+      <extender
+            uri="http://cs.man.ac.uk/mdsd/webgen/expression"
+            class="uk.ac.man.cs.mdsd.webgen.service.provider.ServiceItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
+      <extender
+            uri="http://cs.man.ac.uk/mdsd/webgen/persistence"
+            class="uk.ac.man.cs.mdsd.webgen.service.provider.ServiceItemProviderAdapterFactory$PersistenceChildCreationExtender"/>
+   </extension>
+
 </plugin>

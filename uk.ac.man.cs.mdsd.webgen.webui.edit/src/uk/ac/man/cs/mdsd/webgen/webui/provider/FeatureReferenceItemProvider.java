@@ -33,7 +33,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
-import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.webui.FeatureReference;
 import uk.ac.man.cs.mdsd.webgen.webui.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.InlineActionContainer;
@@ -124,17 +123,10 @@ public class FeatureReferenceItemProvider
 				public Collection<?> getChoiceOfValues(Object object) {
 					final Set<Feature> features = new HashSet<Feature>();
 					if (object instanceof FeatureReference) {
-						final Selection selection = getSelectionContext(object);
-						if (selection != null) {
-							for (EntityOrView entityOrView : getEntitiesAndViews(selection)) {
-								features.addAll(entityOrView.getAllFeatures());
-							}
-							return features;
-						}
 						final InlineActionContainer action = getActionContext(object);
 						if (action != null) {
-							for (EntityOrView entityOrView : getEntitiesAndViews(action)) {
-								features.addAll(entityOrView.getAllFeatures());
+							for (EntityOrView entity : getEntities(action)) {
+								features.addAll(entity.getAllFeatures());
 							}
 							return features;
 						}
@@ -221,18 +213,6 @@ public class FeatureReferenceItemProvider
 		}
 	}
 
-	protected Selection getSelectionContext(final Object object) {
-		Object container = getContext(object);
-		while (container != null) {
-			if (container instanceof Selection) {
-				return (Selection) container;
-			}
-			container = getContext(container);
-		}
-
-		return null;
-	}
-
 	protected InlineActionContainer getActionContext(final Object object) {
 		Object container = getContext(object);
 		while (container != null) {
@@ -245,40 +225,19 @@ public class FeatureReferenceItemProvider
 		return null;
 	}
 
-	protected Set<EntityOrView> getEntitiesAndViews(final InlineActionContainer container) {
-		final Set<EntityOrView> entitiesAndViews = new HashSet<EntityOrView>();
+	protected Set<EntityOrView> getEntities(final InlineActionContainer container) {
+		final Set<EntityOrView> entities = new HashSet<EntityOrView>();
 		if (container instanceof IndexUnit) {
-			entitiesAndViews.addAll(((IndexUnit) container).getEntities());
+			entities.addAll(((IndexUnit) container).getEntities());
 		} else if (container instanceof UnitElement) {
-			entitiesAndViews.add(getParentType(
+			entities.add(getParentType(
 				((UnitElement) container).getAttribute()));
 		} else if (container instanceof UnitAssociation) {
-			entitiesAndViews.add(getSourceType(
+			entities.add(getSourceType(
 				((UnitAssociation) container).getAssociation()));
 		}
 
-		return entitiesAndViews;
-	}
-
-	protected Set<EntityOrView> getEntitiesAndViews(final Selection selection) {
-		final Set<EntityOrView> entitiesAndViews = new HashSet<EntityOrView>();
-		entitiesAndViews.add(selection.getUsedBy().getServes());
-		final Set<Association> joins = new HashSet<Association>(selection.getJoins());
-		while (!joins.isEmpty()) {
-			final Set<Association> handled = new HashSet<Association>();
-			for (Association join : joins) {
-				if (entitiesAndViews.contains(join.getSourceEntityX())) {
-					entitiesAndViews.add(join.getTargetEntityX());
-					handled.add(join);
-				} else if (entitiesAndViews.contains(join.getTargetEntityX())) {
-					entitiesAndViews.add(join.getSourceEntityX());
-					handled.add(join);
-				}
-			}
-			joins.removeAll(handled);
-		}
-
-		return entitiesAndViews;
+		return entities;
 	}
 
 	protected EntityOrView getParentType(final Attribute attribute) {

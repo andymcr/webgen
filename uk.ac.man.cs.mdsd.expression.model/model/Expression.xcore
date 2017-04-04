@@ -53,7 +53,7 @@ class Function extends Expression {
 	String[1] name
 }
 
-interface Path extends Expression {
+interface Variable extends Expression {
 }
 
 abstract class Predicate extends Expression {
@@ -87,9 +87,9 @@ class PredicateLikeOperator extends Predicate {
 }
 
 class PredicateIsEmpty extends Predicate {
-	contains Path feature
+	contains Variable feature
 }
 
 class PredicateIsNull extends Predicate {
-	contains Path feature
+	contains Variable feature
 }

@@ -146,11 +146,6 @@ public class OrderItemProvider
 			(createChildParameter
 				(ServicePackage.Literals.ORDER__PATH,
 				 ServiceFactory.eINSTANCE.createParameterReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ServicePackage.Literals.ORDER__PATH,
-				 ServiceFactory.eINSTANCE.createCurrentUserReference()));
 	}
 
 	/**

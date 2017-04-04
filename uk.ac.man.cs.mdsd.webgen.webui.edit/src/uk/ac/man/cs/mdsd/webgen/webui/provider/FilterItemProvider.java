@@ -12,6 +12,7 @@ import java.util.Set;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -179,6 +180,17 @@ public class FilterItemProvider extends NamedDisplayElementItemProvider {
 			(createChildParameter
 				(WebuiPackage.Literals.FILTER__PARAMETERS,
 				 WebuiFactory.eINSTANCE.createFilterParameter()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return WebuiEditPlugin.INSTANCE;
 	}
 
 	protected Set<Selection> getSelections(final WebUI webUI, final EntityOrView entity) {

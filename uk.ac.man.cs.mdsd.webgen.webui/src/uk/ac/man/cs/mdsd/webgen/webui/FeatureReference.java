@@ -33,12 +33,23 @@ public interface FeatureReference extends Variable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #isSetName()
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getFeatureReference_Name()
-	 * @model changeable="false" volatile="true" derived="true" ordered="false"
+	 * @model unsettable="true" changeable="false" volatile="true" derived="true" ordered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if feature.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif feature.oclIsKindOf(persistence::EntityFeature) then\r\n\t\tfeature.oclAsType(persistence::EntityFeature).name\r\n\telse if feature.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\t\tfeature.oclAsType(persistence::EncapsulatedAttribute).name\r\n\telse if feature.oclIsKindOf(persistence::EncapsulatedAssociation) then\r\n\t\tfeature.oclAsType(persistence::EncapsulatedAssociation).name\r\n\telse\r\n\t\tfeature.oclAsType(persistence::ViewAssociation).name\r\n\tendif endif endif\r\nendif'"
 	 * @generated
 	 */
 	String getName();
+
+	/**
+	 * Returns whether the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureReference#getName <em>Name</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Name</em>' attribute is set.
+	 * @see #getName()
+	 * @generated
+	 */
+	boolean isSetName();
 
 	/**
 	 * Returns the value of the '<em><b>Feature</b></em>' reference.

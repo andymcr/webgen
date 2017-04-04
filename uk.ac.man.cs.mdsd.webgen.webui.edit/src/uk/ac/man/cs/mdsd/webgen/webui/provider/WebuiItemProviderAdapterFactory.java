@@ -12,15 +12,15 @@ import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.emf.edit.domain.EditingDomain;
 
 import org.eclipse.emf.edit.provider.ChangeNotifier;
-import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
-import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
@@ -28,8 +28,21 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
-
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateComparisonOperator;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateEqualityOperator;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsEmpty;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsNull;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsOperator;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateLikeOperator;
+import uk.ac.man.cs.mdsd.webgen.expression.util.ExpressionSwitch;
+import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.util.PersistenceSwitch;
+import uk.ac.man.cs.mdsd.webgen.service.Order;
+import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
+import uk.ac.man.cs.mdsd.webgen.service.util.ServiceSwitch;
+import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.util.WebuiAdapterFactory;
 
 /**
@@ -41,7 +54,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.util.WebuiAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -57,14 +70,6 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
-
-	/**
-	 * This helps manage the child creation extenders.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(WebuiEditPlugin.INSTANCE, WebuiPackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -1090,33 +1095,6 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public List<IChildCreationExtender> getChildCreationExtenders() {
-		return childCreationExtenderManager.getChildCreationExtenders();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
-		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceLocator getResourceLocator() {
-		return childCreationExtenderManager;
-	}
-
-	/**
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1151,53 +1129,359 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * A child creation extender for the {@link ExpressionPackage}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void dispose() {
-		if (webUIItemProvider != null) webUIItemProvider.dispose();
-		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
-		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
-		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
-		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
-		if (menuFeatureItemProvider != null) menuFeatureItemProvider.dispose();
-		if (queryItemProvider != null) queryItemProvider.dispose();
-		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
-		if (pageItemProvider != null) pageItemProvider.dispose();
-		if (pageLinkItemProvider != null) pageLinkItemProvider.dispose();
-		if (filterItemProvider != null) filterItemProvider.dispose();
-		if (filterParameterItemProvider != null) filterParameterItemProvider.dispose();
-		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
-		if (createSitemapUnitItemProvider != null) createSitemapUnitItemProvider.dispose();
-		if (unitElementItemProvider != null) unitElementItemProvider.dispose();
-		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
-		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
-		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
-		if (captchaFieldItemProvider != null) captchaFieldItemProvider.dispose();
-		if (unitSupportActionItemProvider != null) unitSupportActionItemProvider.dispose();
-		if (createUnitItemProvider != null) createUnitItemProvider.dispose();
-		if (createUpdateUnitItemProvider != null) createUpdateUnitItemProvider.dispose();
-		if (updateUnitItemProvider != null) updateUnitItemProvider.dispose();
-		if (mapUnitItemProvider != null) mapUnitItemProvider.dispose();
-		if (detailsUnitItemProvider != null) detailsUnitItemProvider.dispose();
-		if (indexUnitItemProvider != null) indexUnitItemProvider.dispose();
-		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
-		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
-		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
-		if (childPathAttributeItemProvider != null) childPathAttributeItemProvider.dispose();
-		if (childPathAssociationItemProvider != null) childPathAssociationItemProvider.dispose();
-		if (imageIndexUnitItemProvider != null) imageIndexUnitItemProvider.dispose();
-		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
-		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();
-		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();
-		if (loginUnitItemProvider != null) loginUnitItemProvider.dispose();
-		if (forgottenPasswordUnitItemProvider != null) forgottenPasswordUnitItemProvider.dispose();
-		if (selectActionItemProvider != null) selectActionItemProvider.dispose();
-		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
-		if (featureSupportActionItemProvider != null) featureSupportActionItemProvider.dispose();
-		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();
+	public static class ExpressionChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends ExpressionSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateEqualityOperator(PredicateEqualityOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 WebuiFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 WebuiFactory.eINSTANCE.createFeatureReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateComparisonOperator(PredicateComparisonOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 WebuiFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 WebuiFactory.eINSTANCE.createFeatureReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateIsOperator(PredicateIsOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 WebuiFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 WebuiFactory.eINSTANCE.createFeatureReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateLikeOperator(PredicateLikeOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 WebuiFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 WebuiFactory.eINSTANCE.createFeatureReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateIsEmpty(PredicateIsEmpty object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 WebuiFactory.eINSTANCE.createFeatureReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateIsNull(PredicateIsNull object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						 WebuiFactory.eINSTANCE.createFeatureReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return WebuiEditPlugin.INSTANCE;
+		}
+	}
+
+	/**
+	 * A child creation extender for the {@link PersistencePackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class PersistenceChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends PersistenceSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseAttribute(Attribute object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+						 WebuiFactory.eINSTANCE.createFeatureReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return WebuiEditPlugin.INSTANCE;
+		}
+	}
+
+	/**
+	 * A child creation extender for the {@link ServicePackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class ServiceChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends ServiceSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseOrder(Order object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ServicePackage.Literals.ORDER__PATH,
+						 WebuiFactory.eINSTANCE.createFeatureReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return WebuiEditPlugin.INSTANCE;
+		}
 	}
 
 }

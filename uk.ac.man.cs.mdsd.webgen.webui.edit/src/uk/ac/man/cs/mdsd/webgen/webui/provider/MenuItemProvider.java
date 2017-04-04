@@ -9,6 +9,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -241,6 +242,17 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 			(createChildParameter
 				(WebuiPackage.Literals.MENU__ENTRIES,
 				 WebuiFactory.eINSTANCE.createMenuFeature()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return WebuiEditPlugin.INSTANCE;
 	}
 
 }

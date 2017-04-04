@@ -22,6 +22,7 @@ import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitElement;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
@@ -310,12 +311,17 @@ public class UnitElementItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
-				 ExpressionFactory.eINSTANCE.createFunction()));
+				 ExpressionFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -351,6 +357,11 @@ public class UnitElementItemProvider extends UnitFeatureItemProvider {
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 ServiceFactory.eINSTANCE.createFeatureReference()));
 	}
 
 	/**

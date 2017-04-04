@@ -9,6 +9,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -50,8 +51,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addWebUIPropertyDescriptor(object);
-			addChildPagesPropertyDescriptor(object);
 			addAuthenticatedPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addTopMenuOptionPropertyDescriptor(object);
@@ -61,50 +60,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addStyleClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Web UI feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addWebUIPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_webUI_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_webUI_feature", "_UI_Page_type"),
-				 WebuiPackage.Literals.PAGE__WEB_UI,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Child Pages feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addChildPagesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_childPages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_childPages_feature", "_UI_Page_type"),
-				 WebuiPackage.Literals.PAGE__CHILD_PAGES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -257,7 +212,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -436,6 +391,17 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			(createChildParameter
 				(WebuiPackage.Literals.PAGE__PARENT_PAGE,
 				 WebuiFactory.eINSTANCE.createPageLink()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return WebuiEditPlugin.INSTANCE;
 	}
 
 }

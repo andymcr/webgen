@@ -84,6 +84,15 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isSetName() {
+		return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Feature getFeature() {
 		if (feature != null && feature.eIsProxy()) {
 			InternalEObject oldFeature = (InternalEObject)feature;
@@ -173,7 +182,7 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case WebuiPackage.FEATURE_REFERENCE__NAME:
-				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return isSetName();
 			case WebuiPackage.FEATURE_REFERENCE__FEATURE:
 				return feature != null;
 		}

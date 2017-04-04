@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.SingletonUnit;
@@ -431,12 +432,17 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 ExpressionFactory.eINSTANCE.createFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 ExpressionFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 ExpressionFactory.eINSTANCE.createFunction()));
+				 ExpressionFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -472,6 +478,11 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 ServiceFactory.eINSTANCE.createFeatureReference()));
 	}
 
 	protected Set<EntityOrView> getContentType(final DynamicUnit unit) {

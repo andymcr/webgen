@@ -19,4 +19,17 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated webui -->
+      <extender
+            uri="http://cs.man.ac.uk/mdsd/webgen/expression"
+            class="uk.ac.man.cs.mdsd.webgen.webui.provider.WebuiItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
+      <extender
+            uri="http://cs.man.ac.uk/mdsd/webgen/persistence"
+            class="uk.ac.man.cs.mdsd.webgen.webui.provider.WebuiItemProviderAdapterFactory$PersistenceChildCreationExtender"/>
+      <extender
+            uri="http://cs.man.ac.uk/mdsd/webgen/service"
+            class="uk.ac.man.cs.mdsd.webgen.webui.provider.WebuiItemProviderAdapterFactory$ServiceChildCreationExtender"/>
+   </extension>
+
 </plugin>

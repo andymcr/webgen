@@ -62,8 +62,9 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 			case ExpressionPackage.INTEGER_LITERAL: return createIntegerLiteral();
 			case ExpressionPackage.STRING_LITERAL: return createStringLiteral();
 			case ExpressionPackage.TIME_LITERAL: return createTimeLiteral();
-			case ExpressionPackage.CURRENT_TIME: return createCurrentTime();
 			case ExpressionPackage.FUNCTION: return createFunction();
+			case ExpressionPackage.CURRENT_TIME: return createCurrentTime();
+			case ExpressionPackage.CURRENT_USER: return createCurrentUser();
 			case ExpressionPackage.PREDICATE_BOOLEAN_OPERATOR: return createPredicateBooleanOperator();
 			case ExpressionPackage.PREDICATE_EQUALITY_OPERATOR: return createPredicateEqualityOperator();
 			case ExpressionPackage.PREDICATE_COMPARISON_OPERATOR: return createPredicateComparisonOperator();
@@ -178,6 +179,16 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	public Function createFunction() {
 		FunctionImpl function = new FunctionImpl();
 		return function;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CurrentUser createCurrentUser() {
+		CurrentUserImpl currentUser = new CurrentUserImpl();
+		return currentUser;
 	}
 
 	/**

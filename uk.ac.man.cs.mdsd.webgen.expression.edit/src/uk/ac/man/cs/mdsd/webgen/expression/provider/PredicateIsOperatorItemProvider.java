@@ -164,12 +164,17 @@ public class PredicateIsOperatorItemProvider extends PredicateItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+				 ExpressionFactory.eINSTANCE.createFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
 				 ExpressionFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-				 ExpressionFactory.eINSTANCE.createFunction()));
+				 ExpressionFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -234,12 +239,17 @@ public class PredicateIsOperatorItemProvider extends PredicateItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+				 ExpressionFactory.eINSTANCE.createFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
 				 ExpressionFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-				 ExpressionFactory.eINSTANCE.createFunction()));
+				 ExpressionFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter

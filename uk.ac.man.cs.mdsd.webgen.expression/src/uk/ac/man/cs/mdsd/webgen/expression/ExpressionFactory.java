@@ -85,6 +85,15 @@ public interface ExpressionFactory extends EFactory {
 	Function createFunction();
 
 	/**
+	 * Returns a new object of class '<em>Current User</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Current User</em>'.
+	 * @generated
+	 */
+	CurrentUser createCurrentUser();
+
+	/**
 	 * Returns a new object of class '<em>Predicate Boolean Operator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -95,16 +95,20 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 				return createTimeLiteralAdapter();
 			}
 			@Override
-			public Adapter caseCurrentTime(CurrentTime object) {
-				return createCurrentTimeAdapter();
-			}
-			@Override
 			public Adapter caseFunction(Function object) {
 				return createFunctionAdapter();
 			}
 			@Override
 			public Adapter caseVariable(Variable object) {
 				return createVariableAdapter();
+			}
+			@Override
+			public Adapter caseCurrentTime(CurrentTime object) {
+				return createCurrentTimeAdapter();
+			}
+			@Override
+			public Adapter caseCurrentUser(CurrentUser object) {
+				return createCurrentUserAdapter();
 			}
 			@Override
 			public Adapter casePredicate(Predicate object) {
@@ -211,6 +215,20 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.expression.CurrentUser <em>Current User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.CurrentUser
+	 * @generated
+	 */
+	public Adapter createCurrentUserAdapter() {
 		return null;
 	}
 

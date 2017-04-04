@@ -297,34 +297,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getCurrentTime()
 	 * @generated
 	 */
-	int CURRENT_TIME = 7;
-
-	/**
-	 * The feature id for the '<em><b>Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CURRENT_TIME__FORMAT = LITERAL_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Current Time</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CURRENT_TIME_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Current Time</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CURRENT_TIME_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
+	int CURRENT_TIME = 9;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.expression.impl.FunctionImpl <em>Function</em>}' class.
@@ -334,7 +307,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getFunction()
 	 * @generated
 	 */
-	int FUNCTION = 8;
+	int FUNCTION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -371,7 +344,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getVariable()
 	 * @generated
 	 */
-	int VARIABLE = 9;
+	int VARIABLE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Variable</em>' class.
@@ -392,6 +365,61 @@ public interface ExpressionPackage extends EPackage {
 	int VARIABLE_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_TIME__FORMAT = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Current Time</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_TIME_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Current Time</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_TIME_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.expression.impl.CurrentUserImpl <em>Current User</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.CurrentUserImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getCurrentUser()
+	 * @generated
+	 */
+	int CURRENT_USER = 10;
+
+	/**
+	 * The number of structural features of the '<em>Current User</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_USER_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Current User</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_USER_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.expression.impl.PredicateImpl <em>Predicate</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -399,7 +427,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicate()
 	 * @generated
 	 */
-	int PREDICATE = 10;
+	int PREDICATE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -436,7 +464,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicateBooleanOperator()
 	 * @generated
 	 */
-	int PREDICATE_BOOLEAN_OPERATOR = 11;
+	int PREDICATE_BOOLEAN_OPERATOR = 12;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -491,7 +519,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicateEqualityOperator()
 	 * @generated
 	 */
-	int PREDICATE_EQUALITY_OPERATOR = 12;
+	int PREDICATE_EQUALITY_OPERATOR = 13;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -546,7 +574,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicateComparisonOperator()
 	 * @generated
 	 */
-	int PREDICATE_COMPARISON_OPERATOR = 13;
+	int PREDICATE_COMPARISON_OPERATOR = 14;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -610,7 +638,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicateIsOperator()
 	 * @generated
 	 */
-	int PREDICATE_IS_OPERATOR = 14;
+	int PREDICATE_IS_OPERATOR = 15;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -665,7 +693,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicateLikeOperator()
 	 * @generated
 	 */
-	int PREDICATE_LIKE_OPERATOR = 15;
+	int PREDICATE_LIKE_OPERATOR = 16;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -720,7 +748,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicateIsEmpty()
 	 * @generated
 	 */
-	int PREDICATE_IS_EMPTY = 16;
+	int PREDICATE_IS_EMPTY = 17;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -766,7 +794,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicateIsNull()
 	 * @generated
 	 */
-	int PREDICATE_IS_NULL = 17;
+	int PREDICATE_IS_NULL = 18;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -812,7 +840,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getBooleanOperator()
 	 * @generated
 	 */
-	int BOOLEAN_OPERATOR = 18;
+	int BOOLEAN_OPERATOR = 19;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.expression.ComparisionOperator <em>Comparision Operator</em>}' enum.
@@ -822,7 +850,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getComparisionOperator()
 	 * @generated
 	 */
-	int COMPARISION_OPERATOR = 19;
+	int COMPARISION_OPERATOR = 20;
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.expression.Expression <em>Expression</em>}'.
@@ -989,6 +1017,16 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getVariable();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.expression.CurrentUser <em>Current User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Current User</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.CurrentUser
+	 * @generated
+	 */
+	EClass getCurrentUser();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.expression.Predicate <em>Predicate</em>}'.
@@ -1414,6 +1452,16 @@ public interface ExpressionPackage extends EPackage {
 		 * @generated
 		 */
 		EClass VARIABLE = eINSTANCE.getVariable();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.expression.impl.CurrentUserImpl <em>Current User</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.CurrentUserImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getCurrentUser()
+		 * @generated
+		 */
+		EClass CURRENT_USER = eINSTANCE.getCurrentUser();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.expression.impl.PredicateImpl <em>Predicate</em>}' class.

@@ -118,14 +118,6 @@ public class ExpressionSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExpressionPackage.CURRENT_TIME: {
-				CurrentTime currentTime = (CurrentTime)theEObject;
-				T result = caseCurrentTime(currentTime);
-				if (result == null) result = caseLiteral(currentTime);
-				if (result == null) result = caseExpression(currentTime);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ExpressionPackage.FUNCTION: {
 				Function function = (Function)theEObject;
 				T result = caseFunction(function);
@@ -137,6 +129,20 @@ public class ExpressionSwitch<T> extends Switch<T> {
 				Variable variable = (Variable)theEObject;
 				T result = caseVariable(variable);
 				if (result == null) result = caseExpression(variable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExpressionPackage.CURRENT_TIME: {
+				CurrentTime currentTime = (CurrentTime)theEObject;
+				T result = caseCurrentTime(currentTime);
+				if (result == null) result = caseExpression(currentTime);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExpressionPackage.CURRENT_USER: {
+				CurrentUser currentUser = (CurrentUser)theEObject;
+				T result = caseCurrentUser(currentUser);
+				if (result == null) result = caseExpression(currentUser);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -264,6 +270,21 @@ public class ExpressionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVariable(Variable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Current User</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Current User</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCurrentUser(CurrentUser object) {
 		return null;
 	}
 

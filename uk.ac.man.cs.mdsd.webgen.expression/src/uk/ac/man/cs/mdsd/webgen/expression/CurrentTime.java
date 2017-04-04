@@ -19,7 +19,7 @@ package uk.ac.man.cs.mdsd.webgen.expression;
  * @model
  * @generated
  */
-public interface CurrentTime extends Literal {
+public interface CurrentTime extends Expression {
 	/**
 	 * Returns the value of the '<em><b>Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->

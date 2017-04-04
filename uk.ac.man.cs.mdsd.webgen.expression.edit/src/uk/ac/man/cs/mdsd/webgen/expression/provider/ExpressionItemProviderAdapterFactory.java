@@ -18,7 +18,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
-import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
@@ -38,7 +37,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.util.ExpressionAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -244,6 +243,29 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 		}
 
 		return functionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.expression.CurrentUser} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CurrentUserItemProvider currentUserItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.expression.CurrentUser}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCurrentUserAdapter() {
+		if (currentUserItemProvider == null) {
+			currentUserItemProvider = new CurrentUserItemProvider(this);
+		}
+
+		return currentUserItemProvider;
 	}
 
 	/**
@@ -524,29 +546,6 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
-	}
-
-	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void dispose() {
-		if (nullLiteralItemProvider != null) nullLiteralItemProvider.dispose();
-		if (booleanLiteralItemProvider != null) booleanLiteralItemProvider.dispose();
-		if (integerLiteralItemProvider != null) integerLiteralItemProvider.dispose();
-		if (stringLiteralItemProvider != null) stringLiteralItemProvider.dispose();
-		if (timeLiteralItemProvider != null) timeLiteralItemProvider.dispose();
-		if (currentTimeItemProvider != null) currentTimeItemProvider.dispose();
-		if (functionItemProvider != null) functionItemProvider.dispose();
-		if (predicateBooleanOperatorItemProvider != null) predicateBooleanOperatorItemProvider.dispose();
-		if (predicateEqualityOperatorItemProvider != null) predicateEqualityOperatorItemProvider.dispose();
-		if (predicateComparisonOperatorItemProvider != null) predicateComparisonOperatorItemProvider.dispose();
-		if (predicateIsOperatorItemProvider != null) predicateIsOperatorItemProvider.dispose();
-		if (predicateLikeOperatorItemProvider != null) predicateLikeOperatorItemProvider.dispose();
-		if (predicateIsEmptyItemProvider != null) predicateIsEmptyItemProvider.dispose();
-		if (predicateIsNullItemProvider != null) predicateIsNullItemProvider.dispose();
 	}
 
 }

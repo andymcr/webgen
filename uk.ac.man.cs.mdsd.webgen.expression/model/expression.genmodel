@@ -5,8 +5,8 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>expression.ecore</foreignModel>
-  <genPackages prefix="Expression" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
-      extensibleProviderFactory="true" ecorePackage="expression.ecore#/">
+  <genPackages prefix="Expression" basePackage="uk.ac.man.cs.mdsd.webgen" extensibleProviderFactory="true"
+      ecorePackage="expression.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="expression.ecore#//BooleanOperator">
       <genEnumLiterals ecoreEnumLiteral="expression.ecore#//BooleanOperator/And"/>
       <genEnumLiterals ecoreEnumLiteral="expression.ecore#//BooleanOperator/Or"/>
@@ -30,13 +30,14 @@
     <genClasses ecoreClass="expression.ecore#//TimeLiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//TimeLiteral/value"/>
     </genClasses>
-    <genClasses ecoreClass="expression.ecore#//CurrentTime">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//CurrentTime/format"/>
-    </genClasses>
     <genClasses ecoreClass="expression.ecore#//Function">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//Function/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="expression.ecore#//Variable"/>
+    <genClasses ecoreClass="expression.ecore#//CurrentTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//CurrentTime/format"/>
+    </genClasses>
+    <genClasses ecoreClass="expression.ecore#//CurrentUser"/>
     <genClasses image="false" ecoreClass="expression.ecore#//Predicate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//Predicate/negated"/>
     </genClasses>

@@ -1,5 +1,5 @@
 @Ecore(
-	nsURI="http://www.cs.man.ac.uk/mdsd/2015/WebApplicationFramework",
+	nsURI="http://cs.man.ac.uk/mdsd/WebApplicationFramework",
 	nsPrefix="waf"
 )
 @GenModel(
@@ -12,7 +12,6 @@ package uk.ac.man.cs.mdsd.waf
 
 import uk.ac.man.cs.mdsd.expression.Expression
 import uk.ac.man.cs.mdsd.expression.Predicate
-import uk.ac.man.cs.mdsd.expression.Variable
 import uk.ac.man.cs.mdsd.orm.Association
 import uk.ac.man.cs.mdsd.orm.Attribute
 import uk.ac.man.cs.mdsd.orm.DataType

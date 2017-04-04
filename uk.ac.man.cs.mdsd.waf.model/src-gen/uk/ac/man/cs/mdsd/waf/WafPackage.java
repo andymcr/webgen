@@ -42,7 +42,7 @@ public interface WafPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.cs.man.ac.uk/mdsd/2015/WebApplicationFramework";
+	String eNS_URI = "http://cs.man.ac.uk/mdsd/WebApplicationFramework";
 
 	/**
 	 * The package namespace name.

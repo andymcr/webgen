@@ -2,7 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.service;
 
-import uk.ac.man.cs.mdsd.expression.Path;
+import uk.ac.man.cs.mdsd.expression.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +20,7 @@ import uk.ac.man.cs.mdsd.expression.Path;
  * @model
  * @generated
  */
-public interface ParameterReference extends Path {
+public interface ParameterReference extends Variable {
 	/**
 	 * Returns the value of the '<em><b>Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->

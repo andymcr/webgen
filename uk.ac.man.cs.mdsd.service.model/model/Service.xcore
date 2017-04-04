@@ -10,8 +10,8 @@
 	editorDirectory="/uk.ac.man.cs.mdsd.service.editor/src")
 package uk.ac.man.cs.mdsd.service
 
-import uk.ac.man.cs.mdsd.expression.Path
 import uk.ac.man.cs.mdsd.expression.Predicate
+import uk.ac.man.cs.mdsd.expression.Variable
 import uk.ac.man.cs.mdsd.orm.Association
 import uk.ac.man.cs.mdsd.orm.EntityOrView
 import uk.ac.man.cs.mdsd.orm.Feature
@@ -51,7 +51,7 @@ class SelectionParameter extends NamedElement {
 
 abstract class Order {
 	@GenModel(propertyCategory="")
-	contains Path[1] path
+	contains Variable[1] path
 }
 
 class Asc extends Order {
@@ -61,17 +61,13 @@ class Desc extends Order {
 }
 
 
-class FeatureReference extends Path { 
+class FeatureReference extends Variable { 
 	refers Feature[1] feature 
 } 
  
-class ParameterReference extends Path { 
+class ParameterReference extends Variable { 
 	refers SelectionParameter[1] parameter 
 } 
-
-class CurrentUserReference extends Path { 
- } 
-
 
 class BusinessOperation extends NamedElement {
 	container Service[1] partOf opposite operations

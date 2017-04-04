@@ -2,7 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.service;
 
-import uk.ac.man.cs.mdsd.expression.Path;
+import uk.ac.man.cs.mdsd.expression.Variable;
 
 import uk.ac.man.cs.mdsd.orm.Feature;
 
@@ -22,7 +22,7 @@ import uk.ac.man.cs.mdsd.orm.Feature;
  * @model
  * @generated
  */
-public interface FeatureReference extends Path {
+public interface FeatureReference extends Variable {
 	/**
 	 * Returns the value of the '<em><b>Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->

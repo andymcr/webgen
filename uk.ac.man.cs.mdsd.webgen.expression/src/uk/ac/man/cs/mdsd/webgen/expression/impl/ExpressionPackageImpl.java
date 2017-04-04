@@ -11,8 +11,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import uk.ac.man.cs.mdsd.webgen.expression.BooleanLiteral;
 import uk.ac.man.cs.mdsd.webgen.expression.BooleanOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.ComparisionOperator;
-import uk.ac.man.cs.mdsd.webgen.expression.CurrentTime;
-import uk.ac.man.cs.mdsd.webgen.expression.CurrentUser;
 import uk.ac.man.cs.mdsd.webgen.expression.Expression;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
@@ -87,12 +85,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass currentTimeEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass functionEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,12 +92,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * @generated
 	 */
 	private EClass variableEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass currentUserEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -332,24 +318,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCurrentTime() {
-		return currentTimeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCurrentTime_Format() {
-		return (EAttribute)currentTimeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getFunction() {
 		return functionEClass;
 	}
@@ -370,15 +338,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 */
 	public EClass getVariable() {
 		return variableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCurrentUser() {
-		return currentUserEClass;
 	}
 
 	/**
@@ -648,11 +607,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 
 		variableEClass = createEClass(VARIABLE);
 
-		currentTimeEClass = createEClass(CURRENT_TIME);
-		createEAttribute(currentTimeEClass, CURRENT_TIME__FORMAT);
-
-		currentUserEClass = createEClass(CURRENT_USER);
-
 		predicateEClass = createEClass(PREDICATE);
 		createEAttribute(predicateEClass, PREDICATE__NEGATED);
 
@@ -724,8 +678,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		timeLiteralEClass.getESuperTypes().add(this.getLiteral());
 		functionEClass.getESuperTypes().add(this.getExpression());
 		variableEClass.getESuperTypes().add(this.getExpression());
-		currentTimeEClass.getESuperTypes().add(this.getExpression());
-		currentUserEClass.getESuperTypes().add(this.getExpression());
 		predicateEClass.getESuperTypes().add(this.getExpression());
 		predicateBooleanOperatorEClass.getESuperTypes().add(this.getPredicate());
 		predicateEqualityOperatorEClass.getESuperTypes().add(this.getPredicate());
@@ -758,11 +710,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		initEAttribute(getFunction_Name(), ecorePackage.getEString(), "name", null, 1, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(currentTimeEClass, CurrentTime.class, "CurrentTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCurrentTime_Format(), ecorePackage.getEString(), "format", null, 0, 1, CurrentTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(currentUserEClass, CurrentUser.class, "CurrentUser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(predicateEClass, Predicate.class, "Predicate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPredicate_Negated(), ecorePackage.getEBoolean(), "negated", "false", 0, 1, Predicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

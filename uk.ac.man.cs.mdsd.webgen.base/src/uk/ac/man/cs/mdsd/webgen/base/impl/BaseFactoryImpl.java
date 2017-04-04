@@ -59,6 +59,8 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 			case BasePackage.DATA_TYPE: return createDataType();
 			case BasePackage.ENUMERATION_TYPE: return createEnumerationType();
 			case BasePackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
+			case BasePackage.CURRENT_TIME: return createCurrentTime();
+			case BasePackage.CURRENT_USER: return createCurrentUser();
 			case BasePackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case BasePackage.PARAMETER_REFERENCE: return createParameterReference();
 			default:
@@ -94,6 +96,26 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	public EnumerationLiteral createEnumerationLiteral() {
 		EnumerationLiteralImpl enumerationLiteral = new EnumerationLiteralImpl();
 		return enumerationLiteral;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CurrentTime createCurrentTime() {
+		CurrentTimeImpl currentTime = new CurrentTimeImpl();
+		return currentTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CurrentUser createCurrentUser() {
+		CurrentUserImpl currentUser = new CurrentUserImpl();
+		return currentUser;
 	}
 
 	/**

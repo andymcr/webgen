@@ -197,16 +197,6 @@ public class PredicateComparisonOperatorItemProvider extends PredicateItemProvid
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-				 ExpressionFactory.eINSTANCE.createCurrentTime()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-				 ExpressionFactory.eINSTANCE.createCurrentUser()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
@@ -268,16 +258,6 @@ public class PredicateComparisonOperatorItemProvider extends PredicateItemProvid
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
 				 ExpressionFactory.eINSTANCE.createFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-				 ExpressionFactory.eINSTANCE.createCurrentTime()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-				 ExpressionFactory.eINSTANCE.createCurrentUser()));
 
 		newChildDescriptors.add
 			(createChildParameter

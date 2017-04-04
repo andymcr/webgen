@@ -67,15 +67,6 @@ public interface ExpressionFactory extends EFactory {
 	TimeLiteral createTimeLiteral();
 
 	/**
-	 * Returns a new object of class '<em>Current Time</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Current Time</em>'.
-	 * @generated
-	 */
-	CurrentTime createCurrentTime();
-
-	/**
 	 * Returns a new object of class '<em>Function</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,15 +74,6 @@ public interface ExpressionFactory extends EFactory {
 	 * @generated
 	 */
 	Function createFunction();
-
-	/**
-	 * Returns a new object of class '<em>Current User</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Current User</em>'.
-	 * @generated
-	 */
-	CurrentUser createCurrentUser();
 
 	/**
 	 * Returns a new object of class '<em>Predicate Boolean Operator</em>'.

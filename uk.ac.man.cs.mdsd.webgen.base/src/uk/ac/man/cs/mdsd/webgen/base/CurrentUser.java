@@ -1,7 +1,8 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.expression;
+package uk.ac.man.cs.mdsd.webgen.base;
 
+import uk.ac.man.cs.mdsd.webgen.expression.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -9,7 +10,7 @@ package uk.ac.man.cs.mdsd.webgen.expression;
  * <!-- end-user-doc -->
  *
  *
- * @see uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage#getCurrentUser()
+ * @see uk.ac.man.cs.mdsd.webgen.base.BasePackage#getCurrentUser()
  * @model
  * @generated
  */

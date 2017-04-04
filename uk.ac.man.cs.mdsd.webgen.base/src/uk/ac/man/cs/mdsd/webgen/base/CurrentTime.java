@@ -1,7 +1,8 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.expression;
+package uk.ac.man.cs.mdsd.webgen.base;
 
+import uk.ac.man.cs.mdsd.webgen.expression.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,10 +13,10 @@ package uk.ac.man.cs.mdsd.webgen.expression;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.expression.CurrentTime#getFormat <em>Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.CurrentTime#getFormat <em>Format</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage#getCurrentTime()
+ * @see uk.ac.man.cs.mdsd.webgen.base.BasePackage#getCurrentTime()
  * @model
  * @generated
  */
@@ -30,14 +31,14 @@ public interface CurrentTime extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Format</em>' attribute.
 	 * @see #setFormat(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage#getCurrentTime_Format()
+	 * @see uk.ac.man.cs.mdsd.webgen.base.BasePackage#getCurrentTime_Format()
 	 * @model
 	 * @generated
 	 */
 	String getFormat();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.expression.CurrentTime#getFormat <em>Format</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.base.CurrentTime#getFormat <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Format</em>' attribute.

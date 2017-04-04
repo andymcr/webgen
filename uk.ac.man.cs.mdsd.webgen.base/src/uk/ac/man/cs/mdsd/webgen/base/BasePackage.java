@@ -425,6 +425,71 @@ public interface BasePackage extends EPackage {
 	int ENUMERATION_LITERAL_OPERATION_COUNT = NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.CurrentTimeImpl <em>Current Time</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.CurrentTimeImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getCurrentTime()
+	 * @generated
+	 */
+	int CURRENT_TIME = 6;
+
+	/**
+	 * The feature id for the '<em><b>Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_TIME__FORMAT = ExpressionPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Current Time</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_TIME_FEATURE_COUNT = ExpressionPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Current Time</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_TIME_OPERATION_COUNT = ExpressionPackage.EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.CurrentUserImpl <em>Current User</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.CurrentUserImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getCurrentUser()
+	 * @generated
+	 */
+	int CURRENT_USER = 7;
+
+	/**
+	 * The number of structural features of the '<em>Current User</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_USER_FEATURE_COUNT = ExpressionPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Current User</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_USER_OPERATION_COUNT = ExpressionPackage.EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameterList <em>Formal Parameter List</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -432,7 +497,7 @@ public interface BasePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getFormalParameterList()
 	 * @generated
 	 */
-	int FORMAL_PARAMETER_LIST = 6;
+	int FORMAL_PARAMETER_LIST = 8;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -469,7 +534,7 @@ public interface BasePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getSelectionParameter()
 	 * @generated
 	 */
-	int SELECTION_PARAMETER = 7;
+	int SELECTION_PARAMETER = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -534,7 +599,7 @@ public interface BasePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getParameterReference()
 	 * @generated
 	 */
-	int PARAMETER_REFERENCE = 8;
+	int PARAMETER_REFERENCE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -720,6 +785,37 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEnumerationLiteral();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.base.CurrentTime <em>Current Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Current Time</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.CurrentTime
+	 * @generated
+	 */
+	EClass getCurrentTime();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.base.CurrentTime#getFormat <em>Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Format</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.CurrentTime#getFormat()
+	 * @see #getCurrentTime()
+	 * @generated
+	 */
+	EAttribute getCurrentTime_Format();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.base.CurrentUser <em>Current User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Current User</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.CurrentUser
+	 * @generated
+	 */
+	EClass getCurrentUser();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameterList <em>Formal Parameter List</em>}'.
@@ -963,6 +1059,34 @@ public interface BasePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENUMERATION_LITERAL = eINSTANCE.getEnumerationLiteral();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.CurrentTimeImpl <em>Current Time</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.CurrentTimeImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getCurrentTime()
+		 * @generated
+		 */
+		EClass CURRENT_TIME = eINSTANCE.getCurrentTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CURRENT_TIME__FORMAT = eINSTANCE.getCurrentTime_Format();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.CurrentUserImpl <em>Current User</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.CurrentUserImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getCurrentUser()
+		 * @generated
+		 */
+		EClass CURRENT_USER = eINSTANCE.getCurrentUser();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameterList <em>Formal Parameter List</em>}' class.

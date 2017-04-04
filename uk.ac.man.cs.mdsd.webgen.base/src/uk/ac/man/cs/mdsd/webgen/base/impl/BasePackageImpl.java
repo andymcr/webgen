@@ -13,6 +13,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 import uk.ac.man.cs.mdsd.webgen.base.Classifier;
+import uk.ac.man.cs.mdsd.webgen.base.CurrentTime;
+import uk.ac.man.cs.mdsd.webgen.base.CurrentUser;
 import uk.ac.man.cs.mdsd.webgen.base.DataType;
 import uk.ac.man.cs.mdsd.webgen.base.EnumerationLiteral;
 import uk.ac.man.cs.mdsd.webgen.base.EnumerationType;
@@ -73,6 +75,20 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * @generated
 	 */
 	private EClass enumerationLiteralEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass currentTimeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass currentUserEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -299,6 +315,33 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCurrentTime() {
+		return currentTimeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCurrentTime_Format() {
+		return (EAttribute)currentTimeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCurrentUser() {
+		return currentUserEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFormalParameterList() {
 		return formalParameterListEClass;
 	}
@@ -423,6 +466,11 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		enumerationLiteralEClass = createEClass(ENUMERATION_LITERAL);
 
+		currentTimeEClass = createEClass(CURRENT_TIME);
+		createEAttribute(currentTimeEClass, CURRENT_TIME__FORMAT);
+
+		currentUserEClass = createEClass(CURRENT_USER);
+
 		formalParameterListEClass = createEClass(FORMAL_PARAMETER_LIST);
 		createEReference(formalParameterListEClass, FORMAL_PARAMETER_LIST__PARAMETERS);
 
@@ -472,6 +520,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		dataTypeEClass.getESuperTypes().add(this.getClassifier());
 		enumerationTypeEClass.getESuperTypes().add(this.getDataType());
 		enumerationLiteralEClass.getESuperTypes().add(this.getNamedDisplayElement());
+		currentTimeEClass.getESuperTypes().add(theExpressionPackage.getExpression());
+		currentUserEClass.getESuperTypes().add(theExpressionPackage.getExpression());
 		selectionParameterEClass.getESuperTypes().add(this.getNamedElement());
 		parameterReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
 
@@ -495,6 +545,11 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEReference(getEnumerationType_Enumerations(), this.getEnumerationLiteral(), null, "enumerations", null, 0, -1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(enumerationLiteralEClass, EnumerationLiteral.class, "EnumerationLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(currentTimeEClass, CurrentTime.class, "CurrentTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCurrentTime_Format(), ecorePackage.getEString(), "format", null, 0, 1, CurrentTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(currentUserEClass, CurrentUser.class, "CurrentUser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(formalParameterListEClass, FormalParameterList.class, "FormalParameterList", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFormalParameterList_Parameters(), this.getSelectionParameter(), this.getSelectionParameter_FormalFor(), "parameters", null, 0, -1, FormalParameterList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

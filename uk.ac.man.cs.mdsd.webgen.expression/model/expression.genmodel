@@ -34,10 +34,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//Function/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="expression.ecore#//Variable"/>
-    <genClasses ecoreClass="expression.ecore#//CurrentTime">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//CurrentTime/format"/>
-    </genClasses>
-    <genClasses ecoreClass="expression.ecore#//CurrentUser"/>
     <genClasses image="false" ecoreClass="expression.ecore#//Predicate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//Predicate/negated"/>
     </genClasses>

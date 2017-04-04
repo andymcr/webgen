@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.expression.impl;
+package uk.ac.man.cs.mdsd.webgen.base.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -9,8 +9,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.man.cs.mdsd.webgen.expression.CurrentTime;
-import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
+import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.base.CurrentTime;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +20,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.expression.impl.CurrentTimeImpl#getFormat <em>Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.CurrentTimeImpl#getFormat <em>Format</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,7 +62,7 @@ public class CurrentTimeImpl extends MinimalEObjectImpl.Container implements Cur
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ExpressionPackage.Literals.CURRENT_TIME;
+		return BasePackage.Literals.CURRENT_TIME;
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class CurrentTimeImpl extends MinimalEObjectImpl.Container implements Cur
 		String oldFormat = format;
 		format = newFormat;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.CURRENT_TIME__FORMAT, oldFormat, format));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.CURRENT_TIME__FORMAT, oldFormat, format));
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class CurrentTimeImpl extends MinimalEObjectImpl.Container implements Cur
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExpressionPackage.CURRENT_TIME__FORMAT:
+			case BasePackage.CURRENT_TIME__FORMAT:
 				return getFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -108,7 +108,7 @@ public class CurrentTimeImpl extends MinimalEObjectImpl.Container implements Cur
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExpressionPackage.CURRENT_TIME__FORMAT:
+			case BasePackage.CURRENT_TIME__FORMAT:
 				setFormat((String)newValue);
 				return;
 		}
@@ -123,7 +123,7 @@ public class CurrentTimeImpl extends MinimalEObjectImpl.Container implements Cur
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExpressionPackage.CURRENT_TIME__FORMAT:
+			case BasePackage.CURRENT_TIME__FORMAT:
 				setFormat(FORMAT_EDEFAULT);
 				return;
 		}
@@ -138,7 +138,7 @@ public class CurrentTimeImpl extends MinimalEObjectImpl.Container implements Cur
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExpressionPackage.CURRENT_TIME__FORMAT:
+			case BasePackage.CURRENT_TIME__FORMAT:
 				return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
 		}
 		return super.eIsSet(featureID);

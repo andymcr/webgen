@@ -98,6 +98,10 @@ public class BaseValidator extends EObjectValidator {
 				return validateEnumerationType((EnumerationType)value, diagnostics, context);
 			case BasePackage.ENUMERATION_LITERAL:
 				return validateEnumerationLiteral((EnumerationLiteral)value, diagnostics, context);
+			case BasePackage.CURRENT_TIME:
+				return validateCurrentTime((CurrentTime)value, diagnostics, context);
+			case BasePackage.CURRENT_USER:
+				return validateCurrentUser((CurrentUser)value, diagnostics, context);
 			case BasePackage.FORMAL_PARAMETER_LIST:
 				return validateFormalParameterList((FormalParameterList)value, diagnostics, context);
 			case BasePackage.SELECTION_PARAMETER:
@@ -250,6 +254,24 @@ public class BaseValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(enumerationLiteral, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(enumerationLiteral, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCurrentTime(CurrentTime currentTime, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(currentTime, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCurrentUser(CurrentUser currentUser, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(currentUser, diagnostics, context);
 	}
 
 	/**

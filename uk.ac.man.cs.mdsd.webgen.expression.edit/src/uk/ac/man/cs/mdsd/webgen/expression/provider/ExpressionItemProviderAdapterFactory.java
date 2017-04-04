@@ -200,29 +200,6 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.expression.CurrentTime} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CurrentTimeItemProvider currentTimeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.expression.CurrentTime}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCurrentTimeAdapter() {
-		if (currentTimeItemProvider == null) {
-			currentTimeItemProvider = new CurrentTimeItemProvider(this);
-		}
-
-		return currentTimeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.expression.Function} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -243,29 +220,6 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 		}
 
 		return functionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.expression.CurrentUser} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CurrentUserItemProvider currentUserItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.expression.CurrentUser}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCurrentUserAdapter() {
-		if (currentUserItemProvider == null) {
-			currentUserItemProvider = new CurrentUserItemProvider(this);
-		}
-
-		return currentUserItemProvider;
 	}
 
 	/**

@@ -94,6 +94,14 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 				return createEnumerationLiteralAdapter();
 			}
 			@Override
+			public Adapter caseCurrentTime(CurrentTime object) {
+				return createCurrentTimeAdapter();
+			}
+			@Override
+			public Adapter caseCurrentUser(CurrentUser object) {
+				return createCurrentUserAdapter();
+			}
+			@Override
 			public Adapter caseFormalParameterList(FormalParameterList object) {
 				return createFormalParameterListAdapter();
 			}
@@ -214,6 +222,34 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEnumerationLiteralAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.CurrentTime <em>Current Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.CurrentTime
+	 * @generated
+	 */
+	public Adapter createCurrentTimeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.CurrentUser <em>Current User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.CurrentUser
+	 * @generated
+	 */
+	public Adapter createCurrentUserAdapter() {
 		return null;
 	}
 

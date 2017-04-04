@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.expression.provider;
+package uk.ac.man.cs.mdsd.webgen.base.provider;
 
 
 import java.util.Collection;
@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -18,15 +19,20 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.base.CurrentTime;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.expression.CurrentUser} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.base.CurrentTime} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CurrentUserItemProvider 
+public class CurrentTimeItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -40,7 +46,7 @@ public class CurrentUserItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CurrentUserItemProvider(AdapterFactory adapterFactory) {
+	public CurrentTimeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,19 +61,42 @@ public class CurrentUserItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addFormatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns CurrentUser.gif.
+	 * This adds a property descriptor for the Format feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFormatPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CurrentTime_format_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CurrentTime_format_feature", "_UI_CurrentTime_type"),
+				 BasePackage.Literals.CURRENT_TIME__FORMAT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns CurrentTime.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CurrentUser"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CurrentTime"));
 	}
 
 	/**
@@ -78,7 +107,10 @@ public class CurrentUserItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_CurrentUser_type");
+		String label = ((CurrentTime)object).getFormat();
+		return label == null || label.length() == 0 ?
+			getString("_UI_CurrentTime_type") :
+			getString("_UI_CurrentTime_type") + " " + label;
 	}
 	
 
@@ -92,6 +124,12 @@ public class CurrentUserItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(CurrentTime.class)) {
+			case BasePackage.CURRENT_TIME__FORMAT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

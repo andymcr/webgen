@@ -35,6 +35,10 @@
         eType="#//EnumerationLiteral" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral" eSuperTypes="#//NamedDisplayElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CurrentTime" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CurrentUser" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="FormalParameterList" abstract="true"
       interface="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"

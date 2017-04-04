@@ -26,6 +26,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference base.ecore#//EnumerationType/enumerations"/>
     </genClasses>
     <genClasses ecoreClass="base.ecore#//EnumerationLiteral"/>
+    <genClasses ecoreClass="base.ecore#//CurrentTime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//CurrentTime/format"/>
+    </genClasses>
+    <genClasses ecoreClass="base.ecore#//CurrentUser"/>
     <genClasses image="false" ecoreClass="base.ecore#//FormalParameterList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference base.ecore#//FormalParameterList/parameters"/>
     </genClasses>

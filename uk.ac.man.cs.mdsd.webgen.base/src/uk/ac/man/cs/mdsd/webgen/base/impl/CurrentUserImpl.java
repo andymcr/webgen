@@ -1,13 +1,13 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.expression.impl;
+package uk.ac.man.cs.mdsd.webgen.base.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.man.cs.mdsd.webgen.expression.CurrentUser;
-import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
+import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.base.CurrentUser;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +33,7 @@ public class CurrentUserImpl extends MinimalEObjectImpl.Container implements Cur
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ExpressionPackage.Literals.CURRENT_USER;
+		return BasePackage.Literals.CURRENT_USER;
 	}
 
 } //CurrentUserImpl

@@ -49,6 +49,24 @@ public interface BaseFactory extends EFactory {
 	EnumerationLiteral createEnumerationLiteral();
 
 	/**
+	 * Returns a new object of class '<em>Current Time</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Current Time</em>'.
+	 * @generated
+	 */
+	CurrentTime createCurrentTime();
+
+	/**
+	 * Returns a new object of class '<em>Current User</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Current User</em>'.
+	 * @generated
+	 */
+	CurrentUser createCurrentUser();
+
+	/**
 	 * Returns a new object of class '<em>Selection Parameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -12,6 +12,7 @@ package uk.ac.man.cs.mdsd.waf
 
 import uk.ac.man.cs.mdsd.expression.Expression
 import uk.ac.man.cs.mdsd.expression.Predicate
+import uk.ac.man.cs.mdsd.expression.Variable
 import uk.ac.man.cs.mdsd.orm.Association
 import uk.ac.man.cs.mdsd.orm.Attribute
 import uk.ac.man.cs.mdsd.orm.DataType
@@ -111,6 +112,9 @@ class LocalAuthenticationSystem extends Authentication {
 }
 
 class CasAuthentication extends Authentication {
+}
+
+class CurrentUserReference extends Variable {
 }
 
 

@@ -39,8 +39,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='classifierNameUnique pageNameUnique menuNameUnique '"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL classifierNameUnique='classifiers->isUnique(name)' pageNameUnique='pages->isUnique(name)' menuNameUnique='menus->isUnique(name)'"
+ * @model
  * @generated
  */
 public interface WebGenModel extends EObject {

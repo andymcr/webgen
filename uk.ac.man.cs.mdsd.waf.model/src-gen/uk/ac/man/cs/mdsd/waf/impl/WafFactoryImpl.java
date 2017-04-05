@@ -62,7 +62,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.CAS_AUTHENTICATION: return createCasAuthentication();
 			case WafPackage.IMAGE_MANIPULATION: return createImageManipulation();
 			case WafPackage.THUMBNAIL_FILTER: return createThumbnailFilter();
-			case WafPackage.STATIC_MENU: return createStaticMenu();
+			case WafPackage.CONTEXT_MENU: return createContextMenu();
 			case WafPackage.DYNAMIC_MENU: return createDynamicMenu();
 			case WafPackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
 			case WafPackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
@@ -210,9 +210,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StaticMenu createStaticMenu() {
-		StaticMenuImpl staticMenu = new StaticMenuImpl();
-		return staticMenu;
+	public ContextMenu createContextMenu() {
+		ContextMenuImpl contextMenu = new ContextMenuImpl();
+		return contextMenu;
 	}
 
 	/**

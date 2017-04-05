@@ -1,5 +1,5 @@
 @Ecore(
-	nsURI="http://cs.man.ac.uk/mdsd/WebApplicationFramework",
+	nsURI="http://cs.manchester.ac.uk/mdsd/WebApplicationFramework",
 	nsPrefix="waf"
 )
 @GenModel(
@@ -56,6 +56,8 @@ class WafModel {
 	refers ServiceModel[1] business
 	contains ImageManipulation[] imageManipulations
 	contains Page[] pages opposite partOf
+	contains GlobalMenu globalMenu
+	contains ContextMenu[] contextMenus
 	contains Menu[] menus
 	String[1] siteName
 	String[1] siteTitle
@@ -141,10 +143,13 @@ abstract class Menu extends NamedDisplayElement {
 	String layoutClass
 }
 
-class StaticMenu extends Menu {
+abstract class GlobalMenu extends Menu {
 }
 
-class DynamicMenu extends Menu {
+class ContextMenu extends Menu {
+}
+
+class DynamicMenu extends GlobalMenu {
 	refers EntityOrView[1] entityOrView
 	refers Selection[1] selection
 	refers Label title

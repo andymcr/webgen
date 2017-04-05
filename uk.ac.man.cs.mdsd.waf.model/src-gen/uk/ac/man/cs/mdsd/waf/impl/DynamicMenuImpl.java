@@ -32,7 +32,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *
  * @generated
  */
-public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
+public class DynamicMenuImpl extends GlobalMenuImpl implements DynamicMenu {
 	/**
 	 * The cached value of the '{@link #getEntityOrView() <em>Entity Or View</em>}' reference.
 	 * <!-- begin-user-doc -->

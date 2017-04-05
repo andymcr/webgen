@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Waf -->
       <factory
-            uri="http://cs.man.ac.uk/mdsd/WebApplicationFramework"
+            uri="http://cs.manchester.ac.uk/mdsd/WebApplicationFramework"
             class="uk.ac.man.cs.mdsd.waf.provider.WafItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

@@ -26,6 +26,8 @@ import uk.ac.man.cs.mdsd.service.ServiceModel;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getBusiness <em>Business</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getImageManipulations <em>Image Manipulations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getPages <em>Pages</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getGlobalMenu <em>Global Menu</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getContextMenus <em>Context Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getMenus <em>Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteName <em>Site Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteTitle <em>Site Title</em>}</li>
@@ -141,6 +143,48 @@ public interface WafModel extends EObject {
 	 * @generated
 	 */
 	EList<Page> getPages();
+
+	/**
+	 * Returns the value of the '<em><b>Global Menu</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Global Menu</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Global Menu</em>' containment reference.
+	 * @see #setGlobalMenu(GlobalMenu)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_GlobalMenu()
+	 * @model containment="true"
+	 * @generated
+	 */
+	GlobalMenu getGlobalMenu();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#getGlobalMenu <em>Global Menu</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Global Menu</em>' containment reference.
+	 * @see #getGlobalMenu()
+	 * @generated
+	 */
+	void setGlobalMenu(GlobalMenu value);
+
+	/**
+	 * Returns the value of the '<em><b>Context Menus</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ContextMenu}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Context Menus</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Context Menus</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_ContextMenus()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ContextMenu> getContextMenus();
 
 	/**
 	 * Returns the value of the '<em><b>Menus</b></em>' containment reference list.

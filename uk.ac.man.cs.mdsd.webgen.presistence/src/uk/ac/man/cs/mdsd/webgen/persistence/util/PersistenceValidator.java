@@ -183,7 +183,46 @@ public class PersistenceValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePersistence(Persistence persistence, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(persistence, diagnostics, context);
+		if (!validate_NoCircularContainment(persistence, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(persistence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(persistence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(persistence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(persistence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(persistence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(persistence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(persistence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(persistence, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePersistence_classifierNameUnique(persistence, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the classifierNameUnique constraint of '<em>Persistence</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PERSISTENCE__CLASSIFIER_NAME_UNIQUE__EEXPRESSION = "dataTypes->isUnique(name) and entities->isUnique(name)";
+
+	/**
+	 * Validates the classifierNameUnique constraint of '<em>Persistence</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePersistence_classifierNameUnique(Persistence persistence, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PersistencePackage.Literals.PERSISTENCE,
+				 persistence,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "classifierNameUnique",
+				 PERSISTENCE__CLASSIFIER_NAME_UNIQUE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

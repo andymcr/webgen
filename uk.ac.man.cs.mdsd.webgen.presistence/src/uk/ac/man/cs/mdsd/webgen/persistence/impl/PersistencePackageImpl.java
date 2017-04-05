@@ -2390,6 +2390,12 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
 		   });	
 		addAnnotation
+		  (persistenceEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "classifierNameUnique"
+		   });	
+		addAnnotation
 		  (entityOrViewEClass, 
 		   source, 
 		   new String[] {
@@ -2423,6 +2429,12 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 */
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (persistenceEClass, 
+		   source, 
+		   new String[] {
+			 "classifierNameUnique", "dataTypes->isUnique(name) and entities->isUnique(name)"
+		   });	
 		addAnnotation
 		  (entityOrViewEClass, 
 		   source, 

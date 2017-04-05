@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Orm -->
       <package
-            uri="http://cs.man.ac.uk/mdsd/ObjectRelationalMapping"
+            uri="http://cs.manchester.ac.uk/mdsd/ObjectRelationalMapping"
             class="uk.ac.man.cs.mdsd.orm.OrmPackage"
             genModel="model/Orm.xcore"/>
    </extension>

@@ -28,7 +28,7 @@
             id="uk.ac.man.cs.mdsd.service.presentation.ServiceEditorID"
             name="%_UI_ServiceEditor_label"
             icon="icons/full/obj16/ServiceModelFile.gif"
-            extensions="bl"
+            extensions="service"
             class="uk.ac.man.cs.mdsd.service.presentation.ServiceEditor"
             contributorClass="uk.ac.man.cs.mdsd.service.presentation.ServiceActionBarContributor">
       </editor>

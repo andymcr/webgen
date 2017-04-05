@@ -117,26 +117,26 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.StaticMenu} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.ContextMenu} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StaticMenuItemProvider staticMenuItemProvider;
+	protected ContextMenuItemProvider contextMenuItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.StaticMenu}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.ContextMenu}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createStaticMenuAdapter() {
-		if (staticMenuItemProvider == null) {
-			staticMenuItemProvider = new StaticMenuItemProvider(this);
+	public Adapter createContextMenuAdapter() {
+		if (contextMenuItemProvider == null) {
+			contextMenuItemProvider = new ContextMenuItemProvider(this);
 		}
 
-		return staticMenuItemProvider;
+		return contextMenuItemProvider;
 	}
 
 	/**

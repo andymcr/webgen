@@ -7,11 +7,18 @@
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="WebUI">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="pageNameUnique menuNameUnique "/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="pageNameUnique" value="pages->isUnique(name)"/>
+      <details key="menuNameUnique" value="contextMenus->isUnique(name)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Services"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="menus" upperBound="-1"
-        eType="#//Menu" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="globalMenu" eType="#//GlobalMenu"
-        eOpposite="#//GlobalMenu/webUI"/>
+        containment="true" eOpposite="#//GlobalMenu/webUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextMenus" upperBound="-1"
+        eType="#//ContextMenu" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pages" upperBound="-1"
         eType="#//Page" containment="true" eOpposite="#//Page/webUI"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultDateFormat" ordered="false"
@@ -58,11 +65,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="webUI" lowerBound="1" eType="#//WebUI"
         eOpposite="#//WebUI/globalMenu"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ContextMenu" abstract="true" eSuperTypes="#//Menu">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="context" lowerBound="1"
-        eType="#//Page" eOpposite="#//Page/sideMenu"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StaticMenu" eSuperTypes="#//GlobalMenu #//ContextMenu">
+  <eClassifiers xsi:type="ecore:EClass" name="ContextMenu" eSuperTypes="#//Menu">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="onlyStaticEntries"/>
     </eAnnotations>
@@ -136,7 +139,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="navigationLabel" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sideMenu" ordered="false"
-        eType="#//ContextMenu" eOpposite="#//ContextMenu/context"/>
+        eType="#//ContextMenu"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

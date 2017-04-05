@@ -20,7 +20,7 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  */
 public interface GlobalMenu extends Menu {
 	/**
-	 * Returns the value of the '<em><b>Web UI</b></em>' reference.
+	 * Returns the value of the '<em><b>Web UI</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenu <em>Global Menu</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -28,20 +28,20 @@ public interface GlobalMenu extends Menu {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Web UI</em>' reference.
+	 * @return the value of the '<em>Web UI</em>' container reference.
 	 * @see #setWebUI(WebUI)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getGlobalMenu_WebUI()
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenu
-	 * @model opposite="globalMenu" required="true"
+	 * @model opposite="globalMenu" required="true" transient="false"
 	 * @generated
 	 */
 	WebUI getWebUI();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu#getWebUI <em>Web UI</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu#getWebUI <em>Web UI</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Web UI</em>' reference.
+	 * @param value the new value of the '<em>Web UI</em>' container reference.
 	 * @see #getWebUI()
 	 * @generated
 	 */

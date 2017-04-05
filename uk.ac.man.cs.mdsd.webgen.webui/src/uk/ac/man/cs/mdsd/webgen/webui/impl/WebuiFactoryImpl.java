@@ -58,7 +58,7 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case WebuiPackage.WEB_UI: return createWebUI();
-			case WebuiPackage.STATIC_MENU: return createStaticMenu();
+			case WebuiPackage.CONTEXT_MENU: return createContextMenu();
 			case WebuiPackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
 			case WebuiPackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
 			case WebuiPackage.DYNAMIC_MENU: return createDynamicMenu();
@@ -164,9 +164,9 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StaticMenu createStaticMenu() {
-		StaticMenuImpl staticMenu = new StaticMenuImpl();
-		return staticMenu;
+	public ContextMenu createContextMenu() {
+		ContextMenuImpl contextMenu = new ContextMenuImpl();
+		return contextMenu;
 	}
 
 	/**

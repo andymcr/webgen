@@ -473,33 +473,11 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSideMenu(ContextMenu newSideMenu, NotificationChain msgs) {
+	public void setSideMenu(ContextMenu newSideMenu) {
 		ContextMenu oldSideMenu = sideMenu;
 		sideMenu = newSideMenu;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebuiPackage.PAGE__SIDE_MENU, oldSideMenu, newSideMenu);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSideMenu(ContextMenu newSideMenu) {
-		if (newSideMenu != sideMenu) {
-			NotificationChain msgs = null;
-			if (sideMenu != null)
-				msgs = ((InternalEObject)sideMenu).eInverseRemove(this, WebuiPackage.CONTEXT_MENU__CONTEXT, ContextMenu.class, msgs);
-			if (newSideMenu != null)
-				msgs = ((InternalEObject)newSideMenu).eInverseAdd(this, WebuiPackage.CONTEXT_MENU__CONTEXT, ContextMenu.class, msgs);
-			msgs = basicSetSideMenu(newSideMenu, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.PAGE__SIDE_MENU, newSideMenu, newSideMenu));
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.PAGE__SIDE_MENU, oldSideMenu, sideMenu));
 	}
 
 	/**
@@ -540,10 +518,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return basicSetWebUI((WebUI)otherEnd, msgs);
 			case WebuiPackage.PAGE__CHILD_PAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildPages()).basicAdd(otherEnd, msgs);
-			case WebuiPackage.PAGE__SIDE_MENU:
-				if (sideMenu != null)
-					msgs = ((InternalEObject)sideMenu).eInverseRemove(this, WebuiPackage.CONTEXT_MENU__CONTEXT, ContextMenu.class, msgs);
-				return basicSetSideMenu((ContextMenu)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -564,8 +538,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return basicSetParentPage(null, msgs);
 			case WebuiPackage.PAGE__CHILD_PAGES:
 				return ((InternalEList<?>)getChildPages()).basicRemove(otherEnd, msgs);
-			case WebuiPackage.PAGE__SIDE_MENU:
-				return basicSetSideMenu(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

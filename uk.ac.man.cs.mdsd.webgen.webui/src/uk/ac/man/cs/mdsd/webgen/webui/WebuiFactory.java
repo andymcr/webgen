@@ -31,13 +31,13 @@ public interface WebuiFactory extends EFactory {
 	WebUI createWebUI();
 
 	/**
-	 * Returns a new object of class '<em>Static Menu</em>'.
+	 * Returns a new object of class '<em>Context Menu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Static Menu</em>'.
+	 * @return a new object of class '<em>Context Menu</em>'.
 	 * @generated
 	 */
-	StaticMenu createStaticMenu();
+	ContextMenu createContextMenu();
 
 	/**
 	 * Returns a new object of class '<em>Action Menu Entry</em>'.

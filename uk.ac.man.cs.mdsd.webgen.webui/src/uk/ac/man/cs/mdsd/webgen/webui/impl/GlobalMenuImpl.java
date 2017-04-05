@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu;
 import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -27,15 +28,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * @generated
  */
 public abstract class GlobalMenuImpl extends MenuImpl implements GlobalMenu {
-	/**
-	 * The cached value of the '{@link #getWebUI() <em>Web UI</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebUI()
-	 * @generated
-	 * @ordered
-	 */
-	protected WebUI webUI;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,24 +53,8 @@ public abstract class GlobalMenuImpl extends MenuImpl implements GlobalMenu {
 	 * @generated
 	 */
 	public WebUI getWebUI() {
-		if (webUI != null && webUI.eIsProxy()) {
-			InternalEObject oldWebUI = (InternalEObject)webUI;
-			webUI = (WebUI)eResolveProxy(oldWebUI);
-			if (webUI != oldWebUI) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.GLOBAL_MENU__WEB_UI, oldWebUI, webUI));
-			}
-		}
-		return webUI;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WebUI basicGetWebUI() {
-		return webUI;
+		if (eContainerFeatureID() != WebuiPackage.GLOBAL_MENU__WEB_UI) return null;
+		return (WebUI)eInternalContainer();
 	}
 
 	/**
@@ -87,12 +63,7 @@ public abstract class GlobalMenuImpl extends MenuImpl implements GlobalMenu {
 	 * @generated
 	 */
 	public NotificationChain basicSetWebUI(WebUI newWebUI, NotificationChain msgs) {
-		WebUI oldWebUI = webUI;
-		webUI = newWebUI;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebuiPackage.GLOBAL_MENU__WEB_UI, oldWebUI, newWebUI);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newWebUI, WebuiPackage.GLOBAL_MENU__WEB_UI, msgs);
 		return msgs;
 	}
 
@@ -102,10 +73,12 @@ public abstract class GlobalMenuImpl extends MenuImpl implements GlobalMenu {
 	 * @generated
 	 */
 	public void setWebUI(WebUI newWebUI) {
-		if (newWebUI != webUI) {
+		if (newWebUI != eInternalContainer() || (eContainerFeatureID() != WebuiPackage.GLOBAL_MENU__WEB_UI && newWebUI != null)) {
+			if (EcoreUtil.isAncestor(this, newWebUI))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (webUI != null)
-				msgs = ((InternalEObject)webUI).eInverseRemove(this, WebuiPackage.WEB_UI__GLOBAL_MENU, WebUI.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newWebUI != null)
 				msgs = ((InternalEObject)newWebUI).eInverseAdd(this, WebuiPackage.WEB_UI__GLOBAL_MENU, WebUI.class, msgs);
 			msgs = basicSetWebUI(newWebUI, msgs);
@@ -124,8 +97,8 @@ public abstract class GlobalMenuImpl extends MenuImpl implements GlobalMenu {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case WebuiPackage.GLOBAL_MENU__WEB_UI:
-				if (webUI != null)
-					msgs = ((InternalEObject)webUI).eInverseRemove(this, WebuiPackage.WEB_UI__GLOBAL_MENU, WebUI.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetWebUI((WebUI)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -151,11 +124,24 @@ public abstract class GlobalMenuImpl extends MenuImpl implements GlobalMenu {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case WebuiPackage.GLOBAL_MENU__WEB_UI:
+				return eInternalContainer().eInverseRemove(this, WebuiPackage.WEB_UI__GLOBAL_MENU, WebUI.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case WebuiPackage.GLOBAL_MENU__WEB_UI:
-				if (resolve) return getWebUI();
-				return basicGetWebUI();
+				return getWebUI();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -199,7 +185,7 @@ public abstract class GlobalMenuImpl extends MenuImpl implements GlobalMenu {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case WebuiPackage.GLOBAL_MENU__WEB_UI:
-				return webUI != null;
+				return getWebUI() != null;
 		}
 		return super.eIsSet(featureID);
 	}

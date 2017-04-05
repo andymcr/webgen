@@ -244,7 +244,6 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Side Menu</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.webui.ContextMenu#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Side Menu</em>' reference isn't clear,
@@ -254,8 +253,7 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * @return the value of the '<em>Side Menu</em>' reference.
 	 * @see #setSideMenu(ContextMenu)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getPage_SideMenu()
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.ContextMenu#getContext
-	 * @model opposite="context" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	ContextMenu getSideMenu();

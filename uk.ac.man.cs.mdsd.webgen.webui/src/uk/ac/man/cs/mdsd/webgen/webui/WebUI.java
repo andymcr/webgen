@@ -17,8 +17,8 @@ import uk.ac.man.cs.mdsd.webgen.service.Services;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getServices <em>Services</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getMenus <em>Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenu <em>Global Menu</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getContextMenus <em>Context Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getPages <em>Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDefaultDateFormat <em>Default Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDefaultTimeFormat <em>Default Time Format</em>}</li>
@@ -29,7 +29,8 @@ import uk.ac.man.cs.mdsd.webgen.service.Services;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getWebUI()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='pageNameUnique menuNameUnique '"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL pageNameUnique='pages->isUnique(name)' menuNameUnique='contextMenus->isUnique(name)'"
  * @generated
  */
 public interface WebUI extends EObject {
@@ -60,7 +61,7 @@ public interface WebUI extends EObject {
 	void setServices(Services value);
 
 	/**
-	 * Returns the value of the '<em><b>Global Menu</b></em>' reference.
+	 * Returns the value of the '<em><b>Global Menu</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu#getWebUI <em>Web UI</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -68,24 +69,40 @@ public interface WebUI extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Global Menu</em>' reference.
+	 * @return the value of the '<em>Global Menu</em>' containment reference.
 	 * @see #setGlobalMenu(GlobalMenu)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getWebUI_GlobalMenu()
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu#getWebUI
-	 * @model opposite="webUI"
+	 * @model opposite="webUI" containment="true"
 	 * @generated
 	 */
 	GlobalMenu getGlobalMenu();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenu <em>Global Menu</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenu <em>Global Menu</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Global Menu</em>' reference.
+	 * @param value the new value of the '<em>Global Menu</em>' containment reference.
 	 * @see #getGlobalMenu()
 	 * @generated
 	 */
 	void setGlobalMenu(GlobalMenu value);
+
+	/**
+	 * Returns the value of the '<em><b>Context Menus</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.ContextMenu}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Context Menus</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Context Menus</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getWebUI_ContextMenus()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ContextMenu> getContextMenus();
 
 	/**
 	 * Returns the value of the '<em><b>Pages</b></em>' containment reference list.
@@ -272,21 +289,5 @@ public interface WebUI extends EObject {
 	 * @generated
 	 */
 	void setAjaxTechnology(AjaxTechnologies value);
-
-	/**
-	 * Returns the value of the '<em><b>Menus</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.Menu}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Menus</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Menus</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getWebUI_Menus()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Menu> getMenus();
 
 } // WebUI

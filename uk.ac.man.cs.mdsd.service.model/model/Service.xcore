@@ -1,5 +1,5 @@
 @Ecore(
-	nsURI="http://cs.man.ac.uk/mdsd/service",
+	nsURI="http://cs.manchester.ac.uk/mdsd/Service",
 	nsPrefix="service"
 )
 @GenModel(

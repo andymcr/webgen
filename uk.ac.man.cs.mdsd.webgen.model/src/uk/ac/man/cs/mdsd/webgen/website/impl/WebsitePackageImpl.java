@@ -11,8 +11,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import uk.ac.man.cs.mdsd.webgen.image.ImagePackage;
@@ -25,7 +23,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
 
-import uk.ac.man.cs.mdsd.webgen.website.util.WebsiteValidator;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
 /**
@@ -111,15 +108,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		// Initialize created meta-data
 		theWebsitePackage.initializePackageContents();
-
-		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(theWebsitePackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
-					 return WebsiteValidator.INSTANCE;
-				 }
-			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theWebsitePackage.freeze();
@@ -612,8 +600,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL
-		createOCLAnnotations();
 	}
 
 	/**
@@ -631,30 +617,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });	
-		addAnnotation
-		  (webGenModelEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "classifierNameUnique pageNameUnique menuNameUnique "
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
-		addAnnotation
-		  (webGenModelEClass, 
-		   source, 
-		   new String[] {
-			 "classifierNameUnique", "classifiers->isUnique(name)",
-			 "pageNameUnique", "pages->isUnique(name)",
-			 "menuNameUnique", "menus->isUnique(name)"
 		   });
 	}
 

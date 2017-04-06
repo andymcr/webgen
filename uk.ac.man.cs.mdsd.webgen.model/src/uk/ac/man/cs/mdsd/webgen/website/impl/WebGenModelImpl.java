@@ -6,13 +6,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
-import java.util.Collection;
-
-import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -20,17 +15,15 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import uk.ac.man.cs.mdsd.webgen.api.API;
 import uk.ac.man.cs.mdsd.webgen.image.Image;
-import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
-import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
 import uk.ac.man.cs.mdsd.webgen.security.Security;
 import uk.ac.man.cs.mdsd.webgen.service.Services;
+import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
-import uk.ac.man.cs.mdsd.webgen.webui.Menu;
 import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 
 /**
@@ -42,14 +35,13 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getWebsiteProperties <em>Website Properties</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getPersistence <em>Persistence</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getServicesX <em>Services X</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getWebUI <em>Web UI</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getMenus <em>Menus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getImages <em>Images</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getWebUI <em>Web UI</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getApi <em>Api</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getSecurity <em>Security</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getAllowTypeCustomisation <em>Allow Type Customisation</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getImageManipulations <em>Image Manipulations</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +58,26 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	protected WebsiteProperties websiteProperties;
 
 	/**
+	 * The default value of the '{@link #getFrameworkTechnology() <em>Framework Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFrameworkTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final FrameworkTechnologies FRAMEWORK_TECHNOLOGY_EDEFAULT = FrameworkTechnologies.KOHANA;
+
+	/**
+	 * The cached value of the '{@link #getFrameworkTechnology() <em>Framework Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFrameworkTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected FrameworkTechnologies frameworkTechnology = FRAMEWORK_TECHNOLOGY_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getPersistence() <em>Persistence</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,34 +88,14 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	protected Persistence persistence;
 
 	/**
-	 * The cached value of the '{@link #getServicesX() <em>Services X</em>}' containment reference.
+	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getServicesX()
+	 * @see #getServices()
 	 * @generated
 	 * @ordered
 	 */
-	protected Services servicesX;
-
-	/**
-	 * The cached value of the '{@link #getWebUI() <em>Web UI</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWebUI()
-	 * @generated
-	 * @ordered
-	 */
-	protected WebUI webUI;
-
-	/**
-	 * The cached value of the '{@link #getMenus() <em>Menus</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMenus()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Menu> menus;
+	protected Services services;
 
 	/**
 	 * The cached value of the '{@link #getImages() <em>Images</em>}' containment reference.
@@ -116,6 +108,26 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	protected Image images;
 
 	/**
+	 * The cached value of the '{@link #getWebUI() <em>Web UI</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWebUI()
+	 * @generated
+	 * @ordered
+	 */
+	protected WebUI webUI;
+
+	/**
+	 * The cached value of the '{@link #getApi() <em>Api</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApi()
+	 * @generated
+	 * @ordered
+	 */
+	protected API api;
+
+	/**
 	 * The cached value of the '{@link #getSecurity() <em>Security</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -124,26 +136,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * @ordered
 	 */
 	protected Security security;
-
-	/**
-	 * The cached value of the '{@link #getAllowTypeCustomisation() <em>Allow Type Customisation</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAllowTypeCustomisation()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EntityOrView> allowTypeCustomisation;
-
-	/**
-	 * The cached value of the '{@link #getImageManipulations() <em>Image Manipulations</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImageManipulations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ImageManipulation> imageManipulations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,8 +204,8 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Services getServicesX() {
-		return servicesX;
+	public FrameworkTechnologies getFrameworkTechnology() {
+		return frameworkTechnology;
 	}
 
 	/**
@@ -221,33 +213,11 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetServicesX(Services newServicesX, NotificationChain msgs) {
-		Services oldServicesX = servicesX;
-		servicesX = newServicesX;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_GEN_MODEL__SERVICES_X, oldServicesX, newServicesX);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setServicesX(Services newServicesX) {
-		if (newServicesX != servicesX) {
-			NotificationChain msgs = null;
-			if (servicesX != null)
-				msgs = ((InternalEObject)servicesX).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.WEB_GEN_MODEL__SERVICES_X, null, msgs);
-			if (newServicesX != null)
-				msgs = ((InternalEObject)newServicesX).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.WEB_GEN_MODEL__SERVICES_X, null, msgs);
-			msgs = basicSetServicesX(newServicesX, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_GEN_MODEL__SERVICES_X, newServicesX, newServicesX));
+	public void setFrameworkTechnology(FrameworkTechnologies newFrameworkTechnology) {
+		FrameworkTechnologies oldFrameworkTechnology = frameworkTechnology;
+		frameworkTechnology = newFrameworkTechnology == null ? FRAMEWORK_TECHNOLOGY_EDEFAULT : newFrameworkTechnology;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY, oldFrameworkTechnology, frameworkTechnology));
 	}
 
 	/**
@@ -298,11 +268,42 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<Menu> getMenus() {
-		if (menus == null) {
-			menus = new EObjectResolvingEList<Menu>(Menu.class, this, WebsitePackage.WEB_GEN_MODEL__MENUS);
+	public API getApi() {
+		return api;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetApi(API newApi, NotificationChain msgs) {
+		API oldApi = api;
+		api = newApi;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_GEN_MODEL__API, oldApi, newApi);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return menus;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setApi(API newApi) {
+		if (newApi != api) {
+			NotificationChain msgs = null;
+			if (api != null)
+				msgs = ((InternalEObject)api).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.WEB_GEN_MODEL__API, null, msgs);
+			if (newApi != null)
+				msgs = ((InternalEObject)newApi).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.WEB_GEN_MODEL__API, null, msgs);
+			msgs = basicSetApi(newApi, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_GEN_MODEL__API, newApi, newApi));
 	}
 
 	/**
@@ -396,30 +397,6 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<EntityOrView> getAllowTypeCustomisation() {
-		if (allowTypeCustomisation == null) {
-			allowTypeCustomisation = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION);
-		}
-		return allowTypeCustomisation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public List<ImageManipulation> getImageManipulations() {
-		if (imageManipulations == null) {
-			imageManipulations = new EObjectResolvingEList<ImageManipulation>(ImageManipulation.class, this, WebsitePackage.WEB_GEN_MODEL__IMAGE_MANIPULATIONS);
-		}
-		return imageManipulations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Persistence getPersistence() {
 		return persistence;
 	}
@@ -463,6 +440,49 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Services getServices() {
+		return services;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetServices(Services newServices, NotificationChain msgs) {
+		Services oldServices = services;
+		services = newServices;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_GEN_MODEL__SERVICES, oldServices, newServices);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setServices(Services newServices) {
+		if (newServices != services) {
+			NotificationChain msgs = null;
+			if (services != null)
+				msgs = ((InternalEObject)services).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.WEB_GEN_MODEL__SERVICES, null, msgs);
+			if (newServices != null)
+				msgs = ((InternalEObject)newServices).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.WEB_GEN_MODEL__SERVICES, null, msgs);
+			msgs = basicSetServices(newServices, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_GEN_MODEL__SERVICES, newServices, newServices));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -470,12 +490,14 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 				return basicSetWebsiteProperties(null, msgs);
 			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 				return basicSetPersistence(null, msgs);
-			case WebsitePackage.WEB_GEN_MODEL__SERVICES_X:
-				return basicSetServicesX(null, msgs);
-			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
-				return basicSetWebUI(null, msgs);
+			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
+				return basicSetServices(null, msgs);
 			case WebsitePackage.WEB_GEN_MODEL__IMAGES:
 				return basicSetImages(null, msgs);
+			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
+				return basicSetWebUI(null, msgs);
+			case WebsitePackage.WEB_GEN_MODEL__API:
+				return basicSetApi(null, msgs);
 			case WebsitePackage.WEB_GEN_MODEL__SECURITY:
 				return basicSetSecurity(null, msgs);
 		}
@@ -492,22 +514,20 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 		switch (featureID) {
 			case WebsitePackage.WEB_GEN_MODEL__WEBSITE_PROPERTIES:
 				return getWebsiteProperties();
+			case WebsitePackage.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY:
+				return getFrameworkTechnology();
 			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 				return getPersistence();
-			case WebsitePackage.WEB_GEN_MODEL__SERVICES_X:
-				return getServicesX();
-			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
-				return getWebUI();
-			case WebsitePackage.WEB_GEN_MODEL__MENUS:
-				return getMenus();
+			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
+				return getServices();
 			case WebsitePackage.WEB_GEN_MODEL__IMAGES:
 				return getImages();
+			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
+				return getWebUI();
+			case WebsitePackage.WEB_GEN_MODEL__API:
+				return getApi();
 			case WebsitePackage.WEB_GEN_MODEL__SECURITY:
 				return getSecurity();
-			case WebsitePackage.WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION:
-				return getAllowTypeCustomisation();
-			case WebsitePackage.WEB_GEN_MODEL__IMAGE_MANIPULATIONS:
-				return getImageManipulations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -517,39 +537,32 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebsitePackage.WEB_GEN_MODEL__WEBSITE_PROPERTIES:
 				setWebsiteProperties((WebsiteProperties)newValue);
 				return;
+			case WebsitePackage.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY:
+				setFrameworkTechnology((FrameworkTechnologies)newValue);
+				return;
 			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 				setPersistence((Persistence)newValue);
 				return;
-			case WebsitePackage.WEB_GEN_MODEL__SERVICES_X:
-				setServicesX((Services)newValue);
-				return;
-			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
-				setWebUI((WebUI)newValue);
-				return;
-			case WebsitePackage.WEB_GEN_MODEL__MENUS:
-				getMenus().clear();
-				getMenus().addAll((Collection<? extends Menu>)newValue);
+			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
+				setServices((Services)newValue);
 				return;
 			case WebsitePackage.WEB_GEN_MODEL__IMAGES:
 				setImages((Image)newValue);
 				return;
+			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
+				setWebUI((WebUI)newValue);
+				return;
+			case WebsitePackage.WEB_GEN_MODEL__API:
+				setApi((API)newValue);
+				return;
 			case WebsitePackage.WEB_GEN_MODEL__SECURITY:
 				setSecurity((Security)newValue);
-				return;
-			case WebsitePackage.WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION:
-				getAllowTypeCustomisation().clear();
-				getAllowTypeCustomisation().addAll((Collection<? extends EntityOrView>)newValue);
-				return;
-			case WebsitePackage.WEB_GEN_MODEL__IMAGE_MANIPULATIONS:
-				getImageManipulations().clear();
-				getImageManipulations().addAll((Collection<? extends ImageManipulation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -566,29 +579,26 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 			case WebsitePackage.WEB_GEN_MODEL__WEBSITE_PROPERTIES:
 				setWebsiteProperties((WebsiteProperties)null);
 				return;
+			case WebsitePackage.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY:
+				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
+				return;
 			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 				setPersistence((Persistence)null);
 				return;
-			case WebsitePackage.WEB_GEN_MODEL__SERVICES_X:
-				setServicesX((Services)null);
-				return;
-			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
-				setWebUI((WebUI)null);
-				return;
-			case WebsitePackage.WEB_GEN_MODEL__MENUS:
-				getMenus().clear();
+			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
+				setServices((Services)null);
 				return;
 			case WebsitePackage.WEB_GEN_MODEL__IMAGES:
 				setImages((Image)null);
 				return;
+			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
+				setWebUI((WebUI)null);
+				return;
+			case WebsitePackage.WEB_GEN_MODEL__API:
+				setApi((API)null);
+				return;
 			case WebsitePackage.WEB_GEN_MODEL__SECURITY:
 				setSecurity((Security)null);
-				return;
-			case WebsitePackage.WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION:
-				getAllowTypeCustomisation().clear();
-				return;
-			case WebsitePackage.WEB_GEN_MODEL__IMAGE_MANIPULATIONS:
-				getImageManipulations().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -604,24 +614,38 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 		switch (featureID) {
 			case WebsitePackage.WEB_GEN_MODEL__WEBSITE_PROPERTIES:
 				return websiteProperties != null;
+			case WebsitePackage.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY:
+				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
 			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 				return persistence != null;
-			case WebsitePackage.WEB_GEN_MODEL__SERVICES_X:
-				return servicesX != null;
-			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
-				return webUI != null;
-			case WebsitePackage.WEB_GEN_MODEL__MENUS:
-				return menus != null && !menus.isEmpty();
+			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
+				return services != null;
 			case WebsitePackage.WEB_GEN_MODEL__IMAGES:
 				return images != null;
+			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
+				return webUI != null;
+			case WebsitePackage.WEB_GEN_MODEL__API:
+				return api != null;
 			case WebsitePackage.WEB_GEN_MODEL__SECURITY:
 				return security != null;
-			case WebsitePackage.WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION:
-				return allowTypeCustomisation != null && !allowTypeCustomisation.isEmpty();
-			case WebsitePackage.WEB_GEN_MODEL__IMAGE_MANIPULATIONS:
-				return imageManipulations != null && !imageManipulations.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (frameworkTechnology: ");
+		result.append(frameworkTechnology);
+		result.append(')');
+		return result.toString();
 	}
 
 } //WebGenModelImpl

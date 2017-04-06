@@ -1,37 +1,33 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: WebsiteEditPlugin.java,v 1.3 2013/06/11 20:48:47 andy Exp $
  */
-package uk.ac.man.cs.mdsd.webgen.website.provider;
+package uk.ac.man.cs.mdsd.webgen.api.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-import uk.ac.man.cs.mdsd.webgen.api.provider.ApiEditPlugin;
+
 import uk.ac.man.cs.mdsd.webgen.base.provider.BaseEditPlugin;
+
 import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
-import uk.ac.man.cs.mdsd.webgen.image.provider.ImageEditPlugin;
+
 import uk.ac.man.cs.mdsd.webgen.persistence.provider.PersistenceEditPlugin;
-import uk.ac.man.cs.mdsd.webgen.security.provider.SecurityEditPlugin;
+
 import uk.ac.man.cs.mdsd.webgen.service.provider.ServiceEditPlugin;
-import uk.ac.man.cs.mdsd.webgen.webui.provider.WebuiEditPlugin;
 
 /**
- * This is the central singleton for the Website edit plugin.
+ * This is the central singleton for the Api edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public final class WebsiteEditPlugin extends EMFPlugin {
+public final class ApiEditPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final WebsiteEditPlugin INSTANCE = new WebsiteEditPlugin();
+	public static final ApiEditPlugin INSTANCE = new ApiEditPlugin();
 
 	/**
 	 * Keep track of the singleton.
@@ -47,17 +43,13 @@ public final class WebsiteEditPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public WebsiteEditPlugin() {
+	public ApiEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     ApiEditPlugin.INSTANCE,
 		     BaseEditPlugin.INSTANCE,
 		     ExpressionEditPlugin.INSTANCE,
-		     ImageEditPlugin.INSTANCE,
 		     PersistenceEditPlugin.INSTANCE,
-		     SecurityEditPlugin.INSTANCE,
 		     ServiceEditPlugin.INSTANCE,
-		     WebuiEditPlugin.INSTANCE,
 		   });
 	}
 

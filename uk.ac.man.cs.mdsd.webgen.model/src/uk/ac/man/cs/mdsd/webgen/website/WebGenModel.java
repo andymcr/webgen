@@ -6,16 +6,12 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
-import java.util.List;
-
 import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.webgen.api.API;
 import uk.ac.man.cs.mdsd.webgen.image.Image;
-import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
-import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
 import uk.ac.man.cs.mdsd.webgen.security.Security;
 import uk.ac.man.cs.mdsd.webgen.service.Services;
-import uk.ac.man.cs.mdsd.webgen.webui.Menu;
 import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 
 /**
@@ -28,14 +24,13 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getWebsiteProperties <em>Website Properties</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getFrameworkTechnology <em>Framework Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPersistence <em>Persistence</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServicesX <em>Services X</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getWebUI <em>Web UI</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getMenus <em>Menus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getImages <em>Images</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getWebUI <em>Web UI</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getApi <em>Api</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getSecurity <em>Security</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getAllowTypeCustomisation <em>Allow Type Customisation</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getImageManipulations <em>Image Manipulations</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel()
@@ -70,30 +65,34 @@ public interface WebGenModel extends EObject {
 	void setWebsiteProperties(WebsiteProperties value);
 
 	/**
-	 * Returns the value of the '<em><b>Services X</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Framework Technology</b></em>' attribute.
+	 * The default value is <code>"Kohana"</code>.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Services X</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Framework Technology</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Services X</em>' containment reference.
-	 * @see #setServicesX(Services)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_ServicesX()
-	 * @model containment="true"
+	 * @return the value of the '<em>Framework Technology</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies
+	 * @see #setFrameworkTechnology(FrameworkTechnologies)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_FrameworkTechnology()
+	 * @model default="Kohana" required="true" ordered="false"
 	 * @generated
 	 */
-	Services getServicesX();
+	FrameworkTechnologies getFrameworkTechnology();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServicesX <em>Services X</em>}' containment reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getFrameworkTechnology <em>Framework Technology</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Services X</em>' containment reference.
-	 * @see #getServicesX()
+	 * @param value the new value of the '<em>Framework Technology</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies
+	 * @see #getFrameworkTechnology()
 	 * @generated
 	 */
-	void setServicesX(Services value);
+	void setFrameworkTechnology(FrameworkTechnologies value);
 
 	/**
 	 * Returns the value of the '<em><b>Web UI</b></em>' containment reference.
@@ -122,20 +121,30 @@ public interface WebGenModel extends EObject {
 	void setWebUI(WebUI value);
 
 	/**
-	 * Returns the value of the '<em><b>Menus</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.Menu}.
+	 * Returns the value of the '<em><b>Api</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Menus</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Api</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Menus</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_Menus()
-	 * @model
+	 * @return the value of the '<em>Api</em>' containment reference.
+	 * @see #setApi(API)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_Api()
+	 * @model containment="true"
 	 * @generated
 	 */
-	List<Menu> getMenus();
+	API getApi();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getApi <em>Api</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Api</em>' containment reference.
+	 * @see #getApi()
+	 * @generated
+	 */
+	void setApi(API value);
 
 	/**
 	 * Returns the value of the '<em><b>Images</b></em>' containment reference.
@@ -190,38 +199,6 @@ public interface WebGenModel extends EObject {
 	void setSecurity(Security value);
 
 	/**
-	 * Returns the value of the '<em><b>Allow Type Customisation</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Allow Type Customisation</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Allow Type Customisation</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_AllowTypeCustomisation()
-	 * @model
-	 * @generated
-	 */
-	List<EntityOrView> getAllowTypeCustomisation();
-
-	/**
-	 * Returns the value of the '<em><b>Image Manipulations</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.image.ImageManipulation}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Image Manipulations</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Image Manipulations</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_ImageManipulations()
-	 * @model
-	 * @generated
-	 */
-	List<ImageManipulation> getImageManipulations();
-
-	/**
 	 * Returns the value of the '<em><b>Persistence</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -246,5 +223,31 @@ public interface WebGenModel extends EObject {
 	 * @generated
 	 */
 	void setPersistence(Persistence value);
+
+	/**
+	 * Returns the value of the '<em><b>Services</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Services</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Services</em>' containment reference.
+	 * @see #setServices(Services)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_Services()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Services getServices();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServices <em>Services</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Services</em>' containment reference.
+	 * @see #getServices()
+	 * @generated
+	 */
+	void setServices(Services value);
 
 } // WebGenModel

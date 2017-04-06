@@ -29,9 +29,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.Menu;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getMetaDescription <em>Meta Description</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getProjectName <em>Project Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTestProjectName <em>Test Project Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultDateFormat <em>Default Date Format</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultTimeFormat <em>Default Time Format</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultDateTimeFormat <em>Default Date Time Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultMaximumUploadSize <em>Default Maximum Upload Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getFrameworkTechnology <em>Framework Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getInputTechnology <em>Input Technology</em>}</li>
@@ -284,87 +281,6 @@ public interface WebsiteProperties extends EObject {
 	 * @generated
 	 */
 	void setTestProjectName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Default Date Format</b></em>' attribute.
-	 * The default value is <code>"jS F Y"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Default Date Format</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default Date Format</em>' attribute.
-	 * @see #setDefaultDateFormat(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_DefaultDateFormat()
-	 * @model default="jS F Y" ordered="false"
-	 * @generated
-	 */
-	String getDefaultDateFormat();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultDateFormat <em>Default Date Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default Date Format</em>' attribute.
-	 * @see #getDefaultDateFormat()
-	 * @generated
-	 */
-	void setDefaultDateFormat(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Default Time Format</b></em>' attribute.
-	 * The default value is <code>"G.i"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Default Time Format</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default Time Format</em>' attribute.
-	 * @see #setDefaultTimeFormat(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_DefaultTimeFormat()
-	 * @model default="G.i" ordered="false"
-	 * @generated
-	 */
-	String getDefaultTimeFormat();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultTimeFormat <em>Default Time Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default Time Format</em>' attribute.
-	 * @see #getDefaultTimeFormat()
-	 * @generated
-	 */
-	void setDefaultTimeFormat(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Default Date Time Format</b></em>' attribute.
-	 * The default value is <code>"jS F Y G.i"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Default Date Time Format</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default Date Time Format</em>' attribute.
-	 * @see #setDefaultDateTimeFormat(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_DefaultDateTimeFormat()
-	 * @model default="jS F Y G.i" ordered="false"
-	 * @generated
-	 */
-	String getDefaultDateTimeFormat();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultDateTimeFormat <em>Default Date Time Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default Date Time Format</em>' attribute.
-	 * @see #getDefaultDateTimeFormat()
-	 * @generated
-	 */
-	void setDefaultDateTimeFormat(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Maximum Upload Size</b></em>' attribute.

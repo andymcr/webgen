@@ -35,9 +35,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.Menu;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getMetaDescription <em>Meta Description</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getProjectName <em>Project Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTestProjectName <em>Test Project Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDefaultDateFormat <em>Default Date Format</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDefaultTimeFormat <em>Default Time Format</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDefaultDateTimeFormat <em>Default Date Time Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDefaultMaximumUploadSize <em>Default Maximum Upload Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getInputTechnology <em>Input Technology</em>}</li>
@@ -234,66 +231,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @ordered
 	 */
 	protected String testProjectName = TEST_PROJECT_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDefaultDateFormat() <em>Default Date Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultDateFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEFAULT_DATE_FORMAT_EDEFAULT = "jS F Y";
-
-	/**
-	 * The cached value of the '{@link #getDefaultDateFormat() <em>Default Date Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultDateFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected String defaultDateFormat = DEFAULT_DATE_FORMAT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDefaultTimeFormat() <em>Default Time Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultTimeFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEFAULT_TIME_FORMAT_EDEFAULT = "G.i";
-
-	/**
-	 * The cached value of the '{@link #getDefaultTimeFormat() <em>Default Time Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultTimeFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected String defaultTimeFormat = DEFAULT_TIME_FORMAT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDefaultDateTimeFormat() <em>Default Date Time Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultDateTimeFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEFAULT_DATE_TIME_FORMAT_EDEFAULT = "jS F Y G.i";
-
-	/**
-	 * The cached value of the '{@link #getDefaultDateTimeFormat() <em>Default Date Time Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultDateTimeFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected String defaultDateTimeFormat = DEFAULT_DATE_TIME_FORMAT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDefaultMaximumUploadSize() <em>Default Maximum Upload Size</em>}' attribute.
@@ -738,69 +675,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getDefaultDateFormat() {
-		return defaultDateFormat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDefaultDateFormat(String newDefaultDateFormat) {
-		String oldDefaultDateFormat = defaultDateFormat;
-		defaultDateFormat = newDefaultDateFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT, oldDefaultDateFormat, defaultDateFormat));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDefaultTimeFormat() {
-		return defaultTimeFormat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDefaultTimeFormat(String newDefaultTimeFormat) {
-		String oldDefaultTimeFormat = defaultTimeFormat;
-		defaultTimeFormat = newDefaultTimeFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_TIME_FORMAT, oldDefaultTimeFormat, defaultTimeFormat));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDefaultDateTimeFormat() {
-		return defaultDateTimeFormat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDefaultDateTimeFormat(String newDefaultDateTimeFormat) {
-		String oldDefaultDateTimeFormat = defaultDateTimeFormat;
-		defaultDateTimeFormat = newDefaultDateTimeFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT, oldDefaultDateTimeFormat, defaultDateTimeFormat));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getDefaultMaximumUploadSize() {
 		return defaultMaximumUploadSize;
 	}
@@ -1091,12 +965,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return getProjectName();
 			case WebsitePackage.WEBSITE_PROPERTIES__TEST_PROJECT_NAME:
 				return getTestProjectName();
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT:
-				return getDefaultDateFormat();
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_TIME_FORMAT:
-				return getDefaultTimeFormat();
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT:
-				return getDefaultDateTimeFormat();
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE:
 				return getDefaultMaximumUploadSize();
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
@@ -1160,15 +1028,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TEST_PROJECT_NAME:
 				setTestProjectName((String)newValue);
-				return;
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT:
-				setDefaultDateFormat((String)newValue);
-				return;
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_TIME_FORMAT:
-				setDefaultTimeFormat((String)newValue);
-				return;
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT:
-				setDefaultDateTimeFormat((String)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE:
 				setDefaultMaximumUploadSize((Integer)newValue);
@@ -1245,15 +1104,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__TEST_PROJECT_NAME:
 				setTestProjectName(TEST_PROJECT_NAME_EDEFAULT);
 				return;
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT:
-				setDefaultDateFormat(DEFAULT_DATE_FORMAT_EDEFAULT);
-				return;
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_TIME_FORMAT:
-				setDefaultTimeFormat(DEFAULT_TIME_FORMAT_EDEFAULT);
-				return;
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT:
-				setDefaultDateTimeFormat(DEFAULT_DATE_TIME_FORMAT_EDEFAULT);
-				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE:
 				setDefaultMaximumUploadSize(DEFAULT_MAXIMUM_UPLOAD_SIZE_EDEFAULT);
 				return;
@@ -1320,12 +1170,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return PROJECT_NAME_EDEFAULT == null ? projectName != null : !PROJECT_NAME_EDEFAULT.equals(projectName);
 			case WebsitePackage.WEBSITE_PROPERTIES__TEST_PROJECT_NAME:
 				return TEST_PROJECT_NAME_EDEFAULT == null ? testProjectName != null : !TEST_PROJECT_NAME_EDEFAULT.equals(testProjectName);
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT:
-				return DEFAULT_DATE_FORMAT_EDEFAULT == null ? defaultDateFormat != null : !DEFAULT_DATE_FORMAT_EDEFAULT.equals(defaultDateFormat);
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_TIME_FORMAT:
-				return DEFAULT_TIME_FORMAT_EDEFAULT == null ? defaultTimeFormat != null : !DEFAULT_TIME_FORMAT_EDEFAULT.equals(defaultTimeFormat);
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT:
-				return DEFAULT_DATE_TIME_FORMAT_EDEFAULT == null ? defaultDateTimeFormat != null : !DEFAULT_DATE_TIME_FORMAT_EDEFAULT.equals(defaultDateTimeFormat);
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE:
 				return defaultMaximumUploadSize != DEFAULT_MAXIMUM_UPLOAD_SIZE_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
@@ -1382,12 +1226,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		result.append(projectName);
 		result.append(", testProjectName: ");
 		result.append(testProjectName);
-		result.append(", defaultDateFormat: ");
-		result.append(defaultDateFormat);
-		result.append(", defaultTimeFormat: ");
-		result.append(defaultTimeFormat);
-		result.append(", defaultDateTimeFormat: ");
-		result.append(defaultDateTimeFormat);
 		result.append(", defaultMaximumUploadSize: ");
 		result.append(defaultMaximumUploadSize);
 		result.append(", frameworkTechnology: ");

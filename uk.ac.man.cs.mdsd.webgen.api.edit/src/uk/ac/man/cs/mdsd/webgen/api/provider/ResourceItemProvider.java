@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.website.provider;
+package uk.ac.man.cs.mdsd.webgen.api.provider;
 
 
 import java.util.Collection;
@@ -25,23 +25,16 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.api.ApiFactory;
-import uk.ac.man.cs.mdsd.webgen.image.ImageFactory;
-import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
-import uk.ac.man.cs.mdsd.webgen.security.SecurityFactory;
-import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
-import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
-import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
-import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
-import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
-import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
+import uk.ac.man.cs.mdsd.webgen.api.ApiPackage;
+import uk.ac.man.cs.mdsd.webgen.api.Resource;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.api.Resource} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class WebGenModelItemProvider 
+public class ResourceItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -55,7 +48,7 @@ public class WebGenModelItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public WebGenModelItemProvider(AdapterFactory adapterFactory) {
+	public ResourceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -70,29 +63,98 @@ public class WebGenModelItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFrameworkTechnologyPropertyDescriptor(object);
+			addServicePropertyDescriptor(object);
+			addSupportFindAllPropertyDescriptor(object);
+			addSupportFindOnePropertyDescriptor(object);
+			addSelectionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Framework Technology feature.
+	 * This adds a property descriptor for the Service feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFrameworkTechnologyPropertyDescriptor(Object object) {
+	protected void addServicePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WebGenModel_frameworkTechnology_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_frameworkTechnology_feature", "_UI_WebGenModel_type"),
-				 WebsitePackage.Literals.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY,
+				 getString("_UI_Resource_service_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_service_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__SERVICE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Support Find All feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSupportFindAllPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Resource_supportFindAll_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_supportFindAll_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__SUPPORT_FIND_ALL,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Support Find One feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSupportFindOnePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Resource_supportFindOne_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_supportFindOne_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__SUPPORT_FIND_ONE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Selections feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Resource_selections_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_selections_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__SELECTIONS,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -109,13 +171,7 @@ public class WebGenModelItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__WEBSITE_PROPERTIES);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__PERSISTENCE);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__IMAGES);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__WEB_UI);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__API);
-			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__SECURITY);
+			childrenFeatures.add(ApiPackage.Literals.RESOURCE__CHILD_RESOURCES);
 		}
 		return childrenFeatures;
 	}
@@ -134,14 +190,14 @@ public class WebGenModelItemProvider
 	}
 
 	/**
-	 * This returns WebGenModel.gif.
+	 * This returns Resource.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/WebGenModel"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Resource"));
 	}
 
 	/**
@@ -152,12 +208,10 @@ public class WebGenModelItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		FrameworkTechnologies labelValue = ((WebGenModel)object).getFrameworkTechnology();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_WebGenModel_type") :
-			getString("_UI_WebGenModel_type") + " " + label;
+		Resource resource = (Resource)object;
+		return getString("_UI_Resource_type") + " " + resource.isSupportFindAll();
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -170,17 +224,12 @@ public class WebGenModelItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(WebGenModel.class)) {
-			case WebsitePackage.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY:
+		switch (notification.getFeatureID(Resource.class)) {
+			case ApiPackage.RESOURCE__SUPPORT_FIND_ALL:
+			case ApiPackage.RESOURCE__SUPPORT_FIND_ONE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebsitePackage.WEB_GEN_MODEL__WEBSITE_PROPERTIES:
-			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
-			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
-			case WebsitePackage.WEB_GEN_MODEL__IMAGES:
-			case WebsitePackage.WEB_GEN_MODEL__WEB_UI:
-			case WebsitePackage.WEB_GEN_MODEL__API:
-			case WebsitePackage.WEB_GEN_MODEL__SECURITY:
+			case ApiPackage.RESOURCE__CHILD_RESOURCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -200,38 +249,8 @@ public class WebGenModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__WEBSITE_PROPERTIES,
-				 WebsiteFactory.eINSTANCE.createWebsiteProperties()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__PERSISTENCE,
-				 PersistenceFactory.eINSTANCE.createPersistence()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES,
-				 ServiceFactory.eINSTANCE.createServices()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__IMAGES,
-				 ImageFactory.eINSTANCE.createImage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__WEB_UI,
-				 WebuiFactory.eINSTANCE.createWebUI()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__API,
-				 ApiFactory.eINSTANCE.createAPI()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.WEB_GEN_MODEL__SECURITY,
-				 SecurityFactory.eINSTANCE.createSecurity()));
+				(ApiPackage.Literals.RESOURCE__CHILD_RESOURCES,
+				 ApiFactory.eINSTANCE.createResource()));
 	}
 
 	/**
@@ -242,7 +261,7 @@ public class WebGenModelItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return WebsiteEditPlugin.INSTANCE;
+		return ApiEditPlugin.INSTANCE;
 	}
 
 }

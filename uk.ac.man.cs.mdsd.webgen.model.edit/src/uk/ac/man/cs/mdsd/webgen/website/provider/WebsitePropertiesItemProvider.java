@@ -69,9 +69,6 @@ public class WebsitePropertiesItemProvider
 			addMetaDescriptionPropertyDescriptor(object);
 			addProjectNamePropertyDescriptor(object);
 			addTestProjectNamePropertyDescriptor(object);
-			addDefaultDateFormatPropertyDescriptor(object);
-			addDefaultTimeFormatPropertyDescriptor(object);
-			addDefaultDateTimeFormatPropertyDescriptor(object);
 			addDefaultMaximumUploadSizePropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
 			addInputTechnologyPropertyDescriptor(object);
@@ -283,72 +280,6 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_SitePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Default Date Format feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultDateFormatPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_defaultDateFormat_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_defaultDateFormat_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Default Time Format feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultTimeFormatPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_defaultTimeFormat_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_defaultTimeFormat_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DEFAULT_TIME_FORMAT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Default Date Time Format feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultDateTimeFormatPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_defaultDateTimeFormat_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_defaultDateTimeFormat_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -662,9 +593,6 @@ public class WebsitePropertiesItemProvider
 			case WebsitePackage.WEBSITE_PROPERTIES__META_DESCRIPTION:
 			case WebsitePackage.WEBSITE_PROPERTIES__PROJECT_NAME:
 			case WebsitePackage.WEBSITE_PROPERTIES__TEST_PROJECT_NAME:
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT:
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_TIME_FORMAT:
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT:
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE:
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY:

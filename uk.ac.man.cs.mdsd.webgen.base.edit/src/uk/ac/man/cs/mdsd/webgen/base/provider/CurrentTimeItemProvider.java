@@ -84,7 +84,7 @@ public class CurrentTimeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 

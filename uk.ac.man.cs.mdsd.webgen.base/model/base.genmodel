@@ -9,25 +9,26 @@
   <genPackages prefix="Base" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
       extensibleProviderFactory="true" ecorePackage="base.ecore#/">
     <genClasses image="false" ecoreClass="base.ecore#//NamedElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//NamedElement/name"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute base.ecore#//NamedElement/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="base.ecore#//NamedDisplayElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//NamedDisplayElement/displayLabel"/>
+      <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
+          ecoreFeature="ecore:EAttribute base.ecore#//NamedDisplayElement/displayLabel"/>
     </genClasses>
     <genClasses image="false" ecoreClass="base.ecore#//Classifier"/>
     <genClasses ecoreClass="base.ecore#//DataType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//DataType/persistentType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//DataType/ormType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//DataType/interfaceType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//DataType/placeholder"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//DataType/validationPattern"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute base.ecore#//DataType/persistentType"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute base.ecore#//DataType/ormType"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute base.ecore#//DataType/interfaceType"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute base.ecore#//DataType/placeholder"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute base.ecore#//DataType/validationPattern"/>
     </genClasses>
     <genClasses ecoreClass="base.ecore#//EnumerationType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference base.ecore#//EnumerationType/enumerations"/>
     </genClasses>
     <genClasses ecoreClass="base.ecore#//EnumerationLiteral"/>
     <genClasses ecoreClass="base.ecore#//CurrentTime">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//CurrentTime/format"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute base.ecore#//CurrentTime/format"/>
     </genClasses>
     <genClasses ecoreClass="base.ecore#//CurrentUser"/>
     <genClasses image="false" ecoreClass="base.ecore#//FormalParameterList">
@@ -35,12 +36,14 @@
     </genClasses>
     <genClasses ecoreClass="base.ecore#//SelectionParameter">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference base.ecore#//SelectionParameter/formalFor"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//SelectionParameter/optional"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//SelectionParameter/defaultValue"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute base.ecore#//SelectionParameter/optional"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute base.ecore#//SelectionParameter/defaultValue"/>
     </genClasses>
     <genClasses ecoreClass="base.ecore#//ParameterReference">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute base.ecore#//ParameterReference/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference base.ecore#//ParameterReference/parameter"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="Model"
+          ecoreFeature="ecore:EAttribute base.ecore#//ParameterReference/name"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference base.ecore#//ParameterReference/parameter"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

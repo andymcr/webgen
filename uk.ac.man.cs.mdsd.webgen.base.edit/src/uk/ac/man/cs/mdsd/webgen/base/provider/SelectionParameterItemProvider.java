@@ -69,7 +69,7 @@ public class SelectionParameterItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -91,7 +91,7 @@ public class SelectionParameterItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

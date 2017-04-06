@@ -127,7 +127,7 @@ public class AuthenticationItemProvider
 			getString("_UI_PropertyDescriptor_description", "_UI_Authentication_userKey_feature", "_UI_Authentication_type"),
 			SecurityPackage.Literals.AUTHENTICATION__USER_KEY,
 			true, false, true, null,
-			getString("_UI_AuthenticationPropertyCategory"),
+			getString("_UI_SecurityPropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {

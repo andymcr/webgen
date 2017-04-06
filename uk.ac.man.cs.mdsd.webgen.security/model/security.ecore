@@ -7,6 +7,10 @@
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Security">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSiteKey" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSecretKey" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="authentication" eType="#//Authentication"
         containment="true" eOpposite="#//Authentication/security"/>
   </eClassifiers>

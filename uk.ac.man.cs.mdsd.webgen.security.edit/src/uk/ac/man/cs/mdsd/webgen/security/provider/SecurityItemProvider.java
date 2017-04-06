@@ -13,12 +13,14 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -61,8 +63,54 @@ public class SecurityItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCaptchaSiteKeyPropertyDescriptor(object);
+			addCaptchaSecretKeyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Captcha Site Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCaptchaSiteKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Security_captchaSiteKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Security_captchaSiteKey_feature", "_UI_Security_type"),
+				 SecurityPackage.Literals.SECURITY__CAPTCHA_SITE_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Captcha Secret Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCaptchaSecretKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Security_captchaSecretKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Security_captchaSecretKey_feature", "_UI_Security_type"),
+				 SecurityPackage.Literals.SECURITY__CAPTCHA_SECRET_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -114,7 +162,10 @@ public class SecurityItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Security_type");
+		String label = ((Security)object).getCaptchaSiteKey();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Security_type") :
+			getString("_UI_Security_type") + " " + label;
 	}
 	
 
@@ -130,6 +181,10 @@ public class SecurityItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Security.class)) {
+			case SecurityPackage.SECURITY__CAPTCHA_SITE_KEY:
+			case SecurityPackage.SECURITY__CAPTCHA_SECRET_KEY:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case SecurityPackage.SECURITY__AUTHENTICATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

@@ -69,13 +69,31 @@ public interface SecurityPackage extends EPackage {
 	int SECURITY = 0;
 
 	/**
+	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY__CAPTCHA_SITE_KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITY__CAPTCHA_SECRET_KEY = 1;
+
+	/**
 	 * The feature id for the '<em><b>Authentication</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY__AUTHENTICATION = 0;
+	int SECURITY__AUTHENTICATION = 2;
 
 	/**
 	 * The number of structural features of the '<em>Security</em>' class.
@@ -84,7 +102,7 @@ public interface SecurityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECURITY_FEATURE_COUNT = 1;
+	int SECURITY_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Security</em>' class.
@@ -408,6 +426,28 @@ public interface SecurityPackage extends EPackage {
 	EClass getSecurity();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.security.Security#getCaptchaSiteKey <em>Captcha Site Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Captcha Site Key</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.security.Security#getCaptchaSiteKey()
+	 * @see #getSecurity()
+	 * @generated
+	 */
+	EAttribute getSecurity_CaptchaSiteKey();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.security.Security#getCaptchaSecretKey <em>Captcha Secret Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Captcha Secret Key</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.security.Security#getCaptchaSecretKey()
+	 * @see #getSecurity()
+	 * @generated
+	 */
+	EAttribute getSecurity_CaptchaSecretKey();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.security.Security#getAuthentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -633,6 +673,22 @@ public interface SecurityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SECURITY = eINSTANCE.getSecurity();
+
+		/**
+		 * The meta object literal for the '<em><b>Captcha Site Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SECURITY__CAPTCHA_SITE_KEY = eINSTANCE.getSecurity_CaptchaSiteKey();
+
+		/**
+		 * The meta object literal for the '<em><b>Captcha Secret Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SECURITY__CAPTCHA_SECRET_KEY = eINSTANCE.getSecurity_CaptchaSecretKey();
 
 		/**
 		 * The meta object literal for the '<em><b>Authentication</b></em>' containment reference feature.

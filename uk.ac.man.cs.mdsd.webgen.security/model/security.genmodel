@@ -14,6 +14,8 @@
       <genEnumLiterals ecoreEnumLiteral="security.ecore#//AuthenticationKeyTypes/Username"/>
     </genEnums>
     <genClasses ecoreClass="security.ecore#//Security">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//Security/captchaSiteKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//Security/captchaSecretKey"/>
       <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
           ecoreFeature="ecore:EReference security.ecore#//Security/authentication"/>
     </genClasses>

@@ -151,8 +151,26 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSecurity_CaptchaSiteKey() {
+		return (EAttribute)securityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSecurity_CaptchaSecretKey() {
+		return (EAttribute)securityEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getSecurity_Authentication() {
-		return (EReference)securityEClass.getEStructuralFeatures().get(0);
+		return (EReference)securityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -337,6 +355,8 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 
 		// Create classes and their features
 		securityEClass = createEClass(SECURITY);
+		createEAttribute(securityEClass, SECURITY__CAPTCHA_SITE_KEY);
+		createEAttribute(securityEClass, SECURITY__CAPTCHA_SECRET_KEY);
 		createEReference(securityEClass, SECURITY__AUTHENTICATION);
 
 		authenticationEClass = createEClass(AUTHENTICATION);
@@ -398,6 +418,8 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(securityEClass, Security.class, "Security", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSecurity_CaptchaSiteKey(), ecorePackage.getEString(), "captchaSiteKey", null, 0, 1, Security.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSecurity_CaptchaSecretKey(), ecorePackage.getEString(), "captchaSecretKey", null, 0, 1, Security.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getSecurity_Authentication(), this.getAuthentication(), this.getAuthentication_Security(), "authentication", null, 0, 1, Security.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

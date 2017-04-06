@@ -19,50 +19,61 @@
     <genClasses image="false" ecoreClass="expression.ecore#//Literal"/>
     <genClasses ecoreClass="expression.ecore#//NullLiteral"/>
     <genClasses ecoreClass="expression.ecore#//BooleanLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//BooleanLiteral/value"/>
+      <genFeatures createChild="false" propertyCategory="Expression" ecoreFeature="ecore:EAttribute expression.ecore#//BooleanLiteral/value"/>
     </genClasses>
     <genClasses ecoreClass="expression.ecore#//IntegerLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//IntegerLiteral/value"/>
+      <genFeatures createChild="false" propertyCategory="Expression" ecoreFeature="ecore:EAttribute expression.ecore#//IntegerLiteral/value"/>
     </genClasses>
     <genClasses ecoreClass="expression.ecore#//StringLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//StringLiteral/value"/>
+      <genFeatures createChild="false" propertyCategory="Expression" ecoreFeature="ecore:EAttribute expression.ecore#//StringLiteral/value"/>
     </genClasses>
     <genClasses ecoreClass="expression.ecore#//TimeLiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//TimeLiteral/value"/>
+      <genFeatures createChild="false" propertyCategory="Expression" ecoreFeature="ecore:EAttribute expression.ecore#//TimeLiteral/value"/>
     </genClasses>
     <genClasses ecoreClass="expression.ecore#//Function">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//Function/name"/>
+      <genFeatures createChild="false" propertyCategory="Expression" ecoreFeature="ecore:EAttribute expression.ecore#//Function/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="expression.ecore#//Variable"/>
     <genClasses image="false" ecoreClass="expression.ecore#//Predicate">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//Predicate/negated"/>
+      <genFeatures createChild="false" propertyCategory="Expression" ecoreFeature="ecore:EAttribute expression.ecore#//Predicate/negated"/>
     </genClasses>
     <genClasses ecoreClass="expression.ecore#//PredicateBooleanOperator">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//PredicateBooleanOperator/expressions"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//PredicateBooleanOperator/operator"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Expression"
+          ecoreFeature="ecore:EReference expression.ecore#//PredicateBooleanOperator/expressions"/>
+      <genFeatures createChild="false" propertyCategory="Expression" ecoreFeature="ecore:EAttribute expression.ecore#//PredicateBooleanOperator/operator"/>
     </genClasses>
     <genClasses ecoreClass="expression.ecore#//PredicateEqualityOperator">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//PredicateEqualityOperator/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//PredicateEqualityOperator/right"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Expression"
+          ecoreFeature="ecore:EReference expression.ecore#//PredicateEqualityOperator/left"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Expression"
+          ecoreFeature="ecore:EReference expression.ecore#//PredicateEqualityOperator/right"/>
     </genClasses>
     <genClasses ecoreClass="expression.ecore#//PredicateComparisonOperator">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//PredicateComparisonOperator/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//PredicateComparisonOperator/operator"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//PredicateComparisonOperator/right"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Expression"
+          ecoreFeature="ecore:EReference expression.ecore#//PredicateComparisonOperator/left"/>
+      <genFeatures createChild="false" propertyCategory="Expression" ecoreFeature="ecore:EAttribute expression.ecore#//PredicateComparisonOperator/operator"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Expression"
+          ecoreFeature="ecore:EReference expression.ecore#//PredicateComparisonOperator/right"/>
     </genClasses>
     <genClasses ecoreClass="expression.ecore#//PredicateIsOperator">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//PredicateIsOperator/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//PredicateIsOperator/right"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Expression"
+          ecoreFeature="ecore:EReference expression.ecore#//PredicateIsOperator/left"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Expression"
+          propertyDescription="" ecoreFeature="ecore:EReference expression.ecore#//PredicateIsOperator/right"/>
     </genClasses>
     <genClasses ecoreClass="expression.ecore#//PredicateLikeOperator">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//PredicateLikeOperator/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//PredicateLikeOperator/right"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Expression"
+          ecoreFeature="ecore:EReference expression.ecore#//PredicateLikeOperator/left"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Expression"
+          ecoreFeature="ecore:EReference expression.ecore#//PredicateLikeOperator/right"/>
     </genClasses>
     <genClasses ecoreClass="expression.ecore#//PredicateIsEmpty">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//PredicateIsEmpty/feature"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Expression"
+          ecoreFeature="ecore:EReference expression.ecore#//PredicateIsEmpty/feature"/>
     </genClasses>
     <genClasses ecoreClass="expression.ecore#//PredicateIsNull">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//PredicateIsNull/feature"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Expression"
+          ecoreFeature="ecore:EReference expression.ecore#//PredicateIsNull/feature"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

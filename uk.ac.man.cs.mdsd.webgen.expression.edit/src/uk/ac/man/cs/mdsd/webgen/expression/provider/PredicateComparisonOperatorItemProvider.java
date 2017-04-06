@@ -71,7 +71,7 @@ public class PredicateComparisonOperatorItemProvider extends PredicateItemProvid
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ExpressionPropertyCategory"),
 				 null));
 	}
 

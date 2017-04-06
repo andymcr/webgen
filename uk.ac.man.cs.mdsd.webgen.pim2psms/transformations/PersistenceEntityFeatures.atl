@@ -239,7 +239,7 @@ abstract rule SingletonResource {
 			if website.maximumUploadSize > 0 then
 				website.maximumUploadSize
 			else
-				thisModule.findWebsiteProperties().defaultMaximumUploadSize
+				thisModule.findWebsiteUI().defaultMaximumUploadSize
 			endif,
 		validUploadMimeTypes <- website.validUploadMimeTypes,
 		validUploadExtensions <- website.validUploadExtensions,

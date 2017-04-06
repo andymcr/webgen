@@ -90,13 +90,22 @@ public interface WebsitePackage extends EPackage {
 	int WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY = 1;
 
 	/**
+	 * The feature id for the '<em><b>Copyright Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_GEN_MODEL__COPYRIGHT_TEXT = 2;
+
+	/**
 	 * The feature id for the '<em><b>Persistence</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__PERSISTENCE = 2;
+	int WEB_GEN_MODEL__PERSISTENCE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' containment reference.
@@ -105,7 +114,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__SERVICES = 3;
+	int WEB_GEN_MODEL__SERVICES = 4;
 
 	/**
 	 * The feature id for the '<em><b>Images</b></em>' containment reference.
@@ -114,7 +123,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__IMAGES = 4;
+	int WEB_GEN_MODEL__IMAGES = 5;
 
 	/**
 	 * The feature id for the '<em><b>Web UI</b></em>' containment reference.
@@ -123,7 +132,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__WEB_UI = 5;
+	int WEB_GEN_MODEL__WEB_UI = 6;
 
 	/**
 	 * The feature id for the '<em><b>Api</b></em>' containment reference.
@@ -132,7 +141,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__API = 6;
+	int WEB_GEN_MODEL__API = 7;
 
 	/**
 	 * The feature id for the '<em><b>Security</b></em>' containment reference.
@@ -141,7 +150,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL__SECURITY = 7;
+	int WEB_GEN_MODEL__SECURITY = 8;
 
 	/**
 	 * The number of structural features of the '<em>Web Gen Model</em>' class.
@@ -150,7 +159,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL_FEATURE_COUNT = 8;
+	int WEB_GEN_MODEL_FEATURE_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl <em>Properties</em>}' class.
@@ -172,40 +181,13 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__SITE_TITLE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Development Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__DEVELOPMENT_VERSION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Base URL</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__BASE_URL = 2;
-
-	/**
-	 * The feature id for the '<em><b>Rewrite UR Ls</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__REWRITE_UR_LS = 3;
-
-	/**
 	 * The feature id for the '<em><b>Webmaster Email</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__WEBMASTER_EMAIL = 4;
+	int WEBSITE_PROPERTIES__WEBMASTER_EMAIL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Copyright Text</b></em>' attribute.
@@ -214,7 +196,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__COPYRIGHT_TEXT = 5;
+	int WEBSITE_PROPERTIES__COPYRIGHT_TEXT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Meta Description</b></em>' attribute.
@@ -223,34 +205,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__META_DESCRIPTION = 6;
-
-	/**
-	 * The feature id for the '<em><b>Project Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__PROJECT_NAME = 7;
-
-	/**
-	 * The feature id for the '<em><b>Test Project Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__TEST_PROJECT_NAME = 8;
-
-	/**
-	 * The feature id for the '<em><b>Default Maximum Upload Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE = 9;
+	int WEBSITE_PROPERTIES__META_DESCRIPTION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Framework Technology</b></em>' attribute.
@@ -259,43 +214,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 10;
-
-	/**
-	 * The feature id for the '<em><b>Input Technology</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__INPUT_TECHNOLOGY = 11;
-
-	/**
-	 * The feature id for the '<em><b>Ajax Technology</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = 12;
-
-	/**
-	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 13;
-
-	/**
-	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 14;
+	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 4;
 
 	/**
 	 * The feature id for the '<em><b>Text Editor URL</b></em>' attribute.
@@ -304,7 +223,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 15;
+	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 5;
 
 	/**
 	 * The feature id for the '<em><b>Responsive Top Menu</b></em>' attribute.
@@ -313,7 +232,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU = 16;
+	int WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU = 6;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -322,16 +241,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 17;
-
-	/**
-	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__SIDE_MENU = 18;
+	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 7;
 
 	/**
 	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
@@ -340,7 +250,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SITE_TEMPLATE = 19;
+	int WEBSITE_PROPERTIES__SITE_TEMPLATE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -349,7 +259,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 20;
+	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 9;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -358,7 +268,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES_FEATURE_COUNT = 21;
+	int WEBSITE_PROPERTIES_FEATURE_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies <em>Framework Technologies</em>}' enum.
@@ -401,6 +311,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWebGenModel_FrameworkTechnology();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getCopyrightText <em>Copyright Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Copyright Text</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getCopyrightText()
+	 * @see #getWebGenModel()
+	 * @generated
+	 */
+	EAttribute getWebGenModel_CopyrightText();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getWebUI <em>Web UI</em>}'.
@@ -490,39 +411,6 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebsiteProperties_SiteTitle();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isDevelopmentVersion <em>Development Version</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Development Version</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isDevelopmentVersion()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_DevelopmentVersion();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getBaseURL <em>Base URL</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Base URL</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getBaseURL()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_BaseURL();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isRewriteURLs <em>Rewrite UR Ls</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Rewrite UR Ls</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isRewriteURLs()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_RewriteURLs();
-
-	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getWebmasterEmail <em>Webmaster Email</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -556,39 +444,6 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebsiteProperties_MetaDescription();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getProjectName <em>Project Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Project Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getProjectName()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_ProjectName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTestProjectName <em>Test Project Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Test Project Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTestProjectName()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_TestProjectName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultMaximumUploadSize <em>Default Maximum Upload Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Default Maximum Upload Size</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultMaximumUploadSize()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_DefaultMaximumUploadSize();
-
-	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getFrameworkTechnology <em>Framework Technology</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -598,50 +453,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWebsiteProperties_FrameworkTechnology();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getInputTechnology <em>Input Technology</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Input Technology</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getInputTechnology()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_InputTechnology();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAjaxTechnology <em>Ajax Technology</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ajax Technology</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAjaxTechnology()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_AjaxTechnology();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSiteKey <em>Captcha Site Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Captcha Site Key</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSiteKey()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_CaptchaSiteKey();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSecretKey <em>Captcha Secret Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Captcha Secret Key</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSecretKey()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_CaptchaSecretKey();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTextEditorURL <em>Text Editor URL</em>}'.
@@ -675,17 +486,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWebsiteProperties_TopNavigationId();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getSideMenu <em>Side Menu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Side Menu</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getSideMenu()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EReference getWebsiteProperties_SideMenu();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getSiteTemplate <em>Site Template</em>}'.
@@ -768,6 +568,14 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY = eINSTANCE.getWebGenModel_FrameworkTechnology();
 
 		/**
+		 * The meta object literal for the '<em><b>Copyright Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEB_GEN_MODEL__COPYRIGHT_TEXT = eINSTANCE.getWebGenModel_CopyrightText();
+
+		/**
 		 * The meta object literal for the '<em><b>Web UI</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -834,30 +642,6 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEBSITE_PROPERTIES__SITE_TITLE = eINSTANCE.getWebsiteProperties_SiteTitle();
 
 		/**
-		 * The meta object literal for the '<em><b>Development Version</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__DEVELOPMENT_VERSION = eINSTANCE.getWebsiteProperties_DevelopmentVersion();
-
-		/**
-		 * The meta object literal for the '<em><b>Base URL</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__BASE_URL = eINSTANCE.getWebsiteProperties_BaseURL();
-
-		/**
-		 * The meta object literal for the '<em><b>Rewrite UR Ls</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__REWRITE_UR_LS = eINSTANCE.getWebsiteProperties_RewriteURLs();
-
-		/**
 		 * The meta object literal for the '<em><b>Webmaster Email</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -882,68 +666,12 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEBSITE_PROPERTIES__META_DESCRIPTION = eINSTANCE.getWebsiteProperties_MetaDescription();
 
 		/**
-		 * The meta object literal for the '<em><b>Project Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__PROJECT_NAME = eINSTANCE.getWebsiteProperties_ProjectName();
-
-		/**
-		 * The meta object literal for the '<em><b>Test Project Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__TEST_PROJECT_NAME = eINSTANCE.getWebsiteProperties_TestProjectName();
-
-		/**
-		 * The meta object literal for the '<em><b>Default Maximum Upload Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE = eINSTANCE.getWebsiteProperties_DefaultMaximumUploadSize();
-
-		/**
 		 * The meta object literal for the '<em><b>Framework Technology</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = eINSTANCE.getWebsiteProperties_FrameworkTechnology();
-
-		/**
-		 * The meta object literal for the '<em><b>Input Technology</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__INPUT_TECHNOLOGY = eINSTANCE.getWebsiteProperties_InputTechnology();
-
-		/**
-		 * The meta object literal for the '<em><b>Ajax Technology</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = eINSTANCE.getWebsiteProperties_AjaxTechnology();
-
-		/**
-		 * The meta object literal for the '<em><b>Captcha Site Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = eINSTANCE.getWebsiteProperties_CaptchaSiteKey();
-
-		/**
-		 * The meta object literal for the '<em><b>Captcha Secret Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = eINSTANCE.getWebsiteProperties_CaptchaSecretKey();
 
 		/**
 		 * The meta object literal for the '<em><b>Text Editor URL</b></em>' attribute feature.
@@ -968,14 +696,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = eINSTANCE.getWebsiteProperties_TopNavigationId();
-
-		/**
-		 * The meta object literal for the '<em><b>Side Menu</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference WEBSITE_PROPERTIES__SIDE_MENU = eINSTANCE.getWebsiteProperties_SideMenu();
 
 		/**
 		 * The meta object literal for the '<em><b>Site Template</b></em>' attribute feature.

@@ -11,6 +11,8 @@
         lowerBound="1" eType="#//WebsiteProperties" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="frameworkTechnology" ordered="false"
         lowerBound="1" eType="#//FrameworkTechnologies" defaultValueLiteral="Kohana"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="copyrightText" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="persistence" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Persistence"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Services"
@@ -35,38 +37,19 @@
   <eClassifiers xsi:type="ecore:EClass" name="WebsiteProperties">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="siteTitle" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="developmentVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseURL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rewriteURLs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="webmasterEmail" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="copyrightText" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="metaDescription" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="testProjectName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultMaximumUploadSize"
-        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="2000000"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="frameworkTechnology" ordered="false"
         lowerBound="1" eType="#//FrameworkTechnologies" defaultValueLiteral="Kohana"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputTechnology" eType="ecore:EEnum ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//InputTechnologies"
-        defaultValueLiteral="Html"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ajaxTechnology" eType="ecore:EEnum ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//AjaxTechnologies"
-        defaultValueLiteral="None"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSiteKey" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSecretKey" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="textEditorURL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="responsiveTopMenu" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="topNavigationId" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="topnav"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sideMenu" ordered="false"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.webui/model/webui.ecore#//Menu"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="siteTemplate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="staticUnitsEditable" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>

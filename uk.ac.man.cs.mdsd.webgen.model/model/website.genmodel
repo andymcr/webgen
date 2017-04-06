@@ -19,6 +19,7 @@
     <genClasses ecoreClass="website.ecore#//WebGenModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/websiteProperties"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//WebGenModel/frameworkTechnology"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//WebGenModel/copyrightText"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/persistence"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/services"/>
       <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
@@ -30,28 +31,14 @@
     <genClasses ecoreClass="website.ecore#//WebsiteProperties">
       <genFeatures createChild="false" propertyCategory="Site" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/siteTitle"/>
-      <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/developmentVersion"/>
-      <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/baseURL"/>
-      <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/rewriteURLs"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/webmasterEmail"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/copyrightText"/>
       <genFeatures createChild="false" propertyCategory="Site" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/metaDescription"/>
-      <genFeatures createChild="false" propertyCategory="Site" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/projectName"/>
-      <genFeatures createChild="false" propertyCategory="Site" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/testProjectName"/>
-      <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/defaultMaximumUploadSize"/>
       <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/frameworkTechnology"/>
-      <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/inputTechnology"/>
-      <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/ajaxTechnology"/>
-      <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSiteKey"/>
-      <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSecretKey"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/textEditorURL"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/responsiveTopMenu"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/topNavigationId"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
-          propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//WebsiteProperties/sideMenu"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/siteTemplate"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/staticUnitsEditable"/>
     </genClasses>

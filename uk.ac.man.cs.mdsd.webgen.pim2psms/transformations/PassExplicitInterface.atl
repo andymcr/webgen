@@ -21,10 +21,10 @@ helper context String def: createName() : String
 helper context Website!Page def: pageSideMenu() : Website!Menu
 	= if not self.sideMenu.oclIsUndefined() then
 			self.sideMenu
-		else if self.parentPage.oclIsUndefined() then
-			thisModule.findWebsiteProperties().sideMenu
-		else
+		else if not self.parentPage.oclIsUndefined() then
 			self.parentPage.targetPage.pageSideMenu()
+		else
+			OclUndefined
 		endif endif;
 
 
@@ -280,11 +280,8 @@ rule WafModel {
 		globalMenu <- website.webUI.globalMenu,
 		contextMenus <- website.webUI.contextMenus,
 		pages <- website.webUI.pages,
-		siteName <- website.websiteProperties.projectName,
+		siteName <- '?',
 		siteTitle <- website.websiteProperties.siteTitle,
-		developmentVersion <- website.websiteProperties.developmentVersion,
-		baseURL <- website.websiteProperties.baseURL,
-		rewriteURLs <- website.websiteProperties.rewriteURLs,
 		webmasterEmail <- website.websiteProperties.webmasterEmail,
 		copyrightText <-
 			if not website.websiteProperties.copyrightText.oclIsUndefined() and website.websiteProperties.copyrightText <> '' then
@@ -293,11 +290,11 @@ rule WafModel {
 				'&copy; '.concat(website.websiteProperties.siteTitle).concat(' <?php echo date("Y"); ?>')
 			endif,
 		metaDescription <- website.websiteProperties.metaDescription,
-		frameworkTechnology <- website.websiteProperties.frameworkTechnology,
-		inputTechnology <- website.websiteProperties.inputTechnology,
-		ajaxTechnology <- website.websiteProperties.ajaxTechnology,
-		captchaSiteKey <- website.websiteProperties.captchaSiteKey,
-		captchaSecretKey <- website.websiteProperties.captchaSecretKey,
+		frameworkTechnology <- website.frameworkTechnology,
+		inputTechnology <- thisModule.findWebsiteUI().inputTechnology,
+		ajaxTechnology <- thisModule.findWebsiteUI().ajaxTechnology,
+		captchaSiteKey <- thisModule.findWebsiteSecurity().captchaSiteKey,
+		captchaSecretKey <- thisModule.findWebsiteSecurity().captchaSecretKey,
 		textEditorURL <-
 			if website.websiteProperties.textEditorURL.oclIsUndefined() then
 				OclUndefined
@@ -306,12 +303,8 @@ rule WafModel {
 			endif,
 		responsiveTopMenu <- website.websiteProperties.responsiveTopMenu,
 		topNavigationId <- website.websiteProperties.topNavigationId,
-		sideMenu <- website.websiteProperties.sideMenu,
 		siteTemplate <- website.websiteProperties.siteTemplate,
-		staticUnitsEditable <- website.websiteProperties.staticUnitsEditable,
-		allowTypeCustomisation <-
-			website.allowTypeCustomisation
-				->collect(t | thisModule.findOrmEntityOrView(t.name))
+		staticUnitsEditable <- website.websiteProperties.staticUnitsEditable
 	)
 }
 

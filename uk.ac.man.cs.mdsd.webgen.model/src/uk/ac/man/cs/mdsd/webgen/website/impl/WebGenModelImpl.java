@@ -36,6 +36,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getWebsiteProperties <em>Website Properties</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getCopyrightText <em>Copyright Text</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getPersistence <em>Persistence</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getImages <em>Images</em>}</li>
@@ -76,6 +77,26 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * @ordered
 	 */
 	protected FrameworkTechnologies frameworkTechnology = FRAMEWORK_TECHNOLOGY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCopyrightText() <em>Copyright Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCopyrightText()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COPYRIGHT_TEXT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCopyrightText() <em>Copyright Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCopyrightText()
+	 * @generated
+	 * @ordered
+	 */
+	protected String copyrightText = COPYRIGHT_TEXT_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getPersistence() <em>Persistence</em>}' containment reference.
@@ -218,6 +239,27 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 		frameworkTechnology = newFrameworkTechnology == null ? FRAMEWORK_TECHNOLOGY_EDEFAULT : newFrameworkTechnology;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY, oldFrameworkTechnology, frameworkTechnology));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getCopyrightText() {
+		return copyrightText;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCopyrightText(String newCopyrightText) {
+		String oldCopyrightText = copyrightText;
+		copyrightText = newCopyrightText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEB_GEN_MODEL__COPYRIGHT_TEXT, oldCopyrightText, copyrightText));
 	}
 
 	/**
@@ -516,6 +558,8 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 				return getWebsiteProperties();
 			case WebsitePackage.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY:
 				return getFrameworkTechnology();
+			case WebsitePackage.WEB_GEN_MODEL__COPYRIGHT_TEXT:
+				return getCopyrightText();
 			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 				return getPersistence();
 			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
@@ -545,6 +589,9 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 				return;
 			case WebsitePackage.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
+				return;
+			case WebsitePackage.WEB_GEN_MODEL__COPYRIGHT_TEXT:
+				setCopyrightText((String)newValue);
 				return;
 			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 				setPersistence((Persistence)newValue);
@@ -582,6 +629,9 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 			case WebsitePackage.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
 				return;
+			case WebsitePackage.WEB_GEN_MODEL__COPYRIGHT_TEXT:
+				setCopyrightText(COPYRIGHT_TEXT_EDEFAULT);
+				return;
 			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 				setPersistence((Persistence)null);
 				return;
@@ -616,6 +666,8 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 				return websiteProperties != null;
 			case WebsitePackage.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY:
 				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
+			case WebsitePackage.WEB_GEN_MODEL__COPYRIGHT_TEXT:
+				return COPYRIGHT_TEXT_EDEFAULT == null ? copyrightText != null : !COPYRIGHT_TEXT_EDEFAULT.equals(copyrightText);
 			case WebsitePackage.WEB_GEN_MODEL__PERSISTENCE:
 				return persistence != null;
 			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
@@ -644,6 +696,8 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (frameworkTechnology: ");
 		result.append(frameworkTechnology);
+		result.append(", copyrightText: ");
+		result.append(copyrightText);
 		result.append(')');
 		return result.toString();
 	}

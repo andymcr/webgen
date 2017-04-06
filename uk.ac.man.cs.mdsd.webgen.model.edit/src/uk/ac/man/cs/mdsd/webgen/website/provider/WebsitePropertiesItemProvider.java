@@ -61,24 +61,13 @@ public class WebsitePropertiesItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSiteTitlePropertyDescriptor(object);
-			addDevelopmentVersionPropertyDescriptor(object);
-			addBaseURLPropertyDescriptor(object);
-			addRewriteURLsPropertyDescriptor(object);
 			addWebmasterEmailPropertyDescriptor(object);
 			addCopyrightTextPropertyDescriptor(object);
 			addMetaDescriptionPropertyDescriptor(object);
-			addProjectNamePropertyDescriptor(object);
-			addTestProjectNamePropertyDescriptor(object);
-			addDefaultMaximumUploadSizePropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
-			addInputTechnologyPropertyDescriptor(object);
-			addAjaxTechnologyPropertyDescriptor(object);
-			addCaptchaSiteKeyPropertyDescriptor(object);
-			addCaptchaSecretKeyPropertyDescriptor(object);
 			addTextEditorURLPropertyDescriptor(object);
 			addResponsiveTopMenuPropertyDescriptor(object);
 			addTopNavigationIdPropertyDescriptor(object);
-			addSideMenuPropertyDescriptor(object);
 			addSiteTemplatePropertyDescriptor(object);
 			addStaticUnitsEditablePropertyDescriptor(object);
 		}
@@ -103,72 +92,6 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SitePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Development Version feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDevelopmentVersionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_developmentVersion_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_developmentVersion_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DEVELOPMENT_VERSION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_SitePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Base URL feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addBaseURLPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_baseURL_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_baseURL_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__BASE_URL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SitePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Rewrite UR Ls feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRewriteURLsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_rewriteURLs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_rewriteURLs_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__REWRITE_UR_LS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_SitePropertyCategory"),
 				 null));
 	}
@@ -240,72 +163,6 @@ public class WebsitePropertiesItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Project Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addProjectNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_projectName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_projectName_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__PROJECT_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SitePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Test Project Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTestProjectNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_testProjectName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_testProjectName_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__TEST_PROJECT_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SitePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Default Maximum Upload Size feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultMaximumUploadSizePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_defaultMaximumUploadSize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_defaultMaximumUploadSize_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI_SitePropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Framework Technology feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,94 +181,6 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_FrameworkPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Input Technology feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addInputTechnologyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_inputTechnology_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_inputTechnology_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_FrameworkPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ajax Technology feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAjaxTechnologyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_ajaxTechnology_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_ajaxTechnology_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_FrameworkPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Captcha Site Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaptchaSiteKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_captchaSiteKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_captchaSiteKey_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SitePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Captcha Secret Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaptchaSecretKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_captchaSecretKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_captchaSecretKey_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SitePropertyCategory"),
 				 null));
 	}
 
@@ -482,28 +251,6 @@ public class WebsitePropertiesItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Side Menu feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSideMenuPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_sideMenu_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_sideMenu_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__SIDE_MENU,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Site Template feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -566,7 +313,7 @@ public class WebsitePropertiesItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((WebsiteProperties)object).getProjectName();
+		String label = ((WebsiteProperties)object).getSiteTitle();
 		return label == null || label.length() == 0 ?
 			getString("_UI_WebsiteProperties_type") :
 			getString("_UI_WebsiteProperties_type") + " " + label;
@@ -585,20 +332,10 @@ public class WebsitePropertiesItemProvider
 
 		switch (notification.getFeatureID(WebsiteProperties.class)) {
 			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TITLE:
-			case WebsitePackage.WEBSITE_PROPERTIES__DEVELOPMENT_VERSION:
-			case WebsitePackage.WEBSITE_PROPERTIES__BASE_URL:
-			case WebsitePackage.WEBSITE_PROPERTIES__REWRITE_UR_LS:
 			case WebsitePackage.WEBSITE_PROPERTIES__WEBMASTER_EMAIL:
 			case WebsitePackage.WEBSITE_PROPERTIES__COPYRIGHT_TEXT:
 			case WebsitePackage.WEBSITE_PROPERTIES__META_DESCRIPTION:
-			case WebsitePackage.WEBSITE_PROPERTIES__PROJECT_NAME:
-			case WebsitePackage.WEBSITE_PROPERTIES__TEST_PROJECT_NAME:
-			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE:
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
-			case WebsitePackage.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY:
-			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
-			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
-			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 			case WebsitePackage.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU:
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:

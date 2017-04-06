@@ -25,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getWebsiteProperties <em>Website Properties</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getCopyrightText <em>Copyright Text</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getPersistence <em>Persistence</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getImages <em>Images</em>}</li>
@@ -93,6 +94,32 @@ public interface WebGenModel extends EObject {
 	 * @generated
 	 */
 	void setFrameworkTechnology(FrameworkTechnologies value);
+
+	/**
+	 * Returns the value of the '<em><b>Copyright Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Copyright Text</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Copyright Text</em>' attribute.
+	 * @see #setCopyrightText(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebGenModel_CopyrightText()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getCopyrightText();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getCopyrightText <em>Copyright Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Copyright Text</em>' attribute.
+	 * @see #getCopyrightText()
+	 * @generated
+	 */
+	void setCopyrightText(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Web UI</b></em>' containment reference.

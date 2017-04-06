@@ -45,6 +45,9 @@ helper def: findWebsitePersistence() : Website!Persistence
 helper def: findWebsiteSecurity() : Website!Security
 	= thisModule.findWebGenModel().security;
 
+helper def: findWebsiteUI() : Website!Persistence
+	= thisModule.findWebGenModel().webUI;
+
 
 helper context String def: createTableName() : String
 	= let persistence : Website!Persistence = thisModule.findWebsitePersistence()
@@ -283,11 +286,11 @@ helper context Website!Attribute def: dateFormat() : String
 			self.format
 		else
 			if self.details = #DateOnly then
-				thisModule.findWebsiteProperties().defaultDateFormat
+				thisModule.findWebsiteUI().defaultDateFormat
 			else if self.details = #TimeOnly then
-				thisModule.findWebsiteProperties().defaultTimeFormat
+				thisModule.findWebsiteUI().defaultTimeFormat
 			else
-				thisModule.findWebsiteProperties().defaultDateTimeFormat
+				thisModule.findWebsiteUI().defaultDateTimeFormat
 			endif endif
 		endif endif endif;
 
@@ -322,10 +325,6 @@ helper context Website!ChildPath def: dateFormat() : String
 				self.childFeature.dateFormat()
 			endif
 		endif;
-
-
-helper def: findWafService(name : String) : WAF!Service
-	= WAF!Service.allInstancesFrom('waf')->any(s | s.serves.name = name);
 
 
 helper def: findWafMenu(name : String) : WAF!Menu

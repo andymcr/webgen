@@ -71,6 +71,7 @@ public class WebGenModelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addFrameworkTechnologyPropertyDescriptor(object);
+			addCopyrightTextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,6 +90,28 @@ public class WebGenModelItemProvider
 				 getString("_UI_WebGenModel_frameworkTechnology_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_frameworkTechnology_feature", "_UI_WebGenModel_type"),
 				 WebsitePackage.Literals.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Copyright Text feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCopyrightTextPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebGenModel_copyrightText_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebGenModel_copyrightText_feature", "_UI_WebGenModel_type"),
+				 WebsitePackage.Literals.WEB_GEN_MODEL__COPYRIGHT_TEXT,
 				 true,
 				 false,
 				 false,
@@ -172,6 +195,7 @@ public class WebGenModelItemProvider
 
 		switch (notification.getFeatureID(WebGenModel.class)) {
 			case WebsitePackage.WEB_GEN_MODEL__FRAMEWORK_TECHNOLOGY:
+			case WebsitePackage.WEB_GEN_MODEL__COPYRIGHT_TEXT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.WEB_GEN_MODEL__WEBSITE_PROPERTIES:

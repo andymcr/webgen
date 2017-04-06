@@ -90,7 +90,7 @@ public class ServiceFeatureReferenceItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 

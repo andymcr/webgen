@@ -73,7 +73,7 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 
@@ -95,7 +95,7 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 
@@ -117,7 +117,7 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 

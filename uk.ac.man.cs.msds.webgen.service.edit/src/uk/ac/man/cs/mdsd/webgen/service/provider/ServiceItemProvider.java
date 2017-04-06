@@ -73,7 +73,7 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

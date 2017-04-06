@@ -61,11 +61,6 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			addAutoKeyGenerationStrategyPropertyDescriptor(object);
 			addUniquePropertyDescriptor(object);
 			addContainerUniquePropertyDescriptor(object);
-			addFeaturesPropertyDescriptor(object);
-			addAllFeaturesPropertyDescriptor(object);
-			addAttributesPropertyDescriptor(object);
-			addAssociationsPropertyDescriptor(object);
-			addAllAssociationsPropertyDescriptor(object);
 			addSerializationExcludeAllPropertyDescriptor(object);
 			addImplementsUserInterfacePropertyDescriptor(object);
 		}
@@ -286,116 +281,6 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Features feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFeaturesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityOrView_features_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_features_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__FEATURES,
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the All Features feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAllFeaturesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityOrView_allFeatures_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_allFeatures_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__ALL_FEATURES,
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Attributes feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAttributesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityOrView_attributes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_attributes_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__ATTRIBUTES,
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Associations feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAssociationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityOrView_associations_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_associations_feature", "_UI_EntityOrView_type"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__ASSOCIATIONS,
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the All Associations feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAllAssociationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityOrView_allAssociations_feature"),
-				 getString("_UI_EntityOrView_allAssociations_description"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__ALL_ASSOCIATIONS,
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Serialization Exclude All feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -407,13 +292,13 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_EntityOrView_serializationExcludeAll_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_serializationExcludeAll_feature", "_UI_EntityOrView_type"),
+				 getString("_UI_EntityOrView_serializationExcludeAll_description"),
 				 PersistencePackage.Literals.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

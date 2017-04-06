@@ -49,7 +49,6 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPseudoPropertyDescriptor(object);
-			addEncapsulatedByPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addSourceEntityXPropertyDescriptor(object);
 			addTargetEntityXPropertyDescriptor(object);
@@ -87,28 +86,6 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_OrmPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Encapsulated By feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEncapsulatedByPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Association_encapsulatedBy_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Association_encapsulatedBy_feature", "_UI_Association_type"),
-				 PersistencePackage.Literals.ASSOCIATION__ENCAPSULATED_BY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

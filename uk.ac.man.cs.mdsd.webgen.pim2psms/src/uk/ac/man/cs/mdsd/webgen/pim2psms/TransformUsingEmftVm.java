@@ -165,7 +165,7 @@ public class TransformUsingEmftVm {
 		executeRefiningPass("PersistenceEntityLabels", ormModelName, ormModel,
 			ormInputModels, null);
 		executeRefiningPass("PersistenceKeys",
-				ormModelName, ormModel, ormInputModels, null);
+			ormModelName, ormModel, ormInputModels, null);
 		executeRefiningPass("PersistenceImplicitStatic", ormModelName,
 			ormModel, ormInputModels, null);
 		executeRefiningPass("PersistenceImplicitAuthentication",

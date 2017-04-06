@@ -277,8 +277,9 @@ rule WafModel {
 		persistence <- orm,
 		business <- service,
 		imageManipulations <- website.images.manipulations,
+		globalMenu <- website.webUI.globalMenu,
+		contextMenus <- website.webUI.contextMenus,
 		pages <- website.webUI.pages,
-		menus <- website.webUI.menus,
 		siteName <- website.websiteProperties.projectName,
 		siteTitle <- website.websiteProperties.siteTitle,
 		developmentVersion <- website.websiteProperties.developmentVersion,
@@ -361,6 +362,80 @@ rule ThumbnailFilter {
 }
 
 
+-- @extends NamedDisplayElement
+abstract rule Menu {
+	from website : Website!Menu
+	to waf : WAF!Menu (
+		entries <- website.entries,
+		omitCaption <-
+			if not website.omitCaption.oclIsUndefined() then
+				website.omitCaption
+			else
+				false
+			endif,
+		captionClass <- website.captionClass.replaceAll(',', ' '),
+		styleClass <- website.styleClass.replaceAll(',', ' '),
+		layoutClass <- website.layoutClass.replaceAll(',', ' ')
+	)
+}
+
+abstract rule MenuEntry {
+	from website : Website!MenuEntry
+	to waf : WAF!MenuEntry (
+		requiresRole <- website.requiresRole
+	)
+}
+
+-- @extends Menu
+abstract rule GlobalMenu {
+	from website : Website!GlobalMenu
+	to waf : WAF!GlobalMenu (
+	)
+}
+
+-- @extends Menu
+rule ContextMenu {
+	from website : Website!ContextMenu
+	to waf : WAF!ContextMenu (
+	)
+}
+
+-- @extends MenuEntry, NamedDisplayElement
+rule ActionMenuEntry {
+	from website : Website!ActionMenuEntry
+	to waf : WAF!ActionMenuEntry (
+		action <- website.destination,
+		"query" <- website."query"
+	)
+}
+
+-- @extends MenuEntry, NamedDisplayElement
+rule EditStaticTextMenuEntry {
+	from website : Website!EditStaticTextMenuEntry
+	to waf : WAF!EditStaticTextMenuEntry (
+	)
+}
+
+-- @extends GlobalMenu
+rule DynamicMenu {
+	from website : Website!DynamicMenu
+	to waf : WAF!DynamicMenu (
+		entityOrView <-
+			if website.entityOrView.oclIsUndefined() then
+				OclUndefined
+			else
+				website.entityOrView.findOrmEntityOrView()
+			endif,
+		selection <- website.selection,
+		title <-
+			if website.title.oclIsUndefined() then
+				website.title
+			else
+				website.title.findOrmLabel()
+			endif
+	)
+}
+
 -- @extends NamedDisplayElement, UnitContainer
 rule Page {
 	from website : Website!Page
@@ -393,73 +468,6 @@ rule Page {
 	)
 }
 
-
--- @extends NamedDisplayElement
-abstract rule Menu {
-	from website : Website!Menu
-	to waf : WAF!Menu (
-		entries <- website.entries,
-		omitCaption <-
-			if not website.omitCaption.oclIsUndefined() then
-				website.omitCaption
-			else
-				false
-			endif,
-		captionClass <- website.captionClass.replaceAll(',', ' '),
-		styleClass <- website.styleClass.replaceAll(',', ' '),
-		layoutClass <- website.layoutClass.replaceAll(',', ' ')
-	)
-}
-
-abstract rule MenuEntry {
-	from website : Website!MenuEntry
-	to waf : WAF!MenuEntry (
-		requiresRole <- website.requiresRole
-	)
-}
-
--- @extends Menu
-rule StaticMenu {
-	from website : Website!StaticMenu
-	to waf : WAF!StaticMenu (
-	)
-}
-
--- @extends MenuEntry, NamedDisplayElement
-rule ActionMenuEntry {
-	from website : Website!ActionMenuEntry
-	to waf : WAF!ActionMenuEntry (
-		action <- website.destination,
-		"query" <- website."query"
-	)
-}
-
--- @extends MenuEntry, NamedDisplayElement
-rule EditStaticTextMenuEntry {
-	from website : Website!EditStaticTextMenuEntry
-	to waf : WAF!EditStaticTextMenuEntry (
-	)
-}
-
--- @extends Menu
-rule DynamicMenu {
-	from website : Website!DynamicMenu
-	to waf : WAF!DynamicMenu (
-		entityOrView <-
-			if website.entityOrView.oclIsUndefined() then
-				OclUndefined
-			else
-				website.entityOrView.findOrmEntityOrView()
-			endif,
-		selection <- website.selection,
-		title <-
-			if website.title.oclIsUndefined() then
-				website.title
-			else
-				website.title.findOrmLabel()
-			endif
-	)
-}
 
 -- @extends NamedDisplayElement
 rule Filter {

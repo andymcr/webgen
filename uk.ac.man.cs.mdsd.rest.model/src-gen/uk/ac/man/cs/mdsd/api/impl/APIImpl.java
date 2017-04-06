@@ -1,20 +1,24 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.api.impl;
+package uk.ac.man.cs.mdsd.api.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import uk.ac.man.cs.mdsd.webgen.api.API;
-import uk.ac.man.cs.mdsd.webgen.api.ApiPackage;
-import uk.ac.man.cs.mdsd.webgen.api.Resource;
+
+import uk.ac.man.cs.mdsd.api.API;
+import uk.ac.man.cs.mdsd.api.ApiPackage;
+import uk.ac.man.cs.mdsd.api.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +28,7 @@ import uk.ac.man.cs.mdsd.webgen.api.Resource;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.APIImpl#getResources <em>Resources</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.api.impl.APIImpl#getResources <em>Resources</em>}</li>
  * </ul>
  *
  * @generated

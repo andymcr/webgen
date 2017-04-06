@@ -6,12 +6,13 @@
 
 <plugin>
 
+
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated Rest -->
+      <!-- @generated api -->
       <package
-            uri="http://www.cs.man.ac.uk/mdsd/2016/Rest"
-            class="uk.ac.man.cs.mdsd.rest.RestPackage"
-            genModel="model/Rest.xcore"/>
+            uri="http://cs.manchester.ac.uk/mdsd/API"
+            class="uk.ac.man.cs.mdsd.api.ApiPackage"
+            genModel="model/api.xcore"/>
    </extension>
 
 </plugin>

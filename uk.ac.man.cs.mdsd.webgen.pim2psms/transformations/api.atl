@@ -1,0 +1,44 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path Service=/uk.ac.man.cs.mdsd.service.model/model/Service.xecore
+-- @path API=/uk.ac.man.cs.mdsd.api.model/model/api.xecore
+
+module API;
+create api : API from website : Website, service : Service;
+
+uses WebsiteHelpers;
+
+
+rule API {
+	from website : Website!API
+	to api : API!API (
+		resources <- website.resources
+	)
+}
+
+
+--abstract rule NamedElement {
+--	from website : Website!NamedElement
+--	to api : API!NamedElement (
+--		name <- website.name
+--	)
+--}
+
+
+-- extends NamedElement
+rule Resource {
+	from website : Website!Resource
+	to api : API!Resource (
+		service <-
+			if website.service.oclIsUndefined() then
+				OclUndefined
+			else
+				thisModule.findService(website.service.name)
+			endif,
+		supportFindOne <- website.supportFindOne,
+		supportFindAll <- website.supportFindAll,
+		selections <- website.selections,
+		childResources <- website.childResources
+	)
+} 

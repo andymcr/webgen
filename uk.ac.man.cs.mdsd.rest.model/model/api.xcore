@@ -1,0 +1,24 @@
+@Ecore(
+		nsPrefix="api",
+		nsURI="http://cs.manchester.ac.uk/mdsd/API"
+)
+@GenModel(
+	editDirectory="/uk.ac.man.cs.mdsd.api.edit/src",
+	editPluginID="uk.ac.man.cs.mdsd.api.edit")
+package uk.ac.man.cs.mdsd.api
+
+import uk.ac.man.cs.mdsd.service.Selection
+import uk.ac.man.cs.mdsd.service.Service
+
+
+class API {
+	contains Resource[] resources
+}
+
+class Resource {
+	refers Service service
+	boolean supportFindOne = "true"
+	boolean supportFindAll = "true"
+	refers Selection[] selections
+	contains Resource[] childResources
+}

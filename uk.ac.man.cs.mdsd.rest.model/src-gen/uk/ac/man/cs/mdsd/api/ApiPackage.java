@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.api;
+package uk.ac.man.cs.mdsd.api;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -19,8 +19,9 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see uk.ac.man.cs.mdsd.webgen.api.ApiFactory
+ * @see uk.ac.man.cs.mdsd.api.ApiFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/GenModel editDirectory='/uk.ac.man.cs.mdsd.api.edit/src' editPluginID='uk.ac.man.cs.mdsd.api.edit' basePackage='uk.ac.man.cs.mdsd'"
  * @generated
  */
 public interface ApiPackage extends EPackage {
@@ -38,7 +39,7 @@ public interface ApiPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://cs.man.ac.uk/mdsd/webgen/api";
+	String eNS_URI = "http://cs.manchester.ac.uk/mdsd/API";
 
 	/**
 	 * The package namespace name.
@@ -46,7 +47,7 @@ public interface ApiPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "webgen-api";
+	String eNS_PREFIX = "api";
 
 	/**
 	 * The singleton instance of the package.
@@ -54,14 +55,14 @@ public interface ApiPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ApiPackage eINSTANCE = uk.ac.man.cs.mdsd.webgen.api.impl.ApiPackageImpl.init();
+	ApiPackage eINSTANCE = uk.ac.man.cs.mdsd.api.impl.ApiPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.api.impl.APIImpl <em>API</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.api.impl.APIImpl <em>API</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.api.impl.APIImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.api.impl.ApiPackageImpl#getAPI()
+	 * @see uk.ac.man.cs.mdsd.api.impl.APIImpl
+	 * @see uk.ac.man.cs.mdsd.api.impl.ApiPackageImpl#getAPI()
 	 * @generated
 	 */
 	int API = 0;
@@ -94,11 +95,11 @@ public interface ApiPackage extends EPackage {
 	int API_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl <em>Resource</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl <em>Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.api.impl.ApiPackageImpl#getResource()
+	 * @see uk.ac.man.cs.mdsd.api.impl.ResourceImpl
+	 * @see uk.ac.man.cs.mdsd.api.impl.ApiPackageImpl#getResource()
 	 * @generated
 	 */
 	int RESOURCE = 1;
@@ -113,22 +114,22 @@ public interface ApiPackage extends EPackage {
 	int RESOURCE__SERVICE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Support Find All</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE__SUPPORT_FIND_ALL = 1;
-
-	/**
 	 * The feature id for the '<em><b>Support Find One</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__SUPPORT_FIND_ONE = 2;
+	int RESOURCE__SUPPORT_FIND_ONE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Support Find All</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__SUPPORT_FIND_ALL = 2;
 
 	/**
 	 * The feature id for the '<em><b>Selections</b></em>' reference list.
@@ -168,86 +169,86 @@ public interface ApiPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.api.API <em>API</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.api.API <em>API</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>API</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.api.API
+	 * @see uk.ac.man.cs.mdsd.api.API
 	 * @generated
 	 */
 	EClass getAPI();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.api.API#getResources <em>Resources</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.api.API#getResources <em>Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Resources</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.api.API#getResources()
+	 * @see uk.ac.man.cs.mdsd.api.API#getResources()
 	 * @see #getAPI()
 	 * @generated
 	 */
 	EReference getAPI_Resources();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.api.Resource <em>Resource</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.api.Resource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Resource</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.api.Resource
+	 * @see uk.ac.man.cs.mdsd.api.Resource
 	 * @generated
 	 */
 	EClass getResource();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getService <em>Service</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.api.Resource#getService <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Service</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.api.Resource#getService()
+	 * @see uk.ac.man.cs.mdsd.api.Resource#getService()
 	 * @see #getResource()
 	 * @generated
 	 */
 	EReference getResource_Service();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportFindAll <em>Support Find All</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Support Find All</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportFindAll()
-	 * @see #getResource()
-	 * @generated
-	 */
-	EAttribute getResource_SupportFindAll();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportFindOne <em>Support Find One</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.api.Resource#isSupportFindOne <em>Support Find One</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Support Find One</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportFindOne()
+	 * @see uk.ac.man.cs.mdsd.api.Resource#isSupportFindOne()
 	 * @see #getResource()
 	 * @generated
 	 */
 	EAttribute getResource_SupportFindOne();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getSelections <em>Selections</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.api.Resource#isSupportFindAll <em>Support Find All</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Support Find All</em>'.
+	 * @see uk.ac.man.cs.mdsd.api.Resource#isSupportFindAll()
+	 * @see #getResource()
+	 * @generated
+	 */
+	EAttribute getResource_SupportFindAll();
+
+	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.api.Resource#getSelections <em>Selections</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Selections</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.api.Resource#getSelections()
+	 * @see uk.ac.man.cs.mdsd.api.Resource#getSelections()
 	 * @see #getResource()
 	 * @generated
 	 */
 	EReference getResource_Selections();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getChildResources <em>Child Resources</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.api.Resource#getChildResources <em>Child Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Child Resources</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.api.Resource#getChildResources()
+	 * @see uk.ac.man.cs.mdsd.api.Resource#getChildResources()
 	 * @see #getResource()
 	 * @generated
 	 */
@@ -277,11 +278,11 @@ public interface ApiPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.api.impl.APIImpl <em>API</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.api.impl.APIImpl <em>API</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.api.impl.APIImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.api.impl.ApiPackageImpl#getAPI()
+		 * @see uk.ac.man.cs.mdsd.api.impl.APIImpl
+		 * @see uk.ac.man.cs.mdsd.api.impl.ApiPackageImpl#getAPI()
 		 * @generated
 		 */
 		EClass API = eINSTANCE.getAPI();
@@ -295,11 +296,11 @@ public interface ApiPackage extends EPackage {
 		EReference API__RESOURCES = eINSTANCE.getAPI_Resources();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl <em>Resource</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl <em>Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.api.impl.ApiPackageImpl#getResource()
+		 * @see uk.ac.man.cs.mdsd.api.impl.ResourceImpl
+		 * @see uk.ac.man.cs.mdsd.api.impl.ApiPackageImpl#getResource()
 		 * @generated
 		 */
 		EClass RESOURCE = eINSTANCE.getResource();
@@ -313,20 +314,20 @@ public interface ApiPackage extends EPackage {
 		EReference RESOURCE__SERVICE = eINSTANCE.getResource_Service();
 
 		/**
-		 * The meta object literal for the '<em><b>Support Find All</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RESOURCE__SUPPORT_FIND_ALL = eINSTANCE.getResource_SupportFindAll();
-
-		/**
 		 * The meta object literal for the '<em><b>Support Find One</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute RESOURCE__SUPPORT_FIND_ONE = eINSTANCE.getResource_SupportFindOne();
+
+		/**
+		 * The meta object literal for the '<em><b>Support Find All</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE__SUPPORT_FIND_ALL = eINSTANCE.getResource_SupportFindAll();
 
 		/**
 		 * The meta object literal for the '<em><b>Selections</b></em>' reference list feature.

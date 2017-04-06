@@ -1,19 +1,20 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.api.impl;
+package uk.ac.man.cs.mdsd.api.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import uk.ac.man.cs.mdsd.webgen.api.ApiFactory;
-import uk.ac.man.cs.mdsd.webgen.api.ApiPackage;
-import uk.ac.man.cs.mdsd.webgen.api.Resource;
+import uk.ac.man.cs.mdsd.api.ApiFactory;
+import uk.ac.man.cs.mdsd.api.ApiPackage;
+import uk.ac.man.cs.mdsd.api.Resource;
 
-import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
+import uk.ac.man.cs.mdsd.service.ServicePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,7 +48,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see uk.ac.man.cs.mdsd.webgen.api.ApiPackage#eNS_URI
+	 * @see uk.ac.man.cs.mdsd.api.ApiPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
@@ -141,7 +142,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResource_SupportFindAll() {
+	public EAttribute getResource_SupportFindOne() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -150,7 +151,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResource_SupportFindOne() {
+	public EAttribute getResource_SupportFindAll() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -205,8 +206,8 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 
 		resourceEClass = createEClass(RESOURCE);
 		createEReference(resourceEClass, RESOURCE__SERVICE);
-		createEAttribute(resourceEClass, RESOURCE__SUPPORT_FIND_ALL);
 		createEAttribute(resourceEClass, RESOURCE__SUPPORT_FIND_ONE);
+		createEAttribute(resourceEClass, RESOURCE__SUPPORT_FIND_ALL);
 		createEReference(resourceEClass, RESOURCE__SELECTIONS);
 		createEReference(resourceEClass, RESOURCE__CHILD_RESOURCES);
 	}
@@ -236,6 +237,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 
 		// Obtain other dependent packages
 		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -244,13 +246,13 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(apiEClass, uk.ac.man.cs.mdsd.webgen.api.API.class, "API", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPI_Resources(), this.getResource(), null, "resources", null, 0, -1, uk.ac.man.cs.mdsd.webgen.api.API.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(apiEClass, uk.ac.man.cs.mdsd.api.API.class, "API", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPI_Resources(), this.getResource(), null, "resources", null, 0, -1, uk.ac.man.cs.mdsd.api.API.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResource_Service(), theServicePackage.getService(), null, "service", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResource_SupportFindAll(), ecorePackage.getEBoolean(), "supportFindAll", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResource_SupportFindOne(), ecorePackage.getEBoolean(), "supportFindOne", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResource_SupportFindOne(), theEcorePackage.getEBoolean(), "supportFindOne", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResource_SupportFindAll(), theEcorePackage.getEBoolean(), "supportFindAll", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_Selections(), theServicePackage.getSelection(), null, "selections", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_ChildResources(), this.getResource(), null, "childResources", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

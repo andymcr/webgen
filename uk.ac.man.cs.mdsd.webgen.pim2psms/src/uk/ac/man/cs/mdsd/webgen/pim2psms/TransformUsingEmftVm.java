@@ -24,6 +24,7 @@ public class TransformUsingEmftVm {
 	private Metamodel websiteMetamodel;
 	private Metamodel ormMetamodel;
 	private Metamodel serviceMetamodel;
+	private Metamodel apiMetamodel;
 	private Metamodel wafMetamodel;
 	private IPath websiteModelPath;
 	private Model websiteModel;
@@ -57,6 +58,16 @@ public class TransformUsingEmftVm {
 		}
 
 		return serviceMetamodel;
+	}
+
+	protected Metamodel getApiMetamodel() {
+		if (apiMetamodel == null) {
+			apiMetamodel = EmftvmFactory.eINSTANCE.createMetamodel();
+			apiMetamodel.setResource(resourceSet.getResource(
+				URI.createURI("http://cs.manchester.ac.uk/mdsd/API"), true));
+		}
+
+		return apiMetamodel;
 	}
 
 	protected Metamodel getWafMetamodel() {
@@ -109,6 +120,7 @@ public class TransformUsingEmftVm {
 		env.registerMetaModel("Website", getWebsiteMetamodel());
 		env.registerMetaModel("ORM", getOrmMetamodel());
 		env.registerMetaModel("Service", getServiceMetamodel());
+		env.registerMetaModel("API", getApiMetamodel());
 		env.registerMetaModel("WAF", getWafMetamodel());
 
 		return env;
@@ -183,6 +195,14 @@ public class TransformUsingEmftVm {
 		executeRefiningPass("ServiceImplicit", serviceModelName, serviceModel,
 			serviceInputModels, null);
 		serviceModel.getResource().save(Collections.emptyMap());
+
+		final Map<String, Model> apiInputModels = new HashMap<String, Model>();
+		apiInputModels.put("website", getWebsiteModel());
+		apiInputModels.put("service", serviceModel);
+		final String apiModelName = "api";
+		final Model apiModel = executePassCreatingOutputModel("API",
+			apiModelName, "api", apiInputModels, null);
+		apiModel.getResource().save(Collections.emptyMap());
 
 		final Map<String, Model> wafInputModels = new HashMap<String, Model>();
 		wafInputModels.put("website", getWebsiteModel());

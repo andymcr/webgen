@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.api.impl;
 
+import com.google.common.base.Objects;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -34,6 +36,8 @@ import uk.ac.man.cs.mdsd.service.Service;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getService <em>Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#isSupportFindOne <em>Support Find One</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#isSupportFindAll <em>Support Find All</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getSelections <em>Selections</em>}</li>
@@ -52,6 +56,36 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * @ordered
 	 */
 	protected Service service;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String URI_ELEMENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isSupportFindOne() <em>Support Find One</em>}' attribute.
@@ -175,6 +209,43 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		String _xifexpression = null;
+		Service _service = this.getService();
+		boolean _notEquals = (!Objects.equal(_service, null));
+		if (_notEquals) {
+			Service _service_1 = this.getService();
+			_xifexpression = _service_1.getName();
+		}
+		return _xifexpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getUriElement() {
+		return uriElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUriElement(String newUriElement) {
+		String oldUriElement = uriElement;
+		uriElement = newUriElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__URI_ELEMENT, oldUriElement, uriElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isSupportFindOne() {
 		return supportFindOne;
 	}
@@ -261,6 +332,10 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 			case ApiPackage.RESOURCE__SERVICE:
 				if (resolve) return getService();
 				return basicGetService();
+			case ApiPackage.RESOURCE__NAME:
+				return getName();
+			case ApiPackage.RESOURCE__URI_ELEMENT:
+				return getUriElement();
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ONE:
 				return isSupportFindOne();
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ALL:
@@ -284,6 +359,9 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 		switch (featureID) {
 			case ApiPackage.RESOURCE__SERVICE:
 				setService((Service)newValue);
+				return;
+			case ApiPackage.RESOURCE__URI_ELEMENT:
+				setUriElement((String)newValue);
 				return;
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ONE:
 				setSupportFindOne((Boolean)newValue);
@@ -314,6 +392,9 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 			case ApiPackage.RESOURCE__SERVICE:
 				setService((Service)null);
 				return;
+			case ApiPackage.RESOURCE__URI_ELEMENT:
+				setUriElement(URI_ELEMENT_EDEFAULT);
+				return;
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ONE:
 				setSupportFindOne(SUPPORT_FIND_ONE_EDEFAULT);
 				return;
@@ -340,6 +421,10 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 		switch (featureID) {
 			case ApiPackage.RESOURCE__SERVICE:
 				return service != null;
+			case ApiPackage.RESOURCE__NAME:
+				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
+			case ApiPackage.RESOURCE__URI_ELEMENT:
+				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ONE:
 				return supportFindOne != SUPPORT_FIND_ONE_EDEFAULT;
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ALL:
@@ -362,7 +447,9 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (supportFindOne: ");
+		result.append(" (uriElement: ");
+		result.append(uriElement);
+		result.append(", supportFindOne: ");
 		result.append(supportFindOne);
 		result.append(", supportFindAll: ");
 		result.append(supportFindAll);

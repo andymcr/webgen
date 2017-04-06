@@ -33,7 +33,9 @@ import uk.ac.man.cs.mdsd.webgen.service.Service;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#getService <em>Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#isSupportFindAll <em>Support Find All</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#isSupportFindOne <em>Support Find One</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#getSelections <em>Selections</em>}</li>
@@ -44,6 +46,16 @@ import uk.ac.man.cs.mdsd.webgen.service.Service;
  */
 public class ResourceImpl extends MinimalEObjectImpl.Container implements Resource {
 	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
 	 * The cached value of the '{@link #getService() <em>Service</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -52,6 +64,26 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * @ordered
 	 */
 	protected Service service;
+
+	/**
+	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String URI_ELEMENT_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isSupportFindAll() <em>Support Find All</em>}' attribute.
@@ -137,6 +169,28 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		// TODO: implement this method to return the 'Name' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetName() {
+		// TODO: implement this method to return whether the 'Name' attribute is set
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Service getService() {
 		if (service != null && service.eIsProxy()) {
 			InternalEObject oldService = (InternalEObject)service;
@@ -168,6 +222,27 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 		service = newService;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__SERVICE, oldService, service));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getUriElement() {
+		return uriElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUriElement(String newUriElement) {
+		String oldUriElement = uriElement;
+		uriElement = newUriElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__URI_ELEMENT, oldUriElement, uriElement));
 	}
 
 	/**
@@ -258,9 +333,13 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ApiPackage.RESOURCE__NAME:
+				return getName();
 			case ApiPackage.RESOURCE__SERVICE:
 				if (resolve) return getService();
 				return basicGetService();
+			case ApiPackage.RESOURCE__URI_ELEMENT:
+				return getUriElement();
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ALL:
 				return isSupportFindAll();
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ONE:
@@ -284,6 +363,9 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 		switch (featureID) {
 			case ApiPackage.RESOURCE__SERVICE:
 				setService((Service)newValue);
+				return;
+			case ApiPackage.RESOURCE__URI_ELEMENT:
+				setUriElement((String)newValue);
 				return;
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ALL:
 				setSupportFindAll((Boolean)newValue);
@@ -314,6 +396,9 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 			case ApiPackage.RESOURCE__SERVICE:
 				setService((Service)null);
 				return;
+			case ApiPackage.RESOURCE__URI_ELEMENT:
+				setUriElement(URI_ELEMENT_EDEFAULT);
+				return;
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ALL:
 				setSupportFindAll(SUPPORT_FIND_ALL_EDEFAULT);
 				return;
@@ -338,8 +423,12 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ApiPackage.RESOURCE__NAME:
+				return isSetName();
 			case ApiPackage.RESOURCE__SERVICE:
 				return service != null;
+			case ApiPackage.RESOURCE__URI_ELEMENT:
+				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ALL:
 				return supportFindAll != SUPPORT_FIND_ALL_EDEFAULT;
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ONE:
@@ -362,7 +451,9 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (supportFindAll: ");
+		result.append(" (uriElement: ");
+		result.append(uriElement);
+		result.append(", supportFindAll: ");
 		result.append(supportFindAll);
 		result.append(", supportFindOne: ");
 		result.append(supportFindOne);

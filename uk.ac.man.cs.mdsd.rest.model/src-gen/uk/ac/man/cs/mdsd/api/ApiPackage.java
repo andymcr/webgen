@@ -114,13 +114,31 @@ public interface ApiPackage extends EPackage {
 	int RESOURCE__SERVICE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__URI_ELEMENT = 2;
+
+	/**
 	 * The feature id for the '<em><b>Support Find One</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__SUPPORT_FIND_ONE = 1;
+	int RESOURCE__SUPPORT_FIND_ONE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Support Find All</b></em>' attribute.
@@ -129,7 +147,7 @@ public interface ApiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__SUPPORT_FIND_ALL = 2;
+	int RESOURCE__SUPPORT_FIND_ALL = 4;
 
 	/**
 	 * The feature id for the '<em><b>Selections</b></em>' reference list.
@@ -138,7 +156,7 @@ public interface ApiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__SELECTIONS = 3;
+	int RESOURCE__SELECTIONS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Child Resources</b></em>' containment reference list.
@@ -147,7 +165,7 @@ public interface ApiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__CHILD_RESOURCES = 4;
+	int RESOURCE__CHILD_RESOURCES = 6;
 
 	/**
 	 * The number of structural features of the '<em>Resource</em>' class.
@@ -156,7 +174,7 @@ public interface ApiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_FEATURE_COUNT = 5;
+	int RESOURCE_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Resource</em>' class.
@@ -209,6 +227,28 @@ public interface ApiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getResource_Service();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.api.Resource#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.api.Resource#getName()
+	 * @see #getResource()
+	 * @generated
+	 */
+	EAttribute getResource_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.api.Resource#getUriElement <em>Uri Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uri Element</em>'.
+	 * @see uk.ac.man.cs.mdsd.api.Resource#getUriElement()
+	 * @see #getResource()
+	 * @generated
+	 */
+	EAttribute getResource_UriElement();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.api.Resource#isSupportFindOne <em>Support Find One</em>}'.
@@ -312,6 +352,22 @@ public interface ApiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RESOURCE__SERVICE = eINSTANCE.getResource_Service();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE__NAME = eINSTANCE.getResource_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE__URI_ELEMENT = eINSTANCE.getResource_UriElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Support Find One</b></em>' attribute feature.

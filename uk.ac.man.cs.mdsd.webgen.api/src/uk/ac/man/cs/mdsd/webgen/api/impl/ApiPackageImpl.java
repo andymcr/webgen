@@ -132,8 +132,17 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getResource_Name() {
+		return (EAttribute)resourceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getResource_Service() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(0);
+		return (EReference)resourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -141,16 +150,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResource_SupportFindAll() {
-		return (EAttribute)resourceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getResource_SupportFindOne() {
+	public EAttribute getResource_UriElement() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -159,8 +159,26 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getResource_SupportFindAll() {
+		return (EAttribute)resourceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResource_SupportFindOne() {
+		return (EAttribute)resourceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getResource_Selections() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(3);
+		return (EReference)resourceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -169,7 +187,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * @generated
 	 */
 	public EReference getResource_ChildResources() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(4);
+		return (EReference)resourceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -204,7 +222,9 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		createEReference(apiEClass, API__RESOURCES);
 
 		resourceEClass = createEClass(RESOURCE);
+		createEAttribute(resourceEClass, RESOURCE__NAME);
 		createEReference(resourceEClass, RESOURCE__SERVICE);
+		createEAttribute(resourceEClass, RESOURCE__URI_ELEMENT);
 		createEAttribute(resourceEClass, RESOURCE__SUPPORT_FIND_ALL);
 		createEAttribute(resourceEClass, RESOURCE__SUPPORT_FIND_ONE);
 		createEReference(resourceEClass, RESOURCE__SELECTIONS);
@@ -248,7 +268,9 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		initEReference(getAPI_Resources(), this.getResource(), null, "resources", null, 0, -1, uk.ac.man.cs.mdsd.webgen.api.API.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getResource_Service(), theServicePackage.getService(), null, "service", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResource_Name(), ecorePackage.getEString(), "name", null, 0, 1, Resource.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getResource_Service(), theServicePackage.getService(), null, "service", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResource_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_SupportFindAll(), ecorePackage.getEBoolean(), "supportFindAll", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_SupportFindOne(), ecorePackage.getEBoolean(), "supportFindOne", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_Selections(), theServicePackage.getSelection(), null, "selections", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -256,6 +278,26 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (getResource_Name(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if service.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tservice.name\r\nendif endif"
+		   });
 	}
 
 } //ApiPackageImpl

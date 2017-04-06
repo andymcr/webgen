@@ -16,7 +16,12 @@ class API {
 }
 
 class Resource {
-	refers Service service
+	refers Service[1] service
+	derived String[1] name get {
+		if (service != null)
+			service.name
+	}
+	String[1] uriElement
 	boolean supportFindOne = "true"
 	boolean supportFindAll = "true"
 	refers Selection[] selections

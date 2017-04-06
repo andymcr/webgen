@@ -18,7 +18,9 @@ import uk.ac.man.cs.mdsd.webgen.service.Service;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getService <em>Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportFindAll <em>Support Find All</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportFindOne <em>Support Find One</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getSelections <em>Selections</em>}</li>
@@ -31,6 +33,33 @@ import uk.ac.man.cs.mdsd.webgen.service.Service;
  */
 public interface Resource extends EObject {
 	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #isSetName()
+	 * @see uk.ac.man.cs.mdsd.webgen.api.ApiPackage#getResource_Name()
+	 * @model unsettable="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if service.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tservice.name\r\nendif endif'"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Returns whether the value of the '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getName <em>Name</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Name</em>' attribute is set.
+	 * @see #getName()
+	 * @generated
+	 */
+	boolean isSetName();
+
+	/**
 	 * Returns the value of the '<em><b>Service</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -41,7 +70,7 @@ public interface Resource extends EObject {
 	 * @return the value of the '<em>Service</em>' reference.
 	 * @see #setService(Service)
 	 * @see uk.ac.man.cs.mdsd.webgen.api.ApiPackage#getResource_Service()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Service getService();
@@ -55,6 +84,33 @@ public interface Resource extends EObject {
 	 * @generated
 	 */
 	void setService(Service value);
+
+	/**
+	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Uri Element</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Uri Element</em>' attribute.
+	 * @see #setUriElement(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.api.ApiPackage#getResource_UriElement()
+	 * @model default=""
+	 * @generated
+	 */
+	String getUriElement();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getUriElement <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Uri Element</em>' attribute.
+	 * @see #getUriElement()
+	 * @generated
+	 */
+	void setUriElement(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Support Find All</b></em>' attribute.

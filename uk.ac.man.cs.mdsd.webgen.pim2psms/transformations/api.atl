@@ -18,15 +18,6 @@ rule API {
 }
 
 
---abstract rule NamedElement {
---	from website : Website!NamedElement
---	to api : API!NamedElement (
---		name <- website.name
---	)
---}
-
-
--- extends NamedElement
 rule Resource {
 	from website : Website!Resource
 	to api : API!Resource (
@@ -36,6 +27,14 @@ rule Resource {
 			else
 				thisModule.findService(website.service.name)
 			endif,
+		uriElement <-
+			if website.uriElement.trim() <> '' then
+				website.uriElement.trim()
+			else if not website.name.oclIsUndefined() then
+				website.name.createName()
+			else
+				''
+			endif endif,
 		supportFindOne <- website.supportFindOne,
 		supportFindAll <- website.supportFindAll,
 		selections <- website.selections,

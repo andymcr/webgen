@@ -63,12 +63,36 @@ public class ResourceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addServicePropertyDescriptor(object);
+			addUriElementPropertyDescriptor(object);
 			addSupportFindAllPropertyDescriptor(object);
 			addSupportFindOnePropertyDescriptor(object);
 			addSelectionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Resource_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_name_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__NAME,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -89,6 +113,28 @@ public class ResourceItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Uri Element feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUriElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Resource_uriElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_uriElement_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__URI_ELEMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -208,8 +254,10 @@ public class ResourceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Resource resource = (Resource)object;
-		return getString("_UI_Resource_type") + " " + resource.isSupportFindAll();
+		String label = ((Resource)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Resource_type") :
+			getString("_UI_Resource_type") + " " + label;
 	}
 	
 
@@ -225,6 +273,8 @@ public class ResourceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Resource.class)) {
+			case ApiPackage.RESOURCE__NAME:
+			case ApiPackage.RESOURCE__URI_ELEMENT:
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ALL:
 			case ApiPackage.RESOURCE__SUPPORT_FIND_ONE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

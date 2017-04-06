@@ -6,10 +6,10 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import uk.ac.man.cs.mdsd.api.API;
+
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
 import uk.ac.man.cs.mdsd.orm.OrmModel;
-
-import uk.ac.man.cs.mdsd.rest.API;
 
 import uk.ac.man.cs.mdsd.service.ServiceModel;
 
@@ -29,6 +29,7 @@ import uk.ac.man.cs.mdsd.service.ServiceModel;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getGlobalMenu <em>Global Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getContextMenus <em>Context Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getMenus <em>Menus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getApi <em>Api</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteName <em>Site Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteTitle <em>Site Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#isDevelopmentVersion <em>Development Version</em>}</li>
@@ -50,7 +51,6 @@ import uk.ac.man.cs.mdsd.service.ServiceModel;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteTemplate <em>Site Template</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getAllowTypeCustomisation <em>Allow Type Customisation</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getRestApi <em>Rest Api</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel()
@@ -201,6 +201,32 @@ public interface WafModel extends EObject {
 	 * @generated
 	 */
 	EList<Menu> getMenus();
+
+	/**
+	 * Returns the value of the '<em><b>Api</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Api</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Api</em>' reference.
+	 * @see #setApi(API)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_Api()
+	 * @model
+	 * @generated
+	 */
+	API getApi();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#getApi <em>Api</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Api</em>' reference.
+	 * @see #getApi()
+	 * @generated
+	 */
+	void setApi(API value);
 
 	/**
 	 * Returns the value of the '<em><b>Site Name</b></em>' attribute.
@@ -749,31 +775,5 @@ public interface WafModel extends EObject {
 	 * @generated
 	 */
 	EList<EntityOrView> getAllowTypeCustomisation();
-
-	/**
-	 * Returns the value of the '<em><b>Rest Api</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Rest Api</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rest Api</em>' reference.
-	 * @see #setRestApi(API)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_RestApi()
-	 * @model
-	 * @generated
-	 */
-	API getRestApi();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#getRestApi <em>Rest Api</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rest Api</em>' reference.
-	 * @see #getRestApi()
-	 * @generated
-	 */
-	void setRestApi(API value);
 
 } // WafModel

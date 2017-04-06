@@ -189,30 +189,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.StaticMenu} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ContextMenu} instances.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected StaticMenuItemProvider staticMenuItemProvider;
+	protected ContextMenuItemProvider contextMenuItemProvider;
 
-  /**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.StaticMenu}.
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ContextMenu}.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Adapter createStaticMenuAdapter()
-  {
-		if (staticMenuItemProvider == null) {
-			staticMenuItemProvider = new StaticMenuItemProvider(this);
+	@Override
+	public Adapter createContextMenuAdapter() {
+		if (contextMenuItemProvider == null) {
+			contextMenuItemProvider = new ContextMenuItemProvider(this);
 		}
 
-		return staticMenuItemProvider;
+		return contextMenuItemProvider;
 	}
 
-  /**
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DynamicMenu} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1200,7 +1199,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
 		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();
-		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
+		if (contextMenuItemProvider != null) contextMenuItemProvider.dispose();
 		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();

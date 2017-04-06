@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import uk.ac.man.cs.mdsd.api.ApiPackage;
+
 import uk.ac.man.cs.mdsd.expression.ExpressionPackage;
 
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
-
-import uk.ac.man.cs.mdsd.rest.RestPackage;
 
 import uk.ac.man.cs.mdsd.service.ServicePackage;
 
@@ -676,8 +676,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		ServicePackage.eINSTANCE.eClass();
-		RestPackage.eINSTANCE.eClass();
+		ApiPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theWafPackage.createPackageContents();
@@ -771,8 +770,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_SiteName() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(7);
+	public EReference getWafModel_Api() {
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -780,7 +779,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_SiteTitle() {
+	public EAttribute getWafModel_SiteName() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -789,7 +788,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_DevelopmentVersion() {
+	public EAttribute getWafModel_SiteTitle() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -798,7 +797,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_BaseURL() {
+	public EAttribute getWafModel_DevelopmentVersion() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -807,7 +806,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_RewriteURLs() {
+	public EAttribute getWafModel_BaseURL() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -816,7 +815,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_WebmasterEmail() {
+	public EAttribute getWafModel_RewriteURLs() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -825,7 +824,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_CopyrightText() {
+	public EAttribute getWafModel_WebmasterEmail() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -834,7 +833,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_MetaDescription() {
+	public EAttribute getWafModel_CopyrightText() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -843,7 +842,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_FrameworkTechnology() {
+	public EAttribute getWafModel_MetaDescription() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(15);
 	}
 
@@ -852,7 +851,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_InputTechnology() {
+	public EAttribute getWafModel_FrameworkTechnology() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -861,7 +860,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_AjaxTechnology() {
+	public EAttribute getWafModel_InputTechnology() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -870,8 +869,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWafModel_AjaxTechnology() {
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWafModel_Authentication() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(18);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -880,15 +888,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_CaptchaSiteKey() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(19);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWafModel_CaptchaSecretKey() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(20);
 	}
 
@@ -897,7 +896,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_TextEditorURL() {
+	public EAttribute getWafModel_CaptchaSecretKey() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(21);
 	}
 
@@ -906,7 +905,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_ResponsiveTopMenu() {
+	public EAttribute getWafModel_TextEditorURL() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(22);
 	}
 
@@ -915,7 +914,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_TopNavigationId() {
+	public EAttribute getWafModel_ResponsiveTopMenu() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(23);
 	}
 
@@ -924,8 +923,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWafModel_TopNavigationId() {
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWafModel_SideMenu() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(24);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(25);
 	}
 
 	/**
@@ -934,15 +942,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_SiteTemplate() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(25);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWafModel_StaticUnitsEditable() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(26);
 	}
 
@@ -951,8 +950,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWafModel_AllowTypeCustomisation() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(27);
+	public EAttribute getWafModel_StaticUnitsEditable() {
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(27);
 	}
 
 	/**
@@ -960,7 +959,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWafModel_RestApi() {
+	public EReference getWafModel_AllowTypeCustomisation() {
 		return (EReference)wafModelEClass.getEStructuralFeatures().get(28);
 	}
 
@@ -3457,6 +3456,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(wafModelEClass, WAF_MODEL__GLOBAL_MENU);
 		createEReference(wafModelEClass, WAF_MODEL__CONTEXT_MENUS);
 		createEReference(wafModelEClass, WAF_MODEL__MENUS);
+		createEReference(wafModelEClass, WAF_MODEL__API);
 		createEAttribute(wafModelEClass, WAF_MODEL__SITE_NAME);
 		createEAttribute(wafModelEClass, WAF_MODEL__SITE_TITLE);
 		createEAttribute(wafModelEClass, WAF_MODEL__DEVELOPMENT_VERSION);
@@ -3478,7 +3478,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(wafModelEClass, WAF_MODEL__SITE_TEMPLATE);
 		createEAttribute(wafModelEClass, WAF_MODEL__STATIC_UNITS_EDITABLE);
 		createEReference(wafModelEClass, WAF_MODEL__ALLOW_TYPE_CUSTOMISATION);
-		createEReference(wafModelEClass, WAF_MODEL__REST_API);
 
 		authenticationEClass = createEClass(AUTHENTICATION);
 		createEReference(authenticationEClass, AUTHENTICATION__AUTHORISES);
@@ -3850,8 +3849,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		// Obtain other dependent packages
 		OrmPackage theOrmPackage = (OrmPackage)EPackage.Registry.INSTANCE.getEPackage(OrmPackage.eNS_URI);
 		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
+		ApiPackage theApiPackage = (ApiPackage)EPackage.Registry.INSTANCE.getEPackage(ApiPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		RestPackage theRestPackage = (RestPackage)EPackage.Registry.INSTANCE.getEPackage(RestPackage.eNS_URI);
 		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
 
 		// Create type parameters
@@ -3947,6 +3946,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getWafModel_GlobalMenu(), this.getGlobalMenu(), null, "globalMenu", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_ContextMenus(), this.getContextMenu(), null, "contextMenus", null, 0, -1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_Menus(), this.getMenu(), null, "menus", null, 0, -1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWafModel_Api(), theApiPackage.getAPI(), null, "api", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_SiteName(), theEcorePackage.getEString(), "siteName", null, 1, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_SiteTitle(), theEcorePackage.getEString(), "siteTitle", null, 1, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_DevelopmentVersion(), theEcorePackage.getEBoolean(), "developmentVersion", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3968,7 +3968,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getWafModel_SiteTemplate(), theEcorePackage.getEString(), "siteTemplate", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_StaticUnitsEditable(), theEcorePackage.getEBoolean(), "staticUnitsEditable", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_AllowTypeCustomisation(), theOrmPackage.getEntityOrView(), null, "allowTypeCustomisation", null, 0, -1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWafModel_RestApi(), theRestPackage.getAPI(), null, "restApi", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAuthentication_Authorises(), this.getWafModel(), this.getWafModel_Authentication(), "authorises", null, 1, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

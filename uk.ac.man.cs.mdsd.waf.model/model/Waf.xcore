@@ -6,7 +6,6 @@
 	editDirectory="/uk.ac.man.cs.mdsd.waf.edit/src",
 	editPluginID="uk.ac.man.cs.mdsd.waf.edit",
 	childCreationExtenders="true",
-	complianceLevel="6.0",
 	editorDirectory="/uk.ac.man.cs.mdsd.waf.editor/src")
 package uk.ac.man.cs.mdsd.waf
 
@@ -23,7 +22,7 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
 import uk.ac.man.cs.mdsd.orm.NamedElement
 import uk.ac.man.cs.mdsd.orm.OrmModel
 import uk.ac.man.cs.mdsd.orm.SingletonLocation
-import uk.ac.man.cs.mdsd.rest.API
+import uk.ac.man.cs.mdsd.api.API
 import uk.ac.man.cs.mdsd.service.BusinessOperation
 import uk.ac.man.cs.mdsd.service.Selection
 import uk.ac.man.cs.mdsd.service.SelectionParameter
@@ -59,6 +58,7 @@ class WafModel {
 	contains GlobalMenu globalMenu
 	contains ContextMenu[] contextMenus
 	contains Menu[] menus
+	refers API api
 	String[1] siteName
 	String[1] siteTitle
 	boolean developmentVersion
@@ -80,7 +80,6 @@ class WafModel {
 	String siteTemplate
 	boolean staticUnitsEditable
 	refers EntityOrView[] allowTypeCustomisation
-	refers API restApi
 }
 
 

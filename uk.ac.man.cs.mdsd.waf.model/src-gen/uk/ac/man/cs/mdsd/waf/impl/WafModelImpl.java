@@ -20,10 +20,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.api.API;
+
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
 import uk.ac.man.cs.mdsd.orm.OrmModel;
-
-import uk.ac.man.cs.mdsd.rest.API;
 
 import uk.ac.man.cs.mdsd.service.ServiceModel;
 
@@ -54,6 +54,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getGlobalMenu <em>Global Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getContextMenus <em>Context Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getMenus <em>Menus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getApi <em>Api</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSiteName <em>Site Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSiteTitle <em>Site Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#isDevelopmentVersion <em>Development Version</em>}</li>
@@ -75,7 +76,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSiteTemplate <em>Site Template</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getAllowTypeCustomisation <em>Allow Type Customisation</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getRestApi <em>Rest Api</em>}</li>
  * </ul>
  *
  * @generated
@@ -150,6 +150,16 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * @ordered
 	 */
 	protected EList<Menu> menus;
+
+	/**
+	 * The cached value of the '{@link #getApi() <em>Api</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getApi()
+	 * @generated
+	 * @ordered
+	 */
+	protected API api;
 
 	/**
 	 * The default value of the '{@link #getSiteName() <em>Site Name</em>}' attribute.
@@ -542,16 +552,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	protected EList<EntityOrView> allowTypeCustomisation;
 
 	/**
-	 * The cached value of the '{@link #getRestApi() <em>Rest Api</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRestApi()
-	 * @generated
-	 * @ordered
-	 */
-	protected API restApi;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -735,6 +735,44 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			menus = new EObjectContainmentEList<Menu>(Menu.class, this, WafPackage.WAF_MODEL__MENUS);
 		}
 		return menus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public API getApi() {
+		if (api != null && api.eIsProxy()) {
+			InternalEObject oldApi = (InternalEObject)api;
+			api = (API)eResolveProxy(oldApi);
+			if (api != oldApi) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.WAF_MODEL__API, oldApi, api));
+			}
+		}
+		return api;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public API basicGetApi() {
+		return api;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setApi(API newApi) {
+		API oldApi = api;
+		api = newApi;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__API, oldApi, api));
 	}
 
 	/**
@@ -1213,44 +1251,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public API getRestApi() {
-		if (restApi != null && restApi.eIsProxy()) {
-			InternalEObject oldRestApi = (InternalEObject)restApi;
-			restApi = (API)eResolveProxy(oldRestApi);
-			if (restApi != oldRestApi) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.WAF_MODEL__REST_API, oldRestApi, restApi));
-			}
-		}
-		return restApi;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public API basicGetRestApi() {
-		return restApi;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRestApi(API newRestApi) {
-		API oldRestApi = restApi;
-		restApi = newRestApi;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__REST_API, oldRestApi, restApi));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -1313,6 +1313,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return getContextMenus();
 			case WafPackage.WAF_MODEL__MENUS:
 				return getMenus();
+			case WafPackage.WAF_MODEL__API:
+				if (resolve) return getApi();
+				return basicGetApi();
 			case WafPackage.WAF_MODEL__SITE_NAME:
 				return getSiteName();
 			case WafPackage.WAF_MODEL__SITE_TITLE:
@@ -1356,9 +1359,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return isStaticUnitsEditable();
 			case WafPackage.WAF_MODEL__ALLOW_TYPE_CUSTOMISATION:
 				return getAllowTypeCustomisation();
-			case WafPackage.WAF_MODEL__REST_API:
-				if (resolve) return getRestApi();
-				return basicGetRestApi();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1396,6 +1396,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__MENUS:
 				getMenus().clear();
 				getMenus().addAll((Collection<? extends Menu>)newValue);
+				return;
+			case WafPackage.WAF_MODEL__API:
+				setApi((API)newValue);
 				return;
 			case WafPackage.WAF_MODEL__SITE_NAME:
 				setSiteName((String)newValue);
@@ -1461,9 +1464,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				getAllowTypeCustomisation().clear();
 				getAllowTypeCustomisation().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
-			case WafPackage.WAF_MODEL__REST_API:
-				setRestApi((API)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1496,6 +1496,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return;
 			case WafPackage.WAF_MODEL__MENUS:
 				getMenus().clear();
+				return;
+			case WafPackage.WAF_MODEL__API:
+				setApi((API)null);
 				return;
 			case WafPackage.WAF_MODEL__SITE_NAME:
 				setSiteName(SITE_NAME_EDEFAULT);
@@ -1560,9 +1563,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__ALLOW_TYPE_CUSTOMISATION:
 				getAllowTypeCustomisation().clear();
 				return;
-			case WafPackage.WAF_MODEL__REST_API:
-				setRestApi((API)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1589,6 +1589,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return contextMenus != null && !contextMenus.isEmpty();
 			case WafPackage.WAF_MODEL__MENUS:
 				return menus != null && !menus.isEmpty();
+			case WafPackage.WAF_MODEL__API:
+				return api != null;
 			case WafPackage.WAF_MODEL__SITE_NAME:
 				return SITE_NAME_EDEFAULT == null ? siteName != null : !SITE_NAME_EDEFAULT.equals(siteName);
 			case WafPackage.WAF_MODEL__SITE_TITLE:
@@ -1631,8 +1633,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return staticUnitsEditable != STATIC_UNITS_EDITABLE_EDEFAULT;
 			case WafPackage.WAF_MODEL__ALLOW_TYPE_CUSTOMISATION:
 				return allowTypeCustomisation != null && !allowTypeCustomisation.isEmpty();
-			case WafPackage.WAF_MODEL__REST_API:
-				return restApi != null;
 		}
 		return super.eIsSet(featureID);
 	}

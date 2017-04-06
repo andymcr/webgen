@@ -9,6 +9,7 @@ package uk.ac.man.cs.mdsd.waf.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import uk.ac.man.cs.mdsd.api.provider.ApiEditPlugin;
 import uk.ac.man.cs.mdsd.expression.provider.ExpressionEditPlugin;
 import uk.ac.man.cs.mdsd.orm.provider.OrmEditPlugin;
 import uk.ac.man.cs.mdsd.service.provider.ServiceEditPlugin;
@@ -47,6 +48,7 @@ public final class WafEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     OrmEditPlugin.INSTANCE,
 		     ServiceEditPlugin.INSTANCE,
+		     ApiEditPlugin.INSTANCE,
 		     ExpressionEditPlugin.INSTANCE,
 		   });
 	}

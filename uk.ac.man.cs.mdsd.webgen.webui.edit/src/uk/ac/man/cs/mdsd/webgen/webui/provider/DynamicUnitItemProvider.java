@@ -89,7 +89,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

@@ -72,7 +72,7 @@ public class UnitSupportActionItemProvider extends NamedDisplayElementItemProvid
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -94,7 +94,7 @@ public class UnitSupportActionItemProvider extends NamedDisplayElementItemProvid
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 

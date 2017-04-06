@@ -70,7 +70,7 @@ public class DeleteActionItemProvider extends InlineActionItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 
@@ -92,7 +92,7 @@ public class DeleteActionItemProvider extends InlineActionItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -114,7 +114,7 @@ public class DeleteActionItemProvider extends InlineActionItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 

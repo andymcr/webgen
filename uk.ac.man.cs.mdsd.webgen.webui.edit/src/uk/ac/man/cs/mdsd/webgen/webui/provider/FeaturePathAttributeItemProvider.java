@@ -71,7 +71,7 @@ public class FeaturePathAttributeItemProvider extends FeaturePathItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

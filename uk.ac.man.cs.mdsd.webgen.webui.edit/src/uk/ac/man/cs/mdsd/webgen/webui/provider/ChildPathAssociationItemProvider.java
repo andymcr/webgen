@@ -77,7 +77,7 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -126,7 +126,7 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -148,7 +148,7 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -170,7 +170,7 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -192,7 +192,7 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 

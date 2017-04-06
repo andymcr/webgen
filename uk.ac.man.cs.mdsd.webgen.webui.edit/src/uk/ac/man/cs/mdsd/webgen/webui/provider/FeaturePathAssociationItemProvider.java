@@ -78,7 +78,7 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -130,7 +130,7 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -152,7 +152,7 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -174,7 +174,7 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -196,7 +196,7 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 

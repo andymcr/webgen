@@ -13,13 +13,13 @@
           ecoreFeature="ecore:EReference image.ecore#//Image/manipulations"/>
     </genClasses>
     <genClasses ecoreClass="image.ecore#//ImageManipulation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute image.ecore#//ImageManipulation/jpegQuality"/>
+      <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute image.ecore#//ImageManipulation/jpegQuality"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference image.ecore#//ImageManipulation/filters"/>
     </genClasses>
     <genClasses image="false" ecoreClass="image.ecore#//ImageFilter"/>
     <genClasses ecoreClass="image.ecore#//ThumbnailFilter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute image.ecore#//ThumbnailFilter/width"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute image.ecore#//ThumbnailFilter/height"/>
+      <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute image.ecore#//ThumbnailFilter/width"/>
+      <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute image.ecore#//ThumbnailFilter/height"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

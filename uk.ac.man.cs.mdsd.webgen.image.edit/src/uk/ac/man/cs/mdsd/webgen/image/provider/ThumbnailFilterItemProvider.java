@@ -69,7 +69,7 @@ public class ThumbnailFilterItemProvider extends ImageFilterItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -91,7 +91,7 @@ public class ThumbnailFilterItemProvider extends ImageFilterItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 

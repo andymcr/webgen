@@ -73,7 +73,7 @@ public class ImageManipulationItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 

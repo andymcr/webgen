@@ -208,6 +208,7 @@ public class TransformUsingEmftVm {
 		wafInputModels.put("website", getWebsiteModel());
 		wafInputModels.put("orm", ormModel);
 		wafInputModels.put("service", serviceModel);
+		wafInputModels.put("api", apiModel);
 		final String wafModelName = "waf";
 
 		final Model wafTraceModelP1 = createModel("trace_waf_p1");

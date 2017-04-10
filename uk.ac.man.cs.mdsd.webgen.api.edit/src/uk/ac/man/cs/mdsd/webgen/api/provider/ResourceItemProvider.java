@@ -66,8 +66,8 @@ public class ResourceItemProvider
 			addNamePropertyDescriptor(object);
 			addServicePropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
-			addSupportFindAllPropertyDescriptor(object);
-			addSupportFindOnePropertyDescriptor(object);
+			addSupportGetAllPropertyDescriptor(object);
+			addSupportGetOnePropertyDescriptor(object);
 			addSelectionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -140,19 +140,19 @@ public class ResourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Support Find All feature.
+	 * This adds a property descriptor for the Support Get All feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSupportFindAllPropertyDescriptor(Object object) {
+	protected void addSupportGetAllPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Resource_supportFindAll_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_supportFindAll_feature", "_UI_Resource_type"),
-				 ApiPackage.Literals.RESOURCE__SUPPORT_FIND_ALL,
+				 getString("_UI_Resource_supportGetAll_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_supportGetAll_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__SUPPORT_GET_ALL,
 				 true,
 				 false,
 				 false,
@@ -162,19 +162,19 @@ public class ResourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Support Find One feature.
+	 * This adds a property descriptor for the Support Get One feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSupportFindOnePropertyDescriptor(Object object) {
+	protected void addSupportGetOnePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Resource_supportFindOne_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_supportFindOne_feature", "_UI_Resource_type"),
-				 ApiPackage.Literals.RESOURCE__SUPPORT_FIND_ONE,
+				 getString("_UI_Resource_supportGetOne_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_supportGetOne_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__SUPPORT_GET_ONE,
 				 true,
 				 false,
 				 false,
@@ -275,8 +275,8 @@ public class ResourceItemProvider
 		switch (notification.getFeatureID(Resource.class)) {
 			case ApiPackage.RESOURCE__NAME:
 			case ApiPackage.RESOURCE__URI_ELEMENT:
-			case ApiPackage.RESOURCE__SUPPORT_FIND_ALL:
-			case ApiPackage.RESOURCE__SUPPORT_FIND_ONE:
+			case ApiPackage.RESOURCE__SUPPORT_GET_ALL:
+			case ApiPackage.RESOURCE__SUPPORT_GET_ONE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ApiPackage.RESOURCE__CHILD_RESOURCES:

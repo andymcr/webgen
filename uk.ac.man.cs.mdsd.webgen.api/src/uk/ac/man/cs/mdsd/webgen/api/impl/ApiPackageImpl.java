@@ -159,7 +159,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResource_SupportFindAll() {
+	public EAttribute getResource_SupportGetAll() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -168,7 +168,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResource_SupportFindOne() {
+	public EAttribute getResource_SupportGetOne() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -225,8 +225,8 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		createEAttribute(resourceEClass, RESOURCE__NAME);
 		createEReference(resourceEClass, RESOURCE__SERVICE);
 		createEAttribute(resourceEClass, RESOURCE__URI_ELEMENT);
-		createEAttribute(resourceEClass, RESOURCE__SUPPORT_FIND_ALL);
-		createEAttribute(resourceEClass, RESOURCE__SUPPORT_FIND_ONE);
+		createEAttribute(resourceEClass, RESOURCE__SUPPORT_GET_ALL);
+		createEAttribute(resourceEClass, RESOURCE__SUPPORT_GET_ONE);
 		createEReference(resourceEClass, RESOURCE__SELECTIONS);
 		createEReference(resourceEClass, RESOURCE__CHILD_RESOURCES);
 	}
@@ -271,8 +271,8 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		initEAttribute(getResource_Name(), ecorePackage.getEString(), "name", null, 0, 1, Resource.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getResource_Service(), theServicePackage.getService(), null, "service", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResource_SupportFindAll(), ecorePackage.getEBoolean(), "supportFindAll", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResource_SupportFindOne(), ecorePackage.getEBoolean(), "supportFindOne", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResource_SupportGetAll(), ecorePackage.getEBoolean(), "supportGetAll", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResource_SupportGetOne(), ecorePackage.getEBoolean(), "supportGetOne", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_Selections(), theServicePackage.getSelection(), null, "selections", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_ChildResources(), this.getResource(), null, "childResources", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -280,8 +280,28 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });
 	}
 
 	/**
@@ -296,7 +316,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		  (getResource_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if service.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tservice.name\r\nendif endif"
+			 "derivation", "if service.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tservice.name\r\nendif"
 		   });
 	}
 

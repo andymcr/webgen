@@ -35,8 +35,8 @@ rule Resource {
 			else
 				''
 			endif endif,
-		supportFindOne <- website.supportFindOne,
-		supportFindAll <- website.supportFindAll,
+		supportGetOne <- website.supportGetOne,
+		supportGetAll <- website.supportGetAll,
 		selections <- website.selections,
 		childResources <- website.childResources
 	)

@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see uk.ac.man.cs.mdsd.webgen.api.ApiFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface ApiPackage extends EPackage {
@@ -131,22 +132,22 @@ public interface ApiPackage extends EPackage {
 	int RESOURCE__URI_ELEMENT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Support Find All</b></em>' attribute.
+	 * The feature id for the '<em><b>Support Get All</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__SUPPORT_FIND_ALL = 3;
+	int RESOURCE__SUPPORT_GET_ALL = 3;
 
 	/**
-	 * The feature id for the '<em><b>Support Find One</b></em>' attribute.
+	 * The feature id for the '<em><b>Support Get One</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__SUPPORT_FIND_ONE = 4;
+	int RESOURCE__SUPPORT_GET_ONE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Selections</b></em>' reference list.
@@ -250,26 +251,26 @@ public interface ApiPackage extends EPackage {
 	EAttribute getResource_UriElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportFindAll <em>Support Find All</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportGetAll <em>Support Get All</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Support Find All</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportFindAll()
+	 * @return the meta object for the attribute '<em>Support Get All</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportGetAll()
 	 * @see #getResource()
 	 * @generated
 	 */
-	EAttribute getResource_SupportFindAll();
+	EAttribute getResource_SupportGetAll();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportFindOne <em>Support Find One</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportGetOne <em>Support Get One</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Support Find One</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportFindOne()
+	 * @return the meta object for the attribute '<em>Support Get One</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportGetOne()
 	 * @see #getResource()
 	 * @generated
 	 */
-	EAttribute getResource_SupportFindOne();
+	EAttribute getResource_SupportGetOne();
 
 	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getSelections <em>Selections</em>}'.
@@ -369,20 +370,20 @@ public interface ApiPackage extends EPackage {
 		EAttribute RESOURCE__URI_ELEMENT = eINSTANCE.getResource_UriElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Support Find All</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Support Get All</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RESOURCE__SUPPORT_FIND_ALL = eINSTANCE.getResource_SupportFindAll();
+		EAttribute RESOURCE__SUPPORT_GET_ALL = eINSTANCE.getResource_SupportGetAll();
 
 		/**
-		 * The meta object literal for the '<em><b>Support Find One</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Support Get One</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RESOURCE__SUPPORT_FIND_ONE = eINSTANCE.getResource_SupportFindOne();
+		EAttribute RESOURCE__SUPPORT_GET_ONE = eINSTANCE.getResource_SupportGetOne();
 
 		/**
 		 * The meta object literal for the '<em><b>Selections</b></em>' reference list feature.

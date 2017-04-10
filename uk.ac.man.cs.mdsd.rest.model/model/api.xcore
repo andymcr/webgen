@@ -22,8 +22,8 @@ class Resource {
 			service.name
 	}
 	String[1] uriElement
-	boolean supportFindOne = "true"
-	boolean supportFindAll = "true"
+	boolean supportGetOne = "true"
+	boolean supportGetAll = "true"
 	refers Selection[] selections
 	contains Resource[] childResources
 }

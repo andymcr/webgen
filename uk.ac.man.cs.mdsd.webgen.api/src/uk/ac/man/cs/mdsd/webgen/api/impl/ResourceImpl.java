@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -36,8 +37,8 @@ import uk.ac.man.cs.mdsd.webgen.service.Service;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#getService <em>Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#isSupportFindAll <em>Support Find All</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#isSupportFindOne <em>Support Find One</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#isSupportGetAll <em>Support Get All</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#isSupportGetOne <em>Support Get One</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.impl.ResourceImpl#getChildResources <em>Child Resources</em>}</li>
  * </ul>
@@ -46,14 +47,14 @@ import uk.ac.man.cs.mdsd.webgen.service.Service;
  */
 public class ResourceImpl extends MinimalEObjectImpl.Container implements Resource {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ApiPackage.Literals.RESOURCE__NAME).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getService() <em>Service</em>}' reference.
@@ -86,44 +87,44 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isSupportFindAll() <em>Support Find All</em>}' attribute.
+	 * The default value of the '{@link #isSupportGetAll() <em>Support Get All</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSupportFindAll()
+	 * @see #isSupportGetAll()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean SUPPORT_FIND_ALL_EDEFAULT = true;
+	protected static final boolean SUPPORT_GET_ALL_EDEFAULT = true;
 
 	/**
-	 * The cached value of the '{@link #isSupportFindAll() <em>Support Find All</em>}' attribute.
+	 * The cached value of the '{@link #isSupportGetAll() <em>Support Get All</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSupportFindAll()
+	 * @see #isSupportGetAll()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean supportFindAll = SUPPORT_FIND_ALL_EDEFAULT;
+	protected boolean supportGetAll = SUPPORT_GET_ALL_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isSupportFindOne() <em>Support Find One</em>}' attribute.
+	 * The default value of the '{@link #isSupportGetOne() <em>Support Get One</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSupportFindOne()
+	 * @see #isSupportGetOne()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean SUPPORT_FIND_ONE_EDEFAULT = true;
+	protected static final boolean SUPPORT_GET_ONE_EDEFAULT = true;
 
 	/**
-	 * The cached value of the '{@link #isSupportFindOne() <em>Support Find One</em>}' attribute.
+	 * The cached value of the '{@link #isSupportGetOne() <em>Support Get One</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSupportFindOne()
+	 * @see #isSupportGetOne()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean supportFindOne = SUPPORT_FIND_ONE_EDEFAULT;
+	protected boolean supportGetOne = SUPPORT_GET_ONE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSelections() <em>Selections</em>}' reference list.
@@ -170,9 +171,7 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * @generated
 	 */
 	public String getName() {
-		// TODO: implement this method to return the 'Name' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -181,9 +180,7 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * @generated
 	 */
 	public boolean isSetName() {
-		// TODO: implement this method to return whether the 'Name' attribute is set
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
 
 	/**
@@ -250,8 +247,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSupportFindAll() {
-		return supportFindAll;
+	public boolean isSupportGetAll() {
+		return supportGetAll;
 	}
 
 	/**
@@ -259,11 +256,11 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSupportFindAll(boolean newSupportFindAll) {
-		boolean oldSupportFindAll = supportFindAll;
-		supportFindAll = newSupportFindAll;
+	public void setSupportGetAll(boolean newSupportGetAll) {
+		boolean oldSupportGetAll = supportGetAll;
+		supportGetAll = newSupportGetAll;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__SUPPORT_FIND_ALL, oldSupportFindAll, supportFindAll));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__SUPPORT_GET_ALL, oldSupportGetAll, supportGetAll));
 	}
 
 	/**
@@ -271,8 +268,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSupportFindOne() {
-		return supportFindOne;
+	public boolean isSupportGetOne() {
+		return supportGetOne;
 	}
 
 	/**
@@ -280,11 +277,11 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSupportFindOne(boolean newSupportFindOne) {
-		boolean oldSupportFindOne = supportFindOne;
-		supportFindOne = newSupportFindOne;
+	public void setSupportGetOne(boolean newSupportGetOne) {
+		boolean oldSupportGetOne = supportGetOne;
+		supportGetOne = newSupportGetOne;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__SUPPORT_FIND_ONE, oldSupportFindOne, supportFindOne));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__SUPPORT_GET_ONE, oldSupportGetOne, supportGetOne));
 	}
 
 	/**
@@ -340,10 +337,10 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 				return basicGetService();
 			case ApiPackage.RESOURCE__URI_ELEMENT:
 				return getUriElement();
-			case ApiPackage.RESOURCE__SUPPORT_FIND_ALL:
-				return isSupportFindAll();
-			case ApiPackage.RESOURCE__SUPPORT_FIND_ONE:
-				return isSupportFindOne();
+			case ApiPackage.RESOURCE__SUPPORT_GET_ALL:
+				return isSupportGetAll();
+			case ApiPackage.RESOURCE__SUPPORT_GET_ONE:
+				return isSupportGetOne();
 			case ApiPackage.RESOURCE__SELECTIONS:
 				return getSelections();
 			case ApiPackage.RESOURCE__CHILD_RESOURCES:
@@ -367,11 +364,11 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 			case ApiPackage.RESOURCE__URI_ELEMENT:
 				setUriElement((String)newValue);
 				return;
-			case ApiPackage.RESOURCE__SUPPORT_FIND_ALL:
-				setSupportFindAll((Boolean)newValue);
+			case ApiPackage.RESOURCE__SUPPORT_GET_ALL:
+				setSupportGetAll((Boolean)newValue);
 				return;
-			case ApiPackage.RESOURCE__SUPPORT_FIND_ONE:
-				setSupportFindOne((Boolean)newValue);
+			case ApiPackage.RESOURCE__SUPPORT_GET_ONE:
+				setSupportGetOne((Boolean)newValue);
 				return;
 			case ApiPackage.RESOURCE__SELECTIONS:
 				getSelections().clear();
@@ -399,11 +396,11 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 			case ApiPackage.RESOURCE__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
-			case ApiPackage.RESOURCE__SUPPORT_FIND_ALL:
-				setSupportFindAll(SUPPORT_FIND_ALL_EDEFAULT);
+			case ApiPackage.RESOURCE__SUPPORT_GET_ALL:
+				setSupportGetAll(SUPPORT_GET_ALL_EDEFAULT);
 				return;
-			case ApiPackage.RESOURCE__SUPPORT_FIND_ONE:
-				setSupportFindOne(SUPPORT_FIND_ONE_EDEFAULT);
+			case ApiPackage.RESOURCE__SUPPORT_GET_ONE:
+				setSupportGetOne(SUPPORT_GET_ONE_EDEFAULT);
 				return;
 			case ApiPackage.RESOURCE__SELECTIONS:
 				getSelections().clear();
@@ -429,10 +426,10 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 				return service != null;
 			case ApiPackage.RESOURCE__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
-			case ApiPackage.RESOURCE__SUPPORT_FIND_ALL:
-				return supportFindAll != SUPPORT_FIND_ALL_EDEFAULT;
-			case ApiPackage.RESOURCE__SUPPORT_FIND_ONE:
-				return supportFindOne != SUPPORT_FIND_ONE_EDEFAULT;
+			case ApiPackage.RESOURCE__SUPPORT_GET_ALL:
+				return supportGetAll != SUPPORT_GET_ALL_EDEFAULT;
+			case ApiPackage.RESOURCE__SUPPORT_GET_ONE:
+				return supportGetOne != SUPPORT_GET_ONE_EDEFAULT;
 			case ApiPackage.RESOURCE__SELECTIONS:
 				return selections != null && !selections.isEmpty();
 			case ApiPackage.RESOURCE__CHILD_RESOURCES:
@@ -453,10 +450,10 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (uriElement: ");
 		result.append(uriElement);
-		result.append(", supportFindAll: ");
-		result.append(supportFindAll);
-		result.append(", supportFindOne: ");
-		result.append(supportFindOne);
+		result.append(", supportGetAll: ");
+		result.append(supportGetAll);
+		result.append(", supportGetOne: ");
+		result.append(supportGetOne);
 		result.append(')');
 		return result.toString();
 	}

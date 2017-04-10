@@ -160,7 +160,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResource_SupportFindOne() {
+	public EAttribute getResource_SupportGetOne() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -169,7 +169,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResource_SupportFindAll() {
+	public EAttribute getResource_SupportGetAll() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -226,8 +226,8 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		createEReference(resourceEClass, RESOURCE__SERVICE);
 		createEAttribute(resourceEClass, RESOURCE__NAME);
 		createEAttribute(resourceEClass, RESOURCE__URI_ELEMENT);
-		createEAttribute(resourceEClass, RESOURCE__SUPPORT_FIND_ONE);
-		createEAttribute(resourceEClass, RESOURCE__SUPPORT_FIND_ALL);
+		createEAttribute(resourceEClass, RESOURCE__SUPPORT_GET_ONE);
+		createEAttribute(resourceEClass, RESOURCE__SUPPORT_GET_ALL);
 		createEReference(resourceEClass, RESOURCE__SELECTIONS);
 		createEReference(resourceEClass, RESOURCE__CHILD_RESOURCES);
 	}
@@ -273,8 +273,8 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		initEReference(getResource_Service(), theServicePackage.getService(), null, "service", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_Name(), theEcorePackage.getEString(), "name", null, 1, 1, Resource.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_UriElement(), theEcorePackage.getEString(), "uriElement", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResource_SupportFindOne(), theEcorePackage.getEBoolean(), "supportFindOne", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResource_SupportFindAll(), theEcorePackage.getEBoolean(), "supportFindAll", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResource_SupportGetOne(), theEcorePackage.getEBoolean(), "supportGetOne", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResource_SupportGetAll(), theEcorePackage.getEBoolean(), "supportGetAll", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_Selections(), theServicePackage.getSelection(), null, "selections", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_ChildResources(), this.getResource(), null, "childResources", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -21,8 +21,8 @@ import uk.ac.man.cs.mdsd.service.Service;
  *   <li>{@link uk.ac.man.cs.mdsd.api.Resource#getService <em>Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.Resource#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.Resource#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.api.Resource#isSupportFindOne <em>Support Find One</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.api.Resource#isSupportFindAll <em>Support Find All</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.api.Resource#isSupportGetOne <em>Support Get One</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.api.Resource#isSupportGetAll <em>Support Get All</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.Resource#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.Resource#getChildResources <em>Child Resources</em>}</li>
  * </ul>
@@ -101,58 +101,58 @@ public interface Resource extends EObject {
 	void setUriElement(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Support Find One</b></em>' attribute.
+	 * Returns the value of the '<em><b>Support Get One</b></em>' attribute.
 	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Support Find One</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Support Get One</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Support Find One</em>' attribute.
-	 * @see #setSupportFindOne(boolean)
-	 * @see uk.ac.man.cs.mdsd.api.ApiPackage#getResource_SupportFindOne()
+	 * @return the value of the '<em>Support Get One</em>' attribute.
+	 * @see #setSupportGetOne(boolean)
+	 * @see uk.ac.man.cs.mdsd.api.ApiPackage#getResource_SupportGetOne()
 	 * @model default="true" unique="false"
 	 * @generated
 	 */
-	boolean isSupportFindOne();
+	boolean isSupportGetOne();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.api.Resource#isSupportFindOne <em>Support Find One</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.api.Resource#isSupportGetOne <em>Support Get One</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Support Find One</em>' attribute.
-	 * @see #isSupportFindOne()
+	 * @param value the new value of the '<em>Support Get One</em>' attribute.
+	 * @see #isSupportGetOne()
 	 * @generated
 	 */
-	void setSupportFindOne(boolean value);
+	void setSupportGetOne(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Support Find All</b></em>' attribute.
+	 * Returns the value of the '<em><b>Support Get All</b></em>' attribute.
 	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Support Find All</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Support Get All</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Support Find All</em>' attribute.
-	 * @see #setSupportFindAll(boolean)
-	 * @see uk.ac.man.cs.mdsd.api.ApiPackage#getResource_SupportFindAll()
+	 * @return the value of the '<em>Support Get All</em>' attribute.
+	 * @see #setSupportGetAll(boolean)
+	 * @see uk.ac.man.cs.mdsd.api.ApiPackage#getResource_SupportGetAll()
 	 * @model default="true" unique="false"
 	 * @generated
 	 */
-	boolean isSupportFindAll();
+	boolean isSupportGetAll();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.api.Resource#isSupportFindAll <em>Support Find All</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.api.Resource#isSupportGetAll <em>Support Get All</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Support Find All</em>' attribute.
-	 * @see #isSupportFindAll()
+	 * @param value the new value of the '<em>Support Get All</em>' attribute.
+	 * @see #isSupportGetAll()
 	 * @generated
 	 */
-	void setSupportFindAll(boolean value);
+	void setSupportGetAll(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Selections</b></em>' reference list.

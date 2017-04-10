@@ -15,8 +15,8 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute api.ecore#//Resource/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference api.ecore#//Resource/service"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute api.ecore#//Resource/uriElement"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute api.ecore#//Resource/supportFindAll"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute api.ecore#//Resource/supportFindOne"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute api.ecore#//Resource/supportGetAll"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute api.ecore#//Resource/supportGetOne"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference api.ecore#//Resource/selections"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference api.ecore#//Resource/childResources"/>
     </genClasses>

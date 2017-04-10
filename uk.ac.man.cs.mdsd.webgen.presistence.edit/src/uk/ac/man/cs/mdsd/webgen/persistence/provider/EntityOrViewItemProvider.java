@@ -61,7 +61,6 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			addAutoKeyGenerationStrategyPropertyDescriptor(object);
 			addUniquePropertyDescriptor(object);
 			addContainerUniquePropertyDescriptor(object);
-			addSerializationExcludeAllPropertyDescriptor(object);
 			addImplementsUserInterfacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -281,28 +280,6 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Serialization Exclude All feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSerializationExcludeAllPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityOrView_serializationExcludeAll_feature"),
-				 getString("_UI_EntityOrView_serializationExcludeAll_description"),
-				 PersistencePackage.Literals.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Implements User Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -387,7 +364,6 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
 			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
-			case PersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
 			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

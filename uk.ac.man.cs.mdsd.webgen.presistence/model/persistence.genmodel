@@ -75,8 +75,6 @@
           ecoreFeature="ecore:EReference persistence.ecore#//EntityOrView/associations"/>
       <genFeatures property="None" notify="false" createChild="false" propertyCategory="Model"
           propertyDescription="Serialization" ecoreFeature="ecore:EReference persistence.ecore#//EntityOrView/allAssociations"/>
-      <genFeatures createChild="false" propertyCategory="Model" propertyDescription="Seralization"
-          ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/serializationExcludeAll"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/implementsUserInterface"/>
     </genClasses>
     <genClasses image="false" ecoreClass="persistence.ecore#//Feature">

@@ -48,7 +48,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl#getAssociations <em>Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl#getAllAssociations <em>All Associations</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl#isSerializationExcludeAll <em>Serialization Exclude All</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl#isImplementsUserInterface <em>Implements User Interface</em>}</li>
  * </ul>
  *
@@ -264,26 +263,6 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate ALL_ASSOCIATIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PersistencePackage.Literals.ENTITY_OR_VIEW__ALL_ASSOCIATIONS).getSettingDelegate();
-
-	/**
-	 * The default value of the '{@link #isSerializationExcludeAll() <em>Serialization Exclude All</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSerializationExcludeAll()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean SERIALIZATION_EXCLUDE_ALL_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isSerializationExcludeAll() <em>Serialization Exclude All</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSerializationExcludeAll()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean serializationExcludeAll = SERIALIZATION_EXCLUDE_ALL_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isImplementsUserInterface() <em>Implements User Interface</em>}' attribute.
@@ -553,27 +532,6 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSerializationExcludeAll() {
-		return serializationExcludeAll;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSerializationExcludeAll(boolean newSerializationExcludeAll) {
-		boolean oldSerializationExcludeAll = serializationExcludeAll;
-		serializationExcludeAll = newSerializationExcludeAll;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL, oldSerializationExcludeAll, serializationExcludeAll));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isImplementsUserInterface() {
 		return implementsUserInterface;
 	}
@@ -657,8 +615,6 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return getAssociations();
 			case PersistencePackage.ENTITY_OR_VIEW__ALL_ASSOCIATIONS:
 				return getAllAssociations();
-			case PersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
-				return isSerializationExcludeAll();
 			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				return isImplementsUserInterface();
 		}
@@ -708,9 +664,6 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				getLabels().clear();
 				getLabels().addAll((Collection<? extends ModelLabel>)newValue);
 				return;
-			case PersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
-				setSerializationExcludeAll((Boolean)newValue);
-				return;
 			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				setImplementsUserInterface((Boolean)newValue);
 				return;
@@ -755,9 +708,6 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return;
 			case PersistencePackage.ENTITY_OR_VIEW__LABELS:
 				getLabels().clear();
-				return;
-			case PersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
-				setSerializationExcludeAll(SERIALIZATION_EXCLUDE_ALL_EDEFAULT);
 				return;
 			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				setImplementsUserInterface(IMPLEMENTS_USER_INTERFACE_EDEFAULT);
@@ -804,8 +754,6 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return ASSOCIATIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PersistencePackage.ENTITY_OR_VIEW__ALL_ASSOCIATIONS:
 				return ALL_ASSOCIATIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case PersistencePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
-				return serializationExcludeAll != SERIALIZATION_EXCLUDE_ALL_EDEFAULT;
 			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				return implementsUserInterface != IMPLEMENTS_USER_INTERFACE_EDEFAULT;
 		}
@@ -834,8 +782,6 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		result.append(autoKeyPersistentType);
 		result.append(", autoKeyGenerationStrategy: ");
 		result.append(autoKeyGenerationStrategy);
-		result.append(", serializationExcludeAll: ");
-		result.append(serializationExcludeAll);
 		result.append(", implementsUserInterface: ");
 		result.append(implementsUserInterface);
 		result.append(')');

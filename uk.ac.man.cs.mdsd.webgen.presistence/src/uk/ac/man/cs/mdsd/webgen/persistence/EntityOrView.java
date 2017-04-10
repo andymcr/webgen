@@ -30,7 +30,6 @@ import uk.ac.man.cs.mdsd.webgen.base.Classifier;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#getAssociations <em>Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#getAllAssociations <em>All Associations</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isSerializationExcludeAll <em>Serialization Exclude All</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isImplementsUserInterface <em>Implements User Interface</em>}</li>
  * </ul>
  *
@@ -349,33 +348,6 @@ public interface EntityOrView extends Classifier {
 	 * @generated
 	 */
 	EList<Association> getAllAssociations();
-
-	/**
-	 * Returns the value of the '<em><b>Serialization Exclude All</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Serialization Exclude All</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Serialization Exclude All</em>' attribute.
-	 * @see #setSerializationExcludeAll(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_SerializationExcludeAll()
-	 * @model default="false"
-	 * @generated
-	 */
-	boolean isSerializationExcludeAll();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isSerializationExcludeAll <em>Serialization Exclude All</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Serialization Exclude All</em>' attribute.
-	 * @see #isSerializationExcludeAll()
-	 * @generated
-	 */
-	void setSerializationExcludeAll(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Implements User Interface</b></em>' attribute.

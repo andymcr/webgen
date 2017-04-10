@@ -176,7 +176,6 @@ abstract rule EntityOrView {
 		autoKeyName <- website.autoKeyName.createAttributeColumnName(),
 		autoKeyPersistentType <- website.autoKeyPersistentType,
 		autoKeyGenerationStrategy <- website.autoKeyGenerationStrategy,
-		serializationExcludeAll <- website.serializationExcludeAll,
 		implementsUserInterface <- website.implementsUserInterface
 	)
 }

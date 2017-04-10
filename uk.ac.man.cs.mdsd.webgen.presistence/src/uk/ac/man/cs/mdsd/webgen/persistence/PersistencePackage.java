@@ -360,22 +360,13 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_OR_VIEW__ALL_ASSOCIATIONS = BasePackage.CLASSIFIER_FEATURE_COUNT + 14;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Exclude All</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL = BasePackage.CLASSIFIER_FEATURE_COUNT + 15;
-
-	/**
 	 * The feature id for the '<em><b>Implements User Interface</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE = BasePackage.CLASSIFIER_FEATURE_COUNT + 16;
+	int ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE = BasePackage.CLASSIFIER_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Entity Or View</em>' class.
@@ -384,7 +375,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW_FEATURE_COUNT = BasePackage.CLASSIFIER_FEATURE_COUNT + 17;
+	int ENTITY_OR_VIEW_FEATURE_COUNT = BasePackage.CLASSIFIER_FEATURE_COUNT + 16;
 
 	/**
 	 * The number of operations of the '<em>Entity Or View</em>' class.
@@ -1249,15 +1240,6 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY__ALL_ASSOCIATIONS = ENTITY_OR_VIEW__ALL_ASSOCIATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Exclude All</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__SERIALIZATION_EXCLUDE_ALL = ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL;
 
 	/**
 	 * The feature id for the '<em><b>Implements User Interface</b></em>' attribute.
@@ -5462,15 +5444,6 @@ public interface PersistencePackage extends EPackage {
 	int VIEW__ALL_ASSOCIATIONS = ENTITY_OR_VIEW__ALL_ASSOCIATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Exclude All</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__SERIALIZATION_EXCLUDE_ALL = ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL;
-
-	/**
 	 * The feature id for the '<em><b>Implements User Interface</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6868,17 +6841,6 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEntityOrView_AllAssociations();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isSerializationExcludeAll <em>Serialization Exclude All</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Serialization Exclude All</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isSerializationExcludeAll()
-	 * @see #getEntityOrView()
-	 * @generated
-	 */
-	EAttribute getEntityOrView_SerializationExcludeAll();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isImplementsUserInterface <em>Implements User Interface</em>}'.
@@ -8543,14 +8505,6 @@ public interface PersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTITY_OR_VIEW__ALL_ASSOCIATIONS = eINSTANCE.getEntityOrView_AllAssociations();
-
-		/**
-		 * The meta object literal for the '<em><b>Serialization Exclude All</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL = eINSTANCE.getEntityOrView_SerializationExcludeAll();
 
 		/**
 		 * The meta object literal for the '<em><b>Implements User Interface</b></em>' attribute feature.

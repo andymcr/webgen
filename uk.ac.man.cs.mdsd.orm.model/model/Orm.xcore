@@ -110,7 +110,6 @@ abstract class EntityOrView extends Classifier {
 	refers Feature[] ^unique
 	refers Feature[] containerUnique
 	contains ModelLabel[] labels opposite labelFor
-	boolean[1] serializationExcludeAll = "false"
 	boolean implementsUserInterface = "false"
 }
 

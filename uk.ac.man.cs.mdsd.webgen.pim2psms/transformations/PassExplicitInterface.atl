@@ -5,7 +5,7 @@
 -- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.xecore
 
 module PassExplicitInterface;
-create waf : WAF from website : Website, orm : ORM, service : Service;
+create waf : WAF from website : Website, orm : ORM, service : Service, api : API;
 
 uses WebsiteHelpers;
 uses InterfaceExpression;
@@ -272,11 +272,12 @@ helper context Website!EntityOrView def: container() : Website!EntityOrView
 
 
 rule WafModel {
-	from website : Website!WebGenModel, orm : ORM!OrmModel, service : Service!ServiceModel
+	from website : Website!WebGenModel, orm : ORM!OrmModel, service : Service!ServiceModel, api : API!API
 	to waf : WAF!WafModel (
 		persistence <- orm,
 		business <- service,
 		imageManipulations <- website.images.manipulations,
+		api <- api,
 		globalMenu <- website.webUI.globalMenu,
 		contextMenus <- website.webUI.contextMenus,
 		pages <- website.webUI.pages,

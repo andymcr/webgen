@@ -13,6 +13,7 @@ import uk.ac.man.cs.mdsd.webgen.api.ApiFactory;
 import uk.ac.man.cs.mdsd.webgen.api.ApiPackage;
 import uk.ac.man.cs.mdsd.webgen.api.Resource;
 
+import uk.ac.man.cs.mdsd.webgen.api.ResourceSelection;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 
@@ -36,6 +37,13 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * @generated
 	 */
 	private EClass resourceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass resourceSelectionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -169,7 +177,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResource_SupportGetAll() {
+	public EAttribute getResource_EnableDefaultGetAll() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -178,7 +186,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResource_SupportGetOne() {
+	public EAttribute getResource_EnableDefaultGetOne() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -187,7 +195,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getResource_Selections() {
+	public EReference getResource_GetAll() {
 		return (EReference)resourceEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -196,7 +204,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getResource_DefaultSerializationGroups() {
+	public EReference getResource_GetOne() {
 		return (EReference)resourceEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -205,8 +213,80 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getResource_ChildResources() {
+	public EReference getResource_Selections() {
 		return (EReference)resourceEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResource_DefaultSerializationGroups() {
+		return (EReference)resourceEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResource_ChildResources() {
+		return (EReference)resourceEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getResourceSelection() {
+		return resourceSelectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResourceSelection_ParentResource() {
+		return (EReference)resourceSelectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResourceSelection_Name() {
+		return (EAttribute)resourceSelectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResourceSelection_Selection() {
+		return (EReference)resourceSelectionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResourceSelection_UriElement() {
+		return (EAttribute)resourceSelectionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResourceSelection_DefaultSerializationGroups() {
+		return (EReference)resourceSelectionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -245,11 +325,20 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		createEAttribute(resourceEClass, RESOURCE__NAME);
 		createEReference(resourceEClass, RESOURCE__SERVICE);
 		createEAttribute(resourceEClass, RESOURCE__URI_ELEMENT);
-		createEAttribute(resourceEClass, RESOURCE__SUPPORT_GET_ALL);
-		createEAttribute(resourceEClass, RESOURCE__SUPPORT_GET_ONE);
+		createEAttribute(resourceEClass, RESOURCE__ENABLE_DEFAULT_GET_ALL);
+		createEAttribute(resourceEClass, RESOURCE__ENABLE_DEFAULT_GET_ONE);
+		createEReference(resourceEClass, RESOURCE__GET_ALL);
+		createEReference(resourceEClass, RESOURCE__GET_ONE);
 		createEReference(resourceEClass, RESOURCE__SELECTIONS);
 		createEReference(resourceEClass, RESOURCE__DEFAULT_SERIALIZATION_GROUPS);
 		createEReference(resourceEClass, RESOURCE__CHILD_RESOURCES);
+
+		resourceSelectionEClass = createEClass(RESOURCE_SELECTION);
+		createEReference(resourceSelectionEClass, RESOURCE_SELECTION__PARENT_RESOURCE);
+		createEAttribute(resourceSelectionEClass, RESOURCE_SELECTION__NAME);
+		createEReference(resourceSelectionEClass, RESOURCE_SELECTION__SELECTION);
+		createEAttribute(resourceSelectionEClass, RESOURCE_SELECTION__URI_ELEMENT);
+		createEReference(resourceSelectionEClass, RESOURCE_SELECTION__DEFAULT_SERIALIZATION_GROUPS);
 	}
 
 	/**
@@ -294,11 +383,20 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		initEAttribute(getResource_Name(), ecorePackage.getEString(), "name", null, 0, 1, Resource.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getResource_Service(), theServicePackage.getService(), null, "service", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResource_SupportGetAll(), ecorePackage.getEBoolean(), "supportGetAll", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResource_SupportGetOne(), ecorePackage.getEBoolean(), "supportGetOne", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getResource_Selections(), theServicePackage.getSelection(), null, "selections", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResource_EnableDefaultGetAll(), ecorePackage.getEBoolean(), "enableDefaultGetAll", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResource_EnableDefaultGetOne(), ecorePackage.getEBoolean(), "enableDefaultGetOne", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResource_GetAll(), theServicePackage.getSelection(), null, "getAll", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResource_GetOne(), theServicePackage.getSelection(), null, "getOne", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResource_Selections(), this.getResourceSelection(), this.getResourceSelection_ParentResource(), "selections", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_DefaultSerializationGroups(), thePersistencePackage.getSerializationGroup(), null, "defaultSerializationGroups", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_ChildResources(), this.getResource(), this.getResource_ParentResource(), "childResources", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(resourceSelectionEClass, ResourceSelection.class, "ResourceSelection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getResourceSelection_ParentResource(), this.getResource(), this.getResource_Selections(), "parentResource", null, 1, 1, ResourceSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResourceSelection_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResourceSelection.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getResourceSelection_Selection(), theServicePackage.getSelection(), null, "selection", null, 1, 1, ResourceSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getResourceSelection_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, ResourceSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResourceSelection_DefaultSerializationGroups(), thePersistencePackage.getSerializationGroup(), null, "defaultSerializationGroups", null, 0, -1, ResourceSelection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -341,6 +439,12 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		   source, 
 		   new String[] {
 			 "derivation", "if service.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tservice.name\r\nendif"
+		   });	
+		addAnnotation
+		  (getResourceSelection_Name(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if selection.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tselection.name\r\nendif"
 		   });
 	}
 

@@ -66,9 +66,10 @@ public class ResourceItemProvider
 			addNamePropertyDescriptor(object);
 			addServicePropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
-			addSupportGetAllPropertyDescriptor(object);
-			addSupportGetOnePropertyDescriptor(object);
-			addSelectionsPropertyDescriptor(object);
+			addEnableDefaultGetAllPropertyDescriptor(object);
+			addEnableDefaultGetOnePropertyDescriptor(object);
+			addGetAllPropertyDescriptor(object);
+			addGetOnePropertyDescriptor(object);
 			addDefaultSerializationGroupsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -92,7 +93,7 @@ public class ResourceItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -114,7 +115,7 @@ public class ResourceItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -136,24 +137,24 @@ public class ResourceItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Support Get All feature.
+	 * This adds a property descriptor for the Enable Default Get All feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSupportGetAllPropertyDescriptor(Object object) {
+	protected void addEnableDefaultGetAllPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Resource_supportGetAll_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_supportGetAll_feature", "_UI_Resource_type"),
-				 ApiPackage.Literals.RESOURCE__SUPPORT_GET_ALL,
+				 getString("_UI_Resource_enableDefaultGetAll_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_enableDefaultGetAll_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__ENABLE_DEFAULT_GET_ALL,
 				 true,
 				 false,
 				 false,
@@ -163,19 +164,19 @@ public class ResourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Support Get One feature.
+	 * This adds a property descriptor for the Enable Default Get One feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSupportGetOnePropertyDescriptor(Object object) {
+	protected void addEnableDefaultGetOnePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Resource_supportGetOne_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_supportGetOne_feature", "_UI_Resource_type"),
-				 ApiPackage.Literals.RESOURCE__SUPPORT_GET_ONE,
+				 getString("_UI_Resource_enableDefaultGetOne_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_enableDefaultGetOne_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__ENABLE_DEFAULT_GET_ONE,
 				 true,
 				 false,
 				 false,
@@ -185,24 +186,46 @@ public class ResourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Selections feature.
+	 * This adds a property descriptor for the Get All feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSelectionsPropertyDescriptor(Object object) {
+	protected void addGetAllPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Resource_selections_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_selections_feature", "_UI_Resource_type"),
-				 ApiPackage.Literals.RESOURCE__SELECTIONS,
+				 getString("_UI_Resource_getAll_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_getAll_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__GET_ALL,
 				 true,
 				 false,
 				 true,
 				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Get One feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGetOnePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Resource_getOne_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_getOne_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__GET_ONE,
+				 true,
+				 false,
+				 true,
 				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -224,7 +247,7 @@ public class ResourceItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_SerializationPropertyCategory"),
 				 null));
 	}
 
@@ -298,8 +321,8 @@ public class ResourceItemProvider
 		switch (notification.getFeatureID(Resource.class)) {
 			case ApiPackage.RESOURCE__NAME:
 			case ApiPackage.RESOURCE__URI_ELEMENT:
-			case ApiPackage.RESOURCE__SUPPORT_GET_ALL:
-			case ApiPackage.RESOURCE__SUPPORT_GET_ONE:
+			case ApiPackage.RESOURCE__ENABLE_DEFAULT_GET_ALL:
+			case ApiPackage.RESOURCE__ENABLE_DEFAULT_GET_ONE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ApiPackage.RESOURCE__CHILD_RESOURCES:

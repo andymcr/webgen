@@ -118,6 +118,29 @@ public class ApiItemProviderAdapterFactory extends ApiAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.api.ResourceSelection} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResourceSelectionItemProvider resourceSelectionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.api.ResourceSelection}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createResourceSelectionAdapter() {
+		if (resourceSelectionItemProvider == null) {
+			resourceSelectionItemProvider = new ResourceSelectionItemProvider(this);
+		}
+
+		return resourceSelectionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,6 +241,7 @@ public class ApiItemProviderAdapterFactory extends ApiAdapterFactory implements 
 	public void dispose() {
 		if (apiItemProvider != null) apiItemProvider.dispose();
 		if (resourceItemProvider != null) resourceItemProvider.dispose();
+		if (resourceSelectionItemProvider != null) resourceSelectionItemProvider.dispose();
 	}
 
 }

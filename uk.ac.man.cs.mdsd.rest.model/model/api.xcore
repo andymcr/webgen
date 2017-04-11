@@ -24,9 +24,22 @@ class Resource {
 			service.name
 	}
 	String[1] uriElement
-	boolean supportGetOne = "true"
-	boolean supportGetAll = "true"
-	refers Selection[] selections
+	boolean enableDefaultGetOne = "true"
+	boolean enableDefaultGetAll = "true"
+	refers Selection getAll
+	refers Selection getOne
+	contains ResourceSelection[] selections opposite parentResource
 	refers SerializationGroup[] defaultSerializationGroups
 	contains Resource[] childResources opposite parentResource
+}
+
+class ResourceSelection {
+	container Resource parentResource opposite selections
+	refers Selection[1] selection
+	derived String[1] name get {
+		if (selection != null)
+			selection.name
+	}
+	String[1] uriElement
+	refers SerializationGroup[] defaultSerializationGroups
 }

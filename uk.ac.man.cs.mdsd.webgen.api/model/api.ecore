@@ -23,15 +23,33 @@
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Service"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="supportGetAll" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enableDefaultGetAll" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="supportGetOne" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enableDefaultGetOne" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="getAll" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="getOne" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selections" upperBound="-1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
+        eType="#//ResourceSelection" containment="true" eOpposite="#//ResourceSelection/parentResource"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSerializationGroups"
         upperBound="-1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//SerializationGroup"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="childResources" upperBound="-1"
         eType="#//Resource" containment="true" eOpposite="#//Resource/parentResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceSelection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentResource" lowerBound="1"
+        eType="#//Resource" eOpposite="#//Resource/selections"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" unsettable="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if selection.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;selection.name&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selection" lowerBound="1"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSerializationGroups"
+        upperBound="-1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//SerializationGroup"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.api.ApiPackage;
 import uk.ac.man.cs.mdsd.api.Resource;
+import uk.ac.man.cs.mdsd.api.ResourceSelection;
 
 import uk.ac.man.cs.mdsd.orm.SerializationGroup;
 
@@ -42,8 +43,10 @@ import uk.ac.man.cs.mdsd.service.Service;
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getService <em>Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#isSupportGetOne <em>Support Get One</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#isSupportGetAll <em>Support Get All</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#isEnableDefaultGetOne <em>Enable Default Get One</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#isEnableDefaultGetAll <em>Enable Default Get All</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getGetAll <em>Get All</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getGetOne <em>Get One</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getDefaultSerializationGroups <em>Default Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getChildResources <em>Child Resources</em>}</li>
@@ -93,54 +96,74 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isSupportGetOne() <em>Support Get One</em>}' attribute.
+	 * The default value of the '{@link #isEnableDefaultGetOne() <em>Enable Default Get One</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSupportGetOne()
+	 * @see #isEnableDefaultGetOne()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean SUPPORT_GET_ONE_EDEFAULT = true;
+	protected static final boolean ENABLE_DEFAULT_GET_ONE_EDEFAULT = true;
 
 	/**
-	 * The cached value of the '{@link #isSupportGetOne() <em>Support Get One</em>}' attribute.
+	 * The cached value of the '{@link #isEnableDefaultGetOne() <em>Enable Default Get One</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSupportGetOne()
+	 * @see #isEnableDefaultGetOne()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean supportGetOne = SUPPORT_GET_ONE_EDEFAULT;
+	protected boolean enableDefaultGetOne = ENABLE_DEFAULT_GET_ONE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isSupportGetAll() <em>Support Get All</em>}' attribute.
+	 * The default value of the '{@link #isEnableDefaultGetAll() <em>Enable Default Get All</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSupportGetAll()
+	 * @see #isEnableDefaultGetAll()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean SUPPORT_GET_ALL_EDEFAULT = true;
+	protected static final boolean ENABLE_DEFAULT_GET_ALL_EDEFAULT = true;
 
 	/**
-	 * The cached value of the '{@link #isSupportGetAll() <em>Support Get All</em>}' attribute.
+	 * The cached value of the '{@link #isEnableDefaultGetAll() <em>Enable Default Get All</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSupportGetAll()
+	 * @see #isEnableDefaultGetAll()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean supportGetAll = SUPPORT_GET_ALL_EDEFAULT;
+	protected boolean enableDefaultGetAll = ENABLE_DEFAULT_GET_ALL_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSelections() <em>Selections</em>}' reference list.
+	 * The cached value of the '{@link #getGetAll() <em>Get All</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGetAll()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection getAll;
+
+	/**
+	 * The cached value of the '{@link #getGetOne() <em>Get One</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGetOne()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection getOne;
+
+	/**
+	 * The cached value of the '{@link #getSelections() <em>Selections</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSelections()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Selection> selections;
+	protected EList<ResourceSelection> selections;
 
 	/**
 	 * The cached value of the '{@link #getDefaultSerializationGroups() <em>Default Serialization Groups</em>}' reference list.
@@ -312,8 +335,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSupportGetOne() {
-		return supportGetOne;
+	public boolean isEnableDefaultGetOne() {
+		return enableDefaultGetOne;
 	}
 
 	/**
@@ -321,11 +344,11 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSupportGetOne(boolean newSupportGetOne) {
-		boolean oldSupportGetOne = supportGetOne;
-		supportGetOne = newSupportGetOne;
+	public void setEnableDefaultGetOne(boolean newEnableDefaultGetOne) {
+		boolean oldEnableDefaultGetOne = enableDefaultGetOne;
+		enableDefaultGetOne = newEnableDefaultGetOne;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__SUPPORT_GET_ONE, oldSupportGetOne, supportGetOne));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__ENABLE_DEFAULT_GET_ONE, oldEnableDefaultGetOne, enableDefaultGetOne));
 	}
 
 	/**
@@ -333,8 +356,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSupportGetAll() {
-		return supportGetAll;
+	public boolean isEnableDefaultGetAll() {
+		return enableDefaultGetAll;
 	}
 
 	/**
@@ -342,11 +365,11 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSupportGetAll(boolean newSupportGetAll) {
-		boolean oldSupportGetAll = supportGetAll;
-		supportGetAll = newSupportGetAll;
+	public void setEnableDefaultGetAll(boolean newEnableDefaultGetAll) {
+		boolean oldEnableDefaultGetAll = enableDefaultGetAll;
+		enableDefaultGetAll = newEnableDefaultGetAll;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__SUPPORT_GET_ALL, oldSupportGetAll, supportGetAll));
+			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__ENABLE_DEFAULT_GET_ALL, oldEnableDefaultGetAll, enableDefaultGetAll));
 	}
 
 	/**
@@ -354,9 +377,85 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Selection> getSelections() {
+	public Selection getGetAll() {
+		if (getAll != null && getAll.eIsProxy()) {
+			InternalEObject oldGetAll = (InternalEObject)getAll;
+			getAll = (Selection)eResolveProxy(oldGetAll);
+			if (getAll != oldGetAll) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApiPackage.RESOURCE__GET_ALL, oldGetAll, getAll));
+			}
+		}
+		return getAll;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetGetAll() {
+		return getAll;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGetAll(Selection newGetAll) {
+		Selection oldGetAll = getAll;
+		getAll = newGetAll;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__GET_ALL, oldGetAll, getAll));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection getGetOne() {
+		if (getOne != null && getOne.eIsProxy()) {
+			InternalEObject oldGetOne = (InternalEObject)getOne;
+			getOne = (Selection)eResolveProxy(oldGetOne);
+			if (getOne != oldGetOne) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApiPackage.RESOURCE__GET_ONE, oldGetOne, getOne));
+			}
+		}
+		return getOne;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetGetOne() {
+		return getOne;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGetOne(Selection newGetOne) {
+		Selection oldGetOne = getOne;
+		getOne = newGetOne;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__GET_ONE, oldGetOne, getOne));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ResourceSelection> getSelections() {
 		if (selections == null) {
-			selections = new EObjectResolvingEList<Selection>(Selection.class, this, ApiPackage.RESOURCE__SELECTIONS);
+			selections = new EObjectContainmentWithInverseEList<ResourceSelection>(ResourceSelection.class, this, ApiPackage.RESOURCE__SELECTIONS, ApiPackage.RESOURCE_SELECTION__PARENT_RESOURCE);
 		}
 		return selections;
 	}
@@ -398,6 +497,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetParentResource((Resource)otherEnd, msgs);
+			case ApiPackage.RESOURCE__SELECTIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSelections()).basicAdd(otherEnd, msgs);
 			case ApiPackage.RESOURCE__CHILD_RESOURCES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildResources()).basicAdd(otherEnd, msgs);
 		}
@@ -414,6 +515,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 		switch (featureID) {
 			case ApiPackage.RESOURCE__PARENT_RESOURCE:
 				return basicSetParentResource(null, msgs);
+			case ApiPackage.RESOURCE__SELECTIONS:
+				return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
 			case ApiPackage.RESOURCE__CHILD_RESOURCES:
 				return ((InternalEList<?>)getChildResources()).basicRemove(otherEnd, msgs);
 		}
@@ -452,10 +555,16 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 				return getName();
 			case ApiPackage.RESOURCE__URI_ELEMENT:
 				return getUriElement();
-			case ApiPackage.RESOURCE__SUPPORT_GET_ONE:
-				return isSupportGetOne();
-			case ApiPackage.RESOURCE__SUPPORT_GET_ALL:
-				return isSupportGetAll();
+			case ApiPackage.RESOURCE__ENABLE_DEFAULT_GET_ONE:
+				return isEnableDefaultGetOne();
+			case ApiPackage.RESOURCE__ENABLE_DEFAULT_GET_ALL:
+				return isEnableDefaultGetAll();
+			case ApiPackage.RESOURCE__GET_ALL:
+				if (resolve) return getGetAll();
+				return basicGetGetAll();
+			case ApiPackage.RESOURCE__GET_ONE:
+				if (resolve) return getGetOne();
+				return basicGetGetOne();
 			case ApiPackage.RESOURCE__SELECTIONS:
 				return getSelections();
 			case ApiPackage.RESOURCE__DEFAULT_SERIALIZATION_GROUPS:
@@ -484,15 +593,21 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 			case ApiPackage.RESOURCE__URI_ELEMENT:
 				setUriElement((String)newValue);
 				return;
-			case ApiPackage.RESOURCE__SUPPORT_GET_ONE:
-				setSupportGetOne((Boolean)newValue);
+			case ApiPackage.RESOURCE__ENABLE_DEFAULT_GET_ONE:
+				setEnableDefaultGetOne((Boolean)newValue);
 				return;
-			case ApiPackage.RESOURCE__SUPPORT_GET_ALL:
-				setSupportGetAll((Boolean)newValue);
+			case ApiPackage.RESOURCE__ENABLE_DEFAULT_GET_ALL:
+				setEnableDefaultGetAll((Boolean)newValue);
+				return;
+			case ApiPackage.RESOURCE__GET_ALL:
+				setGetAll((Selection)newValue);
+				return;
+			case ApiPackage.RESOURCE__GET_ONE:
+				setGetOne((Selection)newValue);
 				return;
 			case ApiPackage.RESOURCE__SELECTIONS:
 				getSelections().clear();
-				getSelections().addAll((Collection<? extends Selection>)newValue);
+				getSelections().addAll((Collection<? extends ResourceSelection>)newValue);
 				return;
 			case ApiPackage.RESOURCE__DEFAULT_SERIALIZATION_GROUPS:
 				getDefaultSerializationGroups().clear();
@@ -523,11 +638,17 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 			case ApiPackage.RESOURCE__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
-			case ApiPackage.RESOURCE__SUPPORT_GET_ONE:
-				setSupportGetOne(SUPPORT_GET_ONE_EDEFAULT);
+			case ApiPackage.RESOURCE__ENABLE_DEFAULT_GET_ONE:
+				setEnableDefaultGetOne(ENABLE_DEFAULT_GET_ONE_EDEFAULT);
 				return;
-			case ApiPackage.RESOURCE__SUPPORT_GET_ALL:
-				setSupportGetAll(SUPPORT_GET_ALL_EDEFAULT);
+			case ApiPackage.RESOURCE__ENABLE_DEFAULT_GET_ALL:
+				setEnableDefaultGetAll(ENABLE_DEFAULT_GET_ALL_EDEFAULT);
+				return;
+			case ApiPackage.RESOURCE__GET_ALL:
+				setGetAll((Selection)null);
+				return;
+			case ApiPackage.RESOURCE__GET_ONE:
+				setGetOne((Selection)null);
 				return;
 			case ApiPackage.RESOURCE__SELECTIONS:
 				getSelections().clear();
@@ -558,10 +679,14 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
 			case ApiPackage.RESOURCE__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
-			case ApiPackage.RESOURCE__SUPPORT_GET_ONE:
-				return supportGetOne != SUPPORT_GET_ONE_EDEFAULT;
-			case ApiPackage.RESOURCE__SUPPORT_GET_ALL:
-				return supportGetAll != SUPPORT_GET_ALL_EDEFAULT;
+			case ApiPackage.RESOURCE__ENABLE_DEFAULT_GET_ONE:
+				return enableDefaultGetOne != ENABLE_DEFAULT_GET_ONE_EDEFAULT;
+			case ApiPackage.RESOURCE__ENABLE_DEFAULT_GET_ALL:
+				return enableDefaultGetAll != ENABLE_DEFAULT_GET_ALL_EDEFAULT;
+			case ApiPackage.RESOURCE__GET_ALL:
+				return getAll != null;
+			case ApiPackage.RESOURCE__GET_ONE:
+				return getOne != null;
 			case ApiPackage.RESOURCE__SELECTIONS:
 				return selections != null && !selections.isEmpty();
 			case ApiPackage.RESOURCE__DEFAULT_SERIALIZATION_GROUPS:
@@ -584,10 +709,10 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (uriElement: ");
 		result.append(uriElement);
-		result.append(", supportGetOne: ");
-		result.append(supportGetOne);
-		result.append(", supportGetAll: ");
-		result.append(supportGetAll);
+		result.append(", enableDefaultGetOne: ");
+		result.append(enableDefaultGetOne);
+		result.append(", enableDefaultGetAll: ");
+		result.append(enableDefaultGetAll);
 		result.append(')');
 		return result.toString();
 	}

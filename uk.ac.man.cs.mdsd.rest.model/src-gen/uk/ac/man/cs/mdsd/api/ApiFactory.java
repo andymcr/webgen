@@ -40,6 +40,15 @@ public interface ApiFactory extends EFactory {
 	Resource createResource();
 
 	/**
+	 * Returns a new object of class '<em>Resource Selection</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Resource Selection</em>'.
+	 * @generated
+	 */
+	ResourceSelection createResourceSelection();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

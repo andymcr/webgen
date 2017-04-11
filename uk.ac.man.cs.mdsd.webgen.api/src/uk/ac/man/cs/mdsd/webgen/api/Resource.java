@@ -23,8 +23,10 @@ import uk.ac.man.cs.mdsd.webgen.service.Service;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getService <em>Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportGetAll <em>Support Get All</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportGetOne <em>Support Get One</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isEnableDefaultGetAll <em>Enable Default Get All</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isEnableDefaultGetOne <em>Enable Default Get One</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getGetAll <em>Get All</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getGetOne <em>Get One</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getDefaultSerializationGroups <em>Default Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getChildResources <em>Child Resources</em>}</li>
@@ -144,74 +146,128 @@ public interface Resource extends EObject {
 	void setUriElement(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Support Get All</b></em>' attribute.
+	 * Returns the value of the '<em><b>Enable Default Get All</b></em>' attribute.
 	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Support Get All</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Enable Default Get All</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Support Get All</em>' attribute.
-	 * @see #setSupportGetAll(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.api.ApiPackage#getResource_SupportGetAll()
+	 * @return the value of the '<em>Enable Default Get All</em>' attribute.
+	 * @see #setEnableDefaultGetAll(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.api.ApiPackage#getResource_EnableDefaultGetAll()
 	 * @model default="true"
 	 * @generated
 	 */
-	boolean isSupportGetAll();
+	boolean isEnableDefaultGetAll();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportGetAll <em>Support Get All</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isEnableDefaultGetAll <em>Enable Default Get All</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Support Get All</em>' attribute.
-	 * @see #isSupportGetAll()
+	 * @param value the new value of the '<em>Enable Default Get All</em>' attribute.
+	 * @see #isEnableDefaultGetAll()
 	 * @generated
 	 */
-	void setSupportGetAll(boolean value);
+	void setEnableDefaultGetAll(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Support Get One</b></em>' attribute.
+	 * Returns the value of the '<em><b>Enable Default Get One</b></em>' attribute.
 	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Support Get One</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Enable Default Get One</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Support Get One</em>' attribute.
-	 * @see #setSupportGetOne(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.api.ApiPackage#getResource_SupportGetOne()
+	 * @return the value of the '<em>Enable Default Get One</em>' attribute.
+	 * @see #setEnableDefaultGetOne(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.api.ApiPackage#getResource_EnableDefaultGetOne()
 	 * @model default="true"
 	 * @generated
 	 */
-	boolean isSupportGetOne();
+	boolean isEnableDefaultGetOne();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isSupportGetOne <em>Support Get One</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#isEnableDefaultGetOne <em>Enable Default Get One</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Support Get One</em>' attribute.
-	 * @see #isSupportGetOne()
+	 * @param value the new value of the '<em>Enable Default Get One</em>' attribute.
+	 * @see #isEnableDefaultGetOne()
 	 * @generated
 	 */
-	void setSupportGetOne(boolean value);
+	void setEnableDefaultGetOne(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Selections</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.Selection}.
+	 * Returns the value of the '<em><b>Get All</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Get All</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Get All</em>' reference.
+	 * @see #setGetAll(Selection)
+	 * @see uk.ac.man.cs.mdsd.webgen.api.ApiPackage#getResource_GetAll()
+	 * @model
+	 * @generated
+	 */
+	Selection getGetAll();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getGetAll <em>Get All</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Get All</em>' reference.
+	 * @see #getGetAll()
+	 * @generated
+	 */
+	void setGetAll(Selection value);
+
+	/**
+	 * Returns the value of the '<em><b>Get One</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Get One</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Get One</em>' reference.
+	 * @see #setGetOne(Selection)
+	 * @see uk.ac.man.cs.mdsd.webgen.api.ApiPackage#getResource_GetOne()
+	 * @model
+	 * @generated
+	 */
+	Selection getGetOne();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getGetOne <em>Get One</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Get One</em>' reference.
+	 * @see #getGetOne()
+	 * @generated
+	 */
+	void setGetOne(Selection value);
+
+	/**
+	 * Returns the value of the '<em><b>Selections</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.api.ResourceSelection}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.api.ResourceSelection#getParentResource <em>Parent Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Selections</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Selections</em>' reference list.
+	 * @return the value of the '<em>Selections</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.api.ApiPackage#getResource_Selections()
-	 * @model
+	 * @see uk.ac.man.cs.mdsd.webgen.api.ResourceSelection#getParentResource
+	 * @model opposite="parentResource" containment="true"
 	 * @generated
 	 */
-	EList<Selection> getSelections();
+	EList<ResourceSelection> getSelections();
 
 	/**
 	 * Returns the value of the '<em><b>Default Serialization Groups</b></em>' reference list.

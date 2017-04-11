@@ -35,8 +35,10 @@ rule Resource {
 			else
 				''
 			endif endif,
-		supportGetOne <- website.supportGetOne,
-		supportGetAll <- website.supportGetAll,
+		enableDefaultGetOne <- website.enableDefaultGetOne,
+		enableDefaultGetAll <- website.enableDefaultGetAll,
+		getAll <- website.getAll.findServiceSelection(),
+		getOne <- website.getOne.findServiceSelection(),
 		selections <- website.selections,
 		defaultSerializationGroups <-
 			website.defaultSerializationGroups
@@ -44,3 +46,26 @@ rule Resource {
 		childResources <- website.childResources
 	)
 } 
+
+rule ResourceSelection {
+	from website : Website!ResourceSelection
+	to api : API!ResourceSelection (
+		selection <- website.selection.findServiceSelection(),
+		uriElement <-
+			if website.uriElement.trim() <> '' then
+				website.uriElement.trim()
+			else if not website.name.oclIsUndefined() then
+				website.name.createName()
+			else
+				''
+			endif endif,
+		defaultSerializationGroups <-
+			if website.defaultSerializationGroups->notEmpty() then
+				website.defaultSerializationGroups
+				->collect(g | thisModule.findOrmSerializationGroup(g.name))
+			else
+				website.parentResource.defaultSerializationGroups
+					->collect(g | thisModule.findOrmSerializationGroup(g.name))
+			endif
+	)
+}

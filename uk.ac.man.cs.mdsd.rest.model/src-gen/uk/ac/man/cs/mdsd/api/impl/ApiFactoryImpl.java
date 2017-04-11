@@ -58,6 +58,7 @@ public class ApiFactoryImpl extends EFactoryImpl implements ApiFactory {
 		switch (eClass.getClassifierID()) {
 			case ApiPackage.API: return createAPI();
 			case ApiPackage.RESOURCE: return createResource();
+			case ApiPackage.RESOURCE_SELECTION: return createResourceSelection();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,6 +82,16 @@ public class ApiFactoryImpl extends EFactoryImpl implements ApiFactory {
 	public Resource createResource() {
 		ResourceImpl resource = new ResourceImpl();
 		return resource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResourceSelection createResourceSelection() {
+		ResourceSelectionImpl resourceSelection = new ResourceSelectionImpl();
+		return resourceSelection;
 	}
 
 	/**

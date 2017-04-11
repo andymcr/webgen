@@ -4,6 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.api.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -189,44 +190,58 @@ public class ResourceItemProvider
 	 * This adds a property descriptor for the Get All feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addGetAllPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Resource_getAll_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_getAll_feature", "_UI_Resource_type"),
-				 ApiPackage.Literals.RESOURCE__GET_ALL,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_Resource_getAll_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Resource_getAll_feature", "_UI_Resource_type"),
+			ApiPackage.Literals.RESOURCE__GET_ALL,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof Resource) {
+						final Resource resource = (Resource) object;
+						if (resource.getService() != null) {
+							return resource.getService().getSelections();
+						}
+					}
+					return Collections.emptySet();
+				}
+		});
 	}
 
 	/**
 	 * This adds a property descriptor for the Get One feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addGetOnePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Resource_getOne_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_getOne_feature", "_UI_Resource_type"),
-				 ApiPackage.Literals.RESOURCE__GET_ONE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_Resource_getOne_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Resource_getOne_feature", "_UI_Resource_type"),
+			ApiPackage.Literals.RESOURCE__GET_ONE,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof Resource) {
+						final Resource resource = (Resource) object;
+						if (resource.getService() != null) {
+							return resource.getService().getSelections();
+						}
+					}
+					return Collections.emptySet();
+				}
+		});
 	}
 
 	/**

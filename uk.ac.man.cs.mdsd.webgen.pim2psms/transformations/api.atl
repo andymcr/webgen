@@ -37,8 +37,18 @@ rule Resource {
 			endif endif,
 		enableDefaultGetOne <- website.enableDefaultGetOne,
 		enableDefaultGetAll <- website.enableDefaultGetAll,
-		getAll <- website.getAll.findServiceSelection(),
-		getOne <- website.getOne.findServiceSelection(),
+		getAll <-
+			if website.getAll.oclIsUndefined() then
+				OclUndefined
+			else
+				website.getAll.findServiceSelection()
+			endif,
+		getOne <-
+			if website.getOne.oclIsUndefined() then
+				OclUndefined
+			else
+				website.getOne.findServiceSelection()
+			endif,
 		selections <- website.selections,
 		defaultSerializationGroups <-
 			website.defaultSerializationGroups

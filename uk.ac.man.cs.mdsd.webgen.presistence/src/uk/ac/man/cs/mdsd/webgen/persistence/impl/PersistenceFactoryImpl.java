@@ -58,6 +58,7 @@ public class PersistenceFactoryImpl extends EFactoryImpl implements PersistenceF
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case PersistencePackage.PERSISTENCE: return createPersistence();
+			case PersistencePackage.SERIALIZATION_GROUP: return createSerializationGroup();
 			case PersistencePackage.MODEL_LABEL: return createModelLabel();
 			case PersistencePackage.MODEL_LABEL_ATTRIBUTE: return createModelLabelAttribute();
 			case PersistencePackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
@@ -137,6 +138,16 @@ public class PersistenceFactoryImpl extends EFactoryImpl implements PersistenceF
 	public Persistence createPersistence() {
 		PersistenceImpl persistence = new PersistenceImpl();
 		return persistence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SerializationGroup createSerializationGroup() {
+		SerializationGroupImpl serializationGroup = new SerializationGroupImpl();
+		return serializationGroup;
 	}
 
 	/**

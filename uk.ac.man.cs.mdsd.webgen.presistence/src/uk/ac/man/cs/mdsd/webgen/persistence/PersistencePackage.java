@@ -71,13 +71,22 @@ public interface PersistencePackage extends EPackage {
 	int PERSISTENCE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSISTENCE__SERIALIZATION_GROUPS = 0;
+
+	/**
 	 * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__DATA_TYPES = 0;
+	int PERSISTENCE__DATA_TYPES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Entities</b></em>' containment reference list.
@@ -86,7 +95,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__ENTITIES = 1;
+	int PERSISTENCE__ENTITIES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Orm Technology</b></em>' attribute.
@@ -95,7 +104,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__ORM_TECHNOLOGY = 2;
+	int PERSISTENCE__ORM_TECHNOLOGY = 3;
 
 	/**
 	 * The feature id for the '<em><b>Database Technology</b></em>' attribute.
@@ -104,7 +113,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__DATABASE_TECHNOLOGY = 3;
+	int PERSISTENCE__DATABASE_TECHNOLOGY = 4;
 
 	/**
 	 * The feature id for the '<em><b>Database Prefix</b></em>' attribute.
@@ -113,7 +122,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__DATABASE_PREFIX = 4;
+	int PERSISTENCE__DATABASE_PREFIX = 5;
 
 	/**
 	 * The feature id for the '<em><b>Database Host</b></em>' attribute.
@@ -122,7 +131,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__DATABASE_HOST = 5;
+	int PERSISTENCE__DATABASE_HOST = 6;
 
 	/**
 	 * The feature id for the '<em><b>Database Name</b></em>' attribute.
@@ -131,7 +140,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__DATABASE_NAME = 6;
+	int PERSISTENCE__DATABASE_NAME = 7;
 
 	/**
 	 * The feature id for the '<em><b>Database Port</b></em>' attribute.
@@ -140,7 +149,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__DATABASE_PORT = 7;
+	int PERSISTENCE__DATABASE_PORT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Database Username</b></em>' attribute.
@@ -149,7 +158,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__DATABASE_USERNAME = 8;
+	int PERSISTENCE__DATABASE_USERNAME = 9;
 
 	/**
 	 * The feature id for the '<em><b>Database Password</b></em>' attribute.
@@ -158,7 +167,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__DATABASE_PASSWORD = 9;
+	int PERSISTENCE__DATABASE_PASSWORD = 10;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp Creation</b></em>' attribute.
@@ -167,7 +176,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__TIMESTAMP_CREATION = 10;
+	int PERSISTENCE__TIMESTAMP_CREATION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp Updates</b></em>' attribute.
@@ -176,7 +185,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__TIMESTAMP_UPDATES = 11;
+	int PERSISTENCE__TIMESTAMP_UPDATES = 12;
 
 	/**
 	 * The number of structural features of the '<em>Persistence</em>' class.
@@ -185,7 +194,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE_FEATURE_COUNT = 12;
+	int PERSISTENCE_FEATURE_COUNT = 13;
 
 	/**
 	 * The number of operations of the '<em>Persistence</em>' class.
@@ -197,6 +206,43 @@ public interface PersistencePackage extends EPackage {
 	int PERSISTENCE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.SerializationGroupImpl <em>Serialization Group</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.SerializationGroupImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getSerializationGroup()
+	 * @generated
+	 */
+	int SERIALIZATION_GROUP = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERIALIZATION_GROUP__NAME = BasePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Serialization Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERIALIZATION_GROUP_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Serialization Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERIALIZATION_GROUP_OPERATION_COUNT = BasePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl <em>Entity Or View</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -204,7 +250,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEntityOrView()
 	 * @generated
 	 */
-	int ENTITY_OR_VIEW = 1;
+	int ENTITY_OR_VIEW = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -394,7 +440,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getFeature()
 	 * @generated
 	 */
-	int FEATURE = 2;
+	int FEATURE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -442,7 +488,7 @@ public interface PersistencePackage extends EPackage {
 	int FEATURE__ENCODE_URI_KEY = 4;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -451,22 +497,13 @@ public interface PersistencePackage extends EPackage {
 	int FEATURE__SERIALIZATION_GROUPS = 5;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE__SERIALIZATION_EXPOSE = 6;
-
-	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__HEADER_CLASS = 7;
+	int FEATURE__HEADER_CLASS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -475,7 +512,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__DISPLAY_CLASS = 8;
+	int FEATURE__DISPLAY_CLASS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -484,7 +521,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__FOOTER_CLASS = 9;
+	int FEATURE__FOOTER_CLASS = 8;
 
 	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
@@ -493,7 +530,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = 10;
+	int FEATURE_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Feature</em>' class.
@@ -512,7 +549,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 3;
+	int ATTRIBUTE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -560,22 +597,13 @@ public interface PersistencePackage extends EPackage {
 	int ATTRIBUTE__ENCODE_URI_KEY = FEATURE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ATTRIBUTE__SERIALIZATION_GROUPS = FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__SERIALIZATION_EXPOSE = FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -666,7 +694,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getAssociation()
 	 * @generated
 	 */
-	int ASSOCIATION = 4;
+	int ASSOCIATION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -714,22 +742,13 @@ public interface PersistencePackage extends EPackage {
 	int ASSOCIATION__ENCODE_URI_KEY = FEATURE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ASSOCIATION__SERIALIZATION_GROUPS = FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION__SERIALIZATION_EXPOSE = FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -838,7 +857,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getLabel()
 	 * @generated
 	 */
-	int LABEL = 5;
+	int LABEL = 6;
 
 	/**
 	 * The number of structural features of the '<em>Label</em>' class.
@@ -866,7 +885,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getModelLabel()
 	 * @generated
 	 */
-	int MODEL_LABEL = 6;
+	int MODEL_LABEL = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -930,7 +949,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getModelLabelFeature()
 	 * @generated
 	 */
-	int MODEL_LABEL_FEATURE = 7;
+	int MODEL_LABEL_FEATURE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -967,7 +986,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getModelLabelAttribute()
 	 * @generated
 	 */
-	int MODEL_LABEL_ATTRIBUTE = 8;
+	int MODEL_LABEL_ATTRIBUTE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1022,7 +1041,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getModelLabelAssociation()
 	 * @generated
 	 */
-	int MODEL_LABEL_ASSOCIATION = 9;
+	int MODEL_LABEL_ASSOCIATION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1086,7 +1105,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 10;
+	int ENTITY = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1294,7 +1313,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEntityFeature()
 	 * @generated
 	 */
-	int ENTITY_FEATURE = 11;
+	int ENTITY_FEATURE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1360,7 +1379,7 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_FEATURE__ENCODE_URI_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1369,22 +1388,13 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_FEATURE__SERIALIZATION_GROUPS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_FEATURE__SERIALIZATION_EXPOSE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int ENTITY_FEATURE__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -1393,7 +1403,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__DISPLAY_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int ENTITY_FEATURE__DISPLAY_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -1402,7 +1412,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int ENTITY_FEATURE__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1411,7 +1421,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PART_OF = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int ENTITY_FEATURE__PART_OF = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -1420,7 +1430,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__CARDINALITY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int ENTITY_FEATURE__CARDINALITY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
@@ -1429,7 +1439,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__UNIQUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int ENTITY_FEATURE__UNIQUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
@@ -1438,7 +1448,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__ORDERED = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int ENTITY_FEATURE__ORDERED = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
@@ -1447,7 +1457,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
@@ -1456,7 +1466,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__SINGLETON_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
+	int ENTITY_FEATURE__SINGLETON_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
@@ -1465,7 +1475,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PLURALISED_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
+	int ENTITY_FEATURE__PLURALISED_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -1474,7 +1484,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__COLUMN_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
+	int ENTITY_FEATURE__COLUMN_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The number of structural features of the '<em>Entity Feature</em>' class.
@@ -1483,7 +1493,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
+	int ENTITY_FEATURE_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of operations of the '<em>Entity Feature</em>' class.
@@ -1502,7 +1512,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEntityAttribute()
 	 * @generated
 	 */
-	int ENTITY_ATTRIBUTE = 12;
+	int ENTITY_ATTRIBUTE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1568,22 +1578,13 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_FEATURE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -1791,7 +1792,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getDataTypeAttribute()
 	 * @generated
 	 */
-	int DATA_TYPE_ATTRIBUTE = 13;
+	int DATA_TYPE_ATTRIBUTE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1857,22 +1858,13 @@ public interface PersistencePackage extends EPackage {
 	int DATA_TYPE_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DATA_TYPE_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -2116,7 +2108,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getDateAttribute()
 	 * @generated
 	 */
-	int DATE_ATTRIBUTE = 14;
+	int DATE_ATTRIBUTE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2182,22 +2174,13 @@ public interface PersistencePackage extends EPackage {
 	int DATE_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int DATE_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -2423,7 +2406,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getUrlAttribute()
 	 * @generated
 	 */
-	int URL_ATTRIBUTE = 15;
+	int URL_ATTRIBUTE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2489,22 +2472,13 @@ public interface PersistencePackage extends EPackage {
 	int URL_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int URL_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int URL_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -2721,7 +2695,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getResourceAttribute()
 	 * @generated
 	 */
-	int RESOURCE_ATTRIBUTE = 16;
+	int RESOURCE_ATTRIBUTE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2787,22 +2761,13 @@ public interface PersistencePackage extends EPackage {
 	int RESOURCE_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int RESOURCE_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -3055,7 +3020,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getPathElement()
 	 * @generated
 	 */
-	int PATH_ELEMENT = 17;
+	int PATH_ELEMENT = 18;
 
 	/**
 	 * The number of structural features of the '<em>Path Element</em>' class.
@@ -3083,7 +3048,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getStaticPathElement()
 	 * @generated
 	 */
-	int STATIC_PATH_ELEMENT = 18;
+	int STATIC_PATH_ELEMENT = 19;
 
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' attribute.
@@ -3120,7 +3085,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getDatePathElement()
 	 * @generated
 	 */
-	int DATE_PATH_ELEMENT = 19;
+	int DATE_PATH_ELEMENT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -3157,7 +3122,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getFileAttribute()
 	 * @generated
 	 */
-	int FILE_ATTRIBUTE = 20;
+	int FILE_ATTRIBUTE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3223,22 +3188,13 @@ public interface PersistencePackage extends EPackage {
 	int FILE_ATTRIBUTE__ENCODE_URI_KEY = RESOURCE_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int FILE_ATTRIBUTE__SERIALIZATION_GROUPS = RESOURCE_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_ATTRIBUTE__SERIALIZATION_EXPOSE = RESOURCE_ATTRIBUTE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -3491,7 +3447,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getImageAttribute()
 	 * @generated
 	 */
-	int IMAGE_ATTRIBUTE = 21;
+	int IMAGE_ATTRIBUTE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3557,22 +3513,13 @@ public interface PersistencePackage extends EPackage {
 	int IMAGE_ATTRIBUTE__ENCODE_URI_KEY = RESOURCE_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int IMAGE_ATTRIBUTE__SERIALIZATION_GROUPS = RESOURCE_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_ATTRIBUTE__SERIALIZATION_EXPOSE = RESOURCE_ATTRIBUTE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -3825,7 +3772,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getLocationAttribute()
 	 * @generated
 	 */
-	int LOCATION_ATTRIBUTE = 22;
+	int LOCATION_ATTRIBUTE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3891,22 +3838,13 @@ public interface PersistencePackage extends EPackage {
 	int LOCATION_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int LOCATION_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCATION_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -4114,7 +4052,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEntityAssociation()
 	 * @generated
 	 */
-	int ENTITY_ASSOCIATION = 23;
+	int ENTITY_ASSOCIATION = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4180,22 +4118,13 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_ASSOCIATION__ENCODE_URI_KEY = ENTITY_FEATURE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENTITY_ASSOCIATION__SERIALIZATION_GROUPS = ENTITY_FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ASSOCIATION__SERIALIZATION_EXPOSE = ENTITY_FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -4475,7 +4404,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getAssociationWithoutContainment()
 	 * @generated
 	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT = 24;
+	int ASSOCIATION_WITHOUT_CONTAINMENT = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4541,22 +4470,13 @@ public interface PersistencePackage extends EPackage {
 	int ASSOCIATION_WITHOUT_CONTAINMENT__ENCODE_URI_KEY = ENTITY_ASSOCIATION__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ASSOCIATION_WITHOUT_CONTAINMENT__SERIALIZATION_GROUPS = ENTITY_ASSOCIATION__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT__SERIALIZATION_EXPOSE = ENTITY_ASSOCIATION__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -4854,7 +4774,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getAssociationWithContainment()
 	 * @generated
 	 */
-	int ASSOCIATION_WITH_CONTAINMENT = 25;
+	int ASSOCIATION_WITH_CONTAINMENT = 26;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4920,22 +4840,13 @@ public interface PersistencePackage extends EPackage {
 	int ASSOCIATION_WITH_CONTAINMENT__ENCODE_URI_KEY = ENTITY_ASSOCIATION__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ASSOCIATION_WITH_CONTAINMENT__SERIALIZATION_GROUPS = ENTITY_ASSOCIATION__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITH_CONTAINMENT__SERIALIZATION_EXPOSE = ENTITY_ASSOCIATION__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -5224,7 +5135,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getAssociationKey()
 	 * @generated
 	 */
-	int ASSOCIATION_KEY = 26;
+	int ASSOCIATION_KEY = 27;
 
 	/**
 	 * The feature id for the '<em><b>Key For</b></em>' container reference.
@@ -5288,7 +5199,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getView()
 	 * @generated
 	 */
-	int VIEW = 27;
+	int VIEW = 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5496,7 +5407,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getViewFeature()
 	 * @generated
 	 */
-	int VIEW_FEATURE = 28;
+	int VIEW_FEATURE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -5544,22 +5455,13 @@ public interface PersistencePackage extends EPackage {
 	int VIEW_FEATURE__ENCODE_URI_KEY = FEATURE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int VIEW_FEATURE__SERIALIZATION_GROUPS = FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_FEATURE__SERIALIZATION_EXPOSE = FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -5623,7 +5525,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEncapsulatedFeature()
 	 * @generated
 	 */
-	int ENCAPSULATED_FEATURE = 29;
+	int ENCAPSULATED_FEATURE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -5671,22 +5573,13 @@ public interface PersistencePackage extends EPackage {
 	int ENCAPSULATED_FEATURE__ENCODE_URI_KEY = VIEW_FEATURE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENCAPSULATED_FEATURE__SERIALIZATION_GROUPS = VIEW_FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_FEATURE__SERIALIZATION_EXPOSE = VIEW_FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -5777,7 +5670,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEncapsulatedAttribute()
 	 * @generated
 	 */
-	int ENCAPSULATED_ATTRIBUTE = 30;
+	int ENCAPSULATED_ATTRIBUTE = 31;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -5825,22 +5718,13 @@ public interface PersistencePackage extends EPackage {
 	int ENCAPSULATED_ATTRIBUTE__ENCODE_URI_KEY = ENCAPSULATED_FEATURE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENCAPSULATED_ATTRIBUTE__SERIALIZATION_GROUPS = ENCAPSULATED_FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_ATTRIBUTE__SERIALIZATION_EXPOSE = ENCAPSULATED_FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -5994,7 +5878,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getEncapsulatedAssociation()
 	 * @generated
 	 */
-	int ENCAPSULATED_ASSOCIATION = 31;
+	int ENCAPSULATED_ASSOCIATION = 32;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -6042,22 +5926,13 @@ public interface PersistencePackage extends EPackage {
 	int ENCAPSULATED_ASSOCIATION__ENCODE_URI_KEY = ENCAPSULATED_FEATURE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int ENCAPSULATED_ASSOCIATION__SERIALIZATION_GROUPS = ENCAPSULATED_FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_ASSOCIATION__SERIALIZATION_EXPOSE = ENCAPSULATED_FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -6265,7 +6140,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getViewAssociation()
 	 * @generated
 	 */
-	int VIEW_ASSOCIATION = 32;
+	int VIEW_ASSOCIATION = 33;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6331,7 +6206,7 @@ public interface PersistencePackage extends EPackage {
 	int VIEW_ASSOCIATION__ENCODE_URI_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -6340,22 +6215,13 @@ public interface PersistencePackage extends EPackage {
 	int VIEW_ASSOCIATION__SERIALIZATION_GROUPS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_ASSOCIATION__SERIALIZATION_EXPOSE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int VIEW_ASSOCIATION__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -6364,7 +6230,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__DISPLAY_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int VIEW_ASSOCIATION__DISPLAY_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -6373,7 +6239,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int VIEW_ASSOCIATION__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -6382,7 +6248,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PART_OF = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int VIEW_ASSOCIATION__PART_OF = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
@@ -6391,7 +6257,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PSEUDO = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int VIEW_ASSOCIATION__PSEUDO = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Encapsulated By</b></em>' reference list.
@@ -6400,7 +6266,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__ENCAPSULATED_BY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int VIEW_ASSOCIATION__ENCAPSULATED_BY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -6409,7 +6275,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__INPUT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int VIEW_ASSOCIATION__INPUT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Source Entity X</b></em>' reference.
@@ -6418,7 +6284,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity X</b></em>' reference.
@@ -6427,7 +6293,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__TARGET_ENTITY_X = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
+	int VIEW_ASSOCIATION__TARGET_ENTITY_X = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Max Depth</b></em>' attribute.
@@ -6436,7 +6302,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
+	int VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Opposite</b></em>' reference.
@@ -6445,7 +6311,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__OPPOSITE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
+	int VIEW_ASSOCIATION__OPPOSITE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -6454,7 +6320,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__CARDINALITY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
+	int VIEW_ASSOCIATION__CARDINALITY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of structural features of the '<em>View Association</em>' class.
@@ -6463,7 +6329,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 19;
+	int VIEW_ASSOCIATION_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The number of operations of the '<em>View Association</em>' class.
@@ -6482,7 +6348,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getDatabaseTechnologies()
 	 * @generated
 	 */
-	int DATABASE_TECHNOLOGIES = 33;
+	int DATABASE_TECHNOLOGIES = 34;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies <em>Orm Technologies</em>}' enum.
@@ -6492,7 +6358,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getOrmTechnologies()
 	 * @generated
 	 */
-	int ORM_TECHNOLOGIES = 34;
+	int ORM_TECHNOLOGIES = 35;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Cardinality <em>Cardinality</em>}' enum.
@@ -6502,7 +6368,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 35;
+	int CARDINALITY = 36;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.isHasChoices <em>is Has Choices</em>}' enum.
@@ -6512,7 +6378,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getisHasChoices()
 	 * @generated
 	 */
-	int IS_HAS_CHOICES = 36;
+	int IS_HAS_CHOICES = 37;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.DateDetails <em>Date Details</em>}' enum.
@@ -6522,7 +6388,7 @@ public interface PersistencePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getDateDetails()
 	 * @generated
 	 */
-	int DATE_DETAILS = 37;
+	int DATE_DETAILS = 38;
 
 
 	/**
@@ -6534,6 +6400,17 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPersistence();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getSerializationGroups <em>Serialization Groups</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Serialization Groups</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getSerializationGroups()
+	 * @see #getPersistence()
+	 * @generated
+	 */
+	EReference getPersistence_SerializationGroups();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDataTypes <em>Data Types</em>}'.
@@ -6666,6 +6543,16 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPersistence_TimestampUpdates();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup <em>Serialization Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Serialization Group</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup
+	 * @generated
+	 */
+	EClass getSerializationGroup();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView <em>Entity Or View</em>}'.
@@ -6919,26 +6806,15 @@ public interface PersistencePackage extends EPackage {
 	EAttribute getFeature_EncodeUriKey();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getSerializationGroups <em>Serialization Groups</em>}'.
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getSerializationGroups <em>Serialization Groups</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Serialization Groups</em>'.
+	 * @return the meta object for the reference list '<em>Serialization Groups</em>'.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Feature#getSerializationGroups()
 	 * @see #getFeature()
 	 * @generated
 	 */
-	EAttribute getFeature_SerializationGroups();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isSerializationExpose <em>Serialization Expose</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Serialization Expose</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Feature#isSerializationExpose()
-	 * @see #getFeature()
-	 * @generated
-	 */
-	EAttribute getFeature_SerializationExpose();
+	EReference getFeature_SerializationGroups();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getHeaderClass <em>Header Class</em>}'.
@@ -8281,6 +8157,14 @@ public interface PersistencePackage extends EPackage {
 		EClass PERSISTENCE = eINSTANCE.getPersistence();
 
 		/**
+		 * The meta object literal for the '<em><b>Serialization Groups</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PERSISTENCE__SERIALIZATION_GROUPS = eINSTANCE.getPersistence_SerializationGroups();
+
+		/**
 		 * The meta object literal for the '<em><b>Data Types</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8375,6 +8259,16 @@ public interface PersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PERSISTENCE__TIMESTAMP_UPDATES = eINSTANCE.getPersistence_TimestampUpdates();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.SerializationGroupImpl <em>Serialization Group</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.SerializationGroupImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistencePackageImpl#getSerializationGroup()
+		 * @generated
+		 */
+		EClass SERIALIZATION_GROUP = eINSTANCE.getSerializationGroup();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl <em>Entity Or View</em>}' class.
@@ -8565,20 +8459,12 @@ public interface PersistencePackage extends EPackage {
 		EAttribute FEATURE__ENCODE_URI_KEY = eINSTANCE.getFeature_EncodeUriKey();
 
 		/**
-		 * The meta object literal for the '<em><b>Serialization Groups</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Serialization Groups</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FEATURE__SERIALIZATION_GROUPS = eINSTANCE.getFeature_SerializationGroups();
-
-		/**
-		 * The meta object literal for the '<em><b>Serialization Expose</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FEATURE__SERIALIZATION_EXPOSE = eINSTANCE.getFeature_SerializationExpose();
+		EReference FEATURE__SERIALIZATION_GROUPS = eINSTANCE.getFeature_SerializationGroups();
 
 		/**
 		 * The meta object literal for the '<em><b>Header Class</b></em>' attribute feature.

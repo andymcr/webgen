@@ -91,6 +91,29 @@ public class PersistenceItemProviderAdapterFactory extends PersistenceAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SerializationGroupItemProvider serializationGroupItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSerializationGroupAdapter() {
+		if (serializationGroupItemProvider == null) {
+			serializationGroupItemProvider = new SerializationGroupItemProvider(this);
+		}
+
+		return serializationGroupItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

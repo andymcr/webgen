@@ -98,6 +98,8 @@ public class PersistenceValidator extends EObjectValidator {
 		switch (classifierID) {
 			case PersistencePackage.PERSISTENCE:
 				return validatePersistence((Persistence)value, diagnostics, context);
+			case PersistencePackage.SERIALIZATION_GROUP:
+				return validateSerializationGroup((SerializationGroup)value, diagnostics, context);
 			case PersistencePackage.ENTITY_OR_VIEW:
 				return validateEntityOrView((EntityOrView)value, diagnostics, context);
 			case PersistencePackage.FEATURE:
@@ -223,6 +225,25 @@ public class PersistenceValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSerializationGroup(SerializationGroup serializationGroup, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(serializationGroup, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(serializationGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(serializationGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(serializationGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(serializationGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(serializationGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(serializationGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(serializationGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(serializationGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(serializationGroup, diagnostics, context);
+		return result;
 	}
 
 	/**

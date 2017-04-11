@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.expression.Expression
 annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
 
 class OrmModel {
+	contains SerializationGroup[] serializationGroups
 	contains DataType[] dataTypes
 	contains EntityOrView[] entitiesAndViews opposite partOf
 	contains CollectionType[] collectionTypes
@@ -86,6 +87,9 @@ class CollectionType extends NamedElement {
 	String[1] javaImplementationType
 }
 
+class SerializationGroup extends NamedElement {
+}
+
 class DataType extends Classifier {
 }
 
@@ -119,8 +123,7 @@ abstract class Feature extends NamedDisplayElement {
 	boolean collectionAllowAdd = "false"
 	boolean collectionAllowRemove = "false"
 	boolean[1] encodeUriKey = "false"
-	boolean[1] serializationExpose = "true"
-	String[] serializationGroups
+	refers SerializationGroup[] serializationGroups
 }
 
 abstract class Attribute extends Feature, Label {

@@ -52,7 +52,6 @@ public class FeatureItemProvider
 			addCollectionAllowAddPropertyDescriptor(object);
 			addCollectionAllowRemovePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
-			addSerializationExposePropertyDescriptor(object);
 			addSerializationGroupsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -147,28 +146,6 @@ public class FeatureItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Serialization Expose feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSerializationExposePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_serializationExpose_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_serializationExpose_feature", "_UI_Feature_type"),
-				 OrmPackage.Literals.FEATURE__SERIALIZATION_EXPOSE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Serialization Groups feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -184,8 +161,8 @@ public class FeatureItemProvider
 				 OrmPackage.Literals.FEATURE__SERIALIZATION_GROUPS,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -219,8 +196,6 @@ public class FeatureItemProvider
 			case OrmPackage.FEATURE__COLLECTION_ALLOW_ADD:
 			case OrmPackage.FEATURE__COLLECTION_ALLOW_REMOVE:
 			case OrmPackage.FEATURE__ENCODE_URI_KEY:
-			case OrmPackage.FEATURE__SERIALIZATION_EXPOSE:
-			case OrmPackage.FEATURE__SERIALIZATION_GROUPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

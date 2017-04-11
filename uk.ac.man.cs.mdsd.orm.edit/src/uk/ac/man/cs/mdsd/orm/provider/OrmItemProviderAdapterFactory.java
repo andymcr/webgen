@@ -122,6 +122,29 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.SerializationGroup} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SerializationGroupItemProvider serializationGroupItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.SerializationGroup}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSerializationGroupAdapter() {
+		if (serializationGroupItemProvider == null) {
+			serializationGroupItemProvider = new SerializationGroupItemProvider(this);
+		}
+
+		return serializationGroupItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.DataType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -774,6 +797,7 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	public void dispose() {
 		if (ormModelItemProvider != null) ormModelItemProvider.dispose();
 		if (collectionTypeItemProvider != null) collectionTypeItemProvider.dispose();
+		if (serializationGroupItemProvider != null) serializationGroupItemProvider.dispose();
 		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
 		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
 		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();

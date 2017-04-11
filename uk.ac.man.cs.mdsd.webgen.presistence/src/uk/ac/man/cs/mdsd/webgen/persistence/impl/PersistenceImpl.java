@@ -20,6 +20,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistenceImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistenceImpl#getDataTypes <em>Data Types</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistenceImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.PersistenceImpl#getOrmTechnology <em>Orm Technology</em>}</li>
@@ -46,6 +48,15 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  * @generated
  */
 public class PersistenceImpl extends MinimalEObjectImpl.Container implements Persistence {
+	/**
+	 * The cached value of the '{@link #getSerializationGroups() <em>Serialization Groups</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSerializationGroups()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SerializationGroup> serializationGroups;
 	/**
 	 * The cached value of the '{@link #getDataTypes() <em>Data Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -263,6 +274,18 @@ public class PersistenceImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	protected EClass eStaticClass() {
 		return PersistencePackage.Literals.PERSISTENCE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<SerializationGroup> getSerializationGroups() {
+		if (serializationGroups == null) {
+			serializationGroups = new EObjectContainmentEList<SerializationGroup>(SerializationGroup.class, this, PersistencePackage.PERSISTENCE__SERIALIZATION_GROUPS);
+		}
+		return serializationGroups;
 	}
 
 	/**
@@ -507,6 +530,8 @@ public class PersistenceImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case PersistencePackage.PERSISTENCE__SERIALIZATION_GROUPS:
+				return ((InternalEList<?>)getSerializationGroups()).basicRemove(otherEnd, msgs);
 			case PersistencePackage.PERSISTENCE__DATA_TYPES:
 				return ((InternalEList<?>)getDataTypes()).basicRemove(otherEnd, msgs);
 			case PersistencePackage.PERSISTENCE__ENTITIES:
@@ -523,6 +548,8 @@ public class PersistenceImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case PersistencePackage.PERSISTENCE__SERIALIZATION_GROUPS:
+				return getSerializationGroups();
 			case PersistencePackage.PERSISTENCE__DATA_TYPES:
 				return getDataTypes();
 			case PersistencePackage.PERSISTENCE__ENTITIES:
@@ -560,6 +587,10 @@ public class PersistenceImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case PersistencePackage.PERSISTENCE__SERIALIZATION_GROUPS:
+				getSerializationGroups().clear();
+				getSerializationGroups().addAll((Collection<? extends SerializationGroup>)newValue);
+				return;
 			case PersistencePackage.PERSISTENCE__DATA_TYPES:
 				getDataTypes().clear();
 				getDataTypes().addAll((Collection<? extends DataType>)newValue);
@@ -610,6 +641,9 @@ public class PersistenceImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case PersistencePackage.PERSISTENCE__SERIALIZATION_GROUPS:
+				getSerializationGroups().clear();
+				return;
 			case PersistencePackage.PERSISTENCE__DATA_TYPES:
 				getDataTypes().clear();
 				return;
@@ -658,6 +692,8 @@ public class PersistenceImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case PersistencePackage.PERSISTENCE__SERIALIZATION_GROUPS:
+				return serializationGroups != null && !serializationGroups.isEmpty();
 			case PersistencePackage.PERSISTENCE__DATA_TYPES:
 				return dataTypes != null && !dataTypes.isEmpty();
 			case PersistencePackage.PERSISTENCE__ENTITIES:

@@ -9,6 +9,9 @@ create dummyOrm : ORM refining orm : ORM, website : Website;
 uses WebsiteHelpers;
 uses PersistenceExpression;
 
+helper def: findOrmSerializationGroup(name : String) : ORM!SerializationGroup
+	= ORM!SerializationGroup.allInstancesFrom('orm')->any(g | g.name = name);
+
 
 abstract rule NamedElement {
 	from website : Website!NamedElement
@@ -37,8 +40,9 @@ abstract rule Feature {
 		collectionAllowAdd <- website.collectionAllowAdd,
 		collectionAllowRemove <- website.collectionAllowRemove,
 		encodeUriKey <- website.encodeUriKey,
-		serializationExpose <- website.serializationExpose,
-		serializationGroups <- website.serializationGroups
+		serializationGroups <-
+			website.serializationGroups
+				->collect(g | thisModule.findOrmSerializationGroup(g.name))
 	)
 }
 

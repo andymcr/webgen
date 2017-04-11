@@ -35,6 +35,7 @@
       <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//DateDetails/DateAndTime"/>
     </genEnums>
     <genClasses ecoreClass="persistence.ecore#//Persistence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference persistence.ecore#//Persistence/serializationGroups"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory=""
           propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//Persistence/dataTypes"/>
       <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
@@ -50,6 +51,7 @@
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/timestampCreation"/>
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/timestampUpdates"/>
     </genClasses>
+    <genClasses ecoreClass="persistence.ecore#//SerializationGroup"/>
     <genClasses image="false" ecoreClass="persistence.ecore#//EntityOrView">
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/singletonName"/>
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/pluralisedName"/>
@@ -83,8 +85,7 @@
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/collectionAllowRemove"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/nullDisplayValue"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/encodeUriKey"/>
-      <genFeatures createChild="false" propertyCategory="Serialization" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/serializationGroups"/>
-      <genFeatures createChild="false" propertyCategory="Serialization" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/serializationExpose"/>
+      <genFeatures createChild="false" propertyCategory="Serialization" ecoreFeature="ecore:EReference persistence.ecore#//Feature/serializationGroups"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/headerClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/displayClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/footerClass"/>

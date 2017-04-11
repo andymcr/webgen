@@ -308,6 +308,7 @@ public class PersistenceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(PersistencePackage.Literals.PERSISTENCE__SERIALIZATION_GROUPS);
 			childrenFeatures.add(PersistencePackage.Literals.PERSISTENCE__DATA_TYPES);
 			childrenFeatures.add(PersistencePackage.Literals.PERSISTENCE__ENTITIES);
 		}
@@ -377,6 +378,7 @@ public class PersistenceItemProvider
 			case PersistencePackage.PERSISTENCE__TIMESTAMP_UPDATES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case PersistencePackage.PERSISTENCE__SERIALIZATION_GROUPS:
 			case PersistencePackage.PERSISTENCE__DATA_TYPES:
 			case PersistencePackage.PERSISTENCE__ENTITIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -395,6 +397,11 @@ public class PersistenceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PersistencePackage.Literals.PERSISTENCE__SERIALIZATION_GROUPS,
+				 PersistenceFactory.eINSTANCE.createSerializationGroup()));
 
 		newChildDescriptors.add
 			(createChildParameter

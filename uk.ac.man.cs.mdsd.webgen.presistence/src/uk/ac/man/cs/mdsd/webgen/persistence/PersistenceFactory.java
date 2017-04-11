@@ -31,6 +31,15 @@ public interface PersistenceFactory extends EFactory {
 	Persistence createPersistence();
 
 	/**
+	 * Returns a new object of class '<em>Serialization Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Serialization Group</em>'.
+	 * @generated
+	 */
+	SerializationGroup createSerializationGroup();
+
+	/**
 	 * Returns a new object of class '<em>Model Label</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

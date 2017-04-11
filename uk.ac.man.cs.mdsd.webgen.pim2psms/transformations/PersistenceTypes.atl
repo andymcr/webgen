@@ -29,6 +29,7 @@ helper context Website!Association def: inverseFeatureTypeNoted(noted : Set(Webs
 rule Website {
 	from website : Website!Persistence
 	to orm : ORM!OrmModel (
+		serializationGroups <- website.serializationGroups,
 		dataTypes <- website.dataTypes,
 		entitiesAndViews <- website.entities,
 		collectionTypes <- website.entities
@@ -93,6 +94,14 @@ abstract rule NamedDisplayElement {
 			else
 				website.name.createLabel()
 			endif
+	)
+}
+
+
+-- @extends NamedElement
+rule SerializationGroup {
+	from website : Website!SerializationGroup
+	to orm : ORM!SerializationGroup (
 	)
 }
 

@@ -14,6 +14,8 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="classifierNameUnique" value="dataTypes->isUnique(name) and entities->isUnique(name)"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serializationGroups" upperBound="-1"
+        eType="#//SerializationGroup" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataTypes" upperBound="-1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//DataType"
         containment="true"/>
@@ -46,6 +48,7 @@
     <eLiterals name="DoctrineORM" value="4"/>
     <eLiterals name="DoctrineODM" value="5" literal="DoctrineODM"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SerializationGroup" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="EntityOrView" abstract="true" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//Classifier">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="keysFromLocalFeatures"/>
@@ -113,10 +116,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullDisplayValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="encodeUriKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serializationGroups" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serializationExpose" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serializationGroups" upperBound="-1"
+        eType="#//SerializationGroup"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="headerClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="footerClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

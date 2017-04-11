@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getSerializationGroups <em>Serialization Groups</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isSerializationExpose <em>Serialization Expose</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getFooterClass <em>Footer Class</em>}</li>
@@ -166,47 +165,20 @@ public interface Feature extends EObject {
 	void setEncodeUriKey(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Serialization Groups</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Serialization Groups</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Serialization Groups</em>' attribute list.
+	 * @return the value of the '<em>Serialization Groups</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_SerializationGroups()
-	 * @model default=""
+	 * @model
 	 * @generated
 	 */
-	EList<String> getSerializationGroups();
-
-	/**
-	 * Returns the value of the '<em><b>Serialization Expose</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Serialization Expose</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Serialization Expose</em>' attribute.
-	 * @see #setSerializationExpose(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_SerializationExpose()
-	 * @model default="true"
-	 * @generated
-	 */
-	boolean isSerializationExpose();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isSerializationExpose <em>Serialization Expose</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Serialization Expose</em>' attribute.
-	 * @see #isSerializationExpose()
-	 * @generated
-	 */
-	void setSerializationExpose(boolean value);
+	EList<SerializationGroup> getSerializationGroups();
 
 	/**
 	 * Returns the value of the '<em><b>Header Class</b></em>' attribute.

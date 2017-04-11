@@ -75,6 +75,13 @@ public class PersistenceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PersistencePackage.SERIALIZATION_GROUP: {
+				SerializationGroup serializationGroup = (SerializationGroup)theEObject;
+				T result = caseSerializationGroup(serializationGroup);
+				if (result == null) result = caseNamedElement(serializationGroup);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case PersistencePackage.ENTITY_OR_VIEW: {
 				EntityOrView entityOrView = (EntityOrView)theEObject;
 				T result = caseEntityOrView(entityOrView);
@@ -397,6 +404,21 @@ public class PersistenceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePersistence(Persistence object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Serialization Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Serialization Group</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSerializationGroup(SerializationGroup object) {
 		return null;
 	}
 

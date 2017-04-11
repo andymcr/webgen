@@ -331,6 +331,7 @@ public class OrmModelItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__SERIALIZATION_GROUPS);
 			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__DATA_TYPES);
 			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__ENTITIES_AND_VIEWS);
 			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__COLLECTION_TYPES);
@@ -401,6 +402,7 @@ public class OrmModelItemProvider
 			case OrmPackage.ORM_MODEL__HAS_CUSTOM_ORM_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case OrmPackage.ORM_MODEL__SERIALIZATION_GROUPS:
 			case OrmPackage.ORM_MODEL__DATA_TYPES:
 			case OrmPackage.ORM_MODEL__ENTITIES_AND_VIEWS:
 			case OrmPackage.ORM_MODEL__COLLECTION_TYPES:
@@ -420,6 +422,11 @@ public class OrmModelItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ORM_MODEL__SERIALIZATION_GROUPS,
+				 OrmFactory.eINSTANCE.createSerializationGroup()));
 
 		newChildDescriptors.add
 			(createChildParameter

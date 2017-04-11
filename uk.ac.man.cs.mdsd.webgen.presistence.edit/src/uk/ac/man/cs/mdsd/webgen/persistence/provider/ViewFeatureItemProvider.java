@@ -66,7 +66,6 @@ public class ViewFeatureItemProvider
 			addNullDisplayValuePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
 			addSerializationGroupsPropertyDescriptor(object);
-			addSerializationExposePropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addDisplayClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
@@ -201,29 +200,7 @@ public class ViewFeatureItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SerializationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Serialization Expose feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSerializationExposePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_serializationExpose_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_serializationExpose_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__SERIALIZATION_EXPOSE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
 				 getString("_UI_SerializationPropertyCategory"),
 				 null));
 	}
@@ -327,7 +304,6 @@ public class ViewFeatureItemProvider
 			case PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
 			case PersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
 			case PersistencePackage.VIEW_FEATURE__HEADER_CLASS:
 			case PersistencePackage.VIEW_FEATURE__DISPLAY_CLASS:
 			case PersistencePackage.VIEW_FEATURE__FOOTER_CLASS:

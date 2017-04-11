@@ -75,6 +75,10 @@ public class PersistenceAdapterFactory extends AdapterFactoryImpl {
 				return createPersistenceAdapter();
 			}
 			@Override
+			public Adapter caseSerializationGroup(SerializationGroup object) {
+				return createSerializationGroupAdapter();
+			}
+			@Override
 			public Adapter caseEntityOrView(EntityOrView object) {
 				return createEntityOrViewAdapter();
 			}
@@ -245,6 +249,20 @@ public class PersistenceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPersistenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup <em>Serialization Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup
+	 * @generated
+	 */
+	public Adapter createSerializationGroupAdapter() {
 		return null;
 	}
 

@@ -15,6 +15,7 @@ import uk.ac.man.cs.mdsd.webgen.base.DataType;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDataTypes <em>Data Types</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getOrmTechnology <em>Orm Technology</em>}</li>
@@ -35,6 +36,22 @@ import uk.ac.man.cs.mdsd.webgen.base.DataType;
  * @generated
  */
 public interface Persistence extends EObject {
+
+	/**
+	 * Returns the value of the '<em><b>Serialization Groups</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Serialization Groups</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Serialization Groups</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getPersistence_SerializationGroups()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SerializationGroup> getSerializationGroups();
 
 	/**
 	 * Returns the value of the '<em><b>Data Types</b></em>' containment reference list.

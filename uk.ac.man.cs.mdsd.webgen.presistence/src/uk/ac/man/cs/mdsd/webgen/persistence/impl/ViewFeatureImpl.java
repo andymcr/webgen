@@ -14,11 +14,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup;
 import uk.ac.man.cs.mdsd.webgen.persistence.View;
 import uk.ac.man.cs.mdsd.webgen.persistence.ViewFeature;
 
@@ -36,7 +36,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.ViewFeature;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#getFooterClass <em>Footer Class</em>}</li>
@@ -147,34 +146,14 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	protected boolean encodeUriKey = ENCODE_URI_KEY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSerializationGroups() <em>Serialization Groups</em>}' attribute list.
+	 * The cached value of the '{@link #getSerializationGroups() <em>Serialization Groups</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSerializationGroups()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> serializationGroups;
-
-	/**
-	 * The default value of the '{@link #isSerializationExpose() <em>Serialization Expose</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSerializationExpose()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean SERIALIZATION_EXPOSE_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isSerializationExpose() <em>Serialization Expose</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSerializationExpose()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean serializationExpose = SERIALIZATION_EXPOSE_EDEFAULT;
+	protected EList<SerializationGroup> serializationGroups;
 
 	/**
 	 * The default value of the '{@link #getHeaderClass() <em>Header Class</em>}' attribute.
@@ -365,32 +344,11 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<String> getSerializationGroups() {
+	public EList<SerializationGroup> getSerializationGroups() {
 		if (serializationGroups == null) {
-			serializationGroups = new EDataTypeUniqueEList<String>(String.class, this, PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS);
+			serializationGroups = new EObjectResolvingEList<SerializationGroup>(SerializationGroup.class, this, PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS);
 		}
 		return serializationGroups;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSerializationExpose() {
-		return serializationExpose;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSerializationExpose(boolean newSerializationExpose) {
-		boolean oldSerializationExpose = serializationExpose;
-		serializationExpose = newSerializationExpose;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE, oldSerializationExpose, serializationExpose));
 	}
 
 	/**
@@ -561,8 +519,6 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 				return isEncodeUriKey();
 			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
 				return getSerializationGroups();
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
-				return isSerializationExpose();
 			case PersistencePackage.VIEW_FEATURE__HEADER_CLASS:
 				return getHeaderClass();
 			case PersistencePackage.VIEW_FEATURE__DISPLAY_CLASS:
@@ -601,10 +557,7 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 				return;
 			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
 				getSerializationGroups().clear();
-				getSerializationGroups().addAll((Collection<? extends String>)newValue);
-				return;
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
-				setSerializationExpose((Boolean)newValue);
+				getSerializationGroups().addAll((Collection<? extends SerializationGroup>)newValue);
 				return;
 			case PersistencePackage.VIEW_FEATURE__HEADER_CLASS:
 				setHeaderClass((String)newValue);
@@ -648,9 +601,6 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
 				getSerializationGroups().clear();
 				return;
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
-				setSerializationExpose(SERIALIZATION_EXPOSE_EDEFAULT);
-				return;
 			case PersistencePackage.VIEW_FEATURE__HEADER_CLASS:
 				setHeaderClass(HEADER_CLASS_EDEFAULT);
 				return;
@@ -687,8 +637,6 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
 			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
 				return serializationGroups != null && !serializationGroups.isEmpty();
-			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
-				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
 			case PersistencePackage.VIEW_FEATURE__HEADER_CLASS:
 				return HEADER_CLASS_EDEFAULT == null ? headerClass != null : !HEADER_CLASS_EDEFAULT.equals(headerClass);
 			case PersistencePackage.VIEW_FEATURE__DISPLAY_CLASS:
@@ -721,10 +669,6 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		result.append(nullDisplayValue);
 		result.append(", encodeUriKey: ");
 		result.append(encodeUriKey);
-		result.append(", serializationGroups: ");
-		result.append(serializationGroups);
-		result.append(", serializationExpose: ");
-		result.append(serializationExpose);
 		result.append(", headerClass: ");
 		result.append(headerClass);
 		result.append(", displayClass: ");

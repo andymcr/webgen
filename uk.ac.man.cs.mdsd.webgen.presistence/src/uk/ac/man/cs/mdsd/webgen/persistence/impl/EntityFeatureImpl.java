@@ -13,8 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedDisplayElementImpl;
@@ -24,6 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Entity;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup;
 import uk.ac.man.cs.mdsd.webgen.persistence.isHasChoices;
 
 /**
@@ -40,7 +40,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.isHasChoices;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getFooterClass <em>Footer Class</em>}</li>
@@ -158,34 +157,14 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	protected boolean encodeUriKey = ENCODE_URI_KEY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSerializationGroups() <em>Serialization Groups</em>}' attribute list.
+	 * The cached value of the '{@link #getSerializationGroups() <em>Serialization Groups</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSerializationGroups()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> serializationGroups;
-
-	/**
-	 * The default value of the '{@link #isSerializationExpose() <em>Serialization Expose</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSerializationExpose()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean SERIALIZATION_EXPOSE_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isSerializationExpose() <em>Serialization Expose</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSerializationExpose()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean serializationExpose = SERIALIZATION_EXPOSE_EDEFAULT;
+	protected EList<SerializationGroup> serializationGroups;
 
 	/**
 	 * The default value of the '{@link #getHeaderClass() <em>Header Class</em>}' attribute.
@@ -516,32 +495,11 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<String> getSerializationGroups() {
+	public EList<SerializationGroup> getSerializationGroups() {
 		if (serializationGroups == null) {
-			serializationGroups = new EDataTypeUniqueEList<String>(String.class, this, PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS);
+			serializationGroups = new EObjectResolvingEList<SerializationGroup>(SerializationGroup.class, this, PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS);
 		}
 		return serializationGroups;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSerializationExpose() {
-		return serializationExpose;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSerializationExpose(boolean newSerializationExpose) {
-		boolean oldSerializationExpose = serializationExpose;
-		serializationExpose = newSerializationExpose;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE, oldSerializationExpose, serializationExpose));
 	}
 
 	/**
@@ -859,8 +817,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return isEncodeUriKey();
 			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
 				return getSerializationGroups();
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
-				return isSerializationExpose();
 			case PersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
 				return getHeaderClass();
 			case PersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS:
@@ -913,10 +869,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return;
 			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
 				getSerializationGroups().clear();
-				getSerializationGroups().addAll((Collection<? extends String>)newValue);
-				return;
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
-				setSerializationExpose((Boolean)newValue);
+				getSerializationGroups().addAll((Collection<? extends SerializationGroup>)newValue);
 				return;
 			case PersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
 				setHeaderClass((String)newValue);
@@ -981,9 +934,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
 				getSerializationGroups().clear();
 				return;
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
-				setSerializationExpose(SERIALIZATION_EXPOSE_EDEFAULT);
-				return;
 			case PersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
 				setHeaderClass(HEADER_CLASS_EDEFAULT);
 				return;
@@ -1041,8 +991,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
 			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
 				return serializationGroups != null && !serializationGroups.isEmpty();
-			case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
-				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
 			case PersistencePackage.ENTITY_FEATURE__HEADER_CLASS:
 				return HEADER_CLASS_EDEFAULT == null ? headerClass != null : !HEADER_CLASS_EDEFAULT.equals(headerClass);
 			case PersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS:
@@ -1084,7 +1032,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				case PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE: return PersistencePackage.FEATURE__NULL_DISPLAY_VALUE;
 				case PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY: return PersistencePackage.FEATURE__ENCODE_URI_KEY;
 				case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS: return PersistencePackage.FEATURE__SERIALIZATION_GROUPS;
-				case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE: return PersistencePackage.FEATURE__SERIALIZATION_EXPOSE;
 				case PersistencePackage.ENTITY_FEATURE__HEADER_CLASS: return PersistencePackage.FEATURE__HEADER_CLASS;
 				case PersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS: return PersistencePackage.FEATURE__DISPLAY_CLASS;
 				case PersistencePackage.ENTITY_FEATURE__FOOTER_CLASS: return PersistencePackage.FEATURE__FOOTER_CLASS;
@@ -1109,7 +1056,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				case PersistencePackage.FEATURE__NULL_DISPLAY_VALUE: return PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE;
 				case PersistencePackage.FEATURE__ENCODE_URI_KEY: return PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY;
 				case PersistencePackage.FEATURE__SERIALIZATION_GROUPS: return PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS;
-				case PersistencePackage.FEATURE__SERIALIZATION_EXPOSE: return PersistencePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE;
 				case PersistencePackage.FEATURE__HEADER_CLASS: return PersistencePackage.ENTITY_FEATURE__HEADER_CLASS;
 				case PersistencePackage.FEATURE__DISPLAY_CLASS: return PersistencePackage.ENTITY_FEATURE__DISPLAY_CLASS;
 				case PersistencePackage.FEATURE__FOOTER_CLASS: return PersistencePackage.ENTITY_FEATURE__FOOTER_CLASS;
@@ -1139,10 +1085,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		result.append(nullDisplayValue);
 		result.append(", encodeUriKey: ");
 		result.append(encodeUriKey);
-		result.append(", serializationGroups: ");
-		result.append(serializationGroups);
-		result.append(", serializationExpose: ");
-		result.append(serializationExpose);
 		result.append(", headerClass: ");
 		result.append(headerClass);
 		result.append(", displayClass: ");

@@ -105,13 +105,22 @@ public interface ApiPackage extends EPackage {
 	int RESOURCE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Parent Resource</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__PARENT_RESOURCE = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__NAME = 0;
+	int RESOURCE__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Service</b></em>' reference.
@@ -120,7 +129,7 @@ public interface ApiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__SERVICE = 1;
+	int RESOURCE__SERVICE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
@@ -129,7 +138,7 @@ public interface ApiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__URI_ELEMENT = 2;
+	int RESOURCE__URI_ELEMENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Support Get All</b></em>' attribute.
@@ -138,7 +147,7 @@ public interface ApiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__SUPPORT_GET_ALL = 3;
+	int RESOURCE__SUPPORT_GET_ALL = 4;
 
 	/**
 	 * The feature id for the '<em><b>Support Get One</b></em>' attribute.
@@ -147,7 +156,7 @@ public interface ApiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__SUPPORT_GET_ONE = 4;
+	int RESOURCE__SUPPORT_GET_ONE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Selections</b></em>' reference list.
@@ -156,7 +165,16 @@ public interface ApiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__SELECTIONS = 5;
+	int RESOURCE__SELECTIONS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Default Serialization Groups</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__DEFAULT_SERIALIZATION_GROUPS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Child Resources</b></em>' containment reference list.
@@ -165,7 +183,7 @@ public interface ApiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__CHILD_RESOURCES = 6;
+	int RESOURCE__CHILD_RESOURCES = 8;
 
 	/**
 	 * The number of structural features of the '<em>Resource</em>' class.
@@ -174,7 +192,7 @@ public interface ApiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_FEATURE_COUNT = 7;
+	int RESOURCE_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Resource</em>' class.
@@ -216,6 +234,17 @@ public interface ApiPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getResource();
+
+	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getParentResource <em>Parent Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent Resource</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.api.Resource#getParentResource()
+	 * @see #getResource()
+	 * @generated
+	 */
+	EReference getResource_ParentResource();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getName <em>Name</em>}'.
@@ -284,6 +313,17 @@ public interface ApiPackage extends EPackage {
 	EReference getResource_Selections();
 
 	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getDefaultSerializationGroups <em>Default Serialization Groups</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Default Serialization Groups</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.api.Resource#getDefaultSerializationGroups()
+	 * @see #getResource()
+	 * @generated
+	 */
+	EReference getResource_DefaultSerializationGroups();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.api.Resource#getChildResources <em>Child Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -346,6 +386,14 @@ public interface ApiPackage extends EPackage {
 		EClass RESOURCE = eINSTANCE.getResource();
 
 		/**
+		 * The meta object literal for the '<em><b>Parent Resource</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOURCE__PARENT_RESOURCE = eINSTANCE.getResource_ParentResource();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -392,6 +440,14 @@ public interface ApiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RESOURCE__SELECTIONS = eINSTANCE.getResource_Selections();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Serialization Groups</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOURCE__DEFAULT_SERIALIZATION_GROUPS = eINSTANCE.getResource_DefaultSerializationGroups();
 
 		/**
 		 * The meta object literal for the '<em><b>Child Resources</b></em>' containment reference list feature.

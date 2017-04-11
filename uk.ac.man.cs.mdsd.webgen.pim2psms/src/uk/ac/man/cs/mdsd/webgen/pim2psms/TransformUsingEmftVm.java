@@ -198,6 +198,7 @@ public class TransformUsingEmftVm {
 
 		final Map<String, Model> apiInputModels = new HashMap<String, Model>();
 		apiInputModels.put("website", getWebsiteModel());
+		apiInputModels.put("orm", ormModel);
 		apiInputModels.put("service", serviceModel);
 		final String apiModelName = "api";
 		final Model apiModel = executePassCreatingOutputModel("API",

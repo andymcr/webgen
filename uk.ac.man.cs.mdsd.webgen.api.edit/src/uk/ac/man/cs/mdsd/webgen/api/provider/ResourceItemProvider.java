@@ -69,6 +69,7 @@ public class ResourceItemProvider
 			addSupportGetAllPropertyDescriptor(object);
 			addSupportGetOnePropertyDescriptor(object);
 			addSelectionsPropertyDescriptor(object);
+			addDefaultSerializationGroupsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -197,6 +198,28 @@ public class ResourceItemProvider
 				 getString("_UI_Resource_selections_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_selections_feature", "_UI_Resource_type"),
 				 ApiPackage.Literals.RESOURCE__SELECTIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Serialization Groups feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultSerializationGroupsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Resource_defaultSerializationGroups_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_defaultSerializationGroups_feature", "_UI_Resource_type"),
+				 ApiPackage.Literals.RESOURCE__DEFAULT_SERIALIZATION_GROUPS,
 				 true,
 				 false,
 				 true,

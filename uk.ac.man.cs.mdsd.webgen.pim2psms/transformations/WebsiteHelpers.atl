@@ -36,6 +36,9 @@ helper def: findWebGenModel() : Website!WebGenModel
 helper def: findOrmModel() : ORM!OrmModel
 	= ORM!OrmModel.allInstancesFrom('orm')->first();
 
+helper def: findOrmSerializationGroup(name : String) : ORM!SerializationGroup
+	= ORM!SerializationGroup.allInstancesFrom('orm')->any(g | g.name = name);
+
 helper def: findWebsiteProperties() : Website!WebsiteProperties
 	= thisModule.findWebGenModel().websiteProperties;
 

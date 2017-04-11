@@ -13,6 +13,7 @@ import uk.ac.man.cs.mdsd.webgen.api.ApiFactory;
 import uk.ac.man.cs.mdsd.webgen.api.ApiPackage;
 import uk.ac.man.cs.mdsd.webgen.api.Resource;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 
 /**
@@ -132,8 +133,17 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getResource_ParentResource() {
+		return (EReference)resourceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getResource_Name() {
-		return (EAttribute)resourceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)resourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -142,7 +152,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * @generated
 	 */
 	public EReference getResource_Service() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(1);
+		return (EReference)resourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -151,15 +161,6 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * @generated
 	 */
 	public EAttribute getResource_UriElement() {
-		return (EAttribute)resourceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getResource_SupportGetAll() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -168,7 +169,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResource_SupportGetOne() {
+	public EAttribute getResource_SupportGetAll() {
 		return (EAttribute)resourceEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -177,8 +178,26 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getResource_SupportGetOne() {
+		return (EAttribute)resourceEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getResource_Selections() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(5);
+		return (EReference)resourceEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResource_DefaultSerializationGroups() {
+		return (EReference)resourceEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -187,7 +206,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 	 * @generated
 	 */
 	public EReference getResource_ChildResources() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(6);
+		return (EReference)resourceEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -222,12 +241,14 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		createEReference(apiEClass, API__RESOURCES);
 
 		resourceEClass = createEClass(RESOURCE);
+		createEReference(resourceEClass, RESOURCE__PARENT_RESOURCE);
 		createEAttribute(resourceEClass, RESOURCE__NAME);
 		createEReference(resourceEClass, RESOURCE__SERVICE);
 		createEAttribute(resourceEClass, RESOURCE__URI_ELEMENT);
 		createEAttribute(resourceEClass, RESOURCE__SUPPORT_GET_ALL);
 		createEAttribute(resourceEClass, RESOURCE__SUPPORT_GET_ONE);
 		createEReference(resourceEClass, RESOURCE__SELECTIONS);
+		createEReference(resourceEClass, RESOURCE__DEFAULT_SERIALIZATION_GROUPS);
 		createEReference(resourceEClass, RESOURCE__CHILD_RESOURCES);
 	}
 
@@ -256,6 +277,7 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 
 		// Obtain other dependent packages
 		ServicePackage theServicePackage = (ServicePackage)EPackage.Registry.INSTANCE.getEPackage(ServicePackage.eNS_URI);
+		PersistencePackage thePersistencePackage = (PersistencePackage)EPackage.Registry.INSTANCE.getEPackage(PersistencePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -268,13 +290,15 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		initEReference(getAPI_Resources(), this.getResource(), null, "resources", null, 0, -1, uk.ac.man.cs.mdsd.webgen.api.API.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getResource_ParentResource(), this.getResource(), this.getResource_ChildResources(), "parentResource", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_Name(), ecorePackage.getEString(), "name", null, 0, 1, Resource.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getResource_Service(), theServicePackage.getService(), null, "service", null, 1, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_SupportGetAll(), ecorePackage.getEBoolean(), "supportGetAll", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_SupportGetOne(), ecorePackage.getEBoolean(), "supportGetOne", "true", 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_Selections(), theServicePackage.getSelection(), null, "selections", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getResource_ChildResources(), this.getResource(), null, "childResources", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResource_DefaultSerializationGroups(), thePersistencePackage.getSerializationGroup(), null, "defaultSerializationGroups", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResource_ChildResources(), this.getResource(), this.getResource_ParentResource(), "childResources", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

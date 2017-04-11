@@ -17,12 +17,15 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.api.ApiPackage;
 import uk.ac.man.cs.mdsd.api.Resource;
+
+import uk.ac.man.cs.mdsd.orm.SerializationGroup;
 
 import uk.ac.man.cs.mdsd.service.Selection;
 import uk.ac.man.cs.mdsd.service.Service;
@@ -35,12 +38,14 @@ import uk.ac.man.cs.mdsd.service.Service;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getParentResource <em>Parent Resource</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getService <em>Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#isSupportGetOne <em>Support Get One</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#isSupportGetAll <em>Support Get All</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getSelections <em>Selections</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getDefaultSerializationGroups <em>Default Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.api.impl.ResourceImpl#getChildResources <em>Child Resources</em>}</li>
  * </ul>
  *
@@ -138,6 +143,16 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	protected EList<Selection> selections;
 
 	/**
+	 * The cached value of the '{@link #getDefaultSerializationGroups() <em>Default Serialization Groups</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultSerializationGroups()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SerializationGroup> defaultSerializationGroups;
+
+	/**
 	 * The cached value of the '{@link #getChildResources() <em>Child Resources</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,6 +179,57 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	@Override
 	protected EClass eStaticClass() {
 		return ApiPackage.Literals.RESOURCE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Resource getParentResource() {
+		if (eContainerFeatureID() != ApiPackage.RESOURCE__PARENT_RESOURCE) return null;
+		return (Resource)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Resource basicGetParentResource() {
+		if (eContainerFeatureID() != ApiPackage.RESOURCE__PARENT_RESOURCE) return null;
+		return (Resource)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetParentResource(Resource newParentResource, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParentResource, ApiPackage.RESOURCE__PARENT_RESOURCE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParentResource(Resource newParentResource) {
+		if (newParentResource != eInternalContainer() || (eContainerFeatureID() != ApiPackage.RESOURCE__PARENT_RESOURCE && newParentResource != null)) {
+			if (EcoreUtil.isAncestor(this, newParentResource))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newParentResource != null)
+				msgs = ((InternalEObject)newParentResource).eInverseAdd(this, ApiPackage.RESOURCE__CHILD_RESOURCES, Resource.class, msgs);
+			msgs = basicSetParentResource(newParentResource, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApiPackage.RESOURCE__PARENT_RESOURCE, newParentResource, newParentResource));
 	}
 
 	/**
@@ -300,11 +366,42 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SerializationGroup> getDefaultSerializationGroups() {
+		if (defaultSerializationGroups == null) {
+			defaultSerializationGroups = new EObjectResolvingEList<SerializationGroup>(SerializationGroup.class, this, ApiPackage.RESOURCE__DEFAULT_SERIALIZATION_GROUPS);
+		}
+		return defaultSerializationGroups;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Resource> getChildResources() {
 		if (childResources == null) {
-			childResources = new EObjectContainmentEList<Resource>(Resource.class, this, ApiPackage.RESOURCE__CHILD_RESOURCES);
+			childResources = new EObjectContainmentWithInverseEList<Resource>(Resource.class, this, ApiPackage.RESOURCE__CHILD_RESOURCES, ApiPackage.RESOURCE__PARENT_RESOURCE);
 		}
 		return childResources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ApiPackage.RESOURCE__PARENT_RESOURCE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetParentResource((Resource)otherEnd, msgs);
+			case ApiPackage.RESOURCE__CHILD_RESOURCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildResources()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -315,6 +412,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ApiPackage.RESOURCE__PARENT_RESOURCE:
+				return basicSetParentResource(null, msgs);
 			case ApiPackage.RESOURCE__CHILD_RESOURCES:
 				return ((InternalEList<?>)getChildResources()).basicRemove(otherEnd, msgs);
 		}
@@ -327,8 +426,25 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case ApiPackage.RESOURCE__PARENT_RESOURCE:
+				return eInternalContainer().eInverseRemove(this, ApiPackage.RESOURCE__CHILD_RESOURCES, Resource.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ApiPackage.RESOURCE__PARENT_RESOURCE:
+				if (resolve) return getParentResource();
+				return basicGetParentResource();
 			case ApiPackage.RESOURCE__SERVICE:
 				if (resolve) return getService();
 				return basicGetService();
@@ -342,6 +458,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 				return isSupportGetAll();
 			case ApiPackage.RESOURCE__SELECTIONS:
 				return getSelections();
+			case ApiPackage.RESOURCE__DEFAULT_SERIALIZATION_GROUPS:
+				return getDefaultSerializationGroups();
 			case ApiPackage.RESOURCE__CHILD_RESOURCES:
 				return getChildResources();
 		}
@@ -357,6 +475,9 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ApiPackage.RESOURCE__PARENT_RESOURCE:
+				setParentResource((Resource)newValue);
+				return;
 			case ApiPackage.RESOURCE__SERVICE:
 				setService((Service)newValue);
 				return;
@@ -372,6 +493,10 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 			case ApiPackage.RESOURCE__SELECTIONS:
 				getSelections().clear();
 				getSelections().addAll((Collection<? extends Selection>)newValue);
+				return;
+			case ApiPackage.RESOURCE__DEFAULT_SERIALIZATION_GROUPS:
+				getDefaultSerializationGroups().clear();
+				getDefaultSerializationGroups().addAll((Collection<? extends SerializationGroup>)newValue);
 				return;
 			case ApiPackage.RESOURCE__CHILD_RESOURCES:
 				getChildResources().clear();
@@ -389,6 +514,9 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ApiPackage.RESOURCE__PARENT_RESOURCE:
+				setParentResource((Resource)null);
+				return;
 			case ApiPackage.RESOURCE__SERVICE:
 				setService((Service)null);
 				return;
@@ -403,6 +531,9 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 				return;
 			case ApiPackage.RESOURCE__SELECTIONS:
 				getSelections().clear();
+				return;
+			case ApiPackage.RESOURCE__DEFAULT_SERIALIZATION_GROUPS:
+				getDefaultSerializationGroups().clear();
 				return;
 			case ApiPackage.RESOURCE__CHILD_RESOURCES:
 				getChildResources().clear();
@@ -419,6 +550,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ApiPackage.RESOURCE__PARENT_RESOURCE:
+				return basicGetParentResource() != null;
 			case ApiPackage.RESOURCE__SERVICE:
 				return service != null;
 			case ApiPackage.RESOURCE__NAME:
@@ -431,6 +564,8 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 				return supportGetAll != SUPPORT_GET_ALL_EDEFAULT;
 			case ApiPackage.RESOURCE__SELECTIONS:
 				return selections != null && !selections.isEmpty();
+			case ApiPackage.RESOURCE__DEFAULT_SERIALIZATION_GROUPS:
+				return defaultSerializationGroups != null && !defaultSerializationGroups.isEmpty();
 			case ApiPackage.RESOURCE__CHILD_RESOURCES:
 				return childResources != null && !childResources.isEmpty();
 		}

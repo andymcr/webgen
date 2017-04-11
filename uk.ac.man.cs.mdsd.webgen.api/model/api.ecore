@@ -11,6 +11,8 @@
         eType="#//Resource" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Resource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentResource" eType="#//Resource"
+        eOpposite="#//Resource/childResources"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" unsettable="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -27,7 +29,9 @@
         defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selections" upperBound="-1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSerializationGroups"
+        upperBound="-1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//SerializationGroup"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="childResources" upperBound="-1"
-        eType="#//Resource" containment="true"/>
+        eType="#//Resource" containment="true" eOpposite="#//Resource/parentResource"/>
   </eClassifiers>
 </ecore:EPackage>

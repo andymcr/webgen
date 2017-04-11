@@ -9,9 +9,6 @@ create dummyOrm : ORM refining orm : ORM, website : Website;
 uses WebsiteHelpers;
 uses PersistenceExpression;
 
-helper def: findOrmSerializationGroup(name : String) : ORM!SerializationGroup
-	= ORM!SerializationGroup.allInstancesFrom('orm')->any(g | g.name = name);
-
 
 abstract rule NamedElement {
 	from website : Website!NamedElement

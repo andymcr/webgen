@@ -7,6 +7,7 @@
 	editPluginID="uk.ac.man.cs.mdsd.api.edit")
 package uk.ac.man.cs.mdsd.api
 
+import uk.ac.man.cs.mdsd.orm.SerializationGroup
 import uk.ac.man.cs.mdsd.service.Selection
 import uk.ac.man.cs.mdsd.service.Service
 
@@ -16,6 +17,7 @@ class API {
 }
 
 class Resource {
+	container Resource parentResource opposite childResources
 	refers Service[1] service
 	derived String[1] name get {
 		if (service != null)
@@ -25,5 +27,6 @@ class Resource {
 	boolean supportGetOne = "true"
 	boolean supportGetAll = "true"
 	refers Selection[] selections
-	contains Resource[] childResources
+	refers SerializationGroup[] defaultSerializationGroups
+	contains Resource[] childResources opposite parentResource
 }

@@ -38,6 +38,9 @@ rule Resource {
 		supportGetOne <- website.supportGetOne,
 		supportGetAll <- website.supportGetAll,
 		selections <- website.selections,
+		defaultSerializationGroups <-
+			website.defaultSerializationGroups
+				->collect(g | thisModule.findOrmSerializationGroup(g.name)),
 		childResources <- website.childResources
 	)
 } 

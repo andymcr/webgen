@@ -185,6 +185,15 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isSetName() {
+		return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Association getAssociation() {
 		if (association != null && association.eIsProxy()) {
 			InternalEObject oldAssociation = (InternalEObject)association;
@@ -519,7 +528,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebuiPackage.UNIT_ASSOCIATION__UNITS:
 				return units != null && !units.isEmpty();
 			case WebuiPackage.UNIT_ASSOCIATION__NAME:
-				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return isSetName();
 			case WebuiPackage.UNIT_ASSOCIATION__ASSOCIATION:
 				return association != null;
 			case WebuiPackage.UNIT_ASSOCIATION__VALUE_DISPLAY:

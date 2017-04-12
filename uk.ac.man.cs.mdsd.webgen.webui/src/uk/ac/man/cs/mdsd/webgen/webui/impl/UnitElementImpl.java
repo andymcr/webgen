@@ -198,6 +198,15 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isSetName() {
+		return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Expression getDefaultValue() {
 		return defaultValue;
 	}
@@ -403,7 +412,7 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 			case WebuiPackage.UNIT_ELEMENT__ATTRIBUTE:
 				return attribute != null;
 			case WebuiPackage.UNIT_ELEMENT__NAME:
-				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return isSetName();
 			case WebuiPackage.UNIT_ELEMENT__DEFAULT_VALUE:
 				return defaultValue != null;
 			case WebuiPackage.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS:

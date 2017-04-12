@@ -143,6 +143,15 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isSetName() {
+		return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Association getAssociation() {
 		if (association != null && association.eIsProxy()) {
 			InternalEObject oldAssociation = (InternalEObject)association;
@@ -413,7 +422,7 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case WebuiPackage.FEATURE_PATH_ASSOCIATION__NAME:
-				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return isSetName();
 			case WebuiPackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION:
 				return association != null;
 			case WebuiPackage.FEATURE_PATH_ASSOCIATION__VALUE_DISPLAY:

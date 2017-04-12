@@ -36,12 +36,23 @@ public interface AssociationReference extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #isSetName()
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getAssociationReference_Name()
-	 * @model changeable="false" volatile="true" derived="true" ordered="false"
+	 * @model unsettable="true" changeable="false" volatile="true" derived="true" ordered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\t\'\'\r\nelse if association.oclIsKindOf(persistence::EntityAssociation) then\r\n\tassociation.oclAsType(persistence::EntityAssociation).name\r\nelse if association.oclIsTypeOf(persistence::EncapsulatedAssociation) then\r\n\tassociation.oclAsType(persistence::EncapsulatedAssociation).name\r\nelse\r\n\tassociation.oclAsType(persistence::ViewAssociation).name \r\nendif endif endif\r\n'"
 	 * @generated
 	 */
 	String getName();
+
+	/**
+	 * Returns whether the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.AssociationReference#getName <em>Name</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Name</em>' attribute is set.
+	 * @see #getName()
+	 * @generated
+	 */
+	boolean isSetName();
 
 	/**
 	 * Returns the value of the '<em><b>Association</b></em>' reference.

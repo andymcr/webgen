@@ -63,12 +63,23 @@ public interface UnitElement extends UnitFeature {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #isSetName()
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitElement_Name()
-	 * @model changeable="false" volatile="true" derived="true" ordered="false"
+	 * @model unsettable="true" changeable="false" volatile="true" derived="true" ordered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\tattribute.oclAsType(persistence::EncapsulatedAttribute).name\r\nelse\r\n\tattribute.oclAsType(persistence::EntityAttribute).name\r\nendif endif'"
 	 * @generated
 	 */
 	String getName();
+
+	/**
+	 * Returns whether the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitElement#getName <em>Name</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Name</em>' attribute is set.
+	 * @see #getName()
+	 * @generated
+	 */
+	boolean isSetName();
 
 	/**
 	 * Returns the value of the '<em><b>Default Value</b></em>' containment reference.

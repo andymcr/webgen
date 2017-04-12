@@ -9,7 +9,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import uk.ac.man.cs.mdsd.webgen.base.provider.BaseEditPlugin;
 
 import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
-
 import uk.ac.man.cs.mdsd.webgen.persistence.provider.PersistenceEditPlugin;
 
 /**

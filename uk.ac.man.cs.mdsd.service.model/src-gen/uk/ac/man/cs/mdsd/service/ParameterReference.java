@@ -30,12 +30,12 @@ public interface ParameterReference extends Variable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameter</em>' reference.
-	 * @see #setParameter(SelectionParameter)
+	 * @see #setParameter(FormalParameter)
 	 * @see uk.ac.man.cs.mdsd.service.ServicePackage#getParameterReference_Parameter()
 	 * @model required="true"
 	 * @generated
 	 */
-	SelectionParameter getParameter();
+	FormalParameter getParameter();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.service.ParameterReference#getParameter <em>Parameter</em>}' reference.
@@ -45,6 +45,6 @@ public interface ParameterReference extends Variable {
 	 * @see #getParameter()
 	 * @generated
 	 */
-	void setParameter(SelectionParameter value);
+	void setParameter(FormalParameter value);
 
 } // ParameterReference

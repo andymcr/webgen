@@ -24,8 +24,8 @@ import uk.ac.man.cs.mdsd.orm.OrmModel
 import uk.ac.man.cs.mdsd.orm.SingletonLocation
 import uk.ac.man.cs.mdsd.api.API
 import uk.ac.man.cs.mdsd.service.BusinessOperation
+import uk.ac.man.cs.mdsd.service.FormalParameter
 import uk.ac.man.cs.mdsd.service.Selection
-import uk.ac.man.cs.mdsd.service.SelectionParameter
 import uk.ac.man.cs.mdsd.service.Service
 import uk.ac.man.cs.mdsd.service.ServiceModel
 
@@ -192,7 +192,7 @@ class Filter extends NamedDisplayElement {
 }
 
 class FilterParameter extends NamedElement {
-	refers SelectionParameter formal
+	refers FormalParameter formal
 	refers DataType dataType
 	String defaultValue = ''
 	String placeholder

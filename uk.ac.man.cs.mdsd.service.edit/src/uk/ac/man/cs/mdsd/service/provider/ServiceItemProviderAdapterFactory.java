@@ -159,26 +159,26 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.service.SelectionParameter} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.service.FormalParameter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SelectionParameterItemProvider selectionParameterItemProvider;
+	protected FormalParameterItemProvider formalParameterItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.service.SelectionParameter}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.service.FormalParameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSelectionParameterAdapter() {
-		if (selectionParameterItemProvider == null) {
-			selectionParameterItemProvider = new SelectionParameterItemProvider(this);
+	public Adapter createFormalParameterAdapter() {
+		if (formalParameterItemProvider == null) {
+			formalParameterItemProvider = new FormalParameterItemProvider(this);
 		}
 
-		return selectionParameterItemProvider;
+		return formalParameterItemProvider;
 	}
 
 	/**
@@ -398,7 +398,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 		if (serviceModelItemProvider != null) serviceModelItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
-		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
+		if (formalParameterItemProvider != null) formalParameterItemProvider.dispose();
 		if (ascItemProvider != null) ascItemProvider.dispose();
 		if (descItemProvider != null) descItemProvider.dispose();
 		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();

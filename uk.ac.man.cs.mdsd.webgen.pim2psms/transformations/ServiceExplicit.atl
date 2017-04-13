@@ -123,11 +123,13 @@ rule Selection {
 }
 
 -- @extends NamedElement
-rule SelectionParameter {
-	from website : Website!SelectionParameter
-	to service : Service!SelectionParameter (
+rule FormalParameter {
+	from website : Website!FormalParameter
+	to service : Service!FormalParameter (
 		optional <- website.optional,
-		defaultValue <- website.defaultValue
+		defaultValue <- website.defaultValue,
+		dataType <- website.dataType,
+		description <- website.description
 	)
 }
 

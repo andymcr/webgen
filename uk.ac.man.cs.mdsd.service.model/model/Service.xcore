@@ -6,13 +6,13 @@
 	editDirectory="/uk.ac.man.cs.mdsd.service.edit/src",
 	editPluginID="uk.ac.man.cs.mdsd.service.edit",
 	childCreationExtenders="true",
-	complianceLevel="6.0",
 	editorDirectory="/uk.ac.man.cs.mdsd.service.editor/src")
 package uk.ac.man.cs.mdsd.service
 
 import uk.ac.man.cs.mdsd.expression.Predicate
 import uk.ac.man.cs.mdsd.expression.Variable
 import uk.ac.man.cs.mdsd.orm.Association
+import uk.ac.man.cs.mdsd.orm.DataType
 import uk.ac.man.cs.mdsd.orm.EntityOrView
 import uk.ac.man.cs.mdsd.orm.Feature
 import uk.ac.man.cs.mdsd.orm.NamedElement
@@ -35,7 +35,7 @@ class Service extends NamedElement {
 class Selection extends NamedElement {
 	container Service partOf opposite selections
 	boolean distinct
-	contains SelectionParameter[] parameters
+	contains FormalParameter[] parameters
 	refers Feature[] fields
 	refers Association[] joins
 	contains Predicate filter
@@ -44,9 +44,11 @@ class Selection extends NamedElement {
 	boolean selected
 }
 
-class SelectionParameter extends NamedElement {
+class FormalParameter extends NamedElement {
 	boolean optional
 	String defaultValue
+	refers DataType dataType
+	String description
 }
 
 abstract class Order {
@@ -66,7 +68,7 @@ class FeatureReference extends Variable {
 } 
  
 class ParameterReference extends Variable { 
-	refers SelectionParameter[1] parameter 
+	refers FormalParameter[1] parameter 
 } 
 
 class BusinessOperation extends NamedElement {

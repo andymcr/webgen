@@ -21,9 +21,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.base.FormalParameter;
 import uk.ac.man.cs.mdsd.webgen.base.FormalParameterList;
-import uk.ac.man.cs.mdsd.webgen.base.SelectionParameter;
-
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedElementImpl;
 
 import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
@@ -66,7 +65,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SelectionParameter> parameters;
+	protected EList<FormalParameter> parameters;
 
 	/**
 	 * The default value of the '{@link #isDistinct() <em>Distinct</em>}' attribute.
@@ -192,9 +191,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SelectionParameter> getParameters() {
+	public EList<FormalParameter> getParameters() {
 		if (parameters == null) {
-			parameters = new EObjectContainmentWithInverseEList<SelectionParameter>(SelectionParameter.class, this, ServicePackage.SELECTION__PARAMETERS, BasePackage.SELECTION_PARAMETER__FORMAL_FOR);
+			parameters = new EObjectContainmentWithInverseEList<FormalParameter>(FormalParameter.class, this, ServicePackage.SELECTION__PARAMETERS, BasePackage.FORMAL_PARAMETER__FORMAL_FOR);
 		}
 		return parameters;
 	}
@@ -476,7 +475,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		switch (featureID) {
 			case ServicePackage.SELECTION__PARAMETERS:
 				getParameters().clear();
-				getParameters().addAll((Collection<? extends SelectionParameter>)newValue);
+				getParameters().addAll((Collection<? extends FormalParameter>)newValue);
 				return;
 			case ServicePackage.SELECTION__USED_BY:
 				setUsedBy((Service)newValue);

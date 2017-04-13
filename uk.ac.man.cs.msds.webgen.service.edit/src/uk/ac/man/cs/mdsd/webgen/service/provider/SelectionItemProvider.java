@@ -303,7 +303,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(BasePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
-				 BaseFactory.eINSTANCE.createSelectionParameter()));
+				 BaseFactory.eINSTANCE.createFormalParameter()));
 
 		newChildDescriptors.add
 			(createChildParameter

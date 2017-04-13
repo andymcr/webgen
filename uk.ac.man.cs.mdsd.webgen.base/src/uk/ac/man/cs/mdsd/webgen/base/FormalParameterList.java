@@ -25,8 +25,8 @@ import org.eclipse.emf.ecore.EObject;
 public interface FormalParameterList extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.base.SelectionParameter}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.base.SelectionParameter#getFormalFor <em>Formal For</em>}'.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getFormalFor <em>Formal For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
@@ -35,10 +35,10 @@ public interface FormalParameterList extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.base.BasePackage#getFormalParameterList_Parameters()
-	 * @see uk.ac.man.cs.mdsd.webgen.base.SelectionParameter#getFormalFor
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getFormalFor
 	 * @model opposite="formalFor" containment="true"
 	 * @generated
 	 */
-	EList<SelectionParameter> getParameters();
+	EList<FormalParameter> getParameters();
 
 } // FormalParameterList

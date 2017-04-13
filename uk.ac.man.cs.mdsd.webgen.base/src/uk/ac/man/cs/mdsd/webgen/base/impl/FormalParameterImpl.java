@@ -13,25 +13,28 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.base.DataType;
+import uk.ac.man.cs.mdsd.webgen.base.FormalParameter;
 import uk.ac.man.cs.mdsd.webgen.base.FormalParameterList;
-import uk.ac.man.cs.mdsd.webgen.base.SelectionParameter;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Selection Parameter</b></em>'.
+ * An implementation of the model object '<em><b>Formal Parameter</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.SelectionParameterImpl#getFormalFor <em>Formal For</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.SelectionParameterImpl#isOptional <em>Optional</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.SelectionParameterImpl#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl#getFormalFor <em>Formal For</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl#isOptional <em>Optional</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl#getDataType <em>Data Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SelectionParameterImpl extends NamedElementImpl implements SelectionParameter {
+public class FormalParameterImpl extends NamedElementImpl implements FormalParameter {
 	/**
 	 * The default value of the '{@link #isOptional() <em>Optional</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -73,11 +76,41 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	protected String defaultValue = DEFAULT_VALUE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataType()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataType dataType;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SelectionParameterImpl() {
+	protected FormalParameterImpl() {
 		super();
 	}
 
@@ -88,7 +121,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return BasePackage.Literals.SELECTION_PARAMETER;
+		return BasePackage.Literals.FORMAL_PARAMETER;
 	}
 
 	/**
@@ -97,7 +130,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	 * @generated
 	 */
 	public FormalParameterList getFormalFor() {
-		if (eContainerFeatureID() != BasePackage.SELECTION_PARAMETER__FORMAL_FOR) return null;
+		if (eContainerFeatureID() != BasePackage.FORMAL_PARAMETER__FORMAL_FOR) return null;
 		return (FormalParameterList)eInternalContainer();
 	}
 
@@ -107,7 +140,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	 * @generated
 	 */
 	public NotificationChain basicSetFormalFor(FormalParameterList newFormalFor, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newFormalFor, BasePackage.SELECTION_PARAMETER__FORMAL_FOR, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newFormalFor, BasePackage.FORMAL_PARAMETER__FORMAL_FOR, msgs);
 		return msgs;
 	}
 
@@ -117,7 +150,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	 * @generated
 	 */
 	public void setFormalFor(FormalParameterList newFormalFor) {
-		if (newFormalFor != eInternalContainer() || (eContainerFeatureID() != BasePackage.SELECTION_PARAMETER__FORMAL_FOR && newFormalFor != null)) {
+		if (newFormalFor != eInternalContainer() || (eContainerFeatureID() != BasePackage.FORMAL_PARAMETER__FORMAL_FOR && newFormalFor != null)) {
 			if (EcoreUtil.isAncestor(this, newFormalFor))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -129,7 +162,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SELECTION_PARAMETER__FORMAL_FOR, newFormalFor, newFormalFor));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.FORMAL_PARAMETER__FORMAL_FOR, newFormalFor, newFormalFor));
 	}
 
 	/**
@@ -150,7 +183,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 		boolean oldOptional = optional;
 		optional = newOptional;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SELECTION_PARAMETER__OPTIONAL, oldOptional, optional));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.FORMAL_PARAMETER__OPTIONAL, oldOptional, optional));
 	}
 
 	/**
@@ -171,7 +204,66 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 		String oldDefaultValue = defaultValue;
 		defaultValue = newDefaultValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.SELECTION_PARAMETER__DEFAULT_VALUE, oldDefaultValue, defaultValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.FORMAL_PARAMETER__DEFAULT_VALUE, oldDefaultValue, defaultValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType getDataType() {
+		if (dataType != null && dataType.eIsProxy()) {
+			InternalEObject oldDataType = (InternalEObject)dataType;
+			dataType = (DataType)eResolveProxy(oldDataType);
+			if (dataType != oldDataType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.FORMAL_PARAMETER__DATA_TYPE, oldDataType, dataType));
+			}
+		}
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType basicGetDataType() {
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDataType(DataType newDataType) {
+		DataType oldDataType = dataType;
+		dataType = newDataType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.FORMAL_PARAMETER__DATA_TYPE, oldDataType, dataType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.FORMAL_PARAMETER__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -182,7 +274,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasePackage.SELECTION_PARAMETER__FORMAL_FOR:
+			case BasePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetFormalFor((FormalParameterList)otherEnd, msgs);
@@ -198,7 +290,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BasePackage.SELECTION_PARAMETER__FORMAL_FOR:
+			case BasePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				return basicSetFormalFor(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -212,7 +304,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case BasePackage.SELECTION_PARAMETER__FORMAL_FOR:
+			case BasePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				return eInternalContainer().eInverseRemove(this, BasePackage.FORMAL_PARAMETER_LIST__PARAMETERS, FormalParameterList.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -226,12 +318,17 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BasePackage.SELECTION_PARAMETER__FORMAL_FOR:
+			case BasePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				return getFormalFor();
-			case BasePackage.SELECTION_PARAMETER__OPTIONAL:
+			case BasePackage.FORMAL_PARAMETER__OPTIONAL:
 				return isOptional();
-			case BasePackage.SELECTION_PARAMETER__DEFAULT_VALUE:
+			case BasePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				return getDefaultValue();
+			case BasePackage.FORMAL_PARAMETER__DATA_TYPE:
+				if (resolve) return getDataType();
+				return basicGetDataType();
+			case BasePackage.FORMAL_PARAMETER__DESCRIPTION:
+				return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -244,14 +341,20 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BasePackage.SELECTION_PARAMETER__FORMAL_FOR:
+			case BasePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				setFormalFor((FormalParameterList)newValue);
 				return;
-			case BasePackage.SELECTION_PARAMETER__OPTIONAL:
+			case BasePackage.FORMAL_PARAMETER__OPTIONAL:
 				setOptional((Boolean)newValue);
 				return;
-			case BasePackage.SELECTION_PARAMETER__DEFAULT_VALUE:
+			case BasePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				setDefaultValue((String)newValue);
+				return;
+			case BasePackage.FORMAL_PARAMETER__DATA_TYPE:
+				setDataType((DataType)newValue);
+				return;
+			case BasePackage.FORMAL_PARAMETER__DESCRIPTION:
+				setDescription((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -265,14 +368,20 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BasePackage.SELECTION_PARAMETER__FORMAL_FOR:
+			case BasePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				setFormalFor((FormalParameterList)null);
 				return;
-			case BasePackage.SELECTION_PARAMETER__OPTIONAL:
+			case BasePackage.FORMAL_PARAMETER__OPTIONAL:
 				setOptional(OPTIONAL_EDEFAULT);
 				return;
-			case BasePackage.SELECTION_PARAMETER__DEFAULT_VALUE:
+			case BasePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				setDefaultValue(DEFAULT_VALUE_EDEFAULT);
+				return;
+			case BasePackage.FORMAL_PARAMETER__DATA_TYPE:
+				setDataType((DataType)null);
+				return;
+			case BasePackage.FORMAL_PARAMETER__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -286,12 +395,16 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BasePackage.SELECTION_PARAMETER__FORMAL_FOR:
+			case BasePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				return getFormalFor() != null;
-			case BasePackage.SELECTION_PARAMETER__OPTIONAL:
+			case BasePackage.FORMAL_PARAMETER__OPTIONAL:
 				return optional != OPTIONAL_EDEFAULT;
-			case BasePackage.SELECTION_PARAMETER__DEFAULT_VALUE:
+			case BasePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
+			case BasePackage.FORMAL_PARAMETER__DATA_TYPE:
+				return dataType != null;
+			case BasePackage.FORMAL_PARAMETER__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -310,8 +423,10 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 		result.append(optional);
 		result.append(", defaultValue: ");
 		result.append(defaultValue);
+		result.append(", description: ");
+		result.append(description);
 		result.append(')');
 		return result.toString();
 	}
 
-} //SelectionParameterImpl
+} //FormalParameterImpl

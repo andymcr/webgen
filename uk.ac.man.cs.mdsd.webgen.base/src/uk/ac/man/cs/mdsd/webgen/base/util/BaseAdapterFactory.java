@@ -106,8 +106,8 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 				return createFormalParameterListAdapter();
 			}
 			@Override
-			public Adapter caseSelectionParameter(SelectionParameter object) {
-				return createSelectionParameterAdapter();
+			public Adapter caseFormalParameter(FormalParameter object) {
+				return createFormalParameterAdapter();
 			}
 			@Override
 			public Adapter caseParameterReference(ParameterReference object) {
@@ -268,16 +268,16 @@ public class BaseAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.SelectionParameter <em>Selection Parameter</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter <em>Formal Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.base.SelectionParameter
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameter
 	 * @generated
 	 */
-	public Adapter createSelectionParameterAdapter() {
+	public Adapter createFormalParameterAdapter() {
 		return null;
 	}
 

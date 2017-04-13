@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.base.FormalParameter;
 import uk.ac.man.cs.mdsd.webgen.base.ParameterReference;
-import uk.ac.man.cs.mdsd.webgen.base.SelectionParameter;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +48,7 @@ public class ParameterReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected SelectionParameter parameter;
+	protected FormalParameter parameter;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,10 +83,10 @@ public class ParameterReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionParameter getParameter() {
+	public FormalParameter getParameter() {
 		if (parameter != null && parameter.eIsProxy()) {
 			InternalEObject oldParameter = (InternalEObject)parameter;
-			parameter = (SelectionParameter)eResolveProxy(oldParameter);
+			parameter = (FormalParameter)eResolveProxy(oldParameter);
 			if (parameter != oldParameter) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BasePackage.PARAMETER_REFERENCE__PARAMETER, oldParameter, parameter));
@@ -100,7 +100,7 @@ public class ParameterReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionParameter basicGetParameter() {
+	public FormalParameter basicGetParameter() {
 		return parameter;
 	}
 
@@ -109,8 +109,8 @@ public class ParameterReferenceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParameter(SelectionParameter newParameter) {
-		SelectionParameter oldParameter = parameter;
+	public void setParameter(FormalParameter newParameter) {
+		FormalParameter oldParameter = parameter;
 		parameter = newParameter;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.PARAMETER_REFERENCE__PARAMETER, oldParameter, parameter));
@@ -142,7 +142,7 @@ public class ParameterReferenceImpl extends MinimalEObjectImpl.Container impleme
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BasePackage.PARAMETER_REFERENCE__PARAMETER:
-				setParameter((SelectionParameter)newValue);
+				setParameter((FormalParameter)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -157,7 +157,7 @@ public class ParameterReferenceImpl extends MinimalEObjectImpl.Container impleme
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BasePackage.PARAMETER_REFERENCE__PARAMETER:
-				setParameter((SelectionParameter)null);
+				setParameter((FormalParameter)null);
 				return;
 		}
 		super.eUnset(featureID);

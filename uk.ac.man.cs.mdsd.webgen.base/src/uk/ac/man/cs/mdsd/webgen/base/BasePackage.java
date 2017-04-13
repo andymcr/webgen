@@ -527,14 +527,14 @@ public interface BasePackage extends EPackage {
 	int FORMAL_PARAMETER_LIST_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.SelectionParameterImpl <em>Selection Parameter</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl <em>Formal Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.SelectionParameterImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getSelectionParameter()
+	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getFormalParameter()
 	 * @generated
 	 */
-	int SELECTION_PARAMETER = 9;
+	int FORMAL_PARAMETER = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -543,7 +543,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_PARAMETER__NAME = NAMED_ELEMENT__NAME;
+	int FORMAL_PARAMETER__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Formal For</b></em>' container reference.
@@ -552,7 +552,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_PARAMETER__FORMAL_FOR = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int FORMAL_PARAMETER__FORMAL_FOR = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute.
@@ -561,7 +561,7 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_PARAMETER__OPTIONAL = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int FORMAL_PARAMETER__OPTIONAL = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -570,26 +570,43 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_PARAMETER__DEFAULT_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int FORMAL_PARAMETER__DEFAULT_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Selection Parameter</em>' class.
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int FORMAL_PARAMETER__DATA_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of operations of the '<em>Selection Parameter</em>' class.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_PARAMETER_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int FORMAL_PARAMETER__DESCRIPTION = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
+	/**
+	 * The number of structural features of the '<em>Formal Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Formal Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.ParameterReferenceImpl <em>Parameter Reference</em>}' class.
@@ -839,47 +856,69 @@ public interface BasePackage extends EPackage {
 	EReference getFormalParameterList_Parameters();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.base.SelectionParameter <em>Selection Parameter</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter <em>Formal Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Selection Parameter</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.base.SelectionParameter
+	 * @return the meta object for class '<em>Formal Parameter</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameter
 	 * @generated
 	 */
-	EClass getSelectionParameter();
+	EClass getFormalParameter();
 
 	/**
-	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.base.SelectionParameter#getFormalFor <em>Formal For</em>}'.
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getFormalFor <em>Formal For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the container reference '<em>Formal For</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.base.SelectionParameter#getFormalFor()
-	 * @see #getSelectionParameter()
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getFormalFor()
+	 * @see #getFormalParameter()
 	 * @generated
 	 */
-	EReference getSelectionParameter_FormalFor();
+	EReference getFormalParameter_FormalFor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.base.SelectionParameter#isOptional <em>Optional</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#isOptional <em>Optional</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Optional</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.base.SelectionParameter#isOptional()
-	 * @see #getSelectionParameter()
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameter#isOptional()
+	 * @see #getFormalParameter()
 	 * @generated
 	 */
-	EAttribute getSelectionParameter_Optional();
+	EAttribute getFormalParameter_Optional();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.base.SelectionParameter#getDefaultValue <em>Default Value</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getDefaultValue <em>Default Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Default Value</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.base.SelectionParameter#getDefaultValue()
-	 * @see #getSelectionParameter()
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getDefaultValue()
+	 * @see #getFormalParameter()
 	 * @generated
 	 */
-	EAttribute getSelectionParameter_DefaultValue();
+	EAttribute getFormalParameter_DefaultValue();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getDataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Data Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getDataType()
+	 * @see #getFormalParameter()
+	 * @generated
+	 */
+	EReference getFormalParameter_DataType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getDescription()
+	 * @see #getFormalParameter()
+	 * @generated
+	 */
+	EAttribute getFormalParameter_Description();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.base.ParameterReference <em>Parameter Reference</em>}'.
@@ -1107,14 +1146,14 @@ public interface BasePackage extends EPackage {
 		EReference FORMAL_PARAMETER_LIST__PARAMETERS = eINSTANCE.getFormalParameterList_Parameters();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.SelectionParameterImpl <em>Selection Parameter</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl <em>Formal Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.SelectionParameterImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getSelectionParameter()
+		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.base.impl.BasePackageImpl#getFormalParameter()
 		 * @generated
 		 */
-		EClass SELECTION_PARAMETER = eINSTANCE.getSelectionParameter();
+		EClass FORMAL_PARAMETER = eINSTANCE.getFormalParameter();
 
 		/**
 		 * The meta object literal for the '<em><b>Formal For</b></em>' container reference feature.
@@ -1122,7 +1161,7 @@ public interface BasePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SELECTION_PARAMETER__FORMAL_FOR = eINSTANCE.getSelectionParameter_FormalFor();
+		EReference FORMAL_PARAMETER__FORMAL_FOR = eINSTANCE.getFormalParameter_FormalFor();
 
 		/**
 		 * The meta object literal for the '<em><b>Optional</b></em>' attribute feature.
@@ -1130,7 +1169,7 @@ public interface BasePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SELECTION_PARAMETER__OPTIONAL = eINSTANCE.getSelectionParameter_Optional();
+		EAttribute FORMAL_PARAMETER__OPTIONAL = eINSTANCE.getFormalParameter_Optional();
 
 		/**
 		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
@@ -1138,7 +1177,23 @@ public interface BasePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SELECTION_PARAMETER__DEFAULT_VALUE = eINSTANCE.getSelectionParameter_DefaultValue();
+		EAttribute FORMAL_PARAMETER__DEFAULT_VALUE = eINSTANCE.getFormalParameter_DefaultValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FORMAL_PARAMETER__DATA_TYPE = eINSTANCE.getFormalParameter_DataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORMAL_PARAMETER__DESCRIPTION = eINSTANCE.getFormalParameter_Description();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.base.impl.ParameterReferenceImpl <em>Parameter Reference</em>}' class.

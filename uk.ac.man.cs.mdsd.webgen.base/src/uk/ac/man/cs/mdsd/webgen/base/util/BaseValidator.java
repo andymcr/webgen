@@ -104,8 +104,8 @@ public class BaseValidator extends EObjectValidator {
 				return validateCurrentUser((CurrentUser)value, diagnostics, context);
 			case BasePackage.FORMAL_PARAMETER_LIST:
 				return validateFormalParameterList((FormalParameterList)value, diagnostics, context);
-			case BasePackage.SELECTION_PARAMETER:
-				return validateSelectionParameter((SelectionParameter)value, diagnostics, context);
+			case BasePackage.FORMAL_PARAMETER:
+				return validateFormalParameter((FormalParameter)value, diagnostics, context);
 			case BasePackage.PARAMETER_REFERENCE:
 				return validateParameterReference((ParameterReference)value, diagnostics, context);
 			default:
@@ -288,17 +288,17 @@ public class BaseValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSelectionParameter(SelectionParameter selectionParameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(selectionParameter, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(selectionParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(selectionParameter, diagnostics, context);
+	public boolean validateFormalParameter(FormalParameter formalParameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(formalParameter, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(formalParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(formalParameter, diagnostics, context);
 		return result;
 	}
 

@@ -61,7 +61,7 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 			case BasePackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
 			case BasePackage.CURRENT_TIME: return createCurrentTime();
 			case BasePackage.CURRENT_USER: return createCurrentUser();
-			case BasePackage.SELECTION_PARAMETER: return createSelectionParameter();
+			case BasePackage.FORMAL_PARAMETER: return createFormalParameter();
 			case BasePackage.PARAMETER_REFERENCE: return createParameterReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -123,9 +123,9 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionParameter createSelectionParameter() {
-		SelectionParameterImpl selectionParameter = new SelectionParameterImpl();
-		return selectionParameter;
+	public FormalParameter createFormalParameter() {
+		FormalParameterImpl formalParameter = new FormalParameterImpl();
+		return formalParameter;
 	}
 
 	/**

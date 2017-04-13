@@ -136,10 +136,10 @@ public class BaseSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BasePackage.SELECTION_PARAMETER: {
-				SelectionParameter selectionParameter = (SelectionParameter)theEObject;
-				T result = caseSelectionParameter(selectionParameter);
-				if (result == null) result = caseNamedElement(selectionParameter);
+			case BasePackage.FORMAL_PARAMETER: {
+				FormalParameter formalParameter = (FormalParameter)theEObject;
+				T result = caseFormalParameter(formalParameter);
+				if (result == null) result = caseNamedElement(formalParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -291,17 +291,17 @@ public class BaseSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Selection Parameter</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Formal Parameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Selection Parameter</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Formal Parameter</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSelectionParameter(SelectionParameter object) {
+	public T caseFormalParameter(FormalParameter object) {
 		return null;
 	}
 

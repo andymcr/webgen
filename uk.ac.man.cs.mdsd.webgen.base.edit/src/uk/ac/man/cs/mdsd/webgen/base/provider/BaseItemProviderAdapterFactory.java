@@ -204,26 +204,26 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.base.SelectionParameter} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SelectionParameterItemProvider selectionParameterItemProvider;
+	protected FormalParameterItemProvider formalParameterItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.base.SelectionParameter}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSelectionParameterAdapter() {
-		if (selectionParameterItemProvider == null) {
-			selectionParameterItemProvider = new SelectionParameterItemProvider(this);
+	public Adapter createFormalParameterAdapter() {
+		if (formalParameterItemProvider == null) {
+			formalParameterItemProvider = new FormalParameterItemProvider(this);
 		}
 
-		return selectionParameterItemProvider;
+		return formalParameterItemProvider;
 	}
 
 	/**
@@ -380,7 +380,7 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
 		if (currentTimeItemProvider != null) currentTimeItemProvider.dispose();
 		if (currentUserItemProvider != null) currentUserItemProvider.dispose();
-		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
+		if (formalParameterItemProvider != null) formalParameterItemProvider.dispose();
 		if (parameterReferenceItemProvider != null) parameterReferenceItemProvider.dispose();
 	}
 

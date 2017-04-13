@@ -67,13 +67,13 @@ public interface BaseFactory extends EFactory {
 	CurrentUser createCurrentUser();
 
 	/**
-	 * Returns a new object of class '<em>Selection Parameter</em>'.
+	 * Returns a new object of class '<em>Formal Parameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Selection Parameter</em>'.
+	 * @return a new object of class '<em>Formal Parameter</em>'.
 	 * @generated
 	 */
-	SelectionParameter createSelectionParameter();
+	FormalParameter createFormalParameter();
 
 	/**
 	 * Returns a new object of class '<em>Parameter Reference</em>'.

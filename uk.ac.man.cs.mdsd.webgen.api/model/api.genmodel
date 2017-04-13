@@ -18,8 +18,8 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference api.ecore#//Resource/service"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute api.ecore#//Resource/uriElement"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute api.ecore#//Resource/enableDefaultGetAll"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute api.ecore#//Resource/enableDefaultGetOne"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute api.ecore#//Resource/enableDefaultGetAll"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute api.ecore#//Resource/enableDefaultGetOne"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference api.ecore#//Resource/getAll"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"

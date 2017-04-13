@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -24,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelFeature;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,6 +38,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ModelLabelImpl#getLabelFor <em>Label For</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ModelLabelImpl#getFormat <em>Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ModelLabelImpl#getFeatures <em>Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ModelLabelImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
  * </ul>
  *
  * @generated
@@ -70,6 +73,16 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 * @ordered
 	 */
 	protected EList<ModelLabelFeature> features;
+
+	/**
+	 * The cached value of the '{@link #getSerializationGroups() <em>Serialization Groups</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSerializationGroups()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SerializationGroup> serializationGroups;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,6 +182,18 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SerializationGroup> getSerializationGroups() {
+		if (serializationGroups == null) {
+			serializationGroups = new EObjectResolvingEList<SerializationGroup>(SerializationGroup.class, this, PersistencePackage.MODEL_LABEL__SERIALIZATION_GROUPS);
+		}
+		return serializationGroups;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -227,6 +252,8 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 				return getFormat();
 			case PersistencePackage.MODEL_LABEL__FEATURES:
 				return getFeatures();
+			case PersistencePackage.MODEL_LABEL__SERIALIZATION_GROUPS:
+				return getSerializationGroups();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -250,6 +277,10 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 				getFeatures().clear();
 				getFeatures().addAll((Collection<? extends ModelLabelFeature>)newValue);
 				return;
+			case PersistencePackage.MODEL_LABEL__SERIALIZATION_GROUPS:
+				getSerializationGroups().clear();
+				getSerializationGroups().addAll((Collection<? extends SerializationGroup>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -271,6 +302,9 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 			case PersistencePackage.MODEL_LABEL__FEATURES:
 				getFeatures().clear();
 				return;
+			case PersistencePackage.MODEL_LABEL__SERIALIZATION_GROUPS:
+				getSerializationGroups().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -289,6 +323,8 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 				return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
 			case PersistencePackage.MODEL_LABEL__FEATURES:
 				return features != null && !features.isEmpty();
+			case PersistencePackage.MODEL_LABEL__SERIALIZATION_GROUPS:
+				return serializationGroups != null && !serializationGroups.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

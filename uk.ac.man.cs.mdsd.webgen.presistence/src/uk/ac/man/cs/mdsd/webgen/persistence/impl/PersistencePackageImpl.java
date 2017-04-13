@@ -947,6 +947,15 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getModelLabel_SerializationGroups() {
+		return (EReference)modelLabelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getModelLabelFeature() {
 		return modelLabelFeatureEClass;
 	}
@@ -1954,6 +1963,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		createEReference(modelLabelEClass, MODEL_LABEL__LABEL_FOR);
 		createEAttribute(modelLabelEClass, MODEL_LABEL__FORMAT);
 		createEReference(modelLabelEClass, MODEL_LABEL__FEATURES);
+		createEReference(modelLabelEClass, MODEL_LABEL__SERIALIZATION_GROUPS);
 
 		modelLabelFeatureEClass = createEClass(MODEL_LABEL_FEATURE);
 		createEReference(modelLabelFeatureEClass, MODEL_LABEL_FEATURE__PART_OF);
@@ -2223,6 +2233,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEReference(getModelLabel_LabelFor(), this.getEntityOrView(), this.getEntityOrView_Labels(), "labelFor", null, 1, 1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModelLabel_Format(), ecorePackage.getEString(), "format", null, 1, 1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModelLabel_Features(), this.getModelLabelFeature(), this.getModelLabelFeature_PartOf(), "features", null, 0, -1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelLabel_SerializationGroups(), this.getSerializationGroup(), null, "serializationGroups", null, 0, -1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelLabelFeatureEClass, ModelLabelFeature.class, "ModelLabelFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModelLabelFeature_PartOf(), this.getModelLabel(), this.getModelLabel_Features(), "partOf", null, 1, 1, ModelLabelFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

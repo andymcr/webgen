@@ -18,6 +18,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getLabelFor <em>Label For</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getFormat <em>Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getFeatures <em>Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getSerializationGroups <em>Serialization Groups</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabel()
@@ -96,5 +97,21 @@ public interface ModelLabel extends NamedElement, Label {
 	 * @generated
 	 */
 	EList<ModelLabelFeature> getFeatures();
+
+	/**
+	 * Returns the value of the '<em><b>Serialization Groups</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Serialization Groups</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Serialization Groups</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabel_SerializationGroups()
+	 * @model
+	 * @generated
+	 */
+	EList<SerializationGroup> getSerializationGroups();
 
 } // ModelLabel

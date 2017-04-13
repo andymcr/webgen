@@ -166,6 +166,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//ModelLabelFeature" containment="true" eOpposite="#//ModelLabelFeature/partOf"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serializationGroups" upperBound="-1"
+        eType="#//SerializationGroup"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModelLabelFeature" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" lowerBound="1"

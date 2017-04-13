@@ -115,6 +115,8 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute persistence.ecore#//ModelLabel/format"/>
       <genFeatures children="true" createChild="true" propertyCategory="Interface"
           ecoreFeature="ecore:EReference persistence.ecore#//ModelLabel/features"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Serialization"
+          propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference persistence.ecore#//ModelLabel/serializationGroups"/>
     </genClasses>
     <genClasses image="false" ecoreClass="persistence.ecore#//ModelLabelFeature">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference persistence.ecore#//ModelLabelFeature/partOf"/>

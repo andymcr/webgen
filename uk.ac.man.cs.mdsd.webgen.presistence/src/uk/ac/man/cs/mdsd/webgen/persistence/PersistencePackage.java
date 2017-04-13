@@ -924,13 +924,22 @@ public interface PersistencePackage extends EPackage {
 	int MODEL_LABEL__FEATURES = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_LABEL__SERIALIZATION_GROUPS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Model Label</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int MODEL_LABEL_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Model Label</em>' class.
@@ -7033,6 +7042,17 @@ public interface PersistencePackage extends EPackage {
 	EReference getModelLabel_Features();
 
 	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getSerializationGroups <em>Serialization Groups</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Serialization Groups</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getSerializationGroups()
+	 * @see #getModelLabel()
+	 * @generated
+	 */
+	EReference getModelLabel_SerializationGroups();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabelFeature <em>Model Label Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8633,6 +8653,14 @@ public interface PersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MODEL_LABEL__FEATURES = eINSTANCE.getModelLabel_Features();
+
+		/**
+		 * The meta object literal for the '<em><b>Serialization Groups</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL_LABEL__SERIALIZATION_GROUPS = eINSTANCE.getModelLabel_SerializationGroups();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ModelLabelFeatureImpl <em>Model Label Feature</em>}' class.

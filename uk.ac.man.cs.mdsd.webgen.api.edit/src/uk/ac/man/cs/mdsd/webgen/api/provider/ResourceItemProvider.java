@@ -278,6 +278,7 @@ public class ResourceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(ApiPackage.Literals.RESOURCE__SELECTIONS);
 			childrenFeatures.add(ApiPackage.Literals.RESOURCE__CHILD_RESOURCES);
 		}
 		return childrenFeatures;
@@ -340,6 +341,7 @@ public class ResourceItemProvider
 			case ApiPackage.RESOURCE__ENABLE_DEFAULT_GET_ONE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case ApiPackage.RESOURCE__SELECTIONS:
 			case ApiPackage.RESOURCE__CHILD_RESOURCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -357,6 +359,11 @@ public class ResourceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ApiPackage.Literals.RESOURCE__SELECTIONS,
+				 ApiFactory.eINSTANCE.createResourceSelection()));
 
 		newChildDescriptors.add
 			(createChildParameter

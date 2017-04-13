@@ -24,8 +24,8 @@
           ecoreFeature="ecore:EReference api.ecore#//Resource/getAll"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference api.ecore#//Resource/getOne"/>
-      <genFeatures property="None" notify="false" createChild="false" propertyDescription=""
-          propertySortChoices="true" ecoreFeature="ecore:EReference api.ecore#//Resource/selections"/>
+      <genFeatures property="None" children="true" createChild="true" propertyDescription=""
+          ecoreFeature="ecore:EReference api.ecore#//Resource/selections"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Serialization"
           propertySortChoices="true" ecoreFeature="ecore:EReference api.ecore#//Resource/defaultSerializationGroups"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference api.ecore#//Resource/childResources"/>

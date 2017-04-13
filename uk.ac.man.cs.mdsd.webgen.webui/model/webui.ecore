@@ -157,7 +157,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="FilterParameter" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" eType="#//Filter"
         eOpposite="#//Filter/parameters"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="formal" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//SelectionParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formal" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//FormalParameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>

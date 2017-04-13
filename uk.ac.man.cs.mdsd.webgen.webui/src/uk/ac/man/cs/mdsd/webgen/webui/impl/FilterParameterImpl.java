@@ -13,8 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import uk.ac.man.cs.mdsd.webgen.base.DataType;
-import uk.ac.man.cs.mdsd.webgen.base.SelectionParameter;
-
+import uk.ac.man.cs.mdsd.webgen.base.FormalParameter;
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedElementImpl;
 
 import uk.ac.man.cs.mdsd.webgen.webui.Filter;
@@ -47,7 +46,7 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * @generated
 	 * @ordered
 	 */
-	protected SelectionParameter formal;
+	protected FormalParameter formal;
 
 	/**
 	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
@@ -164,10 +163,10 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionParameter getFormal() {
+	public FormalParameter getFormal() {
 		if (formal != null && formal.eIsProxy()) {
 			InternalEObject oldFormal = (InternalEObject)formal;
-			formal = (SelectionParameter)eResolveProxy(oldFormal);
+			formal = (FormalParameter)eResolveProxy(oldFormal);
 			if (formal != oldFormal) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.FILTER_PARAMETER__FORMAL, oldFormal, formal));
@@ -181,7 +180,7 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionParameter basicGetFormal() {
+	public FormalParameter basicGetFormal() {
 		return formal;
 	}
 
@@ -190,8 +189,8 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFormal(SelectionParameter newFormal) {
-		SelectionParameter oldFormal = formal;
+	public void setFormal(FormalParameter newFormal) {
+		FormalParameter oldFormal = formal;
 		formal = newFormal;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.FILTER_PARAMETER__FORMAL, oldFormal, formal));
@@ -357,7 +356,7 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 				setPartOf((Filter)newValue);
 				return;
 			case WebuiPackage.FILTER_PARAMETER__FORMAL:
-				setFormal((SelectionParameter)newValue);
+				setFormal((FormalParameter)newValue);
 				return;
 			case WebuiPackage.FILTER_PARAMETER__DATA_TYPE:
 				setDataType((DataType)newValue);
@@ -384,7 +383,7 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 				setPartOf((Filter)null);
 				return;
 			case WebuiPackage.FILTER_PARAMETER__FORMAL:
-				setFormal((SelectionParameter)null);
+				setFormal((FormalParameter)null);
 				return;
 			case WebuiPackage.FILTER_PARAMETER__DATA_TYPE:
 				setDataType((DataType)null);

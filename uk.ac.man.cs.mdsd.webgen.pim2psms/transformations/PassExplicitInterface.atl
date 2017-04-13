@@ -487,7 +487,7 @@ rule Filter {
 rule FilterParameter {
 	from website : Website!FilterParameter
 	to waf : WAF!FilterParameter (
-		formal <- website.formal.findServiceSelectionParameter(),
+		formal <- website.formal.findServiceFormalParameter(),
 		dataType <- website.dataType,
 		defaultValue <- website.defaultValue,
 		placeholder <-

@@ -262,11 +262,11 @@ helper context Service!Service def: getServiceSelection(name : String) : Service
 helper context Website!Selection def: findServiceSelection() : Service!Selection
 	= thisModule.findService(self.usedBy.name).getServiceSelection(self.name);
 
-helper context Service!Selection def: getServiceSelectionParameter(name : String) : Service!SelectionParameter
+helper context Service!Selection def: getServiceFormalParameter(name : String) : Service!FormalParameter
 	= self.parameters->any(p | p.name = name);
 
-helper context Website!SelectionParameter def: findServiceSelectionParameter() : Service!SelectionParameter
-	= self.formalFor.findServiceSelection().getServiceSelectionParameter(self.name);
+helper context Website!FormalParameter def: findServiceFormalParameter() : Service!FormalParameter
+	= self.formalFor.findServiceSelection().getServiceFormalParameter(self.name);
 
 helper def: findServiceBusinessOperation(name : String) : Service!Service
 	= Service!BusinessOperation.allInstancesFrom('service')->any(bo | bo.name = name);

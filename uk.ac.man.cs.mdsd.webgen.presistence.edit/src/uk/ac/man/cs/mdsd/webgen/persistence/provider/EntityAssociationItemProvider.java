@@ -57,7 +57,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 			addBidirectionalPropertyDescriptor(object);
 			addPivotTableNamePropertyDescriptor(object);
 			addTargetFeatureNamePropertyDescriptor(object);
-			addTargetPrimaryKeyPropertyDescriptor(object);
+			addTargetColumnNamePropertyDescriptor(object);
 			addTargetDisplayLabelPropertyDescriptor(object);
 			addTargetHeaderClassPropertyDescriptor(object);
 			addTargetInputClassPropertyDescriptor(object);
@@ -266,24 +266,24 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Target Primary Key feature.
+	 * This adds a property descriptor for the Target Column Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTargetPrimaryKeyPropertyDescriptor(Object object) {
+	protected void addTargetColumnNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EntityAssociation_targetPrimaryKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_targetPrimaryKey_feature", "_UI_EntityAssociation_type"),
-				 PersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY,
+				 getString("_UI_EntityAssociation_targetColumnName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_targetColumnName_feature", "_UI_EntityAssociation_type"),
+				 PersistencePackage.Literals.ENTITY_ASSOCIATION__TARGET_COLUMN_NAME,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_DatabasePropertyCategory"),
 				 null));
 	}
 
@@ -462,7 +462,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 			case PersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
 			case PersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
-			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_COLUMN_NAME:
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS:

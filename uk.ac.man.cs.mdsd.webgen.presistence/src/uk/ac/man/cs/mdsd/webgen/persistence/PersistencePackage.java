@@ -4334,13 +4334,13 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_ASSOCIATION__TARGET_FEATURE_NAME = ENTITY_FEATURE_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Target Primary Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Target Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY = ENTITY_FEATURE_FEATURE_COUNT + 11;
+	int ENTITY_ASSOCIATION__TARGET_COLUMN_NAME = ENTITY_FEATURE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Target Display Label</b></em>' attribute.
@@ -4686,13 +4686,13 @@ public interface PersistencePackage extends EPackage {
 	int ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_FEATURE_NAME = ENTITY_ASSOCIATION__TARGET_FEATURE_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Primary Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Target Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_PRIMARY_KEY = ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY;
+	int ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_COLUMN_NAME = ENTITY_ASSOCIATION__TARGET_COLUMN_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Target Display Label</b></em>' attribute.
@@ -5056,13 +5056,13 @@ public interface PersistencePackage extends EPackage {
 	int ASSOCIATION_WITH_CONTAINMENT__TARGET_FEATURE_NAME = ENTITY_ASSOCIATION__TARGET_FEATURE_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Target Primary Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Target Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_WITH_CONTAINMENT__TARGET_PRIMARY_KEY = ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY;
+	int ASSOCIATION_WITH_CONTAINMENT__TARGET_COLUMN_NAME = ENTITY_ASSOCIATION__TARGET_COLUMN_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Target Display Label</b></em>' attribute.
@@ -5174,22 +5174,13 @@ public interface PersistencePackage extends EPackage {
 	int ASSOCIATION_KEY__TARGET_FEATURE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Target Column Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_KEY__TARGET_COLUMN_NAME = 3;
-
-	/**
 	 * The number of structural features of the '<em>Association Key</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_KEY_FEATURE_COUNT = 4;
+	int ASSOCIATION_KEY_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Association Key</em>' class.
@@ -7663,15 +7654,15 @@ public interface PersistencePackage extends EPackage {
 	EAttribute getEntityAssociation_TargetFeatureName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#isTargetPrimaryKey <em>Target Primary Key</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetColumnName <em>Target Column Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Target Primary Key</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#isTargetPrimaryKey()
+	 * @return the meta object for the attribute '<em>Target Column Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetColumnName()
 	 * @see #getEntityAssociation()
 	 * @generated
 	 */
-	EAttribute getEntityAssociation_TargetPrimaryKey();
+	EAttribute getEntityAssociation_TargetColumnName();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetDisplayLabel <em>Target Display Label</em>}'.
@@ -7823,17 +7814,6 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAssociationKey_TargetFeature();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.AssociationKey#getTargetColumnName <em>Target Column Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Target Column Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.AssociationKey#getTargetColumnName()
-	 * @see #getAssociationKey()
-	 * @generated
-	 */
-	EAttribute getAssociationKey_TargetColumnName();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.persistence.View <em>View</em>}'.
@@ -9153,12 +9133,12 @@ public interface PersistencePackage extends EPackage {
 		EAttribute ENTITY_ASSOCIATION__TARGET_FEATURE_NAME = eINSTANCE.getEntityAssociation_TargetFeatureName();
 
 		/**
-		 * The meta object literal for the '<em><b>Target Primary Key</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Target Column Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY = eINSTANCE.getEntityAssociation_TargetPrimaryKey();
+		EAttribute ENTITY_ASSOCIATION__TARGET_COLUMN_NAME = eINSTANCE.getEntityAssociation_TargetColumnName();
 
 		/**
 		 * The meta object literal for the '<em><b>Target Display Label</b></em>' attribute feature.
@@ -9277,14 +9257,6 @@ public interface PersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ASSOCIATION_KEY__TARGET_FEATURE = eINSTANCE.getAssociationKey_TargetFeature();
-
-		/**
-		 * The meta object literal for the '<em><b>Target Column Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ASSOCIATION_KEY__TARGET_COLUMN_NAME = eINSTANCE.getAssociationKey_TargetColumnName();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewImpl <em>View</em>}' class.

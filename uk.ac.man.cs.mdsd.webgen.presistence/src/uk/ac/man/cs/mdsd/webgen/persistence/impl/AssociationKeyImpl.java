@@ -29,7 +29,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.AssociationKeyImpl#getKeyFor <em>Key For</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.AssociationKeyImpl#getSourceFeature <em>Source Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.AssociationKeyImpl#getTargetFeature <em>Target Feature</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.AssociationKeyImpl#getTargetColumnName <em>Target Column Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,26 +53,6 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EntityFeature targetFeature;
-
-	/**
-	 * The default value of the '{@link #getTargetColumnName() <em>Target Column Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTargetColumnName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TARGET_COLUMN_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTargetColumnName() <em>Target Column Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTargetColumnName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String targetColumnName = TARGET_COLUMN_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,27 +195,6 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTargetColumnName() {
-		return targetColumnName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTargetColumnName(String newTargetColumnName) {
-		String oldTargetColumnName = targetColumnName;
-		targetColumnName = newTargetColumnName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME, oldTargetColumnName, targetColumnName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -292,8 +250,6 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 			case PersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE:
 				if (resolve) return getTargetFeature();
 				return basicGetTargetFeature();
-			case PersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
-				return getTargetColumnName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -314,9 +270,6 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 				return;
 			case PersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE:
 				setTargetFeature((EntityFeature)newValue);
-				return;
-			case PersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
-				setTargetColumnName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -339,9 +292,6 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 			case PersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE:
 				setTargetFeature((EntityFeature)null);
 				return;
-			case PersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
-				setTargetColumnName(TARGET_COLUMN_NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -360,26 +310,8 @@ public class AssociationKeyImpl extends MinimalEObjectImpl.Container implements 
 				return sourceFeature != null;
 			case PersistencePackage.ASSOCIATION_KEY__TARGET_FEATURE:
 				return targetFeature != null;
-			case PersistencePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
-				return TARGET_COLUMN_NAME_EDEFAULT == null ? targetColumnName != null : !TARGET_COLUMN_NAME_EDEFAULT.equals(targetColumnName);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (targetColumnName: ");
-		result.append(targetColumnName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //AssociationKeyImpl

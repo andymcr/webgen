@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getPivotTableName <em>Pivot Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetFeatureName <em>Target Feature Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#isTargetPrimaryKey <em>Target Primary Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetColumnName <em>Target Column Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetDisplayLabel <em>Target Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetHeaderClass <em>Target Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetInputClass <em>Target Input Class</em>}</li>
@@ -157,30 +157,30 @@ public interface EntityAssociation extends EntityFeature, Association {
 	void setTargetFeatureName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Target Primary Key</b></em>' attribute.
+	 * Returns the value of the '<em><b>Target Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Target Primary Key</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Target Column Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target Primary Key</em>' attribute.
-	 * @see #setTargetPrimaryKey(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_TargetPrimaryKey()
+	 * @return the value of the '<em>Target Column Name</em>' attribute.
+	 * @see #setTargetColumnName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_TargetColumnName()
 	 * @model
 	 * @generated
 	 */
-	boolean isTargetPrimaryKey();
+	String getTargetColumnName();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#isTargetPrimaryKey <em>Target Primary Key</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetColumnName <em>Target Column Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target Primary Key</em>' attribute.
-	 * @see #isTargetPrimaryKey()
+	 * @param value the new value of the '<em>Target Column Name</em>' attribute.
+	 * @see #getTargetColumnName()
 	 * @generated
 	 */
-	void setTargetPrimaryKey(boolean value);
+	void setTargetColumnName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Target Display Label</b></em>' attribute.

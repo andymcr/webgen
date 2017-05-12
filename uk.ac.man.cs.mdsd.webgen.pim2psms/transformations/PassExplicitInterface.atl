@@ -276,7 +276,12 @@ rule WafModel {
 	to waf : WAF!WafModel (
 		persistence <- orm,
 		business <- service,
-		imageManipulations <- website.images.manipulations,
+		imageManipulations <-
+			if not website.images.oclIsUndefined() then
+				website.images.manipulations
+			else
+				Sequence{}
+			endif,
 		api <- api,
 		globalMenu <- website.webUI.globalMenu,
 		contextMenus <- website.webUI.contextMenus,
@@ -670,6 +675,12 @@ rule UnitAssociation {
 				website.selection
 			else
 				website.selection.findServiceSelection()
+			endif,
+		ajaxOptionsList <-
+			if website.ajaxOptionsList.oclIsUndefined() then
+				website.ajaxOptionsList
+			else
+				website.ajaxOptionsList.findServiceSelection()
 			endif,
 		headerClass <-
 			if not website.headerClass.oclIsUndefined() and website.headerClass <> '' then

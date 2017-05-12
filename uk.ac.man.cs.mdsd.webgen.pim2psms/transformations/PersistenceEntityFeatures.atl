@@ -325,10 +325,9 @@ rule OneToOneAssociationWithoutContainment {
 		owningEnd <- website.cardinality <> #Required and website.targetCardinality = #Required,
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,
-		primaryKey <- website.targetPrimaryKey,
 		columnName <-
-			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
-				website.columnName
+			if not website.targetColumnName.oclIsUndefined() and website.targetColumnName <> '' then
+				website.targetColumnName
 			else
 				website.targetFeatureName().createAssociationColumnName()
 			endif,
@@ -356,7 +355,6 @@ rule ManyToOneAssociationWithoutContainment {
 		owningEnd <- false,
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,
-		primaryKey <- website.targetPrimaryKey,
 		pivotTableName <- website.createPivotTableName(),
 		keys <- website.keys->collect(k | thisModule.OppositeAssociationKey(k))
 	)
@@ -380,10 +378,9 @@ rule OneToManyAssociationWithoutContainment {
 		owningEnd <- true,
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,
-		primaryKey <- website.targetPrimaryKey,
 		columnName <-
-			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
-				website.columnName
+			if not website.targetColumnName.oclIsUndefined() and website.targetColumnName <> '' then
+				website.targetColumnName
 			else
 				website.targetFeatureName().createAssociationColumnName()
 			endif,
@@ -413,7 +410,6 @@ rule ManyToManyAssociationWithoutContainment {
 		keys <- website.keys->collect(k | thisModule.OppositeAssociationKey(k)),
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,
-		primaryKey <- website.targetPrimaryKey,
 		columnName <- website.targetFeatureName().createAssociationColumnName()
 	)
 }
@@ -438,10 +434,9 @@ rule OneToOneAssociationWithContainment {
 		container <- true,
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,
-		primaryKey <- website.targetPrimaryKey,
 		columnName <-
-			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
-				website.columnName
+			if not website.targetColumnName.oclIsUndefined() and website.targetColumnName <> '' then
+				website.targetColumnName
 			else
 				website.targetFeatureName().createAssociationColumnName()
 			endif,
@@ -470,10 +465,9 @@ rule OneToManyAssociationWithContainment {
 		container <- true,
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,
-		primaryKey <- website.targetPrimaryKey,
 		columnName <-
-			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
-				website.columnName
+			if not website.targetColumnName.oclIsUndefined() and website.targetColumnName <> '' then
+				website.targetColumnName
 			else
 				website.targetFeatureName().createAssociationColumnName()
 			endif,

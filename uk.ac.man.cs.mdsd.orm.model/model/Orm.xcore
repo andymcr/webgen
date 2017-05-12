@@ -282,7 +282,6 @@ class AssociationKey {
 	container EntityAssociation[1] keyFor opposite ^keys
 	refers EntityFeature[1] sourceFeature
 	refers EntityFeature targetFeature
-	String sourceColumnName
 }
 
 

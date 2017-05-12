@@ -14,17 +14,19 @@
       <genEnumLiterals ecoreEnumLiteral="security.ecore#//AuthenticationKeyTypes/Username"/>
     </genEnums>
     <genClasses ecoreClass="security.ecore#//Security">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//Security/captchaSiteKey"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//Security/captchaSecretKey"/>
+      <genFeatures createChild="false" propertyCategory="Security" ecoreFeature="ecore:EAttribute security.ecore#//Security/captchaSiteKey"/>
+      <genFeatures createChild="false" propertyCategory="Security" ecoreFeature="ecore:EAttribute security.ecore#//Security/captchaSecretKey"/>
       <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
           ecoreFeature="ecore:EReference security.ecore#//Security/authentication"/>
     </genClasses>
     <genClasses image="false" ecoreClass="security.ecore#//Authentication">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference security.ecore#//Authentication/security"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference security.ecore#//Authentication/user"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference security.ecore#//Authentication/userKey"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//Authentication/loginLabel"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute security.ecore#//Authentication/logoutLabel"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Security"
+          propertySortChoices="true" ecoreFeature="ecore:EReference security.ecore#//Authentication/user"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Security"
+          propertySortChoices="true" ecoreFeature="ecore:EReference security.ecore#//Authentication/userKey"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute security.ecore#//Authentication/loginLabel"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute security.ecore#//Authentication/logoutLabel"/>
     </genClasses>
     <genClasses ecoreClass="security.ecore#//LocalAuthenticationSystem">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference security.ecore#//LocalAuthenticationSystem/authentication"/>

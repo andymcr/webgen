@@ -415,13 +415,22 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE = BasePackage.CLASSIFIER_FEATURE_COUNT + 15;
 
 	/**
+	 * The feature id for the '<em><b>Allow Form Type Customisation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__ALLOW_FORM_TYPE_CUSTOMISATION = BasePackage.CLASSIFIER_FEATURE_COUNT + 16;
+
+	/**
 	 * The number of structural features of the '<em>Entity Or View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW_FEATURE_COUNT = BasePackage.CLASSIFIER_FEATURE_COUNT + 16;
+	int ENTITY_OR_VIEW_FEATURE_COUNT = BasePackage.CLASSIFIER_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of operations of the '<em>Entity Or View</em>' class.
@@ -1277,6 +1286,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY__IMPLEMENTS_USER_INTERFACE = ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Allow Form Type Customisation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__ALLOW_FORM_TYPE_CUSTOMISATION = ENTITY_OR_VIEW__ALLOW_FORM_TYPE_CUSTOMISATION;
 
 	/**
 	 * The feature id for the '<em><b>Entity Features</b></em>' containment reference list.
@@ -5364,6 +5382,15 @@ public interface PersistencePackage extends EPackage {
 	int VIEW__IMPLEMENTS_USER_INTERFACE = ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE;
 
 	/**
+	 * The feature id for the '<em><b>Allow Form Type Customisation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__ALLOW_FORM_TYPE_CUSTOMISATION = ENTITY_OR_VIEW__ALLOW_FORM_TYPE_CUSTOMISATION;
+
+	/**
 	 * The feature id for the '<em><b>Encapsulates</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6739,6 +6766,17 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEntityOrView_ImplementsUserInterface();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isAllowFormTypeCustomisation <em>Allow Form Type Customisation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Allow Form Type Customisation</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isAllowFormTypeCustomisation()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EAttribute getEntityOrView_AllowFormTypeCustomisation();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature <em>Feature</em>}'.
@@ -8407,6 +8445,14 @@ public interface PersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE = eINSTANCE.getEntityOrView_ImplementsUserInterface();
+
+		/**
+		 * The meta object literal for the '<em><b>Allow Form Type Customisation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_OR_VIEW__ALLOW_FORM_TYPE_CUSTOMISATION = eINSTANCE.getEntityOrView_AllowFormTypeCustomisation();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature <em>Feature</em>}' class.

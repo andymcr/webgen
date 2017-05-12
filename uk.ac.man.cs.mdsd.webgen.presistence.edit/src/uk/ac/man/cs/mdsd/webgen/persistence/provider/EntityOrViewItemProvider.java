@@ -62,6 +62,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			addUniquePropertyDescriptor(object);
 			addContainerUniquePropertyDescriptor(object);
 			addImplementsUserInterfacePropertyDescriptor(object);
+			addAllowFormTypeCustomisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -297,7 +298,29 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Allow Form Type Customisation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllowFormTypeCustomisationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_allowFormTypeCustomisation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_allowFormTypeCustomisation_feature", "_UI_EntityOrView_type"),
+				 PersistencePackage.Literals.ENTITY_OR_VIEW__ALLOW_FORM_TYPE_CUSTOMISATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -365,6 +388,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
 			case PersistencePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
 			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
+			case PersistencePackage.ENTITY_OR_VIEW__ALLOW_FORM_TYPE_CUSTOMISATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PersistencePackage.ENTITY_OR_VIEW__LABELS:

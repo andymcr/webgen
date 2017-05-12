@@ -77,7 +77,8 @@
           ecoreFeature="ecore:EReference persistence.ecore#//EntityOrView/associations"/>
       <genFeatures property="None" notify="false" createChild="false" propertyCategory="Model"
           propertyDescription="Serialization" ecoreFeature="ecore:EReference persistence.ecore#//EntityOrView/allAssociations"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/implementsUserInterface"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/implementsUserInterface"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityOrView/allowFormTypeCustomisation"/>
     </genClasses>
     <genClasses image="false" ecoreClass="persistence.ecore#//Feature">
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/title"/>

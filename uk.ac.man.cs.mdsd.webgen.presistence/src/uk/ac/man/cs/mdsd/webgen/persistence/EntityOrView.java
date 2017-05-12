@@ -31,6 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.base.Classifier;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#getAssociations <em>Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#getAllAssociations <em>All Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isImplementsUserInterface <em>Implements User Interface</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isAllowFormTypeCustomisation <em>Allow Form Type Customisation</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView()
@@ -375,5 +376,31 @@ public interface EntityOrView extends Classifier {
 	 * @generated
 	 */
 	void setImplementsUserInterface(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Allow Form Type Customisation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Allow Form Type Customisation</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Allow Form Type Customisation</em>' attribute.
+	 * @see #setAllowFormTypeCustomisation(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_AllowFormTypeCustomisation()
+	 * @model
+	 * @generated
+	 */
+	boolean isAllowFormTypeCustomisation();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView#isAllowFormTypeCustomisation <em>Allow Form Type Customisation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Allow Form Type Customisation</em>' attribute.
+	 * @see #isAllowFormTypeCustomisation()
+	 * @generated
+	 */
+	void setAllowFormTypeCustomisation(boolean value);
 
 } // EntityOrView

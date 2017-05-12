@@ -49,6 +49,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl#getAssociations <em>Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl#getAllAssociations <em>All Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl#isImplementsUserInterface <em>Implements User Interface</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityOrViewImpl#isAllowFormTypeCustomisation <em>Allow Form Type Customisation</em>}</li>
  * </ul>
  *
  * @generated
@@ -283,6 +284,26 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @ordered
 	 */
 	protected boolean implementsUserInterface = IMPLEMENTS_USER_INTERFACE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isAllowFormTypeCustomisation() <em>Allow Form Type Customisation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAllowFormTypeCustomisation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ALLOW_FORM_TYPE_CUSTOMISATION_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isAllowFormTypeCustomisation() <em>Allow Form Type Customisation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAllowFormTypeCustomisation()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean allowFormTypeCustomisation = ALLOW_FORM_TYPE_CUSTOMISATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -553,6 +574,27 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isAllowFormTypeCustomisation() {
+		return allowFormTypeCustomisation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAllowFormTypeCustomisation(boolean newAllowFormTypeCustomisation) {
+		boolean oldAllowFormTypeCustomisation = allowFormTypeCustomisation;
+		allowFormTypeCustomisation = newAllowFormTypeCustomisation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_OR_VIEW__ALLOW_FORM_TYPE_CUSTOMISATION, oldAllowFormTypeCustomisation, allowFormTypeCustomisation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -617,6 +659,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return getAllAssociations();
 			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				return isImplementsUserInterface();
+			case PersistencePackage.ENTITY_OR_VIEW__ALLOW_FORM_TYPE_CUSTOMISATION:
+				return isAllowFormTypeCustomisation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -667,6 +711,9 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				setImplementsUserInterface((Boolean)newValue);
 				return;
+			case PersistencePackage.ENTITY_OR_VIEW__ALLOW_FORM_TYPE_CUSTOMISATION:
+				setAllowFormTypeCustomisation((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -712,6 +759,9 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				setImplementsUserInterface(IMPLEMENTS_USER_INTERFACE_EDEFAULT);
 				return;
+			case PersistencePackage.ENTITY_OR_VIEW__ALLOW_FORM_TYPE_CUSTOMISATION:
+				setAllowFormTypeCustomisation(ALLOW_FORM_TYPE_CUSTOMISATION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -756,6 +806,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return ALL_ASSOCIATIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case PersistencePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				return implementsUserInterface != IMPLEMENTS_USER_INTERFACE_EDEFAULT;
+			case PersistencePackage.ENTITY_OR_VIEW__ALLOW_FORM_TYPE_CUSTOMISATION:
+				return allowFormTypeCustomisation != ALLOW_FORM_TYPE_CUSTOMISATION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -784,6 +836,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		result.append(autoKeyGenerationStrategy);
 		result.append(", implementsUserInterface: ");
 		result.append(implementsUserInterface);
+		result.append(", allowFormTypeCustomisation: ");
+		result.append(allowFormTypeCustomisation);
 		result.append(')');
 		return result.toString();
 	}

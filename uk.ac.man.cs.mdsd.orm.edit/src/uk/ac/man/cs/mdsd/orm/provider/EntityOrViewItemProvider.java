@@ -59,6 +59,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			addUniquePropertyDescriptor(object);
 			addContainerUniquePropertyDescriptor(object);
 			addImplementsUserInterfacePropertyDescriptor(object);
+			addAllowFormTypeCustomisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -306,6 +307,28 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Allow Form Type Customisation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllowFormTypeCustomisationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_allowFormTypeCustomisation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_allowFormTypeCustomisation_feature", "_UI_EntityOrView_type"),
+				 OrmPackage.Literals.ENTITY_OR_VIEW__ALLOW_FORM_TYPE_CUSTOMISATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -370,6 +393,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			case OrmPackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
 			case OrmPackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
 			case OrmPackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
+			case OrmPackage.ENTITY_OR_VIEW__ALLOW_FORM_TYPE_CUSTOMISATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OrmPackage.ENTITY_OR_VIEW__FEATURES:

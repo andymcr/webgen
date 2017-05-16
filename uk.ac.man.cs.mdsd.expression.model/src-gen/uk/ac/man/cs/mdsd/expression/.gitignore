@@ -23,3 +23,5 @@
 /PredicateLikeOperator.java
 /StringLiteral.java
 /TimeLiteral.java
+/CurrentUser.java
+/Variable.java

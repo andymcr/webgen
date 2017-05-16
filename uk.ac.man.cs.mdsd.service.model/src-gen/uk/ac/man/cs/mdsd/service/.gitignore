@@ -8,3 +8,6 @@
 /ServiceFactory.java
 /ServiceModel.java
 /ServicePackage.java
+/FeatureReference.java
+/FormalParameter.java
+/ParameterReference.java

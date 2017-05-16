@@ -7,3 +7,6 @@
 /ServiceImpl.java
 /ServiceModelImpl.java
 /ServicePackageImpl.java
+/FeatureReferenceImpl.java
+/FormalParameterImpl.java
+/ParameterReferenceImpl.java

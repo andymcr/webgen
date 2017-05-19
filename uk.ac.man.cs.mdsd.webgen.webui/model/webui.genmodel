@@ -189,8 +189,7 @@
     <genClasses ecoreClass="webui.ecore#//UnitElement">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//UnitElement/attribute"/>
-      <genFeatures property="Readonly" createChild="false" propertyCategory="Model"
-          ecoreFeature="ecore:EAttribute webui.ecore#//UnitElement/name"/>
+      <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//UnitElement/name"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Business"
           ecoreFeature="ecore:EReference webui.ecore#//UnitElement/defaultValue"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitElement/obfuscateFormFields"/>
@@ -208,8 +207,7 @@
           ecoreFeature="ecore:EReference webui.ecore#//UnitAssociation/selection"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//AssociationReference">
-      <genFeatures property="Readonly" createChild="false" propertyCategory="Model"
-          ecoreFeature="ecore:EAttribute webui.ecore#//AssociationReference/name"/>
+      <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//AssociationReference/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//AssociationReference/association"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"

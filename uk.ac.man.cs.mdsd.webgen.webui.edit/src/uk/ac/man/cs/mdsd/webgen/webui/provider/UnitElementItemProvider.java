@@ -57,7 +57,6 @@ public class UnitElementItemProvider extends UnitFeatureItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addAttributePropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
 			addObfuscateFormFieldsPropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
@@ -91,28 +90,6 @@ public class UnitElementItemProvider extends UnitFeatureItemProvider {
 					return Collections.emptySet();
 				}
 			});
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitElement_name_feature", "_UI_UnitElement_type"),
-				 WebuiPackage.Literals.UNIT_ELEMENT__NAME,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
 	}
 
 	/**

@@ -17,12 +17,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.api.API;
 
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
 import uk.ac.man.cs.mdsd.orm.OrmModel;
 
 import uk.ac.man.cs.mdsd.service.ServiceModel;
@@ -75,7 +73,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSiteTemplate <em>Site Template</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getAllowTypeCustomisation <em>Allow Type Customisation</em>}</li>
  * </ul>
  *
  * @generated
@@ -540,16 +537,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * @ordered
 	 */
 	protected boolean staticUnitsEditable = STATIC_UNITS_EDITABLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAllowTypeCustomisation() <em>Allow Type Customisation</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAllowTypeCustomisation()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EntityOrView> allowTypeCustomisation;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1239,18 +1226,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EntityOrView> getAllowTypeCustomisation() {
-		if (allowTypeCustomisation == null) {
-			allowTypeCustomisation = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WafPackage.WAF_MODEL__ALLOW_TYPE_CUSTOMISATION);
-		}
-		return allowTypeCustomisation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -1357,8 +1332,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return getSiteTemplate();
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				return isStaticUnitsEditable();
-			case WafPackage.WAF_MODEL__ALLOW_TYPE_CUSTOMISATION:
-				return getAllowTypeCustomisation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1460,10 +1433,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				setStaticUnitsEditable((Boolean)newValue);
 				return;
-			case WafPackage.WAF_MODEL__ALLOW_TYPE_CUSTOMISATION:
-				getAllowTypeCustomisation().clear();
-				getAllowTypeCustomisation().addAll((Collection<? extends EntityOrView>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1560,9 +1529,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				setStaticUnitsEditable(STATIC_UNITS_EDITABLE_EDEFAULT);
 				return;
-			case WafPackage.WAF_MODEL__ALLOW_TYPE_CUSTOMISATION:
-				getAllowTypeCustomisation().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1631,8 +1597,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return SITE_TEMPLATE_EDEFAULT == null ? siteTemplate != null : !SITE_TEMPLATE_EDEFAULT.equals(siteTemplate);
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				return staticUnitsEditable != STATIC_UNITS_EDITABLE_EDEFAULT;
-			case WafPackage.WAF_MODEL__ALLOW_TYPE_CUSTOMISATION:
-				return allowTypeCustomisation != null && !allowTypeCustomisation.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

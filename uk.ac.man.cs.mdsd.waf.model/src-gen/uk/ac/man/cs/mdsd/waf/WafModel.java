@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EObject;
 
 import uk.ac.man.cs.mdsd.api.API;
 
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
 import uk.ac.man.cs.mdsd.orm.OrmModel;
 
 import uk.ac.man.cs.mdsd.service.ServiceModel;
@@ -50,7 +49,6 @@ import uk.ac.man.cs.mdsd.service.ServiceModel;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteTemplate <em>Site Template</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getAllowTypeCustomisation <em>Allow Type Customisation</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel()
@@ -759,21 +757,5 @@ public interface WafModel extends EObject {
 	 * @generated
 	 */
 	void setStaticUnitsEditable(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Allow Type Customisation</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.EntityOrView}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Allow Type Customisation</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Allow Type Customisation</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_AllowTypeCustomisation()
-	 * @model
-	 * @generated
-	 */
-	EList<EntityOrView> getAllowTypeCustomisation();
 
 } // WafModel

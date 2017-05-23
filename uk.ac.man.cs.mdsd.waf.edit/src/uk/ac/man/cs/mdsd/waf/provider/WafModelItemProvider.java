@@ -88,7 +88,6 @@ public class WafModelItemProvider
 			addSideMenuPropertyDescriptor(object);
 			addSiteTemplatePropertyDescriptor(object);
 			addStaticUnitsEditablePropertyDescriptor(object);
-			addAllowTypeCustomisationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -594,28 +593,6 @@ public class WafModelItemProvider
 	}
 
   /**
-	 * This adds a property descriptor for the Allow Type Customisation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAllowTypeCustomisationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_allowTypeCustomisation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_allowTypeCustomisation_feature", "_UI_WafModel_type"),
-				 WafPackage.Literals.WAF_MODEL__ALLOW_TYPE_CUSTOMISATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-		/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.

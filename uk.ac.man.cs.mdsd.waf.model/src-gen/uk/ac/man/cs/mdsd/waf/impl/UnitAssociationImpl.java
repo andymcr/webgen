@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.orm.Association;
@@ -46,7 +45,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getSelection <em>Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getFilters <em>Filters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getAjaxOptionsList <em>Ajax Options List</em>}</li>
  * </ul>
  *
  * @generated
@@ -113,14 +112,14 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	protected Selection selection;
 
 	/**
-	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' reference list.
+	 * The cached value of the '{@link #getAjaxOptionsList() <em>Ajax Options List</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFilters()
+	 * @see #getAjaxOptionsList()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Label> filters;
+	protected Selection ajaxOptionsList;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -331,11 +330,37 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Label> getFilters() {
-		if (filters == null) {
-			filters = new EObjectResolvingEList<Label>(Label.class, this, WafPackage.UNIT_ASSOCIATION__FILTERS);
+	public Selection getAjaxOptionsList() {
+		if (ajaxOptionsList != null && ajaxOptionsList.eIsProxy()) {
+			InternalEObject oldAjaxOptionsList = (InternalEObject)ajaxOptionsList;
+			ajaxOptionsList = (Selection)eResolveProxy(oldAjaxOptionsList);
+			if (ajaxOptionsList != oldAjaxOptionsList) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST, oldAjaxOptionsList, ajaxOptionsList));
+			}
 		}
-		return filters;
+		return ajaxOptionsList;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetAjaxOptionsList() {
+		return ajaxOptionsList;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAjaxOptionsList(Selection newAjaxOptionsList) {
+		Selection oldAjaxOptionsList = ajaxOptionsList;
+		ajaxOptionsList = newAjaxOptionsList;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST, oldAjaxOptionsList, ajaxOptionsList));
 	}
 
 	/**
@@ -392,8 +417,9 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
-			case WafPackage.UNIT_ASSOCIATION__FILTERS:
-				return getFilters();
+			case WafPackage.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST:
+				if (resolve) return getAjaxOptionsList();
+				return basicGetAjaxOptionsList();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -423,9 +449,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)newValue);
 				return;
-			case WafPackage.UNIT_ASSOCIATION__FILTERS:
-				getFilters().clear();
-				getFilters().addAll((Collection<? extends Label>)newValue);
+			case WafPackage.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST:
+				setAjaxOptionsList((Selection)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -454,8 +479,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)null);
 				return;
-			case WafPackage.UNIT_ASSOCIATION__FILTERS:
-				getFilters().clear();
+			case WafPackage.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST:
+				setAjaxOptionsList((Selection)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -481,8 +506,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return childFeature != null;
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				return selection != null;
-			case WafPackage.UNIT_ASSOCIATION__FILTERS:
-				return filters != null && !filters.isEmpty();
+			case WafPackage.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST:
+				return ajaxOptionsList != null;
 		}
 		return super.eIsSet(featureID);
 	}

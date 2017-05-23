@@ -2,10 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import org.eclipse.emf.common.util.EList;
-
-import uk.ac.man.cs.mdsd.orm.Label;
-
 import uk.ac.man.cs.mdsd.service.Selection;
 
 /**
@@ -18,7 +14,7 @@ import uk.ac.man.cs.mdsd.service.Selection;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getSelection <em>Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getFilters <em>Filters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getAjaxOptionsList <em>Ajax Options List</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAssociation()
@@ -53,19 +49,29 @@ public interface UnitAssociation extends UnitFeature, UnitContainer, Association
 	void setSelection(Selection value);
 
 	/**
-	 * Returns the value of the '<em><b>Filters</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.Label}.
+	 * Returns the value of the '<em><b>Ajax Options List</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Filters</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Ajax Options List</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Filters</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAssociation_Filters()
+	 * @return the value of the '<em>Ajax Options List</em>' reference.
+	 * @see #setAjaxOptionsList(Selection)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAssociation_AjaxOptionsList()
 	 * @model
 	 * @generated
 	 */
-	EList<Label> getFilters();
+	Selection getAjaxOptionsList();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getAjaxOptionsList <em>Ajax Options List</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ajax Options List</em>' reference.
+	 * @see #getAjaxOptionsList()
+	 * @generated
+	 */
+	void setAjaxOptionsList(Selection value);
 
 } // UnitAssociation

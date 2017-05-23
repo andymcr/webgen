@@ -3150,13 +3150,13 @@ public interface WafPackage extends EPackage {
 	int UNIT_ASSOCIATION__SELECTION = UNIT_FEATURE_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Filters</b></em>' reference list.
+	 * The feature id for the '<em><b>Ajax Options List</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__FILTERS = UNIT_FEATURE_FEATURE_COUNT + 6;
+	int UNIT_ASSOCIATION__AJAX_OPTIONS_LIST = UNIT_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Unit Association</em>' class.
@@ -13661,15 +13661,15 @@ public interface WafPackage extends EPackage {
 	EReference getUnitAssociation_Selection();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getFilters <em>Filters</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getAjaxOptionsList <em>Ajax Options List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Filters</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.UnitAssociation#getFilters()
+	 * @return the meta object for the reference '<em>Ajax Options List</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.UnitAssociation#getAjaxOptionsList()
 	 * @see #getUnitAssociation()
 	 * @generated
 	 */
-	EReference getUnitAssociation_Filters();
+	EReference getUnitAssociation_AjaxOptionsList();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.AssociationReference <em>Association Reference</em>}'.
@@ -16547,12 +16547,12 @@ public interface WafPackage extends EPackage {
 		EReference UNIT_ASSOCIATION__SELECTION = eINSTANCE.getUnitAssociation_Selection();
 
 		/**
-		 * The meta object literal for the '<em><b>Filters</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Ajax Options List</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNIT_ASSOCIATION__FILTERS = eINSTANCE.getUnitAssociation_Filters();
+		EReference UNIT_ASSOCIATION__AJAX_OPTIONS_LIST = eINSTANCE.getUnitAssociation_AjaxOptionsList();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.AssociationReferenceImpl <em>Association Reference</em>}' class.

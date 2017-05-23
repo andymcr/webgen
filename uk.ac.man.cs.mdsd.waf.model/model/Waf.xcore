@@ -286,8 +286,7 @@ class UnitAttribute extends UnitFeature {
 
 class UnitAssociation extends UnitFeature, UnitContainer, AssociationReference {
 	refers Selection selection
-	// for selecting inputs
-	refers Label[] filters
+	refers Selection ajaxOptionsList
 }
 
 abstract class AssociationReference {

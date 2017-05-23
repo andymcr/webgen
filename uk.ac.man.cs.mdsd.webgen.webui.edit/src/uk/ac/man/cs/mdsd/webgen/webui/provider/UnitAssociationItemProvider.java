@@ -64,6 +64,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			addSourceEntityPropertyDescriptor(object);
 			addTargetEntityPropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
+			addAjaxOptionsListPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -224,6 +225,28 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 					return Collections.emptySet();
 				}
 			});
+	}
+
+	/**
+	 * This adds a property descriptor for the Ajax Options List feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAjaxOptionsListPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitAssociation_ajaxOptionsList_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_ajaxOptionsList_feature", "_UI_UnitAssociation_type"),
+				 WebuiPackage.Literals.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

@@ -205,6 +205,7 @@
           ecoreFeature="ecore:EReference webui.ecore#//UnitAssociation/targetEntity"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//UnitAssociation/selection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//UnitAssociation/ajaxOptionsList"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//AssociationReference">
       <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//AssociationReference/name"/>

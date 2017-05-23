@@ -2752,13 +2752,22 @@ public interface WebuiPackage extends EPackage {
 	int UNIT_ASSOCIATION__SELECTION = UNIT_FEATURE_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>Ajax Options List</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__AJAX_OPTIONS_LIST = UNIT_FEATURE_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Unit Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION_FEATURE_COUNT = UNIT_FEATURE_FEATURE_COUNT + 9;
+	int UNIT_ASSOCIATION_FEATURE_COUNT = UNIT_FEATURE_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Unit Association</em>' class.
@@ -11832,6 +11841,17 @@ public interface WebuiPackage extends EPackage {
 	EReference getUnitAssociation_Selection();
 
 	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation#getAjaxOptionsList <em>Ajax Options List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ajax Options List</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation#getAjaxOptionsList()
+	 * @see #getUnitAssociation()
+	 * @generated
+	 */
+	EReference getUnitAssociation_AjaxOptionsList();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.AssociationReference <em>Association Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14653,6 +14673,14 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference UNIT_ASSOCIATION__SELECTION = eINSTANCE.getUnitAssociation_Selection();
+
+		/**
+		 * The meta object literal for the '<em><b>Ajax Options List</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNIT_ASSOCIATION__AJAX_OPTIONS_LIST = eINSTANCE.getUnitAssociation_AjaxOptionsList();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.AssociationReference <em>Association Reference</em>}' class.

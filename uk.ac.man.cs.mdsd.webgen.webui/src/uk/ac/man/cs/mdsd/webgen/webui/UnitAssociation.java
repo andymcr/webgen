@@ -19,6 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation#getSourceEntity <em>Source Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation#getTargetEntity <em>Target Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation#getAjaxOptionsList <em>Ajax Options List</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitAssociation()
@@ -100,5 +101,31 @@ public interface UnitAssociation extends UnitFeature, UnitContainer, Association
 	 * @generated
 	 */
 	void setSelection(Selection value);
+
+	/**
+	 * Returns the value of the '<em><b>Ajax Options List</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ajax Options List</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ajax Options List</em>' reference.
+	 * @see #setAjaxOptionsList(Selection)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitAssociation_AjaxOptionsList()
+	 * @model
+	 * @generated
+	 */
+	Selection getAjaxOptionsList();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation#getAjaxOptionsList <em>Ajax Options List</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ajax Options List</em>' reference.
+	 * @see #getAjaxOptionsList()
+	 * @generated
+	 */
+	void setAjaxOptionsList(Selection value);
 
 } // UnitAssociation

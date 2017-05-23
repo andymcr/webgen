@@ -45,6 +45,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitAssociationImpl#getSourceEntity <em>Source Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitAssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitAssociationImpl#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitAssociationImpl#getAjaxOptionsList <em>Ajax Options List</em>}</li>
  * </ul>
  *
  * @generated
@@ -139,6 +140,16 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @ordered
 	 */
 	protected Selection selection;
+
+	/**
+	 * The cached value of the '{@link #getAjaxOptionsList() <em>Ajax Options List</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAjaxOptionsList()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection ajaxOptionsList;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -396,6 +407,44 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Selection getAjaxOptionsList() {
+		if (ajaxOptionsList != null && ajaxOptionsList.eIsProxy()) {
+			InternalEObject oldAjaxOptionsList = (InternalEObject)ajaxOptionsList;
+			ajaxOptionsList = (Selection)eResolveProxy(oldAjaxOptionsList);
+			if (ajaxOptionsList != oldAjaxOptionsList) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST, oldAjaxOptionsList, ajaxOptionsList));
+			}
+		}
+		return ajaxOptionsList;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetAjaxOptionsList() {
+		return ajaxOptionsList;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAjaxOptionsList(Selection newAjaxOptionsList) {
+		Selection oldAjaxOptionsList = ajaxOptionsList;
+		ajaxOptionsList = newAjaxOptionsList;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST, oldAjaxOptionsList, ajaxOptionsList));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -457,6 +506,9 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebuiPackage.UNIT_ASSOCIATION__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
+			case WebuiPackage.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST:
+				if (resolve) return getAjaxOptionsList();
+				return basicGetAjaxOptionsList();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -486,6 +538,9 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebuiPackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)newValue);
 				return;
+			case WebuiPackage.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST:
+				setAjaxOptionsList((Selection)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -512,6 +567,9 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return;
 			case WebuiPackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)null);
+				return;
+			case WebuiPackage.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST:
+				setAjaxOptionsList((Selection)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -543,6 +601,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return TARGET_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebuiPackage.UNIT_ASSOCIATION__SELECTION:
 				return selection != null;
+			case WebuiPackage.UNIT_ASSOCIATION__AJAX_OPTIONS_LIST:
+				return ajaxOptionsList != null;
 		}
 		return super.eIsSet(featureID);
 	}

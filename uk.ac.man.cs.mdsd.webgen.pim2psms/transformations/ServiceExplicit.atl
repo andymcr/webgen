@@ -128,7 +128,12 @@ rule FormalParameter {
 	to service : Service!FormalParameter (
 		optional <- website.optional,
 		defaultValue <- website.defaultValue,
-		dataType <- website.dataType,
+		dataType <-
+			if website.dataType.oclIsUndefined() then
+				website.dataType
+			else
+				thisModule.findOrmDataType(website.dataType.name)
+			endif,
 		description <- website.description
 	)
 }

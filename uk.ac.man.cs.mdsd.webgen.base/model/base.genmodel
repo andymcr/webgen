@@ -6,8 +6,8 @@
     usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression"
     operationReflection="true" importOrganizing="true">
   <foreignModel>base.ecore</foreignModel>
-  <genPackages prefix="Base" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
-      extensibleProviderFactory="true" ecorePackage="base.ecore#/">
+  <genPackages prefix="Base" basePackage="uk.ac.man.cs.mdsd.webgen" childCreationExtenders="true"
+      ecorePackage="base.ecore#/">
     <genClasses image="false" ecoreClass="base.ecore#//NamedElement">
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute base.ecore#//NamedElement/name"/>
     </genClasses>

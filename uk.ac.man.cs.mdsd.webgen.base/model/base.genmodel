@@ -43,8 +43,7 @@
       <genFeatures createChild="false" propertyCategory="Documentation" ecoreFeature="ecore:EAttribute base.ecore#//FormalParameter/description"/>
     </genClasses>
     <genClasses ecoreClass="base.ecore#//ParameterReference">
-      <genFeatures property="Readonly" createChild="false" propertyCategory="Model"
-          ecoreFeature="ecore:EAttribute base.ecore#//ParameterReference/name"/>
+      <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute base.ecore#//ParameterReference/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference base.ecore#//ParameterReference/parameter"/>
     </genClasses>

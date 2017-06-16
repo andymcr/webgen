@@ -6,8 +6,7 @@
     language="" usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.genmodel#//persistence"
     operationReflection="true" importOrganizing="true">
   <foreignModel>security.ecore</foreignModel>
-  <genPackages prefix="Security" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
-      ecorePackage="security.ecore#/">
+  <genPackages prefix="Security" basePackage="uk.ac.man.cs.mdsd.webgen" ecorePackage="security.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="security.ecore#//AuthenticationKeyTypes">
       <genEnumLiterals ecoreEnumLiteral="security.ecore#//AuthenticationKeyTypes/Email"/>
       <genEnumLiterals ecoreEnumLiteral="security.ecore#//AuthenticationKeyTypes/ScreenName"/>

@@ -13,7 +13,6 @@ import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
-import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
@@ -32,7 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.security.util.SecurityAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SecurityItemProviderAdapterFactory extends SecurityAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class SecurityItemProviderAdapterFactory extends SecurityAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -230,18 +229,6 @@ public class SecurityItemProviderAdapterFactory extends SecurityAdapterFactory i
 		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
-	}
-
-	/**
-	 * This disposes all of the item providers created by this factory. 
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void dispose() {
-		if (securityItemProvider != null) securityItemProvider.dispose();
-		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
-		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 	}
 
 }

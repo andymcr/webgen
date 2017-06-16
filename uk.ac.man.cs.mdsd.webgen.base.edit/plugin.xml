@@ -19,4 +19,11 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated base -->
+      <extender
+            uri="http://cs.man.ac.uk/mdsd/webgen/expression"
+            class="uk.ac.man.cs.mdsd.webgen.base.provider.BaseItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
+   </extension>
+
 </plugin>

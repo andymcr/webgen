@@ -6,8 +6,7 @@
     usedGenPackages="../../uk.ac.man.cs.mdsd.webgen.base/model/base.genmodel#//base ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.genmodel#//expression"
     operationReflection="true" importOrganizing="true">
   <foreignModel>persistence.ecore</foreignModel>
-  <genPackages prefix="Persistence" basePackage="uk.ac.man.cs.mdsd.webgen" childCreationExtenders="true"
-      ecorePackage="persistence.ecore#/">
+  <genPackages prefix="Persistence" basePackage="uk.ac.man.cs.mdsd.webgen" ecorePackage="persistence.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="persistence.ecore#//DatabaseTechnologies">
       <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//DatabaseTechnologies/MySql"/>
       <genEnumLiterals ecoreEnumLiteral="persistence.ecore#//DatabaseTechnologies/Oracle"/>

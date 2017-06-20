@@ -51,6 +51,8 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addServesPropertyDescriptor(object);
+			addFindAllPropertyDescriptor(object);
+			addFindOnePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -69,6 +71,50 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 				 getString("_UI_Service_serves_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Service_serves_feature", "_UI_Service_type"),
 				 ServicePackage.Literals.SERVICE__SERVES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Find All feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFindAllPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Service_findAll_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Service_findAll_feature", "_UI_Service_type"),
+				 ServicePackage.Literals.SERVICE__FIND_ALL,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Find One feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFindOnePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Service_findOne_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Service_findOne_feature", "_UI_Service_type"),
+				 ServicePackage.Literals.SERVICE__FIND_ONE,
 				 true,
 				 false,
 				 true,

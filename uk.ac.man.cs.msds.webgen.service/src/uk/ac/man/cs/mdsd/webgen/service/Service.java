@@ -19,6 +19,8 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Service#getServes <em>Serves</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Service#getSelections <em>Selections</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Service#getFindAll <em>Find All</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Service#getFindOne <em>Find One</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Service#getOperations <em>Operations</em>}</li>
  * </ul>
  *
@@ -70,6 +72,58 @@ public interface Service extends NamedElement {
 	 * @generated
 	 */
 	EList<Selection> getSelections();
+
+	/**
+	 * Returns the value of the '<em><b>Find All</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Find All</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Find All</em>' reference.
+	 * @see #setFindAll(Selection)
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getService_FindAll()
+	 * @model
+	 * @generated
+	 */
+	Selection getFindAll();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.Service#getFindAll <em>Find All</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Find All</em>' reference.
+	 * @see #getFindAll()
+	 * @generated
+	 */
+	void setFindAll(Selection value);
+
+	/**
+	 * Returns the value of the '<em><b>Find One</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Find One</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Find One</em>' reference.
+	 * @see #setFindOne(Selection)
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getService_FindOne()
+	 * @model
+	 * @generated
+	 */
+	Selection getFindOne();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.Service#getFindOne <em>Find One</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Find One</em>' reference.
+	 * @see #getFindOne()
+	 * @generated
+	 */
+	void setFindOne(Selection value);
 
 	/**
 	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.

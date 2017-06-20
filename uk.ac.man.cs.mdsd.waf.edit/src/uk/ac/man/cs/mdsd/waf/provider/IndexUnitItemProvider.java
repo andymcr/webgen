@@ -16,6 +16,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import uk.ac.man.cs.mdsd.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.waf.IndexUnit;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -583,7 +584,7 @@ public class IndexUnitItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.COLLECTION_UNIT__FILTERS,
-				 WafFactory.eINSTANCE.createFilter()));
+				 ServiceFactory.eINSTANCE.createFilter()));
 
 		newChildDescriptors.add
 			(createChildParameter

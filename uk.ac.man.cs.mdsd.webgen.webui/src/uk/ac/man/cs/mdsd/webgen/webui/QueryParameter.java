@@ -3,6 +3,7 @@
 package uk.ac.man.cs.mdsd.webgen.webui;
 
 import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.webgen.service.FilterParameter;
 
 /**
  * <!-- begin-user-doc -->

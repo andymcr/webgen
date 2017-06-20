@@ -101,13 +101,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="MenuFeature" eSuperTypes="#//MenuEntry"/>
   <eClassifiers xsi:type="ecore:EClass" name="Query">
     <eStructuralFeatures xsi:type="ecore:EReference" name="filter" lowerBound="1"
-        eType="#//Filter"/>
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Filter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//QueryParameter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QueryParameter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="formal" lowerBound="1"
-        eType="#//FilterParameter"/>
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//FilterParameter"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PageTopMenuOptions">
@@ -146,22 +146,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="PageLink">
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetPage" lowerBound="1"
         eType="#//Page" eOpposite="#//Page/childPages"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Filter" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedDisplayElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="filterFor" lowerBound="1"
-        eType="#//CollectionUnit" eOpposite="#//CollectionUnit/filters"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="#//FilterParameter" containment="true" eOpposite="#//FilterParameter/partOf"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FilterParameter" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" eType="#//Filter"
-        eOpposite="#//Filter/parameters"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="formal" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//FormalParameter"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//DataType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholder" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnitContainer" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="units" upperBound="-1"
@@ -393,9 +377,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="containingFeature" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
-        eType="#//Filter" containment="true" eOpposite="#//Filter/filterFor"/>
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Filter"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="emptyMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pagination" eType="#//Filter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pagination" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Filter"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultPaginationSize"
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="10"/>

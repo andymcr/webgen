@@ -64,6 +64,8 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 			case ServicePackage.ASC: return createAsc();
 			case ServicePackage.DESC: return createDesc();
 			case ServicePackage.BUSINESS_OPERATION: return createBusinessOperation();
+			case ServicePackage.FILTER: return createFilter();
+			case ServicePackage.FILTER_PARAMETER: return createFilterParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -167,6 +169,26 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 	public BusinessOperation createBusinessOperation() {
 		BusinessOperationImpl businessOperation = new BusinessOperationImpl();
 		return businessOperation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Filter createFilter() {
+		FilterImpl filter = new FilterImpl();
+		return filter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FilterParameter createFilterParameter() {
+		FilterParameterImpl filterParameter = new FilterParameterImpl();
+		return filterParameter;
 	}
 
 	/**

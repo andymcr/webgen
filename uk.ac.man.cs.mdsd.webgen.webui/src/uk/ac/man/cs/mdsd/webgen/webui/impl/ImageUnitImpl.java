@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -25,7 +25,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePath;
-import uk.ac.man.cs.mdsd.webgen.webui.Filter;
 import uk.ac.man.cs.mdsd.webgen.webui.ImageUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.SelectableUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -114,7 +113,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Filter> filters;
+	protected EList<uk.ac.man.cs.mdsd.webgen.service.Filter> filters;
 
 	/**
 	 * The default value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
@@ -144,7 +143,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @generated
 	 * @ordered
 	 */
-	protected Filter pagination;
+	protected uk.ac.man.cs.mdsd.webgen.service.Filter pagination;
 
 	/**
 	 * The default value of the '{@link #getDefaultPaginationSize() <em>Default Pagination Size</em>}' attribute.
@@ -576,9 +575,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Filter> getFilters() {
+	public EList<uk.ac.man.cs.mdsd.webgen.service.Filter> getFilters() {
 		if (filters == null) {
-			filters = new EObjectContainmentWithInverseEList<Filter>(Filter.class, this, WebuiPackage.IMAGE_UNIT__FILTERS, WebuiPackage.FILTER__FILTER_FOR);
+			filters = new EObjectContainmentEList<uk.ac.man.cs.mdsd.webgen.service.Filter>(uk.ac.man.cs.mdsd.webgen.service.Filter.class, this, WebuiPackage.IMAGE_UNIT__FILTERS);
 		}
 		return filters;
 	}
@@ -609,10 +608,10 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Filter getPagination() {
+	public uk.ac.man.cs.mdsd.webgen.service.Filter getPagination() {
 		if (pagination != null && pagination.eIsProxy()) {
 			InternalEObject oldPagination = (InternalEObject)pagination;
-			pagination = (Filter)eResolveProxy(oldPagination);
+			pagination = (uk.ac.man.cs.mdsd.webgen.service.Filter)eResolveProxy(oldPagination);
 			if (pagination != oldPagination) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.IMAGE_UNIT__PAGINATION, oldPagination, pagination));
@@ -626,7 +625,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Filter basicGetPagination() {
+	public uk.ac.man.cs.mdsd.webgen.service.Filter basicGetPagination() {
 		return pagination;
 	}
 
@@ -635,8 +634,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPagination(Filter newPagination) {
-		Filter oldPagination = pagination;
+	public void setPagination(uk.ac.man.cs.mdsd.webgen.service.Filter newPagination) {
+		uk.ac.man.cs.mdsd.webgen.service.Filter oldPagination = pagination;
 		pagination = newPagination;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_UNIT__PAGINATION, oldPagination, pagination));
@@ -1061,21 +1060,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case WebuiPackage.IMAGE_UNIT__FILTERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFilters()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -1177,13 +1161,13 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return;
 			case WebuiPackage.IMAGE_UNIT__FILTERS:
 				getFilters().clear();
-				getFilters().addAll((Collection<? extends Filter>)newValue);
+				getFilters().addAll((Collection<? extends uk.ac.man.cs.mdsd.webgen.service.Filter>)newValue);
 				return;
 			case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage((String)newValue);
 				return;
 			case WebuiPackage.IMAGE_UNIT__PAGINATION:
-				setPagination((Filter)newValue);
+				setPagination((uk.ac.man.cs.mdsd.webgen.service.Filter)newValue);
 				return;
 			case WebuiPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize((Integer)newValue);
@@ -1264,7 +1248,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				setEmptyMessage(EMPTY_MESSAGE_EDEFAULT);
 				return;
 			case WebuiPackage.IMAGE_UNIT__PAGINATION:
-				setPagination((Filter)null);
+				setPagination((uk.ac.man.cs.mdsd.webgen.service.Filter)null);
 				return;
 			case WebuiPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize(DEFAULT_PAGINATION_SIZE_EDEFAULT);

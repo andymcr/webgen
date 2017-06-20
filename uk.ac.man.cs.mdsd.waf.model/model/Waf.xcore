@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.orm.OrmModel
 import uk.ac.man.cs.mdsd.orm.SingletonLocation
 import uk.ac.man.cs.mdsd.api.API
 import uk.ac.man.cs.mdsd.service.BusinessOperation
+import uk.ac.man.cs.mdsd.service.Filter
 import uk.ac.man.cs.mdsd.service.FormalParameter
 import uk.ac.man.cs.mdsd.service.Selection
 import uk.ac.man.cs.mdsd.service.Service
@@ -185,25 +186,13 @@ class Page extends NamedDisplayElement, UnitContainer {
 	String styleClass
 }
 
-class Filter extends NamedDisplayElement {
-	contains FilterParameter[] parameters
-	refers Selection selection
-}
-
-class FilterParameter extends NamedElement {
-	refers FormalParameter formal
-	refers DataType dataType
-	String defaultValue = ''
-	String placeholder
-}
-
 class Query extends NamedElement {
 	refers Filter[1] filter
 	contains QueryParameter[] parameters
 }
 
 class QueryParameter extends NamedElement {
-	refers FilterParameter[1] formal
+	refers FormalParameter[1] formal
 	String value
 }
 

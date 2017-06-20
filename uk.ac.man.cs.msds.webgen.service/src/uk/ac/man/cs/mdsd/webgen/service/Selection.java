@@ -24,10 +24,12 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#isDistinct <em>Distinct</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getFields <em>Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getJoins <em>Joins</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getFilter <em>Filter</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getCondition <em>Condition</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getLimit <em>Limit</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#isSelected <em>Selected</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getMethodName <em>Method Name</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getSelection()
@@ -122,30 +124,48 @@ public interface Selection extends NamedElement, FormalParameterList {
 	EList<Association> getJoins();
 
 	/**
-	 * Returns the value of the '<em><b>Filter</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Filter</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Condition</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Filter</em>' containment reference.
-	 * @see #setFilter(Predicate)
-	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getSelection_Filter()
+	 * @return the value of the '<em>Condition</em>' containment reference.
+	 * @see #setCondition(Predicate)
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getSelection_Condition()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	Predicate getFilter();
+	Predicate getCondition();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getFilter <em>Filter</em>}' containment reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getCondition <em>Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Filter</em>' containment reference.
-	 * @see #getFilter()
+	 * @param value the new value of the '<em>Condition</em>' containment reference.
+	 * @see #getCondition()
 	 * @generated
 	 */
-	void setFilter(Predicate value);
+	void setCondition(Predicate value);
+
+	/**
+	 * Returns the value of the '<em><b>Filters</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.Filter}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.service.Filter#getSelection <em>Selection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Filters</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Filters</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getSelection_Filters()
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Filter#getSelection
+	 * @model opposite="selection" containment="true"
+	 * @generated
+	 */
+	EList<Filter> getFilters();
 
 	/**
 	 * Returns the value of the '<em><b>Ordering</b></em>' containment reference list.
@@ -215,5 +235,31 @@ public interface Selection extends NamedElement, FormalParameterList {
 	 * @generated
 	 */
 	void setSelected(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Method Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Method Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Method Name</em>' attribute.
+	 * @see #setMethodName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getSelection_MethodName()
+	 * @model
+	 * @generated
+	 */
+	String getMethodName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getMethodName <em>Method Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Method Name</em>' attribute.
+	 * @see #getMethodName()
+	 * @generated
+	 */
+	void setMethodName(String value);
 
 } // Selection

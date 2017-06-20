@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import uk.ac.man.cs.mdsd.webgen.webui.FilterParameter;
 import uk.ac.man.cs.mdsd.webgen.webui.QueryParameter;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
@@ -36,7 +35,7 @@ public class QueryParameterImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected FilterParameter formal;
+	protected uk.ac.man.cs.mdsd.webgen.service.FilterParameter formal;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -82,10 +81,10 @@ public class QueryParameterImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FilterParameter getFormal() {
+	public uk.ac.man.cs.mdsd.webgen.service.FilterParameter getFormal() {
 		if (formal != null && formal.eIsProxy()) {
 			InternalEObject oldFormal = (InternalEObject)formal;
-			formal = (FilterParameter)eResolveProxy(oldFormal);
+			formal = (uk.ac.man.cs.mdsd.webgen.service.FilterParameter)eResolveProxy(oldFormal);
 			if (formal != oldFormal) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.QUERY_PARAMETER__FORMAL, oldFormal, formal));
@@ -99,7 +98,7 @@ public class QueryParameterImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FilterParameter basicGetFormal() {
+	public uk.ac.man.cs.mdsd.webgen.service.FilterParameter basicGetFormal() {
 		return formal;
 	}
 
@@ -108,8 +107,8 @@ public class QueryParameterImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFormal(FilterParameter newFormal) {
-		FilterParameter oldFormal = formal;
+	public void setFormal(uk.ac.man.cs.mdsd.webgen.service.FilterParameter newFormal) {
+		uk.ac.man.cs.mdsd.webgen.service.FilterParameter oldFormal = formal;
 		formal = newFormal;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.QUERY_PARAMETER__FORMAL, oldFormal, formal));
@@ -162,7 +161,7 @@ public class QueryParameterImpl extends MinimalEObjectImpl.Container implements 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebuiPackage.QUERY_PARAMETER__FORMAL:
-				setFormal((FilterParameter)newValue);
+				setFormal((uk.ac.man.cs.mdsd.webgen.service.FilterParameter)newValue);
 				return;
 			case WebuiPackage.QUERY_PARAMETER__VALUE:
 				setValue((String)newValue);
@@ -180,7 +179,7 @@ public class QueryParameterImpl extends MinimalEObjectImpl.Container implements 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebuiPackage.QUERY_PARAMETER__FORMAL:
-				setFormal((FilterParameter)null);
+				setFormal((uk.ac.man.cs.mdsd.webgen.service.FilterParameter)null);
 				return;
 			case WebuiPackage.QUERY_PARAMETER__VALUE:
 				setValue(VALUE_EDEFAULT);

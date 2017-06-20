@@ -112,24 +112,6 @@ public interface WafFactory extends EFactory {
 	Page createPage();
 
 	/**
-	 * Returns a new object of class '<em>Filter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Filter</em>'.
-	 * @generated
-	 */
-	Filter createFilter();
-
-	/**
-	 * Returns a new object of class '<em>Filter Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Filter Parameter</em>'.
-	 * @generated
-	 */
-	FilterParameter createFilterParameter();
-
-	/**
 	 * Returns a new object of class '<em>Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

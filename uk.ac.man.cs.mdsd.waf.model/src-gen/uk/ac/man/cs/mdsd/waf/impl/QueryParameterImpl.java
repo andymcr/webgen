@@ -11,7 +11,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
-import uk.ac.man.cs.mdsd.waf.FilterParameter;
+import uk.ac.man.cs.mdsd.service.FormalParameter;
+
 import uk.ac.man.cs.mdsd.waf.QueryParameter;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -38,7 +39,7 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	 * @generated
 	 * @ordered
 	 */
-	protected FilterParameter formal;
+	protected FormalParameter formal;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -84,10 +85,10 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FilterParameter getFormal() {
+	public FormalParameter getFormal() {
 		if (formal != null && formal.eIsProxy()) {
 			InternalEObject oldFormal = (InternalEObject)formal;
-			formal = (FilterParameter)eResolveProxy(oldFormal);
+			formal = (FormalParameter)eResolveProxy(oldFormal);
 			if (formal != oldFormal) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.QUERY_PARAMETER__FORMAL, oldFormal, formal));
@@ -101,7 +102,7 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FilterParameter basicGetFormal() {
+	public FormalParameter basicGetFormal() {
 		return formal;
 	}
 
@@ -110,8 +111,8 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFormal(FilterParameter newFormal) {
-		FilterParameter oldFormal = formal;
+	public void setFormal(FormalParameter newFormal) {
+		FormalParameter oldFormal = formal;
 		formal = newFormal;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.QUERY_PARAMETER__FORMAL, oldFormal, formal));
@@ -164,7 +165,7 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WafPackage.QUERY_PARAMETER__FORMAL:
-				setFormal((FilterParameter)newValue);
+				setFormal((FormalParameter)newValue);
 				return;
 			case WafPackage.QUERY_PARAMETER__VALUE:
 				setValue((String)newValue);
@@ -182,7 +183,7 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WafPackage.QUERY_PARAMETER__FORMAL:
-				setFormal((FilterParameter)null);
+				setFormal((FormalParameter)null);
 				return;
 			case WafPackage.QUERY_PARAMETER__VALUE:
 				setValue(VALUE_EDEFAULT);

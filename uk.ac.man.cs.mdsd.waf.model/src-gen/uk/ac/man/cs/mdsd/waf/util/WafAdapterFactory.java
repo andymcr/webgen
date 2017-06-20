@@ -135,14 +135,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createPageAdapter();
 			}
 			@Override
-			public Adapter caseFilter(Filter object) {
-				return createFilterAdapter();
-			}
-			@Override
-			public Adapter caseFilterParameter(FilterParameter object) {
-				return createFilterParameterAdapter();
-			}
-			@Override
 			public Adapter caseQuery(Query object) {
 				return createQueryAdapter();
 			}
@@ -595,34 +587,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.Filter <em>Filter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.Filter
-	 * @generated
-	 */
-	public Adapter createFilterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.FilterParameter <em>Filter Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.FilterParameter
-	 * @generated
-	 */
-	public Adapter createFilterParameterAdapter() {
 		return null;
 	}
 

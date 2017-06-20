@@ -7,6 +7,7 @@ import org.eclipse.emf.common.util.EList;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 
+import uk.ac.man.cs.mdsd.webgen.service.Filter;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 
 /**
@@ -110,8 +111,7 @@ public interface CollectionUnit extends SelectableUnit {
 
 	/**
 	 * Returns the value of the '<em><b>Filters</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.Filter}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.webui.Filter#getFilterFor <em>Filter For</em>}'.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.Filter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Filters</em>' containment reference list isn't clear,
@@ -120,8 +120,7 @@ public interface CollectionUnit extends SelectableUnit {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Filters</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_Filters()
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.Filter#getFilterFor
-	 * @model opposite="filterFor" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Filter> getFilters();

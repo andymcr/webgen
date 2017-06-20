@@ -477,39 +477,39 @@ rule Filter {
 				website.displayLabel
 			else
 				'Filter'
-			endif,
-		parameters <-
-			if website.parameters->notEmpty() then
-				website.parameters
-			else
-				Sequence{thisModule.implicitFilterParameter(website)}
-			endif,
-		selection <- website.selection.findServiceSelection()
+			endif --,
+--		parameters <-
+--			if website.parametersOld->notEmpty() then
+--				website.parametersOld
+--			else
+--				Sequence{thisModule.implicitFilterParameter(website)}
+--			endif --,
+--		selection <- website.selection.findServiceSelection()
 	)
 }
 
--- @extends NamedElement
-rule FilterParameter {
-	from website : Website!FilterParameter
-	to waf : WAF!FilterParameter (
-		formal <- website.formal.findServiceFormalParameter(),
-		dataType <- website.dataType,
-		defaultValue <- website.defaultValue,
-		placeholder <-
-			if not website.placeholder.oclIsUndefined() then
-				website.placeholder
-			else
-				website.name.createLabel()
-			endif
-	)
-}
+--- @extends NamedElement
+--rule FilterParameter {
+--	from website : Website!FilterParameter
+--	to waf : WAF!FilterParameter (
+--		formal <- website.formal.findServiceFormalParameter(),
+--		dataType <- website.dataType,
+--		defaultValue <- website.defaultValue,
+--		placeholder <-
+--			if not website.placeholder.oclIsUndefined() then
+--				website.placeholder
+--			else
+--				website.name.createLabel()
+--			endif
+--	)
+--}
 
-lazy rule implicitFilterParameter {
-	from website : Website!Filter
-	to waf : WAF!FilterParameter (
-		name <- website.name
-	)
-}
+--lazy rule implicitFilterParameter {
+--	-from website : Website!Filter
+--	to waf : WAF!FilterParameter (
+--		name <- website.name
+--	)
+--}
 
 rule Query {
 	from website : Website!Query
@@ -857,11 +857,11 @@ unique lazy rule PaginationFilter {
 	from website : Website!CollectionUnit
 	to waf : WAF!Filter (
 		name <- 'pagination',
-		displayLabel <- 'Pagination',
-		parameters <- Sequence{pageParameter}
-	),
-	pageParameter : WAF!FilterParameter (
-		name <- 'page'
+		displayLabel <- 'Pagination' --,
+--		parameters <- Sequence{pageParameter}
+--	),
+--	pageParameter : WAF!FilterParameter (
+--		name <- 'page'
 	)
 	do {
 		waf;

@@ -30,6 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 
+import uk.ac.man.cs.mdsd.webgen.service.Filter;
 import uk.ac.man.cs.mdsd.webgen.service.Order;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.service.Service;
@@ -48,10 +49,12 @@ import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#isDistinct <em>Distinct</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getJoins <em>Joins</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getFilter <em>Filter</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getCondition <em>Condition</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getLimit <em>Limit</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#isSelected <em>Selected</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getMethodName <em>Method Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -108,14 +111,24 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	protected EList<Association> joins;
 
 	/**
-	 * The cached value of the '{@link #getFilter() <em>Filter</em>}' containment reference.
+	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFilter()
+	 * @see #getCondition()
 	 * @generated
 	 * @ordered
 	 */
-	protected Predicate filter;
+	protected Predicate condition;
+
+	/**
+	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFilters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Filter> filters;
 
 	/**
 	 * The cached value of the '{@link #getOrdering() <em>Ordering</em>}' containment reference list.
@@ -166,6 +179,26 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @ordered
 	 */
 	protected boolean selected = SELECTED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMethodName() <em>Method Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMethodName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String METHOD_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMethodName() <em>Method Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMethodName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String methodName = METHOD_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,8 +322,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Predicate getFilter() {
-		return filter;
+	public Predicate getCondition() {
+		return condition;
 	}
 
 	/**
@@ -298,11 +331,11 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetFilter(Predicate newFilter, NotificationChain msgs) {
-		Predicate oldFilter = filter;
-		filter = newFilter;
+	public NotificationChain basicSetCondition(Predicate newCondition, NotificationChain msgs) {
+		Predicate oldCondition = condition;
+		condition = newCondition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ServicePackage.SELECTION__FILTER, oldFilter, newFilter);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ServicePackage.SELECTION__CONDITION, oldCondition, newCondition);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -313,18 +346,30 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFilter(Predicate newFilter) {
-		if (newFilter != filter) {
+	public void setCondition(Predicate newCondition) {
+		if (newCondition != condition) {
 			NotificationChain msgs = null;
-			if (filter != null)
-				msgs = ((InternalEObject)filter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServicePackage.SELECTION__FILTER, null, msgs);
-			if (newFilter != null)
-				msgs = ((InternalEObject)newFilter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServicePackage.SELECTION__FILTER, null, msgs);
-			msgs = basicSetFilter(newFilter, msgs);
+			if (condition != null)
+				msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServicePackage.SELECTION__CONDITION, null, msgs);
+			if (newCondition != null)
+				msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServicePackage.SELECTION__CONDITION, null, msgs);
+			msgs = basicSetCondition(newCondition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SELECTION__FILTER, newFilter, newFilter));
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SELECTION__CONDITION, newCondition, newCondition));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Filter> getFilters() {
+		if (filters == null) {
+			filters = new EObjectContainmentWithInverseEList<Filter>(Filter.class, this, ServicePackage.SELECTION__FILTERS, ServicePackage.FILTER__SELECTION);
+		}
+		return filters;
 	}
 
 	/**
@@ -386,6 +431,27 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getMethodName() {
+		return methodName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMethodName(String newMethodName) {
+		String oldMethodName = methodName;
+		methodName = newMethodName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SELECTION__METHOD_NAME, oldMethodName, methodName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -396,6 +462,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetUsedBy((Service)otherEnd, msgs);
+			case ServicePackage.SELECTION__FILTERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFilters()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -412,8 +480,10 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 			case ServicePackage.SELECTION__USED_BY:
 				return basicSetUsedBy(null, msgs);
-			case ServicePackage.SELECTION__FILTER:
-				return basicSetFilter(null, msgs);
+			case ServicePackage.SELECTION__CONDITION:
+				return basicSetCondition(null, msgs);
+			case ServicePackage.SELECTION__FILTERS:
+				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
 			case ServicePackage.SELECTION__ORDERING:
 				return ((InternalEList<?>)getOrdering()).basicRemove(otherEnd, msgs);
 		}
@@ -452,14 +522,18 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return getFields();
 			case ServicePackage.SELECTION__JOINS:
 				return getJoins();
-			case ServicePackage.SELECTION__FILTER:
-				return getFilter();
+			case ServicePackage.SELECTION__CONDITION:
+				return getCondition();
+			case ServicePackage.SELECTION__FILTERS:
+				return getFilters();
 			case ServicePackage.SELECTION__ORDERING:
 				return getOrdering();
 			case ServicePackage.SELECTION__LIMIT:
 				return getLimit();
 			case ServicePackage.SELECTION__SELECTED:
 				return isSelected();
+			case ServicePackage.SELECTION__METHOD_NAME:
+				return getMethodName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -491,8 +565,12 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				getJoins().clear();
 				getJoins().addAll((Collection<? extends Association>)newValue);
 				return;
-			case ServicePackage.SELECTION__FILTER:
-				setFilter((Predicate)newValue);
+			case ServicePackage.SELECTION__CONDITION:
+				setCondition((Predicate)newValue);
+				return;
+			case ServicePackage.SELECTION__FILTERS:
+				getFilters().clear();
+				getFilters().addAll((Collection<? extends Filter>)newValue);
 				return;
 			case ServicePackage.SELECTION__ORDERING:
 				getOrdering().clear();
@@ -503,6 +581,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return;
 			case ServicePackage.SELECTION__SELECTED:
 				setSelected((Boolean)newValue);
+				return;
+			case ServicePackage.SELECTION__METHOD_NAME:
+				setMethodName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -531,8 +612,11 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case ServicePackage.SELECTION__JOINS:
 				getJoins().clear();
 				return;
-			case ServicePackage.SELECTION__FILTER:
-				setFilter((Predicate)null);
+			case ServicePackage.SELECTION__CONDITION:
+				setCondition((Predicate)null);
+				return;
+			case ServicePackage.SELECTION__FILTERS:
+				getFilters().clear();
 				return;
 			case ServicePackage.SELECTION__ORDERING:
 				getOrdering().clear();
@@ -542,6 +626,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return;
 			case ServicePackage.SELECTION__SELECTED:
 				setSelected(SELECTED_EDEFAULT);
+				return;
+			case ServicePackage.SELECTION__METHOD_NAME:
+				setMethodName(METHOD_NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -565,14 +652,18 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return fields != null && !fields.isEmpty();
 			case ServicePackage.SELECTION__JOINS:
 				return joins != null && !joins.isEmpty();
-			case ServicePackage.SELECTION__FILTER:
-				return filter != null;
+			case ServicePackage.SELECTION__CONDITION:
+				return condition != null;
+			case ServicePackage.SELECTION__FILTERS:
+				return filters != null && !filters.isEmpty();
 			case ServicePackage.SELECTION__ORDERING:
 				return ordering != null && !ordering.isEmpty();
 			case ServicePackage.SELECTION__LIMIT:
 				return limit != LIMIT_EDEFAULT;
 			case ServicePackage.SELECTION__SELECTED:
 				return selected != SELECTED_EDEFAULT;
+			case ServicePackage.SELECTION__METHOD_NAME:
+				return METHOD_NAME_EDEFAULT == null ? methodName != null : !METHOD_NAME_EDEFAULT.equals(methodName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -625,6 +716,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		result.append(limit);
 		result.append(", selected: ");
 		result.append(selected);
+		result.append(", methodName: ");
+		result.append(methodName);
 		result.append(')');
 		return result.toString();
 	}

@@ -297,6 +297,29 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.service.Filter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FilterItemProvider filterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.service.Filter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFilterAdapter() {
+		if (filterItemProvider == null) {
+			filterItemProvider = new FilterItemProvider(this);
+		}
+
+		return filterItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -395,10 +418,11 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 	 * @generated
 	 */
 	public void dispose() {
+		if (formalParameterItemProvider != null) formalParameterItemProvider.dispose();
 		if (serviceModelItemProvider != null) serviceModelItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
-		if (formalParameterItemProvider != null) formalParameterItemProvider.dispose();
+		if (filterItemProvider != null) filterItemProvider.dispose();
 		if (ascItemProvider != null) ascItemProvider.dispose();
 		if (descItemProvider != null) descItemProvider.dispose();
 		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();

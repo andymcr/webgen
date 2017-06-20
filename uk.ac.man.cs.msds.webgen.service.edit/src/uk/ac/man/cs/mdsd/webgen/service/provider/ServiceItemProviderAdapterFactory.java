@@ -247,6 +247,52 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.service.Filter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FilterItemProvider filterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.service.Filter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFilterAdapter() {
+		if (filterItemProvider == null) {
+			filterItemProvider = new FilterItemProvider(this);
+		}
+
+		return filterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.service.FilterParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FilterParameterItemProvider filterParameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.service.FilterParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFilterParameterAdapter() {
+		if (filterParameterItemProvider == null) {
+			filterParameterItemProvider = new FilterParameterItemProvider(this);
+		}
+
+		return filterParameterItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -19,6 +19,8 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.service.Asc;
 import uk.ac.man.cs.mdsd.webgen.service.BusinessOperation;
 import uk.ac.man.cs.mdsd.webgen.service.Desc;
+import uk.ac.man.cs.mdsd.webgen.service.Filter;
+import uk.ac.man.cs.mdsd.webgen.service.FilterParameter;
 import uk.ac.man.cs.mdsd.webgen.service.OperationResultTypes;
 import uk.ac.man.cs.mdsd.webgen.service.Order;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
@@ -90,6 +92,20 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	private EClass businessOperationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass filterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass filterParameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,8 +228,26 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getService_Operations() {
+	public EReference getService_FindAll() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getService_FindOne() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getService_Operations() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -266,7 +300,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelection_Filter() {
+	public EReference getSelection_Condition() {
 		return (EReference)selectionEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -275,7 +309,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelection_Ordering() {
+	public EReference getSelection_Filters() {
 		return (EReference)selectionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -284,8 +318,17 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSelection_Ordering() {
+		return (EReference)selectionEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getSelection_Limit() {
-		return (EAttribute)selectionEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)selectionEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -294,7 +337,16 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	public EAttribute getSelection_Selected() {
-		return (EAttribute)selectionEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)selectionEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSelection_MethodName() {
+		return (EAttribute)selectionEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -401,6 +453,105 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFilter() {
+		return filterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFilter_Condition() {
+		return (EReference)filterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFilter_MethodName() {
+		return (EAttribute)filterEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFilter_Selection() {
+		return (EReference)filterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFilter_ParametersOld() {
+		return (EReference)filterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFilterParameter() {
+		return filterParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFilterParameter_PartOf() {
+		return (EReference)filterParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFilterParameter_Formal() {
+		return (EReference)filterParameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFilterParameter_DataType() {
+		return (EReference)filterParameterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFilterParameter_DefaultValue() {
+		return (EAttribute)filterParameterEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFilterParameter_Placeholder() {
+		return (EAttribute)filterParameterEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getOperationResultTypes() {
 		return operationResultTypesEEnum;
 	}
@@ -439,6 +590,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		serviceEClass = createEClass(SERVICE);
 		createEReference(serviceEClass, SERVICE__SERVES);
 		createEReference(serviceEClass, SERVICE__SELECTIONS);
+		createEReference(serviceEClass, SERVICE__FIND_ALL);
+		createEReference(serviceEClass, SERVICE__FIND_ONE);
 		createEReference(serviceEClass, SERVICE__OPERATIONS);
 
 		selectionEClass = createEClass(SELECTION);
@@ -446,10 +599,12 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		createEAttribute(selectionEClass, SELECTION__DISTINCT);
 		createEReference(selectionEClass, SELECTION__FIELDS);
 		createEReference(selectionEClass, SELECTION__JOINS);
-		createEReference(selectionEClass, SELECTION__FILTER);
+		createEReference(selectionEClass, SELECTION__CONDITION);
+		createEReference(selectionEClass, SELECTION__FILTERS);
 		createEReference(selectionEClass, SELECTION__ORDERING);
 		createEAttribute(selectionEClass, SELECTION__LIMIT);
 		createEAttribute(selectionEClass, SELECTION__SELECTED);
+		createEAttribute(selectionEClass, SELECTION__METHOD_NAME);
 
 		orderEClass = createEClass(ORDER);
 		createEReference(orderEClass, ORDER__PATH);
@@ -466,6 +621,19 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		createEReference(businessOperationEClass, BUSINESS_OPERATION__USES);
 		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_TYPE);
 		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_MIME_TYPE);
+
+		filterEClass = createEClass(FILTER);
+		createEReference(filterEClass, FILTER__SELECTION);
+		createEReference(filterEClass, FILTER__PARAMETERS_OLD);
+		createEReference(filterEClass, FILTER__CONDITION);
+		createEAttribute(filterEClass, FILTER__METHOD_NAME);
+
+		filterParameterEClass = createEClass(FILTER_PARAMETER);
+		createEReference(filterParameterEClass, FILTER_PARAMETER__PART_OF);
+		createEReference(filterParameterEClass, FILTER_PARAMETER__FORMAL);
+		createEReference(filterParameterEClass, FILTER_PARAMETER__DATA_TYPE);
+		createEAttribute(filterParameterEClass, FILTER_PARAMETER__DEFAULT_VALUE);
+		createEAttribute(filterParameterEClass, FILTER_PARAMETER__PLACEHOLDER);
 
 		// Create enums
 		operationResultTypesEEnum = createEEnum(OPERATION_RESULT_TYPES);
@@ -511,6 +679,9 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		ascEClass.getESuperTypes().add(this.getOrder());
 		descEClass.getESuperTypes().add(this.getOrder());
 		businessOperationEClass.getESuperTypes().add(theBasePackage.getNamedElement());
+		filterEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
+		filterEClass.getESuperTypes().add(theBasePackage.getFormalParameterList());
+		filterParameterEClass.getESuperTypes().add(theBasePackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(servicesEClass, Services.class, "Services", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -519,6 +690,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getService_Serves(), thePersistencePackage.getEntityOrView(), null, "serves", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Selections(), this.getSelection(), this.getSelection_UsedBy(), "selections", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_FindAll(), this.getSelection(), null, "findAll", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_FindOne(), this.getSelection(), null, "findOne", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Operations(), this.getBusinessOperation(), null, "operations", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionEClass, Selection.class, "Selection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -526,10 +699,12 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		initEAttribute(getSelection_Distinct(), ecorePackage.getEBoolean(), "distinct", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Fields(), thePersistencePackage.getFeature(), null, "fields", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Joins(), thePersistencePackage.getAssociation(), null, "joins", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSelection_Filter(), theExpressionPackage.getPredicate(), null, "filter", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSelection_Condition(), theExpressionPackage.getPredicate(), null, "condition", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSelection_Filters(), this.getFilter(), this.getFilter_Selection(), "filters", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Ordering(), this.getOrder(), null, "ordering", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelection_Limit(), ecorePackage.getEInt(), "limit", "0", 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSelection_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSelection_MethodName(), ecorePackage.getEString(), "methodName", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(orderEClass, Order.class, "Order", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOrder_Path(), theExpressionPackage.getVariable(), null, "path", null, 1, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -546,6 +721,19 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		initEReference(getBusinessOperation_Uses(), this.getService(), null, "uses", null, 0, -1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBusinessOperation_ResultType(), this.getOperationResultTypes(), "resultType", null, 1, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBusinessOperation_ResultMimeType(), ecorePackage.getEString(), "resultMimeType", null, 0, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(filterEClass, Filter.class, "Filter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFilter_Selection(), this.getSelection(), this.getSelection_Filters(), "selection", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFilter_ParametersOld(), this.getFilterParameter(), this.getFilterParameter_PartOf(), "parametersOld", null, 0, -1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFilter_Condition(), theExpressionPackage.getPredicate(), null, "condition", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getFilter_MethodName(), ecorePackage.getEString(), "methodName", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(filterParameterEClass, FilterParameter.class, "FilterParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFilterParameter_PartOf(), this.getFilter(), this.getFilter_ParametersOld(), "partOf", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFilterParameter_Formal(), theBasePackage.getFormalParameter(), null, "formal", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFilterParameter_DataType(), theBasePackage.getDataType(), null, "dataType", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFilterParameter_DefaultValue(), ecorePackage.getEString(), "defaultValue", "", 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFilterParameter_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(operationResultTypesEEnum, OperationResultTypes.class, "OperationResultTypes");

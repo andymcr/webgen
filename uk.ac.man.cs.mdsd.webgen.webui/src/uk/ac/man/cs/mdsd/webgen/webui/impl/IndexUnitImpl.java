@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -21,7 +22,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
-import uk.ac.man.cs.mdsd.webgen.webui.Filter;
 import uk.ac.man.cs.mdsd.webgen.webui.IndexDisplayOption;
 import uk.ac.man.cs.mdsd.webgen.webui.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.InlineAction;
@@ -112,7 +112,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Filter> filters;
+	protected EList<uk.ac.man.cs.mdsd.webgen.service.Filter> filters;
 
 	/**
 	 * The default value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
@@ -142,7 +142,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected Filter pagination;
+	protected uk.ac.man.cs.mdsd.webgen.service.Filter pagination;
 
 	/**
 	 * The default value of the '{@link #getDefaultPaginationSize() <em>Default Pagination Size</em>}' attribute.
@@ -584,9 +584,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Filter> getFilters() {
+	public EList<uk.ac.man.cs.mdsd.webgen.service.Filter> getFilters() {
 		if (filters == null) {
-			filters = new EObjectContainmentWithInverseEList<Filter>(Filter.class, this, WebuiPackage.INDEX_UNIT__FILTERS, WebuiPackage.FILTER__FILTER_FOR);
+			filters = new EObjectContainmentEList<uk.ac.man.cs.mdsd.webgen.service.Filter>(uk.ac.man.cs.mdsd.webgen.service.Filter.class, this, WebuiPackage.INDEX_UNIT__FILTERS);
 		}
 		return filters;
 	}
@@ -617,10 +617,10 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Filter getPagination() {
+	public uk.ac.man.cs.mdsd.webgen.service.Filter getPagination() {
 		if (pagination != null && pagination.eIsProxy()) {
 			InternalEObject oldPagination = (InternalEObject)pagination;
-			pagination = (Filter)eResolveProxy(oldPagination);
+			pagination = (uk.ac.man.cs.mdsd.webgen.service.Filter)eResolveProxy(oldPagination);
 			if (pagination != oldPagination) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.INDEX_UNIT__PAGINATION, oldPagination, pagination));
@@ -634,7 +634,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Filter basicGetPagination() {
+	public uk.ac.man.cs.mdsd.webgen.service.Filter basicGetPagination() {
 		return pagination;
 	}
 
@@ -643,8 +643,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPagination(Filter newPagination) {
-		Filter oldPagination = pagination;
+	public void setPagination(uk.ac.man.cs.mdsd.webgen.service.Filter newPagination) {
+		uk.ac.man.cs.mdsd.webgen.service.Filter oldPagination = pagination;
 		pagination = newPagination;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__PAGINATION, oldPagination, pagination));
@@ -965,8 +965,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebuiPackage.INDEX_UNIT__FILTERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFilters()).basicAdd(otherEnd, msgs);
 			case WebuiPackage.INDEX_UNIT__ACTIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getActions()).basicAdd(otherEnd, msgs);
 		}
@@ -1073,13 +1071,13 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return;
 			case WebuiPackage.INDEX_UNIT__FILTERS:
 				getFilters().clear();
-				getFilters().addAll((Collection<? extends Filter>)newValue);
+				getFilters().addAll((Collection<? extends uk.ac.man.cs.mdsd.webgen.service.Filter>)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage((String)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__PAGINATION:
-				setPagination((Filter)newValue);
+				setPagination((uk.ac.man.cs.mdsd.webgen.service.Filter)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize((Integer)newValue);
@@ -1158,7 +1156,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				setEmptyMessage(EMPTY_MESSAGE_EDEFAULT);
 				return;
 			case WebuiPackage.INDEX_UNIT__PAGINATION:
-				setPagination((Filter)null);
+				setPagination((uk.ac.man.cs.mdsd.webgen.service.Filter)null);
 				return;
 			case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize(DEFAULT_PAGINATION_SIZE_EDEFAULT);

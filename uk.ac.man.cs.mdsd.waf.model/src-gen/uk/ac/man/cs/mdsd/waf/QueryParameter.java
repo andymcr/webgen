@@ -4,6 +4,8 @@ package uk.ac.man.cs.mdsd.waf;
 
 import uk.ac.man.cs.mdsd.orm.NamedElement;
 
+import uk.ac.man.cs.mdsd.service.FormalParameter;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Query Parameter</b></em>'.
@@ -31,12 +33,12 @@ public interface QueryParameter extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Formal</em>' reference.
-	 * @see #setFormal(FilterParameter)
+	 * @see #setFormal(FormalParameter)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getQueryParameter_Formal()
 	 * @model required="true"
 	 * @generated
 	 */
-	FilterParameter getFormal();
+	FormalParameter getFormal();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.QueryParameter#getFormal <em>Formal</em>}' reference.
@@ -46,7 +48,7 @@ public interface QueryParameter extends NamedElement {
 	 * @see #getFormal()
 	 * @generated
 	 */
-	void setFormal(FilterParameter value);
+	void setFormal(FormalParameter value);
 
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.

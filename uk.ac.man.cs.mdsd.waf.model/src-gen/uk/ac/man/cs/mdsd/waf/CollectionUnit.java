@@ -7,6 +7,7 @@ import org.eclipse.emf.common.util.EList;
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
 import uk.ac.man.cs.mdsd.orm.Feature;
 
+import uk.ac.man.cs.mdsd.service.Filter;
 import uk.ac.man.cs.mdsd.service.Selection;
 
 /**
@@ -110,7 +111,7 @@ public interface CollectionUnit extends SelectableUnit {
 
 	/**
 	 * Returns the value of the '<em><b>Filters</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.Filter}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.service.Filter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Filters</em>' containment reference list isn't clear,

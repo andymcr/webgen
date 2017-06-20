@@ -51,8 +51,6 @@ import uk.ac.man.cs.mdsd.waf.FeaturePath;
 import uk.ac.man.cs.mdsd.waf.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.waf.FeaturePathAttribute;
 import uk.ac.man.cs.mdsd.waf.FeatureSupportAction;
-import uk.ac.man.cs.mdsd.waf.Filter;
-import uk.ac.man.cs.mdsd.waf.FilterParameter;
 import uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.waf.GalleryUnit;
@@ -215,20 +213,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass pageEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass filterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass filterParameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1483,78 +1467,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EAttribute getPage_StyleClass() {
 		return (EAttribute)pageEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFilter() {
-		return filterEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilter_Parameters() {
-		return (EReference)filterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilter_Selection() {
-		return (EReference)filterEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFilterParameter() {
-		return filterParameterEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilterParameter_Formal() {
-		return (EReference)filterParameterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilterParameter_DataType() {
-		return (EReference)filterParameterEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFilterParameter_DefaultValue() {
-		return (EAttribute)filterParameterEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFilterParameter_Placeholder() {
-		return (EAttribute)filterParameterEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3543,16 +3455,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(pageEClass, PAGE__SIDE_MENU);
 		createEAttribute(pageEClass, PAGE__STYLE_CLASS);
 
-		filterEClass = createEClass(FILTER);
-		createEReference(filterEClass, FILTER__PARAMETERS);
-		createEReference(filterEClass, FILTER__SELECTION);
-
-		filterParameterEClass = createEClass(FILTER_PARAMETER);
-		createEReference(filterParameterEClass, FILTER_PARAMETER__FORMAL);
-		createEReference(filterParameterEClass, FILTER_PARAMETER__DATA_TYPE);
-		createEAttribute(filterParameterEClass, FILTER_PARAMETER__DEFAULT_VALUE);
-		createEAttribute(filterParameterEClass, FILTER_PARAMETER__PLACEHOLDER);
-
 		queryEClass = createEClass(QUERY);
 		createEReference(queryEClass, QUERY__FILTER);
 		createEReference(queryEClass, QUERY__PARAMETERS);
@@ -3862,8 +3764,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		editStaticTextMenuEntryEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		pageEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		pageEClass.getESuperTypes().add(this.getUnitContainer());
-		filterEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
-		filterParameterEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		queryEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		queryParameterEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		contentUnitEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
@@ -4032,22 +3932,12 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getPage_SideMenu(), this.getMenu(), null, "sideMenu", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_StyleClass(), theEcorePackage.getEString(), "styleClass", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(filterEClass, Filter.class, "Filter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFilter_Parameters(), this.getFilterParameter(), null, "parameters", null, 0, -1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFilter_Selection(), theServicePackage.getSelection(), null, "selection", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(filterParameterEClass, FilterParameter.class, "FilterParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFilterParameter_Formal(), theServicePackage.getFormalParameter(), null, "formal", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFilterParameter_DataType(), theOrmPackage.getDataType(), null, "dataType", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFilterParameter_DefaultValue(), theEcorePackage.getEString(), "defaultValue", "", 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFilterParameter_Placeholder(), theEcorePackage.getEString(), "placeholder", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQuery_Filter(), this.getFilter(), null, "filter", null, 1, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQuery_Filter(), theServicePackage.getFilter(), null, "filter", null, 1, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getQuery_Parameters(), this.getQueryParameter(), null, "parameters", null, 0, -1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(queryParameterEClass, QueryParameter.class, "QueryParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQueryParameter_Formal(), this.getFilterParameter(), null, "formal", null, 1, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQueryParameter_Formal(), theServicePackage.getFormalParameter(), null, "formal", null, 1, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQueryParameter_Value(), theEcorePackage.getEString(), "value", null, 0, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unitContainerEClass, UnitContainer.class, "UnitContainer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4153,8 +4043,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getCollectionUnit_ContainingFeature(), theOrmPackage.getFeature(), null, "containingFeature", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_ContentType(), theOrmPackage.getEntityOrView(), null, "contentType", null, 1, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_Selection(), theServicePackage.getSelection(), null, "selection", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCollectionUnit_Filters(), this.getFilter(), null, "filters", null, 0, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCollectionUnit_Pagination(), this.getFilter(), null, "pagination", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCollectionUnit_Filters(), theServicePackage.getFilter(), null, "filters", null, 0, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCollectionUnit_Pagination(), theServicePackage.getFilter(), null, "pagination", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_EmptyMessage(), theEcorePackage.getEString(), "emptyMessage", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_DefaultPaginationSize(), theEcorePackage.getEInt(), "defaultPaginationSize", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_NextNpages(), theEcorePackage.getEInt(), "nextNpages", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

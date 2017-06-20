@@ -112,24 +112,6 @@ public interface WebuiFactory extends EFactory {
 	PageLink createPageLink();
 
 	/**
-	 * Returns a new object of class '<em>Filter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Filter</em>'.
-	 * @generated
-	 */
-	Filter createFilter();
-
-	/**
-	 * Returns a new object of class '<em>Filter Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Filter Parameter</em>'.
-	 * @generated
-	 */
-	FilterParameter createFilterParameter();
-
-	/**
 	 * Returns a new object of class '<em>Static Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

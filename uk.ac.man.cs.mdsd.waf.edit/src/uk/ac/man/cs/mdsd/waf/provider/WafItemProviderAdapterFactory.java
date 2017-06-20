@@ -307,52 +307,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Filter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FilterItemProvider filterItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.Filter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFilterAdapter() {
-		if (filterItemProvider == null) {
-			filterItemProvider = new FilterItemProvider(this);
-		}
-
-		return filterItemProvider;
-	}
-
-		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FilterParameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FilterParameterItemProvider filterParameterItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FilterParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFilterParameterAdapter() {
-		if (filterParameterItemProvider == null) {
-			filterParameterItemProvider = new FilterParameterItemProvider(this);
-		}
-
-		return filterParameterItemProvider;
-	}
-
-		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Query} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1204,8 +1158,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
 		if (pageItemProvider != null) pageItemProvider.dispose();
-		if (filterItemProvider != null) filterItemProvider.dispose();
-		if (filterParameterItemProvider != null) filterParameterItemProvider.dispose();
 		if (queryItemProvider != null) queryItemProvider.dispose();
 		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();

@@ -23,10 +23,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
 import uk.ac.man.cs.mdsd.orm.Feature;
 
+import uk.ac.man.cs.mdsd.service.Filter;
 import uk.ac.man.cs.mdsd.service.Selection;
 
 import uk.ac.man.cs.mdsd.waf.CollectionUnit;
-import uk.ac.man.cs.mdsd.waf.Filter;
 import uk.ac.man.cs.mdsd.waf.IndexUnit;
 import uk.ac.man.cs.mdsd.waf.InlineAction;
 import uk.ac.man.cs.mdsd.waf.InlineActionContainer;

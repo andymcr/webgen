@@ -1562,143 +1562,6 @@ public interface WafPackage extends EPackage {
 	int PAGE_OPERATION_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.FilterImpl <em>Filter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.FilterImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFilter()
-	 * @generated
-	 */
-	int FILTER = 16;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER__NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER__DISPLAY_LABEL = OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER__PARAMETERS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Selection</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER__SELECTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Filter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Filter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_OPERATION_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.FilterParameterImpl <em>Filter Parameter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.FilterParameterImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFilterParameter()
-	 * @generated
-	 */
-	int FILTER_PARAMETER = 17;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__NAME = OrmPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Formal</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__FORMAL = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Data Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__DATA_TYPE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__DEFAULT_VALUE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__PLACEHOLDER = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Filter Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Filter Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER_OPERATION_COUNT = OrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.QueryImpl <em>Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1706,7 +1569,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getQuery()
 	 * @generated
 	 */
-	int QUERY = 18;
+	int QUERY = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1761,7 +1624,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getQueryParameter()
 	 * @generated
 	 */
-	int QUERY_PARAMETER = 19;
+	int QUERY_PARAMETER = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1816,7 +1679,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitContainer()
 	 * @generated
 	 */
-	int UNIT_CONTAINER = 20;
+	int UNIT_CONTAINER = 18;
 
 	/**
 	 * The feature id for the '<em><b>Units</b></em>' containment reference list.
@@ -1853,7 +1716,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getContentUnit()
 	 * @generated
 	 */
-	int CONTENT_UNIT = 21;
+	int CONTENT_UNIT = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1980,7 +1843,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getStaticUnit()
 	 * @generated
 	 */
-	int STATIC_UNIT = 22;
+	int STATIC_UNIT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2125,7 +1988,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDynamicUnit()
 	 * @generated
 	 */
-	int DYNAMIC_UNIT = 23;
+	int DYNAMIC_UNIT = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2333,7 +2196,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitSupportAction()
 	 * @generated
 	 */
-	int UNIT_SUPPORT_ACTION = 24;
+	int UNIT_SUPPORT_ACTION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2397,7 +2260,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitField()
 	 * @generated
 	 */
-	int UNIT_FIELD = 25;
+	int UNIT_FIELD = 23;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2497,7 +2360,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitFeature()
 	 * @generated
 	 */
-	int UNIT_FEATURE = 26;
+	int UNIT_FEATURE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2687,7 +2550,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitAttribute()
 	 * @generated
 	 */
-	int UNIT_ATTRIBUTE = 27;
+	int UNIT_ATTRIBUTE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2931,7 +2794,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitAssociation()
 	 * @generated
 	 */
-	int UNIT_ASSOCIATION = 28;
+	int UNIT_ASSOCIATION = 26;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -3184,7 +3047,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAssociationReference()
 	 * @generated
 	 */
-	int ASSOCIATION_REFERENCE = 29;
+	int ASSOCIATION_REFERENCE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3248,7 +3111,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInterfaceField()
 	 * @generated
 	 */
-	int INTERFACE_FIELD = 30;
+	int INTERFACE_FIELD = 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3420,7 +3283,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDataTypeField()
 	 * @generated
 	 */
-	int DATA_TYPE_FIELD = 31;
+	int DATA_TYPE_FIELD = 29;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3628,7 +3491,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDateField()
 	 * @generated
 	 */
-	int DATE_FIELD = 32;
+	int DATE_FIELD = 30;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3818,7 +3681,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCaptchaField()
 	 * @generated
 	 */
-	int CAPTCHA_FIELD = 33;
+	int CAPTCHA_FIELD = 31;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3990,7 +3853,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectableUnit()
 	 * @generated
 	 */
-	int SELECTABLE_UNIT = 34;
+	int SELECTABLE_UNIT = 32;
 
 	/**
 	 * The feature id for the '<em><b>Selection Type</b></em>' reference.
@@ -4036,7 +3899,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSingletonUnit()
 	 * @generated
 	 */
-	int SINGLETON_UNIT = 35;
+	int SINGLETON_UNIT = 33;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference.
@@ -4073,7 +3936,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionUnit()
 	 * @generated
 	 */
-	int COLLECTION_UNIT = 36;
+	int COLLECTION_UNIT = 34;
 
 	/**
 	 * The feature id for the '<em><b>Selection Type</b></em>' reference.
@@ -4254,7 +4117,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getEditUnit()
 	 * @generated
 	 */
-	int EDIT_UNIT = 37;
+	int EDIT_UNIT = 35;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4543,7 +4406,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCreateUnit()
 	 * @generated
 	 */
-	int CREATE_UNIT = 38;
+	int CREATE_UNIT = 36;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4832,7 +4695,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCreateUpdateUnit()
 	 * @generated
 	 */
-	int CREATE_UPDATE_UNIT = 39;
+	int CREATE_UPDATE_UNIT = 37;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5157,7 +5020,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getMapUnit()
 	 * @generated
 	 */
-	int MAP_UNIT = 40;
+	int MAP_UNIT = 38;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5500,7 +5363,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUpdateUnit()
 	 * @generated
 	 */
-	int UPDATE_UNIT = 41;
+	int UPDATE_UNIT = 39;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5807,7 +5670,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDataUnit()
 	 * @generated
 	 */
-	int DATA_UNIT = 42;
+	int DATA_UNIT = 40;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6033,7 +5896,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDetailsUnit()
 	 * @generated
 	 */
-	int DETAILS_UNIT = 43;
+	int DETAILS_UNIT = 41;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6304,7 +6167,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexUnit()
 	 * @generated
 	 */
-	int INDEX_UNIT = 44;
+	int INDEX_UNIT = 42;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6719,7 +6582,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexGridUnit()
 	 * @generated
 	 */
-	int INDEX_GRID_UNIT = 45;
+	int INDEX_GRID_UNIT = 43;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7134,7 +6997,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexPageDirectionUnit()
 	 * @generated
 	 */
-	int INDEX_PAGE_DIRECTION_UNIT = 46;
+	int INDEX_PAGE_DIRECTION_UNIT = 44;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7549,7 +7412,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexLineDirectionUnit()
 	 * @generated
 	 */
-	int INDEX_LINE_DIRECTION_UNIT = 47;
+	int INDEX_LINE_DIRECTION_UNIT = 45;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7964,7 +7827,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getControlUnit()
 	 * @generated
 	 */
-	int CONTROL_UNIT = 48;
+	int CONTROL_UNIT = 46;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8199,7 +8062,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSearchUnit()
 	 * @generated
 	 */
-	int SEARCH_UNIT = 49;
+	int SEARCH_UNIT = 47;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8443,7 +8306,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getImageUnit()
 	 * @generated
 	 */
-	int IMAGE_UNIT = 50;
+	int IMAGE_UNIT = 48;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8867,7 +8730,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePath()
 	 * @generated
 	 */
-	int FEATURE_PATH = 51;
+	int FEATURE_PATH = 49;
 
 	/**
 	 * The number of structural features of the '<em>Feature Path</em>' class.
@@ -8895,7 +8758,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAttribute()
 	 * @generated
 	 */
-	int FEATURE_PATH_ATTRIBUTE = 52;
+	int FEATURE_PATH_ATTRIBUTE = 50;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8941,7 +8804,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAssociation()
 	 * @generated
 	 */
-	int FEATURE_PATH_ASSOCIATION = 53;
+	int FEATURE_PATH_ASSOCIATION = 51;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9005,7 +8868,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPath()
 	 * @generated
 	 */
-	int CHILD_PATH = 54;
+	int CHILD_PATH = 52;
 
 	/**
 	 * The number of structural features of the '<em>Child Path</em>' class.
@@ -9033,7 +8896,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAttribute()
 	 * @generated
 	 */
-	int CHILD_PATH_ATTRIBUTE = 55;
+	int CHILD_PATH_ATTRIBUTE = 53;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9079,7 +8942,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAssociation()
 	 * @generated
 	 */
-	int CHILD_PATH_ASSOCIATION = 56;
+	int CHILD_PATH_ASSOCIATION = 54;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9143,7 +9006,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getImageIndexUnit()
 	 * @generated
 	 */
-	int IMAGE_INDEX_UNIT = 57;
+	int IMAGE_INDEX_UNIT = 55;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9576,7 +9439,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSliderUnit()
 	 * @generated
 	 */
-	int SLIDER_UNIT = 58;
+	int SLIDER_UNIT = 56;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10000,7 +9863,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getGalleryUnit()
 	 * @generated
 	 */
-	int GALLERY_UNIT = 59;
+	int GALLERY_UNIT = 57;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10433,7 +10296,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 60;
+	int AUTHENTICATION_UNIT = 58;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
@@ -10461,7 +10324,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 61;
+	int REGISTRATION_UNIT = 59;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10759,7 +10622,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 62;
+	int LOGIN_UNIT = 60;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11039,7 +10902,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 63;
+	int FORGOTTEN_PASSWORD_UNIT = 61;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11292,7 +11155,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 64;
+	int INLINE_ACTION_CONTAINER = 62;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -11329,7 +11192,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 65;
+	int INLINE_ACTION = 63;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11456,7 +11319,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 66;
+	int SELECT_ACTION = 64;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11592,7 +11455,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 67;
+	int DELETE_ACTION = 65;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11746,7 +11609,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 68;
+	int FEATURE_SUPPORT_ACTION = 66;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11909,7 +11772,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 69;
+	int FRAMEWORK_TECHNOLOGIES = 67;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.InputTechnologies <em>Input Technologies</em>}' enum.
@@ -11919,7 +11782,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInputTechnologies()
 	 * @generated
 	 */
-	int INPUT_TECHNOLOGIES = 70;
+	int INPUT_TECHNOLOGIES = 68;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -11929,7 +11792,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 71;
+	int AJAX_TECHNOLOGIES = 69;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
@@ -11939,7 +11802,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPES = 72;
+	int AUTHENTICATION_KEY_TYPES = 70;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -11949,7 +11812,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 73;
+	int PAGE_TOP_MENU_OPTIONS = 71;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -11959,7 +11822,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 74;
+	int COLLECTION_DISPLAY_OPTIONS = 72;
 
 
 	/**
@@ -12913,92 +12776,6 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPage_StyleClass();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.Filter <em>Filter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Filter</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.Filter
-	 * @generated
-	 */
-	EClass getFilter();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.Filter#getParameters <em>Parameters</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.Filter#getParameters()
-	 * @see #getFilter()
-	 * @generated
-	 */
-	EReference getFilter_Parameters();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.Filter#getSelection <em>Selection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Selection</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.Filter#getSelection()
-	 * @see #getFilter()
-	 * @generated
-	 */
-	EReference getFilter_Selection();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.FilterParameter <em>Filter Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Filter Parameter</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.FilterParameter
-	 * @generated
-	 */
-	EClass getFilterParameter();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.FilterParameter#getFormal <em>Formal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Formal</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.FilterParameter#getFormal()
-	 * @see #getFilterParameter()
-	 * @generated
-	 */
-	EReference getFilterParameter_Formal();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.FilterParameter#getDataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Type</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.FilterParameter#getDataType()
-	 * @see #getFilterParameter()
-	 * @generated
-	 */
-	EReference getFilterParameter_DataType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.FilterParameter#getDefaultValue <em>Default Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Default Value</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.FilterParameter#getDefaultValue()
-	 * @see #getFilterParameter()
-	 * @generated
-	 */
-	EAttribute getFilterParameter_DefaultValue();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.FilterParameter#getPlaceholder <em>Placeholder</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Placeholder</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.FilterParameter#getPlaceholder()
-	 * @see #getFilterParameter()
-	 * @generated
-	 */
-	EAttribute getFilterParameter_Placeholder();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.Query <em>Query</em>}'.
@@ -15967,74 +15744,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PAGE__STYLE_CLASS = eINSTANCE.getPage_StyleClass();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.FilterImpl <em>Filter</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.FilterImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFilter()
-		 * @generated
-		 */
-		EClass FILTER = eINSTANCE.getFilter();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FILTER__PARAMETERS = eINSTANCE.getFilter_Parameters();
-
-		/**
-		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FILTER__SELECTION = eINSTANCE.getFilter_Selection();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.FilterParameterImpl <em>Filter Parameter</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.FilterParameterImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFilterParameter()
-		 * @generated
-		 */
-		EClass FILTER_PARAMETER = eINSTANCE.getFilterParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Formal</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FILTER_PARAMETER__FORMAL = eINSTANCE.getFilterParameter_Formal();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FILTER_PARAMETER__DATA_TYPE = eINSTANCE.getFilterParameter_DataType();
-
-		/**
-		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FILTER_PARAMETER__DEFAULT_VALUE = eINSTANCE.getFilterParameter_DefaultValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FILTER_PARAMETER__PLACEHOLDER = eINSTANCE.getFilterParameter_Placeholder();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.QueryImpl <em>Query</em>}' class.

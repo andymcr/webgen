@@ -21,6 +21,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
+import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
@@ -651,7 +652,7 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.COLLECTION_UNIT__FILTERS,
-				 WebuiFactory.eINSTANCE.createFilter()));
+				 ServiceFactory.eINSTANCE.createFilter()));
 
 		newChildDescriptors.add
 			(createChildParameter

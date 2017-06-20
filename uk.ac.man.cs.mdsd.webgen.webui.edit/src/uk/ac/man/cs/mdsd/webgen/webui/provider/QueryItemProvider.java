@@ -25,8 +25,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.service.Filter;
 import uk.ac.man.cs.mdsd.webgen.webui.ActionMenuEntry;
-import uk.ac.man.cs.mdsd.webgen.webui.Filter;
 import uk.ac.man.cs.mdsd.webgen.webui.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.Query;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;

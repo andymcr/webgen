@@ -15,9 +15,20 @@ import uk.ac.man.cs.mdsd.orm.Association
 import uk.ac.man.cs.mdsd.orm.DataType
 import uk.ac.man.cs.mdsd.orm.EntityOrView
 import uk.ac.man.cs.mdsd.orm.Feature
+import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
 import uk.ac.man.cs.mdsd.orm.NamedElement
 import uk.ac.man.cs.mdsd.orm.OrmModel
 
+
+interface FormalParameterList {
+	contains FormalParameter[] parameters
+}
+
+class FormalParameter extends NamedElement {
+	refers DataType dataType
+	String defaultValue
+	String description
+}
 
 class ServiceModel {
 	refers OrmModel[1] persistence
@@ -28,29 +39,30 @@ class Service extends NamedElement {
 	refers ServiceModel[1] partOf opposite services
 	refers EntityOrView[1] serves
 	contains Selection[] selections opposite partOf
+	refers Selection findAll
+	refers Selection findOne
 	contains BusinessOperation[] operations opposite partOf
 }
 
 
-class Selection extends NamedElement {
+class Selection extends NamedElement, FormalParameterList {
 	container Service partOf opposite selections
 	boolean distinct
-	contains FormalParameter[] parameters
 	refers Feature[] fields
 	refers Association[] joins
-	contains Predicate filter
+	contains Predicate condition
+	contains Filter[] filters opposite selection
 	contains Order[] ordering
 	int limit = "0"
 	boolean selected
+	String methodName
 }
 
-class FormalParameter extends NamedElement {
-	boolean optional
-	String defaultValue
-	refers DataType dataType
-	String description
+class Filter extends NamedDisplayElement, FormalParameterList {
+	refers Selection selection opposite filters
+	contains Predicate condition
+	String methodName
 }
-
 abstract class Order {
 	@GenModel(propertyCategory="")
 	contains Variable[1] path
@@ -82,3 +94,4 @@ enum OperationResultTypes {
 	None
 	File = 1
 }
+

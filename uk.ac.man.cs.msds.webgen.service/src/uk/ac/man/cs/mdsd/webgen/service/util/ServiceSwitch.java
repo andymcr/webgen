@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 import uk.ac.man.cs.mdsd.webgen.base.FormalParameterList;
+import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
 
 import uk.ac.man.cs.mdsd.webgen.expression.Expression;
@@ -123,6 +124,22 @@ public class ServiceSwitch<T> extends Switch<T> {
 				BusinessOperation businessOperation = (BusinessOperation)theEObject;
 				T result = caseBusinessOperation(businessOperation);
 				if (result == null) result = caseNamedElement(businessOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ServicePackage.FILTER: {
+				Filter filter = (Filter)theEObject;
+				T result = caseFilter(filter);
+				if (result == null) result = caseNamedDisplayElement(filter);
+				if (result == null) result = caseFormalParameterList(filter);
+				if (result == null) result = caseNamedElement(filter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ServicePackage.FILTER_PARAMETER: {
+				FilterParameter filterParameter = (FilterParameter)theEObject;
+				T result = caseFilterParameter(filterParameter);
+				if (result == null) result = caseNamedElement(filterParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -251,6 +268,36 @@ public class ServiceSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Filter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Filter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFilter(Filter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Filter Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Filter Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFilterParameter(FilterParameter object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -307,6 +354,21 @@ public class ServiceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVariable(Variable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Display Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Display Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedDisplayElement(NamedDisplayElement object) {
 		return null;
 	}
 

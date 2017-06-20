@@ -67,8 +67,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
 			case WafPackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
 			case WafPackage.PAGE: return createPage();
-			case WafPackage.FILTER: return createFilter();
-			case WafPackage.FILTER_PARAMETER: return createFilterParameter();
 			case WafPackage.QUERY: return createQuery();
 			case WafPackage.QUERY_PARAMETER: return createQueryParameter();
 			case WafPackage.STATIC_UNIT: return createStaticUnit();
@@ -253,26 +251,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public Page createPage() {
 		PageImpl page = new PageImpl();
 		return page;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Filter createFilter() {
-		FilterImpl filter = new FilterImpl();
-		return filter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FilterParameter createFilterParameter() {
-		FilterParameterImpl filterParameter = new FilterParameterImpl();
-		return filterParameter;
 	}
 
 	/**

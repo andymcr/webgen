@@ -122,10 +122,6 @@ public class WebuiValidator extends EObjectValidator {
 				return validatePage((Page)value, diagnostics, context);
 			case WebuiPackage.PAGE_LINK:
 				return validatePageLink((PageLink)value, diagnostics, context);
-			case WebuiPackage.FILTER:
-				return validateFilter((Filter)value, diagnostics, context);
-			case WebuiPackage.FILTER_PARAMETER:
-				return validateFilterParameter((FilterParameter)value, diagnostics, context);
 			case WebuiPackage.UNIT_CONTAINER:
 				return validateUnitContainer((UnitContainer)value, diagnostics, context);
 			case WebuiPackage.CONTENT_UNIT:
@@ -711,44 +707,6 @@ public class WebuiValidator extends EObjectValidator {
 	 */
 	public boolean validatePageLink(PageLink pageLink, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(pageLink, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateFilter(Filter filter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(filter, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(filter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(filter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(filter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(filter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(filter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(filter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(filter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(filter, diagnostics, context);
-		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(filter, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateFilterParameter(FilterParameter filterParameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(filterParameter, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(filterParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(filterParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(filterParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(filterParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(filterParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(filterParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(filterParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(filterParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(filterParameter, diagnostics, context);
-		return result;
 	}
 
 	/**

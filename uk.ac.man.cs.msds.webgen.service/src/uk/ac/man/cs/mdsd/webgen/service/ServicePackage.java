@@ -136,13 +136,31 @@ public interface ServicePackage extends EPackage {
 	int SERVICE__SELECTIONS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Find All</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE__FIND_ALL = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Find One</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE__FIND_ONE = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__OPERATIONS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SERVICE__OPERATIONS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Service</em>' class.
@@ -151,7 +169,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int SERVICE_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Service</em>' class.
@@ -227,13 +245,22 @@ public interface ServicePackage extends EPackage {
 	int SELECTION__JOINS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Filter</b></em>' containment reference.
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__FILTER = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int SELECTION__CONDITION = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION__FILTERS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Ordering</b></em>' containment reference list.
@@ -242,7 +269,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__ORDERING = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int SELECTION__ORDERING = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Limit</b></em>' attribute.
@@ -251,7 +278,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__LIMIT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int SELECTION__LIMIT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -260,7 +287,16 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__SELECTED = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int SELECTION__SELECTED = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Method Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION__METHOD_NAME = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Selection</em>' class.
@@ -269,7 +305,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int SELECTION_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of operations of the '<em>Selection</em>' class.
@@ -502,6 +538,179 @@ public interface ServicePackage extends EPackage {
 	int BUSINESS_OPERATION_OPERATION_COUNT = BasePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.FilterImpl <em>Filter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.FilterImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getFilter()
+	 * @generated
+	 */
+	int FILTER = 8;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER__NAME = BasePackage.NAMED_DISPLAY_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER__DISPLAY_LABEL = BasePackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER__PARAMETERS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Selection</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER__SELECTION = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Parameters Old</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER__PARAMETERS_OLD = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER__CONDITION = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Method Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER__METHOD_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Filter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Filter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER_OPERATION_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.FilterParameterImpl <em>Filter Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.FilterParameterImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getFilterParameter()
+	 * @generated
+	 */
+	int FILTER_PARAMETER = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER_PARAMETER__NAME = BasePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER_PARAMETER__PART_OF = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Formal</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER_PARAMETER__FORMAL = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER_PARAMETER__DATA_TYPE = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER_PARAMETER__DEFAULT_VALUE = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER_PARAMETER__PLACEHOLDER = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Filter Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER_PARAMETER_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Filter Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER_PARAMETER_OPERATION_COUNT = BasePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.OperationResultTypes <em>Operation Result Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -509,7 +718,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getOperationResultTypes()
 	 * @generated
 	 */
-	int OPERATION_RESULT_TYPES = 8;
+	int OPERATION_RESULT_TYPES = 10;
 
 
 	/**
@@ -564,6 +773,28 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getService_Selections();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.service.Service#getFindAll <em>Find All</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Find All</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Service#getFindAll()
+	 * @see #getService()
+	 * @generated
+	 */
+	EReference getService_FindAll();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.service.Service#getFindOne <em>Find One</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Find One</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Service#getFindOne()
+	 * @see #getService()
+	 * @generated
+	 */
+	EReference getService_FindOne();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.service.Service#getOperations <em>Operations</em>}'.
@@ -631,15 +862,26 @@ public interface ServicePackage extends EPackage {
 	EReference getSelection_Joins();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getFilter <em>Filter</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Filter</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.Selection#getFilter()
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Selection#getCondition()
 	 * @see #getSelection()
 	 * @generated
 	 */
-	EReference getSelection_Filter();
+	EReference getSelection_Condition();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getFilters <em>Filters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Filters</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Selection#getFilters()
+	 * @see #getSelection()
+	 * @generated
+	 */
+	EReference getSelection_Filters();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getOrdering <em>Ordering</em>}'.
@@ -673,6 +915,17 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSelection_Selected();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getMethodName <em>Method Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Method Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Selection#getMethodName()
+	 * @see #getSelection()
+	 * @generated
+	 */
+	EAttribute getSelection_MethodName();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.Order <em>Order</em>}'.
@@ -791,6 +1044,125 @@ public interface ServicePackage extends EPackage {
 	EAttribute getBusinessOperation_ResultMimeType();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.Filter <em>Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Filter</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Filter
+	 * @generated
+	 */
+	EClass getFilter();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.service.Filter#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Filter#getCondition()
+	 * @see #getFilter()
+	 * @generated
+	 */
+	EReference getFilter_Condition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.service.Filter#getMethodName <em>Method Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Method Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Filter#getMethodName()
+	 * @see #getFilter()
+	 * @generated
+	 */
+	EAttribute getFilter_MethodName();
+
+	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.service.Filter#getSelection <em>Selection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Selection</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Filter#getSelection()
+	 * @see #getFilter()
+	 * @generated
+	 */
+	EReference getFilter_Selection();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.service.Filter#getParametersOld <em>Parameters Old</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters Old</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Filter#getParametersOld()
+	 * @see #getFilter()
+	 * @generated
+	 */
+	EReference getFilter_ParametersOld();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.FilterParameter <em>Filter Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Filter Parameter</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FilterParameter
+	 * @generated
+	 */
+	EClass getFilterParameter();
+
+	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.service.FilterParameter#getPartOf <em>Part Of</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Part Of</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FilterParameter#getPartOf()
+	 * @see #getFilterParameter()
+	 * @generated
+	 */
+	EReference getFilterParameter_PartOf();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.service.FilterParameter#getFormal <em>Formal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Formal</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FilterParameter#getFormal()
+	 * @see #getFilterParameter()
+	 * @generated
+	 */
+	EReference getFilterParameter_Formal();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.service.FilterParameter#getDataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Data Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FilterParameter#getDataType()
+	 * @see #getFilterParameter()
+	 * @generated
+	 */
+	EReference getFilterParameter_DataType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.service.FilterParameter#getDefaultValue <em>Default Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Default Value</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FilterParameter#getDefaultValue()
+	 * @see #getFilterParameter()
+	 * @generated
+	 */
+	EAttribute getFilterParameter_DefaultValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.service.FilterParameter#getPlaceholder <em>Placeholder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Placeholder</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FilterParameter#getPlaceholder()
+	 * @see #getFilterParameter()
+	 * @generated
+	 */
+	EAttribute getFilterParameter_Placeholder();
+
+	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.service.OperationResultTypes <em>Operation Result Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -868,6 +1240,22 @@ public interface ServicePackage extends EPackage {
 		EReference SERVICE__SELECTIONS = eINSTANCE.getService_Selections();
 
 		/**
+		 * The meta object literal for the '<em><b>Find All</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE__FIND_ALL = eINSTANCE.getService_FindAll();
+
+		/**
+		 * The meta object literal for the '<em><b>Find One</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE__FIND_ONE = eINSTANCE.getService_FindOne();
+
+		/**
 		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -918,12 +1306,20 @@ public interface ServicePackage extends EPackage {
 		EReference SELECTION__JOINS = eINSTANCE.getSelection_Joins();
 
 		/**
-		 * The meta object literal for the '<em><b>Filter</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SELECTION__FILTER = eINSTANCE.getSelection_Filter();
+		EReference SELECTION__CONDITION = eINSTANCE.getSelection_Condition();
+
+		/**
+		 * The meta object literal for the '<em><b>Filters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SELECTION__FILTERS = eINSTANCE.getSelection_Filters();
 
 		/**
 		 * The meta object literal for the '<em><b>Ordering</b></em>' containment reference list feature.
@@ -948,6 +1344,14 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SELECTION__SELECTED = eINSTANCE.getSelection_Selected();
+
+		/**
+		 * The meta object literal for the '<em><b>Method Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SELECTION__METHOD_NAME = eINSTANCE.getSelection_MethodName();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.OrderImpl <em>Order</em>}' class.
@@ -1046,6 +1450,98 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BUSINESS_OPERATION__RESULT_MIME_TYPE = eINSTANCE.getBusinessOperation_ResultMimeType();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.FilterImpl <em>Filter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.FilterImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getFilter()
+		 * @generated
+		 */
+		EClass FILTER = eINSTANCE.getFilter();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FILTER__CONDITION = eINSTANCE.getFilter_Condition();
+
+		/**
+		 * The meta object literal for the '<em><b>Method Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FILTER__METHOD_NAME = eINSTANCE.getFilter_MethodName();
+
+		/**
+		 * The meta object literal for the '<em><b>Selection</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FILTER__SELECTION = eINSTANCE.getFilter_Selection();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters Old</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FILTER__PARAMETERS_OLD = eINSTANCE.getFilter_ParametersOld();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.FilterParameterImpl <em>Filter Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.FilterParameterImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getFilterParameter()
+		 * @generated
+		 */
+		EClass FILTER_PARAMETER = eINSTANCE.getFilterParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Part Of</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FILTER_PARAMETER__PART_OF = eINSTANCE.getFilterParameter_PartOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Formal</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FILTER_PARAMETER__FORMAL = eINSTANCE.getFilterParameter_Formal();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FILTER_PARAMETER__DATA_TYPE = eINSTANCE.getFilterParameter_DataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FILTER_PARAMETER__DEFAULT_VALUE = eINSTANCE.getFilterParameter_DefaultValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FILTER_PARAMETER__PLACEHOLDER = eINSTANCE.getFilterParameter_Placeholder();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.OperationResultTypes <em>Operation Result Types</em>}' enum.

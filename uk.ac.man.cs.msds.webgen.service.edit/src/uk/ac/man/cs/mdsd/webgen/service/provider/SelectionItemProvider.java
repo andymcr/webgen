@@ -67,6 +67,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			addJoinsPropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
 			addSelectedPropertyDescriptor(object);
+			addMethodNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -206,6 +207,28 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Method Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMethodNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Selection_methodName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_methodName_feature", "_UI_Selection_type"),
+				 ServicePackage.Literals.SELECTION__METHOD_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_IMplementationPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -218,7 +241,8 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(BasePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
-			childrenFeatures.add(ServicePackage.Literals.SELECTION__FILTER);
+			childrenFeatures.add(ServicePackage.Literals.SELECTION__CONDITION);
+			childrenFeatures.add(ServicePackage.Literals.SELECTION__FILTERS);
 			childrenFeatures.add(ServicePackage.Literals.SELECTION__ORDERING);
 		}
 		return childrenFeatures;
@@ -278,10 +302,12 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			case ServicePackage.SELECTION__DISTINCT:
 			case ServicePackage.SELECTION__LIMIT:
 			case ServicePackage.SELECTION__SELECTED:
+			case ServicePackage.SELECTION__METHOD_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ServicePackage.SELECTION__PARAMETERS:
-			case ServicePackage.SELECTION__FILTER:
+			case ServicePackage.SELECTION__CONDITION:
+			case ServicePackage.SELECTION__FILTERS:
 			case ServicePackage.SELECTION__ORDERING:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -307,38 +333,43 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ServicePackage.Literals.SELECTION__FILTER,
+				(ServicePackage.Literals.SELECTION__CONDITION,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ServicePackage.Literals.SELECTION__FILTER,
+				(ServicePackage.Literals.SELECTION__CONDITION,
 				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ServicePackage.Literals.SELECTION__FILTER,
+				(ServicePackage.Literals.SELECTION__CONDITION,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ServicePackage.Literals.SELECTION__FILTER,
+				(ServicePackage.Literals.SELECTION__CONDITION,
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ServicePackage.Literals.SELECTION__FILTER,
+				(ServicePackage.Literals.SELECTION__CONDITION,
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ServicePackage.Literals.SELECTION__FILTER,
+				(ServicePackage.Literals.SELECTION__CONDITION,
 				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ServicePackage.Literals.SELECTION__FILTER,
+				(ServicePackage.Literals.SELECTION__CONDITION,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.SELECTION__FILTERS,
+				 ServiceFactory.eINSTANCE.createFilter()));
 
 		newChildDescriptors.add
 			(createChildParameter

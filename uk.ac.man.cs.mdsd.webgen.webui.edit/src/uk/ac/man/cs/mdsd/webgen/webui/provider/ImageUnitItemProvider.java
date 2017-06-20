@@ -17,6 +17,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.ImageUnit;
@@ -628,7 +629,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.COLLECTION_UNIT__FILTERS,
-				 WebuiFactory.eINSTANCE.createFilter()));
+				 ServiceFactory.eINSTANCE.createFilter()));
 
 		newChildDescriptors.add
 			(createChildParameter

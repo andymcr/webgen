@@ -6,6 +6,8 @@ import org.eclipse.emf.common.util.EList;
 
 import uk.ac.man.cs.mdsd.orm.NamedElement;
 
+import uk.ac.man.cs.mdsd.service.Filter;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Query</b></em>'.

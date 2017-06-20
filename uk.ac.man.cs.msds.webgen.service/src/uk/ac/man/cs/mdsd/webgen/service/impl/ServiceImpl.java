@@ -37,6 +37,8 @@ import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl#getServes <em>Serves</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl#getFindAll <em>Find All</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl#getFindOne <em>Find One</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl#getOperations <em>Operations</em>}</li>
  * </ul>
  *
@@ -62,6 +64,26 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * @ordered
 	 */
 	protected EList<Selection> selections;
+
+	/**
+	 * The cached value of the '{@link #getFindAll() <em>Find All</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFindAll()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection findAll;
+
+	/**
+	 * The cached value of the '{@link #getFindOne() <em>Find One</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFindOne()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection findOne;
 
 	/**
 	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
@@ -147,6 +169,82 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Selection getFindAll() {
+		if (findAll != null && findAll.eIsProxy()) {
+			InternalEObject oldFindAll = (InternalEObject)findAll;
+			findAll = (Selection)eResolveProxy(oldFindAll);
+			if (findAll != oldFindAll) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServicePackage.SERVICE__FIND_ALL, oldFindAll, findAll));
+			}
+		}
+		return findAll;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetFindAll() {
+		return findAll;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFindAll(Selection newFindAll) {
+		Selection oldFindAll = findAll;
+		findAll = newFindAll;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE__FIND_ALL, oldFindAll, findAll));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection getFindOne() {
+		if (findOne != null && findOne.eIsProxy()) {
+			InternalEObject oldFindOne = (InternalEObject)findOne;
+			findOne = (Selection)eResolveProxy(oldFindOne);
+			if (findOne != oldFindOne) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServicePackage.SERVICE__FIND_ONE, oldFindOne, findOne));
+			}
+		}
+		return findOne;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetFindOne() {
+		return findOne;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFindOne(Selection newFindOne) {
+		Selection oldFindOne = findOne;
+		findOne = newFindOne;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SERVICE__FIND_ONE, oldFindOne, findOne));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<BusinessOperation> getOperations() {
 		if (operations == null) {
 			operations = new EObjectContainmentEList<BusinessOperation>(BusinessOperation.class, this, ServicePackage.SERVICE__OPERATIONS);
@@ -198,6 +296,12 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return basicGetServes();
 			case ServicePackage.SERVICE__SELECTIONS:
 				return getSelections();
+			case ServicePackage.SERVICE__FIND_ALL:
+				if (resolve) return getFindAll();
+				return basicGetFindAll();
+			case ServicePackage.SERVICE__FIND_ONE:
+				if (resolve) return getFindOne();
+				return basicGetFindOne();
 			case ServicePackage.SERVICE__OPERATIONS:
 				return getOperations();
 		}
@@ -219,6 +323,12 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			case ServicePackage.SERVICE__SELECTIONS:
 				getSelections().clear();
 				getSelections().addAll((Collection<? extends Selection>)newValue);
+				return;
+			case ServicePackage.SERVICE__FIND_ALL:
+				setFindAll((Selection)newValue);
+				return;
+			case ServicePackage.SERVICE__FIND_ONE:
+				setFindOne((Selection)newValue);
 				return;
 			case ServicePackage.SERVICE__OPERATIONS:
 				getOperations().clear();
@@ -242,6 +352,12 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			case ServicePackage.SERVICE__SELECTIONS:
 				getSelections().clear();
 				return;
+			case ServicePackage.SERVICE__FIND_ALL:
+				setFindAll((Selection)null);
+				return;
+			case ServicePackage.SERVICE__FIND_ONE:
+				setFindOne((Selection)null);
+				return;
 			case ServicePackage.SERVICE__OPERATIONS:
 				getOperations().clear();
 				return;
@@ -261,6 +377,10 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return serves != null;
 			case ServicePackage.SERVICE__SELECTIONS:
 				return selections != null && !selections.isEmpty();
+			case ServicePackage.SERVICE__FIND_ALL:
+				return findAll != null;
+			case ServicePackage.SERVICE__FIND_ONE:
+				return findOne != null;
 			case ServicePackage.SERVICE__OPERATIONS:
 				return operations != null && !operations.isEmpty();
 		}

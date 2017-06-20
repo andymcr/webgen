@@ -19,7 +19,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
-import uk.ac.man.cs.mdsd.waf.Filter;
+import uk.ac.man.cs.mdsd.service.Filter;
+
 import uk.ac.man.cs.mdsd.waf.Query;
 import uk.ac.man.cs.mdsd.waf.QueryParameter;
 import uk.ac.man.cs.mdsd.waf.WafPackage;

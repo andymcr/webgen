@@ -90,6 +90,35 @@ abstract rule NamedElement {
 	)
 }
 
+abstract rule FormalParameterList {
+	from website : Website!FormalParameterList
+	to service : Service!FormalParameterList (
+		parameters <- website.parameters
+	)
+}
+
+-- @extends NamedElement
+rule FormalParameter {
+	from website : Website!FormalParameter
+	to service : Service!FormalParameter (
+		dataType <-
+			if website.dataType.oclIsUndefined() then
+				website.dataType
+			else
+				thisModule.findOrmDataType(website.dataType.name)
+			endif,
+		defaultValue <-
+			if website.defaultValue.oclIsUndefined() then
+				website.defaultValue
+			else if website.defaultValue.trim() <> '' then
+				website.defaultValue.trim()
+			else
+				OclUndefined
+			endif endif,
+		description <- website.description
+	)
+}
+
 
 -- @extends NamedElement
 rule Service {
@@ -102,39 +131,45 @@ rule Service {
 				thisModule.findOrmEntityOrView(website.serves.name)
 			endif,
 		selections <- website.selections,
+		findAll <-
+			if not website.findAll.oclIsUndefined() then
+				website.findAll
+			else if website.selections->select(s | s.name.toLower() = 'all')->notEmpty() then
+				website.selections->any(s | s.name.toLower() = 'all')
+			else
+				OclUndefined
+			endif endif,
+		findOne <-
+			if not website.findOne.oclIsUndefined() then
+				website.findAll
+			else if website.selections->select(s | s.name.toLower() = 'one')->notEmpty() then
+				website.selections->any(s | s.name.toLower() = 'one')
+			else
+				OclUndefined
+			endif endif,
 		operations <- website.operations
 	)
 } 
 
--- @extends NamedElement
+-- @extends NamedElement, FormalParameterList
 rule Selection {
 	from website : Website!Selection
 	to service : Service!Selection (
 		"distinct" <- website."distinct",
 		fields <- website.fields
 			->collect(f | f.findOrmFeature()),
-		parameters <- website.parameters,
 		joins <- website.findOrmJoins(website.joins),
-		filter <- website.filter,
+		condition <- website.condition,
+		filters <- website.filters,
 		ordering <- website.ordering,
 		limit <- website.limit,
-		selected <- website.selected
-	)
-}
-
--- @extends NamedElement
-rule FormalParameter {
-	from website : Website!FormalParameter
-	to service : Service!FormalParameter (
-		optional <- website.optional,
-		defaultValue <- website.defaultValue,
-		dataType <-
-			if website.dataType.oclIsUndefined() then
-				website.dataType
+		selected <- website.selected,
+		methodName <-
+			if not website.methodName.oclIsUndefined() and website.methodName.trim() <> '' then
+			    website.methodName
 			else
-				thisModule.findOrmDataType(website.dataType.name)
-			endif,
-		description <- website.description
+				'find'.concat(website.name.uppercaseFirst())
+			endif
 	)
 }
 
@@ -145,6 +180,27 @@ rule BusinessOperation {
 		uses <- website.uses,
 		resultType <- website.resultType,
 		resultMimeType <- website.resultMimeType
+	)
+}
+
+
+-- @extends NamedElement, FormalParameterList
+rule Filter {
+	from website : Website!Filter (website.name = 'nameLike')
+	to service : Service!Filter (
+		displayLabel <-
+			if not website.displayLabel.oclIsUndefined() and website.displayLabel <> '' then
+				website.displayLabel
+			else
+				'Filter'
+			endif,
+		condition <- website.condition,
+		methodName <-
+			if not website.methodName.oclIsUndefined() and website.methodName.trim() <> '' then
+			    website.methodName
+			else
+				'find'.concat(website.name.uppercaseFirst())
+			endif
 	)
 }
 

@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 import uk.ac.man.cs.mdsd.webgen.base.FormalParameterList;
+import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
 
 import uk.ac.man.cs.mdsd.webgen.expression.Expression;
@@ -104,6 +105,14 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 				return createBusinessOperationAdapter();
 			}
 			@Override
+			public Adapter caseFilter(Filter object) {
+				return createFilterAdapter();
+			}
+			@Override
+			public Adapter caseFilterParameter(FilterParameter object) {
+				return createFilterParameterAdapter();
+			}
+			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
 			}
@@ -118,6 +127,10 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseVariable(Variable object) {
 				return createVariableAdapter();
+			}
+			@Override
+			public Adapter caseNamedDisplayElement(NamedDisplayElement object) {
+				return createNamedDisplayElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -252,6 +265,34 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.Filter <em>Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Filter
+	 * @generated
+	 */
+	public Adapter createFilterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.FilterParameter <em>Filter Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.FilterParameter
+	 * @generated
+	 */
+	public Adapter createFilterParameterAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -304,6 +345,20 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement <em>Named Display Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement
+	 * @generated
+	 */
+	public Adapter createNamedDisplayElementAdapter() {
 		return null;
 	}
 

@@ -190,21 +190,6 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.FILTER: {
-				Filter filter = (Filter)theEObject;
-				T result = caseFilter(filter);
-				if (result == null) result = caseNamedDisplayElement(filter);
-				if (result == null) result = caseNamedElement(filter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.FILTER_PARAMETER: {
-				FilterParameter filterParameter = (FilterParameter)theEObject;
-				T result = caseFilterParameter(filterParameter);
-				if (result == null) result = caseNamedElement(filterParameter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WafPackage.QUERY: {
 				Query query = (Query)theEObject;
 				T result = caseQuery(query);
@@ -945,36 +930,6 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePage(Page object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Filter</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Filter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFilter(Filter object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Filter Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Filter Parameter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFilterParameter(FilterParameter object) {
 		return null;
 	}
 

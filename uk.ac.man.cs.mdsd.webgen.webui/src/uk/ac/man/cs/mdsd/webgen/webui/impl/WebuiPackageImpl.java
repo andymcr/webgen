@@ -47,8 +47,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.FeaturePath;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePathAttribute;
 import uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction;
-import uk.ac.man.cs.mdsd.webgen.webui.Filter;
-import uk.ac.man.cs.mdsd.webgen.webui.FilterParameter;
 import uk.ac.man.cs.mdsd.webgen.webui.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.GalleryUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu;
@@ -188,20 +186,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	private EClass pageLinkEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass filterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass filterParameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1105,96 +1089,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 */
 	public EReference getPageLink_TargetPage() {
 		return (EReference)pageLinkEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFilter() {
-		return filterEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilter_FilterFor() {
-		return (EReference)filterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilter_Parameters() {
-		return (EReference)filterEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilter_Selection() {
-		return (EReference)filterEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFilterParameter() {
-		return filterParameterEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilterParameter_PartOf() {
-		return (EReference)filterParameterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilterParameter_Formal() {
-		return (EReference)filterParameterEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilterParameter_DataType() {
-		return (EReference)filterParameterEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFilterParameter_DefaultValue() {
-		return (EAttribute)filterParameterEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFilterParameter_Placeholder() {
-		return (EAttribute)filterParameterEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3341,18 +3235,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		pageLinkEClass = createEClass(PAGE_LINK);
 		createEReference(pageLinkEClass, PAGE_LINK__TARGET_PAGE);
 
-		filterEClass = createEClass(FILTER);
-		createEReference(filterEClass, FILTER__FILTER_FOR);
-		createEReference(filterEClass, FILTER__PARAMETERS);
-		createEReference(filterEClass, FILTER__SELECTION);
-
-		filterParameterEClass = createEClass(FILTER_PARAMETER);
-		createEReference(filterParameterEClass, FILTER_PARAMETER__PART_OF);
-		createEReference(filterParameterEClass, FILTER_PARAMETER__FORMAL);
-		createEReference(filterParameterEClass, FILTER_PARAMETER__DATA_TYPE);
-		createEAttribute(filterParameterEClass, FILTER_PARAMETER__DEFAULT_VALUE);
-		createEAttribute(filterParameterEClass, FILTER_PARAMETER__PLACEHOLDER);
-
 		unitContainerEClass = createEClass(UNIT_CONTAINER);
 		createEReference(unitContainerEClass, UNIT_CONTAINER__UNITS);
 
@@ -3678,8 +3560,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		menuFeatureEClass.getESuperTypes().add(this.getMenuEntry());
 		pageEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
 		pageEClass.getESuperTypes().add(this.getUnitContainer());
-		filterEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
-		filterParameterEClass.getESuperTypes().add(theBasePackage.getNamedElement());
 		contentUnitEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
 		staticUnitEClass.getESuperTypes().add(this.getContentUnit());
 		createSitemapUnitEClass.getESuperTypes().add(this.getContentUnit());
@@ -3782,11 +3662,11 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEClass(menuFeatureEClass, MenuFeature.class, "MenuFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQuery_Filter(), this.getFilter(), null, "filter", null, 1, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQuery_Filter(), theServicePackage.getFilter(), null, "filter", null, 1, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getQuery_Parameters(), this.getQueryParameter(), null, "parameters", null, 0, -1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(queryParameterEClass, QueryParameter.class, "QueryParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQueryParameter_Formal(), this.getFilterParameter(), null, "formal", null, 1, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQueryParameter_Formal(), theServicePackage.getFilterParameter(), null, "formal", null, 1, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQueryParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3803,18 +3683,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 
 		initEClass(pageLinkEClass, PageLink.class, "PageLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPageLink_TargetPage(), this.getPage(), this.getPage_ChildPages(), "targetPage", null, 1, 1, PageLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(filterEClass, Filter.class, "Filter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFilter_FilterFor(), this.getCollectionUnit(), this.getCollectionUnit_Filters(), "filterFor", null, 1, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFilter_Parameters(), this.getFilterParameter(), this.getFilterParameter_PartOf(), "parameters", null, 0, -1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFilter_Selection(), theServicePackage.getSelection(), null, "selection", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(filterParameterEClass, FilterParameter.class, "FilterParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFilterParameter_PartOf(), this.getFilter(), this.getFilter_Parameters(), "partOf", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFilterParameter_Formal(), theBasePackage.getFormalParameter(), null, "formal", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFilterParameter_DataType(), theBasePackage.getDataType(), null, "dataType", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFilterParameter_DefaultValue(), ecorePackage.getEString(), "defaultValue", "", 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFilterParameter_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unitContainerEClass, UnitContainer.class, "UnitContainer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitContainer_Units(), this.getContentUnit(), this.getContentUnit_DisplayedOn(), "units", null, 0, -1, UnitContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3929,9 +3797,9 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEReference(getCollectionUnit_ContentType(), thePersistencePackage.getEntityOrView(), null, "contentType", null, 1, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_ContainingFeature(), thePersistencePackage.getFeature(), null, "containingFeature", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_Selection(), theServicePackage.getSelection(), null, "selection", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCollectionUnit_Filters(), this.getFilter(), this.getFilter_FilterFor(), "filters", null, 0, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCollectionUnit_Filters(), theServicePackage.getFilter(), null, "filters", null, 0, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_EmptyMessage(), ecorePackage.getEString(), "emptyMessage", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCollectionUnit_Pagination(), this.getFilter(), null, "pagination", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCollectionUnit_Pagination(), theServicePackage.getFilter(), null, "pagination", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_DefaultPaginationSize(), ecorePackage.getEInt(), "defaultPaginationSize", "10", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCollectionUnit_NextNpages(), ecorePackage.getEInt(), "nextNpages", "2", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_PreviousNpages(), ecorePackage.getEInt(), "previousNpages", "2", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

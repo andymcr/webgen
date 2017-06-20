@@ -15,6 +15,8 @@
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selections" upperBound="-1"
         eType="#//Selection" containment="true" eOpposite="#//Selection/usedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="findAll" eType="#//Selection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="findOne" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
         eType="#//BusinessOperation" containment="true"/>
   </eClassifiers>
@@ -26,14 +28,17 @@
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="joins" upperBound="-1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Association"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="filter" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" ordered="false"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
+        eType="#//Filter" containment="true" eOpposite="#//Filter/selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ordering" upperBound="-1"
         eType="#//Order" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="limit" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Order" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="path" lowerBound="1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable"
@@ -65,5 +70,24 @@
   <eClassifiers xsi:type="ecore:EEnum" name="OperationResultTypes">
     <eLiterals name="None" literal="None"/>
     <eLiterals name="File" value="1" literal="File"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Filter" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedDisplayElement ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//FormalParameterList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"
+        eOpposite="#//Selection/filters"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parametersOld" upperBound="-1"
+        eType="#//FilterParameter" containment="true" eOpposite="#//FilterParameter/partOf"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" ordered="false"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FilterParameter" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" eType="#//Filter"
+        eOpposite="#//Filter/parametersOld"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formal" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//FormalParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholder" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

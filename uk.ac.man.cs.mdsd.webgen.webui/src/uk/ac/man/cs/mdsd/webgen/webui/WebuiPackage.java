@@ -1103,161 +1103,6 @@ public interface WebuiPackage extends EPackage {
 	int PAGE_LINK_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FilterImpl <em>Filter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FilterImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFilter()
-	 * @generated
-	 */
-	int FILTER = 13;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER__NAME = BasePackage.NAMED_DISPLAY_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER__DISPLAY_LABEL = BasePackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Filter For</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER__FILTER_FOR = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER__PARAMETERS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Selection</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER__SELECTION = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Filter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Filter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_OPERATION_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FilterParameterImpl <em>Filter Parameter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FilterParameterImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFilterParameter()
-	 * @generated
-	 */
-	int FILTER_PARAMETER = 14;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__NAME = BasePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__PART_OF = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Formal</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__FORMAL = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Data Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__DATA_TYPE = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__DEFAULT_VALUE = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__PLACEHOLDER = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of structural features of the '<em>Filter Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of operations of the '<em>Filter Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER_OPERATION_COUNT = BasePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitContainer <em>Unit Container</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1265,7 +1110,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitContainer()
 	 * @generated
 	 */
-	int UNIT_CONTAINER = 15;
+	int UNIT_CONTAINER = 13;
 
 	/**
 	 * The feature id for the '<em><b>Units</b></em>' containment reference list.
@@ -1302,7 +1147,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getContentUnit()
 	 * @generated
 	 */
-	int CONTENT_UNIT = 16;
+	int CONTENT_UNIT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1429,7 +1274,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getStaticUnit()
 	 * @generated
 	 */
-	int STATIC_UNIT = 17;
+	int STATIC_UNIT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1583,7 +1428,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCreateSitemapUnit()
 	 * @generated
 	 */
-	int CREATE_SITEMAP_UNIT = 18;
+	int CREATE_SITEMAP_UNIT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1746,7 +1591,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDynamicUnit()
 	 * @generated
 	 */
-	int DYNAMIC_UNIT = 19;
+	int DYNAMIC_UNIT = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1954,7 +1799,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitField()
 	 * @generated
 	 */
-	int UNIT_FIELD = 20;
+	int UNIT_FIELD = 18;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -2045,7 +1890,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitFeature()
 	 * @generated
 	 */
-	int UNIT_FEATURE = 21;
+	int UNIT_FEATURE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -2244,7 +2089,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitElement()
 	 * @generated
 	 */
-	int UNIT_ELEMENT = 22;
+	int UNIT_ELEMENT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -2497,7 +2342,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitAssociation()
 	 * @generated
 	 */
-	int UNIT_ASSOCIATION = 23;
+	int UNIT_ASSOCIATION = 21;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -2786,7 +2631,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getAssociationReference()
 	 * @generated
 	 */
-	int ASSOCIATION_REFERENCE = 24;
+	int ASSOCIATION_REFERENCE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2850,7 +2695,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getInterfaceField()
 	 * @generated
 	 */
-	int INTERFACE_FIELD = 25;
+	int INTERFACE_FIELD = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3013,7 +2858,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDataTypeField()
 	 * @generated
 	 */
-	int DATA_TYPE_FIELD = 26;
+	int DATA_TYPE_FIELD = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3212,7 +3057,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDateField()
 	 * @generated
 	 */
-	int DATE_FIELD = 27;
+	int DATE_FIELD = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3393,7 +3238,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCaptchaField()
 	 * @generated
 	 */
-	int CAPTCHA_FIELD = 28;
+	int CAPTCHA_FIELD = 26;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3556,7 +3401,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitSupportAction()
 	 * @generated
 	 */
-	int UNIT_SUPPORT_ACTION = 29;
+	int UNIT_SUPPORT_ACTION = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3620,7 +3465,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSelectableUnit()
 	 * @generated
 	 */
-	int SELECTABLE_UNIT = 30;
+	int SELECTABLE_UNIT = 28;
 
 	/**
 	 * The feature id for the '<em><b>Selection Type</b></em>' reference.
@@ -3657,7 +3502,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSingletonUnit()
 	 * @generated
 	 */
-	int SINGLETON_UNIT = 31;
+	int SINGLETON_UNIT = 29;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference.
@@ -3694,7 +3539,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCollectionUnit()
 	 * @generated
 	 */
-	int COLLECTION_UNIT = 32;
+	int COLLECTION_UNIT = 30;
 
 	/**
 	 * The feature id for the '<em><b>Selection Type</b></em>' reference.
@@ -3866,7 +3711,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getEditUnit()
 	 * @generated
 	 */
-	int EDIT_UNIT = 33;
+	int EDIT_UNIT = 31;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4164,7 +4009,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCreateUnit()
 	 * @generated
 	 */
-	int CREATE_UNIT = 34;
+	int CREATE_UNIT = 32;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4471,7 +4316,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCreateUpdateUnit()
 	 * @generated
 	 */
-	int CREATE_UPDATE_UNIT = 35;
+	int CREATE_UPDATE_UNIT = 33;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4805,7 +4650,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUpdateUnit()
 	 * @generated
 	 */
-	int UPDATE_UNIT = 36;
+	int UPDATE_UNIT = 34;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5121,7 +4966,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getMapUnit()
 	 * @generated
 	 */
-	int MAP_UNIT = 37;
+	int MAP_UNIT = 35;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5473,7 +5318,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDataUnit()
 	 * @generated
 	 */
-	int DATA_UNIT = 38;
+	int DATA_UNIT = 36;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5699,7 +5544,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDetailsUnit()
 	 * @generated
 	 */
-	int DETAILS_UNIT = 39;
+	int DETAILS_UNIT = 37;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5979,7 +5824,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getIndexUnit()
 	 * @generated
 	 */
-	int INDEX_UNIT = 40;
+	int INDEX_UNIT = 38;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6403,7 +6248,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getControlUnit()
 	 * @generated
 	 */
-	int CONTROL_UNIT = 41;
+	int CONTROL_UNIT = 39;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6647,7 +6492,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSearchUnit()
 	 * @generated
 	 */
-	int SEARCH_UNIT = 42;
+	int SEARCH_UNIT = 40;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6909,7 +6754,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getImageUnit()
 	 * @generated
 	 */
-	int IMAGE_UNIT = 43;
+	int IMAGE_UNIT = 41;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7324,7 +7169,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeaturePath()
 	 * @generated
 	 */
-	int FEATURE_PATH = 44;
+	int FEATURE_PATH = 42;
 
 	/**
 	 * The number of structural features of the '<em>Feature Path</em>' class.
@@ -7352,7 +7197,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeaturePathAttribute()
 	 * @generated
 	 */
-	int FEATURE_PATH_ATTRIBUTE = 45;
+	int FEATURE_PATH_ATTRIBUTE = 43;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7398,7 +7243,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeaturePathAssociation()
 	 * @generated
 	 */
-	int FEATURE_PATH_ASSOCIATION = 46;
+	int FEATURE_PATH_ASSOCIATION = 44;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7489,7 +7334,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getChildPath()
 	 * @generated
 	 */
-	int CHILD_PATH = 47;
+	int CHILD_PATH = 45;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -7526,7 +7371,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getChildPathAttribute()
 	 * @generated
 	 */
-	int CHILD_PATH_ATTRIBUTE = 48;
+	int CHILD_PATH_ATTRIBUTE = 46;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -7581,7 +7426,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getChildPathAssociation()
 	 * @generated
 	 */
-	int CHILD_PATH_ASSOCIATION = 49;
+	int CHILD_PATH_ASSOCIATION = 47;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -7681,7 +7526,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getImageIndexUnit()
 	 * @generated
 	 */
-	int IMAGE_INDEX_UNIT = 50;
+	int IMAGE_INDEX_UNIT = 48;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8123,7 +7968,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSliderUnit()
 	 * @generated
 	 */
-	int SLIDER_UNIT = 51;
+	int SLIDER_UNIT = 49;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8556,7 +8401,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getGalleryUnit()
 	 * @generated
 	 */
-	int GALLERY_UNIT = 52;
+	int GALLERY_UNIT = 50;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8998,7 +8843,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 53;
+	int AUTHENTICATION_UNIT = 51;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
@@ -9026,7 +8871,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 54;
+	int REGISTRATION_UNIT = 52;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9279,7 +9124,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 55;
+	int LOGIN_UNIT = 53;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9541,7 +9386,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 56;
+	int FORGOTTEN_PASSWORD_UNIT = 54;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9794,7 +9639,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 57;
+	int INLINE_ACTION_CONTAINER = 55;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -9831,7 +9676,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 58;
+	int INLINE_ACTION = 56;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9958,7 +9803,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 59;
+	int SELECT_ACTION = 57;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10094,7 +9939,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 60;
+	int DELETE_ACTION = 58;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10248,7 +10093,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 61;
+	int FEATURE_SUPPORT_ACTION = 59;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10411,7 +10256,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getWebuiFeatureReference()
 	 * @generated
 	 */
-	int WEBUI_FEATURE_REFERENCE = 62;
+	int WEBUI_FEATURE_REFERENCE = 60;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10457,7 +10302,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getInputTechnologies()
 	 * @generated
 	 */
-	int INPUT_TECHNOLOGIES = 63;
+	int INPUT_TECHNOLOGIES = 61;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -10467,7 +10312,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 64;
+	int AJAX_TECHNOLOGIES = 62;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -10477,7 +10322,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 65;
+	int PAGE_TOP_MENU_OPTIONS = 63;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -10487,7 +10332,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 66;
+	int COLLECTION_DISPLAY_OPTIONS = 64;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.IndexDisplayOption <em>Index Display Option</em>}' enum.
@@ -10497,7 +10342,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getIndexDisplayOption()
 	 * @generated
 	 */
-	int INDEX_DISPLAY_OPTION = 67;
+	int INDEX_DISPLAY_OPTION = 65;
 
 
 	/**
@@ -11047,114 +10892,6 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPageLink_TargetPage();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.Filter <em>Filter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Filter</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.Filter
-	 * @generated
-	 */
-	EClass getFilter();
-
-	/**
-	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.webui.Filter#getFilterFor <em>Filter For</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Filter For</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.Filter#getFilterFor()
-	 * @see #getFilter()
-	 * @generated
-	 */
-	EReference getFilter_FilterFor();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.Filter#getParameters <em>Parameters</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.Filter#getParameters()
-	 * @see #getFilter()
-	 * @generated
-	 */
-	EReference getFilter_Parameters();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.Filter#getSelection <em>Selection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Selection</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.Filter#getSelection()
-	 * @see #getFilter()
-	 * @generated
-	 */
-	EReference getFilter_Selection();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.FilterParameter <em>Filter Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Filter Parameter</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.FilterParameter
-	 * @generated
-	 */
-	EClass getFilterParameter();
-
-	/**
-	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.webui.FilterParameter#getPartOf <em>Part Of</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Part Of</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.FilterParameter#getPartOf()
-	 * @see #getFilterParameter()
-	 * @generated
-	 */
-	EReference getFilterParameter_PartOf();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.FilterParameter#getFormal <em>Formal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Formal</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.FilterParameter#getFormal()
-	 * @see #getFilterParameter()
-	 * @generated
-	 */
-	EReference getFilterParameter_Formal();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.FilterParameter#getDataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Type</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.FilterParameter#getDataType()
-	 * @see #getFilterParameter()
-	 * @generated
-	 */
-	EReference getFilterParameter_DataType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.FilterParameter#getDefaultValue <em>Default Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Default Value</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.FilterParameter#getDefaultValue()
-	 * @see #getFilterParameter()
-	 * @generated
-	 */
-	EAttribute getFilterParameter_DefaultValue();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.FilterParameter#getPlaceholder <em>Placeholder</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Placeholder</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.FilterParameter#getPlaceholder()
-	 * @see #getFilterParameter()
-	 * @generated
-	 */
-	EAttribute getFilterParameter_Placeholder();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitContainer <em>Unit Container</em>}'.
@@ -14067,90 +13804,6 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PAGE_LINK__TARGET_PAGE = eINSTANCE.getPageLink_TargetPage();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FilterImpl <em>Filter</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FilterImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFilter()
-		 * @generated
-		 */
-		EClass FILTER = eINSTANCE.getFilter();
-
-		/**
-		 * The meta object literal for the '<em><b>Filter For</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FILTER__FILTER_FOR = eINSTANCE.getFilter_FilterFor();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FILTER__PARAMETERS = eINSTANCE.getFilter_Parameters();
-
-		/**
-		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FILTER__SELECTION = eINSTANCE.getFilter_Selection();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FilterParameterImpl <em>Filter Parameter</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FilterParameterImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFilterParameter()
-		 * @generated
-		 */
-		EClass FILTER_PARAMETER = eINSTANCE.getFilterParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Part Of</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FILTER_PARAMETER__PART_OF = eINSTANCE.getFilterParameter_PartOf();
-
-		/**
-		 * The meta object literal for the '<em><b>Formal</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FILTER_PARAMETER__FORMAL = eINSTANCE.getFilterParameter_Formal();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FILTER_PARAMETER__DATA_TYPE = eINSTANCE.getFilterParameter_DataType();
-
-		/**
-		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FILTER_PARAMETER__DEFAULT_VALUE = eINSTANCE.getFilterParameter_DefaultValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FILTER_PARAMETER__PLACEHOLDER = eINSTANCE.getFilterParameter_Placeholder();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitContainer <em>Unit Container</em>}' class.

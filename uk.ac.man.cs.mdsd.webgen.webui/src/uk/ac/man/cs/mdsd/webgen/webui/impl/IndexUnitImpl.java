@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 
+import uk.ac.man.cs.mdsd.webgen.service.Filter;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
@@ -41,10 +42,12 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getMaximumPaginationSize <em>Maximum Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getNextNpages <em>Next Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
@@ -105,6 +108,16 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	protected Selection selection;
 
 	/**
+	 * The cached value of the '{@link #getSupportedFilters() <em>Supported Filters</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSupportedFilters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Filter> supportedFilters;
+
+	/**
 	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,7 +125,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<uk.ac.man.cs.mdsd.webgen.service.Filter> filters;
+	protected EList<Filter> filters;
 
 	/**
 	 * The default value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
@@ -142,7 +155,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected uk.ac.man.cs.mdsd.webgen.service.Filter pagination;
+	protected Filter pagination;
 
 	/**
 	 * The default value of the '{@link #getDefaultPaginationSize() <em>Default Pagination Size</em>}' attribute.
@@ -163,6 +176,26 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected int defaultPaginationSize = DEFAULT_PAGINATION_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaximumPaginationSize() <em>Maximum Pagination Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumPaginationSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAXIMUM_PAGINATION_SIZE_EDEFAULT = 100;
+
+	/**
+	 * The cached value of the '{@link #getMaximumPaginationSize() <em>Maximum Pagination Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumPaginationSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maximumPaginationSize = MAXIMUM_PAGINATION_SIZE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNextNpages() <em>Next Npages</em>}' attribute.
@@ -584,9 +617,21 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<uk.ac.man.cs.mdsd.webgen.service.Filter> getFilters() {
+	public EList<Filter> getSupportedFilters() {
+		if (supportedFilters == null) {
+			supportedFilters = new EObjectResolvingEList<Filter>(Filter.class, this, WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS);
+		}
+		return supportedFilters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Filter> getFilters() {
 		if (filters == null) {
-			filters = new EObjectContainmentEList<uk.ac.man.cs.mdsd.webgen.service.Filter>(uk.ac.man.cs.mdsd.webgen.service.Filter.class, this, WebuiPackage.INDEX_UNIT__FILTERS);
+			filters = new EObjectContainmentEList<Filter>(Filter.class, this, WebuiPackage.INDEX_UNIT__FILTERS);
 		}
 		return filters;
 	}
@@ -617,10 +662,10 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public uk.ac.man.cs.mdsd.webgen.service.Filter getPagination() {
+	public Filter getPagination() {
 		if (pagination != null && pagination.eIsProxy()) {
 			InternalEObject oldPagination = (InternalEObject)pagination;
-			pagination = (uk.ac.man.cs.mdsd.webgen.service.Filter)eResolveProxy(oldPagination);
+			pagination = (Filter)eResolveProxy(oldPagination);
 			if (pagination != oldPagination) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.INDEX_UNIT__PAGINATION, oldPagination, pagination));
@@ -634,7 +679,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public uk.ac.man.cs.mdsd.webgen.service.Filter basicGetPagination() {
+	public Filter basicGetPagination() {
 		return pagination;
 	}
 
@@ -643,8 +688,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPagination(uk.ac.man.cs.mdsd.webgen.service.Filter newPagination) {
-		uk.ac.man.cs.mdsd.webgen.service.Filter oldPagination = pagination;
+	public void setPagination(Filter newPagination) {
+		Filter oldPagination = pagination;
 		pagination = newPagination;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__PAGINATION, oldPagination, pagination));
@@ -669,6 +714,27 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		defaultPaginationSize = newDefaultPaginationSize;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE, oldDefaultPaginationSize, defaultPaginationSize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getMaximumPaginationSize() {
+		return maximumPaginationSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaximumPaginationSize(int newMaximumPaginationSize) {
+		int oldMaximumPaginationSize = maximumPaginationSize;
+		maximumPaginationSize = newMaximumPaginationSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE, oldMaximumPaginationSize, maximumPaginationSize));
 	}
 
 	/**
@@ -1006,6 +1072,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
+			case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS:
+				return getSupportedFilters();
 			case WebuiPackage.INDEX_UNIT__FILTERS:
 				return getFilters();
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
@@ -1015,6 +1083,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return basicGetPagination();
 			case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return getDefaultPaginationSize();
+			case WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE:
+				return getMaximumPaginationSize();
 			case WebuiPackage.INDEX_UNIT__NEXT_NPAGES:
 				return getNextNpages();
 			case WebuiPackage.INDEX_UNIT__PREVIOUS_NPAGES:
@@ -1069,18 +1139,25 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)newValue);
 				return;
+			case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS:
+				getSupportedFilters().clear();
+				getSupportedFilters().addAll((Collection<? extends Filter>)newValue);
+				return;
 			case WebuiPackage.INDEX_UNIT__FILTERS:
 				getFilters().clear();
-				getFilters().addAll((Collection<? extends uk.ac.man.cs.mdsd.webgen.service.Filter>)newValue);
+				getFilters().addAll((Collection<? extends Filter>)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage((String)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__PAGINATION:
-				setPagination((uk.ac.man.cs.mdsd.webgen.service.Filter)newValue);
+				setPagination((Filter)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize((Integer)newValue);
+				return;
+			case WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE:
+				setMaximumPaginationSize((Integer)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__NEXT_NPAGES:
 				setNextNpages((Integer)newValue);
@@ -1149,6 +1226,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
+			case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS:
+				getSupportedFilters().clear();
+				return;
 			case WebuiPackage.INDEX_UNIT__FILTERS:
 				getFilters().clear();
 				return;
@@ -1156,10 +1236,13 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				setEmptyMessage(EMPTY_MESSAGE_EDEFAULT);
 				return;
 			case WebuiPackage.INDEX_UNIT__PAGINATION:
-				setPagination((uk.ac.man.cs.mdsd.webgen.service.Filter)null);
+				setPagination((Filter)null);
 				return;
 			case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize(DEFAULT_PAGINATION_SIZE_EDEFAULT);
+				return;
+			case WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE:
+				setMaximumPaginationSize(MAXIMUM_PAGINATION_SIZE_EDEFAULT);
 				return;
 			case WebuiPackage.INDEX_UNIT__NEXT_NPAGES:
 				setNextNpages(NEXT_NPAGES_EDEFAULT);
@@ -1223,6 +1306,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return containingFeature != null;
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				return selection != null;
+			case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS:
+				return supportedFilters != null && !supportedFilters.isEmpty();
 			case WebuiPackage.INDEX_UNIT__FILTERS:
 				return filters != null && !filters.isEmpty();
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
@@ -1231,6 +1316,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return pagination != null;
 			case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return defaultPaginationSize != DEFAULT_PAGINATION_SIZE_EDEFAULT;
+			case WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE:
+				return maximumPaginationSize != MAXIMUM_PAGINATION_SIZE_EDEFAULT;
 			case WebuiPackage.INDEX_UNIT__NEXT_NPAGES:
 				return nextNpages != NEXT_NPAGES_EDEFAULT;
 			case WebuiPackage.INDEX_UNIT__PREVIOUS_NPAGES:
@@ -1281,10 +1368,12 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WebuiPackage.INDEX_UNIT__CONTENT_TYPE: return WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WebuiPackage.INDEX_UNIT__CONTAINING_FEATURE: return WebuiPackage.COLLECTION_UNIT__CONTAINING_FEATURE;
 				case WebuiPackage.INDEX_UNIT__SELECTION: return WebuiPackage.COLLECTION_UNIT__SELECTION;
+				case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS: return WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
 				case WebuiPackage.INDEX_UNIT__FILTERS: return WebuiPackage.COLLECTION_UNIT__FILTERS;
 				case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE: return WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE;
 				case WebuiPackage.INDEX_UNIT__PAGINATION: return WebuiPackage.COLLECTION_UNIT__PAGINATION;
 				case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE: return WebuiPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE;
+				case WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE: return WebuiPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE;
 				case WebuiPackage.INDEX_UNIT__NEXT_NPAGES: return WebuiPackage.COLLECTION_UNIT__NEXT_NPAGES;
 				case WebuiPackage.INDEX_UNIT__PREVIOUS_NPAGES: return WebuiPackage.COLLECTION_UNIT__PREVIOUS_NPAGES;
 				case WebuiPackage.INDEX_UNIT__NEXT_PAGE_LABEL: return WebuiPackage.COLLECTION_UNIT__NEXT_PAGE_LABEL;
@@ -1323,10 +1412,12 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE: return WebuiPackage.INDEX_UNIT__CONTENT_TYPE;
 				case WebuiPackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WebuiPackage.INDEX_UNIT__CONTAINING_FEATURE;
 				case WebuiPackage.COLLECTION_UNIT__SELECTION: return WebuiPackage.INDEX_UNIT__SELECTION;
+				case WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS;
 				case WebuiPackage.COLLECTION_UNIT__FILTERS: return WebuiPackage.INDEX_UNIT__FILTERS;
 				case WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE: return WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE;
 				case WebuiPackage.COLLECTION_UNIT__PAGINATION: return WebuiPackage.INDEX_UNIT__PAGINATION;
 				case WebuiPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE: return WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE;
+				case WebuiPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE: return WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE;
 				case WebuiPackage.COLLECTION_UNIT__NEXT_NPAGES: return WebuiPackage.INDEX_UNIT__NEXT_NPAGES;
 				case WebuiPackage.COLLECTION_UNIT__PREVIOUS_NPAGES: return WebuiPackage.INDEX_UNIT__PREVIOUS_NPAGES;
 				case WebuiPackage.COLLECTION_UNIT__NEXT_PAGE_LABEL: return WebuiPackage.INDEX_UNIT__NEXT_PAGE_LABEL;
@@ -1361,6 +1452,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		result.append(emptyMessage);
 		result.append(", defaultPaginationSize: ");
 		result.append(defaultPaginationSize);
+		result.append(", maximumPaginationSize: ");
+		result.append(maximumPaginationSize);
 		result.append(", nextNpages: ");
 		result.append(nextNpages);
 		result.append(", previousNpages: ");

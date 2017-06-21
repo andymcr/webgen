@@ -13,15 +13,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 
+import uk.ac.man.cs.mdsd.webgen.service.Filter;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePath;
@@ -41,10 +40,12 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getMaximumPaginationSize <em>Maximum Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getNextNpages <em>Next Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
@@ -106,6 +107,16 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	protected Selection selection;
 
 	/**
+	 * The cached value of the '{@link #getSupportedFilters() <em>Supported Filters</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSupportedFilters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Filter> supportedFilters;
+
+	/**
 	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,7 +124,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<uk.ac.man.cs.mdsd.webgen.service.Filter> filters;
+	protected EList<Filter> filters;
 
 	/**
 	 * The default value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
@@ -143,7 +154,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @generated
 	 * @ordered
 	 */
-	protected uk.ac.man.cs.mdsd.webgen.service.Filter pagination;
+	protected Filter pagination;
 
 	/**
 	 * The default value of the '{@link #getDefaultPaginationSize() <em>Default Pagination Size</em>}' attribute.
@@ -164,6 +175,26 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected int defaultPaginationSize = DEFAULT_PAGINATION_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaximumPaginationSize() <em>Maximum Pagination Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumPaginationSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAXIMUM_PAGINATION_SIZE_EDEFAULT = 100;
+
+	/**
+	 * The cached value of the '{@link #getMaximumPaginationSize() <em>Maximum Pagination Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumPaginationSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maximumPaginationSize = MAXIMUM_PAGINATION_SIZE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNextNpages() <em>Next Npages</em>}' attribute.
@@ -575,9 +606,21 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<uk.ac.man.cs.mdsd.webgen.service.Filter> getFilters() {
+	public EList<Filter> getSupportedFilters() {
+		if (supportedFilters == null) {
+			supportedFilters = new EObjectResolvingEList<Filter>(Filter.class, this, WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS);
+		}
+		return supportedFilters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Filter> getFilters() {
 		if (filters == null) {
-			filters = new EObjectContainmentEList<uk.ac.man.cs.mdsd.webgen.service.Filter>(uk.ac.man.cs.mdsd.webgen.service.Filter.class, this, WebuiPackage.IMAGE_UNIT__FILTERS);
+			filters = new EObjectContainmentEList<Filter>(Filter.class, this, WebuiPackage.IMAGE_UNIT__FILTERS);
 		}
 		return filters;
 	}
@@ -608,10 +651,10 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public uk.ac.man.cs.mdsd.webgen.service.Filter getPagination() {
+	public Filter getPagination() {
 		if (pagination != null && pagination.eIsProxy()) {
 			InternalEObject oldPagination = (InternalEObject)pagination;
-			pagination = (uk.ac.man.cs.mdsd.webgen.service.Filter)eResolveProxy(oldPagination);
+			pagination = (Filter)eResolveProxy(oldPagination);
 			if (pagination != oldPagination) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.IMAGE_UNIT__PAGINATION, oldPagination, pagination));
@@ -625,7 +668,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public uk.ac.man.cs.mdsd.webgen.service.Filter basicGetPagination() {
+	public Filter basicGetPagination() {
 		return pagination;
 	}
 
@@ -634,8 +677,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPagination(uk.ac.man.cs.mdsd.webgen.service.Filter newPagination) {
-		uk.ac.man.cs.mdsd.webgen.service.Filter oldPagination = pagination;
+	public void setPagination(Filter newPagination) {
+		Filter oldPagination = pagination;
 		pagination = newPagination;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_UNIT__PAGINATION, oldPagination, pagination));
@@ -660,6 +703,27 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		defaultPaginationSize = newDefaultPaginationSize;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE, oldDefaultPaginationSize, defaultPaginationSize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getMaximumPaginationSize() {
+		return maximumPaginationSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaximumPaginationSize(int newMaximumPaginationSize) {
+		int oldMaximumPaginationSize = maximumPaginationSize;
+		maximumPaginationSize = newMaximumPaginationSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE, oldMaximumPaginationSize, maximumPaginationSize));
 	}
 
 	/**
@@ -1092,6 +1156,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebuiPackage.IMAGE_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
+			case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
+				return getSupportedFilters();
 			case WebuiPackage.IMAGE_UNIT__FILTERS:
 				return getFilters();
 			case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE:
@@ -1101,6 +1167,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return basicGetPagination();
 			case WebuiPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE:
 				return getDefaultPaginationSize();
+			case WebuiPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE:
+				return getMaximumPaginationSize();
 			case WebuiPackage.IMAGE_UNIT__NEXT_NPAGES:
 				return getNextNpages();
 			case WebuiPackage.IMAGE_UNIT__PREVIOUS_NPAGES:
@@ -1159,18 +1227,25 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebuiPackage.IMAGE_UNIT__SELECTION:
 				setSelection((Selection)newValue);
 				return;
+			case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
+				getSupportedFilters().clear();
+				getSupportedFilters().addAll((Collection<? extends Filter>)newValue);
+				return;
 			case WebuiPackage.IMAGE_UNIT__FILTERS:
 				getFilters().clear();
-				getFilters().addAll((Collection<? extends uk.ac.man.cs.mdsd.webgen.service.Filter>)newValue);
+				getFilters().addAll((Collection<? extends Filter>)newValue);
 				return;
 			case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage((String)newValue);
 				return;
 			case WebuiPackage.IMAGE_UNIT__PAGINATION:
-				setPagination((uk.ac.man.cs.mdsd.webgen.service.Filter)newValue);
+				setPagination((Filter)newValue);
 				return;
 			case WebuiPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize((Integer)newValue);
+				return;
+			case WebuiPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE:
+				setMaximumPaginationSize((Integer)newValue);
 				return;
 			case WebuiPackage.IMAGE_UNIT__NEXT_NPAGES:
 				setNextNpages((Integer)newValue);
@@ -1241,6 +1316,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebuiPackage.IMAGE_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
+			case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
+				getSupportedFilters().clear();
+				return;
 			case WebuiPackage.IMAGE_UNIT__FILTERS:
 				getFilters().clear();
 				return;
@@ -1248,10 +1326,13 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				setEmptyMessage(EMPTY_MESSAGE_EDEFAULT);
 				return;
 			case WebuiPackage.IMAGE_UNIT__PAGINATION:
-				setPagination((uk.ac.man.cs.mdsd.webgen.service.Filter)null);
+				setPagination((Filter)null);
 				return;
 			case WebuiPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize(DEFAULT_PAGINATION_SIZE_EDEFAULT);
+				return;
+			case WebuiPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE:
+				setMaximumPaginationSize(MAXIMUM_PAGINATION_SIZE_EDEFAULT);
 				return;
 			case WebuiPackage.IMAGE_UNIT__NEXT_NPAGES:
 				setNextNpages(NEXT_NPAGES_EDEFAULT);
@@ -1318,6 +1399,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return containingFeature != null;
 			case WebuiPackage.IMAGE_UNIT__SELECTION:
 				return selection != null;
+			case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
+				return supportedFilters != null && !supportedFilters.isEmpty();
 			case WebuiPackage.IMAGE_UNIT__FILTERS:
 				return filters != null && !filters.isEmpty();
 			case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE:
@@ -1326,6 +1409,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return pagination != null;
 			case WebuiPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE:
 				return defaultPaginationSize != DEFAULT_PAGINATION_SIZE_EDEFAULT;
+			case WebuiPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE:
+				return maximumPaginationSize != MAXIMUM_PAGINATION_SIZE_EDEFAULT;
 			case WebuiPackage.IMAGE_UNIT__NEXT_NPAGES:
 				return nextNpages != NEXT_NPAGES_EDEFAULT;
 			case WebuiPackage.IMAGE_UNIT__PREVIOUS_NPAGES:
@@ -1378,10 +1463,12 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WebuiPackage.IMAGE_UNIT__CONTENT_TYPE: return WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WebuiPackage.IMAGE_UNIT__CONTAINING_FEATURE: return WebuiPackage.COLLECTION_UNIT__CONTAINING_FEATURE;
 				case WebuiPackage.IMAGE_UNIT__SELECTION: return WebuiPackage.COLLECTION_UNIT__SELECTION;
+				case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS: return WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
 				case WebuiPackage.IMAGE_UNIT__FILTERS: return WebuiPackage.COLLECTION_UNIT__FILTERS;
 				case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE: return WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE;
 				case WebuiPackage.IMAGE_UNIT__PAGINATION: return WebuiPackage.COLLECTION_UNIT__PAGINATION;
 				case WebuiPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE: return WebuiPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE;
+				case WebuiPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE: return WebuiPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE;
 				case WebuiPackage.IMAGE_UNIT__NEXT_NPAGES: return WebuiPackage.COLLECTION_UNIT__NEXT_NPAGES;
 				case WebuiPackage.IMAGE_UNIT__PREVIOUS_NPAGES: return WebuiPackage.COLLECTION_UNIT__PREVIOUS_NPAGES;
 				case WebuiPackage.IMAGE_UNIT__NEXT_PAGE_LABEL: return WebuiPackage.COLLECTION_UNIT__NEXT_PAGE_LABEL;
@@ -1414,10 +1501,12 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE: return WebuiPackage.IMAGE_UNIT__CONTENT_TYPE;
 				case WebuiPackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WebuiPackage.IMAGE_UNIT__CONTAINING_FEATURE;
 				case WebuiPackage.COLLECTION_UNIT__SELECTION: return WebuiPackage.IMAGE_UNIT__SELECTION;
+				case WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS;
 				case WebuiPackage.COLLECTION_UNIT__FILTERS: return WebuiPackage.IMAGE_UNIT__FILTERS;
 				case WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE: return WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE;
 				case WebuiPackage.COLLECTION_UNIT__PAGINATION: return WebuiPackage.IMAGE_UNIT__PAGINATION;
 				case WebuiPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE: return WebuiPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE;
+				case WebuiPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE: return WebuiPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE;
 				case WebuiPackage.COLLECTION_UNIT__NEXT_NPAGES: return WebuiPackage.IMAGE_UNIT__NEXT_NPAGES;
 				case WebuiPackage.COLLECTION_UNIT__PREVIOUS_NPAGES: return WebuiPackage.IMAGE_UNIT__PREVIOUS_NPAGES;
 				case WebuiPackage.COLLECTION_UNIT__NEXT_PAGE_LABEL: return WebuiPackage.IMAGE_UNIT__NEXT_PAGE_LABEL;
@@ -1446,6 +1535,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		result.append(emptyMessage);
 		result.append(", defaultPaginationSize: ");
 		result.append(defaultPaginationSize);
+		result.append(", maximumPaginationSize: ");
+		result.append(maximumPaginationSize);
 		result.append(", nextNpages: ");
 		result.append(nextNpages);
 		result.append(", previousNpages: ");

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import uk.ac.man.cs.mdsd.webgen.service.Filter;
 import uk.ac.man.cs.mdsd.webgen.webui.Query;
 import uk.ac.man.cs.mdsd.webgen.webui.QueryParameter;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -44,7 +45,7 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query {
 	 * @generated
 	 * @ordered
 	 */
-	protected uk.ac.man.cs.mdsd.webgen.service.Filter filter;
+	protected Filter filter;
 
 	/**
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
@@ -80,10 +81,10 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public uk.ac.man.cs.mdsd.webgen.service.Filter getFilter() {
+	public Filter getFilter() {
 		if (filter != null && filter.eIsProxy()) {
 			InternalEObject oldFilter = (InternalEObject)filter;
-			filter = (uk.ac.man.cs.mdsd.webgen.service.Filter)eResolveProxy(oldFilter);
+			filter = (Filter)eResolveProxy(oldFilter);
 			if (filter != oldFilter) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.QUERY__FILTER, oldFilter, filter));
@@ -97,7 +98,7 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public uk.ac.man.cs.mdsd.webgen.service.Filter basicGetFilter() {
+	public Filter basicGetFilter() {
 		return filter;
 	}
 
@@ -106,8 +107,8 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFilter(uk.ac.man.cs.mdsd.webgen.service.Filter newFilter) {
-		uk.ac.man.cs.mdsd.webgen.service.Filter oldFilter = filter;
+	public void setFilter(Filter newFilter) {
+		Filter oldFilter = filter;
 		filter = newFilter;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.QUERY__FILTER, oldFilter, filter));
@@ -166,7 +167,7 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebuiPackage.QUERY__FILTER:
-				setFilter((uk.ac.man.cs.mdsd.webgen.service.Filter)newValue);
+				setFilter((Filter)newValue);
 				return;
 			case WebuiPackage.QUERY__PARAMETERS:
 				getParameters().clear();
@@ -185,7 +186,7 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebuiPackage.QUERY__FILTER:
-				setFilter((uk.ac.man.cs.mdsd.webgen.service.Filter)null);
+				setFilter((Filter)null);
 				return;
 			case WebuiPackage.QUERY__PARAMETERS:
 				getParameters().clear();

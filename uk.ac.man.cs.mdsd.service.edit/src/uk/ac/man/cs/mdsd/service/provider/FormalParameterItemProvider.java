@@ -51,6 +51,7 @@ public class FormalParameterItemProvider extends NamedElementItemProvider {
 
 			addDataTypePropertyDescriptor(object);
 			addDefaultValuePropertyDescriptor(object);
+			addPlaceholderPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -70,6 +71,28 @@ public class FormalParameterItemProvider extends NamedElementItemProvider {
 				 getString("_UI_FormalParameter_defaultValue_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FormalParameter_defaultValue_feature", "_UI_FormalParameter_type"),
 				 ServicePackage.Literals.FORMAL_PARAMETER__DEFAULT_VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FormalParameter_placeholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FormalParameter_placeholder_feature", "_UI_FormalParameter_type"),
+				 ServicePackage.Literals.FORMAL_PARAMETER__PLACEHOLDER,
 				 true,
 				 false,
 				 false,
@@ -161,6 +184,7 @@ public class FormalParameterItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(FormalParameter.class)) {
 			case ServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
+			case ServicePackage.FORMAL_PARAMETER__PLACEHOLDER:
 			case ServicePackage.FORMAL_PARAMETER__DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

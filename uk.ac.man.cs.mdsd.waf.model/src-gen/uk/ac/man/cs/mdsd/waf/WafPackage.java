@@ -3984,22 +3984,13 @@ public interface WafPackage extends EPackage {
 	int COLLECTION_UNIT__SELECTION = SELECTABLE_UNIT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Supported Filters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__FILTERS = SELECTABLE_UNIT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Pagination</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION_UNIT__PAGINATION = SELECTABLE_UNIT_FEATURE_COUNT + 4;
+	int COLLECTION_UNIT__SUPPORTED_FILTERS = SELECTABLE_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Empty Message</b></em>' attribute.
@@ -4008,7 +3999,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__EMPTY_MESSAGE = SELECTABLE_UNIT_FEATURE_COUNT + 5;
+	int COLLECTION_UNIT__EMPTY_MESSAGE = SELECTABLE_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Default Pagination Size</b></em>' attribute.
@@ -4017,7 +4008,16 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE = SELECTABLE_UNIT_FEATURE_COUNT + 6;
+	int COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE = SELECTABLE_UNIT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Pagination Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE = SELECTABLE_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
@@ -6413,22 +6413,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__SELECTION = DATA_UNIT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Supported Filters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__FILTERS = DATA_UNIT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Pagination</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__PAGINATION = DATA_UNIT_FEATURE_COUNT + 6;
+	int INDEX_UNIT__SUPPORTED_FILTERS = DATA_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Empty Message</b></em>' attribute.
@@ -6437,7 +6428,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__EMPTY_MESSAGE = DATA_UNIT_FEATURE_COUNT + 7;
+	int INDEX_UNIT__EMPTY_MESSAGE = DATA_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Default Pagination Size</b></em>' attribute.
@@ -6446,7 +6437,16 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__DEFAULT_PAGINATION_SIZE = DATA_UNIT_FEATURE_COUNT + 8;
+	int INDEX_UNIT__DEFAULT_PAGINATION_SIZE = DATA_UNIT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Pagination Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__MAXIMUM_PAGINATION_SIZE = DATA_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
@@ -6828,22 +6828,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__SELECTION = INDEX_UNIT__SELECTION;
 
 	/**
-	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Supported Filters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_GRID_UNIT__FILTERS = INDEX_UNIT__FILTERS;
-
-	/**
-	 * The feature id for the '<em><b>Pagination</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_GRID_UNIT__PAGINATION = INDEX_UNIT__PAGINATION;
+	int INDEX_GRID_UNIT__SUPPORTED_FILTERS = INDEX_UNIT__SUPPORTED_FILTERS;
 
 	/**
 	 * The feature id for the '<em><b>Empty Message</b></em>' attribute.
@@ -6862,6 +6853,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_GRID_UNIT__DEFAULT_PAGINATION_SIZE = INDEX_UNIT__DEFAULT_PAGINATION_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Pagination Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__MAXIMUM_PAGINATION_SIZE = INDEX_UNIT__MAXIMUM_PAGINATION_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
@@ -7243,22 +7243,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__SELECTION = INDEX_UNIT__SELECTION;
 
 	/**
-	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Supported Filters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_PAGE_DIRECTION_UNIT__FILTERS = INDEX_UNIT__FILTERS;
-
-	/**
-	 * The feature id for the '<em><b>Pagination</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_PAGE_DIRECTION_UNIT__PAGINATION = INDEX_UNIT__PAGINATION;
+	int INDEX_PAGE_DIRECTION_UNIT__SUPPORTED_FILTERS = INDEX_UNIT__SUPPORTED_FILTERS;
 
 	/**
 	 * The feature id for the '<em><b>Empty Message</b></em>' attribute.
@@ -7277,6 +7268,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_PAGE_DIRECTION_UNIT__DEFAULT_PAGINATION_SIZE = INDEX_UNIT__DEFAULT_PAGINATION_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Pagination Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__MAXIMUM_PAGINATION_SIZE = INDEX_UNIT__MAXIMUM_PAGINATION_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
@@ -7658,22 +7658,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__SELECTION = INDEX_UNIT__SELECTION;
 
 	/**
-	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Supported Filters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_LINE_DIRECTION_UNIT__FILTERS = INDEX_UNIT__FILTERS;
-
-	/**
-	 * The feature id for the '<em><b>Pagination</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_LINE_DIRECTION_UNIT__PAGINATION = INDEX_UNIT__PAGINATION;
+	int INDEX_LINE_DIRECTION_UNIT__SUPPORTED_FILTERS = INDEX_UNIT__SUPPORTED_FILTERS;
 
 	/**
 	 * The feature id for the '<em><b>Empty Message</b></em>' attribute.
@@ -7692,6 +7683,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_LINE_DIRECTION_UNIT__DEFAULT_PAGINATION_SIZE = INDEX_UNIT__DEFAULT_PAGINATION_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Pagination Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__MAXIMUM_PAGINATION_SIZE = INDEX_UNIT__MAXIMUM_PAGINATION_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
@@ -8534,22 +8534,13 @@ public interface WafPackage extends EPackage {
 	int IMAGE_UNIT__SELECTION = DYNAMIC_UNIT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Supported Filters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__FILTERS = DYNAMIC_UNIT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Pagination</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_UNIT__PAGINATION = DYNAMIC_UNIT_FEATURE_COUNT + 6;
+	int IMAGE_UNIT__SUPPORTED_FILTERS = DYNAMIC_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Empty Message</b></em>' attribute.
@@ -8558,7 +8549,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__EMPTY_MESSAGE = DYNAMIC_UNIT_FEATURE_COUNT + 7;
+	int IMAGE_UNIT__EMPTY_MESSAGE = DYNAMIC_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Default Pagination Size</b></em>' attribute.
@@ -8567,7 +8558,16 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__DEFAULT_PAGINATION_SIZE = DYNAMIC_UNIT_FEATURE_COUNT + 8;
+	int IMAGE_UNIT__DEFAULT_PAGINATION_SIZE = DYNAMIC_UNIT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Pagination Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE = DYNAMIC_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
@@ -9234,22 +9234,13 @@ public interface WafPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__SELECTION = IMAGE_UNIT__SELECTION;
 
 	/**
-	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Supported Filters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__FILTERS = IMAGE_UNIT__FILTERS;
-
-	/**
-	 * The feature id for the '<em><b>Pagination</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_INDEX_UNIT__PAGINATION = IMAGE_UNIT__PAGINATION;
+	int IMAGE_INDEX_UNIT__SUPPORTED_FILTERS = IMAGE_UNIT__SUPPORTED_FILTERS;
 
 	/**
 	 * The feature id for the '<em><b>Empty Message</b></em>' attribute.
@@ -9268,6 +9259,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_INDEX_UNIT__DEFAULT_PAGINATION_SIZE = IMAGE_UNIT__DEFAULT_PAGINATION_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Pagination Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__MAXIMUM_PAGINATION_SIZE = IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
@@ -9667,22 +9667,13 @@ public interface WafPackage extends EPackage {
 	int SLIDER_UNIT__SELECTION = IMAGE_UNIT__SELECTION;
 
 	/**
-	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Supported Filters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__FILTERS = IMAGE_UNIT__FILTERS;
-
-	/**
-	 * The feature id for the '<em><b>Pagination</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLIDER_UNIT__PAGINATION = IMAGE_UNIT__PAGINATION;
+	int SLIDER_UNIT__SUPPORTED_FILTERS = IMAGE_UNIT__SUPPORTED_FILTERS;
 
 	/**
 	 * The feature id for the '<em><b>Empty Message</b></em>' attribute.
@@ -9701,6 +9692,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SLIDER_UNIT__DEFAULT_PAGINATION_SIZE = IMAGE_UNIT__DEFAULT_PAGINATION_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Pagination Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__MAXIMUM_PAGINATION_SIZE = IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
@@ -10091,22 +10091,13 @@ public interface WafPackage extends EPackage {
 	int GALLERY_UNIT__SELECTION = IMAGE_UNIT__SELECTION;
 
 	/**
-	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Supported Filters</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__FILTERS = IMAGE_UNIT__FILTERS;
-
-	/**
-	 * The feature id for the '<em><b>Pagination</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GALLERY_UNIT__PAGINATION = IMAGE_UNIT__PAGINATION;
+	int GALLERY_UNIT__SUPPORTED_FILTERS = IMAGE_UNIT__SUPPORTED_FILTERS;
 
 	/**
 	 * The feature id for the '<em><b>Empty Message</b></em>' attribute.
@@ -10125,6 +10116,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int GALLERY_UNIT__DEFAULT_PAGINATION_SIZE = IMAGE_UNIT__DEFAULT_PAGINATION_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Pagination Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__MAXIMUM_PAGINATION_SIZE = IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
@@ -13782,26 +13782,15 @@ public interface WafPackage extends EPackage {
 	EReference getCollectionUnit_Selection();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFilters <em>Filters</em>}'.
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getSupportedFilters <em>Supported Filters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Filters</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.CollectionUnit#getFilters()
+	 * @return the meta object for the reference list '<em>Supported Filters</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.CollectionUnit#getSupportedFilters()
 	 * @see #getCollectionUnit()
 	 * @generated
 	 */
-	EReference getCollectionUnit_Filters();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getPagination <em>Pagination</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Pagination</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.CollectionUnit#getPagination()
-	 * @see #getCollectionUnit()
-	 * @generated
-	 */
-	EReference getCollectionUnit_Pagination();
+	EReference getCollectionUnit_SupportedFilters();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getEmptyMessage <em>Empty Message</em>}'.
@@ -13824,6 +13813,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCollectionUnit_DefaultPaginationSize();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getMaximumPaginationSize <em>Maximum Pagination Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Maximum Pagination Size</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.CollectionUnit#getMaximumPaginationSize()
+	 * @see #getCollectionUnit()
+	 * @generated
+	 */
+	EAttribute getCollectionUnit_MaximumPaginationSize();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getNextNpages <em>Next Npages</em>}'.
@@ -16528,20 +16528,12 @@ public interface WafPackage extends EPackage {
 		EReference COLLECTION_UNIT__SELECTION = eINSTANCE.getCollectionUnit_Selection();
 
 		/**
-		 * The meta object literal for the '<em><b>Filters</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Supported Filters</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COLLECTION_UNIT__FILTERS = eINSTANCE.getCollectionUnit_Filters();
-
-		/**
-		 * The meta object literal for the '<em><b>Pagination</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COLLECTION_UNIT__PAGINATION = eINSTANCE.getCollectionUnit_Pagination();
+		EReference COLLECTION_UNIT__SUPPORTED_FILTERS = eINSTANCE.getCollectionUnit_SupportedFilters();
 
 		/**
 		 * The meta object literal for the '<em><b>Empty Message</b></em>' attribute feature.
@@ -16558,6 +16550,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE = eINSTANCE.getCollectionUnit_DefaultPaginationSize();
+
+		/**
+		 * The meta object literal for the '<em><b>Maximum Pagination Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE = eINSTANCE.getCollectionUnit_MaximumPaginationSize();
 
 		/**
 		 * The meta object literal for the '<em><b>Next Npages</b></em>' attribute feature.

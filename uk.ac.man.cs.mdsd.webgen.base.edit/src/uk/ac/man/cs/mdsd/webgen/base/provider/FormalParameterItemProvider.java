@@ -45,34 +45,12 @@ public class FormalParameterItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOptionalPropertyDescriptor(object);
 			addDefaultValuePropertyDescriptor(object);
 			addDataTypePropertyDescriptor(object);
+			addPlaceholderPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Optional feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOptionalPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FormalParameter_optional_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FormalParameter_optional_feature", "_UI_FormalParameter_type"),
-				 BasePackage.Literals.FORMAL_PARAMETER__OPTIONAL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -116,6 +94,28 @@ public class FormalParameterItemProvider extends NamedElementItemProvider {
 				 true,
 				 null,
 				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FormalParameter_placeholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FormalParameter_placeholder_feature", "_UI_FormalParameter_type"),
+				 BasePackage.Literals.FORMAL_PARAMETER__PLACEHOLDER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -179,8 +179,8 @@ public class FormalParameterItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FormalParameter.class)) {
-			case BasePackage.FORMAL_PARAMETER__OPTIONAL:
 			case BasePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
+			case BasePackage.FORMAL_PARAMETER__PLACEHOLDER:
 			case BasePackage.FORMAL_PARAMETER__DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

@@ -16,6 +16,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.service.FormalParameter#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.service.FormalParameter#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.service.FormalParameter#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.service.FormalParameter#getDescription <em>Description</em>}</li>
  * </ul>
  *
@@ -75,6 +76,32 @@ public interface FormalParameter extends NamedElement {
 	 * @generated
 	 */
 	void setDefaultValue(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Placeholder</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Placeholder</em>' attribute.
+	 * @see #setPlaceholder(String)
+	 * @see uk.ac.man.cs.mdsd.service.ServicePackage#getFormalParameter_Placeholder()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getPlaceholder();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.service.FormalParameter#getPlaceholder <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Placeholder</em>' attribute.
+	 * @see #getPlaceholder()
+	 * @generated
+	 */
+	void setPlaceholder(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

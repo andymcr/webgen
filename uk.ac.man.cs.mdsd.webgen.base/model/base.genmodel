@@ -36,10 +36,10 @@
     </genClasses>
     <genClasses ecoreClass="base.ecore#//FormalParameter">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference base.ecore#//FormalParameter/formalFor"/>
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute base.ecore#//FormalParameter/optional"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute base.ecore#//FormalParameter/defaultValue"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference base.ecore#//FormalParameter/dataType"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute base.ecore#//FormalParameter/placeholder"/>
       <genFeatures createChild="false" propertyCategory="Documentation" ecoreFeature="ecore:EAttribute base.ecore#//FormalParameter/description"/>
     </genClasses>
     <genClasses ecoreClass="base.ecore#//ParameterReference">

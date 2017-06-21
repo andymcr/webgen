@@ -13,9 +13,9 @@ package uk.ac.man.cs.mdsd.webgen.base;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getFormalFor <em>Formal For</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#isOptional <em>Optional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getDataType <em>Data Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getDescription <em>Description</em>}</li>
  * </ul>
  *
@@ -51,33 +51,6 @@ public interface FormalParameter extends NamedElement {
 	 * @generated
 	 */
 	void setFormalFor(FormalParameterList value);
-
-	/**
-	 * Returns the value of the '<em><b>Optional</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Optional</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Optional</em>' attribute.
-	 * @see #setOptional(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.base.BasePackage#getFormalParameter_Optional()
-	 * @model default="false"
-	 * @generated
-	 */
-	boolean isOptional();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#isOptional <em>Optional</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Optional</em>' attribute.
-	 * @see #isOptional()
-	 * @generated
-	 */
-	void setOptional(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Value</b></em>' attribute.
@@ -130,6 +103,32 @@ public interface FormalParameter extends NamedElement {
 	 * @generated
 	 */
 	void setDataType(DataType value);
+
+	/**
+	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Placeholder</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Placeholder</em>' attribute.
+	 * @see #setPlaceholder(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.base.BasePackage#getFormalParameter_Placeholder()
+	 * @model
+	 * @generated
+	 */
+	String getPlaceholder();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.base.FormalParameter#getPlaceholder <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Placeholder</em>' attribute.
+	 * @see #getPlaceholder()
+	 * @generated
+	 */
+	void setPlaceholder(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

@@ -26,6 +26,7 @@ import uk.ac.man.cs.mdsd.service.ServicePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.service.impl.FormalParameterImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.service.impl.FormalParameterImpl#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.service.impl.FormalParameterImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.service.impl.FormalParameterImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
@@ -61,6 +62,26 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	 * @ordered
 	 */
 	protected String defaultValue = DEFAULT_VALUE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PLACEHOLDER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected String placeholder = PLACEHOLDER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -165,6 +186,27 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPlaceholder() {
+		return placeholder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPlaceholder(String newPlaceholder) {
+		String oldPlaceholder = placeholder;
+		placeholder = newPlaceholder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.FORMAL_PARAMETER__PLACEHOLDER, oldPlaceholder, placeholder));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getDescription() {
 		return description;
 	}
@@ -194,6 +236,8 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 				return basicGetDataType();
 			case ServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				return getDefaultValue();
+			case ServicePackage.FORMAL_PARAMETER__PLACEHOLDER:
+				return getPlaceholder();
 			case ServicePackage.FORMAL_PARAMETER__DESCRIPTION:
 				return getDescription();
 		}
@@ -213,6 +257,9 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 				return;
 			case ServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				setDefaultValue((String)newValue);
+				return;
+			case ServicePackage.FORMAL_PARAMETER__PLACEHOLDER:
+				setPlaceholder((String)newValue);
 				return;
 			case ServicePackage.FORMAL_PARAMETER__DESCRIPTION:
 				setDescription((String)newValue);
@@ -235,6 +282,9 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 			case ServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				setDefaultValue(DEFAULT_VALUE_EDEFAULT);
 				return;
+			case ServicePackage.FORMAL_PARAMETER__PLACEHOLDER:
+				setPlaceholder(PLACEHOLDER_EDEFAULT);
+				return;
 			case ServicePackage.FORMAL_PARAMETER__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -254,6 +304,8 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 				return dataType != null;
 			case ServicePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
+			case ServicePackage.FORMAL_PARAMETER__PLACEHOLDER:
+				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case ServicePackage.FORMAL_PARAMETER__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
@@ -272,6 +324,8 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (defaultValue: ");
 		result.append(defaultValue);
+		result.append(", placeholder: ");
+		result.append(placeholder);
 		result.append(", description: ");
 		result.append(description);
 		result.append(')');

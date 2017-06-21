@@ -27,6 +27,7 @@ interface FormalParameterList {
 class FormalParameter extends NamedElement {
 	refers DataType dataType
 	String defaultValue
+	String placeholder
 	String description
 }
 

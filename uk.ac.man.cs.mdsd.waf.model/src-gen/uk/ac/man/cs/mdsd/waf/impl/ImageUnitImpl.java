@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -46,10 +45,10 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getSelection <em>Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getFilters <em>Filters</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getPagination <em>Pagination</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getMaximumPaginationSize <em>Maximum Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getNextNpages <em>Next Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
@@ -121,24 +120,14 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	protected Selection selection;
 
 	/**
-	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list.
+	 * The cached value of the '{@link #getSupportedFilters() <em>Supported Filters</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFilters()
+	 * @see #getSupportedFilters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Filter> filters;
-
-	/**
-	 * The cached value of the '{@link #getPagination() <em>Pagination</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPagination()
-	 * @generated
-	 * @ordered
-	 */
-	protected Filter pagination;
+	protected EList<Filter> supportedFilters;
 
 	/**
 	 * The default value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
@@ -179,6 +168,26 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected int defaultPaginationSize = DEFAULT_PAGINATION_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaximumPaginationSize() <em>Maximum Pagination Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumPaginationSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAXIMUM_PAGINATION_SIZE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getMaximumPaginationSize() <em>Maximum Pagination Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumPaginationSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maximumPaginationSize = MAXIMUM_PAGINATION_SIZE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNextNpages() <em>Next Npages</em>}' attribute.
@@ -602,49 +611,11 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Filter> getFilters() {
-		if (filters == null) {
-			filters = new EObjectContainmentEList<Filter>(Filter.class, this, WafPackage.IMAGE_UNIT__FILTERS);
+	public EList<Filter> getSupportedFilters() {
+		if (supportedFilters == null) {
+			supportedFilters = new EObjectResolvingEList<Filter>(Filter.class, this, WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS);
 		}
-		return filters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Filter getPagination() {
-		if (pagination != null && pagination.eIsProxy()) {
-			InternalEObject oldPagination = (InternalEObject)pagination;
-			pagination = (Filter)eResolveProxy(oldPagination);
-			if (pagination != oldPagination) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.IMAGE_UNIT__PAGINATION, oldPagination, pagination));
-			}
-		}
-		return pagination;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Filter basicGetPagination() {
-		return pagination;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPagination(Filter newPagination) {
-		Filter oldPagination = pagination;
-		pagination = newPagination;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__PAGINATION, oldPagination, pagination));
+		return supportedFilters;
 	}
 
 	/**
@@ -687,6 +658,27 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		defaultPaginationSize = newDefaultPaginationSize;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE, oldDefaultPaginationSize, defaultPaginationSize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getMaximumPaginationSize() {
+		return maximumPaginationSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaximumPaginationSize(int newMaximumPaginationSize) {
+		int oldMaximumPaginationSize = maximumPaginationSize;
+		maximumPaginationSize = newMaximumPaginationSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE, oldMaximumPaginationSize, maximumPaginationSize));
 	}
 
 	/**
@@ -1107,8 +1099,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		switch (featureID) {
 			case WafPackage.IMAGE_UNIT__SELECTORS:
 				return ((InternalEList<?>)getSelectors()).basicRemove(otherEnd, msgs);
-			case WafPackage.IMAGE_UNIT__FILTERS:
-				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				return basicSetImagePathFeature(null, msgs);
 			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:
@@ -1138,15 +1128,14 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
-			case WafPackage.IMAGE_UNIT__FILTERS:
-				return getFilters();
-			case WafPackage.IMAGE_UNIT__PAGINATION:
-				if (resolve) return getPagination();
-				return basicGetPagination();
+			case WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
+				return getSupportedFilters();
 			case WafPackage.IMAGE_UNIT__EMPTY_MESSAGE:
 				return getEmptyMessage();
 			case WafPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE:
 				return getDefaultPaginationSize();
+			case WafPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE:
+				return getMaximumPaginationSize();
 			case WafPackage.IMAGE_UNIT__NEXT_NPAGES:
 				return getNextNpages();
 			case WafPackage.IMAGE_UNIT__PREVIOUS_NPAGES:
@@ -1209,18 +1198,18 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__SELECTION:
 				setSelection((Selection)newValue);
 				return;
-			case WafPackage.IMAGE_UNIT__FILTERS:
-				getFilters().clear();
-				getFilters().addAll((Collection<? extends Filter>)newValue);
-				return;
-			case WafPackage.IMAGE_UNIT__PAGINATION:
-				setPagination((Filter)newValue);
+			case WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
+				getSupportedFilters().clear();
+				getSupportedFilters().addAll((Collection<? extends Filter>)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage((String)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize((Integer)newValue);
+				return;
+			case WafPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE:
+				setMaximumPaginationSize((Integer)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__NEXT_NPAGES:
 				setNextNpages((Integer)newValue);
@@ -1294,17 +1283,17 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
-			case WafPackage.IMAGE_UNIT__FILTERS:
-				getFilters().clear();
-				return;
-			case WafPackage.IMAGE_UNIT__PAGINATION:
-				setPagination((Filter)null);
+			case WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
+				getSupportedFilters().clear();
 				return;
 			case WafPackage.IMAGE_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage(EMPTY_MESSAGE_EDEFAULT);
 				return;
 			case WafPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize(DEFAULT_PAGINATION_SIZE_EDEFAULT);
+				return;
+			case WafPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE:
+				setMaximumPaginationSize(MAXIMUM_PAGINATION_SIZE_EDEFAULT);
 				return;
 			case WafPackage.IMAGE_UNIT__NEXT_NPAGES:
 				setNextNpages(NEXT_NPAGES_EDEFAULT);
@@ -1373,14 +1362,14 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return contentType != null && !contentType.isEmpty();
 			case WafPackage.IMAGE_UNIT__SELECTION:
 				return selection != null;
-			case WafPackage.IMAGE_UNIT__FILTERS:
-				return filters != null && !filters.isEmpty();
-			case WafPackage.IMAGE_UNIT__PAGINATION:
-				return pagination != null;
+			case WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
+				return supportedFilters != null && !supportedFilters.isEmpty();
 			case WafPackage.IMAGE_UNIT__EMPTY_MESSAGE:
 				return EMPTY_MESSAGE_EDEFAULT == null ? emptyMessage != null : !EMPTY_MESSAGE_EDEFAULT.equals(emptyMessage);
 			case WafPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE:
 				return defaultPaginationSize != DEFAULT_PAGINATION_SIZE_EDEFAULT;
+			case WafPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE:
+				return maximumPaginationSize != MAXIMUM_PAGINATION_SIZE_EDEFAULT;
 			case WafPackage.IMAGE_UNIT__NEXT_NPAGES:
 				return nextNpages != NEXT_NPAGES_EDEFAULT;
 			case WafPackage.IMAGE_UNIT__PREVIOUS_NPAGES:
@@ -1434,10 +1423,10 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WafPackage.IMAGE_UNIT__CONTAINING_FEATURE: return WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE;
 				case WafPackage.IMAGE_UNIT__CONTENT_TYPE: return WafPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WafPackage.IMAGE_UNIT__SELECTION: return WafPackage.COLLECTION_UNIT__SELECTION;
-				case WafPackage.IMAGE_UNIT__FILTERS: return WafPackage.COLLECTION_UNIT__FILTERS;
-				case WafPackage.IMAGE_UNIT__PAGINATION: return WafPackage.COLLECTION_UNIT__PAGINATION;
+				case WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS: return WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
 				case WafPackage.IMAGE_UNIT__EMPTY_MESSAGE: return WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE;
 				case WafPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE: return WafPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE;
+				case WafPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE: return WafPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE;
 				case WafPackage.IMAGE_UNIT__NEXT_NPAGES: return WafPackage.COLLECTION_UNIT__NEXT_NPAGES;
 				case WafPackage.IMAGE_UNIT__PREVIOUS_NPAGES: return WafPackage.COLLECTION_UNIT__PREVIOUS_NPAGES;
 				case WafPackage.IMAGE_UNIT__NEXT_PAGE_LABEL: return WafPackage.COLLECTION_UNIT__NEXT_PAGE_LABEL;
@@ -1471,10 +1460,10 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WafPackage.IMAGE_UNIT__CONTAINING_FEATURE;
 				case WafPackage.COLLECTION_UNIT__CONTENT_TYPE: return WafPackage.IMAGE_UNIT__CONTENT_TYPE;
 				case WafPackage.COLLECTION_UNIT__SELECTION: return WafPackage.IMAGE_UNIT__SELECTION;
-				case WafPackage.COLLECTION_UNIT__FILTERS: return WafPackage.IMAGE_UNIT__FILTERS;
-				case WafPackage.COLLECTION_UNIT__PAGINATION: return WafPackage.IMAGE_UNIT__PAGINATION;
+				case WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS;
 				case WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE: return WafPackage.IMAGE_UNIT__EMPTY_MESSAGE;
 				case WafPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE: return WafPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE;
+				case WafPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE: return WafPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE;
 				case WafPackage.COLLECTION_UNIT__NEXT_NPAGES: return WafPackage.IMAGE_UNIT__NEXT_NPAGES;
 				case WafPackage.COLLECTION_UNIT__PREVIOUS_NPAGES: return WafPackage.IMAGE_UNIT__PREVIOUS_NPAGES;
 				case WafPackage.COLLECTION_UNIT__NEXT_PAGE_LABEL: return WafPackage.IMAGE_UNIT__NEXT_PAGE_LABEL;
@@ -1503,6 +1492,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		result.append(emptyMessage);
 		result.append(", defaultPaginationSize: ");
 		result.append(defaultPaginationSize);
+		result.append(", maximumPaginationSize: ");
+		result.append(maximumPaginationSize);
 		result.append(", nextNpages: ");
 		result.append(nextNpages);
 		result.append(", previousNpages: ");

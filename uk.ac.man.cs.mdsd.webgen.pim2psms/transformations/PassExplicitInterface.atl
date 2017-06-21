@@ -468,49 +468,6 @@ rule Page {
 }
 
 
--- @extends NamedDisplayElement
-rule Filter {
-	from website : Website!Filter
-	to waf : WAF!Filter (
-		displayLabel <-
-			if not website.displayLabel.oclIsUndefined() and website.displayLabel <> '' then
-				website.displayLabel
-			else
-				'Filter'
-			endif --,
---		parameters <-
---			if website.parametersOld->notEmpty() then
---				website.parametersOld
---			else
---				Sequence{thisModule.implicitFilterParameter(website)}
---			endif --,
---		selection <- website.selection.findServiceSelection()
-	)
-}
-
---- @extends NamedElement
---rule FilterParameter {
---	from website : Website!FilterParameter
---	to waf : WAF!FilterParameter (
---		formal <- website.formal.findServiceFormalParameter(),
---		dataType <- website.dataType,
---		defaultValue <- website.defaultValue,
---		placeholder <-
---			if not website.placeholder.oclIsUndefined() then
---				website.placeholder
---			else
---				website.name.createLabel()
---			endif
---	)
---}
-
---lazy rule implicitFilterParameter {
---	-from website : Website!Filter
---	to waf : WAF!FilterParameter (
---		name <- website.name
---	)
---}
-
 rule Query {
 	from website : Website!Query
 	to waf : WAF!Query (
@@ -828,19 +785,9 @@ abstract rule CollectionUnit {
 			else
 				website.selection.findServiceSelection()
 			endif,
-		filters <- website.filters
-			->union(if website.pagination.oclIsUndefined() and website.defaultPaginationSize > 0 then
-					Sequence{thisModule.PaginationFilter(website)}
-				else
-					Sequence{}
-				endif),
-		pagination <-
-			if website.pagination.oclIsUndefined() and website.defaultPaginationSize > 0 then
-					thisModule.PaginationFilter(website)
-				else
-					website.pagination
-				endif,
+		supportedFilters <-	website.supportedFilters->collect(f | f.findFilter()),
 		defaultPaginationSize <- website.defaultPaginationSize,
+		maximumPaginationSize <- website.maximumPaginationSize,
 		emptyMessage <- website.emptyMessage,
 		nextNpages <- website.nextNpages,
 		previousNpages <- website.previousNpages,
@@ -851,21 +798,6 @@ abstract rule CollectionUnit {
 		firstPageLabel <- website.firstPageLabel,
 		lastPageLabel <- website.lastPageLabel
 	)
-}
-
-unique lazy rule PaginationFilter {
-	from website : Website!CollectionUnit
-	to waf : WAF!Filter (
-		name <- 'pagination',
-		displayLabel <- 'Pagination' --,
---		parameters <- Sequence{pageParameter}
---	),
---	pageParameter : WAF!FilterParameter (
---		name <- 'page'
-	)
-	do {
-		waf;
-	}
 }
 
 

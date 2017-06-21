@@ -326,10 +326,10 @@ interface CollectionUnit extends SelectableUnit {
 	refers Feature containingFeature
 	refers EntityOrView[1..*] contentType
 	refers Selection selection
-	contains Filter[] filters
-	refers Filter pagination
+	refers Filter[] supportedFilters
 	String emptyMessage
 	int defaultPaginationSize
+	int maximumPaginationSize
 	int nextNpages
 	int previousNpages
 	String nextPageLabel = ">"

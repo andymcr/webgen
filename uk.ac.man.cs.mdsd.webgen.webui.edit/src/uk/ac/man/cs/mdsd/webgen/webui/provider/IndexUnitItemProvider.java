@@ -5,10 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.webui.provider;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -20,10 +17,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.service.Selection;
-import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.IndexUnit;
-import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
@@ -59,9 +53,12 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			addContentTypePropertyDescriptor(object);
 			addContainingFeaturePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
+			addSupportedFiltersPropertyDescriptor(object);
+			addFiltersPropertyDescriptor(object);
 			addEmptyMessagePropertyDescriptor(object);
 			addPaginationPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
+			addMaximumPaginationSizePropertyDescriptor(object);
 			addNextNpagesPropertyDescriptor(object);
 			addPreviousNpagesPropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
@@ -180,6 +177,57 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Supported Filters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addSupportedFiltersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_CollectionUnit_supportedFilters_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_supportedFilters_feature", "_UI_CollectionUnit_type"),
+			WebuiPackage.Literals.COLLECTION_UNIT__SUPPORTED_FILTERS,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof IndexUnit) {
+						final IndexUnit unit = (IndexUnit) object;
+						if (unit.getSelection() != null) {
+							return unit.getSelection().getFilters();
+						}
+					}
+					return Collections.emptySet();
+				}
+		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Filters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFiltersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_filters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_filters_feature", "_UI_CollectionUnit_type"),
+				 WebuiPackage.Literals.COLLECTION_UNIT__FILTERS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Empty Message feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -220,7 +268,7 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof IndexUnit) {
-						return ((IndexUnit) object).getFilters();
+						return ((IndexUnit) object).getSupportedFilters();
 					}
 					return Collections.emptySet();
 				}
@@ -241,6 +289,28 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 				 getString("_UI_CollectionUnit_defaultPaginationSize_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_defaultPaginationSize_feature", "_UI_CollectionUnit_type"),
 				 WebuiPackage.Literals.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_PaginationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Maximum Pagination Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaximumPaginationSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_maximumPaginationSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_maximumPaginationSize_feature", "_UI_CollectionUnit_type"),
+				 WebuiPackage.Literals.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE,
 				 true,
 				 false,
 				 false,
@@ -547,7 +617,6 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebuiPackage.Literals.COLLECTION_UNIT__FILTERS);
 			childrenFeatures.add(WebuiPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
 		}
 		return childrenFeatures;
@@ -615,6 +684,7 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 		switch (notification.getFeatureID(IndexUnit.class)) {
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
 			case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
+			case WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE:
 			case WebuiPackage.INDEX_UNIT__NEXT_NPAGES:
 			case WebuiPackage.INDEX_UNIT__PREVIOUS_NPAGES:
 			case WebuiPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
@@ -630,7 +700,6 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			case WebuiPackage.INDEX_UNIT__ROW_CLASSES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebuiPackage.INDEX_UNIT__FILTERS:
 			case WebuiPackage.INDEX_UNIT__ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -651,11 +720,6 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.COLLECTION_UNIT__FILTERS,
-				 ServiceFactory.eINSTANCE.createFilter()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(WebuiPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
 				 WebuiFactory.eINSTANCE.createSelectAction()));
 
@@ -668,19 +732,6 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			(createChildParameter
 				(WebuiPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
 				 WebuiFactory.eINSTANCE.createFeatureSupportAction()));
-	}
-
-	protected Set<Selection> getSelections(final IndexUnit unit) {
-		final Set<Selection> selections = new HashSet<Selection>();
-		final WebUI webUI = unit.getPageDisplayedOn().getWebUI();
-		if (!unit.getContentType().isEmpty()) {
-			selections.addAll(getSelections(webUI, unit.getContentType().get(0)));
-		}
-		if (unit.getSelectionType() != null) {
-			selections.addAll(getSelections(webUI, unit.getSelectionType()));
-		}
-
-		return selections;
 	}
 
 }

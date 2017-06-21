@@ -262,6 +262,12 @@ helper context Service!Service def: getServiceSelection(name : String) : Service
 helper context Website!Selection def: findServiceSelection() : Service!Selection
 	= thisModule.findService(self.usedBy.name).getServiceSelection(self.name);
 
+helper context Service!Selection def: getFilter(name : String) : Service!FormalParameter
+	= self.filters->any(f | f.name = name);
+
+helper context Website!Filter def: findFilter() : Service!Filter
+	= self.selection.findServiceSelection().getFilter(self.name);
+
 helper context Service!Selection def: getServiceFormalParameter(name : String) : Service!FormalParameter
 	= self.parameters->any(p | p.name = name);
 

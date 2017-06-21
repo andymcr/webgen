@@ -203,7 +203,7 @@ public class QueryItemProvider
 			final ActionMenuEntry entry
 				= (ActionMenuEntry) query.eContainer();
 			if (entry.getDestination() instanceof IndexUnit) {
-				return ((IndexUnit) entry.getDestination()).getFilters();
+				return ((IndexUnit) entry.getDestination()).getSupportedFilters();
 			}
 		}
 

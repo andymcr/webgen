@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
@@ -48,10 +47,10 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFilters <em>Filters</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPagination <em>Pagination</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getMaximumPaginationSize <em>Maximum Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getNextNpages <em>Next Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
@@ -120,24 +119,14 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	protected Selection selection;
 
 	/**
-	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list.
+	 * The cached value of the '{@link #getSupportedFilters() <em>Supported Filters</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFilters()
+	 * @see #getSupportedFilters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Filter> filters;
-
-	/**
-	 * The cached value of the '{@link #getPagination() <em>Pagination</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPagination()
-	 * @generated
-	 * @ordered
-	 */
-	protected Filter pagination;
+	protected EList<Filter> supportedFilters;
 
 	/**
 	 * The default value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
@@ -178,6 +167,26 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected int defaultPaginationSize = DEFAULT_PAGINATION_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaximumPaginationSize() <em>Maximum Pagination Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumPaginationSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAXIMUM_PAGINATION_SIZE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getMaximumPaginationSize() <em>Maximum Pagination Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumPaginationSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maximumPaginationSize = MAXIMUM_PAGINATION_SIZE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNextNpages() <em>Next Npages</em>}' attribute.
@@ -561,49 +570,11 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Filter> getFilters() {
-		if (filters == null) {
-			filters = new EObjectContainmentEList<Filter>(Filter.class, this, WafPackage.INDEX_UNIT__FILTERS);
+	public EList<Filter> getSupportedFilters() {
+		if (supportedFilters == null) {
+			supportedFilters = new EObjectResolvingEList<Filter>(Filter.class, this, WafPackage.INDEX_UNIT__SUPPORTED_FILTERS);
 		}
-		return filters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Filter getPagination() {
-		if (pagination != null && pagination.eIsProxy()) {
-			InternalEObject oldPagination = (InternalEObject)pagination;
-			pagination = (Filter)eResolveProxy(oldPagination);
-			if (pagination != oldPagination) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.INDEX_UNIT__PAGINATION, oldPagination, pagination));
-			}
-		}
-		return pagination;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Filter basicGetPagination() {
-		return pagination;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPagination(Filter newPagination) {
-		Filter oldPagination = pagination;
-		pagination = newPagination;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__PAGINATION, oldPagination, pagination));
+		return supportedFilters;
 	}
 
 	/**
@@ -646,6 +617,27 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		defaultPaginationSize = newDefaultPaginationSize;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE, oldDefaultPaginationSize, defaultPaginationSize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getMaximumPaginationSize() {
+		return maximumPaginationSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaximumPaginationSize(int newMaximumPaginationSize) {
+		int oldMaximumPaginationSize = maximumPaginationSize;
+		maximumPaginationSize = newMaximumPaginationSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE, oldMaximumPaginationSize, maximumPaginationSize));
 	}
 
 	/**
@@ -961,8 +953,6 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		switch (featureID) {
 			case WafPackage.INDEX_UNIT__SELECTORS:
 				return ((InternalEList<?>)getSelectors()).basicRemove(otherEnd, msgs);
-			case WafPackage.INDEX_UNIT__FILTERS:
-				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
 			case WafPackage.INDEX_UNIT__TARGETTING_SEARCHES:
@@ -992,15 +982,14 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
-			case WafPackage.INDEX_UNIT__FILTERS:
-				return getFilters();
-			case WafPackage.INDEX_UNIT__PAGINATION:
-				if (resolve) return getPagination();
-				return basicGetPagination();
+			case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS:
+				return getSupportedFilters();
 			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				return getEmptyMessage();
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return getDefaultPaginationSize();
+			case WafPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE:
+				return getMaximumPaginationSize();
 			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
 				return getNextNpages();
 			case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES:
@@ -1056,18 +1045,18 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)newValue);
 				return;
-			case WafPackage.INDEX_UNIT__FILTERS:
-				getFilters().clear();
-				getFilters().addAll((Collection<? extends Filter>)newValue);
-				return;
-			case WafPackage.INDEX_UNIT__PAGINATION:
-				setPagination((Filter)newValue);
+			case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS:
+				getSupportedFilters().clear();
+				getSupportedFilters().addAll((Collection<? extends Filter>)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage((String)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize((Integer)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE:
+				setMaximumPaginationSize((Integer)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
 				setNextNpages((Integer)newValue);
@@ -1133,17 +1122,17 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
-			case WafPackage.INDEX_UNIT__FILTERS:
-				getFilters().clear();
-				return;
-			case WafPackage.INDEX_UNIT__PAGINATION:
-				setPagination((Filter)null);
+			case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS:
+				getSupportedFilters().clear();
 				return;
 			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage(EMPTY_MESSAGE_EDEFAULT);
 				return;
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize(DEFAULT_PAGINATION_SIZE_EDEFAULT);
+				return;
+			case WafPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE:
+				setMaximumPaginationSize(MAXIMUM_PAGINATION_SIZE_EDEFAULT);
 				return;
 			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
 				setNextNpages(NEXT_NPAGES_EDEFAULT);
@@ -1203,14 +1192,14 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return contentType != null && !contentType.isEmpty();
 			case WafPackage.INDEX_UNIT__SELECTION:
 				return selection != null;
-			case WafPackage.INDEX_UNIT__FILTERS:
-				return filters != null && !filters.isEmpty();
-			case WafPackage.INDEX_UNIT__PAGINATION:
-				return pagination != null;
+			case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS:
+				return supportedFilters != null && !supportedFilters.isEmpty();
 			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				return EMPTY_MESSAGE_EDEFAULT == null ? emptyMessage != null : !EMPTY_MESSAGE_EDEFAULT.equals(emptyMessage);
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return defaultPaginationSize != DEFAULT_PAGINATION_SIZE_EDEFAULT;
+			case WafPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE:
+				return maximumPaginationSize != MAXIMUM_PAGINATION_SIZE_EDEFAULT;
 			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
 				return nextNpages != NEXT_NPAGES_EDEFAULT;
 			case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES:
@@ -1258,10 +1247,10 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WafPackage.INDEX_UNIT__CONTAINING_FEATURE: return WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE;
 				case WafPackage.INDEX_UNIT__CONTENT_TYPE: return WafPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WafPackage.INDEX_UNIT__SELECTION: return WafPackage.COLLECTION_UNIT__SELECTION;
-				case WafPackage.INDEX_UNIT__FILTERS: return WafPackage.COLLECTION_UNIT__FILTERS;
-				case WafPackage.INDEX_UNIT__PAGINATION: return WafPackage.COLLECTION_UNIT__PAGINATION;
+				case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS: return WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
 				case WafPackage.INDEX_UNIT__EMPTY_MESSAGE: return WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE;
 				case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE: return WafPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE;
+				case WafPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE: return WafPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE;
 				case WafPackage.INDEX_UNIT__NEXT_NPAGES: return WafPackage.COLLECTION_UNIT__NEXT_NPAGES;
 				case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES: return WafPackage.COLLECTION_UNIT__PREVIOUS_NPAGES;
 				case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL: return WafPackage.COLLECTION_UNIT__NEXT_PAGE_LABEL;
@@ -1301,10 +1290,10 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WafPackage.INDEX_UNIT__CONTAINING_FEATURE;
 				case WafPackage.COLLECTION_UNIT__CONTENT_TYPE: return WafPackage.INDEX_UNIT__CONTENT_TYPE;
 				case WafPackage.COLLECTION_UNIT__SELECTION: return WafPackage.INDEX_UNIT__SELECTION;
-				case WafPackage.COLLECTION_UNIT__FILTERS: return WafPackage.INDEX_UNIT__FILTERS;
-				case WafPackage.COLLECTION_UNIT__PAGINATION: return WafPackage.INDEX_UNIT__PAGINATION;
+				case WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WafPackage.INDEX_UNIT__SUPPORTED_FILTERS;
 				case WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE: return WafPackage.INDEX_UNIT__EMPTY_MESSAGE;
 				case WafPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE: return WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE;
+				case WafPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE: return WafPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE;
 				case WafPackage.COLLECTION_UNIT__NEXT_NPAGES: return WafPackage.INDEX_UNIT__NEXT_NPAGES;
 				case WafPackage.COLLECTION_UNIT__PREVIOUS_NPAGES: return WafPackage.INDEX_UNIT__PREVIOUS_NPAGES;
 				case WafPackage.COLLECTION_UNIT__NEXT_PAGE_LABEL: return WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL;
@@ -1339,6 +1328,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		result.append(emptyMessage);
 		result.append(", defaultPaginationSize: ");
 		result.append(defaultPaginationSize);
+		result.append(", maximumPaginationSize: ");
+		result.append(maximumPaginationSize);
 		result.append(", nextNpages: ");
 		result.append(nextNpages);
 		result.append(", previousNpages: ");

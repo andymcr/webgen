@@ -16,8 +16,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.ImageUnit;
@@ -56,9 +54,12 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			addContentTypePropertyDescriptor(object);
 			addContainingFeaturePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
+			addSupportedFiltersPropertyDescriptor(object);
+			addFiltersPropertyDescriptor(object);
 			addEmptyMessagePropertyDescriptor(object);
 			addPaginationPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
+			addMaximumPaginationSizePropertyDescriptor(object);
 			addNextNpagesPropertyDescriptor(object);
 			addPreviousNpagesPropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
@@ -177,6 +178,50 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Supported Filters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSupportedFiltersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_supportedFilters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_supportedFilters_feature", "_UI_CollectionUnit_type"),
+				 WebuiPackage.Literals.COLLECTION_UNIT__SUPPORTED_FILTERS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Filters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFiltersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_filters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_filters_feature", "_UI_CollectionUnit_type"),
+				 WebuiPackage.Literals.COLLECTION_UNIT__FILTERS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Empty Message feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -234,6 +279,28 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 getString("_UI_CollectionUnit_defaultPaginationSize_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_defaultPaginationSize_feature", "_UI_CollectionUnit_type"),
 				 WebuiPackage.Literals.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_PaginationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Maximum Pagination Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaximumPaginationSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_maximumPaginationSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_maximumPaginationSize_feature", "_UI_CollectionUnit_type"),
+				 WebuiPackage.Literals.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE,
 				 true,
 				 false,
 				 false,
@@ -544,7 +611,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebuiPackage.Literals.COLLECTION_UNIT__FILTERS);
 			childrenFeatures.add(WebuiPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE);
 			childrenFeatures.add(WebuiPackage.Literals.IMAGE_UNIT__TITLE_FEATURE);
 		}
@@ -593,6 +659,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 		switch (notification.getFeatureID(ImageUnit.class)) {
 			case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE:
 			case WebuiPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE:
+			case WebuiPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE:
 			case WebuiPackage.IMAGE_UNIT__NEXT_NPAGES:
 			case WebuiPackage.IMAGE_UNIT__PREVIOUS_NPAGES:
 			case WebuiPackage.IMAGE_UNIT__NEXT_PAGE_LABEL:
@@ -606,7 +673,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			case WebuiPackage.IMAGE_UNIT__TRANSITION_TIME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebuiPackage.IMAGE_UNIT__FILTERS:
 			case WebuiPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 			case WebuiPackage.IMAGE_UNIT__TITLE_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -625,11 +691,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebuiPackage.Literals.COLLECTION_UNIT__FILTERS,
-				 ServiceFactory.eINSTANCE.createFilter()));
 
 		newChildDescriptors.add
 			(createChildParameter

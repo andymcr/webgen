@@ -16,7 +16,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import uk.ac.man.cs.mdsd.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.waf.IndexUnit;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -55,9 +54,10 @@ public class IndexUnitItemProvider
 			addContainingFeaturePropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
-			addPaginationPropertyDescriptor(object);
+			addSupportedFiltersPropertyDescriptor(object);
 			addEmptyMessagePropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
+			addMaximumPaginationSizePropertyDescriptor(object);
 			addNextNpagesPropertyDescriptor(object);
 			addPreviousNpagesPropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
@@ -184,6 +184,28 @@ public class IndexUnitItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Supported Filters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSupportedFiltersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_supportedFilters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_supportedFilters_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__SUPPORTED_FILTERS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Omit Column Labels feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -206,28 +228,6 @@ public class IndexUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Pagination feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPaginationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnit_pagination_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_pagination_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__PAGINATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Default Pagination Size feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -241,6 +241,28 @@ public class IndexUnitItemProvider
 				 getString("_UI_CollectionUnit_defaultPaginationSize_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_defaultPaginationSize_feature", "_UI_CollectionUnit_type"),
 				 WafPackage.Literals.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Maximum Pagination Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaximumPaginationSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_maximumPaginationSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_maximumPaginationSize_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE,
 				 true,
 				 false,
 				 false,
@@ -503,7 +525,6 @@ public class IndexUnitItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.COLLECTION_UNIT__FILTERS);
 			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
 		}
 		return childrenFeatures;
@@ -550,6 +571,7 @@ public class IndexUnitItemProvider
 		switch (notification.getFeatureID(IndexUnit.class)) {
 			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
+			case WafPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE:
 			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
 			case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES:
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
@@ -562,7 +584,6 @@ public class IndexUnitItemProvider
 			case WafPackage.INDEX_UNIT__ROW_CLASSES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.INDEX_UNIT__FILTERS:
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -580,11 +601,6 @@ public class IndexUnitItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.COLLECTION_UNIT__FILTERS,
-				 ServiceFactory.eINSTANCE.createFilter()));
 
 		newChildDescriptors.add
 			(createChildParameter

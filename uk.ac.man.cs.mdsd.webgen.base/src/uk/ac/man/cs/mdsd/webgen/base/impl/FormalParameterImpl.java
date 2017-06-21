@@ -26,35 +26,15 @@ import uk.ac.man.cs.mdsd.webgen.base.FormalParameterList;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl#getFormalFor <em>Formal For</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl#isOptional <em>Optional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl#getDataType <em>Data Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.base.impl.FormalParameterImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FormalParameterImpl extends NamedElementImpl implements FormalParameter {
-	/**
-	 * The default value of the '{@link #isOptional() <em>Optional</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOptional()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean OPTIONAL_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isOptional() <em>Optional</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOptional()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean optional = OPTIONAL_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,6 +64,26 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	 * @ordered
 	 */
 	protected DataType dataType;
+
+	/**
+	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PLACEHOLDER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected String placeholder = PLACEHOLDER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -170,27 +170,6 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isOptional() {
-		return optional;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOptional(boolean newOptional) {
-		boolean oldOptional = optional;
-		optional = newOptional;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.FORMAL_PARAMETER__OPTIONAL, oldOptional, optional));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getDefaultValue() {
 		return defaultValue;
 	}
@@ -243,6 +222,27 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 		dataType = newDataType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.FORMAL_PARAMETER__DATA_TYPE, oldDataType, dataType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPlaceholder() {
+		return placeholder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPlaceholder(String newPlaceholder) {
+		String oldPlaceholder = placeholder;
+		placeholder = newPlaceholder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasePackage.FORMAL_PARAMETER__PLACEHOLDER, oldPlaceholder, placeholder));
 	}
 
 	/**
@@ -320,13 +320,13 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 		switch (featureID) {
 			case BasePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				return getFormalFor();
-			case BasePackage.FORMAL_PARAMETER__OPTIONAL:
-				return isOptional();
 			case BasePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				return getDefaultValue();
 			case BasePackage.FORMAL_PARAMETER__DATA_TYPE:
 				if (resolve) return getDataType();
 				return basicGetDataType();
+			case BasePackage.FORMAL_PARAMETER__PLACEHOLDER:
+				return getPlaceholder();
 			case BasePackage.FORMAL_PARAMETER__DESCRIPTION:
 				return getDescription();
 		}
@@ -344,14 +344,14 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 			case BasePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				setFormalFor((FormalParameterList)newValue);
 				return;
-			case BasePackage.FORMAL_PARAMETER__OPTIONAL:
-				setOptional((Boolean)newValue);
-				return;
 			case BasePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				setDefaultValue((String)newValue);
 				return;
 			case BasePackage.FORMAL_PARAMETER__DATA_TYPE:
 				setDataType((DataType)newValue);
+				return;
+			case BasePackage.FORMAL_PARAMETER__PLACEHOLDER:
+				setPlaceholder((String)newValue);
 				return;
 			case BasePackage.FORMAL_PARAMETER__DESCRIPTION:
 				setDescription((String)newValue);
@@ -371,14 +371,14 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 			case BasePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				setFormalFor((FormalParameterList)null);
 				return;
-			case BasePackage.FORMAL_PARAMETER__OPTIONAL:
-				setOptional(OPTIONAL_EDEFAULT);
-				return;
 			case BasePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				setDefaultValue(DEFAULT_VALUE_EDEFAULT);
 				return;
 			case BasePackage.FORMAL_PARAMETER__DATA_TYPE:
 				setDataType((DataType)null);
+				return;
+			case BasePackage.FORMAL_PARAMETER__PLACEHOLDER:
+				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
 			case BasePackage.FORMAL_PARAMETER__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
@@ -397,12 +397,12 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 		switch (featureID) {
 			case BasePackage.FORMAL_PARAMETER__FORMAL_FOR:
 				return getFormalFor() != null;
-			case BasePackage.FORMAL_PARAMETER__OPTIONAL:
-				return optional != OPTIONAL_EDEFAULT;
 			case BasePackage.FORMAL_PARAMETER__DEFAULT_VALUE:
 				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
 			case BasePackage.FORMAL_PARAMETER__DATA_TYPE:
 				return dataType != null;
+			case BasePackage.FORMAL_PARAMETER__PLACEHOLDER:
+				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case BasePackage.FORMAL_PARAMETER__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
@@ -419,10 +419,10 @@ public class FormalParameterImpl extends NamedElementImpl implements FormalParam
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (optional: ");
-		result.append(optional);
-		result.append(", defaultValue: ");
+		result.append(" (defaultValue: ");
 		result.append(defaultValue);
+		result.append(", placeholder: ");
+		result.append(placeholder);
 		result.append(", description: ");
 		result.append(description);
 		result.append(')');

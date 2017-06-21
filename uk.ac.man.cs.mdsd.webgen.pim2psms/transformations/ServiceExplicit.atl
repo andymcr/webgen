@@ -115,6 +115,12 @@ rule FormalParameter {
 			else
 				OclUndefined
 			endif endif,
+		placeholder <-
+			if not website.placeholder.oclIsUndefined() then
+				website.placeholder.trim()
+			else
+				website.name.createLabel()
+			endif,
 		description <- website.description
 	)
 }

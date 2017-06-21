@@ -377,7 +377,7 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFormalParameter_Optional() {
+	public EAttribute getFormalParameter_DefaultValue() {
 		return (EAttribute)formalParameterEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -386,8 +386,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFormalParameter_DefaultValue() {
-		return (EAttribute)formalParameterEClass.getEStructuralFeatures().get(2);
+	public EReference getFormalParameter_DataType() {
+		return (EReference)formalParameterEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -395,8 +395,8 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFormalParameter_DataType() {
-		return (EReference)formalParameterEClass.getEStructuralFeatures().get(3);
+	public EAttribute getFormalParameter_Placeholder() {
+		return (EAttribute)formalParameterEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -493,9 +493,9 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		formalParameterEClass = createEClass(FORMAL_PARAMETER);
 		createEReference(formalParameterEClass, FORMAL_PARAMETER__FORMAL_FOR);
-		createEAttribute(formalParameterEClass, FORMAL_PARAMETER__OPTIONAL);
 		createEAttribute(formalParameterEClass, FORMAL_PARAMETER__DEFAULT_VALUE);
 		createEReference(formalParameterEClass, FORMAL_PARAMETER__DATA_TYPE);
+		createEAttribute(formalParameterEClass, FORMAL_PARAMETER__PLACEHOLDER);
 		createEAttribute(formalParameterEClass, FORMAL_PARAMETER__DESCRIPTION);
 
 		parameterReferenceEClass = createEClass(PARAMETER_REFERENCE);
@@ -575,9 +575,9 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 
 		initEClass(formalParameterEClass, FormalParameter.class, "FormalParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFormalParameter_FormalFor(), this.getFormalParameterList(), this.getFormalParameterList_Parameters(), "formalFor", null, 1, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFormalParameter_Optional(), ecorePackage.getEBoolean(), "optional", "false", 0, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormalParameter_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFormalParameter_DataType(), this.getDataType(), null, "dataType", null, 0, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormalParameter_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormalParameter_Description(), ecorePackage.getEString(), "description", null, 0, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterReferenceEClass, ParameterReference.class, "ParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

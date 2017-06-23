@@ -4,40 +4,42 @@ package uk.ac.man.cs.mdsd.webgen.service.provider;
 
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.base.provider.NamedElementItemProvider;
+import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
+import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.base.provider.NamedDisplayElementItemProvider;
 
-import uk.ac.man.cs.mdsd.webgen.service.Service;
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
+import uk.ac.man.cs.mdsd.webgen.service.Filter;
 import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.service.Service} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.service.Filter} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceItemProvider extends NamedElementItemProvider {
+public class FilterItemProvider extends NamedDisplayElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceItemProvider(AdapterFactory adapterFactory) {
+	public FilterItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -52,87 +54,31 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addServesPropertyDescriptor(object);
-			addFindAllPropertyDescriptor(object);
-			addFindOnePropertyDescriptor(object);
+			addMethodNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Serves feature.
+	 * This adds a property descriptor for the Method Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addServesPropertyDescriptor(Object object) {
+	protected void addMethodNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Service_serves_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_serves_feature", "_UI_Service_type"),
-				 ServicePackage.Literals.SERVICE__SERVES,
+				 getString("_UI_Filter_methodName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Filter_methodName_feature", "_UI_Filter_type"),
+				 ServicePackage.Literals.FILTER__METHOD_NAME,
 				 true,
 				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_ImplementationPropertyCategory"),
 				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Find All feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addFindAllPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_Service_findAll_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_Service_findAll_feature", "_UI_Service_type"),
-			ServicePackage.Literals.SERVICE__FIND_ALL,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof Service) {
-						return ((Service) object).getSelections();
-					}
-
-					return Collections.emptySet();
-				}
-		});
-	}
-
-	/**
-	 * This adds a property descriptor for the Find One feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addFindOnePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_Service_findOne_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_Service_findOne_feature", "_UI_Service_type"),
-			ServicePackage.Literals.SERVICE__FIND_ONE,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof Service) {
-						return ((Service) object).getSelections();
-					}
-
-					return Collections.emptySet();
-				}
-		});
 	}
 
 	/**
@@ -147,8 +93,9 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ServicePackage.Literals.SERVICE__SELECTIONS);
-			childrenFeatures.add(ServicePackage.Literals.SERVICE__OPERATIONS);
+			childrenFeatures.add(BasePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
+			childrenFeatures.add(ServicePackage.Literals.FILTER__PARAMETERS_OLD);
+			childrenFeatures.add(ServicePackage.Literals.FILTER__CONDITION);
 		}
 		return childrenFeatures;
 	}
@@ -167,14 +114,14 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This returns Service.gif.
+	 * This returns Filter.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Service.png"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Filter"));
 	}
 
 	/**
@@ -185,10 +132,10 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Service)object).getName();
+		String label = ((Filter)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Service_type") :
-			getString("_UI_Service_type") + " " + label;
+			getString("_UI_Filter_type") :
+			getString("_UI_Filter_type") + " " + label;
 	}
 	
 
@@ -203,9 +150,13 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Service.class)) {
-			case ServicePackage.SERVICE__SELECTIONS:
-			case ServicePackage.SERVICE__OPERATIONS:
+		switch (notification.getFeatureID(Filter.class)) {
+			case ServicePackage.FILTER__METHOD_NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case ServicePackage.FILTER__PARAMETERS:
+			case ServicePackage.FILTER__PARAMETERS_OLD:
+			case ServicePackage.FILTER__CONDITION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -225,13 +176,48 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ServicePackage.Literals.SERVICE__SELECTIONS,
-				 ServiceFactory.eINSTANCE.createSelection()));
+				(BasePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
+				 BaseFactory.eINSTANCE.createFormalParameter()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ServicePackage.Literals.SERVICE__OPERATIONS,
-				 ServiceFactory.eINSTANCE.createBusinessOperation()));
+				(ServicePackage.Literals.FILTER__PARAMETERS_OLD,
+				 ServiceFactory.eINSTANCE.createFilterParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.FILTER__CONDITION,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.FILTER__CONDITION,
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.FILTER__CONDITION,
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.FILTER__CONDITION,
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.FILTER__CONDITION,
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.FILTER__CONDITION,
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.FILTER__CONDITION,
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 	/**

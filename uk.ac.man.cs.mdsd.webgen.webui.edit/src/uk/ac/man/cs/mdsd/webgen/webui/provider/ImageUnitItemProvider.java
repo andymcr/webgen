@@ -55,7 +55,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			addContainingFeaturePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addSupportedFiltersPropertyDescriptor(object);
-			addFiltersPropertyDescriptor(object);
 			addEmptyMessagePropertyDescriptor(object);
 			addPaginationPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
@@ -196,28 +195,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 true,
 				 null,
 				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Filters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFiltersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnit_filters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_filters_feature", "_UI_CollectionUnit_type"),
-				 WebuiPackage.Literals.COLLECTION_UNIT__FILTERS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
 				 null));
 	}
 

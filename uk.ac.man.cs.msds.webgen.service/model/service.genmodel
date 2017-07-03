@@ -46,7 +46,7 @@
           ecoreFeature="ecore:EReference service.ecore#//Order/path"/>
     </genClasses>
     <genClasses ecoreClass="service.ecore#//ServiceFeatureReference">
-      <genFeatures property="Readonly" createChild="false" propertyCategory="Business"
+      <genFeatures property="None" createChild="false" propertyCategory="Business"
           ecoreFeature="ecore:EAttribute service.ecore#//ServiceFeatureReference/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Business"
           propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//ServiceFeatureReference/feature"/>

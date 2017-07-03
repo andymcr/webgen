@@ -240,7 +240,6 @@
           ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/selection"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/supportedFilters"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/filters"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/emptyMessage"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Pagination"
           propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/pagination"/>

@@ -13,9 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
@@ -41,7 +39,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
@@ -115,16 +112,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected EList<Filter> supportedFilters;
-
-	/**
-	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFilters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Filter> filters;
 
 	/**
 	 * The default value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
@@ -611,18 +598,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			supportedFilters = new EObjectResolvingEList<Filter>(Filter.class, this, WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS);
 		}
 		return supportedFilters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Filter> getFilters() {
-		if (filters == null) {
-			filters = new EObjectContainmentEList<Filter>(Filter.class, this, WebuiPackage.IMAGE_UNIT__FILTERS);
-		}
-		return filters;
 	}
 
 	/**
@@ -1127,8 +1102,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebuiPackage.IMAGE_UNIT__FILTERS:
-				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
 			case WebuiPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				return basicSetImagePathFeature(null, msgs);
 			case WebuiPackage.IMAGE_UNIT__TITLE_FEATURE:
@@ -1158,8 +1131,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return basicGetSelection();
 			case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
 				return getSupportedFilters();
-			case WebuiPackage.IMAGE_UNIT__FILTERS:
-				return getFilters();
 			case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE:
 				return getEmptyMessage();
 			case WebuiPackage.IMAGE_UNIT__PAGINATION:
@@ -1230,10 +1201,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
 				getSupportedFilters().addAll((Collection<? extends Filter>)newValue);
-				return;
-			case WebuiPackage.IMAGE_UNIT__FILTERS:
-				getFilters().clear();
-				getFilters().addAll((Collection<? extends Filter>)newValue);
 				return;
 			case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage((String)newValue);
@@ -1319,9 +1286,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
 				return;
-			case WebuiPackage.IMAGE_UNIT__FILTERS:
-				getFilters().clear();
-				return;
 			case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage(EMPTY_MESSAGE_EDEFAULT);
 				return;
@@ -1401,8 +1365,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return selection != null;
 			case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
 				return supportedFilters != null && !supportedFilters.isEmpty();
-			case WebuiPackage.IMAGE_UNIT__FILTERS:
-				return filters != null && !filters.isEmpty();
 			case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE:
 				return EMPTY_MESSAGE_EDEFAULT == null ? emptyMessage != null : !EMPTY_MESSAGE_EDEFAULT.equals(emptyMessage);
 			case WebuiPackage.IMAGE_UNIT__PAGINATION:
@@ -1464,7 +1426,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WebuiPackage.IMAGE_UNIT__CONTAINING_FEATURE: return WebuiPackage.COLLECTION_UNIT__CONTAINING_FEATURE;
 				case WebuiPackage.IMAGE_UNIT__SELECTION: return WebuiPackage.COLLECTION_UNIT__SELECTION;
 				case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS: return WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
-				case WebuiPackage.IMAGE_UNIT__FILTERS: return WebuiPackage.COLLECTION_UNIT__FILTERS;
 				case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE: return WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE;
 				case WebuiPackage.IMAGE_UNIT__PAGINATION: return WebuiPackage.COLLECTION_UNIT__PAGINATION;
 				case WebuiPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE: return WebuiPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE;
@@ -1502,7 +1463,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WebuiPackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WebuiPackage.IMAGE_UNIT__CONTAINING_FEATURE;
 				case WebuiPackage.COLLECTION_UNIT__SELECTION: return WebuiPackage.IMAGE_UNIT__SELECTION;
 				case WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS;
-				case WebuiPackage.COLLECTION_UNIT__FILTERS: return WebuiPackage.IMAGE_UNIT__FILTERS;
 				case WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE: return WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE;
 				case WebuiPackage.COLLECTION_UNIT__PAGINATION: return WebuiPackage.IMAGE_UNIT__PAGINATION;
 				case WebuiPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE: return WebuiPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE;

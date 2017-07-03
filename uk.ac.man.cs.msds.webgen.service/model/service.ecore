@@ -74,20 +74,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="Filter" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedDisplayElement ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//FormalParameterList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"
         eOpposite="#//Selection/filters"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parametersOld" upperBound="-1"
-        eType="#//FilterParameter" containment="true" eOpposite="#//FilterParameter/partOf"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" ordered="false"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FilterParameter" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" eType="#//Filter"
-        eOpposite="#//Filter/parametersOld"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="formal" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//FormalParameter"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//DataType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholder" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

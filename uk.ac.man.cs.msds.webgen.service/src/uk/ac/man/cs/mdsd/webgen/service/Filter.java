@@ -2,8 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.webgen.service;
 
-import org.eclipse.emf.common.util.EList;
-
 import uk.ac.man.cs.mdsd.webgen.base.FormalParameterList;
 import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
@@ -18,7 +16,6 @@ import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Filter#getSelection <em>Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Filter#getParametersOld <em>Parameters Old</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Filter#getCondition <em>Condition</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Filter#getMethodName <em>Method Name</em>}</li>
  * </ul>
@@ -107,23 +104,5 @@ public interface Filter extends NamedDisplayElement, FormalParameterList {
 	 * @generated
 	 */
 	void setSelection(Selection value);
-
-	/**
-	 * Returns the value of the '<em><b>Parameters Old</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.FilterParameter}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.service.FilterParameter#getPartOf <em>Part Of</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Parameters Old</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters Old</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getFilter_ParametersOld()
-	 * @see uk.ac.man.cs.mdsd.webgen.service.FilterParameter#getPartOf
-	 * @model opposite="partOf" containment="true"
-	 * @generated
-	 */
-	EList<FilterParameter> getParametersOld();
 
 } // Filter

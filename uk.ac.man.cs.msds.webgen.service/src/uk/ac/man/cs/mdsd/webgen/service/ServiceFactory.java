@@ -94,15 +94,6 @@ public interface ServiceFactory extends EFactory {
 	Filter createFilter();
 
 	/**
-	 * Returns a new object of class '<em>Filter Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Filter Parameter</em>'.
-	 * @generated
-	 */
-	FilterParameter createFilterParameter();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

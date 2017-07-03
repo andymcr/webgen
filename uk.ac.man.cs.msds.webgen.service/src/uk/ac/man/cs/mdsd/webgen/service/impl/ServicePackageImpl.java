@@ -20,7 +20,6 @@ import uk.ac.man.cs.mdsd.webgen.service.Asc;
 import uk.ac.man.cs.mdsd.webgen.service.BusinessOperation;
 import uk.ac.man.cs.mdsd.webgen.service.Desc;
 import uk.ac.man.cs.mdsd.webgen.service.Filter;
-import uk.ac.man.cs.mdsd.webgen.service.FilterParameter;
 import uk.ac.man.cs.mdsd.webgen.service.OperationResultTypes;
 import uk.ac.man.cs.mdsd.webgen.service.Order;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
@@ -99,13 +98,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	private EClass filterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass filterParameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -463,7 +455,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	public EReference getFilter_Condition() {
-		return (EReference)filterEClass.getEStructuralFeatures().get(2);
+		return (EReference)filterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -472,7 +464,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	public EAttribute getFilter_MethodName() {
-		return (EAttribute)filterEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)filterEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -482,69 +474,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 */
 	public EReference getFilter_Selection() {
 		return (EReference)filterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilter_ParametersOld() {
-		return (EReference)filterEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFilterParameter() {
-		return filterParameterEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilterParameter_PartOf() {
-		return (EReference)filterParameterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilterParameter_Formal() {
-		return (EReference)filterParameterEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFilterParameter_DataType() {
-		return (EReference)filterParameterEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFilterParameter_DefaultValue() {
-		return (EAttribute)filterParameterEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFilterParameter_Placeholder() {
-		return (EAttribute)filterParameterEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -624,16 +553,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		filterEClass = createEClass(FILTER);
 		createEReference(filterEClass, FILTER__SELECTION);
-		createEReference(filterEClass, FILTER__PARAMETERS_OLD);
 		createEReference(filterEClass, FILTER__CONDITION);
 		createEAttribute(filterEClass, FILTER__METHOD_NAME);
-
-		filterParameterEClass = createEClass(FILTER_PARAMETER);
-		createEReference(filterParameterEClass, FILTER_PARAMETER__PART_OF);
-		createEReference(filterParameterEClass, FILTER_PARAMETER__FORMAL);
-		createEReference(filterParameterEClass, FILTER_PARAMETER__DATA_TYPE);
-		createEAttribute(filterParameterEClass, FILTER_PARAMETER__DEFAULT_VALUE);
-		createEAttribute(filterParameterEClass, FILTER_PARAMETER__PLACEHOLDER);
 
 		// Create enums
 		operationResultTypesEEnum = createEEnum(OPERATION_RESULT_TYPES);
@@ -681,7 +602,6 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		businessOperationEClass.getESuperTypes().add(theBasePackage.getNamedElement());
 		filterEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
 		filterEClass.getESuperTypes().add(theBasePackage.getFormalParameterList());
-		filterParameterEClass.getESuperTypes().add(theBasePackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(servicesEClass, Services.class, "Services", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -724,16 +644,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		initEClass(filterEClass, Filter.class, "Filter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFilter_Selection(), this.getSelection(), this.getSelection_Filters(), "selection", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFilter_ParametersOld(), this.getFilterParameter(), this.getFilterParameter_PartOf(), "parametersOld", null, 0, -1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFilter_Condition(), theExpressionPackage.getPredicate(), null, "condition", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getFilter_MethodName(), ecorePackage.getEString(), "methodName", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(filterParameterEClass, FilterParameter.class, "FilterParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFilterParameter_PartOf(), this.getFilter(), this.getFilter_ParametersOld(), "partOf", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFilterParameter_Formal(), theBasePackage.getFormalParameter(), null, "formal", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFilterParameter_DataType(), theBasePackage.getDataType(), null, "dataType", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFilterParameter_DefaultValue(), ecorePackage.getEString(), "defaultValue", "", 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFilterParameter_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(operationResultTypesEEnum, OperationResultTypes.class, "OperationResultTypes");

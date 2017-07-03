@@ -23,7 +23,6 @@ import uk.ac.man.cs.mdsd.webgen.base.provider.NamedDisplayElementItemProvider;
 
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.service.Filter;
-import uk.ac.man.cs.mdsd.webgen.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 
 /**
@@ -94,7 +93,6 @@ public class FilterItemProvider extends NamedDisplayElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(BasePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS);
-			childrenFeatures.add(ServicePackage.Literals.FILTER__PARAMETERS_OLD);
 			childrenFeatures.add(ServicePackage.Literals.FILTER__CONDITION);
 		}
 		return childrenFeatures;
@@ -155,7 +153,6 @@ public class FilterItemProvider extends NamedDisplayElementItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ServicePackage.FILTER__PARAMETERS:
-			case ServicePackage.FILTER__PARAMETERS_OLD:
 			case ServicePackage.FILTER__CONDITION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -178,11 +175,6 @@ public class FilterItemProvider extends NamedDisplayElementItemProvider {
 			(createChildParameter
 				(BasePackage.Literals.FORMAL_PARAMETER_LIST__PARAMETERS,
 				 BaseFactory.eINSTANCE.createFormalParameter()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ServicePackage.Literals.FILTER__PARAMETERS_OLD,
-				 ServiceFactory.eINSTANCE.createFilterParameter()));
 
 		newChildDescriptors.add
 			(createChildParameter

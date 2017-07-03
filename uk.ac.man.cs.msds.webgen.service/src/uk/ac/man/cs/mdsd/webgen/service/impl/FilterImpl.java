@@ -25,7 +25,6 @@ import uk.ac.man.cs.mdsd.webgen.base.impl.NamedDisplayElementImpl;
 
 import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.service.Filter;
-import uk.ac.man.cs.mdsd.webgen.service.FilterParameter;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 
@@ -39,7 +38,6 @@ import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.FilterImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.FilterImpl#getSelection <em>Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.FilterImpl#getParametersOld <em>Parameters Old</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.FilterImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.FilterImpl#getMethodName <em>Method Name</em>}</li>
  * </ul>
@@ -56,16 +54,6 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 	 * @ordered
 	 */
 	protected EList<FormalParameter> parameters;
-
-	/**
-	 * The cached value of the '{@link #getParametersOld() <em>Parameters Old</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParametersOld()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<FilterParameter> parametersOld;
 
 	/**
 	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
@@ -238,18 +226,6 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FilterParameter> getParametersOld() {
-		if (parametersOld == null) {
-			parametersOld = new EObjectContainmentWithInverseEList<FilterParameter>(FilterParameter.class, this, ServicePackage.FILTER__PARAMETERS_OLD, ServicePackage.FILTER_PARAMETER__PART_OF);
-		}
-		return parametersOld;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -260,8 +236,6 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetSelection((Selection)otherEnd, msgs);
-			case ServicePackage.FILTER__PARAMETERS_OLD:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParametersOld()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -278,8 +252,6 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 			case ServicePackage.FILTER__SELECTION:
 				return basicSetSelection(null, msgs);
-			case ServicePackage.FILTER__PARAMETERS_OLD:
-				return ((InternalEList<?>)getParametersOld()).basicRemove(otherEnd, msgs);
 			case ServicePackage.FILTER__CONDITION:
 				return basicSetCondition(null, msgs);
 		}
@@ -312,8 +284,6 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 				return getParameters();
 			case ServicePackage.FILTER__SELECTION:
 				return getSelection();
-			case ServicePackage.FILTER__PARAMETERS_OLD:
-				return getParametersOld();
 			case ServicePackage.FILTER__CONDITION:
 				return getCondition();
 			case ServicePackage.FILTER__METHOD_NAME:
@@ -337,10 +307,6 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 				return;
 			case ServicePackage.FILTER__SELECTION:
 				setSelection((Selection)newValue);
-				return;
-			case ServicePackage.FILTER__PARAMETERS_OLD:
-				getParametersOld().clear();
-				getParametersOld().addAll((Collection<? extends FilterParameter>)newValue);
 				return;
 			case ServicePackage.FILTER__CONDITION:
 				setCondition((Predicate)newValue);
@@ -366,9 +332,6 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 			case ServicePackage.FILTER__SELECTION:
 				setSelection((Selection)null);
 				return;
-			case ServicePackage.FILTER__PARAMETERS_OLD:
-				getParametersOld().clear();
-				return;
 			case ServicePackage.FILTER__CONDITION:
 				setCondition((Predicate)null);
 				return;
@@ -391,8 +354,6 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 				return parameters != null && !parameters.isEmpty();
 			case ServicePackage.FILTER__SELECTION:
 				return getSelection() != null;
-			case ServicePackage.FILTER__PARAMETERS_OLD:
-				return parametersOld != null && !parametersOld.isEmpty();
 			case ServicePackage.FILTER__CONDITION:
 				return condition != null;
 			case ServicePackage.FILTER__METHOD_NAME:

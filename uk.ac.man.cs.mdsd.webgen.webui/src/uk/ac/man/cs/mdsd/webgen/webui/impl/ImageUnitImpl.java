@@ -38,6 +38,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getPagination <em>Pagination</em>}</li>
@@ -102,6 +103,16 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected Selection selection;
+
+	/**
+	 * The cached value of the '{@link #getFilter() <em>Filter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFilter()
+	 * @generated
+	 * @ordered
+	 */
+	protected Filter filter;
 
 	/**
 	 * The cached value of the '{@link #getSupportedFilters() <em>Supported Filters</em>}' reference list.
@@ -586,6 +597,44 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		selection = newSelection;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_UNIT__SELECTION, oldSelection, selection));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Filter getFilter() {
+		if (filter != null && filter.eIsProxy()) {
+			InternalEObject oldFilter = (InternalEObject)filter;
+			filter = (Filter)eResolveProxy(oldFilter);
+			if (filter != oldFilter) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.IMAGE_UNIT__FILTER, oldFilter, filter));
+			}
+		}
+		return filter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Filter basicGetFilter() {
+		return filter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFilter(Filter newFilter) {
+		Filter oldFilter = filter;
+		filter = newFilter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_UNIT__FILTER, oldFilter, filter));
 	}
 
 	/**
@@ -1129,6 +1178,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebuiPackage.IMAGE_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
+			case WebuiPackage.IMAGE_UNIT__FILTER:
+				if (resolve) return getFilter();
+				return basicGetFilter();
 			case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
 				return getSupportedFilters();
 			case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE:
@@ -1197,6 +1249,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return;
 			case WebuiPackage.IMAGE_UNIT__SELECTION:
 				setSelection((Selection)newValue);
+				return;
+			case WebuiPackage.IMAGE_UNIT__FILTER:
+				setFilter((Filter)newValue);
 				return;
 			case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
@@ -1283,6 +1338,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebuiPackage.IMAGE_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
+			case WebuiPackage.IMAGE_UNIT__FILTER:
+				setFilter((Filter)null);
+				return;
 			case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
 				return;
@@ -1363,6 +1421,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return containingFeature != null;
 			case WebuiPackage.IMAGE_UNIT__SELECTION:
 				return selection != null;
+			case WebuiPackage.IMAGE_UNIT__FILTER:
+				return filter != null;
 			case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
 				return supportedFilters != null && !supportedFilters.isEmpty();
 			case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE:
@@ -1425,6 +1485,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WebuiPackage.IMAGE_UNIT__CONTENT_TYPE: return WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WebuiPackage.IMAGE_UNIT__CONTAINING_FEATURE: return WebuiPackage.COLLECTION_UNIT__CONTAINING_FEATURE;
 				case WebuiPackage.IMAGE_UNIT__SELECTION: return WebuiPackage.COLLECTION_UNIT__SELECTION;
+				case WebuiPackage.IMAGE_UNIT__FILTER: return WebuiPackage.COLLECTION_UNIT__FILTER;
 				case WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS: return WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
 				case WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE: return WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE;
 				case WebuiPackage.IMAGE_UNIT__PAGINATION: return WebuiPackage.COLLECTION_UNIT__PAGINATION;
@@ -1462,6 +1523,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE: return WebuiPackage.IMAGE_UNIT__CONTENT_TYPE;
 				case WebuiPackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WebuiPackage.IMAGE_UNIT__CONTAINING_FEATURE;
 				case WebuiPackage.COLLECTION_UNIT__SELECTION: return WebuiPackage.IMAGE_UNIT__SELECTION;
+				case WebuiPackage.COLLECTION_UNIT__FILTER: return WebuiPackage.IMAGE_UNIT__FILTER;
 				case WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WebuiPackage.IMAGE_UNIT__SUPPORTED_FILTERS;
 				case WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE: return WebuiPackage.IMAGE_UNIT__EMPTY_MESSAGE;
 				case WebuiPackage.COLLECTION_UNIT__PAGINATION: return WebuiPackage.IMAGE_UNIT__PAGINATION;

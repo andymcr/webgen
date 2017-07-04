@@ -22,6 +22,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getPagination <em>Pagination</em>}</li>
@@ -109,6 +110,32 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	void setSelection(Selection value);
+
+	/**
+	 * Returns the value of the '<em><b>Filter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Filter</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Filter</em>' reference.
+	 * @see #setFilter(Filter)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_Filter()
+	 * @model
+	 * @generated
+	 */
+	Filter getFilter();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFilter <em>Filter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Filter</em>' reference.
+	 * @see #getFilter()
+	 * @generated
+	 */
+	void setFilter(Filter value);
 
 	/**
 	 * Returns the value of the '<em><b>Supported Filters</b></em>' reference list.

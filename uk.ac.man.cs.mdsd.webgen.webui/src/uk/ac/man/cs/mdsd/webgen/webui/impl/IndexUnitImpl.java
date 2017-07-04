@@ -41,6 +41,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getPagination <em>Pagination</em>}</li>
@@ -104,6 +105,16 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected Selection selection;
+
+	/**
+	 * The cached value of the '{@link #getFilter() <em>Filter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFilter()
+	 * @generated
+	 * @ordered
+	 */
+	protected Filter filter;
 
 	/**
 	 * The cached value of the '{@link #getSupportedFilters() <em>Supported Filters</em>}' reference list.
@@ -605,6 +616,44 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Filter getFilter() {
+		if (filter != null && filter.eIsProxy()) {
+			InternalEObject oldFilter = (InternalEObject)filter;
+			filter = (Filter)eResolveProxy(oldFilter);
+			if (filter != oldFilter) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.INDEX_UNIT__FILTER, oldFilter, filter));
+			}
+		}
+		return filter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Filter basicGetFilter() {
+		return filter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFilter(Filter newFilter) {
+		Filter oldFilter = filter;
+		filter = newFilter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__FILTER, oldFilter, filter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Filter> getSupportedFilters() {
 		if (supportedFilters == null) {
 			supportedFilters = new EObjectResolvingEList<Filter>(Filter.class, this, WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS);
@@ -1046,6 +1095,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
+			case WebuiPackage.INDEX_UNIT__FILTER:
+				if (resolve) return getFilter();
+				return basicGetFilter();
 			case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				return getSupportedFilters();
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
@@ -1110,6 +1162,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return;
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)newValue);
+				return;
+			case WebuiPackage.INDEX_UNIT__FILTER:
+				setFilter((Filter)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
@@ -1194,6 +1249,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
+			case WebuiPackage.INDEX_UNIT__FILTER:
+				setFilter((Filter)null);
+				return;
 			case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
 				return;
@@ -1271,6 +1329,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return containingFeature != null;
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				return selection != null;
+			case WebuiPackage.INDEX_UNIT__FILTER:
+				return filter != null;
 			case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				return supportedFilters != null && !supportedFilters.isEmpty();
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
@@ -1331,6 +1391,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WebuiPackage.INDEX_UNIT__CONTENT_TYPE: return WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WebuiPackage.INDEX_UNIT__CONTAINING_FEATURE: return WebuiPackage.COLLECTION_UNIT__CONTAINING_FEATURE;
 				case WebuiPackage.INDEX_UNIT__SELECTION: return WebuiPackage.COLLECTION_UNIT__SELECTION;
+				case WebuiPackage.INDEX_UNIT__FILTER: return WebuiPackage.COLLECTION_UNIT__FILTER;
 				case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS: return WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
 				case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE: return WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE;
 				case WebuiPackage.INDEX_UNIT__PAGINATION: return WebuiPackage.COLLECTION_UNIT__PAGINATION;
@@ -1374,6 +1435,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE: return WebuiPackage.INDEX_UNIT__CONTENT_TYPE;
 				case WebuiPackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WebuiPackage.INDEX_UNIT__CONTAINING_FEATURE;
 				case WebuiPackage.COLLECTION_UNIT__SELECTION: return WebuiPackage.INDEX_UNIT__SELECTION;
+				case WebuiPackage.COLLECTION_UNIT__FILTER: return WebuiPackage.INDEX_UNIT__FILTER;
 				case WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS;
 				case WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE: return WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE;
 				case WebuiPackage.COLLECTION_UNIT__PAGINATION: return WebuiPackage.INDEX_UNIT__PAGINATION;

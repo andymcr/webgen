@@ -326,6 +326,7 @@ interface CollectionUnit extends SelectableUnit {
 	refers Feature containingFeature
 	refers EntityOrView[1..*] contentType
 	refers Selection selection
+	refers Filter filter
 	refers Filter[] supportedFilters
 	String emptyMessage
 	int defaultPaginationSize

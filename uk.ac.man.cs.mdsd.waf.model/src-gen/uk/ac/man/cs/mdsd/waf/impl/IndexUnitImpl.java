@@ -47,6 +47,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
@@ -117,6 +118,16 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected Selection selection;
+
+	/**
+	 * The cached value of the '{@link #getFilter() <em>Filter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFilter()
+	 * @generated
+	 * @ordered
+	 */
+	protected Filter filter;
 
 	/**
 	 * The cached value of the '{@link #getSupportedFilters() <em>Supported Filters</em>}' reference list.
@@ -570,6 +581,44 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Filter getFilter() {
+		if (filter != null && filter.eIsProxy()) {
+			InternalEObject oldFilter = (InternalEObject)filter;
+			filter = (Filter)eResolveProxy(oldFilter);
+			if (filter != oldFilter) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.INDEX_UNIT__FILTER, oldFilter, filter));
+			}
+		}
+		return filter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Filter basicGetFilter() {
+		return filter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFilter(Filter newFilter) {
+		Filter oldFilter = filter;
+		filter = newFilter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__FILTER, oldFilter, filter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Filter> getSupportedFilters() {
 		if (supportedFilters == null) {
 			supportedFilters = new EObjectResolvingEList<Filter>(Filter.class, this, WafPackage.INDEX_UNIT__SUPPORTED_FILTERS);
@@ -982,6 +1031,9 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
+			case WafPackage.INDEX_UNIT__FILTER:
+				if (resolve) return getFilter();
+				return basicGetFilter();
 			case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				return getSupportedFilters();
 			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
@@ -1044,6 +1096,9 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return;
 			case WafPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__FILTER:
+				setFilter((Filter)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
@@ -1122,6 +1177,9 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
+			case WafPackage.INDEX_UNIT__FILTER:
+				setFilter((Filter)null);
+				return;
 			case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
 				return;
@@ -1192,6 +1250,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return contentType != null && !contentType.isEmpty();
 			case WafPackage.INDEX_UNIT__SELECTION:
 				return selection != null;
+			case WafPackage.INDEX_UNIT__FILTER:
+				return filter != null;
 			case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				return supportedFilters != null && !supportedFilters.isEmpty();
 			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
@@ -1247,6 +1307,7 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WafPackage.INDEX_UNIT__CONTAINING_FEATURE: return WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE;
 				case WafPackage.INDEX_UNIT__CONTENT_TYPE: return WafPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WafPackage.INDEX_UNIT__SELECTION: return WafPackage.COLLECTION_UNIT__SELECTION;
+				case WafPackage.INDEX_UNIT__FILTER: return WafPackage.COLLECTION_UNIT__FILTER;
 				case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS: return WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
 				case WafPackage.INDEX_UNIT__EMPTY_MESSAGE: return WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE;
 				case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE: return WafPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE;
@@ -1290,6 +1351,7 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WafPackage.INDEX_UNIT__CONTAINING_FEATURE;
 				case WafPackage.COLLECTION_UNIT__CONTENT_TYPE: return WafPackage.INDEX_UNIT__CONTENT_TYPE;
 				case WafPackage.COLLECTION_UNIT__SELECTION: return WafPackage.INDEX_UNIT__SELECTION;
+				case WafPackage.COLLECTION_UNIT__FILTER: return WafPackage.INDEX_UNIT__FILTER;
 				case WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WafPackage.INDEX_UNIT__SUPPORTED_FILTERS;
 				case WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE: return WafPackage.INDEX_UNIT__EMPTY_MESSAGE;
 				case WafPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE: return WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE;

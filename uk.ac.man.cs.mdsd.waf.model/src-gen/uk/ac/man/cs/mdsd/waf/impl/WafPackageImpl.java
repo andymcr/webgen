@@ -2311,7 +2311,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCollectionUnit_SupportedFilters() {
+	public EReference getCollectionUnit_Filter() {
 		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -2320,8 +2320,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_EmptyMessage() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(4);
+	public EReference getCollectionUnit_SupportedFilters() {
+		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2329,7 +2329,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_DefaultPaginationSize() {
+	public EAttribute getCollectionUnit_EmptyMessage() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -2338,7 +2338,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_MaximumPaginationSize() {
+	public EAttribute getCollectionUnit_DefaultPaginationSize() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -2347,7 +2347,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_NextNpages() {
+	public EAttribute getCollectionUnit_MaximumPaginationSize() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -2356,7 +2356,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_PreviousNpages() {
+	public EAttribute getCollectionUnit_NextNpages() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -2365,7 +2365,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_NextPageLabel() {
+	public EAttribute getCollectionUnit_PreviousNpages() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -2374,7 +2374,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_PreviousPageLabel() {
+	public EAttribute getCollectionUnit_NextPageLabel() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -2383,7 +2383,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_UseDisabledPageLinks() {
+	public EAttribute getCollectionUnit_PreviousPageLabel() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -2392,7 +2392,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_UseFirstLastPageLinks() {
+	public EAttribute getCollectionUnit_UseDisabledPageLinks() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -2401,7 +2401,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_FirstPageLabel() {
+	public EAttribute getCollectionUnit_UseFirstLastPageLinks() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -2410,8 +2410,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_LastPageLabel() {
+	public EAttribute getCollectionUnit_FirstPageLabel() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCollectionUnit_LastPageLabel() {
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -3566,6 +3575,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__CONTAINING_FEATURE);
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__CONTENT_TYPE);
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__SELECTION);
+		createEReference(collectionUnitEClass, COLLECTION_UNIT__FILTER);
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__SUPPORTED_FILTERS);
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__EMPTY_MESSAGE);
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE);
@@ -4043,6 +4053,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getCollectionUnit_ContainingFeature(), theOrmPackage.getFeature(), null, "containingFeature", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_ContentType(), theOrmPackage.getEntityOrView(), null, "contentType", null, 1, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_Selection(), theServicePackage.getSelection(), null, "selection", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCollectionUnit_Filter(), theServicePackage.getFilter(), null, "filter", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_SupportedFilters(), theServicePackage.getFilter(), null, "supportedFilters", null, 0, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_EmptyMessage(), theEcorePackage.getEString(), "emptyMessage", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_DefaultPaginationSize(), theEcorePackage.getEInt(), "defaultPaginationSize", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

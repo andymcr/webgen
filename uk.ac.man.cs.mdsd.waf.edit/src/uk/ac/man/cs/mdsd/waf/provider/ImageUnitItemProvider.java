@@ -52,6 +52,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			addContainingFeaturePropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
+			addFilterPropertyDescriptor(object);
 			addSupportedFiltersPropertyDescriptor(object);
 			addEmptyMessagePropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
@@ -175,6 +176,28 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 getString("_UI_CollectionUnit_selection_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
 				 WafPackage.Literals.COLLECTION_UNIT__SELECTION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Filter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFilterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_filter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_filter_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__FILTER,
 				 true,
 				 false,
 				 true,

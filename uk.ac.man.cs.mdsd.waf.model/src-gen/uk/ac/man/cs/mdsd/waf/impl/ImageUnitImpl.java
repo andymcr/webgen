@@ -45,6 +45,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
@@ -118,6 +119,16 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected Selection selection;
+
+	/**
+	 * The cached value of the '{@link #getFilter() <em>Filter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFilter()
+	 * @generated
+	 * @ordered
+	 */
+	protected Filter filter;
 
 	/**
 	 * The cached value of the '{@link #getSupportedFilters() <em>Supported Filters</em>}' reference list.
@@ -604,6 +615,44 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		selection = newSelection;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__SELECTION, oldSelection, selection));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Filter getFilter() {
+		if (filter != null && filter.eIsProxy()) {
+			InternalEObject oldFilter = (InternalEObject)filter;
+			filter = (Filter)eResolveProxy(oldFilter);
+			if (filter != oldFilter) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.IMAGE_UNIT__FILTER, oldFilter, filter));
+			}
+		}
+		return filter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Filter basicGetFilter() {
+		return filter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFilter(Filter newFilter) {
+		Filter oldFilter = filter;
+		filter = newFilter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__FILTER, oldFilter, filter));
 	}
 
 	/**
@@ -1128,6 +1177,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
+			case WafPackage.IMAGE_UNIT__FILTER:
+				if (resolve) return getFilter();
+				return basicGetFilter();
 			case WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
 				return getSupportedFilters();
 			case WafPackage.IMAGE_UNIT__EMPTY_MESSAGE:
@@ -1197,6 +1249,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return;
 			case WafPackage.IMAGE_UNIT__SELECTION:
 				setSelection((Selection)newValue);
+				return;
+			case WafPackage.IMAGE_UNIT__FILTER:
+				setFilter((Filter)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
@@ -1283,6 +1338,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
+			case WafPackage.IMAGE_UNIT__FILTER:
+				setFilter((Filter)null);
+				return;
 			case WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
 				return;
@@ -1362,6 +1420,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return contentType != null && !contentType.isEmpty();
 			case WafPackage.IMAGE_UNIT__SELECTION:
 				return selection != null;
+			case WafPackage.IMAGE_UNIT__FILTER:
+				return filter != null;
 			case WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS:
 				return supportedFilters != null && !supportedFilters.isEmpty();
 			case WafPackage.IMAGE_UNIT__EMPTY_MESSAGE:
@@ -1423,6 +1483,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WafPackage.IMAGE_UNIT__CONTAINING_FEATURE: return WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE;
 				case WafPackage.IMAGE_UNIT__CONTENT_TYPE: return WafPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WafPackage.IMAGE_UNIT__SELECTION: return WafPackage.COLLECTION_UNIT__SELECTION;
+				case WafPackage.IMAGE_UNIT__FILTER: return WafPackage.COLLECTION_UNIT__FILTER;
 				case WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS: return WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
 				case WafPackage.IMAGE_UNIT__EMPTY_MESSAGE: return WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE;
 				case WafPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE: return WafPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE;
@@ -1460,6 +1521,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WafPackage.IMAGE_UNIT__CONTAINING_FEATURE;
 				case WafPackage.COLLECTION_UNIT__CONTENT_TYPE: return WafPackage.IMAGE_UNIT__CONTENT_TYPE;
 				case WafPackage.COLLECTION_UNIT__SELECTION: return WafPackage.IMAGE_UNIT__SELECTION;
+				case WafPackage.COLLECTION_UNIT__FILTER: return WafPackage.IMAGE_UNIT__FILTER;
 				case WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS;
 				case WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE: return WafPackage.IMAGE_UNIT__EMPTY_MESSAGE;
 				case WafPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE: return WafPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE;

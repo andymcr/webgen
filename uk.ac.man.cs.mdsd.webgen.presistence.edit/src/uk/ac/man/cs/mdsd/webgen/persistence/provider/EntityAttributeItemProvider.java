@@ -340,6 +340,11 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				 BaseFactory.eINSTANCE.createConstant()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
@@ -365,11 +370,6 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
-				 ExpressionFactory.eINSTANCE.createFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
@@ -381,6 +381,11 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			(createChildParameter
 				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter

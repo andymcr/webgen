@@ -273,6 +273,11 @@ public class UnitElementItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 BaseFactory.eINSTANCE.createConstant()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
@@ -298,11 +303,6 @@ public class UnitElementItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
-				 ExpressionFactory.eINSTANCE.createFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
@@ -314,6 +314,11 @@ public class UnitElementItemProvider extends UnitFeatureItemProvider {
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter

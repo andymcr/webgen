@@ -417,6 +417,11 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 BaseFactory.eINSTANCE.createConstant()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 ExpressionFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
@@ -442,11 +447,6 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 ExpressionFactory.eINSTANCE.createFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
@@ -458,6 +458,11 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter

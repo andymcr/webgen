@@ -33,6 +33,7 @@ import uk.ac.man.cs.mdsd.webgen.base.util.BaseAdapterFactory;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateComparisonOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateEqualityOperator;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateInOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsEmpty;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsNull;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsOperator;
@@ -249,6 +250,29 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.base.Constant} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConstantItemProvider constantItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.base.Constant}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConstantAdapter() {
+		if (constantItemProvider == null) {
+			constantItemProvider = new ConstantItemProvider(this);
+		}
+
+		return constantItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -404,6 +428,11 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createConstant()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createCurrentTime()));
 
@@ -416,6 +445,11 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createConstant()));
 
 				return null;
 			}
@@ -444,6 +478,11 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createConstant()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createCurrentTime()));
 
@@ -457,9 +496,63 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createParameterReference()));
 
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createConstant()));
+
 				return null;
 			}
  
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateInOperator(PredicateInOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createCurrentTime()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createCurrentUser()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createConstant()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createCurrentTime()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createCurrentUser()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createConstant()));
+
+				return null;
+			}
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -484,6 +577,11 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createConstant()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createCurrentTime()));
 
@@ -496,6 +594,11 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createConstant()));
 
 				return null;
 			}
@@ -524,6 +627,11 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 BaseFactory.eINSTANCE.createConstant()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createCurrentTime()));
 
@@ -536,6 +644,11 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
 						 BaseFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 BaseFactory.eINSTANCE.createConstant()));
 
 				return null;
 			}
@@ -552,6 +665,11 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
 						 BaseFactory.eINSTANCE.createParameterReference()));
 
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 BaseFactory.eINSTANCE.createConstant()));
+
 				return null;
 			}
  
@@ -566,6 +684,11 @@ public class BaseItemProviderAdapterFactory extends BaseAdapterFactory implement
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
 						 BaseFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						 BaseFactory.eINSTANCE.createConstant()));
 
 				return null;
 			}

@@ -31,6 +31,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateComparisonOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateEqualityOperator;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateInOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsEmpty;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsNull;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsOperator;
@@ -1162,6 +1163,25 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 				return null;
 			}
  
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateInOperator(PredicateInOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 WebuiFactory.eINSTANCE.createWebuiFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 WebuiFactory.eINSTANCE.createWebuiFeatureReference()));
+
+				return null;
+			}
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

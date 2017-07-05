@@ -108,6 +108,8 @@ public class BaseValidator extends EObjectValidator {
 				return validateFormalParameter((FormalParameter)value, diagnostics, context);
 			case BasePackage.PARAMETER_REFERENCE:
 				return validateParameterReference((ParameterReference)value, diagnostics, context);
+			case BasePackage.CONSTANT:
+				return validateConstant((Constant)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -309,6 +311,25 @@ public class BaseValidator extends EObjectValidator {
 	 */
 	public boolean validateParameterReference(ParameterReference parameterReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(parameterReference, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConstant(Constant constant, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(constant, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(constant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(constant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(constant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(constant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(constant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(constant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(constant, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(constant, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(constant, diagnostics, context);
+		return result;
 	}
 
 	/**

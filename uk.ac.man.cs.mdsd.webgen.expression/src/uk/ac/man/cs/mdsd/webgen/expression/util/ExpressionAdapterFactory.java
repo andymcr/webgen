@@ -95,10 +95,6 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 				return createTimeLiteralAdapter();
 			}
 			@Override
-			public Adapter caseFunction(Function object) {
-				return createFunctionAdapter();
-			}
-			@Override
 			public Adapter caseVariable(Variable object) {
 				return createVariableAdapter();
 			}
@@ -117,6 +113,10 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePredicateComparisonOperator(PredicateComparisonOperator object) {
 				return createPredicateComparisonOperatorAdapter();
+			}
+			@Override
+			public Adapter casePredicateInOperator(PredicateInOperator object) {
+				return createPredicateInOperatorAdapter();
 			}
 			@Override
 			public Adapter casePredicateIsOperator(PredicateIsOperator object) {
@@ -165,20 +165,6 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTimeLiteralAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.expression.Function <em>Function</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.expression.Function
-	 * @generated
-	 */
-	public Adapter createFunctionAdapter() {
 		return null;
 	}
 
@@ -249,6 +235,20 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPredicateComparisonOperatorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.expression.PredicateInOperator <em>Predicate In Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.PredicateInOperator
+	 * @generated
+	 */
+	public Adapter createPredicateInOperatorAdapter() {
 		return null;
 	}
 

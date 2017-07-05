@@ -180,6 +180,11 @@ public class PredicateBooleanOperatorItemProvider extends PredicateItemProvider 
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__EXPRESSIONS,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionPackage.Literals.PREDICATE_BOOLEAN_OPERATOR__EXPRESSIONS,
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add

@@ -67,15 +67,6 @@ public interface ExpressionFactory extends EFactory {
 	TimeLiteral createTimeLiteral();
 
 	/**
-	 * Returns a new object of class '<em>Function</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Function</em>'.
-	 * @generated
-	 */
-	Function createFunction();
-
-	/**
 	 * Returns a new object of class '<em>Predicate Boolean Operator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,6 +92,15 @@ public interface ExpressionFactory extends EFactory {
 	 * @generated
 	 */
 	PredicateComparisonOperator createPredicateComparisonOperator();
+
+	/**
+	 * Returns a new object of class '<em>Predicate In Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Predicate In Operator</em>'.
+	 * @generated
+	 */
+	PredicateInOperator createPredicateInOperator();
 
 	/**
 	 * Returns a new object of class '<em>Predicate Is Operator</em>'.

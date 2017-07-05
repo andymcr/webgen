@@ -76,6 +76,10 @@ class Desc extends Order {
 }
 
 
+class Constant extends NamedElement, Variable { 
+	String value 
+} 
+ 
 class FeatureReference extends Variable { 
 	refers Feature[1] feature 
 } 

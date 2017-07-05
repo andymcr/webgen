@@ -14,7 +14,6 @@ import uk.ac.man.cs.mdsd.webgen.expression.ComparisionOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.Expression;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
-import uk.ac.man.cs.mdsd.webgen.expression.Function;
 import uk.ac.man.cs.mdsd.webgen.expression.IntegerLiteral;
 import uk.ac.man.cs.mdsd.webgen.expression.Literal;
 import uk.ac.man.cs.mdsd.webgen.expression.NullLiteral;
@@ -22,6 +21,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateBooleanOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateComparisonOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateEqualityOperator;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateInOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsEmpty;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsNull;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsOperator;
@@ -85,12 +85,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass functionEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass variableEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,6 +110,12 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * @generated
 	 */
 	private EClass predicateComparisonOperatorEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass predicateInOperatorEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -318,24 +318,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFunction() {
-		return functionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFunction_Name() {
-		return (EAttribute)functionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getVariable() {
 		return variableEClass;
 	}
@@ -446,6 +428,33 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 */
 	public EReference getPredicateComparisonOperator_Right() {
 		return (EReference)predicateComparisonOperatorEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPredicateInOperator() {
+		return predicateInOperatorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPredicateInOperator_Left() {
+		return (EReference)predicateInOperatorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPredicateInOperator_Right() {
+		return (EReference)predicateInOperatorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -602,9 +611,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		timeLiteralEClass = createEClass(TIME_LITERAL);
 		createEAttribute(timeLiteralEClass, TIME_LITERAL__VALUE);
 
-		functionEClass = createEClass(FUNCTION);
-		createEAttribute(functionEClass, FUNCTION__NAME);
-
 		variableEClass = createEClass(VARIABLE);
 
 		predicateEClass = createEClass(PREDICATE);
@@ -622,6 +628,10 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		createEReference(predicateComparisonOperatorEClass, PREDICATE_COMPARISON_OPERATOR__LEFT);
 		createEAttribute(predicateComparisonOperatorEClass, PREDICATE_COMPARISON_OPERATOR__OPERATOR);
 		createEReference(predicateComparisonOperatorEClass, PREDICATE_COMPARISON_OPERATOR__RIGHT);
+
+		predicateInOperatorEClass = createEClass(PREDICATE_IN_OPERATOR);
+		createEReference(predicateInOperatorEClass, PREDICATE_IN_OPERATOR__LEFT);
+		createEReference(predicateInOperatorEClass, PREDICATE_IN_OPERATOR__RIGHT);
 
 		predicateIsOperatorEClass = createEClass(PREDICATE_IS_OPERATOR);
 		createEReference(predicateIsOperatorEClass, PREDICATE_IS_OPERATOR__LEFT);
@@ -676,12 +686,12 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		integerLiteralEClass.getESuperTypes().add(this.getLiteral());
 		stringLiteralEClass.getESuperTypes().add(this.getLiteral());
 		timeLiteralEClass.getESuperTypes().add(this.getLiteral());
-		functionEClass.getESuperTypes().add(this.getExpression());
 		variableEClass.getESuperTypes().add(this.getExpression());
 		predicateEClass.getESuperTypes().add(this.getExpression());
 		predicateBooleanOperatorEClass.getESuperTypes().add(this.getPredicate());
 		predicateEqualityOperatorEClass.getESuperTypes().add(this.getPredicate());
 		predicateComparisonOperatorEClass.getESuperTypes().add(this.getPredicate());
+		predicateInOperatorEClass.getESuperTypes().add(this.getPredicate());
 		predicateIsOperatorEClass.getESuperTypes().add(this.getPredicate());
 		predicateLikeOperatorEClass.getESuperTypes().add(this.getPredicate());
 		predicateIsEmptyEClass.getESuperTypes().add(this.getPredicate());
@@ -706,9 +716,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		initEClass(timeLiteralEClass, TimeLiteral.class, "TimeLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimeLiteral_Value(), ecorePackage.getEString(), "value", null, 1, 1, TimeLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFunction_Name(), ecorePackage.getEString(), "name", null, 1, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(predicateEClass, Predicate.class, "Predicate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -726,6 +733,10 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		initEReference(getPredicateComparisonOperator_Left(), this.getExpression(), null, "left", null, 1, 1, PredicateComparisonOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPredicateComparisonOperator_Operator(), this.getComparisionOperator(), "operator", null, 1, 1, PredicateComparisonOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPredicateComparisonOperator_Right(), this.getExpression(), null, "right", null, 1, 1, PredicateComparisonOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(predicateInOperatorEClass, PredicateInOperator.class, "PredicateInOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPredicateInOperator_Left(), this.getExpression(), null, "left", null, 1, 1, PredicateInOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPredicateInOperator_Right(), this.getExpression(), null, "right", null, 1, 1, PredicateInOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(predicateIsOperatorEClass, PredicateIsOperator.class, "PredicateIsOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPredicateIsOperator_Left(), this.getExpression(), null, "left", null, 1, 1, PredicateIsOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

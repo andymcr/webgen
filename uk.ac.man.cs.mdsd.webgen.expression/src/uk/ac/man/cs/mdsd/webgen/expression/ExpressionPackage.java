@@ -290,43 +290,6 @@ public interface ExpressionPackage extends EPackage {
 	int TIME_LITERAL_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.expression.impl.FunctionImpl <em>Function</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.FunctionImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getFunction()
-	 * @generated
-	 */
-	int FUNCTION = 7;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION__NAME = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Function</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Function</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUNCTION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.expression.Variable <em>Variable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -334,7 +297,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getVariable()
 	 * @generated
 	 */
-	int VARIABLE = 8;
+	int VARIABLE = 7;
 
 	/**
 	 * The number of structural features of the '<em>Variable</em>' class.
@@ -362,7 +325,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicate()
 	 * @generated
 	 */
-	int PREDICATE = 9;
+	int PREDICATE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -399,7 +362,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicateBooleanOperator()
 	 * @generated
 	 */
-	int PREDICATE_BOOLEAN_OPERATOR = 10;
+	int PREDICATE_BOOLEAN_OPERATOR = 9;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -454,7 +417,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicateEqualityOperator()
 	 * @generated
 	 */
-	int PREDICATE_EQUALITY_OPERATOR = 11;
+	int PREDICATE_EQUALITY_OPERATOR = 10;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -509,7 +472,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicateComparisonOperator()
 	 * @generated
 	 */
-	int PREDICATE_COMPARISON_OPERATOR = 12;
+	int PREDICATE_COMPARISON_OPERATOR = 11;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -564,6 +527,61 @@ public interface ExpressionPackage extends EPackage {
 	 * @ordered
 	 */
 	int PREDICATE_COMPARISON_OPERATOR_OPERATION_COUNT = PREDICATE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.expression.impl.PredicateInOperatorImpl <em>Predicate In Operator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.PredicateInOperatorImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicateInOperator()
+	 * @generated
+	 */
+	int PREDICATE_IN_OPERATOR = 12;
+
+	/**
+	 * The feature id for the '<em><b>Negated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE_IN_OPERATOR__NEGATED = PREDICATE__NEGATED;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE_IN_OPERATOR__LEFT = PREDICATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE_IN_OPERATOR__RIGHT = PREDICATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Predicate In Operator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE_IN_OPERATOR_FEATURE_COUNT = PREDICATE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Predicate In Operator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE_IN_OPERATOR_OPERATION_COUNT = PREDICATE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.expression.impl.PredicateIsOperatorImpl <em>Predicate Is Operator</em>}' class.
@@ -902,27 +920,6 @@ public interface ExpressionPackage extends EPackage {
 	EAttribute getTimeLiteral_Value();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.expression.Function <em>Function</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Function</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.expression.Function
-	 * @generated
-	 */
-	EClass getFunction();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.expression.Function#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.expression.Function#getName()
-	 * @see #getFunction()
-	 * @generated
-	 */
-	EAttribute getFunction_Name();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.expression.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1059,6 +1056,38 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPredicateComparisonOperator_Right();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.expression.PredicateInOperator <em>Predicate In Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Predicate In Operator</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.PredicateInOperator
+	 * @generated
+	 */
+	EClass getPredicateInOperator();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.expression.PredicateInOperator#getLeft <em>Left</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Left</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.PredicateInOperator#getLeft()
+	 * @see #getPredicateInOperator()
+	 * @generated
+	 */
+	EReference getPredicateInOperator_Left();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.expression.PredicateInOperator#getRight <em>Right</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Right</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.PredicateInOperator#getRight()
+	 * @see #getPredicateInOperator()
+	 * @generated
+	 */
+	EReference getPredicateInOperator_Right();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.expression.PredicateIsOperator <em>Predicate Is Operator</em>}'.
@@ -1312,24 +1341,6 @@ public interface ExpressionPackage extends EPackage {
 		EAttribute TIME_LITERAL__VALUE = eINSTANCE.getTimeLiteral_Value();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.expression.impl.FunctionImpl <em>Function</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.FunctionImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getFunction()
-		 * @generated
-		 */
-		EClass FUNCTION = eINSTANCE.getFunction();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FUNCTION__NAME = eINSTANCE.getFunction_Name();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.expression.Variable <em>Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1442,6 +1453,32 @@ public interface ExpressionPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PREDICATE_COMPARISON_OPERATOR__RIGHT = eINSTANCE.getPredicateComparisonOperator_Right();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.expression.impl.PredicateInOperatorImpl <em>Predicate In Operator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.PredicateInOperatorImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.expression.impl.ExpressionPackageImpl#getPredicateInOperator()
+		 * @generated
+		 */
+		EClass PREDICATE_IN_OPERATOR = eINSTANCE.getPredicateInOperator();
+
+		/**
+		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PREDICATE_IN_OPERATOR__LEFT = eINSTANCE.getPredicateInOperator_Left();
+
+		/**
+		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PREDICATE_IN_OPERATOR__RIGHT = eINSTANCE.getPredicateInOperator_Right();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.expression.impl.PredicateIsOperatorImpl <em>Predicate Is Operator</em>}' class.

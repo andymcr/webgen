@@ -164,11 +164,6 @@ public class PredicateEqualityOperatorItemProvider extends PredicateItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-				 ExpressionFactory.eINSTANCE.createFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
@@ -180,6 +175,11 @@ public class PredicateEqualityOperatorItemProvider extends PredicateItemProvider
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -229,11 +229,6 @@ public class PredicateEqualityOperatorItemProvider extends PredicateItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-				 ExpressionFactory.eINSTANCE.createFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
@@ -245,6 +240,11 @@ public class PredicateEqualityOperatorItemProvider extends PredicateItemProvider
 			(createChildParameter
 				(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter

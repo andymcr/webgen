@@ -53,11 +53,6 @@ class CurrentUser extends Expression {
 }
 
 
-class Function extends Expression {
-	String[1] name
-}
-
-
 interface Variable extends Expression {
 }
 
@@ -79,6 +74,11 @@ class PredicateEqualityOperator extends Predicate {
 class PredicateComparisonOperator extends Predicate {
 	contains Expression[1] left
 	ComparisionOperator[1] operator
+	contains Expression[1] right
+}
+
+class PredicateInOperator extends Predicate {
+	contains Expression[1] left
 	contains Expression[1] right
 }
 

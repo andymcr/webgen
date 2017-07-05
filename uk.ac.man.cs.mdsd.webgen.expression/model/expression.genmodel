@@ -30,9 +30,6 @@
     <genClasses ecoreClass="expression.ecore#//TimeLiteral">
       <genFeatures createChild="false" propertyCategory="Expression" ecoreFeature="ecore:EAttribute expression.ecore#//TimeLiteral/value"/>
     </genClasses>
-    <genClasses ecoreClass="expression.ecore#//Function">
-      <genFeatures createChild="false" propertyCategory="Expression" ecoreFeature="ecore:EAttribute expression.ecore#//Function/name"/>
-    </genClasses>
     <genClasses image="false" ecoreClass="expression.ecore#//Variable"/>
     <genClasses image="false" ecoreClass="expression.ecore#//Predicate">
       <genFeatures createChild="false" propertyCategory="Expression" ecoreFeature="ecore:EAttribute expression.ecore#//Predicate/negated"/>
@@ -54,6 +51,10 @@
       <genFeatures createChild="false" propertyCategory="Expression" ecoreFeature="ecore:EAttribute expression.ecore#//PredicateComparisonOperator/operator"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Expression"
           ecoreFeature="ecore:EReference expression.ecore#//PredicateComparisonOperator/right"/>
+    </genClasses>
+    <genClasses ecoreClass="expression.ecore#//PredicateInOperator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//PredicateInOperator/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//PredicateInOperator/right"/>
     </genClasses>
     <genClasses ecoreClass="expression.ecore#//PredicateIsOperator">
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Expression"

@@ -250,29 +250,6 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.expression.Function} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FunctionItemProvider functionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.expression.Function}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFunctionAdapter() {
-		if (functionItemProvider == null) {
-			functionItemProvider = new FunctionItemProvider(this);
-		}
-
-		return functionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.expression.PredicateBooleanOperator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -339,6 +316,29 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 		}
 
 		return predicateComparisonOperatorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.expression.PredicateInOperator} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PredicateInOperatorItemProvider predicateInOperatorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.expression.PredicateInOperator}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPredicateInOperatorAdapter() {
+		if (predicateInOperatorItemProvider == null) {
+			predicateInOperatorItemProvider = new PredicateInOperatorItemProvider(this);
+		}
+
+		return predicateInOperatorItemProvider;
 	}
 
 	/**
@@ -566,10 +566,10 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 		if (timeLiteralItemProvider != null) timeLiteralItemProvider.dispose();
 		if (currentTimeItemProvider != null) currentTimeItemProvider.dispose();
 		if (currentUserItemProvider != null) currentUserItemProvider.dispose();
-		if (functionItemProvider != null) functionItemProvider.dispose();
 		if (predicateBooleanOperatorItemProvider != null) predicateBooleanOperatorItemProvider.dispose();
 		if (predicateEqualityOperatorItemProvider != null) predicateEqualityOperatorItemProvider.dispose();
 		if (predicateComparisonOperatorItemProvider != null) predicateComparisonOperatorItemProvider.dispose();
+		if (predicateInOperatorItemProvider != null) predicateInOperatorItemProvider.dispose();
 		if (predicateIsOperatorItemProvider != null) predicateIsOperatorItemProvider.dispose();
 		if (predicateLikeOperatorItemProvider != null) predicateLikeOperatorItemProvider.dispose();
 		if (predicateIsEmptyItemProvider != null) predicateIsEmptyItemProvider.dispose();

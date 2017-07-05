@@ -118,13 +118,6 @@ public class ExpressionSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExpressionPackage.FUNCTION: {
-				Function function = (Function)theEObject;
-				T result = caseFunction(function);
-				if (result == null) result = caseExpression(function);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ExpressionPackage.VARIABLE: {
 				Variable variable = (Variable)theEObject;
 				T result = caseVariable(variable);
@@ -160,6 +153,14 @@ public class ExpressionSwitch<T> extends Switch<T> {
 				T result = casePredicateComparisonOperator(predicateComparisonOperator);
 				if (result == null) result = casePredicate(predicateComparisonOperator);
 				if (result == null) result = caseExpression(predicateComparisonOperator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExpressionPackage.PREDICATE_IN_OPERATOR: {
+				PredicateInOperator predicateInOperator = (PredicateInOperator)theEObject;
+				T result = casePredicateInOperator(predicateInOperator);
+				if (result == null) result = casePredicate(predicateInOperator);
+				if (result == null) result = caseExpression(predicateInOperator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -211,21 +212,6 @@ public class ExpressionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTimeLiteral(TimeLiteral object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Function</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Function</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFunction(Function object) {
 		return null;
 	}
 
@@ -301,6 +287,21 @@ public class ExpressionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePredicateComparisonOperator(PredicateComparisonOperator object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Predicate In Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Predicate In Operator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePredicateInOperator(PredicateInOperator object) {
 		return null;
 	}
 

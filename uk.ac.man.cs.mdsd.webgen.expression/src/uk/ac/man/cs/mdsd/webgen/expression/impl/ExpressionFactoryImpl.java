@@ -62,10 +62,10 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 			case ExpressionPackage.INTEGER_LITERAL: return createIntegerLiteral();
 			case ExpressionPackage.STRING_LITERAL: return createStringLiteral();
 			case ExpressionPackage.TIME_LITERAL: return createTimeLiteral();
-			case ExpressionPackage.FUNCTION: return createFunction();
 			case ExpressionPackage.PREDICATE_BOOLEAN_OPERATOR: return createPredicateBooleanOperator();
 			case ExpressionPackage.PREDICATE_EQUALITY_OPERATOR: return createPredicateEqualityOperator();
 			case ExpressionPackage.PREDICATE_COMPARISON_OPERATOR: return createPredicateComparisonOperator();
+			case ExpressionPackage.PREDICATE_IN_OPERATOR: return createPredicateInOperator();
 			case ExpressionPackage.PREDICATE_IS_OPERATOR: return createPredicateIsOperator();
 			case ExpressionPackage.PREDICATE_LIKE_OPERATOR: return createPredicateLikeOperator();
 			case ExpressionPackage.PREDICATE_IS_EMPTY: return createPredicateIsEmpty();
@@ -164,16 +164,6 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Function createFunction() {
-		FunctionImpl function = new FunctionImpl();
-		return function;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public PredicateBooleanOperator createPredicateBooleanOperator() {
 		PredicateBooleanOperatorImpl predicateBooleanOperator = new PredicateBooleanOperatorImpl();
 		return predicateBooleanOperator;
@@ -197,6 +187,16 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	public PredicateComparisonOperator createPredicateComparisonOperator() {
 		PredicateComparisonOperatorImpl predicateComparisonOperator = new PredicateComparisonOperatorImpl();
 		return predicateComparisonOperator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PredicateInOperator createPredicateInOperator() {
+		PredicateInOperatorImpl predicateInOperator = new PredicateInOperatorImpl();
+		return predicateInOperator;
 	}
 
 	/**

@@ -1,57 +1,58 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.expression.impl;
+package uk.ac.man.cs.mdsd.service.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
-import uk.ac.man.cs.mdsd.webgen.expression.Function;
+import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
+
+import uk.ac.man.cs.mdsd.service.Constant;
+import uk.ac.man.cs.mdsd.service.ServicePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Function</b></em>'.
+ * An implementation of the model object '<em><b>Constant</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.expression.impl.FunctionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.service.impl.ConstantImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class FunctionImpl extends MinimalEObjectImpl.Container implements Function {
+public class ConstantImpl extends NamedElementImpl implements Constant {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String VALUE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FunctionImpl() {
+	protected ConstantImpl() {
 		super();
 	}
 
@@ -62,7 +63,7 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ExpressionPackage.Literals.FUNCTION;
+		return ServicePackage.Literals.CONSTANT;
 	}
 
 	/**
@@ -70,8 +71,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getValue() {
+		return value;
 	}
 
 	/**
@@ -79,11 +80,11 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setValue(String newValue) {
+		String oldValue = value;
+		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.FUNCTION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.CONSTANT__VALUE, oldValue, value));
 	}
 
 	/**
@@ -94,8 +95,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExpressionPackage.FUNCTION__NAME:
-				return getName();
+			case ServicePackage.CONSTANT__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,8 +109,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExpressionPackage.FUNCTION__NAME:
-				setName((String)newValue);
+			case ServicePackage.CONSTANT__VALUE:
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,8 +124,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExpressionPackage.FUNCTION__NAME:
-				setName(NAME_EDEFAULT);
+			case ServicePackage.CONSTANT__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -138,8 +139,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExpressionPackage.FUNCTION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ServicePackage.CONSTANT__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,10 +155,10 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}
 
-} //FunctionImpl
+} //ConstantImpl

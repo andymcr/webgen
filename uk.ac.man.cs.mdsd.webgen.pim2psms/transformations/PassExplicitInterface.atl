@@ -785,6 +785,12 @@ abstract rule CollectionUnit {
 			else
 				website.selection.findServiceSelection()
 			endif,
+		filter <-
+			if website.filter.oclIsUndefined() then
+				website.filter
+			else
+				website.filter.findFilter()
+			endif,
 		supportedFilters <-	website.supportedFilters->collect(f | f.findFilter()),
 		defaultPaginationSize <- website.defaultPaginationSize,
 		maximumPaginationSize <- website.maximumPaginationSize,

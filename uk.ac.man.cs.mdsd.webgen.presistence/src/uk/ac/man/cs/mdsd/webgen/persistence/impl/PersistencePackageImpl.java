@@ -2441,7 +2441,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 			 "constraints", "featureNameUniqueWithinEntity"
 		   });	
 		addAnnotation
-		  (entityAttributeEClass, 
+		  (entityFeatureEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "primaryKeyRequired"
@@ -2529,7 +2529,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 			 "featureNameUniqueWithinEntity", "entityFeatures->isUnique(f | f.name)"
 		   });	
 		addAnnotation
-		  (entityAttributeEClass, 
+		  (entityFeatureEClass, 
 		   source, 
 		   new String[] {
 			 "primaryKeyRequired", "primaryKey implies cardinality <> Cardinality::Optional"

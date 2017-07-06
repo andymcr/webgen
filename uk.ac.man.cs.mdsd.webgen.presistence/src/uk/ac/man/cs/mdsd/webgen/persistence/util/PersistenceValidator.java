@@ -443,7 +443,37 @@ public class PersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entityFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entityFeature, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(entityFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityFeature_primaryKeyRequired(entityFeature, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the primaryKeyRequired constraint of '<em>Entity Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ENTITY_FEATURE__PRIMARY_KEY_REQUIRED__EEXPRESSION = "primaryKey implies cardinality <> Cardinality::Optional";
+
+	/**
+	 * Validates the primaryKeyRequired constraint of '<em>Entity Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEntityFeature_primaryKeyRequired(EntityFeature entityFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PersistencePackage.Literals.ENTITY_FEATURE,
+				 entityFeature,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "primaryKeyRequired",
+				 ENTITY_FEATURE__PRIMARY_KEY_REQUIRED__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -462,37 +492,8 @@ public class PersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entityAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entityAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(entityAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(entityAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityFeature_primaryKeyRequired(entityAttribute, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the primaryKeyRequired constraint of '<em>Entity Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ENTITY_ATTRIBUTE__PRIMARY_KEY_REQUIRED__EEXPRESSION = "primaryKey implies cardinality <> Cardinality::Optional";
-
-	/**
-	 * Validates the primaryKeyRequired constraint of '<em>Entity Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateEntityAttribute_primaryKeyRequired(EntityAttribute entityAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(PersistencePackage.Literals.ENTITY_ATTRIBUTE,
-				 entityAttribute,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "primaryKeyRequired",
-				 ENTITY_ATTRIBUTE__PRIMARY_KEY_REQUIRED__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**
@@ -511,7 +512,7 @@ public class PersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dataTypeAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dataTypeAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(dataTypeAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(dataTypeAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityFeature_primaryKeyRequired(dataTypeAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -531,7 +532,7 @@ public class PersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dateAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dateAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(dateAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(dateAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityFeature_primaryKeyRequired(dateAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -551,7 +552,7 @@ public class PersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(urlAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(urlAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(urlAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(urlAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityFeature_primaryKeyRequired(urlAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -571,7 +572,7 @@ public class PersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(resourceAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(resourceAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(resourceAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(resourceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityFeature_primaryKeyRequired(resourceAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -618,7 +619,7 @@ public class PersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fileAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fileAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(fileAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(fileAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityFeature_primaryKeyRequired(fileAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -638,7 +639,7 @@ public class PersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(imageAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(imageAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(imageAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(imageAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityFeature_primaryKeyRequired(imageAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -658,7 +659,7 @@ public class PersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(locationAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(locationAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(locationAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(locationAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityFeature_primaryKeyRequired(locationAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -678,6 +679,7 @@ public class PersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entityAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entityAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(entityAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityFeature_primaryKeyRequired(entityAssociation, diagnostics, context);
 		return result;
 	}
 
@@ -697,6 +699,7 @@ public class PersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(associationWithoutContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(associationWithoutContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(associationWithoutContainment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityFeature_primaryKeyRequired(associationWithoutContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssociationWithoutContainment_oneToManyAssociationsMustBeBidirectional(associationWithoutContainment, diagnostics, context);
 		return result;
 	}
@@ -746,6 +749,7 @@ public class PersistenceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(associationWithContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(associationWithContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(associationWithContainment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityFeature_primaryKeyRequired(associationWithContainment, diagnostics, context);
 		return result;
 	}
 

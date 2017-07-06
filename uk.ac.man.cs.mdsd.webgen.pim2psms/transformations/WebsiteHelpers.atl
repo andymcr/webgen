@@ -256,13 +256,16 @@ helper context Website!Association def: findOrmTargetAssociation() : ORM!Associa
 helper def: findService(name : String) : Service!Service
 	= Service!Service.allInstancesFrom('service')->any(s | s.name = name);
 
+helper context Website!Service def: findService() : Service!Service
+	= thisModule.findService(self.name);
+
 helper context Service!Service def: getServiceSelection(name : String) : Service!Selection
 	= self.selections->any(s | s.name = name);
 
 helper context Website!Selection def: findServiceSelection() : Service!Selection
-	= thisModule.findService(self.usedBy.name).getServiceSelection(self.name);
+	= self.usedBy.findService().getServiceSelection(self.name);
 
-helper context Service!Selection def: getFilter(name : String) : Service!FormalParameter
+helper context Service!Selection def: getFilter(name : String) : Service!Filter
 	= self.filters->any(f | f.name = name);
 
 helper context Website!Filter def: findFilter() : Service!Filter

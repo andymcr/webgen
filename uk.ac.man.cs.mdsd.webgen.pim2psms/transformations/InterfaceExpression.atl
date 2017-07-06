@@ -70,14 +70,6 @@ rule CurrentUser {
 }
 
 
-rule Function {
-	from website : Website!Function
-	to waf : WAF!Function (
-		name <- website.name
-	)
-}
-
-
 abstract rule Predicate {
 	from website : Website!Predicate
 	to waf : WAF!Predicate (

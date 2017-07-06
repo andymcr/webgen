@@ -47,6 +47,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.isHasChoices;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isUnique <em>Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isOrdered <em>Ordered</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isPrimaryKey <em>Primary Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getBooleanIsHasChoice <em>Boolean Is Has Choice</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getSingletonName <em>Singleton Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getPluralisedName <em>Pluralised Name</em>}</li>
@@ -285,6 +286,26 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * @ordered
 	 */
 	protected boolean ordered = ORDERED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isPrimaryKey() <em>Primary Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPrimaryKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean PRIMARY_KEY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isPrimaryKey() <em>Primary Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPrimaryKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean primaryKey = PRIMARY_KEY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBooleanIsHasChoice() <em>Boolean Is Has Choice</em>}' attribute.
@@ -674,6 +695,27 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isPrimaryKey() {
+		return primaryKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPrimaryKey(boolean newPrimaryKey) {
+		boolean oldPrimaryKey = primaryKey;
+		primaryKey = newPrimaryKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__PRIMARY_KEY, oldPrimaryKey, primaryKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public isHasChoices getBooleanIsHasChoice() {
 		return booleanIsHasChoice;
 	}
@@ -831,6 +873,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return isUnique();
 			case PersistencePackage.ENTITY_FEATURE__ORDERED:
 				return isOrdered();
+			case PersistencePackage.ENTITY_FEATURE__PRIMARY_KEY:
+				return isPrimaryKey();
 			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				return getBooleanIsHasChoice();
 			case PersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
@@ -891,6 +935,9 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return;
 			case PersistencePackage.ENTITY_FEATURE__ORDERED:
 				setOrdered((Boolean)newValue);
+				return;
+			case PersistencePackage.ENTITY_FEATURE__PRIMARY_KEY:
+				setPrimaryKey((Boolean)newValue);
 				return;
 			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				setBooleanIsHasChoice((isHasChoices)newValue);
@@ -955,6 +1002,9 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case PersistencePackage.ENTITY_FEATURE__ORDERED:
 				setOrdered(ORDERED_EDEFAULT);
 				return;
+			case PersistencePackage.ENTITY_FEATURE__PRIMARY_KEY:
+				setPrimaryKey(PRIMARY_KEY_EDEFAULT);
+				return;
 			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				setBooleanIsHasChoice(BOOLEAN_IS_HAS_CHOICE_EDEFAULT);
 				return;
@@ -1005,6 +1055,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return unique != UNIQUE_EDEFAULT;
 			case PersistencePackage.ENTITY_FEATURE__ORDERED:
 				return ordered != ORDERED_EDEFAULT;
+			case PersistencePackage.ENTITY_FEATURE__PRIMARY_KEY:
+				return primaryKey != PRIMARY_KEY_EDEFAULT;
 			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				return booleanIsHasChoice != BOOLEAN_IS_HAS_CHOICE_EDEFAULT;
 			case PersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
@@ -1097,6 +1149,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		result.append(unique);
 		result.append(", ordered: ");
 		result.append(ordered);
+		result.append(", primaryKey: ");
+		result.append(primaryKey);
 		result.append(", booleanIsHasChoice: ");
 		result.append(booleanIsHasChoice);
 		result.append(", singletonName: ");

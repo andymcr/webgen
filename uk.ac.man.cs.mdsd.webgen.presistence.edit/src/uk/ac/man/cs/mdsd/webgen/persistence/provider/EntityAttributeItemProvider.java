@@ -52,7 +52,6 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
-			addPrimaryKeyPropertyDescriptor(object);
 			addContainerUniquePropertyDescriptor(object);
 			addPersistentTypePropertyDescriptor(object);
 			addOrmTypePropertyDescriptor(object);
@@ -124,28 +123,6 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_StylePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Primary Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPrimaryKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityAttribute_primaryKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_primaryKey_feature", "_UI_EntityAttribute_type"),
-				 PersistencePackage.Literals.ENTITY_ATTRIBUTE__PRIMARY_KEY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -297,7 +274,6 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			case PersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
 			case PersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
 			case PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
-			case PersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 			case PersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
 			case PersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
 			case PersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE:

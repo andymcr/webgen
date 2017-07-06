@@ -27,7 +27,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#getInputClass <em>Input Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#isPrimaryKey <em>Primary Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#isContainerUnique <em>Container Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#getPersistentType <em>Persistent Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#getOrmType <em>Orm Type</em>}</li>
@@ -106,26 +105,6 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * @ordered
 	 */
 	protected String inputClass = INPUT_CLASS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isPrimaryKey() <em>Primary Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isPrimaryKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean PRIMARY_KEY_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isPrimaryKey() <em>Primary Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isPrimaryKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean primaryKey = PRIMARY_KEY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isContainerUnique() <em>Container Unique</em>}' attribute.
@@ -337,27 +316,6 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isPrimaryKey() {
-		return primaryKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPrimaryKey(boolean newPrimaryKey) {
-		boolean oldPrimaryKey = primaryKey;
-		primaryKey = newPrimaryKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY, oldPrimaryKey, primaryKey));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isContainerUnique() {
 		return containerUnique;
 	}
@@ -467,8 +425,6 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return getValidationPattern();
 			case PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				return getInputClass();
-			case PersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
-				return isPrimaryKey();
 			case PersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
 				return isContainerUnique();
 			case PersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
@@ -500,9 +456,6 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return;
 			case PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				setInputClass((String)newValue);
-				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
-				setPrimaryKey((Boolean)newValue);
 				return;
 			case PersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
 				setContainerUnique((Boolean)newValue);
@@ -540,9 +493,6 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 			case PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
-				setPrimaryKey(PRIMARY_KEY_EDEFAULT);
-				return;
 			case PersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
 				setContainerUnique(CONTAINER_UNIQUE_EDEFAULT);
 				return;
@@ -575,8 +525,6 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return VALIDATION_PATTERN_EDEFAULT == null ? validationPattern != null : !VALIDATION_PATTERN_EDEFAULT.equals(validationPattern);
 			case PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
-			case PersistencePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
-				return primaryKey != PRIMARY_KEY_EDEFAULT;
 			case PersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
 				return containerUnique != CONTAINER_UNIQUE_EDEFAULT;
 			case PersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
@@ -653,8 +601,6 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		result.append(validationPattern);
 		result.append(", inputClass: ");
 		result.append(inputClass);
-		result.append(", primaryKey: ");
-		result.append(primaryKey);
 		result.append(", containerUnique: ");
 		result.append(containerUnique);
 		result.append(", persistentType: ");

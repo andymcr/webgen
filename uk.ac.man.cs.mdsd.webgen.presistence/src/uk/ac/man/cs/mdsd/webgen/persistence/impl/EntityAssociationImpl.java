@@ -45,6 +45,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getPivotTableName <em>Pivot Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getTargetFeatureName <em>Target Feature Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getTargetPrimaryKey <em>Target Primary Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getTargetColumnName <em>Target Column Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getTargetDisplayLabel <em>Target Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getTargetHeaderClass <em>Target Header Class</em>}</li>
@@ -225,6 +226,26 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * @ordered
 	 */
 	protected String targetFeatureName = TARGET_FEATURE_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTargetPrimaryKey() <em>Target Primary Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetPrimaryKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Boolean TARGET_PRIMARY_KEY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTargetPrimaryKey() <em>Target Primary Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetPrimaryKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected Boolean targetPrimaryKey = TARGET_PRIMARY_KEY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTargetColumnName() <em>Target Column Name</em>}' attribute.
@@ -616,6 +637,27 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Boolean getTargetPrimaryKey() {
+		return targetPrimaryKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTargetPrimaryKey(Boolean newTargetPrimaryKey) {
+		Boolean oldTargetPrimaryKey = targetPrimaryKey;
+		targetPrimaryKey = newTargetPrimaryKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY, oldTargetPrimaryKey, targetPrimaryKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTargetColumnName() {
 		return targetColumnName;
 	}
@@ -809,6 +851,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return getPivotTableName();
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				return getTargetFeatureName();
+			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+				return getTargetPrimaryKey();
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_COLUMN_NAME:
 				return getTargetColumnName();
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
@@ -862,6 +906,9 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return;
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				setTargetFeatureName((String)newValue);
+				return;
+			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+				setTargetPrimaryKey((Boolean)newValue);
 				return;
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_COLUMN_NAME:
 				setTargetColumnName((String)newValue);
@@ -920,6 +967,9 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				setTargetFeatureName(TARGET_FEATURE_NAME_EDEFAULT);
 				return;
+			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+				setTargetPrimaryKey(TARGET_PRIMARY_KEY_EDEFAULT);
+				return;
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_COLUMN_NAME:
 				setTargetColumnName(TARGET_COLUMN_NAME_EDEFAULT);
 				return;
@@ -972,6 +1022,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return PIVOT_TABLE_NAME_EDEFAULT == null ? pivotTableName != null : !PIVOT_TABLE_NAME_EDEFAULT.equals(pivotTableName);
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				return TARGET_FEATURE_NAME_EDEFAULT == null ? targetFeatureName != null : !TARGET_FEATURE_NAME_EDEFAULT.equals(targetFeatureName);
+			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+				return TARGET_PRIMARY_KEY_EDEFAULT == null ? targetPrimaryKey != null : !TARGET_PRIMARY_KEY_EDEFAULT.equals(targetPrimaryKey);
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_COLUMN_NAME:
 				return TARGET_COLUMN_NAME_EDEFAULT == null ? targetColumnName != null : !TARGET_COLUMN_NAME_EDEFAULT.equals(targetColumnName);
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
@@ -1052,6 +1104,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		result.append(pivotTableName);
 		result.append(", targetFeatureName: ");
 		result.append(targetFeatureName);
+		result.append(", targetPrimaryKey: ");
+		result.append(targetPrimaryKey);
 		result.append(", targetColumnName: ");
 		result.append(targetColumnName);
 		result.append(", targetDisplayLabel: ");

@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isUnique <em>Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isOrdered <em>Ordered</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isPrimaryKey <em>Primary Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getBooleanIsHasChoice <em>Boolean Is Has Choice</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getSingletonName <em>Singleton Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getPluralisedName <em>Pluralised Name</em>}</li>
@@ -139,6 +140,32 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * @generated
 	 */
 	void setOrdered(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Primary Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Primary Key</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Primary Key</em>' attribute.
+	 * @see #setPrimaryKey(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature_PrimaryKey()
+	 * @model
+	 * @generated
+	 */
+	boolean isPrimaryKey();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isPrimaryKey <em>Primary Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Primary Key</em>' attribute.
+	 * @see #isPrimaryKey()
+	 * @generated
+	 */
+	void setPrimaryKey(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Boolean Is Has Choice</b></em>' attribute.

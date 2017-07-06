@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getPivotTableName <em>Pivot Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetFeatureName <em>Target Feature Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetPrimaryKey <em>Target Primary Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetColumnName <em>Target Column Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetDisplayLabel <em>Target Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetHeaderClass <em>Target Header Class</em>}</li>
@@ -155,6 +156,32 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * @generated
 	 */
 	void setTargetFeatureName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Target Primary Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target Primary Key</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target Primary Key</em>' attribute.
+	 * @see #setTargetPrimaryKey(Boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAssociation_TargetPrimaryKey()
+	 * @model
+	 * @generated
+	 */
+	Boolean getTargetPrimaryKey();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetPrimaryKey <em>Target Primary Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target Primary Key</em>' attribute.
+	 * @see #getTargetPrimaryKey()
+	 * @generated
+	 */
+	void setTargetPrimaryKey(Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Target Column Name</b></em>' attribute.

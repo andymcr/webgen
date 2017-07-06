@@ -56,14 +56,6 @@ rule TimeLiteral {
 }
 
 
-rule Function {
-	from website : Website!Function
-	to service : Service!Function (
-		name <- website.name
-	)
-}
-
-
 rule CurrentTime {
 	from website : Website!CurrentTime (website.isServiceExpression())
 	to service : Service!CurrentTime (
@@ -108,6 +100,15 @@ rule PredicateComparisonOperator {
 	to service : Service!PredicateComparisonOperator (
 		left <- website.left,
 		operator <- website.operator,
+		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateInOperator {
+	from website : Website!PredicateInOperator (website.isServiceExpression())
+	to service : Service!PredicateInOperator (
+		left <- website.left,
 		right <- website.right
 	)
 }

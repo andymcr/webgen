@@ -192,7 +192,7 @@ rule BusinessOperation {
 
 -- @extends NamedElement, FormalParameterList
 rule Filter {
-	from website : Website!Filter (website.name = 'nameLike')
+	from website : Website!Filter
 	to service : Service!Filter (
 		displayLabel <-
 			if not website.displayLabel.oclIsUndefined() and website.displayLabel <> '' then
@@ -232,6 +232,14 @@ rule Desc {
 	)
 }
 
+
+-- @extends NamedElement
+rule Constant {
+	from website : Website!Constant
+	to service : Service!Constant (
+		value <- website.value
+	)
+}
 
 rule ServiceFeatureReference {
 	from website : Website!ServiceFeatureReference

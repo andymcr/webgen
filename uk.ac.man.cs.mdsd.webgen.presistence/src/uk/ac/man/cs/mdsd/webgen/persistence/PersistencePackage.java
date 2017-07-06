@@ -7755,11 +7755,11 @@ public interface PersistencePackage extends EPackage {
 	EAttribute getEntityAssociation_TargetFeatureName();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetPrimaryKey <em>Target Primary Key</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#isTargetPrimaryKey <em>Target Primary Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Target Primary Key</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#getTargetPrimaryKey()
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation#isTargetPrimaryKey()
 	 * @see #getEntityAssociation()
 	 * @generated
 	 */

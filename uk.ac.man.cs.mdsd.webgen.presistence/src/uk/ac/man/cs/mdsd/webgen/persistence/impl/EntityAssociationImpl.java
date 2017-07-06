@@ -45,7 +45,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getPivotTableName <em>Pivot Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getTargetFeatureName <em>Target Feature Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getTargetPrimaryKey <em>Target Primary Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#isTargetPrimaryKey <em>Target Primary Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getTargetColumnName <em>Target Column Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getTargetDisplayLabel <em>Target Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getTargetHeaderClass <em>Target Header Class</em>}</li>
@@ -228,24 +228,24 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	protected String targetFeatureName = TARGET_FEATURE_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTargetPrimaryKey() <em>Target Primary Key</em>}' attribute.
+	 * The default value of the '{@link #isTargetPrimaryKey() <em>Target Primary Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargetPrimaryKey()
+	 * @see #isTargetPrimaryKey()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Boolean TARGET_PRIMARY_KEY_EDEFAULT = null;
+	protected static final boolean TARGET_PRIMARY_KEY_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getTargetPrimaryKey() <em>Target Primary Key</em>}' attribute.
+	 * The cached value of the '{@link #isTargetPrimaryKey() <em>Target Primary Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargetPrimaryKey()
+	 * @see #isTargetPrimaryKey()
 	 * @generated
 	 * @ordered
 	 */
-	protected Boolean targetPrimaryKey = TARGET_PRIMARY_KEY_EDEFAULT;
+	protected boolean targetPrimaryKey = TARGET_PRIMARY_KEY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTargetColumnName() <em>Target Column Name</em>}' attribute.
@@ -637,7 +637,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Boolean getTargetPrimaryKey() {
+	public boolean isTargetPrimaryKey() {
 		return targetPrimaryKey;
 	}
 
@@ -646,8 +646,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTargetPrimaryKey(Boolean newTargetPrimaryKey) {
-		Boolean oldTargetPrimaryKey = targetPrimaryKey;
+	public void setTargetPrimaryKey(boolean newTargetPrimaryKey) {
+		boolean oldTargetPrimaryKey = targetPrimaryKey;
 		targetPrimaryKey = newTargetPrimaryKey;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY, oldTargetPrimaryKey, targetPrimaryKey));
@@ -852,7 +852,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				return getTargetFeatureName();
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
-				return getTargetPrimaryKey();
+				return isTargetPrimaryKey();
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_COLUMN_NAME:
 				return getTargetColumnName();
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
@@ -1023,7 +1023,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				return TARGET_FEATURE_NAME_EDEFAULT == null ? targetFeatureName != null : !TARGET_FEATURE_NAME_EDEFAULT.equals(targetFeatureName);
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
-				return TARGET_PRIMARY_KEY_EDEFAULT == null ? targetPrimaryKey != null : !TARGET_PRIMARY_KEY_EDEFAULT.equals(targetPrimaryKey);
+				return targetPrimaryKey != TARGET_PRIMARY_KEY_EDEFAULT;
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_COLUMN_NAME:
 				return TARGET_COLUMN_NAME_EDEFAULT == null ? targetColumnName != null : !TARGET_COLUMN_NAME_EDEFAULT.equals(targetColumnName);
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:

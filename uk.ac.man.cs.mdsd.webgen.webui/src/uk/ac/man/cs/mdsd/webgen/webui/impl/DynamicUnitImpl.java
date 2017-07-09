@@ -13,11 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
-
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitField;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitSupportAction;
@@ -31,7 +27,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
@@ -45,16 +40,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * @generated
  */
 public abstract class DynamicUnitImpl extends ContentUnitImpl implements DynamicUnit {
-	/**
-	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntities()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EntityOrView> entities;
-
 	/**
 	 * The cached value of the '{@link #getDisplayFields() <em>Display Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -212,18 +197,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	protected EClass eStaticClass() {
 		return WebuiPackage.Literals.DYNAMIC_UNIT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EntityOrView> getEntities() {
-		if (entities == null) {
-			entities = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebuiPackage.DYNAMIC_UNIT__ENTITIES);
-		}
-		return entities;
 	}
 
 	/**
@@ -415,8 +388,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebuiPackage.DYNAMIC_UNIT__ENTITIES:
-				return getEntities();
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
 			case WebuiPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
@@ -446,10 +417,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebuiPackage.DYNAMIC_UNIT__ENTITIES:
-				getEntities().clear();
-				getEntities().addAll((Collection<? extends EntityOrView>)newValue);
-				return;
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				getDisplayFields().addAll((Collection<? extends UnitField>)newValue);
@@ -488,9 +455,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebuiPackage.DYNAMIC_UNIT__ENTITIES:
-				getEntities().clear();
-				return;
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
@@ -527,8 +491,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebuiPackage.DYNAMIC_UNIT__ENTITIES:
-				return entities != null && !entities.isEmpty();
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
 			case WebuiPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:

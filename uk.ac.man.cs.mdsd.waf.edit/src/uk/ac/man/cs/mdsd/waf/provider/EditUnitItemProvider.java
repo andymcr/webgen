@@ -334,6 +334,11 @@ public class EditUnitItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.EDIT_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.EDIT_UNIT__ENABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add

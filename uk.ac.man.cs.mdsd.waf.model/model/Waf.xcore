@@ -218,7 +218,6 @@ class StaticUnit extends ContentUnit {
 }
 
 abstract class DynamicUnit extends ContentUnit {
-	refers EntityOrView[] entities
 	contains UnitField[] displayFields opposite displayedOn
 	contains UnitSupportAction[] supportActions
 	String header

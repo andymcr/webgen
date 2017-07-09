@@ -1285,7 +1285,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDynamicUnit_Entities() {
+	public EReference getDynamicUnit_DisplayFields() {
 		return (EReference)dynamicUnitEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1294,7 +1294,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDynamicUnit_DisplayFields() {
+	public EReference getDynamicUnit_SupportActions() {
 		return (EReference)dynamicUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1303,17 +1303,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDynamicUnit_SupportActions() {
-		return (EReference)dynamicUnitEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getDynamicUnit_Header() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1322,7 +1313,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getDynamicUnit_Footer() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1331,7 +1322,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getDynamicUnit_HeaderClass() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1340,7 +1331,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getDynamicUnit_ControlClass() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1349,7 +1340,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getDynamicUnit_FooterClass() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1358,7 +1349,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getDynamicUnit_ErrorClass() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -3269,7 +3260,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		createEAttribute(createSitemapUnitEClass, CREATE_SITEMAP_UNIT__CONTENT_CLASS);
 
 		dynamicUnitEClass = createEClass(DYNAMIC_UNIT);
-		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__ENTITIES);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__DISPLAY_FIELDS);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		createEAttribute(dynamicUnitEClass, DYNAMIC_UNIT__HEADER);
@@ -3719,7 +3709,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEAttribute(getCreateSitemapUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "create_sitemap_content", 0, 1, CreateSitemapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(dynamicUnitEClass, DynamicUnit.class, "DynamicUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDynamicUnit_Entities(), thePersistencePackage.getEntityOrView(), null, "entities", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicUnit_DisplayFields(), this.getUnitField(), this.getUnitField_DisplayedOn(), "displayFields", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicUnit_SupportActions(), this.getUnitSupportAction(), null, "supportActions", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamicUnit_Header(), ecorePackage.getEString(), "header", null, 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4059,16 +4048,22 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 			 "constraints", "selectionValidChoice"
 		   });	
 		addAnnotation
-		  (dataUnitEClass, 
+		  (editUnitEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "canOnlyTitleWithSingletons selectionValidChoice"
 		   });	
 		addAnnotation
+		  (dataUnitEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "canOnlyTitleWithSingletons"
+		   });	
+		addAnnotation
 		  (detailsUnitEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "selectionMustBeSingleton"
+			 "constraints", "selectionValidChoice selectionMustBeSingleton"
 		   });	
 		addAnnotation
 		  (indexUnitEClass, 
@@ -4137,7 +4132,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		  (dynamicUnitEClass, 
 		   source, 
 		   new String[] {
-			 "featuresMustBeFromContentType", "let entities : OrderedSet(persistence::EntityOrView)\r\n\t= if self.oclIsKindOf(SingletonUnit) then\r\n\t\t\tOrderedSet{self.oclAsType(SingletonUnit).contentType}\r\n\t\telse if self.oclIsKindOf(CollectionUnit) then\r\n\t\t\tself.oclAsType(CollectionUnit).contentType\r\n\t\telse\r\n\t\t\tself.entities\r\n\t\tendif endif\r\n\tin let eovFeatures : Collection(persistence::Feature)\r\n\t\t= entities->collect(eov | eov.allFeatures)\r\n\t\tin displayFields\r\n\t\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t\t\t->select(f | \r\n\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\t\tnot f.oclAsType(UnitElement).attribute.oclIsUndefined()\r\n\t\t\t\telse\r\n\t\t\t\t\tnot f.oclAsType(UnitAssociation).association.oclIsUndefined()\r\n\t\t\t\tendif)\r\n\t\t\t->forAll(f | \r\n\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitElement).attribute)\r\n\t\t\t\telse\r\n\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitAssociation).association)\r\n\t\t\t\tendif)"
+			 "featuresMustBeFromContentType", "let entities : OrderedSet(persistence::EntityOrView)\r\n\t= if self.oclIsKindOf(SingletonUnit) then\r\n\t\t\tOrderedSet{self.oclAsType(SingletonUnit).contentType}\r\n\t\telse if self.oclIsKindOf(CollectionUnit) then\r\n\t\t\tself.oclAsType(CollectionUnit).contentType\r\n\t\telse\r\n\t\t\tOrderedSet{}\r\n\t\tendif endif\r\n\tin let eovFeatures : Collection(persistence::Feature)\r\n\t\t= entities->collect(eov | eov.allFeatures)\r\n\t\tin displayFields\r\n\t\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t\t\t->select(f | \r\n\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\t\tnot f.oclAsType(UnitElement).attribute.oclIsUndefined()\r\n\t\t\t\telse\r\n\t\t\t\t\tnot f.oclAsType(UnitAssociation).association.oclIsUndefined()\r\n\t\t\t\tendif)\r\n\t\t\t->forAll(f | \r\n\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitElement).attribute)\r\n\t\t\t\telse\r\n\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitAssociation).association)\r\n\t\t\t\tendif)"
 		   });	
 		addAnnotation
 		  (unitFeatureEClass, 
@@ -4162,7 +4157,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		  (getUnitAssociation_IsSourceAssociation(), 
 		   source, 
 		   new String[] {
-			 "derivation", "not association.oclIsUndefined() implies\r\n\tlet entities : OrderedSet(persistence::EntityOrView)\r\n\t\t= if displayedOn.oclIsKindOf(SingletonUnit) then\r\n\t\t\t\tOrderedSet{displayedOn.oclAsType(SingletonUnit).contentType}\r\n\t\t\telse if displayedOn.oclIsKindOf(CollectionUnit) then\r\n\t\t\t\tdisplayedOn.oclAsType(CollectionUnit).contentType\r\n\t\t\telse\r\n\t\t\t\tdisplayedOn.entities\r\n\t\t\tendif endif\r\n\t\tin entities->collect(e | e.associations)->includes(association)"
+			 "derivation", "not association.oclIsUndefined() implies\r\n\tlet entities : OrderedSet(persistence::EntityOrView)\r\n\t\t= if displayedOn.oclIsKindOf(SingletonUnit) then\r\n\t\t\t\tOrderedSet{displayedOn.oclAsType(SingletonUnit).contentType}\r\n\t\t\telse if displayedOn.oclIsKindOf(CollectionUnit) then\r\n\t\t\t\tdisplayedOn.oclAsType(CollectionUnit).contentType\r\n\t\t\telse\r\n\t\t\t\tOrderedSet{}\r\n\t\t\tendif endif\r\n\t\tin entities->collect(e | e.associations)->includes(association)"
 		   });	
 		addAnnotation
 		  (getUnitAssociation_SourceEntity(), 
@@ -4183,17 +4178,24 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse if association.oclIsKindOf(persistence::EntityAssociation) then\r\n\tassociation.oclAsType(persistence::EntityAssociation).name\r\nelse if association.oclIsTypeOf(persistence::EncapsulatedAssociation) then\r\n\tassociation.oclAsType(persistence::EncapsulatedAssociation).name\r\nelse\r\n\tassociation.oclAsType(persistence::ViewAssociation).name \r\nendif endif endif\r\n"
 		   });	
 		addAnnotation
-		  (dataUnitEClass, 
+		  (editUnitEClass, 
 		   source, 
 		   new String[] {
 			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies \r\n\tif title.oclIsKindOf(persistence::EntityAttribute) then\r\n\t\ttitle.oclAsType(persistence::EntityAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse if title.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse\r\n\t\ttrue\r\n\tendif endif",
-			 "selectionValidChoice", "not defaultSelection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | entities->includes(s.serves))\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(defaultSelection)"
+			 "selectionValidChoice", "not defaultSelection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | contentType = s.serves)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(defaultSelection)"
+		   });	
+		addAnnotation
+		  (dataUnitEClass, 
+		   source, 
+		   new String[] {
+			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies \r\n\tif title.oclIsKindOf(persistence::EntityAttribute) then\r\n\t\ttitle.oclAsType(persistence::EntityAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse if title.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse\r\n\t\ttrue\r\n\tendif endif"
 		   });	
 		addAnnotation
 		  (detailsUnitEClass, 
 		   source, 
 		   new String[] {
-			 "selectionMustBeSingleton", "not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit = 1"
+			 "selectionMustBeSingleton", "not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit = 1",
+			 "selectionValidChoice", "not defaultSelection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | contentType = s.serves)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(defaultSelection)"
 		   });	
 		addAnnotation
 		  (indexUnitEClass, 

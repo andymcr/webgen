@@ -807,7 +807,7 @@ public class WebuiValidator extends EObjectValidator {
 		"\t\telse if self.oclIsKindOf(CollectionUnit) then\r\n" +
 		"\t\t\tself.oclAsType(CollectionUnit).contentType\r\n" +
 		"\t\telse\r\n" +
-		"\t\t\tself.entities\r\n" +
+		"\t\t\tOrderedSet{}\r\n" +
 		"\t\tendif endif\r\n" +
 		"\tin let eovFeatures : Collection(persistence::Feature)\r\n" +
 		"\t\t= entities->collect(eov | eov.allFeatures)\r\n" +
@@ -1159,7 +1159,78 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(editUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(editUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(editUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEditUnit_canOnlyTitleWithSingletons(editUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEditUnit_selectionValidChoice(editUnit, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the canOnlyTitleWithSingletons constraint of '<em>Edit Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String EDIT_UNIT__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION = "not title.oclIsUndefined() implies \r\n" +
+		"\tif title.oclIsKindOf(persistence::EntityAttribute) then\r\n" +
+		"\t\ttitle.oclAsType(persistence::EntityAttribute).cardinality <> persistence::Cardinality::Many\r\n" +
+		"\telse if title.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n" +
+		"\t\ttitle.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n" +
+		"\telse\r\n" +
+		"\t\ttrue\r\n" +
+		"\tendif endif";
+
+	/**
+	 * Validates the canOnlyTitleWithSingletons constraint of '<em>Edit Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEditUnit_canOnlyTitleWithSingletons(EditUnit editUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebuiPackage.Literals.EDIT_UNIT,
+				 editUnit,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "canOnlyTitleWithSingletons",
+				 EDIT_UNIT__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the selectionValidChoice constraint of '<em>Edit Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String EDIT_UNIT__SELECTION_VALID_CHOICE__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
+		"\tpageDisplayedOn.webUI.services.services\r\n" +
+		"\t\t->select(s : service::Service | contentType = s.serves)\r\n" +
+		"\t\t->collect(s : service::Service | s.selections)\r\n" +
+		"\t\t->includes(defaultSelection)";
+
+	/**
+	 * Validates the selectionValidChoice constraint of '<em>Edit Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEditUnit_selectionValidChoice(EditUnit editUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebuiPackage.Literals.EDIT_UNIT,
+				 editUnit,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "selectionValidChoice",
+				 EDIT_UNIT__SELECTION_VALID_CHOICE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1179,6 +1250,8 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(createUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(createUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(createUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEditUnit_canOnlyTitleWithSingletons(createUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEditUnit_selectionValidChoice(createUnit, diagnostics, context);
 		return result;
 	}
 
@@ -1199,6 +1272,8 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(createUpdateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(createUpdateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(createUpdateUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEditUnit_canOnlyTitleWithSingletons(createUpdateUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEditUnit_selectionValidChoice(createUpdateUnit, diagnostics, context);
 		return result;
 	}
 
@@ -1219,6 +1294,8 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(updateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(updateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(updateUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEditUnit_canOnlyTitleWithSingletons(updateUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEditUnit_selectionValidChoice(updateUnit, diagnostics, context);
 		return result;
 	}
 
@@ -1239,6 +1316,8 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(mapUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(mapUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(mapUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEditUnit_canOnlyTitleWithSingletons(mapUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEditUnit_selectionValidChoice(mapUnit, diagnostics, context);
 		return result;
 	}
 
@@ -1260,7 +1339,6 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletons(dataUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDataUnit_selectionValidChoice(dataUnit, diagnostics, context);
 		return result;
 	}
 
@@ -1301,39 +1379,6 @@ public class WebuiValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the selectionValidChoice constraint of '<em>Data Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DATA_UNIT__SELECTION_VALID_CHOICE__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
-		"\tpageDisplayedOn.webUI.services.services\r\n" +
-		"\t\t->select(s : service::Service | entities->includes(s.serves))\r\n" +
-		"\t\t->collect(s : service::Service | s.selections)\r\n" +
-		"\t\t->includes(defaultSelection)";
-
-	/**
-	 * Validates the selectionValidChoice constraint of '<em>Data Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDataUnit_selectionValidChoice(DataUnit dataUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebuiPackage.Literals.DATA_UNIT,
-				 dataUnit,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "selectionValidChoice",
-				 DATA_UNIT__SELECTION_VALID_CHOICE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1351,9 +1396,42 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletons(detailsUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDataUnit_selectionValidChoice(detailsUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDetailsUnit_selectionValidChoice(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDetailsUnit_selectionMustBeSingleton(detailsUnit, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the selectionValidChoice constraint of '<em>Details Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DETAILS_UNIT__SELECTION_VALID_CHOICE__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
+		"\tpageDisplayedOn.webUI.services.services\r\n" +
+		"\t\t->select(s : service::Service | contentType = s.serves)\r\n" +
+		"\t\t->collect(s : service::Service | s.selections)\r\n" +
+		"\t\t->includes(defaultSelection)";
+
+	/**
+	 * Validates the selectionValidChoice constraint of '<em>Details Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDetailsUnit_selectionValidChoice(DetailsUnit detailsUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebuiPackage.Literals.DETAILS_UNIT,
+				 detailsUnit,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "selectionValidChoice",
+				 DETAILS_UNIT__SELECTION_VALID_CHOICE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1404,7 +1482,6 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletons(indexUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDataUnit_selectionValidChoice(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateIndexUnit_selectionMustNotBeSingleton(indexUnit, diagnostics, context);
 		return result;

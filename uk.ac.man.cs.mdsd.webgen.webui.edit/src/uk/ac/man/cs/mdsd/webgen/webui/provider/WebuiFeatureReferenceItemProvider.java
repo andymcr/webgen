@@ -227,7 +227,7 @@ public class WebuiFeatureReferenceItemProvider
 	protected Set<EntityOrView> getEntities(final InlineActionContainer container) {
 		final Set<EntityOrView> entities = new HashSet<EntityOrView>();
 		if (container instanceof IndexUnit) {
-			entities.addAll(((IndexUnit) container).getEntities());
+			entities.addAll(((IndexUnit) container).getContentType());
 		} else if (container instanceof UnitElement) {
 			entities.add(getParentType(
 				((UnitElement) container).getAttribute()));

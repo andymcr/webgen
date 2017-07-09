@@ -319,6 +319,11 @@ public class InlineActionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
@@ -350,6 +355,11 @@ public class InlineActionItemProvider
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter

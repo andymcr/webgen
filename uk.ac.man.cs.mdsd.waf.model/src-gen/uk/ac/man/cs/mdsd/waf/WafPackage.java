@@ -2090,22 +2090,13 @@ public interface WafPackage extends EPackage {
 	int DYNAMIC_UNIT__CONTENT_CLASS = CONTENT_UNIT__CONTENT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_UNIT__ENTITIES = CONTENT_UNIT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__DISPLAY_FIELDS = CONTENT_UNIT_FEATURE_COUNT + 1;
+	int DYNAMIC_UNIT__DISPLAY_FIELDS = CONTENT_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -2114,7 +2105,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 2;
+	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -2123,7 +2114,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 3;
+	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -2132,7 +2123,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 4;
+	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -2141,7 +2132,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 5;
+	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -2150,7 +2141,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
+	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -2159,7 +2150,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
+	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -2168,7 +2159,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
+	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Dynamic Unit</em>' class.
@@ -2177,7 +2168,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 9;
+	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Dynamic Unit</em>' class.
@@ -4228,15 +4219,6 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__CONTENT_CLASS = DYNAMIC_UNIT__CONTENT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_UNIT__ENTITIES = DYNAMIC_UNIT__ENTITIES;
-
-	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4517,15 +4499,6 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__CONTENT_CLASS = EDIT_UNIT__CONTENT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UNIT__ENTITIES = EDIT_UNIT__ENTITIES;
-
-	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4804,15 +4777,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UPDATE_UNIT__CONTENT_CLASS = EDIT_UNIT__CONTENT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UPDATE_UNIT__ENTITIES = EDIT_UNIT__ENTITIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -5129,15 +5093,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_UNIT__CONTENT_CLASS = EDIT_UNIT__CONTENT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_UNIT__ENTITIES = EDIT_UNIT__ENTITIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -5474,15 +5429,6 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__CONTENT_CLASS = EDIT_UNIT__CONTENT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE_UNIT__ENTITIES = EDIT_UNIT__ENTITIES;
-
-	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5781,15 +5727,6 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__CONTENT_CLASS = DYNAMIC_UNIT__CONTENT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_UNIT__ENTITIES = DYNAMIC_UNIT__ENTITIES;
-
-	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6005,15 +5942,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DETAILS_UNIT__CONTENT_CLASS = DATA_UNIT__CONTENT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__ENTITIES = DATA_UNIT__ENTITIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -6276,15 +6204,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__CONTENT_CLASS = DATA_UNIT__CONTENT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__ENTITIES = DATA_UNIT__ENTITIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -6702,15 +6621,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__CONTENT_CLASS = INDEX_UNIT__CONTENT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_GRID_UNIT__ENTITIES = INDEX_UNIT__ENTITIES;
-
-	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7124,15 +7034,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_PAGE_DIRECTION_UNIT__CONTENT_CLASS = INDEX_UNIT__CONTENT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_PAGE_DIRECTION_UNIT__ENTITIES = INDEX_UNIT__ENTITIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -7550,15 +7451,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__CONTENT_CLASS = INDEX_UNIT__CONTENT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_LINE_DIRECTION_UNIT__ENTITIES = INDEX_UNIT__ENTITIES;
-
-	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7974,15 +7866,6 @@ public interface WafPackage extends EPackage {
 	int CONTROL_UNIT__CONTENT_CLASS = DYNAMIC_UNIT__CONTENT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_UNIT__ENTITIES = DYNAMIC_UNIT__ENTITIES;
-
-	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8207,15 +8090,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEARCH_UNIT__CONTENT_CLASS = CONTROL_UNIT__CONTENT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH_UNIT__ENTITIES = CONTROL_UNIT__ENTITIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -8451,15 +8325,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_UNIT__CONTENT_CLASS = DYNAMIC_UNIT__CONTENT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_UNIT__ENTITIES = DYNAMIC_UNIT__ENTITIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -9162,15 +9027,6 @@ public interface WafPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__CONTENT_CLASS = IMAGE_UNIT__CONTENT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_INDEX_UNIT__ENTITIES = IMAGE_UNIT__ENTITIES;
-
-	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9604,15 +9460,6 @@ public interface WafPackage extends EPackage {
 	int SLIDER_UNIT__CONTENT_CLASS = IMAGE_UNIT__CONTENT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLIDER_UNIT__ENTITIES = IMAGE_UNIT__ENTITIES;
-
-	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10035,15 +9882,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int GALLERY_UNIT__CONTENT_CLASS = IMAGE_UNIT__CONTENT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GALLERY_UNIT__ENTITIES = IMAGE_UNIT__ENTITIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -10507,15 +10345,6 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__CONTENT_CLASS = EDIT_UNIT__CONTENT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGISTRATION_UNIT__ENTITIES = EDIT_UNIT__ENTITIES;
-
-	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10805,15 +10634,6 @@ public interface WafPackage extends EPackage {
 	int LOGIN_UNIT__CONTENT_CLASS = CONTROL_UNIT__CONTENT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGIN_UNIT__ENTITIES = CONTROL_UNIT__ENTITIES;
-
-	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11083,15 +10903,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS = CONTROL_UNIT__CONTENT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Entities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORGOTTEN_PASSWORD_UNIT__ENTITIES = CONTROL_UNIT__ENTITIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -13093,17 +12904,6 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDynamicUnit();
-
-	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getEntities <em>Entities</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Entities</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getEntities()
-	 * @see #getDynamicUnit()
-	 * @generated
-	 */
-	EReference getDynamicUnit_Entities();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}'.
@@ -16024,14 +15824,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DYNAMIC_UNIT = eINSTANCE.getDynamicUnit();
-
-		/**
-		 * The meta object literal for the '<em><b>Entities</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DYNAMIC_UNIT__ENTITIES = eINSTANCE.getDynamicUnit_Entities();
 
 		/**
 		 * The meta object literal for the '<em><b>Display Fields</b></em>' containment reference list feature.

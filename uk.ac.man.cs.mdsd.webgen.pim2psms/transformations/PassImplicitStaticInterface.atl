@@ -47,7 +47,7 @@ unique lazy rule implicitStaticTextPage {
 	text : WAF!IndexGridUnit (
 		name <- 'Text',
 		displayLabel <- 'Text',
-		entities <- Sequence{thisModule.findOrmEntityOrView('StaticText')},
+		contentType <- Sequence{thisModule.findOrmEntityOrView('StaticText')},
 		omitCaption <- false,
 		defaultPaginationSize <- 10,
 		nextPageLabel <- '&gt;',
@@ -75,7 +75,7 @@ unique lazy rule implicitStaticTextPage {
 	editText : WAF!CreateUpdateUnit (
 		name <- 'Edit',
 		displayLabel <- 'Add/Edit Static Text',
-		entities <- Sequence{thisModule.findOrmEntityOrView('StaticText')},
+		contentType <- thisModule.findOrmEntityOrView('StaticText'),
 		omitCaption <- false,
 		confirmLabel <- 'Save',
 		clearLabel <- 'Clear',

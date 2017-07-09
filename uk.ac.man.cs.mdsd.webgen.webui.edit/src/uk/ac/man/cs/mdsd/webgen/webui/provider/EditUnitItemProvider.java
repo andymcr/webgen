@@ -20,7 +20,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
-import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 import uk.ac.man.cs.mdsd.webgen.webui.EditUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -135,9 +134,7 @@ public class EditUnitItemProvider extends DynamicUnitItemProvider {
 					if (object instanceof EditUnit) {
 						final EditUnit unit = (EditUnit) object;
 						final Set<Label> labels = new HashSet<Label>();
-						for (EntityOrView entityOrView : unit.getEntities()) {
-							labels.addAll(getLabels(entityOrView));
-						}
+						labels.addAll(getLabels(unit.getContentType()));
 						return labels;
 					}
 

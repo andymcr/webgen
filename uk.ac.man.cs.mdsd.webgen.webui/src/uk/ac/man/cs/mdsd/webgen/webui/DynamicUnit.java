@@ -4,8 +4,6 @@ package uk.ac.man.cs.mdsd.webgen.webui;
 
 import org.eclipse.emf.common.util.EList;
 
-import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Dynamic Unit</b></em>'.
@@ -15,7 +13,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit#getHeader <em>Header</em>}</li>
@@ -29,26 +26,10 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getDynamicUnit()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='featuresMustBeFromContentType'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featuresMustBeFromContentType='let entities : OrderedSet(persistence::EntityOrView)\r\n\t= if self.oclIsKindOf(SingletonUnit) then\r\n\t\t\tOrderedSet{self.oclAsType(SingletonUnit).contentType}\r\n\t\telse if self.oclIsKindOf(CollectionUnit) then\r\n\t\t\tself.oclAsType(CollectionUnit).contentType\r\n\t\telse\r\n\t\t\tself.entities\r\n\t\tendif endif\r\n\tin let eovFeatures : Collection(persistence::Feature)\r\n\t\t= entities->collect(eov | eov.allFeatures)\r\n\t\tin displayFields\r\n\t\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t\t\t->select(f | \r\n\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\t\tnot f.oclAsType(UnitElement).attribute.oclIsUndefined()\r\n\t\t\t\telse\r\n\t\t\t\t\tnot f.oclAsType(UnitAssociation).association.oclIsUndefined()\r\n\t\t\t\tendif)\r\n\t\t\t->forAll(f | \r\n\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitElement).attribute)\r\n\t\t\t\telse\r\n\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitAssociation).association)\r\n\t\t\t\tendif)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featuresMustBeFromContentType='let entities : OrderedSet(persistence::EntityOrView)\r\n\t= if self.oclIsKindOf(SingletonUnit) then\r\n\t\t\tOrderedSet{self.oclAsType(SingletonUnit).contentType}\r\n\t\telse if self.oclIsKindOf(CollectionUnit) then\r\n\t\t\tself.oclAsType(CollectionUnit).contentType\r\n\t\telse\r\n\t\t\tOrderedSet{}\r\n\t\tendif endif\r\n\tin let eovFeatures : Collection(persistence::Feature)\r\n\t\t= entities->collect(eov | eov.allFeatures)\r\n\t\tin displayFields\r\n\t\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t\t\t->select(f | \r\n\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\t\tnot f.oclAsType(UnitElement).attribute.oclIsUndefined()\r\n\t\t\t\telse\r\n\t\t\t\t\tnot f.oclAsType(UnitAssociation).association.oclIsUndefined()\r\n\t\t\t\tendif)\r\n\t\t\t->forAll(f | \r\n\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitElement).attribute)\r\n\t\t\t\telse\r\n\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitAssociation).association)\r\n\t\t\t\tendif)'"
  * @generated
  */
 public interface DynamicUnit extends ContentUnit {
-	/**
-	 * Returns the value of the '<em><b>Entities</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Entities</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entities</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getDynamicUnit_Entities()
-	 * @model
-	 * @generated
-	 */
-	EList<EntityOrView> getEntities();
-
 	/**
 	 * Returns the value of the '<em><b>Display Fields</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.UnitField}.

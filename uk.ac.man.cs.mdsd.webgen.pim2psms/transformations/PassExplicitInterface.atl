@@ -238,28 +238,6 @@ helper context Website!Label def: findOrmLabel() : ORM!Label
 		self.title
 	endif endif;
 
-helper context Website!DynamicUnit def: defaultSelection() : Website!Selection
-	= if self.oclIsKindOf(Website!DataUnit) or self.oclIsKindOf(Website!EditUnit) or self.oclIsKindOf(Website!ImageUnit) then
-			self.defaultSelection
-		else
-			OclUndefined
-		endif;
-
-helper context Website!DynamicUnit def: uriPathKeys() : Sequence(Website!Feature)
-	= if self.entities->isEmpty() then
-			Sequence{}
-		else
-			self.entities->first().uriPathKeys()
-		endif;
-
-helper context Website!EntityOrView def: uriPathKeys() : Sequence(Website!Feature)
-	= self.keys->union(
-			if self.container().oclIsUndefined() then
-				Sequence{}
-			else
-				self.container().uriPathKeys()
-			endif);
-
 helper context Website!EntityOrView def: container() : Website!EntityOrView
 	= let containingAssociation : Sequence(Website!AssociationWithContainment)
 		= self.allAssociations
@@ -532,8 +510,6 @@ rule StaticUnit {
 abstract rule DynamicUnit {
 	from website : Website!DynamicUnit
 	to waf : WAF!DynamicUnit (
-		entities <- website.entities
-			->collect(e | thisModule.findOrmEntityOrView(e.name)),
 		displayFields <- website.displayFields,
 		supportActions <- website.supportActions,
 		header <- website.header,

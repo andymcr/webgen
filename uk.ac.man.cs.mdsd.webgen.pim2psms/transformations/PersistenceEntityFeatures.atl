@@ -75,6 +75,7 @@ abstract rule EntityFeature {
 	from website : Website!EntityFeature
 	to orm : ORM!EntityFeature (
 		partOf <- thisModule.findOrmEntityOrView(website.partOf.name),
+		primaryKey <- website.primaryKey,
 		singletonName <-
 			if website.singletonName.oclIsUndefined() or website.singletonName = '' then
 				website.name
@@ -101,8 +102,7 @@ abstract rule EntityAttribute {
 				website.columnName.createAttributeColumnName()
 			else
 				website.name.createAttributeColumnName()
-			endif,
-		primaryKey <- website.primaryKey
+			endif
 	)
 }
 
@@ -323,6 +323,7 @@ rule OneToOneAssociationWithoutContainment {
 		associationRelationship <- #OneToOne,
 		opposite <- orm,
 		owningEnd <- website.cardinality <> #Required and website.targetCardinality = #Required,
+		primaryKey <- website.targetPrimaryKey,
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,
 		columnName <-
@@ -353,6 +354,7 @@ rule ManyToOneAssociationWithoutContainment {
 		associationRelationship <- #OneToMany,
 		opposite <- orm,
 		owningEnd <- false,
+		primaryKey <- website.targetPrimaryKey,
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,
 		pivotTableName <- website.createPivotTableName(),
@@ -376,6 +378,7 @@ rule OneToManyAssociationWithoutContainment {
 		associationRelationship <- #ManyToOne,
 		opposite <- orm,
 		owningEnd <- true,
+		primaryKey <- website.targetPrimaryKey,
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,
 		columnName <-
@@ -406,6 +409,7 @@ rule ManyToManyAssociationWithoutContainment {
 		associationRelationship <- #ManyToMany,
 		opposite <- orm,
 		owningEnd <- false,
+		primaryKey <- website.targetPrimaryKey,
 		pivotTableName <- website.createPivotTableName(),
 		keys <- website.keys->collect(k | thisModule.OppositeAssociationKey(k)),
 		pseudo <- website.pseudo,
@@ -431,6 +435,7 @@ rule OneToOneAssociationWithContainment {
 		associationRelationship <- #OneToOne,
 		opposite <- orm,
 		owningEnd <- true,
+		primaryKey <- website.targetPrimaryKey,
 		container <- true,
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,
@@ -462,6 +467,7 @@ rule OneToManyAssociationWithContainment {
 		associationRelationship <- #ManyToOne,
 		opposite <- orm,
 		owningEnd <- true,
+		primaryKey <- website.targetPrimaryKey,
 		container <- true,
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,

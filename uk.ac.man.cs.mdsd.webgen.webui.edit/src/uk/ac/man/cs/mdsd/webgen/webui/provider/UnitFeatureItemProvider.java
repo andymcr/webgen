@@ -509,8 +509,6 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 			}
 		}
 
-		contentType.addAll(unit.getEntities());
-
 		return contentType;
 	}
 

@@ -468,6 +468,11 @@ public class InterfaceFieldItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
+				 ServiceFactory.eINSTANCE.createConstant()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
 				 ServiceFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
@@ -513,11 +518,6 @@ public class InterfaceFieldItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
-				 ExpressionFactory.eINSTANCE.createFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
@@ -529,6 +529,11 @@ public class InterfaceFieldItemProvider
 			(createChildParameter
 				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter

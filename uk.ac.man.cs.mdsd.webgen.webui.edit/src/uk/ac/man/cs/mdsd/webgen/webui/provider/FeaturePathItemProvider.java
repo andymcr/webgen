@@ -133,8 +133,6 @@ public class FeaturePathItemProvider
 			}
 		}
 
-		contentType.addAll(unit.getEntities());
-
 		return contentType;
 	}
 

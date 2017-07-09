@@ -41,11 +41,41 @@ lazy rule implicitQueryParameter {
 abstract rule DynamicUnit {
 	from partialWaf : WAF!DynamicUnit
 	to waf : WAF!DynamicUnit (
+	)
+}
+
+abstract rule SingletonUnit {
+	from partialWaf : WAF!SingletonUnit
+	to waf : WAF!SingletonUnit (
 		displayFields <-
-			if partialWaf.displayFields->notEmpty() or partialWaf.entities->isEmpty() then
+			if partialWaf.displayFields->notEmpty() or partialWaf.contentType.oclIsUndefined() then
 				partialWaf.displayFields
 			else
-				partialWaf.entities->first().features
+				partialWaf.contentType.features
+					->select(f | if f.oclIsKindOf(Website!EntityFeature) then f.visible else true endif)
+					->select(f | f.oclIsKindOf(WAF!Attribute))
+					->collect(f | thisModule.implicitUnitAttribute(f))
+				->union(
+					if not waf.oclIsTypeOf(WAF!CreateUnit) then
+						Sequence{}
+					else
+						partialWaf.contentType.features
+							->select(f | if f.oclIsKindOf(ORM!EntityAssociation) then f.visible or f.container else true endif)
+							->select(f | f.oclIsKindOf(WAF!Association))
+							->collect(f | thisModule.implicitUnitAssociation(f))
+					endif)
+				endif
+	)
+}
+
+abstract rule CollectionUnit {
+	from partialWaf : WAF!CollectionUnit
+	to waf : WAF!CollectionUnit (
+		displayFields <-
+			if partialWaf.displayFields->notEmpty() or partialWaf.contentType->isEmpty() then
+				partialWaf.displayFields
+			else
+				partialWaf.contentType->first().features
 					->select(f | if f.oclIsKindOf(Website!EntityFeature) then f.visible else true endif)
 					->select(f | f.oclIsKindOf(WAF!Attribute))
 					->collect(f | thisModule.implicitUnitAttribute(f))
@@ -53,7 +83,7 @@ abstract rule DynamicUnit {
 					if not partialWaf.oclIsKindOf(WAF!IndexUnit) and not waf.oclIsTypeOf(WAF!CreateUnit) then
 						Sequence{}
 					else
-						partialWaf.entities
+						partialWaf.contentType
 							->collect(e | e.features)->flatten()
 							->select(f | if f.oclIsKindOf(ORM!EntityAssociation) then f.visible or f.container else true endif)
 							->select(f | f.oclIsKindOf(WAF!Association))
@@ -131,7 +161,7 @@ lazy rule implicitUnitAssociation {
 }
 
 
--- @extends DynamicUnit
+-- @extends DynamicUnit, SingletonUnit
 abstract rule EditUnit {
 	from partialWaf : WAF!EditUnit
 	to waf : WAF!EditUnit (
@@ -159,7 +189,7 @@ rule UpdateUnit {
 	)
 }
 
--- @extends DynamicUnit
+-- @extends DynamicUnit, SingletonUnit
 abstract rule DataUnit {
 	from partialWaf : WAF!DataUnit
 	to waf : WAF!DataUnit (
@@ -173,7 +203,7 @@ rule DetailsUnit {
 	)
 }
 
--- @extends DataUnit
+-- @extends DataUnit, CollectionUnit
 abstract rule IndexUnit {
 	from partialWaf : WAF!IndexUnit
 	to waf : WAF!IndexUnit (

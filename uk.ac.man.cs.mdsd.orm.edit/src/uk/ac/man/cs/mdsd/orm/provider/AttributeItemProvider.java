@@ -192,11 +192,6 @@ public class AttributeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
-				 ExpressionFactory.eINSTANCE.createFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
@@ -208,6 +203,11 @@ public class AttributeItemProvider
 			(createChildParameter
 				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter

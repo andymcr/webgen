@@ -238,11 +238,6 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
-				 ExpressionFactory.eINSTANCE.createFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
@@ -254,6 +249,11 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			(createChildParameter
 				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter

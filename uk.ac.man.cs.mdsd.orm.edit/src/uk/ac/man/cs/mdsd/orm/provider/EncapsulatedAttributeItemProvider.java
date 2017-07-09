@@ -224,11 +224,6 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
-				 ExpressionFactory.eINSTANCE.createFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
@@ -240,6 +235,11 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 			(createChildParameter
 				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter

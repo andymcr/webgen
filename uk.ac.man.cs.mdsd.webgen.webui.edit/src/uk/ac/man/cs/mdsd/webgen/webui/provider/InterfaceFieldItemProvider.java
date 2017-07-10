@@ -54,6 +54,7 @@ public class InterfaceFieldItemProvider extends NamedDisplayElementItemProvider 
 			addCollectionAllowRemovePropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
+			addDisableInputPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
 			addDefaultValuePropertyDescriptor(object);
 			addMustMatchPropertyDescriptor(object);
@@ -193,6 +194,28 @@ public class InterfaceFieldItemProvider extends NamedDisplayElementItemProvider 
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Disable Input feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDisableInputPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_disableInput_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_disableInput_feature", "_UI_UnitField_type"),
+				 WebuiPackage.Literals.UNIT_FIELD__DISABLE_INPUT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -361,6 +384,7 @@ public class InterfaceFieldItemProvider extends NamedDisplayElementItemProvider 
 			case WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
 			case WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 			case WebuiPackage.INTERFACE_FIELD__DATE_FORMAT:
+			case WebuiPackage.INTERFACE_FIELD__DISABLE_INPUT:
 			case WebuiPackage.INTERFACE_FIELD__REQUIRED:
 			case WebuiPackage.INTERFACE_FIELD__DEFAULT_VALUE:
 			case WebuiPackage.INTERFACE_FIELD__INPUT_CLASS:

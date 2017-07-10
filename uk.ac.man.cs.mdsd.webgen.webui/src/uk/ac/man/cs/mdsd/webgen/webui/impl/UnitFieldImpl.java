@@ -33,6 +33,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getDateFormat <em>Date Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#isDisableInput <em>Disable Input</em>}</li>
  * </ul>
  *
  * @generated
@@ -157,6 +158,26 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String dateFormat = DATE_FORMAT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isDisableInput() <em>Disable Input</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisableInput()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DISABLE_INPUT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDisableInput() <em>Disable Input</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisableInput()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean disableInput = DISABLE_INPUT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -349,6 +370,27 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isDisableInput() {
+		return disableInput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDisableInput(boolean newDisableInput) {
+		boolean oldDisableInput = disableInput;
+		disableInput = newDisableInput;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.UNIT_FIELD__DISABLE_INPUT, oldDisableInput, disableInput));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -410,6 +452,8 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 				return getMaximumDisplaySize();
 			case WebuiPackage.UNIT_FIELD__DATE_FORMAT:
 				return getDateFormat();
+			case WebuiPackage.UNIT_FIELD__DISABLE_INPUT:
+				return isDisableInput();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -442,6 +486,9 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 				return;
 			case WebuiPackage.UNIT_FIELD__DATE_FORMAT:
 				setDateFormat((String)newValue);
+				return;
+			case WebuiPackage.UNIT_FIELD__DISABLE_INPUT:
+				setDisableInput((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -476,6 +523,9 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 			case WebuiPackage.UNIT_FIELD__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
+			case WebuiPackage.UNIT_FIELD__DISABLE_INPUT:
+				setDisableInput(DISABLE_INPUT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -502,6 +552,8 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WebuiPackage.UNIT_FIELD__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
+			case WebuiPackage.UNIT_FIELD__DISABLE_INPUT:
+				return disableInput != DISABLE_INPUT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -528,6 +580,8 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 		result.append(maximumDisplaySize);
 		result.append(", dateFormat: ");
 		result.append(dateFormat);
+		result.append(", disableInput: ");
+		result.append(disableInput);
 		result.append(')');
 		return result.toString();
 	}

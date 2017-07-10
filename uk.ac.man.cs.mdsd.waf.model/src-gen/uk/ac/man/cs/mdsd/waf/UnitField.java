@@ -19,6 +19,7 @@ package uk.ac.man.cs.mdsd.waf;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getDateFormat <em>Date Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getDisableInput <em>Disable Input</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitField()
@@ -213,5 +214,32 @@ public interface UnitField extends DisplayElement {
 	 * @generated
 	 */
 	void setDateFormat(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Disable Input</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Disable Input</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Disable Input</em>' attribute.
+	 * @see #setDisableInput(Boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitField_DisableInput()
+	 * @model default="false" unique="false"
+	 * @generated
+	 */
+	Boolean getDisableInput();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitField#getDisableInput <em>Disable Input</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Disable Input</em>' attribute.
+	 * @see #getDisableInput()
+	 * @generated
+	 */
+	void setDisableInput(Boolean value);
 
 } // UnitField

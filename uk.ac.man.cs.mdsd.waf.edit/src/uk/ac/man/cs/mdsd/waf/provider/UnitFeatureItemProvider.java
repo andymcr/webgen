@@ -57,6 +57,7 @@ public class UnitFeatureItemProvider
 			addCollectionAllowRemovePropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
+			addDisableInputPropertyDescriptor(object);
 			addNullDisplayValuePropertyDescriptor(object);
 			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
@@ -319,6 +320,28 @@ public class UnitFeatureItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Disable Input feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDisableInputPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_disableInput_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_disableInput_feature", "_UI_UnitField_type"),
+				 WafPackage.Literals.UNIT_FIELD__DISABLE_INPUT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Null Display Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -476,6 +499,7 @@ public class UnitFeatureItemProvider
 			case WafPackage.UNIT_FEATURE__COLLECTION_ALLOW_REMOVE:
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
+			case WafPackage.UNIT_FEATURE__DISABLE_INPUT:
 			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:

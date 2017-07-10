@@ -35,6 +35,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getDateFormat <em>Date Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#isDisableInput <em>Disable Input</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#isRequired <em>Required</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getMustMatch <em>Must Match</em>}</li>
@@ -165,6 +166,26 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * @ordered
 	 */
 	protected String dateFormat = DATE_FORMAT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isDisableInput() <em>Disable Input</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisableInput()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DISABLE_INPUT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDisableInput() <em>Disable Input</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisableInput()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean disableInput = DISABLE_INPUT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isRequired() <em>Required</em>}' attribute.
@@ -467,6 +488,27 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isDisableInput() {
+		return disableInput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDisableInput(boolean newDisableInput) {
+		boolean oldDisableInput = disableInput;
+		disableInput = newDisableInput;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INTERFACE_FIELD__DISABLE_INPUT, oldDisableInput, disableInput));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isRequired() {
 		return required;
 	}
@@ -671,6 +713,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return getMaximumDisplaySize();
 			case WebuiPackage.INTERFACE_FIELD__DATE_FORMAT:
 				return getDateFormat();
+			case WebuiPackage.INTERFACE_FIELD__DISABLE_INPUT:
+				return isDisableInput();
 			case WebuiPackage.INTERFACE_FIELD__REQUIRED:
 				return isRequired();
 			case WebuiPackage.INTERFACE_FIELD__DEFAULT_VALUE:
@@ -716,6 +760,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return;
 			case WebuiPackage.INTERFACE_FIELD__DATE_FORMAT:
 				setDateFormat((String)newValue);
+				return;
+			case WebuiPackage.INTERFACE_FIELD__DISABLE_INPUT:
+				setDisableInput((Boolean)newValue);
 				return;
 			case WebuiPackage.INTERFACE_FIELD__REQUIRED:
 				setRequired((Boolean)newValue);
@@ -768,6 +815,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			case WebuiPackage.INTERFACE_FIELD__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
+			case WebuiPackage.INTERFACE_FIELD__DISABLE_INPUT:
+				setDisableInput(DISABLE_INPUT_EDEFAULT);
+				return;
 			case WebuiPackage.INTERFACE_FIELD__REQUIRED:
 				setRequired(REQUIRED_EDEFAULT);
 				return;
@@ -812,6 +862,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WebuiPackage.INTERFACE_FIELD__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
+			case WebuiPackage.INTERFACE_FIELD__DISABLE_INPUT:
+				return disableInput != DISABLE_INPUT_EDEFAULT;
 			case WebuiPackage.INTERFACE_FIELD__REQUIRED:
 				return required != REQUIRED_EDEFAULT;
 			case WebuiPackage.INTERFACE_FIELD__DEFAULT_VALUE:
@@ -844,6 +896,7 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				case WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE: return WebuiPackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE;
 				case WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WebuiPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WebuiPackage.INTERFACE_FIELD__DATE_FORMAT: return WebuiPackage.UNIT_FIELD__DATE_FORMAT;
+				case WebuiPackage.INTERFACE_FIELD__DISABLE_INPUT: return WebuiPackage.UNIT_FIELD__DISABLE_INPUT;
 				default: return -1;
 			}
 		}
@@ -866,6 +919,7 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				case WebuiPackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE: return WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE;
 				case WebuiPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WebuiPackage.UNIT_FIELD__DATE_FORMAT: return WebuiPackage.INTERFACE_FIELD__DATE_FORMAT;
+				case WebuiPackage.UNIT_FIELD__DISABLE_INPUT: return WebuiPackage.INTERFACE_FIELD__DISABLE_INPUT;
 				default: return -1;
 			}
 		}
@@ -894,6 +948,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		result.append(maximumDisplaySize);
 		result.append(", dateFormat: ");
 		result.append(dateFormat);
+		result.append(", disableInput: ");
+		result.append(disableInput);
 		result.append(", required: ");
 		result.append(required);
 		result.append(", defaultValue: ");

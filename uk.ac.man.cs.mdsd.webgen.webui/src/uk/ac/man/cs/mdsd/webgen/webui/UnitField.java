@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getDateFormat <em>Date Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#isDisableInput <em>Disable Input</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitField()
@@ -217,5 +218,32 @@ public interface UnitField extends EObject {
 	 * @generated
 	 */
 	void setDateFormat(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Disable Input</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Disable Input</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Disable Input</em>' attribute.
+	 * @see #setDisableInput(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitField_DisableInput()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isDisableInput();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#isDisableInput <em>Disable Input</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Disable Input</em>' attribute.
+	 * @see #isDisableInput()
+	 * @generated
+	 */
+	void setDisableInput(boolean value);
 
 } // UnitField

@@ -1843,6 +1843,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getUnitField_DisableInput() {
+		return (EAttribute)unitFieldEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getUnitFeature() {
 		return unitFeatureEClass;
 	}
@@ -3503,6 +3512,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(unitFieldEClass, UNIT_FIELD__COLLECTION_ALLOW_REMOVE);
 		createEAttribute(unitFieldEClass, UNIT_FIELD__MAXIMUM_DISPLAY_SIZE);
 		createEAttribute(unitFieldEClass, UNIT_FIELD__DATE_FORMAT);
+		createEAttribute(unitFieldEClass, UNIT_FIELD__DISABLE_INPUT);
 
 		unitFeatureEClass = createEClass(UNIT_FEATURE);
 		createEReference(unitFeatureEClass, UNIT_FEATURE__FORCED_VALUE);
@@ -3980,6 +3990,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getUnitField_CollectionAllowRemove(), theEcorePackage.getEBoolean(), "collectionAllowRemove", null, 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnitField_MaximumDisplaySize(), theEcorePackage.getEInt(), "maximumDisplaySize", "-1", 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnitField_DateFormat(), theEcorePackage.getEString(), "dateFormat", null, 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUnitField_DisableInput(), theEcorePackage.getEBooleanObject(), "disableInput", "false", 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unitFeatureEClass, UnitFeature.class, "UnitFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitFeature_ForcedValue(), theExpressionPackage.getExpression(), null, "forcedValue", null, 0, 1, UnitFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

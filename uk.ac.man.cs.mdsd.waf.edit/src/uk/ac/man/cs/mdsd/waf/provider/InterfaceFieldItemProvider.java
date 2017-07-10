@@ -56,6 +56,7 @@ public class InterfaceFieldItemProvider
 			addCollectionAllowRemovePropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
+			addDisableInputPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
 			addMustMatchPropertyDescriptor(object);
 			addInterfaceTypePropertyDescriptor(object);
@@ -235,6 +236,28 @@ public class InterfaceFieldItemProvider
 				 getString("_UI_UnitField_dateFormat_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_dateFormat_feature", "_UI_UnitField_type"),
 				 WafPackage.Literals.UNIT_FIELD__DATE_FORMAT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Disable Input feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDisableInputPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_disableInput_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_disableInput_feature", "_UI_UnitField_type"),
+				 WafPackage.Literals.UNIT_FIELD__DISABLE_INPUT,
 				 true,
 				 false,
 				 false,
@@ -440,6 +463,7 @@ public class InterfaceFieldItemProvider
 			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
+			case WafPackage.INTERFACE_FIELD__DISABLE_INPUT:
 			case WafPackage.INTERFACE_FIELD__REQUIRED:
 			case WafPackage.INTERFACE_FIELD__INTERFACE_TYPE:
 			case WafPackage.INTERFACE_FIELD__PLACEHOLDER:

@@ -1847,13 +1847,22 @@ public interface WebuiPackage extends EPackage {
 	int UNIT_FIELD__DATE_FORMAT = 6;
 
 	/**
+	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FIELD__DISABLE_INPUT = 7;
+
+	/**
 	 * The number of structural features of the '<em>Unit Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD_FEATURE_COUNT = 7;
+	int UNIT_FIELD_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Unit Field</em>' class.
@@ -1936,6 +1945,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_FEATURE__DATE_FORMAT = UNIT_FIELD__DATE_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__DISABLE_INPUT = UNIT_FIELD__DISABLE_INPUT;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -2135,6 +2153,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ELEMENT__DATE_FORMAT = UNIT_FEATURE__DATE_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__DISABLE_INPUT = UNIT_FEATURE__DISABLE_INPUT;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -2388,6 +2415,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ASSOCIATION__DATE_FORMAT = UNIT_FEATURE__DATE_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__DISABLE_INPUT = UNIT_FEATURE__DISABLE_INPUT;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -2761,13 +2797,22 @@ public interface WebuiPackage extends EPackage {
 	int INTERFACE_FIELD__DATE_FORMAT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_FIELD__DISABLE_INPUT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__REQUIRED = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int INTERFACE_FIELD__REQUIRED = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -2776,7 +2821,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DEFAULT_VALUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int INTERFACE_FIELD__DEFAULT_VALUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Must Match</b></em>' reference.
@@ -2785,7 +2830,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__MUST_MATCH = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int INTERFACE_FIELD__MUST_MATCH = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -2794,7 +2839,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__INPUT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int INTERFACE_FIELD__INPUT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -2803,7 +2848,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__PLACEHOLDER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int INTERFACE_FIELD__PLACEHOLDER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -2812,7 +2857,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__VALIDATION_PATTERN = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int INTERFACE_FIELD__VALIDATION_PATTERN = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Interface Field</em>' class.
@@ -2821,7 +2866,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int INTERFACE_FIELD_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of operations of the '<em>Interface Field</em>' class.
@@ -2922,6 +2967,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_FIELD__DATE_FORMAT = INTERFACE_FIELD__DATE_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_FIELD__DISABLE_INPUT = INTERFACE_FIELD__DISABLE_INPUT;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -3123,6 +3177,15 @@ public interface WebuiPackage extends EPackage {
 	int DATE_FIELD__DATE_FORMAT = INTERFACE_FIELD__DATE_FORMAT;
 
 	/**
+	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_FIELD__DISABLE_INPUT = INTERFACE_FIELD__DISABLE_INPUT;
+
+	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3302,6 +3365,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int CAPTCHA_FIELD__DATE_FORMAT = INTERFACE_FIELD__DATE_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPTCHA_FIELD__DISABLE_INPUT = INTERFACE_FIELD__DISABLE_INPUT;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -11232,6 +11304,17 @@ public interface WebuiPackage extends EPackage {
 	EAttribute getUnitField_DateFormat();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#isDisableInput <em>Disable Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Disable Input</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.UnitField#isDisableInput()
+	 * @see #getUnitField()
+	 * @generated
+	 */
+	EAttribute getUnitField_DisableInput();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitFeature <em>Unit Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14049,6 +14132,14 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UNIT_FIELD__DATE_FORMAT = eINSTANCE.getUnitField_DateFormat();
+
+		/**
+		 * The meta object literal for the '<em><b>Disable Input</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FIELD__DISABLE_INPUT = eINSTANCE.getUnitField_DisableInput();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFeatureImpl <em>Unit Feature</em>}' class.

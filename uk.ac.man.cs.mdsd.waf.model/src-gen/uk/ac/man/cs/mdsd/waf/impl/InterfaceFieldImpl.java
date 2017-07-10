@@ -39,6 +39,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDateFormat <em>Date Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisableInput <em>Disable Input</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#isRequired <em>Required</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getMustMatch <em>Must Match</em>}</li>
@@ -190,6 +191,26 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	 * @ordered
 	 */
 	protected String dateFormat = DATE_FORMAT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDisableInput() <em>Disable Input</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDisableInput()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Boolean DISABLE_INPUT_EDEFAULT = Boolean.FALSE;
+
+	/**
+	 * The cached value of the '{@link #getDisableInput() <em>Disable Input</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDisableInput()
+	 * @generated
+	 * @ordered
+	 */
+	protected Boolean disableInput = DISABLE_INPUT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isRequired() <em>Required</em>}' attribute.
@@ -533,6 +554,27 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Boolean getDisableInput() {
+		return disableInput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDisableInput(Boolean newDisableInput) {
+		Boolean oldDisableInput = disableInput;
+		disableInput = newDisableInput;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__DISABLE_INPUT, oldDisableInput, disableInput));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isRequired() {
 		return required;
 	}
@@ -785,6 +827,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return getMaximumDisplaySize();
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				return getDateFormat();
+			case WafPackage.INTERFACE_FIELD__DISABLE_INPUT:
+				return getDisableInput();
 			case WafPackage.INTERFACE_FIELD__REQUIRED:
 				return isRequired();
 			case WafPackage.INTERFACE_FIELD__DEFAULT_VALUE:
@@ -835,6 +879,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return;
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				setDateFormat((String)newValue);
+				return;
+			case WafPackage.INTERFACE_FIELD__DISABLE_INPUT:
+				setDisableInput((Boolean)newValue);
 				return;
 			case WafPackage.INTERFACE_FIELD__REQUIRED:
 				setRequired((Boolean)newValue);
@@ -893,6 +940,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
+			case WafPackage.INTERFACE_FIELD__DISABLE_INPUT:
+				setDisableInput(DISABLE_INPUT_EDEFAULT);
+				return;
 			case WafPackage.INTERFACE_FIELD__REQUIRED:
 				setRequired(REQUIRED_EDEFAULT);
 				return;
@@ -942,6 +992,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
+			case WafPackage.INTERFACE_FIELD__DISABLE_INPUT:
+				return DISABLE_INPUT_EDEFAULT == null ? disableInput != null : !DISABLE_INPUT_EDEFAULT.equals(disableInput);
 			case WafPackage.INTERFACE_FIELD__REQUIRED:
 				return required != REQUIRED_EDEFAULT;
 			case WafPackage.INTERFACE_FIELD__DEFAULT_VALUE:
@@ -982,6 +1034,7 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE: return WafPackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE;
 				case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WafPackage.INTERFACE_FIELD__DATE_FORMAT: return WafPackage.UNIT_FIELD__DATE_FORMAT;
+				case WafPackage.INTERFACE_FIELD__DISABLE_INPUT: return WafPackage.UNIT_FIELD__DISABLE_INPUT;
 				default: return -1;
 			}
 		}
@@ -1010,6 +1063,7 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				case WafPackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE: return WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE;
 				case WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WafPackage.UNIT_FIELD__DATE_FORMAT: return WafPackage.INTERFACE_FIELD__DATE_FORMAT;
+				case WafPackage.UNIT_FIELD__DISABLE_INPUT: return WafPackage.INTERFACE_FIELD__DISABLE_INPUT;
 				default: return -1;
 			}
 		}
@@ -1040,6 +1094,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		result.append(maximumDisplaySize);
 		result.append(", dateFormat: ");
 		result.append(dateFormat);
+		result.append(", disableInput: ");
+		result.append(disableInput);
 		result.append(", required: ");
 		result.append(required);
 		result.append(", interfaceType: ");

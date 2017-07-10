@@ -529,7 +529,8 @@ abstract rule UnitField {
 		collectionAllowAdd <- website.collectionAllowAdd,
 		collectionAllowRemove <- website.collectionAllowRemove,
 		maximumDisplaySize <- website.maximumDisplaySize,
-		dateFormat <- website.dateFormat()
+		dateFormat <- website.dateFormat(),
+		disableInput <- website.disableInput
 	)
 }
 

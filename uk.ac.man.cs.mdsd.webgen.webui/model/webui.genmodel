@@ -150,6 +150,7 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitField/collectionAllowRemove"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitField/maximumDisplaySize"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitField/dateFormat"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//UnitField/disableInput"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//UnitFeature">
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitFeature/onlyDisplayWhenNotEmpty"/>

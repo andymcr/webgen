@@ -246,6 +246,7 @@ interface UnitField extends DisplayElement {
 	boolean collectionAllowRemove
 	int maximumDisplaySize = "-1"
 	String dateFormat
+	Boolean disableInput = "false"
 }
 
 abstract class UnitFeature extends UnitField, InlineActionContainer {

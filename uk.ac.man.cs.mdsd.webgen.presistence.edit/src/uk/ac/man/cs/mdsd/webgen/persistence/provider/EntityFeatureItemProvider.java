@@ -351,7 +351,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
+				 getString("_UI_DatabasePropertyCategory"),
 				 null));
 	}
 

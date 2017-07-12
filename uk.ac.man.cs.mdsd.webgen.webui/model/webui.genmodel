@@ -353,8 +353,7 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference webui.ecore#//ChildPath/partOf"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//ChildPathAttribute">
-      <genFeatures property="Readonly" createChild="false" propertyCategory="Model"
-          ecoreFeature="ecore:EAttribute webui.ecore#//ChildPathAttribute/name"/>
+      <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//ChildPathAttribute/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//ChildPathAttribute/attribute"/>
     </genClasses>
@@ -425,8 +424,7 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//FeatureSupportAction/fileExtension"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//WebuiFeatureReference">
-      <genFeatures property="Readonly" createChild="false" propertyCategory="Model"
-          ecoreFeature="ecore:EAttribute webui.ecore#//WebuiFeatureReference/name"/>
+      <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//WebuiFeatureReference/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//WebuiFeatureReference/feature"/>
     </genClasses>

@@ -474,8 +474,6 @@ abstract rule UnitContainer {
 abstract rule ContentUnit {
 	from website : Website!ContentUnit
 	to waf : WAF!ContentUnit (
-		requiresRole <- website.requiresRole,
-		purposeSummary <- website.purposeSummary,
 		uriElement <-
 			if website.uriElement.trim() <> '' then
 				website.uriElement.trim()
@@ -484,6 +482,9 @@ abstract rule ContentUnit {
 			else
 				''
 			endif endif,
+		routingActuals <- website.routingActuals,
+		requiresRole <- website.requiresRole,
+		purposeSummary <- website.purposeSummary,
 		omitCaption <-
 			if not website.omitCaption.oclIsUndefined() then
 				website.omitCaption
@@ -494,6 +495,14 @@ abstract rule ContentUnit {
 		captionClass <- website.captionClass.replaceAll(',', ' '),
 		styleClass <- website.styleClass.replaceAll(',', ' '),
 		contentClass <- website.contentClass.replaceAll(',', ' ')
+	)
+}
+
+rule RoutingActual {
+	from website : Website!RoutingActual
+	to waf : WAF!RoutingActual (
+		routingParameter <- website.routingParameter.findOrmAttribute(),
+		value <- website.value
 	)
 }
 
@@ -692,7 +701,7 @@ rule DataTypeField {
 	from website : Website!DataTypeField
 	to waf : WAF!DataTypeField (
 		dataType <- thisModule.findOrmDataType(website.dataType.name),
-		caseInsensitive <- website.caseInsensitive,
+--		caseInsensitive <- website.caseInsensitive,
 		obfuscateFormFields <- website.obfuscateFormFields,
 		encrypt <- website.encrypt
 	)

@@ -154,6 +154,8 @@
         lowerBound="1" eType="#//UnitContainer" eOpposite="#//UnitContainer/units"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="createDefaultUriElement"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="routingActuals" upperBound="-1"
+        eType="#//RoutingActual" containment="true" eOpposite="#//RoutingActual/actualFor"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiresRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="purposeSummary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -168,6 +170,14 @@
         <details key="derivation" value="if displayedOn.oclIsTypeOf(Page) then&#xD;&#xA;&#x9;displayedOn.oclAsType(Page)&#xD;&#xA;else&#xD;&#xA;&#x9;displayedOn.oclAsType(UnitAssociation).displayedOn.pageDisplayedOn&#xD;&#xA;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoutingActual">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actualFor" lowerBound="1"
+        eType="#//ContentUnit" eOpposite="#//ContentUnit/routingActuals"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="routingParameter" lowerBound="1"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StaticUnit" eSuperTypes="#//ContentUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" ordered="false"

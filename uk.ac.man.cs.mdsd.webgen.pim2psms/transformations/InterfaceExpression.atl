@@ -9,9 +9,11 @@ create waf : WAF from website : Website;
 helper context Website!Expression def: isInterfaceExpression() : Boolean
 	= if self.refImmediateComposite().oclIsUndefined() then
 			false
-		else if self.refImmediateComposite().oclIsKindOf(Website!UnitElement) then
-			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!EditUnit) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!RoutingActual) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!UnitElement) then
 			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!InlineAction) then
 			true
@@ -19,7 +21,7 @@ helper context Website!Expression def: isInterfaceExpression() : Boolean
 			self.refImmediateComposite().isInterfaceExpression()
 		else
 			false
-		endif endif endif endif endif;
+		endif endif endif endif endif endif;
 
 
 rule NullLiteral {

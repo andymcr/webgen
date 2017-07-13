@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
+import org.eclipse.emf.common.util.EList;
+
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
 
 /**
@@ -14,9 +16,10 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getDisplayedOn <em>Displayed On</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getUriElement <em>Uri Element</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getRoutingActuals <em>Routing Actuals</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getRequiresRole <em>Requires Role</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getAlternative <em>Alternative</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getCaptionClass <em>Caption Class</em>}</li>
@@ -58,30 +61,47 @@ public interface ContentUnit extends NamedDisplayElement {
 	void setDisplayedOn(UnitContainer value);
 
 	/**
-	 * Returns the value of the '<em><b>Purpose Summary</b></em>' attribute.
+	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Purpose Summary</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Uri Element</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Purpose Summary</em>' attribute.
-	 * @see #setPurposeSummary(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_PurposeSummary()
-	 * @model unique="false"
+	 * @return the value of the '<em>Uri Element</em>' attribute.
+	 * @see #setUriElement(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_UriElement()
+	 * @model default="" unique="false"
 	 * @generated
 	 */
-	String getPurposeSummary();
+	String getUriElement();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getUriElement <em>Uri Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Purpose Summary</em>' attribute.
-	 * @see #getPurposeSummary()
+	 * @param value the new value of the '<em>Uri Element</em>' attribute.
+	 * @see #getUriElement()
 	 * @generated
 	 */
-	void setPurposeSummary(String value);
+	void setUriElement(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.RoutingActual}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Routing Actuals</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Routing Actuals</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_RoutingActuals()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<RoutingActual> getRoutingActuals();
 
 	/**
 	 * Returns the value of the '<em><b>Requires Role</b></em>' attribute.
@@ -110,31 +130,30 @@ public interface ContentUnit extends NamedDisplayElement {
 	void setRequiresRole(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.
-	 * The default value is <code>""</code>.
+	 * Returns the value of the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Uri Element</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Purpose Summary</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uri Element</em>' attribute.
-	 * @see #setUriElement(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_UriElement()
-	 * @model default="" unique="false"
+	 * @return the value of the '<em>Purpose Summary</em>' attribute.
+	 * @see #setPurposeSummary(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_PurposeSummary()
+	 * @model unique="false"
 	 * @generated
 	 */
-	String getUriElement();
+	String getPurposeSummary();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getUriElement <em>Uri Element</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uri Element</em>' attribute.
-	 * @see #getUriElement()
+	 * @param value the new value of the '<em>Purpose Summary</em>' attribute.
+	 * @see #getPurposeSummary()
 	 * @generated
 	 */
-	void setUriElement(String value);
+	void setPurposeSummary(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Alternative</b></em>' attribute.

@@ -353,6 +353,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.RoutingActual} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RoutingActualItemProvider routingActualItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.RoutingActual}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRoutingActualAdapter() {
+		if (routingActualItemProvider == null) {
+			routingActualItemProvider = new RoutingActualItemProvider(this);
+		}
+
+		return routingActualItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.StaticUnit} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1160,6 +1183,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (pageItemProvider != null) pageItemProvider.dispose();
 		if (queryItemProvider != null) queryItemProvider.dispose();
 		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
+		if (routingActualItemProvider != null) routingActualItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
 		if (unitSupportActionItemProvider != null) unitSupportActionItemProvider.dispose();
 		if (unitAttributeItemProvider != null) unitAttributeItemProvider.dispose();

@@ -26,6 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.LoginUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.Page;
+import uk.ac.man.cs.mdsd.webgen.webui.RoutingActual;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitField;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitSupportAction;
@@ -43,6 +44,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#isCreateDefaultUriElement <em>Create Default Uri Element</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getRoutingActuals <em>Routing Actuals</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getUriElement <em>Uri Element</em>}</li>
@@ -128,6 +130,16 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 	 * @ordered
 	 */
 	protected boolean createDefaultUriElement = CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRoutingActuals() <em>Routing Actuals</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoutingActuals()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RoutingActual> routingActuals;
 
 	/**
 	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
@@ -637,6 +649,18 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<RoutingActual> getRoutingActuals() {
+		if (routingActuals == null) {
+			routingActuals = new EObjectContainmentWithInverseEList<RoutingActual>(RoutingActual.class, this, WebuiPackage.LOGIN_UNIT__ROUTING_ACTUALS, WebuiPackage.ROUTING_ACTUAL__ACTUAL_FOR);
+		}
+		return routingActuals;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getRequiresRole() {
 		return requiresRole;
 	}
@@ -1091,6 +1115,8 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetDisplayedOn((UnitContainer)otherEnd, msgs);
+			case WebuiPackage.LOGIN_UNIT__ROUTING_ACTUALS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoutingActuals()).basicAdd(otherEnd, msgs);
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDisplayFields()).basicAdd(otherEnd, msgs);
 		}
@@ -1107,6 +1133,8 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 		switch (featureID) {
 			case WebuiPackage.LOGIN_UNIT__DISPLAYED_ON:
 				return basicSetDisplayedOn(null, msgs);
+			case WebuiPackage.LOGIN_UNIT__ROUTING_ACTUALS:
+				return ((InternalEList<?>)getRoutingActuals()).basicRemove(otherEnd, msgs);
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS:
@@ -1145,6 +1173,8 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 				return getDisplayedOn();
 			case WebuiPackage.LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				return isCreateDefaultUriElement();
+			case WebuiPackage.LOGIN_UNIT__ROUTING_ACTUALS:
+				return getRoutingActuals();
 			case WebuiPackage.LOGIN_UNIT__REQUIRES_ROLE:
 				return getRequiresRole();
 			case WebuiPackage.LOGIN_UNIT__PURPOSE_SUMMARY:
@@ -1213,6 +1243,10 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 				return;
 			case WebuiPackage.LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				setCreateDefaultUriElement((Boolean)newValue);
+				return;
+			case WebuiPackage.LOGIN_UNIT__ROUTING_ACTUALS:
+				getRoutingActuals().clear();
+				getRoutingActuals().addAll((Collection<? extends RoutingActual>)newValue);
 				return;
 			case WebuiPackage.LOGIN_UNIT__REQUIRES_ROLE:
 				setRequiresRole((String)newValue);
@@ -1300,6 +1334,9 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 			case WebuiPackage.LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				setCreateDefaultUriElement(CREATE_DEFAULT_URI_ELEMENT_EDEFAULT);
 				return;
+			case WebuiPackage.LOGIN_UNIT__ROUTING_ACTUALS:
+				getRoutingActuals().clear();
+				return;
 			case WebuiPackage.LOGIN_UNIT__REQUIRES_ROLE:
 				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
 				return;
@@ -1380,6 +1417,8 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 				return getDisplayedOn() != null;
 			case WebuiPackage.LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				return createDefaultUriElement != CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
+			case WebuiPackage.LOGIN_UNIT__ROUTING_ACTUALS:
+				return routingActuals != null && !routingActuals.isEmpty();
 			case WebuiPackage.LOGIN_UNIT__REQUIRES_ROLE:
 				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WebuiPackage.LOGIN_UNIT__PURPOSE_SUMMARY:
@@ -1449,6 +1488,7 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 			switch (derivedFeatureID) {
 				case WebuiPackage.LOGIN_UNIT__DISPLAYED_ON: return WebuiPackage.CONTENT_UNIT__DISPLAYED_ON;
 				case WebuiPackage.LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT: return WebuiPackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
+				case WebuiPackage.LOGIN_UNIT__ROUTING_ACTUALS: return WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS;
 				case WebuiPackage.LOGIN_UNIT__REQUIRES_ROLE: return WebuiPackage.CONTENT_UNIT__REQUIRES_ROLE;
 				case WebuiPackage.LOGIN_UNIT__PURPOSE_SUMMARY: return WebuiPackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebuiPackage.LOGIN_UNIT__URI_ELEMENT: return WebuiPackage.CONTENT_UNIT__URI_ELEMENT;
@@ -1507,6 +1547,7 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 			switch (baseFeatureID) {
 				case WebuiPackage.CONTENT_UNIT__DISPLAYED_ON: return WebuiPackage.LOGIN_UNIT__DISPLAYED_ON;
 				case WebuiPackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT: return WebuiPackage.LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT;
+				case WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS: return WebuiPackage.LOGIN_UNIT__ROUTING_ACTUALS;
 				case WebuiPackage.CONTENT_UNIT__REQUIRES_ROLE: return WebuiPackage.LOGIN_UNIT__REQUIRES_ROLE;
 				case WebuiPackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebuiPackage.LOGIN_UNIT__PURPOSE_SUMMARY;
 				case WebuiPackage.CONTENT_UNIT__URI_ELEMENT: return WebuiPackage.LOGIN_UNIT__URI_ELEMENT;

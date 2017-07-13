@@ -133,6 +133,10 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 				return createContentUnitAdapter();
 			}
 			@Override
+			public Adapter caseRoutingActual(RoutingActual object) {
+				return createRoutingActualAdapter();
+			}
+			@Override
 			public Adapter caseStaticUnit(StaticUnit object) {
 				return createStaticUnitAdapter();
 			}
@@ -559,6 +563,20 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createContentUnitAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.webui.RoutingActual <em>Routing Actual</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.RoutingActual
+	 * @generated
+	 */
+	public Adapter createRoutingActualAdapter() {
 		return null;
 	}
 

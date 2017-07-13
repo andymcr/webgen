@@ -2,19 +2,26 @@
  */
 package uk.ac.man.cs.mdsd.waf.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedDisplayElementImpl;
 
 import uk.ac.man.cs.mdsd.waf.ContentUnit;
+import uk.ac.man.cs.mdsd.waf.RoutingActual;
 import uk.ac.man.cs.mdsd.waf.UnitContainer;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -27,9 +34,10 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getUriElement <em>Uri Element</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getRoutingActuals <em>Routing Actuals</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getRequiresRole <em>Requires Role</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getAlternative <em>Alternative</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
@@ -41,24 +49,34 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  */
 public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements ContentUnit {
 	/**
-	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
+	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPurposeSummary()
+	 * @see #getUriElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PURPOSE_SUMMARY_EDEFAULT = null;
+	protected static final String URI_ELEMENT_EDEFAULT = "";
 
 	/**
-	 * The cached value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
+	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPurposeSummary()
+	 * @see #getUriElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected String purposeSummary = PURPOSE_SUMMARY_EDEFAULT;
+	protected String uriElement = URI_ELEMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRoutingActuals() <em>Routing Actuals</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoutingActuals()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RoutingActual> routingActuals;
 
 	/**
 	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
@@ -81,24 +99,24 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
+	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUriElement()
+	 * @see #getPurposeSummary()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String URI_ELEMENT_EDEFAULT = "";
+	protected static final String PURPOSE_SUMMARY_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
+	 * The cached value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUriElement()
+	 * @see #getPurposeSummary()
 	 * @generated
 	 * @ordered
 	 */
-	protected String uriElement = URI_ELEMENT_EDEFAULT;
+	protected String purposeSummary = PURPOSE_SUMMARY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAlternative() <em>Alternative</em>}' attribute.
@@ -275,8 +293,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPurposeSummary() {
-		return purposeSummary;
+	public String getUriElement() {
+		return uriElement;
 	}
 
 	/**
@@ -284,11 +302,23 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPurposeSummary(String newPurposeSummary) {
-		String oldPurposeSummary = purposeSummary;
-		purposeSummary = newPurposeSummary;
+	public void setUriElement(String newUriElement) {
+		String oldUriElement = uriElement;
+		uriElement = newUriElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY, oldPurposeSummary, purposeSummary));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CONTENT_UNIT__URI_ELEMENT, oldUriElement, uriElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<RoutingActual> getRoutingActuals() {
+		if (routingActuals == null) {
+			routingActuals = new EObjectContainmentEList<RoutingActual>(RoutingActual.class, this, WafPackage.CONTENT_UNIT__ROUTING_ACTUALS);
+		}
+		return routingActuals;
 	}
 
 	/**
@@ -317,8 +347,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getUriElement() {
-		return uriElement;
+	public String getPurposeSummary() {
+		return purposeSummary;
 	}
 
 	/**
@@ -326,11 +356,11 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUriElement(String newUriElement) {
-		String oldUriElement = uriElement;
-		uriElement = newUriElement;
+	public void setPurposeSummary(String newPurposeSummary) {
+		String oldPurposeSummary = purposeSummary;
+		purposeSummary = newPurposeSummary;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CONTENT_UNIT__URI_ELEMENT, oldUriElement, uriElement));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY, oldPurposeSummary, purposeSummary));
 	}
 
 	/**
@@ -464,6 +494,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		switch (featureID) {
 			case WafPackage.CONTENT_UNIT__DISPLAYED_ON:
 				return basicSetDisplayedOn(null, msgs);
+			case WafPackage.CONTENT_UNIT__ROUTING_ACTUALS:
+				return ((InternalEList<?>)getRoutingActuals()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -493,12 +525,14 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WafPackage.CONTENT_UNIT__DISPLAYED_ON:
 				if (resolve) return getDisplayedOn();
 				return basicGetDisplayedOn();
-			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
-				return getPurposeSummary();
-			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
-				return getRequiresRole();
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				return getUriElement();
+			case WafPackage.CONTENT_UNIT__ROUTING_ACTUALS:
+				return getRoutingActuals();
+			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
+				return getRequiresRole();
+			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
+				return getPurposeSummary();
 			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
 				return getAlternative();
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
@@ -518,20 +552,25 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WafPackage.CONTENT_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)newValue);
 				return;
-			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
-				setPurposeSummary((String)newValue);
+			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
+				setUriElement((String)newValue);
+				return;
+			case WafPackage.CONTENT_UNIT__ROUTING_ACTUALS:
+				getRoutingActuals().clear();
+				getRoutingActuals().addAll((Collection<? extends RoutingActual>)newValue);
 				return;
 			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
 				setRequiresRole((String)newValue);
 				return;
-			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
-				setUriElement((String)newValue);
+			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
+				setPurposeSummary((String)newValue);
 				return;
 			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
 				setAlternative((String)newValue);
@@ -563,14 +602,17 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WafPackage.CONTENT_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)null);
 				return;
-			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
-				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
+			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
+				setUriElement(URI_ELEMENT_EDEFAULT);
+				return;
+			case WafPackage.CONTENT_UNIT__ROUTING_ACTUALS:
+				getRoutingActuals().clear();
 				return;
 			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
 				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
 				return;
-			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
-				setUriElement(URI_ELEMENT_EDEFAULT);
+			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
+				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
 				return;
 			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
 				setAlternative(ALTERNATIVE_EDEFAULT);
@@ -601,12 +643,14 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		switch (featureID) {
 			case WafPackage.CONTENT_UNIT__DISPLAYED_ON:
 				return basicGetDisplayedOn() != null;
-			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
-				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
-			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
-				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
+			case WafPackage.CONTENT_UNIT__ROUTING_ACTUALS:
+				return routingActuals != null && !routingActuals.isEmpty();
+			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
+				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
+			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
+				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
 				return ALTERNATIVE_EDEFAULT == null ? alternative != null : !ALTERNATIVE_EDEFAULT.equals(alternative);
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
@@ -631,12 +675,12 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (purposeSummary: ");
-		result.append(purposeSummary);
+		result.append(" (uriElement: ");
+		result.append(uriElement);
 		result.append(", requiresRole: ");
 		result.append(requiresRole);
-		result.append(", uriElement: ");
-		result.append(uriElement);
+		result.append(", purposeSummary: ");
+		result.append(purposeSummary);
 		result.append(", alternative: ");
 		result.append(alternative);
 		result.append(", omitCaption: ");

@@ -541,6 +541,7 @@ public class ForgottenPasswordUnitItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebuiPackage.Literals.CONTENT_UNIT__ROUTING_ACTUALS);
 			childrenFeatures.add(WebuiPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
 			childrenFeatures.add(WebuiPackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		}
@@ -619,6 +620,7 @@ public class ForgottenPasswordUnitItemProvider
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTING_ACTUALS:
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -637,6 +639,11 @@ public class ForgottenPasswordUnitItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.CONTENT_UNIT__ROUTING_ACTUALS,
+				 WebuiFactory.eINSTANCE.createRoutingActual()));
 
 		newChildDescriptors.add
 			(createChildParameter

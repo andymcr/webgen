@@ -218,6 +218,12 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.ROUTING_ACTUAL: {
+				RoutingActual routingActual = (RoutingActual)theEObject;
+				T result = caseRoutingActual(routingActual);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.STATIC_UNIT: {
 				StaticUnit staticUnit = (StaticUnit)theEObject;
 				T result = caseStaticUnit(staticUnit);
@@ -990,6 +996,21 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseContentUnit(ContentUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Routing Actual</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Routing Actual</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRoutingActual(RoutingActual object) {
 		return null;
 	}
 

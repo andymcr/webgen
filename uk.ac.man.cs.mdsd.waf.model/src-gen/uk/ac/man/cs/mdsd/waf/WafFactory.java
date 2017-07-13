@@ -130,6 +130,15 @@ public interface WafFactory extends EFactory {
 	QueryParameter createQueryParameter();
 
 	/**
+	 * Returns a new object of class '<em>Routing Actual</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Routing Actual</em>'.
+	 * @generated
+	 */
+	RoutingActual createRoutingActual();
+
+	/**
 	 * Returns a new object of class '<em>Static Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

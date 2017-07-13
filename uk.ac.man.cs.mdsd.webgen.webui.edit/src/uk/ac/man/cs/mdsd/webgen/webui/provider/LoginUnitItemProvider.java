@@ -564,6 +564,7 @@ public class LoginUnitItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebuiPackage.Literals.CONTENT_UNIT__ROUTING_ACTUALS);
 			childrenFeatures.add(WebuiPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
 			childrenFeatures.add(WebuiPackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		}
@@ -643,6 +644,7 @@ public class LoginUnitItemProvider
 			case WebuiPackage.LOGIN_UNIT__STYLE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WebuiPackage.LOGIN_UNIT__ROUTING_ACTUALS:
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:
 			case WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -661,6 +663,11 @@ public class LoginUnitItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.CONTENT_UNIT__ROUTING_ACTUALS,
+				 WebuiFactory.eINSTANCE.createRoutingActual()));
 
 		newChildDescriptors.add
 			(createChildParameter

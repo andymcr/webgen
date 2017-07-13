@@ -1746,13 +1746,22 @@ public interface WafPackage extends EPackage {
 	int CONTENT_UNIT__DISPLAYED_ON = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__PURPOSE_SUMMARY = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int CONTENT_UNIT__URI_ELEMENT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT_UNIT__ROUTING_ACTUALS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -1761,16 +1770,16 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__REQUIRES_ROLE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int CONTENT_UNIT__REQUIRES_ROLE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__URI_ELEMENT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int CONTENT_UNIT__PURPOSE_SUMMARY = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -1779,7 +1788,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__ALTERNATIVE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int CONTENT_UNIT__ALTERNATIVE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -1788,7 +1797,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__OMIT_CAPTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int CONTENT_UNIT__OMIT_CAPTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
@@ -1797,7 +1806,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__CAPTION_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int CONTENT_UNIT__CAPTION_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -1806,7 +1815,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int CONTENT_UNIT__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -1815,7 +1824,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__CONTENT_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int CONTENT_UNIT__CONTENT_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Content Unit</em>' class.
@@ -1824,7 +1833,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int CONTENT_UNIT_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Content Unit</em>' class.
@@ -1836,6 +1845,52 @@ public interface WafPackage extends EPackage {
 	int CONTENT_UNIT_OPERATION_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.RoutingActualImpl <em>Routing Actual</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.RoutingActualImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRoutingActual()
+	 * @generated
+	 */
+	int ROUTING_ACTUAL = 20;
+
+	/**
+	 * The feature id for the '<em><b>Routing Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTING_ACTUAL__ROUTING_PARAMETER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTING_ACTUAL__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Routing Actual</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTING_ACTUAL_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Routing Actual</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTING_ACTUAL_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.StaticUnitImpl <em>Static Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1843,7 +1898,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getStaticUnit()
 	 * @generated
 	 */
-	int STATIC_UNIT = 20;
+	int STATIC_UNIT = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1873,13 +1928,22 @@ public interface WafPackage extends EPackage {
 	int STATIC_UNIT__DISPLAYED_ON = CONTENT_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_UNIT__PURPOSE_SUMMARY = CONTENT_UNIT__PURPOSE_SUMMARY;
+	int STATIC_UNIT__URI_ELEMENT = CONTENT_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_UNIT__ROUTING_ACTUALS = CONTENT_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -1891,13 +1955,13 @@ public interface WafPackage extends EPackage {
 	int STATIC_UNIT__REQUIRES_ROLE = CONTENT_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_UNIT__URI_ELEMENT = CONTENT_UNIT__URI_ELEMENT;
+	int STATIC_UNIT__PURPOSE_SUMMARY = CONTENT_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -1988,7 +2052,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDynamicUnit()
 	 * @generated
 	 */
-	int DYNAMIC_UNIT = 21;
+	int DYNAMIC_UNIT = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2018,13 +2082,22 @@ public interface WafPackage extends EPackage {
 	int DYNAMIC_UNIT__DISPLAYED_ON = CONTENT_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__PURPOSE_SUMMARY = CONTENT_UNIT__PURPOSE_SUMMARY;
+	int DYNAMIC_UNIT__URI_ELEMENT = CONTENT_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__ROUTING_ACTUALS = CONTENT_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -2036,13 +2109,13 @@ public interface WafPackage extends EPackage {
 	int DYNAMIC_UNIT__REQUIRES_ROLE = CONTENT_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__URI_ELEMENT = CONTENT_UNIT__URI_ELEMENT;
+	int DYNAMIC_UNIT__PURPOSE_SUMMARY = CONTENT_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -2187,7 +2260,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitSupportAction()
 	 * @generated
 	 */
-	int UNIT_SUPPORT_ACTION = 22;
+	int UNIT_SUPPORT_ACTION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2251,7 +2324,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitField()
 	 * @generated
 	 */
-	int UNIT_FIELD = 23;
+	int UNIT_FIELD = 24;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2360,7 +2433,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitFeature()
 	 * @generated
 	 */
-	int UNIT_FEATURE = 24;
+	int UNIT_FEATURE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2559,7 +2632,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitAttribute()
 	 * @generated
 	 */
-	int UNIT_ATTRIBUTE = 25;
+	int UNIT_ATTRIBUTE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2812,7 +2885,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitAssociation()
 	 * @generated
 	 */
-	int UNIT_ASSOCIATION = 26;
+	int UNIT_ASSOCIATION = 27;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -3074,7 +3147,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAssociationReference()
 	 * @generated
 	 */
-	int ASSOCIATION_REFERENCE = 27;
+	int ASSOCIATION_REFERENCE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3138,7 +3211,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInterfaceField()
 	 * @generated
 	 */
-	int INTERFACE_FIELD = 28;
+	int INTERFACE_FIELD = 29;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3319,7 +3392,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDataTypeField()
 	 * @generated
 	 */
-	int DATA_TYPE_FIELD = 29;
+	int DATA_TYPE_FIELD = 30;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3536,7 +3609,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDateField()
 	 * @generated
 	 */
-	int DATE_FIELD = 30;
+	int DATE_FIELD = 31;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3735,7 +3808,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCaptchaField()
 	 * @generated
 	 */
-	int CAPTCHA_FIELD = 31;
+	int CAPTCHA_FIELD = 32;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3916,7 +3989,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectableUnit()
 	 * @generated
 	 */
-	int SELECTABLE_UNIT = 32;
+	int SELECTABLE_UNIT = 33;
 
 	/**
 	 * The feature id for the '<em><b>Selection Type</b></em>' reference.
@@ -3962,7 +4035,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSingletonUnit()
 	 * @generated
 	 */
-	int SINGLETON_UNIT = 33;
+	int SINGLETON_UNIT = 34;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference.
@@ -3999,7 +4072,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionUnit()
 	 * @generated
 	 */
-	int COLLECTION_UNIT = 34;
+	int COLLECTION_UNIT = 35;
 
 	/**
 	 * The feature id for the '<em><b>Selection Type</b></em>' reference.
@@ -4189,7 +4262,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getEditUnit()
 	 * @generated
 	 */
-	int EDIT_UNIT = 35;
+	int EDIT_UNIT = 36;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4219,13 +4292,22 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__DISPLAYED_ON = DYNAMIC_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__PURPOSE_SUMMARY = DYNAMIC_UNIT__PURPOSE_SUMMARY;
+	int EDIT_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__ROUTING_ACTUALS = DYNAMIC_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -4237,13 +4319,13 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__REQUIRES_ROLE = DYNAMIC_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
+	int EDIT_UNIT__PURPOSE_SUMMARY = DYNAMIC_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -4469,7 +4551,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCreateUnit()
 	 * @generated
 	 */
-	int CREATE_UNIT = 36;
+	int CREATE_UNIT = 37;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4499,13 +4581,22 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UNIT__PURPOSE_SUMMARY = EDIT_UNIT__PURPOSE_SUMMARY;
+	int CREATE_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__ROUTING_ACTUALS = EDIT_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -4517,13 +4608,13 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__REQUIRES_ROLE = EDIT_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
+	int CREATE_UNIT__PURPOSE_SUMMARY = EDIT_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -4749,7 +4840,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCreateUpdateUnit()
 	 * @generated
 	 */
-	int CREATE_UPDATE_UNIT = 37;
+	int CREATE_UPDATE_UNIT = 38;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4779,13 +4870,22 @@ public interface WafPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__PURPOSE_SUMMARY = EDIT_UNIT__PURPOSE_SUMMARY;
+	int CREATE_UPDATE_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__ROUTING_ACTUALS = EDIT_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -4797,13 +4897,13 @@ public interface WafPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__REQUIRES_ROLE = EDIT_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
+	int CREATE_UPDATE_UNIT__PURPOSE_SUMMARY = EDIT_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -5065,7 +5165,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getMapUnit()
 	 * @generated
 	 */
-	int MAP_UNIT = 38;
+	int MAP_UNIT = 39;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5095,13 +5195,22 @@ public interface WafPackage extends EPackage {
 	int MAP_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__PURPOSE_SUMMARY = EDIT_UNIT__PURPOSE_SUMMARY;
+	int MAP_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__ROUTING_ACTUALS = EDIT_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -5113,13 +5222,13 @@ public interface WafPackage extends EPackage {
 	int MAP_UNIT__REQUIRES_ROLE = EDIT_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
+	int MAP_UNIT__PURPOSE_SUMMARY = EDIT_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -5399,7 +5508,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUpdateUnit()
 	 * @generated
 	 */
-	int UPDATE_UNIT = 39;
+	int UPDATE_UNIT = 40;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5429,13 +5538,22 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_UNIT__PURPOSE_SUMMARY = EDIT_UNIT__PURPOSE_SUMMARY;
+	int UPDATE_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__ROUTING_ACTUALS = EDIT_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -5447,13 +5565,13 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__REQUIRES_ROLE = EDIT_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
+	int UPDATE_UNIT__PURPOSE_SUMMARY = EDIT_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -5697,7 +5815,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDataUnit()
 	 * @generated
 	 */
-	int DATA_UNIT = 40;
+	int DATA_UNIT = 41;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5727,13 +5845,22 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__DISPLAYED_ON = DYNAMIC_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_UNIT__PURPOSE_SUMMARY = DYNAMIC_UNIT__PURPOSE_SUMMARY;
+	int DATA_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__ROUTING_ACTUALS = DYNAMIC_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -5745,13 +5872,13 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__REQUIRES_ROLE = DYNAMIC_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
+	int DATA_UNIT__PURPOSE_SUMMARY = DYNAMIC_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -5914,7 +6041,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDetailsUnit()
 	 * @generated
 	 */
-	int DETAILS_UNIT = 41;
+	int DETAILS_UNIT = 42;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5944,13 +6071,22 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__DISPLAYED_ON = DATA_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__PURPOSE_SUMMARY = DATA_UNIT__PURPOSE_SUMMARY;
+	int DETAILS_UNIT__URI_ELEMENT = DATA_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__ROUTING_ACTUALS = DATA_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -5962,13 +6098,13 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__REQUIRES_ROLE = DATA_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__URI_ELEMENT = DATA_UNIT__URI_ELEMENT;
+	int DETAILS_UNIT__PURPOSE_SUMMARY = DATA_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -6176,7 +6312,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexUnit()
 	 * @generated
 	 */
-	int INDEX_UNIT = 42;
+	int INDEX_UNIT = 43;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6206,13 +6342,22 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__DISPLAYED_ON = DATA_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__PURPOSE_SUMMARY = DATA_UNIT__PURPOSE_SUMMARY;
+	int INDEX_UNIT__URI_ELEMENT = DATA_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__ROUTING_ACTUALS = DATA_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -6224,13 +6369,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__REQUIRES_ROLE = DATA_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__URI_ELEMENT = DATA_UNIT__URI_ELEMENT;
+	int INDEX_UNIT__PURPOSE_SUMMARY = DATA_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -6591,7 +6736,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexGridUnit()
 	 * @generated
 	 */
-	int INDEX_GRID_UNIT = 43;
+	int INDEX_GRID_UNIT = 44;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6621,13 +6766,22 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__DISPLAYED_ON = INDEX_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_GRID_UNIT__PURPOSE_SUMMARY = INDEX_UNIT__PURPOSE_SUMMARY;
+	int INDEX_GRID_UNIT__URI_ELEMENT = INDEX_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__ROUTING_ACTUALS = INDEX_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -6639,13 +6793,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__REQUIRES_ROLE = INDEX_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_GRID_UNIT__URI_ELEMENT = INDEX_UNIT__URI_ELEMENT;
+	int INDEX_GRID_UNIT__PURPOSE_SUMMARY = INDEX_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -7006,7 +7160,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexPageDirectionUnit()
 	 * @generated
 	 */
-	int INDEX_PAGE_DIRECTION_UNIT = 44;
+	int INDEX_PAGE_DIRECTION_UNIT = 45;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7036,13 +7190,22 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__DISPLAYED_ON = INDEX_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_PAGE_DIRECTION_UNIT__PURPOSE_SUMMARY = INDEX_UNIT__PURPOSE_SUMMARY;
+	int INDEX_PAGE_DIRECTION_UNIT__URI_ELEMENT = INDEX_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__ROUTING_ACTUALS = INDEX_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -7054,13 +7217,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__REQUIRES_ROLE = INDEX_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_PAGE_DIRECTION_UNIT__URI_ELEMENT = INDEX_UNIT__URI_ELEMENT;
+	int INDEX_PAGE_DIRECTION_UNIT__PURPOSE_SUMMARY = INDEX_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -7421,7 +7584,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexLineDirectionUnit()
 	 * @generated
 	 */
-	int INDEX_LINE_DIRECTION_UNIT = 45;
+	int INDEX_LINE_DIRECTION_UNIT = 46;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7451,13 +7614,22 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__DISPLAYED_ON = INDEX_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_LINE_DIRECTION_UNIT__PURPOSE_SUMMARY = INDEX_UNIT__PURPOSE_SUMMARY;
+	int INDEX_LINE_DIRECTION_UNIT__URI_ELEMENT = INDEX_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__ROUTING_ACTUALS = INDEX_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -7469,13 +7641,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__REQUIRES_ROLE = INDEX_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_LINE_DIRECTION_UNIT__URI_ELEMENT = INDEX_UNIT__URI_ELEMENT;
+	int INDEX_LINE_DIRECTION_UNIT__PURPOSE_SUMMARY = INDEX_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -7836,7 +8008,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getControlUnit()
 	 * @generated
 	 */
-	int CONTROL_UNIT = 46;
+	int CONTROL_UNIT = 47;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7866,13 +8038,22 @@ public interface WafPackage extends EPackage {
 	int CONTROL_UNIT__DISPLAYED_ON = DYNAMIC_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_UNIT__PURPOSE_SUMMARY = DYNAMIC_UNIT__PURPOSE_SUMMARY;
+	int CONTROL_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__ROUTING_ACTUALS = DYNAMIC_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -7884,13 +8065,13 @@ public interface WafPackage extends EPackage {
 	int CONTROL_UNIT__REQUIRES_ROLE = DYNAMIC_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
+	int CONTROL_UNIT__PURPOSE_SUMMARY = DYNAMIC_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -8062,7 +8243,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSearchUnit()
 	 * @generated
 	 */
-	int SEARCH_UNIT = 47;
+	int SEARCH_UNIT = 48;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8092,13 +8273,22 @@ public interface WafPackage extends EPackage {
 	int SEARCH_UNIT__DISPLAYED_ON = CONTROL_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_UNIT__PURPOSE_SUMMARY = CONTROL_UNIT__PURPOSE_SUMMARY;
+	int SEARCH_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__ROUTING_ACTUALS = CONTROL_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -8110,13 +8300,13 @@ public interface WafPackage extends EPackage {
 	int SEARCH_UNIT__REQUIRES_ROLE = CONTROL_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
+	int SEARCH_UNIT__PURPOSE_SUMMARY = CONTROL_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -8297,7 +8487,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getImageUnit()
 	 * @generated
 	 */
-	int IMAGE_UNIT = 48;
+	int IMAGE_UNIT = 49;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8327,13 +8517,22 @@ public interface WafPackage extends EPackage {
 	int IMAGE_UNIT__DISPLAYED_ON = DYNAMIC_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__PURPOSE_SUMMARY = DYNAMIC_UNIT__PURPOSE_SUMMARY;
+	int IMAGE_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__ROUTING_ACTUALS = DYNAMIC_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -8345,13 +8544,13 @@ public interface WafPackage extends EPackage {
 	int IMAGE_UNIT__REQUIRES_ROLE = DYNAMIC_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
+	int IMAGE_UNIT__PURPOSE_SUMMARY = DYNAMIC_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -8721,7 +8920,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePath()
 	 * @generated
 	 */
-	int FEATURE_PATH = 49;
+	int FEATURE_PATH = 50;
 
 	/**
 	 * The number of structural features of the '<em>Feature Path</em>' class.
@@ -8749,7 +8948,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAttribute()
 	 * @generated
 	 */
-	int FEATURE_PATH_ATTRIBUTE = 50;
+	int FEATURE_PATH_ATTRIBUTE = 51;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8795,7 +8994,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAssociation()
 	 * @generated
 	 */
-	int FEATURE_PATH_ASSOCIATION = 51;
+	int FEATURE_PATH_ASSOCIATION = 52;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8859,7 +9058,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPath()
 	 * @generated
 	 */
-	int CHILD_PATH = 52;
+	int CHILD_PATH = 53;
 
 	/**
 	 * The number of structural features of the '<em>Child Path</em>' class.
@@ -8887,7 +9086,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAttribute()
 	 * @generated
 	 */
-	int CHILD_PATH_ATTRIBUTE = 53;
+	int CHILD_PATH_ATTRIBUTE = 54;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8933,7 +9132,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAssociation()
 	 * @generated
 	 */
-	int CHILD_PATH_ASSOCIATION = 54;
+	int CHILD_PATH_ASSOCIATION = 55;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8997,7 +9196,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getImageIndexUnit()
 	 * @generated
 	 */
-	int IMAGE_INDEX_UNIT = 55;
+	int IMAGE_INDEX_UNIT = 56;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9027,13 +9226,22 @@ public interface WafPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__DISPLAYED_ON = IMAGE_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__PURPOSE_SUMMARY = IMAGE_UNIT__PURPOSE_SUMMARY;
+	int IMAGE_INDEX_UNIT__URI_ELEMENT = IMAGE_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__ROUTING_ACTUALS = IMAGE_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -9045,13 +9253,13 @@ public interface WafPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__REQUIRES_ROLE = IMAGE_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__URI_ELEMENT = IMAGE_UNIT__URI_ELEMENT;
+	int IMAGE_INDEX_UNIT__PURPOSE_SUMMARY = IMAGE_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -9430,7 +9638,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSliderUnit()
 	 * @generated
 	 */
-	int SLIDER_UNIT = 56;
+	int SLIDER_UNIT = 57;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9460,13 +9668,22 @@ public interface WafPackage extends EPackage {
 	int SLIDER_UNIT__DISPLAYED_ON = IMAGE_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__PURPOSE_SUMMARY = IMAGE_UNIT__PURPOSE_SUMMARY;
+	int SLIDER_UNIT__URI_ELEMENT = IMAGE_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__ROUTING_ACTUALS = IMAGE_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -9478,13 +9695,13 @@ public interface WafPackage extends EPackage {
 	int SLIDER_UNIT__REQUIRES_ROLE = IMAGE_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__URI_ELEMENT = IMAGE_UNIT__URI_ELEMENT;
+	int SLIDER_UNIT__PURPOSE_SUMMARY = IMAGE_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -9854,7 +10071,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getGalleryUnit()
 	 * @generated
 	 */
-	int GALLERY_UNIT = 57;
+	int GALLERY_UNIT = 58;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9884,13 +10101,22 @@ public interface WafPackage extends EPackage {
 	int GALLERY_UNIT__DISPLAYED_ON = IMAGE_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__PURPOSE_SUMMARY = IMAGE_UNIT__PURPOSE_SUMMARY;
+	int GALLERY_UNIT__URI_ELEMENT = IMAGE_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__ROUTING_ACTUALS = IMAGE_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -9902,13 +10128,13 @@ public interface WafPackage extends EPackage {
 	int GALLERY_UNIT__REQUIRES_ROLE = IMAGE_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__URI_ELEMENT = IMAGE_UNIT__URI_ELEMENT;
+	int GALLERY_UNIT__PURPOSE_SUMMARY = IMAGE_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -10287,7 +10513,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 58;
+	int AUTHENTICATION_UNIT = 59;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
@@ -10315,7 +10541,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 59;
+	int REGISTRATION_UNIT = 60;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10345,13 +10571,22 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__PURPOSE_SUMMARY = EDIT_UNIT__PURPOSE_SUMMARY;
+	int REGISTRATION_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__ROUTING_ACTUALS = EDIT_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -10363,13 +10598,13 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__REQUIRES_ROLE = EDIT_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
+	int REGISTRATION_UNIT__PURPOSE_SUMMARY = EDIT_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -10604,7 +10839,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 60;
+	int LOGIN_UNIT = 61;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10634,13 +10869,22 @@ public interface WafPackage extends EPackage {
 	int LOGIN_UNIT__DISPLAYED_ON = CONTROL_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__PURPOSE_SUMMARY = CONTROL_UNIT__PURPOSE_SUMMARY;
+	int LOGIN_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__ROUTING_ACTUALS = CONTROL_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -10652,13 +10896,13 @@ public interface WafPackage extends EPackage {
 	int LOGIN_UNIT__REQUIRES_ROLE = CONTROL_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
+	int LOGIN_UNIT__PURPOSE_SUMMARY = CONTROL_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -10875,7 +11119,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 61;
+	int FORGOTTEN_PASSWORD_UNIT = 62;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10905,13 +11149,22 @@ public interface WafPackage extends EPackage {
 	int FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON = CONTROL_UNIT__DISPLAYED_ON;
 
 	/**
-	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY = CONTROL_UNIT__PURPOSE_SUMMARY;
+	int FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__ROUTING_ACTUALS = CONTROL_UNIT__ROUTING_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -10923,13 +11176,13 @@ public interface WafPackage extends EPackage {
 	int FORGOTTEN_PASSWORD_UNIT__REQUIRES_ROLE = CONTROL_UNIT__REQUIRES_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
+	int FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY = CONTROL_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -11119,7 +11372,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 62;
+	int INLINE_ACTION_CONTAINER = 63;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -11156,7 +11409,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 63;
+	int INLINE_ACTION = 64;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11283,7 +11536,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 64;
+	int SELECT_ACTION = 65;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11419,7 +11672,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 65;
+	int DELETE_ACTION = 66;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11573,7 +11826,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 66;
+	int FEATURE_SUPPORT_ACTION = 67;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11736,7 +11989,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 67;
+	int FRAMEWORK_TECHNOLOGIES = 68;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.InputTechnologies <em>Input Technologies</em>}' enum.
@@ -11746,7 +11999,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInputTechnologies()
 	 * @generated
 	 */
-	int INPUT_TECHNOLOGIES = 68;
+	int INPUT_TECHNOLOGIES = 69;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -11756,7 +12009,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 69;
+	int AJAX_TECHNOLOGIES = 70;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
@@ -11766,7 +12019,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPES = 70;
+	int AUTHENTICATION_KEY_TYPES = 71;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -11776,7 +12029,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 71;
+	int PAGE_TOP_MENU_OPTIONS = 72;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -11786,7 +12039,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 72;
+	int COLLECTION_DISPLAY_OPTIONS = 73;
 
 
 	/**
@@ -12848,15 +13101,26 @@ public interface WafPackage extends EPackage {
 	EReference getContentUnit_DisplayedOn();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getUriElement <em>Uri Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Purpose Summary</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ContentUnit#getPurposeSummary()
+	 * @return the meta object for the attribute '<em>Uri Element</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ContentUnit#getUriElement()
 	 * @see #getContentUnit()
 	 * @generated
 	 */
-	EAttribute getContentUnit_PurposeSummary();
+	EAttribute getContentUnit_UriElement();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getRoutingActuals <em>Routing Actuals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Routing Actuals</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ContentUnit#getRoutingActuals()
+	 * @see #getContentUnit()
+	 * @generated
+	 */
+	EReference getContentUnit_RoutingActuals();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getRequiresRole <em>Requires Role</em>}'.
@@ -12870,15 +13134,15 @@ public interface WafPackage extends EPackage {
 	EAttribute getContentUnit_RequiresRole();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getUriElement <em>Uri Element</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uri Element</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ContentUnit#getUriElement()
+	 * @return the meta object for the attribute '<em>Purpose Summary</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ContentUnit#getPurposeSummary()
 	 * @see #getContentUnit()
 	 * @generated
 	 */
-	EAttribute getContentUnit_UriElement();
+	EAttribute getContentUnit_PurposeSummary();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getAlternative <em>Alternative</em>}'.
@@ -12934,6 +13198,38 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContentUnit_ContentClass();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.RoutingActual <em>Routing Actual</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Routing Actual</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.RoutingActual
+	 * @generated
+	 */
+	EClass getRoutingActual();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.RoutingActual#getRoutingParameter <em>Routing Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Routing Parameter</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.RoutingActual#getRoutingParameter()
+	 * @see #getRoutingActual()
+	 * @generated
+	 */
+	EReference getRoutingActual_RoutingParameter();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.RoutingActual#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.RoutingActual#getValue()
+	 * @see #getRoutingActual()
+	 * @generated
+	 */
+	EReference getRoutingActual_Value();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.StaticUnit <em>Static Unit</em>}'.
@@ -15809,12 +16105,20 @@ public interface WafPackage extends EPackage {
 		EReference CONTENT_UNIT__DISPLAYED_ON = eINSTANCE.getContentUnit_DisplayedOn();
 
 		/**
-		 * The meta object literal for the '<em><b>Purpose Summary</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTENT_UNIT__PURPOSE_SUMMARY = eINSTANCE.getContentUnit_PurposeSummary();
+		EAttribute CONTENT_UNIT__URI_ELEMENT = eINSTANCE.getContentUnit_UriElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Routing Actuals</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTENT_UNIT__ROUTING_ACTUALS = eINSTANCE.getContentUnit_RoutingActuals();
 
 		/**
 		 * The meta object literal for the '<em><b>Requires Role</b></em>' attribute feature.
@@ -15825,12 +16129,12 @@ public interface WafPackage extends EPackage {
 		EAttribute CONTENT_UNIT__REQUIRES_ROLE = eINSTANCE.getContentUnit_RequiresRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Purpose Summary</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTENT_UNIT__URI_ELEMENT = eINSTANCE.getContentUnit_UriElement();
+		EAttribute CONTENT_UNIT__PURPOSE_SUMMARY = eINSTANCE.getContentUnit_PurposeSummary();
 
 		/**
 		 * The meta object literal for the '<em><b>Alternative</b></em>' attribute feature.
@@ -15871,6 +16175,32 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTENT_UNIT__CONTENT_CLASS = eINSTANCE.getContentUnit_ContentClass();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.RoutingActualImpl <em>Routing Actual</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.RoutingActualImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRoutingActual()
+		 * @generated
+		 */
+		EClass ROUTING_ACTUAL = eINSTANCE.getRoutingActual();
+
+		/**
+		 * The meta object literal for the '<em><b>Routing Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROUTING_ACTUAL__ROUTING_PARAMETER = eINSTANCE.getRoutingActual_RoutingParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROUTING_ACTUAL__VALUE = eINSTANCE.getRoutingActual_Value();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.StaticUnitImpl <em>Static Unit</em>}' class.

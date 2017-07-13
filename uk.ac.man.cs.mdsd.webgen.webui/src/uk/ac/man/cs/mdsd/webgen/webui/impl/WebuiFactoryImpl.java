@@ -67,6 +67,7 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 			case WebuiPackage.QUERY_PARAMETER: return createQueryParameter();
 			case WebuiPackage.PAGE: return createPage();
 			case WebuiPackage.PAGE_LINK: return createPageLink();
+			case WebuiPackage.ROUTING_ACTUAL: return createRoutingActual();
 			case WebuiPackage.STATIC_UNIT: return createStaticUnit();
 			case WebuiPackage.CREATE_SITEMAP_UNIT: return createCreateSitemapUnit();
 			case WebuiPackage.UNIT_ELEMENT: return createUnitElement();
@@ -245,6 +246,16 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 	public PageLink createPageLink() {
 		PageLinkImpl pageLink = new PageLinkImpl();
 		return pageLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoutingActual createRoutingActual() {
+		RoutingActualImpl routingActual = new RoutingActualImpl();
+		return routingActual;
 	}
 
 	/**

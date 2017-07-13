@@ -26,6 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.Page;
 import uk.ac.man.cs.mdsd.webgen.webui.RegistrationUnit;
+import uk.ac.man.cs.mdsd.webgen.webui.RoutingActual;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitField;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitSupportAction;
@@ -43,6 +44,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.RegistrationUnitImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.RegistrationUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.RegistrationUnitImpl#isCreateDefaultUriElement <em>Create Default Uri Element</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.RegistrationUnitImpl#getRoutingActuals <em>Routing Actuals</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.RegistrationUnitImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.RegistrationUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.RegistrationUnitImpl#getUriElement <em>Uri Element</em>}</li>
@@ -127,6 +129,16 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected boolean createDefaultUriElement = CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRoutingActuals() <em>Routing Actuals</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoutingActuals()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RoutingActual> routingActuals;
 
 	/**
 	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
@@ -616,6 +628,18 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<RoutingActual> getRoutingActuals() {
+		if (routingActuals == null) {
+			routingActuals = new EObjectContainmentWithInverseEList<RoutingActual>(RoutingActual.class, this, WebuiPackage.REGISTRATION_UNIT__ROUTING_ACTUALS, WebuiPackage.ROUTING_ACTUAL__ACTUAL_FOR);
+		}
+		return routingActuals;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getRequiresRole() {
 		return requiresRole;
 	}
@@ -1049,6 +1073,8 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetDisplayedOn((UnitContainer)otherEnd, msgs);
+			case WebuiPackage.REGISTRATION_UNIT__ROUTING_ACTUALS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoutingActuals()).basicAdd(otherEnd, msgs);
 			case WebuiPackage.REGISTRATION_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDisplayFields()).basicAdd(otherEnd, msgs);
 		}
@@ -1065,6 +1091,8 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case WebuiPackage.REGISTRATION_UNIT__DISPLAYED_ON:
 				return basicSetDisplayedOn(null, msgs);
+			case WebuiPackage.REGISTRATION_UNIT__ROUTING_ACTUALS:
+				return ((InternalEList<?>)getRoutingActuals()).basicRemove(otherEnd, msgs);
 			case WebuiPackage.REGISTRATION_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WebuiPackage.REGISTRATION_UNIT__SUPPORT_ACTIONS:
@@ -1103,6 +1131,8 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 				return getDisplayedOn();
 			case WebuiPackage.REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				return isCreateDefaultUriElement();
+			case WebuiPackage.REGISTRATION_UNIT__ROUTING_ACTUALS:
+				return getRoutingActuals();
 			case WebuiPackage.REGISTRATION_UNIT__REQUIRES_ROLE:
 				return getRequiresRole();
 			case WebuiPackage.REGISTRATION_UNIT__PURPOSE_SUMMARY:
@@ -1169,6 +1199,10 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 				return;
 			case WebuiPackage.REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				setCreateDefaultUriElement((Boolean)newValue);
+				return;
+			case WebuiPackage.REGISTRATION_UNIT__ROUTING_ACTUALS:
+				getRoutingActuals().clear();
+				getRoutingActuals().addAll((Collection<? extends RoutingActual>)newValue);
 				return;
 			case WebuiPackage.REGISTRATION_UNIT__REQUIRES_ROLE:
 				setRequiresRole((String)newValue);
@@ -1253,6 +1287,9 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 			case WebuiPackage.REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				setCreateDefaultUriElement(CREATE_DEFAULT_URI_ELEMENT_EDEFAULT);
 				return;
+			case WebuiPackage.REGISTRATION_UNIT__ROUTING_ACTUALS:
+				getRoutingActuals().clear();
+				return;
 			case WebuiPackage.REGISTRATION_UNIT__REQUIRES_ROLE:
 				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
 				return;
@@ -1330,6 +1367,8 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 				return getDisplayedOn() != null;
 			case WebuiPackage.REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				return createDefaultUriElement != CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
+			case WebuiPackage.REGISTRATION_UNIT__ROUTING_ACTUALS:
+				return routingActuals != null && !routingActuals.isEmpty();
 			case WebuiPackage.REGISTRATION_UNIT__REQUIRES_ROLE:
 				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WebuiPackage.REGISTRATION_UNIT__PURPOSE_SUMMARY:
@@ -1397,6 +1436,7 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 			switch (derivedFeatureID) {
 				case WebuiPackage.REGISTRATION_UNIT__DISPLAYED_ON: return WebuiPackage.CONTENT_UNIT__DISPLAYED_ON;
 				case WebuiPackage.REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT: return WebuiPackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
+				case WebuiPackage.REGISTRATION_UNIT__ROUTING_ACTUALS: return WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS;
 				case WebuiPackage.REGISTRATION_UNIT__REQUIRES_ROLE: return WebuiPackage.CONTENT_UNIT__REQUIRES_ROLE;
 				case WebuiPackage.REGISTRATION_UNIT__PURPOSE_SUMMARY: return WebuiPackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebuiPackage.REGISTRATION_UNIT__URI_ELEMENT: return WebuiPackage.CONTENT_UNIT__URI_ELEMENT;
@@ -1455,6 +1495,7 @@ public class RegistrationUnitImpl extends MinimalEObjectImpl.Container implement
 			switch (baseFeatureID) {
 				case WebuiPackage.CONTENT_UNIT__DISPLAYED_ON: return WebuiPackage.REGISTRATION_UNIT__DISPLAYED_ON;
 				case WebuiPackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT: return WebuiPackage.REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT;
+				case WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS: return WebuiPackage.REGISTRATION_UNIT__ROUTING_ACTUALS;
 				case WebuiPackage.CONTENT_UNIT__REQUIRES_ROLE: return WebuiPackage.REGISTRATION_UNIT__REQUIRES_ROLE;
 				case WebuiPackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebuiPackage.REGISTRATION_UNIT__PURPOSE_SUMMARY;
 				case WebuiPackage.CONTENT_UNIT__URI_ELEMENT: return WebuiPackage.REGISTRATION_UNIT__URI_ELEMENT;

@@ -112,6 +112,8 @@
     <genClasses image="false" ecoreClass="webui.ecore#//ContentUnit">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference webui.ecore#//ContentUnit/displayedOn"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute webui.ecore#//ContentUnit/createDefaultUriElement"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Navigation"
+          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//ContentUnit/routingActuals"/>
       <genFeatures createChild="false" propertyCategory="Security" ecoreFeature="ecore:EAttribute webui.ecore#//ContentUnit/requiresRole"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//ContentUnit/purposeSummary"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute webui.ecore#//ContentUnit/uriElement"/>
@@ -120,6 +122,13 @@
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ContentUnit/captionClass"/>
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//ContentUnit/pageDisplayedOn"/>
+    </genClasses>
+    <genClasses ecoreClass="webui.ecore#//RoutingActual">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference webui.ecore#//RoutingActual/actualFor"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
+          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//RoutingActual/routingParameter"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Navigation"
+          ecoreFeature="ecore:EReference webui.ecore#//RoutingActual/value"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//StaticUnit">
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//StaticUnit/content"/>

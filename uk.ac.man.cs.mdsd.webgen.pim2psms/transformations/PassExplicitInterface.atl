@@ -271,7 +271,7 @@ rule WafModel {
 			if not website.websiteProperties.copyrightText.oclIsUndefined() and website.websiteProperties.copyrightText <> '' then
 				website.websiteProperties.copyrightText
 			else
-				'&copy; '.concat(website.websiteProperties.siteTitle).concat(' <?php echo date("Y"); ?>')
+				'&copy; '.concat(website.websiteProperties.siteTitle).concat(' {{ \'now\' | date(\'Y\') }}')
 			endif,
 		metaDescription <- website.websiteProperties.metaDescription,
 		frameworkTechnology <- website.frameworkTechnology,

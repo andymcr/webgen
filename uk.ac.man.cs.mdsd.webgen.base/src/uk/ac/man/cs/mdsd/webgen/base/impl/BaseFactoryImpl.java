@@ -63,7 +63,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 			case BasePackage.CURRENT_USER: return createCurrentUser();
 			case BasePackage.FORMAL_PARAMETER: return createFormalParameter();
 			case BasePackage.PARAMETER_REFERENCE: return createParameterReference();
-			case BasePackage.CONSTANT: return createConstant();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -137,16 +136,6 @@ public class BaseFactoryImpl extends EFactoryImpl implements BaseFactory {
 	public ParameterReference createParameterReference() {
 		ParameterReferenceImpl parameterReference = new ParameterReferenceImpl();
 		return parameterReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Constant createConstant() {
-		ConstantImpl constant = new ConstantImpl();
-		return constant;
 	}
 
 	/**

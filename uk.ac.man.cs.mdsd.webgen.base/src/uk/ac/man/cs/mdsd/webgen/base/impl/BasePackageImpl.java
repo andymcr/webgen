@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 import uk.ac.man.cs.mdsd.webgen.base.Classifier;
-import uk.ac.man.cs.mdsd.webgen.base.Constant;
 import uk.ac.man.cs.mdsd.webgen.base.CurrentTime;
 import uk.ac.man.cs.mdsd.webgen.base.CurrentUser;
 import uk.ac.man.cs.mdsd.webgen.base.DataType;
@@ -110,13 +109,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * @generated
 	 */
 	private EClass parameterReferenceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass constantEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -448,24 +440,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getConstant() {
-		return constantEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getConstant_Value() {
-		return (EAttribute)constantEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public BaseFactory getBaseFactory() {
 		return (BaseFactory)getEFactoryInstance();
 	}
@@ -527,9 +501,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		parameterReferenceEClass = createEClass(PARAMETER_REFERENCE);
 		createEAttribute(parameterReferenceEClass, PARAMETER_REFERENCE__NAME);
 		createEReference(parameterReferenceEClass, PARAMETER_REFERENCE__PARAMETER);
-
-		constantEClass = createEClass(CONSTANT);
-		createEAttribute(constantEClass, CONSTANT__VALUE);
 	}
 
 	/**
@@ -572,8 +543,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		currentUserEClass.getESuperTypes().add(theExpressionPackage.getExpression());
 		formalParameterEClass.getESuperTypes().add(this.getNamedElement());
 		parameterReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
-		constantEClass.getESuperTypes().add(this.getNamedElement());
-		constantEClass.getESuperTypes().add(theExpressionPackage.getVariable());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -614,9 +583,6 @@ public class BasePackageImpl extends EPackageImpl implements BasePackage {
 		initEClass(parameterReferenceEClass, ParameterReference.class, "ParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameterReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, ParameterReference.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getParameterReference_Parameter(), this.getFormalParameter(), null, "parameter", null, 1, 1, ParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(constantEClass, Constant.class, "Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConstant_Value(), ecorePackage.getEString(), "value", null, 0, 1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

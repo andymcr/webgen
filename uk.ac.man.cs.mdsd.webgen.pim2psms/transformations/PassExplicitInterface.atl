@@ -482,7 +482,7 @@ abstract rule ContentUnit {
 			else
 				''
 			endif endif,
-		routingActuals <- website.routingActuals,
+		routeActuals <- website.routeActuals,
 		requiresRole <- website.requiresRole,
 		purposeSummary <- website.purposeSummary,
 		omitCaption <-
@@ -498,10 +498,10 @@ abstract rule ContentUnit {
 	)
 }
 
-rule RoutingActual {
-	from website : Website!RoutingActual
-	to waf : WAF!RoutingActual (
-		routingParameter <- website.routingParameter.findOrmAttribute(),
+rule RouteActual {
+	from website : Website!RouteActual
+	to waf : WAF!RouteActual (
+		routeParameter <- website.routeParameter.findOrmAttribute(),
 		value <- website.value
 	)
 }

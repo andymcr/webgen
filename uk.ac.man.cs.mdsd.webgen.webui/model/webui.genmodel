@@ -112,8 +112,7 @@
     <genClasses image="false" ecoreClass="webui.ecore#//ContentUnit">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference webui.ecore#//ContentUnit/displayedOn"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute webui.ecore#//ContentUnit/createDefaultUriElement"/>
-      <genFeatures property="None" children="true" createChild="true" propertyCategory="Navigation"
-          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//ContentUnit/routingActuals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//ContentUnit/routeActuals"/>
       <genFeatures createChild="false" propertyCategory="Security" ecoreFeature="ecore:EAttribute webui.ecore#//ContentUnit/requiresRole"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//ContentUnit/purposeSummary"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute webui.ecore#//ContentUnit/uriElement"/>
@@ -123,12 +122,12 @@
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//ContentUnit/pageDisplayedOn"/>
     </genClasses>
-    <genClasses ecoreClass="webui.ecore#//RoutingActual">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference webui.ecore#//RoutingActual/actualFor"/>
+    <genClasses ecoreClass="webui.ecore#//RouteActual">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference webui.ecore#//RouteActual/actualFor"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
-          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//RoutingActual/routingParameter"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//RouteActual/routeParameter"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Navigation"
-          ecoreFeature="ecore:EReference webui.ecore#//RoutingActual/value"/>
+          ecoreFeature="ecore:EReference webui.ecore#//RouteActual/value"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//StaticUnit">
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//StaticUnit/content"/>

@@ -203,7 +203,7 @@ interface UnitContainer {
 abstract class ContentUnit extends NamedDisplayElement {
 	container UnitContainer[1] displayedOn opposite units
 	String uriElement = ""
-	contains RoutingActual[] routingActuals
+	contains RouteActual[] routeActuals
 	String requiresRole
 	String purposeSummary
 	String alternative
@@ -213,8 +213,8 @@ abstract class ContentUnit extends NamedDisplayElement {
 	String contentClass
 }
 
-class RoutingActual {
-	refers Attribute[1] routingParameter
+class RouteActual {
+	refers Attribute[1] routeParameter
 	contains Expression[1] value
 }
 class StaticUnit extends ContentUnit {

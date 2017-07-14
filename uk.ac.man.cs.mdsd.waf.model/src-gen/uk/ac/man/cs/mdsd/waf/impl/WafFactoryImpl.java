@@ -69,7 +69,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.PAGE: return createPage();
 			case WafPackage.QUERY: return createQuery();
 			case WafPackage.QUERY_PARAMETER: return createQueryParameter();
-			case WafPackage.ROUTING_ACTUAL: return createRoutingActual();
+			case WafPackage.ROUTE_ACTUAL: return createRouteActual();
 			case WafPackage.STATIC_UNIT: return createStaticUnit();
 			case WafPackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
 			case WafPackage.UNIT_ATTRIBUTE: return createUnitAttribute();
@@ -279,9 +279,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoutingActual createRoutingActual() {
-		RoutingActualImpl routingActual = new RoutingActualImpl();
-		return routingActual;
+	public RouteActual createRouteActual() {
+		RouteActualImpl routeActual = new RouteActualImpl();
+		return routeActual;
 	}
 
 	/**

@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.orm.impl.NamedDisplayElementImpl;
 
 import uk.ac.man.cs.mdsd.waf.ContentUnit;
-import uk.ac.man.cs.mdsd.waf.RoutingActual;
+import uk.ac.man.cs.mdsd.waf.RouteActual;
 import uk.ac.man.cs.mdsd.waf.UnitContainer;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -35,7 +35,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getRoutingActuals <em>Routing Actuals</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getRouteActuals <em>Route Actuals</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getAlternative <em>Alternative</em>}</li>
@@ -69,14 +69,14 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRoutingActuals() <em>Routing Actuals</em>}' containment reference list.
+	 * The cached value of the '{@link #getRouteActuals() <em>Route Actuals</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoutingActuals()
+	 * @see #getRouteActuals()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RoutingActual> routingActuals;
+	protected EList<RouteActual> routeActuals;
 
 	/**
 	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
@@ -314,11 +314,11 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RoutingActual> getRoutingActuals() {
-		if (routingActuals == null) {
-			routingActuals = new EObjectContainmentEList<RoutingActual>(RoutingActual.class, this, WafPackage.CONTENT_UNIT__ROUTING_ACTUALS);
+	public EList<RouteActual> getRouteActuals() {
+		if (routeActuals == null) {
+			routeActuals = new EObjectContainmentEList<RouteActual>(RouteActual.class, this, WafPackage.CONTENT_UNIT__ROUTE_ACTUALS);
 		}
-		return routingActuals;
+		return routeActuals;
 	}
 
 	/**
@@ -494,8 +494,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		switch (featureID) {
 			case WafPackage.CONTENT_UNIT__DISPLAYED_ON:
 				return basicSetDisplayedOn(null, msgs);
-			case WafPackage.CONTENT_UNIT__ROUTING_ACTUALS:
-				return ((InternalEList<?>)getRoutingActuals()).basicRemove(otherEnd, msgs);
+			case WafPackage.CONTENT_UNIT__ROUTE_ACTUALS:
+				return ((InternalEList<?>)getRouteActuals()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -527,8 +527,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return basicGetDisplayedOn();
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				return getUriElement();
-			case WafPackage.CONTENT_UNIT__ROUTING_ACTUALS:
-				return getRoutingActuals();
+			case WafPackage.CONTENT_UNIT__ROUTE_ACTUALS:
+				return getRouteActuals();
 			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
 				return getRequiresRole();
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
@@ -562,9 +562,9 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				setUriElement((String)newValue);
 				return;
-			case WafPackage.CONTENT_UNIT__ROUTING_ACTUALS:
-				getRoutingActuals().clear();
-				getRoutingActuals().addAll((Collection<? extends RoutingActual>)newValue);
+			case WafPackage.CONTENT_UNIT__ROUTE_ACTUALS:
+				getRouteActuals().clear();
+				getRouteActuals().addAll((Collection<? extends RouteActual>)newValue);
 				return;
 			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
 				setRequiresRole((String)newValue);
@@ -605,8 +605,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
-			case WafPackage.CONTENT_UNIT__ROUTING_ACTUALS:
-				getRoutingActuals().clear();
+			case WafPackage.CONTENT_UNIT__ROUTE_ACTUALS:
+				getRouteActuals().clear();
 				return;
 			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
 				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
@@ -645,8 +645,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return basicGetDisplayedOn() != null;
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
-			case WafPackage.CONTENT_UNIT__ROUTING_ACTUALS:
-				return routingActuals != null && !routingActuals.isEmpty();
+			case WafPackage.CONTENT_UNIT__ROUTE_ACTUALS:
+				return routeActuals != null && !routeActuals.isEmpty();
 			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
 				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:

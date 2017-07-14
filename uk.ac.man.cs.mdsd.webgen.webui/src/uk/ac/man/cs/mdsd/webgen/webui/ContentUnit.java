@@ -16,7 +16,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#isCreateDefaultUriElement <em>Create Default Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#getRoutingActuals <em>Routing Actuals</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#getRouteActuals <em>Route Actuals</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#getUriElement <em>Uri Element</em>}</li>
@@ -87,22 +87,22 @@ public interface ContentUnit extends NamedDisplayElement {
 	void setCreateDefaultUriElement(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Routing Actuals</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.RoutingActual}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.webui.RoutingActual#getActualFor <em>Actual For</em>}'.
+	 * Returns the value of the '<em><b>Route Actuals</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.RouteActual}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.webui.RouteActual#getActualFor <em>Actual For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Routing Actuals</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Route Actuals</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Routing Actuals</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getContentUnit_RoutingActuals()
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.RoutingActual#getActualFor
+	 * @return the value of the '<em>Route Actuals</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getContentUnit_RouteActuals()
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.RouteActual#getActualFor
 	 * @model opposite="actualFor" containment="true"
 	 * @generated
 	 */
-	EList<RoutingActual> getRoutingActuals();
+	EList<RouteActual> getRouteActuals();
 
 	/**
 	 * Returns the value of the '<em><b>Requires Role</b></em>' attribute.

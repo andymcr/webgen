@@ -154,8 +154,8 @@
         lowerBound="1" eType="#//UnitContainer" eOpposite="#//UnitContainer/units"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="createDefaultUriElement"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="routingActuals" upperBound="-1"
-        eType="#//RoutingActual" containment="true" eOpposite="#//RoutingActual/actualFor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="routeActuals" upperBound="-1"
+        eType="#//RouteActual" containment="true" eOpposite="#//RouteActual/actualFor"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiresRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="purposeSummary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -171,10 +171,10 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RoutingActual">
+  <eClassifiers xsi:type="ecore:EClass" name="RouteActual">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actualFor" lowerBound="1"
-        eType="#//ContentUnit" eOpposite="#//ContentUnit/routingActuals"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="routingParameter" lowerBound="1"
+        eType="#//ContentUnit" eOpposite="#//ContentUnit/routeActuals"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="routeParameter" lowerBound="1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Attribute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Expression"
         containment="true"/>

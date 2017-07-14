@@ -26,7 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.Page;
-import uk.ac.man.cs.mdsd.webgen.webui.RoutingActual;
+import uk.ac.man.cs.mdsd.webgen.webui.RouteActual;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitField;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitSupportAction;
@@ -44,7 +44,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#isCreateDefaultUriElement <em>Create Default Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getRoutingActuals <em>Routing Actuals</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getRouteActuals <em>Route Actuals</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getUriElement <em>Uri Element</em>}</li>
@@ -131,14 +131,14 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 	protected boolean createDefaultUriElement = CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRoutingActuals() <em>Routing Actuals</em>}' containment reference list.
+	 * The cached value of the '{@link #getRouteActuals() <em>Route Actuals</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoutingActuals()
+	 * @see #getRouteActuals()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RoutingActual> routingActuals;
+	protected EList<RouteActual> routeActuals;
 
 	/**
 	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
@@ -628,11 +628,11 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RoutingActual> getRoutingActuals() {
-		if (routingActuals == null) {
-			routingActuals = new EObjectContainmentWithInverseEList<RoutingActual>(RoutingActual.class, this, WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTING_ACTUALS, WebuiPackage.ROUTING_ACTUAL__ACTUAL_FOR);
+	public EList<RouteActual> getRouteActuals() {
+		if (routeActuals == null) {
+			routeActuals = new EObjectContainmentWithInverseEList<RouteActual>(RouteActual.class, this, WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTE_ACTUALS, WebuiPackage.ROUTE_ACTUAL__ACTUAL_FOR);
 		}
-		return routingActuals;
+		return routeActuals;
 	}
 
 	/**
@@ -1073,8 +1073,8 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetDisplayedOn((UnitContainer)otherEnd, msgs);
-			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTING_ACTUALS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoutingActuals()).basicAdd(otherEnd, msgs);
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTE_ACTUALS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRouteActuals()).basicAdd(otherEnd, msgs);
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDisplayFields()).basicAdd(otherEnd, msgs);
 		}
@@ -1091,8 +1091,8 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 		switch (featureID) {
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON:
 				return basicSetDisplayedOn(null, msgs);
-			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTING_ACTUALS:
-				return ((InternalEList<?>)getRoutingActuals()).basicRemove(otherEnd, msgs);
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTE_ACTUALS:
+				return ((InternalEList<?>)getRouteActuals()).basicRemove(otherEnd, msgs);
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
@@ -1131,8 +1131,8 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 				return getDisplayedOn();
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				return isCreateDefaultUriElement();
-			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTING_ACTUALS:
-				return getRoutingActuals();
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTE_ACTUALS:
+				return getRouteActuals();
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__REQUIRES_ROLE:
 				return getRequiresRole();
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
@@ -1200,9 +1200,9 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				setCreateDefaultUriElement((Boolean)newValue);
 				return;
-			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTING_ACTUALS:
-				getRoutingActuals().clear();
-				getRoutingActuals().addAll((Collection<? extends RoutingActual>)newValue);
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTE_ACTUALS:
+				getRouteActuals().clear();
+				getRouteActuals().addAll((Collection<? extends RouteActual>)newValue);
 				return;
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__REQUIRES_ROLE:
 				setRequiresRole((String)newValue);
@@ -1287,8 +1287,8 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				setCreateDefaultUriElement(CREATE_DEFAULT_URI_ELEMENT_EDEFAULT);
 				return;
-			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTING_ACTUALS:
-				getRoutingActuals().clear();
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTE_ACTUALS:
+				getRouteActuals().clear();
 				return;
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__REQUIRES_ROLE:
 				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
@@ -1367,8 +1367,8 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 				return getDisplayedOn() != null;
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				return createDefaultUriElement != CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
-			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTING_ACTUALS:
-				return routingActuals != null && !routingActuals.isEmpty();
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTE_ACTUALS:
+				return routeActuals != null && !routeActuals.isEmpty();
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__REQUIRES_ROLE:
 				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
@@ -1436,7 +1436,7 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 			switch (derivedFeatureID) {
 				case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON: return WebuiPackage.CONTENT_UNIT__DISPLAYED_ON;
 				case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT: return WebuiPackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
-				case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTING_ACTUALS: return WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS;
+				case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTE_ACTUALS: return WebuiPackage.CONTENT_UNIT__ROUTE_ACTUALS;
 				case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__REQUIRES_ROLE: return WebuiPackage.CONTENT_UNIT__REQUIRES_ROLE;
 				case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY: return WebuiPackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT: return WebuiPackage.CONTENT_UNIT__URI_ELEMENT;
@@ -1495,7 +1495,7 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 			switch (baseFeatureID) {
 				case WebuiPackage.CONTENT_UNIT__DISPLAYED_ON: return WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON;
 				case WebuiPackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT: return WebuiPackage.FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT;
-				case WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS: return WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTING_ACTUALS;
+				case WebuiPackage.CONTENT_UNIT__ROUTE_ACTUALS: return WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTE_ACTUALS;
 				case WebuiPackage.CONTENT_UNIT__REQUIRES_ROLE: return WebuiPackage.FORGOTTEN_PASSWORD_UNIT__REQUIRES_ROLE;
 				case WebuiPackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebuiPackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY;
 				case WebuiPackage.CONTENT_UNIT__URI_ELEMENT: return WebuiPackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT;

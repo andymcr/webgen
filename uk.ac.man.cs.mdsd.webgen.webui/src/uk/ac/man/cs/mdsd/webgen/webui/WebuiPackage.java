@@ -1177,13 +1177,13 @@ public interface WebuiPackage extends EPackage {
 	int CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__ROUTING_ACTUALS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int CONTENT_UNIT__ROUTE_ACTUALS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -1267,14 +1267,14 @@ public interface WebuiPackage extends EPackage {
 	int CONTENT_UNIT_OPERATION_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.RoutingActualImpl <em>Routing Actual</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.RouteActualImpl <em>Route Actual</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.RoutingActualImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getRoutingActual()
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.RouteActualImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getRouteActual()
 	 * @generated
 	 */
-	int ROUTING_ACTUAL = 15;
+	int ROUTE_ACTUAL = 15;
 
 	/**
 	 * The feature id for the '<em><b>Actual For</b></em>' container reference.
@@ -1283,16 +1283,16 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTING_ACTUAL__ACTUAL_FOR = 0;
+	int ROUTE_ACTUAL__ACTUAL_FOR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Routing Parameter</b></em>' reference.
+	 * The feature id for the '<em><b>Route Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTING_ACTUAL__ROUTING_PARAMETER = 1;
+	int ROUTE_ACTUAL__ROUTE_PARAMETER = 1;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1301,25 +1301,25 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTING_ACTUAL__VALUE = 2;
+	int ROUTE_ACTUAL__VALUE = 2;
 
 	/**
-	 * The number of structural features of the '<em>Routing Actual</em>' class.
+	 * The number of structural features of the '<em>Route Actual</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTING_ACTUAL_FEATURE_COUNT = 3;
+	int ROUTE_ACTUAL_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Routing Actual</em>' class.
+	 * The number of operations of the '<em>Route Actual</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTING_ACTUAL_OPERATION_COUNT = 0;
+	int ROUTE_ACTUAL_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.StaticUnitImpl <em>Static Unit</em>}' class.
@@ -1368,13 +1368,13 @@ public interface WebuiPackage extends EPackage {
 	int STATIC_UNIT__CREATE_DEFAULT_URI_ELEMENT = CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_UNIT__ROUTING_ACTUALS = CONTENT_UNIT__ROUTING_ACTUALS;
+	int STATIC_UNIT__ROUTE_ACTUALS = CONTENT_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -1531,13 +1531,13 @@ public interface WebuiPackage extends EPackage {
 	int CREATE_SITEMAP_UNIT__CREATE_DEFAULT_URI_ELEMENT = CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_SITEMAP_UNIT__ROUTING_ACTUALS = CONTENT_UNIT__ROUTING_ACTUALS;
+	int CREATE_SITEMAP_UNIT__ROUTE_ACTUALS = CONTENT_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -1703,13 +1703,13 @@ public interface WebuiPackage extends EPackage {
 	int DYNAMIC_UNIT__CREATE_DEFAULT_URI_ELEMENT = CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__ROUTING_ACTUALS = CONTENT_UNIT__ROUTING_ACTUALS;
+	int DYNAMIC_UNIT__ROUTE_ACTUALS = CONTENT_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -3913,13 +3913,13 @@ public interface WebuiPackage extends EPackage {
 	int EDIT_UNIT__CREATE_DEFAULT_URI_ELEMENT = DYNAMIC_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__ROUTING_ACTUALS = DYNAMIC_UNIT__ROUTING_ACTUALS;
+	int EDIT_UNIT__ROUTE_ACTUALS = DYNAMIC_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -4211,13 +4211,13 @@ public interface WebuiPackage extends EPackage {
 	int CREATE_UNIT__CREATE_DEFAULT_URI_ELEMENT = EDIT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UNIT__ROUTING_ACTUALS = EDIT_UNIT__ROUTING_ACTUALS;
+	int CREATE_UNIT__ROUTE_ACTUALS = EDIT_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -4518,13 +4518,13 @@ public interface WebuiPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__CREATE_DEFAULT_URI_ELEMENT = EDIT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__ROUTING_ACTUALS = EDIT_UNIT__ROUTING_ACTUALS;
+	int CREATE_UPDATE_UNIT__ROUTE_ACTUALS = EDIT_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -4852,13 +4852,13 @@ public interface WebuiPackage extends EPackage {
 	int UPDATE_UNIT__CREATE_DEFAULT_URI_ELEMENT = EDIT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_UNIT__ROUTING_ACTUALS = EDIT_UNIT__ROUTING_ACTUALS;
+	int UPDATE_UNIT__ROUTE_ACTUALS = EDIT_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -5168,13 +5168,13 @@ public interface WebuiPackage extends EPackage {
 	int MAP_UNIT__CREATE_DEFAULT_URI_ELEMENT = EDIT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__ROUTING_ACTUALS = EDIT_UNIT__ROUTING_ACTUALS;
+	int MAP_UNIT__ROUTE_ACTUALS = EDIT_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -5520,13 +5520,13 @@ public interface WebuiPackage extends EPackage {
 	int DATA_UNIT__CREATE_DEFAULT_URI_ELEMENT = DYNAMIC_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_UNIT__ROUTING_ACTUALS = DYNAMIC_UNIT__ROUTING_ACTUALS;
+	int DATA_UNIT__ROUTE_ACTUALS = DYNAMIC_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -5746,13 +5746,13 @@ public interface WebuiPackage extends EPackage {
 	int DETAILS_UNIT__CREATE_DEFAULT_URI_ELEMENT = DATA_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__ROUTING_ACTUALS = DATA_UNIT__ROUTING_ACTUALS;
+	int DETAILS_UNIT__ROUTE_ACTUALS = DATA_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -6026,13 +6026,13 @@ public interface WebuiPackage extends EPackage {
 	int INDEX_UNIT__CREATE_DEFAULT_URI_ELEMENT = DATA_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__ROUTING_ACTUALS = DATA_UNIT__ROUTING_ACTUALS;
+	int INDEX_UNIT__ROUTE_ACTUALS = DATA_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -6468,13 +6468,13 @@ public interface WebuiPackage extends EPackage {
 	int CONTROL_UNIT__CREATE_DEFAULT_URI_ELEMENT = DYNAMIC_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_UNIT__ROUTING_ACTUALS = DYNAMIC_UNIT__ROUTING_ACTUALS;
+	int CONTROL_UNIT__ROUTE_ACTUALS = DYNAMIC_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -6712,13 +6712,13 @@ public interface WebuiPackage extends EPackage {
 	int SEARCH_UNIT__CREATE_DEFAULT_URI_ELEMENT = CONTROL_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_UNIT__ROUTING_ACTUALS = CONTROL_UNIT__ROUTING_ACTUALS;
+	int SEARCH_UNIT__ROUTE_ACTUALS = CONTROL_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -6974,13 +6974,13 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_UNIT__CREATE_DEFAULT_URI_ELEMENT = DYNAMIC_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__ROUTING_ACTUALS = DYNAMIC_UNIT__ROUTING_ACTUALS;
+	int IMAGE_UNIT__ROUTE_ACTUALS = DYNAMIC_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -7764,13 +7764,13 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__CREATE_DEFAULT_URI_ELEMENT = IMAGE_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__ROUTING_ACTUALS = IMAGE_UNIT__ROUTING_ACTUALS;
+	int IMAGE_INDEX_UNIT__ROUTE_ACTUALS = IMAGE_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -8224,13 +8224,13 @@ public interface WebuiPackage extends EPackage {
 	int SLIDER_UNIT__CREATE_DEFAULT_URI_ELEMENT = IMAGE_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__ROUTING_ACTUALS = IMAGE_UNIT__ROUTING_ACTUALS;
+	int SLIDER_UNIT__ROUTE_ACTUALS = IMAGE_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -8675,13 +8675,13 @@ public interface WebuiPackage extends EPackage {
 	int GALLERY_UNIT__CREATE_DEFAULT_URI_ELEMENT = IMAGE_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__ROUTING_ACTUALS = IMAGE_UNIT__ROUTING_ACTUALS;
+	int GALLERY_UNIT__ROUTE_ACTUALS = IMAGE_UNIT__ROUTE_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -9163,13 +9163,13 @@ public interface WebuiPackage extends EPackage {
 	int REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__ROUTING_ACTUALS = AUTHENTICATION_UNIT_FEATURE_COUNT + 4;
+	int REGISTRATION_UNIT__ROUTE_ACTUALS = AUTHENTICATION_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -9416,13 +9416,13 @@ public interface WebuiPackage extends EPackage {
 	int LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__ROUTING_ACTUALS = AUTHENTICATION_UNIT_FEATURE_COUNT + 4;
+	int LOGIN_UNIT__ROUTE_ACTUALS = AUTHENTICATION_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -9678,13 +9678,13 @@ public interface WebuiPackage extends EPackage {
 	int FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Routing Actuals</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Route Actuals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__ROUTING_ACTUALS = AUTHENTICATION_UNIT_FEATURE_COUNT + 4;
+	int FORGOTTEN_PASSWORD_UNIT__ROUTE_ACTUALS = AUTHENTICATION_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -11189,15 +11189,15 @@ public interface WebuiPackage extends EPackage {
 	EAttribute getContentUnit_CreateDefaultUriElement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#getRoutingActuals <em>Routing Actuals</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#getRouteActuals <em>Route Actuals</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Routing Actuals</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#getRoutingActuals()
+	 * @return the meta object for the containment reference list '<em>Route Actuals</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#getRouteActuals()
 	 * @see #getContentUnit()
 	 * @generated
 	 */
-	EReference getContentUnit_RoutingActuals();
+	EReference getContentUnit_RouteActuals();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.ContentUnit#getRequiresRole <em>Requires Role</em>}'.
@@ -11277,47 +11277,47 @@ public interface WebuiPackage extends EPackage {
 	EReference getContentUnit_PageDisplayedOn();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.RoutingActual <em>Routing Actual</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.RouteActual <em>Route Actual</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Routing Actual</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.RoutingActual
+	 * @return the meta object for class '<em>Route Actual</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.RouteActual
 	 * @generated
 	 */
-	EClass getRoutingActual();
+	EClass getRouteActual();
 
 	/**
-	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.webui.RoutingActual#getActualFor <em>Actual For</em>}'.
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.webui.RouteActual#getActualFor <em>Actual For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the container reference '<em>Actual For</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.RoutingActual#getActualFor()
-	 * @see #getRoutingActual()
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.RouteActual#getActualFor()
+	 * @see #getRouteActual()
 	 * @generated
 	 */
-	EReference getRoutingActual_ActualFor();
+	EReference getRouteActual_ActualFor();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.RoutingActual#getRoutingParameter <em>Routing Parameter</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.RouteActual#getRouteParameter <em>Route Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Routing Parameter</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.RoutingActual#getRoutingParameter()
-	 * @see #getRoutingActual()
+	 * @return the meta object for the reference '<em>Route Parameter</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.RouteActual#getRouteParameter()
+	 * @see #getRouteActual()
 	 * @generated
 	 */
-	EReference getRoutingActual_RoutingParameter();
+	EReference getRouteActual_RouteParameter();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.RoutingActual#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.RouteActual#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Value</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.RoutingActual#getValue()
-	 * @see #getRoutingActual()
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.RouteActual#getValue()
+	 * @see #getRouteActual()
 	 * @generated
 	 */
-	EReference getRoutingActual_Value();
+	EReference getRouteActual_Value();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.StaticUnit <em>Static Unit</em>}'.
@@ -14160,12 +14160,12 @@ public interface WebuiPackage extends EPackage {
 		EAttribute CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT = eINSTANCE.getContentUnit_CreateDefaultUriElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Routing Actuals</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Route Actuals</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTENT_UNIT__ROUTING_ACTUALS = eINSTANCE.getContentUnit_RoutingActuals();
+		EReference CONTENT_UNIT__ROUTE_ACTUALS = eINSTANCE.getContentUnit_RouteActuals();
 
 		/**
 		 * The meta object literal for the '<em><b>Requires Role</b></em>' attribute feature.
@@ -14224,14 +14224,14 @@ public interface WebuiPackage extends EPackage {
 		EReference CONTENT_UNIT__PAGE_DISPLAYED_ON = eINSTANCE.getContentUnit_PageDisplayedOn();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.RoutingActualImpl <em>Routing Actual</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.RouteActualImpl <em>Route Actual</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.RoutingActualImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getRoutingActual()
+		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.RouteActualImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getRouteActual()
 		 * @generated
 		 */
-		EClass ROUTING_ACTUAL = eINSTANCE.getRoutingActual();
+		EClass ROUTE_ACTUAL = eINSTANCE.getRouteActual();
 
 		/**
 		 * The meta object literal for the '<em><b>Actual For</b></em>' container reference feature.
@@ -14239,15 +14239,15 @@ public interface WebuiPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROUTING_ACTUAL__ACTUAL_FOR = eINSTANCE.getRoutingActual_ActualFor();
+		EReference ROUTE_ACTUAL__ACTUAL_FOR = eINSTANCE.getRouteActual_ActualFor();
 
 		/**
-		 * The meta object literal for the '<em><b>Routing Parameter</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Route Parameter</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROUTING_ACTUAL__ROUTING_PARAMETER = eINSTANCE.getRoutingActual_RoutingParameter();
+		EReference ROUTE_ACTUAL__ROUTE_PARAMETER = eINSTANCE.getRouteActual_RouteParameter();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
@@ -14255,7 +14255,7 @@ public interface WebuiPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROUTING_ACTUAL__VALUE = eINSTANCE.getRoutingActual_Value();
+		EReference ROUTE_ACTUAL__VALUE = eINSTANCE.getRouteActual_Value();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.StaticUnitImpl <em>Static Unit</em>}' class.

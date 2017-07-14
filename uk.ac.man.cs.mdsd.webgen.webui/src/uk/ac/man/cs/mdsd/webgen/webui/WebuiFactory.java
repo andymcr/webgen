@@ -112,13 +112,13 @@ public interface WebuiFactory extends EFactory {
 	PageLink createPageLink();
 
 	/**
-	 * Returns a new object of class '<em>Routing Actual</em>'.
+	 * Returns a new object of class '<em>Route Actual</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Routing Actual</em>'.
+	 * @return a new object of class '<em>Route Actual</em>'.
 	 * @generated
 	 */
-	RoutingActual createRoutingActual();
+	RouteActual createRouteActual();
 
 	/**
 	 * Returns a new object of class '<em>Static Unit</em>'.

@@ -325,26 +325,26 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.RoutingActual} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.RouteActual} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RoutingActualItemProvider routingActualItemProvider;
+	protected RouteActualItemProvider routeActualItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.RoutingActual}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.RouteActual}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRoutingActualAdapter() {
-		if (routingActualItemProvider == null) {
-			routingActualItemProvider = new RoutingActualItemProvider(this);
+	public Adapter createRouteActualAdapter() {
+		if (routeActualItemProvider == null) {
+			routeActualItemProvider = new RouteActualItemProvider(this);
 		}
 
-		return routingActualItemProvider;
+		return routeActualItemProvider;
 	}
 
 	/**

@@ -126,8 +126,8 @@ public class WebuiValidator extends EObjectValidator {
 				return validateUnitContainer((UnitContainer)value, diagnostics, context);
 			case WebuiPackage.CONTENT_UNIT:
 				return validateContentUnit((ContentUnit)value, diagnostics, context);
-			case WebuiPackage.ROUTING_ACTUAL:
-				return validateRoutingActual((RoutingActual)value, diagnostics, context);
+			case WebuiPackage.ROUTE_ACTUAL:
+				return validateRouteActual((RouteActual)value, diagnostics, context);
 			case WebuiPackage.STATIC_UNIT:
 				return validateStaticUnit((StaticUnit)value, diagnostics, context);
 			case WebuiPackage.CREATE_SITEMAP_UNIT:
@@ -744,8 +744,8 @@ public class WebuiValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRoutingActual(RoutingActual routingActual, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(routingActual, diagnostics, context);
+	public boolean validateRouteActual(RouteActual routeActual, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(routeActual, diagnostics, context);
 	}
 
 	/**

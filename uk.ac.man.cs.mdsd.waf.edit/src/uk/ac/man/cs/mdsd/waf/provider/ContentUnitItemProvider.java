@@ -253,7 +253,7 @@ public class ContentUnitItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.CONTENT_UNIT__ROUTING_ACTUALS);
+			childrenFeatures.add(WafPackage.Literals.CONTENT_UNIT__ROUTE_ACTUALS);
 		}
 		return childrenFeatures;
 	}
@@ -329,7 +329,7 @@ public class ContentUnitItemProvider
 			case WafPackage.CONTENT_UNIT__CONTENT_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.CONTENT_UNIT__ROUTING_ACTUALS:
+			case WafPackage.CONTENT_UNIT__ROUTE_ACTUALS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -349,8 +349,8 @@ public class ContentUnitItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.CONTENT_UNIT__ROUTING_ACTUALS,
-				 WafFactory.eINSTANCE.createRoutingActual()));
+				(WafPackage.Literals.CONTENT_UNIT__ROUTE_ACTUALS,
+				 WafFactory.eINSTANCE.createRouteActual()));
 	}
 
 	/**

@@ -218,9 +218,9 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.ROUTING_ACTUAL: {
-				RoutingActual routingActual = (RoutingActual)theEObject;
-				T result = caseRoutingActual(routingActual);
+			case WafPackage.ROUTE_ACTUAL: {
+				RouteActual routeActual = (RouteActual)theEObject;
+				T result = caseRouteActual(routeActual);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1000,17 +1000,17 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Routing Actual</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Route Actual</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Routing Actual</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Route Actual</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRoutingActual(RoutingActual object) {
+	public T caseRouteActual(RouteActual object) {
 		return null;
 	}
 

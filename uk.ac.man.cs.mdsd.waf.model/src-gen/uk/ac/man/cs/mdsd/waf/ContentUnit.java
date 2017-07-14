@@ -17,7 +17,7 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getRoutingActuals <em>Routing Actuals</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getRouteActuals <em>Route Actuals</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getAlternative <em>Alternative</em>}</li>
@@ -88,20 +88,20 @@ public interface ContentUnit extends NamedDisplayElement {
 	void setUriElement(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Routing Actuals</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.RoutingActual}.
+	 * Returns the value of the '<em><b>Route Actuals</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.RouteActual}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Routing Actuals</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Route Actuals</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Routing Actuals</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_RoutingActuals()
+	 * @return the value of the '<em>Route Actuals</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_RouteActuals()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<RoutingActual> getRoutingActuals();
+	EList<RouteActual> getRouteActuals();
 
 	/**
 	 * Returns the value of the '<em><b>Requires Role</b></em>' attribute.

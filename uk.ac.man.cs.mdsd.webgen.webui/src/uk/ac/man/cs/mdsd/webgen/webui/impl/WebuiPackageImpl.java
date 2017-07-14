@@ -69,7 +69,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.webgen.webui.Query;
 import uk.ac.man.cs.mdsd.webgen.webui.QueryParameter;
 import uk.ac.man.cs.mdsd.webgen.webui.RegistrationUnit;
-import uk.ac.man.cs.mdsd.webgen.webui.RoutingActual;
+import uk.ac.man.cs.mdsd.webgen.webui.RouteActual;
 import uk.ac.man.cs.mdsd.webgen.webui.SearchUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.SelectAction;
 import uk.ac.man.cs.mdsd.webgen.webui.SelectableUnit;
@@ -207,7 +207,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass routingActualEClass = null;
+	private EClass routeActualEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1140,7 +1140,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getContentUnit_RoutingActuals() {
+	public EReference getContentUnit_RouteActuals() {
 		return (EReference)contentUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1212,8 +1212,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRoutingActual() {
-		return routingActualEClass;
+	public EClass getRouteActual() {
+		return routeActualEClass;
 	}
 
 	/**
@@ -1221,8 +1221,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoutingActual_ActualFor() {
-		return (EReference)routingActualEClass.getEStructuralFeatures().get(0);
+	public EReference getRouteActual_ActualFor() {
+		return (EReference)routeActualEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1230,8 +1230,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoutingActual_RoutingParameter() {
-		return (EReference)routingActualEClass.getEStructuralFeatures().get(1);
+	public EReference getRouteActual_RouteParameter() {
+		return (EReference)routeActualEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1239,8 +1239,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoutingActual_Value() {
-		return (EReference)routingActualEClass.getEStructuralFeatures().get(2);
+	public EReference getRouteActual_Value() {
+		return (EReference)routeActualEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3302,7 +3302,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		contentUnitEClass = createEClass(CONTENT_UNIT);
 		createEReference(contentUnitEClass, CONTENT_UNIT__DISPLAYED_ON);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT);
-		createEReference(contentUnitEClass, CONTENT_UNIT__ROUTING_ACTUALS);
+		createEReference(contentUnitEClass, CONTENT_UNIT__ROUTE_ACTUALS);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__REQUIRES_ROLE);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__PURPOSE_SUMMARY);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__URI_ELEMENT);
@@ -3311,10 +3311,10 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__CAPTION_CLASS);
 		createEReference(contentUnitEClass, CONTENT_UNIT__PAGE_DISPLAYED_ON);
 
-		routingActualEClass = createEClass(ROUTING_ACTUAL);
-		createEReference(routingActualEClass, ROUTING_ACTUAL__ACTUAL_FOR);
-		createEReference(routingActualEClass, ROUTING_ACTUAL__ROUTING_PARAMETER);
-		createEReference(routingActualEClass, ROUTING_ACTUAL__VALUE);
+		routeActualEClass = createEClass(ROUTE_ACTUAL);
+		createEReference(routeActualEClass, ROUTE_ACTUAL__ACTUAL_FOR);
+		createEReference(routeActualEClass, ROUTE_ACTUAL__ROUTE_PARAMETER);
+		createEReference(routeActualEClass, ROUTE_ACTUAL__VALUE);
 
 		staticUnitEClass = createEClass(STATIC_UNIT);
 		createEAttribute(staticUnitEClass, STATIC_UNIT__CONTENT);
@@ -3758,7 +3758,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEClass(contentUnitEClass, ContentUnit.class, "ContentUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContentUnit_DisplayedOn(), this.getUnitContainer(), this.getUnitContainer_Units(), "displayedOn", null, 1, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getContentUnit_CreateDefaultUriElement(), ecorePackage.getEBoolean(), "createDefaultUriElement", "true", 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContentUnit_RoutingActuals(), this.getRoutingActual(), this.getRoutingActual_ActualFor(), "routingActuals", null, 0, -1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContentUnit_RouteActuals(), this.getRouteActual(), this.getRouteActual_ActualFor(), "routeActuals", null, 0, -1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_RequiresRole(), ecorePackage.getEString(), "requiresRole", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_PurposeSummary(), ecorePackage.getEString(), "purposeSummary", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3767,10 +3767,10 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEAttribute(getContentUnit_CaptionClass(), ecorePackage.getEString(), "captionClass", "unit_caption", 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContentUnit_PageDisplayedOn(), this.getPage(), null, "pageDisplayedOn", null, 0, 1, ContentUnit.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(routingActualEClass, RoutingActual.class, "RoutingActual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoutingActual_ActualFor(), this.getContentUnit(), this.getContentUnit_RoutingActuals(), "actualFor", null, 1, 1, RoutingActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoutingActual_RoutingParameter(), thePersistencePackage.getAttribute(), null, "routingParameter", null, 1, 1, RoutingActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoutingActual_Value(), theExpressionPackage.getExpression(), null, "value", null, 1, 1, RoutingActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(routeActualEClass, RouteActual.class, "RouteActual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRouteActual_ActualFor(), this.getContentUnit(), this.getContentUnit_RouteActuals(), "actualFor", null, 1, 1, RouteActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRouteActual_RouteParameter(), thePersistencePackage.getAttribute(), null, "routeParameter", null, 1, 1, RouteActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRouteActual_Value(), theExpressionPackage.getExpression(), null, "value", null, 1, 1, RouteActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(staticUnitEClass, StaticUnit.class, "StaticUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStaticUnit_Content(), ecorePackage.getEString(), "content", null, 0, 1, StaticUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

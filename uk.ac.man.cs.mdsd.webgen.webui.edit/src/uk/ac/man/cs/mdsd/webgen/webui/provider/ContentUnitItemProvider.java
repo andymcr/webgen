@@ -227,7 +227,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebuiPackage.Literals.CONTENT_UNIT__ROUTING_ACTUALS);
+			childrenFeatures.add(WebuiPackage.Literals.CONTENT_UNIT__ROUTE_ACTUALS);
 		}
 		return childrenFeatures;
 	}
@@ -281,7 +281,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			case WebuiPackage.CONTENT_UNIT__CAPTION_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS:
+			case WebuiPackage.CONTENT_UNIT__ROUTE_ACTUALS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -301,8 +301,8 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.CONTENT_UNIT__ROUTING_ACTUALS,
-				 WebuiFactory.eINSTANCE.createRoutingActual()));
+				(WebuiPackage.Literals.CONTENT_UNIT__ROUTE_ACTUALS,
+				 WebuiFactory.eINSTANCE.createRouteActual()));
 	}
 
 	/**

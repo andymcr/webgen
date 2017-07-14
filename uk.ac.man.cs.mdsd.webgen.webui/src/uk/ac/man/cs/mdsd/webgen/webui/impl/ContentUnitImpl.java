@@ -21,7 +21,7 @@ import uk.ac.man.cs.mdsd.webgen.base.impl.NamedDisplayElementImpl;
 
 import uk.ac.man.cs.mdsd.webgen.webui.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.Page;
-import uk.ac.man.cs.mdsd.webgen.webui.RoutingActual;
+import uk.ac.man.cs.mdsd.webgen.webui.RouteActual;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
@@ -35,7 +35,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ContentUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ContentUnitImpl#isCreateDefaultUriElement <em>Create Default Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ContentUnitImpl#getRoutingActuals <em>Routing Actuals</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ContentUnitImpl#getRouteActuals <em>Route Actuals</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ContentUnitImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ContentUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ContentUnitImpl#getUriElement <em>Uri Element</em>}</li>
@@ -69,14 +69,14 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	protected boolean createDefaultUriElement = CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRoutingActuals() <em>Routing Actuals</em>}' containment reference list.
+	 * The cached value of the '{@link #getRouteActuals() <em>Route Actuals</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoutingActuals()
+	 * @see #getRouteActuals()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RoutingActual> routingActuals;
+	protected EList<RouteActual> routeActuals;
 
 	/**
 	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
@@ -294,11 +294,11 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RoutingActual> getRoutingActuals() {
-		if (routingActuals == null) {
-			routingActuals = new EObjectContainmentWithInverseEList<RoutingActual>(RoutingActual.class, this, WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS, WebuiPackage.ROUTING_ACTUAL__ACTUAL_FOR);
+	public EList<RouteActual> getRouteActuals() {
+		if (routeActuals == null) {
+			routeActuals = new EObjectContainmentWithInverseEList<RouteActual>(RouteActual.class, this, WebuiPackage.CONTENT_UNIT__ROUTE_ACTUALS, WebuiPackage.ROUTE_ACTUAL__ACTUAL_FOR);
 		}
-		return routingActuals;
+		return routeActuals;
 	}
 
 	/**
@@ -467,8 +467,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetDisplayedOn((UnitContainer)otherEnd, msgs);
-			case WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoutingActuals()).basicAdd(otherEnd, msgs);
+			case WebuiPackage.CONTENT_UNIT__ROUTE_ACTUALS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRouteActuals()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -483,8 +483,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		switch (featureID) {
 			case WebuiPackage.CONTENT_UNIT__DISPLAYED_ON:
 				return basicSetDisplayedOn(null, msgs);
-			case WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS:
-				return ((InternalEList<?>)getRoutingActuals()).basicRemove(otherEnd, msgs);
+			case WebuiPackage.CONTENT_UNIT__ROUTE_ACTUALS:
+				return ((InternalEList<?>)getRouteActuals()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -515,8 +515,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return getDisplayedOn();
 			case WebuiPackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				return isCreateDefaultUriElement();
-			case WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS:
-				return getRoutingActuals();
+			case WebuiPackage.CONTENT_UNIT__ROUTE_ACTUALS:
+				return getRouteActuals();
 			case WebuiPackage.CONTENT_UNIT__REQUIRES_ROLE:
 				return getRequiresRole();
 			case WebuiPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
@@ -551,9 +551,9 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WebuiPackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				setCreateDefaultUriElement((Boolean)newValue);
 				return;
-			case WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS:
-				getRoutingActuals().clear();
-				getRoutingActuals().addAll((Collection<? extends RoutingActual>)newValue);
+			case WebuiPackage.CONTENT_UNIT__ROUTE_ACTUALS:
+				getRouteActuals().clear();
+				getRouteActuals().addAll((Collection<? extends RouteActual>)newValue);
 				return;
 			case WebuiPackage.CONTENT_UNIT__REQUIRES_ROLE:
 				setRequiresRole((String)newValue);
@@ -591,8 +591,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WebuiPackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				setCreateDefaultUriElement(CREATE_DEFAULT_URI_ELEMENT_EDEFAULT);
 				return;
-			case WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS:
-				getRoutingActuals().clear();
+			case WebuiPackage.CONTENT_UNIT__ROUTE_ACTUALS:
+				getRouteActuals().clear();
 				return;
 			case WebuiPackage.CONTENT_UNIT__REQUIRES_ROLE:
 				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
@@ -628,8 +628,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return getDisplayedOn() != null;
 			case WebuiPackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				return createDefaultUriElement != CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
-			case WebuiPackage.CONTENT_UNIT__ROUTING_ACTUALS:
-				return routingActuals != null && !routingActuals.isEmpty();
+			case WebuiPackage.CONTENT_UNIT__ROUTE_ACTUALS:
+				return routeActuals != null && !routeActuals.isEmpty();
 			case WebuiPackage.CONTENT_UNIT__REQUIRES_ROLE:
 				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WebuiPackage.CONTENT_UNIT__PURPOSE_SUMMARY:

@@ -32,6 +32,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
+import uk.ac.man.cs.mdsd.webgen.webui.EditUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation;
@@ -104,6 +105,12 @@ public class WebuiFeatureReferenceItemProvider
 							for (EntityOrView entity : getEntities(action)) {
 								features.addAll(entity.getAllFeatures());
 							}
+							return features;
+						}
+
+						final EditUnit editUnit = getEditUnitContext(object);
+						if (editUnit != null) {
+							features.addAll(editUnit.getContentType().getAllFeatures());
 							return features;
 						}
 					}
@@ -194,6 +201,18 @@ public class WebuiFeatureReferenceItemProvider
 		while (container != null) {
 			if (container instanceof InlineActionContainer) {
 				return (InlineActionContainer) container;
+			}
+			container = getContext(container);
+		}
+
+		return null;
+	}
+
+	protected EditUnit getEditUnitContext(final Object object) {
+		Object container = getContext(object);
+		while (container != null) {
+			if (container instanceof EditUnit) {
+				return (EditUnit) container;
 			}
 			container = getContext(container);
 		}

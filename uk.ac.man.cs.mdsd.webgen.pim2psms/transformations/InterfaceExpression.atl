@@ -71,6 +71,14 @@ rule CurrentUser {
 	)
 }
 
+rule Constant {
+	from website : Website!Constant (website.isInterfaceExpression())
+	to waf : WAF!Constant (
+		name <- website.name,
+		value <- website.value
+	)
+}
+
 
 abstract rule Predicate {
 	from website : Website!Predicate

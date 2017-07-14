@@ -81,12 +81,20 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 				return createServiceAdapter();
 			}
 			@Override
+			public Adapter caseConstant(Constant object) {
+				return createConstantAdapter();
+			}
+			@Override
 			public Adapter caseSelection(Selection object) {
 				return createSelectionAdapter();
 			}
 			@Override
 			public Adapter caseOrder(Order object) {
 				return createOrderAdapter();
+			}
+			@Override
+			public Adapter caseConstantReference(ConstantReference object) {
+				return createConstantReferenceAdapter();
 			}
 			@Override
 			public Adapter caseServiceFeatureReference(ServiceFeatureReference object) {
@@ -177,6 +185,20 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.Constant <em>Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Constant
+	 * @generated
+	 */
+	public Adapter createConstantAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.Selection <em>Selection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -201,6 +223,20 @@ public class ServiceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOrderAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.service.ConstantReference <em>Constant Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ConstantReference
+	 * @generated
+	 */
+	public Adapter createConstantReferenceAdapter() {
 		return null;
 	}
 

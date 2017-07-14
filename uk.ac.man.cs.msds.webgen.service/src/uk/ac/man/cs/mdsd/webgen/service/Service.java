@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Service#getConstants <em>Constants</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Service#getServes <em>Serves</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Service#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Service#getFindAll <em>Find All</em>}</li>
@@ -30,6 +31,24 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
  */
 public interface Service extends NamedElement {
 	/**
+	 * Returns the value of the '<em><b>Constants</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.Constant}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.service.Constant#getDefinedBy <em>Defined By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Constants</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Constants</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getService_Constants()
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Constant#getDefinedBy
+	 * @model opposite="definedBy" containment="true"
+	 * @generated
+	 */
+	EList<Constant> getConstants();
+
+	/**
 	 * Returns the value of the '<em><b>Serves</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -40,7 +59,7 @@ public interface Service extends NamedElement {
 	 * @return the value of the '<em>Serves</em>' reference.
 	 * @see #setServes(EntityOrView)
 	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getService_Serves()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	EntityOrView getServes();

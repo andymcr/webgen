@@ -26,6 +26,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateComparisonOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateEqualityOperator;
+import uk.ac.man.cs.mdsd.webgen.expression.PredicateInOperator;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsEmpty;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsNull;
 import uk.ac.man.cs.mdsd.webgen.expression.PredicateIsOperator;
@@ -132,6 +133,29 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.service.Constant} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConstantItemProvider constantItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.service.Constant}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConstantAdapter() {
+		if (constantItemProvider == null) {
+			constantItemProvider = new ConstantItemProvider(this);
+		}
+
+		return constantItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.service.Selection} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,6 +176,29 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 		}
 
 		return selectionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.service.ConstantReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConstantReferenceItemProvider constantReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.service.ConstantReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConstantReferenceAdapter() {
+		if (constantReferenceItemProvider == null) {
+			constantReferenceItemProvider = new ConstantReferenceItemProvider(this);
+		}
+
+		return constantReferenceItemProvider;
 	}
 
 	/**
@@ -411,7 +458,17 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
 						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -431,7 +488,17 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
 						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -447,11 +514,50 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 			 * @generated
 			 */
 			@Override
+			public Object casePredicateInOperator(PredicateInOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
 			public Object casePredicateIsOperator(PredicateIsOperator object) {
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
 						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -471,7 +577,17 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
 						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -491,6 +607,11 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
 						 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
 
 				return null;
@@ -503,6 +624,11 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 			 */
 			@Override
 			public Object casePredicateIsNull(PredicateIsNull object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
+
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
@@ -590,6 +716,11 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 			 */
 			@Override
 			public Object caseAttribute(Attribute object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+						 ServiceFactory.eINSTANCE.createConstantReference()));
+
 				newChildDescriptors.add
 					(createChildParameter
 						(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,

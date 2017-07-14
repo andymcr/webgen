@@ -18,6 +18,8 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 
 import uk.ac.man.cs.mdsd.webgen.service.Asc;
 import uk.ac.man.cs.mdsd.webgen.service.BusinessOperation;
+import uk.ac.man.cs.mdsd.webgen.service.Constant;
+import uk.ac.man.cs.mdsd.webgen.service.ConstantReference;
 import uk.ac.man.cs.mdsd.webgen.service.Desc;
 import uk.ac.man.cs.mdsd.webgen.service.Filter;
 import uk.ac.man.cs.mdsd.webgen.service.OperationResultTypes;
@@ -55,6 +57,13 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass constantEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass selectionEClass = null;
 
 	/**
@@ -63,6 +72,13 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * @generated
 	 */
 	private EClass orderEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass constantReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,7 +218,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getService_Serves() {
+	public EReference getService_Constants() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -211,7 +227,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getService_Selections() {
+	public EReference getService_Serves() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -220,7 +236,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getService_FindAll() {
+	public EReference getService_Selections() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -229,7 +245,7 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getService_FindOne() {
+	public EReference getService_FindAll() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -238,8 +254,44 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getService_Operations() {
+	public EReference getService_FindOne() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getService_Operations() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConstant() {
+		return constantEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConstant_DefinedBy() {
+		return (EReference)constantEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConstant_Value() {
+		return (EReference)constantEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -357,6 +409,33 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 */
 	public EReference getOrder_Path() {
 		return (EReference)orderEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConstantReference() {
+		return constantReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConstantReference_Name() {
+		return (EAttribute)constantReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConstantReference_Value() {
+		return (EReference)constantReferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -517,11 +596,16 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		createEReference(servicesEClass, SERVICES__SERVICES);
 
 		serviceEClass = createEClass(SERVICE);
+		createEReference(serviceEClass, SERVICE__CONSTANTS);
 		createEReference(serviceEClass, SERVICE__SERVES);
 		createEReference(serviceEClass, SERVICE__SELECTIONS);
 		createEReference(serviceEClass, SERVICE__FIND_ALL);
 		createEReference(serviceEClass, SERVICE__FIND_ONE);
 		createEReference(serviceEClass, SERVICE__OPERATIONS);
+
+		constantEClass = createEClass(CONSTANT);
+		createEReference(constantEClass, CONSTANT__DEFINED_BY);
+		createEReference(constantEClass, CONSTANT__VALUE);
 
 		selectionEClass = createEClass(SELECTION);
 		createEReference(selectionEClass, SELECTION__USED_BY);
@@ -537,6 +621,10 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		orderEClass = createEClass(ORDER);
 		createEReference(orderEClass, ORDER__PATH);
+
+		constantReferenceEClass = createEClass(CONSTANT_REFERENCE);
+		createEAttribute(constantReferenceEClass, CONSTANT_REFERENCE__NAME);
+		createEReference(constantReferenceEClass, CONSTANT_REFERENCE__VALUE);
 
 		serviceFeatureReferenceEClass = createEClass(SERVICE_FEATURE_REFERENCE);
 		createEAttribute(serviceFeatureReferenceEClass, SERVICE_FEATURE_REFERENCE__NAME);
@@ -594,8 +682,10 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		// Add supertypes to classes
 		serviceEClass.getESuperTypes().add(theBasePackage.getNamedElement());
+		constantEClass.getESuperTypes().add(theBasePackage.getNamedElement());
 		selectionEClass.getESuperTypes().add(theBasePackage.getNamedElement());
 		selectionEClass.getESuperTypes().add(theBasePackage.getFormalParameterList());
+		constantReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
 		serviceFeatureReferenceEClass.getESuperTypes().add(theExpressionPackage.getVariable());
 		ascEClass.getESuperTypes().add(this.getOrder());
 		descEClass.getESuperTypes().add(this.getOrder());
@@ -608,11 +698,16 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		initEReference(getServices_Services(), this.getService(), null, "services", null, 0, -1, Services.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getService_Serves(), thePersistencePackage.getEntityOrView(), null, "serves", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Constants(), this.getConstant(), this.getConstant_DefinedBy(), "constants", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Serves(), thePersistencePackage.getEntityOrView(), null, "serves", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Selections(), this.getSelection(), this.getSelection_UsedBy(), "selections", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_FindAll(), this.getSelection(), null, "findAll", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_FindOne(), this.getSelection(), null, "findOne", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Operations(), this.getBusinessOperation(), null, "operations", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(constantEClass, Constant.class, "Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConstant_DefinedBy(), this.getService(), this.getService_Constants(), "definedBy", null, 1, 1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConstant_Value(), theExpressionPackage.getExpression(), null, "value", null, 0, 1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionEClass, Selection.class, "Selection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSelection_UsedBy(), this.getService(), this.getService_Selections(), "usedBy", null, 1, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -628,6 +723,10 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 
 		initEClass(orderEClass, Order.class, "Order", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOrder_Path(), theExpressionPackage.getVariable(), null, "path", null, 1, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(constantReferenceEClass, ConstantReference.class, "ConstantReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConstantReference_Name(), ecorePackage.getEString(), "name", "", 0, 1, ConstantReference.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getConstantReference_Value(), this.getConstant(), null, "value", null, 1, 1, ConstantReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceFeatureReferenceEClass, ServiceFeatureReference.class, "ServiceFeatureReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceFeatureReference_Name(), ecorePackage.getEString(), "name", "", 0, 1, ServiceFeatureReference.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -688,6 +787,12 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 	 */
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (getConstantReference_Name(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if value.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tvalue.name\r\nendif"
+		   });	
 		addAnnotation
 		  (getServiceFeatureReference_Name(), 
 		   source, 

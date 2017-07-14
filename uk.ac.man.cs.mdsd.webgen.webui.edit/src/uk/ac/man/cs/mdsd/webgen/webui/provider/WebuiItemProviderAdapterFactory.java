@@ -40,6 +40,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.util.ExpressionSwitch;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.util.PersistenceSwitch;
+import uk.ac.man.cs.mdsd.webgen.service.Constant;
 import uk.ac.man.cs.mdsd.webgen.service.Order;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 import uk.ac.man.cs.mdsd.webgen.service.util.ServiceSwitch;
@@ -1433,6 +1434,20 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
 				this.newChildDescriptors = newChildDescriptors;
 				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseConstant(Constant object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ServicePackage.Literals.CONSTANT__VALUE,
+						 WebuiFactory.eINSTANCE.createWebuiFeatureReference()));
+
+				return null;
 			}
 			/**
 			 * <!-- begin-user-doc -->

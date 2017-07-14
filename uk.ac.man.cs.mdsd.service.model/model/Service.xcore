@@ -9,6 +9,7 @@
 	editorDirectory="/uk.ac.man.cs.mdsd.service.editor/src")
 package uk.ac.man.cs.mdsd.service
 
+import uk.ac.man.cs.mdsd.expression.Expression
 import uk.ac.man.cs.mdsd.expression.Predicate
 import uk.ac.man.cs.mdsd.expression.Variable
 import uk.ac.man.cs.mdsd.orm.Association
@@ -38,6 +39,7 @@ class ServiceModel {
 
 class Service extends NamedElement {
 	refers ServiceModel[1] partOf opposite services
+	contains Constant[] constants opposite definedBy
 	refers EntityOrView[1] serves
 	contains Selection[] selections opposite partOf
 	refers Selection findAll
@@ -45,6 +47,11 @@ class Service extends NamedElement {
 	contains BusinessOperation[] operations opposite partOf
 }
 
+
+class Constant extends NamedElement {
+	container Service[1] definedBy opposite constants
+	contains Expression value
+}
 
 class Selection extends NamedElement, FormalParameterList {
 	container Service partOf opposite selections
@@ -76,8 +83,8 @@ class Desc extends Order {
 }
 
 
-class Constant extends NamedElement, Variable { 
-	String value 
+class ConstantReference extends Variable { 
+	refers Constant[1] value 
 } 
  
 class FeatureReference extends Variable { 

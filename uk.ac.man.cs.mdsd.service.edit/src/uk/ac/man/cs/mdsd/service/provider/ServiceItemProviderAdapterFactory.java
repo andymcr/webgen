@@ -229,6 +229,29 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.service.ConstantReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConstantReferenceItemProvider constantReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.service.ConstantReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConstantReferenceAdapter() {
+		if (constantReferenceItemProvider == null) {
+			constantReferenceItemProvider = new ConstantReferenceItemProvider(this);
+		}
+
+		return constantReferenceItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.service.Constant} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -445,11 +468,12 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 		if (formalParameterItemProvider != null) formalParameterItemProvider.dispose();
 		if (serviceModelItemProvider != null) serviceModelItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
+		if (constantItemProvider != null) constantItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
 		if (filterItemProvider != null) filterItemProvider.dispose();
 		if (ascItemProvider != null) ascItemProvider.dispose();
 		if (descItemProvider != null) descItemProvider.dispose();
-		if (constantItemProvider != null) constantItemProvider.dispose();
+		if (constantReferenceItemProvider != null) constantReferenceItemProvider.dispose();
 		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();
 		if (parameterReferenceItemProvider != null) parameterReferenceItemProvider.dispose();
 		if (businessOperationItemProvider != null) businessOperationItemProvider.dispose();
@@ -505,7 +529,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
-						 ServiceFactory.eINSTANCE.createConstant()));
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -602,7 +626,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
-						 ServiceFactory.eINSTANCE.createConstant()));
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -617,7 +641,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
-						 ServiceFactory.eINSTANCE.createConstant()));
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -642,7 +666,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
-						 ServiceFactory.eINSTANCE.createConstant()));
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -657,7 +681,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
-						 ServiceFactory.eINSTANCE.createConstant()));
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -682,7 +706,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
-						 ServiceFactory.eINSTANCE.createConstant()));
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -697,7 +721,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
-						 ServiceFactory.eINSTANCE.createConstant()));
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -721,7 +745,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
-						 ServiceFactory.eINSTANCE.createConstant()));
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -736,7 +760,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
-						 ServiceFactory.eINSTANCE.createConstant()));
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -761,7 +785,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
-						 ServiceFactory.eINSTANCE.createConstant()));
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -776,7 +800,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
-						 ServiceFactory.eINSTANCE.createConstant()));
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -801,7 +825,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
-						 ServiceFactory.eINSTANCE.createConstant()));
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -826,7 +850,7 @@ public class ServiceItemProviderAdapterFactory extends ServiceAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 ServiceFactory.eINSTANCE.createConstant()));
+						 ServiceFactory.eINSTANCE.createConstantReference()));
 
 				newChildDescriptors.add
 					(createChildParameter

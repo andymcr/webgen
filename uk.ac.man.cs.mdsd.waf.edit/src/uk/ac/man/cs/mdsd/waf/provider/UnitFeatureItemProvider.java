@@ -548,7 +548,7 @@ public class UnitFeatureItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 ServiceFactory.eINSTANCE.createConstant()));
+				 ServiceFactory.eINSTANCE.createConstantReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

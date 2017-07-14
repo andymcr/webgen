@@ -178,7 +178,7 @@ public class RouteActualItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
-				 ServiceFactory.eINSTANCE.createConstant()));
+				 ServiceFactory.eINSTANCE.createConstantReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

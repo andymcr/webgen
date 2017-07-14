@@ -118,13 +118,22 @@ public interface ServicePackage extends EPackage {
 	int SERVICE__NAME = BasePackage.NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Constants</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE__CONSTANTS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Serves</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__SERVES = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SERVICE__SERVES = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Selections</b></em>' containment reference list.
@@ -133,7 +142,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__SELECTIONS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SERVICE__SELECTIONS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Find All</b></em>' reference.
@@ -142,7 +151,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__FIND_ALL = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SERVICE__FIND_ALL = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Find One</b></em>' reference.
@@ -151,7 +160,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__FIND_ONE = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int SERVICE__FIND_ONE = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
@@ -160,7 +169,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__OPERATIONS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int SERVICE__OPERATIONS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Service</em>' class.
@@ -169,7 +178,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int SERVICE_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Service</em>' class.
@@ -181,6 +190,61 @@ public interface ServicePackage extends EPackage {
 	int SERVICE_OPERATION_COUNT = BasePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.ConstantImpl <em>Constant</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ConstantImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getConstant()
+	 * @generated
+	 */
+	int CONSTANT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANT__NAME = BasePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Defined By</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANT__DEFINED_BY = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANT__VALUE = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Constant</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANT_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Constant</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANT_OPERATION_COUNT = BasePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl <em>Selection</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -188,7 +252,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getSelection()
 	 * @generated
 	 */
-	int SELECTION = 2;
+	int SELECTION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -324,7 +388,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getOrder()
 	 * @generated
 	 */
-	int ORDER = 3;
+	int ORDER = 4;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
@@ -354,6 +418,52 @@ public interface ServicePackage extends EPackage {
 	int ORDER_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.ConstantReferenceImpl <em>Constant Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ConstantReferenceImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getConstantReference()
+	 * @generated
+	 */
+	int CONSTANT_REFERENCE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANT_REFERENCE__NAME = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANT_REFERENCE__VALUE = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Constant Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANT_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Constant Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANT_REFERENCE_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceFeatureReferenceImpl <em>Feature Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -361,7 +471,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getServiceFeatureReference()
 	 * @generated
 	 */
-	int SERVICE_FEATURE_REFERENCE = 4;
+	int SERVICE_FEATURE_REFERENCE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -407,7 +517,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getAsc()
 	 * @generated
 	 */
-	int ASC = 5;
+	int ASC = 7;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
@@ -444,7 +554,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getDesc()
 	 * @generated
 	 */
-	int DESC = 6;
+	int DESC = 8;
 
 	/**
 	 * The feature id for the '<em><b>Path</b></em>' containment reference.
@@ -481,7 +591,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getBusinessOperation()
 	 * @generated
 	 */
-	int BUSINESS_OPERATION = 7;
+	int BUSINESS_OPERATION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -545,7 +655,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getFilter()
 	 * @generated
 	 */
-	int FILTER = 8;
+	int FILTER = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -627,7 +737,7 @@ public interface ServicePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getOperationResultTypes()
 	 * @generated
 	 */
-	int OPERATION_RESULT_TYPES = 9;
+	int OPERATION_RESULT_TYPES = 11;
 
 
 	/**
@@ -660,6 +770,17 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getService();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.service.Service#getConstants <em>Constants</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Constants</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Service#getConstants()
+	 * @see #getService()
+	 * @generated
+	 */
+	EReference getService_Constants();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.service.Service#getServes <em>Serves</em>}'.
@@ -715,6 +836,38 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getService_Operations();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.Constant <em>Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Constant</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Constant
+	 * @generated
+	 */
+	EClass getConstant();
+
+	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.service.Constant#getDefinedBy <em>Defined By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Defined By</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Constant#getDefinedBy()
+	 * @see #getConstant()
+	 * @generated
+	 */
+	EReference getConstant_DefinedBy();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.service.Constant#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Constant#getValue()
+	 * @see #getConstant()
+	 * @generated
+	 */
+	EReference getConstant_Value();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.Selection <em>Selection</em>}'.
@@ -856,6 +1009,38 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOrder_Path();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.ConstantReference <em>Constant Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Constant Reference</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ConstantReference
+	 * @generated
+	 */
+	EClass getConstantReference();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.service.ConstantReference#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ConstantReference#getName()
+	 * @see #getConstantReference()
+	 * @generated
+	 */
+	EAttribute getConstantReference_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.service.ConstantReference#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ConstantReference#getValue()
+	 * @see #getConstantReference()
+	 * @generated
+	 */
+	EReference getConstantReference_Value();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.service.ServiceFeatureReference <em>Feature Reference</em>}'.
@@ -1057,6 +1242,14 @@ public interface ServicePackage extends EPackage {
 		EClass SERVICE = eINSTANCE.getService();
 
 		/**
+		 * The meta object literal for the '<em><b>Constants</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE__CONSTANTS = eINSTANCE.getService_Constants();
+
+		/**
 		 * The meta object literal for the '<em><b>Serves</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1095,6 +1288,32 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SERVICE__OPERATIONS = eINSTANCE.getService_Operations();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.ConstantImpl <em>Constant</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ConstantImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getConstant()
+		 * @generated
+		 */
+		EClass CONSTANT = eINSTANCE.getConstant();
+
+		/**
+		 * The meta object literal for the '<em><b>Defined By</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSTANT__DEFINED_BY = eINSTANCE.getConstant_DefinedBy();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSTANT__VALUE = eINSTANCE.getConstant_Value();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl <em>Selection</em>}' class.
@@ -1203,6 +1422,32 @@ public interface ServicePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ORDER__PATH = eINSTANCE.getOrder_Path();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.ConstantReferenceImpl <em>Constant Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ConstantReferenceImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.service.impl.ServicePackageImpl#getConstantReference()
+		 * @generated
+		 */
+		EClass CONSTANT_REFERENCE = eINSTANCE.getConstantReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSTANT_REFERENCE__NAME = eINSTANCE.getConstantReference_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSTANT_REFERENCE__VALUE = eINSTANCE.getConstantReference_Value();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceFeatureReferenceImpl <em>Feature Reference</em>}' class.

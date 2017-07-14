@@ -317,11 +317,6 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 		newChildDescriptors.add
 			(createChildParameter
 				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
-				 BaseFactory.eINSTANCE.createConstant()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 ExpressionFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add

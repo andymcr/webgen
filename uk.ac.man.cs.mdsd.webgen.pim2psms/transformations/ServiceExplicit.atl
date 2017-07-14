@@ -130,6 +130,7 @@ rule FormalParameter {
 rule Service {
 	from website : Website!Service
 	to service : Service!Service (
+		constants <- website.constants,
 		serves <-
 			if website.serves.oclIsUndefined() then
 				OclUndefined
@@ -156,6 +157,14 @@ rule Service {
 		operations <- website.operations
 	)
 } 
+
+-- @extends NamedElement
+rule Constant {
+	from website : Website!Constant
+	to service : Service!Constant (
+		value <- website.value
+	)
+}
 
 -- @extends NamedElement, FormalParameterList
 rule Selection {
@@ -233,10 +242,9 @@ rule Desc {
 }
 
 
--- @extends NamedElement
-rule Constant {
-	from website : Website!Constant
-	to service : Service!Constant (
+rule ConstantReference {
+	from website : Website!ConstantReference
+	to service : Service!ConstantReference (
 		value <- website.value
 	)
 }

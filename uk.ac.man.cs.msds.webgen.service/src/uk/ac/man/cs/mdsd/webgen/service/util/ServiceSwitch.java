@@ -84,6 +84,13 @@ public class ServiceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ServicePackage.CONSTANT: {
+				Constant constant = (Constant)theEObject;
+				T result = caseConstant(constant);
+				if (result == null) result = caseNamedElement(constant);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ServicePackage.SELECTION: {
 				Selection selection = (Selection)theEObject;
 				T result = caseSelection(selection);
@@ -95,6 +102,14 @@ public class ServiceSwitch<T> extends Switch<T> {
 			case ServicePackage.ORDER: {
 				Order order = (Order)theEObject;
 				T result = caseOrder(order);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ServicePackage.CONSTANT_REFERENCE: {
+				ConstantReference constantReference = (ConstantReference)theEObject;
+				T result = caseConstantReference(constantReference);
+				if (result == null) result = caseVariable(constantReference);
+				if (result == null) result = caseExpression(constantReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -171,6 +186,21 @@ public class ServiceSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constant</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constant</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConstant(Constant object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Selection</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -197,6 +227,21 @@ public class ServiceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOrder(Order object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constant Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constant Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConstantReference(ConstantReference object) {
 		return null;
 	}
 

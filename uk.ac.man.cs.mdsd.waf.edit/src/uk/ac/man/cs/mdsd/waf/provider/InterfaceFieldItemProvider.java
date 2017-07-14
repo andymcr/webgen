@@ -492,7 +492,7 @@ public class InterfaceFieldItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
-				 ServiceFactory.eINSTANCE.createConstant()));
+				 ServiceFactory.eINSTANCE.createConstantReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

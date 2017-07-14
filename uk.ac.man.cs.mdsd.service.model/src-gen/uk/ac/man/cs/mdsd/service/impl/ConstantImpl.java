@@ -3,14 +3,21 @@
 package uk.ac.man.cs.mdsd.service.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import uk.ac.man.cs.mdsd.expression.Expression;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
 import uk.ac.man.cs.mdsd.service.Constant;
+import uk.ac.man.cs.mdsd.service.Service;
 import uk.ac.man.cs.mdsd.service.ServicePackage;
 
 /**
@@ -21,6 +28,7 @@ import uk.ac.man.cs.mdsd.service.ServicePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.service.impl.ConstantImpl#getDefinedBy <em>Defined By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.service.impl.ConstantImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -28,24 +36,14 @@ import uk.ac.man.cs.mdsd.service.ServicePackage;
  */
 public class ConstantImpl extends NamedElementImpl implements Constant {
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
+	protected Expression value;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,7 +69,58 @@ public class ConstantImpl extends NamedElementImpl implements Constant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getValue() {
+	public Service getDefinedBy() {
+		if (eContainerFeatureID() != ServicePackage.CONSTANT__DEFINED_BY) return null;
+		return (Service)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Service basicGetDefinedBy() {
+		if (eContainerFeatureID() != ServicePackage.CONSTANT__DEFINED_BY) return null;
+		return (Service)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDefinedBy(Service newDefinedBy, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newDefinedBy, ServicePackage.CONSTANT__DEFINED_BY, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefinedBy(Service newDefinedBy) {
+		if (newDefinedBy != eInternalContainer() || (eContainerFeatureID() != ServicePackage.CONSTANT__DEFINED_BY && newDefinedBy != null)) {
+			if (EcoreUtil.isAncestor(this, newDefinedBy))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newDefinedBy != null)
+				msgs = ((InternalEObject)newDefinedBy).eInverseAdd(this, ServicePackage.SERVICE__CONSTANTS, Service.class, msgs);
+			msgs = basicSetDefinedBy(newDefinedBy, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.CONSTANT__DEFINED_BY, newDefinedBy, newDefinedBy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Expression getValue() {
 		return value;
 	}
 
@@ -80,11 +129,79 @@ public class ConstantImpl extends NamedElementImpl implements Constant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(String newValue) {
-		String oldValue = value;
+	public NotificationChain basicSetValue(Expression newValue, NotificationChain msgs) {
+		Expression oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.CONSTANT__VALUE, oldValue, value));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ServicePackage.CONSTANT__VALUE, oldValue, newValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(Expression newValue) {
+		if (newValue != value) {
+			NotificationChain msgs = null;
+			if (value != null)
+				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ServicePackage.CONSTANT__VALUE, null, msgs);
+			if (newValue != null)
+				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ServicePackage.CONSTANT__VALUE, null, msgs);
+			msgs = basicSetValue(newValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.CONSTANT__VALUE, newValue, newValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ServicePackage.CONSTANT__DEFINED_BY:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetDefinedBy((Service)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ServicePackage.CONSTANT__DEFINED_BY:
+				return basicSetDefinedBy(null, msgs);
+			case ServicePackage.CONSTANT__VALUE:
+				return basicSetValue(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case ServicePackage.CONSTANT__DEFINED_BY:
+				return eInternalContainer().eInverseRemove(this, ServicePackage.SERVICE__CONSTANTS, Service.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -95,6 +212,9 @@ public class ConstantImpl extends NamedElementImpl implements Constant {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ServicePackage.CONSTANT__DEFINED_BY:
+				if (resolve) return getDefinedBy();
+				return basicGetDefinedBy();
 			case ServicePackage.CONSTANT__VALUE:
 				return getValue();
 		}
@@ -109,8 +229,11 @@ public class ConstantImpl extends NamedElementImpl implements Constant {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ServicePackage.CONSTANT__DEFINED_BY:
+				setDefinedBy((Service)newValue);
+				return;
 			case ServicePackage.CONSTANT__VALUE:
-				setValue((String)newValue);
+				setValue((Expression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -124,8 +247,11 @@ public class ConstantImpl extends NamedElementImpl implements Constant {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ServicePackage.CONSTANT__DEFINED_BY:
+				setDefinedBy((Service)null);
+				return;
 			case ServicePackage.CONSTANT__VALUE:
-				setValue(VALUE_EDEFAULT);
+				setValue((Expression)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -139,26 +265,12 @@ public class ConstantImpl extends NamedElementImpl implements Constant {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ServicePackage.CONSTANT__DEFINED_BY:
+				return basicGetDefinedBy() != null;
 			case ServicePackage.CONSTANT__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+				return value != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ConstantImpl

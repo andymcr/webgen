@@ -259,6 +259,12 @@ helper def: findService(name : String) : Service!Service
 helper context Website!Service def: findService() : Service!Service
 	= thisModule.findService(self.name);
 
+helper context Service!Service def: getServiceConstant(name : String) : Service!Selection
+	= self.constants->any(s | s.name = name);
+
+helper context Website!Constant def: findServiceConstant() : Service!Selection
+	= self.definedBy.findService().getServiceConstant(self.name);
+
 helper context Service!Service def: getServiceSelection(name : String) : Service!Selection
 	= self.selections->any(s | s.name = name);
 

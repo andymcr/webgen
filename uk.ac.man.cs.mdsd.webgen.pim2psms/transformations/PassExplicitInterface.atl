@@ -1178,6 +1178,18 @@ rule FeatureSupportAction {
 }
 
 
+rule ConstantReference {
+	from website : Website!ConstantReference (website.isInterfaceExpression())
+	to waf : WAF!ConstantReference (
+		value <-
+			if website.value.oclIsUndefined() then
+				website.value
+			else
+				website.value.findServiceConstant()
+			endif
+	)
+}
+
 rule WebuiFeatureReference {
 	from website : Website!WebuiFeatureReference
 	to waf : WAF!FeatureReference (

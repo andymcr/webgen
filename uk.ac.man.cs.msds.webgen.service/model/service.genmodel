@@ -17,6 +17,8 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Services/services"/>
     </genClasses>
     <genClasses ecoreClass="service.ecore#//Service">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference service.ecore#//Service/constants"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference service.ecore#//Service/serves"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//Service/selections"/>
@@ -25,6 +27,11 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference service.ecore#//Service/findOne"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//Service/operations"/>
+    </genClasses>
+    <genClasses ecoreClass="service.ecore#//Constant">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference service.ecore#//Constant/definedBy"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Constant/value"/>
     </genClasses>
     <genClasses ecoreClass="service.ecore#//Selection">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference service.ecore#//Selection/usedBy"/>
@@ -44,6 +51,10 @@
     <genClasses image="false" ecoreClass="service.ecore#//Order">
       <genFeatures property="None" children="true" createChild="true" propertyCategory=""
           ecoreFeature="ecore:EReference service.ecore#//Order/path"/>
+    </genClasses>
+    <genClasses ecoreClass="service.ecore#//ConstantReference">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute service.ecore#//ConstantReference/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//ConstantReference/value"/>
     </genClasses>
     <genClasses ecoreClass="service.ecore#//ServiceFeatureReference">
       <genFeatures property="None" createChild="false" propertyCategory="Business"

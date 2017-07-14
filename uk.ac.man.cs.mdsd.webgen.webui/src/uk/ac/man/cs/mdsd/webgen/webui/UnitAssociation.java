@@ -24,7 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitAssociation()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='selectionValidChoice'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionValidChoice='not selection.oclIsUndefined() implies\r\n\tdisplayedOn.pageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | s.serves = targetEntity)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(selection)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionValidChoice='not selection.oclIsUndefined() implies\r\n\tdisplayedOn.pageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | not s.serves.oclIsUndefined())\r\n\t\t->select(s : service::Service | s.serves = targetEntity)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(selection)'"
  * @generated
  */
 public interface UnitAssociation extends UnitFeature, UnitContainer, AssociationReference {

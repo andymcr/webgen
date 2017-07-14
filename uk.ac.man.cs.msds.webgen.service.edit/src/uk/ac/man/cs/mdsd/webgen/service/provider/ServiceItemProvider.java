@@ -147,6 +147,7 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(ServicePackage.Literals.SERVICE__CONSTANTS);
 			childrenFeatures.add(ServicePackage.Literals.SERVICE__SELECTIONS);
 			childrenFeatures.add(ServicePackage.Literals.SERVICE__OPERATIONS);
 		}
@@ -204,6 +205,7 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Service.class)) {
+			case ServicePackage.SERVICE__CONSTANTS:
 			case ServicePackage.SERVICE__SELECTIONS:
 			case ServicePackage.SERVICE__OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -222,6 +224,11 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.SERVICE__CONSTANTS,
+				 ServiceFactory.eINSTANCE.createConstant()));
 
 		newChildDescriptors.add
 			(createChildParameter

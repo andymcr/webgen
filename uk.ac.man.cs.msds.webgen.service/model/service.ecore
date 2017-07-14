@@ -11,14 +11,21 @@
         eType="#//Service" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="serves" lowerBound="1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constants" upperBound="-1"
+        eType="#//Constant" containment="true" eOpposite="#//Constant/definedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serves" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selections" upperBound="-1"
         eType="#//Selection" containment="true" eOpposite="#//Selection/usedBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="findAll" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="findOne" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
         eType="#//BusinessOperation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definedBy" lowerBound="1"
+        eType="#//Service" eOpposite="#//Service/constants"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Selection" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//FormalParameterList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="usedBy" lowerBound="1"
@@ -47,6 +54,16 @@
         <details key="propertyCategory" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstantReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" defaultValueLiteral="" unsettable="true"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if value.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;value.name&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//Constant"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceFeatureReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

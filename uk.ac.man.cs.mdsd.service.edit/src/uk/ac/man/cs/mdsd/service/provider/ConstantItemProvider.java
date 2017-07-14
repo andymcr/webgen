@@ -11,14 +11,16 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
 
 import uk.ac.man.cs.mdsd.service.Constant;
+import uk.ac.man.cs.mdsd.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.service.ServicePackage;
 
 /**
@@ -49,31 +51,61 @@ public class ConstantItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuePropertyDescriptor(object);
+			addDefinedByPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
+	 * This adds a property descriptor for the Defined By feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object) {
+	protected void addDefinedByPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Constant_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Constant_value_feature", "_UI_Constant_type"),
-				 ServicePackage.Literals.CONSTANT__VALUE,
+				 getString("_UI_Constant_definedBy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Constant_definedBy_feature", "_UI_Constant_type"),
+				 ServicePackage.Literals.CONSTANT__DEFINED_BY,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(ServicePackage.Literals.CONSTANT__VALUE);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -115,7 +147,7 @@ public class ConstantItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(Constant.class)) {
 			case ServicePackage.CONSTANT__VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -131,6 +163,96 @@ public class ConstantItemProvider extends NamedElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ServiceFactory.eINSTANCE.createConstantReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ServiceFactory.eINSTANCE.createFeatureReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ServiceFactory.eINSTANCE.createParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createNullLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createBooleanLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createIntegerLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createStringLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createTimeLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createCurrentTime()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createCurrentUser()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.CONSTANT__VALUE,
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 	/**

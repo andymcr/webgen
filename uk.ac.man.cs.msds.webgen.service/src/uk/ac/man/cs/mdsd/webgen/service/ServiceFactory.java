@@ -40,6 +40,15 @@ public interface ServiceFactory extends EFactory {
 	Service createService();
 
 	/**
+	 * Returns a new object of class '<em>Constant</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Constant</em>'.
+	 * @generated
+	 */
+	Constant createConstant();
+
+	/**
 	 * Returns a new object of class '<em>Selection</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,6 +56,15 @@ public interface ServiceFactory extends EFactory {
 	 * @generated
 	 */
 	Selection createSelection();
+
+	/**
+	 * Returns a new object of class '<em>Constant Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Constant Reference</em>'.
+	 * @generated
+	 */
+	ConstantReference createConstantReference();
 
 	/**
 	 * Returns a new object of class '<em>Feature Reference</em>'.

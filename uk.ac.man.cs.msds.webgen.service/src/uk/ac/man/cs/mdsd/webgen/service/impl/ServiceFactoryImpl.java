@@ -59,7 +59,9 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 		switch (eClass.getClassifierID()) {
 			case ServicePackage.SERVICES: return createServices();
 			case ServicePackage.SERVICE: return createService();
+			case ServicePackage.CONSTANT: return createConstant();
 			case ServicePackage.SELECTION: return createSelection();
+			case ServicePackage.CONSTANT_REFERENCE: return createConstantReference();
 			case ServicePackage.SERVICE_FEATURE_REFERENCE: return createServiceFeatureReference();
 			case ServicePackage.ASC: return createAsc();
 			case ServicePackage.DESC: return createDesc();
@@ -125,9 +127,29 @@ public class ServiceFactoryImpl extends EFactoryImpl implements ServiceFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Constant createConstant() {
+		ConstantImpl constant = new ConstantImpl();
+		return constant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Selection createSelection() {
 		SelectionImpl selection = new SelectionImpl();
 		return selection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConstantReference createConstantReference() {
+		ConstantReferenceImpl constantReference = new ConstantReferenceImpl();
+		return constantReference;
 	}
 
 	/**

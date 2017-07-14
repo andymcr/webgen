@@ -23,6 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.base.impl.NamedElementImpl;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 
 import uk.ac.man.cs.mdsd.webgen.service.BusinessOperation;
+import uk.ac.man.cs.mdsd.webgen.service.Constant;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.service.Service;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
@@ -35,6 +36,7 @@ import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl#getConstants <em>Constants</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl#getServes <em>Serves</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl#getFindAll <em>Find All</em>}</li>
@@ -45,6 +47,16 @@ import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
  * @generated
  */
 public class ServiceImpl extends NamedElementImpl implements Service {
+	/**
+	 * The cached value of the '{@link #getConstants() <em>Constants</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConstants()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Constant> constants;
+
 	/**
 	 * The cached value of the '{@link #getServes() <em>Serves</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -112,6 +124,18 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	protected EClass eStaticClass() {
 		return ServicePackage.Literals.SERVICE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Constant> getConstants() {
+		if (constants == null) {
+			constants = new EObjectContainmentWithInverseEList<Constant>(Constant.class, this, ServicePackage.SERVICE__CONSTANTS, ServicePackage.CONSTANT__DEFINED_BY);
+		}
+		return constants;
 	}
 
 	/**
@@ -261,6 +285,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ServicePackage.SERVICE__CONSTANTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstants()).basicAdd(otherEnd, msgs);
 			case ServicePackage.SERVICE__SELECTIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSelections()).basicAdd(otherEnd, msgs);
 		}
@@ -275,6 +301,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ServicePackage.SERVICE__CONSTANTS:
+				return ((InternalEList<?>)getConstants()).basicRemove(otherEnd, msgs);
 			case ServicePackage.SERVICE__SELECTIONS:
 				return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
 			case ServicePackage.SERVICE__OPERATIONS:
@@ -291,6 +319,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ServicePackage.SERVICE__CONSTANTS:
+				return getConstants();
 			case ServicePackage.SERVICE__SERVES:
 				if (resolve) return getServes();
 				return basicGetServes();
@@ -317,6 +347,10 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ServicePackage.SERVICE__CONSTANTS:
+				getConstants().clear();
+				getConstants().addAll((Collection<? extends Constant>)newValue);
+				return;
 			case ServicePackage.SERVICE__SERVES:
 				setServes((EntityOrView)newValue);
 				return;
@@ -346,6 +380,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ServicePackage.SERVICE__CONSTANTS:
+				getConstants().clear();
+				return;
 			case ServicePackage.SERVICE__SERVES:
 				setServes((EntityOrView)null);
 				return;
@@ -373,6 +410,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ServicePackage.SERVICE__CONSTANTS:
+				return constants != null && !constants.isEmpty();
 			case ServicePackage.SERVICE__SERVES:
 				return serves != null;
 			case ServicePackage.SERVICE__SELECTIONS:

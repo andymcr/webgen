@@ -4227,7 +4227,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		  (unitAssociationEClass, 
 		   source, 
 		   new String[] {
-			 "selectionValidChoice", "not selection.oclIsUndefined() implies\r\n\tdisplayedOn.pageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | s.serves = targetEntity)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(selection)"
+			 "selectionValidChoice", "not selection.oclIsUndefined() implies\r\n\tdisplayedOn.pageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | not s.serves.oclIsUndefined())\r\n\t\t->select(s : service::Service | s.serves = targetEntity)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(selection)"
 		   });	
 		addAnnotation
 		  (getUnitAssociation_IsSourceAssociation(), 
@@ -4258,7 +4258,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		   source, 
 		   new String[] {
 			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies \r\n\tif title.oclIsKindOf(persistence::EntityAttribute) then\r\n\t\ttitle.oclAsType(persistence::EntityAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse if title.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse\r\n\t\ttrue\r\n\tendif endif",
-			 "selectionValidChoice", "not defaultSelection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | contentType = s.serves)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(defaultSelection)"
+			 "selectionValidChoice", "not defaultSelection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | not s.serves.oclIsUndefined())\r\n\t\t->select(s : service::Service | contentType = s.serves)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(defaultSelection)"
 		   });	
 		addAnnotation
 		  (dataUnitEClass, 
@@ -4271,7 +4271,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		   source, 
 		   new String[] {
 			 "selectionMustBeSingleton", "not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit = 1",
-			 "selectionValidChoice", "not defaultSelection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | contentType = s.serves)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(defaultSelection)"
+			 "selectionValidChoice", "not defaultSelection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | not s.serves.oclIsUndefined())\r\n\t\t->select(s : service::Service | contentType = s.serves)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(defaultSelection)"
 		   });	
 		addAnnotation
 		  (indexUnitEClass, 

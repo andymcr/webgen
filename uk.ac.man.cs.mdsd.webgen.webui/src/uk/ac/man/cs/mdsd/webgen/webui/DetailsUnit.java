@@ -19,7 +19,7 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getDetailsUnit()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='selectionValidChoice selectionMustBeSingleton'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionMustBeSingleton='not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit = 1' selectionValidChoice='not defaultSelection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | contentType = s.serves)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(defaultSelection)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionMustBeSingleton='not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit = 1' selectionValidChoice='not defaultSelection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | not s.serves.oclIsUndefined())\r\n\t\t->select(s : service::Service | contentType = s.serves)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(defaultSelection)'"
  * @generated
  */
 public interface DetailsUnit extends DataUnit, SingletonUnit, SelectableUnit {

@@ -349,6 +349,11 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ServicePackage.Literals.SELECTION__CONDITION,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.SELECTION__CONDITION,
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add

@@ -3,6 +3,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence.diagram.edit.parts;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
@@ -15,6 +16,8 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
+import uk.ac.man.cs.mdsd.webgen.persistence.diagram.edit.policies.CompartmentRepositionLayoutEditPolicy;
 import uk.ac.man.cs.mdsd.webgen.persistence.diagram.edit.policies.EntityAttributeCompartmentCanonicalEditPolicy;
 import uk.ac.man.cs.mdsd.webgen.persistence.diagram.edit.policies.EntityAttributeCompartmentItemSemanticEditPolicy;
 import uk.ac.man.cs.mdsd.webgen.persistence.diagram.part.Messages;
@@ -62,15 +65,17 @@ public class EntityAttributeCompartmentEditPart extends ListCompartmentEditPart 
 	}
 
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new EntityAttributeCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(PersistenceVisualIDRegistry.TYPED_INSTANCE));
+			new CreationEditPolicyWithCustomReparent(PersistenceVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new EntityAttributeCompartmentCanonicalEditPolicy());
+		installEditPolicy(EditPolicy.LAYOUT_ROLE,
+			new CompartmentRepositionLayoutEditPolicy(PersistencePackage.Literals.ENTITY__ENTITY_FEATURES));
 	}
 
 	/**

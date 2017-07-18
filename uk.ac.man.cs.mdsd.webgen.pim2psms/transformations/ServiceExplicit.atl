@@ -188,7 +188,7 @@ rule Selection {
 	)
 }
 
--- @extends NamedElement
+-- @extends NamedElement, FormalParameterList
 rule BusinessOperation {
 	from website : Website!BusinessOperation
 	to service : Service!BusinessOperation (

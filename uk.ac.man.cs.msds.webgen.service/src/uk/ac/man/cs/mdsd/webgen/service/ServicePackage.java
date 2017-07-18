@@ -603,13 +603,22 @@ public interface ServicePackage extends EPackage {
 	int BUSINESS_OPERATION__NAME = BasePackage.NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_OPERATION__PARAMETERS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Uses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION__USES = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int BUSINESS_OPERATION__USES = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' attribute.
@@ -618,7 +627,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION__RESULT_TYPE = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int BUSINESS_OPERATION__RESULT_TYPE = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Result Mime Type</b></em>' attribute.
@@ -627,7 +636,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION__RESULT_MIME_TYPE = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int BUSINESS_OPERATION__RESULT_MIME_TYPE = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Business Operation</em>' class.
@@ -636,7 +645,7 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int BUSINESS_OPERATION_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Business Operation</em>' class.

@@ -139,6 +139,7 @@ public class ServiceSwitch<T> extends Switch<T> {
 				BusinessOperation businessOperation = (BusinessOperation)theEObject;
 				T result = caseBusinessOperation(businessOperation);
 				if (result == null) result = caseNamedElement(businessOperation);
+				if (result == null) result = caseFormalParameterList(businessOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

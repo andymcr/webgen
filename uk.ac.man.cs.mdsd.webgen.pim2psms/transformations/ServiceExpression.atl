@@ -10,6 +10,8 @@ create service : Service from website : Website;
 helper context Website!Expression def: isServiceExpression() : Boolean
 	= if self.refImmediateComposite().oclIsUndefined() then
 			false
+		else if self.refImmediateComposite().oclIsKindOf(Website!Constant) then
+			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!Selection) then
 			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!Filter) then
@@ -18,7 +20,7 @@ helper context Website!Expression def: isServiceExpression() : Boolean
 			self.refImmediateComposite().isServiceExpression()
 		else
 			false
-		endif endif endif endif;
+		endif endif endif endif endif;
 
 
 rule NullLiteral {

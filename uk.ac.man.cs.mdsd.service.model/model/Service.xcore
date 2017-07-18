@@ -95,7 +95,7 @@ class ParameterReference extends Variable {
 	refers FormalParameter[1] parameter 
 } 
 
-class BusinessOperation extends NamedElement {
+class BusinessOperation extends NamedElement, FormalParameterList {
 	container Service[1] partOf opposite operations
 	refers Service[] uses
 	OperationResultTypes[1] resultType

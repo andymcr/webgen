@@ -23,6 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Service#getFindAll <em>Find All</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Service#getFindOne <em>Find One</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Service#getOperations <em>Operations</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Service#getUses <em>Uses</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getService()
@@ -159,5 +160,21 @@ public interface Service extends NamedElement {
 	 * @generated
 	 */
 	EList<BusinessOperation> getOperations();
+
+	/**
+	 * Returns the value of the '<em><b>Uses</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.Service}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Uses</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Uses</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getService_Uses()
+	 * @model
+	 * @generated
+	 */
+	EList<Service> getUses();
 
 } // Service

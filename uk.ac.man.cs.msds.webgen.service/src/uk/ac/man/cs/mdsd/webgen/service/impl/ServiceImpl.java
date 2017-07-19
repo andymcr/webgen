@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedElementImpl;
@@ -42,6 +43,7 @@ import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl#getFindAll <em>Find All</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl#getFindOne <em>Find One</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl#getOperations <em>Operations</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.ServiceImpl#getUses <em>Uses</em>}</li>
  * </ul>
  *
  * @generated
@@ -106,6 +108,16 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * @ordered
 	 */
 	protected EList<BusinessOperation> operations;
+
+	/**
+	 * The cached value of the '{@link #getUses() <em>Uses</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Service> uses;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -281,6 +293,18 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Service> getUses() {
+		if (uses == null) {
+			uses = new EObjectResolvingEList<Service>(Service.class, this, ServicePackage.SERVICE__USES);
+		}
+		return uses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -334,6 +358,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return basicGetFindOne();
 			case ServicePackage.SERVICE__OPERATIONS:
 				return getOperations();
+			case ServicePackage.SERVICE__USES:
+				return getUses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -368,6 +394,10 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				getOperations().clear();
 				getOperations().addAll((Collection<? extends BusinessOperation>)newValue);
 				return;
+			case ServicePackage.SERVICE__USES:
+				getUses().clear();
+				getUses().addAll((Collection<? extends Service>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -398,6 +428,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			case ServicePackage.SERVICE__OPERATIONS:
 				getOperations().clear();
 				return;
+			case ServicePackage.SERVICE__USES:
+				getUses().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -422,6 +455,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return findOne != null;
 			case ServicePackage.SERVICE__OPERATIONS:
 				return operations != null && !operations.isEmpty();
+			case ServicePackage.SERVICE__USES:
+				return uses != null && !uses.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

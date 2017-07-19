@@ -45,6 +45,7 @@ class Service extends NamedElement {
 	refers Selection findAll
 	refers Selection findOne
 	contains BusinessOperation[] operations opposite partOf
+	refers Service[] uses
 }
 
 

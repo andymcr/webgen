@@ -154,6 +154,7 @@ rule Service {
 			else
 				OclUndefined
 			endif endif,
+		"uses" <- website."uses",
 		operations <- website.operations
 	)
 } 

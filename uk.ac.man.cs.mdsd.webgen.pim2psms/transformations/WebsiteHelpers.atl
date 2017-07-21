@@ -83,6 +83,9 @@ helper context String def: createAssociationColumnName() : String
 					name.toLower()
 				endif;
 
+helper context Website!Entity def: createEntityColumnName() : String
+	= self.name.createName().concat('_id');
+
 helper context Website!DataType def: persistentType() : String
 	= if not self.persistentType.oclIsUndefined() and self.persistentType <> '' then
 			self.persistentType

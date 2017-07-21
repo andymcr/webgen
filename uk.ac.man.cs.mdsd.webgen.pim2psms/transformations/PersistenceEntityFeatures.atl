@@ -401,7 +401,13 @@ rule ManyToManyAssociationWithoutContainment {
 		collectionType <- thisModule.findOrmCollection(website.targetEntity.name),
 		associationRelationship <- #ManyToMany,
 		opposite <- associationEnd,
-		owningEnd <- true
+		owningEnd <- true,
+		columnName <-
+			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
+				website.columnName
+			else
+				website.partOf.createEntityColumnName()
+			endif
 	),
 	associationEnd : ORM!CollectionAssociation (
 		name <- website.targetFeatureName(),
@@ -415,7 +421,12 @@ rule ManyToManyAssociationWithoutContainment {
 		keys <- website.keys->collect(k | thisModule.OppositeAssociationKey(k)),
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,
-		columnName <- website.targetFeatureName().createAssociationColumnName()
+		columnName <-
+			if not website.targetColumnName.oclIsUndefined() and website.targetColumnName <> '' then
+				website.targetColumnName
+			else
+				website.targetEntity.createEntityColumnName()
+			endif
 	)
 }
 

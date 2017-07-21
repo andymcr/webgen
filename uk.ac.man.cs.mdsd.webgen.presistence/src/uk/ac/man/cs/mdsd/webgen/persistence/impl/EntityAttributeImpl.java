@@ -2,12 +2,15 @@
  */
 package uk.ac.man.cs.mdsd.webgen.persistence.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import uk.ac.man.cs.mdsd.webgen.expression.Expression;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
@@ -31,6 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#getPersistentType <em>Persistent Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#getOrmType <em>Orm Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#getInterfaceType <em>Interface Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#getSlugFields <em>Slug Fields</em>}</li>
  * </ul>
  *
  * @generated
@@ -185,6 +189,16 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * @ordered
 	 */
 	protected String interfaceType = INTERFACE_TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSlugFields() <em>Slug Fields</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSlugFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Attribute> slugFields;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -400,6 +414,18 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Attribute> getSlugFields() {
+		if (slugFields == null) {
+			slugFields = new EObjectResolvingEList<Attribute>(Attribute.class, this, PersistencePackage.ENTITY_ATTRIBUTE__SLUG_FIELDS);
+		}
+		return slugFields;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -433,6 +459,8 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return getOrmType();
 			case PersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
 				return getInterfaceType();
+			case PersistencePackage.ENTITY_ATTRIBUTE__SLUG_FIELDS:
+				return getSlugFields();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -442,6 +470,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -468,6 +497,10 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return;
 			case PersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
 				setInterfaceType((String)newValue);
+				return;
+			case PersistencePackage.ENTITY_ATTRIBUTE__SLUG_FIELDS:
+				getSlugFields().clear();
+				getSlugFields().addAll((Collection<? extends Attribute>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -505,6 +538,9 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 			case PersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
 				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
 				return;
+			case PersistencePackage.ENTITY_ATTRIBUTE__SLUG_FIELDS:
+				getSlugFields().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -533,6 +569,8 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return ORM_TYPE_EDEFAULT == null ? ormType != null : !ORM_TYPE_EDEFAULT.equals(ormType);
 			case PersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
 				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
+			case PersistencePackage.ENTITY_ATTRIBUTE__SLUG_FIELDS:
+				return slugFields != null && !slugFields.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

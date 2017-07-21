@@ -175,6 +175,7 @@ abstract class EntityFeature extends Feature {
 abstract class EntityAttribute extends EntityFeature, Attribute {
 	String[1] persistentType
 	String[1] ormType
+	refers Attribute[] slugFields
 }
 
 abstract class SingletonAttribute extends EntityAttribute {

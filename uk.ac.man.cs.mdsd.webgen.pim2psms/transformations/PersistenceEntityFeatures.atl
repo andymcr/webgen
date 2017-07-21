@@ -102,7 +102,8 @@ abstract rule EntityAttribute {
 				website.columnName.createAttributeColumnName()
 			else
 				website.name.createAttributeColumnName()
-			endif
+			endif,
+		slugFields <- website.slugFields
 	)
 }
 

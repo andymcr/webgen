@@ -4,6 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -56,6 +57,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			addPersistentTypePropertyDescriptor(object);
 			addOrmTypePropertyDescriptor(object);
 			addInterfaceTypePropertyDescriptor(object);
+			addSlugFieldsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -212,6 +214,43 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
 				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Slug Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addSlugFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_EntityAttribute_slugFields_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_slugFields_feature", "_UI_EntityAttribute_type"),
+			PersistencePackage.Literals.ENTITY_ATTRIBUTE__SLUG_FIELDS,
+			true, false, true, null,
+			null,
+			null));
+//		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+//			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//			getResourceLocator(),
+//			getString("_UI_EntityAttribute_slugFields_feature"),
+//			getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_slugFields_feature", "_UI_EntityAttribute_type"),
+//			PersistencePackage.Literals.ENTITY_ATTRIBUTE__SLUG_FIELDS,
+//			true, false, true, null,
+//			getString("_UI_ModelPropertyCategory"),
+//			null) {
+//				@Override
+//				public Collection<?> getChoiceOfValues(Object object) {
+//					if (object instanceof EntityAttribute) {
+//						final EntityAttribute attribute = (EntityAttribute) object;
+//						return attribute.getPartOf().getAllFeatures();
+//					}
+//
+//					return Collections.emptySet();
+//				}
+//			});
 	}
 
 	/**

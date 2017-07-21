@@ -1803,13 +1803,22 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_ATTRIBUTE__INTERFACE_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Slug Fields</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__SLUG_FIELDS = ENTITY_FEATURE_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Entity Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 8;
+	int ENTITY_ATTRIBUTE_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Entity Attribute</em>' class.
@@ -2081,6 +2090,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_ATTRIBUTE__INTERFACE_TYPE = ENTITY_ATTRIBUTE__INTERFACE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Slug Fields</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__SLUG_FIELDS = ENTITY_ATTRIBUTE__SLUG_FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Data Type</b></em>' reference.
@@ -2399,6 +2417,15 @@ public interface PersistencePackage extends EPackage {
 	int DATE_ATTRIBUTE__INTERFACE_TYPE = ENTITY_ATTRIBUTE__INTERFACE_TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Slug Fields</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__SLUG_FIELDS = ENTITY_ATTRIBUTE__SLUG_FIELDS;
+
+	/**
 	 * The feature id for the '<em><b>Details</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2697,6 +2724,15 @@ public interface PersistencePackage extends EPackage {
 	int URL_ATTRIBUTE__INTERFACE_TYPE = ENTITY_ATTRIBUTE__INTERFACE_TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Slug Fields</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__SLUG_FIELDS = ENTITY_ATTRIBUTE__SLUG_FIELDS;
+
+	/**
 	 * The feature id for the '<em><b>Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2984,6 +3020,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_ATTRIBUTE__INTERFACE_TYPE = ENTITY_ATTRIBUTE__INTERFACE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Slug Fields</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__SLUG_FIELDS = ENTITY_ATTRIBUTE__SLUG_FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
@@ -3413,6 +3458,15 @@ public interface PersistencePackage extends EPackage {
 	int FILE_ATTRIBUTE__INTERFACE_TYPE = RESOURCE_ATTRIBUTE__INTERFACE_TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Slug Fields</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__SLUG_FIELDS = RESOURCE_ATTRIBUTE__SLUG_FIELDS;
+
+	/**
 	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3738,6 +3792,15 @@ public interface PersistencePackage extends EPackage {
 	int IMAGE_ATTRIBUTE__INTERFACE_TYPE = RESOURCE_ATTRIBUTE__INTERFACE_TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Slug Fields</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__SLUG_FIELDS = RESOURCE_ATTRIBUTE__SLUG_FIELDS;
+
+	/**
 	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4061,6 +4124,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int LOCATION_ATTRIBUTE__INTERFACE_TYPE = ENTITY_ATTRIBUTE__INTERFACE_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Slug Fields</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__SLUG_FIELDS = ENTITY_ATTRIBUTE__SLUG_FIELDS;
 
 	/**
 	 * The number of structural features of the '<em>Location Attribute</em>' class.
@@ -7436,6 +7508,17 @@ public interface PersistencePackage extends EPackage {
 	EAttribute getEntityAttribute_InterfaceType();
 
 	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#getSlugFields <em>Slug Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Slug Fields</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#getSlugFields()
+	 * @see #getEntityAttribute()
+	 * @generated
+	 */
+	EReference getEntityAttribute_SlugFields();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.persistence.DataTypeAttribute <em>Data Type Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8989,6 +9072,14 @@ public interface PersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY_ATTRIBUTE__INTERFACE_TYPE = eINSTANCE.getEntityAttribute_InterfaceType();
+
+		/**
+		 * The meta object literal for the '<em><b>Slug Fields</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_ATTRIBUTE__SLUG_FIELDS = eINSTANCE.getEntityAttribute_SlugFields();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.DataTypeAttributeImpl <em>Data Type Attribute</em>}' class.

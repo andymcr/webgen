@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.persistence;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Entity Attribute</b></em>'.
@@ -15,6 +17,7 @@ package uk.ac.man.cs.mdsd.webgen.persistence;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#getPersistentType <em>Persistent Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#getOrmType <em>Orm Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#getInterfaceType <em>Interface Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#getSlugFields <em>Slug Fields</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAttribute()
@@ -125,5 +128,21 @@ public interface EntityAttribute extends EntityFeature, Attribute {
 	 * @generated
 	 */
 	void setInterfaceType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Slug Fields</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.Attribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Slug Fields</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Slug Fields</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAttribute_SlugFields()
+	 * @model
+	 * @generated
+	 */
+	EList<Attribute> getSlugFields();
 
 } // EntityAttribute

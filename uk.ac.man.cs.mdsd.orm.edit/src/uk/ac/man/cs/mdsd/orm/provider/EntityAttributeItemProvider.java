@@ -50,6 +50,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			addValidationPatternPropertyDescriptor(object);
 			addPersistentTypePropertyDescriptor(object);
 			addOrmTypePropertyDescriptor(object);
+			addSlugFieldsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -116,6 +117,28 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Slug Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSlugFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityAttribute_slugFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_slugFields_feature", "_UI_EntityAttribute_type"),
+				 OrmPackage.Literals.ENTITY_ATTRIBUTE__SLUG_FIELDS,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

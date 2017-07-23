@@ -4,7 +4,6 @@ package uk.ac.man.cs.mdsd.webgen.persistence.provider;
 
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;

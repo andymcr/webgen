@@ -49,7 +49,7 @@ rule ModelLabelAttribute {
 				website.attribute
 			endif,
 		dateFormat <-
-			if not website.dateFormat.oclIsUndefined() and website.dateFormat.displayLabel <> '' then
+			if not website.dateFormat.oclIsUndefined() and website.dateFormat <> '' then
 				website.dateFormat
 			else
 				website.attribute.dateFormat()

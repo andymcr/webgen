@@ -104,8 +104,6 @@ public class WebuiValidator extends EObjectValidator {
 				return validateMenuEntry((MenuEntry)value, diagnostics, context);
 			case WebuiPackage.GLOBAL_MENU:
 				return validateGlobalMenu((GlobalMenu)value, diagnostics, context);
-			case WebuiPackage.CONTEXT_MENU:
-				return validateContextMenu((ContextMenu)value, diagnostics, context);
 			case WebuiPackage.ACTION_MENU_ENTRY:
 				return validateActionMenuEntry((ActionMenuEntry)value, diagnostics, context);
 			case WebuiPackage.EDIT_STATIC_TEXT_MENU_ENTRY:
@@ -396,55 +394,6 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(editStaticTextMenuEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(editStaticTextMenuEntry, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateContextMenu(ContextMenu contextMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(contextMenu, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(contextMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(contextMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(contextMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(contextMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(contextMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(contextMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(contextMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(contextMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(contextMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validateContextMenu_onlyStaticEntries(contextMenu, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the onlyStaticEntries constraint of '<em>Context Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CONTEXT_MENU__ONLY_STATIC_ENTRIES__EEXPRESSION = "entries->select(e | e.oclIsKindOf(MenuFeature))->isEmpty()";
-
-	/**
-	 * Validates the onlyStaticEntries constraint of '<em>Context Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateContextMenu_onlyStaticEntries(ContextMenu contextMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebuiPackage.Literals.CONTEXT_MENU,
-				 contextMenu,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "onlyStaticEntries",
-				 CONTEXT_MENU__ONLY_STATIC_ENTRIES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**

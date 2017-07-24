@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.orm.impl.NamedDisplayElementImpl;
 
 import uk.ac.man.cs.mdsd.waf.ContentUnit;
-import uk.ac.man.cs.mdsd.waf.Menu;
+import uk.ac.man.cs.mdsd.waf.GlobalMenu;
 import uk.ac.man.cs.mdsd.waf.Page;
 import uk.ac.man.cs.mdsd.waf.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.waf.UnitContainer;
@@ -191,7 +191,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @generated
 	 * @ordered
 	 */
-	protected Menu sideMenu;
+	protected GlobalMenu sideMenu;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -477,10 +477,10 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Menu getSideMenu() {
+	public GlobalMenu getSideMenu() {
 		if (sideMenu != null && sideMenu.eIsProxy()) {
 			InternalEObject oldSideMenu = (InternalEObject)sideMenu;
-			sideMenu = (Menu)eResolveProxy(oldSideMenu);
+			sideMenu = (GlobalMenu)eResolveProxy(oldSideMenu);
 			if (sideMenu != oldSideMenu) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.PAGE__SIDE_MENU, oldSideMenu, sideMenu));
@@ -494,7 +494,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Menu basicGetSideMenu() {
+	public GlobalMenu basicGetSideMenu() {
 		return sideMenu;
 	}
 
@@ -503,8 +503,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSideMenu(Menu newSideMenu) {
-		Menu oldSideMenu = sideMenu;
+	public void setSideMenu(GlobalMenu newSideMenu) {
+		GlobalMenu oldSideMenu = sideMenu;
 		sideMenu = newSideMenu;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.PAGE__SIDE_MENU, oldSideMenu, sideMenu));
@@ -666,7 +666,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				setNavigationLabel((String)newValue);
 				return;
 			case WafPackage.PAGE__SIDE_MENU:
-				setSideMenu((Menu)newValue);
+				setSideMenu((GlobalMenu)newValue);
 				return;
 			case WafPackage.PAGE__STYLE_CLASS:
 				setStyleClass((String)newValue);
@@ -711,7 +711,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				setNavigationLabel(NAVIGATION_LABEL_EDEFAULT);
 				return;
 			case WafPackage.PAGE__SIDE_MENU:
-				setSideMenu((Menu)null);
+				setSideMenu((GlobalMenu)null);
 				return;
 			case WafPackage.PAGE__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);

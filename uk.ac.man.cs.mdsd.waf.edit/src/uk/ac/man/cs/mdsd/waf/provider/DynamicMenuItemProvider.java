@@ -19,7 +19,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public class DynamicMenuItemProvider
-	extends GlobalMenuItemProvider {
+	extends MenuItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

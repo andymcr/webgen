@@ -3,16 +3,19 @@
 package uk.ac.man.cs.mdsd.webgen.webui.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu;
+import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
 /**
@@ -23,6 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicMenuImpl#getWebUI <em>Web UI</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicMenuImpl#getEntityOrView <em>Entity Or View</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicMenuImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicMenuImpl#getTitle <em>Title</em>}</li>
@@ -30,7 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *
  * @generated
  */
-public class DynamicMenuImpl extends GlobalMenuImpl implements DynamicMenu {
+public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	/**
 	 * The cached value of the '{@link #getEntityOrView() <em>Entity Or View</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -78,6 +82,47 @@ public class DynamicMenuImpl extends GlobalMenuImpl implements DynamicMenu {
 	@Override
 	protected EClass eStaticClass() {
 		return WebuiPackage.Literals.DYNAMIC_MENU;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WebUI getWebUI() {
+		if (eContainerFeatureID() != WebuiPackage.DYNAMIC_MENU__WEB_UI) return null;
+		return (WebUI)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetWebUI(WebUI newWebUI, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newWebUI, WebuiPackage.DYNAMIC_MENU__WEB_UI, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setWebUI(WebUI newWebUI) {
+		if (newWebUI != eInternalContainer() || (eContainerFeatureID() != WebuiPackage.DYNAMIC_MENU__WEB_UI && newWebUI != null)) {
+			if (EcoreUtil.isAncestor(this, newWebUI))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newWebUI != null)
+				msgs = ((InternalEObject)newWebUI).eInverseAdd(this, WebuiPackage.WEB_UI__DYNAMIC_MENUS, WebUI.class, msgs);
+			msgs = basicSetWebUI(newWebUI, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.DYNAMIC_MENU__WEB_UI, newWebUI, newWebUI));
 	}
 
 	/**
@@ -200,8 +245,54 @@ public class DynamicMenuImpl extends GlobalMenuImpl implements DynamicMenu {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebuiPackage.DYNAMIC_MENU__WEB_UI:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetWebUI((WebUI)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebuiPackage.DYNAMIC_MENU__WEB_UI:
+				return basicSetWebUI(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case WebuiPackage.DYNAMIC_MENU__WEB_UI:
+				return eInternalContainer().eInverseRemove(this, WebuiPackage.WEB_UI__DYNAMIC_MENUS, WebUI.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebuiPackage.DYNAMIC_MENU__WEB_UI:
+				return getWebUI();
 			case WebuiPackage.DYNAMIC_MENU__ENTITY_OR_VIEW:
 				if (resolve) return getEntityOrView();
 				return basicGetEntityOrView();
@@ -223,6 +314,9 @@ public class DynamicMenuImpl extends GlobalMenuImpl implements DynamicMenu {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebuiPackage.DYNAMIC_MENU__WEB_UI:
+				setWebUI((WebUI)newValue);
+				return;
 			case WebuiPackage.DYNAMIC_MENU__ENTITY_OR_VIEW:
 				setEntityOrView((EntityOrView)newValue);
 				return;
@@ -244,6 +338,9 @@ public class DynamicMenuImpl extends GlobalMenuImpl implements DynamicMenu {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebuiPackage.DYNAMIC_MENU__WEB_UI:
+				setWebUI((WebUI)null);
+				return;
 			case WebuiPackage.DYNAMIC_MENU__ENTITY_OR_VIEW:
 				setEntityOrView((EntityOrView)null);
 				return;
@@ -265,6 +362,8 @@ public class DynamicMenuImpl extends GlobalMenuImpl implements DynamicMenu {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebuiPackage.DYNAMIC_MENU__WEB_UI:
+				return getWebUI() != null;
 			case WebuiPackage.DYNAMIC_MENU__ENTITY_OR_VIEW:
 				return entityOrView != null;
 			case WebuiPackage.DYNAMIC_MENU__SELECTION:

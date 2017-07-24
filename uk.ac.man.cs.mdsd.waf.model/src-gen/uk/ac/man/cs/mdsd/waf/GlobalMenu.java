@@ -10,7 +10,7 @@ package uk.ac.man.cs.mdsd.waf;
  *
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getGlobalMenu()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface GlobalMenu extends Menu {

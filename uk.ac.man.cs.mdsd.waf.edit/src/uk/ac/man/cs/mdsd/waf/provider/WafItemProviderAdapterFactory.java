@@ -189,26 +189,26 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ContextMenu} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.GlobalMenu} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContextMenuItemProvider contextMenuItemProvider;
+	protected GlobalMenuItemProvider globalMenuItemProvider;
 
 		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ContextMenu}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.GlobalMenu}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createContextMenuAdapter() {
-		if (contextMenuItemProvider == null) {
-			contextMenuItemProvider = new ContextMenuItemProvider(this);
+	public Adapter createGlobalMenuAdapter() {
+		if (globalMenuItemProvider == null) {
+			globalMenuItemProvider = new GlobalMenuItemProvider(this);
 		}
 
-		return contextMenuItemProvider;
+		return globalMenuItemProvider;
 	}
 
 		/**
@@ -1176,7 +1176,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
 		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();
-		if (contextMenuItemProvider != null) contextMenuItemProvider.dispose();
+		if (globalMenuItemProvider != null) globalMenuItemProvider.dispose();
 		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();

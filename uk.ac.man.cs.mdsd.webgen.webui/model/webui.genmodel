@@ -34,8 +34,8 @@
     <genClasses ecoreClass="webui.ecore#//WebUI">
       <genFeatures notify="false" createChild="false" propertyCategory="Business"
           propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//WebUI/services"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//WebUI/globalMenu"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//WebUI/contextMenus"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//WebUI/globalMenus"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//WebUI/dynamicMenus"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory=""
           propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//WebUI/pages"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//WebUI/defaultDateFormat"/>
@@ -57,10 +57,8 @@
       <genFeatures createChild="false" propertyCategory="Security" ecoreFeature="ecore:EAttribute webui.ecore#//MenuEntry/requiresRole"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//GlobalMenu">
-      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
-          ecoreFeature="ecore:EReference webui.ecore#//GlobalMenu/webUI"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference webui.ecore#//GlobalMenu/webUI"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="webui.ecore#//ContextMenu"/>
     <genClasses ecoreClass="webui.ecore#//ActionMenuEntry">
       <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
           propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//ActionMenuEntry/destination"/>
@@ -69,6 +67,7 @@
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//EditStaticTextMenuEntry"/>
     <genClasses ecoreClass="webui.ecore#//DynamicMenu">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference webui.ecore#//DynamicMenu/webUI"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//DynamicMenu/entityOrView"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"

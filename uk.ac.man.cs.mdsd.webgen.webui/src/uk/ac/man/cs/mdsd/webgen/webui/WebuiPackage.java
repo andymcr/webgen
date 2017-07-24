@@ -81,22 +81,22 @@ public interface WebuiPackage extends EPackage {
 	int WEB_UI__SERVICES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Global Menu</b></em>' containment reference.
+	 * The feature id for the '<em><b>Global Menus</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_UI__GLOBAL_MENU = 1;
+	int WEB_UI__GLOBAL_MENUS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Context Menus</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Dynamic Menus</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_UI__CONTEXT_MENUS = 2;
+	int WEB_UI__DYNAMIC_MENUS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Pages</b></em>' containment reference list.
@@ -424,7 +424,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getActionMenuEntry()
 	 * @generated
 	 */
-	int ACTION_MENU_ENTRY = 5;
+	int ACTION_MENU_ENTRY = 4;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.EditStaticTextMenuEntryImpl <em>Edit Static Text Menu Entry</em>}' class.
@@ -434,98 +434,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getEditStaticTextMenuEntry()
 	 * @generated
 	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY = 6;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ContextMenuImpl <em>Context Menu</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.ContextMenuImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getContextMenu()
-	 * @generated
-	 */
-	int CONTEXT_MENU = 4;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_MENU__NAME = MENU__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_MENU__DISPLAY_LABEL = MENU__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Entries</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_MENU__ENTRIES = MENU__ENTRIES;
-
-	/**
-	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_MENU__OMIT_CAPTION = MENU__OMIT_CAPTION;
-
-	/**
-	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_MENU__CAPTION_CLASS = MENU__CAPTION_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_MENU__STYLE_CLASS = MENU__STYLE_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_MENU__LAYOUT_CLASS = MENU__LAYOUT_CLASS;
-
-	/**
-	 * The number of structural features of the '<em>Context Menu</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_MENU_FEATURE_COUNT = MENU_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Context Menu</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_MENU_OPERATION_COUNT = MENU_OPERATION_COUNT + 0;
+	int EDIT_STATIC_TEXT_MENU_ENTRY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -661,7 +570,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDynamicMenu()
 	 * @generated
 	 */
-	int DYNAMIC_MENU = 7;
+	int DYNAMIC_MENU = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -670,7 +579,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU__NAME = GLOBAL_MENU__NAME;
+	int DYNAMIC_MENU__NAME = MENU__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -679,7 +588,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU__DISPLAY_LABEL = GLOBAL_MENU__DISPLAY_LABEL;
+	int DYNAMIC_MENU__DISPLAY_LABEL = MENU__DISPLAY_LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Entries</b></em>' containment reference list.
@@ -688,7 +597,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU__ENTRIES = GLOBAL_MENU__ENTRIES;
+	int DYNAMIC_MENU__ENTRIES = MENU__ENTRIES;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -697,7 +606,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU__OMIT_CAPTION = GLOBAL_MENU__OMIT_CAPTION;
+	int DYNAMIC_MENU__OMIT_CAPTION = MENU__OMIT_CAPTION;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
@@ -706,7 +615,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU__CAPTION_CLASS = GLOBAL_MENU__CAPTION_CLASS;
+	int DYNAMIC_MENU__CAPTION_CLASS = MENU__CAPTION_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -715,7 +624,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU__STYLE_CLASS = GLOBAL_MENU__STYLE_CLASS;
+	int DYNAMIC_MENU__STYLE_CLASS = MENU__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
@@ -724,7 +633,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU__LAYOUT_CLASS = GLOBAL_MENU__LAYOUT_CLASS;
+	int DYNAMIC_MENU__LAYOUT_CLASS = MENU__LAYOUT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Web UI</b></em>' container reference.
@@ -733,7 +642,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU__WEB_UI = GLOBAL_MENU__WEB_UI;
+	int DYNAMIC_MENU__WEB_UI = MENU_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Entity Or View</b></em>' reference.
@@ -742,7 +651,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU__ENTITY_OR_VIEW = GLOBAL_MENU_FEATURE_COUNT + 0;
+	int DYNAMIC_MENU__ENTITY_OR_VIEW = MENU_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
@@ -751,7 +660,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU__SELECTION = GLOBAL_MENU_FEATURE_COUNT + 1;
+	int DYNAMIC_MENU__SELECTION = MENU_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -760,7 +669,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU__TITLE = GLOBAL_MENU_FEATURE_COUNT + 2;
+	int DYNAMIC_MENU__TITLE = MENU_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Dynamic Menu</em>' class.
@@ -769,7 +678,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU_FEATURE_COUNT = GLOBAL_MENU_FEATURE_COUNT + 3;
+	int DYNAMIC_MENU_FEATURE_COUNT = MENU_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Dynamic Menu</em>' class.
@@ -778,7 +687,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU_OPERATION_COUNT = GLOBAL_MENU_OPERATION_COUNT + 0;
+	int DYNAMIC_MENU_OPERATION_COUNT = MENU_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.MenuFeatureImpl <em>Menu Feature</em>}' class.
@@ -788,7 +697,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getMenuFeature()
 	 * @generated
 	 */
-	int MENU_FEATURE = 8;
+	int MENU_FEATURE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -835,7 +744,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getQuery()
 	 * @generated
 	 */
-	int QUERY = 9;
+	int QUERY = 8;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' reference.
@@ -881,7 +790,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getQueryParameter()
 	 * @generated
 	 */
-	int QUERY_PARAMETER = 10;
+	int QUERY_PARAMETER = 9;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -919,7 +828,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getPage()
 	 * @generated
 	 */
-	int PAGE = 11;
+	int PAGE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1064,7 +973,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getPageLink()
 	 * @generated
 	 */
-	int PAGE_LINK = 12;
+	int PAGE_LINK = 11;
 
 	/**
 	 * The feature id for the '<em><b>Target Page</b></em>' reference.
@@ -1101,7 +1010,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitContainer()
 	 * @generated
 	 */
-	int UNIT_CONTAINER = 13;
+	int UNIT_CONTAINER = 12;
 
 	/**
 	 * The feature id for the '<em><b>Units</b></em>' containment reference list.
@@ -1138,7 +1047,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getContentUnit()
 	 * @generated
 	 */
-	int CONTENT_UNIT = 14;
+	int CONTENT_UNIT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1274,7 +1183,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getRouteActual()
 	 * @generated
 	 */
-	int ROUTE_ACTUAL = 15;
+	int ROUTE_ACTUAL = 14;
 
 	/**
 	 * The feature id for the '<em><b>Actual For</b></em>' container reference.
@@ -1329,7 +1238,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getStaticUnit()
 	 * @generated
 	 */
-	int STATIC_UNIT = 16;
+	int STATIC_UNIT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1492,7 +1401,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCreateSitemapUnit()
 	 * @generated
 	 */
-	int CREATE_SITEMAP_UNIT = 17;
+	int CREATE_SITEMAP_UNIT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1664,7 +1573,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDynamicUnit()
 	 * @generated
 	 */
-	int DYNAMIC_UNIT = 18;
+	int DYNAMIC_UNIT = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1872,7 +1781,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitField()
 	 * @generated
 	 */
-	int UNIT_FIELD = 19;
+	int UNIT_FIELD = 18;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -1972,7 +1881,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitFeature()
 	 * @generated
 	 */
-	int UNIT_FEATURE = 20;
+	int UNIT_FEATURE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -2180,7 +2089,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitElement()
 	 * @generated
 	 */
-	int UNIT_ELEMENT = 21;
+	int UNIT_ELEMENT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -2442,7 +2351,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitAssociation()
 	 * @generated
 	 */
-	int UNIT_ASSOCIATION = 22;
+	int UNIT_ASSOCIATION = 21;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -2740,7 +2649,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getAssociationReference()
 	 * @generated
 	 */
-	int ASSOCIATION_REFERENCE = 23;
+	int ASSOCIATION_REFERENCE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2804,7 +2713,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getInterfaceField()
 	 * @generated
 	 */
-	int INTERFACE_FIELD = 24;
+	int INTERFACE_FIELD = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2976,7 +2885,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDataTypeField()
 	 * @generated
 	 */
-	int DATA_TYPE_FIELD = 25;
+	int DATA_TYPE_FIELD = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3184,7 +3093,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDateField()
 	 * @generated
 	 */
-	int DATE_FIELD = 26;
+	int DATE_FIELD = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3374,7 +3283,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCaptchaField()
 	 * @generated
 	 */
-	int CAPTCHA_FIELD = 27;
+	int CAPTCHA_FIELD = 26;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3546,7 +3455,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitSupportAction()
 	 * @generated
 	 */
-	int UNIT_SUPPORT_ACTION = 28;
+	int UNIT_SUPPORT_ACTION = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3610,7 +3519,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSelectableUnit()
 	 * @generated
 	 */
-	int SELECTABLE_UNIT = 29;
+	int SELECTABLE_UNIT = 28;
 
 	/**
 	 * The feature id for the '<em><b>Selection Type</b></em>' reference.
@@ -3647,7 +3556,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSingletonUnit()
 	 * @generated
 	 */
-	int SINGLETON_UNIT = 30;
+	int SINGLETON_UNIT = 29;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference.
@@ -3684,7 +3593,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCollectionUnit()
 	 * @generated
 	 */
-	int COLLECTION_UNIT = 31;
+	int COLLECTION_UNIT = 30;
 
 	/**
 	 * The feature id for the '<em><b>Selection Type</b></em>' reference.
@@ -3874,7 +3783,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getEditUnit()
 	 * @generated
 	 */
-	int EDIT_UNIT = 32;
+	int EDIT_UNIT = 31;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4172,7 +4081,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCreateUnit()
 	 * @generated
 	 */
-	int CREATE_UNIT = 33;
+	int CREATE_UNIT = 32;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4479,7 +4388,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCreateUpdateUnit()
 	 * @generated
 	 */
-	int CREATE_UPDATE_UNIT = 34;
+	int CREATE_UPDATE_UNIT = 33;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4813,7 +4722,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUpdateUnit()
 	 * @generated
 	 */
-	int UPDATE_UNIT = 35;
+	int UPDATE_UNIT = 34;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5129,7 +5038,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getMapUnit()
 	 * @generated
 	 */
-	int MAP_UNIT = 36;
+	int MAP_UNIT = 35;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5481,7 +5390,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDataUnit()
 	 * @generated
 	 */
-	int DATA_UNIT = 37;
+	int DATA_UNIT = 36;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5707,7 +5616,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDetailsUnit()
 	 * @generated
 	 */
-	int DETAILS_UNIT = 38;
+	int DETAILS_UNIT = 37;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5987,7 +5896,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getIndexUnit()
 	 * @generated
 	 */
-	int INDEX_UNIT = 39;
+	int INDEX_UNIT = 38;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6429,7 +6338,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getControlUnit()
 	 * @generated
 	 */
-	int CONTROL_UNIT = 40;
+	int CONTROL_UNIT = 39;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6673,7 +6582,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSearchUnit()
 	 * @generated
 	 */
-	int SEARCH_UNIT = 41;
+	int SEARCH_UNIT = 40;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6935,7 +6844,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getImageUnit()
 	 * @generated
 	 */
-	int IMAGE_UNIT = 42;
+	int IMAGE_UNIT = 41;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7368,7 +7277,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeaturePath()
 	 * @generated
 	 */
-	int FEATURE_PATH = 43;
+	int FEATURE_PATH = 42;
 
 	/**
 	 * The number of structural features of the '<em>Feature Path</em>' class.
@@ -7396,7 +7305,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeaturePathAttribute()
 	 * @generated
 	 */
-	int FEATURE_PATH_ATTRIBUTE = 44;
+	int FEATURE_PATH_ATTRIBUTE = 43;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7442,7 +7351,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeaturePathAssociation()
 	 * @generated
 	 */
-	int FEATURE_PATH_ASSOCIATION = 45;
+	int FEATURE_PATH_ASSOCIATION = 44;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7533,7 +7442,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getChildPath()
 	 * @generated
 	 */
-	int CHILD_PATH = 46;
+	int CHILD_PATH = 45;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -7570,7 +7479,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getChildPathAttribute()
 	 * @generated
 	 */
-	int CHILD_PATH_ATTRIBUTE = 47;
+	int CHILD_PATH_ATTRIBUTE = 46;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -7625,7 +7534,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getChildPathAssociation()
 	 * @generated
 	 */
-	int CHILD_PATH_ASSOCIATION = 48;
+	int CHILD_PATH_ASSOCIATION = 47;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -7725,7 +7634,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getImageIndexUnit()
 	 * @generated
 	 */
-	int IMAGE_INDEX_UNIT = 49;
+	int IMAGE_INDEX_UNIT = 48;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8185,7 +8094,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSliderUnit()
 	 * @generated
 	 */
-	int SLIDER_UNIT = 50;
+	int SLIDER_UNIT = 49;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8636,7 +8545,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getGalleryUnit()
 	 * @generated
 	 */
-	int GALLERY_UNIT = 51;
+	int GALLERY_UNIT = 50;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9096,7 +9005,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 52;
+	int AUTHENTICATION_UNIT = 51;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
@@ -9124,7 +9033,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 53;
+	int REGISTRATION_UNIT = 52;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9377,7 +9286,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 54;
+	int LOGIN_UNIT = 53;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9639,7 +9548,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 55;
+	int FORGOTTEN_PASSWORD_UNIT = 54;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9892,7 +9801,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 56;
+	int INLINE_ACTION_CONTAINER = 55;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -9929,7 +9838,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 57;
+	int INLINE_ACTION = 56;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10056,7 +9965,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 58;
+	int SELECT_ACTION = 57;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10192,7 +10101,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 59;
+	int DELETE_ACTION = 58;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10346,7 +10255,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 60;
+	int FEATURE_SUPPORT_ACTION = 59;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10509,7 +10418,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getWebuiFeatureReference()
 	 * @generated
 	 */
-	int WEBUI_FEATURE_REFERENCE = 61;
+	int WEBUI_FEATURE_REFERENCE = 60;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10555,7 +10464,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getInputTechnologies()
 	 * @generated
 	 */
-	int INPUT_TECHNOLOGIES = 62;
+	int INPUT_TECHNOLOGIES = 61;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -10565,7 +10474,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 63;
+	int AJAX_TECHNOLOGIES = 62;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -10575,7 +10484,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 64;
+	int PAGE_TOP_MENU_OPTIONS = 63;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -10585,7 +10494,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 65;
+	int COLLECTION_DISPLAY_OPTIONS = 64;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.IndexDisplayOption <em>Index Display Option</em>}' enum.
@@ -10595,7 +10504,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getIndexDisplayOption()
 	 * @generated
 	 */
-	int INDEX_DISPLAY_OPTION = 66;
+	int INDEX_DISPLAY_OPTION = 65;
 
 
 	/**
@@ -10620,26 +10529,26 @@ public interface WebuiPackage extends EPackage {
 	EReference getWebUI_Services();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenu <em>Global Menu</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenus <em>Global Menus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Global Menu</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenu()
+	 * @return the meta object for the containment reference list '<em>Global Menus</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenus()
 	 * @see #getWebUI()
 	 * @generated
 	 */
-	EReference getWebUI_GlobalMenu();
+	EReference getWebUI_GlobalMenus();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getContextMenus <em>Context Menus</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDynamicMenus <em>Dynamic Menus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Context Menus</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getContextMenus()
+	 * @return the meta object for the containment reference list '<em>Dynamic Menus</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDynamicMenus()
 	 * @see #getWebUI()
 	 * @generated
 	 */
-	EReference getWebUI_ContextMenus();
+	EReference getWebUI_DynamicMenus();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getPages <em>Pages</em>}'.
@@ -10879,16 +10788,6 @@ public interface WebuiPackage extends EPackage {
 	EClass getEditStaticTextMenuEntry();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.ContextMenu <em>Context Menu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Context Menu</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.ContextMenu
-	 * @generated
-	 */
-	EClass getContextMenu();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu <em>Dynamic Menu</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10897,6 +10796,17 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDynamicMenu();
+
+	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu#getWebUI <em>Web UI</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Web UI</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu#getWebUI()
+	 * @see #getDynamicMenu()
+	 * @generated
+	 */
+	EReference getDynamicMenu_WebUI();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu#getEntityOrView <em>Entity Or View</em>}'.
@@ -13708,20 +13618,20 @@ public interface WebuiPackage extends EPackage {
 		EReference WEB_UI__SERVICES = eINSTANCE.getWebUI_Services();
 
 		/**
-		 * The meta object literal for the '<em><b>Global Menu</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Global Menus</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WEB_UI__GLOBAL_MENU = eINSTANCE.getWebUI_GlobalMenu();
+		EReference WEB_UI__GLOBAL_MENUS = eINSTANCE.getWebUI_GlobalMenus();
 
 		/**
-		 * The meta object literal for the '<em><b>Context Menus</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Dynamic Menus</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WEB_UI__CONTEXT_MENUS = eINSTANCE.getWebUI_ContextMenus();
+		EReference WEB_UI__DYNAMIC_MENUS = eINSTANCE.getWebUI_DynamicMenus();
 
 		/**
 		 * The meta object literal for the '<em><b>Pages</b></em>' containment reference list feature.
@@ -13910,16 +13820,6 @@ public interface WebuiPackage extends EPackage {
 		EClass EDIT_STATIC_TEXT_MENU_ENTRY = eINSTANCE.getEditStaticTextMenuEntry();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ContextMenuImpl <em>Context Menu</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.ContextMenuImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getContextMenu()
-		 * @generated
-		 */
-		EClass CONTEXT_MENU = eINSTANCE.getContextMenu();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicMenuImpl <em>Dynamic Menu</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13928,6 +13828,14 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DYNAMIC_MENU = eINSTANCE.getDynamicMenu();
+
+		/**
+		 * The meta object literal for the '<em><b>Web UI</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DYNAMIC_MENU__WEB_UI = eINSTANCE.getDynamicMenu_WebUI();
 
 		/**
 		 * The meta object literal for the '<em><b>Entity Or View</b></em>' reference feature.

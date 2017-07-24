@@ -14,7 +14,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *
  * @generated
  */
-public abstract class GlobalMenuImpl extends MenuImpl implements GlobalMenu {
+public class GlobalMenuImpl extends MenuImpl implements GlobalMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

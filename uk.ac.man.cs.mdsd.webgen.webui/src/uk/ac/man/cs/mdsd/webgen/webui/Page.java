@@ -251,12 +251,12 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Side Menu</em>' reference.
-	 * @see #setSideMenu(ContextMenu)
+	 * @see #setSideMenu(GlobalMenu)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getPage_SideMenu()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	ContextMenu getSideMenu();
+	GlobalMenu getSideMenu();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getSideMenu <em>Side Menu</em>}' reference.
@@ -266,7 +266,7 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * @see #getSideMenu()
 	 * @generated
 	 */
-	void setSideMenu(ContextMenu value);
+	void setSideMenu(GlobalMenu value);
 
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.

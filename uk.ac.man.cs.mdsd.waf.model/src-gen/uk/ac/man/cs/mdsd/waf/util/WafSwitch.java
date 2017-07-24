@@ -138,19 +138,9 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.CONTEXT_MENU: {
-				ContextMenu contextMenu = (ContextMenu)theEObject;
-				T result = caseContextMenu(contextMenu);
-				if (result == null) result = caseMenu(contextMenu);
-				if (result == null) result = caseNamedDisplayElement(contextMenu);
-				if (result == null) result = caseNamedElement(contextMenu);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WafPackage.DYNAMIC_MENU: {
 				DynamicMenu dynamicMenu = (DynamicMenu)theEObject;
 				T result = caseDynamicMenu(dynamicMenu);
-				if (result == null) result = caseGlobalMenu(dynamicMenu);
 				if (result == null) result = caseMenu(dynamicMenu);
 				if (result == null) result = caseNamedDisplayElement(dynamicMenu);
 				if (result == null) result = caseNamedElement(dynamicMenu);
@@ -846,21 +836,6 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseGlobalMenu(GlobalMenu object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Context Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Context Menu</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseContextMenu(ContextMenu object) {
 		return null;
 	}
 

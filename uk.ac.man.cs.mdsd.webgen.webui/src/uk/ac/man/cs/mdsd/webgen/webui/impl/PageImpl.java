@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedDisplayElementImpl;
 import uk.ac.man.cs.mdsd.webgen.webui.ContentUnit;
-import uk.ac.man.cs.mdsd.webgen.webui.ContextMenu;
+import uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu;
 import uk.ac.man.cs.mdsd.webgen.webui.Page;
 import uk.ac.man.cs.mdsd.webgen.webui.PageLink;
 import uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions;
@@ -188,7 +188,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @generated
 	 * @ordered
 	 */
-	protected ContextMenu sideMenu;
+	protected GlobalMenu sideMenu;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -447,10 +447,10 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContextMenu getSideMenu() {
+	public GlobalMenu getSideMenu() {
 		if (sideMenu != null && sideMenu.eIsProxy()) {
 			InternalEObject oldSideMenu = (InternalEObject)sideMenu;
-			sideMenu = (ContextMenu)eResolveProxy(oldSideMenu);
+			sideMenu = (GlobalMenu)eResolveProxy(oldSideMenu);
 			if (sideMenu != oldSideMenu) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.PAGE__SIDE_MENU, oldSideMenu, sideMenu));
@@ -464,7 +464,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContextMenu basicGetSideMenu() {
+	public GlobalMenu basicGetSideMenu() {
 		return sideMenu;
 	}
 
@@ -473,8 +473,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSideMenu(ContextMenu newSideMenu) {
-		ContextMenu oldSideMenu = sideMenu;
+	public void setSideMenu(GlobalMenu newSideMenu) {
+		GlobalMenu oldSideMenu = sideMenu;
 		sideMenu = newSideMenu;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.PAGE__SIDE_MENU, oldSideMenu, sideMenu));
@@ -630,7 +630,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				setNavigationLabel((String)newValue);
 				return;
 			case WebuiPackage.PAGE__SIDE_MENU:
-				setSideMenu((ContextMenu)newValue);
+				setSideMenu((GlobalMenu)newValue);
 				return;
 			case WebuiPackage.PAGE__STYLE_CLASS:
 				setStyleClass((String)newValue);
@@ -675,7 +675,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				setNavigationLabel(NAVIGATION_LABEL_EDEFAULT);
 				return;
 			case WebuiPackage.PAGE__SIDE_MENU:
-				setSideMenu((ContextMenu)null);
+				setSideMenu((GlobalMenu)null);
 				return;
 			case WebuiPackage.PAGE__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);

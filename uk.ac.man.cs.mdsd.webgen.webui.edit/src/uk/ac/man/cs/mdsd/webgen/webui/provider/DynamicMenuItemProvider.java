@@ -29,7 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DynamicMenuItemProvider extends GlobalMenuItemProvider {
+public class DynamicMenuItemProvider extends MenuItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

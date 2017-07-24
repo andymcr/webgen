@@ -67,13 +67,13 @@ public interface WafFactory extends EFactory {
 	ThumbnailFilter createThumbnailFilter();
 
 	/**
-	 * Returns a new object of class '<em>Context Menu</em>'.
+	 * Returns a new object of class '<em>Global Menu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Context Menu</em>'.
+	 * @return a new object of class '<em>Global Menu</em>'.
 	 * @generated
 	 */
-	ContextMenu createContextMenu();
+	GlobalMenu createGlobalMenu();
 
 	/**
 	 * Returns a new object of class '<em>Dynamic Menu</em>'.

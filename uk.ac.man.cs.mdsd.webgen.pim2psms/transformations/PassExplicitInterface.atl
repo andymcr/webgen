@@ -261,8 +261,8 @@ rule WafModel {
 				Sequence{}
 			endif,
 		api <- api,
-		globalMenu <- website.webUI.globalMenu,
-		contextMenus <- website.webUI.contextMenus,
+		globalMenus <- website.webUI.globalMenus,
+		dynamicMenus <- website.webUI.dynamicMenus,
 		pages <- website.webUI.pages,
 		siteName <- '?',
 		siteTitle <- website.websiteProperties.siteTitle,
@@ -364,16 +364,9 @@ abstract rule MenuEntry {
 }
 
 -- @extends Menu
-abstract rule GlobalMenu {
+rule GlobalMenu {
 	from website : Website!GlobalMenu
 	to waf : WAF!GlobalMenu (
-	)
-}
-
--- @extends Menu
-rule ContextMenu {
-	from website : Website!ContextMenu
-	to waf : WAF!ContextMenu (
 	)
 }
 
@@ -393,7 +386,7 @@ rule EditStaticTextMenuEntry {
 	)
 }
 
--- @extends GlobalMenu
+-- @extends Menu
 rule DynamicMenu {
 	from website : Website!DynamicMenu
 	to waf : WAF!DynamicMenu (

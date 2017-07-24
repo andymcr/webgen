@@ -56,9 +56,8 @@ class WafModel {
 	refers ServiceModel[1] business
 	contains ImageManipulation[] imageManipulations
 	contains Page[] pages opposite partOf
-	contains GlobalMenu globalMenu
-	contains ContextMenu[] contextMenus
-	contains Menu[] menus
+	contains GlobalMenu[] globalMenus
+	contains DynamicMenu[] dynamicMenus
 	refers API api
 	String[1] siteName
 	String[1] siteTitle
@@ -142,13 +141,10 @@ abstract class Menu extends NamedDisplayElement {
 	String layoutClass
 }
 
-abstract class GlobalMenu extends Menu {
+class GlobalMenu extends Menu {
 }
 
-class ContextMenu extends Menu {
-}
-
-class DynamicMenu extends GlobalMenu {
+class DynamicMenu extends Menu {
 	refers EntityOrView[1] entityOrView
 	refers Selection[1] selection
 	refers Label title
@@ -182,7 +178,7 @@ class Page extends NamedDisplayElement, UnitContainer {
 	PageTopMenuOptions topMenuOption
 	int topMenuRank = "65535"
 	String navigationLabel
-	refers Menu sideMenu
+	refers GlobalMenu sideMenu
 	String styleClass
 }
 

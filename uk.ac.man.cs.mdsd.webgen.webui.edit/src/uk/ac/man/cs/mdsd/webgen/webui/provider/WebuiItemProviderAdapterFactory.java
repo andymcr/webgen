@@ -119,26 +119,26 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.ContextMenu} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContextMenuItemProvider contextMenuItemProvider;
+	protected GlobalMenuItemProvider globalMenuItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.ContextMenu}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createContextMenuAdapter() {
-		if (contextMenuItemProvider == null) {
-			contextMenuItemProvider = new ContextMenuItemProvider(this);
+	public Adapter createGlobalMenuAdapter() {
+		if (globalMenuItemProvider == null) {
+			globalMenuItemProvider = new GlobalMenuItemProvider(this);
 		}
 
-		return contextMenuItemProvider;
+		return globalMenuItemProvider;
 	}
 
 	/**

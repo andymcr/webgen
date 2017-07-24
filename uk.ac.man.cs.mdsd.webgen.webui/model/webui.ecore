@@ -15,10 +15,10 @@
       <details key="menuNameUnique" value="contextMenus->isUnique(name)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Services"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="globalMenu" eType="#//GlobalMenu"
-        containment="true" eOpposite="#//GlobalMenu/webUI"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contextMenus" upperBound="-1"
-        eType="#//ContextMenu" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globalMenus" upperBound="-1"
+        eType="#//GlobalMenu" containment="true" eOpposite="#//GlobalMenu/webUI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicMenus" upperBound="-1"
+        eType="#//DynamicMenu" containment="true" eOpposite="#//DynamicMenu/webUI"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pages" upperBound="-1"
         eType="#//Page" containment="true" eOpposite="#//Page/webUI"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultDateFormat" ordered="false"
@@ -61,17 +61,9 @@
         lowerBound="1" eType="#//Menu" eOpposite="#//Menu/entries"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiresRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GlobalMenu" abstract="true" eSuperTypes="#//Menu">
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalMenu" eSuperTypes="#//Menu">
     <eStructuralFeatures xsi:type="ecore:EReference" name="webUI" lowerBound="1" eType="#//WebUI"
-        eOpposite="#//WebUI/globalMenu"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ContextMenu" eSuperTypes="#//Menu">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="onlyStaticEntries"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="onlyStaticEntries" value="entries->select(e | e.oclIsKindOf(MenuFeature))->isEmpty()"/>
-    </eAnnotations>
+        eOpposite="#//WebUI/globalMenus"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionMenuEntry" eSuperTypes="#//MenuEntry ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedDisplayElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" ordered="false"
@@ -80,7 +72,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EditStaticTextMenuEntry" eSuperTypes="#//MenuEntry ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedDisplayElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DynamicMenu" eSuperTypes="#//GlobalMenu">
+  <eClassifiers xsi:type="ecore:EClass" name="DynamicMenu" eSuperTypes="#//Menu">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="entriesMustBeFromSource onlyIncludeFeaturesOnce mustSelectSingleton titleFromEntityOrView canOnlyTitleWithSingletons"/>
     </eAnnotations>
@@ -91,6 +83,8 @@
       <details key="titleFromEntityOrView" value="not title.oclIsUndefined() and not entityOrView.oclIsUndefined() implies&#xD;&#xA;&#x9;entityOrView.features->includes(title)"/>
       <details key="canOnlyTitleWithSingletons" value="not title.oclIsUndefined() implies&#xD;&#xA;&#x9;if title.oclIsKindOf(persistence::EntityFeature) then&#xD;&#xA;&#x9;&#x9;title.oclAsType(persistence::EntityFeature).cardinality &lt;> persistence::Cardinality::Many&#xD;&#xA;&#x9;else if title.oclIsKindOf(persistence::EncapsulatedAttribute) then&#xD;&#xA;&#x9;&#x9;title.oclAsType(persistence::EncapsulatedAttribute).cardinality &lt;> persistence::Cardinality::Many&#xD;&#xA;&#x9;else if title.oclIsKindOf(persistence::EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;title.oclAsType(persistence::EncapsulatedAssociation).cardinality &lt;> persistence::Cardinality::Many&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;&#x9;endif endif endif"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="webUI" lowerBound="1" eType="#//WebUI"
+        eOpposite="#//WebUI/dynamicMenus"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entityOrView" lowerBound="1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" lowerBound="1"
@@ -137,7 +131,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="navigationLabel" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sideMenu" ordered="false"
-        eType="#//ContextMenu"/>
+        eType="#//GlobalMenu"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

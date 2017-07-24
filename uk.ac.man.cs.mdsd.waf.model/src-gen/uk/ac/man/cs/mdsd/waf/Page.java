@@ -250,12 +250,12 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Side Menu</em>' reference.
-	 * @see #setSideMenu(Menu)
+	 * @see #setSideMenu(GlobalMenu)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getPage_SideMenu()
 	 * @model
 	 * @generated
 	 */
-	Menu getSideMenu();
+	GlobalMenu getSideMenu();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Page#getSideMenu <em>Side Menu</em>}' reference.
@@ -265,7 +265,7 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * @see #getSideMenu()
 	 * @generated
 	 */
-	void setSideMenu(Menu value);
+	void setSideMenu(GlobalMenu value);
 
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.

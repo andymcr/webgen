@@ -607,9 +607,8 @@ public class WafModelItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__IMAGE_MANIPULATIONS);
 			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__PAGES);
-			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__GLOBAL_MENU);
-			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__CONTEXT_MENUS);
-			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__MENUS);
+			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__GLOBAL_MENUS);
+			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__DYNAMIC_MENUS);
 			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__AUTHENTICATION);
 		}
 		return childrenFeatures;
@@ -691,9 +690,8 @@ public class WafModelItemProvider
 				return;
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 			case WafPackage.WAF_MODEL__PAGES:
-			case WafPackage.WAF_MODEL__GLOBAL_MENU:
-			case WafPackage.WAF_MODEL__CONTEXT_MENUS:
-			case WafPackage.WAF_MODEL__MENUS:
+			case WafPackage.WAF_MODEL__GLOBAL_MENUS:
+			case WafPackage.WAF_MODEL__DYNAMIC_MENUS:
 			case WafPackage.WAF_MODEL__AUTHENTICATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -725,22 +723,12 @@ public class WafModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.WAF_MODEL__GLOBAL_MENU,
-				 WafFactory.eINSTANCE.createDynamicMenu()));
+				(WafPackage.Literals.WAF_MODEL__GLOBAL_MENUS,
+				 WafFactory.eINSTANCE.createGlobalMenu()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.WAF_MODEL__CONTEXT_MENUS,
-				 WafFactory.eINSTANCE.createContextMenu()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.WAF_MODEL__MENUS,
-				 WafFactory.eINSTANCE.createContextMenu()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.WAF_MODEL__MENUS,
+				(WafPackage.Literals.WAF_MODEL__DYNAMIC_MENUS,
 				 WafFactory.eINSTANCE.createDynamicMenu()));
 
 		newChildDescriptors.add
@@ -755,30 +743,6 @@ public class WafModelItemProvider
 	}
 
   /**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == WafPackage.Literals.WAF_MODEL__GLOBAL_MENU ||
-			childFeature == WafPackage.Literals.WAF_MODEL__MENUS ||
-			childFeature == WafPackage.Literals.WAF_MODEL__CONTEXT_MENUS;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
-	}
-
-		/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -4,10 +4,8 @@ package uk.ac.man.cs.mdsd.webgen.webui.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu;
@@ -27,7 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *
  * @generated
  */
-public abstract class GlobalMenuImpl extends MenuImpl implements GlobalMenu {
+public class GlobalMenuImpl extends MenuImpl implements GlobalMenu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,7 +78,7 @@ public abstract class GlobalMenuImpl extends MenuImpl implements GlobalMenu {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newWebUI != null)
-				msgs = ((InternalEObject)newWebUI).eInverseAdd(this, WebuiPackage.WEB_UI__GLOBAL_MENU, WebUI.class, msgs);
+				msgs = ((InternalEObject)newWebUI).eInverseAdd(this, WebuiPackage.WEB_UI__GLOBAL_MENUS, WebUI.class, msgs);
 			msgs = basicSetWebUI(newWebUI, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -127,7 +125,7 @@ public abstract class GlobalMenuImpl extends MenuImpl implements GlobalMenu {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case WebuiPackage.GLOBAL_MENU__WEB_UI:
-				return eInternalContainer().eInverseRemove(this, WebuiPackage.WEB_UI__GLOBAL_MENU, WebUI.class, msgs);
+				return eInternalContainer().eInverseRemove(this, WebuiPackage.WEB_UI__GLOBAL_MENUS, WebUI.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

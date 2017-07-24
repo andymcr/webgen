@@ -25,7 +25,7 @@ import uk.ac.man.cs.mdsd.service.Selection;
  * @model
  * @generated
  */
-public interface DynamicMenu extends GlobalMenu {
+public interface DynamicMenu extends Menu {
 	/**
 	 * Returns the value of the '<em><b>Entity Or View</b></em>' reference.
 	 * <!-- begin-user-doc -->

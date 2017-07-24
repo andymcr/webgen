@@ -63,7 +63,6 @@ public class WebUIItemProvider
 			super.getPropertyDescriptors(object);
 
 			addServicesPropertyDescriptor(object);
-			addGlobalMenuPropertyDescriptor(object);
 			addDefaultDateFormatPropertyDescriptor(object);
 			addDefaultTimeFormatPropertyDescriptor(object);
 			addDefaultDateTimeFormatPropertyDescriptor(object);
@@ -93,28 +92,6 @@ public class WebUIItemProvider
 				 true,
 				 null,
 				 getString("_UI_BusinessPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Global Menu feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGlobalMenuPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebUI_globalMenu_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebUI_globalMenu_feature", "_UI_WebUI_type"),
-				 WebuiPackage.Literals.WEB_UI__GLOBAL_MENU,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
 				 null));
 	}
 
@@ -262,7 +239,8 @@ public class WebUIItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebuiPackage.Literals.WEB_UI__CONTEXT_MENUS);
+			childrenFeatures.add(WebuiPackage.Literals.WEB_UI__GLOBAL_MENUS);
+			childrenFeatures.add(WebuiPackage.Literals.WEB_UI__DYNAMIC_MENUS);
 			childrenFeatures.add(WebuiPackage.Literals.WEB_UI__PAGES);
 		}
 		return childrenFeatures;
@@ -327,7 +305,8 @@ public class WebUIItemProvider
 			case WebuiPackage.WEB_UI__AJAX_TECHNOLOGY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebuiPackage.WEB_UI__CONTEXT_MENUS:
+			case WebuiPackage.WEB_UI__GLOBAL_MENUS:
+			case WebuiPackage.WEB_UI__DYNAMIC_MENUS:
 			case WebuiPackage.WEB_UI__PAGES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -348,8 +327,13 @@ public class WebUIItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.WEB_UI__CONTEXT_MENUS,
-				 WebuiFactory.eINSTANCE.createContextMenu()));
+				(WebuiPackage.Literals.WEB_UI__GLOBAL_MENUS,
+				 WebuiFactory.eINSTANCE.createGlobalMenu()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.WEB_UI__DYNAMIC_MENUS,
+				 WebuiFactory.eINSTANCE.createDynamicMenu()));
 
 		newChildDescriptors.add
 			(createChildParameter

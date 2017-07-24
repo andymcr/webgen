@@ -27,7 +27,7 @@ import uk.ac.man.cs.mdsd.service.ServiceModel;
 
 import uk.ac.man.cs.mdsd.waf.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.waf.Authentication;
-import uk.ac.man.cs.mdsd.waf.ContextMenu;
+import uk.ac.man.cs.mdsd.waf.DynamicMenu;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.waf.GlobalMenu;
 import uk.ac.man.cs.mdsd.waf.ImageManipulation;
@@ -49,9 +49,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getBusiness <em>Business</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getImageManipulations <em>Image Manipulations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getPages <em>Pages</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getGlobalMenu <em>Global Menu</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getContextMenus <em>Context Menus</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getMenus <em>Menus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getGlobalMenus <em>Global Menus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getDynamicMenus <em>Dynamic Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getApi <em>Api</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSiteName <em>Site Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSiteTitle <em>Site Title</em>}</li>
@@ -119,34 +118,24 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	protected EList<Page> pages;
 
 	/**
-	 * The cached value of the '{@link #getGlobalMenu() <em>Global Menu</em>}' containment reference.
+	 * The cached value of the '{@link #getGlobalMenus() <em>Global Menus</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGlobalMenu()
+	 * @see #getGlobalMenus()
 	 * @generated
 	 * @ordered
 	 */
-	protected GlobalMenu globalMenu;
+	protected EList<GlobalMenu> globalMenus;
 
 	/**
-	 * The cached value of the '{@link #getContextMenus() <em>Context Menus</em>}' containment reference list.
+	 * The cached value of the '{@link #getDynamicMenus() <em>Dynamic Menus</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContextMenus()
+	 * @see #getDynamicMenus()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ContextMenu> contextMenus;
-
-	/**
-	 * The cached value of the '{@link #getMenus() <em>Menus</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMenus()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Menu> menus;
+	protected EList<DynamicMenu> dynamicMenus;
 
 	/**
 	 * The cached value of the '{@link #getApi() <em>Api</em>}' reference.
@@ -662,8 +651,11 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GlobalMenu getGlobalMenu() {
-		return globalMenu;
+	public EList<GlobalMenu> getGlobalMenus() {
+		if (globalMenus == null) {
+			globalMenus = new EObjectContainmentEList<GlobalMenu>(GlobalMenu.class, this, WafPackage.WAF_MODEL__GLOBAL_MENUS);
+		}
+		return globalMenus;
 	}
 
 	/**
@@ -671,57 +663,11 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetGlobalMenu(GlobalMenu newGlobalMenu, NotificationChain msgs) {
-		GlobalMenu oldGlobalMenu = globalMenu;
-		globalMenu = newGlobalMenu;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__GLOBAL_MENU, oldGlobalMenu, newGlobalMenu);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<DynamicMenu> getDynamicMenus() {
+		if (dynamicMenus == null) {
+			dynamicMenus = new EObjectContainmentEList<DynamicMenu>(DynamicMenu.class, this, WafPackage.WAF_MODEL__DYNAMIC_MENUS);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setGlobalMenu(GlobalMenu newGlobalMenu) {
-		if (newGlobalMenu != globalMenu) {
-			NotificationChain msgs = null;
-			if (globalMenu != null)
-				msgs = ((InternalEObject)globalMenu).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.WAF_MODEL__GLOBAL_MENU, null, msgs);
-			if (newGlobalMenu != null)
-				msgs = ((InternalEObject)newGlobalMenu).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.WAF_MODEL__GLOBAL_MENU, null, msgs);
-			msgs = basicSetGlobalMenu(newGlobalMenu, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__GLOBAL_MENU, newGlobalMenu, newGlobalMenu));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ContextMenu> getContextMenus() {
-		if (contextMenus == null) {
-			contextMenus = new EObjectContainmentEList<ContextMenu>(ContextMenu.class, this, WafPackage.WAF_MODEL__CONTEXT_MENUS);
-		}
-		return contextMenus;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Menu> getMenus() {
-		if (menus == null) {
-			menus = new EObjectContainmentEList<Menu>(Menu.class, this, WafPackage.WAF_MODEL__MENUS);
-		}
-		return menus;
+		return dynamicMenus;
 	}
 
 	/**
@@ -1252,12 +1198,10 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return ((InternalEList<?>)getImageManipulations()).basicRemove(otherEnd, msgs);
 			case WafPackage.WAF_MODEL__PAGES:
 				return ((InternalEList<?>)getPages()).basicRemove(otherEnd, msgs);
-			case WafPackage.WAF_MODEL__GLOBAL_MENU:
-				return basicSetGlobalMenu(null, msgs);
-			case WafPackage.WAF_MODEL__CONTEXT_MENUS:
-				return ((InternalEList<?>)getContextMenus()).basicRemove(otherEnd, msgs);
-			case WafPackage.WAF_MODEL__MENUS:
-				return ((InternalEList<?>)getMenus()).basicRemove(otherEnd, msgs);
+			case WafPackage.WAF_MODEL__GLOBAL_MENUS:
+				return ((InternalEList<?>)getGlobalMenus()).basicRemove(otherEnd, msgs);
+			case WafPackage.WAF_MODEL__DYNAMIC_MENUS:
+				return ((InternalEList<?>)getDynamicMenus()).basicRemove(otherEnd, msgs);
 			case WafPackage.WAF_MODEL__AUTHENTICATION:
 				return basicSetAuthentication(null, msgs);
 		}
@@ -1282,12 +1226,10 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return getImageManipulations();
 			case WafPackage.WAF_MODEL__PAGES:
 				return getPages();
-			case WafPackage.WAF_MODEL__GLOBAL_MENU:
-				return getGlobalMenu();
-			case WafPackage.WAF_MODEL__CONTEXT_MENUS:
-				return getContextMenus();
-			case WafPackage.WAF_MODEL__MENUS:
-				return getMenus();
+			case WafPackage.WAF_MODEL__GLOBAL_MENUS:
+				return getGlobalMenus();
+			case WafPackage.WAF_MODEL__DYNAMIC_MENUS:
+				return getDynamicMenus();
 			case WafPackage.WAF_MODEL__API:
 				if (resolve) return getApi();
 				return basicGetApi();
@@ -1359,16 +1301,13 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				getPages().clear();
 				getPages().addAll((Collection<? extends Page>)newValue);
 				return;
-			case WafPackage.WAF_MODEL__GLOBAL_MENU:
-				setGlobalMenu((GlobalMenu)newValue);
+			case WafPackage.WAF_MODEL__GLOBAL_MENUS:
+				getGlobalMenus().clear();
+				getGlobalMenus().addAll((Collection<? extends GlobalMenu>)newValue);
 				return;
-			case WafPackage.WAF_MODEL__CONTEXT_MENUS:
-				getContextMenus().clear();
-				getContextMenus().addAll((Collection<? extends ContextMenu>)newValue);
-				return;
-			case WafPackage.WAF_MODEL__MENUS:
-				getMenus().clear();
-				getMenus().addAll((Collection<? extends Menu>)newValue);
+			case WafPackage.WAF_MODEL__DYNAMIC_MENUS:
+				getDynamicMenus().clear();
+				getDynamicMenus().addAll((Collection<? extends DynamicMenu>)newValue);
 				return;
 			case WafPackage.WAF_MODEL__API:
 				setApi((API)newValue);
@@ -1457,14 +1396,11 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__PAGES:
 				getPages().clear();
 				return;
-			case WafPackage.WAF_MODEL__GLOBAL_MENU:
-				setGlobalMenu((GlobalMenu)null);
+			case WafPackage.WAF_MODEL__GLOBAL_MENUS:
+				getGlobalMenus().clear();
 				return;
-			case WafPackage.WAF_MODEL__CONTEXT_MENUS:
-				getContextMenus().clear();
-				return;
-			case WafPackage.WAF_MODEL__MENUS:
-				getMenus().clear();
+			case WafPackage.WAF_MODEL__DYNAMIC_MENUS:
+				getDynamicMenus().clear();
 				return;
 			case WafPackage.WAF_MODEL__API:
 				setApi((API)null);
@@ -1549,12 +1485,10 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return imageManipulations != null && !imageManipulations.isEmpty();
 			case WafPackage.WAF_MODEL__PAGES:
 				return pages != null && !pages.isEmpty();
-			case WafPackage.WAF_MODEL__GLOBAL_MENU:
-				return globalMenu != null;
-			case WafPackage.WAF_MODEL__CONTEXT_MENUS:
-				return contextMenus != null && !contextMenus.isEmpty();
-			case WafPackage.WAF_MODEL__MENUS:
-				return menus != null && !menus.isEmpty();
+			case WafPackage.WAF_MODEL__GLOBAL_MENUS:
+				return globalMenus != null && !globalMenus.isEmpty();
+			case WafPackage.WAF_MODEL__DYNAMIC_MENUS:
+				return dynamicMenus != null && !dynamicMenus.isEmpty();
 			case WafPackage.WAF_MODEL__API:
 				return api != null;
 			case WafPackage.WAF_MODEL__SITE_NAME:

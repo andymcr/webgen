@@ -15,24 +15,25 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getGlobalMenu()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface GlobalMenu extends Menu {
+
 	/**
 	 * Returns the value of the '<em><b>Web UI</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenu <em>Global Menu</em>}'.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenus <em>Global Menus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Web UI</em>' reference isn't clear,
+	 * If the meaning of the '<em>Web UI</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Web UI</em>' container reference.
 	 * @see #setWebUI(WebUI)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getGlobalMenu_WebUI()
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenu
-	 * @model opposite="globalMenu" required="true" transient="false"
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenus
+	 * @model opposite="globalMenus" required="true" transient="false"
 	 * @generated
 	 */
 	WebUI getWebUI();

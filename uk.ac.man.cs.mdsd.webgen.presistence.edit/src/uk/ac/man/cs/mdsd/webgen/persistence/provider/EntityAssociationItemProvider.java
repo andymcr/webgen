@@ -55,6 +55,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 			addSerializationMaxDepthPropertyDescriptor(object);
 			addTargetEntityPropertyDescriptor(object);
 			addBidirectionalPropertyDescriptor(object);
+			addUniquePropertyDescriptor(object);
 			addPivotTableNamePropertyDescriptor(object);
 			addTargetFeatureNamePropertyDescriptor(object);
 			addTargetPrimaryKeyPropertyDescriptor(object);
@@ -214,6 +215,28 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getString("_UI_EntityAssociation_bidirectional_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_bidirectional_feature", "_UI_EntityAssociation_type"),
 				 PersistencePackage.Literals.ENTITY_ASSOCIATION__BIDIRECTIONAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Unique feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUniquePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityAssociation_unique_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_unique_feature", "_UI_EntityAssociation_type"),
+				 PersistencePackage.Literals.ENTITY_ASSOCIATION__UNIQUE,
 				 true,
 				 false,
 				 false,
@@ -483,6 +506,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 			case PersistencePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 			case PersistencePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 			case PersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
+			case PersistencePackage.ENTITY_ASSOCIATION__UNIQUE:
 			case PersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:

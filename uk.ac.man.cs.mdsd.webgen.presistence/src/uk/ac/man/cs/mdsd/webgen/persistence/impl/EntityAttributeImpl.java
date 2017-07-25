@@ -35,6 +35,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#getOrmType <em>Orm Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#getSlugFields <em>Slug Fields</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAttributeImpl#isUnique <em>Unique</em>}</li>
  * </ul>
  *
  * @generated
@@ -199,6 +200,26 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * @ordered
 	 */
 	protected EList<Attribute> slugFields;
+
+	/**
+	 * The default value of the '{@link #isUnique() <em>Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean UNIQUE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isUnique() <em>Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean unique = UNIQUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -426,6 +447,27 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isUnique() {
+		return unique;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUnique(boolean newUnique) {
+		boolean oldUnique = unique;
+		unique = newUnique;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ATTRIBUTE__UNIQUE, oldUnique, unique));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -461,6 +503,8 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return getInterfaceType();
 			case PersistencePackage.ENTITY_ATTRIBUTE__SLUG_FIELDS:
 				return getSlugFields();
+			case PersistencePackage.ENTITY_ATTRIBUTE__UNIQUE:
+				return isUnique();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -502,6 +546,9 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				getSlugFields().clear();
 				getSlugFields().addAll((Collection<? extends Attribute>)newValue);
 				return;
+			case PersistencePackage.ENTITY_ATTRIBUTE__UNIQUE:
+				setUnique((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -541,6 +588,9 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 			case PersistencePackage.ENTITY_ATTRIBUTE__SLUG_FIELDS:
 				getSlugFields().clear();
 				return;
+			case PersistencePackage.ENTITY_ATTRIBUTE__UNIQUE:
+				setUnique(UNIQUE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -571,6 +621,8 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
 			case PersistencePackage.ENTITY_ATTRIBUTE__SLUG_FIELDS:
 				return slugFields != null && !slugFields.isEmpty();
+			case PersistencePackage.ENTITY_ATTRIBUTE__UNIQUE:
+				return unique != UNIQUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -647,6 +699,8 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		result.append(ormType);
 		result.append(", interfaceType: ");
 		result.append(interfaceType);
+		result.append(", unique: ");
+		result.append(unique);
 		result.append(')');
 		return result.toString();
 	}

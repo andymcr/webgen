@@ -1100,7 +1100,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityFeature_Unique() {
+	public EAttribute getEntityFeature_Ordered() {
 		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1109,7 +1109,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityFeature_Ordered() {
+	public EAttribute getEntityFeature_PrimaryKey() {
 		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1118,7 +1118,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityFeature_PrimaryKey() {
+	public EAttribute getEntityFeature_BooleanIsHasChoice() {
 		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1127,7 +1127,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityFeature_BooleanIsHasChoice() {
+	public EAttribute getEntityFeature_SingletonName() {
 		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1136,7 +1136,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityFeature_SingletonName() {
+	public EAttribute getEntityFeature_PluralisedName() {
 		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1145,17 +1145,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityFeature_PluralisedName() {
-		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getEntityFeature_ColumnName() {
-		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1210,6 +1201,15 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 */
 	public EReference getEntityAttribute_SlugFields() {
 		return (EReference)entityAttributeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAttribute_Unique() {
+		return (EAttribute)entityAttributeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1469,7 +1469,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_PivotTableName() {
+	public EAttribute getEntityAssociation_Unique() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1478,7 +1478,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetFeatureName() {
+	public EAttribute getEntityAssociation_PivotTableName() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1487,7 +1487,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetPrimaryKey() {
+	public EAttribute getEntityAssociation_TargetFeatureName() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1496,7 +1496,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetColumnName() {
+	public EAttribute getEntityAssociation_TargetPrimaryKey() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1505,7 +1505,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetDisplayLabel() {
+	public EAttribute getEntityAssociation_TargetColumnName() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1514,7 +1514,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetHeaderClass() {
+	public EAttribute getEntityAssociation_TargetDisplayLabel() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -1523,7 +1523,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetInputClass() {
+	public EAttribute getEntityAssociation_TargetHeaderClass() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -1532,7 +1532,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetDisplayClass() {
+	public EAttribute getEntityAssociation_TargetInputClass() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -1541,8 +1541,17 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetFooterClass() {
+	public EAttribute getEntityAssociation_TargetDisplayClass() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAssociation_TargetFooterClass() {
+		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -2003,7 +2012,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		entityFeatureEClass = createEClass(ENTITY_FEATURE);
 		createEReference(entityFeatureEClass, ENTITY_FEATURE__PART_OF);
 		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__CARDINALITY);
-		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__UNIQUE);
 		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__ORDERED);
 		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__PRIMARY_KEY);
 		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE);
@@ -2017,6 +2025,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		createEAttribute(entityAttributeEClass, ENTITY_ATTRIBUTE__ORM_TYPE);
 		createEAttribute(entityAttributeEClass, ENTITY_ATTRIBUTE__INTERFACE_TYPE);
 		createEReference(entityAttributeEClass, ENTITY_ATTRIBUTE__SLUG_FIELDS);
+		createEAttribute(entityAttributeEClass, ENTITY_ATTRIBUTE__UNIQUE);
 
 		dataTypeAttributeEClass = createEClass(DATA_TYPE_ATTRIBUTE);
 		createEReference(dataTypeAttributeEClass, DATA_TYPE_ATTRIBUTE__DATA_TYPE);
@@ -2056,6 +2065,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		createEReference(entityAssociationEClass, ENTITY_ASSOCIATION__KEYS);
 		createEReference(entityAssociationEClass, ENTITY_ASSOCIATION__TARGET_ENTITY);
 		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__BIDIRECTIONAL);
+		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__UNIQUE);
 		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__PIVOT_TABLE_NAME);
 		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__TARGET_FEATURE_NAME);
 		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY);
@@ -2275,7 +2285,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEClass(entityFeatureEClass, EntityFeature.class, "EntityFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntityFeature_PartOf(), this.getEntity(), this.getEntity_EntityFeatures(), "partOf", null, 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityFeature_Cardinality(), this.getCardinality(), "cardinality", "Optional", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEntityFeature_Unique(), ecorePackage.getEBoolean(), "unique", "true", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityFeature_Ordered(), ecorePackage.getEBoolean(), "ordered", "false", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityFeature_PrimaryKey(), ecorePackage.getEBoolean(), "primaryKey", null, 0, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityFeature_BooleanIsHasChoice(), this.getisHasChoices(), "booleanIsHasChoice", null, 0, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2289,6 +2298,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEAttribute(getEntityAttribute_OrmType(), ecorePackage.getEString(), "ormType", null, 0, 1, EntityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityAttribute_InterfaceType(), ecorePackage.getEString(), "interfaceType", null, 0, 1, EntityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityAttribute_SlugFields(), this.getAttribute(), null, "slugFields", null, 0, -1, EntityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityAttribute_Unique(), ecorePackage.getEBoolean(), "unique", "false", 1, 1, EntityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeAttributeEClass, DataTypeAttribute.class, "DataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataTypeAttribute_DataType(), theBasePackage.getDataType(), null, "dataType", null, 1, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2328,6 +2338,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEReference(getEntityAssociation_Keys(), this.getAssociationKey(), this.getAssociationKey_KeyFor(), "keys", null, 0, -1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityAssociation_TargetEntity(), this.getEntity(), this.getEntity_AssociationEnds(), "targetEntity", null, 1, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityAssociation_Bidirectional(), ecorePackage.getEBoolean(), "bidirectional", "false", 1, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityAssociation_Unique(), ecorePackage.getEBoolean(), "unique", "true", 1, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityAssociation_PivotTableName(), ecorePackage.getEString(), "pivotTableName", null, 0, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityAssociation_TargetFeatureName(), ecorePackage.getEString(), "targetFeatureName", null, 0, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityAssociation_TargetPrimaryKey(), ecorePackage.getEBoolean(), "targetPrimaryKey", "false", 0, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

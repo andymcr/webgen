@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#getOrmType <em>Orm Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#getSlugFields <em>Slug Fields</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#isUnique <em>Unique</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAttribute()
@@ -144,5 +145,32 @@ public interface EntityAttribute extends EntityFeature, Attribute {
 	 * @generated
 	 */
 	EList<Attribute> getSlugFields();
+
+	/**
+	 * Returns the value of the '<em><b>Unique</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Unique</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Unique</em>' attribute.
+	 * @see #setUnique(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAttribute_Unique()
+	 * @model default="false" required="true"
+	 * @generated
+	 */
+	boolean isUnique();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#isUnique <em>Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Unique</em>' attribute.
+	 * @see #isUnique()
+	 * @generated
+	 */
+	void setUnique(boolean value);
 
 } // EntityAttribute

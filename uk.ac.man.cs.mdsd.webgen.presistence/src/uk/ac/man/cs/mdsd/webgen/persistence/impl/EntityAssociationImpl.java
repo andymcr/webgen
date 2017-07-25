@@ -43,6 +43,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#isBidirectional <em>Bidirectional</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#isUnique <em>Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getPivotTableName <em>Pivot Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#getTargetFeatureName <em>Target Feature Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityAssociationImpl#isTargetPrimaryKey <em>Target Primary Key</em>}</li>
@@ -186,6 +187,26 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * @ordered
 	 */
 	protected boolean bidirectional = BIDIRECTIONAL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isUnique() <em>Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean UNIQUE_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isUnique() <em>Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean unique = UNIQUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPivotTableName() <em>Pivot Table Name</em>}' attribute.
@@ -595,6 +616,27 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isUnique() {
+		return unique;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUnique(boolean newUnique) {
+		boolean oldUnique = unique;
+		unique = newUnique;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_ASSOCIATION__UNIQUE, oldUnique, unique));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPivotTableName() {
 		return pivotTableName;
 	}
@@ -847,6 +889,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return basicGetTargetEntity();
 			case PersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
 				return isBidirectional();
+			case PersistencePackage.ENTITY_ASSOCIATION__UNIQUE:
+				return isUnique();
 			case PersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				return getPivotTableName();
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
@@ -900,6 +944,9 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return;
 			case PersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
 				setBidirectional((Boolean)newValue);
+				return;
+			case PersistencePackage.ENTITY_ASSOCIATION__UNIQUE:
+				setUnique((Boolean)newValue);
 				return;
 			case PersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				setPivotTableName((String)newValue);
@@ -961,6 +1008,9 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 			case PersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
 				setBidirectional(BIDIRECTIONAL_EDEFAULT);
 				return;
+			case PersistencePackage.ENTITY_ASSOCIATION__UNIQUE:
+				setUnique(UNIQUE_EDEFAULT);
+				return;
 			case PersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				setPivotTableName(PIVOT_TABLE_NAME_EDEFAULT);
 				return;
@@ -1018,6 +1068,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return targetEntity != null;
 			case PersistencePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
 				return bidirectional != BIDIRECTIONAL_EDEFAULT;
+			case PersistencePackage.ENTITY_ASSOCIATION__UNIQUE:
+				return unique != UNIQUE_EDEFAULT;
 			case PersistencePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				return PIVOT_TABLE_NAME_EDEFAULT == null ? pivotTableName != null : !PIVOT_TABLE_NAME_EDEFAULT.equals(pivotTableName);
 			case PersistencePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
@@ -1100,6 +1152,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		result.append(serializationMaxDepth);
 		result.append(", bidirectional: ");
 		result.append(bidirectional);
+		result.append(", unique: ");
+		result.append(unique);
 		result.append(", pivotTableName: ");
 		result.append(pivotTableName);
 		result.append(", targetFeatureName: ");

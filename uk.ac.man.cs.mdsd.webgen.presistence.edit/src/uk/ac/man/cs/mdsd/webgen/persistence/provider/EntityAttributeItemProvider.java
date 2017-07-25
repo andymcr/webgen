@@ -57,6 +57,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			addOrmTypePropertyDescriptor(object);
 			addInterfaceTypePropertyDescriptor(object);
 			addSlugFieldsPropertyDescriptor(object);
+			addUniquePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -253,6 +254,28 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Unique feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUniquePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityAttribute_unique_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_unique_feature", "_UI_EntityAttribute_type"),
+				 PersistencePackage.Literals.ENTITY_ATTRIBUTE__UNIQUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -316,6 +339,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			case PersistencePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
 			case PersistencePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
 			case PersistencePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
+			case PersistencePackage.ENTITY_ATTRIBUTE__UNIQUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PersistencePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:

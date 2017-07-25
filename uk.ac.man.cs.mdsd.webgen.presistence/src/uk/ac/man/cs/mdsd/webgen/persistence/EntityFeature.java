@@ -15,7 +15,6 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isUnique <em>Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isOrdered <em>Ordered</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isPrimaryKey <em>Primary Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getBooleanIsHasChoice <em>Boolean Is Has Choice</em>}</li>
@@ -88,33 +87,6 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * @generated
 	 */
 	void setCardinality(Cardinality value);
-
-	/**
-	 * Returns the value of the '<em><b>Unique</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Unique</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Unique</em>' attribute.
-	 * @see #setUnique(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature_Unique()
-	 * @model default="true" required="true"
-	 * @generated
-	 */
-	boolean isUnique();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isUnique <em>Unique</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Unique</em>' attribute.
-	 * @see #isUnique()
-	 * @generated
-	 */
-	void setUnique(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Ordered</b></em>' attribute.

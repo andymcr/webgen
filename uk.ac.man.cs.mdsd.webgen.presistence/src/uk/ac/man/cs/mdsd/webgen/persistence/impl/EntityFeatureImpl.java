@@ -45,7 +45,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.isHasChoices;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getFooterClass <em>Footer Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isUnique <em>Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isOrdered <em>Ordered</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isPrimaryKey <em>Primary Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getBooleanIsHasChoice <em>Boolean Is Has Choice</em>}</li>
@@ -246,26 +245,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * @ordered
 	 */
 	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isUnique() <em>Unique</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUnique()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean UNIQUE_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isUnique() <em>Unique</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUnique()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean unique = UNIQUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isOrdered() <em>Ordered</em>}' attribute.
@@ -653,27 +632,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isUnique() {
-		return unique;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUnique(boolean newUnique) {
-		boolean oldUnique = unique;
-		unique = newUnique;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__UNIQUE, oldUnique, unique));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isOrdered() {
 		return ordered;
 	}
@@ -869,8 +827,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return getPartOf();
 			case PersistencePackage.ENTITY_FEATURE__CARDINALITY:
 				return getCardinality();
-			case PersistencePackage.ENTITY_FEATURE__UNIQUE:
-				return isUnique();
 			case PersistencePackage.ENTITY_FEATURE__ORDERED:
 				return isOrdered();
 			case PersistencePackage.ENTITY_FEATURE__PRIMARY_KEY:
@@ -929,9 +885,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return;
 			case PersistencePackage.ENTITY_FEATURE__CARDINALITY:
 				setCardinality((Cardinality)newValue);
-				return;
-			case PersistencePackage.ENTITY_FEATURE__UNIQUE:
-				setUnique((Boolean)newValue);
 				return;
 			case PersistencePackage.ENTITY_FEATURE__ORDERED:
 				setOrdered((Boolean)newValue);
@@ -996,9 +949,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case PersistencePackage.ENTITY_FEATURE__CARDINALITY:
 				setCardinality(CARDINALITY_EDEFAULT);
 				return;
-			case PersistencePackage.ENTITY_FEATURE__UNIQUE:
-				setUnique(UNIQUE_EDEFAULT);
-				return;
 			case PersistencePackage.ENTITY_FEATURE__ORDERED:
 				setOrdered(ORDERED_EDEFAULT);
 				return;
@@ -1051,8 +1001,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return getPartOf() != null;
 			case PersistencePackage.ENTITY_FEATURE__CARDINALITY:
 				return cardinality != CARDINALITY_EDEFAULT;
-			case PersistencePackage.ENTITY_FEATURE__UNIQUE:
-				return unique != UNIQUE_EDEFAULT;
 			case PersistencePackage.ENTITY_FEATURE__ORDERED:
 				return ordered != ORDERED_EDEFAULT;
 			case PersistencePackage.ENTITY_FEATURE__PRIMARY_KEY:
@@ -1145,8 +1093,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		result.append(footerClass);
 		result.append(", cardinality: ");
 		result.append(cardinality);
-		result.append(", unique: ");
-		result.append(unique);
 		result.append(", ordered: ");
 		result.append(ordered);
 		result.append(", primaryKey: ");

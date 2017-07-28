@@ -57,6 +57,7 @@ abstract rule Association {
 	from website : Website!Association
 	to orm : ORM!Association (
 		pseudo <- website.pseudo,
+		placeholder <- website.placeholder,
 		serializationMaxDepth <- website.serializationMaxDepth
 	)
 }

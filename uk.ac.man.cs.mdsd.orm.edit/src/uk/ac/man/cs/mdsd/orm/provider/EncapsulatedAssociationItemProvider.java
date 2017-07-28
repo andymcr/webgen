@@ -44,6 +44,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 			super.getPropertyDescriptors(object);
 
 			addPseudoPropertyDescriptor(object);
+			addPlaceholderPropertyDescriptor(object);
 			addSerializationMaxDepthPropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
 			addEncapsulatedTargetPropertyDescriptor(object);
@@ -69,6 +70,28 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_placeholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_placeholder_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__PLACEHOLDER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -178,6 +201,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 
 		switch (notification.getFeatureID(EncapsulatedAssociation.class)) {
 			case OrmPackage.ENCAPSULATED_ASSOCIATION__PSEUDO:
+			case OrmPackage.ENCAPSULATED_ASSOCIATION__PLACEHOLDER:
 			case OrmPackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

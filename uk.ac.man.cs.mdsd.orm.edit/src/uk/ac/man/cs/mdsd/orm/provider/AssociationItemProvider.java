@@ -49,6 +49,7 @@ public class AssociationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPseudoPropertyDescriptor(object);
+			addPlaceholderPropertyDescriptor(object);
 			addSerializationMaxDepthPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -72,6 +73,28 @@ public class AssociationItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_placeholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_placeholder_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__PLACEHOLDER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -125,6 +148,7 @@ public class AssociationItemProvider
 
 		switch (notification.getFeatureID(Association.class)) {
 			case OrmPackage.ASSOCIATION__PSEUDO:
+			case OrmPackage.ASSOCIATION__PLACEHOLDER:
 			case OrmPackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

@@ -37,6 +37,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.isHasChoices;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
@@ -115,6 +116,26 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * @ordered
 	 */
 	protected boolean collectionAllowRemove = COLLECTION_ALLOW_REMOVE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PLACEHOLDER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected String placeholder = PLACEHOLDER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
@@ -446,6 +467,27 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		collectionAllowRemove = newCollectionAllowRemove;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPlaceholder() {
+		return placeholder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPlaceholder(String newPlaceholder) {
+		String oldPlaceholder = placeholder;
+		placeholder = newPlaceholder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__PLACEHOLDER, oldPlaceholder, placeholder));
 	}
 
 	/**
@@ -811,6 +853,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return isCollectionAllowAdd();
 			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 				return isCollectionAllowRemove();
+			case PersistencePackage.ENTITY_FEATURE__PLACEHOLDER:
+				return getPlaceholder();
 			case PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
 				return getNullDisplayValue();
 			case PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
@@ -860,6 +904,9 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return;
 			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove((Boolean)newValue);
+				return;
+			case PersistencePackage.ENTITY_FEATURE__PLACEHOLDER:
+				setPlaceholder((String)newValue);
 				return;
 			case PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue((String)newValue);
@@ -925,6 +972,9 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
 				return;
+			case PersistencePackage.ENTITY_FEATURE__PLACEHOLDER:
+				setPlaceholder(PLACEHOLDER_EDEFAULT);
+				return;
 			case PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
 				return;
@@ -985,6 +1035,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
 			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
+			case PersistencePackage.ENTITY_FEATURE__PLACEHOLDER:
+				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
 				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
 			case PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
@@ -1029,6 +1081,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				case PersistencePackage.ENTITY_FEATURE__TITLE: return PersistencePackage.FEATURE__TITLE;
 				case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD: return PersistencePackage.FEATURE__COLLECTION_ALLOW_ADD;
 				case PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE: return PersistencePackage.FEATURE__COLLECTION_ALLOW_REMOVE;
+				case PersistencePackage.ENTITY_FEATURE__PLACEHOLDER: return PersistencePackage.FEATURE__PLACEHOLDER;
 				case PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE: return PersistencePackage.FEATURE__NULL_DISPLAY_VALUE;
 				case PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY: return PersistencePackage.FEATURE__ENCODE_URI_KEY;
 				case PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS: return PersistencePackage.FEATURE__SERIALIZATION_GROUPS;
@@ -1053,6 +1106,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				case PersistencePackage.FEATURE__TITLE: return PersistencePackage.ENTITY_FEATURE__TITLE;
 				case PersistencePackage.FEATURE__COLLECTION_ALLOW_ADD: return PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD;
 				case PersistencePackage.FEATURE__COLLECTION_ALLOW_REMOVE: return PersistencePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
+				case PersistencePackage.FEATURE__PLACEHOLDER: return PersistencePackage.ENTITY_FEATURE__PLACEHOLDER;
 				case PersistencePackage.FEATURE__NULL_DISPLAY_VALUE: return PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE;
 				case PersistencePackage.FEATURE__ENCODE_URI_KEY: return PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY;
 				case PersistencePackage.FEATURE__SERIALIZATION_GROUPS: return PersistencePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS;
@@ -1081,6 +1135,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		result.append(collectionAllowAdd);
 		result.append(", collectionAllowRemove: ");
 		result.append(collectionAllowRemove);
+		result.append(", placeholder: ");
+		result.append(placeholder);
 		result.append(", nullDisplayValue: ");
 		result.append(nullDisplayValue);
 		result.append(", encodeUriKey: ");

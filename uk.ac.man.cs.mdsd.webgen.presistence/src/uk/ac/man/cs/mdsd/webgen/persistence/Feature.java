@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getSerializationGroups <em>Serialization Groups</em>}</li>
@@ -110,6 +111,32 @@ public interface Feature extends EObject {
 	 * @generated
 	 */
 	void setCollectionAllowRemove(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Placeholder</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Placeholder</em>' attribute.
+	 * @see #setPlaceholder(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_Placeholder()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getPlaceholder();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getPlaceholder <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Placeholder</em>' attribute.
+	 * @see #getPlaceholder()
+	 * @generated
+	 */
+	void setPlaceholder(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Null Display Value</b></em>' attribute.

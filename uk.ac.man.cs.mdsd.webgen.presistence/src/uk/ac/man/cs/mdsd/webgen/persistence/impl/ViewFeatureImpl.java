@@ -33,6 +33,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.ViewFeature;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
@@ -104,6 +105,26 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	 * @ordered
 	 */
 	protected boolean collectionAllowRemove = COLLECTION_ALLOW_REMOVE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PLACEHOLDER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected String placeholder = PLACEHOLDER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
@@ -295,6 +316,27 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		collectionAllowRemove = newCollectionAllowRemove;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPlaceholder() {
+		return placeholder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPlaceholder(String newPlaceholder) {
+		String oldPlaceholder = placeholder;
+		placeholder = newPlaceholder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__PLACEHOLDER, oldPlaceholder, placeholder));
 	}
 
 	/**
@@ -513,6 +555,8 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 				return isCollectionAllowAdd();
 			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
 				return isCollectionAllowRemove();
+			case PersistencePackage.VIEW_FEATURE__PLACEHOLDER:
+				return getPlaceholder();
 			case PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
 				return getNullDisplayValue();
 			case PersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
@@ -548,6 +592,9 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 				return;
 			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove((Boolean)newValue);
+				return;
+			case PersistencePackage.VIEW_FEATURE__PLACEHOLDER:
+				setPlaceholder((String)newValue);
 				return;
 			case PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue((String)newValue);
@@ -592,6 +639,9 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
 				return;
+			case PersistencePackage.VIEW_FEATURE__PLACEHOLDER:
+				setPlaceholder(PLACEHOLDER_EDEFAULT);
+				return;
 			case PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
 				return;
@@ -631,6 +681,8 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
 			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
 				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
+			case PersistencePackage.VIEW_FEATURE__PLACEHOLDER:
+				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
 				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
 			case PersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
@@ -665,6 +717,8 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		result.append(collectionAllowAdd);
 		result.append(", collectionAllowRemove: ");
 		result.append(collectionAllowRemove);
+		result.append(", placeholder: ");
+		result.append(placeholder);
 		result.append(", nullDisplayValue: ");
 		result.append(nullDisplayValue);
 		result.append(", encodeUriKey: ");

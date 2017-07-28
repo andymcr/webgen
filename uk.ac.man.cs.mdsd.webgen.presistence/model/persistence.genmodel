@@ -83,6 +83,7 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/title"/>
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/collectionAllowAdd"/>
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/collectionAllowRemove"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/placeholder"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/nullDisplayValue"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/encodeUriKey"/>
       <genFeatures createChild="false" propertyCategory="Serialization" ecoreFeature="ecore:EReference persistence.ecore#//Feature/serializationGroups"/>
@@ -93,8 +94,6 @@
     <genClasses image="false" ecoreClass="persistence.ecore#//Attribute">
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
           ecoreFeature="ecore:EReference persistence.ecore#//Attribute/defaultValue"/>
-      <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
-          ecoreFeature="ecore:EAttribute persistence.ecore#//Attribute/placeholder"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute persistence.ecore#//Attribute/validationPattern"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute persistence.ecore#//Attribute/inputClass"/>
     </genClasses>

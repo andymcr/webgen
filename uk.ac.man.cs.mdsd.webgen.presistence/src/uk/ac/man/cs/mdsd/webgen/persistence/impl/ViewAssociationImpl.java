@@ -42,6 +42,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.ViewFeature;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewAssociationImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewAssociationImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewAssociationImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewAssociationImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewAssociationImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewAssociationImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewAssociationImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
@@ -121,6 +122,26 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @ordered
 	 */
 	protected boolean collectionAllowRemove = COLLECTION_ALLOW_REMOVE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PLACEHOLDER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected String placeholder = PLACEHOLDER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
@@ -432,6 +453,27 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		collectionAllowRemove = newCollectionAllowRemove;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPlaceholder() {
+		return placeholder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPlaceholder(String newPlaceholder) {
+		String oldPlaceholder = placeholder;
+		placeholder = newPlaceholder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_ASSOCIATION__PLACEHOLDER, oldPlaceholder, placeholder));
 	}
 
 	/**
@@ -825,6 +867,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return isCollectionAllowAdd();
 			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
 				return isCollectionAllowRemove();
+			case PersistencePackage.VIEW_ASSOCIATION__PLACEHOLDER:
+				return getPlaceholder();
 			case PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
 				return getNullDisplayValue();
 			case PersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
@@ -879,6 +923,9 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return;
 			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove((Boolean)newValue);
+				return;
+			case PersistencePackage.VIEW_ASSOCIATION__PLACEHOLDER:
+				setPlaceholder((String)newValue);
 				return;
 			case PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
 				setNullDisplayValue((String)newValue);
@@ -942,6 +989,9 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
 				return;
+			case PersistencePackage.VIEW_ASSOCIATION__PLACEHOLDER:
+				setPlaceholder(PLACEHOLDER_EDEFAULT);
+				return;
 			case PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
 				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
 				return;
@@ -999,6 +1049,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
 			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
 				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
+			case PersistencePackage.VIEW_ASSOCIATION__PLACEHOLDER:
+				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
 				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
 			case PersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
@@ -1045,6 +1097,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case PersistencePackage.VIEW_ASSOCIATION__TITLE: return PersistencePackage.FEATURE__TITLE;
 				case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD: return PersistencePackage.FEATURE__COLLECTION_ALLOW_ADD;
 				case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE: return PersistencePackage.FEATURE__COLLECTION_ALLOW_REMOVE;
+				case PersistencePackage.VIEW_ASSOCIATION__PLACEHOLDER: return PersistencePackage.FEATURE__PLACEHOLDER;
 				case PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE: return PersistencePackage.FEATURE__NULL_DISPLAY_VALUE;
 				case PersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY: return PersistencePackage.FEATURE__ENCODE_URI_KEY;
 				case PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS: return PersistencePackage.FEATURE__SERIALIZATION_GROUPS;
@@ -1086,6 +1139,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case PersistencePackage.FEATURE__TITLE: return PersistencePackage.VIEW_ASSOCIATION__TITLE;
 				case PersistencePackage.FEATURE__COLLECTION_ALLOW_ADD: return PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD;
 				case PersistencePackage.FEATURE__COLLECTION_ALLOW_REMOVE: return PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
+				case PersistencePackage.FEATURE__PLACEHOLDER: return PersistencePackage.VIEW_ASSOCIATION__PLACEHOLDER;
 				case PersistencePackage.FEATURE__NULL_DISPLAY_VALUE: return PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE;
 				case PersistencePackage.FEATURE__ENCODE_URI_KEY: return PersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY;
 				case PersistencePackage.FEATURE__SERIALIZATION_GROUPS: return PersistencePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS;
@@ -1131,6 +1185,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		result.append(collectionAllowAdd);
 		result.append(", collectionAllowRemove: ");
 		result.append(collectionAllowRemove);
+		result.append(", placeholder: ");
+		result.append(placeholder);
 		result.append(", nullDisplayValue: ");
 		result.append(nullDisplayValue);
 		result.append(", encodeUriKey: ");

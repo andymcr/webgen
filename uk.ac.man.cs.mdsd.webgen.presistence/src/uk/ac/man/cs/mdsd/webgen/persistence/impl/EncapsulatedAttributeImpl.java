@@ -27,7 +27,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EncapsulatedAttributeImpl#getDefaultValue <em>Default Value</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EncapsulatedAttributeImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EncapsulatedAttributeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EncapsulatedAttributeImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EncapsulatedAttributeImpl#getName <em>Name</em>}</li>
@@ -47,26 +46,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	 * @ordered
 	 */
 	protected Expression defaultValue;
-
-	/**
-	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPlaceholder()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PLACEHOLDER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPlaceholder()
-	 * @generated
-	 * @ordered
-	 */
-	protected String placeholder = PLACEHOLDER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getValidationPattern() <em>Validation Pattern</em>}' attribute.
@@ -205,27 +184,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPlaceholder() {
-		return placeholder;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPlaceholder(String newPlaceholder) {
-		String oldPlaceholder = placeholder;
-		placeholder = newPlaceholder;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER, oldPlaceholder, placeholder));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getValidationPattern() {
 		return validationPattern;
 	}
@@ -352,8 +310,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		switch (featureID) {
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
 				return getDefaultValue();
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER:
-				return getPlaceholder();
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN:
 				return getValidationPattern();
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
@@ -379,9 +335,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		switch (featureID) {
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue((Expression)newValue);
-				return;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER:
-				setPlaceholder((String)newValue);
 				return;
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN:
 				setValidationPattern((String)newValue);
@@ -410,9 +363,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue((Expression)null);
 				return;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER:
-				setPlaceholder(PLACEHOLDER_EDEFAULT);
-				return;
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN:
 				setValidationPattern(VALIDATION_PATTERN_EDEFAULT);
 				return;
@@ -439,8 +389,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		switch (featureID) {
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE:
 				return defaultValue != null;
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER:
-				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN:
 				return VALIDATION_PATTERN_EDEFAULT == null ? validationPattern != null : !VALIDATION_PATTERN_EDEFAULT.equals(validationPattern);
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
@@ -470,7 +418,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		if (baseClass == Attribute.class) {
 			switch (derivedFeatureID) {
 				case PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE: return PersistencePackage.ATTRIBUTE__DEFAULT_VALUE;
-				case PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER: return PersistencePackage.ATTRIBUTE__PLACEHOLDER;
 				case PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN: return PersistencePackage.ATTRIBUTE__VALIDATION_PATTERN;
 				case PersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS: return PersistencePackage.ATTRIBUTE__INPUT_CLASS;
 				default: return -1;
@@ -494,7 +441,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		if (baseClass == Attribute.class) {
 			switch (baseFeatureID) {
 				case PersistencePackage.ATTRIBUTE__DEFAULT_VALUE: return PersistencePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE;
-				case PersistencePackage.ATTRIBUTE__PLACEHOLDER: return PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER;
 				case PersistencePackage.ATTRIBUTE__VALIDATION_PATTERN: return PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN;
 				case PersistencePackage.ATTRIBUTE__INPUT_CLASS: return PersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS;
 				default: return -1;
@@ -513,9 +459,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (placeholder: ");
-		result.append(placeholder);
-		result.append(", validationPattern: ");
+		result.append(" (validationPattern: ");
 		result.append(validationPattern);
 		result.append(", inputClass: ");
 		result.append(inputClass);

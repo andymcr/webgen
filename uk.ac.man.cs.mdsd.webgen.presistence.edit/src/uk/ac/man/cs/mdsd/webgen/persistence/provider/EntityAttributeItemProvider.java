@@ -49,7 +49,6 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addContainerUniquePropertyDescriptor(object);
@@ -60,28 +59,6 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			addUniquePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Placeholder feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPlaceholderPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attribute_placeholder_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_placeholder_feature", "_UI_Attribute_type"),
-				 PersistencePackage.Literals.ATTRIBUTE__PLACEHOLDER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -332,7 +309,6 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityAttribute.class)) {
-			case PersistencePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
 			case PersistencePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
 			case PersistencePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 			case PersistencePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:

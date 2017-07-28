@@ -479,13 +479,22 @@ public interface PersistencePackage extends EPackage {
 	int FEATURE__COLLECTION_ALLOW_REMOVE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__PLACEHOLDER = 3;
+
+	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__NULL_DISPLAY_VALUE = 3;
+	int FEATURE__NULL_DISPLAY_VALUE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -494,7 +503,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__ENCODE_URI_KEY = 4;
+	int FEATURE__ENCODE_URI_KEY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
@@ -503,7 +512,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__SERIALIZATION_GROUPS = 5;
+	int FEATURE__SERIALIZATION_GROUPS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -512,7 +521,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__HEADER_CLASS = 6;
+	int FEATURE__HEADER_CLASS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -521,7 +530,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__DISPLAY_CLASS = 7;
+	int FEATURE__DISPLAY_CLASS = 8;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -530,7 +539,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__FOOTER_CLASS = 8;
+	int FEATURE__FOOTER_CLASS = 9;
 
 	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
@@ -539,7 +548,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = 9;
+	int FEATURE_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Feature</em>' class.
@@ -586,6 +595,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE__COLLECTION_ALLOW_REMOVE = FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__PLACEHOLDER = FEATURE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -651,22 +669,13 @@ public interface PersistencePackage extends EPackage {
 	int ATTRIBUTE__DEFAULT_VALUE = FEATURE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__PLACEHOLDER = FEATURE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__VALIDATION_PATTERN = FEATURE_FEATURE_COUNT + 2;
+	int ATTRIBUTE__VALIDATION_PATTERN = FEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -675,7 +684,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__INPUT_CLASS = FEATURE_FEATURE_COUNT + 3;
+	int ATTRIBUTE__INPUT_CLASS = FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -684,7 +693,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 4;
+	int ATTRIBUTE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Attribute</em>' class.
@@ -731,6 +740,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION__COLLECTION_ALLOW_REMOVE = FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__PLACEHOLDER = FEATURE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -1388,13 +1406,22 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__PLACEHOLDER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__NULL_DISPLAY_VALUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int ENTITY_FEATURE__NULL_DISPLAY_VALUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -1403,7 +1430,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__ENCODE_URI_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int ENTITY_FEATURE__ENCODE_URI_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
@@ -1412,7 +1439,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__SERIALIZATION_GROUPS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int ENTITY_FEATURE__SERIALIZATION_GROUPS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -1421,7 +1448,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int ENTITY_FEATURE__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -1430,7 +1457,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__DISPLAY_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int ENTITY_FEATURE__DISPLAY_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -1439,7 +1466,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int ENTITY_FEATURE__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1448,7 +1475,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PART_OF = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int ENTITY_FEATURE__PART_OF = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -1457,7 +1484,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__CARDINALITY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int ENTITY_FEATURE__CARDINALITY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
@@ -1466,7 +1493,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__ORDERED = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int ENTITY_FEATURE__ORDERED = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Primary Key</b></em>' attribute.
@@ -1475,7 +1502,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PRIMARY_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int ENTITY_FEATURE__PRIMARY_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
@@ -1484,7 +1511,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
@@ -1493,7 +1520,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__SINGLETON_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int ENTITY_FEATURE__SINGLETON_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
@@ -1502,7 +1529,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PLURALISED_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
+	int ENTITY_FEATURE__PLURALISED_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -1511,7 +1538,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__COLUMN_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
+	int ENTITY_FEATURE__COLUMN_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of structural features of the '<em>Entity Feature</em>' class.
@@ -1520,7 +1547,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
+	int ENTITY_FEATURE_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The number of operations of the '<em>Entity Feature</em>' class.
@@ -1585,6 +1612,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__PLACEHOLDER = ENTITY_FEATURE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -1722,22 +1758,13 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_ATTRIBUTE__DEFAULT_VALUE = ENTITY_FEATURE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ATTRIBUTE__PLACEHOLDER = ENTITY_FEATURE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__VALIDATION_PATTERN = ENTITY_FEATURE_FEATURE_COUNT + 2;
+	int ENTITY_ATTRIBUTE__VALIDATION_PATTERN = ENTITY_FEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -1746,7 +1773,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__INPUT_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 3;
+	int ENTITY_ATTRIBUTE__INPUT_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Container Unique</b></em>' attribute.
@@ -1755,7 +1782,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__CONTAINER_UNIQUE = ENTITY_FEATURE_FEATURE_COUNT + 4;
+	int ENTITY_ATTRIBUTE__CONTAINER_UNIQUE = ENTITY_FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
@@ -1764,7 +1791,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__PERSISTENT_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 5;
+	int ENTITY_ATTRIBUTE__PERSISTENT_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
@@ -1773,7 +1800,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__ORM_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 6;
+	int ENTITY_ATTRIBUTE__ORM_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
@@ -1782,7 +1809,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__INTERFACE_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 7;
+	int ENTITY_ATTRIBUTE__INTERFACE_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Slug Fields</b></em>' reference list.
@@ -1791,7 +1818,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__SLUG_FIELDS = ENTITY_FEATURE_FEATURE_COUNT + 8;
+	int ENTITY_ATTRIBUTE__SLUG_FIELDS = ENTITY_FEATURE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
@@ -1800,7 +1827,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__UNIQUE = ENTITY_FEATURE_FEATURE_COUNT + 9;
+	int ENTITY_ATTRIBUTE__UNIQUE = ENTITY_FEATURE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Entity Attribute</em>' class.
@@ -1809,7 +1836,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 10;
+	int ENTITY_ATTRIBUTE_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Entity Attribute</em>' class.
@@ -1874,6 +1901,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__PLACEHOLDER = ENTITY_ATTRIBUTE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -2009,15 +2045,6 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_ATTRIBUTE__DEFAULT_VALUE = ENTITY_ATTRIBUTE__DEFAULT_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_ATTRIBUTE__PLACEHOLDER = ENTITY_ATTRIBUTE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -2201,6 +2228,15 @@ public interface PersistencePackage extends EPackage {
 	int DATE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__PLACEHOLDER = ENTITY_ATTRIBUTE__PLACEHOLDER;
+
+	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2334,15 +2370,6 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATE_ATTRIBUTE__DEFAULT_VALUE = ENTITY_ATTRIBUTE__DEFAULT_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_ATTRIBUTE__PLACEHOLDER = ENTITY_ATTRIBUTE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -2508,6 +2535,15 @@ public interface PersistencePackage extends EPackage {
 	int URL_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__PLACEHOLDER = ENTITY_ATTRIBUTE__PLACEHOLDER;
+
+	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2641,15 +2677,6 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int URL_ATTRIBUTE__DEFAULT_VALUE = ENTITY_ATTRIBUTE__DEFAULT_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int URL_ATTRIBUTE__PLACEHOLDER = ENTITY_ATTRIBUTE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -2806,6 +2833,15 @@ public interface PersistencePackage extends EPackage {
 	int RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__PLACEHOLDER = ENTITY_ATTRIBUTE__PLACEHOLDER;
+
+	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2939,15 +2975,6 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_ATTRIBUTE__DEFAULT_VALUE = ENTITY_ATTRIBUTE__DEFAULT_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_ATTRIBUTE__PLACEHOLDER = ENTITY_ATTRIBUTE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -3242,6 +3269,15 @@ public interface PersistencePackage extends EPackage {
 	int FILE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__PLACEHOLDER = RESOURCE_ATTRIBUTE__PLACEHOLDER;
+
+	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3375,15 +3411,6 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int FILE_ATTRIBUTE__DEFAULT_VALUE = RESOURCE_ATTRIBUTE__DEFAULT_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_ATTRIBUTE__PLACEHOLDER = RESOURCE_ATTRIBUTE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -3576,6 +3603,15 @@ public interface PersistencePackage extends EPackage {
 	int IMAGE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__PLACEHOLDER = RESOURCE_ATTRIBUTE__PLACEHOLDER;
+
+	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3709,15 +3745,6 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_ATTRIBUTE__DEFAULT_VALUE = RESOURCE_ATTRIBUTE__DEFAULT_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_ATTRIBUTE__PLACEHOLDER = RESOURCE_ATTRIBUTE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -3910,6 +3937,15 @@ public interface PersistencePackage extends EPackage {
 	int LOCATION_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__PLACEHOLDER = ENTITY_ATTRIBUTE__PLACEHOLDER;
+
+	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4043,15 +4079,6 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int LOCATION_ATTRIBUTE__DEFAULT_VALUE = ENTITY_ATTRIBUTE__DEFAULT_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCATION_ATTRIBUTE__PLACEHOLDER = ENTITY_ATTRIBUTE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -4197,6 +4224,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__PLACEHOLDER = ENTITY_FEATURE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -4567,6 +4603,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__PLACEHOLDER = ENTITY_ASSOCIATION__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -4955,6 +5000,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__PLACEHOLDER = ENTITY_ASSOCIATION__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -5590,6 +5644,15 @@ public interface PersistencePackage extends EPackage {
 	int VIEW_FEATURE__COLLECTION_ALLOW_REMOVE = FEATURE__COLLECTION_ALLOW_REMOVE;
 
 	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE__PLACEHOLDER = FEATURE__PLACEHOLDER;
+
+	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5706,6 +5769,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENCAPSULATED_FEATURE__COLLECTION_ALLOW_REMOVE = VIEW_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_FEATURE__PLACEHOLDER = VIEW_FEATURE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -5853,6 +5925,15 @@ public interface PersistencePackage extends EPackage {
 	int ENCAPSULATED_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENCAPSULATED_FEATURE__COLLECTION_ALLOW_REMOVE;
 
 	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ATTRIBUTE__PLACEHOLDER = ENCAPSULATED_FEATURE__PLACEHOLDER;
+
+	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5952,22 +6033,13 @@ public interface PersistencePackage extends EPackage {
 	int ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE = ENCAPSULATED_FEATURE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_ATTRIBUTE__PLACEHOLDER = ENCAPSULATED_FEATURE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN = ENCAPSULATED_FEATURE_FEATURE_COUNT + 2;
+	int ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN = ENCAPSULATED_FEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -5976,7 +6048,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ATTRIBUTE__INPUT_CLASS = ENCAPSULATED_FEATURE_FEATURE_COUNT + 3;
+	int ENCAPSULATED_ATTRIBUTE__INPUT_CLASS = ENCAPSULATED_FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5985,7 +6057,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ATTRIBUTE__NAME = ENCAPSULATED_FEATURE_FEATURE_COUNT + 4;
+	int ENCAPSULATED_ATTRIBUTE__NAME = ENCAPSULATED_FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -5994,7 +6066,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ATTRIBUTE__ATTRIBUTE = ENCAPSULATED_FEATURE_FEATURE_COUNT + 5;
+	int ENCAPSULATED_ATTRIBUTE__ATTRIBUTE = ENCAPSULATED_FEATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -6003,7 +6075,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ATTRIBUTE__CARDINALITY = ENCAPSULATED_FEATURE_FEATURE_COUNT + 6;
+	int ENCAPSULATED_ATTRIBUTE__CARDINALITY = ENCAPSULATED_FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Encapsulated Attribute</em>' class.
@@ -6012,7 +6084,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ATTRIBUTE_FEATURE_COUNT = ENCAPSULATED_FEATURE_FEATURE_COUNT + 7;
+	int ENCAPSULATED_ATTRIBUTE_FEATURE_COUNT = ENCAPSULATED_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Encapsulated Attribute</em>' class.
@@ -6059,6 +6131,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENCAPSULATED_ASSOCIATION__COLLECTION_ALLOW_REMOVE = ENCAPSULATED_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__PLACEHOLDER = ENCAPSULATED_FEATURE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -6341,13 +6422,22 @@ public interface PersistencePackage extends EPackage {
 	int VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_ASSOCIATION__PLACEHOLDER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__NULL_DISPLAY_VALUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int VIEW_ASSOCIATION__NULL_DISPLAY_VALUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -6356,7 +6446,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__ENCODE_URI_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int VIEW_ASSOCIATION__ENCODE_URI_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
@@ -6365,7 +6455,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SERIALIZATION_GROUPS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int VIEW_ASSOCIATION__SERIALIZATION_GROUPS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -6374,7 +6464,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int VIEW_ASSOCIATION__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -6383,7 +6473,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__DISPLAY_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int VIEW_ASSOCIATION__DISPLAY_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -6392,7 +6482,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int VIEW_ASSOCIATION__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -6401,7 +6491,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PART_OF = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int VIEW_ASSOCIATION__PART_OF = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
@@ -6410,7 +6500,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PSEUDO = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int VIEW_ASSOCIATION__PSEUDO = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Encapsulated By</b></em>' reference list.
@@ -6419,7 +6509,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__ENCAPSULATED_BY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int VIEW_ASSOCIATION__ENCAPSULATED_BY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -6428,7 +6518,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__INPUT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int VIEW_ASSOCIATION__INPUT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Source Entity X</b></em>' reference.
@@ -6437,7 +6527,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity X</b></em>' reference.
@@ -6446,7 +6536,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__TARGET_ENTITY_X = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int VIEW_ASSOCIATION__TARGET_ENTITY_X = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Max Depth</b></em>' attribute.
@@ -6455,7 +6545,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
+	int VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Opposite</b></em>' reference.
@@ -6464,7 +6554,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__OPPOSITE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
+	int VIEW_ASSOCIATION__OPPOSITE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -6473,7 +6563,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__CARDINALITY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
+	int VIEW_ASSOCIATION__CARDINALITY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The number of structural features of the '<em>View Association</em>' class.
@@ -6482,7 +6572,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
+	int VIEW_ASSOCIATION_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The number of operations of the '<em>View Association</em>' class.
@@ -6948,6 +7038,17 @@ public interface PersistencePackage extends EPackage {
 	EAttribute getFeature_CollectionAllowRemove();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getPlaceholder <em>Placeholder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Placeholder</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Feature#getPlaceholder()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EAttribute getFeature_Placeholder();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getNullDisplayValue <em>Null Display Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7033,17 +7134,6 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAttribute_DefaultValue();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Attribute#getPlaceholder <em>Placeholder</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Placeholder</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Attribute#getPlaceholder()
-	 * @see #getAttribute()
-	 * @generated
-	 */
-	EAttribute getAttribute_Placeholder();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Attribute#getValidationPattern <em>Validation Pattern</em>}'.
@@ -8648,6 +8738,14 @@ public interface PersistencePackage extends EPackage {
 		EAttribute FEATURE__COLLECTION_ALLOW_REMOVE = eINSTANCE.getFeature_CollectionAllowRemove();
 
 		/**
+		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE__PLACEHOLDER = eINSTANCE.getFeature_Placeholder();
+
+		/**
 		 * The meta object literal for the '<em><b>Null Display Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8712,14 +8810,6 @@ public interface PersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ATTRIBUTE__DEFAULT_VALUE = eINSTANCE.getAttribute_DefaultValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ATTRIBUTE__PLACEHOLDER = eINSTANCE.getAttribute_Placeholder();
 
 		/**
 		 * The meta object literal for the '<em><b>Validation Pattern</b></em>' attribute feature.

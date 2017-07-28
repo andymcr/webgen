@@ -749,7 +749,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_NullDisplayValue() {
+	public EAttribute getFeature_Placeholder() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -758,7 +758,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_EncodeUriKey() {
+	public EAttribute getFeature_NullDisplayValue() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -767,8 +767,17 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getFeature_EncodeUriKey() {
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getFeature_SerializationGroups() {
-		return (EReference)featureEClass.getEStructuralFeatures().get(5);
+		return (EReference)featureEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -777,15 +786,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * @generated
 	 */
 	public EAttribute getFeature_HeaderClass() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFeature_DisplayClass() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -794,8 +794,17 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_FooterClass() {
+	public EAttribute getFeature_DisplayClass() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeature_FooterClass() {
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -821,7 +830,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAttribute_Placeholder() {
+	public EAttribute getAttribute_ValidationPattern() {
 		return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -830,17 +839,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAttribute_ValidationPattern() {
-		return (EAttribute)attributeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getAttribute_InputClass() {
-		return (EAttribute)attributeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)attributeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1964,6 +1964,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		createEAttribute(featureEClass, FEATURE__TITLE);
 		createEAttribute(featureEClass, FEATURE__COLLECTION_ALLOW_ADD);
 		createEAttribute(featureEClass, FEATURE__COLLECTION_ALLOW_REMOVE);
+		createEAttribute(featureEClass, FEATURE__PLACEHOLDER);
 		createEAttribute(featureEClass, FEATURE__NULL_DISPLAY_VALUE);
 		createEAttribute(featureEClass, FEATURE__ENCODE_URI_KEY);
 		createEReference(featureEClass, FEATURE__SERIALIZATION_GROUPS);
@@ -1973,7 +1974,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEReference(attributeEClass, ATTRIBUTE__DEFAULT_VALUE);
-		createEAttribute(attributeEClass, ATTRIBUTE__PLACEHOLDER);
 		createEAttribute(attributeEClass, ATTRIBUTE__VALIDATION_PATTERN);
 		createEAttribute(attributeEClass, ATTRIBUTE__INPUT_CLASS);
 
@@ -2237,6 +2237,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEAttribute(getFeature_Title(), ecorePackage.getEString(), "title", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_CollectionAllowAdd(), ecorePackage.getEBoolean(), "collectionAllowAdd", "false", 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_CollectionAllowRemove(), ecorePackage.getEBoolean(), "collectionAllowRemove", "false", 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getFeature_NullDisplayValue(), ecorePackage.getEString(), "nullDisplayValue", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_EncodeUriKey(), ecorePackage.getEBoolean(), "encodeUriKey", "false", 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeature_SerializationGroups(), this.getSerializationGroup(), null, "serializationGroups", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2246,7 +2247,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAttribute_DefaultValue(), theExpressionPackage.getExpression(), null, "defaultValue", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getAttribute_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAttribute_ValidationPattern(), ecorePackage.getEString(), "validationPattern", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAttribute_InputClass(), ecorePackage.getEString(), "inputClass", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 

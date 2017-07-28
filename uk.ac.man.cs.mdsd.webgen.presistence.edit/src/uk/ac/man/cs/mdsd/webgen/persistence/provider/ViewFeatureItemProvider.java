@@ -63,6 +63,7 @@ public class ViewFeatureItemProvider
 			addTitlePropertyDescriptor(object);
 			addCollectionAllowAddPropertyDescriptor(object);
 			addCollectionAllowRemovePropertyDescriptor(object);
+			addPlaceholderPropertyDescriptor(object);
 			addNullDisplayValuePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
 			addSerializationGroupsPropertyDescriptor(object);
@@ -136,6 +137,28 @@ public class ViewFeatureItemProvider
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_OrmPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_placeholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_placeholder_feature", "_UI_Feature_type"),
+				 PersistencePackage.Literals.FEATURE__PLACEHOLDER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -301,6 +324,7 @@ public class ViewFeatureItemProvider
 			case PersistencePackage.VIEW_FEATURE__TITLE:
 			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
 			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
+			case PersistencePackage.VIEW_FEATURE__PLACEHOLDER:
 			case PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
 			case PersistencePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 			case PersistencePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:

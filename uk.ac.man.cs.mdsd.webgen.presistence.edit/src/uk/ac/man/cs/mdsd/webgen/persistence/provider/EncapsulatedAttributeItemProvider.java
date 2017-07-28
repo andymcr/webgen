@@ -54,7 +54,6 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
@@ -62,28 +61,6 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Placeholder feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPlaceholderPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attribute_placeholder_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_placeholder_feature", "_UI_Attribute_type"),
-				 PersistencePackage.Literals.ATTRIBUTE__PLACEHOLDER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -274,7 +251,6 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EncapsulatedAttribute.class)) {
-			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__PLACEHOLDER:
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__VALIDATION_PATTERN:
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
 			case PersistencePackage.ENCAPSULATED_ATTRIBUTE__NAME:

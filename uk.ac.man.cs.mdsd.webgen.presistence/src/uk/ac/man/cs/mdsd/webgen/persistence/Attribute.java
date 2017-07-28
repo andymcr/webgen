@@ -14,7 +14,6 @@ import uk.ac.man.cs.mdsd.webgen.expression.Expression;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Attribute#getDefaultValue <em>Default Value</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Attribute#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Attribute#getValidationPattern <em>Validation Pattern</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Attribute#getInputClass <em>Input Class</em>}</li>
  * </ul>
@@ -49,32 +48,6 @@ public interface Attribute extends Feature, Label {
 	 * @generated
 	 */
 	void setDefaultValue(Expression value);
-
-	/**
-	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Placeholder</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Placeholder</em>' attribute.
-	 * @see #setPlaceholder(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getAttribute_Placeholder()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getPlaceholder();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Attribute#getPlaceholder <em>Placeholder</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Placeholder</em>' attribute.
-	 * @see #getPlaceholder()
-	 * @generated
-	 */
-	void setPlaceholder(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Validation Pattern</b></em>' attribute.

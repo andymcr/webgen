@@ -679,7 +679,12 @@ abstract rule AssociationReference {
 abstract rule InterfaceField {
 	from website : Website!InterfaceField
 	to waf : WAF!InterfaceField (
-		displayLabel <- website.displayLabel,
+		displayLabel <-
+			if not website.displayLabel.oclIsUndefined() and website.displayLabel <> '' then
+				website.displayLabel
+			else
+				website.name.createLabel()
+			endif,
 		required <- website.required,
 		defaultValue <- website.defaultValue,
 		mustMatch <- website.mustMatch,
@@ -857,7 +862,7 @@ rule CreateUpdateUnit {
 			if website.createUriElement.trim() <> '' then
 				website.createUriElement.trim()
 			else
-				'update'
+				'create'
 			endif,
 		clearLabel <- website.clearLabel
 , selectionType <- thisModule.findOrmEntityOrView(website.contentType.name)

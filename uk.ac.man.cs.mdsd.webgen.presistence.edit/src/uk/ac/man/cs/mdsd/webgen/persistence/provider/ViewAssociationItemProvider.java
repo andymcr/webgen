@@ -49,8 +49,10 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTitlePropertyDescriptor(object);
-			addCollectionAllowAddPropertyDescriptor(object);
-			addCollectionAllowRemovePropertyDescriptor(object);
+			addCollectionOrmAllowAddPropertyDescriptor(object);
+			addCollectionOrmAllowRemovePropertyDescriptor(object);
+			addCollectionUiAllowAddPropertyDescriptor(object);
+			addCollectionUiAllowRemovePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addNullDisplayValuePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
@@ -92,19 +94,19 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Collection Allow Add feature.
+	 * This adds a property descriptor for the Collection Orm Allow Add feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCollectionAllowAddPropertyDescriptor(Object object) {
+	protected void addCollectionOrmAllowAddPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Feature_collectionAllowAdd_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionAllowAdd_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__COLLECTION_ALLOW_ADD,
+				 getString("_UI_Feature_collectionOrmAllowAdd_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionOrmAllowAdd_feature", "_UI_Feature_type"),
+				 PersistencePackage.Literals.FEATURE__COLLECTION_ORM_ALLOW_ADD,
 				 true,
 				 false,
 				 false,
@@ -114,24 +116,68 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Collection Allow Remove feature.
+	 * This adds a property descriptor for the Collection Orm Allow Remove feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCollectionAllowRemovePropertyDescriptor(Object object) {
+	protected void addCollectionOrmAllowRemovePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Feature_collectionAllowRemove_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionAllowRemove_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__COLLECTION_ALLOW_REMOVE,
+				 getString("_UI_Feature_collectionOrmAllowRemove_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionOrmAllowRemove_feature", "_UI_Feature_type"),
+				 PersistencePackage.Literals.FEATURE__COLLECTION_ORM_ALLOW_REMOVE,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_OrmPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Ui Allow Add feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionUiAllowAddPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_collectionUiAllowAdd_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionUiAllowAdd_feature", "_UI_Feature_type"),
+				 PersistencePackage.Literals.FEATURE__COLLECTION_UI_ALLOW_ADD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Ui Allow Remove feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionUiAllowRemovePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_collectionUiAllowRemove_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionUiAllowRemove_feature", "_UI_Feature_type"),
+				 PersistencePackage.Literals.FEATURE__COLLECTION_UI_ALLOW_REMOVE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -482,8 +528,10 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 
 		switch (notification.getFeatureID(ViewAssociation.class)) {
 			case PersistencePackage.VIEW_ASSOCIATION__TITLE:
-			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
-			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
+			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ORM_ALLOW_ADD:
+			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_ORM_ALLOW_REMOVE:
+			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_UI_ALLOW_ADD:
+			case PersistencePackage.VIEW_ASSOCIATION__COLLECTION_UI_ALLOW_REMOVE:
 			case PersistencePackage.VIEW_ASSOCIATION__PLACEHOLDER:
 			case PersistencePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
 			case PersistencePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:

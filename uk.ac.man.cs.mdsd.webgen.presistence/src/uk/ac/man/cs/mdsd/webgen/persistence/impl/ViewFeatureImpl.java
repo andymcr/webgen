@@ -31,8 +31,10 @@ import uk.ac.man.cs.mdsd.webgen.persistence.ViewFeature;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#isCollectionOrmAllowAdd <em>Collection Orm Allow Add</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#isCollectionOrmAllowRemove <em>Collection Orm Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#isCollectionUiAllowAdd <em>Collection Ui Allow Add</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#isCollectionUiAllowRemove <em>Collection Ui Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ViewFeatureImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
@@ -67,44 +69,84 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	protected String title = TITLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isCollectionAllowAdd() <em>Collection Allow Add</em>}' attribute.
+	 * The default value of the '{@link #isCollectionOrmAllowAdd() <em>Collection Orm Allow Add</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCollectionAllowAdd()
+	 * @see #isCollectionOrmAllowAdd()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean COLLECTION_ALLOW_ADD_EDEFAULT = false;
+	protected static final boolean COLLECTION_ORM_ALLOW_ADD_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isCollectionAllowAdd() <em>Collection Allow Add</em>}' attribute.
+	 * The cached value of the '{@link #isCollectionOrmAllowAdd() <em>Collection Orm Allow Add</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCollectionAllowAdd()
+	 * @see #isCollectionOrmAllowAdd()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean collectionAllowAdd = COLLECTION_ALLOW_ADD_EDEFAULT;
+	protected boolean collectionOrmAllowAdd = COLLECTION_ORM_ALLOW_ADD_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isCollectionAllowRemove() <em>Collection Allow Remove</em>}' attribute.
+	 * The default value of the '{@link #isCollectionOrmAllowRemove() <em>Collection Orm Allow Remove</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCollectionAllowRemove()
+	 * @see #isCollectionOrmAllowRemove()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean COLLECTION_ALLOW_REMOVE_EDEFAULT = false;
+	protected static final boolean COLLECTION_ORM_ALLOW_REMOVE_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isCollectionAllowRemove() <em>Collection Allow Remove</em>}' attribute.
+	 * The cached value of the '{@link #isCollectionOrmAllowRemove() <em>Collection Orm Allow Remove</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isCollectionAllowRemove()
+	 * @see #isCollectionOrmAllowRemove()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean collectionAllowRemove = COLLECTION_ALLOW_REMOVE_EDEFAULT;
+	protected boolean collectionOrmAllowRemove = COLLECTION_ORM_ALLOW_REMOVE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCollectionUiAllowAdd() <em>Collection Ui Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionUiAllowAdd()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean COLLECTION_UI_ALLOW_ADD_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCollectionUiAllowAdd() <em>Collection Ui Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionUiAllowAdd()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean collectionUiAllowAdd = COLLECTION_UI_ALLOW_ADD_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCollectionUiAllowRemove() <em>Collection Ui Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionUiAllowRemove()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean COLLECTION_UI_ALLOW_REMOVE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCollectionUiAllowRemove() <em>Collection Ui Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionUiAllowRemove()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean collectionUiAllowRemove = COLLECTION_UI_ALLOW_REMOVE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
@@ -281,8 +323,8 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isCollectionAllowAdd() {
-		return collectionAllowAdd;
+	public boolean isCollectionOrmAllowAdd() {
+		return collectionOrmAllowAdd;
 	}
 
 	/**
@@ -290,11 +332,11 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCollectionAllowAdd(boolean newCollectionAllowAdd) {
-		boolean oldCollectionAllowAdd = collectionAllowAdd;
-		collectionAllowAdd = newCollectionAllowAdd;
+	public void setCollectionOrmAllowAdd(boolean newCollectionOrmAllowAdd) {
+		boolean oldCollectionOrmAllowAdd = collectionOrmAllowAdd;
+		collectionOrmAllowAdd = newCollectionOrmAllowAdd;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD, oldCollectionAllowAdd, collectionAllowAdd));
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__COLLECTION_ORM_ALLOW_ADD, oldCollectionOrmAllowAdd, collectionOrmAllowAdd));
 	}
 
 	/**
@@ -302,8 +344,8 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isCollectionAllowRemove() {
-		return collectionAllowRemove;
+	public boolean isCollectionOrmAllowRemove() {
+		return collectionOrmAllowRemove;
 	}
 
 	/**
@@ -311,11 +353,53 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCollectionAllowRemove(boolean newCollectionAllowRemove) {
-		boolean oldCollectionAllowRemove = collectionAllowRemove;
-		collectionAllowRemove = newCollectionAllowRemove;
+	public void setCollectionOrmAllowRemove(boolean newCollectionOrmAllowRemove) {
+		boolean oldCollectionOrmAllowRemove = collectionOrmAllowRemove;
+		collectionOrmAllowRemove = newCollectionOrmAllowRemove;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__COLLECTION_ORM_ALLOW_REMOVE, oldCollectionOrmAllowRemove, collectionOrmAllowRemove));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCollectionUiAllowAdd() {
+		return collectionUiAllowAdd;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionUiAllowAdd(boolean newCollectionUiAllowAdd) {
+		boolean oldCollectionUiAllowAdd = collectionUiAllowAdd;
+		collectionUiAllowAdd = newCollectionUiAllowAdd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__COLLECTION_UI_ALLOW_ADD, oldCollectionUiAllowAdd, collectionUiAllowAdd));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCollectionUiAllowRemove() {
+		return collectionUiAllowRemove;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionUiAllowRemove(boolean newCollectionUiAllowRemove) {
+		boolean oldCollectionUiAllowRemove = collectionUiAllowRemove;
+		collectionUiAllowRemove = newCollectionUiAllowRemove;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.VIEW_FEATURE__COLLECTION_UI_ALLOW_REMOVE, oldCollectionUiAllowRemove, collectionUiAllowRemove));
 	}
 
 	/**
@@ -551,10 +635,14 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		switch (featureID) {
 			case PersistencePackage.VIEW_FEATURE__TITLE:
 				return getTitle();
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
-				return isCollectionAllowAdd();
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
-				return isCollectionAllowRemove();
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_ORM_ALLOW_ADD:
+				return isCollectionOrmAllowAdd();
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_ORM_ALLOW_REMOVE:
+				return isCollectionOrmAllowRemove();
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_UI_ALLOW_ADD:
+				return isCollectionUiAllowAdd();
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+				return isCollectionUiAllowRemove();
 			case PersistencePackage.VIEW_FEATURE__PLACEHOLDER:
 				return getPlaceholder();
 			case PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
@@ -587,11 +675,17 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 			case PersistencePackage.VIEW_FEATURE__TITLE:
 				setTitle((String)newValue);
 				return;
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
-				setCollectionAllowAdd((Boolean)newValue);
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_ORM_ALLOW_ADD:
+				setCollectionOrmAllowAdd((Boolean)newValue);
 				return;
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
-				setCollectionAllowRemove((Boolean)newValue);
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_ORM_ALLOW_REMOVE:
+				setCollectionOrmAllowRemove((Boolean)newValue);
+				return;
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_UI_ALLOW_ADD:
+				setCollectionUiAllowAdd((Boolean)newValue);
+				return;
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+				setCollectionUiAllowRemove((Boolean)newValue);
 				return;
 			case PersistencePackage.VIEW_FEATURE__PLACEHOLDER:
 				setPlaceholder((String)newValue);
@@ -633,11 +727,17 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 			case PersistencePackage.VIEW_FEATURE__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
-				setCollectionAllowAdd(COLLECTION_ALLOW_ADD_EDEFAULT);
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_ORM_ALLOW_ADD:
+				setCollectionOrmAllowAdd(COLLECTION_ORM_ALLOW_ADD_EDEFAULT);
 				return;
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
-				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_ORM_ALLOW_REMOVE:
+				setCollectionOrmAllowRemove(COLLECTION_ORM_ALLOW_REMOVE_EDEFAULT);
+				return;
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_UI_ALLOW_ADD:
+				setCollectionUiAllowAdd(COLLECTION_UI_ALLOW_ADD_EDEFAULT);
+				return;
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+				setCollectionUiAllowRemove(COLLECTION_UI_ALLOW_REMOVE_EDEFAULT);
 				return;
 			case PersistencePackage.VIEW_FEATURE__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
@@ -677,10 +777,14 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		switch (featureID) {
 			case PersistencePackage.VIEW_FEATURE__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
-				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
-			case PersistencePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
-				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_ORM_ALLOW_ADD:
+				return collectionOrmAllowAdd != COLLECTION_ORM_ALLOW_ADD_EDEFAULT;
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_ORM_ALLOW_REMOVE:
+				return collectionOrmAllowRemove != COLLECTION_ORM_ALLOW_REMOVE_EDEFAULT;
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_UI_ALLOW_ADD:
+				return collectionUiAllowAdd != COLLECTION_UI_ALLOW_ADD_EDEFAULT;
+			case PersistencePackage.VIEW_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+				return collectionUiAllowRemove != COLLECTION_UI_ALLOW_REMOVE_EDEFAULT;
 			case PersistencePackage.VIEW_FEATURE__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case PersistencePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
@@ -713,10 +817,14 @@ public abstract class ViewFeatureImpl extends MinimalEObjectImpl.Container imple
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (title: ");
 		result.append(title);
-		result.append(", collectionAllowAdd: ");
-		result.append(collectionAllowAdd);
-		result.append(", collectionAllowRemove: ");
-		result.append(collectionAllowRemove);
+		result.append(", collectionOrmAllowAdd: ");
+		result.append(collectionOrmAllowAdd);
+		result.append(", collectionOrmAllowRemove: ");
+		result.append(collectionOrmAllowRemove);
+		result.append(", collectionUiAllowAdd: ");
+		result.append(collectionUiAllowAdd);
+		result.append(", collectionUiAllowRemove: ");
+		result.append(collectionUiAllowRemove);
 		result.append(", placeholder: ");
 		result.append(placeholder);
 		result.append(", nullDisplayValue: ");

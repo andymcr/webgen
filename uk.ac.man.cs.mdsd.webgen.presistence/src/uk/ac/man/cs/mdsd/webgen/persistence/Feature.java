@@ -16,8 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getTitle <em>Title</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionOrmAllowAdd <em>Collection Orm Allow Add</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionOrmAllowRemove <em>Collection Orm Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionUiAllowAdd <em>Collection Ui Allow Add</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionUiAllowRemove <em>Collection Ui Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isEncodeUriKey <em>Encode Uri Key</em>}</li>
@@ -59,58 +61,112 @@ public interface Feature extends EObject {
 	void setTitle(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * Returns the value of the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Collection Allow Add</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Collection Orm Allow Add</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Collection Allow Add</em>' attribute.
-	 * @see #setCollectionAllowAdd(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_CollectionAllowAdd()
+	 * @return the value of the '<em>Collection Orm Allow Add</em>' attribute.
+	 * @see #setCollectionOrmAllowAdd(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_CollectionOrmAllowAdd()
 	 * @model default="false"
 	 * @generated
 	 */
-	boolean isCollectionAllowAdd();
+	boolean isCollectionOrmAllowAdd();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionAllowAdd <em>Collection Allow Add</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionOrmAllowAdd <em>Collection Orm Allow Add</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Collection Allow Add</em>' attribute.
-	 * @see #isCollectionAllowAdd()
+	 * @param value the new value of the '<em>Collection Orm Allow Add</em>' attribute.
+	 * @see #isCollectionOrmAllowAdd()
 	 * @generated
 	 */
-	void setCollectionAllowAdd(boolean value);
+	void setCollectionOrmAllowAdd(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * Returns the value of the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Collection Allow Remove</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Collection Orm Allow Remove</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Collection Allow Remove</em>' attribute.
-	 * @see #setCollectionAllowRemove(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_CollectionAllowRemove()
+	 * @return the value of the '<em>Collection Orm Allow Remove</em>' attribute.
+	 * @see #setCollectionOrmAllowRemove(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_CollectionOrmAllowRemove()
 	 * @model default="false"
 	 * @generated
 	 */
-	boolean isCollectionAllowRemove();
+	boolean isCollectionOrmAllowRemove();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionAllowRemove <em>Collection Allow Remove</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionOrmAllowRemove <em>Collection Orm Allow Remove</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Collection Allow Remove</em>' attribute.
-	 * @see #isCollectionAllowRemove()
+	 * @param value the new value of the '<em>Collection Orm Allow Remove</em>' attribute.
+	 * @see #isCollectionOrmAllowRemove()
 	 * @generated
 	 */
-	void setCollectionAllowRemove(boolean value);
+	void setCollectionOrmAllowRemove(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Collection Ui Allow Add</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Collection Ui Allow Add</em>' attribute.
+	 * @see #setCollectionUiAllowAdd(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_CollectionUiAllowAdd()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isCollectionUiAllowAdd();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionUiAllowAdd <em>Collection Ui Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Collection Ui Allow Add</em>' attribute.
+	 * @see #isCollectionUiAllowAdd()
+	 * @generated
+	 */
+	void setCollectionUiAllowAdd(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Collection Ui Allow Remove</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Collection Ui Allow Remove</em>' attribute.
+	 * @see #setCollectionUiAllowRemove(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getFeature_CollectionUiAllowRemove()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isCollectionUiAllowRemove();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionUiAllowRemove <em>Collection Ui Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Collection Ui Allow Remove</em>' attribute.
+	 * @see #isCollectionUiAllowRemove()
+	 * @generated
+	 */
+	void setCollectionUiAllowRemove(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.

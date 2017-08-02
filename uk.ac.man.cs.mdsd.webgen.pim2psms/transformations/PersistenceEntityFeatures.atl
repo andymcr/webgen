@@ -34,8 +34,10 @@ abstract rule NamedDisplayElement {
 abstract rule Feature {
 	from website : Website!Feature
 	to orm : ORM!Feature (
-		collectionAllowAdd <- website.collectionAllowAdd,
-		collectionAllowRemove <- website.collectionAllowRemove,
+		collectionOrmAllowAdd <- website.collectionOrmAllowAdd,
+		collectionOrmAllowRemove <- website.collectionOrmAllowRemove,
+		collectionUiAllowAdd <- website.collectionUiAllowAdd,
+		collectionUiAllowRemove <- website.collectionUiAllowRemove,
 		encodeUriKey <- website.encodeUriKey,
 		serializationGroups <-
 			website.serializationGroups

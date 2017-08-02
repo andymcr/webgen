@@ -461,22 +461,40 @@ public interface PersistencePackage extends EPackage {
 	int FEATURE__TITLE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__COLLECTION_ALLOW_ADD = 1;
+	int FEATURE__COLLECTION_ORM_ALLOW_ADD = 1;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__COLLECTION_ALLOW_REMOVE = 2;
+	int FEATURE__COLLECTION_ORM_ALLOW_REMOVE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__COLLECTION_UI_ALLOW_ADD = 3;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__COLLECTION_UI_ALLOW_REMOVE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -485,7 +503,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__PLACEHOLDER = 3;
+	int FEATURE__PLACEHOLDER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -494,7 +512,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__NULL_DISPLAY_VALUE = 4;
+	int FEATURE__NULL_DISPLAY_VALUE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -503,7 +521,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__ENCODE_URI_KEY = 5;
+	int FEATURE__ENCODE_URI_KEY = 7;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
@@ -512,7 +530,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__SERIALIZATION_GROUPS = 6;
+	int FEATURE__SERIALIZATION_GROUPS = 8;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -521,7 +539,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__HEADER_CLASS = 7;
+	int FEATURE__HEADER_CLASS = 9;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -530,7 +548,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__DISPLAY_CLASS = 8;
+	int FEATURE__DISPLAY_CLASS = 10;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -539,7 +557,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__FOOTER_CLASS = 9;
+	int FEATURE__FOOTER_CLASS = 11;
 
 	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
@@ -548,7 +566,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = 10;
+	int FEATURE_FEATURE_COUNT = 12;
 
 	/**
 	 * The number of operations of the '<em>Feature</em>' class.
@@ -579,22 +597,40 @@ public interface PersistencePackage extends EPackage {
 	int ATTRIBUTE__TITLE = FEATURE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__COLLECTION_ALLOW_ADD = FEATURE__COLLECTION_ALLOW_ADD;
+	int ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD = FEATURE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__COLLECTION_ALLOW_REMOVE = FEATURE__COLLECTION_ALLOW_REMOVE;
+	int ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE = FEATURE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__COLLECTION_UI_ALLOW_ADD = FEATURE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE = FEATURE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -724,22 +760,40 @@ public interface PersistencePackage extends EPackage {
 	int ASSOCIATION__TITLE = FEATURE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__COLLECTION_ALLOW_ADD = FEATURE__COLLECTION_ALLOW_ADD;
+	int ASSOCIATION__COLLECTION_ORM_ALLOW_ADD = FEATURE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__COLLECTION_ALLOW_REMOVE = FEATURE__COLLECTION_ALLOW_REMOVE;
+	int ASSOCIATION__COLLECTION_ORM_ALLOW_REMOVE = FEATURE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__COLLECTION_UI_ALLOW_ADD = FEATURE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__COLLECTION_UI_ALLOW_REMOVE = FEATURE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -1388,22 +1442,40 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_FEATURE__TITLE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__COLLECTION_ALLOW_ADD = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int ENTITY_FEATURE__COLLECTION_ORM_ALLOW_ADD = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int ENTITY_FEATURE__COLLECTION_ORM_ALLOW_REMOVE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__COLLECTION_UI_ALLOW_ADD = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__COLLECTION_UI_ALLOW_REMOVE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -1412,7 +1484,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PLACEHOLDER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int ENTITY_FEATURE__PLACEHOLDER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -1421,7 +1493,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__NULL_DISPLAY_VALUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int ENTITY_FEATURE__NULL_DISPLAY_VALUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -1430,7 +1502,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__ENCODE_URI_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int ENTITY_FEATURE__ENCODE_URI_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
@@ -1439,7 +1511,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__SERIALIZATION_GROUPS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int ENTITY_FEATURE__SERIALIZATION_GROUPS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -1448,7 +1520,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int ENTITY_FEATURE__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -1457,7 +1529,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__DISPLAY_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int ENTITY_FEATURE__DISPLAY_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -1466,7 +1538,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int ENTITY_FEATURE__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1475,7 +1547,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PART_OF = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int ENTITY_FEATURE__PART_OF = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -1484,7 +1556,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__CARDINALITY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int ENTITY_FEATURE__CARDINALITY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
@@ -1493,7 +1565,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__ORDERED = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int ENTITY_FEATURE__ORDERED = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Primary Key</b></em>' attribute.
@@ -1502,7 +1574,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PRIMARY_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int ENTITY_FEATURE__PRIMARY_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
@@ -1511,7 +1583,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
@@ -1520,7 +1592,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__SINGLETON_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
+	int ENTITY_FEATURE__SINGLETON_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
@@ -1529,7 +1601,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PLURALISED_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
+	int ENTITY_FEATURE__PLURALISED_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -1538,7 +1610,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__COLUMN_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
+	int ENTITY_FEATURE__COLUMN_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The number of structural features of the '<em>Entity Feature</em>' class.
@@ -1547,7 +1619,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
+	int ENTITY_FEATURE_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The number of operations of the '<em>Entity Feature</em>' class.
@@ -1596,22 +1668,40 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_ATTRIBUTE__TITLE = ENTITY_FEATURE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_FEATURE__COLLECTION_ALLOW_ADD;
+	int ENTITY_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD = ENTITY_FEATURE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
+	int ENTITY_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD = ENTITY_FEATURE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -1885,22 +1975,40 @@ public interface PersistencePackage extends EPackage {
 	int DATA_TYPE_ATTRIBUTE__TITLE = ENTITY_ATTRIBUTE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+	int DATA_TYPE_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+	int DATA_TYPE_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -2210,22 +2318,40 @@ public interface PersistencePackage extends EPackage {
 	int DATE_ATTRIBUTE__TITLE = ENTITY_ATTRIBUTE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+	int DATE_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+	int DATE_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -2517,22 +2643,40 @@ public interface PersistencePackage extends EPackage {
 	int URL_ATTRIBUTE__TITLE = ENTITY_ATTRIBUTE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int URL_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+	int URL_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int URL_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+	int URL_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -2815,22 +2959,40 @@ public interface PersistencePackage extends EPackage {
 	int RESOURCE_ATTRIBUTE__TITLE = ENTITY_ATTRIBUTE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+	int RESOURCE_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+	int RESOURCE_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -3251,22 +3413,40 @@ public interface PersistencePackage extends EPackage {
 	int FILE_ATTRIBUTE__TITLE = RESOURCE_ATTRIBUTE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__COLLECTION_ALLOW_ADD = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+	int FILE_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD = RESOURCE_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+	int FILE_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD = RESOURCE_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -3585,22 +3765,40 @@ public interface PersistencePackage extends EPackage {
 	int IMAGE_ATTRIBUTE__TITLE = RESOURCE_ATTRIBUTE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_ATTRIBUTE__COLLECTION_ALLOW_ADD = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+	int IMAGE_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD = RESOURCE_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+	int IMAGE_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD = RESOURCE_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -3919,22 +4117,40 @@ public interface PersistencePackage extends EPackage {
 	int LOCATION_ATTRIBUTE__TITLE = ENTITY_ATTRIBUTE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+	int LOCATION_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+	int LOCATION_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -4208,22 +4424,40 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_ASSOCIATION__TITLE = ENTITY_FEATURE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__COLLECTION_ALLOW_ADD = ENTITY_FEATURE__COLLECTION_ALLOW_ADD;
+	int ENTITY_ASSOCIATION__COLLECTION_ORM_ALLOW_ADD = ENTITY_FEATURE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
+	int ENTITY_ASSOCIATION__COLLECTION_ORM_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__COLLECTION_UI_ALLOW_ADD = ENTITY_FEATURE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__COLLECTION_UI_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -4587,22 +4821,40 @@ public interface PersistencePackage extends EPackage {
 	int ASSOCIATION_WITHOUT_CONTAINMENT__TITLE = ENTITY_ASSOCIATION__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_ALLOW_ADD = ENTITY_ASSOCIATION__COLLECTION_ALLOW_ADD;
+	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_ORM_ALLOW_ADD = ENTITY_ASSOCIATION__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
+	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_ORM_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_UI_ALLOW_ADD = ENTITY_ASSOCIATION__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_UI_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -4984,22 +5236,40 @@ public interface PersistencePackage extends EPackage {
 	int ASSOCIATION_WITH_CONTAINMENT__TITLE = ENTITY_ASSOCIATION__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_ALLOW_ADD = ENTITY_ASSOCIATION__COLLECTION_ALLOW_ADD;
+	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_ORM_ALLOW_ADD = ENTITY_ASSOCIATION__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
+	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_ORM_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_UI_ALLOW_ADD = ENTITY_ASSOCIATION__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_UI_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -5626,22 +5896,40 @@ public interface PersistencePackage extends EPackage {
 	int VIEW_FEATURE__TITLE = FEATURE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FEATURE__COLLECTION_ALLOW_ADD = FEATURE__COLLECTION_ALLOW_ADD;
+	int VIEW_FEATURE__COLLECTION_ORM_ALLOW_ADD = FEATURE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FEATURE__COLLECTION_ALLOW_REMOVE = FEATURE__COLLECTION_ALLOW_REMOVE;
+	int VIEW_FEATURE__COLLECTION_ORM_ALLOW_REMOVE = FEATURE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE__COLLECTION_UI_ALLOW_ADD = FEATURE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE__COLLECTION_UI_ALLOW_REMOVE = FEATURE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -5753,22 +6041,40 @@ public interface PersistencePackage extends EPackage {
 	int ENCAPSULATED_FEATURE__TITLE = VIEW_FEATURE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_FEATURE__COLLECTION_ALLOW_ADD = VIEW_FEATURE__COLLECTION_ALLOW_ADD;
+	int ENCAPSULATED_FEATURE__COLLECTION_ORM_ALLOW_ADD = VIEW_FEATURE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_FEATURE__COLLECTION_ALLOW_REMOVE = VIEW_FEATURE__COLLECTION_ALLOW_REMOVE;
+	int ENCAPSULATED_FEATURE__COLLECTION_ORM_ALLOW_REMOVE = VIEW_FEATURE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_FEATURE__COLLECTION_UI_ALLOW_ADD = VIEW_FEATURE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_FEATURE__COLLECTION_UI_ALLOW_REMOVE = VIEW_FEATURE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -5907,22 +6213,40 @@ public interface PersistencePackage extends EPackage {
 	int ENCAPSULATED_ATTRIBUTE__TITLE = ENCAPSULATED_FEATURE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENCAPSULATED_FEATURE__COLLECTION_ALLOW_ADD;
+	int ENCAPSULATED_ATTRIBUTE__COLLECTION_ORM_ALLOW_ADD = ENCAPSULATED_FEATURE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENCAPSULATED_FEATURE__COLLECTION_ALLOW_REMOVE;
+	int ENCAPSULATED_ATTRIBUTE__COLLECTION_ORM_ALLOW_REMOVE = ENCAPSULATED_FEATURE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ATTRIBUTE__COLLECTION_UI_ALLOW_ADD = ENCAPSULATED_FEATURE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ATTRIBUTE__COLLECTION_UI_ALLOW_REMOVE = ENCAPSULATED_FEATURE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -6115,22 +6439,40 @@ public interface PersistencePackage extends EPackage {
 	int ENCAPSULATED_ASSOCIATION__TITLE = ENCAPSULATED_FEATURE__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ASSOCIATION__COLLECTION_ALLOW_ADD = ENCAPSULATED_FEATURE__COLLECTION_ALLOW_ADD;
+	int ENCAPSULATED_ASSOCIATION__COLLECTION_ORM_ALLOW_ADD = ENCAPSULATED_FEATURE__COLLECTION_ORM_ALLOW_ADD;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ASSOCIATION__COLLECTION_ALLOW_REMOVE = ENCAPSULATED_FEATURE__COLLECTION_ALLOW_REMOVE;
+	int ENCAPSULATED_ASSOCIATION__COLLECTION_ORM_ALLOW_REMOVE = ENCAPSULATED_FEATURE__COLLECTION_ORM_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__COLLECTION_UI_ALLOW_ADD = ENCAPSULATED_FEATURE__COLLECTION_UI_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__COLLECTION_UI_ALLOW_REMOVE = ENCAPSULATED_FEATURE__COLLECTION_UI_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -6404,22 +6746,40 @@ public interface PersistencePackage extends EPackage {
 	int VIEW_ASSOCIATION__TITLE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int VIEW_ASSOCIATION__COLLECTION_ORM_ALLOW_ADD = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Orm Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int VIEW_ASSOCIATION__COLLECTION_ORM_ALLOW_REMOVE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_ASSOCIATION__COLLECTION_UI_ALLOW_ADD = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_ASSOCIATION__COLLECTION_UI_ALLOW_REMOVE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -6428,7 +6788,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PLACEHOLDER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int VIEW_ASSOCIATION__PLACEHOLDER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
@@ -6437,7 +6797,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__NULL_DISPLAY_VALUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int VIEW_ASSOCIATION__NULL_DISPLAY_VALUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -6446,7 +6806,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__ENCODE_URI_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int VIEW_ASSOCIATION__ENCODE_URI_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
@@ -6455,7 +6815,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SERIALIZATION_GROUPS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int VIEW_ASSOCIATION__SERIALIZATION_GROUPS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -6464,7 +6824,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int VIEW_ASSOCIATION__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -6473,7 +6833,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__DISPLAY_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int VIEW_ASSOCIATION__DISPLAY_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -6482,7 +6842,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int VIEW_ASSOCIATION__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -6491,7 +6851,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PART_OF = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int VIEW_ASSOCIATION__PART_OF = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
@@ -6500,7 +6860,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PSEUDO = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int VIEW_ASSOCIATION__PSEUDO = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Encapsulated By</b></em>' reference list.
@@ -6509,7 +6869,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__ENCAPSULATED_BY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int VIEW_ASSOCIATION__ENCAPSULATED_BY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -6518,7 +6878,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__INPUT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int VIEW_ASSOCIATION__INPUT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Source Entity X</b></em>' reference.
@@ -6527,7 +6887,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity X</b></em>' reference.
@@ -6536,7 +6896,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__TARGET_ENTITY_X = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
+	int VIEW_ASSOCIATION__TARGET_ENTITY_X = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Max Depth</b></em>' attribute.
@@ -6545,7 +6905,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
+	int VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Opposite</b></em>' reference.
@@ -6554,7 +6914,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__OPPOSITE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
+	int VIEW_ASSOCIATION__OPPOSITE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -6563,7 +6923,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__CARDINALITY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
+	int VIEW_ASSOCIATION__CARDINALITY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The number of structural features of the '<em>View Association</em>' class.
@@ -6572,7 +6932,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 19;
+	int VIEW_ASSOCIATION_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The number of operations of the '<em>View Association</em>' class.
@@ -7016,26 +7376,48 @@ public interface PersistencePackage extends EPackage {
 	EAttribute getFeature_Title();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionAllowAdd <em>Collection Allow Add</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionOrmAllowAdd <em>Collection Orm Allow Add</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Collection Allow Add</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionAllowAdd()
+	 * @return the meta object for the attribute '<em>Collection Orm Allow Add</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionOrmAllowAdd()
 	 * @see #getFeature()
 	 * @generated
 	 */
-	EAttribute getFeature_CollectionAllowAdd();
+	EAttribute getFeature_CollectionOrmAllowAdd();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionAllowRemove <em>Collection Allow Remove</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionOrmAllowRemove <em>Collection Orm Allow Remove</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Collection Allow Remove</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionAllowRemove()
+	 * @return the meta object for the attribute '<em>Collection Orm Allow Remove</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionOrmAllowRemove()
 	 * @see #getFeature()
 	 * @generated
 	 */
-	EAttribute getFeature_CollectionAllowRemove();
+	EAttribute getFeature_CollectionOrmAllowRemove();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionUiAllowAdd <em>Collection Ui Allow Add</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Collection Ui Allow Add</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionUiAllowAdd()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EAttribute getFeature_CollectionUiAllowAdd();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionUiAllowRemove <em>Collection Ui Allow Remove</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Collection Ui Allow Remove</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Feature#isCollectionUiAllowRemove()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EAttribute getFeature_CollectionUiAllowRemove();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Feature#getPlaceholder <em>Placeholder</em>}'.
@@ -8722,20 +9104,36 @@ public interface PersistencePackage extends EPackage {
 		EAttribute FEATURE__TITLE = eINSTANCE.getFeature_Title();
 
 		/**
-		 * The meta object literal for the '<em><b>Collection Allow Add</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Collection Orm Allow Add</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FEATURE__COLLECTION_ALLOW_ADD = eINSTANCE.getFeature_CollectionAllowAdd();
+		EAttribute FEATURE__COLLECTION_ORM_ALLOW_ADD = eINSTANCE.getFeature_CollectionOrmAllowAdd();
 
 		/**
-		 * The meta object literal for the '<em><b>Collection Allow Remove</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Collection Orm Allow Remove</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FEATURE__COLLECTION_ALLOW_REMOVE = eINSTANCE.getFeature_CollectionAllowRemove();
+		EAttribute FEATURE__COLLECTION_ORM_ALLOW_REMOVE = eINSTANCE.getFeature_CollectionOrmAllowRemove();
+
+		/**
+		 * The meta object literal for the '<em><b>Collection Ui Allow Add</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE__COLLECTION_UI_ALLOW_ADD = eINSTANCE.getFeature_CollectionUiAllowAdd();
+
+		/**
+		 * The meta object literal for the '<em><b>Collection Ui Allow Remove</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE__COLLECTION_UI_ALLOW_REMOVE = eINSTANCE.getFeature_CollectionUiAllowRemove();
 
 		/**
 		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.

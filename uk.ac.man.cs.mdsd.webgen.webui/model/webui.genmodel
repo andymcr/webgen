@@ -160,11 +160,13 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//UnitField/disableInput"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//UnitFeature">
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitFeature/onlyDisplayWhenNotEmpty"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitFeature/displayLabel"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//UnitFeature/required"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Business"
           ecoreFeature="ecore:EReference webui.ecore#//UnitFeature/forcedValue"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitFeature/collectionUiAllowAdd"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitFeature/collectionUiAllowRemove"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitFeature/onlyDisplayWhenNotEmpty"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitFeature/nullDisplayValue"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitFeature/footer"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute webui.ecore#//UnitFeature/autofocus"/>

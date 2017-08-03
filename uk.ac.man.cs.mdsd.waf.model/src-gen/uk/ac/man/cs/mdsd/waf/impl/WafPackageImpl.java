@@ -1888,7 +1888,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitFeature_NullDisplayValue() {
+	public EAttribute getUnitFeature_CollectionUiAllowAdd() {
 		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1897,7 +1897,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitFeature_OnlyDisplayWhenNotEmpty() {
+	public EAttribute getUnitFeature_CollectionUiAllowRemove() {
 		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1906,7 +1906,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitFeature_Autofocus() {
+	public EAttribute getUnitFeature_NullDisplayValue() {
 		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1915,7 +1915,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitFeature_Footer() {
+	public EAttribute getUnitFeature_OnlyDisplayWhenNotEmpty() {
 		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1924,7 +1924,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitFeature_HeaderClass() {
+	public EAttribute getUnitFeature_Autofocus() {
 		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1933,7 +1933,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitFeature_InputClass() {
+	public EAttribute getUnitFeature_Footer() {
 		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1942,7 +1942,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitFeature_DisplayClass() {
+	public EAttribute getUnitFeature_HeaderClass() {
 		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1951,8 +1951,26 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitFeature_FooterClass() {
+	public EAttribute getUnitFeature_InputClass() {
 		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnitFeature_DisplayClass() {
+		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnitFeature_FooterClass() {
+		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -3536,6 +3554,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		unitFeatureEClass = createEClass(UNIT_FEATURE);
 		createEReference(unitFeatureEClass, UNIT_FEATURE__FORCED_VALUE);
+		createEAttribute(unitFeatureEClass, UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD);
+		createEAttribute(unitFeatureEClass, UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE);
 		createEAttribute(unitFeatureEClass, UNIT_FEATURE__NULL_DISPLAY_VALUE);
 		createEAttribute(unitFeatureEClass, UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY);
 		createEAttribute(unitFeatureEClass, UNIT_FEATURE__AUTOFOCUS);
@@ -4015,6 +4035,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(unitFeatureEClass, UnitFeature.class, "UnitFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitFeature_ForcedValue(), theExpressionPackage.getExpression(), null, "forcedValue", null, 0, 1, UnitFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUnitFeature_CollectionUiAllowAdd(), theEcorePackage.getEBoolean(), "collectionUiAllowAdd", "true", 0, 1, UnitFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUnitFeature_CollectionUiAllowRemove(), theEcorePackage.getEBoolean(), "collectionUiAllowRemove", "true", 0, 1, UnitFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnitFeature_NullDisplayValue(), theEcorePackage.getEString(), "nullDisplayValue", null, 0, 1, UnitFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnitFeature_OnlyDisplayWhenNotEmpty(), theEcorePackage.getEBoolean(), "onlyDisplayWhenNotEmpty", "false", 0, 1, UnitFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnitFeature_Autofocus(), theEcorePackage.getEBoolean(), "autofocus", null, 0, 1, UnitFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

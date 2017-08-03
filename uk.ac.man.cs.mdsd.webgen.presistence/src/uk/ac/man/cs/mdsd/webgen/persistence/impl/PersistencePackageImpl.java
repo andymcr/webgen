@@ -749,7 +749,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_CollectionUiAllowAdd() {
+	public EAttribute getFeature_Placeholder() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -758,7 +758,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_CollectionUiAllowRemove() {
+	public EAttribute getFeature_NullDisplayValue() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -767,7 +767,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_Placeholder() {
+	public EAttribute getFeature_EncodeUriKey() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -776,26 +776,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_NullDisplayValue() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFeature_EncodeUriKey() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getFeature_SerializationGroups() {
-		return (EReference)featureEClass.getEStructuralFeatures().get(8);
+		return (EReference)featureEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -804,7 +786,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * @generated
 	 */
 	public EAttribute getFeature_HeaderClass() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -813,7 +795,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * @generated
 	 */
 	public EAttribute getFeature_DisplayClass() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -822,7 +804,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * @generated
 	 */
 	public EAttribute getFeature_FooterClass() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1982,8 +1964,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		createEAttribute(featureEClass, FEATURE__TITLE);
 		createEAttribute(featureEClass, FEATURE__COLLECTION_ORM_ALLOW_ADD);
 		createEAttribute(featureEClass, FEATURE__COLLECTION_ORM_ALLOW_REMOVE);
-		createEAttribute(featureEClass, FEATURE__COLLECTION_UI_ALLOW_ADD);
-		createEAttribute(featureEClass, FEATURE__COLLECTION_UI_ALLOW_REMOVE);
 		createEAttribute(featureEClass, FEATURE__PLACEHOLDER);
 		createEAttribute(featureEClass, FEATURE__NULL_DISPLAY_VALUE);
 		createEAttribute(featureEClass, FEATURE__ENCODE_URI_KEY);
@@ -2257,8 +2237,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEAttribute(getFeature_Title(), ecorePackage.getEString(), "title", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_CollectionOrmAllowAdd(), ecorePackage.getEBoolean(), "collectionOrmAllowAdd", "false", 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_CollectionOrmAllowRemove(), ecorePackage.getEBoolean(), "collectionOrmAllowRemove", "false", 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFeature_CollectionUiAllowAdd(), ecorePackage.getEBoolean(), "collectionUiAllowAdd", "false", 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFeature_CollectionUiAllowRemove(), ecorePackage.getEBoolean(), "collectionUiAllowRemove", "false", 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getFeature_NullDisplayValue(), ecorePackage.getEString(), "nullDisplayValue", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_EncodeUriKey(), ecorePackage.getEBoolean(), "encodeUriKey", "false", 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -58,6 +58,8 @@ public class UnitFeatureItemProvider
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addDisableInputPropertyDescriptor(object);
+			addCollectionUiAllowAddPropertyDescriptor(object);
+			addCollectionUiAllowRemovePropertyDescriptor(object);
 			addNullDisplayValuePropertyDescriptor(object);
 			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
@@ -342,6 +344,50 @@ public class UnitFeatureItemProvider
 	}
 
 		/**
+	 * This adds a property descriptor for the Collection Ui Allow Add feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionUiAllowAddPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_collectionUiAllowAdd_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_collectionUiAllowAdd_feature", "_UI_UnitFeature_type"),
+				 WafPackage.Literals.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
+	 * This adds a property descriptor for the Collection Ui Allow Remove feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionUiAllowRemovePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_collectionUiAllowRemove_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_collectionUiAllowRemove_feature", "_UI_UnitFeature_type"),
+				 WafPackage.Literals.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Null Display Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -500,6 +546,8 @@ public class UnitFeatureItemProvider
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
 			case WafPackage.UNIT_FEATURE__DISABLE_INPUT:
+			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
+			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
 			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:

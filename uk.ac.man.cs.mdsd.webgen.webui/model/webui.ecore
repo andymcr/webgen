@@ -243,9 +243,6 @@
       <details key="atMostOneSelectAction" value="actions->select(a | a.oclIsKindOf(SelectAction))->size() &lt; 2"/>
       <details key="noDeleteActions" value="actions->select(a | a.oclIsKindOf(DeleteAction))->isEmpty()"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onlyDisplayWhenNotEmpty"
-        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayLabel" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" ordered="false"
@@ -253,6 +250,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="forcedValue" ordered="false"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Expression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionUiAllowAdd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionUiAllowRemove"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onlyDisplayWhenNotEmpty"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullDisplayValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="footer" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -83,8 +83,6 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/title"/>
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/collectionOrmAllowAdd"/>
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/collectionOrmAllowRemove"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/collectionUiAllowAdd"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/collectionUiAllowRemove"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/placeholder"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/nullDisplayValue"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute persistence.ecore#//Feature/encodeUriKey"/>

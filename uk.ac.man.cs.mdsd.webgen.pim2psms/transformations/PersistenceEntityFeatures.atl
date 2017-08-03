@@ -36,8 +36,6 @@ abstract rule Feature {
 	to orm : ORM!Feature (
 		collectionOrmAllowAdd <- website.collectionOrmAllowAdd,
 		collectionOrmAllowRemove <- website.collectionOrmAllowRemove,
-		collectionUiAllowAdd <- website.collectionUiAllowAdd,
-		collectionUiAllowRemove <- website.collectionUiAllowRemove,
 		encodeUriKey <- website.encodeUriKey,
 		serializationGroups <-
 			website.serializationGroups

@@ -541,6 +541,8 @@ abstract rule UnitFeature {
 	from website : Website!UnitFeature
 	to waf : WAF!UnitFeature (
 		forcedValue <- website.forcedValue,
+		collectionUiAllowAdd <- website.collectionUiAllowAdd,
+		collectionUiAllowRemove <- website.collectionUiAllowRemove,
 		nullDisplayValue <- website.nullDisplayValue(),
 		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
 		autofocus <- website.autofocus,

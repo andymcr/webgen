@@ -56,9 +56,11 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addDisplayLabelPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
+			addCollectionUiAllowAddPropertyDescriptor(object);
+			addCollectionUiAllowRemovePropertyDescriptor(object);
+			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addNullDisplayValuePropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
@@ -133,6 +135,50 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Ui Allow Add feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionUiAllowAddPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_collectionUiAllowAdd_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_collectionUiAllowAdd_feature", "_UI_UnitFeature_type"),
+				 WebuiPackage.Literals.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Ui Allow Remove feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionUiAllowRemovePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_collectionUiAllowRemove_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_collectionUiAllowRemove_feature", "_UI_UnitFeature_type"),
+				 WebuiPackage.Literals.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -348,9 +394,11 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitFeature.class)) {
-			case WebuiPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WebuiPackage.UNIT_FEATURE__DISPLAY_LABEL:
 			case WebuiPackage.UNIT_FEATURE__REQUIRED:
+			case WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
+			case WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+			case WebuiPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WebuiPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 			case WebuiPackage.UNIT_FEATURE__FOOTER:
 			case WebuiPackage.UNIT_FEATURE__AUTOFOCUS:

@@ -45,6 +45,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDisableInput <em>Disable Input</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getForcedValue <em>Forced Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isCollectionUiAllowAdd <em>Collection Ui Allow Add</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isCollectionUiAllowRemove <em>Collection Ui Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isAutofocus <em>Autofocus</em>}</li>
@@ -217,6 +219,46 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 	 * @ordered
 	 */
 	protected Expression forcedValue;
+
+	/**
+	 * The default value of the '{@link #isCollectionUiAllowAdd() <em>Collection Ui Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionUiAllowAdd()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean COLLECTION_UI_ALLOW_ADD_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isCollectionUiAllowAdd() <em>Collection Ui Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionUiAllowAdd()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean collectionUiAllowAdd = COLLECTION_UI_ALLOW_ADD_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCollectionUiAllowRemove() <em>Collection Ui Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionUiAllowRemove()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean COLLECTION_UI_ALLOW_REMOVE_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isCollectionUiAllowRemove() <em>Collection Ui Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionUiAllowRemove()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean collectionUiAllowRemove = COLLECTION_UI_ALLOW_REMOVE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
@@ -655,6 +697,48 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isCollectionUiAllowAdd() {
+		return collectionUiAllowAdd;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionUiAllowAdd(boolean newCollectionUiAllowAdd) {
+		boolean oldCollectionUiAllowAdd = collectionUiAllowAdd;
+		collectionUiAllowAdd = newCollectionUiAllowAdd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD, oldCollectionUiAllowAdd, collectionUiAllowAdd));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCollectionUiAllowRemove() {
+		return collectionUiAllowRemove;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionUiAllowRemove(boolean newCollectionUiAllowRemove) {
+		boolean oldCollectionUiAllowRemove = collectionUiAllowRemove;
+		collectionUiAllowRemove = newCollectionUiAllowRemove;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE, oldCollectionUiAllowRemove, collectionUiAllowRemove));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getNullDisplayValue() {
 		return nullDisplayValue;
 	}
@@ -898,6 +982,10 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return getActions();
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				return getForcedValue();
+			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
+				return isCollectionUiAllowAdd();
+			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+				return isCollectionUiAllowRemove();
 			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 				return getNullDisplayValue();
 			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
@@ -957,6 +1045,12 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return;
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)newValue);
+				return;
+			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
+				setCollectionUiAllowAdd((Boolean)newValue);
+				return;
+			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+				setCollectionUiAllowRemove((Boolean)newValue);
 				return;
 			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue((String)newValue);
@@ -1024,6 +1118,12 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)null);
 				return;
+			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
+				setCollectionUiAllowAdd(COLLECTION_UI_ALLOW_ADD_EDEFAULT);
+				return;
+			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+				setCollectionUiAllowRemove(COLLECTION_UI_ALLOW_REMOVE_EDEFAULT);
+				return;
 			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
 				return;
@@ -1080,6 +1180,10 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return actions != null && !actions.isEmpty();
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				return forcedValue != null;
+			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
+				return collectionUiAllowAdd != COLLECTION_UI_ALLOW_ADD_EDEFAULT;
+			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+				return collectionUiAllowRemove != COLLECTION_UI_ALLOW_REMOVE_EDEFAULT;
 			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
 			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
@@ -1156,6 +1260,10 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		result.append(dateFormat);
 		result.append(", disableInput: ");
 		result.append(disableInput);
+		result.append(", collectionUiAllowAdd: ");
+		result.append(collectionUiAllowAdd);
+		result.append(", collectionUiAllowRemove: ");
+		result.append(collectionUiAllowRemove);
 		result.append(", nullDisplayValue: ");
 		result.append(nullDisplayValue);
 		result.append(", onlyDisplayWhenNotEmpty: ");

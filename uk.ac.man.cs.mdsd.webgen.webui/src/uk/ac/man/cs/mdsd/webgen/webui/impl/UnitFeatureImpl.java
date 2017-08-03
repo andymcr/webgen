@@ -30,10 +30,12 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFeatureImpl#getActions <em>Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFeatureImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFeatureImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFeatureImpl#isRequired <em>Required</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFeatureImpl#getForcedValue <em>Forced Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFeatureImpl#isCollectionUiAllowAdd <em>Collection Ui Allow Add</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFeatureImpl#isCollectionUiAllowRemove <em>Collection Ui Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFeatureImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFeatureImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFeatureImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFeatureImpl#isAutofocus <em>Autofocus</em>}</li>
@@ -55,26 +57,6 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 	 * @ordered
 	 */
 	protected EList<InlineAction> actions;
-
-	/**
-	 * The default value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOnlyDisplayWhenNotEmpty()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOnlyDisplayWhenNotEmpty()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean onlyDisplayWhenNotEmpty = ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
@@ -125,6 +107,66 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 	 * @ordered
 	 */
 	protected Expression forcedValue;
+
+	/**
+	 * The default value of the '{@link #isCollectionUiAllowAdd() <em>Collection Ui Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionUiAllowAdd()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean COLLECTION_UI_ALLOW_ADD_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCollectionUiAllowAdd() <em>Collection Ui Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionUiAllowAdd()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean collectionUiAllowAdd = COLLECTION_UI_ALLOW_ADD_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCollectionUiAllowRemove() <em>Collection Ui Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionUiAllowRemove()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean COLLECTION_UI_ALLOW_REMOVE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCollectionUiAllowRemove() <em>Collection Ui Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionUiAllowRemove()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean collectionUiAllowRemove = COLLECTION_UI_ALLOW_REMOVE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnlyDisplayWhenNotEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnlyDisplayWhenNotEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean onlyDisplayWhenNotEmpty = ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
@@ -408,6 +450,48 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isCollectionUiAllowAdd() {
+		return collectionUiAllowAdd;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionUiAllowAdd(boolean newCollectionUiAllowAdd) {
+		boolean oldCollectionUiAllowAdd = collectionUiAllowAdd;
+		collectionUiAllowAdd = newCollectionUiAllowAdd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD, oldCollectionUiAllowAdd, collectionUiAllowAdd));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCollectionUiAllowRemove() {
+		return collectionUiAllowRemove;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionUiAllowRemove(boolean newCollectionUiAllowRemove) {
+		boolean oldCollectionUiAllowRemove = collectionUiAllowRemove;
+		collectionUiAllowRemove = newCollectionUiAllowRemove;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE, oldCollectionUiAllowRemove, collectionUiAllowRemove));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getNullDisplayValue() {
 		return nullDisplayValue;
 	}
@@ -591,14 +675,18 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 		switch (featureID) {
 			case WebuiPackage.UNIT_FEATURE__ACTIONS:
 				return getActions();
-			case WebuiPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				return isOnlyDisplayWhenNotEmpty();
 			case WebuiPackage.UNIT_FEATURE__DISPLAY_LABEL:
 				return getDisplayLabel();
 			case WebuiPackage.UNIT_FEATURE__REQUIRED:
 				return isRequired();
 			case WebuiPackage.UNIT_FEATURE__FORCED_VALUE:
 				return getForcedValue();
+			case WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
+				return isCollectionUiAllowAdd();
+			case WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+				return isCollectionUiAllowRemove();
+			case WebuiPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				return isOnlyDisplayWhenNotEmpty();
 			case WebuiPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 				return getNullDisplayValue();
 			case WebuiPackage.UNIT_FEATURE__FOOTER:
@@ -630,9 +718,6 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 				getActions().clear();
 				getActions().addAll((Collection<? extends InlineAction>)newValue);
 				return;
-			case WebuiPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
-				return;
 			case WebuiPackage.UNIT_FEATURE__DISPLAY_LABEL:
 				setDisplayLabel((String)newValue);
 				return;
@@ -641,6 +726,15 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 				return;
 			case WebuiPackage.UNIT_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)newValue);
+				return;
+			case WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
+				setCollectionUiAllowAdd((Boolean)newValue);
+				return;
+			case WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+				setCollectionUiAllowRemove((Boolean)newValue);
+				return;
+			case WebuiPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
 				return;
 			case WebuiPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue((String)newValue);
@@ -678,9 +772,6 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 			case WebuiPackage.UNIT_FEATURE__ACTIONS:
 				getActions().clear();
 				return;
-			case WebuiPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
-				return;
 			case WebuiPackage.UNIT_FEATURE__DISPLAY_LABEL:
 				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
 				return;
@@ -689,6 +780,15 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 				return;
 			case WebuiPackage.UNIT_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)null);
+				return;
+			case WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
+				setCollectionUiAllowAdd(COLLECTION_UI_ALLOW_ADD_EDEFAULT);
+				return;
+			case WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+				setCollectionUiAllowRemove(COLLECTION_UI_ALLOW_REMOVE_EDEFAULT);
+				return;
+			case WebuiPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
 				return;
 			case WebuiPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
@@ -725,14 +825,18 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 		switch (featureID) {
 			case WebuiPackage.UNIT_FEATURE__ACTIONS:
 				return actions != null && !actions.isEmpty();
-			case WebuiPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 			case WebuiPackage.UNIT_FEATURE__DISPLAY_LABEL:
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 			case WebuiPackage.UNIT_FEATURE__REQUIRED:
 				return required != REQUIRED_EDEFAULT;
 			case WebuiPackage.UNIT_FEATURE__FORCED_VALUE:
 				return forcedValue != null;
+			case WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
+				return collectionUiAllowAdd != COLLECTION_UI_ALLOW_ADD_EDEFAULT;
+			case WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
+				return collectionUiAllowRemove != COLLECTION_UI_ALLOW_REMOVE_EDEFAULT;
+			case WebuiPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 			case WebuiPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
 			case WebuiPackage.UNIT_FEATURE__FOOTER:
@@ -793,12 +897,16 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (onlyDisplayWhenNotEmpty: ");
-		result.append(onlyDisplayWhenNotEmpty);
-		result.append(", displayLabel: ");
+		result.append(" (displayLabel: ");
 		result.append(displayLabel);
 		result.append(", required: ");
 		result.append(required);
+		result.append(", collectionUiAllowAdd: ");
+		result.append(collectionUiAllowAdd);
+		result.append(", collectionUiAllowRemove: ");
+		result.append(collectionUiAllowRemove);
+		result.append(", onlyDisplayWhenNotEmpty: ");
+		result.append(onlyDisplayWhenNotEmpty);
 		result.append(", nullDisplayValue: ");
 		result.append(nullDisplayValue);
 		result.append(", footer: ");

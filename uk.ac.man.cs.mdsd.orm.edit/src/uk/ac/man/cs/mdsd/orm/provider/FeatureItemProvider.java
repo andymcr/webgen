@@ -51,8 +51,6 @@ public class FeatureItemProvider
 			addPartOfPropertyDescriptor(object);
 			addCollectionOrmAllowAddPropertyDescriptor(object);
 			addCollectionOrmAllowRemovePropertyDescriptor(object);
-			addCollectionUiAllowAddPropertyDescriptor(object);
-			addCollectionUiAllowRemovePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
 			addSerializationGroupsPropertyDescriptor(object);
 		}
@@ -117,50 +115,6 @@ public class FeatureItemProvider
 				 getString("_UI_Feature_collectionOrmAllowRemove_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionOrmAllowRemove_feature", "_UI_Feature_type"),
 				 OrmPackage.Literals.FEATURE__COLLECTION_ORM_ALLOW_REMOVE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Collection Ui Allow Add feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCollectionUiAllowAddPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_collectionUiAllowAdd_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionUiAllowAdd_feature", "_UI_Feature_type"),
-				 OrmPackage.Literals.FEATURE__COLLECTION_UI_ALLOW_ADD,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Collection Ui Allow Remove feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCollectionUiAllowRemovePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_collectionUiAllowRemove_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionUiAllowRemove_feature", "_UI_Feature_type"),
-				 OrmPackage.Literals.FEATURE__COLLECTION_UI_ALLOW_REMOVE,
 				 true,
 				 false,
 				 false,
@@ -241,8 +195,6 @@ public class FeatureItemProvider
 		switch (notification.getFeatureID(Feature.class)) {
 			case OrmPackage.FEATURE__COLLECTION_ORM_ALLOW_ADD:
 			case OrmPackage.FEATURE__COLLECTION_ORM_ALLOW_REMOVE:
-			case OrmPackage.FEATURE__COLLECTION_UI_ALLOW_ADD:
-			case OrmPackage.FEATURE__COLLECTION_UI_ALLOW_REMOVE:
 			case OrmPackage.FEATURE__ENCODE_URI_KEY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

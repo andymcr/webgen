@@ -123,8 +123,6 @@ abstract class Feature extends NamedDisplayElement {
 	container EntityOrView[1] partOf opposite features
 	boolean collectionOrmAllowAdd = "false"
 	boolean collectionOrmAllowRemove = "false"
-	boolean collectionUiAllowAdd = "false"
-	boolean collectionUiAllowRemove = "false"
 	boolean[1] encodeUriKey = "false"
 	refers SerializationGroup[] serializationGroups
 }

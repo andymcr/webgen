@@ -14,6 +14,8 @@ import uk.ac.man.cs.mdsd.expression.Expression;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getForcedValue <em>Forced Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isCollectionUiAllowAdd <em>Collection Ui Allow Add</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isCollectionUiAllowRemove <em>Collection Ui Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isAutofocus <em>Autofocus</em>}</li>
@@ -54,6 +56,60 @@ public interface UnitFeature extends UnitField, InlineActionContainer {
 	 * @generated
 	 */
 	void setForcedValue(Expression value);
+
+	/**
+	 * Returns the value of the '<em><b>Collection Ui Allow Add</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Collection Ui Allow Add</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Collection Ui Allow Add</em>' attribute.
+	 * @see #setCollectionUiAllowAdd(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitFeature_CollectionUiAllowAdd()
+	 * @model default="true" unique="false"
+	 * @generated
+	 */
+	boolean isCollectionUiAllowAdd();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isCollectionUiAllowAdd <em>Collection Ui Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Collection Ui Allow Add</em>' attribute.
+	 * @see #isCollectionUiAllowAdd()
+	 * @generated
+	 */
+	void setCollectionUiAllowAdd(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Collection Ui Allow Remove</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Collection Ui Allow Remove</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Collection Ui Allow Remove</em>' attribute.
+	 * @see #setCollectionUiAllowRemove(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitFeature_CollectionUiAllowRemove()
+	 * @model default="true" unique="false"
+	 * @generated
+	 */
+	boolean isCollectionUiAllowRemove();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isCollectionUiAllowRemove <em>Collection Ui Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Collection Ui Allow Remove</em>' attribute.
+	 * @see #isCollectionUiAllowRemove()
+	 * @generated
+	 */
+	void setCollectionUiAllowRemove(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Null Display Value</b></em>' attribute.

@@ -51,8 +51,6 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			addTitlePropertyDescriptor(object);
 			addCollectionOrmAllowAddPropertyDescriptor(object);
 			addCollectionOrmAllowRemovePropertyDescriptor(object);
-			addCollectionUiAllowAddPropertyDescriptor(object);
-			addCollectionUiAllowRemovePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addNullDisplayValuePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
@@ -134,50 +132,6 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_OrmPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Collection Ui Allow Add feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCollectionUiAllowAddPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_collectionUiAllowAdd_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionUiAllowAdd_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__COLLECTION_UI_ALLOW_ADD,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Collection Ui Allow Remove feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCollectionUiAllowRemovePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_collectionUiAllowRemove_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionUiAllowRemove_feature", "_UI_Feature_type"),
-				 PersistencePackage.Literals.FEATURE__COLLECTION_UI_ALLOW_REMOVE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -519,8 +473,6 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			case PersistencePackage.ENTITY_FEATURE__TITLE:
 			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ORM_ALLOW_ADD:
 			case PersistencePackage.ENTITY_FEATURE__COLLECTION_ORM_ALLOW_REMOVE:
-			case PersistencePackage.ENTITY_FEATURE__COLLECTION_UI_ALLOW_ADD:
-			case PersistencePackage.ENTITY_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
 			case PersistencePackage.ENTITY_FEATURE__PLACEHOLDER:
 			case PersistencePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
 			case PersistencePackage.ENTITY_FEATURE__ENCODE_URI_KEY:

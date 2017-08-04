@@ -528,8 +528,6 @@ abstract rule UnitField {
 	to waf : WAF!UnitField (
 		title <- website.title(),
 		collectionDisplayOption <- website.collectionDisplayOption,
-		collectionAllowAdd <- website.collectionAllowAdd,
-		collectionAllowRemove <- website.collectionAllowRemove,
 		maximumDisplaySize <- website.maximumDisplaySize,
 		dateFormat <- website.dateFormat(),
 		disableInput <- website.disableInput

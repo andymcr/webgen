@@ -31,8 +31,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#isDisableInput <em>Disable Input</em>}</li>
@@ -86,46 +84,6 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * @ordered
 	 */
 	protected CollectionDisplayOptions collectionDisplayOption = COLLECTION_DISPLAY_OPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isCollectionAllowAdd() <em>Collection Allow Add</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCollectionAllowAdd()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean COLLECTION_ALLOW_ADD_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isCollectionAllowAdd() <em>Collection Allow Add</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCollectionAllowAdd()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean collectionAllowAdd = COLLECTION_ALLOW_ADD_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isCollectionAllowRemove() <em>Collection Allow Remove</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCollectionAllowRemove()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean COLLECTION_ALLOW_REMOVE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isCollectionAllowRemove() <em>Collection Allow Remove</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCollectionAllowRemove()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean collectionAllowRemove = COLLECTION_ALLOW_REMOVE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
@@ -404,48 +362,6 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isCollectionAllowAdd() {
-		return collectionAllowAdd;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCollectionAllowAdd(boolean newCollectionAllowAdd) {
-		boolean oldCollectionAllowAdd = collectionAllowAdd;
-		collectionAllowAdd = newCollectionAllowAdd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD, oldCollectionAllowAdd, collectionAllowAdd));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isCollectionAllowRemove() {
-		return collectionAllowRemove;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCollectionAllowRemove(boolean newCollectionAllowRemove) {
-		boolean oldCollectionAllowRemove = collectionAllowRemove;
-		collectionAllowRemove = newCollectionAllowRemove;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getMaximumDisplaySize() {
 		return maximumDisplaySize;
 	}
@@ -705,10 +621,6 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return getTitle();
 			case WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				return getCollectionDisplayOption();
-			case WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
-				return isCollectionAllowAdd();
-			case WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
-				return isCollectionAllowRemove();
 			case WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return getMaximumDisplaySize();
 			case WebuiPackage.INTERFACE_FIELD__DATE_FORMAT:
@@ -748,12 +660,6 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return;
 			case WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption((CollectionDisplayOptions)newValue);
-				return;
-			case WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
-				setCollectionAllowAdd((Boolean)newValue);
-				return;
-			case WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
-				setCollectionAllowRemove((Boolean)newValue);
 				return;
 			case WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize((Integer)newValue);
@@ -803,12 +709,6 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			case WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption(COLLECTION_DISPLAY_OPTION_EDEFAULT);
 				return;
-			case WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
-				setCollectionAllowAdd(COLLECTION_ALLOW_ADD_EDEFAULT);
-				return;
-			case WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
-				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
-				return;
 			case WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
 				return;
@@ -854,10 +754,6 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
-			case WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
-				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
-			case WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
-				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
 			case WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WebuiPackage.INTERFACE_FIELD__DATE_FORMAT:
@@ -892,8 +788,6 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				case WebuiPackage.INTERFACE_FIELD__DISPLAYED_ON: return WebuiPackage.UNIT_FIELD__DISPLAYED_ON;
 				case WebuiPackage.INTERFACE_FIELD__TITLE: return WebuiPackage.UNIT_FIELD__TITLE;
 				case WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION: return WebuiPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
-				case WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD: return WebuiPackage.UNIT_FIELD__COLLECTION_ALLOW_ADD;
-				case WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE: return WebuiPackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE;
 				case WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WebuiPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WebuiPackage.INTERFACE_FIELD__DATE_FORMAT: return WebuiPackage.UNIT_FIELD__DATE_FORMAT;
 				case WebuiPackage.INTERFACE_FIELD__DISABLE_INPUT: return WebuiPackage.UNIT_FIELD__DISABLE_INPUT;
@@ -915,8 +809,6 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				case WebuiPackage.UNIT_FIELD__DISPLAYED_ON: return WebuiPackage.INTERFACE_FIELD__DISPLAYED_ON;
 				case WebuiPackage.UNIT_FIELD__TITLE: return WebuiPackage.INTERFACE_FIELD__TITLE;
 				case WebuiPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION: return WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
-				case WebuiPackage.UNIT_FIELD__COLLECTION_ALLOW_ADD: return WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD;
-				case WebuiPackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE: return WebuiPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE;
 				case WebuiPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WebuiPackage.UNIT_FIELD__DATE_FORMAT: return WebuiPackage.INTERFACE_FIELD__DATE_FORMAT;
 				case WebuiPackage.UNIT_FIELD__DISABLE_INPUT: return WebuiPackage.INTERFACE_FIELD__DISABLE_INPUT;
@@ -940,10 +832,6 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		result.append(title);
 		result.append(", collectionDisplayOption: ");
 		result.append(collectionDisplayOption);
-		result.append(", collectionAllowAdd: ");
-		result.append(collectionAllowAdd);
-		result.append(", collectionAllowRemove: ");
-		result.append(collectionAllowRemove);
 		result.append(", maximumDisplaySize: ");
 		result.append(maximumDisplaySize);
 		result.append(", dateFormat: ");

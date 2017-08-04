@@ -52,8 +52,6 @@ public class InterfaceFieldItemProvider
 			addDisplayedOnPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
-			addCollectionAllowAddPropertyDescriptor(object);
-			addCollectionAllowRemovePropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addDisableInputPropertyDescriptor(object);
@@ -152,50 +150,6 @@ public class InterfaceFieldItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-		/**
-	 * This adds a property descriptor for the Collection Allow Add feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCollectionAllowAddPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_collectionAllowAdd_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_collectionAllowAdd_feature", "_UI_UnitField_type"),
-				 WafPackage.Literals.UNIT_FIELD__COLLECTION_ALLOW_ADD,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-		/**
-	 * This adds a property descriptor for the Collection Allow Remove feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCollectionAllowRemovePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_collectionAllowRemove_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_collectionAllowRemove_feature", "_UI_UnitField_type"),
-				 WafPackage.Literals.UNIT_FIELD__COLLECTION_ALLOW_REMOVE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -459,8 +413,6 @@ public class InterfaceFieldItemProvider
 			case WafPackage.INTERFACE_FIELD__DISPLAY_LABEL:
 			case WafPackage.INTERFACE_FIELD__TITLE:
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
-			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
-			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 			case WafPackage.INTERFACE_FIELD__DISABLE_INPUT:

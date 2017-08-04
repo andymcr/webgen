@@ -53,8 +53,6 @@ public class UnitFeatureItemProvider
 			addDisplayedOnPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
-			addCollectionAllowAddPropertyDescriptor(object);
-			addCollectionAllowRemovePropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addDisableInputPropertyDescriptor(object);
@@ -250,50 +248,6 @@ public class UnitFeatureItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-		/**
-	 * This adds a property descriptor for the Collection Allow Add feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCollectionAllowAddPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_collectionAllowAdd_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_collectionAllowAdd_feature", "_UI_UnitField_type"),
-				 WafPackage.Literals.UNIT_FIELD__COLLECTION_ALLOW_ADD,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-		/**
-	 * This adds a property descriptor for the Collection Allow Remove feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCollectionAllowRemovePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_collectionAllowRemove_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_collectionAllowRemove_feature", "_UI_UnitField_type"),
-				 WafPackage.Literals.UNIT_FIELD__COLLECTION_ALLOW_REMOVE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -541,8 +495,6 @@ public class UnitFeatureItemProvider
 		switch (notification.getFeatureID(UnitFeature.class)) {
 			case WafPackage.UNIT_FEATURE__TITLE:
 			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
-			case WafPackage.UNIT_FEATURE__COLLECTION_ALLOW_ADD:
-			case WafPackage.UNIT_FEATURE__COLLECTION_ALLOW_REMOVE:
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
 			case WafPackage.UNIT_FEATURE__DISABLE_INPUT:

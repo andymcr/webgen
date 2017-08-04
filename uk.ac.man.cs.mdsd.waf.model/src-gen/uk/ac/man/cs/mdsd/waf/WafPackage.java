@@ -2263,31 +2263,13 @@ public interface WafPackage extends EPackage {
 	int UNIT_FIELD__COLLECTION_DISPLAY_OPTION = DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FIELD__COLLECTION_ALLOW_ADD = DISPLAY_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FIELD__COLLECTION_ALLOW_REMOVE = DISPLAY_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -2296,7 +2278,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__DATE_FORMAT = DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int UNIT_FIELD__DATE_FORMAT = DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
@@ -2305,7 +2287,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__DISABLE_INPUT = DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int UNIT_FIELD__DISABLE_INPUT = DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Unit Field</em>' class.
@@ -2314,7 +2296,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD_FEATURE_COUNT = DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int UNIT_FIELD_FEATURE_COUNT = DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Unit Field</em>' class.
@@ -2370,24 +2352,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_FEATURE__COLLECTION_DISPLAY_OPTION = UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__COLLECTION_ALLOW_ADD = UNIT_FIELD__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__COLLECTION_ALLOW_REMOVE = UNIT_FIELD__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -2587,24 +2551,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ATTRIBUTE__COLLECTION_DISPLAY_OPTION = UNIT_FEATURE__COLLECTION_DISPLAY_OPTION;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ATTRIBUTE__COLLECTION_ALLOW_ADD = UNIT_FEATURE__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = UNIT_FEATURE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -2858,24 +2804,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION = UNIT_FEATURE__COLLECTION_DISPLAY_OPTION;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__COLLECTION_ALLOW_ADD = UNIT_FEATURE__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__COLLECTION_ALLOW_REMOVE = UNIT_FEATURE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -3213,31 +3141,13 @@ public interface WafPackage extends EPackage {
 	int INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERFACE_FIELD__COLLECTION_ALLOW_ADD = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -3246,7 +3156,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DATE_FORMAT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int INTERFACE_FIELD__DATE_FORMAT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
@@ -3255,7 +3165,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DISABLE_INPUT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int INTERFACE_FIELD__DISABLE_INPUT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -3264,7 +3174,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__REQUIRED = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int INTERFACE_FIELD__REQUIRED = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
@@ -3273,7 +3183,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DEFAULT_VALUE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int INTERFACE_FIELD__DEFAULT_VALUE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Must Match</b></em>' reference.
@@ -3282,7 +3192,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__MUST_MATCH = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int INTERFACE_FIELD__MUST_MATCH = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
@@ -3291,7 +3201,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__INTERFACE_TYPE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int INTERFACE_FIELD__INTERFACE_TYPE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -3300,7 +3210,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__PLACEHOLDER = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int INTERFACE_FIELD__PLACEHOLDER = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -3309,7 +3219,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__VALIDATION_PATTERN = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+	int INTERFACE_FIELD__VALIDATION_PATTERN = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -3318,7 +3228,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__INPUT_CLASS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
+	int INTERFACE_FIELD__INPUT_CLASS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Interface Field</em>' class.
@@ -3327,7 +3237,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 16;
+	int INTERFACE_FIELD_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of operations of the '<em>Interface Field</em>' class.
@@ -3392,24 +3302,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_FIELD__COLLECTION_DISPLAY_OPTION = INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_FIELD__COLLECTION_ALLOW_ADD = INTERFACE_FIELD__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_FIELD__COLLECTION_ALLOW_REMOVE = INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -3611,24 +3503,6 @@ public interface WafPackage extends EPackage {
 	int DATE_FIELD__COLLECTION_DISPLAY_OPTION = INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
 
 	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_FIELD__COLLECTION_ALLOW_ADD = INTERFACE_FIELD__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_FIELD__COLLECTION_ALLOW_REMOVE = INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE;
-
-	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3808,24 +3682,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CAPTCHA_FIELD__COLLECTION_DISPLAY_OPTION = INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAPTCHA_FIELD__COLLECTION_ALLOW_ADD = INTERFACE_FIELD__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAPTCHA_FIELD__COLLECTION_ALLOW_REMOVE = INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -13370,28 +13226,6 @@ public interface WafPackage extends EPackage {
 	EAttribute getUnitField_CollectionDisplayOption();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.UnitField#isCollectionAllowAdd <em>Collection Allow Add</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Collection Allow Add</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.UnitField#isCollectionAllowAdd()
-	 * @see #getUnitField()
-	 * @generated
-	 */
-	EAttribute getUnitField_CollectionAllowAdd();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.UnitField#isCollectionAllowRemove <em>Collection Allow Remove</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Collection Allow Remove</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.UnitField#isCollectionAllowRemove()
-	 * @see #getUnitField()
-	 * @generated
-	 */
-	EAttribute getUnitField_CollectionAllowRemove();
-
-	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16298,22 +16132,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UNIT_FIELD__COLLECTION_DISPLAY_OPTION = eINSTANCE.getUnitField_CollectionDisplayOption();
-
-		/**
-		 * The meta object literal for the '<em><b>Collection Allow Add</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UNIT_FIELD__COLLECTION_ALLOW_ADD = eINSTANCE.getUnitField_CollectionAllowAdd();
-
-		/**
-		 * The meta object literal for the '<em><b>Collection Allow Remove</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UNIT_FIELD__COLLECTION_ALLOW_REMOVE = eINSTANCE.getUnitField_CollectionAllowRemove();
 
 		/**
 		 * The meta object literal for the '<em><b>Maximum Display Size</b></em>' attribute feature.

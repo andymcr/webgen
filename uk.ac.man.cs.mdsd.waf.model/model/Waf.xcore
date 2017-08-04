@@ -243,8 +243,6 @@ interface UnitField extends DisplayElement {
 	container DynamicUnit[1] displayedOn opposite displayFields
 	String title
 	CollectionDisplayOptions collectionDisplayOption
-	boolean collectionAllowAdd
-	boolean collectionAllowRemove
 	int maximumDisplaySize = "-1"
 	String dateFormat
 	Boolean disableInput = "false"

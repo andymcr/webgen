@@ -35,8 +35,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisableInput <em>Disable Input</em>}</li>
@@ -111,46 +109,6 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	 * @ordered
 	 */
 	protected CollectionDisplayOptions collectionDisplayOption = COLLECTION_DISPLAY_OPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isCollectionAllowAdd() <em>Collection Allow Add</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCollectionAllowAdd()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean COLLECTION_ALLOW_ADD_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isCollectionAllowAdd() <em>Collection Allow Add</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCollectionAllowAdd()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean collectionAllowAdd = COLLECTION_ALLOW_ADD_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isCollectionAllowRemove() <em>Collection Allow Remove</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCollectionAllowRemove()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean COLLECTION_ALLOW_REMOVE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isCollectionAllowRemove() <em>Collection Allow Remove</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCollectionAllowRemove()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean collectionAllowRemove = COLLECTION_ALLOW_REMOVE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
@@ -470,48 +428,6 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isCollectionAllowAdd() {
-		return collectionAllowAdd;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCollectionAllowAdd(boolean newCollectionAllowAdd) {
-		boolean oldCollectionAllowAdd = collectionAllowAdd;
-		collectionAllowAdd = newCollectionAllowAdd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD, oldCollectionAllowAdd, collectionAllowAdd));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isCollectionAllowRemove() {
-		return collectionAllowRemove;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCollectionAllowRemove(boolean newCollectionAllowRemove) {
-		boolean oldCollectionAllowRemove = collectionAllowRemove;
-		collectionAllowRemove = newCollectionAllowRemove;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getMaximumDisplaySize() {
 		return maximumDisplaySize;
 	}
@@ -819,10 +735,6 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return getTitle();
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				return getCollectionDisplayOption();
-			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
-				return isCollectionAllowAdd();
-			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
-				return isCollectionAllowRemove();
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return getMaximumDisplaySize();
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
@@ -867,12 +779,6 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return;
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption((CollectionDisplayOptions)newValue);
-				return;
-			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
-				setCollectionAllowAdd((Boolean)newValue);
-				return;
-			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
-				setCollectionAllowRemove((Boolean)newValue);
 				return;
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize((Integer)newValue);
@@ -928,12 +834,6 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption(COLLECTION_DISPLAY_OPTION_EDEFAULT);
 				return;
-			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
-				setCollectionAllowAdd(COLLECTION_ALLOW_ADD_EDEFAULT);
-				return;
-			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
-				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
-				return;
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
 				return;
@@ -984,10 +884,6 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
-			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
-				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
-			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
-				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
@@ -1030,8 +926,6 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				case WafPackage.INTERFACE_FIELD__DISPLAYED_ON: return WafPackage.UNIT_FIELD__DISPLAYED_ON;
 				case WafPackage.INTERFACE_FIELD__TITLE: return WafPackage.UNIT_FIELD__TITLE;
 				case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION: return WafPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
-				case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD: return WafPackage.UNIT_FIELD__COLLECTION_ALLOW_ADD;
-				case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE: return WafPackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE;
 				case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WafPackage.INTERFACE_FIELD__DATE_FORMAT: return WafPackage.UNIT_FIELD__DATE_FORMAT;
 				case WafPackage.INTERFACE_FIELD__DISABLE_INPUT: return WafPackage.UNIT_FIELD__DISABLE_INPUT;
@@ -1059,8 +953,6 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				case WafPackage.UNIT_FIELD__DISPLAYED_ON: return WafPackage.INTERFACE_FIELD__DISPLAYED_ON;
 				case WafPackage.UNIT_FIELD__TITLE: return WafPackage.INTERFACE_FIELD__TITLE;
 				case WafPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION: return WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
-				case WafPackage.UNIT_FIELD__COLLECTION_ALLOW_ADD: return WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD;
-				case WafPackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE: return WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE;
 				case WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WafPackage.UNIT_FIELD__DATE_FORMAT: return WafPackage.INTERFACE_FIELD__DATE_FORMAT;
 				case WafPackage.UNIT_FIELD__DISABLE_INPUT: return WafPackage.INTERFACE_FIELD__DISABLE_INPUT;
@@ -1086,10 +978,6 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		result.append(title);
 		result.append(", collectionDisplayOption: ");
 		result.append(collectionDisplayOption);
-		result.append(", collectionAllowAdd: ");
-		result.append(collectionAllowAdd);
-		result.append(", collectionAllowRemove: ");
-		result.append(collectionAllowRemove);
 		result.append(", maximumDisplaySize: ");
 		result.append(maximumDisplaySize);
 		result.append(", dateFormat: ");

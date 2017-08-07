@@ -239,7 +239,7 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/contentType"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/containingFeature"/>
+          ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/containingAssociation"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/selection"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"

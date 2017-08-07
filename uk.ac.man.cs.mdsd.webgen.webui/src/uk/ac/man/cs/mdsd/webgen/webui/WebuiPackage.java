@@ -3524,13 +3524,13 @@ public interface WebuiPackage extends EPackage {
 	int COLLECTION_UNIT__CONTENT_TYPE = SELECTABLE_UNIT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__CONTAINING_FEATURE = SELECTABLE_UNIT_FEATURE_COUNT + 1;
+	int COLLECTION_UNIT__CONTAINING_ASSOCIATION = SELECTABLE_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
@@ -6025,13 +6025,13 @@ public interface WebuiPackage extends EPackage {
 	int INDEX_UNIT__CONTENT_TYPE = DATA_UNIT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__CONTAINING_FEATURE = DATA_UNIT_FEATURE_COUNT + 2;
+	int INDEX_UNIT__CONTAINING_ASSOCIATION = DATA_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
@@ -6955,13 +6955,13 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_UNIT__CONTENT_TYPE = DYNAMIC_UNIT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__CONTAINING_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+	int IMAGE_UNIT__CONTAINING_ASSOCIATION = DYNAMIC_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
@@ -7745,13 +7745,13 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__CONTENT_TYPE = IMAGE_UNIT__CONTENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__CONTAINING_FEATURE = IMAGE_UNIT__CONTAINING_FEATURE;
+	int IMAGE_INDEX_UNIT__CONTAINING_ASSOCIATION = IMAGE_UNIT__CONTAINING_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
@@ -8205,13 +8205,13 @@ public interface WebuiPackage extends EPackage {
 	int SLIDER_UNIT__CONTENT_TYPE = IMAGE_UNIT__CONTENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__CONTAINING_FEATURE = IMAGE_UNIT__CONTAINING_FEATURE;
+	int SLIDER_UNIT__CONTAINING_ASSOCIATION = IMAGE_UNIT__CONTAINING_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
@@ -8656,13 +8656,13 @@ public interface WebuiPackage extends EPackage {
 	int GALLERY_UNIT__CONTENT_TYPE = IMAGE_UNIT__CONTENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__CONTAINING_FEATURE = IMAGE_UNIT__CONTAINING_FEATURE;
+	int GALLERY_UNIT__CONTAINING_ASSOCIATION = IMAGE_UNIT__CONTAINING_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
@@ -12026,15 +12026,15 @@ public interface WebuiPackage extends EPackage {
 	EReference getCollectionUnit_ContentType();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getContainingFeature <em>Containing Feature</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getContainingAssociation <em>Containing Association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Containing Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getContainingFeature()
+	 * @return the meta object for the reference '<em>Containing Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getContainingAssociation()
 	 * @see #getCollectionUnit()
 	 * @generated
 	 */
-	EReference getCollectionUnit_ContainingFeature();
+	EReference getCollectionUnit_ContainingAssociation();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getSelection <em>Selection</em>}'.
@@ -14764,12 +14764,12 @@ public interface WebuiPackage extends EPackage {
 		EReference COLLECTION_UNIT__CONTENT_TYPE = eINSTANCE.getCollectionUnit_ContentType();
 
 		/**
-		 * The meta object literal for the '<em><b>Containing Feature</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Containing Association</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COLLECTION_UNIT__CONTAINING_FEATURE = eINSTANCE.getCollectionUnit_ContainingFeature();
+		EReference COLLECTION_UNIT__CONTAINING_ASSOCIATION = eINSTANCE.getCollectionUnit_ContainingAssociation();
 
 		/**
 		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.

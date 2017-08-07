@@ -324,7 +324,7 @@ interface SingletonUnit {
 }
 
 interface CollectionUnit extends SelectableUnit {
-	refers Feature containingFeature
+	refers Association containingAssociation
 	refers EntityOrView[1..*] contentType
 	refers Selection selection
 	refers Filter filter

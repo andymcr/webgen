@@ -15,9 +15,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
-
 import uk.ac.man.cs.mdsd.webgen.service.Filter;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 
@@ -39,7 +38,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getContainingAssociation <em>Containing Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
@@ -87,14 +86,14 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	protected EList<EntityOrView> contentType;
 
 	/**
-	 * The cached value of the '{@link #getContainingFeature() <em>Containing Feature</em>}' reference.
+	 * The cached value of the '{@link #getContainingAssociation() <em>Containing Association</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContainingFeature()
+	 * @see #getContainingAssociation()
 	 * @generated
 	 * @ordered
 	 */
-	protected Feature containingFeature;
+	protected Association containingAssociation;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -540,16 +539,16 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feature getContainingFeature() {
-		if (containingFeature != null && containingFeature.eIsProxy()) {
-			InternalEObject oldContainingFeature = (InternalEObject)containingFeature;
-			containingFeature = (Feature)eResolveProxy(oldContainingFeature);
-			if (containingFeature != oldContainingFeature) {
+	public Association getContainingAssociation() {
+		if (containingAssociation != null && containingAssociation.eIsProxy()) {
+			InternalEObject oldContainingAssociation = (InternalEObject)containingAssociation;
+			containingAssociation = (Association)eResolveProxy(oldContainingAssociation);
+			if (containingAssociation != oldContainingAssociation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.INDEX_UNIT__CONTAINING_FEATURE, oldContainingFeature, containingFeature));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION, oldContainingAssociation, containingAssociation));
 			}
 		}
-		return containingFeature;
+		return containingAssociation;
 	}
 
 	/**
@@ -557,8 +556,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feature basicGetContainingFeature() {
-		return containingFeature;
+	public Association basicGetContainingAssociation() {
+		return containingAssociation;
 	}
 
 	/**
@@ -566,11 +565,11 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContainingFeature(Feature newContainingFeature) {
-		Feature oldContainingFeature = containingFeature;
-		containingFeature = newContainingFeature;
+	public void setContainingAssociation(Association newContainingAssociation) {
+		Association oldContainingAssociation = containingAssociation;
+		containingAssociation = newContainingAssociation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__CONTAINING_FEATURE, oldContainingFeature, containingFeature));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION, oldContainingAssociation, containingAssociation));
 	}
 
 	/**
@@ -1089,9 +1088,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return basicGetSelectionType();
 			case WebuiPackage.INDEX_UNIT__CONTENT_TYPE:
 				return getContentType();
-			case WebuiPackage.INDEX_UNIT__CONTAINING_FEATURE:
-				if (resolve) return getContainingFeature();
-				return basicGetContainingFeature();
+			case WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION:
+				if (resolve) return getContainingAssociation();
+				return basicGetContainingAssociation();
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
@@ -1157,8 +1156,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				getContentType().clear();
 				getContentType().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
-			case WebuiPackage.INDEX_UNIT__CONTAINING_FEATURE:
-				setContainingFeature((Feature)newValue);
+			case WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION:
+				setContainingAssociation((Association)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)newValue);
@@ -1243,8 +1242,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				return;
-			case WebuiPackage.INDEX_UNIT__CONTAINING_FEATURE:
-				setContainingFeature((Feature)null);
+			case WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION:
+				setContainingAssociation((Association)null);
 				return;
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)null);
@@ -1325,8 +1324,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return selectionType != null;
 			case WebuiPackage.INDEX_UNIT__CONTENT_TYPE:
 				return contentType != null && !contentType.isEmpty();
-			case WebuiPackage.INDEX_UNIT__CONTAINING_FEATURE:
-				return containingFeature != null;
+			case WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION:
+				return containingAssociation != null;
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				return selection != null;
 			case WebuiPackage.INDEX_UNIT__FILTER:
@@ -1389,7 +1388,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		if (baseClass == CollectionUnit.class) {
 			switch (derivedFeatureID) {
 				case WebuiPackage.INDEX_UNIT__CONTENT_TYPE: return WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE;
-				case WebuiPackage.INDEX_UNIT__CONTAINING_FEATURE: return WebuiPackage.COLLECTION_UNIT__CONTAINING_FEATURE;
+				case WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION: return WebuiPackage.COLLECTION_UNIT__CONTAINING_ASSOCIATION;
 				case WebuiPackage.INDEX_UNIT__SELECTION: return WebuiPackage.COLLECTION_UNIT__SELECTION;
 				case WebuiPackage.INDEX_UNIT__FILTER: return WebuiPackage.COLLECTION_UNIT__FILTER;
 				case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS: return WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
@@ -1433,7 +1432,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		if (baseClass == CollectionUnit.class) {
 			switch (baseFeatureID) {
 				case WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE: return WebuiPackage.INDEX_UNIT__CONTENT_TYPE;
-				case WebuiPackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WebuiPackage.INDEX_UNIT__CONTAINING_FEATURE;
+				case WebuiPackage.COLLECTION_UNIT__CONTAINING_ASSOCIATION: return WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION;
 				case WebuiPackage.COLLECTION_UNIT__SELECTION: return WebuiPackage.INDEX_UNIT__SELECTION;
 				case WebuiPackage.COLLECTION_UNIT__FILTER: return WebuiPackage.INDEX_UNIT__FILTER;
 				case WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS;

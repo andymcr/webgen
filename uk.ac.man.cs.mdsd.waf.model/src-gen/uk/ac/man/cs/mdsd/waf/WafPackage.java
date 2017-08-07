@@ -3903,13 +3903,13 @@ public interface WafPackage extends EPackage {
 	int COLLECTION_UNIT__SELECTORS = SELECTABLE_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__CONTAINING_FEATURE = SELECTABLE_UNIT_FEATURE_COUNT + 0;
+	int COLLECTION_UNIT__CONTAINING_ASSOCIATION = SELECTABLE_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
@@ -6341,13 +6341,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__SELECTORS = DATA_UNIT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__CONTAINING_FEATURE = DATA_UNIT_FEATURE_COUNT + 2;
+	int INDEX_UNIT__CONTAINING_ASSOCIATION = DATA_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
@@ -6765,13 +6765,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__SELECTORS = INDEX_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_GRID_UNIT__CONTAINING_FEATURE = INDEX_UNIT__CONTAINING_FEATURE;
+	int INDEX_GRID_UNIT__CONTAINING_ASSOCIATION = INDEX_UNIT__CONTAINING_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
@@ -7189,13 +7189,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__SELECTORS = INDEX_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_PAGE_DIRECTION_UNIT__CONTAINING_FEATURE = INDEX_UNIT__CONTAINING_FEATURE;
+	int INDEX_PAGE_DIRECTION_UNIT__CONTAINING_ASSOCIATION = INDEX_UNIT__CONTAINING_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
@@ -7613,13 +7613,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__SELECTORS = INDEX_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_LINE_DIRECTION_UNIT__CONTAINING_FEATURE = INDEX_UNIT__CONTAINING_FEATURE;
+	int INDEX_LINE_DIRECTION_UNIT__CONTAINING_ASSOCIATION = INDEX_UNIT__CONTAINING_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
@@ -8498,13 +8498,13 @@ public interface WafPackage extends EPackage {
 	int IMAGE_UNIT__SELECTORS = DYNAMIC_UNIT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__CONTAINING_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+	int IMAGE_UNIT__CONTAINING_ASSOCIATION = DYNAMIC_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
@@ -9207,13 +9207,13 @@ public interface WafPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__SELECTORS = IMAGE_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__CONTAINING_FEATURE = IMAGE_UNIT__CONTAINING_FEATURE;
+	int IMAGE_INDEX_UNIT__CONTAINING_ASSOCIATION = IMAGE_UNIT__CONTAINING_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
@@ -9649,13 +9649,13 @@ public interface WafPackage extends EPackage {
 	int SLIDER_UNIT__SELECTORS = IMAGE_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__CONTAINING_FEATURE = IMAGE_UNIT__CONTAINING_FEATURE;
+	int SLIDER_UNIT__CONTAINING_ASSOCIATION = IMAGE_UNIT__CONTAINING_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
@@ -10082,13 +10082,13 @@ public interface WafPackage extends EPackage {
 	int GALLERY_UNIT__SELECTORS = IMAGE_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Containing Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Containing Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__CONTAINING_FEATURE = IMAGE_UNIT__CONTAINING_FEATURE;
+	int GALLERY_UNIT__CONTAINING_ASSOCIATION = IMAGE_UNIT__CONTAINING_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
@@ -13798,15 +13798,15 @@ public interface WafPackage extends EPackage {
 	EClass getCollectionUnit();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContainingFeature <em>Containing Feature</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContainingAssociation <em>Containing Association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Containing Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.CollectionUnit#getContainingFeature()
+	 * @return the meta object for the reference '<em>Containing Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.CollectionUnit#getContainingAssociation()
 	 * @see #getCollectionUnit()
 	 * @generated
 	 */
-	EReference getCollectionUnit_ContainingFeature();
+	EReference getCollectionUnit_ContainingAssociation();
 
 	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContentType <em>Content Type</em>}'.
@@ -16580,12 +16580,12 @@ public interface WafPackage extends EPackage {
 		EClass COLLECTION_UNIT = eINSTANCE.getCollectionUnit();
 
 		/**
-		 * The meta object literal for the '<em><b>Containing Feature</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Containing Association</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COLLECTION_UNIT__CONTAINING_FEATURE = eINSTANCE.getCollectionUnit_ContainingFeature();
+		EReference COLLECTION_UNIT__CONTAINING_ASSOCIATION = eINSTANCE.getCollectionUnit_ContainingAssociation();
 
 		/**
 		 * The meta object literal for the '<em><b>Content Type</b></em>' reference list feature.

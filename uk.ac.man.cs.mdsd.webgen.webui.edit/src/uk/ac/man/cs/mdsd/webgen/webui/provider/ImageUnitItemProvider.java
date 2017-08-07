@@ -52,7 +52,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 
 			addSelectionTypePropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
-			addContainingFeaturePropertyDescriptor(object);
+			addContainingAssociationPropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addFilterPropertyDescriptor(object);
 			addSupportedFiltersPropertyDescriptor(object);
@@ -127,13 +127,13 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addContainingFeaturePropertyDescriptor(Object object) {
+	protected void addContainingAssociationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_CollectionUnit_containingFeature_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_containingFeature_feature", "_UI_CollectionUnit_type"),
-			WebuiPackage.Literals.COLLECTION_UNIT__CONTAINING_FEATURE,
+			getString("_UI_CollectionUnit_containingAssociation_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_containingAssociation_feature", "_UI_CollectionUnit_type"),
+			WebuiPackage.Literals.COLLECTION_UNIT__CONTAINING_ASSOCIATION,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {
@@ -142,7 +142,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 					if (object instanceof CollectionUnit) {
 						final CollectionUnit unit = (CollectionUnit) object;
 						if (unit.getSelectionType() != null) {
-							return unit.getSelectionType().getAssociations();
+							return unit.getSelectionType().getAllAssociations();
 						}
 					}
 

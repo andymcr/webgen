@@ -141,7 +141,7 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 					if (object instanceof IndexUnit) {
 						final IndexUnit unit = (IndexUnit) object;
 						if (unit.getSelectionType() != null) {
-							return unit.getSelectionType().getAssociations();
+							return unit.getSelectionType().getAllAssociations();
 						}
 					}
 

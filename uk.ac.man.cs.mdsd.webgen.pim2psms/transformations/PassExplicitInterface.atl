@@ -760,9 +760,17 @@ abstract rule CollectionUnit {
 		containingFeature <-
 			if not website.containingFeature.oclIsUndefined() then
 				website.containingFeature.findOrmFeature()
+			else if not website.selectionType.oclIsUndefined() and website.contentType->notEmpty() then
+				let containingFeature : Website!Association
+					= website.contentType->first().allAssociations->any(a | a.targetEntityX = website.selectionType)
+					in if not containingFeature.oclIsUndefined() then
+							containingFeature.findOrmTargetAssociation()
+						else
+							website.containingFeature
+						endif
 			else
 				website.containingFeature
-			endif,
+			endif endif,
 		selection <-
 			if website.selection.oclIsUndefined() then
 				website.selection

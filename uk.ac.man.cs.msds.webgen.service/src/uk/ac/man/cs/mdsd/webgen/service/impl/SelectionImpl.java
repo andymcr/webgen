@@ -54,6 +54,7 @@ import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getLimit <em>Limit</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#isSelected <em>Selected</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getSelectVia <em>Select Via</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getMethodName <em>Method Name</em>}</li>
  * </ul>
  *
@@ -179,6 +180,16 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @ordered
 	 */
 	protected boolean selected = SELECTED_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSelectVia() <em>Select Via</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelectVia()
+	 * @generated
+	 * @ordered
+	 */
+	protected Association selectVia;
 
 	/**
 	 * The default value of the '{@link #getMethodName() <em>Method Name</em>}' attribute.
@@ -431,6 +442,44 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Association getSelectVia() {
+		if (selectVia != null && selectVia.eIsProxy()) {
+			InternalEObject oldSelectVia = (InternalEObject)selectVia;
+			selectVia = (Association)eResolveProxy(oldSelectVia);
+			if (selectVia != oldSelectVia) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServicePackage.SELECTION__SELECT_VIA, oldSelectVia, selectVia));
+			}
+		}
+		return selectVia;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Association basicGetSelectVia() {
+		return selectVia;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelectVia(Association newSelectVia) {
+		Association oldSelectVia = selectVia;
+		selectVia = newSelectVia;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SELECTION__SELECT_VIA, oldSelectVia, selectVia));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getMethodName() {
 		return methodName;
 	}
@@ -532,6 +581,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return getLimit();
 			case ServicePackage.SELECTION__SELECTED:
 				return isSelected();
+			case ServicePackage.SELECTION__SELECT_VIA:
+				if (resolve) return getSelectVia();
+				return basicGetSelectVia();
 			case ServicePackage.SELECTION__METHOD_NAME:
 				return getMethodName();
 		}
@@ -582,6 +634,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case ServicePackage.SELECTION__SELECTED:
 				setSelected((Boolean)newValue);
 				return;
+			case ServicePackage.SELECTION__SELECT_VIA:
+				setSelectVia((Association)newValue);
+				return;
 			case ServicePackage.SELECTION__METHOD_NAME:
 				setMethodName((String)newValue);
 				return;
@@ -627,6 +682,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case ServicePackage.SELECTION__SELECTED:
 				setSelected(SELECTED_EDEFAULT);
 				return;
+			case ServicePackage.SELECTION__SELECT_VIA:
+				setSelectVia((Association)null);
+				return;
 			case ServicePackage.SELECTION__METHOD_NAME:
 				setMethodName(METHOD_NAME_EDEFAULT);
 				return;
@@ -662,6 +720,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return limit != LIMIT_EDEFAULT;
 			case ServicePackage.SELECTION__SELECTED:
 				return selected != SELECTED_EDEFAULT;
+			case ServicePackage.SELECTION__SELECT_VIA:
+				return selectVia != null;
 			case ServicePackage.SELECTION__METHOD_NAME:
 				return METHOD_NAME_EDEFAULT == null ? methodName != null : !METHOD_NAME_EDEFAULT.equals(methodName);
 		}

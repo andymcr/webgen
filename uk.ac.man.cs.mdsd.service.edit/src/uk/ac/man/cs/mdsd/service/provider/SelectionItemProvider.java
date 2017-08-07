@@ -60,6 +60,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			addJoinsPropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
 			addSelectedPropertyDescriptor(object);
+			addSelectViaPropertyDescriptor(object);
 			addMethodNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -193,6 +194,28 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Select Via feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectViaPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Selection_selectVia_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_selectVia_feature", "_UI_Selection_type"),
+				 ServicePackage.Literals.SELECTION__SELECT_VIA,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

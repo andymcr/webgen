@@ -180,6 +180,12 @@ rule Selection {
 		ordering <- website.ordering,
 		limit <- website.limit,
 		selected <- website.selected,
+		selectVia <-
+			if not website.selectVia.oclIsUndefined() then
+				website.selectVia.findOrmFeature()
+			else
+				website.selectVia
+			endif,
 		methodName <-
 			if not website.methodName.oclIsUndefined() and website.methodName.trim() <> '' then
 			    website.methodName

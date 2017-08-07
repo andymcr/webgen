@@ -67,6 +67,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			addJoinsPropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
 			addSelectedPropertyDescriptor(object);
+			addSelectViaPropertyDescriptor(object);
 			addMethodNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -108,16 +109,16 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			getString("_UI_PropertyDescriptor_description", "_UI_Selection_fields_feature", "_UI_Selection_type"),
 			ServicePackage.Literals.SELECTION__FIELDS,
 			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
+			getString("_UI_BusinessPropertyCategory"),
 			null) {
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof Selection) {
-					final Set<EntityOrView> entitiesAndViews
+					final Set<EntityOrView> entities
 						= getEntitiesAndViews((Selection) object);
 					final Set<Feature> fields = new HashSet<Feature>();
-					for (EntityOrView entityOrView : entitiesAndViews) {
-						fields.addAll(entityOrView.getFeatures());
+					for (EntityOrView entity : entities) {
+						fields.addAll(entity.getFeatures());
 					}
 
 					return fields;
@@ -147,11 +148,11 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof Selection) {
-					final Set<EntityOrView> entitiesAndViews
+					final Set<EntityOrView> entities
 						= getEntitiesAndViews((Selection) object);
 					final Set<Association> associations = new HashSet<Association>();
-					for (EntityOrView entityOrView : entitiesAndViews) {
-						associations.addAll(entityOrView.getAllAssociations());
+					for (EntityOrView entity : entities) {
+						associations.addAll(entity.getAllAssociations());
 					}
 
 					return associations;
@@ -207,6 +208,40 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Select Via feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addSelectViaPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_Selection_selectVia_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Selection_selectVia_feature", "_UI_Selection_type"),
+			ServicePackage.Literals.SELECTION__SELECT_VIA,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				if (object instanceof Selection) {
+					final Set<EntityOrView> entities
+						= getEntitiesAndViews((Selection) object);
+					final Set<Feature> fields = new HashSet<Feature>();
+					for (EntityOrView entity : entities) {
+						fields.addAll(entity.getAllAssociations());
+					}
+
+					return fields;
+				}
+
+				return Collections.emptySet();
+			}
+		});
+	}
+
+	/**
 	 * This adds a property descriptor for the Method Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -224,7 +259,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_IMplementationPropertyCategory"),
+				 getString("_UI_ImplementationPropertyCategory"),
 				 null));
 	}
 

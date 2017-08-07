@@ -29,6 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getLimit <em>Limit</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#isSelected <em>Selected</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectVia <em>Select Via</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getMethodName <em>Method Name</em>}</li>
  * </ul>
  *
@@ -235,6 +236,32 @@ public interface Selection extends NamedElement, FormalParameterList {
 	 * @generated
 	 */
 	void setSelected(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Select Via</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Select Via</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Select Via</em>' reference.
+	 * @see #setSelectVia(Association)
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getSelection_SelectVia()
+	 * @model
+	 * @generated
+	 */
+	Association getSelectVia();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectVia <em>Select Via</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Select Via</em>' reference.
+	 * @see #getSelectVia()
+	 * @generated
+	 */
+	void setSelectVia(Association value);
 
 	/**
 	 * Returns the value of the '<em><b>Method Name</b></em>' attribute.

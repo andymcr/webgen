@@ -42,13 +42,16 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Selection/fields"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Business"
           propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Selection/joins"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//Selection/condition"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Business"
+          ecoreFeature="ecore:EReference service.ecore#//Selection/condition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference service.ecore#//Selection/filters"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Business"
           ecoreFeature="ecore:EReference service.ecore#//Selection/ordering"/>
       <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute service.ecore#//Selection/limit"/>
       <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute service.ecore#//Selection/selected"/>
-      <genFeatures createChild="false" propertyCategory="IMplementation" ecoreFeature="ecore:EAttribute service.ecore#//Selection/methodName"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Business"
+          propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Selection/selectVia"/>
+      <genFeatures createChild="false" propertyCategory="Implementation" ecoreFeature="ecore:EAttribute service.ecore#//Selection/methodName"/>
     </genClasses>
     <genClasses image="false" ecoreClass="service.ecore#//Order">
       <genFeatures property="None" children="true" createChild="true" propertyCategory=""

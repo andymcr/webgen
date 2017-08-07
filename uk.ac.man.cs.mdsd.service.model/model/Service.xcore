@@ -64,6 +64,7 @@ class Selection extends NamedElement, FormalParameterList {
 	contains Order[] ordering
 	int limit = "0"
 	boolean selected
+	refers Association selectVia
 	String methodName
 }
 

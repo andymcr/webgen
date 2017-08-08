@@ -183,9 +183,9 @@ rule Selection {
 		selectVia <-
 			if not website.selectVia.oclIsUndefined() then
 				if website.usedBy.serves.associations->includes(website.selectVia)  then
-					website.selectVia.findOrmTargetAssociation()
-				else
 					website.selectVia.findOrmSourceAssociation()
+				else
+					website.selectVia.findOrmTargetAssociation()
 				endif
 			else
 				website.selectVia

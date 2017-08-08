@@ -3,8 +3,6 @@
 package uk.ac.man.cs.mdsd.webgen.webui;
 
 import org.eclipse.emf.common.util.EList;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.service.Filter;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
@@ -19,7 +17,6 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getContentType <em>Content Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getContainingAssociation <em>Containing Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getSupportedFilters <em>Supported Filters</em>}</li>
@@ -57,32 +54,6 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	EList<EntityOrView> getContentType();
-
-	/**
-	 * Returns the value of the '<em><b>Containing Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Containing Association</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Containing Association</em>' reference.
-	 * @see #setContainingAssociation(Association)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_ContainingAssociation()
-	 * @model
-	 * @generated
-	 */
-	Association getContainingAssociation();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getContainingAssociation <em>Containing Association</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Containing Association</em>' reference.
-	 * @see #getContainingAssociation()
-	 * @generated
-	 */
-	void setContainingAssociation(Association value);
 
 	/**
 	 * Returns the value of the '<em><b>Selection</b></em>' reference.

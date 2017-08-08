@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.orm.Attribute;
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
 import uk.ac.man.cs.mdsd.orm.SingletonLocation;
 
 import uk.ac.man.cs.mdsd.waf.MapUnit;
@@ -34,7 +33,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#getSelectors <em>Selectors</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#isReadOnly <em>Read Only</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#getDefaultZoomLevel <em>Default Zoom Level</em>}</li>
@@ -45,16 +43,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public class MapUnitImpl extends EditUnitImpl implements MapUnit {
-	/**
-	 * The cached value of the '{@link #getSelectionType() <em>Selection Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelectionType()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntityOrView selectionType;
-
 	/**
 	 * The cached value of the '{@link #getSelectors() <em>Selectors</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -142,44 +130,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.MAP_UNIT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView getSelectionType() {
-		if (selectionType != null && selectionType.eIsProxy()) {
-			InternalEObject oldSelectionType = (InternalEObject)selectionType;
-			selectionType = (EntityOrView)eResolveProxy(oldSelectionType);
-			if (selectionType != oldSelectionType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.MAP_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
-			}
-		}
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView basicGetSelectionType() {
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectionType(EntityOrView newSelectionType) {
-		EntityOrView oldSelectionType = selectionType;
-		selectionType = newSelectionType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.MAP_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
 	}
 
 	/**
@@ -349,9 +299,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.MAP_UNIT__SELECTION_TYPE:
-				if (resolve) return getSelectionType();
-				return basicGetSelectionType();
 			case WafPackage.MAP_UNIT__SELECTORS:
 				return getSelectors();
 			case WafPackage.MAP_UNIT__READ_ONLY:
@@ -377,9 +324,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.MAP_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)newValue);
-				return;
 			case WafPackage.MAP_UNIT__SELECTORS:
 				getSelectors().clear();
 				getSelectors().addAll((Collection<? extends SelectAction>)newValue);
@@ -408,9 +352,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.MAP_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)null);
-				return;
 			case WafPackage.MAP_UNIT__SELECTORS:
 				getSelectors().clear();
 				return;
@@ -438,8 +379,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.MAP_UNIT__SELECTION_TYPE:
-				return selectionType != null;
 			case WafPackage.MAP_UNIT__SELECTORS:
 				return selectors != null && !selectors.isEmpty();
 			case WafPackage.MAP_UNIT__READ_ONLY:
@@ -463,7 +402,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == SelectableUnit.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.MAP_UNIT__SELECTION_TYPE: return WafPackage.SELECTABLE_UNIT__SELECTION_TYPE;
 				case WafPackage.MAP_UNIT__SELECTORS: return WafPackage.SELECTABLE_UNIT__SELECTORS;
 				default: return -1;
 			}
@@ -480,7 +418,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == SelectableUnit.class) {
 			switch (baseFeatureID) {
-				case WafPackage.SELECTABLE_UNIT__SELECTION_TYPE: return WafPackage.MAP_UNIT__SELECTION_TYPE;
 				case WafPackage.SELECTABLE_UNIT__SELECTORS: return WafPackage.MAP_UNIT__SELECTORS;
 				default: return -1;
 			}

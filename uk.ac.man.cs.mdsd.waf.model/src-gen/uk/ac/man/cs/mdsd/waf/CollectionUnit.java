@@ -4,7 +4,6 @@ package uk.ac.man.cs.mdsd.waf;
 
 import org.eclipse.emf.common.util.EList;
 
-import uk.ac.man.cs.mdsd.orm.Association;
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
 import uk.ac.man.cs.mdsd.service.Filter;
@@ -19,7 +18,6 @@ import uk.ac.man.cs.mdsd.service.Selection;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContainingAssociation <em>Containing Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFilter <em>Filter</em>}</li>
@@ -42,32 +40,6 @@ import uk.ac.man.cs.mdsd.service.Selection;
  * @generated
  */
 public interface CollectionUnit extends SelectableUnit {
-	/**
-	 * Returns the value of the '<em><b>Containing Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Containing Association</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Containing Association</em>' reference.
-	 * @see #setContainingAssociation(Association)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_ContainingAssociation()
-	 * @model
-	 * @generated
-	 */
-	Association getContainingAssociation();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContainingAssociation <em>Containing Association</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Containing Association</em>' reference.
-	 * @see #getContainingAssociation()
-	 * @generated
-	 */
-	void setContainingAssociation(Association value);
-
 	/**
 	 * Returns the value of the '<em><b>Content Type</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.EntityOrView}.

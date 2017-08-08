@@ -17,8 +17,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
-
 import uk.ac.man.cs.mdsd.waf.CreateUpdateUnit;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
 import uk.ac.man.cs.mdsd.waf.SelectableUnit;
@@ -32,7 +30,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CreateUpdateUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CreateUpdateUnitImpl#getSelectors <em>Selectors</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CreateUpdateUnitImpl#getCreateUriElement <em>Create Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CreateUpdateUnitImpl#getClearLabel <em>Clear Label</em>}</li>
@@ -41,16 +38,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUnit {
-	/**
-	 * The cached value of the '{@link #getSelectionType() <em>Selection Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelectionType()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntityOrView selectionType;
-
 	/**
 	 * The cached value of the '{@link #getSelectors() <em>Selectors</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -118,44 +105,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.CREATE_UPDATE_UNIT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView getSelectionType() {
-		if (selectionType != null && selectionType.eIsProxy()) {
-			InternalEObject oldSelectionType = (InternalEObject)selectionType;
-			selectionType = (EntityOrView)eResolveProxy(oldSelectionType);
-			if (selectionType != oldSelectionType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.CREATE_UPDATE_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
-			}
-		}
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView basicGetSelectionType() {
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectionType(EntityOrView newSelectionType) {
-		EntityOrView oldSelectionType = selectionType;
-		selectionType = newSelectionType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CREATE_UPDATE_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
 	}
 
 	/**
@@ -249,9 +198,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.CREATE_UPDATE_UNIT__SELECTION_TYPE:
-				if (resolve) return getSelectionType();
-				return basicGetSelectionType();
 			case WafPackage.CREATE_UPDATE_UNIT__SELECTORS:
 				return getSelectors();
 			case WafPackage.CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT:
@@ -271,9 +217,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.CREATE_UPDATE_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)newValue);
-				return;
 			case WafPackage.CREATE_UPDATE_UNIT__SELECTORS:
 				getSelectors().clear();
 				getSelectors().addAll((Collection<? extends SelectAction>)newValue);
@@ -296,9 +239,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.CREATE_UPDATE_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)null);
-				return;
 			case WafPackage.CREATE_UPDATE_UNIT__SELECTORS:
 				getSelectors().clear();
 				return;
@@ -320,8 +260,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.CREATE_UPDATE_UNIT__SELECTION_TYPE:
-				return selectionType != null;
 			case WafPackage.CREATE_UPDATE_UNIT__SELECTORS:
 				return selectors != null && !selectors.isEmpty();
 			case WafPackage.CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT:
@@ -341,7 +279,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == SelectableUnit.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.CREATE_UPDATE_UNIT__SELECTION_TYPE: return WafPackage.SELECTABLE_UNIT__SELECTION_TYPE;
 				case WafPackage.CREATE_UPDATE_UNIT__SELECTORS: return WafPackage.SELECTABLE_UNIT__SELECTORS;
 				default: return -1;
 			}
@@ -358,7 +295,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == SelectableUnit.class) {
 			switch (baseFeatureID) {
-				case WafPackage.SELECTABLE_UNIT__SELECTION_TYPE: return WafPackage.CREATE_UPDATE_UNIT__SELECTION_TYPE;
 				case WafPackage.SELECTABLE_UNIT__SELECTORS: return WafPackage.CREATE_UPDATE_UNIT__SELECTORS;
 				default: return -1;
 			}

@@ -733,12 +733,6 @@ rule UnitSupportAction {
 abstract rule SelectableUnit {
 	from website : Website!SelectableUnit
 	to waf : WAF!SelectableUnit (
-		selectionType <-
-			if website.selectionType.oclIsUndefined() then
-				website.selectionType
-			else
-				thisModule.findOrmEntityOrView(website.selectionType.name)
-			endif
 	)
 }
 
@@ -757,26 +751,6 @@ abstract rule CollectionUnit {
 	to waf : WAF!CollectionUnit (
 		contentType <- website.contentType
 			->collect(eov | thisModule.findOrmEntityOrView(eov.name)),
-		containingAssociation <-
-			if not website.containingAssociation.oclIsUndefined() then
-				website.containingAssociation.findOrmFeature()
-			else if not website.selectionType.oclIsUndefined() and website.contentType->notEmpty() then
-				let association1 : Website!Association
-					= website.contentType->first().allAssociations->any(a | a.targetEntityX = website.selectionType)
-					in if not association1.oclIsUndefined() then
-							association1.findOrmTargetAssociation()
-						else
-							let association2 : Website!Association
-								= website.contentType->first().allAssociations->any(a | a.sourceEntityX = website.selectionType)
-								in if not association2.oclIsUndefined() then
-										association2.findOrmSourceAssociation()
-									else
-										website.containingAssociation
-									endif
-						endif
-			else
-				website.containingAssociation
-			endif endif,
 		selection <-
 			if website.selection.oclIsUndefined() then
 				website.selection
@@ -879,7 +853,6 @@ rule CreateUpdateUnit {
 				'create'
 			endif,
 		clearLabel <- website.clearLabel
-, selectionType <- thisModule.findOrmEntityOrView(website.contentType.name)
 	)
 }
 
@@ -904,7 +877,6 @@ rule MapUnit {
 rule UpdateUnit {
 	from website : Website!UpdateUnit
 	to waf : WAF!UpdateUnit (
-selectionType <- thisModule.findOrmEntityOrView(website.contentType.name)
 	)
 }
 
@@ -932,13 +904,7 @@ rule DetailsUnit {
 	from website : Website!DetailsUnit
 	to waf : WAF!DetailsUnit (
 		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
-		omitFieldLabels <- website.omitFieldLabels,
-		selectionType <-
-			if website.defaultSelection.oclIsUndefined() then
-				thisModule.findOrmEntityOrView(website.contentType.name)
-			else
-				OclUndefined
-			endif
+		omitFieldLabels <- website.omitFieldLabels
 	)
 }
 

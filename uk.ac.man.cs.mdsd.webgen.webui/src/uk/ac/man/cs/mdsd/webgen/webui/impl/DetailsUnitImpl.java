@@ -23,7 +23,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DetailsUnitImpl#getContentType <em>Content Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DetailsUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DetailsUnitImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DetailsUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DetailsUnitImpl#getStyleClass <em>Style Class</em>}</li>
@@ -42,16 +41,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * @ordered
 	 */
 	protected EntityOrView contentType;
-
-	/**
-	 * The cached value of the '{@link #getSelectionType() <em>Selection Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelectionType()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntityOrView selectionType;
 
 	/**
 	 * The default value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
@@ -195,44 +184,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView getSelectionType() {
-		if (selectionType != null && selectionType.eIsProxy()) {
-			InternalEObject oldSelectionType = (InternalEObject)selectionType;
-			selectionType = (EntityOrView)eResolveProxy(oldSelectionType);
-			if (selectionType != oldSelectionType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.DETAILS_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
-			}
-		}
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView basicGetSelectionType() {
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectionType(EntityOrView newSelectionType) {
-		EntityOrView oldSelectionType = selectionType;
-		selectionType = newSelectionType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.DETAILS_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isOnlyDisplayWhenNotEmpty() {
 		return onlyDisplayWhenNotEmpty;
 	}
@@ -323,9 +274,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WebuiPackage.DETAILS_UNIT__CONTENT_TYPE:
 				if (resolve) return getContentType();
 				return basicGetContentType();
-			case WebuiPackage.DETAILS_UNIT__SELECTION_TYPE:
-				if (resolve) return getSelectionType();
-				return basicGetSelectionType();
 			case WebuiPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				return isOnlyDisplayWhenNotEmpty();
 			case WebuiPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
@@ -348,9 +296,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		switch (featureID) {
 			case WebuiPackage.DETAILS_UNIT__CONTENT_TYPE:
 				setContentType((EntityOrView)newValue);
-				return;
-			case WebuiPackage.DETAILS_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)newValue);
 				return;
 			case WebuiPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
@@ -379,9 +324,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WebuiPackage.DETAILS_UNIT__CONTENT_TYPE:
 				setContentType((EntityOrView)null);
 				return;
-			case WebuiPackage.DETAILS_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)null);
-				return;
 			case WebuiPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
 				return;
@@ -408,8 +350,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		switch (featureID) {
 			case WebuiPackage.DETAILS_UNIT__CONTENT_TYPE:
 				return contentType != null;
-			case WebuiPackage.DETAILS_UNIT__SELECTION_TYPE:
-				return selectionType != null;
 			case WebuiPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 			case WebuiPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
@@ -437,7 +377,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		}
 		if (baseClass == SelectableUnit.class) {
 			switch (derivedFeatureID) {
-				case WebuiPackage.DETAILS_UNIT__SELECTION_TYPE: return WebuiPackage.SELECTABLE_UNIT__SELECTION_TYPE;
 				default: return -1;
 			}
 		}
@@ -459,7 +398,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		}
 		if (baseClass == SelectableUnit.class) {
 			switch (baseFeatureID) {
-				case WebuiPackage.SELECTABLE_UNIT__SELECTION_TYPE: return WebuiPackage.DETAILS_UNIT__SELECTION_TYPE;
 				default: return -1;
 			}
 		}

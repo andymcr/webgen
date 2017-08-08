@@ -9,6 +9,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 
 /**
@@ -246,12 +247,12 @@ public interface Selection extends NamedElement, FormalParameterList {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Select Via</em>' reference.
-	 * @see #setSelectVia(Association)
+	 * @see #setSelectVia(EntityAssociation)
 	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getSelection_SelectVia()
 	 * @model
 	 * @generated
 	 */
-	Association getSelectVia();
+	EntityAssociation getSelectVia();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectVia <em>Select Via</em>}' reference.
@@ -261,7 +262,7 @@ public interface Selection extends NamedElement, FormalParameterList {
 	 * @see #getSelectVia()
 	 * @generated
 	 */
-	void setSelectVia(Association value);
+	void setSelectVia(EntityAssociation value);
 
 	/**
 	 * Returns the value of the '<em><b>Method Name</b></em>' attribute.

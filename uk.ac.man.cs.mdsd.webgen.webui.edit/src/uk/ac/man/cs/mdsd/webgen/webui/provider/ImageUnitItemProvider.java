@@ -16,7 +16,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.ImageUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
@@ -50,9 +49,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSelectionTypePropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
-			addContainingAssociationPropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addFilterPropertyDescriptor(object);
 			addSupportedFiltersPropertyDescriptor(object);
@@ -78,28 +75,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Selection Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSelectionTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SelectableUnit_selectionType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SelectableUnit_selectionType_feature", "_UI_SelectableUnit_type"),
-				 WebuiPackage.Literals.SELECTABLE_UNIT__SELECTION_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Content Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,36 +94,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 null,
 				 getString("_UI_ModelPropertyCategory"),
 				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Containing Feature feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addContainingAssociationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_CollectionUnit_containingAssociation_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_containingAssociation_feature", "_UI_CollectionUnit_type"),
-			WebuiPackage.Literals.COLLECTION_UNIT__CONTAINING_ASSOCIATION,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof CollectionUnit) {
-						final CollectionUnit unit = (CollectionUnit) object;
-						if (unit.getSelectionType() != null) {
-							return unit.getSelectionType().getAllAssociations();
-						}
-					}
-
-					return Collections.emptySet();
-				}
-		});
 	}
 
 	/**

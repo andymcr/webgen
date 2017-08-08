@@ -34,7 +34,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#getContentType <em>Content Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#getSelectors <em>Selectors</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
@@ -52,16 +51,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * @ordered
 	 */
 	protected EntityOrView contentType;
-
-	/**
-	 * The cached value of the '{@link #getSelectionType() <em>Selection Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelectionType()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntityOrView selectionType;
 
 	/**
 	 * The cached value of the '{@link #getSelectors() <em>Selectors</em>}' reference list.
@@ -175,44 +164,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView getSelectionType() {
-		if (selectionType != null && selectionType.eIsProxy()) {
-			InternalEObject oldSelectionType = (InternalEObject)selectionType;
-			selectionType = (EntityOrView)eResolveProxy(oldSelectionType);
-			if (selectionType != oldSelectionType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.DETAILS_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
-			}
-		}
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView basicGetSelectionType() {
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectionType(EntityOrView newSelectionType) {
-		EntityOrView oldSelectionType = selectionType;
-		selectionType = newSelectionType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DETAILS_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<SelectAction> getSelectors() {
 		if (selectors == null) {
 			selectors = new EObjectWithInverseResolvingEList<SelectAction>(SelectAction.class, this, WafPackage.DETAILS_UNIT__SELECTORS, WafPackage.SELECT_ACTION__TARGET);
@@ -302,9 +253,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WafPackage.DETAILS_UNIT__CONTENT_TYPE:
 				if (resolve) return getContentType();
 				return basicGetContentType();
-			case WafPackage.DETAILS_UNIT__SELECTION_TYPE:
-				if (resolve) return getSelectionType();
-				return basicGetSelectionType();
 			case WafPackage.DETAILS_UNIT__SELECTORS:
 				return getSelectors();
 			case WafPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
@@ -326,9 +274,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		switch (featureID) {
 			case WafPackage.DETAILS_UNIT__CONTENT_TYPE:
 				setContentType((EntityOrView)newValue);
-				return;
-			case WafPackage.DETAILS_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)newValue);
 				return;
 			case WafPackage.DETAILS_UNIT__SELECTORS:
 				getSelectors().clear();
@@ -355,9 +300,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WafPackage.DETAILS_UNIT__CONTENT_TYPE:
 				setContentType((EntityOrView)null);
 				return;
-			case WafPackage.DETAILS_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)null);
-				return;
 			case WafPackage.DETAILS_UNIT__SELECTORS:
 				getSelectors().clear();
 				return;
@@ -381,8 +323,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		switch (featureID) {
 			case WafPackage.DETAILS_UNIT__CONTENT_TYPE:
 				return contentType != null;
-			case WafPackage.DETAILS_UNIT__SELECTION_TYPE:
-				return selectionType != null;
 			case WafPackage.DETAILS_UNIT__SELECTORS:
 				return selectors != null && !selectors.isEmpty();
 			case WafPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
@@ -408,7 +348,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		}
 		if (baseClass == SelectableUnit.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.DETAILS_UNIT__SELECTION_TYPE: return WafPackage.SELECTABLE_UNIT__SELECTION_TYPE;
 				case WafPackage.DETAILS_UNIT__SELECTORS: return WafPackage.SELECTABLE_UNIT__SELECTORS;
 				default: return -1;
 			}
@@ -431,7 +370,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		}
 		if (baseClass == SelectableUnit.class) {
 			switch (baseFeatureID) {
-				case WafPackage.SELECTABLE_UNIT__SELECTION_TYPE: return WafPackage.DETAILS_UNIT__SELECTION_TYPE;
 				case WafPackage.SELECTABLE_UNIT__SELECTORS: return WafPackage.DETAILS_UNIT__SELECTORS;
 				default: return -1;
 			}

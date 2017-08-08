@@ -14,8 +14,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.service.Filter;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
@@ -36,9 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getContainingAssociation <em>Containing Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
@@ -66,16 +62,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  */
 public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	/**
-	 * The cached value of the '{@link #getSelectionType() <em>Selection Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelectionType()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntityOrView selectionType;
-
-	/**
 	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -84,16 +70,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected EList<EntityOrView> contentType;
-
-	/**
-	 * The cached value of the '{@link #getContainingAssociation() <em>Containing Association</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContainingAssociation()
-	 * @generated
-	 * @ordered
-	 */
-	protected Association containingAssociation;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -489,87 +465,11 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView getSelectionType() {
-		if (selectionType != null && selectionType.eIsProxy()) {
-			InternalEObject oldSelectionType = (InternalEObject)selectionType;
-			selectionType = (EntityOrView)eResolveProxy(oldSelectionType);
-			if (selectionType != oldSelectionType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.INDEX_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
-			}
-		}
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView basicGetSelectionType() {
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectionType(EntityOrView newSelectionType) {
-		EntityOrView oldSelectionType = selectionType;
-		selectionType = newSelectionType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<EntityOrView> getContentType() {
 		if (contentType == null) {
 			contentType = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebuiPackage.INDEX_UNIT__CONTENT_TYPE);
 		}
 		return contentType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Association getContainingAssociation() {
-		if (containingAssociation != null && containingAssociation.eIsProxy()) {
-			InternalEObject oldContainingAssociation = (InternalEObject)containingAssociation;
-			containingAssociation = (Association)eResolveProxy(oldContainingAssociation);
-			if (containingAssociation != oldContainingAssociation) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION, oldContainingAssociation, containingAssociation));
-			}
-		}
-		return containingAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Association basicGetContainingAssociation() {
-		return containingAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setContainingAssociation(Association newContainingAssociation) {
-		Association oldContainingAssociation = containingAssociation;
-		containingAssociation = newContainingAssociation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION, oldContainingAssociation, containingAssociation));
 	}
 
 	/**
@@ -1083,14 +983,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebuiPackage.INDEX_UNIT__SELECTION_TYPE:
-				if (resolve) return getSelectionType();
-				return basicGetSelectionType();
 			case WebuiPackage.INDEX_UNIT__CONTENT_TYPE:
 				return getContentType();
-			case WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION:
-				if (resolve) return getContainingAssociation();
-				return basicGetContainingAssociation();
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
@@ -1149,15 +1043,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebuiPackage.INDEX_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)newValue);
-				return;
 			case WebuiPackage.INDEX_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				getContentType().addAll((Collection<? extends EntityOrView>)newValue);
-				return;
-			case WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION:
-				setContainingAssociation((Association)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)newValue);
@@ -1236,14 +1124,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebuiPackage.INDEX_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)null);
-				return;
 			case WebuiPackage.INDEX_UNIT__CONTENT_TYPE:
 				getContentType().clear();
-				return;
-			case WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION:
-				setContainingAssociation((Association)null);
 				return;
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)null);
@@ -1320,12 +1202,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebuiPackage.INDEX_UNIT__SELECTION_TYPE:
-				return selectionType != null;
 			case WebuiPackage.INDEX_UNIT__CONTENT_TYPE:
 				return contentType != null && !contentType.isEmpty();
-			case WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION:
-				return containingAssociation != null;
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				return selection != null;
 			case WebuiPackage.INDEX_UNIT__FILTER:
@@ -1381,14 +1259,12 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == SelectableUnit.class) {
 			switch (derivedFeatureID) {
-				case WebuiPackage.INDEX_UNIT__SELECTION_TYPE: return WebuiPackage.SELECTABLE_UNIT__SELECTION_TYPE;
 				default: return -1;
 			}
 		}
 		if (baseClass == CollectionUnit.class) {
 			switch (derivedFeatureID) {
 				case WebuiPackage.INDEX_UNIT__CONTENT_TYPE: return WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE;
-				case WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION: return WebuiPackage.COLLECTION_UNIT__CONTAINING_ASSOCIATION;
 				case WebuiPackage.INDEX_UNIT__SELECTION: return WebuiPackage.COLLECTION_UNIT__SELECTION;
 				case WebuiPackage.INDEX_UNIT__FILTER: return WebuiPackage.COLLECTION_UNIT__FILTER;
 				case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS: return WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
@@ -1425,14 +1301,12 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == SelectableUnit.class) {
 			switch (baseFeatureID) {
-				case WebuiPackage.SELECTABLE_UNIT__SELECTION_TYPE: return WebuiPackage.INDEX_UNIT__SELECTION_TYPE;
 				default: return -1;
 			}
 		}
 		if (baseClass == CollectionUnit.class) {
 			switch (baseFeatureID) {
 				case WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE: return WebuiPackage.INDEX_UNIT__CONTENT_TYPE;
-				case WebuiPackage.COLLECTION_UNIT__CONTAINING_ASSOCIATION: return WebuiPackage.INDEX_UNIT__CONTAINING_ASSOCIATION;
 				case WebuiPackage.COLLECTION_UNIT__SELECTION: return WebuiPackage.INDEX_UNIT__SELECTION;
 				case WebuiPackage.COLLECTION_UNIT__FILTER: return WebuiPackage.INDEX_UNIT__FILTER;
 				case WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS;

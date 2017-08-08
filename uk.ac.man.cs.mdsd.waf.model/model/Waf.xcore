@@ -315,7 +315,6 @@ class CaptchaField extends InterfaceField {
 }
 
 interface SelectableUnit {
-	refers EntityOrView selectionType
 	refers SelectAction[] selectors opposite target
 }
 
@@ -324,7 +323,6 @@ interface SingletonUnit {
 }
 
 interface CollectionUnit extends SelectableUnit {
-	refers Association containingAssociation
 	refers EntityOrView[1..*] contentType
 	refers Selection selection
 	refers Filter filter

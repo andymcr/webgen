@@ -28,6 +28,7 @@ import uk.ac.man.cs.mdsd.webgen.base.impl.NamedElementImpl;
 import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 
 import uk.ac.man.cs.mdsd.webgen.service.Filter;
@@ -189,7 +190,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @generated
 	 * @ordered
 	 */
-	protected Association selectVia;
+	protected EntityAssociation selectVia;
 
 	/**
 	 * The default value of the '{@link #getMethodName() <em>Method Name</em>}' attribute.
@@ -442,10 +443,10 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Association getSelectVia() {
+	public EntityAssociation getSelectVia() {
 		if (selectVia != null && selectVia.eIsProxy()) {
 			InternalEObject oldSelectVia = (InternalEObject)selectVia;
-			selectVia = (Association)eResolveProxy(oldSelectVia);
+			selectVia = (EntityAssociation)eResolveProxy(oldSelectVia);
 			if (selectVia != oldSelectVia) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServicePackage.SELECTION__SELECT_VIA, oldSelectVia, selectVia));
@@ -459,7 +460,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Association basicGetSelectVia() {
+	public EntityAssociation basicGetSelectVia() {
 		return selectVia;
 	}
 
@@ -468,8 +469,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSelectVia(Association newSelectVia) {
-		Association oldSelectVia = selectVia;
+	public void setSelectVia(EntityAssociation newSelectVia) {
+		EntityAssociation oldSelectVia = selectVia;
 		selectVia = newSelectVia;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SELECTION__SELECT_VIA, oldSelectVia, selectVia));
@@ -635,7 +636,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				setSelected((Boolean)newValue);
 				return;
 			case ServicePackage.SELECTION__SELECT_VIA:
-				setSelectVia((Association)newValue);
+				setSelectVia((EntityAssociation)newValue);
 				return;
 			case ServicePackage.SELECTION__METHOD_NAME:
 				setMethodName((String)newValue);
@@ -683,7 +684,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				setSelected(SELECTED_EDEFAULT);
 				return;
 			case ServicePackage.SELECTION__SELECT_VIA:
-				setSelectVia((Association)null);
+				setSelectVia((EntityAssociation)null);
 				return;
 			case ServicePackage.SELECTION__METHOD_NAME:
 				setMethodName(METHOD_NAME_EDEFAULT);

@@ -227,10 +227,7 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//UnitSupportAction/disable"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitSupportAction/confirmMessage"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="webui.ecore#//SelectableUnit">
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference webui.ecore#//SelectableUnit/selectionType"/>
-    </genClasses>
+    <genClasses image="false" ecoreClass="webui.ecore#//SelectableUnit"/>
     <genClasses image="false" ecoreClass="webui.ecore#//SingletonUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//SingletonUnit/contentType"/>
@@ -238,8 +235,6 @@
     <genClasses image="false" ecoreClass="webui.ecore#//CollectionUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/contentType"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/containingAssociation"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/selection"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"

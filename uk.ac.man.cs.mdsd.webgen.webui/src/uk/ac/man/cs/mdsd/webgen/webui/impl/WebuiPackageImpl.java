@@ -1933,15 +1933,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelectableUnit_SelectionType() {
-		return (EReference)selectableUnitEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSingletonUnit() {
 		return singletonUnitEClass;
 	}
@@ -1978,7 +1969,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCollectionUnit_ContainingAssociation() {
+	public EReference getCollectionUnit_Selection() {
 		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1987,7 +1978,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCollectionUnit_Selection() {
+	public EReference getCollectionUnit_Filter() {
 		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1996,7 +1987,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCollectionUnit_Filter() {
+	public EReference getCollectionUnit_SupportedFilters() {
 		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -2005,17 +1996,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCollectionUnit_SupportedFilters() {
-		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getCollectionUnit_EmptyMessage() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2024,7 +2006,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EReference getCollectionUnit_Pagination() {
-		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(6);
+		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2033,7 +2015,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_DefaultPaginationSize() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -2042,7 +2024,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_MaximumPaginationSize() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -2051,7 +2033,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_NextNpages() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2060,7 +2042,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_PreviousNpages() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2069,7 +2051,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_NextPageLabel() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -2078,7 +2060,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_PreviousPageLabel() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -2087,7 +2069,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_UseDisabledPageLinks() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -2096,7 +2078,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_UseFirstLastPageLinks() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -2105,7 +2087,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_FirstPageLabel() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -2114,7 +2096,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_LastPageLabel() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -3397,14 +3379,12 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		createEAttribute(unitSupportActionEClass, UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE);
 
 		selectableUnitEClass = createEClass(SELECTABLE_UNIT);
-		createEReference(selectableUnitEClass, SELECTABLE_UNIT__SELECTION_TYPE);
 
 		singletonUnitEClass = createEClass(SINGLETON_UNIT);
 		createEReference(singletonUnitEClass, SINGLETON_UNIT__CONTENT_TYPE);
 
 		collectionUnitEClass = createEClass(COLLECTION_UNIT);
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__CONTENT_TYPE);
-		createEReference(collectionUnitEClass, COLLECTION_UNIT__CONTAINING_ASSOCIATION);
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__SELECTION);
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__FILTER);
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__SUPPORTED_FILTERS);
@@ -3851,14 +3831,12 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEAttribute(getUnitSupportAction_ConfirmMessage(), ecorePackage.getEString(), "confirmMessage", null, 0, 1, UnitSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(selectableUnitEClass, SelectableUnit.class, "SelectableUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSelectableUnit_SelectionType(), thePersistencePackage.getEntityOrView(), null, "selectionType", null, 0, 1, SelectableUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(singletonUnitEClass, SingletonUnit.class, "SingletonUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSingletonUnit_ContentType(), thePersistencePackage.getEntityOrView(), null, "contentType", null, 1, 1, SingletonUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(collectionUnitEClass, CollectionUnit.class, "CollectionUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCollectionUnit_ContentType(), thePersistencePackage.getEntityOrView(), null, "contentType", null, 1, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCollectionUnit_ContainingAssociation(), thePersistencePackage.getAssociation(), null, "containingAssociation", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_Selection(), theServicePackage.getSelection(), null, "selection", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_Filter(), theServicePackage.getFilter(), null, "filter", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_SupportedFilters(), theServicePackage.getFilter(), null, "supportedFilters", null, 0, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

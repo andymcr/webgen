@@ -2257,17 +2257,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelectableUnit_SelectionType() {
-		return (EReference)selectableUnitEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getSelectableUnit_Selectors() {
-		return (EReference)selectableUnitEClass.getEStructuralFeatures().get(1);
+		return (EReference)selectableUnitEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2302,7 +2293,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCollectionUnit_ContainingAssociation() {
+	public EReference getCollectionUnit_ContentType() {
 		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -2311,7 +2302,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCollectionUnit_ContentType() {
+	public EReference getCollectionUnit_Selection() {
 		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2320,7 +2311,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCollectionUnit_Selection() {
+	public EReference getCollectionUnit_Filter() {
 		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -2329,7 +2320,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCollectionUnit_Filter() {
+	public EReference getCollectionUnit_SupportedFilters() {
 		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -2338,17 +2329,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCollectionUnit_SupportedFilters() {
-		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getCollectionUnit_EmptyMessage() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2357,7 +2339,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_DefaultPaginationSize() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2366,7 +2348,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_MaximumPaginationSize() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -2375,7 +2357,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_NextNpages() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -2384,7 +2366,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_PreviousNpages() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2393,7 +2375,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_NextPageLabel() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2402,7 +2384,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_PreviousPageLabel() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -2411,7 +2393,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_UseDisabledPageLinks() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -2420,7 +2402,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_UseFirstLastPageLinks() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -2429,7 +2411,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_FirstPageLabel() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -2438,7 +2420,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getCollectionUnit_LastPageLabel() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -3585,14 +3567,12 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		captchaFieldEClass = createEClass(CAPTCHA_FIELD);
 
 		selectableUnitEClass = createEClass(SELECTABLE_UNIT);
-		createEReference(selectableUnitEClass, SELECTABLE_UNIT__SELECTION_TYPE);
 		createEReference(selectableUnitEClass, SELECTABLE_UNIT__SELECTORS);
 
 		singletonUnitEClass = createEClass(SINGLETON_UNIT);
 		createEReference(singletonUnitEClass, SINGLETON_UNIT__CONTENT_TYPE);
 
 		collectionUnitEClass = createEClass(COLLECTION_UNIT);
-		createEReference(collectionUnitEClass, COLLECTION_UNIT__CONTAINING_ASSOCIATION);
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__CONTENT_TYPE);
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__SELECTION);
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__FILTER);
@@ -4064,14 +4044,12 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(captchaFieldEClass, CaptchaField.class, "CaptchaField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(selectableUnitEClass, SelectableUnit.class, "SelectableUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSelectableUnit_SelectionType(), theOrmPackage.getEntityOrView(), null, "selectionType", null, 0, 1, SelectableUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelectableUnit_Selectors(), this.getSelectAction(), this.getSelectAction_Target(), "selectors", null, 0, -1, SelectableUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(singletonUnitEClass, SingletonUnit.class, "SingletonUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSingletonUnit_ContentType(), theOrmPackage.getEntityOrView(), null, "contentType", null, 1, 1, SingletonUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(collectionUnitEClass, CollectionUnit.class, "CollectionUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCollectionUnit_ContainingAssociation(), theOrmPackage.getAssociation(), null, "containingAssociation", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_ContentType(), theOrmPackage.getEntityOrView(), null, "contentType", null, 1, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_Selection(), theServicePackage.getSelection(), null, "selection", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_Filter(), theServicePackage.getFilter(), null, "filter", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

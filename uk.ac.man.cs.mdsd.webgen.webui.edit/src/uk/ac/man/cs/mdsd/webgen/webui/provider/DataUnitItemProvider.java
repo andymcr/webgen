@@ -18,7 +18,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
-import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DataUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
@@ -105,9 +104,6 @@ public class DataUnitItemProvider extends DynamicUnitItemProvider {
 						final Set<Label> labels = new HashSet<Label>();
 						for (EntityOrView entity : getContentType(unit)) {
 							labels.addAll(getLabels(entity));
-						}
-						if (unit instanceof CollectionUnit) {
-							labels.addAll(getLabels(((CollectionUnit) unit).getSelectionType()));
 						}
 						return labels;
 					}

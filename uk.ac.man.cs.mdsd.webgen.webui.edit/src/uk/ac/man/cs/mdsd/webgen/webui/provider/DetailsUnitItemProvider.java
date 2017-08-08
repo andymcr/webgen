@@ -47,7 +47,6 @@ public class DetailsUnitItemProvider extends DataUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addContentTypePropertyDescriptor(object);
-			addSelectionTypePropertyDescriptor(object);
 			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
@@ -70,28 +69,6 @@ public class DetailsUnitItemProvider extends DataUnitItemProvider {
 				 getString("_UI_SingletonUnit_contentType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonUnit_contentType_feature", "_UI_SingletonUnit_type"),
 				 WebuiPackage.Literals.SINGLETON_UNIT__CONTENT_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Selection Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSelectionTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SelectableUnit_selectionType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SelectableUnit_selectionType_feature", "_UI_SelectableUnit_type"),
-				 WebuiPackage.Literals.SELECTABLE_UNIT__SELECTION_TYPE,
 				 true,
 				 false,
 				 true,

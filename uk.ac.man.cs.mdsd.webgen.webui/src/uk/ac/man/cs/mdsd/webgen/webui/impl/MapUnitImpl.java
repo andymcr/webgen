@@ -10,11 +10,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.LocationAttribute;
 
 import uk.ac.man.cs.mdsd.webgen.webui.MapUnit;
-import uk.ac.man.cs.mdsd.webgen.webui.SelectableUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
 /**
@@ -25,7 +23,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.MapUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.MapUnitImpl#isReadOnly <em>Read Only</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.MapUnitImpl#getDefaultZoomLevel <em>Default Zoom Level</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.MapUnitImpl#getStyleClass <em>Style Class</em>}</li>
@@ -36,16 +33,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * @generated
  */
 public class MapUnitImpl extends EditUnitImpl implements MapUnit {
-	/**
-	 * The cached value of the '{@link #getSelectionType() <em>Selection Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelectionType()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntityOrView selectionType;
-
 	/**
 	 * The default value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -143,44 +130,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	protected EClass eStaticClass() {
 		return WebuiPackage.Literals.MAP_UNIT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView getSelectionType() {
-		if (selectionType != null && selectionType.eIsProxy()) {
-			InternalEObject oldSelectionType = (InternalEObject)selectionType;
-			selectionType = (EntityOrView)eResolveProxy(oldSelectionType);
-			if (selectionType != oldSelectionType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.MAP_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
-			}
-		}
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView basicGetSelectionType() {
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectionType(EntityOrView newSelectionType) {
-		EntityOrView oldSelectionType = selectionType;
-		selectionType = newSelectionType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.MAP_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
 	}
 
 	/**
@@ -330,9 +279,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebuiPackage.MAP_UNIT__SELECTION_TYPE:
-				if (resolve) return getSelectionType();
-				return basicGetSelectionType();
 			case WebuiPackage.MAP_UNIT__READ_ONLY:
 				return isReadOnly();
 			case WebuiPackage.MAP_UNIT__DEFAULT_ZOOM_LEVEL:
@@ -357,9 +303,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebuiPackage.MAP_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)newValue);
-				return;
 			case WebuiPackage.MAP_UNIT__READ_ONLY:
 				setReadOnly((Boolean)newValue);
 				return;
@@ -387,9 +330,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebuiPackage.MAP_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)null);
-				return;
 			case WebuiPackage.MAP_UNIT__READ_ONLY:
 				setReadOnly(READ_ONLY_EDEFAULT);
 				return;
@@ -417,8 +357,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebuiPackage.MAP_UNIT__SELECTION_TYPE:
-				return selectionType != null;
 			case WebuiPackage.MAP_UNIT__READ_ONLY:
 				return readOnly != READ_ONLY_EDEFAULT;
 			case WebuiPackage.MAP_UNIT__DEFAULT_ZOOM_LEVEL:
@@ -431,38 +369,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 				return placeName != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == SelectableUnit.class) {
-			switch (derivedFeatureID) {
-				case WebuiPackage.MAP_UNIT__SELECTION_TYPE: return WebuiPackage.SELECTABLE_UNIT__SELECTION_TYPE;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == SelectableUnit.class) {
-			switch (baseFeatureID) {
-				case WebuiPackage.SELECTABLE_UNIT__SELECTION_TYPE: return WebuiPackage.MAP_UNIT__SELECTION_TYPE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

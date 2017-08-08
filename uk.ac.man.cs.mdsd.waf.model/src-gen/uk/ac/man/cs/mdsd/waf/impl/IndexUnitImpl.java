@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.orm.Association;
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
 import uk.ac.man.cs.mdsd.service.Filter;
@@ -42,9 +41,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSelectors <em>Selectors</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getContainingAssociation <em>Containing Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFilter <em>Filter</em>}</li>
@@ -70,16 +67,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  */
 public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	/**
-	 * The cached value of the '{@link #getSelectionType() <em>Selection Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelectionType()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntityOrView selectionType;
-
-	/**
 	 * The cached value of the '{@link #getSelectors() <em>Selectors</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -88,16 +75,6 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected EList<SelectAction> selectors;
-
-	/**
-	 * The cached value of the '{@link #getContainingAssociation() <em>Containing Association</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContainingAssociation()
-	 * @generated
-	 * @ordered
-	 */
-	protected Association containingAssociation;
 
 	/**
 	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' reference list.
@@ -443,87 +420,11 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView getSelectionType() {
-		if (selectionType != null && selectionType.eIsProxy()) {
-			InternalEObject oldSelectionType = (InternalEObject)selectionType;
-			selectionType = (EntityOrView)eResolveProxy(oldSelectionType);
-			if (selectionType != oldSelectionType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.INDEX_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
-			}
-		}
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView basicGetSelectionType() {
-		return selectionType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectionType(EntityOrView newSelectionType) {
-		EntityOrView oldSelectionType = selectionType;
-		selectionType = newSelectionType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<SelectAction> getSelectors() {
 		if (selectors == null) {
 			selectors = new EObjectWithInverseResolvingEList<SelectAction>(SelectAction.class, this, WafPackage.INDEX_UNIT__SELECTORS, WafPackage.SELECT_ACTION__TARGET);
 		}
 		return selectors;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Association getContainingAssociation() {
-		if (containingAssociation != null && containingAssociation.eIsProxy()) {
-			InternalEObject oldContainingAssociation = (InternalEObject)containingAssociation;
-			containingAssociation = (Association)eResolveProxy(oldContainingAssociation);
-			if (containingAssociation != oldContainingAssociation) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.INDEX_UNIT__CONTAINING_ASSOCIATION, oldContainingAssociation, containingAssociation));
-			}
-		}
-		return containingAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Association basicGetContainingAssociation() {
-		return containingAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setContainingAssociation(Association newContainingAssociation) {
-		Association oldContainingAssociation = containingAssociation;
-		containingAssociation = newContainingAssociation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__CONTAINING_ASSOCIATION, oldContainingAssociation, containingAssociation));
 	}
 
 	/**
@@ -1018,14 +919,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.INDEX_UNIT__SELECTION_TYPE:
-				if (resolve) return getSelectionType();
-				return basicGetSelectionType();
 			case WafPackage.INDEX_UNIT__SELECTORS:
 				return getSelectors();
-			case WafPackage.INDEX_UNIT__CONTAINING_ASSOCIATION:
-				if (resolve) return getContainingAssociation();
-				return basicGetContainingAssociation();
 			case WafPackage.INDEX_UNIT__CONTENT_TYPE:
 				return getContentType();
 			case WafPackage.INDEX_UNIT__SELECTION:
@@ -1080,15 +975,9 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.INDEX_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)newValue);
-				return;
 			case WafPackage.INDEX_UNIT__SELECTORS:
 				getSelectors().clear();
 				getSelectors().addAll((Collection<? extends SelectAction>)newValue);
-				return;
-			case WafPackage.INDEX_UNIT__CONTAINING_ASSOCIATION:
-				setContainingAssociation((Association)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__CONTENT_TYPE:
 				getContentType().clear();
@@ -1162,14 +1051,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.INDEX_UNIT__SELECTION_TYPE:
-				setSelectionType((EntityOrView)null);
-				return;
 			case WafPackage.INDEX_UNIT__SELECTORS:
 				getSelectors().clear();
-				return;
-			case WafPackage.INDEX_UNIT__CONTAINING_ASSOCIATION:
-				setContainingAssociation((Association)null);
 				return;
 			case WafPackage.INDEX_UNIT__CONTENT_TYPE:
 				getContentType().clear();
@@ -1240,12 +1123,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.INDEX_UNIT__SELECTION_TYPE:
-				return selectionType != null;
 			case WafPackage.INDEX_UNIT__SELECTORS:
 				return selectors != null && !selectors.isEmpty();
-			case WafPackage.INDEX_UNIT__CONTAINING_ASSOCIATION:
-				return containingAssociation != null;
 			case WafPackage.INDEX_UNIT__CONTENT_TYPE:
 				return contentType != null && !contentType.isEmpty();
 			case WafPackage.INDEX_UNIT__SELECTION:
@@ -1297,14 +1176,12 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == SelectableUnit.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.INDEX_UNIT__SELECTION_TYPE: return WafPackage.SELECTABLE_UNIT__SELECTION_TYPE;
 				case WafPackage.INDEX_UNIT__SELECTORS: return WafPackage.SELECTABLE_UNIT__SELECTORS;
 				default: return -1;
 			}
 		}
 		if (baseClass == CollectionUnit.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.INDEX_UNIT__CONTAINING_ASSOCIATION: return WafPackage.COLLECTION_UNIT__CONTAINING_ASSOCIATION;
 				case WafPackage.INDEX_UNIT__CONTENT_TYPE: return WafPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WafPackage.INDEX_UNIT__SELECTION: return WafPackage.COLLECTION_UNIT__SELECTION;
 				case WafPackage.INDEX_UNIT__FILTER: return WafPackage.COLLECTION_UNIT__FILTER;
@@ -1341,14 +1218,12 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == SelectableUnit.class) {
 			switch (baseFeatureID) {
-				case WafPackage.SELECTABLE_UNIT__SELECTION_TYPE: return WafPackage.INDEX_UNIT__SELECTION_TYPE;
 				case WafPackage.SELECTABLE_UNIT__SELECTORS: return WafPackage.INDEX_UNIT__SELECTORS;
 				default: return -1;
 			}
 		}
 		if (baseClass == CollectionUnit.class) {
 			switch (baseFeatureID) {
-				case WafPackage.COLLECTION_UNIT__CONTAINING_ASSOCIATION: return WafPackage.INDEX_UNIT__CONTAINING_ASSOCIATION;
 				case WafPackage.COLLECTION_UNIT__CONTENT_TYPE: return WafPackage.INDEX_UNIT__CONTENT_TYPE;
 				case WafPackage.COLLECTION_UNIT__SELECTION: return WafPackage.INDEX_UNIT__SELECTION;
 				case WafPackage.COLLECTION_UNIT__FILTER: return WafPackage.INDEX_UNIT__FILTER;

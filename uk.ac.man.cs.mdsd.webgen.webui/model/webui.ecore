@@ -120,8 +120,6 @@
         eType="#//PageLink" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="childPages" upperBound="-1"
         eType="#//PageLink" eOpposite="#//PageLink/targetPage"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="authenticated" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="topMenuOption" ordered="false"
@@ -221,7 +219,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="UnitField" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayedOn" ordered="false"
         lowerBound="1" eType="#//DynamicUnit" eOpposite="#//DynamicUnit/displayFields"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiresRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionDisplayOption"
         ordered="false" eType="#//CollectionDisplayOptions" defaultValueLiteral="LineDirection"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumDisplaySize" ordered="false"

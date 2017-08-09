@@ -60,6 +60,7 @@ public class UnitFieldItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiresRolePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
@@ -67,6 +68,28 @@ public class UnitFieldItemProvider
 			addDisableInputPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Requires Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiresRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_requiresRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_requiresRole_feature", "_UI_UnitField_type"),
+				 WebuiPackage.Literals.UNIT_FIELD__REQUIRES_ROLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_SecurityPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -187,7 +210,7 @@ public class UnitFieldItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UnitField)object).getTitle();
+		String label = ((UnitField)object).getRequiresRole();
 		return label == null || label.length() == 0 ?
 			getString("_UI_UnitField_type") :
 			getString("_UI_UnitField_type") + " " + label;
@@ -206,6 +229,7 @@ public class UnitFieldItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitField.class)) {
+			case WebuiPackage.UNIT_FIELD__REQUIRES_ROLE:
 			case WebuiPackage.UNIT_FIELD__TITLE:
 			case WebuiPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION:
 			case WebuiPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE:

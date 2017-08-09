@@ -33,6 +33,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
@@ -71,6 +72,26 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	protected String displayLabel = DISPLAY_LABEL_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRES_ROLE_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78,7 +99,7 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TITLE_EDEFAULT = null;
+	protected static final String TITLE_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -379,6 +400,27 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRequiresRole() {
+		return requiresRole;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequiresRole(String newRequiresRole) {
+		String oldRequiresRole = requiresRole;
+		requiresRole = newRequiresRole;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__REQUIRES_ROLE, oldRequiresRole, requiresRole));
 	}
 
 	/**
@@ -731,6 +773,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				if (resolve) return getDisplayedOn();
 				return basicGetDisplayedOn();
+			case WafPackage.INTERFACE_FIELD__REQUIRES_ROLE:
+				return getRequiresRole();
 			case WafPackage.INTERFACE_FIELD__TITLE:
 				return getTitle();
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
@@ -773,6 +817,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return;
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)newValue);
+				return;
+			case WafPackage.INTERFACE_FIELD__REQUIRES_ROLE:
+				setRequiresRole((String)newValue);
 				return;
 			case WafPackage.INTERFACE_FIELD__TITLE:
 				setTitle((String)newValue);
@@ -828,6 +875,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)null);
 				return;
+			case WafPackage.INTERFACE_FIELD__REQUIRES_ROLE:
+				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
+				return;
 			case WafPackage.INTERFACE_FIELD__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -880,6 +930,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				return basicGetDisplayedOn() != null;
+			case WafPackage.INTERFACE_FIELD__REQUIRES_ROLE:
+				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WafPackage.INTERFACE_FIELD__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
@@ -924,6 +976,7 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		if (baseClass == UnitField.class) {
 			switch (derivedFeatureID) {
 				case WafPackage.INTERFACE_FIELD__DISPLAYED_ON: return WafPackage.UNIT_FIELD__DISPLAYED_ON;
+				case WafPackage.INTERFACE_FIELD__REQUIRES_ROLE: return WafPackage.UNIT_FIELD__REQUIRES_ROLE;
 				case WafPackage.INTERFACE_FIELD__TITLE: return WafPackage.UNIT_FIELD__TITLE;
 				case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION: return WafPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
@@ -951,6 +1004,7 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		if (baseClass == UnitField.class) {
 			switch (baseFeatureID) {
 				case WafPackage.UNIT_FIELD__DISPLAYED_ON: return WafPackage.INTERFACE_FIELD__DISPLAYED_ON;
+				case WafPackage.UNIT_FIELD__REQUIRES_ROLE: return WafPackage.INTERFACE_FIELD__REQUIRES_ROLE;
 				case WafPackage.UNIT_FIELD__TITLE: return WafPackage.INTERFACE_FIELD__TITLE;
 				case WafPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION: return WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
@@ -974,6 +1028,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (displayLabel: ");
 		result.append(displayLabel);
+		result.append(", requiresRole: ");
+		result.append(requiresRole);
 		result.append(", title: ");
 		result.append(title);
 		result.append(", collectionDisplayOption: ");

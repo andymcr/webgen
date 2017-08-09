@@ -64,7 +64,6 @@ class Selection extends NamedElement, FormalParameterList {
 	contains Filter[] filters opposite selection
 	contains Order[] ordering
 	int limit = "0"
-	boolean selected
 	refers EntityAssociation selectVia
 	String methodName
 }

@@ -59,7 +59,6 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			addFieldsPropertyDescriptor(object);
 			addJoinsPropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
-			addSelectedPropertyDescriptor(object);
 			addSelectViaPropertyDescriptor(object);
 			addMethodNamePropertyDescriptor(object);
 		}
@@ -172,28 +171,6 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Selected feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSelectedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Selection_selected_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_selected_feature", "_UI_Selection_type"),
-				 ServicePackage.Literals.SELECTION__SELECTED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -315,7 +292,6 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 		switch (notification.getFeatureID(Selection.class)) {
 			case ServicePackage.SELECTION__DISTINCT:
 			case ServicePackage.SELECTION__LIMIT:
-			case ServicePackage.SELECTION__SELECTED:
 			case ServicePackage.SELECTION__METHOD_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

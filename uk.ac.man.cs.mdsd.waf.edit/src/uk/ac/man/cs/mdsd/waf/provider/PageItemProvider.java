@@ -54,7 +54,6 @@ public class PageItemProvider
 			addPartOfPropertyDescriptor(object);
 			addParentPagePropertyDescriptor(object);
 			addChildPagesPropertyDescriptor(object);
-			addAuthenticatedPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addTopMenuOptionPropertyDescriptor(object);
 			addTopMenuRankPropertyDescriptor(object);
@@ -199,28 +198,6 @@ public class PageItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Authenticated feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAuthenticatedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_authenticated_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_authenticated_feature", "_UI_Page_type"),
-				 WafPackage.Literals.PAGE__AUTHENTICATED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Uri Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -353,7 +330,6 @@ public class PageItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Page.class)) {
-			case WafPackage.PAGE__AUTHENTICATED:
 			case WafPackage.PAGE__URI_ELEMENT:
 			case WafPackage.PAGE__TOP_MENU_OPTION:
 			case WafPackage.PAGE__TOP_MENU_RANK:

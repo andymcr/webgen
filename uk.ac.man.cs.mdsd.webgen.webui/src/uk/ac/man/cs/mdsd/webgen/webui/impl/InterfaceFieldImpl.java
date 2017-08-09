@@ -29,6 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
@@ -46,6 +47,26 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  */
 public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl implements InterfaceField {
 	/**
+	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRES_ROLE_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -53,7 +74,7 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TITLE_EDEFAULT = null;
+	protected static final String TITLE_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -313,6 +334,27 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INTERFACE_FIELD__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRequiresRole() {
+		return requiresRole;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequiresRole(String newRequiresRole) {
+		String oldRequiresRole = requiresRole;
+		requiresRole = newRequiresRole;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE, oldRequiresRole, requiresRole));
 	}
 
 	/**
@@ -617,6 +659,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		switch (featureID) {
 			case WebuiPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				return getDisplayedOn();
+			case WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE:
+				return getRequiresRole();
 			case WebuiPackage.INTERFACE_FIELD__TITLE:
 				return getTitle();
 			case WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
@@ -654,6 +698,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		switch (featureID) {
 			case WebuiPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)newValue);
+				return;
+			case WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE:
+				setRequiresRole((String)newValue);
 				return;
 			case WebuiPackage.INTERFACE_FIELD__TITLE:
 				setTitle((String)newValue);
@@ -703,6 +750,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			case WebuiPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)null);
 				return;
+			case WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE:
+				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
+				return;
 			case WebuiPackage.INTERFACE_FIELD__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -750,6 +800,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		switch (featureID) {
 			case WebuiPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				return getDisplayedOn() != null;
+			case WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE:
+				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WebuiPackage.INTERFACE_FIELD__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
@@ -786,6 +838,7 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		if (baseClass == UnitField.class) {
 			switch (derivedFeatureID) {
 				case WebuiPackage.INTERFACE_FIELD__DISPLAYED_ON: return WebuiPackage.UNIT_FIELD__DISPLAYED_ON;
+				case WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE: return WebuiPackage.UNIT_FIELD__REQUIRES_ROLE;
 				case WebuiPackage.INTERFACE_FIELD__TITLE: return WebuiPackage.UNIT_FIELD__TITLE;
 				case WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION: return WebuiPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WebuiPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
@@ -807,6 +860,7 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		if (baseClass == UnitField.class) {
 			switch (baseFeatureID) {
 				case WebuiPackage.UNIT_FIELD__DISPLAYED_ON: return WebuiPackage.INTERFACE_FIELD__DISPLAYED_ON;
+				case WebuiPackage.UNIT_FIELD__REQUIRES_ROLE: return WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE;
 				case WebuiPackage.UNIT_FIELD__TITLE: return WebuiPackage.INTERFACE_FIELD__TITLE;
 				case WebuiPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION: return WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WebuiPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
@@ -828,7 +882,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (title: ");
+		result.append(" (requiresRole: ");
+		result.append(requiresRole);
+		result.append(", title: ");
 		result.append(title);
 		result.append(", collectionDisplayOption: ");
 		result.append(collectionDisplayOption);

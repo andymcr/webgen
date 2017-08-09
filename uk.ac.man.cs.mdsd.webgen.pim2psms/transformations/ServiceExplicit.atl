@@ -179,7 +179,6 @@ rule Selection {
 		filters <- website.filters,
 		ordering <- website.ordering,
 		limit <- website.limit,
-		selected <- website.selected,
 		selectVia <-
 			if not website.selectVia.oclIsUndefined() then
 				if website.usedBy.serves.associations->includes(website.selectVia)  then

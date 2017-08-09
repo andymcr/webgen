@@ -375,7 +375,7 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UnitFeature)object).getTitle();
+		String label = ((UnitFeature)object).getRequiresRole();
 		return label == null || label.length() == 0 ?
 			getString("_UI_UnitFeature_type") :
 			getString("_UI_UnitFeature_type") + " " + label;

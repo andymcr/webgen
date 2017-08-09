@@ -72,8 +72,8 @@ helper context Website!UnitAssociation def: associationLabel() : String
 
 
 helper context Website!UnitField def: title() : String
-	= if not self.title.oclIsUndefined() and self.title <> '' then
-			self.title
+	= if self.title.trim() <> '' then
+			self.title.trim()
 		else
 			if self.oclIsTypeOf(Website!UnitElement) then
 				if not self.attribute.title.oclIsUndefined() and self.attribute.title <> '' then
@@ -410,8 +410,7 @@ rule DynamicMenu {
 rule Page {
 	from website : Website!Page
 	to waf : WAF!Page (
-		authenticated <- website.authenticated,
-		uriElement <- website.uriElement,
+		uriElement <- website.uriElement.trim(),
 		parentPage <-
 			if website.parentPage.oclIsUndefined() then
 				OclUndefined
@@ -526,6 +525,7 @@ abstract rule DynamicUnit {
 abstract rule UnitField {
 	from website : Website!UnitField
 	to waf : WAF!UnitField (
+		requiresRole <- website.requiresRole,
 		title <- website.title(),
 		collectionDisplayOption <- website.collectionDisplayOption,
 		maximumDisplaySize <- website.maximumDisplaySize,

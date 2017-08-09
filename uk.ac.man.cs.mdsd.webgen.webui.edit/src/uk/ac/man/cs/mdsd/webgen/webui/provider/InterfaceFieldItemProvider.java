@@ -48,6 +48,7 @@ public class InterfaceFieldItemProvider extends NamedDisplayElementItemProvider 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiresRolePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
@@ -61,6 +62,28 @@ public class InterfaceFieldItemProvider extends NamedDisplayElementItemProvider 
 			addValidationPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Requires Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiresRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_requiresRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_requiresRole_feature", "_UI_UnitField_type"),
+				 WebuiPackage.Literals.UNIT_FIELD__REQUIRES_ROLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_SecurityPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -332,6 +355,7 @@ public class InterfaceFieldItemProvider extends NamedDisplayElementItemProvider 
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(InterfaceField.class)) {
+			case WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE:
 			case WebuiPackage.INTERFACE_FIELD__TITLE:
 			case WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 			case WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:

@@ -41,7 +41,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getChildPages <em>Child Pages</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#isAuthenticated <em>Authenticated</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getTopMenuOption <em>Top Menu Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getTopMenuRank <em>Top Menu Rank</em>}</li>
@@ -82,26 +81,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @ordered
 	 */
 	protected EList<Page> childPages;
-
-	/**
-	 * The default value of the '{@link #isAuthenticated() <em>Authenticated</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAuthenticated()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean AUTHENTICATED_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isAuthenticated() <em>Authenticated</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAuthenticated()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean authenticated = AUTHENTICATED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
@@ -372,27 +351,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAuthenticated() {
-		return authenticated;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAuthenticated(boolean newAuthenticated) {
-		boolean oldAuthenticated = authenticated;
-		authenticated = newAuthenticated;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.PAGE__AUTHENTICATED, oldAuthenticated, authenticated));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getUriElement() {
 		return uriElement;
 	}
@@ -608,8 +566,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return basicGetParentPage();
 			case WafPackage.PAGE__CHILD_PAGES:
 				return getChildPages();
-			case WafPackage.PAGE__AUTHENTICATED:
-				return isAuthenticated();
 			case WafPackage.PAGE__URI_ELEMENT:
 				return getUriElement();
 			case WafPackage.PAGE__TOP_MENU_OPTION:
@@ -649,9 +605,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WafPackage.PAGE__CHILD_PAGES:
 				getChildPages().clear();
 				getChildPages().addAll((Collection<? extends Page>)newValue);
-				return;
-			case WafPackage.PAGE__AUTHENTICATED:
-				setAuthenticated((Boolean)newValue);
 				return;
 			case WafPackage.PAGE__URI_ELEMENT:
 				setUriElement((String)newValue);
@@ -695,9 +648,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WafPackage.PAGE__CHILD_PAGES:
 				getChildPages().clear();
 				return;
-			case WafPackage.PAGE__AUTHENTICATED:
-				setAuthenticated(AUTHENTICATED_EDEFAULT);
-				return;
 			case WafPackage.PAGE__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
@@ -736,8 +686,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return parentPage != null;
 			case WafPackage.PAGE__CHILD_PAGES:
 				return childPages != null && !childPages.isEmpty();
-			case WafPackage.PAGE__AUTHENTICATED:
-				return authenticated != AUTHENTICATED_EDEFAULT;
 			case WafPackage.PAGE__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 			case WafPackage.PAGE__TOP_MENU_OPTION:
@@ -796,9 +744,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (authenticated: ");
-		result.append(authenticated);
-		result.append(", uriElement: ");
+		result.append(" (uriElement: ");
 		result.append(uriElement);
 		result.append(", topMenuOption: ");
 		result.append(topMenuOption);

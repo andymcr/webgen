@@ -173,7 +173,6 @@ class Page extends NamedDisplayElement, UnitContainer {
 	container WafModel partOf opposite pages
 	refers Page parentPage opposite childPages
 	refers Page[] childPages opposite parentPage
-	boolean authenticated
 	String uriElement = ""
 	PageTopMenuOptions topMenuOption
 	int topMenuRank = "65535"
@@ -241,7 +240,8 @@ enum CollectionDisplayOptions {
 
 interface UnitField extends DisplayElement {
 	container DynamicUnit[1] displayedOn opposite displayFields
-	String title
+	String requiresRole = ""
+	String title = ""
 	CollectionDisplayOptions collectionDisplayOption
 	int maximumDisplaySize = "-1"
 	String dateFormat

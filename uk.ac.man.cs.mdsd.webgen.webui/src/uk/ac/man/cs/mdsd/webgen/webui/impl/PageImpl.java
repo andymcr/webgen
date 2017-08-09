@@ -38,7 +38,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getWebUI <em>Web UI</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getChildPages <em>Child Pages</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#isAuthenticated <em>Authenticated</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getTopMenuOption <em>Top Menu Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getTopMenuRank <em>Top Menu Rank</em>}</li>
@@ -79,26 +78,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @ordered
 	 */
 	protected EList<PageLink> childPages;
-
-	/**
-	 * The default value of the '{@link #isAuthenticated() <em>Authenticated</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAuthenticated()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean AUTHENTICATED_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isAuthenticated() <em>Authenticated</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAuthenticated()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean authenticated = AUTHENTICATED_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
@@ -342,27 +321,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isAuthenticated() {
-		return authenticated;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAuthenticated(boolean newAuthenticated) {
-		boolean oldAuthenticated = authenticated;
-		authenticated = newAuthenticated;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.PAGE__AUTHENTICATED, oldAuthenticated, authenticated));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getUriElement() {
 		return uriElement;
 	}
@@ -572,8 +530,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return getParentPage();
 			case WebuiPackage.PAGE__CHILD_PAGES:
 				return getChildPages();
-			case WebuiPackage.PAGE__AUTHENTICATED:
-				return isAuthenticated();
 			case WebuiPackage.PAGE__URI_ELEMENT:
 				return getUriElement();
 			case WebuiPackage.PAGE__TOP_MENU_OPTION:
@@ -613,9 +569,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WebuiPackage.PAGE__CHILD_PAGES:
 				getChildPages().clear();
 				getChildPages().addAll((Collection<? extends PageLink>)newValue);
-				return;
-			case WebuiPackage.PAGE__AUTHENTICATED:
-				setAuthenticated((Boolean)newValue);
 				return;
 			case WebuiPackage.PAGE__URI_ELEMENT:
 				setUriElement((String)newValue);
@@ -659,9 +612,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WebuiPackage.PAGE__CHILD_PAGES:
 				getChildPages().clear();
 				return;
-			case WebuiPackage.PAGE__AUTHENTICATED:
-				setAuthenticated(AUTHENTICATED_EDEFAULT);
-				return;
 			case WebuiPackage.PAGE__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
@@ -700,8 +650,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return parentPage != null;
 			case WebuiPackage.PAGE__CHILD_PAGES:
 				return childPages != null && !childPages.isEmpty();
-			case WebuiPackage.PAGE__AUTHENTICATED:
-				return authenticated != AUTHENTICATED_EDEFAULT;
 			case WebuiPackage.PAGE__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 			case WebuiPackage.PAGE__TOP_MENU_OPTION:
@@ -760,9 +708,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (authenticated: ");
-		result.append(authenticated);
-		result.append(", uriElement: ");
+		result.append(" (uriElement: ");
 		result.append(uriElement);
 		result.append(", topMenuOption: ");
 		result.append(topMenuOption);

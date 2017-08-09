@@ -18,7 +18,6 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getChildPages <em>Child Pages</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#isAuthenticated <em>Authenticated</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getTopMenuOption <em>Top Menu Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getTopMenuRank <em>Top Menu Rank</em>}</li>
@@ -105,32 +104,6 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * @generated
 	 */
 	EList<Page> getChildPages();
-
-	/**
-	 * Returns the value of the '<em><b>Authenticated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Authenticated</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Authenticated</em>' attribute.
-	 * @see #setAuthenticated(boolean)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getPage_Authenticated()
-	 * @model unique="false"
-	 * @generated
-	 */
-	boolean isAuthenticated();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Page#isAuthenticated <em>Authenticated</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Authenticated</em>' attribute.
-	 * @see #isAuthenticated()
-	 * @generated
-	 */
-	void setAuthenticated(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.

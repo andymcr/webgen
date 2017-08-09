@@ -51,7 +51,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAuthenticatedPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addTopMenuOptionPropertyDescriptor(object);
 			addTopMenuRankPropertyDescriptor(object);
@@ -60,28 +59,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			addStyleClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Authenticated feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAuthenticatedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_authenticated_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_authenticated_feature", "_UI_Page_type"),
-				 WebuiPackage.Literals.PAGE__AUTHENTICATED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_SecurityPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -285,7 +262,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Page.class)) {
-			case WebuiPackage.PAGE__AUTHENTICATED:
 			case WebuiPackage.PAGE__URI_ELEMENT:
 			case WebuiPackage.PAGE__TOP_MENU_OPTION:
 			case WebuiPackage.PAGE__TOP_MENU_RANK:

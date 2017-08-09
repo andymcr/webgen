@@ -13,6 +13,7 @@ package uk.ac.man.cs.mdsd.waf;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
@@ -54,7 +55,35 @@ public interface UnitField extends DisplayElement {
 	void setDisplayedOn(DynamicUnit value);
 
 	/**
+	 * Returns the value of the '<em><b>Requires Role</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Requires Role</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requires Role</em>' attribute.
+	 * @see #setRequiresRole(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitField_RequiresRole()
+	 * @model default="" unique="false"
+	 * @generated
+	 */
+	String getRequiresRole();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitField#getRequiresRole <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Requires Role</em>' attribute.
+	 * @see #getRequiresRole()
+	 * @generated
+	 */
+	void setRequiresRole(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Title</em>' attribute isn't clear,
@@ -64,7 +93,7 @@ public interface UnitField extends DisplayElement {
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(String)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitField_Title()
-	 * @model unique="false"
+	 * @model default="" unique="false"
 	 * @generated
 	 */
 	String getTitle();

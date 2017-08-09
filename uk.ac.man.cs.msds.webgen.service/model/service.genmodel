@@ -48,7 +48,6 @@
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Business"
           ecoreFeature="ecore:EReference service.ecore#//Selection/ordering"/>
       <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute service.ecore#//Selection/limit"/>
-      <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute service.ecore#//Selection/selected"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Business"
           propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//Selection/selectVia"/>
       <genFeatures createChild="false" propertyCategory="Implementation" ecoreFeature="ecore:EAttribute service.ecore#//Selection/methodName"/>

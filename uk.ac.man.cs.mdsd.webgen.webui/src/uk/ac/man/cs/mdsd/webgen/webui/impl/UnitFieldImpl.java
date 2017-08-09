@@ -27,6 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
@@ -38,6 +39,26 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  */
 public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container implements UnitField {
 	/**
+	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRES_ROLE_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -45,7 +66,7 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TITLE_EDEFAULT = null;
+	protected static final String TITLE_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -195,6 +216,27 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.UNIT_FIELD__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRequiresRole() {
+		return requiresRole;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequiresRole(String newRequiresRole) {
+		String oldRequiresRole = requiresRole;
+		requiresRole = newRequiresRole;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.UNIT_FIELD__REQUIRES_ROLE, oldRequiresRole, requiresRole));
 	}
 
 	/**
@@ -356,6 +398,8 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case WebuiPackage.UNIT_FIELD__DISPLAYED_ON:
 				return getDisplayedOn();
+			case WebuiPackage.UNIT_FIELD__REQUIRES_ROLE:
+				return getRequiresRole();
 			case WebuiPackage.UNIT_FIELD__TITLE:
 				return getTitle();
 			case WebuiPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION:
@@ -380,6 +424,9 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case WebuiPackage.UNIT_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)newValue);
+				return;
+			case WebuiPackage.UNIT_FIELD__REQUIRES_ROLE:
+				setRequiresRole((String)newValue);
 				return;
 			case WebuiPackage.UNIT_FIELD__TITLE:
 				setTitle((String)newValue);
@@ -411,6 +458,9 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 			case WebuiPackage.UNIT_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)null);
 				return;
+			case WebuiPackage.UNIT_FIELD__REQUIRES_ROLE:
+				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
+				return;
 			case WebuiPackage.UNIT_FIELD__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -440,6 +490,8 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case WebuiPackage.UNIT_FIELD__DISPLAYED_ON:
 				return getDisplayedOn() != null;
+			case WebuiPackage.UNIT_FIELD__REQUIRES_ROLE:
+				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WebuiPackage.UNIT_FIELD__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WebuiPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION:
@@ -464,7 +516,9 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (title: ");
+		result.append(" (requiresRole: ");
+		result.append(requiresRole);
+		result.append(", title: ");
 		result.append(title);
 		result.append(", collectionDisplayOption: ");
 		result.append(collectionDisplayOption);

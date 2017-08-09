@@ -29,7 +29,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getLimit <em>Limit</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#isSelected <em>Selected</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectVia <em>Select Via</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getMethodName <em>Method Name</em>}</li>
  * </ul>
@@ -211,32 +210,6 @@ public interface Selection extends NamedElement, FormalParameterList {
 	 * @generated
 	 */
 	void setLimit(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Selected</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Selected</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Selected</em>' attribute.
-	 * @see #setSelected(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getSelection_Selected()
-	 * @model
-	 * @generated
-	 */
-	boolean isSelected();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#isSelected <em>Selected</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Selected</em>' attribute.
-	 * @see #isSelected()
-	 * @generated
-	 */
-	void setSelected(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Select Via</b></em>' reference.

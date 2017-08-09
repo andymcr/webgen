@@ -54,7 +54,6 @@ import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getLimit <em>Limit</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#isSelected <em>Selected</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getSelectVia <em>Select Via</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getMethodName <em>Method Name</em>}</li>
  * </ul>
@@ -161,26 +160,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @ordered
 	 */
 	protected int limit = LIMIT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isSelected() <em>Selected</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSelected()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean SELECTED_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isSelected() <em>Selected</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSelected()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean selected = SELECTED_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSelectVia() <em>Select Via</em>}' reference.
@@ -422,27 +401,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSelected() {
-		return selected;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelected(boolean newSelected) {
-		boolean oldSelected = selected;
-		selected = newSelected;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SELECTION__SELECTED, oldSelected, selected));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EntityAssociation getSelectVia() {
 		if (selectVia != null && selectVia.eIsProxy()) {
 			InternalEObject oldSelectVia = (InternalEObject)selectVia;
@@ -580,8 +538,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return getOrdering();
 			case ServicePackage.SELECTION__LIMIT:
 				return getLimit();
-			case ServicePackage.SELECTION__SELECTED:
-				return isSelected();
 			case ServicePackage.SELECTION__SELECT_VIA:
 				if (resolve) return getSelectVia();
 				return basicGetSelectVia();
@@ -632,9 +588,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case ServicePackage.SELECTION__LIMIT:
 				setLimit((Integer)newValue);
 				return;
-			case ServicePackage.SELECTION__SELECTED:
-				setSelected((Boolean)newValue);
-				return;
 			case ServicePackage.SELECTION__SELECT_VIA:
 				setSelectVia((EntityAssociation)newValue);
 				return;
@@ -680,9 +633,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case ServicePackage.SELECTION__LIMIT:
 				setLimit(LIMIT_EDEFAULT);
 				return;
-			case ServicePackage.SELECTION__SELECTED:
-				setSelected(SELECTED_EDEFAULT);
-				return;
 			case ServicePackage.SELECTION__SELECT_VIA:
 				setSelectVia((EntityAssociation)null);
 				return;
@@ -719,8 +669,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return ordering != null && !ordering.isEmpty();
 			case ServicePackage.SELECTION__LIMIT:
 				return limit != LIMIT_EDEFAULT;
-			case ServicePackage.SELECTION__SELECTED:
-				return selected != SELECTED_EDEFAULT;
 			case ServicePackage.SELECTION__SELECT_VIA:
 				return selectVia != null;
 			case ServicePackage.SELECTION__METHOD_NAME:
@@ -775,8 +723,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		result.append(distinct);
 		result.append(", limit: ");
 		result.append(limit);
-		result.append(", selected: ");
-		result.append(selected);
 		result.append(", methodName: ");
 		result.append(methodName);
 		result.append(')');

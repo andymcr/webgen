@@ -18,7 +18,6 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getWebUI <em>Web UI</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getChildPages <em>Child Pages</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#isAuthenticated <em>Authenticated</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuOption <em>Top Menu Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuRank <em>Top Menu Rank</em>}</li>
@@ -104,33 +103,6 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * @generated
 	 */
 	EList<PageLink> getChildPages();
-
-	/**
-	 * Returns the value of the '<em><b>Authenticated</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Authenticated</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Authenticated</em>' attribute.
-	 * @see #setAuthenticated(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getPage_Authenticated()
-	 * @model default="true" ordered="false"
-	 * @generated
-	 */
-	boolean isAuthenticated();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#isAuthenticated <em>Authenticated</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Authenticated</em>' attribute.
-	 * @see #isAuthenticated()
-	 * @generated
-	 */
-	void setAuthenticated(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.

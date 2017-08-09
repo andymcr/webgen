@@ -12,7 +12,7 @@
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="pageNameUnique" value="pages->isUnique(name)"/>
-      <details key="menuNameUnique" value="contextMenus->isUnique(name)"/>
+      <details key="menuNameUnique" value="globalMenus->isUnique(name)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Services"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="globalMenus" upperBound="-1"

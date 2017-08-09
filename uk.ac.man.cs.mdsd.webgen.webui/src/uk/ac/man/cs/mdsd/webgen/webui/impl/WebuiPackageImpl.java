@@ -4135,7 +4135,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		   source, 
 		   new String[] {
 			 "pageNameUnique", "pages->isUnique(name)",
-			 "menuNameUnique", "contextMenus->isUnique(name)"
+			 "menuNameUnique", "globalMenus->isUnique(name)"
 		   });	
 		addAnnotation
 		  (dynamicMenuEClass, 

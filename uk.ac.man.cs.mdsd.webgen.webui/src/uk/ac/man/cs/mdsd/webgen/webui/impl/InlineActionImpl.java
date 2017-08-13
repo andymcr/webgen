@@ -30,8 +30,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InlineActionImpl#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InlineActionImpl#isDisable <em>Disable</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InlineActionImpl#getRequiresRole <em>Requires Role</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InlineActionImpl#getEnableWhen <em>Enable When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InlineActionImpl#getDisplayWhen <em>Display When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InlineActionImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InlineActionImpl#getFooter <em>Footer</em>}</li>
@@ -61,36 +59,6 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	 * @ordered
 	 */
 	protected boolean disable = DISABLE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequiresRole()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REQUIRES_ROLE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequiresRole()
-	 * @generated
-	 * @ordered
-	 */
-	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getEnableWhen() <em>Enable When</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnableWhen()
-	 * @generated
-	 * @ordered
-	 */
-	protected Predicate enableWhen;
 
 	/**
 	 * The cached value of the '{@link #getDisplayWhen() <em>Display When</em>}' containment reference.
@@ -268,70 +236,6 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRequiresRole() {
-		return requiresRole;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRequiresRole(String newRequiresRole) {
-		String oldRequiresRole = requiresRole;
-		requiresRole = newRequiresRole;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INLINE_ACTION__REQUIRES_ROLE, oldRequiresRole, requiresRole));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Predicate getEnableWhen() {
-		return enableWhen;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetEnableWhen(Predicate newEnableWhen, NotificationChain msgs) {
-		Predicate oldEnableWhen = enableWhen;
-		enableWhen = newEnableWhen;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebuiPackage.INLINE_ACTION__ENABLE_WHEN, oldEnableWhen, newEnableWhen);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEnableWhen(Predicate newEnableWhen) {
-		if (newEnableWhen != enableWhen) {
-			NotificationChain msgs = null;
-			if (enableWhen != null)
-				msgs = ((InternalEObject)enableWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.INLINE_ACTION__ENABLE_WHEN, null, msgs);
-			if (newEnableWhen != null)
-				msgs = ((InternalEObject)newEnableWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.INLINE_ACTION__ENABLE_WHEN, null, msgs);
-			msgs = basicSetEnableWhen(newEnableWhen, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INLINE_ACTION__ENABLE_WHEN, newEnableWhen, newEnableWhen));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Predicate getDisplayWhen() {
 		return displayWhen;
 	}
@@ -480,8 +384,6 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		switch (featureID) {
 			case WebuiPackage.INLINE_ACTION__USED_BY:
 				return basicSetUsedBy(null, msgs);
-			case WebuiPackage.INLINE_ACTION__ENABLE_WHEN:
-				return basicSetEnableWhen(null, msgs);
 			case WebuiPackage.INLINE_ACTION__DISPLAY_WHEN:
 				return basicSetDisplayWhen(null, msgs);
 		}
@@ -514,10 +416,6 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 				return getUsedBy();
 			case WebuiPackage.INLINE_ACTION__DISABLE:
 				return isDisable();
-			case WebuiPackage.INLINE_ACTION__REQUIRES_ROLE:
-				return getRequiresRole();
-			case WebuiPackage.INLINE_ACTION__ENABLE_WHEN:
-				return getEnableWhen();
 			case WebuiPackage.INLINE_ACTION__DISPLAY_WHEN:
 				return getDisplayWhen();
 			case WebuiPackage.INLINE_ACTION__HEADER:
@@ -545,12 +443,6 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 				return;
 			case WebuiPackage.INLINE_ACTION__DISABLE:
 				setDisable((Boolean)newValue);
-				return;
-			case WebuiPackage.INLINE_ACTION__REQUIRES_ROLE:
-				setRequiresRole((String)newValue);
-				return;
-			case WebuiPackage.INLINE_ACTION__ENABLE_WHEN:
-				setEnableWhen((Predicate)newValue);
 				return;
 			case WebuiPackage.INLINE_ACTION__DISPLAY_WHEN:
 				setDisplayWhen((Predicate)newValue);
@@ -585,12 +477,6 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 			case WebuiPackage.INLINE_ACTION__DISABLE:
 				setDisable(DISABLE_EDEFAULT);
 				return;
-			case WebuiPackage.INLINE_ACTION__REQUIRES_ROLE:
-				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
-				return;
-			case WebuiPackage.INLINE_ACTION__ENABLE_WHEN:
-				setEnableWhen((Predicate)null);
-				return;
 			case WebuiPackage.INLINE_ACTION__DISPLAY_WHEN:
 				setDisplayWhen((Predicate)null);
 				return;
@@ -622,10 +508,6 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 				return getUsedBy() != null;
 			case WebuiPackage.INLINE_ACTION__DISABLE:
 				return disable != DISABLE_EDEFAULT;
-			case WebuiPackage.INLINE_ACTION__REQUIRES_ROLE:
-				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
-			case WebuiPackage.INLINE_ACTION__ENABLE_WHEN:
-				return enableWhen != null;
 			case WebuiPackage.INLINE_ACTION__DISPLAY_WHEN:
 				return displayWhen != null;
 			case WebuiPackage.INLINE_ACTION__HEADER:
@@ -652,8 +534,6 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (disable: ");
 		result.append(disable);
-		result.append(", requiresRole: ");
-		result.append(requiresRole);
 		result.append(", header: ");
 		result.append(header);
 		result.append(", footer: ");

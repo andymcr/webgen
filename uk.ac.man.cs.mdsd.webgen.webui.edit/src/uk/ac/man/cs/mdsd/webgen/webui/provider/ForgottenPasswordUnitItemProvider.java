@@ -26,6 +26,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -542,6 +543,7 @@ public class ForgottenPasswordUnitItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebuiPackage.Literals.CONTENT_UNIT__ROUTE_ACTUALS);
+			childrenFeatures.add(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN);
 			childrenFeatures.add(WebuiPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
 			childrenFeatures.add(WebuiPackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		}
@@ -621,6 +623,7 @@ public class ForgottenPasswordUnitItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTE_ACTUALS:
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ENABLE_WHEN:
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -644,6 +647,46 @@ public class ForgottenPasswordUnitItemProvider
 			(createChildParameter
 				(WebuiPackage.Literals.CONTENT_UNIT__ROUTE_ACTUALS,
 				 WebuiFactory.eINSTANCE.createRouteActual()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter

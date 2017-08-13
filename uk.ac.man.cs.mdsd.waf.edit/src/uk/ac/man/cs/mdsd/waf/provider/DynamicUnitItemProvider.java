@@ -12,6 +12,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -200,6 +201,7 @@ public class DynamicUnitItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
+			childrenFeatures.add(WafPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN);
 			childrenFeatures.add(WafPackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		}
 		return childrenFeatures;
@@ -253,6 +255,7 @@ public class DynamicUnitItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
+			case WafPackage.DYNAMIC_UNIT__ENABLE_WHEN:
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -295,6 +298,46 @@ public class DynamicUnitItemProvider
 			(createChildParameter
 				(WafPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS,
 				 WafFactory.eINSTANCE.createCaptchaField()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter

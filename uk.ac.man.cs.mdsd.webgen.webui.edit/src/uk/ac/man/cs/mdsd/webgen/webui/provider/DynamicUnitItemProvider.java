@@ -19,6 +19,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
@@ -214,6 +215,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN);
 			childrenFeatures.add(WebuiPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
 			childrenFeatures.add(WebuiPackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		}
@@ -268,6 +270,7 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			case WebuiPackage.DYNAMIC_UNIT__ERROR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WebuiPackage.DYNAMIC_UNIT__ENABLE_WHEN:
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 			case WebuiPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -286,6 +289,46 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__ENABLE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter

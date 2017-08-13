@@ -146,29 +146,6 @@ public class SelectActionItemProvider extends InlineActionItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == WebuiPackage.Literals.INLINE_ACTION__ENABLE_WHEN ||
-			childFeature == WebuiPackage.Literals.INLINE_ACTION__DISPLAY_WHEN;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
-	}
-
 	protected WebUI getWebUI(final InlineActionContainer container) {
 		if (container instanceof CollectionUnit) {
 			return ((DynamicUnit) container).getPageDisplayedOn().getWebUI();

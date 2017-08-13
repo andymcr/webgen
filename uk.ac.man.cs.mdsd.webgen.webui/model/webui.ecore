@@ -148,7 +148,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="routeActuals" upperBound="-1"
         eType="#//RouteActual" containment="true" eOpposite="#//RouteActual/actualFor"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiresRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiresRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="purposeSummary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
@@ -197,6 +198,8 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="featuresMustBeFromContentType" value="let entities : OrderedSet(persistence::EntityOrView)&#xD;&#xA;&#x9;= if self.oclIsKindOf(SingletonUnit) then&#xD;&#xA;&#x9;&#x9;&#x9;OrderedSet{self.oclAsType(SingletonUnit).contentType}&#xD;&#xA;&#x9;&#x9;else if self.oclIsKindOf(CollectionUnit) then&#xD;&#xA;&#x9;&#x9;&#x9;self.oclAsType(CollectionUnit).contentType&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;OrderedSet{}&#xD;&#xA;&#x9;&#x9;endif endif&#xD;&#xA;&#x9;in let eovFeatures : Collection(persistence::Feature)&#xD;&#xA;&#x9;&#x9;= entities->collect(eov | eov.allFeatures)&#xD;&#xA;&#x9;&#x9;in displayFields&#xD;&#xA;&#x9;&#x9;&#x9;->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)&#xD;&#xA;&#x9;&#x9;&#x9;->select(f | &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;not f.oclAsType(UnitElement).attribute.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;not f.oclAsType(UnitAssociation).association.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif)&#xD;&#xA;&#x9;&#x9;&#x9;->forAll(f | &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;eovFeatures->includes(f.oclAsType(UnitElement).attribute)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;eovFeatures->includes(f.oclAsType(UnitAssociation).association)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif)"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayFields" upperBound="-1"
         eType="#//UnitField" containment="true" eOpposite="#//UnitField/displayedOn"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="supportActions" upperBound="-1"
@@ -416,8 +419,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" ordered="false"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Label"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="confirmDestination" ordered="false"
         eType="#//Page"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confirmLabel" ordered="false"
@@ -655,9 +656,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="usedBy" ordered="false"
         lowerBound="1" eType="#//InlineActionContainer" eOpposite="#//InlineActionContainer/actions"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="disable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiresRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -678,6 +676,10 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="#//Page"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confirmMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiresRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
   </eClassifiers>
@@ -685,9 +687,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//BusinessOperation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confirmMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileExtension" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiresRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileExtension" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WebuiFeatureReference" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

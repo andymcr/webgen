@@ -53,7 +53,6 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addDisablePropertyDescriptor(object);
-			addRequiresRolePropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -81,28 +80,6 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Requires Role feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequiresRolePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_InlineAction_requiresRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_InlineAction_requiresRole_feature", "_UI_InlineAction_type"),
-				 WebuiPackage.Literals.INLINE_ACTION__REQUIRES_ROLE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SecurityPropertyCategory"),
 				 null));
 	}
 
@@ -206,7 +183,6 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebuiPackage.Literals.INLINE_ACTION__ENABLE_WHEN);
 			childrenFeatures.add(WebuiPackage.Literals.INLINE_ACTION__DISPLAY_WHEN);
 		}
 		return childrenFeatures;
@@ -253,14 +229,12 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 
 		switch (notification.getFeatureID(InlineAction.class)) {
 			case WebuiPackage.INLINE_ACTION__DISABLE:
-			case WebuiPackage.INLINE_ACTION__REQUIRES_ROLE:
 			case WebuiPackage.INLINE_ACTION__HEADER:
 			case WebuiPackage.INLINE_ACTION__FOOTER:
 			case WebuiPackage.INLINE_ACTION__HEADER_CLASS:
 			case WebuiPackage.INLINE_ACTION__FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebuiPackage.INLINE_ACTION__ENABLE_WHEN:
 			case WebuiPackage.INLINE_ACTION__DISPLAY_WHEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -281,46 +255,6 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebuiPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebuiPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebuiPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebuiPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebuiPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebuiPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebuiPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(WebuiPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
@@ -358,29 +292,6 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 			(createChildParameter
 				(WebuiPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == WebuiPackage.Literals.INLINE_ACTION__ENABLE_WHEN ||
-			childFeature == WebuiPackage.Literals.INLINE_ACTION__DISPLAY_WHEN;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.expression.Predicate;
+
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
 import uk.ac.man.cs.mdsd.waf.UnitField;
 import uk.ac.man.cs.mdsd.waf.UnitSupportAction;
@@ -32,6 +34,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getEnableWhen <em>Enable When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getFooter <em>Footer</em>}</li>
@@ -53,6 +56,16 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * @ordered
 	 */
 	protected EList<UnitField> displayFields;
+
+	/**
+	 * The cached value of the '{@link #getEnableWhen() <em>Enable When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnableWhen()
+	 * @generated
+	 * @ordered
+	 */
+	protected Predicate enableWhen;
 
 	/**
 	 * The cached value of the '{@link #getSupportActions() <em>Support Actions</em>}' containment reference list.
@@ -220,6 +233,49 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Predicate getEnableWhen() {
+		return enableWhen;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEnableWhen(Predicate newEnableWhen, NotificationChain msgs) {
+		Predicate oldEnableWhen = enableWhen;
+		enableWhen = newEnableWhen;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.DYNAMIC_UNIT__ENABLE_WHEN, oldEnableWhen, newEnableWhen);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEnableWhen(Predicate newEnableWhen) {
+		if (newEnableWhen != enableWhen) {
+			NotificationChain msgs = null;
+			if (enableWhen != null)
+				msgs = ((InternalEObject)enableWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.DYNAMIC_UNIT__ENABLE_WHEN, null, msgs);
+			if (newEnableWhen != null)
+				msgs = ((InternalEObject)newEnableWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.DYNAMIC_UNIT__ENABLE_WHEN, null, msgs);
+			msgs = basicSetEnableWhen(newEnableWhen, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DYNAMIC_UNIT__ENABLE_WHEN, newEnableWhen, newEnableWhen));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<UnitSupportAction> getSupportActions() {
 		if (supportActions == null) {
 			supportActions = new EObjectContainmentEList<UnitSupportAction>(UnitSupportAction.class, this, WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS);
@@ -378,6 +434,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
+			case WafPackage.DYNAMIC_UNIT__ENABLE_WHEN:
+				return basicSetEnableWhen(null, msgs);
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return ((InternalEList<?>)getSupportActions()).basicRemove(otherEnd, msgs);
 		}
@@ -394,6 +452,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
+			case WafPackage.DYNAMIC_UNIT__ENABLE_WHEN:
+				return getEnableWhen();
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return getSupportActions();
 			case WafPackage.DYNAMIC_UNIT__HEADER:
@@ -424,6 +484,9 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				getDisplayFields().addAll((Collection<? extends UnitField>)newValue);
+				return;
+			case WafPackage.DYNAMIC_UNIT__ENABLE_WHEN:
+				setEnableWhen((Predicate)newValue);
 				return;
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
@@ -462,6 +525,9 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
+			case WafPackage.DYNAMIC_UNIT__ENABLE_WHEN:
+				setEnableWhen((Predicate)null);
+				return;
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				return;
@@ -497,6 +563,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
+			case WafPackage.DYNAMIC_UNIT__ENABLE_WHEN:
+				return enableWhen != null;
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return supportActions != null && !supportActions.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__HEADER:

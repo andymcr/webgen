@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
+import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.webui.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
@@ -52,6 +53,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getPageDisplayedOn <em>Page Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getEnableWhen <em>Enable When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getHeader <em>Header</em>}</li>
@@ -149,7 +151,7 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REQUIRES_ROLE_EDEFAULT = null;
+	protected static final String REQUIRES_ROLE_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
@@ -270,6 +272,16 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate PAGE_DISPLAYED_ON__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebuiPackage.Literals.CONTENT_UNIT__PAGE_DISPLAYED_ON).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getEnableWhen() <em>Enable When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnableWhen()
+	 * @generated
+	 * @ordered
+	 */
+	protected Predicate enableWhen;
 
 	/**
 	 * The cached value of the '{@link #getDisplayFields() <em>Display Fields</em>}' containment reference list.
@@ -814,6 +826,49 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Predicate getEnableWhen() {
+		return enableWhen;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEnableWhen(Predicate newEnableWhen, NotificationChain msgs) {
+		Predicate oldEnableWhen = enableWhen;
+		enableWhen = newEnableWhen;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebuiPackage.LOGIN_UNIT__ENABLE_WHEN, oldEnableWhen, newEnableWhen);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEnableWhen(Predicate newEnableWhen) {
+		if (newEnableWhen != enableWhen) {
+			NotificationChain msgs = null;
+			if (enableWhen != null)
+				msgs = ((InternalEObject)enableWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.LOGIN_UNIT__ENABLE_WHEN, null, msgs);
+			if (newEnableWhen != null)
+				msgs = ((InternalEObject)newEnableWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.LOGIN_UNIT__ENABLE_WHEN, null, msgs);
+			msgs = basicSetEnableWhen(newEnableWhen, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.LOGIN_UNIT__ENABLE_WHEN, newEnableWhen, newEnableWhen));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<UnitField> getDisplayFields() {
 		if (displayFields == null) {
 			displayFields = new EObjectContainmentWithInverseEList<UnitField>(UnitField.class, this, WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS, WebuiPackage.UNIT_FIELD__DISPLAYED_ON);
@@ -1135,6 +1190,8 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 				return basicSetDisplayedOn(null, msgs);
 			case WebuiPackage.LOGIN_UNIT__ROUTE_ACTUALS:
 				return ((InternalEList<?>)getRouteActuals()).basicRemove(otherEnd, msgs);
+			case WebuiPackage.LOGIN_UNIT__ENABLE_WHEN:
+				return basicSetEnableWhen(null, msgs);
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS:
@@ -1190,6 +1247,8 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 			case WebuiPackage.LOGIN_UNIT__PAGE_DISPLAYED_ON:
 				if (resolve) return getPageDisplayedOn();
 				return basicGetPageDisplayedOn();
+			case WebuiPackage.LOGIN_UNIT__ENABLE_WHEN:
+				return getEnableWhen();
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
 			case WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS:
@@ -1265,6 +1324,9 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 				return;
 			case WebuiPackage.LOGIN_UNIT__CAPTION_CLASS:
 				setCaptionClass((String)newValue);
+				return;
+			case WebuiPackage.LOGIN_UNIT__ENABLE_WHEN:
+				setEnableWhen((Predicate)newValue);
 				return;
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
@@ -1355,6 +1417,9 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 			case WebuiPackage.LOGIN_UNIT__CAPTION_CLASS:
 				setCaptionClass(CAPTION_CLASS_EDEFAULT);
 				return;
+			case WebuiPackage.LOGIN_UNIT__ENABLE_WHEN:
+				setEnableWhen((Predicate)null);
+				return;
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
@@ -1433,6 +1498,8 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
 			case WebuiPackage.LOGIN_UNIT__PAGE_DISPLAYED_ON:
 				return isSetPageDisplayedOn();
+			case WebuiPackage.LOGIN_UNIT__ENABLE_WHEN:
+				return enableWhen != null;
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
 			case WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS:
@@ -1501,6 +1568,7 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 		}
 		if (baseClass == DynamicUnit.class) {
 			switch (derivedFeatureID) {
+				case WebuiPackage.LOGIN_UNIT__ENABLE_WHEN: return WebuiPackage.DYNAMIC_UNIT__ENABLE_WHEN;
 				case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS: return WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
 				case WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS: return WebuiPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
 				case WebuiPackage.LOGIN_UNIT__HEADER: return WebuiPackage.DYNAMIC_UNIT__HEADER;
@@ -1560,6 +1628,7 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 		}
 		if (baseClass == DynamicUnit.class) {
 			switch (baseFeatureID) {
+				case WebuiPackage.DYNAMIC_UNIT__ENABLE_WHEN: return WebuiPackage.LOGIN_UNIT__ENABLE_WHEN;
 				case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS;
 				case WebuiPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS;
 				case WebuiPackage.DYNAMIC_UNIT__HEADER: return WebuiPackage.LOGIN_UNIT__HEADER;

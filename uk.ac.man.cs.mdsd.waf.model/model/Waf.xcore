@@ -199,7 +199,7 @@ abstract class ContentUnit extends NamedDisplayElement {
 	container UnitContainer[1] displayedOn opposite units
 	String uriElement = ""
 	contains RouteActual[] routeActuals
-	String requiresRole
+	String requiresRole = ""
 	String purposeSummary
 	String alternative
 	boolean omitCaption
@@ -219,6 +219,7 @@ class StaticUnit extends ContentUnit {
 
 abstract class DynamicUnit extends ContentUnit {
 	contains UnitField[] displayFields opposite displayedOn
+	contains Predicate enableWhen
 	contains UnitSupportAction[] supportActions
 	String header
 	String footer
@@ -343,7 +344,6 @@ interface CollectionUnit extends SelectableUnit {
 abstract class EditUnit extends DynamicUnit, SingletonUnit {
 	refers Selection defaultSelection
 	refers Label title
-	contains Predicate enableWhen
 	refers Page confirmDestination
 	String[1] confirmLabel
 	refers Page cancelDestination

@@ -475,7 +475,7 @@ abstract rule ContentUnit {
 				''
 			endif endif,
 		routeActuals <- website.routeActuals,
-		requiresRole <- website.requiresRole,
+		requiresRole <- website.requiresRole.trim(),
 		purposeSummary <- website.purposeSummary,
 		omitCaption <-
 			if not website.omitCaption.oclIsUndefined() then
@@ -511,6 +511,7 @@ rule StaticUnit {
 abstract rule DynamicUnit {
 	from website : Website!DynamicUnit
 	to waf : WAF!DynamicUnit (
+		enableWhen <- website.enableWhen,
 		displayFields <- website.displayFields,
 		supportActions <- website.supportActions,
 		header <- website.header,
@@ -869,7 +870,6 @@ rule MapUnit {
 			else
 				website.placeName.findOrmAttribute()
 			endif
-, selectionType <- thisModule.findOrmEntityOrView(website.contentType.name)
 	)
 }
 
@@ -1093,8 +1093,6 @@ abstract rule InlineAction {
 	from website : Website!InlineAction
 	to waf : WAF!InlineAction (
 		disable <- website.disable,
-		requiresRole <- website.requiresRole,
-		enableWhen <- website.enableWhen,
 		displayWhen <- website.displayWhen,
 		header <- website.header,
 		footer <- website.footer,
@@ -1108,7 +1106,9 @@ abstract rule InlineAction {
 rule SelectAction {
 	from website : Website!SelectAction
 	to waf : WAF!SelectAction (
-		target <- website.target
+		target <- website.target,
+		requiresRole <-website.target.requiresRole.trim(),
+		enableWhen <- website.target.enableWhen
 	)
 }
 
@@ -1125,6 +1125,8 @@ rule DeleteAction {
 			else
 				website.name.createLabel().concat('?')
 			endif endif,
+		requiresRole <- website.requiresRole,
+		enableWhen <- website.enableWhen,
 		uriElement <-
 			if website.uriElement <> '' then
 				website.uriElement
@@ -1145,6 +1147,8 @@ rule FeatureSupportAction {
 			else
 				OclUndefined
 			endif,
+		requiresRole <- website.requiresRole,
+		enableWhen <- website.enableWhen,
 		uriElement <-
 			if website.uriElement <> '' then
 				website.uriElement

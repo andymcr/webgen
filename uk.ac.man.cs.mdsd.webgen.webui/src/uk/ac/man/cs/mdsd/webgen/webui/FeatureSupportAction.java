@@ -2,6 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.webgen.webui;
 
+import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.service.BusinessOperation;
 
 /**
@@ -15,8 +16,10 @@ import uk.ac.man.cs.mdsd.webgen.service.BusinessOperation;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction#getOperation <em>Operation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction#getConfirmMessage <em>Confirm Message</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction#getFileExtension <em>File Extension</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction#getRequiresRole <em>Requires Role</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction#getEnableWhen <em>Enable When</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction#getUriElement <em>Uri Element</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getFeatureSupportAction()
@@ -128,5 +131,58 @@ public interface FeatureSupportAction extends InlineAction {
 	 * @generated
 	 */
 	void setFileExtension(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Requires Role</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Requires Role</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requires Role</em>' attribute.
+	 * @see #setRequiresRole(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getFeatureSupportAction_RequiresRole()
+	 * @model default=""
+	 * @generated
+	 */
+	String getRequiresRole();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction#getRequiresRole <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Requires Role</em>' attribute.
+	 * @see #getRequiresRole()
+	 * @generated
+	 */
+	void setRequiresRole(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Enable When</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Enable When</em>' containment reference.
+	 * @see #setEnableWhen(Predicate)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getFeatureSupportAction_EnableWhen()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Predicate getEnableWhen();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction#getEnableWhen <em>Enable When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Enable When</em>' containment reference.
+	 * @see #getEnableWhen()
+	 * @generated
+	 */
+	void setEnableWhen(Predicate value);
 
 } // FeatureSupportAction

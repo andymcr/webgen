@@ -105,6 +105,7 @@ public interface ContentUnit extends NamedDisplayElement {
 
 	/**
 	 * Returns the value of the '<em><b>Requires Role</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requires Role</em>' attribute isn't clear,
@@ -114,7 +115,7 @@ public interface ContentUnit extends NamedDisplayElement {
 	 * @return the value of the '<em>Requires Role</em>' attribute.
 	 * @see #setRequiresRole(String)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_RequiresRole()
-	 * @model unique="false"
+	 * @model default="" unique="false"
 	 * @generated
 	 */
 	String getRequiresRole();

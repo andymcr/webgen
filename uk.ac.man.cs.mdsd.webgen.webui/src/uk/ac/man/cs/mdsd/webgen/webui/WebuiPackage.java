@@ -1675,13 +1675,22 @@ public interface WebuiPackage extends EPackage {
 	int DYNAMIC_UNIT__PAGE_DISPLAYED_ON = CONTENT_UNIT__PAGE_DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__ENABLE_WHEN = CONTENT_UNIT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__DISPLAY_FIELDS = CONTENT_UNIT_FEATURE_COUNT + 0;
+	int DYNAMIC_UNIT__DISPLAY_FIELDS = CONTENT_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -1690,7 +1699,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 1;
+	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -1699,7 +1708,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 2;
+	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -1708,7 +1717,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 3;
+	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -1717,7 +1726,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 4;
+	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -1726,7 +1735,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 5;
+	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -1735,7 +1744,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
+	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -1744,7 +1753,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
+	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Dynamic Unit</em>' class.
@@ -1753,7 +1762,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 8;
+	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Dynamic Unit</em>' class.
@@ -3840,6 +3849,15 @@ public interface WebuiPackage extends EPackage {
 	int EDIT_UNIT__PAGE_DISPLAYED_ON = DYNAMIC_UNIT__PAGE_DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__ENABLE_WHEN = DYNAMIC_UNIT__ENABLE_WHEN;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3939,22 +3957,13 @@ public interface WebuiPackage extends EPackage {
 	int EDIT_UNIT__TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_UNIT__ENABLE_WHEN = DYNAMIC_UNIT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CONFIRM_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 4;
+	int EDIT_UNIT__CONFIRM_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
@@ -3963,7 +3972,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CONFIRM_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 5;
+	int EDIT_UNIT__CONFIRM_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -3972,7 +3981,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CANCEL_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 6;
+	int EDIT_UNIT__CANCEL_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -3981,7 +3990,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CANCEL_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 7;
+	int EDIT_UNIT__CANCEL_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -3990,7 +3999,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CONTENT_CLASS = DYNAMIC_UNIT_FEATURE_COUNT + 8;
+	int EDIT_UNIT__CONTENT_CLASS = DYNAMIC_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Customise Values</b></em>' attribute.
@@ -3999,7 +4008,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CUSTOMISE_VALUES = DYNAMIC_UNIT_FEATURE_COUNT + 9;
+	int EDIT_UNIT__CUSTOMISE_VALUES = DYNAMIC_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Edit Unit</em>' class.
@@ -4008,7 +4017,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 10;
+	int EDIT_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Edit Unit</em>' class.
@@ -4138,6 +4147,15 @@ public interface WebuiPackage extends EPackage {
 	int CREATE_UNIT__PAGE_DISPLAYED_ON = EDIT_UNIT__PAGE_DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4235,15 +4253,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UNIT__TITLE = EDIT_UNIT__TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
@@ -4445,6 +4454,15 @@ public interface WebuiPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__PAGE_DISPLAYED_ON = EDIT_UNIT__PAGE_DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4542,15 +4560,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UPDATE_UNIT__TITLE = EDIT_UNIT__TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UPDATE_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
@@ -4770,6 +4779,15 @@ public interface WebuiPackage extends EPackage {
 	int UPDATE_UNIT__PAGE_DISPLAYED_ON = EDIT_UNIT__PAGE_DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4867,15 +4885,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int UPDATE_UNIT__TITLE = EDIT_UNIT__TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
@@ -5077,6 +5086,15 @@ public interface WebuiPackage extends EPackage {
 	int MAP_UNIT__PAGE_DISPLAYED_ON = EDIT_UNIT__PAGE_DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5174,15 +5192,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_UNIT__TITLE = EDIT_UNIT__TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
@@ -5420,6 +5429,15 @@ public interface WebuiPackage extends EPackage {
 	int DATA_UNIT__PAGE_DISPLAYED_ON = DYNAMIC_UNIT__PAGE_DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__ENABLE_WHEN = DYNAMIC_UNIT__ENABLE_WHEN;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5644,6 +5662,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int DETAILS_UNIT__PAGE_DISPLAYED_ON = DATA_UNIT__PAGE_DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__ENABLE_WHEN = DATA_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -5915,6 +5942,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__PAGE_DISPLAYED_ON = DATA_UNIT__PAGE_DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__ENABLE_WHEN = DATA_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -6341,6 +6377,15 @@ public interface WebuiPackage extends EPackage {
 	int CONTROL_UNIT__PAGE_DISPLAYED_ON = DYNAMIC_UNIT__PAGE_DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__ENABLE_WHEN = DYNAMIC_UNIT__ENABLE_WHEN;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6583,6 +6628,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEARCH_UNIT__PAGE_DISPLAYED_ON = CONTROL_UNIT__PAGE_DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__ENABLE_WHEN = CONTROL_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -6845,6 +6899,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_UNIT__PAGE_DISPLAYED_ON = DYNAMIC_UNIT__PAGE_DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__ENABLE_WHEN = DYNAMIC_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -7619,6 +7682,15 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__PAGE_DISPLAYED_ON = IMAGE_UNIT__PAGE_DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__ENABLE_WHEN = IMAGE_UNIT__ENABLE_WHEN;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8061,6 +8133,15 @@ public interface WebuiPackage extends EPackage {
 	int SLIDER_UNIT__PAGE_DISPLAYED_ON = IMAGE_UNIT__PAGE_DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__ENABLE_WHEN = IMAGE_UNIT__ENABLE_WHEN;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8492,6 +8573,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int GALLERY_UNIT__PAGE_DISPLAYED_ON = IMAGE_UNIT__PAGE_DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__ENABLE_WHEN = IMAGE_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -8964,13 +9054,22 @@ public interface WebuiPackage extends EPackage {
 	int REGISTRATION_UNIT__PAGE_DISPLAYED_ON = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__ENABLE_WHEN = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
+	int REGISTRATION_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -8979,7 +9078,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+	int REGISTRATION_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -8988,7 +9087,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+	int REGISTRATION_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -8997,7 +9096,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
+	int REGISTRATION_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -9006,7 +9105,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
+	int REGISTRATION_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -9015,7 +9114,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
+	int REGISTRATION_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -9024,7 +9123,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
+	int REGISTRATION_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -9033,7 +9132,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
+	int REGISTRATION_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Submit Label</b></em>' attribute.
@@ -9042,7 +9141,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
+	int REGISTRATION_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -9051,7 +9150,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
+	int REGISTRATION_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -9060,7 +9159,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
+	int REGISTRATION_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -9069,7 +9168,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
+	int REGISTRATION_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -9078,7 +9177,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
+	int REGISTRATION_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
 
 	/**
 	 * The number of structural features of the '<em>Registration Unit</em>' class.
@@ -9087,7 +9186,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
+	int REGISTRATION_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 26;
 
 	/**
 	 * The number of operations of the '<em>Registration Unit</em>' class.
@@ -9217,13 +9316,22 @@ public interface WebuiPackage extends EPackage {
 	int LOGIN_UNIT__PAGE_DISPLAYED_ON = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__ENABLE_WHEN = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
+	int LOGIN_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -9232,7 +9340,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+	int LOGIN_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -9241,7 +9349,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+	int LOGIN_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -9250,7 +9358,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
+	int LOGIN_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -9259,7 +9367,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
+	int LOGIN_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -9268,7 +9376,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
+	int LOGIN_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -9277,7 +9385,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
+	int LOGIN_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -9286,7 +9394,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
+	int LOGIN_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Submit Label</b></em>' attribute.
@@ -9295,7 +9403,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
+	int LOGIN_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -9304,7 +9412,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
+	int LOGIN_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -9313,7 +9421,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
+	int LOGIN_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -9322,7 +9430,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
+	int LOGIN_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Logout Uri Element</b></em>' attribute.
@@ -9331,7 +9439,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__LOGOUT_URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
+	int LOGIN_UNIT__LOGOUT_URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -9340,7 +9448,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
+	int LOGIN_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 26;
 
 	/**
 	 * The number of structural features of the '<em>Login Unit</em>' class.
@@ -9349,7 +9457,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 26;
+	int LOGIN_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 27;
 
 	/**
 	 * The number of operations of the '<em>Login Unit</em>' class.
@@ -9479,13 +9587,22 @@ public interface WebuiPackage extends EPackage {
 	int FORGOTTEN_PASSWORD_UNIT__PAGE_DISPLAYED_ON = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__ENABLE_WHEN = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
+	int FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -9494,7 +9611,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+	int FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -9503,7 +9620,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+	int FORGOTTEN_PASSWORD_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -9512,7 +9629,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
+	int FORGOTTEN_PASSWORD_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -9521,7 +9638,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
+	int FORGOTTEN_PASSWORD_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -9530,7 +9647,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
+	int FORGOTTEN_PASSWORD_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -9539,7 +9656,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
+	int FORGOTTEN_PASSWORD_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -9548,7 +9665,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
+	int FORGOTTEN_PASSWORD_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Submit Label</b></em>' attribute.
@@ -9557,7 +9674,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
+	int FORGOTTEN_PASSWORD_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -9566,7 +9683,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
+	int FORGOTTEN_PASSWORD_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -9575,7 +9692,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
+	int FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -9584,7 +9701,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
+	int FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -9593,7 +9710,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
+	int FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
 
 	/**
 	 * The number of structural features of the '<em>Forgotten Password Unit</em>' class.
@@ -9602,7 +9719,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
+	int FORGOTTEN_PASSWORD_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 26;
 
 	/**
 	 * The number of operations of the '<em>Forgotten Password Unit</em>' class.
@@ -9697,31 +9814,13 @@ public interface WebuiPackage extends EPackage {
 	int INLINE_ACTION__DISABLE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INLINE_ACTION__REQUIRES_ROLE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INLINE_ACTION__ENABLE_WHEN = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Display When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__DISPLAY_WHEN = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int INLINE_ACTION__DISPLAY_WHEN = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -9730,7 +9829,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__HEADER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int INLINE_ACTION__HEADER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -9739,7 +9838,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__FOOTER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int INLINE_ACTION__FOOTER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -9748,7 +9847,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int INLINE_ACTION__HEADER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -9757,7 +9856,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int INLINE_ACTION__FOOTER_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Inline Action</em>' class.
@@ -9766,7 +9865,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int INLINE_ACTION_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Inline Action</em>' class.
@@ -9822,24 +9921,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int SELECT_ACTION__DISABLE = INLINE_ACTION__DISABLE;
-
-	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECT_ACTION__REQUIRES_ROLE = INLINE_ACTION__REQUIRES_ROLE;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECT_ACTION__ENABLE_WHEN = INLINE_ACTION__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Display When</b></em>' containment reference.
@@ -9960,24 +10041,6 @@ public interface WebuiPackage extends EPackage {
 	int DELETE_ACTION__DISABLE = INLINE_ACTION__DISABLE;
 
 	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELETE_ACTION__REQUIRES_ROLE = INLINE_ACTION__REQUIRES_ROLE;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELETE_ACTION__ENABLE_WHEN = INLINE_ACTION__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Display When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10041,13 +10104,31 @@ public interface WebuiPackage extends EPackage {
 	int DELETE_ACTION__CONFIRM_MESSAGE = INLINE_ACTION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE_ACTION__REQUIRES_ROLE = INLINE_ACTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE_ACTION__ENABLE_WHEN = INLINE_ACTION_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELETE_ACTION__URI_ELEMENT = INLINE_ACTION_FEATURE_COUNT + 2;
+	int DELETE_ACTION__URI_ELEMENT = INLINE_ACTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Delete Action</em>' class.
@@ -10056,7 +10137,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELETE_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 3;
+	int DELETE_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Delete Action</em>' class.
@@ -10112,24 +10193,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE_SUPPORT_ACTION__DISABLE = INLINE_ACTION__DISABLE;
-
-	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_SUPPORT_ACTION__REQUIRES_ROLE = INLINE_ACTION__REQUIRES_ROLE;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_SUPPORT_ACTION__ENABLE_WHEN = INLINE_ACTION__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Display When</b></em>' containment reference.
@@ -10195,22 +10258,40 @@ public interface WebuiPackage extends EPackage {
 	int FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE = INLINE_ACTION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_SUPPORT_ACTION__URI_ELEMENT = INLINE_ACTION_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>File Extension</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_SUPPORT_ACTION__FILE_EXTENSION = INLINE_ACTION_FEATURE_COUNT + 3;
+	int FEATURE_SUPPORT_ACTION__FILE_EXTENSION = INLINE_ACTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_SUPPORT_ACTION__REQUIRES_ROLE = INLINE_ACTION_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_SUPPORT_ACTION__ENABLE_WHEN = INLINE_ACTION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_SUPPORT_ACTION__URI_ELEMENT = INLINE_ACTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Feature Support Action</em>' class.
@@ -10219,7 +10300,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_SUPPORT_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 4;
+	int FEATURE_SUPPORT_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Feature Support Action</em>' class.
@@ -11144,6 +11225,17 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDynamicUnit();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit#getEnableWhen <em>Enable When</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Enable When</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit#getEnableWhen()
+	 * @see #getDynamicUnit()
+	 * @generated
+	 */
+	EReference getDynamicUnit_EnableWhen();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit#getDisplayFields <em>Display Fields</em>}'.
@@ -12122,17 +12214,6 @@ public interface WebuiPackage extends EPackage {
 	EReference getEditUnit_Title();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getEnableWhen <em>Enable When</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Enable When</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getEnableWhen()
-	 * @see #getEditUnit()
-	 * @generated
-	 */
-	EReference getEditUnit_EnableWhen();
-
-	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getConfirmDestination <em>Confirm Destination</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13098,28 +13179,6 @@ public interface WebuiPackage extends EPackage {
 	EAttribute getInlineAction_Disable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.InlineAction#getRequiresRole <em>Requires Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Requires Role</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.InlineAction#getRequiresRole()
-	 * @see #getInlineAction()
-	 * @generated
-	 */
-	EAttribute getInlineAction_RequiresRole();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.InlineAction#getEnableWhen <em>Enable When</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Enable When</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.InlineAction#getEnableWhen()
-	 * @see #getInlineAction()
-	 * @generated
-	 */
-	EReference getInlineAction_EnableWhen();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.InlineAction#getDisplayWhen <em>Display When</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13228,6 +13287,28 @@ public interface WebuiPackage extends EPackage {
 	EAttribute getDeleteAction_ConfirmMessage();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.DeleteAction#getRequiresRole <em>Requires Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Requires Role</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.DeleteAction#getRequiresRole()
+	 * @see #getDeleteAction()
+	 * @generated
+	 */
+	EAttribute getDeleteAction_RequiresRole();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.DeleteAction#getEnableWhen <em>Enable When</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Enable When</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.DeleteAction#getEnableWhen()
+	 * @see #getDeleteAction()
+	 * @generated
+	 */
+	EReference getDeleteAction_EnableWhen();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.DeleteAction#getUriElement <em>Uri Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13291,6 +13372,28 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFeatureSupportAction_FileExtension();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction#getRequiresRole <em>Requires Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Requires Role</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction#getRequiresRole()
+	 * @see #getFeatureSupportAction()
+	 * @generated
+	 */
+	EAttribute getFeatureSupportAction_RequiresRole();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction#getEnableWhen <em>Enable When</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Enable When</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction#getEnableWhen()
+	 * @see #getFeatureSupportAction()
+	 * @generated
+	 */
+	EReference getFeatureSupportAction_EnableWhen();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference <em>Feature Reference</em>}'.
@@ -14042,6 +14145,14 @@ public interface WebuiPackage extends EPackage {
 		EClass DYNAMIC_UNIT = eINSTANCE.getDynamicUnit();
 
 		/**
+		 * The meta object literal for the '<em><b>Enable When</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DYNAMIC_UNIT__ENABLE_WHEN = eINSTANCE.getDynamicUnit_EnableWhen();
+
+		/**
 		 * The meta object literal for the '<em><b>Display Fields</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -14788,14 +14899,6 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EDIT_UNIT__TITLE = eINSTANCE.getEditUnit_Title();
-
-		/**
-		 * The meta object literal for the '<em><b>Enable When</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EDIT_UNIT__ENABLE_WHEN = eINSTANCE.getEditUnit_EnableWhen();
 
 		/**
 		 * The meta object literal for the '<em><b>Confirm Destination</b></em>' reference feature.
@@ -15568,22 +15671,6 @@ public interface WebuiPackage extends EPackage {
 		EAttribute INLINE_ACTION__DISABLE = eINSTANCE.getInlineAction_Disable();
 
 		/**
-		 * The meta object literal for the '<em><b>Requires Role</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INLINE_ACTION__REQUIRES_ROLE = eINSTANCE.getInlineAction_RequiresRole();
-
-		/**
-		 * The meta object literal for the '<em><b>Enable When</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INLINE_ACTION__ENABLE_WHEN = eINSTANCE.getInlineAction_EnableWhen();
-
-		/**
 		 * The meta object literal for the '<em><b>Display When</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -15668,6 +15755,22 @@ public interface WebuiPackage extends EPackage {
 		EAttribute DELETE_ACTION__CONFIRM_MESSAGE = eINSTANCE.getDeleteAction_ConfirmMessage();
 
 		/**
+		 * The meta object literal for the '<em><b>Requires Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DELETE_ACTION__REQUIRES_ROLE = eINSTANCE.getDeleteAction_RequiresRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Enable When</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DELETE_ACTION__ENABLE_WHEN = eINSTANCE.getDeleteAction_EnableWhen();
+
+		/**
 		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -15716,6 +15819,22 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FEATURE_SUPPORT_ACTION__FILE_EXTENSION = eINSTANCE.getFeatureSupportAction_FileExtension();
+
+		/**
+		 * The meta object literal for the '<em><b>Requires Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE_SUPPORT_ACTION__REQUIRES_ROLE = eINSTANCE.getFeatureSupportAction_RequiresRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Enable When</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_SUPPORT_ACTION__ENABLE_WHEN = eINSTANCE.getFeatureSupportAction_EnableWhen();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiFeatureReferenceImpl <em>Feature Reference</em>}' class.

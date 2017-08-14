@@ -791,7 +791,6 @@ abstract rule EditUnit {
 			else
 				website.title.findOrmLabel()
 			endif,
-		enableWhen <- website.enableWhen,
 		uriElement <-
 			if website.uriElement.trim() <> '' then
 				website.uriElement.trim()
@@ -1106,9 +1105,7 @@ abstract rule InlineAction {
 rule SelectAction {
 	from website : Website!SelectAction
 	to waf : WAF!SelectAction (
-		target <- website.target,
-		requiresRole <-website.target.requiresRole.trim(),
-		enableWhen <- website.target.enableWhen
+		target <- website.target
 	)
 }
 
@@ -1125,7 +1122,12 @@ rule DeleteAction {
 			else
 				website.name.createLabel().concat('?')
 			endif endif,
-		requiresRole <- website.requiresRole,
+		requiresRole <-
+			if website.requiresRole <> '' then
+				website.requiresRole
+			else
+				website.usedBy.requiresRole
+			endif,
 		enableWhen <- website.enableWhen,
 		uriElement <-
 			if website.uriElement <> '' then
@@ -1147,7 +1149,12 @@ rule FeatureSupportAction {
 			else
 				OclUndefined
 			endif,
-		requiresRole <- website.requiresRole,
+		requiresRole <-
+			if website.requiresRole <> '' then
+				website.requiresRole
+			else
+				website.usedBy.requiresRole
+			endif,
 		enableWhen <- website.enableWhen,
 		uriElement <-
 			if website.uriElement <> '' then

@@ -53,7 +53,6 @@ public class InlineActionItemProvider
 
 			addUsedByPropertyDescriptor(object);
 			addDisablePropertyDescriptor(object);
-			addRequiresRolePropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -103,28 +102,6 @@ public class InlineActionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-		/**
-	 * This adds a property descriptor for the Requires Role feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequiresRolePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_InlineAction_requiresRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_InlineAction_requiresRole_feature", "_UI_InlineAction_type"),
-				 WafPackage.Literals.INLINE_ACTION__REQUIRES_ROLE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -229,7 +206,6 @@ public class InlineActionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN);
 			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN);
 		}
 		return childrenFeatures;
@@ -275,14 +251,12 @@ public class InlineActionItemProvider
 
 		switch (notification.getFeatureID(InlineAction.class)) {
 			case WafPackage.INLINE_ACTION__DISABLE:
-			case WafPackage.INLINE_ACTION__REQUIRES_ROLE:
 			case WafPackage.INLINE_ACTION__HEADER:
 			case WafPackage.INLINE_ACTION__FOOTER:
 			case WafPackage.INLINE_ACTION__HEADER_CLASS:
 			case WafPackage.INLINE_ACTION__FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.INLINE_ACTION__ENABLE_WHEN:
 			case WafPackage.INLINE_ACTION__DISPLAY_WHEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -303,46 +277,6 @@ public class InlineActionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
@@ -380,29 +314,6 @@ public class InlineActionItemProvider
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN ||
-			childFeature == WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

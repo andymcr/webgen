@@ -2,6 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
+import uk.ac.man.cs.mdsd.expression.Predicate;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,8 @@ package uk.ac.man.cs.mdsd.waf;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DeleteAction#getDestination <em>Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DeleteAction#getConfirmMessage <em>Confirm Message</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.DeleteAction#getRequiresRole <em>Requires Role</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.DeleteAction#getEnableWhen <em>Enable When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DeleteAction#getUriElement <em>Uri Element</em>}</li>
  * </ul>
  *
@@ -73,6 +76,58 @@ public interface DeleteAction extends InlineAction {
 	 * @generated
 	 */
 	void setConfirmMessage(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Requires Role</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requires Role</em>' attribute.
+	 * @see #setRequiresRole(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDeleteAction_RequiresRole()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getRequiresRole();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.DeleteAction#getRequiresRole <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Requires Role</em>' attribute.
+	 * @see #getRequiresRole()
+	 * @generated
+	 */
+	void setRequiresRole(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Enable When</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Enable When</em>' containment reference.
+	 * @see #setEnableWhen(Predicate)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDeleteAction_EnableWhen()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Predicate getEnableWhen();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.DeleteAction#getEnableWhen <em>Enable When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Enable When</em>' containment reference.
+	 * @see #getEnableWhen()
+	 * @generated
+	 */
+	void setEnableWhen(Predicate value);
 
 	/**
 	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.

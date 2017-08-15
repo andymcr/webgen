@@ -481,8 +481,6 @@ interface InlineActionContainer {
 abstract class InlineAction extends NamedDisplayElement {
 	container InlineActionContainer[1] usedBy opposite actions
 	boolean disable
-	String requiresRole
-	contains Predicate enableWhen
 	contains Predicate displayWhen
 	String header
 	String footer
@@ -497,12 +495,16 @@ class SelectAction extends InlineAction {
 class DeleteAction extends InlineAction {
 	refers Page destination
 	String[1] confirmMessage
+	String requiresRole
+	contains Predicate enableWhen
 	String[1] uriElement
 }
 
 class FeatureSupportAction extends InlineAction {
 	refers BusinessOperation[1] operation
 	String confirmMessage
+	String requiresRole
+	contains Predicate enableWhen
 	String[1] uriElement
 	String fileExtension
 }

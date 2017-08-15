@@ -22,7 +22,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.webui.Page;
 import uk.ac.man.cs.mdsd.webgen.webui.SelectAction;
 import uk.ac.man.cs.mdsd.webgen.webui.SelectableUnit;
-import uk.ac.man.cs.mdsd.webgen.webui.UnitElement;
+import uk.ac.man.cs.mdsd.webgen.webui.UnitFeature;
 import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
@@ -80,7 +80,8 @@ public class SelectActionItemProvider extends InlineActionItemProvider {
 					if (object instanceof SelectAction) {
 						final SelectAction action = (SelectAction) object;
 						final Set<SelectableUnit> targets = new HashSet<SelectableUnit>();
-						for (Page page : getWebUI(action.getUsedBy()).getPages()) {
+						WebUI xx = getWebUI(action.getUsedBy());
+						for (Page page : xx.getPages()) {
 							for (ContentUnit unit : page.getUnits()) {
 								if (unit instanceof SelectableUnit) {
 									targets.add((SelectableUnit) unit);
@@ -149,8 +150,8 @@ public class SelectActionItemProvider extends InlineActionItemProvider {
 	protected WebUI getWebUI(final InlineActionContainer container) {
 		if (container instanceof CollectionUnit) {
 			return ((DynamicUnit) container).getPageDisplayedOn().getWebUI();
-		} else if (container instanceof UnitElement) {
-			((UnitElement) container).getDisplayedOn().getPageDisplayedOn().getWebUI();
+		} else if (container instanceof UnitFeature) {
+			return ((UnitFeature) container).getDisplayedOn().getPageDisplayedOn().getWebUI();
 		}
 		
 		return null;

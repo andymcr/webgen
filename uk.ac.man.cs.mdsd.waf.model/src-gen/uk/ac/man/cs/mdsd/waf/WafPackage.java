@@ -11249,31 +11249,13 @@ public interface WafPackage extends EPackage {
 	int INLINE_ACTION__DISABLE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INLINE_ACTION__REQUIRES_ROLE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INLINE_ACTION__ENABLE_WHEN = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Display When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__DISPLAY_WHEN = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int INLINE_ACTION__DISPLAY_WHEN = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -11282,7 +11264,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__HEADER = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int INLINE_ACTION__HEADER = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -11291,7 +11273,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__FOOTER = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int INLINE_ACTION__FOOTER = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -11300,7 +11282,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__HEADER_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int INLINE_ACTION__HEADER_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -11309,7 +11291,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__FOOTER_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int INLINE_ACTION__FOOTER_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Inline Action</em>' class.
@@ -11318,7 +11300,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int INLINE_ACTION_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Inline Action</em>' class.
@@ -11374,24 +11356,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SELECT_ACTION__DISABLE = INLINE_ACTION__DISABLE;
-
-	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECT_ACTION__REQUIRES_ROLE = INLINE_ACTION__REQUIRES_ROLE;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECT_ACTION__ENABLE_WHEN = INLINE_ACTION__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Display When</b></em>' containment reference.
@@ -11512,24 +11476,6 @@ public interface WafPackage extends EPackage {
 	int DELETE_ACTION__DISABLE = INLINE_ACTION__DISABLE;
 
 	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELETE_ACTION__REQUIRES_ROLE = INLINE_ACTION__REQUIRES_ROLE;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELETE_ACTION__ENABLE_WHEN = INLINE_ACTION__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Display When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11593,13 +11539,31 @@ public interface WafPackage extends EPackage {
 	int DELETE_ACTION__CONFIRM_MESSAGE = INLINE_ACTION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE_ACTION__REQUIRES_ROLE = INLINE_ACTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE_ACTION__ENABLE_WHEN = INLINE_ACTION_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELETE_ACTION__URI_ELEMENT = INLINE_ACTION_FEATURE_COUNT + 2;
+	int DELETE_ACTION__URI_ELEMENT = INLINE_ACTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Delete Action</em>' class.
@@ -11608,7 +11572,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELETE_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 3;
+	int DELETE_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Delete Action</em>' class.
@@ -11664,24 +11628,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE_SUPPORT_ACTION__DISABLE = INLINE_ACTION__DISABLE;
-
-	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_SUPPORT_ACTION__REQUIRES_ROLE = INLINE_ACTION__REQUIRES_ROLE;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_SUPPORT_ACTION__ENABLE_WHEN = INLINE_ACTION__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Display When</b></em>' containment reference.
@@ -11747,13 +11693,31 @@ public interface WafPackage extends EPackage {
 	int FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE = INLINE_ACTION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_SUPPORT_ACTION__REQUIRES_ROLE = INLINE_ACTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_SUPPORT_ACTION__ENABLE_WHEN = INLINE_ACTION_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_SUPPORT_ACTION__URI_ELEMENT = INLINE_ACTION_FEATURE_COUNT + 2;
+	int FEATURE_SUPPORT_ACTION__URI_ELEMENT = INLINE_ACTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>File Extension</b></em>' attribute.
@@ -11762,7 +11726,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_SUPPORT_ACTION__FILE_EXTENSION = INLINE_ACTION_FEATURE_COUNT + 3;
+	int FEATURE_SUPPORT_ACTION__FILE_EXTENSION = INLINE_ACTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Feature Support Action</em>' class.
@@ -11771,7 +11735,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_SUPPORT_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 4;
+	int FEATURE_SUPPORT_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Feature Support Action</em>' class.
@@ -14761,28 +14725,6 @@ public interface WafPackage extends EPackage {
 	EAttribute getInlineAction_Disable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.InlineAction#getRequiresRole <em>Requires Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Requires Role</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.InlineAction#getRequiresRole()
-	 * @see #getInlineAction()
-	 * @generated
-	 */
-	EAttribute getInlineAction_RequiresRole();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.InlineAction#getEnableWhen <em>Enable When</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Enable When</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.InlineAction#getEnableWhen()
-	 * @see #getInlineAction()
-	 * @generated
-	 */
-	EReference getInlineAction_EnableWhen();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.InlineAction#getDisplayWhen <em>Display When</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14891,6 +14833,28 @@ public interface WafPackage extends EPackage {
 	EAttribute getDeleteAction_ConfirmMessage();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.DeleteAction#getRequiresRole <em>Requires Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Requires Role</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.DeleteAction#getRequiresRole()
+	 * @see #getDeleteAction()
+	 * @generated
+	 */
+	EAttribute getDeleteAction_RequiresRole();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.DeleteAction#getEnableWhen <em>Enable When</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Enable When</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.DeleteAction#getEnableWhen()
+	 * @see #getDeleteAction()
+	 * @generated
+	 */
+	EReference getDeleteAction_EnableWhen();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.DeleteAction#getUriElement <em>Uri Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14932,6 +14896,28 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFeatureSupportAction_ConfirmMessage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getRequiresRole <em>Requires Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Requires Role</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getRequiresRole()
+	 * @see #getFeatureSupportAction()
+	 * @generated
+	 */
+	EAttribute getFeatureSupportAction_RequiresRole();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getEnableWhen <em>Enable When</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Enable When</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getEnableWhen()
+	 * @see #getFeatureSupportAction()
+	 * @generated
+	 */
+	EReference getFeatureSupportAction_EnableWhen();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getUriElement <em>Uri Element</em>}'.
@@ -17335,22 +17321,6 @@ public interface WafPackage extends EPackage {
 		EAttribute INLINE_ACTION__DISABLE = eINSTANCE.getInlineAction_Disable();
 
 		/**
-		 * The meta object literal for the '<em><b>Requires Role</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INLINE_ACTION__REQUIRES_ROLE = eINSTANCE.getInlineAction_RequiresRole();
-
-		/**
-		 * The meta object literal for the '<em><b>Enable When</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INLINE_ACTION__ENABLE_WHEN = eINSTANCE.getInlineAction_EnableWhen();
-
-		/**
 		 * The meta object literal for the '<em><b>Display When</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -17435,6 +17405,22 @@ public interface WafPackage extends EPackage {
 		EAttribute DELETE_ACTION__CONFIRM_MESSAGE = eINSTANCE.getDeleteAction_ConfirmMessage();
 
 		/**
+		 * The meta object literal for the '<em><b>Requires Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DELETE_ACTION__REQUIRES_ROLE = eINSTANCE.getDeleteAction_RequiresRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Enable When</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DELETE_ACTION__ENABLE_WHEN = eINSTANCE.getDeleteAction_EnableWhen();
+
+		/**
 		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -17467,6 +17453,22 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE = eINSTANCE.getFeatureSupportAction_ConfirmMessage();
+
+		/**
+		 * The meta object literal for the '<em><b>Requires Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE_SUPPORT_ACTION__REQUIRES_ROLE = eINSTANCE.getFeatureSupportAction_RequiresRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Enable When</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_SUPPORT_ACTION__ENABLE_WHEN = eINSTANCE.getFeatureSupportAction_EnableWhen();
 
 		/**
 		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.

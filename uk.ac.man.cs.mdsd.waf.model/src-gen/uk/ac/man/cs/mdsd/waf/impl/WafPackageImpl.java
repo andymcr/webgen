@@ -3121,26 +3121,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInlineAction_RequiresRole() {
-		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getInlineAction_EnableWhen() {
-		return (EReference)inlineActionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getInlineAction_DisplayWhen() {
-		return (EReference)inlineActionEClass.getEStructuralFeatures().get(4);
+		return (EReference)inlineActionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3149,7 +3131,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getInlineAction_Header() {
-		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3158,7 +3140,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getInlineAction_Footer() {
-		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3167,7 +3149,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getInlineAction_HeaderClass() {
-		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3176,7 +3158,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getInlineAction_FooterClass() {
-		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -3229,8 +3211,26 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDeleteAction_UriElement() {
+	public EAttribute getDeleteAction_RequiresRole() {
 		return (EAttribute)deleteActionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDeleteAction_EnableWhen() {
+		return (EReference)deleteActionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDeleteAction_UriElement() {
+		return (EAttribute)deleteActionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3265,7 +3265,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeatureSupportAction_UriElement() {
+	public EAttribute getFeatureSupportAction_RequiresRole() {
 		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3274,8 +3274,26 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getFeatureSupportAction_EnableWhen() {
+		return (EReference)featureSupportActionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeatureSupportAction_UriElement() {
+		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getFeatureSupportAction_FileExtension() {
-		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3694,8 +3712,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		inlineActionEClass = createEClass(INLINE_ACTION);
 		createEReference(inlineActionEClass, INLINE_ACTION__USED_BY);
 		createEAttribute(inlineActionEClass, INLINE_ACTION__DISABLE);
-		createEAttribute(inlineActionEClass, INLINE_ACTION__REQUIRES_ROLE);
-		createEReference(inlineActionEClass, INLINE_ACTION__ENABLE_WHEN);
 		createEReference(inlineActionEClass, INLINE_ACTION__DISPLAY_WHEN);
 		createEAttribute(inlineActionEClass, INLINE_ACTION__HEADER);
 		createEAttribute(inlineActionEClass, INLINE_ACTION__FOOTER);
@@ -3708,11 +3724,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		deleteActionEClass = createEClass(DELETE_ACTION);
 		createEReference(deleteActionEClass, DELETE_ACTION__DESTINATION);
 		createEAttribute(deleteActionEClass, DELETE_ACTION__CONFIRM_MESSAGE);
+		createEAttribute(deleteActionEClass, DELETE_ACTION__REQUIRES_ROLE);
+		createEReference(deleteActionEClass, DELETE_ACTION__ENABLE_WHEN);
 		createEAttribute(deleteActionEClass, DELETE_ACTION__URI_ELEMENT);
 
 		featureSupportActionEClass = createEClass(FEATURE_SUPPORT_ACTION);
 		createEReference(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__OPERATION);
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE);
+		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__REQUIRES_ROLE);
+		createEReference(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__ENABLE_WHEN);
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__URI_ELEMENT);
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__FILE_EXTENSION);
 
@@ -4171,8 +4191,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(inlineActionEClass, InlineAction.class, "InlineAction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInlineAction_UsedBy(), this.getInlineActionContainer(), this.getInlineActionContainer_Actions(), "usedBy", null, 1, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInlineAction_Disable(), theEcorePackage.getEBoolean(), "disable", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInlineAction_RequiresRole(), theEcorePackage.getEString(), "requiresRole", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInlineAction_EnableWhen(), theExpressionPackage.getPredicate(), null, "enableWhen", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInlineAction_DisplayWhen(), theExpressionPackage.getPredicate(), null, "displayWhen", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInlineAction_Header(), theEcorePackage.getEString(), "header", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInlineAction_Footer(), theEcorePackage.getEString(), "footer", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4185,11 +4203,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(deleteActionEClass, DeleteAction.class, "DeleteAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDeleteAction_Destination(), this.getPage(), null, "destination", null, 0, 1, DeleteAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeleteAction_ConfirmMessage(), theEcorePackage.getEString(), "confirmMessage", null, 1, 1, DeleteAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeleteAction_RequiresRole(), theEcorePackage.getEString(), "requiresRole", null, 0, 1, DeleteAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeleteAction_EnableWhen(), theExpressionPackage.getPredicate(), null, "enableWhen", null, 0, 1, DeleteAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeleteAction_UriElement(), theEcorePackage.getEString(), "uriElement", null, 1, 1, DeleteAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureSupportActionEClass, FeatureSupportAction.class, "FeatureSupportAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFeatureSupportAction_Operation(), theServicePackage.getBusinessOperation(), null, "operation", null, 1, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeatureSupportAction_ConfirmMessage(), theEcorePackage.getEString(), "confirmMessage", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeatureSupportAction_RequiresRole(), theEcorePackage.getEString(), "requiresRole", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeatureSupportAction_EnableWhen(), theExpressionPackage.getPredicate(), null, "enableWhen", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeatureSupportAction_UriElement(), theEcorePackage.getEString(), "uriElement", null, 1, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeatureSupportAction_FileExtension(), theEcorePackage.getEString(), "fileExtension", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

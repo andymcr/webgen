@@ -149,7 +149,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int LIMIT_EDEFAULT = 0;
+	protected static final int LIMIT_EDEFAULT = 10;
 
 	/**
 	 * The cached value of the '{@link #getLimit() <em>Limit</em>}' attribute.

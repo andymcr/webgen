@@ -186,7 +186,7 @@ public interface Selection extends NamedElement, FormalParameterList {
 
 	/**
 	 * Returns the value of the '<em><b>Limit</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
+	 * The default value is <code>"10"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Limit</em>' attribute isn't clear,
@@ -196,7 +196,7 @@ public interface Selection extends NamedElement, FormalParameterList {
 	 * @return the value of the '<em>Limit</em>' attribute.
 	 * @see #setLimit(int)
 	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getSelection_Limit()
-	 * @model default="0" ordered="false"
+	 * @model default="10" ordered="false"
 	 * @generated
 	 */
 	int getLimit();

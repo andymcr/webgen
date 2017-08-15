@@ -11567,13 +11567,22 @@ public interface WafPackage extends EPackage {
 	int FEATURE_SUPPORT_ACTION__ENABLE_WHEN = INLINE_ACTION_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_SUPPORT_ACTION__URI_ELEMENT = INLINE_ACTION_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>File Extension</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_SUPPORT_ACTION__FILE_EXTENSION = INLINE_ACTION_FEATURE_COUNT + 4;
+	int FEATURE_SUPPORT_ACTION__FILE_EXTENSION = INLINE_ACTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Feature Support Action</em>' class.
@@ -11582,7 +11591,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_SUPPORT_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 5;
+	int FEATURE_SUPPORT_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Feature Support Action</em>' class.
@@ -14756,6 +14765,17 @@ public interface WafPackage extends EPackage {
 	EReference getFeatureSupportAction_EnableWhen();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getUriElement <em>Uri Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uri Element</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getUriElement()
+	 * @see #getFeatureSupportAction()
+	 * @generated
+	 */
+	EAttribute getFeatureSupportAction_UriElement();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getFileExtension <em>File Extension</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -17286,6 +17306,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FEATURE_SUPPORT_ACTION__ENABLE_WHEN = eINSTANCE.getFeatureSupportAction_EnableWhen();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE_SUPPORT_ACTION__URI_ELEMENT = eINSTANCE.getFeatureSupportAction_UriElement();
 
 		/**
 		 * The meta object literal for the '<em><b>File Extension</b></em>' attribute feature.

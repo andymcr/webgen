@@ -19,6 +19,7 @@ import uk.ac.man.cs.mdsd.service.BusinessOperation;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getConfirmMessage <em>Confirm Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getEnableWhen <em>Enable When</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getFileExtension <em>File Extension</em>}</li>
  * </ul>
  *
@@ -130,6 +131,32 @@ public interface FeatureSupportAction extends InlineAction {
 	 * @generated
 	 */
 	void setEnableWhen(Predicate value);
+
+	/**
+	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Uri Element</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Uri Element</em>' attribute.
+	 * @see #setUriElement(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFeatureSupportAction_UriElement()
+	 * @model unique="false" required="true"
+	 * @generated
+	 */
+	String getUriElement();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getUriElement <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Uri Element</em>' attribute.
+	 * @see #getUriElement()
+	 * @generated
+	 */
+	void setUriElement(String value);
 
 	/**
 	 * Returns the value of the '<em><b>File Extension</b></em>' attribute.

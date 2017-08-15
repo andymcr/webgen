@@ -504,5 +504,6 @@ class FeatureSupportAction extends InlineAction {
 	String confirmMessage
 	String requiresRole
 	contains Predicate enableWhen
+	String[1] uriElement
 	String fileExtension
 }

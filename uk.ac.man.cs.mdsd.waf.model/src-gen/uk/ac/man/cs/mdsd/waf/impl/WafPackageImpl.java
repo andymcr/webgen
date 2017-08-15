@@ -3274,8 +3274,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeatureSupportAction_FileExtension() {
+	public EAttribute getFeatureSupportAction_UriElement() {
 		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeatureSupportAction_FileExtension() {
+		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3714,6 +3723,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE);
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__REQUIRES_ROLE);
 		createEReference(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__ENABLE_WHEN);
+		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__URI_ELEMENT);
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__FILE_EXTENSION);
 
 		// Create enums
@@ -4191,6 +4201,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getFeatureSupportAction_ConfirmMessage(), theEcorePackage.getEString(), "confirmMessage", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeatureSupportAction_RequiresRole(), theEcorePackage.getEString(), "requiresRole", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeatureSupportAction_EnableWhen(), theExpressionPackage.getPredicate(), null, "enableWhen", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeatureSupportAction_UriElement(), theEcorePackage.getEString(), "uriElement", null, 1, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeatureSupportAction_FileExtension(), theEcorePackage.getEString(), "fileExtension", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals

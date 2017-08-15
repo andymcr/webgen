@@ -2,9 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.webui;
 
+import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
-
-import uk.ac.man.cs.mdsd.webgen.service.Selection;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +14,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getDefaultSelection <em>Default Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getDisableCondition <em>Disable Condition</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getConfirmDestination <em>Confirm Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getConfirmLabel <em>Confirm Label</em>}</li>
@@ -33,30 +32,30 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  */
 public interface EditUnit extends DynamicUnit, SingletonUnit {
 	/**
-	 * Returns the value of the '<em><b>Default Selection</b></em>' reference.
+	 * Returns the value of the '<em><b>Disable Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Default Selection</em>' reference isn't clear,
+	 * If the meaning of the '<em>Disable Condition</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default Selection</em>' reference.
-	 * @see #setDefaultSelection(Selection)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getEditUnit_DefaultSelection()
-	 * @model
+	 * @return the value of the '<em>Disable Condition</em>' containment reference.
+	 * @see #setDisableCondition(Predicate)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getEditUnit_DisableCondition()
+	 * @model containment="true"
 	 * @generated
 	 */
-	Selection getDefaultSelection();
+	Predicate getDisableCondition();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getDefaultSelection <em>Default Selection</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getDisableCondition <em>Disable Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default Selection</em>' reference.
-	 * @see #getDefaultSelection()
+	 * @param value the new value of the '<em>Disable Condition</em>' containment reference.
+	 * @see #getDisableCondition()
 	 * @generated
 	 */
-	void setDefaultSelection(Selection value);
+	void setDisableCondition(Predicate value);
 
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' reference.

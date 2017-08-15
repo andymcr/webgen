@@ -141,8 +141,6 @@
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//CreateSitemapUnit/contentClass"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//DynamicUnit">
-      <genFeatures property="None" children="true" createChild="true" propertyCategory="Security"
-          ecoreFeature="ecore:EReference webui.ecore#//DynamicUnit/enableWhen"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//DynamicUnit/displayFields"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//DynamicUnit/supportActions"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//DynamicUnit/header"/>
@@ -261,8 +259,8 @@
           ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/lastPageLabel"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//EditUnit">
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference webui.ecore#//EditUnit/defaultSelection"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference webui.ecore#//EditUnit/disableCondition"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//EditUnit/title"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
@@ -299,9 +297,9 @@
           ecoreFeature="ecore:EReference webui.ecore#//DataUnit/defaultSelection"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//DataUnit/title"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//DataUnit/onlyDisplayWhenNotEmpty"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//DetailsUnit">
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//DetailsUnit/onlyDisplayWhenNotEmpty"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//DetailsUnit/omitFieldLabels"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//DetailsUnit/styleClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//DetailsUnit/contentClass"/>

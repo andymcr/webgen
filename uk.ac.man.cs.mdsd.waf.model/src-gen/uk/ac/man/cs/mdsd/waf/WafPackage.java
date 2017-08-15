@@ -2063,22 +2063,13 @@ public interface WafPackage extends EPackage {
 	int DYNAMIC_UNIT__DISPLAY_FIELDS = CONTENT_UNIT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_UNIT__ENABLE_WHEN = CONTENT_UNIT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 2;
+	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -2087,7 +2078,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 3;
+	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -2096,7 +2087,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 4;
+	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -2105,7 +2096,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 5;
+	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -2114,7 +2105,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
+	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -2123,7 +2114,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
+	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -2132,7 +2123,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
+	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Dynamic Unit</em>' class.
@@ -2141,7 +2132,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 9;
+	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Dynamic Unit</em>' class.
@@ -4237,15 +4228,6 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_UNIT__ENABLE_WHEN = DYNAMIC_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4318,13 +4300,13 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__CONTENT_TYPE = DYNAMIC_UNIT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__DEFAULT_SELECTION = DYNAMIC_UNIT_FEATURE_COUNT + 1;
+	int EDIT_UNIT__DISABLE_CONDITION = DYNAMIC_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -4526,15 +4508,6 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4607,13 +4580,13 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UNIT__DEFAULT_SELECTION = EDIT_UNIT__DEFAULT_SELECTION;
+	int CREATE_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -4815,15 +4788,6 @@ public interface WafPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UPDATE_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4896,13 +4860,13 @@ public interface WafPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__DEFAULT_SELECTION = EDIT_UNIT__DEFAULT_SELECTION;
+	int CREATE_UPDATE_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -5131,15 +5095,6 @@ public interface WafPackage extends EPackage {
 	int MAP_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5212,13 +5167,13 @@ public interface WafPackage extends EPackage {
 	int MAP_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__DEFAULT_SELECTION = EDIT_UNIT__DEFAULT_SELECTION;
+	int MAP_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -5465,15 +5420,6 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5546,13 +5492,13 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_UNIT__DEFAULT_SELECTION = EDIT_UNIT__DEFAULT_SELECTION;
+	int UPDATE_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -5763,15 +5709,6 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_UNIT__ENABLE_WHEN = DYNAMIC_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5853,13 +5790,22 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Data Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+	int DATA_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Data Unit</em>' class.
@@ -5998,15 +5944,6 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__DISPLAY_FIELDS = DATA_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__ENABLE_WHEN = DATA_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6088,6 +6025,15 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__TITLE = DATA_UNIT__TITLE;
 
 	/**
+	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY;
+
+	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6106,22 +6052,13 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__SELECTORS = DATA_UNIT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = DATA_UNIT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Omit Field Labels</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__OMIT_FIELD_LABELS = DATA_UNIT_FEATURE_COUNT + 3;
+	int DETAILS_UNIT__OMIT_FIELD_LABELS = DATA_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Details Unit</em>' class.
@@ -6130,7 +6067,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 4;
+	int DETAILS_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Details Unit</em>' class.
@@ -6269,15 +6206,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__DISPLAY_FIELDS = DATA_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__ENABLE_WHEN = DATA_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6357,6 +6285,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__TITLE = DATA_UNIT__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Selectors</b></em>' reference list.
@@ -6684,15 +6621,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__DISPLAY_FIELDS = INDEX_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_GRID_UNIT__ENABLE_WHEN = INDEX_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6772,6 +6700,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_GRID_UNIT__TITLE = INDEX_UNIT__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = INDEX_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Selectors</b></em>' reference list.
@@ -7099,15 +7036,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__DISPLAY_FIELDS = INDEX_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_PAGE_DIRECTION_UNIT__ENABLE_WHEN = INDEX_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7187,6 +7115,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_PAGE_DIRECTION_UNIT__TITLE = INDEX_UNIT__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = INDEX_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Selectors</b></em>' reference list.
@@ -7514,15 +7451,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__DISPLAY_FIELDS = INDEX_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_LINE_DIRECTION_UNIT__ENABLE_WHEN = INDEX_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7602,6 +7530,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_LINE_DIRECTION_UNIT__TITLE = INDEX_UNIT__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = INDEX_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Selectors</b></em>' reference list.
@@ -7929,15 +7866,6 @@ public interface WafPackage extends EPackage {
 	int CONTROL_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_UNIT__ENABLE_WHEN = DYNAMIC_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8171,15 +8099,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEARCH_UNIT__DISPLAY_FIELDS = CONTROL_UNIT__DISPLAY_FIELDS;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH_UNIT__ENABLE_WHEN = CONTROL_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -8424,15 +8343,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_UNIT__ENABLE_WHEN = DYNAMIC_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -9126,15 +9036,6 @@ public interface WafPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__DISPLAY_FIELDS = IMAGE_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_INDEX_UNIT__ENABLE_WHEN = IMAGE_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9559,15 +9460,6 @@ public interface WafPackage extends EPackage {
 	int SLIDER_UNIT__DISPLAY_FIELDS = IMAGE_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLIDER_UNIT__ENABLE_WHEN = IMAGE_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9981,15 +9873,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int GALLERY_UNIT__DISPLAY_FIELDS = IMAGE_UNIT__DISPLAY_FIELDS;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GALLERY_UNIT__ENABLE_WHEN = IMAGE_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -10444,15 +10327,6 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGISTRATION_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10525,13 +10399,13 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__DEFAULT_SELECTION = EDIT_UNIT__DEFAULT_SELECTION;
+	int REGISTRATION_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -10740,15 +10614,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGIN_UNIT__DISPLAY_FIELDS = CONTROL_UNIT__DISPLAY_FIELDS;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGIN_UNIT__ENABLE_WHEN = CONTROL_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -11029,15 +10894,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS = CONTROL_UNIT__DISPLAY_FIELDS;
-
-	/**
-	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORGOTTEN_PASSWORD_UNIT__ENABLE_WHEN = CONTROL_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -11711,22 +11567,13 @@ public interface WafPackage extends EPackage {
 	int FEATURE_SUPPORT_ACTION__ENABLE_WHEN = INLINE_ACTION_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_SUPPORT_ACTION__URI_ELEMENT = INLINE_ACTION_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>File Extension</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_SUPPORT_ACTION__FILE_EXTENSION = INLINE_ACTION_FEATURE_COUNT + 5;
+	int FEATURE_SUPPORT_ACTION__FILE_EXTENSION = INLINE_ACTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Feature Support Action</em>' class.
@@ -11735,7 +11582,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_SUPPORT_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 6;
+	int FEATURE_SUPPORT_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Feature Support Action</em>' class.
@@ -13018,17 +12865,6 @@ public interface WafPackage extends EPackage {
 	EReference getDynamicUnit_DisplayFields();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getEnableWhen <em>Enable When</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Enable When</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getEnableWhen()
-	 * @see #getDynamicUnit()
-	 * @generated
-	 */
-	EReference getDynamicUnit_EnableWhen();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13928,15 +13764,15 @@ public interface WafPackage extends EPackage {
 	EClass getEditUnit();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.EditUnit#getDefaultSelection <em>Default Selection</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.EditUnit#getDisableCondition <em>Disable Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Default Selection</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.EditUnit#getDefaultSelection()
+	 * @return the meta object for the containment reference '<em>Disable Condition</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.EditUnit#getDisableCondition()
 	 * @see #getEditUnit()
 	 * @generated
 	 */
-	EReference getEditUnit_DefaultSelection();
+	EReference getEditUnit_DisableCondition();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.EditUnit#getTitle <em>Title</em>}'.
@@ -14143,6 +13979,17 @@ public interface WafPackage extends EPackage {
 	EReference getDataUnit_Title();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.DataUnit#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Only Display When Not Empty</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.DataUnit#isOnlyDisplayWhenNotEmpty()
+	 * @see #getDataUnit()
+	 * @generated
+	 */
+	EAttribute getDataUnit_OnlyDisplayWhenNotEmpty();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.DetailsUnit <em>Details Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14151,17 +13998,6 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDetailsUnit();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.DetailsUnit#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Only Display When Not Empty</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.DetailsUnit#isOnlyDisplayWhenNotEmpty()
-	 * @see #getDetailsUnit()
-	 * @generated
-	 */
-	EAttribute getDetailsUnit_OnlyDisplayWhenNotEmpty();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.DetailsUnit#isOmitFieldLabels <em>Omit Field Labels</em>}'.
@@ -14918,17 +14754,6 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFeatureSupportAction_EnableWhen();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getUriElement <em>Uri Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uri Element</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getUriElement()
-	 * @see #getFeatureSupportAction()
-	 * @generated
-	 */
-	EAttribute getFeatureSupportAction_UriElement();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getFileExtension <em>File Extension</em>}'.
@@ -15965,14 +15790,6 @@ public interface WafPackage extends EPackage {
 		EReference DYNAMIC_UNIT__DISPLAY_FIELDS = eINSTANCE.getDynamicUnit_DisplayFields();
 
 		/**
-		 * The meta object literal for the '<em><b>Enable When</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DYNAMIC_UNIT__ENABLE_WHEN = eINSTANCE.getDynamicUnit_EnableWhen();
-
-		/**
 		 * The meta object literal for the '<em><b>Support Actions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16665,12 +16482,12 @@ public interface WafPackage extends EPackage {
 		EClass EDIT_UNIT = eINSTANCE.getEditUnit();
 
 		/**
-		 * The meta object literal for the '<em><b>Default Selection</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Disable Condition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EDIT_UNIT__DEFAULT_SELECTION = eINSTANCE.getEditUnit_DefaultSelection();
+		EReference EDIT_UNIT__DISABLE_CONDITION = eINSTANCE.getEditUnit_DisableCondition();
 
 		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' reference feature.
@@ -16835,6 +16652,14 @@ public interface WafPackage extends EPackage {
 		EReference DATA_UNIT__TITLE = eINSTANCE.getDataUnit_Title();
 
 		/**
+		 * The meta object literal for the '<em><b>Only Display When Not Empty</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = eINSTANCE.getDataUnit_OnlyDisplayWhenNotEmpty();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl <em>Details Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16843,14 +16668,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DETAILS_UNIT = eINSTANCE.getDetailsUnit();
-
-		/**
-		 * The meta object literal for the '<em><b>Only Display When Not Empty</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = eINSTANCE.getDetailsUnit_OnlyDisplayWhenNotEmpty();
 
 		/**
 		 * The meta object literal for the '<em><b>Omit Field Labels</b></em>' attribute feature.
@@ -17469,14 +17286,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FEATURE_SUPPORT_ACTION__ENABLE_WHEN = eINSTANCE.getFeatureSupportAction_EnableWhen();
-
-		/**
-		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FEATURE_SUPPORT_ACTION__URI_ELEMENT = eINSTANCE.getFeatureSupportAction_UriElement();
 
 		/**
 		 * The meta object literal for the '<em><b>File Extension</b></em>' attribute feature.

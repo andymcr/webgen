@@ -198,8 +198,6 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="featuresMustBeFromContentType" value="let entities : OrderedSet(persistence::EntityOrView)&#xD;&#xA;&#x9;= if self.oclIsKindOf(SingletonUnit) then&#xD;&#xA;&#x9;&#x9;&#x9;OrderedSet{self.oclAsType(SingletonUnit).contentType}&#xD;&#xA;&#x9;&#x9;else if self.oclIsKindOf(CollectionUnit) then&#xD;&#xA;&#x9;&#x9;&#x9;self.oclAsType(CollectionUnit).contentType&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;OrderedSet{}&#xD;&#xA;&#x9;&#x9;endif endif&#xD;&#xA;&#x9;in let eovFeatures : Collection(persistence::Feature)&#xD;&#xA;&#x9;&#x9;= entities->collect(eov | eov.allFeatures)&#xD;&#xA;&#x9;&#x9;in displayFields&#xD;&#xA;&#x9;&#x9;&#x9;->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)&#xD;&#xA;&#x9;&#x9;&#x9;->select(f | &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;not f.oclAsType(UnitElement).attribute.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;not f.oclAsType(UnitAssociation).association.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif)&#xD;&#xA;&#x9;&#x9;&#x9;->forAll(f | &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;eovFeatures->includes(f.oclAsType(UnitElement).attribute)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;eovFeatures->includes(f.oclAsType(UnitAssociation).association)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif)"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayFields" upperBound="-1"
         eType="#//UnitField" containment="true" eOpposite="#//UnitField/displayedOn"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="supportActions" upperBound="-1"
@@ -416,7 +414,8 @@
       <details key="canOnlyTitleWithSingletons" value="not title.oclIsUndefined() implies &#xD;&#xA;&#x9;if title.oclIsKindOf(persistence::EntityAttribute) then&#xD;&#xA;&#x9;&#x9;title.oclAsType(persistence::EntityAttribute).cardinality &lt;> persistence::Cardinality::Many&#xD;&#xA;&#x9;else if title.oclIsKindOf(persistence::EncapsulatedAttribute) then&#xD;&#xA;&#x9;&#x9;title.oclAsType(persistence::EncapsulatedAttribute).cardinality &lt;> persistence::Cardinality::Many&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif endif"/>
       <details key="selectionValidChoice" value="not defaultSelection.oclIsUndefined() implies&#xD;&#xA;&#x9;pageDisplayedOn.webUI.services.services&#xD;&#xA;&#x9;&#x9;->select(s : service::Service | not s.serves.oclIsUndefined())&#xD;&#xA;&#x9;&#x9;->select(s : service::Service | contentType = s.serves)&#xD;&#xA;&#x9;&#x9;->collect(s : service::Service | s.selections)&#xD;&#xA;&#x9;&#x9;->includes(defaultSelection)"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="disableCondition" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" ordered="false"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Label"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="confirmDestination" ordered="false"
@@ -468,6 +467,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" ordered="false"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Label"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onlyDisplayWhenNotEmpty"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DetailsUnit" eSuperTypes="#//DataUnit #//SingletonUnit #//SelectableUnit">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -477,9 +479,6 @@
       <details key="selectionMustBeSingleton" value="not defaultSelection.oclIsUndefined() implies&#xD;&#xA;&#x9;defaultSelection.limit = 1"/>
       <details key="selectionValidChoice" value="not defaultSelection.oclIsUndefined() implies&#xD;&#xA;&#x9;pageDisplayedOn.webUI.services.services&#xD;&#xA;&#x9;&#x9;->select(s : service::Service | not s.serves.oclIsUndefined())&#xD;&#xA;&#x9;&#x9;->select(s : service::Service | contentType = s.serves)&#xD;&#xA;&#x9;&#x9;->collect(s : service::Service | s.selections)&#xD;&#xA;&#x9;&#x9;->includes(defaultSelection)"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onlyDisplayWhenNotEmpty"
-        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitFieldLabels" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"

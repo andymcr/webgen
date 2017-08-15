@@ -3,15 +3,14 @@
 package uk.ac.man.cs.mdsd.webgen.webui.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
-
-import uk.ac.man.cs.mdsd.webgen.service.Selection;
-
 import uk.ac.man.cs.mdsd.webgen.webui.EditUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.Page;
 import uk.ac.man.cs.mdsd.webgen.webui.SingletonUnit;
@@ -26,7 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.EditUnitImpl#getContentType <em>Content Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.EditUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.EditUnitImpl#getDisableCondition <em>Disable Condition</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.EditUnitImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.EditUnitImpl#getConfirmDestination <em>Confirm Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.EditUnitImpl#getConfirmLabel <em>Confirm Label</em>}</li>
@@ -50,14 +49,14 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	protected EntityOrView contentType;
 
 	/**
-	 * The cached value of the '{@link #getDefaultSelection() <em>Default Selection</em>}' reference.
+	 * The cached value of the '{@link #getDisableCondition() <em>Disable Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDefaultSelection()
+	 * @see #getDisableCondition()
 	 * @generated
 	 * @ordered
 	 */
-	protected Selection defaultSelection;
+	protected Predicate disableCondition;
 
 	/**
 	 * The cached value of the '{@link #getTitle() <em>Title</em>}' reference.
@@ -231,16 +230,23 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Selection getDefaultSelection() {
-		if (defaultSelection != null && defaultSelection.eIsProxy()) {
-			InternalEObject oldDefaultSelection = (InternalEObject)defaultSelection;
-			defaultSelection = (Selection)eResolveProxy(oldDefaultSelection);
-			if (defaultSelection != oldDefaultSelection) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.EDIT_UNIT__DEFAULT_SELECTION, oldDefaultSelection, defaultSelection));
-			}
+	public Predicate getDisableCondition() {
+		return disableCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDisableCondition(Predicate newDisableCondition, NotificationChain msgs) {
+		Predicate oldDisableCondition = disableCondition;
+		disableCondition = newDisableCondition;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebuiPackage.EDIT_UNIT__DISABLE_CONDITION, oldDisableCondition, newDisableCondition);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return defaultSelection;
+		return msgs;
 	}
 
 	/**
@@ -248,20 +254,18 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Selection basicGetDefaultSelection() {
-		return defaultSelection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDefaultSelection(Selection newDefaultSelection) {
-		Selection oldDefaultSelection = defaultSelection;
-		defaultSelection = newDefaultSelection;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.EDIT_UNIT__DEFAULT_SELECTION, oldDefaultSelection, defaultSelection));
+	public void setDisableCondition(Predicate newDisableCondition) {
+		if (newDisableCondition != disableCondition) {
+			NotificationChain msgs = null;
+			if (disableCondition != null)
+				msgs = ((InternalEObject)disableCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.EDIT_UNIT__DISABLE_CONDITION, null, msgs);
+			if (newDisableCondition != null)
+				msgs = ((InternalEObject)newDisableCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.EDIT_UNIT__DISABLE_CONDITION, null, msgs);
+			msgs = basicSetDisableCondition(newDisableCondition, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.EDIT_UNIT__DISABLE_CONDITION, newDisableCondition, newDisableCondition));
 	}
 
 	/**
@@ -468,14 +472,27 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebuiPackage.EDIT_UNIT__DISABLE_CONDITION:
+				return basicSetDisableCondition(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case WebuiPackage.EDIT_UNIT__CONTENT_TYPE:
 				if (resolve) return getContentType();
 				return basicGetContentType();
-			case WebuiPackage.EDIT_UNIT__DEFAULT_SELECTION:
-				if (resolve) return getDefaultSelection();
-				return basicGetDefaultSelection();
+			case WebuiPackage.EDIT_UNIT__DISABLE_CONDITION:
+				return getDisableCondition();
 			case WebuiPackage.EDIT_UNIT__TITLE:
 				if (resolve) return getTitle();
 				return basicGetTitle();
@@ -508,8 +525,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 			case WebuiPackage.EDIT_UNIT__CONTENT_TYPE:
 				setContentType((EntityOrView)newValue);
 				return;
-			case WebuiPackage.EDIT_UNIT__DEFAULT_SELECTION:
-				setDefaultSelection((Selection)newValue);
+			case WebuiPackage.EDIT_UNIT__DISABLE_CONDITION:
+				setDisableCondition((Predicate)newValue);
 				return;
 			case WebuiPackage.EDIT_UNIT__TITLE:
 				setTitle((Label)newValue);
@@ -547,8 +564,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 			case WebuiPackage.EDIT_UNIT__CONTENT_TYPE:
 				setContentType((EntityOrView)null);
 				return;
-			case WebuiPackage.EDIT_UNIT__DEFAULT_SELECTION:
-				setDefaultSelection((Selection)null);
+			case WebuiPackage.EDIT_UNIT__DISABLE_CONDITION:
+				setDisableCondition((Predicate)null);
 				return;
 			case WebuiPackage.EDIT_UNIT__TITLE:
 				setTitle((Label)null);
@@ -585,8 +602,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 		switch (featureID) {
 			case WebuiPackage.EDIT_UNIT__CONTENT_TYPE:
 				return contentType != null;
-			case WebuiPackage.EDIT_UNIT__DEFAULT_SELECTION:
-				return defaultSelection != null;
+			case WebuiPackage.EDIT_UNIT__DISABLE_CONDITION:
+				return disableCondition != null;
 			case WebuiPackage.EDIT_UNIT__TITLE:
 				return title != null;
 			case WebuiPackage.EDIT_UNIT__CONFIRM_DESTINATION:

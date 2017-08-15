@@ -511,7 +511,6 @@ rule StaticUnit {
 abstract rule DynamicUnit {
 	from website : Website!DynamicUnit
 	to waf : WAF!DynamicUnit (
-		enableWhen <- website.enableWhen,
 		displayFields <- website.displayFields,
 		supportActions <- website.supportActions,
 		header <- website.header,
@@ -784,7 +783,7 @@ abstract rule CollectionUnit {
 abstract rule EditUnit {
 	from website : Website!EditUnit
 	to waf : WAF!EditUnit (
-		defaultSelection <- website.defaultSelection,
+		disableCondition <- website.disableCondition,
 		title <-
 			if website.title.oclIsUndefined() then
 				website.title
@@ -894,7 +893,8 @@ abstract rule DataUnit {
 				website.title
 			else
 				website.title.findOrmLabel()
-			endif
+			endif,
+		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty
 	)
 }
 
@@ -902,7 +902,6 @@ abstract rule DataUnit {
 rule DetailsUnit {
 	from website : Website!DetailsUnit
 	to waf : WAF!DetailsUnit (
-		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
 		omitFieldLabels <- website.omitFieldLabels
 	)
 }

@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.DataUnit#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.DataUnit#getTitle <em>Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.DataUnit#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getDataUnit()
@@ -77,5 +78,32 @@ public interface DataUnit extends DynamicUnit {
 	 * @generated
 	 */
 	void setTitle(Label value);
+
+	/**
+	 * Returns the value of the '<em><b>Only Display When Not Empty</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Only Display When Not Empty</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Only Display When Not Empty</em>' attribute.
+	 * @see #setOnlyDisplayWhenNotEmpty(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getDataUnit_OnlyDisplayWhenNotEmpty()
+	 * @model default="false" ordered="false"
+	 * @generated
+	 */
+	boolean isOnlyDisplayWhenNotEmpty();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.DataUnit#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Only Display When Not Empty</em>' attribute.
+	 * @see #isOnlyDisplayWhenNotEmpty()
+	 * @generated
+	 */
+	void setOnlyDisplayWhenNotEmpty(boolean value);
 
 } // DataUnit

@@ -11,7 +11,6 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.DetailsUnit#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.DetailsUnit#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.DetailsUnit#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.DetailsUnit#getContentClass <em>Content Class</em>}</li>
@@ -23,33 +22,6 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  * @generated
  */
 public interface DetailsUnit extends DataUnit, SingletonUnit, SelectableUnit {
-	/**
-	 * Returns the value of the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Only Display When Not Empty</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Only Display When Not Empty</em>' attribute.
-	 * @see #setOnlyDisplayWhenNotEmpty(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getDetailsUnit_OnlyDisplayWhenNotEmpty()
-	 * @model default="false" ordered="false"
-	 * @generated
-	 */
-	boolean isOnlyDisplayWhenNotEmpty();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.DetailsUnit#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Only Display When Not Empty</em>' attribute.
-	 * @see #isOnlyDisplayWhenNotEmpty()
-	 * @generated
-	 */
-	void setOnlyDisplayWhenNotEmpty(boolean value);
-
 	/**
 	 * Returns the value of the '<em><b>Omit Field Labels</b></em>' attribute.
 	 * The default value is <code>"false"</code>.

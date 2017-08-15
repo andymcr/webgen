@@ -219,7 +219,6 @@ class StaticUnit extends ContentUnit {
 
 abstract class DynamicUnit extends ContentUnit {
 	contains UnitField[] displayFields opposite displayedOn
-	contains Predicate enableWhen
 	contains UnitSupportAction[] supportActions
 	String header
 	String footer
@@ -342,7 +341,7 @@ interface CollectionUnit extends SelectableUnit {
 }
 
 abstract class EditUnit extends DynamicUnit, SingletonUnit {
-	refers Selection defaultSelection
+	contains Predicate disableCondition
 	refers Label title
 	refers Page confirmDestination
 	String[1] confirmLabel
@@ -372,10 +371,10 @@ class UpdateUnit extends EditUnit, SelectableUnit {
 abstract class DataUnit extends DynamicUnit {
 	refers Selection defaultSelection
 	refers Label title
+	boolean onlyDisplayWhenNotEmpty
 }
 
 class DetailsUnit extends DataUnit, SingletonUnit, SelectableUnit {
-	boolean onlyDisplayWhenNotEmpty
 	boolean omitFieldLabels
 }
 
@@ -505,6 +504,5 @@ class FeatureSupportAction extends InlineAction {
 	String confirmMessage
 	String requiresRole
 	contains Predicate enableWhen
-	String[1] uriElement
 	String fileExtension
 }

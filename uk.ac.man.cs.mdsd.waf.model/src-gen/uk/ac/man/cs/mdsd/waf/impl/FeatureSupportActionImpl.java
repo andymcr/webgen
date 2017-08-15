@@ -29,7 +29,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FeatureSupportActionImpl#getConfirmMessage <em>Confirm Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FeatureSupportActionImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FeatureSupportActionImpl#getEnableWhen <em>Enable When</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FeatureSupportActionImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FeatureSupportActionImpl#getFileExtension <em>File Extension</em>}</li>
  * </ul>
  *
@@ -95,26 +94,6 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 	 * @ordered
 	 */
 	protected Predicate enableWhen;
-
-	/**
-	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUriElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String URI_ELEMENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUriElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFileExtension() <em>File Extension</em>}' attribute.
@@ -283,27 +262,6 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getUriElement() {
-		return uriElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUriElement(String newUriElement) {
-		String oldUriElement = uriElement;
-		uriElement = newUriElement;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT, oldUriElement, uriElement));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getFileExtension() {
 		return fileExtension;
 	}
@@ -351,8 +309,6 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 				return getRequiresRole();
 			case WafPackage.FEATURE_SUPPORT_ACTION__ENABLE_WHEN:
 				return getEnableWhen();
-			case WafPackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:
-				return getUriElement();
 			case WafPackage.FEATURE_SUPPORT_ACTION__FILE_EXTENSION:
 				return getFileExtension();
 		}
@@ -378,9 +334,6 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 				return;
 			case WafPackage.FEATURE_SUPPORT_ACTION__ENABLE_WHEN:
 				setEnableWhen((Predicate)newValue);
-				return;
-			case WafPackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:
-				setUriElement((String)newValue);
 				return;
 			case WafPackage.FEATURE_SUPPORT_ACTION__FILE_EXTENSION:
 				setFileExtension((String)newValue);
@@ -409,9 +362,6 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 			case WafPackage.FEATURE_SUPPORT_ACTION__ENABLE_WHEN:
 				setEnableWhen((Predicate)null);
 				return;
-			case WafPackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:
-				setUriElement(URI_ELEMENT_EDEFAULT);
-				return;
 			case WafPackage.FEATURE_SUPPORT_ACTION__FILE_EXTENSION:
 				setFileExtension(FILE_EXTENSION_EDEFAULT);
 				return;
@@ -435,8 +385,6 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WafPackage.FEATURE_SUPPORT_ACTION__ENABLE_WHEN:
 				return enableWhen != null;
-			case WafPackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:
-				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 			case WafPackage.FEATURE_SUPPORT_ACTION__FILE_EXTENSION:
 				return FILE_EXTENSION_EDEFAULT == null ? fileExtension != null : !FILE_EXTENSION_EDEFAULT.equals(fileExtension);
 		}
@@ -457,8 +405,6 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 		result.append(confirmMessage);
 		result.append(", requiresRole: ");
 		result.append(requiresRole);
-		result.append(", uriElement: ");
-		result.append(uriElement);
 		result.append(", fileExtension: ");
 		result.append(fileExtension);
 		result.append(')');

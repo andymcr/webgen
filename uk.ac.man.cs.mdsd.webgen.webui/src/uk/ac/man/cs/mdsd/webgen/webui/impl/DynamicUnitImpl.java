@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitField;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitSupportAction;
@@ -28,7 +27,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicUnitImpl#getEnableWhen <em>Enable When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
@@ -42,16 +40,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * @generated
  */
 public abstract class DynamicUnitImpl extends ContentUnitImpl implements DynamicUnit {
-	/**
-	 * The cached value of the '{@link #getEnableWhen() <em>Enable When</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnableWhen()
-	 * @generated
-	 * @ordered
-	 */
-	protected Predicate enableWhen;
-
 	/**
 	 * The cached value of the '{@link #getDisplayFields() <em>Display Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -209,49 +197,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	protected EClass eStaticClass() {
 		return WebuiPackage.Literals.DYNAMIC_UNIT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Predicate getEnableWhen() {
-		return enableWhen;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetEnableWhen(Predicate newEnableWhen, NotificationChain msgs) {
-		Predicate oldEnableWhen = enableWhen;
-		enableWhen = newEnableWhen;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebuiPackage.DYNAMIC_UNIT__ENABLE_WHEN, oldEnableWhen, newEnableWhen);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEnableWhen(Predicate newEnableWhen) {
-		if (newEnableWhen != enableWhen) {
-			NotificationChain msgs = null;
-			if (enableWhen != null)
-				msgs = ((InternalEObject)enableWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.DYNAMIC_UNIT__ENABLE_WHEN, null, msgs);
-			if (newEnableWhen != null)
-				msgs = ((InternalEObject)newEnableWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.DYNAMIC_UNIT__ENABLE_WHEN, null, msgs);
-			msgs = basicSetEnableWhen(newEnableWhen, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.DYNAMIC_UNIT__ENABLE_WHEN, newEnableWhen, newEnableWhen));
 	}
 
 	/**
@@ -427,8 +372,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebuiPackage.DYNAMIC_UNIT__ENABLE_WHEN:
-				return basicSetEnableWhen(null, msgs);
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WebuiPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
@@ -445,8 +388,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebuiPackage.DYNAMIC_UNIT__ENABLE_WHEN:
-				return getEnableWhen();
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
 			case WebuiPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
@@ -476,9 +417,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebuiPackage.DYNAMIC_UNIT__ENABLE_WHEN:
-				setEnableWhen((Predicate)newValue);
-				return;
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				getDisplayFields().addAll((Collection<? extends UnitField>)newValue);
@@ -517,9 +455,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebuiPackage.DYNAMIC_UNIT__ENABLE_WHEN:
-				setEnableWhen((Predicate)null);
-				return;
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
@@ -556,8 +491,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebuiPackage.DYNAMIC_UNIT__ENABLE_WHEN:
-				return enableWhen != null;
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
 			case WebuiPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:

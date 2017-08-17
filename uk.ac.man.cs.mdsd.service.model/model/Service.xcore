@@ -74,7 +74,6 @@ class Filter extends NamedDisplayElement, FormalParameterList {
 	String methodName
 }
 abstract class Order {
-	@GenModel(propertyCategory="")
 	contains Variable[1] path
 }
 

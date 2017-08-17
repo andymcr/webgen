@@ -1411,7 +1411,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_TopMenuRank() {
+	public EAttribute getPage_TopMenuRequiresRole() {
 		return (EAttribute)pageEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1420,7 +1420,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_NavigationLabel() {
+	public EAttribute getPage_TopMenuRank() {
 		return (EAttribute)pageEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1429,8 +1429,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPage_NavigationLabel() {
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getPage_SideMenu() {
-		return (EReference)pageEClass.getEStructuralFeatures().get(7);
+		return (EReference)pageEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1439,7 +1448,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getPage_StyleClass() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -3464,6 +3473,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(pageEClass, PAGE__CHILD_PAGES);
 		createEAttribute(pageEClass, PAGE__URI_ELEMENT);
 		createEAttribute(pageEClass, PAGE__TOP_MENU_OPTION);
+		createEAttribute(pageEClass, PAGE__TOP_MENU_REQUIRES_ROLE);
 		createEAttribute(pageEClass, PAGE__TOP_MENU_RANK);
 		createEAttribute(pageEClass, PAGE__NAVIGATION_LABEL);
 		createEReference(pageEClass, PAGE__SIDE_MENU);
@@ -3942,6 +3952,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getPage_ChildPages(), this.getPage(), this.getPage_ParentPage(), "childPages", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_UriElement(), theEcorePackage.getEString(), "uriElement", "", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_TopMenuOption(), this.getPageTopMenuOptions(), "topMenuOption", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPage_TopMenuRequiresRole(), theEcorePackage.getEString(), "topMenuRequiresRole", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_TopMenuRank(), theEcorePackage.getEInt(), "topMenuRank", "65535", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_NavigationLabel(), theEcorePackage.getEString(), "navigationLabel", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_SideMenu(), this.getGlobalMenu(), null, "sideMenu", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

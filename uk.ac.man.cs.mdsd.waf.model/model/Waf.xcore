@@ -175,6 +175,7 @@ class Page extends NamedDisplayElement, UnitContainer {
 	refers Page[] childPages opposite parentPage
 	String uriElement = ""
 	PageTopMenuOptions topMenuOption
+	String topMenuRequiresRole
 	int topMenuRank = "65535"
 	String navigationLabel
 	refers GlobalMenu sideMenu

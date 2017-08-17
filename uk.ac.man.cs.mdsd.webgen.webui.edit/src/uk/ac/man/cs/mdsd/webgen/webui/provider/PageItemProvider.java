@@ -53,6 +53,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 
 			addUriElementPropertyDescriptor(object);
 			addTopMenuOptionPropertyDescriptor(object);
+			addTopMenuRequiresRolePropertyDescriptor(object);
 			addTopMenuRankPropertyDescriptor(object);
 			addNavigationLabelPropertyDescriptor(object);
 			addSideMenuPropertyDescriptor(object);
@@ -102,6 +103,28 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_NavigationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Top Menu Requires Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTopMenuRequiresRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_topMenuRequiresRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_topMenuRequiresRole_feature", "_UI_Page_type"),
+				 WebuiPackage.Literals.PAGE__TOP_MENU_REQUIRES_ROLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_SecurityPropertyCategory"),
 				 null));
 	}
 
@@ -264,6 +287,7 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 		switch (notification.getFeatureID(Page.class)) {
 			case WebuiPackage.PAGE__URI_ELEMENT:
 			case WebuiPackage.PAGE__TOP_MENU_OPTION:
+			case WebuiPackage.PAGE__TOP_MENU_REQUIRES_ROLE:
 			case WebuiPackage.PAGE__TOP_MENU_RANK:
 			case WebuiPackage.PAGE__NAVIGATION_LABEL:
 			case WebuiPackage.PAGE__STYLE_CLASS:

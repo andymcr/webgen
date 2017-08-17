@@ -1399,13 +1399,22 @@ public interface WafPackage extends EPackage {
 	int PAGE__TOP_MENU_OPTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Top Menu Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__TOP_MENU_REQUIRES_ROLE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The feature id for the '<em><b>Top Menu Rank</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__TOP_MENU_RANK = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int PAGE__TOP_MENU_RANK = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Navigation Label</b></em>' attribute.
@@ -1414,7 +1423,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__NAVIGATION_LABEL = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int PAGE__NAVIGATION_LABEL = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -1423,7 +1432,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__SIDE_MENU = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int PAGE__SIDE_MENU = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -1432,7 +1441,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int PAGE__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Page</em>' class.
@@ -1441,7 +1450,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int PAGE_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of operations of the '<em>Page</em>' class.
@@ -12540,6 +12549,17 @@ public interface WafPackage extends EPackage {
 	EAttribute getPage_TopMenuOption();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.Page#getTopMenuRequiresRole <em>Top Menu Requires Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Top Menu Requires Role</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.Page#getTopMenuRequiresRole()
+	 * @see #getPage()
+	 * @generated
+	 */
+	EAttribute getPage_TopMenuRequiresRole();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.Page#getTopMenuRank <em>Top Menu Rank</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15546,6 +15566,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PAGE__TOP_MENU_OPTION = eINSTANCE.getPage_TopMenuOption();
+
+		/**
+		 * The meta object literal for the '<em><b>Top Menu Requires Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PAGE__TOP_MENU_REQUIRES_ROLE = eINSTANCE.getPage_TopMenuRequiresRole();
 
 		/**
 		 * The meta object literal for the '<em><b>Top Menu Rank</b></em>' attribute feature.

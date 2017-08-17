@@ -425,6 +425,7 @@ rule Page {
 			else
 				#IncludeWhenAuthenticated
 			endif endif,
+		topMenuRequiresRole <- website.topMenuRequiresRole,
 		topMenuRank <- website.topMenuRank,
 		navigationLabel <-
 			if not website.navigationLabel.oclIsUndefined() and website.navigationLabel <> '' then

@@ -164,6 +164,7 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Top Menu Requires Role</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Top Menu Requires Role</em>' attribute isn't clear,
@@ -173,7 +174,7 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * @return the value of the '<em>Top Menu Requires Role</em>' attribute.
 	 * @see #setTopMenuRequiresRole(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getPage_TopMenuRequiresRole()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getTopMenuRequiresRole();

@@ -128,7 +128,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TOP_MENU_REQUIRES_ROLE_EDEFAULT = null;
+	protected static final String TOP_MENU_REQUIRES_ROLE_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getTopMenuRequiresRole() <em>Top Menu Requires Role</em>}' attribute.

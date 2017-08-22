@@ -17,12 +17,33 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UpdateUnitImpl#isOnSaveContinueEditing <em>On Save Continue Editing</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UpdateUnitImpl#getStyleClass <em>Style Class</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
+	/**
+	 * The default value of the '{@link #isOnSaveContinueEditing() <em>On Save Continue Editing</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnSaveContinueEditing()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ON_SAVE_CONTINUE_EDITING_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOnSaveContinueEditing() <em>On Save Continue Editing</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnSaveContinueEditing()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean onSaveContinueEditing = ON_SAVE_CONTINUE_EDITING_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -67,6 +88,27 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isOnSaveContinueEditing() {
+		return onSaveContinueEditing;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOnSaveContinueEditing(boolean newOnSaveContinueEditing) {
+		boolean oldOnSaveContinueEditing = onSaveContinueEditing;
+		onSaveContinueEditing = newOnSaveContinueEditing;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING, oldOnSaveContinueEditing, onSaveContinueEditing));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getStyleClass() {
 		return styleClass;
 	}
@@ -91,6 +133,8 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebuiPackage.UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING:
+				return isOnSaveContinueEditing();
 			case WebuiPackage.UPDATE_UNIT__STYLE_CLASS:
 				return getStyleClass();
 		}
@@ -105,6 +149,9 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebuiPackage.UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING:
+				setOnSaveContinueEditing((Boolean)newValue);
+				return;
 			case WebuiPackage.UPDATE_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
 				return;
@@ -120,6 +167,9 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebuiPackage.UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING:
+				setOnSaveContinueEditing(ON_SAVE_CONTINUE_EDITING_EDEFAULT);
+				return;
 			case WebuiPackage.UPDATE_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
 				return;
@@ -135,6 +185,8 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebuiPackage.UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING:
+				return onSaveContinueEditing != ON_SAVE_CONTINUE_EDITING_EDEFAULT;
 			case WebuiPackage.UPDATE_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 		}
@@ -151,7 +203,9 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (styleClass: ");
+		result.append(" (onSaveContinueEditing: ");
+		result.append(onSaveContinueEditing);
+		result.append(", styleClass: ");
 		result.append(styleClass);
 		result.append(')');
 		return result.toString();

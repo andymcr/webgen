@@ -4589,13 +4589,22 @@ public interface WebuiPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__CUSTOMISE_VALUES = EDIT_UNIT__CUSTOMISE_VALUES;
 
 	/**
+	 * The feature id for the '<em><b>On Save Continue Editing</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING = EDIT_UNIT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Create Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT = EDIT_UNIT_FEATURE_COUNT + 0;
+	int CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT = EDIT_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Clear Label</b></em>' attribute.
@@ -4604,7 +4613,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__CLEAR_LABEL = EDIT_UNIT_FEATURE_COUNT + 1;
+	int CREATE_UPDATE_UNIT__CLEAR_LABEL = EDIT_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -4613,7 +4622,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__STYLE_CLASS = EDIT_UNIT_FEATURE_COUNT + 2;
+	int CREATE_UPDATE_UNIT__STYLE_CLASS = EDIT_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Create Update Unit</em>' class.
@@ -4622,7 +4631,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 3;
+	int CREATE_UPDATE_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Create Update Unit</em>' class.
@@ -4905,13 +4914,22 @@ public interface WebuiPackage extends EPackage {
 	int UPDATE_UNIT__CUSTOMISE_VALUES = EDIT_UNIT__CUSTOMISE_VALUES;
 
 	/**
+	 * The feature id for the '<em><b>On Save Continue Editing</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING = EDIT_UNIT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_UNIT__STYLE_CLASS = EDIT_UNIT_FEATURE_COUNT + 0;
+	int UPDATE_UNIT__STYLE_CLASS = EDIT_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Update Unit</em>' class.
@@ -4920,7 +4938,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 1;
+	int UPDATE_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Update Unit</em>' class.
@@ -12176,6 +12194,17 @@ public interface WebuiPackage extends EPackage {
 	EClass getCreateUpdateUnit();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.CreateUpdateUnit#isOnSaveContinueEditing <em>On Save Continue Editing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>On Save Continue Editing</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.CreateUpdateUnit#isOnSaveContinueEditing()
+	 * @see #getCreateUpdateUnit()
+	 * @generated
+	 */
+	EAttribute getCreateUpdateUnit_OnSaveContinueEditing();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.CreateUpdateUnit#getCreateUriElement <em>Create Uri Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12217,6 +12246,17 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getUpdateUnit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.UpdateUnit#isOnSaveContinueEditing <em>On Save Continue Editing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>On Save Continue Editing</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.UpdateUnit#isOnSaveContinueEditing()
+	 * @see #getUpdateUnit()
+	 * @generated
+	 */
+	EAttribute getUpdateUnit_OnSaveContinueEditing();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.UpdateUnit#getStyleClass <em>Style Class</em>}'.
@@ -14842,6 +14882,14 @@ public interface WebuiPackage extends EPackage {
 		EClass CREATE_UPDATE_UNIT = eINSTANCE.getCreateUpdateUnit();
 
 		/**
+		 * The meta object literal for the '<em><b>On Save Continue Editing</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREATE_UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING = eINSTANCE.getCreateUpdateUnit_OnSaveContinueEditing();
+
+		/**
 		 * The meta object literal for the '<em><b>Create Uri Element</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -14874,6 +14922,14 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EClass UPDATE_UNIT = eINSTANCE.getUpdateUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>On Save Continue Editing</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING = eINSTANCE.getUpdateUnit_OnSaveContinueEditing();
 
 		/**
 		 * The meta object literal for the '<em><b>Style Class</b></em>' attribute feature.

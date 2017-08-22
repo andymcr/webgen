@@ -46,9 +46,32 @@ public class UpdateUnitItemProvider extends EditUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOnSaveContinueEditingPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the On Save Continue Editing feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOnSaveContinueEditingPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UpdateUnit_onSaveContinueEditing_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UpdateUnit_onSaveContinueEditing_feature", "_UI_UpdateUnit_type"),
+				 WebuiPackage.Literals.UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -120,6 +143,7 @@ public class UpdateUnitItemProvider extends EditUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UpdateUnit.class)) {
+			case WebuiPackage.UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING:
 			case WebuiPackage.UPDATE_UNIT__STYLE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

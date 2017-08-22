@@ -46,11 +46,34 @@ public class CreateUpdateUnitItemProvider extends EditUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOnSaveContinueEditingPropertyDescriptor(object);
 			addCreateUriElementPropertyDescriptor(object);
 			addClearLabelPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the On Save Continue Editing feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOnSaveContinueEditingPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CreateUpdateUnit_onSaveContinueEditing_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CreateUpdateUnit_onSaveContinueEditing_feature", "_UI_CreateUpdateUnit_type"),
+				 WebuiPackage.Literals.CREATE_UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -166,6 +189,7 @@ public class CreateUpdateUnitItemProvider extends EditUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CreateUpdateUnit.class)) {
+			case WebuiPackage.CREATE_UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING:
 			case WebuiPackage.CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT:
 			case WebuiPackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 			case WebuiPackage.CREATE_UPDATE_UNIT__STYLE_CLASS:

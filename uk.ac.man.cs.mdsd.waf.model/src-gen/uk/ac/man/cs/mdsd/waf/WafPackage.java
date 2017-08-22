@@ -4309,13 +4309,22 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__CONTENT_TYPE = DYNAMIC_UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>On Save Continue Editing</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__ON_SAVE_CONTINUE_EDITING = DYNAMIC_UNIT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__DISABLE_CONDITION = DYNAMIC_UNIT_FEATURE_COUNT + 1;
+	int EDIT_UNIT__DISABLE_CONDITION = DYNAMIC_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -4324,7 +4333,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+	int EDIT_UNIT__TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
@@ -4333,7 +4342,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CONFIRM_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 3;
+	int EDIT_UNIT__CONFIRM_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
@@ -4342,7 +4351,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CONFIRM_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 4;
+	int EDIT_UNIT__CONFIRM_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -4351,7 +4360,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CANCEL_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 5;
+	int EDIT_UNIT__CANCEL_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -4360,7 +4369,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CANCEL_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 6;
+	int EDIT_UNIT__CANCEL_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Customise Values</b></em>' attribute.
@@ -4369,7 +4378,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CUSTOMISE_VALUES = DYNAMIC_UNIT_FEATURE_COUNT + 7;
+	int EDIT_UNIT__CUSTOMISE_VALUES = DYNAMIC_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Edit Unit</em>' class.
@@ -4378,7 +4387,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 8;
+	int EDIT_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Edit Unit</em>' class.
@@ -4587,6 +4596,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>On Save Continue Editing</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__ON_SAVE_CONTINUE_EDITING = EDIT_UNIT__ON_SAVE_CONTINUE_EDITING;
 
 	/**
 	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
@@ -4867,6 +4885,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UPDATE_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>On Save Continue Editing</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING = EDIT_UNIT__ON_SAVE_CONTINUE_EDITING;
 
 	/**
 	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
@@ -5174,6 +5201,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>On Save Continue Editing</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__ON_SAVE_CONTINUE_EDITING = EDIT_UNIT__ON_SAVE_CONTINUE_EDITING;
 
 	/**
 	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
@@ -5499,6 +5535,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UPDATE_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>On Save Continue Editing</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING = EDIT_UNIT__ON_SAVE_CONTINUE_EDITING;
 
 	/**
 	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
@@ -10408,6 +10453,15 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
 
 	/**
+	 * The feature id for the '<em><b>On Save Continue Editing</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__ON_SAVE_CONTINUE_EDITING = EDIT_UNIT__ON_SAVE_CONTINUE_EDITING;
+
+	/**
 	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13793,6 +13847,17 @@ public interface WafPackage extends EPackage {
 	EClass getEditUnit();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.EditUnit#isOnSaveContinueEditing <em>On Save Continue Editing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>On Save Continue Editing</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.EditUnit#isOnSaveContinueEditing()
+	 * @see #getEditUnit()
+	 * @generated
+	 */
+	EAttribute getEditUnit_OnSaveContinueEditing();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.EditUnit#getDisableCondition <em>Disable Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16528,6 +16593,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EDIT_UNIT = eINSTANCE.getEditUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>On Save Continue Editing</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EDIT_UNIT__ON_SAVE_CONTINUE_EDITING = eINSTANCE.getEditUnit_OnSaveContinueEditing();
 
 		/**
 		 * The meta object literal for the '<em><b>Disable Condition</b></em>' containment reference feature.

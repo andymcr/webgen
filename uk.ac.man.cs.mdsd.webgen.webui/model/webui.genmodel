@@ -277,11 +277,13 @@
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//CreateUnit/styleClass"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//CreateUpdateUnit">
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//CreateUpdateUnit/onSaveContinueEditing"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute webui.ecore#//CreateUpdateUnit/createUriElement"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//CreateUpdateUnit/clearLabel"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//CreateUpdateUnit/styleClass"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//UpdateUnit">
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//UpdateUnit/onSaveContinueEditing"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//UpdateUnit/styleClass"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//MapUnit">

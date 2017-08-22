@@ -15,6 +15,7 @@ import uk.ac.man.cs.mdsd.orm.Label;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.EditUnit#isOnSaveContinueEditing <em>On Save Continue Editing</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.EditUnit#getDisableCondition <em>Disable Condition</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.EditUnit#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.EditUnit#getConfirmDestination <em>Confirm Destination</em>}</li>
@@ -29,6 +30,33 @@ import uk.ac.man.cs.mdsd.orm.Label;
  * @generated
  */
 public interface EditUnit extends DynamicUnit, SingletonUnit {
+	/**
+	 * Returns the value of the '<em><b>On Save Continue Editing</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>On Save Continue Editing</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>On Save Continue Editing</em>' attribute.
+	 * @see #setOnSaveContinueEditing(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getEditUnit_OnSaveContinueEditing()
+	 * @model default="false" unique="false"
+	 * @generated
+	 */
+	boolean isOnSaveContinueEditing();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.EditUnit#isOnSaveContinueEditing <em>On Save Continue Editing</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>On Save Continue Editing</em>' attribute.
+	 * @see #isOnSaveContinueEditing()
+	 * @generated
+	 */
+	void setOnSaveContinueEditing(boolean value);
+
 	/**
 	 * Returns the value of the '<em><b>Disable Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

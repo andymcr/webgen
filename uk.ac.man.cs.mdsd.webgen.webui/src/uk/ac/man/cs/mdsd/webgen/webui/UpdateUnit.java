@@ -12,6 +12,7 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UpdateUnit#isOnSaveContinueEditing <em>On Save Continue Editing</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UpdateUnit#getStyleClass <em>Style Class</em>}</li>
  * </ul>
  *
@@ -20,6 +21,33 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  * @generated
  */
 public interface UpdateUnit extends EditUnit, SelectableUnit {
+	/**
+	 * Returns the value of the '<em><b>On Save Continue Editing</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>On Save Continue Editing</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>On Save Continue Editing</em>' attribute.
+	 * @see #setOnSaveContinueEditing(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUpdateUnit_OnSaveContinueEditing()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isOnSaveContinueEditing();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.UpdateUnit#isOnSaveContinueEditing <em>On Save Continue Editing</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>On Save Continue Editing</em>' attribute.
+	 * @see #isOnSaveContinueEditing()
+	 * @generated
+	 */
+	void setOnSaveContinueEditing(boolean value);
+
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.
 	 * The default value is <code>"unit,update_unit"</code>.

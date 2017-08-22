@@ -2446,8 +2446,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEditUnit_DisableCondition() {
-		return (EReference)editUnitEClass.getEStructuralFeatures().get(0);
+	public EAttribute getEditUnit_OnSaveContinueEditing() {
+		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2455,7 +2455,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEditUnit_Title() {
+	public EReference getEditUnit_DisableCondition() {
 		return (EReference)editUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2464,7 +2464,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEditUnit_ConfirmDestination() {
+	public EReference getEditUnit_Title() {
 		return (EReference)editUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -2473,8 +2473,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEditUnit_ConfirmDestination() {
+		return (EReference)editUnitEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getEditUnit_ConfirmLabel() {
-		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2483,7 +2492,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EReference getEditUnit_CancelDestination() {
-		return (EReference)editUnitEClass.getEStructuralFeatures().get(4);
+		return (EReference)editUnitEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2492,7 +2501,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getEditUnit_CancelLabel() {
-		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -2501,7 +2510,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getEditUnit_CustomiseValues() {
-		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -3609,6 +3618,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__LAST_PAGE_LABEL);
 
 		editUnitEClass = createEClass(EDIT_UNIT);
+		createEAttribute(editUnitEClass, EDIT_UNIT__ON_SAVE_CONTINUE_EDITING);
 		createEReference(editUnitEClass, EDIT_UNIT__DISABLE_CONDITION);
 		createEReference(editUnitEClass, EDIT_UNIT__TITLE);
 		createEReference(editUnitEClass, EDIT_UNIT__CONFIRM_DESTINATION);
@@ -4088,6 +4098,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getCollectionUnit_LastPageLabel(), theEcorePackage.getEString(), "lastPageLabel", ">>", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(editUnitEClass, EditUnit.class, "EditUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEditUnit_OnSaveContinueEditing(), theEcorePackage.getEBoolean(), "onSaveContinueEditing", "false", 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEditUnit_DisableCondition(), theExpressionPackage.getPredicate(), null, "disableCondition", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEditUnit_Title(), theOrmPackage.getLabel(), null, "title", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEditUnit_ConfirmDestination(), this.getPage(), null, "confirmDestination", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

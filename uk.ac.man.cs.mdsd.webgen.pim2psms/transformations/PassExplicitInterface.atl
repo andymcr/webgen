@@ -846,6 +846,7 @@ rule CreateUnit {
 rule CreateUpdateUnit {
 	from website : Website!CreateUpdateUnit
 	to waf : WAF!CreateUpdateUnit (
+		onSaveContinueEditing <- website.onSaveContinueEditing,
 		createUriElement <-
 			if website.createUriElement.trim() <> '' then
 				website.createUriElement.trim()
@@ -876,6 +877,7 @@ rule MapUnit {
 rule UpdateUnit {
 	from website : Website!UpdateUnit
 	to waf : WAF!UpdateUnit (
+		onSaveContinueEditing <- website.onSaveContinueEditing
 	)
 }
 

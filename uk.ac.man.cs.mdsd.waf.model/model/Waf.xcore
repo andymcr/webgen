@@ -342,6 +342,7 @@ interface CollectionUnit extends SelectableUnit {
 }
 
 abstract class EditUnit extends DynamicUnit, SingletonUnit {
+	boolean onSaveContinueEditing = "false"
 	contains Predicate disableCondition
 	refers Label title
 	refers Page confirmDestination

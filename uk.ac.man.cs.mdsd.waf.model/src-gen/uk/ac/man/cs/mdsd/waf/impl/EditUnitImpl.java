@@ -29,6 +29,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getContentType <em>Content Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#isOnSaveContinueEditing <em>On Save Continue Editing</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getDisableCondition <em>Disable Condition</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getConfirmDestination <em>Confirm Destination</em>}</li>
@@ -50,6 +51,26 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * @ordered
 	 */
 	protected EntityOrView contentType;
+
+	/**
+	 * The default value of the '{@link #isOnSaveContinueEditing() <em>On Save Continue Editing</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnSaveContinueEditing()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ON_SAVE_CONTINUE_EDITING_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOnSaveContinueEditing() <em>On Save Continue Editing</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnSaveContinueEditing()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean onSaveContinueEditing = ON_SAVE_CONTINUE_EDITING_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDisableCondition() <em>Disable Condition</em>}' containment reference.
@@ -206,6 +227,27 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 		contentType = newContentType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.EDIT_UNIT__CONTENT_TYPE, oldContentType, contentType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOnSaveContinueEditing() {
+		return onSaveContinueEditing;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOnSaveContinueEditing(boolean newOnSaveContinueEditing) {
+		boolean oldOnSaveContinueEditing = onSaveContinueEditing;
+		onSaveContinueEditing = newOnSaveContinueEditing;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING, oldOnSaveContinueEditing, onSaveContinueEditing));
 	}
 
 	/**
@@ -453,6 +495,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 			case WafPackage.EDIT_UNIT__CONTENT_TYPE:
 				if (resolve) return getContentType();
 				return basicGetContentType();
+			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
+				return isOnSaveContinueEditing();
 			case WafPackage.EDIT_UNIT__DISABLE_CONDITION:
 				return getDisableCondition();
 			case WafPackage.EDIT_UNIT__TITLE:
@@ -484,6 +528,9 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 		switch (featureID) {
 			case WafPackage.EDIT_UNIT__CONTENT_TYPE:
 				setContentType((EntityOrView)newValue);
+				return;
+			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
+				setOnSaveContinueEditing((Boolean)newValue);
 				return;
 			case WafPackage.EDIT_UNIT__DISABLE_CONDITION:
 				setDisableCondition((Predicate)newValue);
@@ -521,6 +568,9 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 			case WafPackage.EDIT_UNIT__CONTENT_TYPE:
 				setContentType((EntityOrView)null);
 				return;
+			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
+				setOnSaveContinueEditing(ON_SAVE_CONTINUE_EDITING_EDEFAULT);
+				return;
 			case WafPackage.EDIT_UNIT__DISABLE_CONDITION:
 				setDisableCondition((Predicate)null);
 				return;
@@ -556,6 +606,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 		switch (featureID) {
 			case WafPackage.EDIT_UNIT__CONTENT_TYPE:
 				return contentType != null;
+			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
+				return onSaveContinueEditing != ON_SAVE_CONTINUE_EDITING_EDEFAULT;
 			case WafPackage.EDIT_UNIT__DISABLE_CONDITION:
 				return disableCondition != null;
 			case WafPackage.EDIT_UNIT__TITLE:
@@ -616,7 +668,9 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (confirmLabel: ");
+		result.append(" (onSaveContinueEditing: ");
+		result.append(onSaveContinueEditing);
+		result.append(", confirmLabel: ");
 		result.append(confirmLabel);
 		result.append(", cancelLabel: ");
 		result.append(cancelLabel);

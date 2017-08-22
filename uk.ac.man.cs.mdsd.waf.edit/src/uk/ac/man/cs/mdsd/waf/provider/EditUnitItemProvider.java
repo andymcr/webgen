@@ -50,6 +50,7 @@ public class EditUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addContentTypePropertyDescriptor(object);
+			addOnSaveContinueEditingPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addConfirmDestinationPropertyDescriptor(object);
 			addConfirmLabelPropertyDescriptor(object);
@@ -78,6 +79,28 @@ public class EditUnitItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the On Save Continue Editing feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOnSaveContinueEditingPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_onSaveContinueEditing_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_onSaveContinueEditing_feature", "_UI_EditUnit_type"),
+				 WafPackage.Literals.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -270,6 +293,7 @@ public class EditUnitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EditUnit.class)) {
+			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
 			case WafPackage.EDIT_UNIT__CONFIRM_LABEL:
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
 			case WafPackage.EDIT_UNIT__CUSTOMISE_VALUES:

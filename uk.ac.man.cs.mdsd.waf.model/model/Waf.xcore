@@ -16,7 +16,6 @@ import uk.ac.man.cs.mdsd.orm.Attribute
 import uk.ac.man.cs.mdsd.orm.DataType
 import uk.ac.man.cs.mdsd.orm.DateDetails
 import uk.ac.man.cs.mdsd.orm.EntityOrView
-import uk.ac.man.cs.mdsd.orm.Feature
 import uk.ac.man.cs.mdsd.orm.Label
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
 import uk.ac.man.cs.mdsd.orm.NamedElement

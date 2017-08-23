@@ -116,15 +116,15 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitAssociation) {
+						final UnitAssociation association = (UnitAssociation) object;
 						final Set<Label> labels = new HashSet<Label>();
-//						for (Service service : getSourceServices((UnitAssociation) object)) {
-//							labels.addAll(getFeatureAttributes(service));
-//							for (EntityOrView entityOrView : service.getEncapsulates()) {
-//								labels.addAll(entityOrView.getLabels());
-//							}
-//						}
+						if (association.getAssociation() != null) {
+							labels.addAll(association.getAssociation().getTargetEntityX().getLabels());
+						}
+
 						return labels;
 					}
+
 					return Collections.emptySet();
 				}
 			});

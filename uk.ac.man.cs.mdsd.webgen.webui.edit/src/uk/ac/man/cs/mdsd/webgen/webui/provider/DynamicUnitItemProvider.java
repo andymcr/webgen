@@ -19,6 +19,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithContainment;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
@@ -339,6 +340,28 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		return contentType;
 	}
 
+	protected EntityOrView getRoutingType(final DynamicUnit unit) {
+		if (unit instanceof SingletonUnit) {
+			final SingletonUnit singleton = (SingletonUnit) unit;
+			return singleton.getContentType();
+		}
+
+		if (unit instanceof CollectionUnit) {
+			final CollectionUnit collection = (CollectionUnit) unit;
+			if (collection.getSelection() != null) {
+				if (collection.getSelection().getSelectVia() != null) {
+					return collection.getSelection().getSelectVia().getTargetEntityX();
+				}
+			}
+			final Association association = getContainingAssociation(unit);
+			if (association != null) {
+				association.getSourceEntityX();
+			}
+		}
+
+		return null;
+	}
+
 	protected Set<Attribute> getAttributes(final DynamicUnit unit) {
 		final Set<Attribute> attributes = new HashSet<Attribute>();
 
@@ -357,6 +380,19 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		}
 
 		return associations;
+	}
+
+	protected Association getContainingAssociation(final DynamicUnit unit) {
+		for (Association association : getAssociations(unit)) {
+			if (association instanceof AssociationWithContainment) {
+				if (!getContentType(unit).contains(
+						(AssociationWithContainment) association.getSourceEntityX())) {
+					return association;
+				}
+			}
+		}
+
+		return null;
 	}
 
 	protected Set<Label> getLabels(final EntityOrView entityOrView) {

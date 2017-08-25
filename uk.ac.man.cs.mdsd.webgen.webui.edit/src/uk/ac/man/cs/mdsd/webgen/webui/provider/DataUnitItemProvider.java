@@ -19,7 +19,10 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
+import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DataUnit;
+import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.webui.SingletonUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
 /**
@@ -101,13 +104,21 @@ public class DataUnitItemProvider extends DynamicUnitItemProvider {
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof DataUnit) {
-						final DataUnit unit = (DataUnit) object;
+					if (object instanceof SingletonUnit) {
+						final SingletonUnit unit = (SingletonUnit) object;
 						final Set<Label> labels = new HashSet<Label>();
-						for (EntityOrView entity : getContentType(unit)) {
-							labels.addAll(getLabels(entity));
-						}
+						labels.addAll(unit.getContentType().getAttributes());
+						labels.addAll(unit.getContentType().getLabels());
 						return labels;
+					}
+					if (object instanceof CollectionUnit) {
+						final EntityOrView routingType = getRoutingType((DynamicUnit) object);
+						if (routingType != null) {
+							final Set<Label> labels = new HashSet<Label>();
+							labels.addAll(routingType.getAttributes());
+							labels.addAll(routingType.getLabels());
+							return labels;
+						}
 					}
 
 					return Collections.emptySet();

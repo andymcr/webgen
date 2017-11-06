@@ -64,7 +64,7 @@ class Selection extends NamedElement, FormalParameterList {
 	contains Filter[] filters opposite selection
 	contains Order[] ordering
 	int limit = "0"
-	refers EntityAssociation selectVia
+	refers EntityAssociation[] selectPath
 	String methodName
 }
 

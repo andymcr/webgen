@@ -162,14 +162,14 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	protected int limit = LIMIT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSelectVia() <em>Select Via</em>}' reference.
+	 * The cached value of the '{@link #getSelectVia() <em>Select Via</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSelectVia()
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityAssociation selectVia;
+	protected EList<EntityAssociation> selectVia;
 
 	/**
 	 * The default value of the '{@link #getMethodName() <em>Method Name</em>}' attribute.
@@ -401,37 +401,11 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityAssociation getSelectVia() {
-		if (selectVia != null && selectVia.eIsProxy()) {
-			InternalEObject oldSelectVia = (InternalEObject)selectVia;
-			selectVia = (EntityAssociation)eResolveProxy(oldSelectVia);
-			if (selectVia != oldSelectVia) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ServicePackage.SELECTION__SELECT_VIA, oldSelectVia, selectVia));
-			}
+	public EList<EntityAssociation> getSelectVia() {
+		if (selectVia == null) {
+			selectVia = new EObjectResolvingEList<EntityAssociation>(EntityAssociation.class, this, ServicePackage.SELECTION__SELECT_VIA);
 		}
 		return selectVia;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityAssociation basicGetSelectVia() {
-		return selectVia;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectVia(EntityAssociation newSelectVia) {
-		EntityAssociation oldSelectVia = selectVia;
-		selectVia = newSelectVia;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.SELECTION__SELECT_VIA, oldSelectVia, selectVia));
 	}
 
 	/**
@@ -539,8 +513,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case ServicePackage.SELECTION__LIMIT:
 				return getLimit();
 			case ServicePackage.SELECTION__SELECT_VIA:
-				if (resolve) return getSelectVia();
-				return basicGetSelectVia();
+				return getSelectVia();
 			case ServicePackage.SELECTION__METHOD_NAME:
 				return getMethodName();
 		}
@@ -589,7 +562,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				setLimit((Integer)newValue);
 				return;
 			case ServicePackage.SELECTION__SELECT_VIA:
-				setSelectVia((EntityAssociation)newValue);
+				getSelectVia().clear();
+				getSelectVia().addAll((Collection<? extends EntityAssociation>)newValue);
 				return;
 			case ServicePackage.SELECTION__METHOD_NAME:
 				setMethodName((String)newValue);
@@ -634,7 +608,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				setLimit(LIMIT_EDEFAULT);
 				return;
 			case ServicePackage.SELECTION__SELECT_VIA:
-				setSelectVia((EntityAssociation)null);
+				getSelectVia().clear();
 				return;
 			case ServicePackage.SELECTION__METHOD_NAME:
 				setMethodName(METHOD_NAME_EDEFAULT);
@@ -670,7 +644,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case ServicePackage.SELECTION__LIMIT:
 				return limit != LIMIT_EDEFAULT;
 			case ServicePackage.SELECTION__SELECT_VIA:
-				return selectVia != null;
+				return selectVia != null && !selectVia.isEmpty();
 			case ServicePackage.SELECTION__METHOD_NAME:
 				return METHOD_NAME_EDEFAULT == null ? methodName != null : !METHOD_NAME_EDEFAULT.equals(methodName);
 		}

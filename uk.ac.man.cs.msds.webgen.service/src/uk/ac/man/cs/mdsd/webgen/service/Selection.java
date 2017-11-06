@@ -212,30 +212,20 @@ public interface Selection extends NamedElement, FormalParameterList {
 	void setLimit(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Select Via</b></em>' reference.
+	 * Returns the value of the '<em><b>Select Via</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Select Via</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Select Via</em>' reference.
-	 * @see #setSelectVia(EntityAssociation)
+	 * @return the value of the '<em>Select Via</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getSelection_SelectVia()
 	 * @model
 	 * @generated
 	 */
-	EntityAssociation getSelectVia();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectVia <em>Select Via</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Select Via</em>' reference.
-	 * @see #getSelectVia()
-	 * @generated
-	 */
-	void setSelectVia(EntityAssociation value);
+	EList<EntityAssociation> getSelectVia();
 
 	/**
 	 * Returns the value of the '<em><b>Method Name</b></em>' attribute.

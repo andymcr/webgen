@@ -27,6 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.base.provider.NamedElementItemProvider;
 
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
@@ -203,11 +204,28 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof Selection) {
-					final Set<EntityOrView> entities
-						= getEntitiesAndViews((Selection) object);
-					final Set<Feature> fields = new HashSet<Feature>();
-					for (EntityOrView entity : entities) {
-						fields.addAll(entity.getAllAssociations());
+					final Selection selection = (Selection) object;
+					final EntityAssociation last
+						= selection.getSelectVia().isEmpty()
+							? null
+							: selection.getSelectVia().get(selection.getSelectVia().size() - 1);
+					final EntityAssociation penultimate
+						= selection.getSelectVia().size() < 2
+							? null
+							: selection.getSelectVia().get(selection.getSelectVia().size() - 2);
+					final Set<Association> fields = new HashSet<Association>();
+					if ((last == null) || (penultimate == null)) {
+						final Set<EntityOrView> entities
+							= getEntitiesAndViews((Selection) object);
+						for (EntityOrView entity : entities) {
+							fields.addAll(entity.getAllAssociations());
+						}
+					}
+					if (last != null) {
+						fields.addAll(last.getTargetEntityX().getAllAssociations());
+						if (penultimate != null) {
+							fields.addAll(penultimate.getTargetEntityX().getAllAssociations());
+						}
 					}
 
 					return fields;

@@ -354,7 +354,7 @@ public interface ServicePackage extends EPackage {
 	int SELECTION__LIMIT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Select Via</b></em>' reference.
+	 * The feature id for the '<em><b>Select Via</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -997,10 +997,10 @@ public interface ServicePackage extends EPackage {
 	EAttribute getSelection_Limit();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectVia <em>Select Via</em>}'.
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectVia <em>Select Via</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Select Via</em>'.
+	 * @return the meta object for the reference list '<em>Select Via</em>'.
 	 * @see uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectVia()
 	 * @see #getSelection()
 	 * @generated
@@ -1427,7 +1427,7 @@ public interface ServicePackage extends EPackage {
 		EAttribute SELECTION__LIMIT = eINSTANCE.getSelection_Limit();
 
 		/**
-		 * The meta object literal for the '<em><b>Select Via</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Select Via</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

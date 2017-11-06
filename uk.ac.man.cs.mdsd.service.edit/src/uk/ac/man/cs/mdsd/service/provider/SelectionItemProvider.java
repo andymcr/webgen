@@ -59,7 +59,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			addFieldsPropertyDescriptor(object);
 			addJoinsPropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
-			addSelectViaPropertyDescriptor(object);
+			addSelectPathPropertyDescriptor(object);
 			addMethodNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -176,19 +176,19 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Select Via feature.
+	 * This adds a property descriptor for the Select Path feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSelectViaPropertyDescriptor(Object object) {
+	protected void addSelectPathPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Selection_selectVia_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_selectVia_feature", "_UI_Selection_type"),
-				 ServicePackage.Literals.SELECTION__SELECT_VIA,
+				 getString("_UI_Selection_selectPath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_selectPath_feature", "_UI_Selection_type"),
+				 ServicePackage.Literals.SELECTION__SELECT_PATH,
 				 true,
 				 false,
 				 true,

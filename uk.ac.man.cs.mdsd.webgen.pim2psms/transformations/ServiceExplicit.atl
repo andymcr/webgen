@@ -74,7 +74,28 @@ helper context Website!Selection def: findOrmJoins(xx : Sequence(Website!Associa
 						endif
 			endif endif;
 
+helper context Website!Selection def: findOrmSelectVias(xx : Sequence(Website!Association)) : Sequence(ORM!Association)
+	= if xx->isEmpty() then
+			Sequence{}
+		else if xx->size() = 1 then
+			if xx->last().partOf = self.usedBy.serves then
+				Sequence{xx->last().findOrmSourceAssociation()}
+			else
+				Sequence{xx->last().findOrmTargetAssociation()}
+			endif
+		else
+			let yy : Sequence(Website!EntityOrView)
+				= self.entities(xx->subSequence(1, xx->size() -1))
+				in let zz : Sequence(ORM!Association)
+					= self.findOrmJoins(xx->subSequence(1, xx->size() -1))
+					in if yy->includes(xx->last().partOf) then
+							zz->union(Sequence{xx->last().findOrmSourceAssociation()})
+						else
+							zz->union(Sequence{xx->last().findOrmTargetAssociation()})
+						endif
+			endif endif;
 
+				
 rule ServiceModel {
 	from website : Website!Services
 	to service : Service!ServiceModel (
@@ -179,16 +200,7 @@ rule Selection {
 		filters <- website.filters,
 		ordering <- website.ordering,
 		limit <- website.limit,
-		selectVia <-
-			if not website.selectVia.oclIsUndefined() then
-				if website.usedBy.serves.associations->includes(website.selectVia)  then
-					website.selectVia.findOrmSourceAssociation()
-				else
-					website.selectVia.findOrmTargetAssociation()
-				endif
-			else
-				website.selectVia
-			endif,
+		selectPath <- website.findOrmSelectVias(website.selectVia),
 		methodName <-
 			if not website.methodName.oclIsUndefined() and website.methodName.trim() <> '' then
 			    website.methodName

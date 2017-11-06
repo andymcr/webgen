@@ -4132,7 +4132,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		  (editUnitEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "canOnlyTitleWithSingletons selectionValidChoice"
+			 "constraints", "canOnlyTitleWithSingletons"
 		   });	
 		addAnnotation
 		  (dataUnitEClass, 
@@ -4256,8 +4256,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		  (editUnitEClass, 
 		   source, 
 		   new String[] {
-			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies \r\n\tif title.oclIsKindOf(persistence::EntityAttribute) then\r\n\t\ttitle.oclAsType(persistence::EntityAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse if title.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse\r\n\t\ttrue\r\n\tendif endif",
-			 "selectionValidChoice", "not defaultSelection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | not s.serves.oclIsUndefined())\r\n\t\t->select(s : service::Service | contentType = s.serves)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(defaultSelection)"
+			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies \r\n\tif title.oclIsKindOf(persistence::EntityAttribute) then\r\n\t\ttitle.oclAsType(persistence::EntityAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse if title.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse\r\n\t\ttrue\r\n\tendif endif"
 		   });	
 		addAnnotation
 		  (dataUnitEClass, 

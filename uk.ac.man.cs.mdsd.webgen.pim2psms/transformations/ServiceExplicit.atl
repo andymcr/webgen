@@ -74,7 +74,7 @@ helper context Website!Selection def: findOrmJoins(xx : Sequence(Website!Associa
 						endif
 			endif endif;
 
-helper context Website!Selection def: findOrmSelectVias(xx : Sequence(Website!Association)) : Sequence(ORM!Association)
+helper context Website!Selection def: findOrmSelectPaths(xx : Sequence(Website!Association)) : Sequence(ORM!Association)
 	= if xx->isEmpty() then
 			Sequence{}
 		else if xx->size() = 1 then
@@ -200,7 +200,7 @@ rule Selection {
 		filters <- website.filters,
 		ordering <- website.ordering,
 		limit <- website.limit,
-		selectPath <- website.findOrmSelectVias(website.selectVia),
+		selectPath <- website.findOrmSelectPaths(website.selectPath),
 		methodName <-
 			if not website.methodName.oclIsUndefined() and website.methodName.trim() <> '' then
 			    website.methodName

@@ -54,7 +54,7 @@ import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getLimit <em>Limit</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getSelectVia <em>Select Via</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getSelectPath <em>Select Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.SelectionImpl#getMethodName <em>Method Name</em>}</li>
  * </ul>
  *
@@ -162,14 +162,14 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	protected int limit = LIMIT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSelectVia() <em>Select Via</em>}' reference list.
+	 * The cached value of the '{@link #getSelectPath() <em>Select Path</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSelectVia()
+	 * @see #getSelectPath()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntityAssociation> selectVia;
+	protected EList<EntityAssociation> selectPath;
 
 	/**
 	 * The default value of the '{@link #getMethodName() <em>Method Name</em>}' attribute.
@@ -401,11 +401,11 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EntityAssociation> getSelectVia() {
-		if (selectVia == null) {
-			selectVia = new EObjectResolvingEList<EntityAssociation>(EntityAssociation.class, this, ServicePackage.SELECTION__SELECT_VIA);
+	public EList<EntityAssociation> getSelectPath() {
+		if (selectPath == null) {
+			selectPath = new EObjectResolvingEList<EntityAssociation>(EntityAssociation.class, this, ServicePackage.SELECTION__SELECT_PATH);
 		}
-		return selectVia;
+		return selectPath;
 	}
 
 	/**
@@ -512,8 +512,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return getOrdering();
 			case ServicePackage.SELECTION__LIMIT:
 				return getLimit();
-			case ServicePackage.SELECTION__SELECT_VIA:
-				return getSelectVia();
+			case ServicePackage.SELECTION__SELECT_PATH:
+				return getSelectPath();
 			case ServicePackage.SELECTION__METHOD_NAME:
 				return getMethodName();
 		}
@@ -561,9 +561,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case ServicePackage.SELECTION__LIMIT:
 				setLimit((Integer)newValue);
 				return;
-			case ServicePackage.SELECTION__SELECT_VIA:
-				getSelectVia().clear();
-				getSelectVia().addAll((Collection<? extends EntityAssociation>)newValue);
+			case ServicePackage.SELECTION__SELECT_PATH:
+				getSelectPath().clear();
+				getSelectPath().addAll((Collection<? extends EntityAssociation>)newValue);
 				return;
 			case ServicePackage.SELECTION__METHOD_NAME:
 				setMethodName((String)newValue);
@@ -607,8 +607,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case ServicePackage.SELECTION__LIMIT:
 				setLimit(LIMIT_EDEFAULT);
 				return;
-			case ServicePackage.SELECTION__SELECT_VIA:
-				getSelectVia().clear();
+			case ServicePackage.SELECTION__SELECT_PATH:
+				getSelectPath().clear();
 				return;
 			case ServicePackage.SELECTION__METHOD_NAME:
 				setMethodName(METHOD_NAME_EDEFAULT);
@@ -643,8 +643,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return ordering != null && !ordering.isEmpty();
 			case ServicePackage.SELECTION__LIMIT:
 				return limit != LIMIT_EDEFAULT;
-			case ServicePackage.SELECTION__SELECT_VIA:
-				return selectVia != null && !selectVia.isEmpty();
+			case ServicePackage.SELECTION__SELECT_PATH:
+				return selectPath != null && !selectPath.isEmpty();
 			case ServicePackage.SELECTION__METHOD_NAME:
 				return METHOD_NAME_EDEFAULT == null ? methodName != null : !METHOD_NAME_EDEFAULT.equals(methodName);
 		}

@@ -29,7 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getLimit <em>Limit</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectVia <em>Select Via</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectPath <em>Select Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getMethodName <em>Method Name</em>}</li>
  * </ul>
  *
@@ -212,20 +212,20 @@ public interface Selection extends NamedElement, FormalParameterList {
 	void setLimit(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Select Via</b></em>' reference list.
+	 * Returns the value of the '<em><b>Select Path</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Select Via</em>' reference isn't clear,
+	 * If the meaning of the '<em>Select Path</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Select Via</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getSelection_SelectVia()
+	 * @return the value of the '<em>Select Path</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getSelection_SelectPath()
 	 * @model
 	 * @generated
 	 */
-	EList<EntityAssociation> getSelectVia();
+	EList<EntityAssociation> getSelectPath();
 
 	/**
 	 * Returns the value of the '<em><b>Method Name</b></em>' attribute.

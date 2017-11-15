@@ -122,7 +122,7 @@ public class DataUnitItemProvider extends DynamicUnitItemProvider {
 							labels.addAll(entity.getLabels());
 						}
 						if (unit.getSelection() != null) {
-							for (EntityAssociation association : unit.getSelection().getSelectVia()) {
+							for (EntityAssociation association : unit.getSelection().getSelectPath()) {
 								if (entities.contains(association.getSourceEntityX())) {
 									labels.addAll(association.getTargetEntityX().getAttributes());
 									labels.addAll(association.getTargetEntityX().getLabels());

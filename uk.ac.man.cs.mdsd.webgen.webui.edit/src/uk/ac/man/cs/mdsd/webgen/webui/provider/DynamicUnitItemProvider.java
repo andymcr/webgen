@@ -349,9 +349,9 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		if (unit instanceof CollectionUnit) {
 			final CollectionUnit collection = (CollectionUnit) unit;
 			if (collection.getSelection() != null) {
-				if (!collection.getSelection().getSelectVia().isEmpty()) {
-					return collection.getSelection().getSelectVia().get(
-							collection.getSelection().getSelectVia().size() - 1)
+				if (!collection.getSelection().getSelectPath().isEmpty()) {
+					return collection.getSelection().getSelectPath().get(
+							collection.getSelection().getSelectPath().size() - 1)
 							.getTargetEntityX();
 				}
 			}

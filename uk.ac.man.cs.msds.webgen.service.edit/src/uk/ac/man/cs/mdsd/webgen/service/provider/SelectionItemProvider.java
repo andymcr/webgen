@@ -67,7 +67,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			addFieldsPropertyDescriptor(object);
 			addJoinsPropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
-			addSelectViaPropertyDescriptor(object);
+			addSelectPathPropertyDescriptor(object);
 			addMethodNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -186,6 +186,28 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Select Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Selection_selectPath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_selectPath_feature", "_UI_Selection_type"),
+				 ServicePackage.Literals.SELECTION__SELECT_PATH,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_BusinessPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Select Via feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -197,7 +219,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			getResourceLocator(),
 			getString("_UI_Selection_selectVia_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_Selection_selectVia_feature", "_UI_Selection_type"),
-			ServicePackage.Literals.SELECTION__SELECT_VIA,
+			ServicePackage.Literals.SELECTION__SELECT_PATH,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {
@@ -206,13 +228,13 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 				if (object instanceof Selection) {
 					final Selection selection = (Selection) object;
 					final EntityAssociation last
-						= selection.getSelectVia().isEmpty()
+						= selection.getSelectPath().isEmpty()
 							? null
-							: selection.getSelectVia().get(selection.getSelectVia().size() - 1);
+							: selection.getSelectPath().get(selection.getSelectPath().size() - 1);
 					final EntityAssociation penultimate
-						= selection.getSelectVia().size() < 2
+						= selection.getSelectPath().size() < 2
 							? null
-							: selection.getSelectVia().get(selection.getSelectVia().size() - 2);
+							: selection.getSelectPath().get(selection.getSelectPath().size() - 2);
 					final Set<Association> fields = new HashSet<Association>();
 					if ((last == null) || (penultimate == null)) {
 						final Set<EntityOrView> entities

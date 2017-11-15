@@ -354,13 +354,13 @@ public interface ServicePackage extends EPackage {
 	int SELECTION__LIMIT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Select Via</b></em>' reference list.
+	 * The feature id for the '<em><b>Select Path</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__SELECT_VIA = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int SELECTION__SELECT_PATH = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Method Name</b></em>' attribute.
@@ -997,15 +997,15 @@ public interface ServicePackage extends EPackage {
 	EAttribute getSelection_Limit();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectVia <em>Select Via</em>}'.
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectPath <em>Select Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Select Via</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectVia()
+	 * @return the meta object for the reference list '<em>Select Path</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Selection#getSelectPath()
 	 * @see #getSelection()
 	 * @generated
 	 */
-	EReference getSelection_SelectVia();
+	EReference getSelection_SelectPath();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.service.Selection#getMethodName <em>Method Name</em>}'.
@@ -1427,12 +1427,12 @@ public interface ServicePackage extends EPackage {
 		EAttribute SELECTION__LIMIT = eINSTANCE.getSelection_Limit();
 
 		/**
-		 * The meta object literal for the '<em><b>Select Via</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Select Path</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SELECTION__SELECT_VIA = eINSTANCE.getSelection_SelectVia();
+		EReference SELECTION__SELECT_PATH = eINSTANCE.getSelection_SelectPath();
 
 		/**
 		 * The meta object literal for the '<em><b>Method Name</b></em>' attribute feature.

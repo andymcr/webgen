@@ -45,7 +45,7 @@
         eType="#//Order" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="limit" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="10"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="selectVia" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectPath" upperBound="-1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityAssociation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

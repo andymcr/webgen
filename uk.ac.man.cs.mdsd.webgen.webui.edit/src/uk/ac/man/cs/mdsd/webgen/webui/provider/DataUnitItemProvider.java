@@ -17,6 +17,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
@@ -112,13 +114,29 @@ public class DataUnitItemProvider extends DynamicUnitItemProvider {
 						return labels;
 					}
 					if (object instanceof CollectionUnit) {
-						final EntityOrView routingType = getRoutingType((DynamicUnit) object);
-						if (routingType != null) {
-							final Set<Label> labels = new HashSet<Label>();
-							labels.addAll(routingType.getAttributes());
-							labels.addAll(routingType.getLabels());
-							return labels;
+						final CollectionUnit unit = (CollectionUnit) object;
+						final Set<EntityOrView> entities
+							= new HashSet<EntityOrView>(unit.getContentType());
+						final Set<Label> labels = new HashSet<Label>();
+						for (EntityOrView entity : unit.getContentType()) {
+							labels.addAll(entity.getAttributes());
+							labels.addAll(entity.getLabels());
 						}
+						System.err.println(((DynamicUnit) unit).getName()); 
+						if (unit.getSelection() != null) {
+							for (EntityAssociation association : unit.getSelection().getSelectVia()) {
+								System.err.println("  "+association.getName()+" source "+association.getSourceEntityX().getName());
+								System.err.println("  "+association.getName()+" target "+association.getTargetEntityX().getName());
+								if (entities.contains(association.getSourceEntityX())) {
+									labels.addAll(association.getTargetEntityX().getAttributes());
+									labels.addAll(association.getTargetEntityX().getLabels());
+								} else {
+									labels.addAll(association.getSourceEntityX().getAttributes());
+									labels.addAll(association.getSourceEntityX().getLabels());
+								}
+							}
+						}
+						return labels;
 					}
 
 					return Collections.emptySet();

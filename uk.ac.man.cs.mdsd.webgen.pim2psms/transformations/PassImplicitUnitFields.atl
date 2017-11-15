@@ -189,14 +189,14 @@ rule UpdateUnit {
 	)
 }
 
--- @extends DynamicUnit, SingletonUnit
+-- @extends DynamicUnit
 abstract rule DataUnit {
 	from partialWaf : WAF!DataUnit
 	to waf : WAF!DataUnit (
 	)
 }
 
--- @extends DataUnit
+-- @extends DataUnit, SingletonUnit
 rule DetailsUnit {
 	from partialWaf : WAF!DetailsUnit
 	to waf : WAF!DetailsUnit (

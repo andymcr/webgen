@@ -23,7 +23,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DataUnit;
-import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.SingletonUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
@@ -122,11 +121,8 @@ public class DataUnitItemProvider extends DynamicUnitItemProvider {
 							labels.addAll(entity.getAttributes());
 							labels.addAll(entity.getLabels());
 						}
-						System.err.println(((DynamicUnit) unit).getName()); 
 						if (unit.getSelection() != null) {
 							for (EntityAssociation association : unit.getSelection().getSelectVia()) {
-								System.err.println("  "+association.getName()+" source "+association.getSourceEntityX().getName());
-								System.err.println("  "+association.getName()+" target "+association.getTargetEntityX().getName());
 								if (entities.contains(association.getSourceEntityX())) {
 									labels.addAll(association.getTargetEntityX().getAttributes());
 									labels.addAll(association.getTargetEntityX().getLabels());

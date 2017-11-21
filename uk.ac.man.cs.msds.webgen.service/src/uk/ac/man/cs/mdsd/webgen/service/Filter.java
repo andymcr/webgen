@@ -36,7 +36,7 @@ public interface Filter extends NamedDisplayElement, FormalParameterList {
 	 * @return the value of the '<em>Condition</em>' containment reference.
 	 * @see #setCondition(Predicate)
 	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getFilter_Condition()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Predicate getCondition();

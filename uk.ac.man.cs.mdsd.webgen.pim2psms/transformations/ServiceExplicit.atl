@@ -30,7 +30,15 @@ helper context Website!Feature def: findOrmFeature(reference : Website!ServiceFe
 			in if selection.oclIsUndefined() then
 					OclUndefined
 				else
-					self.findOrmAssociation(reference.findContainingSelection().usedBy.serves)
+					if reference.findContainingSelection().usedBy.serves = self.partOf then
+						self.findOrmSourceAssociation()
+					else if reference.findContainingSelection().usedBy.serves = self.getTarget() then
+						self.findOrmTargetAssociation()
+					else if selection.joins->includes(self.partOf) then
+						self.findOrmSourceAssociation()
+					else
+						self.findOrmTargetAssociation()
+					endif endif endif
 				endif
 		endif;
 

@@ -48,7 +48,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getFirstPageLabel <em>First Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getLastPageLabel <em>Last Page Label</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getTitleFeature <em>Title Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getMissingImagePath <em>Missing Image Path</em>}</li>
@@ -329,16 +328,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected String lastPageLabel = LAST_PAGE_LABEL_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDefaultSelection() <em>Default Selection</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultSelection()
-	 * @generated
-	 * @ordered
-	 */
-	protected Selection defaultSelection;
 
 	/**
 	 * The cached value of the '{@link #getImagePathFeature() <em>Image Path Feature</em>}' containment reference.
@@ -823,44 +812,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Selection getDefaultSelection() {
-		if (defaultSelection != null && defaultSelection.eIsProxy()) {
-			InternalEObject oldDefaultSelection = (InternalEObject)defaultSelection;
-			defaultSelection = (Selection)eResolveProxy(oldDefaultSelection);
-			if (defaultSelection != oldDefaultSelection) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.IMAGE_UNIT__DEFAULT_SELECTION, oldDefaultSelection, defaultSelection));
-			}
-		}
-		return defaultSelection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Selection basicGetDefaultSelection() {
-		return defaultSelection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDefaultSelection(Selection newDefaultSelection) {
-		Selection oldDefaultSelection = defaultSelection;
-		defaultSelection = newDefaultSelection;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_UNIT__DEFAULT_SELECTION, oldDefaultSelection, defaultSelection));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public FeaturePath getImagePathFeature() {
 		return imagePathFeature;
 	}
@@ -1102,9 +1053,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return getFirstPageLabel();
 			case WebuiPackage.IMAGE_UNIT__LAST_PAGE_LABEL:
 				return getLastPageLabel();
-			case WebuiPackage.IMAGE_UNIT__DEFAULT_SELECTION:
-				if (resolve) return getDefaultSelection();
-				return basicGetDefaultSelection();
 			case WebuiPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				return getImagePathFeature();
 			case WebuiPackage.IMAGE_UNIT__TITLE_FEATURE:
@@ -1180,9 +1128,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return;
 			case WebuiPackage.IMAGE_UNIT__LAST_PAGE_LABEL:
 				setLastPageLabel((String)newValue);
-				return;
-			case WebuiPackage.IMAGE_UNIT__DEFAULT_SELECTION:
-				setDefaultSelection((Selection)newValue);
 				return;
 			case WebuiPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				setImagePathFeature((FeaturePath)newValue);
@@ -1262,9 +1207,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebuiPackage.IMAGE_UNIT__LAST_PAGE_LABEL:
 				setLastPageLabel(LAST_PAGE_LABEL_EDEFAULT);
 				return;
-			case WebuiPackage.IMAGE_UNIT__DEFAULT_SELECTION:
-				setDefaultSelection((Selection)null);
-				return;
 			case WebuiPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				setImagePathFeature((FeaturePath)null);
 				return;
@@ -1327,8 +1269,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return FIRST_PAGE_LABEL_EDEFAULT == null ? firstPageLabel != null : !FIRST_PAGE_LABEL_EDEFAULT.equals(firstPageLabel);
 			case WebuiPackage.IMAGE_UNIT__LAST_PAGE_LABEL:
 				return LAST_PAGE_LABEL_EDEFAULT == null ? lastPageLabel != null : !LAST_PAGE_LABEL_EDEFAULT.equals(lastPageLabel);
-			case WebuiPackage.IMAGE_UNIT__DEFAULT_SELECTION:
-				return defaultSelection != null;
 			case WebuiPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				return imagePathFeature != null;
 			case WebuiPackage.IMAGE_UNIT__TITLE_FEATURE:

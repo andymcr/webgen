@@ -976,12 +976,6 @@ rule SearchUnit {
 abstract rule ImageUnit {
 	from website : Website!ImageUnit
 	to waf : WAF!ImageUnit (
-		defaultSelection <-
-			if website.defaultSelection.oclIsUndefined() then
-				website.defaultSelection
-			else
-				website.defaultSelection.findServiceSelection()
-			endif,
 		imagePathFeature <- website.imagePathFeature,
 		titleFeature <- website.titleFeature,
 		missingImagePath <- website.missingImagePath,

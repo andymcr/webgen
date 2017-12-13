@@ -63,7 +63,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			addUseFirstLastPageLinksPropertyDescriptor(object);
 			addFirstPageLabelPropertyDescriptor(object);
 			addLastPageLabelPropertyDescriptor(object);
-			addDefaultSelectionPropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
@@ -420,28 +419,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Default Selection feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultSelectionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageUnit_defaultSelection_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_defaultSelection_feature", "_UI_ImageUnit_type"),
-				 WafPackage.Literals.IMAGE_UNIT__DEFAULT_SELECTION,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

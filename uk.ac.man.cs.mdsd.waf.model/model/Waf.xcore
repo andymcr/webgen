@@ -405,7 +405,6 @@ class SearchUnit extends ControlUnit {
 }
 
 abstract class ImageUnit extends DynamicUnit, CollectionUnit {
-	refers Selection defaultSelection
 	contains FeaturePath[1] imagePathFeature
 	contains FeaturePath[1] titleFeature
 	String missingImagePath

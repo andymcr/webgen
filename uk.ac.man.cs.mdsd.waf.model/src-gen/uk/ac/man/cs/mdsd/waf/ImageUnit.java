@@ -2,7 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import uk.ac.man.cs.mdsd.service.Selection;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +12,6 @@ import uk.ac.man.cs.mdsd.service.Selection;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getTitleFeature <em>Title Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}</li>
@@ -27,32 +25,6 @@ import uk.ac.man.cs.mdsd.service.Selection;
  * @generated
  */
 public interface ImageUnit extends DynamicUnit, CollectionUnit {
-	/**
-	 * Returns the value of the '<em><b>Default Selection</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Default Selection</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Default Selection</em>' reference.
-	 * @see #setDefaultSelection(Selection)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageUnit_DefaultSelection()
-	 * @model
-	 * @generated
-	 */
-	Selection getDefaultSelection();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getDefaultSelection <em>Default Selection</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default Selection</em>' reference.
-	 * @see #getDefaultSelection()
-	 * @generated
-	 */
-	void setDefaultSelection(Selection value);
-
 	/**
 	 * Returns the value of the '<em><b>Image Path Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

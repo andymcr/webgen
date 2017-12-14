@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.image.ImagePackage;
 import uk.ac.man.cs.mdsd.webgen.image.ThumbnailFilter;
+import uk.ac.man.cs.mdsd.webgen.image.ThumbnailModes;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +22,7 @@ import uk.ac.man.cs.mdsd.webgen.image.ThumbnailFilter;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.image.impl.ThumbnailFilterImpl#getWidth <em>Width</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.image.impl.ThumbnailFilterImpl#getHeight <em>Height</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.image.impl.ThumbnailFilterImpl#getMode <em>Mode</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,6 +67,26 @@ public class ThumbnailFilterImpl extends ImageFilterImpl implements ThumbnailFil
 	 * @ordered
 	 */
 	protected int height = HEIGHT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMode()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ThumbnailModes MODE_EDEFAULT = ThumbnailModes.CROP;
+
+	/**
+	 * The cached value of the '{@link #getMode() <em>Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMode()
+	 * @generated
+	 * @ordered
+	 */
+	protected ThumbnailModes mode = MODE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -132,6 +154,27 @@ public class ThumbnailFilterImpl extends ImageFilterImpl implements ThumbnailFil
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ThumbnailModes getMode() {
+		return mode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMode(ThumbnailModes newMode) {
+		ThumbnailModes oldMode = mode;
+		mode = newMode == null ? MODE_EDEFAULT : newMode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ImagePackage.THUMBNAIL_FILTER__MODE, oldMode, mode));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -139,6 +182,8 @@ public class ThumbnailFilterImpl extends ImageFilterImpl implements ThumbnailFil
 				return getWidth();
 			case ImagePackage.THUMBNAIL_FILTER__HEIGHT:
 				return getHeight();
+			case ImagePackage.THUMBNAIL_FILTER__MODE:
+				return getMode();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -156,6 +201,9 @@ public class ThumbnailFilterImpl extends ImageFilterImpl implements ThumbnailFil
 				return;
 			case ImagePackage.THUMBNAIL_FILTER__HEIGHT:
 				setHeight((Integer)newValue);
+				return;
+			case ImagePackage.THUMBNAIL_FILTER__MODE:
+				setMode((ThumbnailModes)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -175,6 +223,9 @@ public class ThumbnailFilterImpl extends ImageFilterImpl implements ThumbnailFil
 			case ImagePackage.THUMBNAIL_FILTER__HEIGHT:
 				setHeight(HEIGHT_EDEFAULT);
 				return;
+			case ImagePackage.THUMBNAIL_FILTER__MODE:
+				setMode(MODE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -191,6 +242,8 @@ public class ThumbnailFilterImpl extends ImageFilterImpl implements ThumbnailFil
 				return width != WIDTH_EDEFAULT;
 			case ImagePackage.THUMBNAIL_FILTER__HEIGHT:
 				return height != HEIGHT_EDEFAULT;
+			case ImagePackage.THUMBNAIL_FILTER__MODE:
+				return mode != MODE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -209,6 +262,8 @@ public class ThumbnailFilterImpl extends ImageFilterImpl implements ThumbnailFil
 		result.append(width);
 		result.append(", height: ");
 		result.append(height);
+		result.append(", mode: ");
+		result.append(mode);
 		result.append(')');
 		return result.toString();
 	}

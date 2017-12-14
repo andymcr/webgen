@@ -4,6 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.image;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -207,13 +208,22 @@ public interface ImagePackage extends EPackage {
 	int THUMBNAIL_FILTER__HEIGHT = IMAGE_FILTER_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THUMBNAIL_FILTER__MODE = IMAGE_FILTER_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Thumbnail Filter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THUMBNAIL_FILTER_FEATURE_COUNT = IMAGE_FILTER_FEATURE_COUNT + 2;
+	int THUMBNAIL_FILTER_FEATURE_COUNT = IMAGE_FILTER_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Thumbnail Filter</em>' class.
@@ -223,6 +233,17 @@ public interface ImagePackage extends EPackage {
 	 * @ordered
 	 */
 	int THUMBNAIL_FILTER_OPERATION_COUNT = IMAGE_FILTER_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.image.ThumbnailModes <em>Thumbnail Modes</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.image.ThumbnailModes
+	 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getThumbnailModes()
+	 * @generated
+	 */
+	int THUMBNAIL_MODES = 4;
 
 
 	/**
@@ -319,6 +340,27 @@ public interface ImagePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getThumbnailFilter_Height();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.image.ThumbnailFilter#getMode <em>Mode</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mode</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.image.ThumbnailFilter#getMode()
+	 * @see #getThumbnailFilter()
+	 * @generated
+	 */
+	EAttribute getThumbnailFilter_Mode();
+
+	/**
+	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.image.ThumbnailModes <em>Thumbnail Modes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Thumbnail Modes</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.image.ThumbnailModes
+	 * @generated
+	 */
+	EEnum getThumbnailModes();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -422,6 +464,24 @@ public interface ImagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute THUMBNAIL_FILTER__HEIGHT = eINSTANCE.getThumbnailFilter_Height();
+
+		/**
+		 * The meta object literal for the '<em><b>Mode</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THUMBNAIL_FILTER__MODE = eINSTANCE.getThumbnailFilter_Mode();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.image.ThumbnailModes <em>Thumbnail Modes</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.image.ThumbnailModes
+		 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getThumbnailModes()
+		 * @generated
+		 */
+		EEnum THUMBNAIL_MODES = eINSTANCE.getThumbnailModes();
 
 	}
 

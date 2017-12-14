@@ -120,6 +120,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 				return createAjaxTechnologiesFromString(eDataType, initialValue);
 			case WafPackage.AUTHENTICATION_KEY_TYPES:
 				return createAuthenticationKeyTypesFromString(eDataType, initialValue);
+			case WafPackage.THUMBNAIL_MODES:
+				return createThumbnailModesFromString(eDataType, initialValue);
 			case WafPackage.PAGE_TOP_MENU_OPTIONS:
 				return createPageTopMenuOptionsFromString(eDataType, initialValue);
 			case WafPackage.COLLECTION_DISPLAY_OPTIONS:
@@ -145,6 +147,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 				return convertAjaxTechnologiesToString(eDataType, instanceValue);
 			case WafPackage.AUTHENTICATION_KEY_TYPES:
 				return convertAuthenticationKeyTypesToString(eDataType, instanceValue);
+			case WafPackage.THUMBNAIL_MODES:
+				return convertThumbnailModesToString(eDataType, instanceValue);
 			case WafPackage.PAGE_TOP_MENU_OPTIONS:
 				return convertPageTopMenuOptionsToString(eDataType, instanceValue);
 			case WafPackage.COLLECTION_DISPLAY_OPTIONS:
@@ -651,6 +655,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * @generated
 	 */
 	public String convertAuthenticationKeyTypesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ThumbnailModes createThumbnailModesFromString(EDataType eDataType, String initialValue) {
+		ThumbnailModes result = ThumbnailModes.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertThumbnailModesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -807,13 +807,22 @@ public interface WafPackage extends EPackage {
 	int THUMBNAIL_FILTER__HEIGHT = IMAGE_FILTER_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Mode</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THUMBNAIL_FILTER__MODE = IMAGE_FILTER_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Thumbnail Filter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THUMBNAIL_FILTER_FEATURE_COUNT = IMAGE_FILTER_FEATURE_COUNT + 2;
+	int THUMBNAIL_FILTER_FEATURE_COUNT = IMAGE_FILTER_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Thumbnail Filter</em>' class.
@@ -11670,6 +11679,16 @@ public interface WafPackage extends EPackage {
 	int AUTHENTICATION_KEY_TYPES = 70;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.ThumbnailModes <em>Thumbnail Modes</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.ThumbnailModes
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getThumbnailModes()
+	 * @generated
+	 */
+	int THUMBNAIL_MODES = 71;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11677,7 +11696,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 71;
+	int PAGE_TOP_MENU_OPTIONS = 72;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -11687,7 +11706,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 72;
+	int COLLECTION_DISPLAY_OPTIONS = 73;
 
 
 	/**
@@ -12308,6 +12327,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getThumbnailFilter_Height();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ThumbnailFilter#getMode <em>Mode</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mode</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ThumbnailFilter#getMode()
+	 * @see #getThumbnailFilter()
+	 * @generated
+	 */
+	EAttribute getThumbnailFilter_Mode();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.Menu <em>Menu</em>}'.
@@ -14865,6 +14895,16 @@ public interface WafPackage extends EPackage {
 	EEnum getAuthenticationKeyTypes();
 
 	/**
+	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.waf.ThumbnailModes <em>Thumbnail Modes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Thumbnail Modes</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ThumbnailModes
+	 * @generated
+	 */
+	EEnum getThumbnailModes();
+
+	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15378,6 +15418,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute THUMBNAIL_FILTER__HEIGHT = eINSTANCE.getThumbnailFilter_Height();
+
+		/**
+		 * The meta object literal for the '<em><b>Mode</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THUMBNAIL_FILTER__MODE = eINSTANCE.getThumbnailFilter_Mode();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.MenuImpl <em>Menu</em>}' class.
@@ -17408,6 +17456,16 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum AUTHENTICATION_KEY_TYPES = eINSTANCE.getAuthenticationKeyTypes();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.ThumbnailModes <em>Thumbnail Modes</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.ThumbnailModes
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getThumbnailModes()
+		 * @generated
+		 */
+		EEnum THUMBNAIL_MODES = eINSTANCE.getThumbnailModes();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.

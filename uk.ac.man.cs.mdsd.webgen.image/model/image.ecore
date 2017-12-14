@@ -12,10 +12,15 @@
         eType="#//ImageFilter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImageFilter" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ThumbnailModes">
+    <eLiterals name="Crop"/>
+    <eLiterals name="Resize" value="1"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ThumbnailFilter" eSuperTypes="#//ImageFilter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="-1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="#//ThumbnailModes"/>
   </eClassifiers>
 </ecore:EPackage>

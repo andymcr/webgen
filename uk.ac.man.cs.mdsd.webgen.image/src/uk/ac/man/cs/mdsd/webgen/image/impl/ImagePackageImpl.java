@@ -4,6 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.image.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -17,6 +18,7 @@ import uk.ac.man.cs.mdsd.webgen.image.ImageFilter;
 import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.image.ImagePackage;
 import uk.ac.man.cs.mdsd.webgen.image.ThumbnailFilter;
+import uk.ac.man.cs.mdsd.webgen.image.ThumbnailModes;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,6 +54,13 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 	 * @generated
 	 */
 	private EClass thumbnailFilterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum thumbnailModesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -203,6 +212,24 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getThumbnailFilter_Mode() {
+		return (EAttribute)thumbnailFilterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getThumbnailModes() {
+		return thumbnailModesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ImageFactory getImageFactory() {
 		return (ImageFactory)getEFactoryInstance();
 	}
@@ -238,6 +265,10 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 		thumbnailFilterEClass = createEClass(THUMBNAIL_FILTER);
 		createEAttribute(thumbnailFilterEClass, THUMBNAIL_FILTER__WIDTH);
 		createEAttribute(thumbnailFilterEClass, THUMBNAIL_FILTER__HEIGHT);
+		createEAttribute(thumbnailFilterEClass, THUMBNAIL_FILTER__MODE);
+
+		// Create enums
+		thumbnailModesEEnum = createEEnum(THUMBNAIL_MODES);
 	}
 
 	/**
@@ -287,6 +318,12 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 		initEClass(thumbnailFilterEClass, ThumbnailFilter.class, "ThumbnailFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getThumbnailFilter_Width(), ecorePackage.getEInt(), "width", "-1", 0, 1, ThumbnailFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getThumbnailFilter_Height(), ecorePackage.getEInt(), "height", "-1", 0, 1, ThumbnailFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThumbnailFilter_Mode(), this.getThumbnailModes(), "mode", null, 0, 1, ThumbnailFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(thumbnailModesEEnum, ThumbnailModes.class, "ThumbnailModes");
+		addEEnumLiteral(thumbnailModesEEnum, ThumbnailModes.CROP);
+		addEEnumLiteral(thumbnailModesEEnum, ThumbnailModes.RESIZE);
 
 		// Create resource
 		createResource(eNS_URI);

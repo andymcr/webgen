@@ -84,6 +84,7 @@ import uk.ac.man.cs.mdsd.waf.SingletonUnit;
 import uk.ac.man.cs.mdsd.waf.SliderUnit;
 import uk.ac.man.cs.mdsd.waf.StaticUnit;
 import uk.ac.man.cs.mdsd.waf.ThumbnailFilter;
+import uk.ac.man.cs.mdsd.waf.ThumbnailModes;
 import uk.ac.man.cs.mdsd.waf.UnitAssociation;
 import uk.ac.man.cs.mdsd.waf.UnitAttribute;
 import uk.ac.man.cs.mdsd.waf.UnitContainer;
@@ -598,6 +599,13 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EEnum authenticationKeyTypesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum thumbnailModesEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1188,6 +1196,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EAttribute getThumbnailFilter_Height() {
 		return (EAttribute)thumbnailFilterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getThumbnailFilter_Mode() {
+		return (EAttribute)thumbnailFilterEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3337,6 +3354,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getThumbnailModes() {
+		return thumbnailModesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPageTopMenuOptions() {
 		return pageTopMenuOptionsEEnum;
 	}
@@ -3442,6 +3468,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		thumbnailFilterEClass = createEClass(THUMBNAIL_FILTER);
 		createEAttribute(thumbnailFilterEClass, THUMBNAIL_FILTER__WIDTH);
 		createEAttribute(thumbnailFilterEClass, THUMBNAIL_FILTER__HEIGHT);
+		createEAttribute(thumbnailFilterEClass, THUMBNAIL_FILTER__MODE);
 
 		menuEClass = createEClass(MENU);
 		createEReference(menuEClass, MENU__ENTRIES);
@@ -3741,6 +3768,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		inputTechnologiesEEnum = createEEnum(INPUT_TECHNOLOGIES);
 		ajaxTechnologiesEEnum = createEEnum(AJAX_TECHNOLOGIES);
 		authenticationKeyTypesEEnum = createEEnum(AUTHENTICATION_KEY_TYPES);
+		thumbnailModesEEnum = createEEnum(THUMBNAIL_MODES);
 		pageTopMenuOptionsEEnum = createEEnum(PAGE_TOP_MENU_OPTIONS);
 		collectionDisplayOptionsEEnum = createEEnum(COLLECTION_DISPLAY_OPTIONS);
 	}
@@ -3921,6 +3949,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(thumbnailFilterEClass, ThumbnailFilter.class, "ThumbnailFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getThumbnailFilter_Width(), theEcorePackage.getEInt(), "width", null, 0, 1, ThumbnailFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getThumbnailFilter_Height(), theEcorePackage.getEInt(), "height", null, 0, 1, ThumbnailFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThumbnailFilter_Mode(), this.getThumbnailModes(), "mode", null, 0, 1, ThumbnailFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(menuEClass, Menu.class, "Menu", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMenu_Entries(), this.getMenuEntry(), this.getMenuEntry_PartOf(), "entries", null, 0, -1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4236,6 +4265,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEEnum(authenticationKeyTypesEEnum, AuthenticationKeyTypes.class, "AuthenticationKeyTypes");
 		addEEnumLiteral(authenticationKeyTypesEEnum, AuthenticationKeyTypes.EMAIL);
 		addEEnumLiteral(authenticationKeyTypesEEnum, AuthenticationKeyTypes.USERNAME);
+
+		initEEnum(thumbnailModesEEnum, ThumbnailModes.class, "ThumbnailModes");
+		addEEnumLiteral(thumbnailModesEEnum, ThumbnailModes.CROP);
+		addEEnumLiteral(thumbnailModesEEnum, ThumbnailModes.RESZIE);
 
 		initEEnum(pageTopMenuOptionsEEnum, PageTopMenuOptions.class, "PageTopMenuOptions");
 		addEEnumLiteral(pageTopMenuOptionsEEnum, PageTopMenuOptions.NEVER_INCLUDE);

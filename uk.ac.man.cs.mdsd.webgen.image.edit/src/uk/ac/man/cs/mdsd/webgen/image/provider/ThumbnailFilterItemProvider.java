@@ -47,6 +47,7 @@ public class ThumbnailFilterItemProvider extends ImageFilterItemProvider {
 
 			addWidthPropertyDescriptor(object);
 			addHeightPropertyDescriptor(object);
+			addModePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -96,6 +97,28 @@ public class ThumbnailFilterItemProvider extends ImageFilterItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Mode feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addModePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ThumbnailFilter_mode_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ThumbnailFilter_mode_feature", "_UI_ThumbnailFilter_type"),
+				 ImagePackage.Literals.THUMBNAIL_FILTER__MODE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_ImagePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This returns ThumbnailFilter.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -133,6 +156,7 @@ public class ThumbnailFilterItemProvider extends ImageFilterItemProvider {
 		switch (notification.getFeatureID(ThumbnailFilter.class)) {
 			case ImagePackage.THUMBNAIL_FILTER__WIDTH:
 			case ImagePackage.THUMBNAIL_FILTER__HEIGHT:
+			case ImagePackage.THUMBNAIL_FILTER__MODE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

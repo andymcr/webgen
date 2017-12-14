@@ -126,9 +126,15 @@ class ImageManipulation extends NamedElement {
 abstract class ImageFilter {
 }
 
+enum ThumbnailModes {
+	Crop = 0,
+	Reszie = 1
+}
+
 class ThumbnailFilter extends ImageFilter {
 	int width
 	int height
+	ThumbnailModes mode
 }
 
 

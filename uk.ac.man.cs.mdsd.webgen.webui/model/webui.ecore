@@ -510,7 +510,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,index_unit"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="index_content,framed"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="index_content,striped,responsive-table"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rowClasses" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="odd_row,even_row"/>
   </eClassifiers>

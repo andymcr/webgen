@@ -409,7 +409,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONTENT_CLASS_EDEFAULT = "index_content,framed";
+	protected static final String CONTENT_CLASS_EDEFAULT = "index_content,striped,responsive-table";
 
 	/**
 	 * The cached value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.

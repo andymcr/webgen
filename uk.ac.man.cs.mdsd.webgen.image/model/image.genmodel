@@ -7,6 +7,10 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>image.ecore</foreignModel>
   <genPackages prefix="Image" basePackage="uk.ac.man.cs.mdsd.webgen" ecorePackage="image.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="image.ecore#//ThumbnailModes">
+      <genEnumLiterals ecoreEnumLiteral="image.ecore#//ThumbnailModes/Crop"/>
+      <genEnumLiterals ecoreEnumLiteral="image.ecore#//ThumbnailModes/Resize"/>
+    </genEnums>
     <genClasses ecoreClass="image.ecore#//Image">
       <genFeatures property="None" children="true" createChild="true" propertySortChoices="true"
           ecoreFeature="ecore:EReference image.ecore#//Image/manipulations"/>
@@ -19,6 +23,7 @@
     <genClasses ecoreClass="image.ecore#//ThumbnailFilter">
       <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute image.ecore#//ThumbnailFilter/width"/>
       <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute image.ecore#//ThumbnailFilter/height"/>
+      <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute image.ecore#//ThumbnailFilter/mode"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

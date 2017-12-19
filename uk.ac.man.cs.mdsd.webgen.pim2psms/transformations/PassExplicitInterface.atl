@@ -334,7 +334,8 @@ rule ThumbnailFilter {
 	from website : Website!ThumbnailFilter
 	to waf : WAF!ThumbnailFilter (
 		width <- website.width,
-		height <- website.height
+		height <- website.height,
+		mode <- website.mode
 	)
 }
 

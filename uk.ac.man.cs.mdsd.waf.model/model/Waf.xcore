@@ -128,7 +128,7 @@ abstract class ImageFilter {
 
 enum ThumbnailModes {
 	Crop = 0,
-	Reszie = 1
+	Resize = 1
 }
 
 class ThumbnailFilter extends ImageFilter {

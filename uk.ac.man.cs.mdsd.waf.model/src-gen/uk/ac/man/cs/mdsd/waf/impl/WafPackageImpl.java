@@ -4268,7 +4268,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEEnum(thumbnailModesEEnum, ThumbnailModes.class, "ThumbnailModes");
 		addEEnumLiteral(thumbnailModesEEnum, ThumbnailModes.CROP);
-		addEEnumLiteral(thumbnailModesEEnum, ThumbnailModes.RESZIE);
+		addEEnumLiteral(thumbnailModesEEnum, ThumbnailModes.RESIZE);
 
 		initEEnum(pageTopMenuOptionsEEnum, PageTopMenuOptions.class, "PageTopMenuOptions");
 		addEEnumLiteral(pageTopMenuOptionsEEnum, PageTopMenuOptions.NEVER_INCLUDE);

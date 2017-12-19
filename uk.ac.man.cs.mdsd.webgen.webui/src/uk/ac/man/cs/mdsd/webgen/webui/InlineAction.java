@@ -16,6 +16,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.InlineAction#getUsedBy <em>Used By</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.InlineAction#getIconName <em>Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.InlineAction#isDisable <em>Disable</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.InlineAction#getDisplayWhen <em>Display When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.InlineAction#getHeader <em>Header</em>}</li>
@@ -56,6 +57,33 @@ public interface InlineAction extends NamedDisplayElement {
 	 * @generated
 	 */
 	void setUsedBy(InlineActionContainer value);
+
+	/**
+	 * Returns the value of the '<em><b>Icon Name</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Icon Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Icon Name</em>' attribute.
+	 * @see #setIconName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getInlineAction_IconName()
+	 * @model default=""
+	 * @generated
+	 */
+	String getIconName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.InlineAction#getIconName <em>Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Icon Name</em>' attribute.
+	 * @see #getIconName()
+	 * @generated
+	 */
+	void setIconName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Disable</b></em>' attribute.

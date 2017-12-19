@@ -52,11 +52,17 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getNextNpages <em>Next Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getNextPageIconName <em>Next Page Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPreviousPageLabel <em>Previous Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPreviousPageIconName <em>Previous Page Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#isUseDisabledPageLinks <em>Use Disabled Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFirstPageLabel <em>First Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFirstPageIconName <em>First Page Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getLastPageLabel <em>Last Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getLastPageIconName <em>Last Page Icon Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPaginationClass <em>Pagination Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPaginationElementClass <em>Pagination Element Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getTargettingSearches <em>Targetting Searches</em>}</li>
@@ -237,6 +243,26 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	protected String nextPageLabel = NEXT_PAGE_LABEL_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getNextPageIconName() <em>Next Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNextPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NEXT_PAGE_ICON_NAME_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getNextPageIconName() <em>Next Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNextPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nextPageIconName = NEXT_PAGE_ICON_NAME_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getPreviousPageLabel() <em>Previous Page Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -255,6 +281,26 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected String previousPageLabel = PREVIOUS_PAGE_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPreviousPageIconName() <em>Previous Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreviousPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PREVIOUS_PAGE_ICON_NAME_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getPreviousPageIconName() <em>Previous Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreviousPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String previousPageIconName = PREVIOUS_PAGE_ICON_NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isUseDisabledPageLinks() <em>Use Disabled Page Links</em>}' attribute.
@@ -317,6 +363,26 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	protected String firstPageLabel = FIRST_PAGE_LABEL_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getFirstPageIconName() <em>First Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FIRST_PAGE_ICON_NAME_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getFirstPageIconName() <em>First Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String firstPageIconName = FIRST_PAGE_ICON_NAME_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getLastPageLabel() <em>Last Page Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -335,6 +401,66 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected String lastPageLabel = LAST_PAGE_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLastPageIconName() <em>Last Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LAST_PAGE_ICON_NAME_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getLastPageIconName() <em>Last Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String lastPageIconName = LAST_PAGE_ICON_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPaginationClass() <em>Pagination Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaginationClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PAGINATION_CLASS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPaginationClass() <em>Pagination Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaginationClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String paginationClass = PAGINATION_CLASS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPaginationElementClass() <em>Pagination Element Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaginationElementClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PAGINATION_ELEMENT_CLASS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPaginationElementClass() <em>Pagination Element Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaginationElementClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String paginationElementClass = PAGINATION_ELEMENT_CLASS_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
@@ -658,6 +784,27 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getNextPageIconName() {
+		return nextPageIconName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNextPageIconName(String newNextPageIconName) {
+		String oldNextPageIconName = nextPageIconName;
+		nextPageIconName = newNextPageIconName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME, oldNextPageIconName, nextPageIconName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPreviousPageLabel() {
 		return previousPageLabel;
 	}
@@ -672,6 +819,27 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		previousPageLabel = newPreviousPageLabel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL, oldPreviousPageLabel, previousPageLabel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPreviousPageIconName() {
+		return previousPageIconName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPreviousPageIconName(String newPreviousPageIconName) {
+		String oldPreviousPageIconName = previousPageIconName;
+		previousPageIconName = newPreviousPageIconName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME, oldPreviousPageIconName, previousPageIconName));
 	}
 
 	/**
@@ -742,6 +910,27 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getFirstPageIconName() {
+		return firstPageIconName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFirstPageIconName(String newFirstPageIconName) {
+		String oldFirstPageIconName = firstPageIconName;
+		firstPageIconName = newFirstPageIconName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME, oldFirstPageIconName, firstPageIconName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getLastPageLabel() {
 		return lastPageLabel;
 	}
@@ -756,6 +945,69 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		lastPageLabel = newLastPageLabel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__LAST_PAGE_LABEL, oldLastPageLabel, lastPageLabel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLastPageIconName() {
+		return lastPageIconName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLastPageIconName(String newLastPageIconName) {
+		String oldLastPageIconName = lastPageIconName;
+		lastPageIconName = newLastPageIconName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME, oldLastPageIconName, lastPageIconName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPaginationClass() {
+		return paginationClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaginationClass(String newPaginationClass) {
+		String oldPaginationClass = paginationClass;
+		paginationClass = newPaginationClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__PAGINATION_CLASS, oldPaginationClass, paginationClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPaginationElementClass() {
+		return paginationElementClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaginationElementClass(String newPaginationElementClass) {
+		String oldPaginationElementClass = paginationElementClass;
+		paginationElementClass = newPaginationElementClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS, oldPaginationElementClass, paginationElementClass));
 	}
 
 	/**
@@ -943,16 +1195,28 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return getPreviousNpages();
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 				return getNextPageLabel();
+			case WafPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME:
+				return getNextPageIconName();
 			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				return getPreviousPageLabel();
+			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME:
+				return getPreviousPageIconName();
 			case WafPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
 				return isUseDisabledPageLinks();
 			case WafPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 				return isUseFirstLastPageLinks();
 			case WafPackage.INDEX_UNIT__FIRST_PAGE_LABEL:
 				return getFirstPageLabel();
+			case WafPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME:
+				return getFirstPageIconName();
 			case WafPackage.INDEX_UNIT__LAST_PAGE_LABEL:
 				return getLastPageLabel();
+			case WafPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME:
+				return getLastPageIconName();
+			case WafPackage.INDEX_UNIT__PAGINATION_CLASS:
+				return getPaginationClass();
+			case WafPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS:
+				return getPaginationElementClass();
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				return getActions();
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
@@ -1011,8 +1275,14 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 				setNextPageLabel((String)newValue);
 				return;
+			case WafPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME:
+				setNextPageIconName((String)newValue);
+				return;
 			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				setPreviousPageLabel((String)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME:
+				setPreviousPageIconName((String)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
 				setUseDisabledPageLinks((Boolean)newValue);
@@ -1023,8 +1293,20 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__FIRST_PAGE_LABEL:
 				setFirstPageLabel((String)newValue);
 				return;
+			case WafPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME:
+				setFirstPageIconName((String)newValue);
+				return;
 			case WafPackage.INDEX_UNIT__LAST_PAGE_LABEL:
 				setLastPageLabel((String)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME:
+				setLastPageIconName((String)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__PAGINATION_CLASS:
+				setPaginationClass((String)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS:
+				setPaginationElementClass((String)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
@@ -1084,8 +1366,14 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 				setNextPageLabel(NEXT_PAGE_LABEL_EDEFAULT);
 				return;
+			case WafPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME:
+				setNextPageIconName(NEXT_PAGE_ICON_NAME_EDEFAULT);
+				return;
 			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				setPreviousPageLabel(PREVIOUS_PAGE_LABEL_EDEFAULT);
+				return;
+			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME:
+				setPreviousPageIconName(PREVIOUS_PAGE_ICON_NAME_EDEFAULT);
 				return;
 			case WafPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
 				setUseDisabledPageLinks(USE_DISABLED_PAGE_LINKS_EDEFAULT);
@@ -1096,8 +1384,20 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__FIRST_PAGE_LABEL:
 				setFirstPageLabel(FIRST_PAGE_LABEL_EDEFAULT);
 				return;
+			case WafPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME:
+				setFirstPageIconName(FIRST_PAGE_ICON_NAME_EDEFAULT);
+				return;
 			case WafPackage.INDEX_UNIT__LAST_PAGE_LABEL:
 				setLastPageLabel(LAST_PAGE_LABEL_EDEFAULT);
+				return;
+			case WafPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME:
+				setLastPageIconName(LAST_PAGE_ICON_NAME_EDEFAULT);
+				return;
+			case WafPackage.INDEX_UNIT__PAGINATION_CLASS:
+				setPaginationClass(PAGINATION_CLASS_EDEFAULT);
+				return;
+			case WafPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS:
+				setPaginationElementClass(PAGINATION_ELEMENT_CLASS_EDEFAULT);
 				return;
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
@@ -1145,16 +1445,28 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return previousNpages != PREVIOUS_NPAGES_EDEFAULT;
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 				return NEXT_PAGE_LABEL_EDEFAULT == null ? nextPageLabel != null : !NEXT_PAGE_LABEL_EDEFAULT.equals(nextPageLabel);
+			case WafPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME:
+				return NEXT_PAGE_ICON_NAME_EDEFAULT == null ? nextPageIconName != null : !NEXT_PAGE_ICON_NAME_EDEFAULT.equals(nextPageIconName);
 			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				return PREVIOUS_PAGE_LABEL_EDEFAULT == null ? previousPageLabel != null : !PREVIOUS_PAGE_LABEL_EDEFAULT.equals(previousPageLabel);
+			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME:
+				return PREVIOUS_PAGE_ICON_NAME_EDEFAULT == null ? previousPageIconName != null : !PREVIOUS_PAGE_ICON_NAME_EDEFAULT.equals(previousPageIconName);
 			case WafPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
 				return useDisabledPageLinks != USE_DISABLED_PAGE_LINKS_EDEFAULT;
 			case WafPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 				return useFirstLastPageLinks != USE_FIRST_LAST_PAGE_LINKS_EDEFAULT;
 			case WafPackage.INDEX_UNIT__FIRST_PAGE_LABEL:
 				return FIRST_PAGE_LABEL_EDEFAULT == null ? firstPageLabel != null : !FIRST_PAGE_LABEL_EDEFAULT.equals(firstPageLabel);
+			case WafPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME:
+				return FIRST_PAGE_ICON_NAME_EDEFAULT == null ? firstPageIconName != null : !FIRST_PAGE_ICON_NAME_EDEFAULT.equals(firstPageIconName);
 			case WafPackage.INDEX_UNIT__LAST_PAGE_LABEL:
 				return LAST_PAGE_LABEL_EDEFAULT == null ? lastPageLabel != null : !LAST_PAGE_LABEL_EDEFAULT.equals(lastPageLabel);
+			case WafPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME:
+				return LAST_PAGE_ICON_NAME_EDEFAULT == null ? lastPageIconName != null : !LAST_PAGE_ICON_NAME_EDEFAULT.equals(lastPageIconName);
+			case WafPackage.INDEX_UNIT__PAGINATION_CLASS:
+				return PAGINATION_CLASS_EDEFAULT == null ? paginationClass != null : !PAGINATION_CLASS_EDEFAULT.equals(paginationClass);
+			case WafPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS:
+				return PAGINATION_ELEMENT_CLASS_EDEFAULT == null ? paginationElementClass != null : !PAGINATION_ELEMENT_CLASS_EDEFAULT.equals(paginationElementClass);
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				return actions != null && !actions.isEmpty();
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
@@ -1192,11 +1504,17 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WafPackage.INDEX_UNIT__NEXT_NPAGES: return WafPackage.COLLECTION_UNIT__NEXT_NPAGES;
 				case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES: return WafPackage.COLLECTION_UNIT__PREVIOUS_NPAGES;
 				case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL: return WafPackage.COLLECTION_UNIT__NEXT_PAGE_LABEL;
+				case WafPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME: return WafPackage.COLLECTION_UNIT__NEXT_PAGE_ICON_NAME;
 				case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL: return WafPackage.COLLECTION_UNIT__PREVIOUS_PAGE_LABEL;
+				case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME: return WafPackage.COLLECTION_UNIT__PREVIOUS_PAGE_ICON_NAME;
 				case WafPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS: return WafPackage.COLLECTION_UNIT__USE_DISABLED_PAGE_LINKS;
 				case WafPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS: return WafPackage.COLLECTION_UNIT__USE_FIRST_LAST_PAGE_LINKS;
 				case WafPackage.INDEX_UNIT__FIRST_PAGE_LABEL: return WafPackage.COLLECTION_UNIT__FIRST_PAGE_LABEL;
+				case WafPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME: return WafPackage.COLLECTION_UNIT__FIRST_PAGE_ICON_NAME;
 				case WafPackage.INDEX_UNIT__LAST_PAGE_LABEL: return WafPackage.COLLECTION_UNIT__LAST_PAGE_LABEL;
+				case WafPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME: return WafPackage.COLLECTION_UNIT__LAST_PAGE_ICON_NAME;
+				case WafPackage.INDEX_UNIT__PAGINATION_CLASS: return WafPackage.COLLECTION_UNIT__PAGINATION_CLASS;
+				case WafPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS: return WafPackage.COLLECTION_UNIT__PAGINATION_ELEMENT_CLASS;
 				default: return -1;
 			}
 		}
@@ -1234,11 +1552,17 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WafPackage.COLLECTION_UNIT__NEXT_NPAGES: return WafPackage.INDEX_UNIT__NEXT_NPAGES;
 				case WafPackage.COLLECTION_UNIT__PREVIOUS_NPAGES: return WafPackage.INDEX_UNIT__PREVIOUS_NPAGES;
 				case WafPackage.COLLECTION_UNIT__NEXT_PAGE_LABEL: return WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL;
+				case WafPackage.COLLECTION_UNIT__NEXT_PAGE_ICON_NAME: return WafPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME;
 				case WafPackage.COLLECTION_UNIT__PREVIOUS_PAGE_LABEL: return WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL;
+				case WafPackage.COLLECTION_UNIT__PREVIOUS_PAGE_ICON_NAME: return WafPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME;
 				case WafPackage.COLLECTION_UNIT__USE_DISABLED_PAGE_LINKS: return WafPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS;
 				case WafPackage.COLLECTION_UNIT__USE_FIRST_LAST_PAGE_LINKS: return WafPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS;
 				case WafPackage.COLLECTION_UNIT__FIRST_PAGE_LABEL: return WafPackage.INDEX_UNIT__FIRST_PAGE_LABEL;
+				case WafPackage.COLLECTION_UNIT__FIRST_PAGE_ICON_NAME: return WafPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME;
 				case WafPackage.COLLECTION_UNIT__LAST_PAGE_LABEL: return WafPackage.INDEX_UNIT__LAST_PAGE_LABEL;
+				case WafPackage.COLLECTION_UNIT__LAST_PAGE_ICON_NAME: return WafPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME;
+				case WafPackage.COLLECTION_UNIT__PAGINATION_CLASS: return WafPackage.INDEX_UNIT__PAGINATION_CLASS;
+				case WafPackage.COLLECTION_UNIT__PAGINATION_ELEMENT_CLASS: return WafPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS;
 				default: return -1;
 			}
 		}
@@ -1273,16 +1597,28 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		result.append(previousNpages);
 		result.append(", nextPageLabel: ");
 		result.append(nextPageLabel);
+		result.append(", nextPageIconName: ");
+		result.append(nextPageIconName);
 		result.append(", previousPageLabel: ");
 		result.append(previousPageLabel);
+		result.append(", previousPageIconName: ");
+		result.append(previousPageIconName);
 		result.append(", useDisabledPageLinks: ");
 		result.append(useDisabledPageLinks);
 		result.append(", useFirstLastPageLinks: ");
 		result.append(useFirstLastPageLinks);
 		result.append(", firstPageLabel: ");
 		result.append(firstPageLabel);
+		result.append(", firstPageIconName: ");
+		result.append(firstPageIconName);
 		result.append(", lastPageLabel: ");
 		result.append(lastPageLabel);
+		result.append(", lastPageIconName: ");
+		result.append(lastPageIconName);
+		result.append(", paginationClass: ");
+		result.append(paginationClass);
+		result.append(", paginationElementClass: ");
+		result.append(paginationElementClass);
 		result.append(", omitColumnLabels: ");
 		result.append(omitColumnLabels);
 		result.append(", rowClasses: ");

@@ -60,11 +60,17 @@ public class IndexUnitItemProvider
 			addNextNpagesPropertyDescriptor(object);
 			addPreviousNpagesPropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
+			addNextPageIconNamePropertyDescriptor(object);
 			addPreviousPageLabelPropertyDescriptor(object);
+			addPreviousPageIconNamePropertyDescriptor(object);
 			addUseDisabledPageLinksPropertyDescriptor(object);
 			addUseFirstLastPageLinksPropertyDescriptor(object);
 			addFirstPageLabelPropertyDescriptor(object);
+			addFirstPageIconNamePropertyDescriptor(object);
 			addLastPageLabelPropertyDescriptor(object);
+			addLastPageIconNamePropertyDescriptor(object);
+			addPaginationClassPropertyDescriptor(object);
+			addPaginationElementClassPropertyDescriptor(object);
 			addOmitColumnLabelsPropertyDescriptor(object);
 			addTargettingSearchesPropertyDescriptor(object);
 			addRowClassesPropertyDescriptor(object);
@@ -337,6 +343,28 @@ public class IndexUnitItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Next Page Icon Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNextPageIconNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_nextPageIconName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_nextPageIconName_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__NEXT_PAGE_ICON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Previous Page Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -350,6 +378,28 @@ public class IndexUnitItemProvider
 				 getString("_UI_CollectionUnit_previousPageLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_previousPageLabel_feature", "_UI_CollectionUnit_type"),
 				 WafPackage.Literals.COLLECTION_UNIT__PREVIOUS_PAGE_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Previous Page Icon Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPreviousPageIconNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_previousPageIconName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_previousPageIconName_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__PREVIOUS_PAGE_ICON_NAME,
 				 true,
 				 false,
 				 false,
@@ -425,6 +475,28 @@ public class IndexUnitItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the First Page Icon Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFirstPageIconNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_firstPageIconName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_firstPageIconName_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__FIRST_PAGE_ICON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Last Page Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -438,6 +510,72 @@ public class IndexUnitItemProvider
 				 getString("_UI_CollectionUnit_lastPageLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_lastPageLabel_feature", "_UI_CollectionUnit_type"),
 				 WafPackage.Literals.COLLECTION_UNIT__LAST_PAGE_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Last Page Icon Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLastPageIconNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_lastPageIconName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_lastPageIconName_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__LAST_PAGE_ICON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pagination Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPaginationClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_paginationClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_paginationClass_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__PAGINATION_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pagination Element Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPaginationElementClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_paginationElementClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_paginationElementClass_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__PAGINATION_ELEMENT_CLASS,
 				 true,
 				 false,
 				 false,
@@ -552,11 +690,17 @@ public class IndexUnitItemProvider
 			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
 			case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES:
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
+			case WafPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME:
 			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
+			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME:
 			case WafPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
 			case WafPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 			case WafPackage.INDEX_UNIT__FIRST_PAGE_LABEL:
+			case WafPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME:
 			case WafPackage.INDEX_UNIT__LAST_PAGE_LABEL:
+			case WafPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME:
+			case WafPackage.INDEX_UNIT__PAGINATION_CLASS:
+			case WafPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS:
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 			case WafPackage.INDEX_UNIT__ROW_CLASSES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

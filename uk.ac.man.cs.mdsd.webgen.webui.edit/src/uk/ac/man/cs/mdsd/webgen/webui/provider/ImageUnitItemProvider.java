@@ -53,17 +53,22 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			addFilterPropertyDescriptor(object);
 			addSupportedFiltersPropertyDescriptor(object);
 			addEmptyMessagePropertyDescriptor(object);
-			addPaginationPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
 			addMaximumPaginationSizePropertyDescriptor(object);
 			addNextNpagesPropertyDescriptor(object);
 			addPreviousNpagesPropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
+			addNextPageIconNamePropertyDescriptor(object);
 			addPreviousPageLabelPropertyDescriptor(object);
+			addPreviousPageIconNamePropertyDescriptor(object);
 			addUseDisabledPageLinksPropertyDescriptor(object);
 			addUseFirstLastPageLinksPropertyDescriptor(object);
 			addFirstPageLabelPropertyDescriptor(object);
+			addFirstPageIconNamePropertyDescriptor(object);
 			addLastPageLabelPropertyDescriptor(object);
+			addLastPageIconNamePropertyDescriptor(object);
+			addPaginationClassPropertyDescriptor(object);
+			addPaginationElementClassPropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
@@ -187,28 +192,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Pagination feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPaginationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnit_pagination_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_pagination_feature", "_UI_CollectionUnit_type"),
-				 WebuiPackage.Literals.COLLECTION_UNIT__PAGINATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_PaginationPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Default Pagination Size feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -319,6 +302,28 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Next Page Icon Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNextPageIconNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_nextPageIconName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_nextPageIconName_feature", "_UI_CollectionUnit_type"),
+				 WebuiPackage.Literals.COLLECTION_UNIT__NEXT_PAGE_ICON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Previous Page Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -337,6 +342,28 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Previous Page Icon Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPreviousPageIconNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_previousPageIconName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_previousPageIconName_feature", "_UI_CollectionUnit_type"),
+				 WebuiPackage.Literals.COLLECTION_UNIT__PREVIOUS_PAGE_ICON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
 				 null));
 	}
 
@@ -407,6 +434,28 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the First Page Icon Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFirstPageIconNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_firstPageIconName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_firstPageIconName_feature", "_UI_CollectionUnit_type"),
+				 WebuiPackage.Literals.COLLECTION_UNIT__FIRST_PAGE_ICON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Last Page Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -425,6 +474,72 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Last Page Icon Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLastPageIconNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_lastPageIconName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_lastPageIconName_feature", "_UI_CollectionUnit_type"),
+				 WebuiPackage.Literals.COLLECTION_UNIT__LAST_PAGE_ICON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pagination Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPaginationClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_paginationClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_paginationClass_feature", "_UI_CollectionUnit_type"),
+				 WebuiPackage.Literals.COLLECTION_UNIT__PAGINATION_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pagination Element Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPaginationElementClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_paginationElementClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_paginationElementClass_feature", "_UI_CollectionUnit_type"),
+				 WebuiPackage.Literals.COLLECTION_UNIT__PAGINATION_ELEMENT_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
 				 null));
 	}
 
@@ -580,11 +695,17 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			case WebuiPackage.IMAGE_UNIT__NEXT_NPAGES:
 			case WebuiPackage.IMAGE_UNIT__PREVIOUS_NPAGES:
 			case WebuiPackage.IMAGE_UNIT__NEXT_PAGE_LABEL:
+			case WebuiPackage.IMAGE_UNIT__NEXT_PAGE_ICON_NAME:
 			case WebuiPackage.IMAGE_UNIT__PREVIOUS_PAGE_LABEL:
+			case WebuiPackage.IMAGE_UNIT__PREVIOUS_PAGE_ICON_NAME:
 			case WebuiPackage.IMAGE_UNIT__USE_DISABLED_PAGE_LINKS:
 			case WebuiPackage.IMAGE_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 			case WebuiPackage.IMAGE_UNIT__FIRST_PAGE_LABEL:
+			case WebuiPackage.IMAGE_UNIT__FIRST_PAGE_ICON_NAME:
 			case WebuiPackage.IMAGE_UNIT__LAST_PAGE_LABEL:
+			case WebuiPackage.IMAGE_UNIT__LAST_PAGE_ICON_NAME:
+			case WebuiPackage.IMAGE_UNIT__PAGINATION_CLASS:
+			case WebuiPackage.IMAGE_UNIT__PAGINATION_ELEMENT_CLASS:
 			case WebuiPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 			case WebuiPackage.IMAGE_UNIT__SHOW_TIME:
 			case WebuiPackage.IMAGE_UNIT__TRANSITION_TIME:

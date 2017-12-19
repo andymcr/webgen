@@ -2409,7 +2409,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_PreviousPageLabel() {
+	public EAttribute getCollectionUnit_NextPageIconName() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -2418,7 +2418,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_UseDisabledPageLinks() {
+	public EAttribute getCollectionUnit_PreviousPageLabel() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -2427,7 +2427,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_UseFirstLastPageLinks() {
+	public EAttribute getCollectionUnit_PreviousPageIconName() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -2436,7 +2436,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_FirstPageLabel() {
+	public EAttribute getCollectionUnit_UseDisabledPageLinks() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -2445,8 +2445,62 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_LastPageLabel() {
+	public EAttribute getCollectionUnit_UseFirstLastPageLinks() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCollectionUnit_FirstPageLabel() {
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCollectionUnit_FirstPageIconName() {
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCollectionUnit_LastPageLabel() {
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCollectionUnit_LastPageIconName() {
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCollectionUnit_PaginationClass() {
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCollectionUnit_PaginationElementClass() {
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -3629,11 +3683,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__NEXT_NPAGES);
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__PREVIOUS_NPAGES);
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__NEXT_PAGE_LABEL);
+		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__NEXT_PAGE_ICON_NAME);
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__PREVIOUS_PAGE_LABEL);
+		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__PREVIOUS_PAGE_ICON_NAME);
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__USE_DISABLED_PAGE_LINKS);
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__USE_FIRST_LAST_PAGE_LINKS);
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__FIRST_PAGE_LABEL);
+		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__FIRST_PAGE_ICON_NAME);
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__LAST_PAGE_LABEL);
+		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__LAST_PAGE_ICON_NAME);
+		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__PAGINATION_CLASS);
+		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__PAGINATION_ELEMENT_CLASS);
 
 		editUnitEClass = createEClass(EDIT_UNIT);
 		createEAttribute(editUnitEClass, EDIT_UNIT__ON_SAVE_CONTINUE_EDITING);
@@ -4110,11 +4170,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getCollectionUnit_NextNpages(), theEcorePackage.getEInt(), "nextNpages", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_PreviousNpages(), theEcorePackage.getEInt(), "previousNpages", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_NextPageLabel(), theEcorePackage.getEString(), "nextPageLabel", ">", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCollectionUnit_NextPageIconName(), theEcorePackage.getEString(), "nextPageIconName", "", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_PreviousPageLabel(), theEcorePackage.getEString(), "previousPageLabel", "<", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCollectionUnit_PreviousPageIconName(), theEcorePackage.getEString(), "previousPageIconName", "", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_UseDisabledPageLinks(), theEcorePackage.getEBoolean(), "useDisabledPageLinks", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_UseFirstLastPageLinks(), theEcorePackage.getEBoolean(), "useFirstLastPageLinks", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_FirstPageLabel(), theEcorePackage.getEString(), "firstPageLabel", "<<", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCollectionUnit_FirstPageIconName(), theEcorePackage.getEString(), "firstPageIconName", "", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_LastPageLabel(), theEcorePackage.getEString(), "lastPageLabel", ">>", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCollectionUnit_LastPageIconName(), theEcorePackage.getEString(), "lastPageIconName", "", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCollectionUnit_PaginationClass(), theEcorePackage.getEString(), "paginationClass", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCollectionUnit_PaginationElementClass(), theEcorePackage.getEString(), "paginationElementClass", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(editUnitEClass, EditUnit.class, "EditUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEditUnit_OnSaveContinueEditing(), theEcorePackage.getEBoolean(), "onSaveContinueEditing", "false", 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

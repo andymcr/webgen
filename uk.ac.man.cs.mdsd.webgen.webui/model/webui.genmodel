@@ -245,19 +245,23 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/supportedFilters"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/emptyMessage"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Pagination"
-          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/pagination"/>
       <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/defaultPaginationSize"/>
       <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/maximumPaginationSize"/>
       <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/nextNpages"/>
       <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/previousNpages"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/nextPageLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/nextPageIconName"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/previousPageLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/previousPageIconName"/>
       <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/useDisabledPageLinks"/>
       <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/useFirstLastPageLinks"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/firstPageLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/firstPageIconName"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/lastPageLabel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/lastPageIconName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/paginationClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/paginationElementClass"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//EditUnit">
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
@@ -398,6 +402,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//InlineAction">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference webui.ecore#//InlineAction/usedBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//InlineAction/iconName"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//InlineAction/disable"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Business"
           ecoreFeature="ecore:EReference webui.ecore#//InlineAction/displayWhen"/>

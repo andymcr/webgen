@@ -772,11 +772,17 @@ abstract rule CollectionUnit {
 		nextNpages <- website.nextNpages,
 		previousNpages <- website.previousNpages,
 		nextPageLabel <- website.nextPageLabel,
+		nextPageIconName <- website.nextPageIconName,
 		previousPageLabel <- website.previousPageLabel,
+		previousPageIconName <- website.previousPageIconName,
 		useDisabledPageLinks <- website.useDisabledPageLinks,
 		useFirstLastPageLinks <- website.useFirstLastPageLinks,
 		firstPageLabel <- website.firstPageLabel,
-		lastPageLabel <- website.lastPageLabel
+		firstPageIconName <- website.firstPageIconName,
+		lastPageLabel <- website.lastPageLabel,
+		lastPageIconName <- website.lastPageIconName,
+		paginationClass <- website.paginationClass,
+		paginationElementClass <- website.paginationElementClass
 	)
 }
 

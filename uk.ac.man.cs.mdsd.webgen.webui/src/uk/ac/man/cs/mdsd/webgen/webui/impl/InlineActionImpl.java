@@ -29,6 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InlineActionImpl#getUsedBy <em>Used By</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InlineActionImpl#getIconName <em>Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InlineActionImpl#isDisable <em>Disable</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InlineActionImpl#getDisplayWhen <em>Display When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InlineActionImpl#getHeader <em>Header</em>}</li>
@@ -40,6 +41,26 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * @generated
  */
 public abstract class InlineActionImpl extends NamedDisplayElementImpl implements InlineAction {
+	/**
+	 * The default value of the '{@link #getIconName() <em>Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ICON_NAME_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getIconName() <em>Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String iconName = ICON_NAME_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #isDisable() <em>Disable</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -208,6 +229,27 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INLINE_ACTION__USED_BY, newUsedBy, newUsedBy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getIconName() {
+		return iconName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIconName(String newIconName) {
+		String oldIconName = iconName;
+		iconName = newIconName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INLINE_ACTION__ICON_NAME, oldIconName, iconName));
 	}
 
 	/**
@@ -414,6 +456,8 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		switch (featureID) {
 			case WebuiPackage.INLINE_ACTION__USED_BY:
 				return getUsedBy();
+			case WebuiPackage.INLINE_ACTION__ICON_NAME:
+				return getIconName();
 			case WebuiPackage.INLINE_ACTION__DISABLE:
 				return isDisable();
 			case WebuiPackage.INLINE_ACTION__DISPLAY_WHEN:
@@ -440,6 +484,9 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		switch (featureID) {
 			case WebuiPackage.INLINE_ACTION__USED_BY:
 				setUsedBy((InlineActionContainer)newValue);
+				return;
+			case WebuiPackage.INLINE_ACTION__ICON_NAME:
+				setIconName((String)newValue);
 				return;
 			case WebuiPackage.INLINE_ACTION__DISABLE:
 				setDisable((Boolean)newValue);
@@ -474,6 +521,9 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 			case WebuiPackage.INLINE_ACTION__USED_BY:
 				setUsedBy((InlineActionContainer)null);
 				return;
+			case WebuiPackage.INLINE_ACTION__ICON_NAME:
+				setIconName(ICON_NAME_EDEFAULT);
+				return;
 			case WebuiPackage.INLINE_ACTION__DISABLE:
 				setDisable(DISABLE_EDEFAULT);
 				return;
@@ -506,6 +556,8 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		switch (featureID) {
 			case WebuiPackage.INLINE_ACTION__USED_BY:
 				return getUsedBy() != null;
+			case WebuiPackage.INLINE_ACTION__ICON_NAME:
+				return ICON_NAME_EDEFAULT == null ? iconName != null : !ICON_NAME_EDEFAULT.equals(iconName);
 			case WebuiPackage.INLINE_ACTION__DISABLE:
 				return disable != DISABLE_EDEFAULT;
 			case WebuiPackage.INLINE_ACTION__DISPLAY_WHEN:
@@ -532,7 +584,9 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (disable: ");
+		result.append(" (iconName: ");
+		result.append(iconName);
+		result.append(", disable: ");
 		result.append(disable);
 		result.append(", header: ");
 		result.append(header);

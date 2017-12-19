@@ -39,17 +39,22 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getMaximumPaginationSize <em>Maximum Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getNextNpages <em>Next Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getNextPageIconName <em>Next Page Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getPreviousPageLabel <em>Previous Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getPreviousPageIconName <em>Previous Page Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#isUseDisabledPageLinks <em>Use Disabled Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFirstPageLabel <em>First Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFirstPageIconName <em>First Page Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getLastPageLabel <em>Last Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getLastPageIconName <em>Last Page Icon Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getPaginationClass <em>Pagination Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getPaginationElementClass <em>Pagination Element Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getDisplayOption <em>Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
@@ -120,16 +125,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected String emptyMessage = EMPTY_MESSAGE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getPagination() <em>Pagination</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPagination()
-	 * @generated
-	 * @ordered
-	 */
-	protected Filter pagination;
 
 	/**
 	 * The default value of the '{@link #getDefaultPaginationSize() <em>Default Pagination Size</em>}' attribute.
@@ -232,6 +227,26 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	protected String nextPageLabel = NEXT_PAGE_LABEL_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getNextPageIconName() <em>Next Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNextPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NEXT_PAGE_ICON_NAME_EDEFAULT = "chevron_right";
+
+	/**
+	 * The cached value of the '{@link #getNextPageIconName() <em>Next Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNextPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nextPageIconName = NEXT_PAGE_ICON_NAME_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getPreviousPageLabel() <em>Previous Page Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -250,6 +265,26 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected String previousPageLabel = PREVIOUS_PAGE_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPreviousPageIconName() <em>Previous Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreviousPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PREVIOUS_PAGE_ICON_NAME_EDEFAULT = "chevron_left";
+
+	/**
+	 * The cached value of the '{@link #getPreviousPageIconName() <em>Previous Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreviousPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String previousPageIconName = PREVIOUS_PAGE_ICON_NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isUseDisabledPageLinks() <em>Use Disabled Page Links</em>}' attribute.
@@ -312,6 +347,26 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	protected String firstPageLabel = FIRST_PAGE_LABEL_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getFirstPageIconName() <em>First Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FIRST_PAGE_ICON_NAME_EDEFAULT = "first_page";
+
+	/**
+	 * The cached value of the '{@link #getFirstPageIconName() <em>First Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String firstPageIconName = FIRST_PAGE_ICON_NAME_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getLastPageLabel() <em>Last Page Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -330,6 +385,66 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected String lastPageLabel = LAST_PAGE_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLastPageIconName() <em>Last Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LAST_PAGE_ICON_NAME_EDEFAULT = "last_page";
+
+	/**
+	 * The cached value of the '{@link #getLastPageIconName() <em>Last Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastPageIconName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String lastPageIconName = LAST_PAGE_ICON_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPaginationClass() <em>Pagination Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaginationClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PAGINATION_CLASS_EDEFAULT = "pagination";
+
+	/**
+	 * The cached value of the '{@link #getPaginationClass() <em>Pagination Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaginationClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String paginationClass = PAGINATION_CLASS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPaginationElementClass() <em>Pagination Element Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaginationElementClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PAGINATION_ELEMENT_CLASS_EDEFAULT = "waves_effect";
+
+	/**
+	 * The cached value of the '{@link #getPaginationElementClass() <em>Pagination Element Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaginationElementClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String paginationElementClass = PAGINATION_ELEMENT_CLASS_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
@@ -586,44 +701,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Filter getPagination() {
-		if (pagination != null && pagination.eIsProxy()) {
-			InternalEObject oldPagination = (InternalEObject)pagination;
-			pagination = (Filter)eResolveProxy(oldPagination);
-			if (pagination != oldPagination) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.INDEX_UNIT__PAGINATION, oldPagination, pagination));
-			}
-		}
-		return pagination;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Filter basicGetPagination() {
-		return pagination;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPagination(Filter newPagination) {
-		Filter oldPagination = pagination;
-		pagination = newPagination;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__PAGINATION, oldPagination, pagination));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getDefaultPaginationSize() {
 		return defaultPaginationSize;
 	}
@@ -729,6 +806,27 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getNextPageIconName() {
+		return nextPageIconName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNextPageIconName(String newNextPageIconName) {
+		String oldNextPageIconName = nextPageIconName;
+		nextPageIconName = newNextPageIconName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME, oldNextPageIconName, nextPageIconName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPreviousPageLabel() {
 		return previousPageLabel;
 	}
@@ -743,6 +841,27 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		previousPageLabel = newPreviousPageLabel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL, oldPreviousPageLabel, previousPageLabel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPreviousPageIconName() {
+		return previousPageIconName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPreviousPageIconName(String newPreviousPageIconName) {
+		String oldPreviousPageIconName = previousPageIconName;
+		previousPageIconName = newPreviousPageIconName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME, oldPreviousPageIconName, previousPageIconName));
 	}
 
 	/**
@@ -813,6 +932,27 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getFirstPageIconName() {
+		return firstPageIconName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFirstPageIconName(String newFirstPageIconName) {
+		String oldFirstPageIconName = firstPageIconName;
+		firstPageIconName = newFirstPageIconName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME, oldFirstPageIconName, firstPageIconName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getLastPageLabel() {
 		return lastPageLabel;
 	}
@@ -827,6 +967,69 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		lastPageLabel = newLastPageLabel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__LAST_PAGE_LABEL, oldLastPageLabel, lastPageLabel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLastPageIconName() {
+		return lastPageIconName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLastPageIconName(String newLastPageIconName) {
+		String oldLastPageIconName = lastPageIconName;
+		lastPageIconName = newLastPageIconName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME, oldLastPageIconName, lastPageIconName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPaginationClass() {
+		return paginationClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaginationClass(String newPaginationClass) {
+		String oldPaginationClass = paginationClass;
+		paginationClass = newPaginationClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__PAGINATION_CLASS, oldPaginationClass, paginationClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPaginationElementClass() {
+		return paginationElementClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaginationElementClass(String newPaginationElementClass) {
+		String oldPaginationElementClass = paginationElementClass;
+		paginationElementClass = newPaginationElementClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS, oldPaginationElementClass, paginationElementClass));
 	}
 
 	/**
@@ -995,9 +1198,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return getSupportedFilters();
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				return getEmptyMessage();
-			case WebuiPackage.INDEX_UNIT__PAGINATION:
-				if (resolve) return getPagination();
-				return basicGetPagination();
 			case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return getDefaultPaginationSize();
 			case WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE:
@@ -1008,16 +1208,28 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return getPreviousNpages();
 			case WebuiPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 				return getNextPageLabel();
+			case WebuiPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME:
+				return getNextPageIconName();
 			case WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				return getPreviousPageLabel();
+			case WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME:
+				return getPreviousPageIconName();
 			case WebuiPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
 				return isUseDisabledPageLinks();
 			case WebuiPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 				return isUseFirstLastPageLinks();
 			case WebuiPackage.INDEX_UNIT__FIRST_PAGE_LABEL:
 				return getFirstPageLabel();
+			case WebuiPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME:
+				return getFirstPageIconName();
 			case WebuiPackage.INDEX_UNIT__LAST_PAGE_LABEL:
 				return getLastPageLabel();
+			case WebuiPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME:
+				return getLastPageIconName();
+			case WebuiPackage.INDEX_UNIT__PAGINATION_CLASS:
+				return getPaginationClass();
+			case WebuiPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS:
+				return getPaginationElementClass();
 			case WebuiPackage.INDEX_UNIT__ACTIONS:
 				return getActions();
 			case WebuiPackage.INDEX_UNIT__DISPLAY_OPTION:
@@ -1060,9 +1272,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage((String)newValue);
 				return;
-			case WebuiPackage.INDEX_UNIT__PAGINATION:
-				setPagination((Filter)newValue);
-				return;
 			case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize((Integer)newValue);
 				return;
@@ -1078,8 +1287,14 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 				setNextPageLabel((String)newValue);
 				return;
+			case WebuiPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME:
+				setNextPageIconName((String)newValue);
+				return;
 			case WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				setPreviousPageLabel((String)newValue);
+				return;
+			case WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME:
+				setPreviousPageIconName((String)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
 				setUseDisabledPageLinks((Boolean)newValue);
@@ -1090,8 +1305,20 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__FIRST_PAGE_LABEL:
 				setFirstPageLabel((String)newValue);
 				return;
+			case WebuiPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME:
+				setFirstPageIconName((String)newValue);
+				return;
 			case WebuiPackage.INDEX_UNIT__LAST_PAGE_LABEL:
 				setLastPageLabel((String)newValue);
+				return;
+			case WebuiPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME:
+				setLastPageIconName((String)newValue);
+				return;
+			case WebuiPackage.INDEX_UNIT__PAGINATION_CLASS:
+				setPaginationClass((String)newValue);
+				return;
+			case WebuiPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS:
+				setPaginationElementClass((String)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
@@ -1139,9 +1366,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage(EMPTY_MESSAGE_EDEFAULT);
 				return;
-			case WebuiPackage.INDEX_UNIT__PAGINATION:
-				setPagination((Filter)null);
-				return;
 			case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize(DEFAULT_PAGINATION_SIZE_EDEFAULT);
 				return;
@@ -1157,8 +1381,14 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 				setNextPageLabel(NEXT_PAGE_LABEL_EDEFAULT);
 				return;
+			case WebuiPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME:
+				setNextPageIconName(NEXT_PAGE_ICON_NAME_EDEFAULT);
+				return;
 			case WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				setPreviousPageLabel(PREVIOUS_PAGE_LABEL_EDEFAULT);
+				return;
+			case WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME:
+				setPreviousPageIconName(PREVIOUS_PAGE_ICON_NAME_EDEFAULT);
 				return;
 			case WebuiPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
 				setUseDisabledPageLinks(USE_DISABLED_PAGE_LINKS_EDEFAULT);
@@ -1169,8 +1399,20 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__FIRST_PAGE_LABEL:
 				setFirstPageLabel(FIRST_PAGE_LABEL_EDEFAULT);
 				return;
+			case WebuiPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME:
+				setFirstPageIconName(FIRST_PAGE_ICON_NAME_EDEFAULT);
+				return;
 			case WebuiPackage.INDEX_UNIT__LAST_PAGE_LABEL:
 				setLastPageLabel(LAST_PAGE_LABEL_EDEFAULT);
+				return;
+			case WebuiPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME:
+				setLastPageIconName(LAST_PAGE_ICON_NAME_EDEFAULT);
+				return;
+			case WebuiPackage.INDEX_UNIT__PAGINATION_CLASS:
+				setPaginationClass(PAGINATION_CLASS_EDEFAULT);
+				return;
+			case WebuiPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS:
+				setPaginationElementClass(PAGINATION_ELEMENT_CLASS_EDEFAULT);
 				return;
 			case WebuiPackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
@@ -1212,8 +1454,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return supportedFilters != null && !supportedFilters.isEmpty();
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				return EMPTY_MESSAGE_EDEFAULT == null ? emptyMessage != null : !EMPTY_MESSAGE_EDEFAULT.equals(emptyMessage);
-			case WebuiPackage.INDEX_UNIT__PAGINATION:
-				return pagination != null;
 			case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return defaultPaginationSize != DEFAULT_PAGINATION_SIZE_EDEFAULT;
 			case WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE:
@@ -1224,16 +1464,28 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return previousNpages != PREVIOUS_NPAGES_EDEFAULT;
 			case WebuiPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 				return NEXT_PAGE_LABEL_EDEFAULT == null ? nextPageLabel != null : !NEXT_PAGE_LABEL_EDEFAULT.equals(nextPageLabel);
+			case WebuiPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME:
+				return NEXT_PAGE_ICON_NAME_EDEFAULT == null ? nextPageIconName != null : !NEXT_PAGE_ICON_NAME_EDEFAULT.equals(nextPageIconName);
 			case WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				return PREVIOUS_PAGE_LABEL_EDEFAULT == null ? previousPageLabel != null : !PREVIOUS_PAGE_LABEL_EDEFAULT.equals(previousPageLabel);
+			case WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME:
+				return PREVIOUS_PAGE_ICON_NAME_EDEFAULT == null ? previousPageIconName != null : !PREVIOUS_PAGE_ICON_NAME_EDEFAULT.equals(previousPageIconName);
 			case WebuiPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
 				return useDisabledPageLinks != USE_DISABLED_PAGE_LINKS_EDEFAULT;
 			case WebuiPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 				return useFirstLastPageLinks != USE_FIRST_LAST_PAGE_LINKS_EDEFAULT;
 			case WebuiPackage.INDEX_UNIT__FIRST_PAGE_LABEL:
 				return FIRST_PAGE_LABEL_EDEFAULT == null ? firstPageLabel != null : !FIRST_PAGE_LABEL_EDEFAULT.equals(firstPageLabel);
+			case WebuiPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME:
+				return FIRST_PAGE_ICON_NAME_EDEFAULT == null ? firstPageIconName != null : !FIRST_PAGE_ICON_NAME_EDEFAULT.equals(firstPageIconName);
 			case WebuiPackage.INDEX_UNIT__LAST_PAGE_LABEL:
 				return LAST_PAGE_LABEL_EDEFAULT == null ? lastPageLabel != null : !LAST_PAGE_LABEL_EDEFAULT.equals(lastPageLabel);
+			case WebuiPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME:
+				return LAST_PAGE_ICON_NAME_EDEFAULT == null ? lastPageIconName != null : !LAST_PAGE_ICON_NAME_EDEFAULT.equals(lastPageIconName);
+			case WebuiPackage.INDEX_UNIT__PAGINATION_CLASS:
+				return PAGINATION_CLASS_EDEFAULT == null ? paginationClass != null : !PAGINATION_CLASS_EDEFAULT.equals(paginationClass);
+			case WebuiPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS:
+				return PAGINATION_ELEMENT_CLASS_EDEFAULT == null ? paginationElementClass != null : !PAGINATION_ELEMENT_CLASS_EDEFAULT.equals(paginationElementClass);
 			case WebuiPackage.INDEX_UNIT__ACTIONS:
 				return actions != null && !actions.isEmpty();
 			case WebuiPackage.INDEX_UNIT__DISPLAY_OPTION:
@@ -1269,17 +1521,22 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WebuiPackage.INDEX_UNIT__FILTER: return WebuiPackage.COLLECTION_UNIT__FILTER;
 				case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS: return WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
 				case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE: return WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE;
-				case WebuiPackage.INDEX_UNIT__PAGINATION: return WebuiPackage.COLLECTION_UNIT__PAGINATION;
 				case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE: return WebuiPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE;
 				case WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE: return WebuiPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE;
 				case WebuiPackage.INDEX_UNIT__NEXT_NPAGES: return WebuiPackage.COLLECTION_UNIT__NEXT_NPAGES;
 				case WebuiPackage.INDEX_UNIT__PREVIOUS_NPAGES: return WebuiPackage.COLLECTION_UNIT__PREVIOUS_NPAGES;
 				case WebuiPackage.INDEX_UNIT__NEXT_PAGE_LABEL: return WebuiPackage.COLLECTION_UNIT__NEXT_PAGE_LABEL;
+				case WebuiPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME: return WebuiPackage.COLLECTION_UNIT__NEXT_PAGE_ICON_NAME;
 				case WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL: return WebuiPackage.COLLECTION_UNIT__PREVIOUS_PAGE_LABEL;
+				case WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME: return WebuiPackage.COLLECTION_UNIT__PREVIOUS_PAGE_ICON_NAME;
 				case WebuiPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS: return WebuiPackage.COLLECTION_UNIT__USE_DISABLED_PAGE_LINKS;
 				case WebuiPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS: return WebuiPackage.COLLECTION_UNIT__USE_FIRST_LAST_PAGE_LINKS;
 				case WebuiPackage.INDEX_UNIT__FIRST_PAGE_LABEL: return WebuiPackage.COLLECTION_UNIT__FIRST_PAGE_LABEL;
+				case WebuiPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME: return WebuiPackage.COLLECTION_UNIT__FIRST_PAGE_ICON_NAME;
 				case WebuiPackage.INDEX_UNIT__LAST_PAGE_LABEL: return WebuiPackage.COLLECTION_UNIT__LAST_PAGE_LABEL;
+				case WebuiPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME: return WebuiPackage.COLLECTION_UNIT__LAST_PAGE_ICON_NAME;
+				case WebuiPackage.INDEX_UNIT__PAGINATION_CLASS: return WebuiPackage.COLLECTION_UNIT__PAGINATION_CLASS;
+				case WebuiPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS: return WebuiPackage.COLLECTION_UNIT__PAGINATION_ELEMENT_CLASS;
 				default: return -1;
 			}
 		}
@@ -1311,17 +1568,22 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WebuiPackage.COLLECTION_UNIT__FILTER: return WebuiPackage.INDEX_UNIT__FILTER;
 				case WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS;
 				case WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE: return WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE;
-				case WebuiPackage.COLLECTION_UNIT__PAGINATION: return WebuiPackage.INDEX_UNIT__PAGINATION;
 				case WebuiPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE: return WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE;
 				case WebuiPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE: return WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE;
 				case WebuiPackage.COLLECTION_UNIT__NEXT_NPAGES: return WebuiPackage.INDEX_UNIT__NEXT_NPAGES;
 				case WebuiPackage.COLLECTION_UNIT__PREVIOUS_NPAGES: return WebuiPackage.INDEX_UNIT__PREVIOUS_NPAGES;
 				case WebuiPackage.COLLECTION_UNIT__NEXT_PAGE_LABEL: return WebuiPackage.INDEX_UNIT__NEXT_PAGE_LABEL;
+				case WebuiPackage.COLLECTION_UNIT__NEXT_PAGE_ICON_NAME: return WebuiPackage.INDEX_UNIT__NEXT_PAGE_ICON_NAME;
 				case WebuiPackage.COLLECTION_UNIT__PREVIOUS_PAGE_LABEL: return WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL;
+				case WebuiPackage.COLLECTION_UNIT__PREVIOUS_PAGE_ICON_NAME: return WebuiPackage.INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME;
 				case WebuiPackage.COLLECTION_UNIT__USE_DISABLED_PAGE_LINKS: return WebuiPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS;
 				case WebuiPackage.COLLECTION_UNIT__USE_FIRST_LAST_PAGE_LINKS: return WebuiPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS;
 				case WebuiPackage.COLLECTION_UNIT__FIRST_PAGE_LABEL: return WebuiPackage.INDEX_UNIT__FIRST_PAGE_LABEL;
+				case WebuiPackage.COLLECTION_UNIT__FIRST_PAGE_ICON_NAME: return WebuiPackage.INDEX_UNIT__FIRST_PAGE_ICON_NAME;
 				case WebuiPackage.COLLECTION_UNIT__LAST_PAGE_LABEL: return WebuiPackage.INDEX_UNIT__LAST_PAGE_LABEL;
+				case WebuiPackage.COLLECTION_UNIT__LAST_PAGE_ICON_NAME: return WebuiPackage.INDEX_UNIT__LAST_PAGE_ICON_NAME;
+				case WebuiPackage.COLLECTION_UNIT__PAGINATION_CLASS: return WebuiPackage.INDEX_UNIT__PAGINATION_CLASS;
+				case WebuiPackage.COLLECTION_UNIT__PAGINATION_ELEMENT_CLASS: return WebuiPackage.INDEX_UNIT__PAGINATION_ELEMENT_CLASS;
 				default: return -1;
 			}
 		}
@@ -1356,16 +1618,28 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		result.append(previousNpages);
 		result.append(", nextPageLabel: ");
 		result.append(nextPageLabel);
+		result.append(", nextPageIconName: ");
+		result.append(nextPageIconName);
 		result.append(", previousPageLabel: ");
 		result.append(previousPageLabel);
+		result.append(", previousPageIconName: ");
+		result.append(previousPageIconName);
 		result.append(", useDisabledPageLinks: ");
 		result.append(useDisabledPageLinks);
 		result.append(", useFirstLastPageLinks: ");
 		result.append(useFirstLastPageLinks);
 		result.append(", firstPageLabel: ");
 		result.append(firstPageLabel);
+		result.append(", firstPageIconName: ");
+		result.append(firstPageIconName);
 		result.append(", lastPageLabel: ");
 		result.append(lastPageLabel);
+		result.append(", lastPageIconName: ");
+		result.append(lastPageIconName);
+		result.append(", paginationClass: ");
+		result.append(paginationClass);
+		result.append(", paginationElementClass: ");
+		result.append(paginationElementClass);
 		result.append(", displayOption: ");
 		result.append(displayOption);
 		result.append(", omitColumnLabels: ");

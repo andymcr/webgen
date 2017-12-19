@@ -339,11 +339,17 @@ interface CollectionUnit extends SelectableUnit {
 	int nextNpages
 	int previousNpages
 	String nextPageLabel = ">"
+	String nextPageIconName = ""
 	String previousPageLabel = "<"
+	String previousPageIconName = ""
 	boolean useDisabledPageLinks
 	boolean useFirstLastPageLinks
 	String firstPageLabel = "<<"
+	String firstPageIconName = ""
 	String lastPageLabel = ">>"
+	String lastPageIconName = ""
+	String paginationClass
+	String paginationElementClass
 }
 
 abstract class EditUnit extends DynamicUnit, SingletonUnit {

@@ -52,6 +52,7 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIconNamePropertyDescriptor(object);
 			addDisablePropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
@@ -59,6 +60,28 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 			addFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Icon Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIconNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InlineAction_iconName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InlineAction_iconName_feature", "_UI_InlineAction_type"),
+				 WebuiPackage.Literals.INLINE_ACTION__ICON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -228,6 +251,7 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(InlineAction.class)) {
+			case WebuiPackage.INLINE_ACTION__ICON_NAME:
 			case WebuiPackage.INLINE_ACTION__DISABLE:
 			case WebuiPackage.INLINE_ACTION__HEADER:
 			case WebuiPackage.INLINE_ACTION__FOOTER:

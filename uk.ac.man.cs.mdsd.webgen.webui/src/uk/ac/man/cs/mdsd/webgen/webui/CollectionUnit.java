@@ -21,17 +21,22 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getEmptyMessage <em>Empty Message</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getMaximumPaginationSize <em>Maximum Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getNextNpages <em>Next Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getNextPageLabel <em>Next Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getNextPageIconName <em>Next Page Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getPreviousPageLabel <em>Previous Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getPreviousPageIconName <em>Previous Page Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#isUseDisabledPageLinks <em>Use Disabled Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFirstPageLabel <em>First Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFirstPageIconName <em>First Page Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getLastPageLabel <em>Last Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getLastPageIconName <em>Last Page Icon Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getPaginationClass <em>Pagination Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getPaginationElementClass <em>Pagination Element Class</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit()
@@ -148,32 +153,6 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	void setEmptyMessage(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Pagination</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Pagination</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pagination</em>' reference.
-	 * @see #setPagination(Filter)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_Pagination()
-	 * @model
-	 * @generated
-	 */
-	Filter getPagination();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getPagination <em>Pagination</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pagination</em>' reference.
-	 * @see #getPagination()
-	 * @generated
-	 */
-	void setPagination(Filter value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Pagination Size</b></em>' attribute.
@@ -311,6 +290,33 @@ public interface CollectionUnit extends SelectableUnit {
 	void setNextPageLabel(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Next Page Icon Name</b></em>' attribute.
+	 * The default value is <code>"chevron_right"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Next Page Icon Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Next Page Icon Name</em>' attribute.
+	 * @see #setNextPageIconName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_NextPageIconName()
+	 * @model default="chevron_right"
+	 * @generated
+	 */
+	String getNextPageIconName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getNextPageIconName <em>Next Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Next Page Icon Name</em>' attribute.
+	 * @see #getNextPageIconName()
+	 * @generated
+	 */
+	void setNextPageIconName(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Previous Page Label</b></em>' attribute.
 	 * The default value is <code>"&lt;"</code>.
 	 * <!-- begin-user-doc -->
@@ -336,6 +342,33 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	void setPreviousPageLabel(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Previous Page Icon Name</b></em>' attribute.
+	 * The default value is <code>"chevron_left"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Previous Page Icon Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Previous Page Icon Name</em>' attribute.
+	 * @see #setPreviousPageIconName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_PreviousPageIconName()
+	 * @model default="chevron_left"
+	 * @generated
+	 */
+	String getPreviousPageIconName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getPreviousPageIconName <em>Previous Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Previous Page Icon Name</em>' attribute.
+	 * @see #getPreviousPageIconName()
+	 * @generated
+	 */
+	void setPreviousPageIconName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Use Disabled Page Links</b></em>' attribute.
@@ -419,6 +452,33 @@ public interface CollectionUnit extends SelectableUnit {
 	void setFirstPageLabel(String value);
 
 	/**
+	 * Returns the value of the '<em><b>First Page Icon Name</b></em>' attribute.
+	 * The default value is <code>"first_page"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>First Page Icon Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>First Page Icon Name</em>' attribute.
+	 * @see #setFirstPageIconName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_FirstPageIconName()
+	 * @model default="first_page"
+	 * @generated
+	 */
+	String getFirstPageIconName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFirstPageIconName <em>First Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>First Page Icon Name</em>' attribute.
+	 * @see #getFirstPageIconName()
+	 * @generated
+	 */
+	void setFirstPageIconName(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Last Page Label</b></em>' attribute.
 	 * The default value is <code>">>"</code>.
 	 * <!-- begin-user-doc -->
@@ -444,5 +504,86 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	void setLastPageLabel(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Last Page Icon Name</b></em>' attribute.
+	 * The default value is <code>"last_page"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Last Page Icon Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Last Page Icon Name</em>' attribute.
+	 * @see #setLastPageIconName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_LastPageIconName()
+	 * @model default="last_page"
+	 * @generated
+	 */
+	String getLastPageIconName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getLastPageIconName <em>Last Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Last Page Icon Name</em>' attribute.
+	 * @see #getLastPageIconName()
+	 * @generated
+	 */
+	void setLastPageIconName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Pagination Class</b></em>' attribute.
+	 * The default value is <code>"pagination"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pagination Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pagination Class</em>' attribute.
+	 * @see #setPaginationClass(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_PaginationClass()
+	 * @model default="pagination"
+	 * @generated
+	 */
+	String getPaginationClass();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getPaginationClass <em>Pagination Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pagination Class</em>' attribute.
+	 * @see #getPaginationClass()
+	 * @generated
+	 */
+	void setPaginationClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Pagination Element Class</b></em>' attribute.
+	 * The default value is <code>"waves_effect"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pagination Element Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pagination Element Class</em>' attribute.
+	 * @see #setPaginationElementClass(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_PaginationElementClass()
+	 * @model default="waves_effect"
+	 * @generated
+	 */
+	String getPaginationElementClass();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getPaginationElementClass <em>Pagination Element Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pagination Element Class</em>' attribute.
+	 * @see #getPaginationElementClass()
+	 * @generated
+	 */
+	void setPaginationElementClass(String value);
 
 } // CollectionUnit

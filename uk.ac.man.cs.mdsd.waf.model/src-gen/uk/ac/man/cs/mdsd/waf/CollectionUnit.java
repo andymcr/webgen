@@ -28,11 +28,17 @@ import uk.ac.man.cs.mdsd.service.Selection;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getNextNpages <em>Next Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getNextPageLabel <em>Next Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getNextPageIconName <em>Next Page Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getPreviousPageLabel <em>Previous Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getPreviousPageIconName <em>Previous Page Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#isUseDisabledPageLinks <em>Use Disabled Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFirstPageLabel <em>First Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFirstPageIconName <em>First Page Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getLastPageLabel <em>Last Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getLastPageIconName <em>Last Page Icon Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getPaginationClass <em>Pagination Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getPaginationElementClass <em>Pagination Element Class</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit()
@@ -282,6 +288,33 @@ public interface CollectionUnit extends SelectableUnit {
 	void setNextPageLabel(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Next Page Icon Name</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Next Page Icon Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Next Page Icon Name</em>' attribute.
+	 * @see #setNextPageIconName(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_NextPageIconName()
+	 * @model default="" unique="false"
+	 * @generated
+	 */
+	String getNextPageIconName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getNextPageIconName <em>Next Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Next Page Icon Name</em>' attribute.
+	 * @see #getNextPageIconName()
+	 * @generated
+	 */
+	void setNextPageIconName(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Previous Page Label</b></em>' attribute.
 	 * The default value is <code>"<"</code>.
 	 * <!-- begin-user-doc -->
@@ -307,6 +340,33 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	void setPreviousPageLabel(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Previous Page Icon Name</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Previous Page Icon Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Previous Page Icon Name</em>' attribute.
+	 * @see #setPreviousPageIconName(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_PreviousPageIconName()
+	 * @model default="" unique="false"
+	 * @generated
+	 */
+	String getPreviousPageIconName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getPreviousPageIconName <em>Previous Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Previous Page Icon Name</em>' attribute.
+	 * @see #getPreviousPageIconName()
+	 * @generated
+	 */
+	void setPreviousPageIconName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Use Disabled Page Links</b></em>' attribute.
@@ -388,6 +448,33 @@ public interface CollectionUnit extends SelectableUnit {
 	void setFirstPageLabel(String value);
 
 	/**
+	 * Returns the value of the '<em><b>First Page Icon Name</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>First Page Icon Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>First Page Icon Name</em>' attribute.
+	 * @see #setFirstPageIconName(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_FirstPageIconName()
+	 * @model default="" unique="false"
+	 * @generated
+	 */
+	String getFirstPageIconName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFirstPageIconName <em>First Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>First Page Icon Name</em>' attribute.
+	 * @see #getFirstPageIconName()
+	 * @generated
+	 */
+	void setFirstPageIconName(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Last Page Label</b></em>' attribute.
 	 * The default value is <code>">>"</code>.
 	 * <!-- begin-user-doc -->
@@ -413,5 +500,84 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	void setLastPageLabel(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Last Page Icon Name</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Last Page Icon Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Last Page Icon Name</em>' attribute.
+	 * @see #setLastPageIconName(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_LastPageIconName()
+	 * @model default="" unique="false"
+	 * @generated
+	 */
+	String getLastPageIconName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getLastPageIconName <em>Last Page Icon Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Last Page Icon Name</em>' attribute.
+	 * @see #getLastPageIconName()
+	 * @generated
+	 */
+	void setLastPageIconName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Pagination Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pagination Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pagination Class</em>' attribute.
+	 * @see #setPaginationClass(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_PaginationClass()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getPaginationClass();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getPaginationClass <em>Pagination Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pagination Class</em>' attribute.
+	 * @see #getPaginationClass()
+	 * @generated
+	 */
+	void setPaginationClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Pagination Element Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pagination Element Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pagination Element Class</em>' attribute.
+	 * @see #setPaginationElementClass(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_PaginationElementClass()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getPaginationElementClass();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getPaginationElementClass <em>Pagination Element Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pagination Element Class</em>' attribute.
+	 * @see #getPaginationElementClass()
+	 * @generated
+	 */
+	void setPaginationElementClass(String value);
 
 } // CollectionUnit

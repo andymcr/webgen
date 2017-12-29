@@ -54,12 +54,11 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getApi <em>Api</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSiteName <em>Site Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSiteTitle <em>Site Title</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#isDevelopmentVersion <em>Development Version</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getBaseURL <em>Base URL</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#isRewriteURLs <em>Rewrite UR Ls</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getWebmasterEmail <em>Webmaster Email</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getCopyrightText <em>Copyright Text</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getMetaDescription <em>Meta Description</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getLogoImage <em>Logo Image</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getLogoFilters <em>Logo Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getInputTechnology <em>Input Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getAjaxTechnology <em>Ajax Technology</em>}</li>
@@ -67,7 +66,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getTextEditorURL <em>Text Editor URL</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#isResponsiveTopMenu <em>Responsive Top Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSiteTemplate <em>Site Template</em>}</li>
@@ -188,66 +186,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	protected String siteTitle = SITE_TITLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isDevelopmentVersion() <em>Development Version</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isDevelopmentVersion()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean DEVELOPMENT_VERSION_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isDevelopmentVersion() <em>Development Version</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isDevelopmentVersion()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean developmentVersion = DEVELOPMENT_VERSION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getBaseURL() <em>Base URL</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBaseURL()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BASE_URL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getBaseURL() <em>Base URL</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBaseURL()
-	 * @generated
-	 * @ordered
-	 */
-	protected String baseURL = BASE_URL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isRewriteURLs() <em>Rewrite UR Ls</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRewriteURLs()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean REWRITE_UR_LS_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isRewriteURLs() <em>Rewrite UR Ls</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isRewriteURLs()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean rewriteURLs = REWRITE_UR_LS_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getWebmasterEmail() <em>Webmaster Email</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -306,6 +244,36 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * @ordered
 	 */
 	protected String metaDescription = META_DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLogoImage() <em>Logo Image</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogoImage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LOGO_IMAGE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLogoImage() <em>Logo Image</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogoImage()
+	 * @generated
+	 * @ordered
+	 */
+	protected String logoImage = LOGO_IMAGE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getLogoFilters() <em>Logo Filters</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogoFilters()
+	 * @generated
+	 * @ordered
+	 */
+	protected ImageManipulation logoFilters;
 
 	/**
 	 * The default value of the '{@link #getFrameworkTechnology() <em>Framework Technology</em>}' attribute.
@@ -436,26 +404,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * @ordered
 	 */
 	protected String textEditorURL = TEXT_EDITOR_URL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isResponsiveTopMenu() <em>Responsive Top Menu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResponsiveTopMenu()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean RESPONSIVE_TOP_MENU_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isResponsiveTopMenu() <em>Responsive Top Menu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResponsiveTopMenu()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean responsiveTopMenu = RESPONSIVE_TOP_MENU_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTopNavigationId() <em>Top Navigation Id</em>}' attribute.
@@ -755,69 +703,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isDevelopmentVersion() {
-		return developmentVersion;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDevelopmentVersion(boolean newDevelopmentVersion) {
-		boolean oldDevelopmentVersion = developmentVersion;
-		developmentVersion = newDevelopmentVersion;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__DEVELOPMENT_VERSION, oldDevelopmentVersion, developmentVersion));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getBaseURL() {
-		return baseURL;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBaseURL(String newBaseURL) {
-		String oldBaseURL = baseURL;
-		baseURL = newBaseURL;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__BASE_URL, oldBaseURL, baseURL));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isRewriteURLs() {
-		return rewriteURLs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRewriteURLs(boolean newRewriteURLs) {
-		boolean oldRewriteURLs = rewriteURLs;
-		rewriteURLs = newRewriteURLs;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__REWRITE_UR_LS, oldRewriteURLs, rewriteURLs));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getWebmasterEmail() {
 		return webmasterEmail;
 	}
@@ -874,6 +759,65 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 		metaDescription = newMetaDescription;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__META_DESCRIPTION, oldMetaDescription, metaDescription));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLogoImage() {
+		return logoImage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLogoImage(String newLogoImage) {
+		String oldLogoImage = logoImage;
+		logoImage = newLogoImage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__LOGO_IMAGE, oldLogoImage, logoImage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImageManipulation getLogoFilters() {
+		if (logoFilters != null && logoFilters.eIsProxy()) {
+			InternalEObject oldLogoFilters = (InternalEObject)logoFilters;
+			logoFilters = (ImageManipulation)eResolveProxy(oldLogoFilters);
+			if (logoFilters != oldLogoFilters) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.WAF_MODEL__LOGO_FILTERS, oldLogoFilters, logoFilters));
+			}
+		}
+		return logoFilters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImageManipulation basicGetLogoFilters() {
+		return logoFilters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLogoFilters(ImageManipulation newLogoFilters) {
+		ImageManipulation oldLogoFilters = logoFilters;
+		logoFilters = newLogoFilters;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__LOGO_FILTERS, oldLogoFilters, logoFilters));
 	}
 
 	/**
@@ -1050,27 +994,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isResponsiveTopMenu() {
-		return responsiveTopMenu;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setResponsiveTopMenu(boolean newResponsiveTopMenu) {
-		boolean oldResponsiveTopMenu = responsiveTopMenu;
-		responsiveTopMenu = newResponsiveTopMenu;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__RESPONSIVE_TOP_MENU, oldResponsiveTopMenu, responsiveTopMenu));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getTopNavigationId() {
 		return topNavigationId;
 	}
@@ -1237,18 +1160,17 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return getSiteName();
 			case WafPackage.WAF_MODEL__SITE_TITLE:
 				return getSiteTitle();
-			case WafPackage.WAF_MODEL__DEVELOPMENT_VERSION:
-				return isDevelopmentVersion();
-			case WafPackage.WAF_MODEL__BASE_URL:
-				return getBaseURL();
-			case WafPackage.WAF_MODEL__REWRITE_UR_LS:
-				return isRewriteURLs();
 			case WafPackage.WAF_MODEL__WEBMASTER_EMAIL:
 				return getWebmasterEmail();
 			case WafPackage.WAF_MODEL__COPYRIGHT_TEXT:
 				return getCopyrightText();
 			case WafPackage.WAF_MODEL__META_DESCRIPTION:
 				return getMetaDescription();
+			case WafPackage.WAF_MODEL__LOGO_IMAGE:
+				return getLogoImage();
+			case WafPackage.WAF_MODEL__LOGO_FILTERS:
+				if (resolve) return getLogoFilters();
+				return basicGetLogoFilters();
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 				return getFrameworkTechnology();
 			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
@@ -1263,8 +1185,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return getCaptchaSecretKey();
 			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
 				return getTextEditorURL();
-			case WafPackage.WAF_MODEL__RESPONSIVE_TOP_MENU:
-				return isResponsiveTopMenu();
 			case WafPackage.WAF_MODEL__TOP_NAVIGATION_ID:
 				return getTopNavigationId();
 			case WafPackage.WAF_MODEL__SIDE_MENU:
@@ -1318,15 +1238,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__SITE_TITLE:
 				setSiteTitle((String)newValue);
 				return;
-			case WafPackage.WAF_MODEL__DEVELOPMENT_VERSION:
-				setDevelopmentVersion((Boolean)newValue);
-				return;
-			case WafPackage.WAF_MODEL__BASE_URL:
-				setBaseURL((String)newValue);
-				return;
-			case WafPackage.WAF_MODEL__REWRITE_UR_LS:
-				setRewriteURLs((Boolean)newValue);
-				return;
 			case WafPackage.WAF_MODEL__WEBMASTER_EMAIL:
 				setWebmasterEmail((String)newValue);
 				return;
@@ -1335,6 +1246,12 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return;
 			case WafPackage.WAF_MODEL__META_DESCRIPTION:
 				setMetaDescription((String)newValue);
+				return;
+			case WafPackage.WAF_MODEL__LOGO_IMAGE:
+				setLogoImage((String)newValue);
+				return;
+			case WafPackage.WAF_MODEL__LOGO_FILTERS:
+				setLogoFilters((ImageManipulation)newValue);
 				return;
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
@@ -1356,9 +1273,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return;
 			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
 				setTextEditorURL((String)newValue);
-				return;
-			case WafPackage.WAF_MODEL__RESPONSIVE_TOP_MENU:
-				setResponsiveTopMenu((Boolean)newValue);
 				return;
 			case WafPackage.WAF_MODEL__TOP_NAVIGATION_ID:
 				setTopNavigationId((String)newValue);
@@ -1411,15 +1325,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__SITE_TITLE:
 				setSiteTitle(SITE_TITLE_EDEFAULT);
 				return;
-			case WafPackage.WAF_MODEL__DEVELOPMENT_VERSION:
-				setDevelopmentVersion(DEVELOPMENT_VERSION_EDEFAULT);
-				return;
-			case WafPackage.WAF_MODEL__BASE_URL:
-				setBaseURL(BASE_URL_EDEFAULT);
-				return;
-			case WafPackage.WAF_MODEL__REWRITE_UR_LS:
-				setRewriteURLs(REWRITE_UR_LS_EDEFAULT);
-				return;
 			case WafPackage.WAF_MODEL__WEBMASTER_EMAIL:
 				setWebmasterEmail(WEBMASTER_EMAIL_EDEFAULT);
 				return;
@@ -1428,6 +1333,12 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return;
 			case WafPackage.WAF_MODEL__META_DESCRIPTION:
 				setMetaDescription(META_DESCRIPTION_EDEFAULT);
+				return;
+			case WafPackage.WAF_MODEL__LOGO_IMAGE:
+				setLogoImage(LOGO_IMAGE_EDEFAULT);
+				return;
+			case WafPackage.WAF_MODEL__LOGO_FILTERS:
+				setLogoFilters((ImageManipulation)null);
 				return;
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
@@ -1449,9 +1360,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return;
 			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
 				setTextEditorURL(TEXT_EDITOR_URL_EDEFAULT);
-				return;
-			case WafPackage.WAF_MODEL__RESPONSIVE_TOP_MENU:
-				setResponsiveTopMenu(RESPONSIVE_TOP_MENU_EDEFAULT);
 				return;
 			case WafPackage.WAF_MODEL__TOP_NAVIGATION_ID:
 				setTopNavigationId(TOP_NAVIGATION_ID_EDEFAULT);
@@ -1495,18 +1403,16 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return SITE_NAME_EDEFAULT == null ? siteName != null : !SITE_NAME_EDEFAULT.equals(siteName);
 			case WafPackage.WAF_MODEL__SITE_TITLE:
 				return SITE_TITLE_EDEFAULT == null ? siteTitle != null : !SITE_TITLE_EDEFAULT.equals(siteTitle);
-			case WafPackage.WAF_MODEL__DEVELOPMENT_VERSION:
-				return developmentVersion != DEVELOPMENT_VERSION_EDEFAULT;
-			case WafPackage.WAF_MODEL__BASE_URL:
-				return BASE_URL_EDEFAULT == null ? baseURL != null : !BASE_URL_EDEFAULT.equals(baseURL);
-			case WafPackage.WAF_MODEL__REWRITE_UR_LS:
-				return rewriteURLs != REWRITE_UR_LS_EDEFAULT;
 			case WafPackage.WAF_MODEL__WEBMASTER_EMAIL:
 				return WEBMASTER_EMAIL_EDEFAULT == null ? webmasterEmail != null : !WEBMASTER_EMAIL_EDEFAULT.equals(webmasterEmail);
 			case WafPackage.WAF_MODEL__COPYRIGHT_TEXT:
 				return COPYRIGHT_TEXT_EDEFAULT == null ? copyrightText != null : !COPYRIGHT_TEXT_EDEFAULT.equals(copyrightText);
 			case WafPackage.WAF_MODEL__META_DESCRIPTION:
 				return META_DESCRIPTION_EDEFAULT == null ? metaDescription != null : !META_DESCRIPTION_EDEFAULT.equals(metaDescription);
+			case WafPackage.WAF_MODEL__LOGO_IMAGE:
+				return LOGO_IMAGE_EDEFAULT == null ? logoImage != null : !LOGO_IMAGE_EDEFAULT.equals(logoImage);
+			case WafPackage.WAF_MODEL__LOGO_FILTERS:
+				return logoFilters != null;
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
 			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
@@ -1521,8 +1427,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return CAPTCHA_SECRET_KEY_EDEFAULT == null ? captchaSecretKey != null : !CAPTCHA_SECRET_KEY_EDEFAULT.equals(captchaSecretKey);
 			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
 				return TEXT_EDITOR_URL_EDEFAULT == null ? textEditorURL != null : !TEXT_EDITOR_URL_EDEFAULT.equals(textEditorURL);
-			case WafPackage.WAF_MODEL__RESPONSIVE_TOP_MENU:
-				return responsiveTopMenu != RESPONSIVE_TOP_MENU_EDEFAULT;
 			case WafPackage.WAF_MODEL__TOP_NAVIGATION_ID:
 				return TOP_NAVIGATION_ID_EDEFAULT == null ? topNavigationId != null : !TOP_NAVIGATION_ID_EDEFAULT.equals(topNavigationId);
 			case WafPackage.WAF_MODEL__SIDE_MENU:
@@ -1549,18 +1453,14 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 		result.append(siteName);
 		result.append(", siteTitle: ");
 		result.append(siteTitle);
-		result.append(", developmentVersion: ");
-		result.append(developmentVersion);
-		result.append(", baseURL: ");
-		result.append(baseURL);
-		result.append(", rewriteURLs: ");
-		result.append(rewriteURLs);
 		result.append(", webmasterEmail: ");
 		result.append(webmasterEmail);
 		result.append(", copyrightText: ");
 		result.append(copyrightText);
 		result.append(", metaDescription: ");
 		result.append(metaDescription);
+		result.append(", logoImage: ");
+		result.append(logoImage);
 		result.append(", frameworkTechnology: ");
 		result.append(frameworkTechnology);
 		result.append(", inputTechnology: ");
@@ -1573,8 +1473,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 		result.append(captchaSecretKey);
 		result.append(", textEditorURL: ");
 		result.append(textEditorURL);
-		result.append(", responsiveTopMenu: ");
-		result.append(responsiveTopMenu);
 		result.append(", topNavigationId: ");
 		result.append(topNavigationId);
 		result.append(", siteTemplate: ");

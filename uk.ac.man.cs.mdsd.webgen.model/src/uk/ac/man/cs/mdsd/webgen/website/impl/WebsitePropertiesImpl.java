@@ -6,11 +6,16 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
+import java.util.Collection;
+import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
@@ -30,9 +35,10 @@ import uk.ac.man.cs.mdsd.webgen.webui.Menu;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getWebmasterEmail <em>Webmaster Email</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCopyrightText <em>Copyright Text</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getMetaDescription <em>Meta Description</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getLogoImage <em>Logo Image</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getLogoFilters <em>Logo Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTextEditorURL <em>Text Editor URL</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isResponsiveTopMenu <em>Responsive Top Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getSiteTemplate <em>Site Template</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
@@ -122,6 +128,36 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	protected String metaDescription = META_DESCRIPTION_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getLogoImage() <em>Logo Image</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogoImage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LOGO_IMAGE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLogoImage() <em>Logo Image</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogoImage()
+	 * @generated
+	 * @ordered
+	 */
+	protected String logoImage = LOGO_IMAGE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getLogoFilters() <em>Logo Filters</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogoFilters()
+	 * @generated
+	 * @ordered
+	 */
+	protected ImageManipulation logoFilters;
+
+	/**
 	 * The default value of the '{@link #getFrameworkTechnology() <em>Framework Technology</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,26 +196,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @ordered
 	 */
 	protected String textEditorURL = TEXT_EDITOR_URL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isResponsiveTopMenu() <em>Responsive Top Menu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResponsiveTopMenu()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean RESPONSIVE_TOP_MENU_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isResponsiveTopMenu() <em>Responsive Top Menu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResponsiveTopMenu()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean responsiveTopMenu = RESPONSIVE_TOP_MENU_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTopNavigationId() <em>Top Navigation Id</em>}' attribute.
@@ -349,6 +365,65 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getLogoImage() {
+		return logoImage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLogoImage(String newLogoImage) {
+		String oldLogoImage = logoImage;
+		logoImage = newLogoImage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__LOGO_IMAGE, oldLogoImage, logoImage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImageManipulation getLogoFilters() {
+		if (logoFilters != null && logoFilters.eIsProxy()) {
+			InternalEObject oldLogoFilters = (InternalEObject)logoFilters;
+			logoFilters = (ImageManipulation)eResolveProxy(oldLogoFilters);
+			if (logoFilters != oldLogoFilters) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.WEBSITE_PROPERTIES__LOGO_FILTERS, oldLogoFilters, logoFilters));
+			}
+		}
+		return logoFilters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImageManipulation basicGetLogoFilters() {
+		return logoFilters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLogoFilters(ImageManipulation newLogoFilters) {
+		ImageManipulation oldLogoFilters = logoFilters;
+		logoFilters = newLogoFilters;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__LOGO_FILTERS, oldLogoFilters, logoFilters));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public FrameworkTechnologies getFrameworkTechnology() {
 		return frameworkTechnology;
 	}
@@ -384,27 +459,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		textEditorURL = newTextEditorURL;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL, oldTextEditorURL, textEditorURL));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isResponsiveTopMenu() {
-		return responsiveTopMenu;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setResponsiveTopMenu(boolean newResponsiveTopMenu) {
-		boolean oldResponsiveTopMenu = responsiveTopMenu;
-		responsiveTopMenu = newResponsiveTopMenu;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU, oldResponsiveTopMenu, responsiveTopMenu));
 	}
 
 	/**
@@ -486,12 +540,15 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return getCopyrightText();
 			case WebsitePackage.WEBSITE_PROPERTIES__META_DESCRIPTION:
 				return getMetaDescription();
+			case WebsitePackage.WEBSITE_PROPERTIES__LOGO_IMAGE:
+				return getLogoImage();
+			case WebsitePackage.WEBSITE_PROPERTIES__LOGO_FILTERS:
+				if (resolve) return getLogoFilters();
+				return basicGetLogoFilters();
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return getFrameworkTechnology();
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 				return getTextEditorURL();
-			case WebsitePackage.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU:
-				return isResponsiveTopMenu();
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				return getTopNavigationId();
 			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TEMPLATE:
@@ -507,6 +564,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -522,14 +580,17 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__META_DESCRIPTION:
 				setMetaDescription((String)newValue);
 				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__LOGO_IMAGE:
+				setLogoImage((String)newValue);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__LOGO_FILTERS:
+				setLogoFilters((ImageManipulation)newValue);
+				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 				setTextEditorURL((String)newValue);
-				return;
-			case WebsitePackage.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU:
-				setResponsiveTopMenu((Boolean)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				setTopNavigationId((String)newValue);
@@ -564,14 +625,17 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__META_DESCRIPTION:
 				setMetaDescription(META_DESCRIPTION_EDEFAULT);
 				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__LOGO_IMAGE:
+				setLogoImage(LOGO_IMAGE_EDEFAULT);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__LOGO_FILTERS:
+				setLogoFilters((ImageManipulation)null);
+				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 				setTextEditorURL(TEXT_EDITOR_URL_EDEFAULT);
-				return;
-			case WebsitePackage.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU:
-				setResponsiveTopMenu(RESPONSIVE_TOP_MENU_EDEFAULT);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				setTopNavigationId(TOP_NAVIGATION_ID_EDEFAULT);
@@ -602,12 +666,14 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return COPYRIGHT_TEXT_EDEFAULT == null ? copyrightText != null : !COPYRIGHT_TEXT_EDEFAULT.equals(copyrightText);
 			case WebsitePackage.WEBSITE_PROPERTIES__META_DESCRIPTION:
 				return META_DESCRIPTION_EDEFAULT == null ? metaDescription != null : !META_DESCRIPTION_EDEFAULT.equals(metaDescription);
+			case WebsitePackage.WEBSITE_PROPERTIES__LOGO_IMAGE:
+				return LOGO_IMAGE_EDEFAULT == null ? logoImage != null : !LOGO_IMAGE_EDEFAULT.equals(logoImage);
+			case WebsitePackage.WEBSITE_PROPERTIES__LOGO_FILTERS:
+				return logoFilters != null;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 				return TEXT_EDITOR_URL_EDEFAULT == null ? textEditorURL != null : !TEXT_EDITOR_URL_EDEFAULT.equals(textEditorURL);
-			case WebsitePackage.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU:
-				return responsiveTopMenu != RESPONSIVE_TOP_MENU_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				return TOP_NAVIGATION_ID_EDEFAULT == null ? topNavigationId != null : !TOP_NAVIGATION_ID_EDEFAULT.equals(topNavigationId);
 			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TEMPLATE:
@@ -636,12 +702,12 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		result.append(copyrightText);
 		result.append(", metaDescription: ");
 		result.append(metaDescription);
+		result.append(", logoImage: ");
+		result.append(logoImage);
 		result.append(", frameworkTechnology: ");
 		result.append(frameworkTechnology);
 		result.append(", textEditorURL: ");
 		result.append(textEditorURL);
-		result.append(", responsiveTopMenu: ");
-		result.append(responsiveTopMenu);
 		result.append(", topNavigationId: ");
 		result.append(topNavigationId);
 		result.append(", siteTemplate: ");

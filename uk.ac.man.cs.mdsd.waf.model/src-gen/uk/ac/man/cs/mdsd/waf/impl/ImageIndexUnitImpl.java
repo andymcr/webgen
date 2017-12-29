@@ -4,12 +4,15 @@ package uk.ac.man.cs.mdsd.waf.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -28,6 +31,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getActions <em>Actions</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getColumnClass <em>Column Class</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,6 +46,26 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @ordered
 	 */
 	protected EList<InlineAction> actions;
+
+	/**
+	 * The default value of the '{@link #getColumnClass() <em>Column Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColumnClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COLUMN_CLASS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getColumnClass() <em>Column Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColumnClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String columnClass = COLUMN_CLASS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,6 +96,27 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			actions = new EObjectContainmentWithInverseEList<InlineAction>(InlineAction.class, this, WafPackage.IMAGE_INDEX_UNIT__ACTIONS, WafPackage.INLINE_ACTION__USED_BY);
 		}
 		return actions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getColumnClass() {
+		return columnClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setColumnClass(String newColumnClass) {
+		String oldColumnClass = columnClass;
+		columnClass = newColumnClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS, oldColumnClass, columnClass));
 	}
 
 	/**
@@ -113,6 +158,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		switch (featureID) {
 			case WafPackage.IMAGE_INDEX_UNIT__ACTIONS:
 				return getActions();
+			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
+				return getColumnClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -130,6 +177,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				getActions().clear();
 				getActions().addAll((Collection<? extends InlineAction>)newValue);
 				return;
+			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
+				setColumnClass((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -145,6 +195,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WafPackage.IMAGE_INDEX_UNIT__ACTIONS:
 				getActions().clear();
 				return;
+			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
+				setColumnClass(COLUMN_CLASS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -159,6 +212,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		switch (featureID) {
 			case WafPackage.IMAGE_INDEX_UNIT__ACTIONS:
 				return actions != null && !actions.isEmpty();
+			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
+				return COLUMN_CLASS_EDEFAULT == null ? columnClass != null : !COLUMN_CLASS_EDEFAULT.equals(columnClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -193,6 +248,22 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (columnClass: ");
+		result.append(columnClass);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ImageIndexUnitImpl

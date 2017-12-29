@@ -6,7 +6,9 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import java.util.List;
 import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies;
 import uk.ac.man.cs.mdsd.webgen.webui.Menu;
@@ -24,9 +26,10 @@ import uk.ac.man.cs.mdsd.webgen.webui.Menu;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getWebmasterEmail <em>Webmaster Email</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCopyrightText <em>Copyright Text</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getMetaDescription <em>Meta Description</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getLogoImage <em>Logo Image</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getLogoFilters <em>Logo Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getFrameworkTechnology <em>Framework Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTextEditorURL <em>Text Editor URL</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isResponsiveTopMenu <em>Responsive Top Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getSiteTemplate <em>Site Template</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
@@ -142,6 +145,58 @@ public interface WebsiteProperties extends EObject {
 	void setMetaDescription(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Logo Image</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Logo Image</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Logo Image</em>' attribute.
+	 * @see #setLogoImage(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_LogoImage()
+	 * @model
+	 * @generated
+	 */
+	String getLogoImage();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getLogoImage <em>Logo Image</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Logo Image</em>' attribute.
+	 * @see #getLogoImage()
+	 * @generated
+	 */
+	void setLogoImage(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Logo Filters</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Logo Filters</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Logo Filters</em>' reference.
+	 * @see #setLogoFilters(ImageManipulation)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_LogoFilters()
+	 * @model
+	 * @generated
+	 */
+	ImageManipulation getLogoFilters();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getLogoFilters <em>Logo Filters</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Logo Filters</em>' reference.
+	 * @see #getLogoFilters()
+	 * @generated
+	 */
+	void setLogoFilters(ImageManipulation value);
+
+	/**
 	 * Returns the value of the '<em><b>Framework Technology</b></em>' attribute.
 	 * The default value is <code>"Kohana"</code>.
 	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies}.
@@ -196,32 +251,6 @@ public interface WebsiteProperties extends EObject {
 	 * @generated
 	 */
 	void setTextEditorURL(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Responsive Top Menu</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Responsive Top Menu</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Responsive Top Menu</em>' attribute.
-	 * @see #setResponsiveTopMenu(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_ResponsiveTopMenu()
-	 * @model
-	 * @generated
-	 */
-	boolean isResponsiveTopMenu();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isResponsiveTopMenu <em>Responsive Top Menu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Responsive Top Menu</em>' attribute.
-	 * @see #isResponsiveTopMenu()
-	 * @generated
-	 */
-	void setResponsiveTopMenu(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Top Navigation Id</b></em>' attribute.

@@ -274,6 +274,8 @@ rule WafModel {
 				'&copy; '.concat(website.websiteProperties.siteTitle).concat(' {{ \'now\' | date(\'Y\') }}')
 			endif,
 		metaDescription <- website.websiteProperties.metaDescription,
+		logoImage <- website.websiteProperties.logoImage,
+		logoFilters <- website.websiteProperties.logoFilters,
 		frameworkTechnology <- website.frameworkTechnology,
 		inputTechnology <- thisModule.findWebsiteUI().inputTechnology,
 		ajaxTechnology <- thisModule.findWebsiteUI().ajaxTechnology,
@@ -285,7 +287,6 @@ rule WafModel {
 			else
 				website.websiteProperties.textEditorURL.cleanString()
 			endif,
-		responsiveTopMenu <- website.websiteProperties.responsiveTopMenu,
 		topNavigationId <- website.websiteProperties.topNavigationId,
 		siteTemplate <- website.websiteProperties.siteTemplate,
 		staticUnitsEditable <- website.websiteProperties.staticUnitsEditable
@@ -1038,6 +1039,7 @@ rule ChildPathAssociation {
 rule ImageIndexUnit {
 	from website : Website!ImageIndexUnit
 	to waf : WAF!ImageIndexUnit (
+		columnClass <- website.columnClass
 	)
 }
 

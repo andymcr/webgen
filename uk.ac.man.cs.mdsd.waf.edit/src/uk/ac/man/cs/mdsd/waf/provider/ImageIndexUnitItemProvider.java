@@ -10,8 +10,10 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.waf.ImageIndexUnit;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
@@ -45,8 +47,31 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addColumnClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Column Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addColumnClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageIndexUnit_columnClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_columnClass_feature", "_UI_ImageIndexUnit_type"),
+				 WafPackage.Literals.IMAGE_INDEX_UNIT__COLUMN_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -117,6 +142,9 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ImageIndexUnit.class)) {
+			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case WafPackage.IMAGE_INDEX_UNIT__ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

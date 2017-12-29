@@ -208,13 +208,31 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__META_DESCRIPTION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Logo Image</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__LOGO_IMAGE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Logo Filters</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__LOGO_FILTERS = 5;
+
+	/**
 	 * The feature id for the '<em><b>Framework Technology</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 4;
+	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 6;
 
 	/**
 	 * The feature id for the '<em><b>Text Editor URL</b></em>' attribute.
@@ -223,16 +241,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 5;
-
-	/**
-	 * The feature id for the '<em><b>Responsive Top Menu</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU = 6;
+	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 7;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -241,7 +250,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 7;
+	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 8;
 
 	/**
 	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
@@ -250,7 +259,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SITE_TEMPLATE = 8;
+	int WEBSITE_PROPERTIES__SITE_TEMPLATE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -259,7 +268,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 9;
+	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 10;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -268,7 +277,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES_FEATURE_COUNT = 10;
+	int WEBSITE_PROPERTIES_FEATURE_COUNT = 11;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies <em>Framework Technologies</em>}' enum.
@@ -444,6 +453,28 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebsiteProperties_MetaDescription();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getLogoImage <em>Logo Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Logo Image</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getLogoImage()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EAttribute getWebsiteProperties_LogoImage();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getLogoFilters <em>Logo Filters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Logo Filters</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getLogoFilters()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EReference getWebsiteProperties_LogoFilters();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getFrameworkTechnology <em>Framework Technology</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -464,17 +495,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWebsiteProperties_TextEditorURL();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isResponsiveTopMenu <em>Responsive Top Menu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Responsive Top Menu</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isResponsiveTopMenu()
-	 * @see #getWebsiteProperties()
-	 * @generated
-	 */
-	EAttribute getWebsiteProperties_ResponsiveTopMenu();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTopNavigationId <em>Top Navigation Id</em>}'.
@@ -666,6 +686,22 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEBSITE_PROPERTIES__META_DESCRIPTION = eINSTANCE.getWebsiteProperties_MetaDescription();
 
 		/**
+		 * The meta object literal for the '<em><b>Logo Image</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEBSITE_PROPERTIES__LOGO_IMAGE = eINSTANCE.getWebsiteProperties_LogoImage();
+
+		/**
+		 * The meta object literal for the '<em><b>Logo Filters</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WEBSITE_PROPERTIES__LOGO_FILTERS = eINSTANCE.getWebsiteProperties_LogoFilters();
+
+		/**
 		 * The meta object literal for the '<em><b>Framework Technology</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -680,14 +716,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WEBSITE_PROPERTIES__TEXT_EDITOR_URL = eINSTANCE.getWebsiteProperties_TextEditorURL();
-
-		/**
-		 * The meta object literal for the '<em><b>Responsive Top Menu</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU = eINSTANCE.getWebsiteProperties_ResponsiveTopMenu();
 
 		/**
 		 * The meta object literal for the '<em><b>Top Navigation Id</b></em>' attribute feature.

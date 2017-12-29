@@ -64,9 +64,10 @@ public class WebsitePropertiesItemProvider
 			addWebmasterEmailPropertyDescriptor(object);
 			addCopyrightTextPropertyDescriptor(object);
 			addMetaDescriptionPropertyDescriptor(object);
+			addLogoImagePropertyDescriptor(object);
+			addLogoFiltersPropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
 			addTextEditorURLPropertyDescriptor(object);
-			addResponsiveTopMenuPropertyDescriptor(object);
 			addTopNavigationIdPropertyDescriptor(object);
 			addSiteTemplatePropertyDescriptor(object);
 			addStaticUnitsEditablePropertyDescriptor(object);
@@ -163,6 +164,50 @@ public class WebsitePropertiesItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Logo Image feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLogoImagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_logoImage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_logoImage_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__LOGO_IMAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Logo Filters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLogoFiltersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_logoFilters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_logoFilters_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__LOGO_FILTERS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Framework Technology feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -203,28 +248,6 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_SitePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Responsive Top Menu feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResponsiveTopMenuPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_responsiveTopMenu_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_responsiveTopMenu_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -335,9 +358,9 @@ public class WebsitePropertiesItemProvider
 			case WebsitePackage.WEBSITE_PROPERTIES__WEBMASTER_EMAIL:
 			case WebsitePackage.WEBSITE_PROPERTIES__COPYRIGHT_TEXT:
 			case WebsitePackage.WEBSITE_PROPERTIES__META_DESCRIPTION:
+			case WebsitePackage.WEBSITE_PROPERTIES__LOGO_IMAGE:
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
-			case WebsitePackage.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU:
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TEMPLATE:
 			case WebsitePackage.WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE:

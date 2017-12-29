@@ -30,12 +30,11 @@ import uk.ac.man.cs.mdsd.service.ServiceModel;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getApi <em>Api</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteName <em>Site Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteTitle <em>Site Title</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#isDevelopmentVersion <em>Development Version</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getBaseURL <em>Base URL</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#isRewriteURLs <em>Rewrite UR Ls</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getWebmasterEmail <em>Webmaster Email</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getCopyrightText <em>Copyright Text</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getMetaDescription <em>Meta Description</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getLogoImage <em>Logo Image</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getLogoFilters <em>Logo Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getFrameworkTechnology <em>Framework Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getInputTechnology <em>Input Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getAjaxTechnology <em>Ajax Technology</em>}</li>
@@ -43,7 +42,6 @@ import uk.ac.man.cs.mdsd.service.ServiceModel;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getTextEditorURL <em>Text Editor URL</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#isResponsiveTopMenu <em>Responsive Top Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteTemplate <em>Site Template</em>}</li>
@@ -252,84 +250,6 @@ public interface WafModel extends EObject {
 	void setSiteTitle(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Development Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Development Version</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Development Version</em>' attribute.
-	 * @see #setDevelopmentVersion(boolean)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_DevelopmentVersion()
-	 * @model unique="false"
-	 * @generated
-	 */
-	boolean isDevelopmentVersion();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#isDevelopmentVersion <em>Development Version</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Development Version</em>' attribute.
-	 * @see #isDevelopmentVersion()
-	 * @generated
-	 */
-	void setDevelopmentVersion(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Base URL</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Base URL</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Base URL</em>' attribute.
-	 * @see #setBaseURL(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_BaseURL()
-	 * @model unique="false"
-	 * @generated
-	 */
-	String getBaseURL();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#getBaseURL <em>Base URL</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base URL</em>' attribute.
-	 * @see #getBaseURL()
-	 * @generated
-	 */
-	void setBaseURL(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Rewrite UR Ls</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Rewrite UR Ls</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rewrite UR Ls</em>' attribute.
-	 * @see #setRewriteURLs(boolean)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_RewriteURLs()
-	 * @model unique="false"
-	 * @generated
-	 */
-	boolean isRewriteURLs();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#isRewriteURLs <em>Rewrite UR Ls</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rewrite UR Ls</em>' attribute.
-	 * @see #isRewriteURLs()
-	 * @generated
-	 */
-	void setRewriteURLs(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Webmaster Email</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -406,6 +326,58 @@ public interface WafModel extends EObject {
 	 * @generated
 	 */
 	void setMetaDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Logo Image</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Logo Image</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Logo Image</em>' attribute.
+	 * @see #setLogoImage(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_LogoImage()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getLogoImage();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#getLogoImage <em>Logo Image</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Logo Image</em>' attribute.
+	 * @see #getLogoImage()
+	 * @generated
+	 */
+	void setLogoImage(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Logo Filters</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Logo Filters</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Logo Filters</em>' reference.
+	 * @see #setLogoFilters(ImageManipulation)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_LogoFilters()
+	 * @model
+	 * @generated
+	 */
+	ImageManipulation getLogoFilters();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#getLogoFilters <em>Logo Filters</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Logo Filters</em>' reference.
+	 * @see #getLogoFilters()
+	 * @generated
+	 */
+	void setLogoFilters(ImageManipulation value);
 
 	/**
 	 * Returns the value of the '<em><b>Framework Technology</b></em>' attribute.
@@ -599,33 +571,6 @@ public interface WafModel extends EObject {
 	 * @generated
 	 */
 	void setTextEditorURL(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Responsive Top Menu</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Responsive Top Menu</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Responsive Top Menu</em>' attribute.
-	 * @see #setResponsiveTopMenu(boolean)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_ResponsiveTopMenu()
-	 * @model default="false" unique="false"
-	 * @generated
-	 */
-	boolean isResponsiveTopMenu();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#isResponsiveTopMenu <em>Responsive Top Menu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Responsive Top Menu</em>' attribute.
-	 * @see #isResponsiveTopMenu()
-	 * @generated
-	 */
-	void setResponsiveTopMenu(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Top Navigation Id</b></em>' attribute.

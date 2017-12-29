@@ -60,12 +60,11 @@ class WafModel {
 	refers API api
 	String[1] siteName
 	String[1] siteTitle
-	boolean developmentVersion
-	String baseURL
-	boolean rewriteURLs
 	String webmasterEmail
 	String copyrightText
 	String metaDescription
+	String logoImage
+	refers ImageManipulation logoFilters
 	FrameworkTechnologies frameworkTechnology
 	InputTechnologies inputTechnology
 	AjaxTechnologies ajaxTechnology
@@ -73,7 +72,6 @@ class WafModel {
 	String captchaSiteKey
 	String captchaSecretKey
 	String textEditorURL
-	boolean responsiveTopMenu = "false"
 	String topNavigationId
 	refers Menu sideMenu
 	String siteTemplate
@@ -455,6 +453,7 @@ class ChildPathAssociation extends ChildPath, AssociationReference {
 
 
 class ImageIndexUnit extends ImageUnit, InlineActionContainer {
+	String columnClass
 }
 
 class SliderUnit extends ImageUnit {

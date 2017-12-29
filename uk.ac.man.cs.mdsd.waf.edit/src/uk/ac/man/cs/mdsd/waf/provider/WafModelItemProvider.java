@@ -71,19 +71,17 @@ public class WafModelItemProvider
 			addApiPropertyDescriptor(object);
 			addSiteNamePropertyDescriptor(object);
 			addSiteTitlePropertyDescriptor(object);
-			addDevelopmentVersionPropertyDescriptor(object);
-			addBaseURLPropertyDescriptor(object);
-			addRewriteURLsPropertyDescriptor(object);
 			addWebmasterEmailPropertyDescriptor(object);
 			addCopyrightTextPropertyDescriptor(object);
 			addMetaDescriptionPropertyDescriptor(object);
+			addLogoImagePropertyDescriptor(object);
+			addLogoFiltersPropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
 			addInputTechnologyPropertyDescriptor(object);
 			addAjaxTechnologyPropertyDescriptor(object);
 			addCaptchaSiteKeyPropertyDescriptor(object);
 			addCaptchaSecretKeyPropertyDescriptor(object);
 			addTextEditorURLPropertyDescriptor(object);
-			addResponsiveTopMenuPropertyDescriptor(object);
 			addTopNavigationIdPropertyDescriptor(object);
 			addSideMenuPropertyDescriptor(object);
 			addSiteTemplatePropertyDescriptor(object);
@@ -206,75 +204,6 @@ public class WafModelItemProvider
 	}
 
   /**
-	 * This adds a property descriptor for the Development Version feature.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected void addDevelopmentVersionPropertyDescriptor(Object object)
-  {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_developmentVersion_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_developmentVersion_feature", "_UI_WafModel_type"),
-				 WafPackage.Literals.WAF_MODEL__DEVELOPMENT_VERSION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-  /**
-	 * This adds a property descriptor for the Base URL feature.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected void addBaseURLPropertyDescriptor(Object object)
-  {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_baseURL_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_baseURL_feature", "_UI_WafModel_type"),
-				 WafPackage.Literals.WAF_MODEL__BASE_URL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-  /**
-	 * This adds a property descriptor for the Rewrite UR Ls feature.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected void addRewriteURLsPropertyDescriptor(Object object)
-  {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_rewriteURLs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_rewriteURLs_feature", "_UI_WafModel_type"),
-				 WafPackage.Literals.WAF_MODEL__REWRITE_UR_LS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-  /**
 	 * This adds a property descriptor for the Webmaster Email feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -344,6 +273,50 @@ public class WafModelItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Logo Image feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLogoImagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_logoImage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_logoImage_feature", "_UI_WafModel_type"),
+				 WafPackage.Literals.WAF_MODEL__LOGO_IMAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
+	 * This adds a property descriptor for the Logo Filters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLogoFiltersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_logoFilters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_logoFilters_feature", "_UI_WafModel_type"),
+				 WafPackage.Literals.WAF_MODEL__LOGO_FILTERS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Framework Technology feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -481,28 +454,6 @@ public class WafModelItemProvider
 	}
 
   /**
-	 * This adds a property descriptor for the Responsive Top Menu feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResponsiveTopMenuPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_WafModel_responsiveTopMenu_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_responsiveTopMenu_feature", "_UI_WafModel_type"),
-				 WafPackage.Literals.WAF_MODEL__RESPONSIVE_TOP_MENU,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-		/**
 	 * This adds a property descriptor for the Top Navigation Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -670,19 +621,16 @@ public class WafModelItemProvider
 		switch (notification.getFeatureID(WafModel.class)) {
 			case WafPackage.WAF_MODEL__SITE_NAME:
 			case WafPackage.WAF_MODEL__SITE_TITLE:
-			case WafPackage.WAF_MODEL__DEVELOPMENT_VERSION:
-			case WafPackage.WAF_MODEL__BASE_URL:
-			case WafPackage.WAF_MODEL__REWRITE_UR_LS:
 			case WafPackage.WAF_MODEL__WEBMASTER_EMAIL:
 			case WafPackage.WAF_MODEL__COPYRIGHT_TEXT:
 			case WafPackage.WAF_MODEL__META_DESCRIPTION:
+			case WafPackage.WAF_MODEL__LOGO_IMAGE:
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
 			case WafPackage.WAF_MODEL__AJAX_TECHNOLOGY:
 			case WafPackage.WAF_MODEL__CAPTCHA_SITE_KEY:
 			case WafPackage.WAF_MODEL__CAPTCHA_SECRET_KEY:
 			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
-			case WafPackage.WAF_MODEL__RESPONSIVE_TOP_MENU:
 			case WafPackage.WAF_MODEL__TOP_NAVIGATION_ID:
 			case WafPackage.WAF_MODEL__SITE_TEMPLATE:
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:

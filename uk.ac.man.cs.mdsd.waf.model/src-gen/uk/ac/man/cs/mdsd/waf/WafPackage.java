@@ -152,40 +152,13 @@ public interface WafPackage extends EPackage {
 	int WAF_MODEL__SITE_TITLE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Development Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WAF_MODEL__DEVELOPMENT_VERSION = 9;
-
-	/**
-	 * The feature id for the '<em><b>Base URL</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WAF_MODEL__BASE_URL = 10;
-
-	/**
-	 * The feature id for the '<em><b>Rewrite UR Ls</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WAF_MODEL__REWRITE_UR_LS = 11;
-
-	/**
 	 * The feature id for the '<em><b>Webmaster Email</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__WEBMASTER_EMAIL = 12;
+	int WAF_MODEL__WEBMASTER_EMAIL = 9;
 
 	/**
 	 * The feature id for the '<em><b>Copyright Text</b></em>' attribute.
@@ -194,7 +167,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__COPYRIGHT_TEXT = 13;
+	int WAF_MODEL__COPYRIGHT_TEXT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Meta Description</b></em>' attribute.
@@ -203,7 +176,25 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__META_DESCRIPTION = 14;
+	int WAF_MODEL__META_DESCRIPTION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Logo Image</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAF_MODEL__LOGO_IMAGE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Logo Filters</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAF_MODEL__LOGO_FILTERS = 13;
 
 	/**
 	 * The feature id for the '<em><b>Framework Technology</b></em>' attribute.
@@ -212,7 +203,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__FRAMEWORK_TECHNOLOGY = 15;
+	int WAF_MODEL__FRAMEWORK_TECHNOLOGY = 14;
 
 	/**
 	 * The feature id for the '<em><b>Input Technology</b></em>' attribute.
@@ -221,7 +212,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__INPUT_TECHNOLOGY = 16;
+	int WAF_MODEL__INPUT_TECHNOLOGY = 15;
 
 	/**
 	 * The feature id for the '<em><b>Ajax Technology</b></em>' attribute.
@@ -230,7 +221,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__AJAX_TECHNOLOGY = 17;
+	int WAF_MODEL__AJAX_TECHNOLOGY = 16;
 
 	/**
 	 * The feature id for the '<em><b>Authentication</b></em>' containment reference.
@@ -239,7 +230,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__AUTHENTICATION = 18;
+	int WAF_MODEL__AUTHENTICATION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
@@ -248,7 +239,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__CAPTCHA_SITE_KEY = 19;
+	int WAF_MODEL__CAPTCHA_SITE_KEY = 18;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
@@ -257,7 +248,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__CAPTCHA_SECRET_KEY = 20;
+	int WAF_MODEL__CAPTCHA_SECRET_KEY = 19;
 
 	/**
 	 * The feature id for the '<em><b>Text Editor URL</b></em>' attribute.
@@ -266,16 +257,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__TEXT_EDITOR_URL = 21;
-
-	/**
-	 * The feature id for the '<em><b>Responsive Top Menu</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WAF_MODEL__RESPONSIVE_TOP_MENU = 22;
+	int WAF_MODEL__TEXT_EDITOR_URL = 20;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -284,7 +266,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__TOP_NAVIGATION_ID = 23;
+	int WAF_MODEL__TOP_NAVIGATION_ID = 21;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -293,7 +275,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__SIDE_MENU = 24;
+	int WAF_MODEL__SIDE_MENU = 22;
 
 	/**
 	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
@@ -302,7 +284,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__SITE_TEMPLATE = 25;
+	int WAF_MODEL__SITE_TEMPLATE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -311,7 +293,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__STATIC_UNITS_EDITABLE = 26;
+	int WAF_MODEL__STATIC_UNITS_EDITABLE = 24;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -320,7 +302,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL_FEATURE_COUNT = 27;
+	int WAF_MODEL_FEATURE_COUNT = 25;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -9738,13 +9720,22 @@ public interface WafPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__ACTIONS = IMAGE_UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Column Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__COLUMN_CLASS = IMAGE_UNIT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Image Index Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 1;
+	int IMAGE_INDEX_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Image Index Unit</em>' class.
@@ -12305,39 +12296,6 @@ public interface WafPackage extends EPackage {
 	EAttribute getWafModel_SiteTitle();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#isDevelopmentVersion <em>Development Version</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Development Version</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.WafModel#isDevelopmentVersion()
-	 * @see #getWafModel()
-	 * @generated
-	 */
-	EAttribute getWafModel_DevelopmentVersion();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#getBaseURL <em>Base URL</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Base URL</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.WafModel#getBaseURL()
-	 * @see #getWafModel()
-	 * @generated
-	 */
-	EAttribute getWafModel_BaseURL();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#isRewriteURLs <em>Rewrite UR Ls</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Rewrite UR Ls</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.WafModel#isRewriteURLs()
-	 * @see #getWafModel()
-	 * @generated
-	 */
-	EAttribute getWafModel_RewriteURLs();
-
-	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#getWebmasterEmail <em>Webmaster Email</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12369,6 +12327,28 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWafModel_MetaDescription();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#getLogoImage <em>Logo Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Logo Image</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.WafModel#getLogoImage()
+	 * @see #getWafModel()
+	 * @generated
+	 */
+	EAttribute getWafModel_LogoImage();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.WafModel#getLogoFilters <em>Logo Filters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Logo Filters</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.WafModel#getLogoFilters()
+	 * @see #getWafModel()
+	 * @generated
+	 */
+	EReference getWafModel_LogoFilters();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#getFrameworkTechnology <em>Framework Technology</em>}'.
@@ -12446,17 +12426,6 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWafModel_TextEditorURL();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#isResponsiveTopMenu <em>Responsive Top Menu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Responsive Top Menu</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.WafModel#isResponsiveTopMenu()
-	 * @see #getWafModel()
-	 * @generated
-	 */
-	EAttribute getWafModel_ResponsiveTopMenu();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#getTopNavigationId <em>Top Navigation Id</em>}'.
@@ -14978,6 +14947,17 @@ public interface WafPackage extends EPackage {
 	EClass getImageIndexUnit();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getColumnClass <em>Column Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Column Class</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getColumnClass()
+	 * @see #getImageIndexUnit()
+	 * @generated
+	 */
+	EAttribute getImageIndexUnit_ColumnClass();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.SliderUnit <em>Slider Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15582,30 +15562,6 @@ public interface WafPackage extends EPackage {
 		EAttribute WAF_MODEL__SITE_TITLE = eINSTANCE.getWafModel_SiteTitle();
 
 		/**
-		 * The meta object literal for the '<em><b>Development Version</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WAF_MODEL__DEVELOPMENT_VERSION = eINSTANCE.getWafModel_DevelopmentVersion();
-
-		/**
-		 * The meta object literal for the '<em><b>Base URL</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WAF_MODEL__BASE_URL = eINSTANCE.getWafModel_BaseURL();
-
-		/**
-		 * The meta object literal for the '<em><b>Rewrite UR Ls</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WAF_MODEL__REWRITE_UR_LS = eINSTANCE.getWafModel_RewriteURLs();
-
-		/**
 		 * The meta object literal for the '<em><b>Webmaster Email</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -15628,6 +15584,22 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WAF_MODEL__META_DESCRIPTION = eINSTANCE.getWafModel_MetaDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Logo Image</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WAF_MODEL__LOGO_IMAGE = eINSTANCE.getWafModel_LogoImage();
+
+		/**
+		 * The meta object literal for the '<em><b>Logo Filters</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WAF_MODEL__LOGO_FILTERS = eINSTANCE.getWafModel_LogoFilters();
 
 		/**
 		 * The meta object literal for the '<em><b>Framework Technology</b></em>' attribute feature.
@@ -15684,14 +15656,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WAF_MODEL__TEXT_EDITOR_URL = eINSTANCE.getWafModel_TextEditorURL();
-
-		/**
-		 * The meta object literal for the '<em><b>Responsive Top Menu</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WAF_MODEL__RESPONSIVE_TOP_MENU = eINSTANCE.getWafModel_ResponsiveTopMenu();
 
 		/**
 		 * The meta object literal for the '<em><b>Top Navigation Id</b></em>' attribute feature.
@@ -17674,6 +17638,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EClass IMAGE_INDEX_UNIT = eINSTANCE.getImageIndexUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Column Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_INDEX_UNIT__COLUMN_CLASS = eINSTANCE.getImageIndexUnit_ColumnClass();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.SliderUnitImpl <em>Slider Unit</em>}' class.

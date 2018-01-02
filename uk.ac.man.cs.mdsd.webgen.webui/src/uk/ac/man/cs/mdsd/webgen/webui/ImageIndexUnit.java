@@ -14,6 +14,7 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getContentClass <em>Content Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getColumnClass <em>Column Class</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit()
@@ -50,7 +51,7 @@ public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Content Class</b></em>' attribute.
-	 * The default value is <code>"image_index_content"</code>.
+	 * The default value is <code>"card"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Class</em>' attribute isn't clear,
@@ -60,7 +61,7 @@ public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
 	 * @return the value of the '<em>Content Class</em>' attribute.
 	 * @see #setContentClass(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit_ContentClass()
-	 * @model default="image_index_content" ordered="false"
+	 * @model default="card" ordered="false"
 	 * @generated
 	 */
 	String getContentClass();
@@ -74,5 +75,32 @@ public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
 	 * @generated
 	 */
 	void setContentClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Column Class</b></em>' attribute.
+	 * The default value is <code>"col s12 m6 l3"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Column Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Column Class</em>' attribute.
+	 * @see #setColumnClass(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit_ColumnClass()
+	 * @model default="col s12 m6 l3" ordered="false"
+	 * @generated
+	 */
+	String getColumnClass();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getColumnClass <em>Column Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Column Class</em>' attribute.
+	 * @see #getColumnClass()
+	 * @generated
+	 */
+	void setColumnClass(String value);
 
 } // ImageIndexUnit

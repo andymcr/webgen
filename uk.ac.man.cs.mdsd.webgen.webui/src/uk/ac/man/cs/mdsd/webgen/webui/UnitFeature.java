@@ -301,6 +301,7 @@ public interface UnitFeature extends UnitField, InlineActionContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Input Class</b></em>' attribute.
+	 * The default value is <code>"input-field,col,s12"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Input Class</em>' attribute isn't clear,
@@ -310,7 +311,7 @@ public interface UnitFeature extends UnitField, InlineActionContainer {
 	 * @return the value of the '<em>Input Class</em>' attribute.
 	 * @see #setInputClass(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitFeature_InputClass()
-	 * @model ordered="false"
+	 * @model default="input-field,col,s12" ordered="false"
 	 * @generated
 	 */
 	String getInputClass();

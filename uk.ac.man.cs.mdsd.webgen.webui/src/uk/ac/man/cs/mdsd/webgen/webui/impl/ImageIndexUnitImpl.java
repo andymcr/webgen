@@ -30,6 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getContentClass <em>Content Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getColumnClass <em>Column Class</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,7 +74,7 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONTENT_CLASS_EDEFAULT = "image_index_content";
+	protected static final String CONTENT_CLASS_EDEFAULT = "card";
 
 	/**
 	 * The cached value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
@@ -84,6 +85,26 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @ordered
 	 */
 	protected String contentClass = CONTENT_CLASS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getColumnClass() <em>Column Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColumnClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COLUMN_CLASS_EDEFAULT = "col s12 m6 l3";
+
+	/**
+	 * The cached value of the '{@link #getColumnClass() <em>Column Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColumnClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String columnClass = COLUMN_CLASS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,6 +184,27 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getColumnClass() {
+		return columnClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setColumnClass(String newColumnClass) {
+		String oldColumnClass = columnClass;
+		columnClass = newColumnClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS, oldColumnClass, columnClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -201,6 +243,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return getStyleClass();
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
 				return getContentClass();
+			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
+				return getColumnClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -224,6 +268,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
 				setContentClass((String)newValue);
 				return;
+			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
+				setColumnClass((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -245,6 +292,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
 				setContentClass(CONTENT_CLASS_EDEFAULT);
 				return;
+			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
+				setColumnClass(COLUMN_CLASS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -263,6 +313,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
 				return CONTENT_CLASS_EDEFAULT == null ? contentClass != null : !CONTENT_CLASS_EDEFAULT.equals(contentClass);
+			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
+				return COLUMN_CLASS_EDEFAULT == null ? columnClass != null : !COLUMN_CLASS_EDEFAULT.equals(columnClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -313,6 +365,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		result.append(styleClass);
 		result.append(", contentClass: ");
 		result.append(contentClass);
+		result.append(", columnClass: ");
+		result.append(columnClass);
 		result.append(')');
 		return result.toString();
 	}

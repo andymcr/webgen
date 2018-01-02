@@ -8087,13 +8087,22 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__CONTENT_CLASS = IMAGE_UNIT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Column Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__COLUMN_CLASS = IMAGE_UNIT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Image Index Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 3;
+	int IMAGE_INDEX_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Image Index Unit</em>' class.
@@ -13186,6 +13195,17 @@ public interface WebuiPackage extends EPackage {
 	EAttribute getImageIndexUnit_ContentClass();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getColumnClass <em>Column Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Column Class</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getColumnClass()
+	 * @see #getImageIndexUnit()
+	 * @generated
+	 */
+	EAttribute getImageIndexUnit_ColumnClass();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.SliderUnit <em>Slider Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15771,6 +15791,14 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute IMAGE_INDEX_UNIT__CONTENT_CLASS = eINSTANCE.getImageIndexUnit_ContentClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Column Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_INDEX_UNIT__COLUMN_CLASS = eINSTANCE.getImageIndexUnit_ColumnClass();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.SliderUnitImpl <em>Slider Unit</em>}' class.

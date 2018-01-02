@@ -256,7 +256,7 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INPUT_CLASS_EDEFAULT = null;
+	protected static final String INPUT_CLASS_EDEFAULT = "input-field,col,s12";
 
 	/**
 	 * The cached value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.

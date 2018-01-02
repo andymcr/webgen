@@ -51,6 +51,7 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 
 			addStyleClassPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
+			addColumnClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -96,6 +97,28 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_StylePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Column Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addColumnClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageIndexUnit_columnClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_columnClass_feature", "_UI_ImageIndexUnit_type"),
+				 WebuiPackage.Literals.IMAGE_INDEX_UNIT__COLUMN_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
 				 null));
 	}
 
@@ -178,6 +201,7 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 		switch (notification.getFeatureID(ImageIndexUnit.class)) {
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
+			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__ACTIONS:

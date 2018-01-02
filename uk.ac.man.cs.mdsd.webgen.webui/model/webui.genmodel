@@ -375,6 +375,7 @@
     <genClasses ecoreClass="webui.ecore#//ImageIndexUnit">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/styleClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/contentClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/columnClass"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//SliderUnit">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//SliderUnit/styleClass"/>

@@ -110,7 +110,7 @@ public interface IndexUnit extends DataUnit, CollectionUnit, InlineActionContain
 
 	/**
 	 * Returns the value of the '<em><b>Content Class</b></em>' attribute.
-	 * The default value is <code>"index_content,striped,responsive-table"</code>.
+	 * The default value is <code>"striped,responsive-table"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Class</em>' attribute isn't clear,
@@ -120,7 +120,7 @@ public interface IndexUnit extends DataUnit, CollectionUnit, InlineActionContain
 	 * @return the value of the '<em>Content Class</em>' attribute.
 	 * @see #setContentClass(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getIndexUnit_ContentClass()
-	 * @model default="index_content,striped,responsive-table" ordered="false"
+	 * @model default="striped,responsive-table" ordered="false"
 	 * @generated
 	 */
 	String getContentClass();

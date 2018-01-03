@@ -18,11 +18,11 @@ helper context String def: createName() : String
 			self.trim().lowercaseFirst().replaceAll('([A-Z])', '_$1')
 		endif;
 
-helper context Website!Page def: pageSideMenu() : Website!Menu
-	= if not self.sideMenu.oclIsUndefined() then
-			self.sideMenu
+helper context Website!Page def: pageContextMenu() : Website!Menu
+	= if not self.contextMenu.oclIsUndefined() then
+			self.contextMenu
 		else if not self.parentPage.oclIsUndefined() then
-			self.parentPage.targetPage.pageSideMenu()
+			self.parentPage.targetPage.pageContextMenu()
 		else
 			OclUndefined
 		endif endif;
@@ -427,7 +427,7 @@ rule Page {
 			else
 				website.parentPage.targetPage
 			endif,
-		sideMenu <- website.pageSideMenu(),
+		contextMenu <- website.pageContextMenu(),
 		styleClass <-
 			if website.styleClass.oclIsUndefined() then
 				OclUndefined

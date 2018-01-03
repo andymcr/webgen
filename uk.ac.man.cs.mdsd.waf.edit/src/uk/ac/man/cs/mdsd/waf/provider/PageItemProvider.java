@@ -54,7 +54,7 @@ public class PageItemProvider
 			addPartOfPropertyDescriptor(object);
 			addParentPagePropertyDescriptor(object);
 			addChildPagesPropertyDescriptor(object);
-			addSideMenuPropertyDescriptor(object);
+			addContextMenuPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 		}
@@ -129,19 +129,19 @@ public class PageItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Side Menu feature.
+	 * This adds a property descriptor for the Context Menu feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSideMenuPropertyDescriptor(Object object) {
+	protected void addContextMenuPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_sideMenu_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_sideMenu_feature", "_UI_Page_type"),
-				 WafPackage.Literals.PAGE__SIDE_MENU,
+				 getString("_UI_Page_contextMenu_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_contextMenu_feature", "_UI_Page_type"),
+				 WafPackage.Literals.PAGE__CONTEXT_MENU,
 				 true,
 				 false,
 				 true,

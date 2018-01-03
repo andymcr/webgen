@@ -174,7 +174,7 @@ class Page extends NamedDisplayElement, UnitContainer {
 	container WafModel partOf opposite pages
 	refers Page parentPage opposite childPages
 	refers Page[] childPages opposite parentPage
-	refers GlobalMenu sideMenu
+	refers GlobalMenu contextMenu
 	String uriElement = ""
 	String styleClass
 }

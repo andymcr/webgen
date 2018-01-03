@@ -1445,13 +1445,13 @@ public interface WafPackage extends EPackage {
 	int PAGE__CHILD_PAGES = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
+	 * The feature id for the '<em><b>Context Menu</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__SIDE_MENU = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int PAGE__CONTEXT_MENU = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
@@ -13078,15 +13078,15 @@ public interface WafPackage extends EPackage {
 	EReference getPage_ChildPages();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.Page#getSideMenu <em>Side Menu</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.Page#getContextMenu <em>Context Menu</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Side Menu</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.Page#getSideMenu()
+	 * @return the meta object for the reference '<em>Context Menu</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.Page#getContextMenu()
 	 * @see #getPage()
 	 * @generated
 	 */
-	EReference getPage_SideMenu();
+	EReference getPage_ContextMenu();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.Page#getUriElement <em>Uri Element</em>}'.
@@ -16146,12 +16146,12 @@ public interface WafPackage extends EPackage {
 		EReference PAGE__CHILD_PAGES = eINSTANCE.getPage_ChildPages();
 
 		/**
-		 * The meta object literal for the '<em><b>Side Menu</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Context Menu</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PAGE__SIDE_MENU = eINSTANCE.getPage_SideMenu();
+		EReference PAGE__CONTEXT_MENU = eINSTANCE.getPage_ContextMenu();
 
 		/**
 		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.

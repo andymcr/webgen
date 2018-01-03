@@ -21,7 +21,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu;
 import uk.ac.man.cs.mdsd.webgen.webui.Page;
 import uk.ac.man.cs.mdsd.webgen.webui.PageLink;
-import uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -39,11 +38,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getChildPages <em>Child Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getTopMenuOption <em>Top Menu Option</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getTopMenuRequiresRole <em>Top Menu Requires Role</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getTopMenuRank <em>Top Menu Rank</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getNavigationLabel <em>Navigation Label</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getSideMenu <em>Side Menu</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getStyleClass <em>Style Class</em>}</li>
  * </ul>
  *
@@ -101,94 +96,14 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTopMenuOption() <em>Top Menu Option</em>}' attribute.
+	 * The cached value of the '{@link #getContextMenu() <em>Context Menu</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTopMenuOption()
+	 * @see #getContextMenu()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final PageTopMenuOptions TOP_MENU_OPTION_EDEFAULT = PageTopMenuOptions.NEVER_INCLUDE;
-
-	/**
-	 * The cached value of the '{@link #getTopMenuOption() <em>Top Menu Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopMenuOption()
-	 * @generated
-	 * @ordered
-	 */
-	protected PageTopMenuOptions topMenuOption = TOP_MENU_OPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTopMenuRequiresRole() <em>Top Menu Requires Role</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopMenuRequiresRole()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TOP_MENU_REQUIRES_ROLE_EDEFAULT = "";
-
-	/**
-	 * The cached value of the '{@link #getTopMenuRequiresRole() <em>Top Menu Requires Role</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopMenuRequiresRole()
-	 * @generated
-	 * @ordered
-	 */
-	protected String topMenuRequiresRole = TOP_MENU_REQUIRES_ROLE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTopMenuRank() <em>Top Menu Rank</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopMenuRank()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int TOP_MENU_RANK_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getTopMenuRank() <em>Top Menu Rank</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopMenuRank()
-	 * @generated
-	 * @ordered
-	 */
-	protected int topMenuRank = TOP_MENU_RANK_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNavigationLabel() <em>Navigation Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNavigationLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAVIGATION_LABEL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNavigationLabel() <em>Navigation Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNavigationLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected String navigationLabel = NAVIGATION_LABEL_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSideMenu() <em>Side Menu</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSideMenu()
-	 * @generated
-	 * @ordered
-	 */
-	protected GlobalMenu sideMenu;
+	protected GlobalMenu contextMenu;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -363,100 +278,16 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PageTopMenuOptions getTopMenuOption() {
-		return topMenuOption;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTopMenuOption(PageTopMenuOptions newTopMenuOption) {
-		PageTopMenuOptions oldTopMenuOption = topMenuOption;
-		topMenuOption = newTopMenuOption == null ? TOP_MENU_OPTION_EDEFAULT : newTopMenuOption;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.PAGE__TOP_MENU_OPTION, oldTopMenuOption, topMenuOption));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getTopMenuRequiresRole() {
-		return topMenuRequiresRole;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTopMenuRequiresRole(String newTopMenuRequiresRole) {
-		String oldTopMenuRequiresRole = topMenuRequiresRole;
-		topMenuRequiresRole = newTopMenuRequiresRole;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.PAGE__TOP_MENU_REQUIRES_ROLE, oldTopMenuRequiresRole, topMenuRequiresRole));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getTopMenuRank() {
-		return topMenuRank;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTopMenuRank(int newTopMenuRank) {
-		int oldTopMenuRank = topMenuRank;
-		topMenuRank = newTopMenuRank;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.PAGE__TOP_MENU_RANK, oldTopMenuRank, topMenuRank));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getNavigationLabel() {
-		return navigationLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNavigationLabel(String newNavigationLabel) {
-		String oldNavigationLabel = navigationLabel;
-		navigationLabel = newNavigationLabel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.PAGE__NAVIGATION_LABEL, oldNavigationLabel, navigationLabel));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GlobalMenu getSideMenu() {
-		if (sideMenu != null && sideMenu.eIsProxy()) {
-			InternalEObject oldSideMenu = (InternalEObject)sideMenu;
-			sideMenu = (GlobalMenu)eResolveProxy(oldSideMenu);
-			if (sideMenu != oldSideMenu) {
+	public GlobalMenu getContextMenu() {
+		if (contextMenu != null && contextMenu.eIsProxy()) {
+			InternalEObject oldContextMenu = (InternalEObject)contextMenu;
+			contextMenu = (GlobalMenu)eResolveProxy(oldContextMenu);
+			if (contextMenu != oldContextMenu) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.PAGE__SIDE_MENU, oldSideMenu, sideMenu));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.PAGE__CONTEXT_MENU, oldContextMenu, contextMenu));
 			}
 		}
-		return sideMenu;
+		return contextMenu;
 	}
 
 	/**
@@ -464,8 +295,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GlobalMenu basicGetSideMenu() {
-		return sideMenu;
+	public GlobalMenu basicGetContextMenu() {
+		return contextMenu;
 	}
 
 	/**
@@ -473,11 +304,11 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSideMenu(GlobalMenu newSideMenu) {
-		GlobalMenu oldSideMenu = sideMenu;
-		sideMenu = newSideMenu;
+	public void setContextMenu(GlobalMenu newContextMenu) {
+		GlobalMenu oldContextMenu = contextMenu;
+		contextMenu = newContextMenu;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.PAGE__SIDE_MENU, oldSideMenu, sideMenu));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.PAGE__CONTEXT_MENU, oldContextMenu, contextMenu));
 	}
 
 	/**
@@ -574,17 +405,9 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return getChildPages();
 			case WebuiPackage.PAGE__URI_ELEMENT:
 				return getUriElement();
-			case WebuiPackage.PAGE__TOP_MENU_OPTION:
-				return getTopMenuOption();
-			case WebuiPackage.PAGE__TOP_MENU_REQUIRES_ROLE:
-				return getTopMenuRequiresRole();
-			case WebuiPackage.PAGE__TOP_MENU_RANK:
-				return getTopMenuRank();
-			case WebuiPackage.PAGE__NAVIGATION_LABEL:
-				return getNavigationLabel();
-			case WebuiPackage.PAGE__SIDE_MENU:
-				if (resolve) return getSideMenu();
-				return basicGetSideMenu();
+			case WebuiPackage.PAGE__CONTEXT_MENU:
+				if (resolve) return getContextMenu();
+				return basicGetContextMenu();
 			case WebuiPackage.PAGE__STYLE_CLASS:
 				return getStyleClass();
 		}
@@ -617,20 +440,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WebuiPackage.PAGE__URI_ELEMENT:
 				setUriElement((String)newValue);
 				return;
-			case WebuiPackage.PAGE__TOP_MENU_OPTION:
-				setTopMenuOption((PageTopMenuOptions)newValue);
-				return;
-			case WebuiPackage.PAGE__TOP_MENU_REQUIRES_ROLE:
-				setTopMenuRequiresRole((String)newValue);
-				return;
-			case WebuiPackage.PAGE__TOP_MENU_RANK:
-				setTopMenuRank((Integer)newValue);
-				return;
-			case WebuiPackage.PAGE__NAVIGATION_LABEL:
-				setNavigationLabel((String)newValue);
-				return;
-			case WebuiPackage.PAGE__SIDE_MENU:
-				setSideMenu((GlobalMenu)newValue);
+			case WebuiPackage.PAGE__CONTEXT_MENU:
+				setContextMenu((GlobalMenu)newValue);
 				return;
 			case WebuiPackage.PAGE__STYLE_CLASS:
 				setStyleClass((String)newValue);
@@ -662,20 +473,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WebuiPackage.PAGE__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
-			case WebuiPackage.PAGE__TOP_MENU_OPTION:
-				setTopMenuOption(TOP_MENU_OPTION_EDEFAULT);
-				return;
-			case WebuiPackage.PAGE__TOP_MENU_REQUIRES_ROLE:
-				setTopMenuRequiresRole(TOP_MENU_REQUIRES_ROLE_EDEFAULT);
-				return;
-			case WebuiPackage.PAGE__TOP_MENU_RANK:
-				setTopMenuRank(TOP_MENU_RANK_EDEFAULT);
-				return;
-			case WebuiPackage.PAGE__NAVIGATION_LABEL:
-				setNavigationLabel(NAVIGATION_LABEL_EDEFAULT);
-				return;
-			case WebuiPackage.PAGE__SIDE_MENU:
-				setSideMenu((GlobalMenu)null);
+			case WebuiPackage.PAGE__CONTEXT_MENU:
+				setContextMenu((GlobalMenu)null);
 				return;
 			case WebuiPackage.PAGE__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
@@ -702,16 +501,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return childPages != null && !childPages.isEmpty();
 			case WebuiPackage.PAGE__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
-			case WebuiPackage.PAGE__TOP_MENU_OPTION:
-				return topMenuOption != TOP_MENU_OPTION_EDEFAULT;
-			case WebuiPackage.PAGE__TOP_MENU_REQUIRES_ROLE:
-				return TOP_MENU_REQUIRES_ROLE_EDEFAULT == null ? topMenuRequiresRole != null : !TOP_MENU_REQUIRES_ROLE_EDEFAULT.equals(topMenuRequiresRole);
-			case WebuiPackage.PAGE__TOP_MENU_RANK:
-				return topMenuRank != TOP_MENU_RANK_EDEFAULT;
-			case WebuiPackage.PAGE__NAVIGATION_LABEL:
-				return NAVIGATION_LABEL_EDEFAULT == null ? navigationLabel != null : !NAVIGATION_LABEL_EDEFAULT.equals(navigationLabel);
-			case WebuiPackage.PAGE__SIDE_MENU:
-				return sideMenu != null;
+			case WebuiPackage.PAGE__CONTEXT_MENU:
+				return contextMenu != null;
 			case WebuiPackage.PAGE__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 		}
@@ -762,14 +553,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (uriElement: ");
 		result.append(uriElement);
-		result.append(", topMenuOption: ");
-		result.append(topMenuOption);
-		result.append(", topMenuRequiresRole: ");
-		result.append(topMenuRequiresRole);
-		result.append(", topMenuRank: ");
-		result.append(topMenuRank);
-		result.append(", navigationLabel: ");
-		result.append(navigationLabel);
 		result.append(", styleClass: ");
 		result.append(styleClass);
 		result.append(')');

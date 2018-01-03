@@ -40,7 +40,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getChildPages <em>Child Pages</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getSideMenu <em>Side Menu</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getStyleClass <em>Style Class</em>}</li>
  * </ul>
@@ -79,14 +79,14 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	protected EList<Page> childPages;
 
 	/**
-	 * The cached value of the '{@link #getSideMenu() <em>Side Menu</em>}' reference.
+	 * The cached value of the '{@link #getContextMenu() <em>Context Menu</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSideMenu()
+	 * @see #getContextMenu()
 	 * @generated
 	 * @ordered
 	 */
-	protected GlobalMenu sideMenu;
+	protected GlobalMenu contextMenu;
 
 	/**
 	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
@@ -287,16 +287,16 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GlobalMenu getSideMenu() {
-		if (sideMenu != null && sideMenu.eIsProxy()) {
-			InternalEObject oldSideMenu = (InternalEObject)sideMenu;
-			sideMenu = (GlobalMenu)eResolveProxy(oldSideMenu);
-			if (sideMenu != oldSideMenu) {
+	public GlobalMenu getContextMenu() {
+		if (contextMenu != null && contextMenu.eIsProxy()) {
+			InternalEObject oldContextMenu = (InternalEObject)contextMenu;
+			contextMenu = (GlobalMenu)eResolveProxy(oldContextMenu);
+			if (contextMenu != oldContextMenu) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.PAGE__SIDE_MENU, oldSideMenu, sideMenu));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.PAGE__CONTEXT_MENU, oldContextMenu, contextMenu));
 			}
 		}
-		return sideMenu;
+		return contextMenu;
 	}
 
 	/**
@@ -304,8 +304,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GlobalMenu basicGetSideMenu() {
-		return sideMenu;
+	public GlobalMenu basicGetContextMenu() {
+		return contextMenu;
 	}
 
 	/**
@@ -313,11 +313,11 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSideMenu(GlobalMenu newSideMenu) {
-		GlobalMenu oldSideMenu = sideMenu;
-		sideMenu = newSideMenu;
+	public void setContextMenu(GlobalMenu newContextMenu) {
+		GlobalMenu oldContextMenu = contextMenu;
+		contextMenu = newContextMenu;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.PAGE__SIDE_MENU, oldSideMenu, sideMenu));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.PAGE__CONTEXT_MENU, oldContextMenu, contextMenu));
 	}
 
 	/**
@@ -439,9 +439,9 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return basicGetParentPage();
 			case WafPackage.PAGE__CHILD_PAGES:
 				return getChildPages();
-			case WafPackage.PAGE__SIDE_MENU:
-				if (resolve) return getSideMenu();
-				return basicGetSideMenu();
+			case WafPackage.PAGE__CONTEXT_MENU:
+				if (resolve) return getContextMenu();
+				return basicGetContextMenu();
 			case WafPackage.PAGE__URI_ELEMENT:
 				return getUriElement();
 			case WafPackage.PAGE__STYLE_CLASS:
@@ -473,8 +473,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				getChildPages().clear();
 				getChildPages().addAll((Collection<? extends Page>)newValue);
 				return;
-			case WafPackage.PAGE__SIDE_MENU:
-				setSideMenu((GlobalMenu)newValue);
+			case WafPackage.PAGE__CONTEXT_MENU:
+				setContextMenu((GlobalMenu)newValue);
 				return;
 			case WafPackage.PAGE__URI_ELEMENT:
 				setUriElement((String)newValue);
@@ -506,8 +506,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WafPackage.PAGE__CHILD_PAGES:
 				getChildPages().clear();
 				return;
-			case WafPackage.PAGE__SIDE_MENU:
-				setSideMenu((GlobalMenu)null);
+			case WafPackage.PAGE__CONTEXT_MENU:
+				setContextMenu((GlobalMenu)null);
 				return;
 			case WafPackage.PAGE__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
@@ -535,8 +535,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return parentPage != null;
 			case WafPackage.PAGE__CHILD_PAGES:
 				return childPages != null && !childPages.isEmpty();
-			case WafPackage.PAGE__SIDE_MENU:
-				return sideMenu != null;
+			case WafPackage.PAGE__CONTEXT_MENU:
+				return contextMenu != null;
 			case WafPackage.PAGE__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 			case WafPackage.PAGE__STYLE_CLASS:

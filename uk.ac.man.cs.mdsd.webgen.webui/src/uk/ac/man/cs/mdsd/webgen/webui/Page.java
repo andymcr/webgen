@@ -19,11 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getChildPages <em>Child Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuOption <em>Top Menu Option</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuRequiresRole <em>Top Menu Requires Role</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuRank <em>Top Menu Rank</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getNavigationLabel <em>Navigation Label</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getSideMenu <em>Side Menu</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getStyleClass <em>Style Class</em>}</li>
  * </ul>
  *
@@ -133,140 +129,30 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	void setUriElement(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Top Menu Option</b></em>' attribute.
-	 * The default value is <code>"NeverInclude"</code>.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions}.
+	 * Returns the value of the '<em><b>Context Menu</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Top Menu Option</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Context Menu</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Top Menu Option</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions
-	 * @see #setTopMenuOption(PageTopMenuOptions)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getPage_TopMenuOption()
-	 * @model default="NeverInclude" ordered="false"
-	 * @generated
-	 */
-	PageTopMenuOptions getTopMenuOption();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuOption <em>Top Menu Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Top Menu Option</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions
-	 * @see #getTopMenuOption()
-	 * @generated
-	 */
-	void setTopMenuOption(PageTopMenuOptions value);
-
-	/**
-	 * Returns the value of the '<em><b>Top Menu Requires Role</b></em>' attribute.
-	 * The default value is <code>""</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Top Menu Requires Role</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Top Menu Requires Role</em>' attribute.
-	 * @see #setTopMenuRequiresRole(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getPage_TopMenuRequiresRole()
-	 * @model default=""
-	 * @generated
-	 */
-	String getTopMenuRequiresRole();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuRequiresRole <em>Top Menu Requires Role</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Top Menu Requires Role</em>' attribute.
-	 * @see #getTopMenuRequiresRole()
-	 * @generated
-	 */
-	void setTopMenuRequiresRole(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Top Menu Rank</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Top Menu Rank</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Top Menu Rank</em>' attribute.
-	 * @see #setTopMenuRank(int)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getPage_TopMenuRank()
-	 * @model default="0" ordered="false"
-	 * @generated
-	 */
-	int getTopMenuRank();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuRank <em>Top Menu Rank</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Top Menu Rank</em>' attribute.
-	 * @see #getTopMenuRank()
-	 * @generated
-	 */
-	void setTopMenuRank(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Navigation Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Navigation Label</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Navigation Label</em>' attribute.
-	 * @see #setNavigationLabel(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getPage_NavigationLabel()
+	 * @return the value of the '<em>Context Menu</em>' reference.
+	 * @see #setContextMenu(GlobalMenu)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getPage_ContextMenu()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	String getNavigationLabel();
+	GlobalMenu getContextMenu();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getNavigationLabel <em>Navigation Label</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getContextMenu <em>Context Menu</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Navigation Label</em>' attribute.
-	 * @see #getNavigationLabel()
+	 * @param value the new value of the '<em>Context Menu</em>' reference.
+	 * @see #getContextMenu()
 	 * @generated
 	 */
-	void setNavigationLabel(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Side Menu</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Side Menu</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Side Menu</em>' reference.
-	 * @see #setSideMenu(GlobalMenu)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getPage_SideMenu()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	GlobalMenu getSideMenu();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getSideMenu <em>Side Menu</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Side Menu</em>' reference.
-	 * @see #getSideMenu()
-	 * @generated
-	 */
-	void setSideMenu(GlobalMenu value);
+	void setContextMenu(GlobalMenu value);
 
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.

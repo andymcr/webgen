@@ -94,12 +94,7 @@
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//Page/childPages"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute webui.ecore#//Page/uriElement"/>
-      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute webui.ecore#//Page/topMenuOption"/>
-      <genFeatures createChild="false" propertyCategory="Security" ecoreFeature="ecore:EAttribute webui.ecore#//Page/topMenuRequiresRole"/>
-      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute webui.ecore#//Page/topMenuRank"/>
-      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute webui.ecore#//Page/navigationLabel"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
-          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//Page/sideMenu"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//Page/contextMenu"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//Page/styleClass"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//PageLink">

@@ -958,49 +958,13 @@ public interface WebuiPackage extends EPackage {
 	int PAGE__URI_ELEMENT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Top Menu Option</b></em>' attribute.
+	 * The feature id for the '<em><b>Context Menu</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__TOP_MENU_OPTION = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Top Menu Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__TOP_MENU_REQUIRES_ROLE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Top Menu Rank</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__TOP_MENU_RANK = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Navigation Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__NAVIGATION_LABEL = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__SIDE_MENU = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int PAGE__CONTEXT_MENU = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -1009,7 +973,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__STYLE_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int PAGE__STYLE_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Page</em>' class.
@@ -1018,7 +982,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int PAGE_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Page</em>' class.
@@ -11096,59 +11060,15 @@ public interface WebuiPackage extends EPackage {
 	EAttribute getPage_UriElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuOption <em>Top Menu Option</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getContextMenu <em>Context Menu</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Top Menu Option</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuOption()
+	 * @return the meta object for the reference '<em>Context Menu</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.Page#getContextMenu()
 	 * @see #getPage()
 	 * @generated
 	 */
-	EAttribute getPage_TopMenuOption();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuRequiresRole <em>Top Menu Requires Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Top Menu Requires Role</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuRequiresRole()
-	 * @see #getPage()
-	 * @generated
-	 */
-	EAttribute getPage_TopMenuRequiresRole();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuRank <em>Top Menu Rank</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Top Menu Rank</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.Page#getTopMenuRank()
-	 * @see #getPage()
-	 * @generated
-	 */
-	EAttribute getPage_TopMenuRank();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getNavigationLabel <em>Navigation Label</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Navigation Label</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.Page#getNavigationLabel()
-	 * @see #getPage()
-	 * @generated
-	 */
-	EAttribute getPage_NavigationLabel();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getSideMenu <em>Side Menu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Side Menu</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.Page#getSideMenu()
-	 * @see #getPage()
-	 * @generated
-	 */
-	EReference getPage_SideMenu();
+	EReference getPage_ContextMenu();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getStyleClass <em>Style Class</em>}'.
@@ -14193,44 +14113,12 @@ public interface WebuiPackage extends EPackage {
 		EAttribute PAGE__URI_ELEMENT = eINSTANCE.getPage_UriElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Top Menu Option</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Context Menu</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PAGE__TOP_MENU_OPTION = eINSTANCE.getPage_TopMenuOption();
-
-		/**
-		 * The meta object literal for the '<em><b>Top Menu Requires Role</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PAGE__TOP_MENU_REQUIRES_ROLE = eINSTANCE.getPage_TopMenuRequiresRole();
-
-		/**
-		 * The meta object literal for the '<em><b>Top Menu Rank</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PAGE__TOP_MENU_RANK = eINSTANCE.getPage_TopMenuRank();
-
-		/**
-		 * The meta object literal for the '<em><b>Navigation Label</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PAGE__NAVIGATION_LABEL = eINSTANCE.getPage_NavigationLabel();
-
-		/**
-		 * The meta object literal for the '<em><b>Side Menu</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PAGE__SIDE_MENU = eINSTANCE.getPage_SideMenu();
+		EReference PAGE__CONTEXT_MENU = eINSTANCE.getPage_ContextMenu();
 
 		/**
 		 * The meta object literal for the '<em><b>Style Class</b></em>' attribute feature.

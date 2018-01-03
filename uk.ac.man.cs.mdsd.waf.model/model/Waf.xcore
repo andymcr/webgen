@@ -158,6 +158,10 @@ abstract class MenuEntry {
 	String requiresRole
 }
 
+class SubmenuEntry extends MenuEntry, NamedDisplayElement {
+	contains Menu[1] submenu
+}
+
 class ActionMenuEntry extends MenuEntry, NamedDisplayElement {
 	refers ContentUnit[1] action
 	contains Query query
@@ -166,22 +170,12 @@ class ActionMenuEntry extends MenuEntry, NamedDisplayElement {
 class EditStaticTextMenuEntry extends MenuEntry, NamedDisplayElement {
 }
 
-enum PageTopMenuOptions {
-	NeverInclude
-	AlwaysInclude = 1
-	IncludeWhenAuthenticated = 2
-}
-
 class Page extends NamedDisplayElement, UnitContainer {
 	container WafModel partOf opposite pages
 	refers Page parentPage opposite childPages
 	refers Page[] childPages opposite parentPage
-	String uriElement = ""
-	PageTopMenuOptions topMenuOption
-	String topMenuRequiresRole
-	int topMenuRank = "65535"
-	String navigationLabel
 	refers GlobalMenu sideMenu
+	String uriElement = ""
 	String styleClass
 }
 

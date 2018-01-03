@@ -142,6 +142,29 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.SubmenuEntry} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SubmenuEntryItemProvider submenuEntryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.SubmenuEntry}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSubmenuEntryAdapter() {
+		if (submenuEntryItemProvider == null) {
+			submenuEntryItemProvider = new SubmenuEntryItemProvider(this);
+		}
+
+		return submenuEntryItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.ActionMenuEntry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

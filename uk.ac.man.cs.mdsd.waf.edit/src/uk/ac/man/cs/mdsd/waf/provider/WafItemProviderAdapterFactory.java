@@ -236,6 +236,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.SubmenuEntry} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SubmenuEntryItemProvider submenuEntryItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.SubmenuEntry}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSubmenuEntryAdapter() {
+		if (submenuEntryItemProvider == null) {
+			submenuEntryItemProvider = new SubmenuEntryItemProvider(this);
+		}
+
+		return submenuEntryItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ActionMenuEntry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1178,6 +1201,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();
 		if (globalMenuItemProvider != null) globalMenuItemProvider.dispose();
 		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
+		if (submenuEntryItemProvider != null) submenuEntryItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
 		if (pageItemProvider != null) pageItemProvider.dispose();

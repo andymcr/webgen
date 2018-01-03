@@ -54,12 +54,8 @@ public class PageItemProvider
 			addPartOfPropertyDescriptor(object);
 			addParentPagePropertyDescriptor(object);
 			addChildPagesPropertyDescriptor(object);
-			addUriElementPropertyDescriptor(object);
-			addTopMenuOptionPropertyDescriptor(object);
-			addTopMenuRequiresRolePropertyDescriptor(object);
-			addTopMenuRankPropertyDescriptor(object);
-			addNavigationLabelPropertyDescriptor(object);
 			addSideMenuPropertyDescriptor(object);
+			addUriElementPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -133,28 +129,6 @@ public class PageItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Navigation Label feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNavigationLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_navigationLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_navigationLabel_feature", "_UI_Page_type"),
-				 WafPackage.Literals.PAGE__NAVIGATION_LABEL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Side Menu feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -216,72 +190,6 @@ public class PageItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Top Menu Option feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTopMenuOptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_topMenuOption_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_topMenuOption_feature", "_UI_Page_type"),
-				 WafPackage.Literals.PAGE__TOP_MENU_OPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Top Menu Requires Role feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTopMenuRequiresRolePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_topMenuRequiresRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_topMenuRequiresRole_feature", "_UI_Page_type"),
-				 WafPackage.Literals.PAGE__TOP_MENU_REQUIRES_ROLE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Top Menu Rank feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTopMenuRankPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_topMenuRank_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_topMenuRank_feature", "_UI_Page_type"),
-				 WafPackage.Literals.PAGE__TOP_MENU_RANK,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -354,10 +262,6 @@ public class PageItemProvider
 
 		switch (notification.getFeatureID(Page.class)) {
 			case WafPackage.PAGE__URI_ELEMENT:
-			case WafPackage.PAGE__TOP_MENU_OPTION:
-			case WafPackage.PAGE__TOP_MENU_REQUIRES_ROLE:
-			case WafPackage.PAGE__TOP_MENU_RANK:
-			case WafPackage.PAGE__NAVIGATION_LABEL:
 			case WafPackage.PAGE__STYLE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

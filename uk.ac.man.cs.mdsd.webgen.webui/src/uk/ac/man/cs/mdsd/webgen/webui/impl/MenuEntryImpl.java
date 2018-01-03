@@ -40,7 +40,7 @@ public abstract class MenuEntryImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String REQUIRES_ROLE_EDEFAULT = null;
+	protected static final String REQUIRES_ROLE_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.

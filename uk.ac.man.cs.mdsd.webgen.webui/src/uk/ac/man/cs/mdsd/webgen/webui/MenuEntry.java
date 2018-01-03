@@ -52,6 +52,7 @@ public interface MenuEntry extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Requires Role</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Requires Role</em>' attribute isn't clear,
@@ -61,7 +62,7 @@ public interface MenuEntry extends EObject {
 	 * @return the value of the '<em>Requires Role</em>' attribute.
 	 * @see #setRequiresRole(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getMenuEntry_RequiresRole()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getRequiresRole();

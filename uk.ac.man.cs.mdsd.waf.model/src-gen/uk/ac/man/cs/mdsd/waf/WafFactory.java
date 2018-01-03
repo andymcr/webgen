@@ -85,6 +85,15 @@ public interface WafFactory extends EFactory {
 	DynamicMenu createDynamicMenu();
 
 	/**
+	 * Returns a new object of class '<em>Submenu Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Submenu Entry</em>'.
+	 * @generated
+	 */
+	SubmenuEntry createSubmenuEntry();
+
+	/**
 	 * Returns a new object of class '<em>Action Menu Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -59,6 +59,7 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 		switch (eClass.getClassifierID()) {
 			case WebuiPackage.WEB_UI: return createWebUI();
 			case WebuiPackage.GLOBAL_MENU: return createGlobalMenu();
+			case WebuiPackage.SUBMENU_ENTRY: return createSubmenuEntry();
 			case WebuiPackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
 			case WebuiPackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
 			case WebuiPackage.DYNAMIC_MENU: return createDynamicMenu();
@@ -166,6 +167,16 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 	public GlobalMenu createGlobalMenu() {
 		GlobalMenuImpl globalMenu = new GlobalMenuImpl();
 		return globalMenu;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SubmenuEntry createSubmenuEntry() {
+		SubmenuEntryImpl submenuEntry = new SubmenuEntryImpl();
+		return submenuEntry;
 	}
 
 	/**

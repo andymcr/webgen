@@ -64,6 +64,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.THUMBNAIL_FILTER: return createThumbnailFilter();
 			case WafPackage.GLOBAL_MENU: return createGlobalMenu();
 			case WafPackage.DYNAMIC_MENU: return createDynamicMenu();
+			case WafPackage.SUBMENU_ENTRY: return createSubmenuEntry();
 			case WafPackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
 			case WafPackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
 			case WafPackage.PAGE: return createPage();
@@ -122,8 +123,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 				return createAuthenticationKeyTypesFromString(eDataType, initialValue);
 			case WafPackage.THUMBNAIL_MODES:
 				return createThumbnailModesFromString(eDataType, initialValue);
-			case WafPackage.PAGE_TOP_MENU_OPTIONS:
-				return createPageTopMenuOptionsFromString(eDataType, initialValue);
 			case WafPackage.COLLECTION_DISPLAY_OPTIONS:
 				return createCollectionDisplayOptionsFromString(eDataType, initialValue);
 			default:
@@ -149,8 +148,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 				return convertAuthenticationKeyTypesToString(eDataType, instanceValue);
 			case WafPackage.THUMBNAIL_MODES:
 				return convertThumbnailModesToString(eDataType, instanceValue);
-			case WafPackage.PAGE_TOP_MENU_OPTIONS:
-				return convertPageTopMenuOptionsToString(eDataType, instanceValue);
 			case WafPackage.COLLECTION_DISPLAY_OPTIONS:
 				return convertCollectionDisplayOptionsToString(eDataType, instanceValue);
 			default:
@@ -226,6 +223,16 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public DynamicMenu createDynamicMenu() {
 		DynamicMenuImpl dynamicMenu = new DynamicMenuImpl();
 		return dynamicMenu;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SubmenuEntry createSubmenuEntry() {
+		SubmenuEntryImpl submenuEntry = new SubmenuEntryImpl();
+		return submenuEntry;
 	}
 
 	/**
@@ -675,26 +682,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * @generated
 	 */
 	public String convertThumbnailModesToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PageTopMenuOptions createPageTopMenuOptionsFromString(EDataType eDataType, String initialValue) {
-		PageTopMenuOptions result = PageTopMenuOptions.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertPageTopMenuOptionsToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

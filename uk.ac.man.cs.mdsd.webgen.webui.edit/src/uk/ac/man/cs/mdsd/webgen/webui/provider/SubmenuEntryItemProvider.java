@@ -1,38 +1,40 @@
 /**
  */
-package uk.ac.man.cs.mdsd.waf.provider;
+package uk.ac.man.cs.mdsd.webgen.webui.provider;
 
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import uk.ac.man.cs.mdsd.orm.provider.NamedDisplayElementItemProvider;
-import uk.ac.man.cs.mdsd.waf.WafFactory;
-import uk.ac.man.cs.mdsd.waf.WafPackage;
-import uk.ac.man.cs.mdsd.waf.Menu;
+
+import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.webui.SubmenuEntry;
+import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
+import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.Menu} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.SubmenuEntry} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MenuItemProvider
-	extends NamedDisplayElementItemProvider {
+public class SubmenuEntryItemProvider extends MenuEntryItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MenuItemProvider(AdapterFactory adapterFactory) {
+	public SubmenuEntryItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -47,99 +49,53 @@ public class MenuItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOmitCaptionPropertyDescriptor(object);
-			addCaptionClassPropertyDescriptor(object);
-			addStyleClassPropertyDescriptor(object);
-			addLayoutClassPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addDisplayLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Omit Caption feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOmitCaptionPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Menu_omitCaption_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Menu_omitCaption_feature", "_UI_Menu_type"),
-				 WafPackage.Literals.MENU__OMIT_CAPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Caption Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaptionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Menu_captionClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Menu_captionClass_feature", "_UI_Menu_type"),
-				 WafPackage.Literals.MENU__CAPTION_CLASS,
+				 getString("_UI_NamedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				 BasePackage.Literals.NAMED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Style Class feature.
+	 * This adds a property descriptor for the Display Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStyleClassPropertyDescriptor(Object object) {
+	protected void addDisplayLabelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Menu_styleClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Menu_styleClass_feature", "_UI_Menu_type"),
-				 WafPackage.Literals.MENU__STYLE_CLASS,
+				 getString("_UI_NamedDisplayElement_displayLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedDisplayElement_displayLabel_feature", "_UI_NamedDisplayElement_type"),
+				 BasePackage.Literals.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Layout Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLayoutClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Menu_layoutClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Menu_layoutClass_feature", "_UI_Menu_type"),
-				 WafPackage.Literals.MENU__LAYOUT_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -155,7 +111,7 @@ public class MenuItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.MENU__ENTRIES);
+			childrenFeatures.add(WebuiPackage.Literals.SUBMENU_ENTRY__SUBMENU);
 		}
 		return childrenFeatures;
 	}
@@ -174,6 +130,17 @@ public class MenuItemProvider
 	}
 
 	/**
+	 * This returns SubmenuEntry.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/SubmenuEntry"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -181,11 +148,12 @@ public class MenuItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Menu)object).getName();
+		String label = ((SubmenuEntry)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Menu_type") :
-			getString("_UI_Menu_type") + " " + label;
+			getString("_UI_SubmenuEntry_type") :
+			getString("_UI_SubmenuEntry_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -198,14 +166,12 @@ public class MenuItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Menu.class)) {
-			case WafPackage.MENU__OMIT_CAPTION:
-			case WafPackage.MENU__CAPTION_CLASS:
-			case WafPackage.MENU__STYLE_CLASS:
-			case WafPackage.MENU__LAYOUT_CLASS:
+		switch (notification.getFeatureID(SubmenuEntry.class)) {
+			case WebuiPackage.SUBMENU_ENTRY__NAME:
+			case WebuiPackage.SUBMENU_ENTRY__DISPLAY_LABEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.MENU__ENTRIES:
+			case WebuiPackage.SUBMENU_ENTRY__SUBMENU:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -225,29 +191,13 @@ public class MenuItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.MENU__ENTRIES,
-				 WafFactory.eINSTANCE.createSubmenuEntry()));
+				(WebuiPackage.Literals.SUBMENU_ENTRY__SUBMENU,
+				 WebuiFactory.eINSTANCE.createGlobalMenu()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.MENU__ENTRIES,
-				 WafFactory.eINSTANCE.createActionMenuEntry()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.MENU__ENTRIES,
-				 WafFactory.eINSTANCE.createEditStaticTextMenuEntry()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return WafEditPlugin.INSTANCE;
+				(WebuiPackage.Literals.SUBMENU_ENTRY__SUBMENU,
+				 WebuiFactory.eINSTANCE.createDynamicMenu()));
 	}
 
 }

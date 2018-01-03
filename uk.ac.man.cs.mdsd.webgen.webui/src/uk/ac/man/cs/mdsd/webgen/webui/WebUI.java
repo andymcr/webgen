@@ -63,7 +63,6 @@ public interface WebUI extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Global Menus</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu#getWebUI <em>Web UI</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Global Menus</em>' containment reference list isn't clear,
@@ -72,8 +71,7 @@ public interface WebUI extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Global Menus</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getWebUI_GlobalMenus()
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu#getWebUI
-	 * @model opposite="webUI" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<GlobalMenu> getGlobalMenus();

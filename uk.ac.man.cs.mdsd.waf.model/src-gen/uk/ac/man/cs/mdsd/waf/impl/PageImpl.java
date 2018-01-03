@@ -24,7 +24,6 @@ import uk.ac.man.cs.mdsd.orm.impl.NamedDisplayElementImpl;
 import uk.ac.man.cs.mdsd.waf.ContentUnit;
 import uk.ac.man.cs.mdsd.waf.GlobalMenu;
 import uk.ac.man.cs.mdsd.waf.Page;
-import uk.ac.man.cs.mdsd.waf.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.waf.UnitContainer;
 import uk.ac.man.cs.mdsd.waf.WafModel;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -41,12 +40,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getChildPages <em>Child Pages</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getTopMenuOption <em>Top Menu Option</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getTopMenuRequiresRole <em>Top Menu Requires Role</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getTopMenuRank <em>Top Menu Rank</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getNavigationLabel <em>Navigation Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getSideMenu <em>Side Menu</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getStyleClass <em>Style Class</em>}</li>
  * </ul>
  *
@@ -84,6 +79,16 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	protected EList<Page> childPages;
 
 	/**
+	 * The cached value of the '{@link #getSideMenu() <em>Side Menu</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSideMenu()
+	 * @generated
+	 * @ordered
+	 */
+	protected GlobalMenu sideMenu;
+
+	/**
 	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,96 +107,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @ordered
 	 */
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTopMenuOption() <em>Top Menu Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopMenuOption()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final PageTopMenuOptions TOP_MENU_OPTION_EDEFAULT = PageTopMenuOptions.NEVER_INCLUDE;
-
-	/**
-	 * The cached value of the '{@link #getTopMenuOption() <em>Top Menu Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopMenuOption()
-	 * @generated
-	 * @ordered
-	 */
-	protected PageTopMenuOptions topMenuOption = TOP_MENU_OPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTopMenuRequiresRole() <em>Top Menu Requires Role</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopMenuRequiresRole()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TOP_MENU_REQUIRES_ROLE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTopMenuRequiresRole() <em>Top Menu Requires Role</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopMenuRequiresRole()
-	 * @generated
-	 * @ordered
-	 */
-	protected String topMenuRequiresRole = TOP_MENU_REQUIRES_ROLE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTopMenuRank() <em>Top Menu Rank</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopMenuRank()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int TOP_MENU_RANK_EDEFAULT = 65535;
-
-	/**
-	 * The cached value of the '{@link #getTopMenuRank() <em>Top Menu Rank</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTopMenuRank()
-	 * @generated
-	 * @ordered
-	 */
-	protected int topMenuRank = TOP_MENU_RANK_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNavigationLabel() <em>Navigation Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNavigationLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAVIGATION_LABEL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNavigationLabel() <em>Navigation Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNavigationLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected String navigationLabel = NAVIGATION_LABEL_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSideMenu() <em>Side Menu</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSideMenu()
-	 * @generated
-	 * @ordered
-	 */
-	protected GlobalMenu sideMenu;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -372,111 +287,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getUriElement() {
-		return uriElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUriElement(String newUriElement) {
-		String oldUriElement = uriElement;
-		uriElement = newUriElement;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.PAGE__URI_ELEMENT, oldUriElement, uriElement));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PageTopMenuOptions getTopMenuOption() {
-		return topMenuOption;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTopMenuOption(PageTopMenuOptions newTopMenuOption) {
-		PageTopMenuOptions oldTopMenuOption = topMenuOption;
-		topMenuOption = newTopMenuOption == null ? TOP_MENU_OPTION_EDEFAULT : newTopMenuOption;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.PAGE__TOP_MENU_OPTION, oldTopMenuOption, topMenuOption));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getTopMenuRequiresRole() {
-		return topMenuRequiresRole;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTopMenuRequiresRole(String newTopMenuRequiresRole) {
-		String oldTopMenuRequiresRole = topMenuRequiresRole;
-		topMenuRequiresRole = newTopMenuRequiresRole;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.PAGE__TOP_MENU_REQUIRES_ROLE, oldTopMenuRequiresRole, topMenuRequiresRole));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getTopMenuRank() {
-		return topMenuRank;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTopMenuRank(int newTopMenuRank) {
-		int oldTopMenuRank = topMenuRank;
-		topMenuRank = newTopMenuRank;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.PAGE__TOP_MENU_RANK, oldTopMenuRank, topMenuRank));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getNavigationLabel() {
-		return navigationLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNavigationLabel(String newNavigationLabel) {
-		String oldNavigationLabel = navigationLabel;
-		navigationLabel = newNavigationLabel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.PAGE__NAVIGATION_LABEL, oldNavigationLabel, navigationLabel));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public GlobalMenu getSideMenu() {
 		if (sideMenu != null && sideMenu.eIsProxy()) {
 			InternalEObject oldSideMenu = (InternalEObject)sideMenu;
@@ -508,6 +318,27 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 		sideMenu = newSideMenu;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.PAGE__SIDE_MENU, oldSideMenu, sideMenu));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getUriElement() {
+		return uriElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUriElement(String newUriElement) {
+		String oldUriElement = uriElement;
+		uriElement = newUriElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.PAGE__URI_ELEMENT, oldUriElement, uriElement));
 	}
 
 	/**
@@ -608,19 +439,11 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return basicGetParentPage();
 			case WafPackage.PAGE__CHILD_PAGES:
 				return getChildPages();
-			case WafPackage.PAGE__URI_ELEMENT:
-				return getUriElement();
-			case WafPackage.PAGE__TOP_MENU_OPTION:
-				return getTopMenuOption();
-			case WafPackage.PAGE__TOP_MENU_REQUIRES_ROLE:
-				return getTopMenuRequiresRole();
-			case WafPackage.PAGE__TOP_MENU_RANK:
-				return getTopMenuRank();
-			case WafPackage.PAGE__NAVIGATION_LABEL:
-				return getNavigationLabel();
 			case WafPackage.PAGE__SIDE_MENU:
 				if (resolve) return getSideMenu();
 				return basicGetSideMenu();
+			case WafPackage.PAGE__URI_ELEMENT:
+				return getUriElement();
 			case WafPackage.PAGE__STYLE_CLASS:
 				return getStyleClass();
 		}
@@ -650,23 +473,11 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				getChildPages().clear();
 				getChildPages().addAll((Collection<? extends Page>)newValue);
 				return;
-			case WafPackage.PAGE__URI_ELEMENT:
-				setUriElement((String)newValue);
-				return;
-			case WafPackage.PAGE__TOP_MENU_OPTION:
-				setTopMenuOption((PageTopMenuOptions)newValue);
-				return;
-			case WafPackage.PAGE__TOP_MENU_REQUIRES_ROLE:
-				setTopMenuRequiresRole((String)newValue);
-				return;
-			case WafPackage.PAGE__TOP_MENU_RANK:
-				setTopMenuRank((Integer)newValue);
-				return;
-			case WafPackage.PAGE__NAVIGATION_LABEL:
-				setNavigationLabel((String)newValue);
-				return;
 			case WafPackage.PAGE__SIDE_MENU:
 				setSideMenu((GlobalMenu)newValue);
+				return;
+			case WafPackage.PAGE__URI_ELEMENT:
+				setUriElement((String)newValue);
 				return;
 			case WafPackage.PAGE__STYLE_CLASS:
 				setStyleClass((String)newValue);
@@ -695,23 +506,11 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WafPackage.PAGE__CHILD_PAGES:
 				getChildPages().clear();
 				return;
-			case WafPackage.PAGE__URI_ELEMENT:
-				setUriElement(URI_ELEMENT_EDEFAULT);
-				return;
-			case WafPackage.PAGE__TOP_MENU_OPTION:
-				setTopMenuOption(TOP_MENU_OPTION_EDEFAULT);
-				return;
-			case WafPackage.PAGE__TOP_MENU_REQUIRES_ROLE:
-				setTopMenuRequiresRole(TOP_MENU_REQUIRES_ROLE_EDEFAULT);
-				return;
-			case WafPackage.PAGE__TOP_MENU_RANK:
-				setTopMenuRank(TOP_MENU_RANK_EDEFAULT);
-				return;
-			case WafPackage.PAGE__NAVIGATION_LABEL:
-				setNavigationLabel(NAVIGATION_LABEL_EDEFAULT);
-				return;
 			case WafPackage.PAGE__SIDE_MENU:
 				setSideMenu((GlobalMenu)null);
+				return;
+			case WafPackage.PAGE__URI_ELEMENT:
+				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
 			case WafPackage.PAGE__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
@@ -736,18 +535,10 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return parentPage != null;
 			case WafPackage.PAGE__CHILD_PAGES:
 				return childPages != null && !childPages.isEmpty();
-			case WafPackage.PAGE__URI_ELEMENT:
-				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
-			case WafPackage.PAGE__TOP_MENU_OPTION:
-				return topMenuOption != TOP_MENU_OPTION_EDEFAULT;
-			case WafPackage.PAGE__TOP_MENU_REQUIRES_ROLE:
-				return TOP_MENU_REQUIRES_ROLE_EDEFAULT == null ? topMenuRequiresRole != null : !TOP_MENU_REQUIRES_ROLE_EDEFAULT.equals(topMenuRequiresRole);
-			case WafPackage.PAGE__TOP_MENU_RANK:
-				return topMenuRank != TOP_MENU_RANK_EDEFAULT;
-			case WafPackage.PAGE__NAVIGATION_LABEL:
-				return NAVIGATION_LABEL_EDEFAULT == null ? navigationLabel != null : !NAVIGATION_LABEL_EDEFAULT.equals(navigationLabel);
 			case WafPackage.PAGE__SIDE_MENU:
 				return sideMenu != null;
+			case WafPackage.PAGE__URI_ELEMENT:
+				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 			case WafPackage.PAGE__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 		}
@@ -798,14 +589,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (uriElement: ");
 		result.append(uriElement);
-		result.append(", topMenuOption: ");
-		result.append(topMenuOption);
-		result.append(", topMenuRequiresRole: ");
-		result.append(topMenuRequiresRole);
-		result.append(", topMenuRank: ");
-		result.append(topMenuRank);
-		result.append(", navigationLabel: ");
-		result.append(navigationLabel);
 		result.append(", styleClass: ");
 		result.append(styleClass);
 		result.append(')');

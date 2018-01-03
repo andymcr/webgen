@@ -18,12 +18,8 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getChildPages <em>Child Pages</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getTopMenuOption <em>Top Menu Option</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getTopMenuRequiresRole <em>Top Menu Requires Role</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getTopMenuRank <em>Top Menu Rank</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getNavigationLabel <em>Navigation Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getSideMenu <em>Side Menu</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getStyleClass <em>Style Class</em>}</li>
  * </ul>
  *
@@ -107,6 +103,32 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	EList<Page> getChildPages();
 
 	/**
+	 * Returns the value of the '<em><b>Side Menu</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Side Menu</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Side Menu</em>' reference.
+	 * @see #setSideMenu(GlobalMenu)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getPage_SideMenu()
+	 * @model
+	 * @generated
+	 */
+	GlobalMenu getSideMenu();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Page#getSideMenu <em>Side Menu</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Side Menu</em>' reference.
+	 * @see #getSideMenu()
+	 * @generated
+	 */
+	void setSideMenu(GlobalMenu value);
+
+	/**
 	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.
 	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
@@ -132,140 +154,6 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * @generated
 	 */
 	void setUriElement(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Top Menu Option</b></em>' attribute.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Top Menu Option</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Top Menu Option</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.waf.PageTopMenuOptions
-	 * @see #setTopMenuOption(PageTopMenuOptions)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getPage_TopMenuOption()
-	 * @model unique="false"
-	 * @generated
-	 */
-	PageTopMenuOptions getTopMenuOption();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Page#getTopMenuOption <em>Top Menu Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Top Menu Option</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.waf.PageTopMenuOptions
-	 * @see #getTopMenuOption()
-	 * @generated
-	 */
-	void setTopMenuOption(PageTopMenuOptions value);
-
-	/**
-	 * Returns the value of the '<em><b>Top Menu Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Top Menu Requires Role</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Top Menu Requires Role</em>' attribute.
-	 * @see #setTopMenuRequiresRole(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getPage_TopMenuRequiresRole()
-	 * @model unique="false"
-	 * @generated
-	 */
-	String getTopMenuRequiresRole();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Page#getTopMenuRequiresRole <em>Top Menu Requires Role</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Top Menu Requires Role</em>' attribute.
-	 * @see #getTopMenuRequiresRole()
-	 * @generated
-	 */
-	void setTopMenuRequiresRole(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Top Menu Rank</b></em>' attribute.
-	 * The default value is <code>"65535"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Top Menu Rank</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Top Menu Rank</em>' attribute.
-	 * @see #setTopMenuRank(int)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getPage_TopMenuRank()
-	 * @model default="65535" unique="false"
-	 * @generated
-	 */
-	int getTopMenuRank();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Page#getTopMenuRank <em>Top Menu Rank</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Top Menu Rank</em>' attribute.
-	 * @see #getTopMenuRank()
-	 * @generated
-	 */
-	void setTopMenuRank(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Navigation Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Navigation Label</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Navigation Label</em>' attribute.
-	 * @see #setNavigationLabel(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getPage_NavigationLabel()
-	 * @model unique="false"
-	 * @generated
-	 */
-	String getNavigationLabel();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Page#getNavigationLabel <em>Navigation Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Navigation Label</em>' attribute.
-	 * @see #getNavigationLabel()
-	 * @generated
-	 */
-	void setNavigationLabel(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Side Menu</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Side Menu</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Side Menu</em>' reference.
-	 * @see #setSideMenu(GlobalMenu)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getPage_SideMenu()
-	 * @model
-	 * @generated
-	 */
-	GlobalMenu getSideMenu();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Page#getSideMenu <em>Side Menu</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Side Menu</em>' reference.
-	 * @see #getSideMenu()
-	 * @generated
-	 */
-	void setSideMenu(GlobalMenu value);
 
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.

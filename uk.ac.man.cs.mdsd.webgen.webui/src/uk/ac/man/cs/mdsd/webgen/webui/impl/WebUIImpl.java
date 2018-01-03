@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.service.Services;
@@ -272,7 +273,7 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	 */
 	public EList<GlobalMenu> getGlobalMenus() {
 		if (globalMenus == null) {
-			globalMenus = new EObjectContainmentWithInverseEList<GlobalMenu>(GlobalMenu.class, this, WebuiPackage.WEB_UI__GLOBAL_MENUS, WebuiPackage.GLOBAL_MENU__WEB_UI);
+			globalMenus = new EObjectContainmentEList<GlobalMenu>(GlobalMenu.class, this, WebuiPackage.WEB_UI__GLOBAL_MENUS);
 		}
 		return globalMenus;
 	}
@@ -436,8 +437,6 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebuiPackage.WEB_UI__GLOBAL_MENUS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getGlobalMenus()).basicAdd(otherEnd, msgs);
 			case WebuiPackage.WEB_UI__DYNAMIC_MENUS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDynamicMenus()).basicAdd(otherEnd, msgs);
 			case WebuiPackage.WEB_UI__PAGES:

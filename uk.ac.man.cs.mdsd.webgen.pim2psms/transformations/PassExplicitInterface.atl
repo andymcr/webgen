@@ -373,6 +373,14 @@ rule GlobalMenu {
 }
 
 -- @extends MenuEntry, NamedDisplayElement
+rule SubmenuEntry {
+	from website : Website!SubmenuEntry
+	to waf : WAF!SubmenuEntry (
+		submenu <- website.submenu
+	)
+}
+
+-- @extends MenuEntry, NamedDisplayElement
 rule ActionMenuEntry {
 	from website : Website!ActionMenuEntry
 	to waf : WAF!ActionMenuEntry (
@@ -419,24 +427,13 @@ rule Page {
 			else
 				website.parentPage.targetPage
 			endif,
-		topMenuOption <-
-			if website.topMenuOption = #NeverInclude then
-				#NeverInclude
-			else if website.topMenuOption = #AlwaysInclude then
-				#AlwaysInclude
-			else
-				#IncludeWhenAuthenticated
-			endif endif,
-		topMenuRequiresRole <- website.topMenuRequiresRole,
-		topMenuRank <- website.topMenuRank,
-		navigationLabel <-
-			if not website.navigationLabel.oclIsUndefined() and website.navigationLabel <> '' then
-				website.navigationLabel
-			else
-				website.name.createLabel()
-			endif,
 		sideMenu <- website.pageSideMenu(),
-		styleClass <- website.styleClass
+		styleClass <-
+			if website.styleClass.oclIsUndefined() then
+				OclUndefined
+			else
+				website.styleClass.replaceAll(',', ' ')
+			endif
 	)
 }
 
@@ -573,10 +570,14 @@ rule UnitAttribute {
 			endif,
 		inputClass <-
 			if not website.inputClass.oclIsUndefined() and website.inputClass <> '' then
-				website.inputClass
+				website.inputClass.replaceAll(',', ' ')
 			else
 				if not website.attribute.oclIsUndefined() then
-					website.attribute.inputClass
+					if not website.attribute.inputClass.oclIsUndefined() then
+						website.attribute.inputClass.replaceAll(',', ' ')
+					else
+						OclUndefined
+					endif
 				else
 					OclUndefined
 				endif
@@ -1039,7 +1040,7 @@ rule ChildPathAssociation {
 rule ImageIndexUnit {
 	from website : Website!ImageIndexUnit
 	to waf : WAF!ImageIndexUnit (
-		columnClass <- website.columnClass
+		columnClass <- website.columnClass.replaceAll(',', ' ')
 	)
 }
 

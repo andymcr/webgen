@@ -72,7 +72,6 @@ import uk.ac.man.cs.mdsd.waf.MapUnit;
 import uk.ac.man.cs.mdsd.waf.Menu;
 import uk.ac.man.cs.mdsd.waf.MenuEntry;
 import uk.ac.man.cs.mdsd.waf.Page;
-import uk.ac.man.cs.mdsd.waf.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.waf.Query;
 import uk.ac.man.cs.mdsd.waf.QueryParameter;
 import uk.ac.man.cs.mdsd.waf.RegistrationUnit;
@@ -83,6 +82,7 @@ import uk.ac.man.cs.mdsd.waf.SelectableUnit;
 import uk.ac.man.cs.mdsd.waf.SingletonUnit;
 import uk.ac.man.cs.mdsd.waf.SliderUnit;
 import uk.ac.man.cs.mdsd.waf.StaticUnit;
+import uk.ac.man.cs.mdsd.waf.SubmenuEntry;
 import uk.ac.man.cs.mdsd.waf.ThumbnailFilter;
 import uk.ac.man.cs.mdsd.waf.ThumbnailModes;
 import uk.ac.man.cs.mdsd.waf.UnitAssociation;
@@ -186,6 +186,13 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass menuEntryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass submenuEntryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -606,13 +613,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EEnum thumbnailModesEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum pageTopMenuOptionsEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1320,6 +1320,24 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSubmenuEntry() {
+		return submenuEntryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSubmenuEntry_Submenu() {
+		return (EReference)submenuEntryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getActionMenuEntry() {
 		return actionMenuEntryEClass;
 	}
@@ -1392,8 +1410,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_UriElement() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(3);
+	public EReference getPage_SideMenu() {
+		return (EReference)pageEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1401,7 +1419,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_TopMenuOption() {
+	public EAttribute getPage_UriElement() {
 		return (EAttribute)pageEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1410,44 +1428,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_TopMenuRequiresRole() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPage_TopMenuRank() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPage_NavigationLabel() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPage_SideMenu() {
-		return (EReference)pageEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getPage_StyleClass() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3408,15 +3390,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getPageTopMenuOptions() {
-		return pageTopMenuOptionsEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getCollectionDisplayOptions() {
 		return collectionDisplayOptionsEEnum;
 	}
@@ -3531,6 +3504,9 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(menuEntryEClass, MENU_ENTRY__PART_OF);
 		createEAttribute(menuEntryEClass, MENU_ENTRY__REQUIRES_ROLE);
 
+		submenuEntryEClass = createEClass(SUBMENU_ENTRY);
+		createEReference(submenuEntryEClass, SUBMENU_ENTRY__SUBMENU);
+
 		actionMenuEntryEClass = createEClass(ACTION_MENU_ENTRY);
 		createEReference(actionMenuEntryEClass, ACTION_MENU_ENTRY__ACTION);
 		createEReference(actionMenuEntryEClass, ACTION_MENU_ENTRY__QUERY);
@@ -3541,12 +3517,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(pageEClass, PAGE__PART_OF);
 		createEReference(pageEClass, PAGE__PARENT_PAGE);
 		createEReference(pageEClass, PAGE__CHILD_PAGES);
-		createEAttribute(pageEClass, PAGE__URI_ELEMENT);
-		createEAttribute(pageEClass, PAGE__TOP_MENU_OPTION);
-		createEAttribute(pageEClass, PAGE__TOP_MENU_REQUIRES_ROLE);
-		createEAttribute(pageEClass, PAGE__TOP_MENU_RANK);
-		createEAttribute(pageEClass, PAGE__NAVIGATION_LABEL);
 		createEReference(pageEClass, PAGE__SIDE_MENU);
+		createEAttribute(pageEClass, PAGE__URI_ELEMENT);
 		createEAttribute(pageEClass, PAGE__STYLE_CLASS);
 
 		queryEClass = createEClass(QUERY);
@@ -3819,7 +3791,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		ajaxTechnologiesEEnum = createEEnum(AJAX_TECHNOLOGIES);
 		authenticationKeyTypesEEnum = createEEnum(AUTHENTICATION_KEY_TYPES);
 		thumbnailModesEEnum = createEEnum(THUMBNAIL_MODES);
-		pageTopMenuOptionsEEnum = createEEnum(PAGE_TOP_MENU_OPTIONS);
 		collectionDisplayOptionsEEnum = createEEnum(COLLECTION_DISPLAY_OPTIONS);
 	}
 
@@ -3865,6 +3836,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		menuEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		globalMenuEClass.getESuperTypes().add(this.getMenu());
 		dynamicMenuEClass.getESuperTypes().add(this.getMenu());
+		submenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
+		submenuEntryEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		actionMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
 		actionMenuEntryEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		editStaticTextMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
@@ -4017,6 +3990,9 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getMenuEntry_PartOf(), this.getMenu(), this.getMenu_Entries(), "partOf", null, 1, 1, MenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMenuEntry_RequiresRole(), theEcorePackage.getEString(), "requiresRole", null, 0, 1, MenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(submenuEntryEClass, SubmenuEntry.class, "SubmenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSubmenuEntry_Submenu(), this.getMenu(), null, "submenu", null, 1, 1, SubmenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(actionMenuEntryEClass, ActionMenuEntry.class, "ActionMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActionMenuEntry_Action(), this.getContentUnit(), null, "action", null, 1, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActionMenuEntry_Query(), this.getQuery(), null, "query", null, 0, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4027,12 +4003,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getPage_PartOf(), this.getWafModel(), this.getWafModel_Pages(), "partOf", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_ParentPage(), this.getPage(), this.getPage_ChildPages(), "parentPage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_ChildPages(), this.getPage(), this.getPage_ParentPage(), "childPages", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPage_UriElement(), theEcorePackage.getEString(), "uriElement", "", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPage_TopMenuOption(), this.getPageTopMenuOptions(), "topMenuOption", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPage_TopMenuRequiresRole(), theEcorePackage.getEString(), "topMenuRequiresRole", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPage_TopMenuRank(), theEcorePackage.getEInt(), "topMenuRank", "65535", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPage_NavigationLabel(), theEcorePackage.getEString(), "navigationLabel", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_SideMenu(), this.getGlobalMenu(), null, "sideMenu", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPage_UriElement(), theEcorePackage.getEString(), "uriElement", "", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_StyleClass(), theEcorePackage.getEString(), "styleClass", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4324,11 +4296,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEEnum(thumbnailModesEEnum, ThumbnailModes.class, "ThumbnailModes");
 		addEEnumLiteral(thumbnailModesEEnum, ThumbnailModes.CROP);
 		addEEnumLiteral(thumbnailModesEEnum, ThumbnailModes.RESIZE);
-
-		initEEnum(pageTopMenuOptionsEEnum, PageTopMenuOptions.class, "PageTopMenuOptions");
-		addEEnumLiteral(pageTopMenuOptionsEEnum, PageTopMenuOptions.NEVER_INCLUDE);
-		addEEnumLiteral(pageTopMenuOptionsEEnum, PageTopMenuOptions.ALWAYS_INCLUDE);
-		addEEnumLiteral(pageTopMenuOptionsEEnum, PageTopMenuOptions.INCLUDE_WHEN_AUTHENTICATED);
 
 		initEEnum(collectionDisplayOptionsEEnum, CollectionDisplayOptions.class, "CollectionDisplayOptions");
 		addEEnumLiteral(collectionDisplayOptionsEEnum, CollectionDisplayOptions.LINE_DIRECTION);

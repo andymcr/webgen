@@ -231,6 +231,11 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.MENU__ENTRIES,
+				 WebuiFactory.eINSTANCE.createSubmenuEntry()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.MENU__ENTRIES,
 				 WebuiFactory.eINSTANCE.createActionMenuEntry()));
 
 		newChildDescriptors.add

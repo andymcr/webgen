@@ -104,6 +104,8 @@ public class WebuiValidator extends EObjectValidator {
 				return validateMenuEntry((MenuEntry)value, diagnostics, context);
 			case WebuiPackage.GLOBAL_MENU:
 				return validateGlobalMenu((GlobalMenu)value, diagnostics, context);
+			case WebuiPackage.SUBMENU_ENTRY:
+				return validateSubmenuEntry((SubmenuEntry)value, diagnostics, context);
 			case WebuiPackage.ACTION_MENU_ENTRY:
 				return validateActionMenuEntry((ActionMenuEntry)value, diagnostics, context);
 			case WebuiPackage.EDIT_STATIC_TEXT_MENU_ENTRY:
@@ -355,6 +357,25 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(globalMenu, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(globalMenu, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(globalMenu, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSubmenuEntry(SubmenuEntry submenuEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(submenuEntry, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(submenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(submenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(submenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(submenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(submenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(submenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(submenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(submenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(submenuEntry, diagnostics, context);
 		return result;
 	}
 

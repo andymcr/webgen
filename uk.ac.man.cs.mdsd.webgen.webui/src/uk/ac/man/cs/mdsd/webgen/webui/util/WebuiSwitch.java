@@ -100,6 +100,15 @@ public class WebuiSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebuiPackage.SUBMENU_ENTRY: {
+				SubmenuEntry submenuEntry = (SubmenuEntry)theEObject;
+				T result = caseSubmenuEntry(submenuEntry);
+				if (result == null) result = caseMenuEntry(submenuEntry);
+				if (result == null) result = caseNamedDisplayElement(submenuEntry);
+				if (result == null) result = caseNamedElement(submenuEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebuiPackage.ACTION_MENU_ENTRY: {
 				ActionMenuEntry actionMenuEntry = (ActionMenuEntry)theEObject;
 				T result = caseActionMenuEntry(actionMenuEntry);
@@ -680,6 +689,21 @@ public class WebuiSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseGlobalMenu(GlobalMenu object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Submenu Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Submenu Entry</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSubmenuEntry(SubmenuEntry object) {
 		return null;
 	}
 

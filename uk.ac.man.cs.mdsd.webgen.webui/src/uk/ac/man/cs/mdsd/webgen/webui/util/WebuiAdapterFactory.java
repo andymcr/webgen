@@ -89,6 +89,10 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 				return createGlobalMenuAdapter();
 			}
 			@Override
+			public Adapter caseSubmenuEntry(SubmenuEntry object) {
+				return createSubmenuEntryAdapter();
+			}
+			@Override
 			public Adapter caseActionMenuEntry(ActionMenuEntry object) {
 				return createActionMenuEntryAdapter();
 			}
@@ -405,6 +409,20 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGlobalMenuAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.webui.SubmenuEntry <em>Submenu Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.SubmenuEntry
+	 * @generated
+	 */
+	public Adapter createSubmenuEntryAdapter() {
 		return null;
 	}
 

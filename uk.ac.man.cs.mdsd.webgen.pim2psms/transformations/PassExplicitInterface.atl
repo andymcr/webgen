@@ -634,10 +634,10 @@ rule UnitAssociation {
 			endif,
 		inputClass <-
 			if not website.inputClass.oclIsUndefined() and website.inputClass <> '' then
-				website.inputClass
+				website.inputClass.replaceAll(',', ' ')
 			else
 				if not website.association.oclIsUndefined() then
-					website.association.inputClass
+					website.association.inputClass.replaceAll(',', ' ')
 				else
 					OclUndefined
 				endif

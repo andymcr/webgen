@@ -127,7 +127,7 @@ public interface Menu extends NamedDisplayElement {
 
 	/**
 	 * Returns the value of the '<em><b>Layout Class</b></em>' attribute.
-	 * The default value is <code>"menu_content"</code>.
+	 * The default value is <code>"collapsible"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Layout Class</em>' attribute isn't clear,
@@ -137,7 +137,7 @@ public interface Menu extends NamedDisplayElement {
 	 * @return the value of the '<em>Layout Class</em>' attribute.
 	 * @see #setLayoutClass(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getMenu_LayoutClass()
-	 * @model default="menu_content" ordered="false"
+	 * @model default="collapsible" ordered="false"
 	 * @generated
 	 */
 	String getLayoutClass();

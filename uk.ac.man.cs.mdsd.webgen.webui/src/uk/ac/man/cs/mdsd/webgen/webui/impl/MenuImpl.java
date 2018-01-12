@@ -119,7 +119,7 @@ public abstract class MenuImpl extends NamedDisplayElementImpl implements Menu {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LAYOUT_CLASS_EDEFAULT = "menu_content";
+	protected static final String LAYOUT_CLASS_EDEFAULT = "collapsible";
 
 	/**
 	 * The cached value of the '{@link #getLayoutClass() <em>Layout Class</em>}' attribute.

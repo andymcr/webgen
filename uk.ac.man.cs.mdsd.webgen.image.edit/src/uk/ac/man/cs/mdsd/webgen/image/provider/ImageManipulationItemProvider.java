@@ -170,6 +170,11 @@ public class ImageManipulationItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ImagePackage.Literals.IMAGE_MANIPULATION__FILTERS,
+				 ImageFactory.eINSTANCE.createBackgroundFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ImagePackage.Literals.IMAGE_MANIPULATION__FILTERS,
 				 ImageFactory.eINSTANCE.createThumbnailFilter()));
 	}
 

@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 
+import uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter;
+import uk.ac.man.cs.mdsd.webgen.image.BackgroundPositions;
 import uk.ac.man.cs.mdsd.webgen.image.Image;
 import uk.ac.man.cs.mdsd.webgen.image.ImageFactory;
 import uk.ac.man.cs.mdsd.webgen.image.ImageFilter;
@@ -46,6 +48,13 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass backgroundFilterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass imageFilterEClass = null;
 
 	/**
@@ -54,6 +63,13 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 	 * @generated
 	 */
 	private EClass thumbnailFilterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum backgroundPositionsEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -176,6 +192,51 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getBackgroundFilter() {
+		return backgroundFilterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBackgroundFilter_Color() {
+		return (EAttribute)backgroundFilterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBackgroundFilter_Width() {
+		return (EAttribute)backgroundFilterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBackgroundFilter_Height() {
+		return (EAttribute)backgroundFilterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBackgroundFilter_Position() {
+		return (EAttribute)backgroundFilterEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getImageFilter() {
 		return imageFilterEClass;
 	}
@@ -214,6 +275,15 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 	 */
 	public EAttribute getThumbnailFilter_Mode() {
 		return (EAttribute)thumbnailFilterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getBackgroundPositions() {
+		return backgroundPositionsEEnum;
 	}
 
 	/**
@@ -260,6 +330,12 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 		createEAttribute(imageManipulationEClass, IMAGE_MANIPULATION__JPEG_QUALITY);
 		createEReference(imageManipulationEClass, IMAGE_MANIPULATION__FILTERS);
 
+		backgroundFilterEClass = createEClass(BACKGROUND_FILTER);
+		createEAttribute(backgroundFilterEClass, BACKGROUND_FILTER__COLOR);
+		createEAttribute(backgroundFilterEClass, BACKGROUND_FILTER__WIDTH);
+		createEAttribute(backgroundFilterEClass, BACKGROUND_FILTER__HEIGHT);
+		createEAttribute(backgroundFilterEClass, BACKGROUND_FILTER__POSITION);
+
 		imageFilterEClass = createEClass(IMAGE_FILTER);
 
 		thumbnailFilterEClass = createEClass(THUMBNAIL_FILTER);
@@ -268,6 +344,7 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 		createEAttribute(thumbnailFilterEClass, THUMBNAIL_FILTER__MODE);
 
 		// Create enums
+		backgroundPositionsEEnum = createEEnum(BACKGROUND_POSITIONS);
 		thumbnailModesEEnum = createEEnum(THUMBNAIL_MODES);
 	}
 
@@ -303,6 +380,7 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 
 		// Add supertypes to classes
 		imageManipulationEClass.getESuperTypes().add(theBasePackage.getNamedElement());
+		backgroundFilterEClass.getESuperTypes().add(this.getImageFilter());
 		thumbnailFilterEClass.getESuperTypes().add(this.getImageFilter());
 
 		// Initialize classes, features, and operations; add parameters
@@ -313,6 +391,12 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 		initEAttribute(getImageManipulation_JpegQuality(), ecorePackage.getEInt(), "jpegQuality", "-1", 0, 1, ImageManipulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImageManipulation_Filters(), this.getImageFilter(), null, "filters", null, 0, -1, ImageManipulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(backgroundFilterEClass, BackgroundFilter.class, "BackgroundFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBackgroundFilter_Color(), ecorePackage.getEString(), "color", "#fff", 0, 1, BackgroundFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBackgroundFilter_Width(), ecorePackage.getEInt(), "width", "-1", 0, 1, BackgroundFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBackgroundFilter_Height(), ecorePackage.getEInt(), "height", "-1", 0, 1, BackgroundFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBackgroundFilter_Position(), this.getBackgroundPositions(), "position", "Center", 0, 1, BackgroundFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(imageFilterEClass, ImageFilter.class, "ImageFilter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(thumbnailFilterEClass, ThumbnailFilter.class, "ThumbnailFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -321,6 +405,17 @@ public class ImagePackageImpl extends EPackageImpl implements ImagePackage {
 		initEAttribute(getThumbnailFilter_Mode(), this.getThumbnailModes(), "mode", null, 0, 1, ThumbnailFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
+		initEEnum(backgroundPositionsEEnum, BackgroundPositions.class, "BackgroundPositions");
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.TOP_LEFT);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.TOP);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.TOP_RIGHT);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.LEFT);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.CENTER);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.RIGHT);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.BOTTOM_LEFT);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.BOTTOM);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.BOTTOM_RIGHT);
+
 		initEEnum(thumbnailModesEEnum, ThumbnailModes.class, "ThumbnailModes");
 		addEEnumLiteral(thumbnailModesEEnum, ThumbnailModes.CROP);
 		addEEnumLiteral(thumbnailModesEEnum, ThumbnailModes.RESIZE);

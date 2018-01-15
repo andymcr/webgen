@@ -99,6 +99,10 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createImageFilterAdapter();
 			}
 			@Override
+			public Adapter caseBackgroundFilter(BackgroundFilter object) {
+				return createBackgroundFilterAdapter();
+			}
+			@Override
 			public Adapter caseThumbnailFilter(ThumbnailFilter object) {
 				return createThumbnailFilterAdapter();
 			}
@@ -465,6 +469,20 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createImageFilterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.BackgroundFilter <em>Background Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.BackgroundFilter
+	 * @generated
+	 */
+	public Adapter createBackgroundFilterAdapter() {
 		return null;
 	}
 

@@ -159,7 +159,7 @@ public interface ImagePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getImageFilter()
 	 * @generated
 	 */
-	int IMAGE_FILTER = 2;
+	int IMAGE_FILTER = 3;
 
 	/**
 	 * The number of structural features of the '<em>Filter</em>' class.
@@ -180,6 +180,70 @@ public interface ImagePackage extends EPackage {
 	int IMAGE_FILTER_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.image.impl.BackgroundFilterImpl <em>Background Filter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.image.impl.BackgroundFilterImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getBackgroundFilter()
+	 * @generated
+	 */
+	int BACKGROUND_FILTER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACKGROUND_FILTER__COLOR = IMAGE_FILTER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACKGROUND_FILTER__WIDTH = IMAGE_FILTER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACKGROUND_FILTER__HEIGHT = IMAGE_FILTER_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Position</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACKGROUND_FILTER__POSITION = IMAGE_FILTER_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Background Filter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACKGROUND_FILTER_FEATURE_COUNT = IMAGE_FILTER_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Background Filter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACKGROUND_FILTER_OPERATION_COUNT = IMAGE_FILTER_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.image.impl.ThumbnailFilterImpl <em>Thumbnail Filter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -187,7 +251,7 @@ public interface ImagePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getThumbnailFilter()
 	 * @generated
 	 */
-	int THUMBNAIL_FILTER = 3;
+	int THUMBNAIL_FILTER = 4;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -236,6 +300,16 @@ public interface ImagePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.image.BackgroundPositions <em>Background Positions</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.image.BackgroundPositions
+	 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getBackgroundPositions()
+	 * @generated
+	 */
+	int BACKGROUND_POSITIONS = 5;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.image.ThumbnailModes <em>Thumbnail Modes</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -243,7 +317,7 @@ public interface ImagePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getThumbnailModes()
 	 * @generated
 	 */
-	int THUMBNAIL_MODES = 4;
+	int THUMBNAIL_MODES = 6;
 
 
 	/**
@@ -300,6 +374,60 @@ public interface ImagePackage extends EPackage {
 	EReference getImageManipulation_Filters();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter <em>Background Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Background Filter</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter
+	 * @generated
+	 */
+	EClass getBackgroundFilter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter#getColor <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Color</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter#getColor()
+	 * @see #getBackgroundFilter()
+	 * @generated
+	 */
+	EAttribute getBackgroundFilter_Color();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter#getWidth <em>Width</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Width</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter#getWidth()
+	 * @see #getBackgroundFilter()
+	 * @generated
+	 */
+	EAttribute getBackgroundFilter_Width();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter#getHeight <em>Height</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Height</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter#getHeight()
+	 * @see #getBackgroundFilter()
+	 * @generated
+	 */
+	EAttribute getBackgroundFilter_Height();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter#getPosition <em>Position</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Position</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter#getPosition()
+	 * @see #getBackgroundFilter()
+	 * @generated
+	 */
+	EAttribute getBackgroundFilter_Position();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.image.ImageFilter <em>Filter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -351,6 +479,16 @@ public interface ImagePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getThumbnailFilter_Mode();
+
+	/**
+	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.image.BackgroundPositions <em>Background Positions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Background Positions</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.image.BackgroundPositions
+	 * @generated
+	 */
+	EEnum getBackgroundPositions();
 
 	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.image.ThumbnailModes <em>Thumbnail Modes</em>}'.
@@ -430,6 +568,48 @@ public interface ImagePackage extends EPackage {
 		EReference IMAGE_MANIPULATION__FILTERS = eINSTANCE.getImageManipulation_Filters();
 
 		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.image.impl.BackgroundFilterImpl <em>Background Filter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.image.impl.BackgroundFilterImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getBackgroundFilter()
+		 * @generated
+		 */
+		EClass BACKGROUND_FILTER = eINSTANCE.getBackgroundFilter();
+
+		/**
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BACKGROUND_FILTER__COLOR = eINSTANCE.getBackgroundFilter_Color();
+
+		/**
+		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BACKGROUND_FILTER__WIDTH = eINSTANCE.getBackgroundFilter_Width();
+
+		/**
+		 * The meta object literal for the '<em><b>Height</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BACKGROUND_FILTER__HEIGHT = eINSTANCE.getBackgroundFilter_Height();
+
+		/**
+		 * The meta object literal for the '<em><b>Position</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BACKGROUND_FILTER__POSITION = eINSTANCE.getBackgroundFilter_Position();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.image.impl.ImageFilterImpl <em>Filter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -472,6 +652,16 @@ public interface ImagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute THUMBNAIL_FILTER__MODE = eINSTANCE.getThumbnailFilter_Mode();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.image.BackgroundPositions <em>Background Positions</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.image.BackgroundPositions
+		 * @see uk.ac.man.cs.mdsd.webgen.image.impl.ImagePackageImpl#getBackgroundPositions()
+		 * @generated
+		 */
+		EEnum BACKGROUND_POSITIONS = eINSTANCE.getBackgroundPositions();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.image.ThumbnailModes <em>Thumbnail Modes</em>}' enum.

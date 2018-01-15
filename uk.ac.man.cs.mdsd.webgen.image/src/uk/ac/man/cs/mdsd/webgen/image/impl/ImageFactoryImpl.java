@@ -59,6 +59,7 @@ public class ImageFactoryImpl extends EFactoryImpl implements ImageFactory {
 		switch (eClass.getClassifierID()) {
 			case ImagePackage.IMAGE: return createImage();
 			case ImagePackage.IMAGE_MANIPULATION: return createImageManipulation();
+			case ImagePackage.BACKGROUND_FILTER: return createBackgroundFilter();
 			case ImagePackage.THUMBNAIL_FILTER: return createThumbnailFilter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -73,6 +74,8 @@ public class ImageFactoryImpl extends EFactoryImpl implements ImageFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case ImagePackage.BACKGROUND_POSITIONS:
+				return createBackgroundPositionsFromString(eDataType, initialValue);
 			case ImagePackage.THUMBNAIL_MODES:
 				return createThumbnailModesFromString(eDataType, initialValue);
 			default:
@@ -88,6 +91,8 @@ public class ImageFactoryImpl extends EFactoryImpl implements ImageFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case ImagePackage.BACKGROUND_POSITIONS:
+				return convertBackgroundPositionsToString(eDataType, instanceValue);
 			case ImagePackage.THUMBNAIL_MODES:
 				return convertThumbnailModesToString(eDataType, instanceValue);
 			default:
@@ -120,9 +125,39 @@ public class ImageFactoryImpl extends EFactoryImpl implements ImageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BackgroundFilter createBackgroundFilter() {
+		BackgroundFilterImpl backgroundFilter = new BackgroundFilterImpl();
+		return backgroundFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ThumbnailFilter createThumbnailFilter() {
 		ThumbnailFilterImpl thumbnailFilter = new ThumbnailFilterImpl();
 		return thumbnailFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BackgroundPositions createBackgroundPositionsFromString(EDataType eDataType, String initialValue) {
+		BackgroundPositions result = BackgroundPositions.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBackgroundPositionsToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

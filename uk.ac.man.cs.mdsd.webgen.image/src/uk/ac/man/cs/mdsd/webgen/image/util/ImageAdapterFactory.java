@@ -78,6 +78,10 @@ public class ImageAdapterFactory extends AdapterFactoryImpl {
 				return createImageManipulationAdapter();
 			}
 			@Override
+			public Adapter caseBackgroundFilter(BackgroundFilter object) {
+				return createBackgroundFilterAdapter();
+			}
+			@Override
 			public Adapter caseImageFilter(ImageFilter object) {
 				return createImageFilterAdapter();
 			}
@@ -134,6 +138,20 @@ public class ImageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createImageManipulationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter <em>Background Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter
+	 * @generated
+	 */
+	public Adapter createBackgroundFilterAdapter() {
 		return null;
 	}
 

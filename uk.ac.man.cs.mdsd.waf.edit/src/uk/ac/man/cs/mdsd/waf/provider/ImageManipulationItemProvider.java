@@ -171,6 +171,11 @@ public class ImageManipulationItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.IMAGE_MANIPULATION__FILTERS,
+				 WafFactory.eINSTANCE.createBackgroundFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.IMAGE_MANIPULATION__FILTERS,
 				 WafFactory.eINSTANCE.createThumbnailFilter()));
 	}
 

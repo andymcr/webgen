@@ -331,6 +331,16 @@ abstract rule ImageFilter {
 }
 
 -- @extends ImageFilter
+rule BackgroundFilter {
+	from website : Website!BackgroundFilter
+	to waf : WAF!BackgroundFilter (
+		color <- website.color,
+		width <- website.width,
+		height <- website.height,
+		position <- website.position
+	)
+}
+-- @extends ImageFilter
 rule ThumbnailFilter {
 	from website : Website!ThumbnailFilter
 	to waf : WAF!ThumbnailFilter (
@@ -339,6 +349,7 @@ rule ThumbnailFilter {
 		mode <- website.mode
 	)
 }
+
 
 
 -- @extends NamedDisplayElement

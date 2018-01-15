@@ -114,6 +114,13 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.BACKGROUND_FILTER: {
+				BackgroundFilter backgroundFilter = (BackgroundFilter)theEObject;
+				T result = caseBackgroundFilter(backgroundFilter);
+				if (result == null) result = caseImageFilter(backgroundFilter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.THUMBNAIL_FILTER: {
 				ThumbnailFilter thumbnailFilter = (ThumbnailFilter)theEObject;
 				T result = caseThumbnailFilter(thumbnailFilter);
@@ -800,6 +807,21 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseImageFilter(ImageFilter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Background Filter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Background Filter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBackgroundFilter(BackgroundFilter object) {
 		return null;
 	}
 

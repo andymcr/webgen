@@ -7,6 +7,17 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>image.ecore</foreignModel>
   <genPackages prefix="Image" basePackage="uk.ac.man.cs.mdsd.webgen" ecorePackage="image.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="image.ecore#//BackgroundPositions">
+      <genEnumLiterals ecoreEnumLiteral="image.ecore#//BackgroundPositions/TopLeft"/>
+      <genEnumLiterals ecoreEnumLiteral="image.ecore#//BackgroundPositions/Top"/>
+      <genEnumLiterals ecoreEnumLiteral="image.ecore#//BackgroundPositions/TopRight"/>
+      <genEnumLiterals ecoreEnumLiteral="image.ecore#//BackgroundPositions/Left"/>
+      <genEnumLiterals ecoreEnumLiteral="image.ecore#//BackgroundPositions/Center"/>
+      <genEnumLiterals ecoreEnumLiteral="image.ecore#//BackgroundPositions/Right"/>
+      <genEnumLiterals ecoreEnumLiteral="image.ecore#//BackgroundPositions/BottomLeft"/>
+      <genEnumLiterals ecoreEnumLiteral="image.ecore#//BackgroundPositions/Bottom"/>
+      <genEnumLiterals ecoreEnumLiteral="image.ecore#//BackgroundPositions/BottomRight"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="image.ecore#//ThumbnailModes">
       <genEnumLiterals ecoreEnumLiteral="image.ecore#//ThumbnailModes/Crop"/>
       <genEnumLiterals ecoreEnumLiteral="image.ecore#//ThumbnailModes/Resize"/>
@@ -18,6 +29,12 @@
     <genClasses ecoreClass="image.ecore#//ImageManipulation">
       <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute image.ecore#//ImageManipulation/jpegQuality"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference image.ecore#//ImageManipulation/filters"/>
+    </genClasses>
+    <genClasses ecoreClass="image.ecore#//BackgroundFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute image.ecore#//BackgroundFilter/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute image.ecore#//BackgroundFilter/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute image.ecore#//BackgroundFilter/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute image.ecore#//BackgroundFilter/position"/>
     </genClasses>
     <genClasses image="false" ecoreClass="image.ecore#//ImageFilter"/>
     <genClasses ecoreClass="image.ecore#//ThumbnailFilter">

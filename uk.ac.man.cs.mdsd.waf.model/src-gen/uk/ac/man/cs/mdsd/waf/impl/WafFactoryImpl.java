@@ -61,6 +61,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
 			case WafPackage.CAS_AUTHENTICATION: return createCasAuthentication();
 			case WafPackage.IMAGE_MANIPULATION: return createImageManipulation();
+			case WafPackage.BACKGROUND_FILTER: return createBackgroundFilter();
 			case WafPackage.THUMBNAIL_FILTER: return createThumbnailFilter();
 			case WafPackage.GLOBAL_MENU: return createGlobalMenu();
 			case WafPackage.DYNAMIC_MENU: return createDynamicMenu();
@@ -121,6 +122,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 				return createAjaxTechnologiesFromString(eDataType, initialValue);
 			case WafPackage.AUTHENTICATION_KEY_TYPES:
 				return createAuthenticationKeyTypesFromString(eDataType, initialValue);
+			case WafPackage.BACKGROUND_POSITIONS:
+				return createBackgroundPositionsFromString(eDataType, initialValue);
 			case WafPackage.THUMBNAIL_MODES:
 				return createThumbnailModesFromString(eDataType, initialValue);
 			case WafPackage.COLLECTION_DISPLAY_OPTIONS:
@@ -146,6 +149,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 				return convertAjaxTechnologiesToString(eDataType, instanceValue);
 			case WafPackage.AUTHENTICATION_KEY_TYPES:
 				return convertAuthenticationKeyTypesToString(eDataType, instanceValue);
+			case WafPackage.BACKGROUND_POSITIONS:
+				return convertBackgroundPositionsToString(eDataType, instanceValue);
 			case WafPackage.THUMBNAIL_MODES:
 				return convertThumbnailModesToString(eDataType, instanceValue);
 			case WafPackage.COLLECTION_DISPLAY_OPTIONS:
@@ -193,6 +198,16 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public ImageManipulation createImageManipulation() {
 		ImageManipulationImpl imageManipulation = new ImageManipulationImpl();
 		return imageManipulation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BackgroundFilter createBackgroundFilter() {
+		BackgroundFilterImpl backgroundFilter = new BackgroundFilterImpl();
+		return backgroundFilter;
 	}
 
 	/**
@@ -662,6 +677,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * @generated
 	 */
 	public String convertAuthenticationKeyTypesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BackgroundPositions createBackgroundPositionsFromString(EDataType eDataType, String initialValue) {
+		BackgroundPositions result = BackgroundPositions.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBackgroundPositionsToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

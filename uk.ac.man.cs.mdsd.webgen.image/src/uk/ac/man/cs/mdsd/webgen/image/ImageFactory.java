@@ -40,6 +40,15 @@ public interface ImageFactory extends EFactory {
 	ImageManipulation createImageManipulation();
 
 	/**
+	 * Returns a new object of class '<em>Background Filter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Background Filter</em>'.
+	 * @generated
+	 */
+	BackgroundFilter createBackgroundFilter();
+
+	/**
 	 * Returns a new object of class '<em>Thumbnail Filter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

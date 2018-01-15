@@ -25,6 +25,8 @@ import uk.ac.man.cs.mdsd.waf.AssociationReference;
 import uk.ac.man.cs.mdsd.waf.Authentication;
 import uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes;
 import uk.ac.man.cs.mdsd.waf.AuthenticationUnit;
+import uk.ac.man.cs.mdsd.waf.BackgroundFilter;
+import uk.ac.man.cs.mdsd.waf.BackgroundPositions;
 import uk.ac.man.cs.mdsd.waf.CaptchaField;
 import uk.ac.man.cs.mdsd.waf.CasAuthentication;
 import uk.ac.man.cs.mdsd.waf.ChildPath;
@@ -151,6 +153,13 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass imageFilterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass backgroundFilterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -606,6 +615,13 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EEnum authenticationKeyTypesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum backgroundPositionsEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1151,6 +1167,51 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EClass getImageFilter() {
 		return imageFilterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBackgroundFilter() {
+		return backgroundFilterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBackgroundFilter_Color() {
+		return (EAttribute)backgroundFilterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBackgroundFilter_Width() {
+		return (EAttribute)backgroundFilterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBackgroundFilter_Height() {
+		return (EAttribute)backgroundFilterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBackgroundFilter_Position() {
+		return (EAttribute)backgroundFilterEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3381,6 +3442,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getBackgroundPositions() {
+		return backgroundPositionsEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getThumbnailModes() {
 		return thumbnailModesEEnum;
 	}
@@ -3480,6 +3550,12 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(imageManipulationEClass, IMAGE_MANIPULATION__FILTERS);
 
 		imageFilterEClass = createEClass(IMAGE_FILTER);
+
+		backgroundFilterEClass = createEClass(BACKGROUND_FILTER);
+		createEAttribute(backgroundFilterEClass, BACKGROUND_FILTER__COLOR);
+		createEAttribute(backgroundFilterEClass, BACKGROUND_FILTER__WIDTH);
+		createEAttribute(backgroundFilterEClass, BACKGROUND_FILTER__HEIGHT);
+		createEAttribute(backgroundFilterEClass, BACKGROUND_FILTER__POSITION);
 
 		thumbnailFilterEClass = createEClass(THUMBNAIL_FILTER);
 		createEAttribute(thumbnailFilterEClass, THUMBNAIL_FILTER__WIDTH);
@@ -3790,6 +3866,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		inputTechnologiesEEnum = createEEnum(INPUT_TECHNOLOGIES);
 		ajaxTechnologiesEEnum = createEEnum(AJAX_TECHNOLOGIES);
 		authenticationKeyTypesEEnum = createEEnum(AUTHENTICATION_KEY_TYPES);
+		backgroundPositionsEEnum = createEEnum(BACKGROUND_POSITIONS);
 		thumbnailModesEEnum = createEEnum(THUMBNAIL_MODES);
 		collectionDisplayOptionsEEnum = createEEnum(COLLECTION_DISPLAY_OPTIONS);
 	}
@@ -3832,6 +3909,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		localAuthenticationSystemEClass.getESuperTypes().add(this.getAuthentication());
 		casAuthenticationEClass.getESuperTypes().add(this.getAuthentication());
 		imageManipulationEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
+		backgroundFilterEClass.getESuperTypes().add(this.getImageFilter());
 		thumbnailFilterEClass.getESuperTypes().add(this.getImageFilter());
 		menuEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		globalMenuEClass.getESuperTypes().add(this.getMenu());
@@ -3966,6 +4044,12 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getImageManipulation_Filters(), this.getImageFilter(), null, "filters", null, 0, -1, ImageManipulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(imageFilterEClass, ImageFilter.class, "ImageFilter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(backgroundFilterEClass, BackgroundFilter.class, "BackgroundFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBackgroundFilter_Color(), theEcorePackage.getEString(), "color", null, 0, 1, BackgroundFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBackgroundFilter_Width(), theEcorePackage.getEInt(), "width", null, 0, 1, BackgroundFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBackgroundFilter_Height(), theEcorePackage.getEInt(), "height", null, 0, 1, BackgroundFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBackgroundFilter_Position(), this.getBackgroundPositions(), "position", null, 0, 1, BackgroundFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(thumbnailFilterEClass, ThumbnailFilter.class, "ThumbnailFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getThumbnailFilter_Width(), theEcorePackage.getEInt(), "width", null, 0, 1, ThumbnailFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4292,6 +4376,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEEnum(authenticationKeyTypesEEnum, AuthenticationKeyTypes.class, "AuthenticationKeyTypes");
 		addEEnumLiteral(authenticationKeyTypesEEnum, AuthenticationKeyTypes.EMAIL);
 		addEEnumLiteral(authenticationKeyTypesEEnum, AuthenticationKeyTypes.USERNAME);
+
+		initEEnum(backgroundPositionsEEnum, BackgroundPositions.class, "BackgroundPositions");
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.TOP_LEFT);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.TOP);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.TOP_RIGHT);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.LEFT);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.CENTER);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.RIGHT);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.BOTTOM_LEFT);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.BOTTOM);
+		addEEnumLiteral(backgroundPositionsEEnum, BackgroundPositions.BOTTOM_RIGHT);
 
 		initEEnum(thumbnailModesEEnum, ThumbnailModes.class, "ThumbnailModes");
 		addEEnumLiteral(thumbnailModesEEnum, ThumbnailModes.CROP);

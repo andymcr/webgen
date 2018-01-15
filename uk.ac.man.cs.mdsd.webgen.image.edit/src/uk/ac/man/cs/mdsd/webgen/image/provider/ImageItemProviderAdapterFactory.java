@@ -114,6 +114,29 @@ public class ImageItemProviderAdapterFactory extends ImageAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BackgroundFilterItemProvider backgroundFilterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.image.BackgroundFilter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBackgroundFilterAdapter() {
+		if (backgroundFilterItemProvider == null) {
+			backgroundFilterItemProvider = new BackgroundFilterItemProvider(this);
+		}
+
+		return backgroundFilterItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.image.ThumbnailFilter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

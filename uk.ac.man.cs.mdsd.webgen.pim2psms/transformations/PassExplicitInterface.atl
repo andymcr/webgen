@@ -537,6 +537,7 @@ abstract rule UnitField {
 	from website : Website!UnitField
 	to waf : WAF!UnitField (
 		requiresRole <- website.requiresRole,
+		hideWhen <- website.hideWhen,
 		title <- website.title(),
 		collectionDisplayOption <- website.collectionDisplayOption,
 		maximumDisplaySize <- website.maximumDisplaySize,
@@ -553,7 +554,6 @@ abstract rule UnitFeature {
 		collectionUiAllowAdd <- website.collectionUiAllowAdd,
 		collectionUiAllowRemove <- website.collectionUiAllowRemove,
 		nullDisplayValue <- website.nullDisplayValue(),
-		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
 		autofocus <- website.autofocus,
 		footer <- website.footer
 	)
@@ -1051,6 +1051,8 @@ rule ChildPathAssociation {
 rule ImageIndexUnit {
 	from website : Website!ImageIndexUnit
 	to waf : WAF!ImageIndexUnit (
+		omitFieldLabels <- website.omitFieldLabels,
+		overlayTitle <- website.overlayTitle,
 		columnClass <- website.columnClass.replaceAll(',', ' ')
 	)
 }

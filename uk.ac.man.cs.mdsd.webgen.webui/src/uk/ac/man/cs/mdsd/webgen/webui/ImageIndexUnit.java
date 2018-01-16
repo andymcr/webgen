@@ -12,6 +12,8 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isOverlayTitle <em>Overlay Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getColumnClass <em>Column Class</em>}</li>
@@ -22,6 +24,60 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  * @generated
  */
 public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
+	/**
+	 * Returns the value of the '<em><b>Omit Field Labels</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Omit Field Labels</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Omit Field Labels</em>' attribute.
+	 * @see #setOmitFieldLabels(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit_OmitFieldLabels()
+	 * @model default="false" ordered="false"
+	 * @generated
+	 */
+	boolean isOmitFieldLabels();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isOmitFieldLabels <em>Omit Field Labels</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Omit Field Labels</em>' attribute.
+	 * @see #isOmitFieldLabels()
+	 * @generated
+	 */
+	void setOmitFieldLabels(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Overlay Title</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Overlay Title</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Overlay Title</em>' attribute.
+	 * @see #setOverlayTitle(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit_OverlayTitle()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isOverlayTitle();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isOverlayTitle <em>Overlay Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Overlay Title</em>' attribute.
+	 * @see #isOverlayTitle()
+	 * @generated
+	 */
+	void setOverlayTitle(boolean value);
+
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.
 	 * The default value is <code>"unit,image_index_unit"</code>.

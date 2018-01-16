@@ -3,6 +3,7 @@
 package uk.ac.man.cs.mdsd.webgen.webui;
 
 import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getRequiresRole <em>Requires Role</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getHideWhen <em>Hide When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
@@ -81,6 +83,32 @@ public interface UnitField extends EObject {
 	 * @generated
 	 */
 	void setRequiresRole(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Hide When</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hide When</em>' containment reference.
+	 * @see #setHideWhen(Predicate)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitField_HideWhen()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Predicate getHideWhen();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getHideWhen <em>Hide When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hide When</em>' containment reference.
+	 * @see #getHideWhen()
+	 * @generated
+	 */
+	void setHideWhen(Predicate value);
 
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.

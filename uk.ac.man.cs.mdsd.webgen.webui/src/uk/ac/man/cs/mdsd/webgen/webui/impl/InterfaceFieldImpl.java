@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedDisplayElementImpl;
 
+import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.InterfaceField;
@@ -30,6 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getRequiresRole <em>Requires Role</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getHideWhen <em>Hide When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
@@ -65,6 +67,16 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * @ordered
 	 */
 	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getHideWhen() <em>Hide When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHideWhen()
+	 * @generated
+	 * @ordered
+	 */
+	protected Predicate hideWhen;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -362,6 +374,49 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Predicate getHideWhen() {
+		return hideWhen;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHideWhen(Predicate newHideWhen, NotificationChain msgs) {
+		Predicate oldHideWhen = hideWhen;
+		hideWhen = newHideWhen;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebuiPackage.INTERFACE_FIELD__HIDE_WHEN, oldHideWhen, newHideWhen);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHideWhen(Predicate newHideWhen) {
+		if (newHideWhen != hideWhen) {
+			NotificationChain msgs = null;
+			if (hideWhen != null)
+				msgs = ((InternalEObject)hideWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.INTERFACE_FIELD__HIDE_WHEN, null, msgs);
+			if (newHideWhen != null)
+				msgs = ((InternalEObject)newHideWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.INTERFACE_FIELD__HIDE_WHEN, null, msgs);
+			msgs = basicSetHideWhen(newHideWhen, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INTERFACE_FIELD__HIDE_WHEN, newHideWhen, newHideWhen));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTitle() {
 		return title;
 	}
@@ -631,6 +686,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		switch (featureID) {
 			case WebuiPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				return basicSetDisplayedOn(null, msgs);
+			case WebuiPackage.INTERFACE_FIELD__HIDE_WHEN:
+				return basicSetHideWhen(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -661,6 +718,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return getDisplayedOn();
 			case WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE:
 				return getRequiresRole();
+			case WebuiPackage.INTERFACE_FIELD__HIDE_WHEN:
+				return getHideWhen();
 			case WebuiPackage.INTERFACE_FIELD__TITLE:
 				return getTitle();
 			case WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
@@ -701,6 +760,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return;
 			case WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE:
 				setRequiresRole((String)newValue);
+				return;
+			case WebuiPackage.INTERFACE_FIELD__HIDE_WHEN:
+				setHideWhen((Predicate)newValue);
 				return;
 			case WebuiPackage.INTERFACE_FIELD__TITLE:
 				setTitle((String)newValue);
@@ -753,6 +815,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			case WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE:
 				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
 				return;
+			case WebuiPackage.INTERFACE_FIELD__HIDE_WHEN:
+				setHideWhen((Predicate)null);
+				return;
 			case WebuiPackage.INTERFACE_FIELD__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -802,6 +867,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return getDisplayedOn() != null;
 			case WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE:
 				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
+			case WebuiPackage.INTERFACE_FIELD__HIDE_WHEN:
+				return hideWhen != null;
 			case WebuiPackage.INTERFACE_FIELD__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
@@ -839,6 +906,7 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			switch (derivedFeatureID) {
 				case WebuiPackage.INTERFACE_FIELD__DISPLAYED_ON: return WebuiPackage.UNIT_FIELD__DISPLAYED_ON;
 				case WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE: return WebuiPackage.UNIT_FIELD__REQUIRES_ROLE;
+				case WebuiPackage.INTERFACE_FIELD__HIDE_WHEN: return WebuiPackage.UNIT_FIELD__HIDE_WHEN;
 				case WebuiPackage.INTERFACE_FIELD__TITLE: return WebuiPackage.UNIT_FIELD__TITLE;
 				case WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION: return WebuiPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WebuiPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
@@ -861,6 +929,7 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			switch (baseFeatureID) {
 				case WebuiPackage.UNIT_FIELD__DISPLAYED_ON: return WebuiPackage.INTERFACE_FIELD__DISPLAYED_ON;
 				case WebuiPackage.UNIT_FIELD__REQUIRES_ROLE: return WebuiPackage.INTERFACE_FIELD__REQUIRES_ROLE;
+				case WebuiPackage.UNIT_FIELD__HIDE_WHEN: return WebuiPackage.INTERFACE_FIELD__HIDE_WHEN;
 				case WebuiPackage.UNIT_FIELD__TITLE: return WebuiPackage.INTERFACE_FIELD__TITLE;
 				case WebuiPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION: return WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WebuiPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;

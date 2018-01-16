@@ -13,7 +13,7 @@ helper context Website!Expression def: isInterfaceExpression() : Boolean
 			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!RouteActual) then
 			true
-		else if self.refImmediateComposite().oclIsKindOf(Website!UnitElement) then
+		else if self.refImmediateComposite().oclIsKindOf(Website!UnitField) then
 			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!InlineAction) then
 			true

@@ -18,7 +18,6 @@ import uk.ac.man.cs.mdsd.webgen.expression.Expression;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitFeature#getForcedValue <em>Forced Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitFeature#isCollectionUiAllowAdd <em>Collection Ui Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitFeature#isCollectionUiAllowRemove <em>Collection Ui Allow Remove</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitFeature#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitFeature#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitFeature#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitFeature#isAutofocus <em>Autofocus</em>}</li>
@@ -35,33 +34,6 @@ import uk.ac.man.cs.mdsd.webgen.expression.Expression;
  * @generated
  */
 public interface UnitFeature extends UnitField, InlineActionContainer {
-	/**
-	 * Returns the value of the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Only Display When Not Empty</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Only Display When Not Empty</em>' attribute.
-	 * @see #setOnlyDisplayWhenNotEmpty(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitFeature_OnlyDisplayWhenNotEmpty()
-	 * @model default="false" ordered="false"
-	 * @generated
-	 */
-	boolean isOnlyDisplayWhenNotEmpty();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitFeature#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Only Display When Not Empty</em>' attribute.
-	 * @see #isOnlyDisplayWhenNotEmpty()
-	 * @generated
-	 */
-	void setOnlyDisplayWhenNotEmpty(boolean value);
-
 	/**
 	 * Returns the value of the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->

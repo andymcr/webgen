@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitField;
@@ -28,6 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getRequiresRole <em>Requires Role</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getHideWhen <em>Hide When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
@@ -57,6 +59,16 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getHideWhen() <em>Hide When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHideWhen()
+	 * @generated
+	 * @ordered
+	 */
+	protected Predicate hideWhen;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -244,6 +256,49 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Predicate getHideWhen() {
+		return hideWhen;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHideWhen(Predicate newHideWhen, NotificationChain msgs) {
+		Predicate oldHideWhen = hideWhen;
+		hideWhen = newHideWhen;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebuiPackage.UNIT_FIELD__HIDE_WHEN, oldHideWhen, newHideWhen);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHideWhen(Predicate newHideWhen) {
+		if (newHideWhen != hideWhen) {
+			NotificationChain msgs = null;
+			if (hideWhen != null)
+				msgs = ((InternalEObject)hideWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.UNIT_FIELD__HIDE_WHEN, null, msgs);
+			if (newHideWhen != null)
+				msgs = ((InternalEObject)newHideWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.UNIT_FIELD__HIDE_WHEN, null, msgs);
+			msgs = basicSetHideWhen(newHideWhen, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.UNIT_FIELD__HIDE_WHEN, newHideWhen, newHideWhen));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTitle() {
 		return title;
 	}
@@ -370,6 +425,8 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 			case WebuiPackage.UNIT_FIELD__DISPLAYED_ON:
 				return basicSetDisplayedOn(null, msgs);
+			case WebuiPackage.UNIT_FIELD__HIDE_WHEN:
+				return basicSetHideWhen(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -400,6 +457,8 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 				return getDisplayedOn();
 			case WebuiPackage.UNIT_FIELD__REQUIRES_ROLE:
 				return getRequiresRole();
+			case WebuiPackage.UNIT_FIELD__HIDE_WHEN:
+				return getHideWhen();
 			case WebuiPackage.UNIT_FIELD__TITLE:
 				return getTitle();
 			case WebuiPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION:
@@ -427,6 +486,9 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 				return;
 			case WebuiPackage.UNIT_FIELD__REQUIRES_ROLE:
 				setRequiresRole((String)newValue);
+				return;
+			case WebuiPackage.UNIT_FIELD__HIDE_WHEN:
+				setHideWhen((Predicate)newValue);
 				return;
 			case WebuiPackage.UNIT_FIELD__TITLE:
 				setTitle((String)newValue);
@@ -461,6 +523,9 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 			case WebuiPackage.UNIT_FIELD__REQUIRES_ROLE:
 				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
 				return;
+			case WebuiPackage.UNIT_FIELD__HIDE_WHEN:
+				setHideWhen((Predicate)null);
+				return;
 			case WebuiPackage.UNIT_FIELD__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -492,6 +557,8 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 				return getDisplayedOn() != null;
 			case WebuiPackage.UNIT_FIELD__REQUIRES_ROLE:
 				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
+			case WebuiPackage.UNIT_FIELD__HIDE_WHEN:
+				return hideWhen != null;
 			case WebuiPackage.UNIT_FIELD__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WebuiPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION:

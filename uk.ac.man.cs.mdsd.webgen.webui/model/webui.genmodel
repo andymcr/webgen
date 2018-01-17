@@ -269,12 +269,12 @@
     <genClasses image="false" ecoreClass="webui.ecore#//CollectionUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/contentType"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/selection"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/filter"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/supportedFilters"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Business"
+          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/selection"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Business"
+          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/filter"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Business"
+          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/supportedFilters"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/emptyMessage"/>
       <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/defaultPaginationSize"/>
       <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/maximumPaginationSize"/>
@@ -331,8 +331,8 @@
           ecoreFeature="ecore:EReference webui.ecore#//MapUnit/placeName"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//DataUnit">
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference webui.ecore#//DataUnit/defaultSelection"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Business"
+          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//DataUnit/defaultSelection"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//DataUnit/title"/>
     </genClasses>

@@ -143,7 +143,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 getString("_UI_ModelPropertyCategory"),
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 
@@ -165,7 +165,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 getString("_UI_ModelPropertyCategory"),
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 

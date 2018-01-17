@@ -17,6 +17,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePathAttribute;
+import uk.ac.man.cs.mdsd.webgen.webui.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
 /**
@@ -94,9 +95,14 @@ public class FeaturePathAttributeItemProvider extends FeaturePathItemProvider {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof FeaturePathAttribute) {
-						final FeaturePathAttribute path = (FeaturePathAttribute) object;
-						if (path.eContainer() instanceof DynamicUnit) {
-							return getAttributes((DynamicUnit) path.eContainer());
+						final InlineActionContainer action = getActionContext(object); 
+						if (action != null) { 
+							return getAttributes(action); 
+						} 
+ 
+						final DynamicUnit unit = getDynamicUnitContext(object);
+						if (unit != null) {
+							return getAttributes(unit);
 						}
 					}
 

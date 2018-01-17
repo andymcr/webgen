@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -22,10 +23,17 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAssociation;
+import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAttribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.webui.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.webui.SingletonUnit;
+import uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation;
+import uk.ac.man.cs.mdsd.webgen.webui.UnitElement;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.FeaturePath} object.
@@ -114,6 +122,73 @@ public class FeaturePathItemProvider
 		return WebuiEditPlugin.INSTANCE;
 	}
 
+	protected Object getContext(final Object object) {
+		if (object instanceof EObject) {
+			return ((EObject) object).eContainer();
+		} else {
+			return null;
+		}
+	}
+
+	protected InlineActionContainer getActionContext(final Object object) { 
+	Object container = getContext(object); 
+ 		while (container != null) { 
+ 			if (container instanceof InlineActionContainer) { 
+ 				return (InlineActionContainer) container; 
+ 			} 
+ 			container = getContext(container); 
+ 		} 
+ 
+ 		return null; 
+	}
+ 
+	protected DynamicUnit getDynamicUnitContext(final Object object) {
+		Object container = getContext(object);
+		while (container != null) {
+			if (container instanceof DynamicUnit) {
+				return (DynamicUnit) container;
+			}
+			container = getContext(container);
+		}
+
+		return null;
+	}
+
+	protected Set<EntityOrView> getEntities(final InlineActionContainer container) {
+		final Set<EntityOrView> entities = new HashSet<EntityOrView>();
+		if (container instanceof CollectionUnit) {
+			entities.addAll(((CollectionUnit) container).getContentType());
+		} else if (container instanceof UnitElement) {
+			entities.add(getParentType(
+				((UnitElement) container).getAttribute()));
+		} else if (container instanceof UnitAssociation) {
+			entities.add(getSourceType(
+				((UnitAssociation) container).getAssociation()));
+		}
+
+		return entities;
+	}
+
+	protected EntityOrView getParentType(final Attribute attribute) {
+		if (attribute instanceof EntityAttribute) {
+			return ((EntityAttribute) attribute).getPartOf();
+		} else {
+			return getParentType(
+				((EncapsulatedAttribute) attribute).getAttribute());
+		}
+	}
+
+	protected EntityOrView getSourceType(final Association association) {
+		if (association instanceof EntityAssociation) {
+			return ((EntityAssociation) association).getPartOf();
+		} else if (association instanceof EncapsulatedAssociation) {
+			return ((EncapsulatedAssociation) association).getSourceEntity();
+		} else {
+			// TODO handle view
+			return null;
+		}
+	}
+
 	protected Set<EntityOrView> getContentType(final DynamicUnit unit) {
 		final Set<EntityOrView> contentType = new HashSet<EntityOrView>();
 
@@ -134,6 +209,26 @@ public class FeaturePathItemProvider
 		}
 
 		return contentType;
+	}
+
+	protected Set<Attribute> getAttributes(final InlineActionContainer action) {
+		final Set<Attribute> attributes = new HashSet<Attribute>();
+
+		for (EntityOrView entity : getEntities(action)) {
+			attributes.addAll(entity.getAttributes());
+		}
+
+		return attributes;
+	}
+
+	protected Set<Association> getAssociations(final InlineActionContainer action) {
+		final Set<Association> associations = new HashSet<Association>();
+
+		for (EntityOrView entity : getEntities(action)) {
+			associations.addAll(entity.getAllAssociations());
+		}
+
+		return associations;
 	}
 
 	protected Set<Attribute> getAttributes(final DynamicUnit unit) {

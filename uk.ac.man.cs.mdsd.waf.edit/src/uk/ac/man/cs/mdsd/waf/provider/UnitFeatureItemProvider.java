@@ -60,7 +60,6 @@ public class UnitFeatureItemProvider
 			addCollectionUiAllowAddPropertyDescriptor(object);
 			addCollectionUiAllowRemovePropertyDescriptor(object);
 			addNullDisplayValuePropertyDescriptor(object);
-			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -387,29 +386,6 @@ public class UnitFeatureItemProvider
 	}
 
 		/**
-	 * This adds a property descriptor for the Only Display When Not Empty feature.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected void addOnlyDisplayWhenNotEmptyPropertyDescriptor(Object object)
-  {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitFeature_onlyDisplayWhenNotEmpty_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_onlyDisplayWhenNotEmpty_feature", "_UI_UnitFeature_type"),
-				 WafPackage.Literals.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-  /**
 	 * This adds a property descriptor for the Maximum Display Size feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -468,6 +444,7 @@ public class UnitFeatureItemProvider
   {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.Literals.UNIT_FIELD__HIDE_WHEN);
 			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
 			childrenFeatures.add(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE);
 		}
@@ -525,7 +502,6 @@ public class UnitFeatureItemProvider
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
 			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
-			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
 			case WafPackage.UNIT_FEATURE__FOOTER:
 			case WafPackage.UNIT_FEATURE__HEADER_CLASS:
@@ -534,6 +510,7 @@ public class UnitFeatureItemProvider
 			case WafPackage.UNIT_FEATURE__FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WafPackage.UNIT_FEATURE__HIDE_WHEN:
 			case WafPackage.UNIT_FEATURE__ACTIONS:
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -556,6 +533,46 @@ public class UnitFeatureItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(WafPackage.Literals.UNIT_FIELD__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_FIELD__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_FIELD__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_FIELD__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_FIELD__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_FIELD__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_FIELD__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_FIELD__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
 				 WafFactory.eINSTANCE.createSelectAction()));
 
@@ -568,6 +585,16 @@ public class UnitFeatureItemProvider
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
 				 WafFactory.eINSTANCE.createFeatureSupportAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -658,6 +685,29 @@ public class UnitFeatureItemProvider
 			(createChildParameter
 				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+	}
+
+		/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == WafPackage.Literals.UNIT_FIELD__HIDE_WHEN ||
+			childFeature == WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

@@ -257,6 +257,54 @@ public class WebuiSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebuiPackage.CHILD_PATH: {
+				ChildPath childPath = (ChildPath)theEObject;
+				T result = caseChildPath(childPath);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebuiPackage.CHILD_PATH_ATTRIBUTE: {
+				ChildPathAttribute childPathAttribute = (ChildPathAttribute)theEObject;
+				T result = caseChildPathAttribute(childPathAttribute);
+				if (result == null) result = caseChildPath(childPathAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebuiPackage.CHILD_PATH_ASSOCIATION: {
+				ChildPathAssociation childPathAssociation = (ChildPathAssociation)theEObject;
+				T result = caseChildPathAssociation(childPathAssociation);
+				if (result == null) result = caseChildPath(childPathAssociation);
+				if (result == null) result = caseAssociationReference(childPathAssociation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebuiPackage.FEATURE_PATH: {
+				FeaturePath featurePath = (FeaturePath)theEObject;
+				T result = caseFeaturePath(featurePath);
+				if (result == null) result = caseVariable(featurePath);
+				if (result == null) result = caseExpression(featurePath);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebuiPackage.FEATURE_PATH_ATTRIBUTE: {
+				FeaturePathAttribute featurePathAttribute = (FeaturePathAttribute)theEObject;
+				T result = caseFeaturePathAttribute(featurePathAttribute);
+				if (result == null) result = caseFeaturePath(featurePathAttribute);
+				if (result == null) result = caseVariable(featurePathAttribute);
+				if (result == null) result = caseExpression(featurePathAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebuiPackage.FEATURE_PATH_ASSOCIATION: {
+				FeaturePathAssociation featurePathAssociation = (FeaturePathAssociation)theEObject;
+				T result = caseFeaturePathAssociation(featurePathAssociation);
+				if (result == null) result = caseFeaturePath(featurePathAssociation);
+				if (result == null) result = caseAssociationReference(featurePathAssociation);
+				if (result == null) result = caseVariable(featurePathAssociation);
+				if (result == null) result = caseExpression(featurePathAssociation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebuiPackage.INTERFACE_FIELD: {
 				InterfaceField interfaceField = (InterfaceField)theEObject;
 				T result = caseInterfaceField(interfaceField);
@@ -455,48 +503,6 @@ public class WebuiSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebuiPackage.FEATURE_PATH: {
-				FeaturePath featurePath = (FeaturePath)theEObject;
-				T result = caseFeaturePath(featurePath);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebuiPackage.FEATURE_PATH_ATTRIBUTE: {
-				FeaturePathAttribute featurePathAttribute = (FeaturePathAttribute)theEObject;
-				T result = caseFeaturePathAttribute(featurePathAttribute);
-				if (result == null) result = caseFeaturePath(featurePathAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebuiPackage.FEATURE_PATH_ASSOCIATION: {
-				FeaturePathAssociation featurePathAssociation = (FeaturePathAssociation)theEObject;
-				T result = caseFeaturePathAssociation(featurePathAssociation);
-				if (result == null) result = caseFeaturePath(featurePathAssociation);
-				if (result == null) result = caseAssociationReference(featurePathAssociation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebuiPackage.CHILD_PATH: {
-				ChildPath childPath = (ChildPath)theEObject;
-				T result = caseChildPath(childPath);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebuiPackage.CHILD_PATH_ATTRIBUTE: {
-				ChildPathAttribute childPathAttribute = (ChildPathAttribute)theEObject;
-				T result = caseChildPathAttribute(childPathAttribute);
-				if (result == null) result = caseChildPath(childPathAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebuiPackage.CHILD_PATH_ASSOCIATION: {
-				ChildPathAssociation childPathAssociation = (ChildPathAssociation)theEObject;
-				T result = caseChildPathAssociation(childPathAssociation);
-				if (result == null) result = caseChildPath(childPathAssociation);
-				if (result == null) result = caseAssociationReference(childPathAssociation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WebuiPackage.IMAGE_INDEX_UNIT: {
 				ImageIndexUnit imageIndexUnit = (ImageIndexUnit)theEObject;
 				T result = caseImageIndexUnit(imageIndexUnit);
@@ -617,14 +623,6 @@ public class WebuiSwitch<T> extends Switch<T> {
 				if (result == null) result = caseInlineAction(featureSupportAction);
 				if (result == null) result = caseNamedDisplayElement(featureSupportAction);
 				if (result == null) result = caseNamedElement(featureSupportAction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebuiPackage.WEBUI_FEATURE_REFERENCE: {
-				WebuiFeatureReference webuiFeatureReference = (WebuiFeatureReference)theEObject;
-				T result = caseWebuiFeatureReference(webuiFeatureReference);
-				if (result == null) result = caseVariable(webuiFeatureReference);
-				if (result == null) result = caseExpression(webuiFeatureReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1544,21 +1542,6 @@ public class WebuiSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFeatureSupportAction(FeatureSupportAction object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseWebuiFeatureReference(WebuiFeatureReference object) {
 		return null;
 	}
 

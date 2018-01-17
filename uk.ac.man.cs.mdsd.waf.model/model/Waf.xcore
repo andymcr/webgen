@@ -11,6 +11,7 @@ package uk.ac.man.cs.mdsd.waf
 
 import uk.ac.man.cs.mdsd.expression.Expression
 import uk.ac.man.cs.mdsd.expression.Predicate
+import uk.ac.man.cs.mdsd.expression.Variable
 import uk.ac.man.cs.mdsd.orm.Association
 import uk.ac.man.cs.mdsd.orm.Attribute
 import uk.ac.man.cs.mdsd.orm.DataType
@@ -237,6 +238,8 @@ class StaticUnit extends ContentUnit {
 
 abstract class DynamicUnit extends ContentUnit {
 	contains UnitField[] displayFields opposite displayedOn
+	contains Predicate hideWhen
+	String messageWhenHidden
 	contains UnitSupportAction[] supportActions
 	String header
 	String footer
@@ -259,6 +262,7 @@ enum CollectionDisplayOptions {
 interface UnitField extends DisplayElement {
 	container DynamicUnit[1] displayedOn opposite displayFields
 	String requiresRole = ""
+	contains Predicate hideWhen
 	String title = ""
 	CollectionDisplayOptions collectionDisplayOption
 	int maximumDisplaySize = "-1"
@@ -271,7 +275,6 @@ abstract class UnitFeature extends UnitField, InlineActionContainer {
 	boolean collectionUiAllowAdd = "true"
 	boolean collectionUiAllowRemove = "true"
 	String nullDisplayValue
-	boolean onlyDisplayWhenNotEmpty = "false"
 	boolean autofocus
 	String footer
 	String headerClass
@@ -305,6 +308,34 @@ abstract class AssociationReference {
 	refers Association[1] association
 	refers Label valueDisplay
 	contains ChildPath childFeature
+}
+
+abstract class ChildPath {
+}
+
+class ChildPathAttribute extends ChildPath {
+	derived String name get {
+		if (attribute != null)
+			attribute.name
+	}
+	refers Attribute[1] attribute
+}
+
+class ChildPathAssociation extends ChildPath, AssociationReference {
+}
+
+abstract class FeaturePath extends Variable {
+}
+
+class FeaturePathAttribute extends FeaturePath {
+	derived String name get {
+		if (attribute != null)
+			attribute.name
+	}
+	refers Attribute[1] attribute
+}
+
+class FeaturePathAssociation extends FeaturePath, AssociationReference {
 }
 
 abstract class InterfaceField extends NamedElement, UnitField {
@@ -366,7 +397,7 @@ interface CollectionUnit extends SelectableUnit {
 
 abstract class EditUnit extends DynamicUnit, SingletonUnit {
 	boolean onSaveContinueEditing = "false"
-	contains Predicate disableCondition
+	contains Predicate disableWhen
 	refers Label title
 	refers Page confirmDestination
 	String[1] confirmLabel
@@ -396,7 +427,6 @@ class UpdateUnit extends EditUnit, SelectableUnit {
 abstract class DataUnit extends DynamicUnit {
 	refers Selection defaultSelection
 	refers Label title
-	boolean onlyDisplayWhenNotEmpty
 }
 
 class DetailsUnit extends DataUnit, SingletonUnit, SelectableUnit {
@@ -437,36 +467,10 @@ abstract class ImageUnit extends DynamicUnit, CollectionUnit {
 	int transitionTime
 }
 
-abstract class FeaturePath {
-}
-
-class FeaturePathAttribute extends FeaturePath {
-	derived String name get {
-		if (attribute != null)
-			attribute.name
-	}
-	refers Attribute[1] attribute
-}
-
-class FeaturePathAssociation extends FeaturePath, AssociationReference {
-}
-
-abstract class ChildPath {
-}
-
-class ChildPathAttribute extends ChildPath {
-	derived String name get {
-		if (attribute != null)
-			attribute.name
-	}
-	refers Attribute[1] attribute
-}
-
-class ChildPathAssociation extends ChildPath, AssociationReference {
-}
-
 
 class ImageIndexUnit extends ImageUnit, InlineActionContainer {
+	boolean omitFieldLabels
+	boolean overlayTitle
 	String columnClass
 }
 

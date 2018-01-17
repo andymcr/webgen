@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
+import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 import uk.ac.man.cs.mdsd.webgen.webui.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
@@ -53,6 +54,8 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getPageDisplayedOn <em>Page Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getHideWhen <em>Hide When</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getMessageWhenHidden <em>Message When Hidden</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.LoginUnitImpl#getFooter <em>Footer</em>}</li>
@@ -280,6 +283,36 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 	 * @ordered
 	 */
 	protected EList<UnitField> displayFields;
+
+	/**
+	 * The cached value of the '{@link #getHideWhen() <em>Hide When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHideWhen()
+	 * @generated
+	 * @ordered
+	 */
+	protected Predicate hideWhen;
+
+	/**
+	 * The default value of the '{@link #getMessageWhenHidden() <em>Message When Hidden</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessageWhenHidden()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MESSAGE_WHEN_HIDDEN_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getMessageWhenHidden() <em>Message When Hidden</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessageWhenHidden()
+	 * @generated
+	 * @ordered
+	 */
+	protected String messageWhenHidden = MESSAGE_WHEN_HIDDEN_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSupportActions() <em>Support Actions</em>}' containment reference list.
@@ -826,6 +859,70 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Predicate getHideWhen() {
+		return hideWhen;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHideWhen(Predicate newHideWhen, NotificationChain msgs) {
+		Predicate oldHideWhen = hideWhen;
+		hideWhen = newHideWhen;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebuiPackage.LOGIN_UNIT__HIDE_WHEN, oldHideWhen, newHideWhen);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHideWhen(Predicate newHideWhen) {
+		if (newHideWhen != hideWhen) {
+			NotificationChain msgs = null;
+			if (hideWhen != null)
+				msgs = ((InternalEObject)hideWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.LOGIN_UNIT__HIDE_WHEN, null, msgs);
+			if (newHideWhen != null)
+				msgs = ((InternalEObject)newHideWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebuiPackage.LOGIN_UNIT__HIDE_WHEN, null, msgs);
+			msgs = basicSetHideWhen(newHideWhen, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.LOGIN_UNIT__HIDE_WHEN, newHideWhen, newHideWhen));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getMessageWhenHidden() {
+		return messageWhenHidden;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMessageWhenHidden(String newMessageWhenHidden) {
+		String oldMessageWhenHidden = messageWhenHidden;
+		messageWhenHidden = newMessageWhenHidden;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.LOGIN_UNIT__MESSAGE_WHEN_HIDDEN, oldMessageWhenHidden, messageWhenHidden));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<UnitSupportAction> getSupportActions() {
 		if (supportActions == null) {
 			supportActions = new EObjectContainmentEList<UnitSupportAction>(UnitSupportAction.class, this, WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS);
@@ -1137,6 +1234,8 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 				return ((InternalEList<?>)getRouteActuals()).basicRemove(otherEnd, msgs);
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
+			case WebuiPackage.LOGIN_UNIT__HIDE_WHEN:
+				return basicSetHideWhen(null, msgs);
 			case WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				return ((InternalEList<?>)getSupportActions()).basicRemove(otherEnd, msgs);
 		}
@@ -1192,6 +1291,10 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 				return basicGetPageDisplayedOn();
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
+			case WebuiPackage.LOGIN_UNIT__HIDE_WHEN:
+				return getHideWhen();
+			case WebuiPackage.LOGIN_UNIT__MESSAGE_WHEN_HIDDEN:
+				return getMessageWhenHidden();
 			case WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				return getSupportActions();
 			case WebuiPackage.LOGIN_UNIT__HEADER:
@@ -1269,6 +1372,12 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				getDisplayFields().addAll((Collection<? extends UnitField>)newValue);
+				return;
+			case WebuiPackage.LOGIN_UNIT__HIDE_WHEN:
+				setHideWhen((Predicate)newValue);
+				return;
+			case WebuiPackage.LOGIN_UNIT__MESSAGE_WHEN_HIDDEN:
+				setMessageWhenHidden((String)newValue);
 				return;
 			case WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
@@ -1358,6 +1467,12 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
+			case WebuiPackage.LOGIN_UNIT__HIDE_WHEN:
+				setHideWhen((Predicate)null);
+				return;
+			case WebuiPackage.LOGIN_UNIT__MESSAGE_WHEN_HIDDEN:
+				setMessageWhenHidden(MESSAGE_WHEN_HIDDEN_EDEFAULT);
+				return;
 			case WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				return;
@@ -1435,6 +1550,10 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 				return isSetPageDisplayedOn();
 			case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
+			case WebuiPackage.LOGIN_UNIT__HIDE_WHEN:
+				return hideWhen != null;
+			case WebuiPackage.LOGIN_UNIT__MESSAGE_WHEN_HIDDEN:
+				return MESSAGE_WHEN_HIDDEN_EDEFAULT == null ? messageWhenHidden != null : !MESSAGE_WHEN_HIDDEN_EDEFAULT.equals(messageWhenHidden);
 			case WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				return supportActions != null && !supportActions.isEmpty();
 			case WebuiPackage.LOGIN_UNIT__HEADER:
@@ -1502,6 +1621,8 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 		if (baseClass == DynamicUnit.class) {
 			switch (derivedFeatureID) {
 				case WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS: return WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
+				case WebuiPackage.LOGIN_UNIT__HIDE_WHEN: return WebuiPackage.DYNAMIC_UNIT__HIDE_WHEN;
+				case WebuiPackage.LOGIN_UNIT__MESSAGE_WHEN_HIDDEN: return WebuiPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN;
 				case WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS: return WebuiPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
 				case WebuiPackage.LOGIN_UNIT__HEADER: return WebuiPackage.DYNAMIC_UNIT__HEADER;
 				case WebuiPackage.LOGIN_UNIT__FOOTER: return WebuiPackage.DYNAMIC_UNIT__FOOTER;
@@ -1561,6 +1682,8 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 		if (baseClass == DynamicUnit.class) {
 			switch (baseFeatureID) {
 				case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebuiPackage.LOGIN_UNIT__DISPLAY_FIELDS;
+				case WebuiPackage.DYNAMIC_UNIT__HIDE_WHEN: return WebuiPackage.LOGIN_UNIT__HIDE_WHEN;
+				case WebuiPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN: return WebuiPackage.LOGIN_UNIT__MESSAGE_WHEN_HIDDEN;
 				case WebuiPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebuiPackage.LOGIN_UNIT__SUPPORT_ACTIONS;
 				case WebuiPackage.DYNAMIC_UNIT__HEADER: return WebuiPackage.LOGIN_UNIT__HEADER;
 				case WebuiPackage.DYNAMIC_UNIT__FOOTER: return WebuiPackage.LOGIN_UNIT__FOOTER;
@@ -1611,6 +1734,8 @@ public class LoginUnitImpl extends MinimalEObjectImpl.Container implements Login
 		result.append(omitCaption);
 		result.append(", captionClass: ");
 		result.append(captionClass);
+		result.append(", messageWhenHidden: ");
+		result.append(messageWhenHidden);
 		result.append(", header: ");
 		result.append(header);
 		result.append(", footer: ");

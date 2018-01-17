@@ -253,7 +253,12 @@ public class UnitElementItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
-				 WebuiFactory.eINSTANCE.createWebuiFeatureReference()));
+				 WebuiFactory.eINSTANCE.createFeaturePathAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -358,6 +363,7 @@ public class UnitElementItemProvider extends UnitFeatureItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
+			childFeature == WebuiPackage.Literals.UNIT_FIELD__HIDE_WHEN ||
 			childFeature == WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE ||
 			childFeature == WebuiPackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE;
 

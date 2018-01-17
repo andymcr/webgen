@@ -1721,13 +1721,31 @@ public interface WebuiPackage extends EPackage {
 	int DYNAMIC_UNIT__DISPLAY_FIELDS = CONTENT_UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__HIDE_WHEN = CONTENT_UNIT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN = CONTENT_UNIT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 1;
+	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -1736,7 +1754,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 2;
+	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -1745,7 +1763,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 3;
+	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -1754,7 +1772,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 4;
+	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -1763,7 +1781,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 5;
+	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -1772,7 +1790,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
+	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -1781,7 +1799,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
+	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Dynamic Unit</em>' class.
@@ -1790,7 +1808,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 8;
+	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Dynamic Unit</em>' class.
@@ -2768,7 +2786,544 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getInterfaceField()
 	 * @generated
 	 */
-	int INTERFACE_FIELD = 24;
+	int INTERFACE_FIELD = 30;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DataTypeFieldImpl <em>Data Type Field</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.DataTypeFieldImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDataTypeField()
+	 * @generated
+	 */
+	int DATA_TYPE_FIELD = 31;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DateFieldImpl <em>Date Field</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.DateFieldImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDateField()
+	 * @generated
+	 */
+	int DATE_FIELD = 32;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.CaptchaFieldImpl <em>Captcha Field</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.CaptchaFieldImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCaptchaField()
+	 * @generated
+	 */
+	int CAPTCHA_FIELD = 33;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitSupportActionImpl <em>Unit Support Action</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.UnitSupportActionImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitSupportAction()
+	 * @generated
+	 */
+	int UNIT_SUPPORT_ACTION = 34;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.SelectableUnit <em>Selectable Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.SelectableUnit
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSelectableUnit()
+	 * @generated
+	 */
+	int SELECTABLE_UNIT = 35;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.SingletonUnit <em>Singleton Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.SingletonUnit
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSingletonUnit()
+	 * @generated
+	 */
+	int SINGLETON_UNIT = 36;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit <em>Collection Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCollectionUnit()
+	 * @generated
+	 */
+	int COLLECTION_UNIT = 37;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.EditUnitImpl <em>Edit Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.EditUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getEditUnit()
+	 * @generated
+	 */
+	int EDIT_UNIT = 38;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.CreateUnitImpl <em>Create Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.CreateUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCreateUnit()
+	 * @generated
+	 */
+	int CREATE_UNIT = 39;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.CreateUpdateUnitImpl <em>Create Update Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.CreateUpdateUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCreateUpdateUnit()
+	 * @generated
+	 */
+	int CREATE_UPDATE_UNIT = 40;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UpdateUnitImpl <em>Update Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.UpdateUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUpdateUnit()
+	 * @generated
+	 */
+	int UPDATE_UNIT = 41;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.MapUnitImpl <em>Map Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.MapUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getMapUnit()
+	 * @generated
+	 */
+	int MAP_UNIT = 42;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DataUnitImpl <em>Data Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.DataUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDataUnit()
+	 * @generated
+	 */
+	int DATA_UNIT = 43;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DetailsUnitImpl <em>Details Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.DetailsUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDetailsUnit()
+	 * @generated
+	 */
+	int DETAILS_UNIT = 44;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl <em>Index Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getIndexUnit()
+	 * @generated
+	 */
+	int INDEX_UNIT = 45;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ControlUnitImpl <em>Control Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.ControlUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getControlUnit()
+	 * @generated
+	 */
+	int CONTROL_UNIT = 46;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.SearchUnitImpl <em>Search Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.SearchUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSearchUnit()
+	 * @generated
+	 */
+	int SEARCH_UNIT = 47;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl <em>Image Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getImageUnit()
+	 * @generated
+	 */
+	int IMAGE_UNIT = 48;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FeaturePathImpl <em>Feature Path</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FeaturePathImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeaturePath()
+	 * @generated
+	 */
+	int FEATURE_PATH = 27;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FeaturePathAttributeImpl <em>Feature Path Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FeaturePathAttributeImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeaturePathAttribute()
+	 * @generated
+	 */
+	int FEATURE_PATH_ATTRIBUTE = 28;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FeaturePathAssociationImpl <em>Feature Path Association</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FeaturePathAssociationImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeaturePathAssociation()
+	 * @generated
+	 */
+	int FEATURE_PATH_ASSOCIATION = 29;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ChildPathImpl <em>Child Path</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.ChildPathImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getChildPath()
+	 * @generated
+	 */
+	int CHILD_PATH = 24;
+
+	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH__PART_OF = 0;
+
+	/**
+	 * The number of structural features of the '<em>Child Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Child Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ChildPathAttributeImpl <em>Child Path Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.ChildPathAttributeImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getChildPathAttribute()
+	 * @generated
+	 */
+	int CHILD_PATH_ATTRIBUTE = 25;
+
+	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ATTRIBUTE__PART_OF = CHILD_PATH__PART_OF;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ATTRIBUTE__NAME = CHILD_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ATTRIBUTE__ATTRIBUTE = CHILD_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Child Path Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ATTRIBUTE_FEATURE_COUNT = CHILD_PATH_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Child Path Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ATTRIBUTE_OPERATION_COUNT = CHILD_PATH_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ChildPathAssociationImpl <em>Child Path Association</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.ChildPathAssociationImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getChildPathAssociation()
+	 * @generated
+	 */
+	int CHILD_PATH_ASSOCIATION = 26;
+
+	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION__PART_OF = CHILD_PATH__PART_OF;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION__NAME = CHILD_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION__ASSOCIATION = CHILD_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Value Display</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION__VALUE_DISPLAY = CHILD_PATH_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION__CHILD_FEATURE = CHILD_PATH_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Is Source Association</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION = CHILD_PATH_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION__SOURCE_ENTITY = CHILD_PATH_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION__TARGET_ENTITY = CHILD_PATH_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of structural features of the '<em>Child Path Association</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION_FEATURE_COUNT = CHILD_PATH_FEATURE_COUNT + 7;
+
+	/**
+	 * The number of operations of the '<em>Child Path Association</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION_OPERATION_COUNT = CHILD_PATH_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Feature Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Feature Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE__NAME = FEATURE_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = FEATURE_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Feature Path Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Feature Path Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE_OPERATION_COUNT = FEATURE_PATH_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__NAME = FEATURE_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__ASSOCIATION = FEATURE_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Value Display</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__VALUE_DISPLAY = FEATURE_PATH_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__CHILD_FEATURE = FEATURE_PATH_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Is Source Association</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION = FEATURE_PATH_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__SOURCE_ENTITY = FEATURE_PATH_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__TARGET_ENTITY = FEATURE_PATH_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of structural features of the '<em>Feature Path Association</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 7;
+
+	/**
+	 * The number of operations of the '<em>Feature Path Association</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION_OPERATION_COUNT = FEATURE_PATH_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2931,16 +3486,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERFACE_FIELD_OPERATION_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DataTypeFieldImpl <em>Data Type Field</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.DataTypeFieldImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDataTypeField()
-	 * @generated
-	 */
-	int DATA_TYPE_FIELD = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3141,16 +3686,6 @@ public interface WebuiPackage extends EPackage {
 	int DATA_TYPE_FIELD_OPERATION_COUNT = INTERFACE_FIELD_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DateFieldImpl <em>Date Field</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.DateFieldImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDateField()
-	 * @generated
-	 */
-	int DATE_FIELD = 26;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3331,16 +3866,6 @@ public interface WebuiPackage extends EPackage {
 	int DATE_FIELD_OPERATION_COUNT = INTERFACE_FIELD_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.CaptchaFieldImpl <em>Captcha Field</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.CaptchaFieldImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCaptchaField()
-	 * @generated
-	 */
-	int CAPTCHA_FIELD = 27;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3503,16 +4028,6 @@ public interface WebuiPackage extends EPackage {
 	int CAPTCHA_FIELD_OPERATION_COUNT = INTERFACE_FIELD_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitSupportActionImpl <em>Unit Support Action</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.UnitSupportActionImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUnitSupportAction()
-	 * @generated
-	 */
-	int UNIT_SUPPORT_ACTION = 28;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3567,16 +4082,6 @@ public interface WebuiPackage extends EPackage {
 	int UNIT_SUPPORT_ACTION_OPERATION_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.SelectableUnit <em>Selectable Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.SelectableUnit
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSelectableUnit()
-	 * @generated
-	 */
-	int SELECTABLE_UNIT = 29;
-
-	/**
 	 * The number of structural features of the '<em>Selectable Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3593,16 +4098,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int SELECTABLE_UNIT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.SingletonUnit <em>Singleton Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.SingletonUnit
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSingletonUnit()
-	 * @generated
-	 */
-	int SINGLETON_UNIT = 30;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference.
@@ -3630,16 +4125,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLETON_UNIT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit <em>Collection Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCollectionUnit()
-	 * @generated
-	 */
-	int COLLECTION_UNIT = 31;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
@@ -3849,16 +4334,6 @@ public interface WebuiPackage extends EPackage {
 	int COLLECTION_UNIT_OPERATION_COUNT = SELECTABLE_UNIT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.EditUnitImpl <em>Edit Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.EditUnitImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getEditUnit()
-	 * @generated
-	 */
-	int EDIT_UNIT = 32;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3976,6 +4451,24 @@ public interface WebuiPackage extends EPackage {
 	int EDIT_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__HIDE_WHEN = DYNAMIC_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__MESSAGE_WHEN_HIDDEN = DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4048,13 +4541,13 @@ public interface WebuiPackage extends EPackage {
 	int EDIT_UNIT__CONTENT_TYPE = DYNAMIC_UNIT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__DISABLE_CONDITION = DYNAMIC_UNIT_FEATURE_COUNT + 1;
+	int EDIT_UNIT__DISABLE_WHEN = DYNAMIC_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -4136,16 +4629,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int EDIT_UNIT_OPERATION_COUNT = DYNAMIC_UNIT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.CreateUnitImpl <em>Create Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.CreateUnitImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCreateUnit()
-	 * @generated
-	 */
-	int CREATE_UNIT = 33;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4265,6 +4748,24 @@ public interface WebuiPackage extends EPackage {
 	int CREATE_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__HIDE_WHEN = EDIT_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__MESSAGE_WHEN_HIDDEN = EDIT_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4337,13 +4838,13 @@ public interface WebuiPackage extends EPackage {
 	int CREATE_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
+	int CREATE_UNIT__DISABLE_WHEN = EDIT_UNIT__DISABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -4434,16 +4935,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UNIT_OPERATION_COUNT = EDIT_UNIT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.CreateUpdateUnitImpl <em>Create Update Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.CreateUpdateUnitImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCreateUpdateUnit()
-	 * @generated
-	 */
-	int CREATE_UPDATE_UNIT = 34;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4563,6 +5054,24 @@ public interface WebuiPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__HIDE_WHEN = EDIT_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__MESSAGE_WHEN_HIDDEN = EDIT_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4635,13 +5144,13 @@ public interface WebuiPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
+	int CREATE_UPDATE_UNIT__DISABLE_WHEN = EDIT_UNIT__DISABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -4761,16 +5270,6 @@ public interface WebuiPackage extends EPackage {
 	int CREATE_UPDATE_UNIT_OPERATION_COUNT = EDIT_UNIT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UpdateUnitImpl <em>Update Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.UpdateUnitImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getUpdateUnit()
-	 * @generated
-	 */
-	int UPDATE_UNIT = 35;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4888,6 +5387,24 @@ public interface WebuiPackage extends EPackage {
 	int UPDATE_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__HIDE_WHEN = EDIT_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__MESSAGE_WHEN_HIDDEN = EDIT_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4960,13 +5477,13 @@ public interface WebuiPackage extends EPackage {
 	int UPDATE_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
+	int UPDATE_UNIT__DISABLE_WHEN = EDIT_UNIT__DISABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -5066,16 +5583,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int UPDATE_UNIT_OPERATION_COUNT = EDIT_UNIT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.MapUnitImpl <em>Map Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.MapUnitImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getMapUnit()
-	 * @generated
-	 */
-	int MAP_UNIT = 36;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5195,6 +5702,24 @@ public interface WebuiPackage extends EPackage {
 	int MAP_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__HIDE_WHEN = EDIT_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__MESSAGE_WHEN_HIDDEN = EDIT_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5267,13 +5792,13 @@ public interface WebuiPackage extends EPackage {
 	int MAP_UNIT__CONTENT_TYPE = EDIT_UNIT__CONTENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
+	int MAP_UNIT__DISABLE_WHEN = EDIT_UNIT__DISABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -5402,16 +5927,6 @@ public interface WebuiPackage extends EPackage {
 	int MAP_UNIT_OPERATION_COUNT = EDIT_UNIT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DataUnitImpl <em>Data Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.DataUnitImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDataUnit()
-	 * @generated
-	 */
-	int DATA_UNIT = 37;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5529,6 +6044,24 @@ public interface WebuiPackage extends EPackage {
 	int DATA_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__HIDE_WHEN = DYNAMIC_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__MESSAGE_WHEN_HIDDEN = DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5610,22 +6143,13 @@ public interface WebuiPackage extends EPackage {
 	int DATA_UNIT__TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = DYNAMIC_UNIT_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Data Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 3;
+	int DATA_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Data Unit</em>' class.
@@ -5635,16 +6159,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_UNIT_OPERATION_COUNT = DYNAMIC_UNIT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DetailsUnitImpl <em>Details Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.DetailsUnitImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getDetailsUnit()
-	 * @generated
-	 */
-	int DETAILS_UNIT = 38;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5764,6 +6278,24 @@ public interface WebuiPackage extends EPackage {
 	int DETAILS_UNIT__DISPLAY_FIELDS = DATA_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__HIDE_WHEN = DATA_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__MESSAGE_WHEN_HIDDEN = DATA_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5845,15 +6377,6 @@ public interface WebuiPackage extends EPackage {
 	int DETAILS_UNIT__TITLE = DATA_UNIT__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY;
-
-	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5906,16 +6429,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int DETAILS_UNIT_OPERATION_COUNT = DATA_UNIT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl <em>Index Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getIndexUnit()
-	 * @generated
-	 */
-	int INDEX_UNIT = 39;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6035,6 +6548,24 @@ public interface WebuiPackage extends EPackage {
 	int INDEX_UNIT__DISPLAY_FIELDS = DATA_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__HIDE_WHEN = DATA_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__MESSAGE_WHEN_HIDDEN = DATA_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6114,15 +6645,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__TITLE = DATA_UNIT__TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
@@ -6386,16 +6908,6 @@ public interface WebuiPackage extends EPackage {
 	int INDEX_UNIT_OPERATION_COUNT = DATA_UNIT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ControlUnitImpl <em>Control Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.ControlUnitImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getControlUnit()
-	 * @generated
-	 */
-	int CONTROL_UNIT = 40;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6511,6 +7023,24 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__HIDE_WHEN = DYNAMIC_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__MESSAGE_WHEN_HIDDEN = DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -6630,16 +7160,6 @@ public interface WebuiPackage extends EPackage {
 	int CONTROL_UNIT_OPERATION_COUNT = DYNAMIC_UNIT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.SearchUnitImpl <em>Search Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.SearchUnitImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getSearchUnit()
-	 * @generated
-	 */
-	int SEARCH_UNIT = 41;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6755,6 +7275,24 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEARCH_UNIT__DISPLAY_FIELDS = CONTROL_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__HIDE_WHEN = CONTROL_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__MESSAGE_WHEN_HIDDEN = CONTROL_UNIT__MESSAGE_WHEN_HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -6892,16 +7430,6 @@ public interface WebuiPackage extends EPackage {
 	int SEARCH_UNIT_OPERATION_COUNT = CONTROL_UNIT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl <em>Image Unit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getImageUnit()
-	 * @generated
-	 */
-	int IMAGE_UNIT = 42;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7017,6 +7545,24 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__HIDE_WHEN = DYNAMIC_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__MESSAGE_WHEN_HIDDEN = DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -7343,363 +7889,6 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_UNIT_OPERATION_COUNT = DYNAMIC_UNIT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FeaturePathImpl <em>Feature Path</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FeaturePathImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeaturePath()
-	 * @generated
-	 */
-	int FEATURE_PATH = 43;
-
-	/**
-	 * The number of structural features of the '<em>Feature Path</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Feature Path</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FeaturePathAttributeImpl <em>Feature Path Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FeaturePathAttributeImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeaturePathAttribute()
-	 * @generated
-	 */
-	int FEATURE_PATH_ATTRIBUTE = 44;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ATTRIBUTE__NAME = FEATURE_PATH_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = FEATURE_PATH_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Feature Path Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ATTRIBUTE_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Feature Path Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ATTRIBUTE_OPERATION_COUNT = FEATURE_PATH_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FeaturePathAssociationImpl <em>Feature Path Association</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.FeaturePathAssociationImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getFeaturePathAssociation()
-	 * @generated
-	 */
-	int FEATURE_PATH_ASSOCIATION = 45;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION__NAME = FEATURE_PATH_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION__ASSOCIATION = FEATURE_PATH_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Value Display</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION__VALUE_DISPLAY = FEATURE_PATH_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION__CHILD_FEATURE = FEATURE_PATH_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Is Source Association</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION = FEATURE_PATH_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION__SOURCE_ENTITY = FEATURE_PATH_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION__TARGET_ENTITY = FEATURE_PATH_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of structural features of the '<em>Feature Path Association</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 7;
-
-	/**
-	 * The number of operations of the '<em>Feature Path Association</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION_OPERATION_COUNT = FEATURE_PATH_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ChildPathImpl <em>Child Path</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.ChildPathImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getChildPath()
-	 * @generated
-	 */
-	int CHILD_PATH = 46;
-
-	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH__PART_OF = 0;
-
-	/**
-	 * The number of structural features of the '<em>Child Path</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Child Path</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ChildPathAttributeImpl <em>Child Path Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.ChildPathAttributeImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getChildPathAttribute()
-	 * @generated
-	 */
-	int CHILD_PATH_ATTRIBUTE = 47;
-
-	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ATTRIBUTE__PART_OF = CHILD_PATH__PART_OF;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ATTRIBUTE__NAME = CHILD_PATH_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ATTRIBUTE__ATTRIBUTE = CHILD_PATH_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Child Path Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ATTRIBUTE_FEATURE_COUNT = CHILD_PATH_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Child Path Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ATTRIBUTE_OPERATION_COUNT = CHILD_PATH_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ChildPathAssociationImpl <em>Child Path Association</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.ChildPathAssociationImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getChildPathAssociation()
-	 * @generated
-	 */
-	int CHILD_PATH_ASSOCIATION = 48;
-
-	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION__PART_OF = CHILD_PATH__PART_OF;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION__NAME = CHILD_PATH_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION__ASSOCIATION = CHILD_PATH_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Value Display</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION__VALUE_DISPLAY = CHILD_PATH_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION__CHILD_FEATURE = CHILD_PATH_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Is Source Association</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION = CHILD_PATH_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION__SOURCE_ENTITY = CHILD_PATH_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION__TARGET_ENTITY = CHILD_PATH_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of structural features of the '<em>Child Path Association</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION_FEATURE_COUNT = CHILD_PATH_FEATURE_COUNT + 7;
-
-	/**
-	 * The number of operations of the '<em>Child Path Association</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION_OPERATION_COUNT = CHILD_PATH_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl <em>Image Index Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7825,6 +8014,24 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_INDEX_UNIT__DISPLAY_FIELDS = IMAGE_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__HIDE_WHEN = IMAGE_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__MESSAGE_WHEN_HIDDEN = IMAGE_UNIT__MESSAGE_WHEN_HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -8332,6 +8539,24 @@ public interface WebuiPackage extends EPackage {
 	int SLIDER_UNIT__DISPLAY_FIELDS = IMAGE_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__HIDE_WHEN = IMAGE_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__MESSAGE_WHEN_HIDDEN = IMAGE_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8799,6 +9024,24 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int GALLERY_UNIT__DISPLAY_FIELDS = IMAGE_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__HIDE_WHEN = IMAGE_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__MESSAGE_WHEN_HIDDEN = IMAGE_UNIT__MESSAGE_WHEN_HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -9307,13 +9550,31 @@ public interface WebuiPackage extends EPackage {
 	int REGISTRATION_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__HIDE_WHEN = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__MESSAGE_WHEN_HIDDEN = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+	int REGISTRATION_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -9322,7 +9583,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+	int REGISTRATION_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -9331,7 +9592,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
+	int REGISTRATION_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -9340,7 +9601,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
+	int REGISTRATION_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -9349,7 +9610,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
+	int REGISTRATION_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -9358,7 +9619,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
+	int REGISTRATION_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -9367,7 +9628,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
+	int REGISTRATION_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Submit Label</b></em>' attribute.
@@ -9376,7 +9637,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
+	int REGISTRATION_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -9385,7 +9646,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
+	int REGISTRATION_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -9394,7 +9655,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
+	int REGISTRATION_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -9403,7 +9664,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
+	int REGISTRATION_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -9412,7 +9673,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
+	int REGISTRATION_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 26;
 
 	/**
 	 * The number of structural features of the '<em>Registration Unit</em>' class.
@@ -9421,7 +9682,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
+	int REGISTRATION_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 27;
 
 	/**
 	 * The number of operations of the '<em>Registration Unit</em>' class.
@@ -9560,13 +9821,31 @@ public interface WebuiPackage extends EPackage {
 	int LOGIN_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__HIDE_WHEN = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__MESSAGE_WHEN_HIDDEN = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+	int LOGIN_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -9575,7 +9854,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+	int LOGIN_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -9584,7 +9863,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
+	int LOGIN_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -9593,7 +9872,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
+	int LOGIN_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -9602,7 +9881,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
+	int LOGIN_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -9611,7 +9890,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
+	int LOGIN_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -9620,7 +9899,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
+	int LOGIN_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Submit Label</b></em>' attribute.
@@ -9629,7 +9908,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
+	int LOGIN_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -9638,7 +9917,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
+	int LOGIN_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -9647,7 +9926,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
+	int LOGIN_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -9656,7 +9935,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
+	int LOGIN_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Logout Uri Element</b></em>' attribute.
@@ -9665,7 +9944,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__LOGOUT_URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
+	int LOGIN_UNIT__LOGOUT_URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -9674,7 +9953,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
+	int LOGIN_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 27;
 
 	/**
 	 * The number of structural features of the '<em>Login Unit</em>' class.
@@ -9683,7 +9962,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 26;
+	int LOGIN_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 28;
 
 	/**
 	 * The number of operations of the '<em>Login Unit</em>' class.
@@ -9822,13 +10101,31 @@ public interface WebuiPackage extends EPackage {
 	int FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__HIDE_WHEN = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__MESSAGE_WHEN_HIDDEN = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+	int FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -9837,7 +10134,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+	int FORGOTTEN_PASSWORD_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -9846,7 +10143,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
+	int FORGOTTEN_PASSWORD_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -9855,7 +10152,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
+	int FORGOTTEN_PASSWORD_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -9864,7 +10161,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
+	int FORGOTTEN_PASSWORD_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -9873,7 +10170,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
+	int FORGOTTEN_PASSWORD_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -9882,7 +10179,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
+	int FORGOTTEN_PASSWORD_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Submit Label</b></em>' attribute.
@@ -9891,7 +10188,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
+	int FORGOTTEN_PASSWORD_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -9900,7 +10197,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
+	int FORGOTTEN_PASSWORD_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -9909,7 +10206,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
+	int FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -9918,7 +10215,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
+	int FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -9927,7 +10224,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
+	int FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 26;
 
 	/**
 	 * The number of structural features of the '<em>Forgotten Password Unit</em>' class.
@@ -9936,7 +10233,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
+	int FORGOTTEN_PASSWORD_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 27;
 
 	/**
 	 * The number of operations of the '<em>Forgotten Password Unit</em>' class.
@@ -10565,52 +10862,6 @@ public interface WebuiPackage extends EPackage {
 	int FEATURE_SUPPORT_ACTION_OPERATION_COUNT = INLINE_ACTION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiFeatureReferenceImpl <em>Feature Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiFeatureReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getWebuiFeatureReference()
-	 * @generated
-	 */
-	int WEBUI_FEATURE_REFERENCE = 61;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBUI_FEATURE_REFERENCE__NAME = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBUI_FEATURE_REFERENCE__FEATURE = ExpressionPackage.VARIABLE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Feature Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBUI_FEATURE_REFERENCE_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Feature Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WEBUI_FEATURE_REFERENCE_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies <em>Input Technologies</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10618,7 +10869,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getInputTechnologies()
 	 * @generated
 	 */
-	int INPUT_TECHNOLOGIES = 62;
+	int INPUT_TECHNOLOGIES = 61;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -10628,7 +10879,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 63;
+	int AJAX_TECHNOLOGIES = 62;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -10638,7 +10889,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 64;
+	int PAGE_TOP_MENU_OPTIONS = 63;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -10648,7 +10899,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 65;
+	int COLLECTION_DISPLAY_OPTIONS = 64;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.webui.IndexDisplayOption <em>Index Display Option</em>}' enum.
@@ -10658,7 +10909,7 @@ public interface WebuiPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getIndexDisplayOption()
 	 * @generated
 	 */
-	int INDEX_DISPLAY_OPTION = 66;
+	int INDEX_DISPLAY_OPTION = 65;
 
 
 	/**
@@ -11466,6 +11717,28 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDynamicUnit_DisplayFields();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit#getHideWhen <em>Hide When</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Hide When</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit#getHideWhen()
+	 * @see #getDynamicUnit()
+	 * @generated
+	 */
+	EReference getDynamicUnit_HideWhen();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit#getMessageWhenHidden <em>Message When Hidden</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Message When Hidden</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit#getMessageWhenHidden()
+	 * @see #getDynamicUnit()
+	 * @generated
+	 */
+	EAttribute getDynamicUnit_MessageWhenHidden();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit#getSupportActions <em>Support Actions</em>}'.
@@ -12466,15 +12739,15 @@ public interface WebuiPackage extends EPackage {
 	EClass getEditUnit();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getDisableCondition <em>Disable Condition</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getDisableWhen <em>Disable When</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Disable Condition</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getDisableCondition()
+	 * @return the meta object for the containment reference '<em>Disable When</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getDisableWhen()
 	 * @see #getEditUnit()
 	 * @generated
 	 */
-	EReference getEditUnit_DisableCondition();
+	EReference getEditUnit_DisableWhen();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.EditUnit#getTitle <em>Title</em>}'.
@@ -12756,17 +13029,6 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDataUnit_Title();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.DataUnit#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Only Display When Not Empty</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.DataUnit#isOnlyDisplayWhenNotEmpty()
-	 * @see #getDataUnit()
-	 * @generated
-	 */
-	EAttribute getDataUnit_OnlyDisplayWhenNotEmpty();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.DetailsUnit <em>Details Unit</em>}'.
@@ -13725,38 +13987,6 @@ public interface WebuiPackage extends EPackage {
 	EReference getFeatureSupportAction_EnableWhen();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference <em>Feature Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Feature Reference</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference
-	 * @generated
-	 */
-	EClass getWebuiFeatureReference();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference#getName()
-	 * @see #getWebuiFeatureReference()
-	 * @generated
-	 */
-	EAttribute getWebuiFeatureReference_Name();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference#getFeature <em>Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference#getFeature()
-	 * @see #getWebuiFeatureReference()
-	 * @generated
-	 */
-	EReference getWebuiFeatureReference_Feature();
-
-	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies <em>Input Technologies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14466,6 +14696,22 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DYNAMIC_UNIT__DISPLAY_FIELDS = eINSTANCE.getDynamicUnit_DisplayFields();
+
+		/**
+		 * The meta object literal for the '<em><b>Hide When</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DYNAMIC_UNIT__HIDE_WHEN = eINSTANCE.getDynamicUnit_HideWhen();
+
+		/**
+		 * The meta object literal for the '<em><b>Message When Hidden</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN = eINSTANCE.getDynamicUnit_MessageWhenHidden();
 
 		/**
 		 * The meta object literal for the '<em><b>Support Actions</b></em>' containment reference list feature.
@@ -15232,12 +15478,12 @@ public interface WebuiPackage extends EPackage {
 		EClass EDIT_UNIT = eINSTANCE.getEditUnit();
 
 		/**
-		 * The meta object literal for the '<em><b>Disable Condition</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Disable When</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EDIT_UNIT__DISABLE_CONDITION = eINSTANCE.getEditUnit_DisableCondition();
+		EReference EDIT_UNIT__DISABLE_WHEN = eINSTANCE.getEditUnit_DisableWhen();
 
 		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' reference feature.
@@ -15456,14 +15702,6 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_UNIT__TITLE = eINSTANCE.getDataUnit_Title();
-
-		/**
-		 * The meta object literal for the '<em><b>Only Display When Not Empty</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = eINSTANCE.getDataUnit_OnlyDisplayWhenNotEmpty();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DetailsUnitImpl <em>Details Unit</em>}' class.
@@ -16222,32 +16460,6 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FEATURE_SUPPORT_ACTION__ENABLE_WHEN = eINSTANCE.getFeatureSupportAction_EnableWhen();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiFeatureReferenceImpl <em>Feature Reference</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiFeatureReferenceImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.webui.impl.WebuiPackageImpl#getWebuiFeatureReference()
-		 * @generated
-		 */
-		EClass WEBUI_FEATURE_REFERENCE = eINSTANCE.getWebuiFeatureReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WEBUI_FEATURE_REFERENCE__NAME = eINSTANCE.getWebuiFeatureReference_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference WEBUI_FEATURE_REFERENCE__FEATURE = eINSTANCE.getWebuiFeatureReference_Feature();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies <em>Input Technologies</em>}' enum.

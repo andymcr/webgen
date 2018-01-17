@@ -199,7 +199,12 @@ public class RouteActualItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.ROUTE_ACTUAL__VALUE,
-				 WebuiFactory.eINSTANCE.createWebuiFeatureReference()));
+				 WebuiFactory.eINSTANCE.createFeaturePathAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.ROUTE_ACTUAL__VALUE,
+				 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter

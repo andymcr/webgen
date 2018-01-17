@@ -12,6 +12,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -45,6 +46,7 @@ public class DynamicUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addMessageWhenHiddenPropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -53,6 +55,28 @@ public class DynamicUnitItemProvider
 			addErrorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Message When Hidden feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMessageWhenHiddenPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_messageWhenHidden_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_messageWhenHidden_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.Literals.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -200,6 +224,7 @@ public class DynamicUnitItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
+			childrenFeatures.add(WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN);
 			childrenFeatures.add(WafPackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		}
 		return childrenFeatures;
@@ -244,6 +269,7 @@ public class DynamicUnitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DynamicUnit.class)) {
+			case WafPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN:
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 			case WafPackage.DYNAMIC_UNIT__FOOTER:
 			case WafPackage.DYNAMIC_UNIT__HEADER_CLASS:
@@ -253,6 +279,7 @@ public class DynamicUnitItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
+			case WafPackage.DYNAMIC_UNIT__HIDE_WHEN:
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -295,6 +322,46 @@ public class DynamicUnitItemProvider
 			(createChildParameter
 				(WafPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS,
 				 WafFactory.eINSTANCE.createCaptchaField()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter

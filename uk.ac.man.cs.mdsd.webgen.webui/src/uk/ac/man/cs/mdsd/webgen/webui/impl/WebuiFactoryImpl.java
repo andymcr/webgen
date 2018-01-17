@@ -73,6 +73,10 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 			case WebuiPackage.CREATE_SITEMAP_UNIT: return createCreateSitemapUnit();
 			case WebuiPackage.UNIT_ELEMENT: return createUnitElement();
 			case WebuiPackage.UNIT_ASSOCIATION: return createUnitAssociation();
+			case WebuiPackage.CHILD_PATH_ATTRIBUTE: return createChildPathAttribute();
+			case WebuiPackage.CHILD_PATH_ASSOCIATION: return createChildPathAssociation();
+			case WebuiPackage.FEATURE_PATH_ATTRIBUTE: return createFeaturePathAttribute();
+			case WebuiPackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
 			case WebuiPackage.DATA_TYPE_FIELD: return createDataTypeField();
 			case WebuiPackage.DATE_FIELD: return createDateField();
 			case WebuiPackage.CAPTCHA_FIELD: return createCaptchaField();
@@ -84,10 +88,6 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 			case WebuiPackage.DETAILS_UNIT: return createDetailsUnit();
 			case WebuiPackage.INDEX_UNIT: return createIndexUnit();
 			case WebuiPackage.SEARCH_UNIT: return createSearchUnit();
-			case WebuiPackage.FEATURE_PATH_ATTRIBUTE: return createFeaturePathAttribute();
-			case WebuiPackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
-			case WebuiPackage.CHILD_PATH_ATTRIBUTE: return createChildPathAttribute();
-			case WebuiPackage.CHILD_PATH_ASSOCIATION: return createChildPathAssociation();
 			case WebuiPackage.IMAGE_INDEX_UNIT: return createImageIndexUnit();
 			case WebuiPackage.SLIDER_UNIT: return createSliderUnit();
 			case WebuiPackage.GALLERY_UNIT: return createGalleryUnit();
@@ -97,7 +97,6 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 			case WebuiPackage.SELECT_ACTION: return createSelectAction();
 			case WebuiPackage.DELETE_ACTION: return createDeleteAction();
 			case WebuiPackage.FEATURE_SUPPORT_ACTION: return createFeatureSupportAction();
-			case WebuiPackage.WEBUI_FEATURE_REFERENCE: return createWebuiFeatureReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -547,16 +546,6 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 	public FeatureSupportAction createFeatureSupportAction() {
 		FeatureSupportActionImpl featureSupportAction = new FeatureSupportActionImpl();
 		return featureSupportAction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WebuiFeatureReference createWebuiFeatureReference() {
-		WebuiFeatureReferenceImpl webuiFeatureReference = new WebuiFeatureReferenceImpl();
-		return webuiFeatureReference;
 	}
 
 	/**

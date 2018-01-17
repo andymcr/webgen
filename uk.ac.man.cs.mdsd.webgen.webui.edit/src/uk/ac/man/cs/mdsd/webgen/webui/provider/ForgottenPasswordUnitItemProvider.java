@@ -25,6 +25,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -73,6 +74,7 @@ public class ForgottenPasswordUnitItemProvider
 			addAlternativePropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
 			addCaptionClassPropertyDescriptor(object);
+			addMessageWhenHiddenPropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -283,6 +285,28 @@ public class ForgottenPasswordUnitItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_StylePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Message When Hidden feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMessageWhenHiddenPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_messageWhenHidden_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_messageWhenHidden_feature", "_UI_DynamicUnit_type"),
+				 WebuiPackage.Literals.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 
@@ -542,6 +566,7 @@ public class ForgottenPasswordUnitItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebuiPackage.Literals.CONTENT_UNIT__ROUTE_ACTUALS);
 			childrenFeatures.add(WebuiPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
+			childrenFeatures.add(WebuiPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN);
 			childrenFeatures.add(WebuiPackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		}
 		return childrenFeatures;
@@ -607,6 +632,7 @@ public class ForgottenPasswordUnitItemProvider
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE:
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION:
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS:
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__MESSAGE_WHEN_HIDDEN:
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__HEADER:
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__FOOTER:
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__HEADER_CLASS:
@@ -621,6 +647,7 @@ public class ForgottenPasswordUnitItemProvider
 				return;
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__ROUTE_ACTUALS:
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__HIDE_WHEN:
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -668,6 +695,46 @@ public class ForgottenPasswordUnitItemProvider
 			(createChildParameter
 				(WebuiPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS,
 				 WebuiFactory.eINSTANCE.createCaptchaField()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN,
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -257,7 +257,7 @@ public class EditUnitItemProvider extends DynamicUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebuiPackage.Literals.EDIT_UNIT__DISABLE_CONDITION);
+			childrenFeatures.add(WebuiPackage.Literals.EDIT_UNIT__DISABLE_WHEN);
 		}
 		return childrenFeatures;
 	}
@@ -308,7 +308,7 @@ public class EditUnitItemProvider extends DynamicUnitItemProvider {
 			case WebuiPackage.EDIT_UNIT__CUSTOMISE_VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebuiPackage.EDIT_UNIT__DISABLE_CONDITION:
+			case WebuiPackage.EDIT_UNIT__DISABLE_WHEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -328,43 +328,66 @@ public class EditUnitItemProvider extends DynamicUnitItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WebuiPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == WebuiPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN ||
+			childFeature == WebuiPackage.Literals.EDIT_UNIT__DISABLE_WHEN;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

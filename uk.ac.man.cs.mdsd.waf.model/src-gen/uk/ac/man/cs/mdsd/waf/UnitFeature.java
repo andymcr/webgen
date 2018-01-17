@@ -17,7 +17,6 @@ import uk.ac.man.cs.mdsd.expression.Expression;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isCollectionUiAllowAdd <em>Collection Ui Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isCollectionUiAllowRemove <em>Collection Ui Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getNullDisplayValue <em>Null Display Value</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isAutofocus <em>Autofocus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getHeaderClass <em>Header Class</em>}</li>
@@ -136,33 +135,6 @@ public interface UnitFeature extends UnitField, InlineActionContainer {
 	 * @generated
 	 */
 	void setNullDisplayValue(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Only Display When Not Empty</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Only Display When Not Empty</em>' attribute.
-	 * @see #setOnlyDisplayWhenNotEmpty(boolean)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitFeature_OnlyDisplayWhenNotEmpty()
-	 * @model default="false" unique="false"
-	 * @generated
-	 */
-	boolean isOnlyDisplayWhenNotEmpty();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Only Display When Not Empty</em>' attribute.
-	 * @see #isOnlyDisplayWhenNotEmpty()
-	 * @generated
-	 */
-	void setOnlyDisplayWhenNotEmpty(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Autofocus</b></em>' attribute.

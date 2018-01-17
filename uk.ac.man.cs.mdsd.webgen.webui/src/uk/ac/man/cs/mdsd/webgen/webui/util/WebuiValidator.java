@@ -144,6 +144,18 @@ public class WebuiValidator extends EObjectValidator {
 				return validateUnitAssociation((UnitAssociation)value, diagnostics, context);
 			case WebuiPackage.ASSOCIATION_REFERENCE:
 				return validateAssociationReference((AssociationReference)value, diagnostics, context);
+			case WebuiPackage.CHILD_PATH:
+				return validateChildPath((ChildPath)value, diagnostics, context);
+			case WebuiPackage.CHILD_PATH_ATTRIBUTE:
+				return validateChildPathAttribute((ChildPathAttribute)value, diagnostics, context);
+			case WebuiPackage.CHILD_PATH_ASSOCIATION:
+				return validateChildPathAssociation((ChildPathAssociation)value, diagnostics, context);
+			case WebuiPackage.FEATURE_PATH:
+				return validateFeaturePath((FeaturePath)value, diagnostics, context);
+			case WebuiPackage.FEATURE_PATH_ATTRIBUTE:
+				return validateFeaturePathAttribute((FeaturePathAttribute)value, diagnostics, context);
+			case WebuiPackage.FEATURE_PATH_ASSOCIATION:
+				return validateFeaturePathAssociation((FeaturePathAssociation)value, diagnostics, context);
 			case WebuiPackage.INTERFACE_FIELD:
 				return validateInterfaceField((InterfaceField)value, diagnostics, context);
 			case WebuiPackage.DATA_TYPE_FIELD:
@@ -182,18 +194,6 @@ public class WebuiValidator extends EObjectValidator {
 				return validateSearchUnit((SearchUnit)value, diagnostics, context);
 			case WebuiPackage.IMAGE_UNIT:
 				return validateImageUnit((ImageUnit)value, diagnostics, context);
-			case WebuiPackage.FEATURE_PATH:
-				return validateFeaturePath((FeaturePath)value, diagnostics, context);
-			case WebuiPackage.FEATURE_PATH_ATTRIBUTE:
-				return validateFeaturePathAttribute((FeaturePathAttribute)value, diagnostics, context);
-			case WebuiPackage.FEATURE_PATH_ASSOCIATION:
-				return validateFeaturePathAssociation((FeaturePathAssociation)value, diagnostics, context);
-			case WebuiPackage.CHILD_PATH:
-				return validateChildPath((ChildPath)value, diagnostics, context);
-			case WebuiPackage.CHILD_PATH_ATTRIBUTE:
-				return validateChildPathAttribute((ChildPathAttribute)value, diagnostics, context);
-			case WebuiPackage.CHILD_PATH_ASSOCIATION:
-				return validateChildPathAssociation((ChildPathAssociation)value, diagnostics, context);
 			case WebuiPackage.IMAGE_INDEX_UNIT:
 				return validateImageIndexUnit((ImageIndexUnit)value, diagnostics, context);
 			case WebuiPackage.SLIDER_UNIT:
@@ -218,8 +218,6 @@ public class WebuiValidator extends EObjectValidator {
 				return validateDeleteAction((DeleteAction)value, diagnostics, context);
 			case WebuiPackage.FEATURE_SUPPORT_ACTION:
 				return validateFeatureSupportAction((FeatureSupportAction)value, diagnostics, context);
-			case WebuiPackage.WEBUI_FEATURE_REFERENCE:
-				return validateWebuiFeatureReference((WebuiFeatureReference)value, diagnostics, context);
 			case WebuiPackage.INPUT_TECHNOLOGIES:
 				return validateInputTechnologies((InputTechnologies)value, diagnostics, context);
 			case WebuiPackage.AJAX_TECHNOLOGIES:
@@ -1879,15 +1877,6 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(featureSupportAction, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(featureSupportAction, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateWebuiFeatureReference(WebuiFeatureReference webuiFeatureReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(webuiFeatureReference, diagnostics, context);
 	}
 
 	/**

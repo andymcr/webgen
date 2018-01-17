@@ -169,6 +169,30 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 				return createAssociationReferenceAdapter();
 			}
 			@Override
+			public Adapter caseChildPath(ChildPath object) {
+				return createChildPathAdapter();
+			}
+			@Override
+			public Adapter caseChildPathAttribute(ChildPathAttribute object) {
+				return createChildPathAttributeAdapter();
+			}
+			@Override
+			public Adapter caseChildPathAssociation(ChildPathAssociation object) {
+				return createChildPathAssociationAdapter();
+			}
+			@Override
+			public Adapter caseFeaturePath(FeaturePath object) {
+				return createFeaturePathAdapter();
+			}
+			@Override
+			public Adapter caseFeaturePathAttribute(FeaturePathAttribute object) {
+				return createFeaturePathAttributeAdapter();
+			}
+			@Override
+			public Adapter caseFeaturePathAssociation(FeaturePathAssociation object) {
+				return createFeaturePathAssociationAdapter();
+			}
+			@Override
 			public Adapter caseInterfaceField(InterfaceField object) {
 				return createInterfaceFieldAdapter();
 			}
@@ -245,30 +269,6 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 				return createImageUnitAdapter();
 			}
 			@Override
-			public Adapter caseFeaturePath(FeaturePath object) {
-				return createFeaturePathAdapter();
-			}
-			@Override
-			public Adapter caseFeaturePathAttribute(FeaturePathAttribute object) {
-				return createFeaturePathAttributeAdapter();
-			}
-			@Override
-			public Adapter caseFeaturePathAssociation(FeaturePathAssociation object) {
-				return createFeaturePathAssociationAdapter();
-			}
-			@Override
-			public Adapter caseChildPath(ChildPath object) {
-				return createChildPathAdapter();
-			}
-			@Override
-			public Adapter caseChildPathAttribute(ChildPathAttribute object) {
-				return createChildPathAttributeAdapter();
-			}
-			@Override
-			public Adapter caseChildPathAssociation(ChildPathAssociation object) {
-				return createChildPathAssociationAdapter();
-			}
-			@Override
 			public Adapter caseImageIndexUnit(ImageIndexUnit object) {
 				return createImageIndexUnitAdapter();
 			}
@@ -315,10 +315,6 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseFeatureSupportAction(FeatureSupportAction object) {
 				return createFeatureSupportActionAdapter();
-			}
-			@Override
-			public Adapter caseWebuiFeatureReference(WebuiFeatureReference object) {
-				return createWebuiFeatureReferenceAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
@@ -1207,20 +1203,6 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFeatureSupportActionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference <em>Feature Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiFeatureReference
-	 * @generated
-	 */
-	public Adapter createWebuiFeatureReferenceAdapter() {
 		return null;
 	}
 

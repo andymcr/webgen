@@ -19,4 +19,17 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated Waf -->
+      <extender
+            uri="http://cs.manchester.ac.uk/mdsd/ObjectRelationalMapping"
+            class="uk.ac.man.cs.mdsd.waf.provider.WafItemProviderAdapterFactory$OrmChildCreationExtender"/>
+      <extender
+            uri="http://cs.manchester.ac.uk/mdsd/Service"
+            class="uk.ac.man.cs.mdsd.waf.provider.WafItemProviderAdapterFactory$ServiceChildCreationExtender"/>
+      <extender
+            uri="http://cs.manchester.ac.uk/mdsd/Expression"
+            class="uk.ac.man.cs.mdsd.waf.provider.WafItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
+   </extension>
+
 </plugin>

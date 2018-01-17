@@ -2,7 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.webgen.webui;
 
-import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.webgen.expression.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface FeaturePath extends EObject {
+public interface FeaturePath extends Variable {
 } // FeaturePath

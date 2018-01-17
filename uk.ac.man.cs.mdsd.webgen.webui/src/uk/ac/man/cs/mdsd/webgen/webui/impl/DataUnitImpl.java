@@ -24,7 +24,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DataUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DataUnitImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DataUnitImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,26 +48,6 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	 * @ordered
 	 */
 	protected Label title;
-
-	/**
-	 * The default value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOnlyDisplayWhenNotEmpty()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOnlyDisplayWhenNotEmpty()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean onlyDisplayWhenNotEmpty = ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -170,27 +149,6 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isOnlyDisplayWhenNotEmpty() {
-		return onlyDisplayWhenNotEmpty;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOnlyDisplayWhenNotEmpty(boolean newOnlyDisplayWhenNotEmpty) {
-		boolean oldOnlyDisplayWhenNotEmpty = onlyDisplayWhenNotEmpty;
-		onlyDisplayWhenNotEmpty = newOnlyDisplayWhenNotEmpty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY, oldOnlyDisplayWhenNotEmpty, onlyDisplayWhenNotEmpty));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -200,8 +158,6 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 			case WebuiPackage.DATA_UNIT__TITLE:
 				if (resolve) return getTitle();
 				return basicGetTitle();
-			case WebuiPackage.DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				return isOnlyDisplayWhenNotEmpty();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -219,9 +175,6 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 				return;
 			case WebuiPackage.DATA_UNIT__TITLE:
 				setTitle((Label)newValue);
-				return;
-			case WebuiPackage.DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -241,9 +194,6 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 			case WebuiPackage.DATA_UNIT__TITLE:
 				setTitle((Label)null);
 				return;
-			case WebuiPackage.DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -260,26 +210,8 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 				return defaultSelection != null;
 			case WebuiPackage.DATA_UNIT__TITLE:
 				return title != null;
-			case WebuiPackage.DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (onlyDisplayWhenNotEmpty: ");
-		result.append(onlyDisplayWhenNotEmpty);
-		result.append(')');
-		return result.toString();
 	}
 
 } //DataUnitImpl

@@ -31,6 +31,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getActions <em>Actions</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isOverlayTitle <em>Overlay Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getColumnClass <em>Column Class</em>}</li>
  * </ul>
  *
@@ -46,6 +48,46 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @ordered
 	 */
 	protected EList<InlineAction> actions;
+
+	/**
+	 * The default value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOmitFieldLabels()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OMIT_FIELD_LABELS_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOmitFieldLabels()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean omitFieldLabels = OMIT_FIELD_LABELS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isOverlayTitle() <em>Overlay Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOverlayTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OVERLAY_TITLE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOverlayTitle() <em>Overlay Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOverlayTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean overlayTitle = OVERLAY_TITLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getColumnClass() <em>Column Class</em>}' attribute.
@@ -96,6 +138,48 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			actions = new EObjectContainmentWithInverseEList<InlineAction>(InlineAction.class, this, WafPackage.IMAGE_INDEX_UNIT__ACTIONS, WafPackage.INLINE_ACTION__USED_BY);
 		}
 		return actions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOmitFieldLabels() {
+		return omitFieldLabels;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOmitFieldLabels(boolean newOmitFieldLabels) {
+		boolean oldOmitFieldLabels = omitFieldLabels;
+		omitFieldLabels = newOmitFieldLabels;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS, oldOmitFieldLabels, omitFieldLabels));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOverlayTitle() {
+		return overlayTitle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOverlayTitle(boolean newOverlayTitle) {
+		boolean oldOverlayTitle = overlayTitle;
+		overlayTitle = newOverlayTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE, oldOverlayTitle, overlayTitle));
 	}
 
 	/**
@@ -158,6 +242,10 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		switch (featureID) {
 			case WafPackage.IMAGE_INDEX_UNIT__ACTIONS:
 				return getActions();
+			case WafPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
+				return isOmitFieldLabels();
+			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
+				return isOverlayTitle();
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return getColumnClass();
 		}
@@ -177,6 +265,12 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				getActions().clear();
 				getActions().addAll((Collection<? extends InlineAction>)newValue);
 				return;
+			case WafPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
+				setOmitFieldLabels((Boolean)newValue);
+				return;
+			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
+				setOverlayTitle((Boolean)newValue);
+				return;
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass((String)newValue);
 				return;
@@ -195,6 +289,12 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WafPackage.IMAGE_INDEX_UNIT__ACTIONS:
 				getActions().clear();
 				return;
+			case WafPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
+				setOmitFieldLabels(OMIT_FIELD_LABELS_EDEFAULT);
+				return;
+			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
+				setOverlayTitle(OVERLAY_TITLE_EDEFAULT);
+				return;
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass(COLUMN_CLASS_EDEFAULT);
 				return;
@@ -212,6 +312,10 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		switch (featureID) {
 			case WafPackage.IMAGE_INDEX_UNIT__ACTIONS:
 				return actions != null && !actions.isEmpty();
+			case WafPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
+				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
+			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
+				return overlayTitle != OVERLAY_TITLE_EDEFAULT;
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return COLUMN_CLASS_EDEFAULT == null ? columnClass != null : !COLUMN_CLASS_EDEFAULT.equals(columnClass);
 		}
@@ -260,7 +364,11 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (columnClass: ");
+		result.append(" (omitFieldLabels: ");
+		result.append(omitFieldLabels);
+		result.append(", overlayTitle: ");
+		result.append(overlayTitle);
+		result.append(", columnClass: ");
 		result.append(columnClass);
 		result.append(')');
 		return result.toString();

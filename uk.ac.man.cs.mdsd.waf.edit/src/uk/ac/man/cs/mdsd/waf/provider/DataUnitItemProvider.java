@@ -13,8 +13,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.waf.DataUnit;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -49,7 +47,6 @@ public class DataUnitItemProvider
 
 			addDefaultSelectionPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
-			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -99,28 +96,6 @@ public class DataUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Only Display When Not Empty feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOnlyDisplayWhenNotEmptyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DataUnit_onlyDisplayWhenNotEmpty_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataUnit_onlyDisplayWhenNotEmpty_feature", "_UI_DataUnit_type"),
-				 WafPackage.Literals.DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -144,12 +119,6 @@ public class DataUnitItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(DataUnit.class)) {
-			case WafPackage.DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

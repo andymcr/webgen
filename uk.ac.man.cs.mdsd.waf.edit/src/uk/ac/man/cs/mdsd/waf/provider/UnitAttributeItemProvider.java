@@ -18,6 +18,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.waf.UnitAttribute;
+import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -262,6 +263,16 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
+				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE,
 				 ServiceFactory.eINSTANCE.createConstantReference()));
 
 		newChildDescriptors.add
@@ -362,6 +373,7 @@ public class UnitAttributeItemProvider extends UnitFeatureItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
+			childFeature == WafPackage.Literals.UNIT_FIELD__HIDE_WHEN ||
 			childFeature == WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE ||
 			childFeature == WafPackage.Literals.UNIT_ATTRIBUTE__DEFAULT_VALUE;
 

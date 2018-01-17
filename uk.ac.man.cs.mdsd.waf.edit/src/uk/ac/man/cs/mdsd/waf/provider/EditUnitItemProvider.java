@@ -249,7 +249,7 @@ public class EditUnitItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.EDIT_UNIT__DISABLE_CONDITION);
+			childrenFeatures.add(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN);
 		}
 		return childrenFeatures;
 	}
@@ -299,7 +299,7 @@ public class EditUnitItemProvider
 			case WafPackage.EDIT_UNIT__CUSTOMISE_VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.EDIT_UNIT__DISABLE_CONDITION:
+			case WafPackage.EDIT_UNIT__DISABLE_WHEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -319,43 +319,66 @@ public class EditUnitItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateInOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.EDIT_UNIT__DISABLE_CONDITION,
+				(WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN,
 				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == WafPackage.Literals.DYNAMIC_UNIT__HIDE_WHEN ||
+			childFeature == WafPackage.Literals.EDIT_UNIT__DISABLE_WHEN;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

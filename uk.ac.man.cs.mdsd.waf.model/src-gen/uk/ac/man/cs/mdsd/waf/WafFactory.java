@@ -193,6 +193,42 @@ public interface WafFactory extends EFactory {
 	UnitAssociation createUnitAssociation();
 
 	/**
+	 * Returns a new object of class '<em>Child Path Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Child Path Attribute</em>'.
+	 * @generated
+	 */
+	ChildPathAttribute createChildPathAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Child Path Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Child Path Association</em>'.
+	 * @generated
+	 */
+	ChildPathAssociation createChildPathAssociation();
+
+	/**
+	 * Returns a new object of class '<em>Feature Path Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Feature Path Attribute</em>'.
+	 * @generated
+	 */
+	FeaturePathAttribute createFeaturePathAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Feature Path Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Feature Path Association</em>'.
+	 * @generated
+	 */
+	FeaturePathAssociation createFeaturePathAssociation();
+
+	/**
 	 * Returns a new object of class '<em>Data Type Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -299,42 +335,6 @@ public interface WafFactory extends EFactory {
 	 * @generated
 	 */
 	SearchUnit createSearchUnit();
-
-	/**
-	 * Returns a new object of class '<em>Feature Path Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Feature Path Attribute</em>'.
-	 * @generated
-	 */
-	FeaturePathAttribute createFeaturePathAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Feature Path Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Feature Path Association</em>'.
-	 * @generated
-	 */
-	FeaturePathAssociation createFeaturePathAssociation();
-
-	/**
-	 * Returns a new object of class '<em>Child Path Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Child Path Attribute</em>'.
-	 * @generated
-	 */
-	ChildPathAttribute createChildPathAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Child Path Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Child Path Association</em>'.
-	 * @generated
-	 */
-	ChildPathAssociation createChildPathAssociation();
 
 	/**
 	 * Returns a new object of class '<em>Image Index Unit</em>'.

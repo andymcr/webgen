@@ -30,7 +30,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#isOnSaveContinueEditing <em>On Save Continue Editing</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getDisableCondition <em>Disable Condition</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getDisableWhen <em>Disable When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getConfirmDestination <em>Confirm Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getConfirmLabel <em>Confirm Label</em>}</li>
@@ -73,14 +73,14 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	protected boolean onSaveContinueEditing = ON_SAVE_CONTINUE_EDITING_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDisableCondition() <em>Disable Condition</em>}' containment reference.
+	 * The cached value of the '{@link #getDisableWhen() <em>Disable When</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDisableCondition()
+	 * @see #getDisableWhen()
 	 * @generated
 	 * @ordered
 	 */
-	protected Predicate disableCondition;
+	protected Predicate disableWhen;
 
 	/**
 	 * The cached value of the '{@link #getTitle() <em>Title</em>}' reference.
@@ -255,8 +255,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Predicate getDisableCondition() {
-		return disableCondition;
+	public Predicate getDisableWhen() {
+		return disableWhen;
 	}
 
 	/**
@@ -264,11 +264,11 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDisableCondition(Predicate newDisableCondition, NotificationChain msgs) {
-		Predicate oldDisableCondition = disableCondition;
-		disableCondition = newDisableCondition;
+	public NotificationChain basicSetDisableWhen(Predicate newDisableWhen, NotificationChain msgs) {
+		Predicate oldDisableWhen = disableWhen;
+		disableWhen = newDisableWhen;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.EDIT_UNIT__DISABLE_CONDITION, oldDisableCondition, newDisableCondition);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.EDIT_UNIT__DISABLE_WHEN, oldDisableWhen, newDisableWhen);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -279,18 +279,18 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDisableCondition(Predicate newDisableCondition) {
-		if (newDisableCondition != disableCondition) {
+	public void setDisableWhen(Predicate newDisableWhen) {
+		if (newDisableWhen != disableWhen) {
 			NotificationChain msgs = null;
-			if (disableCondition != null)
-				msgs = ((InternalEObject)disableCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.EDIT_UNIT__DISABLE_CONDITION, null, msgs);
-			if (newDisableCondition != null)
-				msgs = ((InternalEObject)newDisableCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.EDIT_UNIT__DISABLE_CONDITION, null, msgs);
-			msgs = basicSetDisableCondition(newDisableCondition, msgs);
+			if (disableWhen != null)
+				msgs = ((InternalEObject)disableWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.EDIT_UNIT__DISABLE_WHEN, null, msgs);
+			if (newDisableWhen != null)
+				msgs = ((InternalEObject)newDisableWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.EDIT_UNIT__DISABLE_WHEN, null, msgs);
+			msgs = basicSetDisableWhen(newDisableWhen, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.EDIT_UNIT__DISABLE_CONDITION, newDisableCondition, newDisableCondition));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.EDIT_UNIT__DISABLE_WHEN, newDisableWhen, newDisableWhen));
 	}
 
 	/**
@@ -478,8 +478,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.EDIT_UNIT__DISABLE_CONDITION:
-				return basicSetDisableCondition(null, msgs);
+			case WafPackage.EDIT_UNIT__DISABLE_WHEN:
+				return basicSetDisableWhen(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -497,8 +497,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 				return basicGetContentType();
 			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
 				return isOnSaveContinueEditing();
-			case WafPackage.EDIT_UNIT__DISABLE_CONDITION:
-				return getDisableCondition();
+			case WafPackage.EDIT_UNIT__DISABLE_WHEN:
+				return getDisableWhen();
 			case WafPackage.EDIT_UNIT__TITLE:
 				if (resolve) return getTitle();
 				return basicGetTitle();
@@ -532,8 +532,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
 				setOnSaveContinueEditing((Boolean)newValue);
 				return;
-			case WafPackage.EDIT_UNIT__DISABLE_CONDITION:
-				setDisableCondition((Predicate)newValue);
+			case WafPackage.EDIT_UNIT__DISABLE_WHEN:
+				setDisableWhen((Predicate)newValue);
 				return;
 			case WafPackage.EDIT_UNIT__TITLE:
 				setTitle((Label)newValue);
@@ -571,8 +571,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
 				setOnSaveContinueEditing(ON_SAVE_CONTINUE_EDITING_EDEFAULT);
 				return;
-			case WafPackage.EDIT_UNIT__DISABLE_CONDITION:
-				setDisableCondition((Predicate)null);
+			case WafPackage.EDIT_UNIT__DISABLE_WHEN:
+				setDisableWhen((Predicate)null);
 				return;
 			case WafPackage.EDIT_UNIT__TITLE:
 				setTitle((Label)null);
@@ -608,8 +608,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 				return contentType != null;
 			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
 				return onSaveContinueEditing != ON_SAVE_CONTINUE_EDITING_EDEFAULT;
-			case WafPackage.EDIT_UNIT__DISABLE_CONDITION:
-				return disableCondition != null;
+			case WafPackage.EDIT_UNIT__DISABLE_WHEN:
+				return disableWhen != null;
 			case WafPackage.EDIT_UNIT__TITLE:
 				return title != null;
 			case WafPackage.EDIT_UNIT__CONFIRM_DESTINATION:

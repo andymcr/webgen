@@ -76,6 +76,10 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
 			case WafPackage.UNIT_ATTRIBUTE: return createUnitAttribute();
 			case WafPackage.UNIT_ASSOCIATION: return createUnitAssociation();
+			case WafPackage.CHILD_PATH_ATTRIBUTE: return createChildPathAttribute();
+			case WafPackage.CHILD_PATH_ASSOCIATION: return createChildPathAssociation();
+			case WafPackage.FEATURE_PATH_ATTRIBUTE: return createFeaturePathAttribute();
+			case WafPackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
 			case WafPackage.DATA_TYPE_FIELD: return createDataTypeField();
 			case WafPackage.DATE_FIELD: return createDateField();
 			case WafPackage.CAPTCHA_FIELD: return createCaptchaField();
@@ -88,10 +92,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.INDEX_PAGE_DIRECTION_UNIT: return createIndexPageDirectionUnit();
 			case WafPackage.INDEX_LINE_DIRECTION_UNIT: return createIndexLineDirectionUnit();
 			case WafPackage.SEARCH_UNIT: return createSearchUnit();
-			case WafPackage.FEATURE_PATH_ATTRIBUTE: return createFeaturePathAttribute();
-			case WafPackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
-			case WafPackage.CHILD_PATH_ATTRIBUTE: return createChildPathAttribute();
-			case WafPackage.CHILD_PATH_ASSOCIATION: return createChildPathAssociation();
 			case WafPackage.IMAGE_INDEX_UNIT: return createImageIndexUnit();
 			case WafPackage.SLIDER_UNIT: return createSliderUnit();
 			case WafPackage.GALLERY_UNIT: return createGalleryUnit();
@@ -355,6 +355,46 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ChildPathAttribute createChildPathAttribute() {
+		ChildPathAttributeImpl childPathAttribute = new ChildPathAttributeImpl();
+		return childPathAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildPathAssociation createChildPathAssociation() {
+		ChildPathAssociationImpl childPathAssociation = new ChildPathAssociationImpl();
+		return childPathAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FeaturePathAttribute createFeaturePathAttribute() {
+		FeaturePathAttributeImpl featurePathAttribute = new FeaturePathAttributeImpl();
+		return featurePathAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FeaturePathAssociation createFeaturePathAssociation() {
+		FeaturePathAssociationImpl featurePathAssociation = new FeaturePathAssociationImpl();
+		return featurePathAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DataTypeField createDataTypeField() {
 		DataTypeFieldImpl dataTypeField = new DataTypeFieldImpl();
 		return dataTypeField;
@@ -468,46 +508,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public SearchUnit createSearchUnit() {
 		SearchUnitImpl searchUnit = new SearchUnitImpl();
 		return searchUnit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FeaturePathAttribute createFeaturePathAttribute() {
-		FeaturePathAttributeImpl featurePathAttribute = new FeaturePathAttributeImpl();
-		return featurePathAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FeaturePathAssociation createFeaturePathAssociation() {
-		FeaturePathAssociationImpl featurePathAssociation = new FeaturePathAssociationImpl();
-		return featurePathAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ChildPathAttribute createChildPathAttribute() {
-		ChildPathAttributeImpl childPathAttribute = new ChildPathAttributeImpl();
-		return childPathAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ChildPathAssociation createChildPathAssociation() {
-		ChildPathAssociationImpl childPathAssociation = new ChildPathAssociationImpl();
-		return childPathAssociation;
 	}
 
 	/**

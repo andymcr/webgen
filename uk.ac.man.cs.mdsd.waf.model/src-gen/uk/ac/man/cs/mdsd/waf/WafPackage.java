@@ -8,6 +8,8 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import uk.ac.man.cs.mdsd.expression.ExpressionPackage;
+
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
 /**
@@ -2164,13 +2166,31 @@ public interface WafPackage extends EPackage {
 	int DYNAMIC_UNIT__DISPLAY_FIELDS = CONTENT_UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__HIDE_WHEN = CONTENT_UNIT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN = CONTENT_UNIT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 1;
+	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -2179,7 +2199,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 2;
+	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -2188,7 +2208,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 3;
+	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -2197,7 +2217,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 4;
+	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -2206,7 +2226,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 5;
+	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -2215,7 +2235,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
+	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -2224,7 +2244,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
+	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Dynamic Unit</em>' class.
@@ -2233,7 +2253,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 8;
+	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Dynamic Unit</em>' class.
@@ -2346,13 +2366,22 @@ public interface WafPackage extends EPackage {
 	int UNIT_FIELD__REQUIRES_ROLE = DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FIELD__HIDE_WHEN = DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__TITLE = DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int UNIT_FIELD__TITLE = DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
@@ -2361,7 +2390,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__COLLECTION_DISPLAY_OPTION = DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int UNIT_FIELD__COLLECTION_DISPLAY_OPTION = DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -2370,7 +2399,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -2379,7 +2408,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__DATE_FORMAT = DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int UNIT_FIELD__DATE_FORMAT = DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
@@ -2388,7 +2417,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__DISABLE_INPUT = DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int UNIT_FIELD__DISABLE_INPUT = DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Unit Field</em>' class.
@@ -2397,7 +2426,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD_FEATURE_COUNT = DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int UNIT_FIELD_FEATURE_COUNT = DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Unit Field</em>' class.
@@ -2444,6 +2473,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_FEATURE__REQUIRES_ROLE = UNIT_FIELD__REQUIRES_ROLE;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__HIDE_WHEN = UNIT_FIELD__HIDE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -2536,22 +2574,13 @@ public interface WafPackage extends EPackage {
 	int UNIT_FEATURE__NULL_DISPLAY_VALUE = UNIT_FIELD_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY = UNIT_FIELD_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__AUTOFOCUS = UNIT_FIELD_FEATURE_COUNT + 6;
+	int UNIT_FEATURE__AUTOFOCUS = UNIT_FIELD_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -2560,7 +2589,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__FOOTER = UNIT_FIELD_FEATURE_COUNT + 7;
+	int UNIT_FEATURE__FOOTER = UNIT_FIELD_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -2569,7 +2598,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__HEADER_CLASS = UNIT_FIELD_FEATURE_COUNT + 8;
+	int UNIT_FEATURE__HEADER_CLASS = UNIT_FIELD_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -2578,7 +2607,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__INPUT_CLASS = UNIT_FIELD_FEATURE_COUNT + 9;
+	int UNIT_FEATURE__INPUT_CLASS = UNIT_FIELD_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -2587,7 +2616,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__DISPLAY_CLASS = UNIT_FIELD_FEATURE_COUNT + 10;
+	int UNIT_FEATURE__DISPLAY_CLASS = UNIT_FIELD_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -2596,7 +2625,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__FOOTER_CLASS = UNIT_FIELD_FEATURE_COUNT + 11;
+	int UNIT_FEATURE__FOOTER_CLASS = UNIT_FIELD_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Unit Feature</em>' class.
@@ -2605,7 +2634,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE_FEATURE_COUNT = UNIT_FIELD_FEATURE_COUNT + 12;
+	int UNIT_FEATURE_FEATURE_COUNT = UNIT_FIELD_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of operations of the '<em>Unit Feature</em>' class.
@@ -2652,6 +2681,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ATTRIBUTE__REQUIRES_ROLE = UNIT_FEATURE__REQUIRES_ROLE;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ATTRIBUTE__HIDE_WHEN = UNIT_FEATURE__HIDE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -2742,15 +2780,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ATTRIBUTE__NULL_DISPLAY_VALUE = UNIT_FEATURE__NULL_DISPLAY_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ATTRIBUTE__ONLY_DISPLAY_WHEN_NOT_EMPTY = UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
@@ -2916,6 +2945,15 @@ public interface WafPackage extends EPackage {
 	int UNIT_ASSOCIATION__REQUIRES_ROLE = UNIT_FEATURE__REQUIRES_ROLE;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__HIDE_WHEN = UNIT_FEATURE__HIDE_WHEN;
+
+	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3004,15 +3042,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ASSOCIATION__NULL_DISPLAY_VALUE = UNIT_FEATURE__NULL_DISPLAY_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__ONLY_DISPLAY_WHEN_NOT_EMPTY = UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
@@ -3214,6 +3243,282 @@ public interface WafPackage extends EPackage {
 	int ASSOCIATION_REFERENCE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathImpl <em>Child Path</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPath()
+	 * @generated
+	 */
+	int CHILD_PATH = 30;
+
+	/**
+	 * The number of structural features of the '<em>Child Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Child Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAttributeImpl <em>Child Path Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathAttributeImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAttribute()
+	 * @generated
+	 */
+	int CHILD_PATH_ATTRIBUTE = 31;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ATTRIBUTE__NAME = CHILD_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ATTRIBUTE__ATTRIBUTE = CHILD_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Child Path Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ATTRIBUTE_FEATURE_COUNT = CHILD_PATH_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Child Path Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ATTRIBUTE_OPERATION_COUNT = CHILD_PATH_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAssociationImpl <em>Child Path Association</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathAssociationImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAssociation()
+	 * @generated
+	 */
+	int CHILD_PATH_ASSOCIATION = 32;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION__NAME = CHILD_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION__ASSOCIATION = CHILD_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Value Display</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION__VALUE_DISPLAY = CHILD_PATH_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION__CHILD_FEATURE = CHILD_PATH_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Child Path Association</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION_FEATURE_COUNT = CHILD_PATH_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Child Path Association</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_ASSOCIATION_OPERATION_COUNT = CHILD_PATH_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathImpl <em>Feature Path</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePath()
+	 * @generated
+	 */
+	int FEATURE_PATH = 33;
+
+	/**
+	 * The number of structural features of the '<em>Feature Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_FEATURE_COUNT = ExpressionPackage.VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Feature Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl <em>Feature Path Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAttribute()
+	 * @generated
+	 */
+	int FEATURE_PATH_ATTRIBUTE = 34;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE__NAME = FEATURE_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = FEATURE_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Feature Path Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Feature Path Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE_OPERATION_COUNT = FEATURE_PATH_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl <em>Feature Path Association</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAssociation()
+	 * @generated
+	 */
+	int FEATURE_PATH_ASSOCIATION = 35;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__NAME = FEATURE_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__ASSOCIATION = FEATURE_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Value Display</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__VALUE_DISPLAY = FEATURE_PATH_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__CHILD_FEATURE = FEATURE_PATH_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Feature Path Association</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Feature Path Association</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION_OPERATION_COUNT = FEATURE_PATH_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl <em>Interface Field</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3221,7 +3526,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInterfaceField()
 	 * @generated
 	 */
-	int INTERFACE_FIELD = 30;
+	int INTERFACE_FIELD = 36;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3260,13 +3565,22 @@ public interface WafPackage extends EPackage {
 	int INTERFACE_FIELD__REQUIRES_ROLE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_FIELD__HIDE_WHEN = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__TITLE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int INTERFACE_FIELD__TITLE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
@@ -3275,7 +3589,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -3284,7 +3598,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -3293,7 +3607,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DATE_FORMAT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int INTERFACE_FIELD__DATE_FORMAT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
@@ -3302,7 +3616,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DISABLE_INPUT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int INTERFACE_FIELD__DISABLE_INPUT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -3311,7 +3625,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__REQUIRED = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int INTERFACE_FIELD__REQUIRED = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
@@ -3320,7 +3634,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DEFAULT_VALUE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int INTERFACE_FIELD__DEFAULT_VALUE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Must Match</b></em>' reference.
@@ -3329,7 +3643,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__MUST_MATCH = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int INTERFACE_FIELD__MUST_MATCH = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
@@ -3338,7 +3652,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__INTERFACE_TYPE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int INTERFACE_FIELD__INTERFACE_TYPE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -3347,7 +3661,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__PLACEHOLDER = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int INTERFACE_FIELD__PLACEHOLDER = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -3356,7 +3670,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__VALIDATION_PATTERN = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int INTERFACE_FIELD__VALIDATION_PATTERN = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -3365,7 +3679,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__INPUT_CLASS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+	int INTERFACE_FIELD__INPUT_CLASS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Interface Field</em>' class.
@@ -3374,7 +3688,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
+	int INTERFACE_FIELD_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The number of operations of the '<em>Interface Field</em>' class.
@@ -3393,7 +3707,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDataTypeField()
 	 * @generated
 	 */
-	int DATA_TYPE_FIELD = 31;
+	int DATA_TYPE_FIELD = 37;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3430,6 +3744,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_FIELD__REQUIRES_ROLE = INTERFACE_FIELD__REQUIRES_ROLE;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_FIELD__HIDE_WHEN = INTERFACE_FIELD__HIDE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -3601,7 +3924,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDateField()
 	 * @generated
 	 */
-	int DATE_FIELD = 32;
+	int DATE_FIELD = 38;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3638,6 +3961,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATE_FIELD__REQUIRES_ROLE = INTERFACE_FIELD__REQUIRES_ROLE;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_FIELD__HIDE_WHEN = INTERFACE_FIELD__HIDE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -3791,7 +4123,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCaptchaField()
 	 * @generated
 	 */
-	int CAPTCHA_FIELD = 33;
+	int CAPTCHA_FIELD = 39;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3828,6 +4160,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CAPTCHA_FIELD__REQUIRES_ROLE = INTERFACE_FIELD__REQUIRES_ROLE;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPTCHA_FIELD__HIDE_WHEN = INTERFACE_FIELD__HIDE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -3963,7 +4304,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectableUnit()
 	 * @generated
 	 */
-	int SELECTABLE_UNIT = 34;
+	int SELECTABLE_UNIT = 40;
 
 	/**
 	 * The feature id for the '<em><b>Selectors</b></em>' reference list.
@@ -4000,7 +4341,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSingletonUnit()
 	 * @generated
 	 */
-	int SINGLETON_UNIT = 35;
+	int SINGLETON_UNIT = 41;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference.
@@ -4037,7 +4378,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionUnit()
 	 * @generated
 	 */
-	int COLLECTION_UNIT = 36;
+	int COLLECTION_UNIT = 42;
 
 	/**
 	 * The feature id for the '<em><b>Selectors</b></em>' reference list.
@@ -4263,7 +4604,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getEditUnit()
 	 * @generated
 	 */
-	int EDIT_UNIT = 37;
+	int EDIT_UNIT = 43;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4383,6 +4724,24 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__HIDE_WHEN = DYNAMIC_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__MESSAGE_WHEN_HIDDEN = DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4464,13 +4823,13 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__ON_SAVE_CONTINUE_EDITING = DYNAMIC_UNIT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__DISABLE_CONDITION = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+	int EDIT_UNIT__DISABLE_WHEN = DYNAMIC_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -4552,7 +4911,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCreateUnit()
 	 * @generated
 	 */
-	int CREATE_UNIT = 38;
+	int CREATE_UNIT = 44;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4672,6 +5031,24 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__HIDE_WHEN = EDIT_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__MESSAGE_WHEN_HIDDEN = EDIT_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4753,13 +5130,13 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__ON_SAVE_CONTINUE_EDITING = EDIT_UNIT__ON_SAVE_CONTINUE_EDITING;
 
 	/**
-	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
+	int CREATE_UNIT__DISABLE_WHEN = EDIT_UNIT__DISABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -4841,7 +5218,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCreateUpdateUnit()
 	 * @generated
 	 */
-	int CREATE_UPDATE_UNIT = 39;
+	int CREATE_UPDATE_UNIT = 45;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4961,6 +5338,24 @@ public interface WafPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__HIDE_WHEN = EDIT_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__MESSAGE_WHEN_HIDDEN = EDIT_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5042,13 +5437,13 @@ public interface WafPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING = EDIT_UNIT__ON_SAVE_CONTINUE_EDITING;
 
 	/**
-	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
+	int CREATE_UPDATE_UNIT__DISABLE_WHEN = EDIT_UNIT__DISABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -5157,7 +5552,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getMapUnit()
 	 * @generated
 	 */
-	int MAP_UNIT = 40;
+	int MAP_UNIT = 46;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5277,6 +5672,24 @@ public interface WafPackage extends EPackage {
 	int MAP_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__HIDE_WHEN = EDIT_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__MESSAGE_WHEN_HIDDEN = EDIT_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5358,13 +5771,13 @@ public interface WafPackage extends EPackage {
 	int MAP_UNIT__ON_SAVE_CONTINUE_EDITING = EDIT_UNIT__ON_SAVE_CONTINUE_EDITING;
 
 	/**
-	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
+	int MAP_UNIT__DISABLE_WHEN = EDIT_UNIT__DISABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -5491,7 +5904,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUpdateUnit()
 	 * @generated
 	 */
-	int UPDATE_UNIT = 41;
+	int UPDATE_UNIT = 47;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5611,6 +6024,24 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__HIDE_WHEN = EDIT_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__MESSAGE_WHEN_HIDDEN = EDIT_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5692,13 +6123,13 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__ON_SAVE_CONTINUE_EDITING = EDIT_UNIT__ON_SAVE_CONTINUE_EDITING;
 
 	/**
-	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
+	int UPDATE_UNIT__DISABLE_WHEN = EDIT_UNIT__DISABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -5789,7 +6220,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDataUnit()
 	 * @generated
 	 */
-	int DATA_UNIT = 42;
+	int DATA_UNIT = 48;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5909,6 +6340,24 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__HIDE_WHEN = DYNAMIC_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__MESSAGE_WHEN_HIDDEN = DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5990,22 +6439,13 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = DYNAMIC_UNIT_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Data Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 3;
+	int DATA_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Data Unit</em>' class.
@@ -6024,7 +6464,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDetailsUnit()
 	 * @generated
 	 */
-	int DETAILS_UNIT = 43;
+	int DETAILS_UNIT = 49;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6144,6 +6584,24 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__DISPLAY_FIELDS = DATA_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__HIDE_WHEN = DATA_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__MESSAGE_WHEN_HIDDEN = DATA_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6225,15 +6683,6 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__TITLE = DATA_UNIT__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY;
-
-	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6286,7 +6735,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexUnit()
 	 * @generated
 	 */
-	int INDEX_UNIT = 44;
+	int INDEX_UNIT = 50;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6406,6 +6855,24 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__DISPLAY_FIELDS = DATA_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__HIDE_WHEN = DATA_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__MESSAGE_WHEN_HIDDEN = DATA_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6485,15 +6952,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__TITLE = DATA_UNIT__TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Selectors</b></em>' reference list.
@@ -6755,7 +7213,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexGridUnit()
 	 * @generated
 	 */
-	int INDEX_GRID_UNIT = 45;
+	int INDEX_GRID_UNIT = 51;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6875,6 +7333,24 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__DISPLAY_FIELDS = INDEX_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__HIDE_WHEN = INDEX_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__MESSAGE_WHEN_HIDDEN = INDEX_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6954,15 +7430,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_GRID_UNIT__TITLE = INDEX_UNIT__TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_GRID_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = INDEX_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Selectors</b></em>' reference list.
@@ -7224,7 +7691,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexPageDirectionUnit()
 	 * @generated
 	 */
-	int INDEX_PAGE_DIRECTION_UNIT = 46;
+	int INDEX_PAGE_DIRECTION_UNIT = 52;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7344,6 +7811,24 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__DISPLAY_FIELDS = INDEX_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__HIDE_WHEN = INDEX_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__MESSAGE_WHEN_HIDDEN = INDEX_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7423,15 +7908,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_PAGE_DIRECTION_UNIT__TITLE = INDEX_UNIT__TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_PAGE_DIRECTION_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = INDEX_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Selectors</b></em>' reference list.
@@ -7693,7 +8169,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexLineDirectionUnit()
 	 * @generated
 	 */
-	int INDEX_LINE_DIRECTION_UNIT = 47;
+	int INDEX_LINE_DIRECTION_UNIT = 53;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7813,6 +8289,24 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__DISPLAY_FIELDS = INDEX_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__HIDE_WHEN = INDEX_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__MESSAGE_WHEN_HIDDEN = INDEX_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7892,15 +8386,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_LINE_DIRECTION_UNIT__TITLE = INDEX_UNIT__TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_LINE_DIRECTION_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = INDEX_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Selectors</b></em>' reference list.
@@ -8162,7 +8647,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getControlUnit()
 	 * @generated
 	 */
-	int CONTROL_UNIT = 48;
+	int CONTROL_UNIT = 54;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8282,6 +8767,24 @@ public interface WafPackage extends EPackage {
 	int CONTROL_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__HIDE_WHEN = DYNAMIC_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__MESSAGE_WHEN_HIDDEN = DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8397,7 +8900,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSearchUnit()
 	 * @generated
 	 */
-	int SEARCH_UNIT = 49;
+	int SEARCH_UNIT = 55;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8515,6 +9018,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEARCH_UNIT__DISPLAY_FIELDS = CONTROL_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__HIDE_WHEN = CONTROL_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__MESSAGE_WHEN_HIDDEN = CONTROL_UNIT__MESSAGE_WHEN_HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -8641,7 +9162,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getImageUnit()
 	 * @generated
 	 */
-	int IMAGE_UNIT = 50;
+	int IMAGE_UNIT = 56;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8759,6 +9280,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__HIDE_WHEN = DYNAMIC_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__MESSAGE_WHEN_HIDDEN = DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -9094,282 +9633,6 @@ public interface WafPackage extends EPackage {
 	int IMAGE_UNIT_OPERATION_COUNT = DYNAMIC_UNIT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathImpl <em>Feature Path</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePath()
-	 * @generated
-	 */
-	int FEATURE_PATH = 51;
-
-	/**
-	 * The number of structural features of the '<em>Feature Path</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Feature Path</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl <em>Feature Path Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAttribute()
-	 * @generated
-	 */
-	int FEATURE_PATH_ATTRIBUTE = 52;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ATTRIBUTE__NAME = FEATURE_PATH_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = FEATURE_PATH_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Feature Path Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ATTRIBUTE_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Feature Path Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ATTRIBUTE_OPERATION_COUNT = FEATURE_PATH_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl <em>Feature Path Association</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAssociation()
-	 * @generated
-	 */
-	int FEATURE_PATH_ASSOCIATION = 53;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION__NAME = FEATURE_PATH_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION__ASSOCIATION = FEATURE_PATH_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Value Display</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION__VALUE_DISPLAY = FEATURE_PATH_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION__CHILD_FEATURE = FEATURE_PATH_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Feature Path Association</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Feature Path Association</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_PATH_ASSOCIATION_OPERATION_COUNT = FEATURE_PATH_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathImpl <em>Child Path</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPath()
-	 * @generated
-	 */
-	int CHILD_PATH = 54;
-
-	/**
-	 * The number of structural features of the '<em>Child Path</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Child Path</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAttributeImpl <em>Child Path Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathAttributeImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAttribute()
-	 * @generated
-	 */
-	int CHILD_PATH_ATTRIBUTE = 55;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ATTRIBUTE__NAME = CHILD_PATH_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ATTRIBUTE__ATTRIBUTE = CHILD_PATH_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Child Path Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ATTRIBUTE_FEATURE_COUNT = CHILD_PATH_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Child Path Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ATTRIBUTE_OPERATION_COUNT = CHILD_PATH_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAssociationImpl <em>Child Path Association</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathAssociationImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAssociation()
-	 * @generated
-	 */
-	int CHILD_PATH_ASSOCIATION = 56;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION__NAME = CHILD_PATH_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION__ASSOCIATION = CHILD_PATH_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Value Display</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION__VALUE_DISPLAY = CHILD_PATH_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION__CHILD_FEATURE = CHILD_PATH_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Child Path Association</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION_FEATURE_COUNT = CHILD_PATH_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Child Path Association</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_PATH_ASSOCIATION_OPERATION_COUNT = CHILD_PATH_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl <em>Image Index Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9495,6 +9758,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_INDEX_UNIT__DISPLAY_FIELDS = IMAGE_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__HIDE_WHEN = IMAGE_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__MESSAGE_WHEN_HIDDEN = IMAGE_UNIT__MESSAGE_WHEN_HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -9821,13 +10102,31 @@ public interface WafPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__ACTIONS = IMAGE_UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Omit Field Labels</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS = IMAGE_UNIT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Overlay Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__OVERLAY_TITLE = IMAGE_UNIT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Column Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__COLUMN_CLASS = IMAGE_UNIT_FEATURE_COUNT + 1;
+	int IMAGE_INDEX_UNIT__COLUMN_CLASS = IMAGE_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Image Index Unit</em>' class.
@@ -9836,7 +10135,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 2;
+	int IMAGE_INDEX_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Image Index Unit</em>' class.
@@ -9973,6 +10272,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SLIDER_UNIT__DISPLAY_FIELDS = IMAGE_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__HIDE_WHEN = IMAGE_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__MESSAGE_WHEN_HIDDEN = IMAGE_UNIT__MESSAGE_WHEN_HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -10433,6 +10750,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int GALLERY_UNIT__DISPLAY_FIELDS = IMAGE_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__HIDE_WHEN = IMAGE_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__MESSAGE_WHEN_HIDDEN = IMAGE_UNIT__MESSAGE_WHEN_HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -10932,6 +11267,24 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
 
 	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__HIDE_WHEN = EDIT_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__MESSAGE_WHEN_HIDDEN = EDIT_UNIT__MESSAGE_WHEN_HIDDEN;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11013,13 +11366,13 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__ON_SAVE_CONTINUE_EDITING = EDIT_UNIT__ON_SAVE_CONTINUE_EDITING;
 
 	/**
-	 * The feature id for the '<em><b>Disable Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__DISABLE_CONDITION = EDIT_UNIT__DISABLE_CONDITION;
+	int REGISTRATION_UNIT__DISABLE_WHEN = EDIT_UNIT__DISABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -11228,6 +11581,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGIN_UNIT__DISPLAY_FIELDS = CONTROL_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__HIDE_WHEN = CONTROL_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__MESSAGE_WHEN_HIDDEN = CONTROL_UNIT__MESSAGE_WHEN_HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -11508,6 +11879,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS = CONTROL_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__HIDE_WHEN = CONTROL_UNIT__HIDE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__MESSAGE_WHEN_HIDDEN = CONTROL_UNIT__MESSAGE_WHEN_HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -13529,6 +13918,28 @@ public interface WafPackage extends EPackage {
 	EReference getDynamicUnit_DisplayFields();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHideWhen <em>Hide When</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Hide When</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getHideWhen()
+	 * @see #getDynamicUnit()
+	 * @generated
+	 */
+	EReference getDynamicUnit_HideWhen();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getMessageWhenHidden <em>Message When Hidden</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Message When Hidden</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getMessageWhenHidden()
+	 * @see #getDynamicUnit()
+	 * @generated
+	 */
+	EAttribute getDynamicUnit_MessageWhenHidden();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13670,6 +14081,17 @@ public interface WafPackage extends EPackage {
 	EAttribute getUnitField_RequiresRole();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.UnitField#getHideWhen <em>Hide When</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Hide When</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.UnitField#getHideWhen()
+	 * @see #getUnitField()
+	 * @generated
+	 */
+	EReference getUnitField_HideWhen();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.UnitField#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13777,17 +14199,6 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUnitFeature_NullDisplayValue();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Only Display When Not Empty</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.UnitFeature#isOnlyDisplayWhenNotEmpty()
-	 * @see #getUnitFeature()
-	 * @generated
-	 */
-	EAttribute getUnitFeature_OnlyDisplayWhenNotEmpty();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isAutofocus <em>Autofocus</em>}'.
@@ -14016,6 +14427,110 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAssociationReference_ChildFeature();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ChildPath <em>Child Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Child Path</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildPath
+	 * @generated
+	 */
+	EClass getChildPath();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ChildPathAttribute <em>Child Path Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Child Path Attribute</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAttribute
+	 * @generated
+	 */
+	EClass getChildPathAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ChildPathAttribute#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAttribute#getName()
+	 * @see #getChildPathAttribute()
+	 * @generated
+	 */
+	EAttribute getChildPathAttribute_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.ChildPathAttribute#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attribute</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAttribute#getAttribute()
+	 * @see #getChildPathAttribute()
+	 * @generated
+	 */
+	EReference getChildPathAttribute_Attribute();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ChildPathAssociation <em>Child Path Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Child Path Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAssociation
+	 * @generated
+	 */
+	EClass getChildPathAssociation();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.FeaturePath <em>Feature Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Path</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePath
+	 * @generated
+	 */
+	EClass getFeaturePath();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAttribute <em>Feature Path Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Path Attribute</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAttribute
+	 * @generated
+	 */
+	EClass getFeaturePathAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAttribute#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAttribute#getName()
+	 * @see #getFeaturePathAttribute()
+	 * @generated
+	 */
+	EAttribute getFeaturePathAttribute_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAttribute#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attribute</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAttribute#getAttribute()
+	 * @see #getFeaturePathAttribute()
+	 * @generated
+	 */
+	EReference getFeaturePathAttribute_Attribute();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAssociation <em>Feature Path Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Path Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAssociation
+	 * @generated
+	 */
+	EClass getFeaturePathAssociation();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.InterfaceField <em>Interface Field</em>}'.
@@ -14505,15 +15020,15 @@ public interface WafPackage extends EPackage {
 	EAttribute getEditUnit_OnSaveContinueEditing();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.EditUnit#getDisableCondition <em>Disable Condition</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.EditUnit#getDisableWhen <em>Disable When</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Disable Condition</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.EditUnit#getDisableCondition()
+	 * @return the meta object for the containment reference '<em>Disable When</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.EditUnit#getDisableWhen()
 	 * @see #getEditUnit()
 	 * @generated
 	 */
-	EReference getEditUnit_DisableCondition();
+	EReference getEditUnit_DisableWhen();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.EditUnit#getTitle <em>Title</em>}'.
@@ -14718,17 +15233,6 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDataUnit_Title();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.DataUnit#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Only Display When Not Empty</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.DataUnit#isOnlyDisplayWhenNotEmpty()
-	 * @see #getDataUnit()
-	 * @generated
-	 */
-	EAttribute getDataUnit_OnlyDisplayWhenNotEmpty();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.DetailsUnit <em>Details Unit</em>}'.
@@ -14965,110 +15469,6 @@ public interface WafPackage extends EPackage {
 	EAttribute getImageUnit_TransitionTime();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.FeaturePath <em>Feature Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Feature Path</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.FeaturePath
-	 * @generated
-	 */
-	EClass getFeaturePath();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAttribute <em>Feature Path Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Feature Path Attribute</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAttribute
-	 * @generated
-	 */
-	EClass getFeaturePathAttribute();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAttribute#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAttribute#getName()
-	 * @see #getFeaturePathAttribute()
-	 * @generated
-	 */
-	EAttribute getFeaturePathAttribute_Name();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAttribute#getAttribute <em>Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attribute</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAttribute#getAttribute()
-	 * @see #getFeaturePathAttribute()
-	 * @generated
-	 */
-	EReference getFeaturePathAttribute_Attribute();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAssociation <em>Feature Path Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Feature Path Association</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAssociation
-	 * @generated
-	 */
-	EClass getFeaturePathAssociation();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ChildPath <em>Child Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Child Path</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ChildPath
-	 * @generated
-	 */
-	EClass getChildPath();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ChildPathAttribute <em>Child Path Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Child Path Attribute</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAttribute
-	 * @generated
-	 */
-	EClass getChildPathAttribute();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ChildPathAttribute#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAttribute#getName()
-	 * @see #getChildPathAttribute()
-	 * @generated
-	 */
-	EAttribute getChildPathAttribute_Name();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.ChildPathAttribute#getAttribute <em>Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attribute</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAttribute#getAttribute()
-	 * @see #getChildPathAttribute()
-	 * @generated
-	 */
-	EReference getChildPathAttribute_Attribute();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ChildPathAssociation <em>Child Path Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Child Path Association</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAssociation
-	 * @generated
-	 */
-	EClass getChildPathAssociation();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit <em>Image Index Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15077,6 +15477,28 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getImageIndexUnit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOmitFieldLabels <em>Omit Field Labels</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Omit Field Labels</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOmitFieldLabels()
+	 * @see #getImageIndexUnit()
+	 * @generated
+	 */
+	EAttribute getImageIndexUnit_OmitFieldLabels();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOverlayTitle <em>Overlay Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Overlay Title</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOverlayTitle()
+	 * @see #getImageIndexUnit()
+	 * @generated
+	 */
+	EAttribute getImageIndexUnit_OverlayTitle();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getColumnClass <em>Column Class</em>}'.
@@ -16580,6 +17002,22 @@ public interface WafPackage extends EPackage {
 		EReference DYNAMIC_UNIT__DISPLAY_FIELDS = eINSTANCE.getDynamicUnit_DisplayFields();
 
 		/**
+		 * The meta object literal for the '<em><b>Hide When</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DYNAMIC_UNIT__HIDE_WHEN = eINSTANCE.getDynamicUnit_HideWhen();
+
+		/**
+		 * The meta object literal for the '<em><b>Message When Hidden</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN = eINSTANCE.getDynamicUnit_MessageWhenHidden();
+
+		/**
 		 * The meta object literal for the '<em><b>Support Actions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16688,6 +17126,14 @@ public interface WafPackage extends EPackage {
 		EAttribute UNIT_FIELD__REQUIRES_ROLE = eINSTANCE.getUnitField_RequiresRole();
 
 		/**
+		 * The meta object literal for the '<em><b>Hide When</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNIT_FIELD__HIDE_WHEN = eINSTANCE.getUnitField_HideWhen();
+
+		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16768,14 +17214,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UNIT_FEATURE__NULL_DISPLAY_VALUE = eINSTANCE.getUnitFeature_NullDisplayValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Only Display When Not Empty</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY = eINSTANCE.getUnitFeature_OnlyDisplayWhenNotEmpty();
 
 		/**
 		 * The meta object literal for the '<em><b>Autofocus</b></em>' attribute feature.
@@ -16950,6 +17388,98 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ASSOCIATION_REFERENCE__CHILD_FEATURE = eINSTANCE.getAssociationReference_ChildFeature();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathImpl <em>Child Path</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPath()
+		 * @generated
+		 */
+		EClass CHILD_PATH = eINSTANCE.getChildPath();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAttributeImpl <em>Child Path Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathAttributeImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAttribute()
+		 * @generated
+		 */
+		EClass CHILD_PATH_ATTRIBUTE = eINSTANCE.getChildPathAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHILD_PATH_ATTRIBUTE__NAME = eINSTANCE.getChildPathAttribute_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHILD_PATH_ATTRIBUTE__ATTRIBUTE = eINSTANCE.getChildPathAttribute_Attribute();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAssociationImpl <em>Child Path Association</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathAssociationImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAssociation()
+		 * @generated
+		 */
+		EClass CHILD_PATH_ASSOCIATION = eINSTANCE.getChildPathAssociation();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathImpl <em>Feature Path</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePath()
+		 * @generated
+		 */
+		EClass FEATURE_PATH = eINSTANCE.getFeaturePath();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl <em>Feature Path Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAttribute()
+		 * @generated
+		 */
+		EClass FEATURE_PATH_ATTRIBUTE = eINSTANCE.getFeaturePathAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE_PATH_ATTRIBUTE__NAME = eINSTANCE.getFeaturePathAttribute_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = eINSTANCE.getFeaturePathAttribute_Attribute();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl <em>Feature Path Association</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAssociation()
+		 * @generated
+		 */
+		EClass FEATURE_PATH_ASSOCIATION = eINSTANCE.getFeaturePathAssociation();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl <em>Interface Field</em>}' class.
@@ -17328,12 +17858,12 @@ public interface WafPackage extends EPackage {
 		EAttribute EDIT_UNIT__ON_SAVE_CONTINUE_EDITING = eINSTANCE.getEditUnit_OnSaveContinueEditing();
 
 		/**
-		 * The meta object literal for the '<em><b>Disable Condition</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Disable When</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EDIT_UNIT__DISABLE_CONDITION = eINSTANCE.getEditUnit_DisableCondition();
+		EReference EDIT_UNIT__DISABLE_WHEN = eINSTANCE.getEditUnit_DisableWhen();
 
 		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' reference feature.
@@ -17496,14 +18026,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_UNIT__TITLE = eINSTANCE.getDataUnit_Title();
-
-		/**
-		 * The meta object literal for the '<em><b>Only Display When Not Empty</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = eINSTANCE.getDataUnit_OnlyDisplayWhenNotEmpty();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl <em>Details Unit</em>}' class.
@@ -17698,98 +18220,6 @@ public interface WafPackage extends EPackage {
 		EAttribute IMAGE_UNIT__TRANSITION_TIME = eINSTANCE.getImageUnit_TransitionTime();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathImpl <em>Feature Path</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePath()
-		 * @generated
-		 */
-		EClass FEATURE_PATH = eINSTANCE.getFeaturePath();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl <em>Feature Path Attribute</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAttribute()
-		 * @generated
-		 */
-		EClass FEATURE_PATH_ATTRIBUTE = eINSTANCE.getFeaturePathAttribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FEATURE_PATH_ATTRIBUTE__NAME = eINSTANCE.getFeaturePathAttribute_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = eINSTANCE.getFeaturePathAttribute_Attribute();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl <em>Feature Path Association</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAssociation()
-		 * @generated
-		 */
-		EClass FEATURE_PATH_ASSOCIATION = eINSTANCE.getFeaturePathAssociation();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathImpl <em>Child Path</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPath()
-		 * @generated
-		 */
-		EClass CHILD_PATH = eINSTANCE.getChildPath();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAttributeImpl <em>Child Path Attribute</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathAttributeImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAttribute()
-		 * @generated
-		 */
-		EClass CHILD_PATH_ATTRIBUTE = eINSTANCE.getChildPathAttribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CHILD_PATH_ATTRIBUTE__NAME = eINSTANCE.getChildPathAttribute_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CHILD_PATH_ATTRIBUTE__ATTRIBUTE = eINSTANCE.getChildPathAttribute_Attribute();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAssociationImpl <em>Child Path Association</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathAssociationImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAssociation()
-		 * @generated
-		 */
-		EClass CHILD_PATH_ASSOCIATION = eINSTANCE.getChildPathAssociation();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl <em>Image Index Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -17798,6 +18228,22 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EClass IMAGE_INDEX_UNIT = eINSTANCE.getImageIndexUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Omit Field Labels</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS = eINSTANCE.getImageIndexUnit_OmitFieldLabels();
+
+		/**
+		 * The meta object literal for the '<em><b>Overlay Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_INDEX_UNIT__OVERLAY_TITLE = eINSTANCE.getImageIndexUnit_OverlayTitle();
 
 		/**
 		 * The meta object literal for the '<em><b>Column Class</b></em>' attribute feature.

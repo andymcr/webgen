@@ -7,6 +7,9 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import uk.ac.man.cs.mdsd.expression.Expression;
+import uk.ac.man.cs.mdsd.expression.Variable;
+
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.orm.NamedElement;
 
@@ -300,6 +303,54 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.CHILD_PATH: {
+				ChildPath childPath = (ChildPath)theEObject;
+				T result = caseChildPath(childPath);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.CHILD_PATH_ATTRIBUTE: {
+				ChildPathAttribute childPathAttribute = (ChildPathAttribute)theEObject;
+				T result = caseChildPathAttribute(childPathAttribute);
+				if (result == null) result = caseChildPath(childPathAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.CHILD_PATH_ASSOCIATION: {
+				ChildPathAssociation childPathAssociation = (ChildPathAssociation)theEObject;
+				T result = caseChildPathAssociation(childPathAssociation);
+				if (result == null) result = caseChildPath(childPathAssociation);
+				if (result == null) result = caseAssociationReference(childPathAssociation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.FEATURE_PATH: {
+				FeaturePath featurePath = (FeaturePath)theEObject;
+				T result = caseFeaturePath(featurePath);
+				if (result == null) result = caseVariable(featurePath);
+				if (result == null) result = caseExpression(featurePath);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.FEATURE_PATH_ATTRIBUTE: {
+				FeaturePathAttribute featurePathAttribute = (FeaturePathAttribute)theEObject;
+				T result = caseFeaturePathAttribute(featurePathAttribute);
+				if (result == null) result = caseFeaturePath(featurePathAttribute);
+				if (result == null) result = caseVariable(featurePathAttribute);
+				if (result == null) result = caseExpression(featurePathAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.FEATURE_PATH_ASSOCIATION: {
+				FeaturePathAssociation featurePathAssociation = (FeaturePathAssociation)theEObject;
+				T result = caseFeaturePathAssociation(featurePathAssociation);
+				if (result == null) result = caseFeaturePath(featurePathAssociation);
+				if (result == null) result = caseAssociationReference(featurePathAssociation);
+				if (result == null) result = caseVariable(featurePathAssociation);
+				if (result == null) result = caseExpression(featurePathAssociation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.INTERFACE_FIELD: {
 				InterfaceField interfaceField = (InterfaceField)theEObject;
 				T result = caseInterfaceField(interfaceField);
@@ -532,48 +583,6 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = caseSelectableUnit(imageUnit);
 				if (result == null) result = caseNamedDisplayElement(imageUnit);
 				if (result == null) result = caseNamedElement(imageUnit);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.FEATURE_PATH: {
-				FeaturePath featurePath = (FeaturePath)theEObject;
-				T result = caseFeaturePath(featurePath);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.FEATURE_PATH_ATTRIBUTE: {
-				FeaturePathAttribute featurePathAttribute = (FeaturePathAttribute)theEObject;
-				T result = caseFeaturePathAttribute(featurePathAttribute);
-				if (result == null) result = caseFeaturePath(featurePathAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.FEATURE_PATH_ASSOCIATION: {
-				FeaturePathAssociation featurePathAssociation = (FeaturePathAssociation)theEObject;
-				T result = caseFeaturePathAssociation(featurePathAssociation);
-				if (result == null) result = caseFeaturePath(featurePathAssociation);
-				if (result == null) result = caseAssociationReference(featurePathAssociation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.CHILD_PATH: {
-				ChildPath childPath = (ChildPath)theEObject;
-				T result = caseChildPath(childPath);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.CHILD_PATH_ATTRIBUTE: {
-				ChildPathAttribute childPathAttribute = (ChildPathAttribute)theEObject;
-				T result = caseChildPathAttribute(childPathAttribute);
-				if (result == null) result = caseChildPath(childPathAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.CHILD_PATH_ASSOCIATION: {
-				ChildPathAssociation childPathAssociation = (ChildPathAssociation)theEObject;
-				T result = caseChildPathAssociation(childPathAssociation);
-				if (result == null) result = caseChildPath(childPathAssociation);
-				if (result == null) result = caseAssociationReference(childPathAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1156,6 +1165,96 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Child Path</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Child Path</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChildPath(ChildPath object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Child Path Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Child Path Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChildPathAttribute(ChildPathAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Child Path Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Child Path Association</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChildPathAssociation(ChildPathAssociation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Path</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Path</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFeaturePath(FeaturePath object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Path Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Path Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFeaturePathAttribute(FeaturePathAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Path Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Path Association</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFeaturePathAssociation(FeaturePathAssociation object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Interface Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1471,96 +1570,6 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature Path</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature Path</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFeaturePath(FeaturePath object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature Path Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature Path Attribute</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFeaturePathAttribute(FeaturePathAttribute object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature Path Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature Path Association</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFeaturePathAssociation(FeaturePathAssociation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Child Path</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Child Path</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseChildPath(ChildPath object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Child Path Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Child Path Attribute</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseChildPathAttribute(ChildPathAttribute object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Child Path Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Child Path Association</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseChildPathAssociation(ChildPathAssociation object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Image Index Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1767,6 +1776,36 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedDisplayElement(NamedDisplayElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExpression(Expression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVariable(Variable object) {
 		return null;
 	}
 

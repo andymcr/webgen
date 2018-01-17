@@ -4,6 +4,8 @@ package uk.ac.man.cs.mdsd.waf;
 
 import org.eclipse.emf.common.util.EList;
 
+import uk.ac.man.cs.mdsd.expression.Predicate;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Dynamic Unit</b></em>'.
@@ -14,6 +16,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHideWhen <em>Hide When</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getMessageWhenHidden <em>Message When Hidden</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getFooter <em>Footer</em>}</li>
@@ -45,6 +49,58 @@ public interface DynamicUnit extends ContentUnit {
 	 * @generated
 	 */
 	EList<UnitField> getDisplayFields();
+
+	/**
+	 * Returns the value of the '<em><b>Hide When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Hide When</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hide When</em>' containment reference.
+	 * @see #setHideWhen(Predicate)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDynamicUnit_HideWhen()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Predicate getHideWhen();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHideWhen <em>Hide When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hide When</em>' containment reference.
+	 * @see #getHideWhen()
+	 * @generated
+	 */
+	void setHideWhen(Predicate value);
+
+	/**
+	 * Returns the value of the '<em><b>Message When Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Message When Hidden</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Message When Hidden</em>' attribute.
+	 * @see #setMessageWhenHidden(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDynamicUnit_MessageWhenHidden()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getMessageWhenHidden();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getMessageWhenHidden <em>Message When Hidden</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Message When Hidden</em>' attribute.
+	 * @see #getMessageWhenHidden()
+	 * @generated
+	 */
+	void setMessageWhenHidden(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Support Actions</b></em>' containment reference list.

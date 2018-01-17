@@ -17,7 +17,6 @@ import uk.ac.man.cs.mdsd.service.Selection;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DataUnit#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DataUnit#getTitle <em>Title</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.DataUnit#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDataUnit()
@@ -76,31 +75,5 @@ public interface DataUnit extends DynamicUnit {
 	 * @generated
 	 */
 	void setTitle(Label value);
-
-	/**
-	 * Returns the value of the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Only Display When Not Empty</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Only Display When Not Empty</em>' attribute.
-	 * @see #setOnlyDisplayWhenNotEmpty(boolean)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDataUnit_OnlyDisplayWhenNotEmpty()
-	 * @model unique="false"
-	 * @generated
-	 */
-	boolean isOnlyDisplayWhenNotEmpty();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.DataUnit#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Only Display When Not Empty</em>' attribute.
-	 * @see #isOnlyDisplayWhenNotEmpty()
-	 * @generated
-	 */
-	void setOnlyDisplayWhenNotEmpty(boolean value);
 
 } // DataUnit

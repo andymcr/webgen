@@ -5,11 +5,13 @@ package uk.ac.man.cs.mdsd.webgen.webui.provider;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -17,6 +19,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
@@ -77,10 +81,14 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
+					final Set<Association> associations = new HashSet<Association>();
 					if (object instanceof FeaturePathAssociation) {
-						final FeaturePathAssociation path = (FeaturePathAssociation) object;
-						if (path.eContainer() instanceof DynamicUnit) {
-							return getAssociations((DynamicUnit) path.eContainer());
+						final DynamicUnit unit = getDynamicUnitContext(object);
+						if (unit != null) {
+							for (EntityOrView entity : getContentType(unit)) {
+								associations.addAll(entity.getAllAssociations());
+							}
+							return associations;
 						}
 					}
 
@@ -276,6 +284,26 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 			(createChildParameter
 				(WebuiPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
 				 WebuiFactory.eINSTANCE.createChildPathAssociation()));
+	}
+
+	protected Object getContext(final Object object) {
+		if (object instanceof EObject) {
+			return ((EObject) object).eContainer();
+		} else {
+			return null;
+		}
+	}
+
+	protected DynamicUnit getDynamicUnitContext(final Object object) {
+		Object container = getContext(object);
+		while (container != null) {
+			if (container instanceof DynamicUnit) {
+				return (DynamicUnit) container;
+			}
+			container = getContext(container);
+		}
+
+		return null;
 	}
 
 }

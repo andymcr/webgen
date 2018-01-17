@@ -60,7 +60,6 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 			addRequiredPropertyDescriptor(object);
 			addCollectionUiAllowAddPropertyDescriptor(object);
 			addCollectionUiAllowRemovePropertyDescriptor(object);
-			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addNullDisplayValuePropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
@@ -70,28 +69,6 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 			addFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Only Display When Not Empty feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOnlyDisplayWhenNotEmptyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitFeature_onlyDisplayWhenNotEmpty_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_onlyDisplayWhenNotEmpty_feature", "_UI_UnitFeature_type"),
-				 WebuiPackage.Literals.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -398,7 +375,6 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 			case WebuiPackage.UNIT_FEATURE__REQUIRED:
 			case WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:
 			case WebuiPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_REMOVE:
-			case WebuiPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WebuiPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 			case WebuiPackage.UNIT_FEATURE__FOOTER:
 			case WebuiPackage.UNIT_FEATURE__AUTOFOCUS:
@@ -445,7 +421,12 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
-				 WebuiFactory.eINSTANCE.createWebuiFeatureReference()));
+				 WebuiFactory.eINSTANCE.createFeaturePathAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -536,6 +517,29 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 			(createChildParameter
 				(WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 ServiceFactory.eINSTANCE.createServiceFeatureReference()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == WebuiPackage.Literals.UNIT_FIELD__HIDE_WHEN ||
+			childFeature == WebuiPackage.Literals.UNIT_FEATURE__FORCED_VALUE;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	protected Set<EntityOrView> getContentType(final DynamicUnit unit) {

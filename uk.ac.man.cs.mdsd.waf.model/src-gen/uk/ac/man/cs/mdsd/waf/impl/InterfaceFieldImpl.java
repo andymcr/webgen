@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import uk.ac.man.cs.mdsd.expression.Expression;
+import uk.ac.man.cs.mdsd.expression.Predicate;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
@@ -34,6 +35,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getRequiresRole <em>Requires Role</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getHideWhen <em>Hide When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
@@ -90,6 +92,16 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	 * @ordered
 	 */
 	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getHideWhen() <em>Hide When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHideWhen()
+	 * @generated
+	 * @ordered
+	 */
+	protected Predicate hideWhen;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -428,6 +440,49 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Predicate getHideWhen() {
+		return hideWhen;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHideWhen(Predicate newHideWhen, NotificationChain msgs) {
+		Predicate oldHideWhen = hideWhen;
+		hideWhen = newHideWhen;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__HIDE_WHEN, oldHideWhen, newHideWhen);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHideWhen(Predicate newHideWhen) {
+		if (newHideWhen != hideWhen) {
+			NotificationChain msgs = null;
+			if (hideWhen != null)
+				msgs = ((InternalEObject)hideWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.INTERFACE_FIELD__HIDE_WHEN, null, msgs);
+			if (newHideWhen != null)
+				msgs = ((InternalEObject)newHideWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.INTERFACE_FIELD__HIDE_WHEN, null, msgs);
+			msgs = basicSetHideWhen(newHideWhen, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__HIDE_WHEN, newHideWhen, newHideWhen));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTitle() {
 		return title;
 	}
@@ -740,6 +795,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		switch (featureID) {
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				return basicSetDisplayedOn(null, msgs);
+			case WafPackage.INTERFACE_FIELD__HIDE_WHEN:
+				return basicSetHideWhen(null, msgs);
 			case WafPackage.INTERFACE_FIELD__DEFAULT_VALUE:
 				return basicSetDefaultValue(null, msgs);
 		}
@@ -775,6 +832,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return basicGetDisplayedOn();
 			case WafPackage.INTERFACE_FIELD__REQUIRES_ROLE:
 				return getRequiresRole();
+			case WafPackage.INTERFACE_FIELD__HIDE_WHEN:
+				return getHideWhen();
 			case WafPackage.INTERFACE_FIELD__TITLE:
 				return getTitle();
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
@@ -820,6 +879,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return;
 			case WafPackage.INTERFACE_FIELD__REQUIRES_ROLE:
 				setRequiresRole((String)newValue);
+				return;
+			case WafPackage.INTERFACE_FIELD__HIDE_WHEN:
+				setHideWhen((Predicate)newValue);
 				return;
 			case WafPackage.INTERFACE_FIELD__TITLE:
 				setTitle((String)newValue);
@@ -878,6 +940,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			case WafPackage.INTERFACE_FIELD__REQUIRES_ROLE:
 				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
 				return;
+			case WafPackage.INTERFACE_FIELD__HIDE_WHEN:
+				setHideWhen((Predicate)null);
+				return;
 			case WafPackage.INTERFACE_FIELD__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -932,6 +997,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return basicGetDisplayedOn() != null;
 			case WafPackage.INTERFACE_FIELD__REQUIRES_ROLE:
 				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
+			case WafPackage.INTERFACE_FIELD__HIDE_WHEN:
+				return hideWhen != null;
 			case WafPackage.INTERFACE_FIELD__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
@@ -977,6 +1044,7 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			switch (derivedFeatureID) {
 				case WafPackage.INTERFACE_FIELD__DISPLAYED_ON: return WafPackage.UNIT_FIELD__DISPLAYED_ON;
 				case WafPackage.INTERFACE_FIELD__REQUIRES_ROLE: return WafPackage.UNIT_FIELD__REQUIRES_ROLE;
+				case WafPackage.INTERFACE_FIELD__HIDE_WHEN: return WafPackage.UNIT_FIELD__HIDE_WHEN;
 				case WafPackage.INTERFACE_FIELD__TITLE: return WafPackage.UNIT_FIELD__TITLE;
 				case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION: return WafPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
@@ -1005,6 +1073,7 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			switch (baseFeatureID) {
 				case WafPackage.UNIT_FIELD__DISPLAYED_ON: return WafPackage.INTERFACE_FIELD__DISPLAYED_ON;
 				case WafPackage.UNIT_FIELD__REQUIRES_ROLE: return WafPackage.INTERFACE_FIELD__REQUIRES_ROLE;
+				case WafPackage.UNIT_FIELD__HIDE_WHEN: return WafPackage.INTERFACE_FIELD__HIDE_WHEN;
 				case WafPackage.UNIT_FIELD__TITLE: return WafPackage.INTERFACE_FIELD__TITLE;
 				case WafPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION: return WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;

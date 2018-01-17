@@ -206,18 +206,6 @@ helper context Website!Expression def: findContainingSelection() : Website!Selec
 			OclUndefined
 		endif endif endif ;
 
-helper context Website!Feature def: findOrmFeature(reference : Website!WebuiFeatureReference) : ORM!Feature
-	= if self.oclIsKindOf(Website!Attribute) then
-			self.findOrmAttribute()
-		else
-			let selection : Website!Selection = reference.findContainingSelection()
-			in if selection.oclIsUndefined() then
-					OclUndefined
-				else
-					self.findOrmAssociation(reference.findContainingSelection().usedBy.serves)
-				endif
-		endif;
-
 helper context Website!AssociationReference def: findOrmAssociation() : ORM!Association
 	= if self.association.oclIsUndefined() then
 			OclUndefined
@@ -523,6 +511,8 @@ abstract rule DynamicUnit {
 	from website : Website!DynamicUnit
 	to waf : WAF!DynamicUnit (
 		displayFields <- website.displayFields,
+		hideWhen <- website.hideWhen,
+		messageWhenHidden <- website.messageWhenHidden.trim(),
 		supportActions <- website.supportActions,
 		header <- website.header,
 		footer <- website.footer,
@@ -804,7 +794,7 @@ abstract rule CollectionUnit {
 abstract rule EditUnit {
 	from website : Website!EditUnit
 	to waf : WAF!EditUnit (
-		disableCondition <- website.disableCondition,
+		disableWhen <- website.disableWhen,
 		title <-
 			if website.title.oclIsUndefined() then
 				website.title
@@ -916,8 +906,7 @@ abstract rule DataUnit {
 				website.title
 			else
 				website.title.findOrmLabel()
-			endif,
-		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty
+			endif
 	)
 }
 
@@ -1197,16 +1186,3 @@ rule ConstantReference {
 			endif
 	)
 }
-
-rule WebuiFeatureReference {
-	from website : Website!WebuiFeatureReference
-	to waf : WAF!FeatureReference (
-		feature <-
-			if website.feature.oclIsUndefined() then
-				OclUndefined
-			else
-				website.feature.findOrmFeature(website)
-			endif
-	)
-}
-

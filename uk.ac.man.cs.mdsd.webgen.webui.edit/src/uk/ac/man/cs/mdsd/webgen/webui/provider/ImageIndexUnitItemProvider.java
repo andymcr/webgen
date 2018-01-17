@@ -49,11 +49,57 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOmitFieldLabelsPropertyDescriptor(object);
+			addOverlayTitlePropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
 			addColumnClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Omit Field Labels feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOmitFieldLabelsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageIndexUnit_omitFieldLabels_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_omitFieldLabels_feature", "_UI_ImageIndexUnit_type"),
+				 WebuiPackage.Literals.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Overlay Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOverlayTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageIndexUnit_overlayTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_overlayTitle_feature", "_UI_ImageIndexUnit_type"),
+				 WebuiPackage.Literals.IMAGE_INDEX_UNIT__OVERLAY_TITLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -118,7 +164,7 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
@@ -199,6 +245,8 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ImageIndexUnit.class)) {
+			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
+			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
 			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:

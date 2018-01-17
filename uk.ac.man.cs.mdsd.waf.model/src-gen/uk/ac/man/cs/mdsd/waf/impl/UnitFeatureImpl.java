@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.expression.Expression;
+import uk.ac.man.cs.mdsd.expression.Predicate;
 
 import uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
@@ -37,6 +38,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getRequiresRole <em>Requires Role</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getHideWhen <em>Hide When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
@@ -47,7 +49,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isCollectionUiAllowAdd <em>Collection Ui Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isCollectionUiAllowRemove <em>Collection Ui Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isAutofocus <em>Autofocus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -78,6 +79,16 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 	 * @ordered
 	 */
 	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getHideWhen() <em>Hide When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHideWhen()
+	 * @generated
+	 * @ordered
+	 */
+	protected Predicate hideWhen;
 
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -258,26 +269,6 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 	 * @ordered
 	 */
 	protected String nullDisplayValue = NULL_DISPLAY_VALUE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOnlyDisplayWhenNotEmpty()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOnlyDisplayWhenNotEmpty()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean onlyDisplayWhenNotEmpty = ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isAutofocus() <em>Autofocus</em>}' attribute.
@@ -488,6 +479,49 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		requiresRole = newRequiresRole;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__REQUIRES_ROLE, oldRequiresRole, requiresRole));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Predicate getHideWhen() {
+		return hideWhen;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHideWhen(Predicate newHideWhen, NotificationChain msgs) {
+		Predicate oldHideWhen = hideWhen;
+		hideWhen = newHideWhen;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__HIDE_WHEN, oldHideWhen, newHideWhen);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHideWhen(Predicate newHideWhen) {
+		if (newHideWhen != hideWhen) {
+			NotificationChain msgs = null;
+			if (hideWhen != null)
+				msgs = ((InternalEObject)hideWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.UNIT_FEATURE__HIDE_WHEN, null, msgs);
+			if (newHideWhen != null)
+				msgs = ((InternalEObject)newHideWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.UNIT_FEATURE__HIDE_WHEN, null, msgs);
+			msgs = basicSetHideWhen(newHideWhen, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__HIDE_WHEN, newHideWhen, newHideWhen));
 	}
 
 	/**
@@ -718,27 +752,6 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isOnlyDisplayWhenNotEmpty() {
-		return onlyDisplayWhenNotEmpty;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOnlyDisplayWhenNotEmpty(boolean newOnlyDisplayWhenNotEmpty) {
-		boolean oldOnlyDisplayWhenNotEmpty = onlyDisplayWhenNotEmpty;
-		onlyDisplayWhenNotEmpty = newOnlyDisplayWhenNotEmpty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY, oldOnlyDisplayWhenNotEmpty, onlyDisplayWhenNotEmpty));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isAutofocus() {
 		return autofocus;
 	}
@@ -889,6 +902,8 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		switch (featureID) {
 			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
 				return basicSetDisplayedOn(null, msgs);
+			case WafPackage.UNIT_FEATURE__HIDE_WHEN:
+				return basicSetHideWhen(null, msgs);
 			case WafPackage.UNIT_FEATURE__ACTIONS:
 				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
@@ -924,6 +939,8 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return basicGetDisplayedOn();
 			case WafPackage.UNIT_FEATURE__REQUIRES_ROLE:
 				return getRequiresRole();
+			case WafPackage.UNIT_FEATURE__HIDE_WHEN:
+				return getHideWhen();
 			case WafPackage.UNIT_FEATURE__TITLE:
 				return getTitle();
 			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
@@ -944,8 +961,6 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return isCollectionUiAllowRemove();
 			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 				return getNullDisplayValue();
-			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				return isOnlyDisplayWhenNotEmpty();
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
 				return isAutofocus();
 			case WafPackage.UNIT_FEATURE__FOOTER:
@@ -977,6 +992,9 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 			case WafPackage.UNIT_FEATURE__REQUIRES_ROLE:
 				setRequiresRole((String)newValue);
 				return;
+			case WafPackage.UNIT_FEATURE__HIDE_WHEN:
+				setHideWhen((Predicate)newValue);
+				return;
 			case WafPackage.UNIT_FEATURE__TITLE:
 				setTitle((String)newValue);
 				return;
@@ -1007,9 +1025,6 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return;
 			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue((String)newValue);
-				return;
-			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
 				return;
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
 				setAutofocus((Boolean)newValue);
@@ -1047,6 +1062,9 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 			case WafPackage.UNIT_FEATURE__REQUIRES_ROLE:
 				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
 				return;
+			case WafPackage.UNIT_FEATURE__HIDE_WHEN:
+				setHideWhen((Predicate)null);
+				return;
 			case WafPackage.UNIT_FEATURE__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -1076,9 +1094,6 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return;
 			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
-				return;
-			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
 				return;
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
 				setAutofocus(AUTOFOCUS_EDEFAULT);
@@ -1114,6 +1129,8 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return basicGetDisplayedOn() != null;
 			case WafPackage.UNIT_FEATURE__REQUIRES_ROLE:
 				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
+			case WafPackage.UNIT_FEATURE__HIDE_WHEN:
+				return hideWhen != null;
 			case WafPackage.UNIT_FEATURE__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
@@ -1134,8 +1151,6 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return collectionUiAllowRemove != COLLECTION_UI_ALLOW_REMOVE_EDEFAULT;
 			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
-			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
 				return autofocus != AUTOFOCUS_EDEFAULT;
 			case WafPackage.UNIT_FEATURE__FOOTER:
@@ -1212,8 +1227,6 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		result.append(collectionUiAllowRemove);
 		result.append(", nullDisplayValue: ");
 		result.append(nullDisplayValue);
-		result.append(", onlyDisplayWhenNotEmpty: ");
-		result.append(onlyDisplayWhenNotEmpty);
 		result.append(", autofocus: ");
 		result.append(autofocus);
 		result.append(", footer: ");

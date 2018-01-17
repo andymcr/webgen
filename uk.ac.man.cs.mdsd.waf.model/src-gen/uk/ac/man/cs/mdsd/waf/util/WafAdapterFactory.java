@@ -9,6 +9,9 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import uk.ac.man.cs.mdsd.expression.Expression;
+import uk.ac.man.cs.mdsd.expression.Variable;
+
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.orm.NamedElement;
 
@@ -191,6 +194,30 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createAssociationReferenceAdapter();
 			}
 			@Override
+			public Adapter caseChildPath(ChildPath object) {
+				return createChildPathAdapter();
+			}
+			@Override
+			public Adapter caseChildPathAttribute(ChildPathAttribute object) {
+				return createChildPathAttributeAdapter();
+			}
+			@Override
+			public Adapter caseChildPathAssociation(ChildPathAssociation object) {
+				return createChildPathAssociationAdapter();
+			}
+			@Override
+			public Adapter caseFeaturePath(FeaturePath object) {
+				return createFeaturePathAdapter();
+			}
+			@Override
+			public Adapter caseFeaturePathAttribute(FeaturePathAttribute object) {
+				return createFeaturePathAttributeAdapter();
+			}
+			@Override
+			public Adapter caseFeaturePathAssociation(FeaturePathAssociation object) {
+				return createFeaturePathAssociationAdapter();
+			}
+			@Override
 			public Adapter caseInterfaceField(InterfaceField object) {
 				return createInterfaceFieldAdapter();
 			}
@@ -275,30 +302,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createImageUnitAdapter();
 			}
 			@Override
-			public Adapter caseFeaturePath(FeaturePath object) {
-				return createFeaturePathAdapter();
-			}
-			@Override
-			public Adapter caseFeaturePathAttribute(FeaturePathAttribute object) {
-				return createFeaturePathAttributeAdapter();
-			}
-			@Override
-			public Adapter caseFeaturePathAssociation(FeaturePathAssociation object) {
-				return createFeaturePathAssociationAdapter();
-			}
-			@Override
-			public Adapter caseChildPath(ChildPath object) {
-				return createChildPathAdapter();
-			}
-			@Override
-			public Adapter caseChildPathAttribute(ChildPathAttribute object) {
-				return createChildPathAttributeAdapter();
-			}
-			@Override
-			public Adapter caseChildPathAssociation(ChildPathAssociation object) {
-				return createChildPathAssociationAdapter();
-			}
-			@Override
 			public Adapter caseImageIndexUnit(ImageIndexUnit object) {
 				return createImageIndexUnitAdapter();
 			}
@@ -353,6 +356,14 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNamedDisplayElement(NamedDisplayElement object) {
 				return createNamedDisplayElementAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
+			}
+			@Override
+			public Adapter caseVariable(Variable object) {
+				return createVariableAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -795,6 +806,90 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildPath <em>Child Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildPath
+	 * @generated
+	 */
+	public Adapter createChildPathAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildPathAttribute <em>Child Path Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAttribute
+	 * @generated
+	 */
+	public Adapter createChildPathAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildPathAssociation <em>Child Path Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAssociation
+	 * @generated
+	 */
+	public Adapter createChildPathAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.FeaturePath <em>Feature Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePath
+	 * @generated
+	 */
+	public Adapter createFeaturePathAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAttribute <em>Feature Path Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAttribute
+	 * @generated
+	 */
+	public Adapter createFeaturePathAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAssociation <em>Feature Path Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAssociation
+	 * @generated
+	 */
+	public Adapter createFeaturePathAssociationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.InterfaceField <em>Interface Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1089,90 +1184,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.FeaturePath <em>Feature Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.FeaturePath
-	 * @generated
-	 */
-	public Adapter createFeaturePathAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAttribute <em>Feature Path Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAttribute
-	 * @generated
-	 */
-	public Adapter createFeaturePathAttributeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAssociation <em>Feature Path Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAssociation
-	 * @generated
-	 */
-	public Adapter createFeaturePathAssociationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildPath <em>Child Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ChildPath
-	 * @generated
-	 */
-	public Adapter createChildPathAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildPathAttribute <em>Child Path Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAttribute
-	 * @generated
-	 */
-	public Adapter createChildPathAttributeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildPathAssociation <em>Child Path Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAssociation
-	 * @generated
-	 */
-	public Adapter createChildPathAssociationAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit <em>Image Index Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1365,6 +1376,34 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedDisplayElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.expression.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.expression.Expression
+	 * @generated
+	 */
+	public Adapter createExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.expression.Variable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.expression.Variable
+	 * @generated
+	 */
+	public Adapter createVariableAdapter() {
 		return null;
 	}
 

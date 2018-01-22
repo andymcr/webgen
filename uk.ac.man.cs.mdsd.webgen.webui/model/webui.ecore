@@ -373,7 +373,8 @@
         <details key="derivation" value="if attribute.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else if attribute.oclIsKindOf(persistence::EntityAttribute) then&#xD;&#xA;&#x9;attribute.oclAsType(persistence::EntityAttribute).name&#xD;&#xA;else&#xD;&#xA;&#x9;attribute.oclAsType(persistence::EncapsulatedAttribute).name&#xD;&#xA;endif endif&#xD;&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FeaturePathAssociation" eSuperTypes="#//FeaturePath #//AssociationReference">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSourceAssociation" lowerBound="1"

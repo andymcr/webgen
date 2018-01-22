@@ -49,7 +49,7 @@ public interface FeaturePathAttribute extends FeaturePath {
 	 * @return the value of the '<em>Attribute</em>' reference.
 	 * @see #setAttribute(Attribute)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getFeaturePathAttribute_Attribute()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Attribute getAttribute();

@@ -606,6 +606,8 @@
         eType="#//FeaturePath" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="titleFeature" lowerBound="1"
         eType="#//FeaturePath" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="truncateTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="missingImagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imageFilter" lowerBound="1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.image/model/image.ecore#//ImageManipulation"/>

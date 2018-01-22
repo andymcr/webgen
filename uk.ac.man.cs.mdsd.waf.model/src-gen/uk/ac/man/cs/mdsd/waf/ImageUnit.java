@@ -14,6 +14,7 @@ package uk.ac.man.cs.mdsd.waf;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getTitleFeature <em>Title Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateTitle <em>Truncate Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImageFilter <em>Image Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getShowTime <em>Show Time</em>}</li>
@@ -76,6 +77,32 @@ public interface ImageUnit extends DynamicUnit, CollectionUnit {
 	 * @generated
 	 */
 	void setTitleFeature(FeaturePath value);
+
+	/**
+	 * Returns the value of the '<em><b>Truncate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Truncate Title</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Truncate Title</em>' attribute.
+	 * @see #setTruncateTitle(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageUnit_TruncateTitle()
+	 * @model unique="false"
+	 * @generated
+	 */
+	boolean isTruncateTitle();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateTitle <em>Truncate Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Truncate Title</em>' attribute.
+	 * @see #isTruncateTitle()
+	 * @generated
+	 */
+	void setTruncateTitle(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Missing Image Path</b></em>' attribute.

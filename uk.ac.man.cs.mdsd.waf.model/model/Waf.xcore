@@ -461,6 +461,7 @@ class SearchUnit extends ControlUnit {
 abstract class ImageUnit extends DynamicUnit, CollectionUnit {
 	contains FeaturePath[1] imagePathFeature
 	contains FeaturePath[1] titleFeature
+	boolean truncateTitle
 	String missingImagePath
 	refers ImageManipulation[1] imageFilter
 	int showTime

@@ -680,6 +680,48 @@ abstract rule AssociationReference {
 	)
 }
 
+abstract rule FeaturePath {
+	from website : Website!FeaturePath
+	to waf : WAF!FeaturePath (
+	)
+}
+
+-- @extends FeaturePath
+rule FeaturePathAttribute {
+	from website : Website!FeaturePathAttribute
+	to waf : WAF!FeaturePathAttribute (
+		attribute <- website.attribute.findOrmFeature()
+	)
+}
+
+-- @extends FeaturePath, AssociationReference
+rule FeaturePathAssociation {
+	from website : Website!FeaturePathAssociation
+	to waf : WAF!FeaturePathAssociation (
+	)
+}
+
+abstract rule ChildPath {
+	from website : Website!ChildPath
+	to waf : WAF!ChildPath (
+	)
+}
+
+-- @extends ChildPath
+rule ChildPathAttribute {
+	from website : Website!ChildPathAttribute
+	to waf : WAF!ChildPathAttribute (
+		attribute <- website.attribute.findOrmAttribute()
+	)
+}
+
+-- @extends ChildPath, AssociationReference
+rule ChildPathAssociation {
+	from website : Website!ChildPathAssociation
+	to waf : WAF!ChildPathAssociation (
+	)
+}
+
 -- @extends UnitField, NamedElement
 abstract rule InterfaceField {
 	from website : Website!InterfaceField
@@ -991,48 +1033,6 @@ abstract rule ImageUnit {
 		imageFilter <- website.imageFilter,
 		showTime <- website.showTime,
 		transitionTime <- website.transitionTime
-	)
-}
-
-abstract rule FeaturePath {
-	from website : Website!FeaturePath
-	to waf : WAF!FeaturePath (
-	)
-}
-
--- @extends FeaturePath
-rule FeaturePathAttribute {
-	from website : Website!FeaturePathAttribute
-	to waf : WAF!FeaturePathAttribute (
-		attribute <- website.attribute.findOrmFeature()
-	)
-}
-
--- @extends FeaturePath, AssociationReference
-rule FeaturePathAssociation {
-	from website : Website!FeaturePathAssociation
-	to waf : WAF!FeaturePathAssociation (
-	)
-}
-
-abstract rule ChildPath {
-	from website : Website!ChildPath
-	to waf : WAF!ChildPath (
-	)
-}
-
--- @extends ChildPath
-rule ChildPathAttribute {
-	from website : Website!ChildPathAttribute
-	to waf : WAF!ChildPathAttribute (
-		attribute <- website.attribute.findOrmAttribute()
-	)
-}
-
--- @extends ChildPath, AssociationReference
-rule ChildPathAssociation {
-	from website : Website!ChildPathAssociation
-	to waf : WAF!ChildPathAssociation (
 	)
 }
 

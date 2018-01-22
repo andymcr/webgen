@@ -3001,7 +3001,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageUnit_MissingImagePath() {
+	public EAttribute getImageUnit_TruncateTitle() {
 		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3010,8 +3010,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getImageUnit_MissingImagePath() {
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getImageUnit_ImageFilter() {
-		return (EReference)imageUnitEClass.getEStructuralFeatures().get(3);
+		return (EReference)imageUnitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3020,7 +3029,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getImageUnit_ShowTime() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3029,7 +3038,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getImageUnit_TransitionTime() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -3830,6 +3839,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		imageUnitEClass = createEClass(IMAGE_UNIT);
 		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_PATH_FEATURE);
 		createEReference(imageUnitEClass, IMAGE_UNIT__TITLE_FEATURE);
+		createEAttribute(imageUnitEClass, IMAGE_UNIT__TRUNCATE_TITLE);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__MISSING_IMAGE_PATH);
 		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_FILTER);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__SHOW_TIME);
@@ -4328,6 +4338,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(imageUnitEClass, ImageUnit.class, "ImageUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getImageUnit_ImagePathFeature(), this.getFeaturePath(), null, "imagePathFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImageUnit_TitleFeature(), this.getFeaturePath(), null, "titleFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImageUnit_TruncateTitle(), theEcorePackage.getEBoolean(), "truncateTitle", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_MissingImagePath(), theEcorePackage.getEString(), "missingImagePath", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImageUnit_ImageFilter(), this.getImageManipulation(), null, "imageFilter", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_ShowTime(), theEcorePackage.getEInt(), "showTime", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

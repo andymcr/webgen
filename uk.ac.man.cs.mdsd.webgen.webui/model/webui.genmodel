@@ -365,6 +365,7 @@
           ecoreFeature="ecore:EReference webui.ecore#//ImageUnit/imagePathFeature"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
           ecoreFeature="ecore:EReference webui.ecore#//ImageUnit/titleFeature"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/truncateTitle"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/missingImagePath"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//ImageUnit/imageFilter"/>

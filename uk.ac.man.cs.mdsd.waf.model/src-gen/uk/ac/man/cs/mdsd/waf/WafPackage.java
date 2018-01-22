@@ -9579,13 +9579,22 @@ public interface WafPackage extends EPackage {
 	int IMAGE_UNIT__TITLE_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 23;
 
 	/**
+	 * The feature id for the '<em><b>Truncate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__TRUNCATE_TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 24;
+
+	/**
 	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__MISSING_IMAGE_PATH = DYNAMIC_UNIT_FEATURE_COUNT + 24;
+	int IMAGE_UNIT__MISSING_IMAGE_PATH = DYNAMIC_UNIT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Image Filter</b></em>' reference.
@@ -9594,7 +9603,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__IMAGE_FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 25;
+	int IMAGE_UNIT__IMAGE_FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
@@ -9603,7 +9612,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__SHOW_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 26;
+	int IMAGE_UNIT__SHOW_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Transition Time</b></em>' attribute.
@@ -9612,7 +9621,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__TRANSITION_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 27;
+	int IMAGE_UNIT__TRANSITION_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 28;
 
 	/**
 	 * The number of structural features of the '<em>Image Unit</em>' class.
@@ -9621,7 +9630,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 28;
+	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 29;
 
 	/**
 	 * The number of operations of the '<em>Image Unit</em>' class.
@@ -10055,6 +10064,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_INDEX_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Truncate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__TRUNCATE_TITLE = IMAGE_UNIT__TRUNCATE_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
@@ -10571,6 +10589,15 @@ public interface WafPackage extends EPackage {
 	int SLIDER_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
 
 	/**
+	 * The feature id for the '<em><b>Truncate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__TRUNCATE_TITLE = IMAGE_UNIT__TRUNCATE_TITLE;
+
+	/**
 	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11047,6 +11074,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int GALLERY_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Truncate Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__TRUNCATE_TITLE = IMAGE_UNIT__TRUNCATE_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
@@ -15425,6 +15461,17 @@ public interface WafPackage extends EPackage {
 	EReference getImageUnit_TitleFeature();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateTitle <em>Truncate Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Truncate Title</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateTitle()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EAttribute getImageUnit_TruncateTitle();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -18186,6 +18233,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IMAGE_UNIT__TITLE_FEATURE = eINSTANCE.getImageUnit_TitleFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Truncate Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_UNIT__TRUNCATE_TITLE = eINSTANCE.getImageUnit_TruncateTitle();
 
 		/**
 		 * The meta object literal for the '<em><b>Missing Image Path</b></em>' attribute feature.

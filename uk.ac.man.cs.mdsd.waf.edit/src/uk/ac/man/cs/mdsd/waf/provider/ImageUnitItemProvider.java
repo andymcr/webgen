@@ -69,6 +69,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			addLastPageIconNamePropertyDescriptor(object);
 			addPaginationClassPropertyDescriptor(object);
 			addPaginationElementClassPropertyDescriptor(object);
+			addTruncateTitlePropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
@@ -562,6 +563,28 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Truncate Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTruncateTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_truncateTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_truncateTitle_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__TRUNCATE_TITLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Missing Image Path feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -724,6 +747,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			case WafPackage.IMAGE_UNIT__LAST_PAGE_ICON_NAME:
 			case WafPackage.IMAGE_UNIT__PAGINATION_CLASS:
 			case WafPackage.IMAGE_UNIT__PAGINATION_ELEMENT_CLASS:
+			case WafPackage.IMAGE_UNIT__TRUNCATE_TITLE:
 			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 			case WafPackage.IMAGE_UNIT__SHOW_TIME:
 			case WafPackage.IMAGE_UNIT__TRANSITION_TIME:

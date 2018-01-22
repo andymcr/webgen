@@ -684,6 +684,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="SelectAction" eSuperTypes="#//InlineAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//SelectableUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valuePath" eType="#//FeaturePath"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeleteAction" eSuperTypes="#//InlineAction">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">

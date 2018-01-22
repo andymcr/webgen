@@ -519,6 +519,7 @@ abstract class InlineAction extends NamedDisplayElement {
 
 class SelectAction extends InlineAction {
 	refers SelectableUnit[1] target opposite selectors
+	contains FeaturePath valuePath
 }
 
 class DeleteAction extends InlineAction {

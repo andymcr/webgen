@@ -13,6 +13,7 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.SelectAction#getTarget <em>Target</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.SelectAction#getValuePath <em>Value Path</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getSelectAction()
@@ -45,5 +46,31 @@ public interface SelectAction extends InlineAction {
 	 * @generated
 	 */
 	void setTarget(SelectableUnit value);
+
+	/**
+	 * Returns the value of the '<em><b>Value Path</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Value Path</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Value Path</em>' containment reference.
+	 * @see #setValuePath(FeaturePath)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getSelectAction_ValuePath()
+	 * @model containment="true"
+	 * @generated
+	 */
+	FeaturePath getValuePath();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.SelectAction#getValuePath <em>Value Path</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value Path</em>' containment reference.
+	 * @see #getValuePath()
+	 * @generated
+	 */
+	void setValuePath(FeaturePath value);
 
 } // SelectAction

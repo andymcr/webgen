@@ -10545,13 +10545,22 @@ public interface WebuiPackage extends EPackage {
 	int SELECT_ACTION__TARGET = INLINE_ACTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Value Path</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECT_ACTION__VALUE_PATH = INLINE_ACTION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Select Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECT_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 1;
+	int SELECT_ACTION_FEATURE_COUNT = INLINE_ACTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Select Action</em>' class.
@@ -13893,6 +13902,17 @@ public interface WebuiPackage extends EPackage {
 	EReference getSelectAction_Target();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.SelectAction#getValuePath <em>Value Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value Path</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.SelectAction#getValuePath()
+	 * @see #getSelectAction()
+	 * @generated
+	 */
+	EReference getSelectAction_ValuePath();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.DeleteAction <em>Delete Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16407,6 +16427,14 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SELECT_ACTION__TARGET = eINSTANCE.getSelectAction_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Value Path</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SELECT_ACTION__VALUE_PATH = eINSTANCE.getSelectAction_ValuePath();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DeleteActionImpl <em>Delete Action</em>}' class.

@@ -1029,6 +1029,7 @@ abstract rule ImageUnit {
 	to waf : WAF!ImageUnit (
 		imagePathFeature <- website.imagePathFeature,
 		titleFeature <- website.titleFeature,
+		truncateTitle <- website.truncateTitle,
 		missingImagePath <- website.missingImagePath,
 		imageFilter <- website.imageFilter,
 		showTime <- website.showTime,
@@ -1113,7 +1114,8 @@ abstract rule InlineAction {
 rule SelectAction {
 	from website : Website!SelectAction
 	to waf : WAF!SelectAction (
-		target <- website.target
+		target <- website.target,
+		valuePath <- website.valuePath
 	)
 }
 

@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.man.cs.mdsd.waf.FeaturePath;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
 import uk.ac.man.cs.mdsd.waf.SelectableUnit;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -23,6 +24,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectActionImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectActionImpl#getValuePath <em>Value Path</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,6 +39,16 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	 * @ordered
 	 */
 	protected SelectableUnit target;
+
+	/**
+	 * The cached value of the '{@link #getValuePath() <em>Value Path</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValuePath()
+	 * @generated
+	 * @ordered
+	 */
+	protected FeaturePath valuePath;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,6 +134,49 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public FeaturePath getValuePath() {
+		return valuePath;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetValuePath(FeaturePath newValuePath, NotificationChain msgs) {
+		FeaturePath oldValuePath = valuePath;
+		valuePath = newValuePath;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.SELECT_ACTION__VALUE_PATH, oldValuePath, newValuePath);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValuePath(FeaturePath newValuePath) {
+		if (newValuePath != valuePath) {
+			NotificationChain msgs = null;
+			if (valuePath != null)
+				msgs = ((InternalEObject)valuePath).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.SELECT_ACTION__VALUE_PATH, null, msgs);
+			if (newValuePath != null)
+				msgs = ((InternalEObject)newValuePath).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.SELECT_ACTION__VALUE_PATH, null, msgs);
+			msgs = basicSetValuePath(newValuePath, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SELECT_ACTION__VALUE_PATH, newValuePath, newValuePath));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -143,6 +198,8 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 		switch (featureID) {
 			case WafPackage.SELECT_ACTION__TARGET:
 				return basicSetTarget(null, msgs);
+			case WafPackage.SELECT_ACTION__VALUE_PATH:
+				return basicSetValuePath(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -158,6 +215,8 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 			case WafPackage.SELECT_ACTION__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
+			case WafPackage.SELECT_ACTION__VALUE_PATH:
+				return getValuePath();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -172,6 +231,9 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 		switch (featureID) {
 			case WafPackage.SELECT_ACTION__TARGET:
 				setTarget((SelectableUnit)newValue);
+				return;
+			case WafPackage.SELECT_ACTION__VALUE_PATH:
+				setValuePath((FeaturePath)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -188,6 +250,9 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 			case WafPackage.SELECT_ACTION__TARGET:
 				setTarget((SelectableUnit)null);
 				return;
+			case WafPackage.SELECT_ACTION__VALUE_PATH:
+				setValuePath((FeaturePath)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,6 +267,8 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 		switch (featureID) {
 			case WafPackage.SELECT_ACTION__TARGET:
 				return target != null;
+			case WafPackage.SELECT_ACTION__VALUE_PATH:
+				return valuePath != null;
 		}
 		return super.eIsSet(featureID);
 	}

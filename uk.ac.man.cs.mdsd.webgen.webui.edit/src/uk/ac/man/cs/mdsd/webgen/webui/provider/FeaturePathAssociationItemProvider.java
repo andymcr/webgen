@@ -5,7 +5,10 @@ package uk.ac.man.cs.mdsd.webgen.webui.provider;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -15,6 +18,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.Association;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -75,8 +80,12 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof FeaturePathAssociation) {
+						final Set<Association> associations = new HashSet<Association>();
 						final FeaturePathAssociation path = (FeaturePathAssociation) object;
-						return getTarget(path).getAllAssociations();
+						for (EntityOrView entity :  getTargets(path)) {
+							associations.addAll(entity.getAllAssociations());
+						}
+						return associations;
 					}
 
 					return Collections.emptySet();

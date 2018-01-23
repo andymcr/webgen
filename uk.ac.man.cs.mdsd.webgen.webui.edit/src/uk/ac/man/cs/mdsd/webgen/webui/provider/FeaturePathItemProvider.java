@@ -22,11 +22,10 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import uk.ac.man.cs.mdsd.webgen.expression.Expression;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAttribute;
-import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
@@ -38,6 +37,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.webui.SingletonUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitElement;
+import uk.ac.man.cs.mdsd.webgen.webui.UnitField;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.FeaturePath} object.
@@ -128,41 +128,54 @@ public class FeaturePathItemProvider
 
 	protected Set<EntityOrView> getParentType(final FeaturePath path) {
 		if (path.eContainer() instanceof DynamicUnit) {
-			return getContentType((DynamicUnit) path.eContainer());
+			return getContentTypes((DynamicUnit) path.eContainer());
 
 		} else if (path.eContainer() instanceof InlineAction) {
 			return getEntities((InlineActionContainer) path.eContainer());
+
+		} else if (path.eContainer() instanceof Expression) {
+			return getEntities((Expression) path.eContainer());
 
 		} else {
 			return Collections.emptySet();
 		}
 	}
 
-	protected EntityOrView getTarget(final FeaturePathAssociation path) {
+	protected Set<EntityOrView> getTargets(final FeaturePathAssociation path) {
 		if (path.eContainer() instanceof DynamicUnit) {
-			final Set<EntityOrView> contentType
-				= getContentType((DynamicUnit) path.eContainer());
-			if (contentType.contains(path.getAssociation().getSourceEntityX())) {
-				return path.getAssociation().getTargetEntityX();
-			} else{
-				return path.getAssociation().getSourceEntityX();
-			}
+			final Set<EntityOrView> targets = new HashSet<EntityOrView>();
+			targets.add(getTarget(path.getAssociation(), (DynamicUnit) path.eContainer()));
+			return targets;
 
 		} else if (path.eContainer() instanceof InlineAction) {
+			final Set<EntityOrView> targets = new HashSet<EntityOrView>();
 			final Set<EntityOrView> entities
 				= getEntities((InlineActionContainer) path.eContainer());
 			if (entities.contains(path.getAssociation().getSourceEntityX())) {
-				return path.getAssociation().getTargetEntityX();
+				targets.add(path.getAssociation().getTargetEntityX());
 			} else{
-				return path.getAssociation().getSourceEntityX();
+				targets.add(path.getAssociation().getSourceEntityX());
 			}
+			return targets;
+
+		} else if (path.eContainer() instanceof Expression) {
+			return getEntities((Expression) path.eContainer());
 
 		} else {
-			return null;
+			return Collections.emptySet();
 		}
 	}
 
-	protected Set<EntityOrView> getContentType(final DynamicUnit unit) {
+	protected EntityOrView getTarget(final Association association, final DynamicUnit unit) {
+		final Set<EntityOrView> contentType = getContentTypes(unit);
+		if (contentType.contains(association.getSourceEntityX())) {
+			return association.getTargetEntityX();
+		} else{
+			return association.getSourceEntityX();
+		}
+	}
+
+	protected Set<EntityOrView> getContentTypes(final DynamicUnit unit) {
 		final Set<EntityOrView> contentType = new HashSet<EntityOrView>();
 
 		if (unit instanceof SingletonUnit) {
@@ -198,6 +211,20 @@ public class FeaturePathItemProvider
 		return entities;
 	}
 
+	protected Set<EntityOrView> getEntities(final Expression expression) {
+		final DynamicUnit unit = getDynamicUnitContext(expression);
+		if (unit != null) {
+			return getContentTypes(unit);
+		}
+
+		final InlineActionContainer action = getActionContext(expression);
+		if (action != null) {
+			return getEntities(action);
+		}
+
+		return Collections.emptySet();
+	}
+
 	protected EntityOrView getParentType(final Attribute attribute) {
 		if (attribute instanceof EntityAttribute) {
 			return ((EntityAttribute) attribute).getPartOf();
@@ -215,18 +242,6 @@ public class FeaturePathItemProvider
 		}
 	}
 
-	protected InlineActionContainer getActionContext(final Object object) { 
-	Object container = getContext(object); 
- 		while (container != null) { 
- 			if (container instanceof InlineActionContainer) { 
- 				return (InlineActionContainer) container; 
- 			} 
- 			container = getContext(container); 
- 		} 
- 
- 		return null; 
-	}
- 
 	protected DynamicUnit getDynamicUnitContext(final Object object) {
 		Object container = getContext(object);
 		while (container != null) {
@@ -239,15 +254,28 @@ public class FeaturePathItemProvider
 		return null;
 	}
 
-	protected EntityOrView getSourceType(final Association association) {
-		if (association instanceof EntityAssociation) {
-			return ((EntityAssociation) association).getPartOf();
-		} else if (association instanceof EncapsulatedAssociation) {
-			return ((EncapsulatedAssociation) association).getSourceEntity();
-		} else {
-			// TODO handle view
-			return null;
+	protected UnitField getUnitFieldContext(final Object object) {
+		Object container = getContext(object);
+		while (container != null) {
+			if (container instanceof UnitField) {
+				return (UnitField) container;
+			}
+			container = getContext(container);
 		}
+
+		return null;
 	}
 
+	protected InlineActionContainer getActionContext(final Object object) { 
+	Object container = getContext(object); 
+ 		while (container != null) { 
+ 			if (container instanceof InlineActionContainer) { 
+ 				return (InlineActionContainer) container; 
+ 			} 
+ 			container = getContext(container); 
+ 		} 
+ 
+ 		return null; 
+	}
+ 
 }

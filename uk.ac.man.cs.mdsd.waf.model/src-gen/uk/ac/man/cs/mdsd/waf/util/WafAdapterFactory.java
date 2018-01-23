@@ -218,6 +218,10 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createFeaturePathAssociationAdapter();
 			}
 			@Override
+			public Adapter caseFeaturePathLabel(FeaturePathLabel object) {
+				return createFeaturePathLabelAdapter();
+			}
+			@Override
 			public Adapter caseInterfaceField(InterfaceField object) {
 				return createInterfaceFieldAdapter();
 			}
@@ -886,6 +890,20 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFeaturePathAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.FeaturePathLabel <em>Feature Path Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathLabel
+	 * @generated
+	 */
+	public Adapter createFeaturePathLabelAdapter() {
 		return null;
 	}
 

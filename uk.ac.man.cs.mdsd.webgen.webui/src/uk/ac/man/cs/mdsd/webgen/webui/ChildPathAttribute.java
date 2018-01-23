@@ -49,7 +49,7 @@ public interface ChildPathAttribute extends ChildPath {
 	 * @return the value of the '<em>Attribute</em>' reference.
 	 * @see #setAttribute(Attribute)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getChildPathAttribute_Attribute()
-	 * @model ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Attribute getAttribute();

@@ -19,12 +19,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.service.Service;
-import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
@@ -89,7 +87,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitAssociation) {
 						final UnitAssociation association = (UnitAssociation) object;
-						return getAssociations(association.getDisplayedOn());
+						return getTarget(association).getAllAssociations();
 					}
 
 					return Collections.emptySet();
@@ -119,7 +117,9 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 						final UnitAssociation association = (UnitAssociation) object;
 						final Set<Label> labels = new HashSet<Label>();
 						if (association.getAssociation() != null) {
-							labels.addAll(association.getAssociation().getTargetEntityX().getLabels());
+							final EntityOrView target = getTarget(association);
+							labels.addAll(target.getAttributes());
+							labels.addAll(target.getLabels());
 						}
 
 						return labels;
@@ -219,7 +219,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 						if (association.getAssociation() != null) {
 							final WebUI webUI
 								= association.getDisplayedOn().getPageDisplayedOn().getWebUI();
-							return getSelections(webUI, association.getTargetEntity());
+							return getSelections(webUI, getTarget(association));
 						}
 					}
 					return Collections.emptySet();
@@ -450,14 +450,13 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
-	protected Set<Association> getAssociations(final DynamicUnit unit) {
-		final Set<Association> associations = new HashSet<Association>();
-
-		for (EntityOrView entity : getContentType(unit)) {
-			associations.addAll(entity.getAllAssociations());
+	protected EntityOrView getTarget(final UnitAssociation association) {
+		final Set<EntityOrView> entities = getContentType(association.getDisplayedOn());
+		if (entities.contains(association.getAssociation().getSourceEntityX())) {
+			return association.getAssociation().getTargetEntityX();
+		} else{
+			return association.getAssociation().getSourceEntityX();
 		}
-
-		return associations;
 	}
 
 	protected Set<Selection> getSelections(final WebUI webUI, final EntityOrView entity) {

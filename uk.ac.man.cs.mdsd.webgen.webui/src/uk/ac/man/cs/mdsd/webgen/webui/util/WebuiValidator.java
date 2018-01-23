@@ -156,6 +156,8 @@ public class WebuiValidator extends EObjectValidator {
 				return validateFeaturePathAttribute((FeaturePathAttribute)value, diagnostics, context);
 			case WebuiPackage.FEATURE_PATH_ASSOCIATION:
 				return validateFeaturePathAssociation((FeaturePathAssociation)value, diagnostics, context);
+			case WebuiPackage.FEATURE_PATH_LABEL:
+				return validateFeaturePathLabel((FeaturePathLabel)value, diagnostics, context);
 			case WebuiPackage.INTERFACE_FIELD:
 				return validateInterfaceField((InterfaceField)value, diagnostics, context);
 			case WebuiPackage.DATA_TYPE_FIELD:
@@ -1545,6 +1547,15 @@ public class WebuiValidator extends EObjectValidator {
 	 */
 	public boolean validateFeaturePathAssociation(FeaturePathAssociation featurePathAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(featurePathAssociation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFeaturePathLabel(FeaturePathLabel featurePathLabel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(featurePathLabel, diagnostics, context);
 	}
 
 	/**

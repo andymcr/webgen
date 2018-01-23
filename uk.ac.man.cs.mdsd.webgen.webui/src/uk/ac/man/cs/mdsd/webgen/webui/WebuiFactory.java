@@ -283,6 +283,15 @@ public interface WebuiFactory extends EFactory {
 	FeaturePathAssociation createFeaturePathAssociation();
 
 	/**
+	 * Returns a new object of class '<em>Feature Path Label</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Feature Path Label</em>'.
+	 * @generated
+	 */
+	FeaturePathLabel createFeaturePathLabel();
+
+	/**
 	 * Returns a new object of class '<em>Child Path Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

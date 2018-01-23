@@ -680,6 +680,27 @@ abstract rule AssociationReference {
 	)
 }
 
+abstract rule ChildPath {
+	from website : Website!ChildPath
+	to waf : WAF!ChildPath (
+	)
+}
+
+-- @extends ChildPath
+rule ChildPathAttribute {
+	from website : Website!ChildPathAttribute
+	to waf : WAF!ChildPathAttribute (
+		attribute <- website.attribute.findOrmAttribute()
+	)
+}
+
+-- @extends ChildPath, AssociationReference
+rule ChildPathAssociation {
+	from website : Website!ChildPathAssociation
+	to waf : WAF!ChildPathAssociation (
+	)
+}
+
 abstract rule FeaturePath {
 	from website : Website!FeaturePath
 	to waf : WAF!FeaturePath (
@@ -701,24 +722,11 @@ rule FeaturePathAssociation {
 	)
 }
 
-abstract rule ChildPath {
-	from website : Website!ChildPath
-	to waf : WAF!ChildPath (
-	)
-}
-
--- @extends ChildPath
-rule ChildPathAttribute {
-	from website : Website!ChildPathAttribute
-	to waf : WAF!ChildPathAttribute (
-		attribute <- website.attribute.findOrmAttribute()
-	)
-}
-
--- @extends ChildPath, AssociationReference
-rule ChildPathAssociation {
-	from website : Website!ChildPathAssociation
-	to waf : WAF!ChildPathAssociation (
+-- @extends FeaturePath
+rule FeaturePathLabel {
+	from website : Website!FeaturePathLabel
+	to waf : WAF!FeaturePathLabel (
+		label <- website.label.findOrmLabel()
 	)
 }
 

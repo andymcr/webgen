@@ -194,6 +194,11 @@ public class SelectActionItemProvider extends InlineActionItemProvider {
 			(createChildParameter
 				(WebuiPackage.Literals.SELECT_ACTION__VALUE_PATH,
 				 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.SELECT_ACTION__VALUE_PATH,
+				 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
 	}
 
 	protected WebUI getWebUI(final InlineActionContainer container) {

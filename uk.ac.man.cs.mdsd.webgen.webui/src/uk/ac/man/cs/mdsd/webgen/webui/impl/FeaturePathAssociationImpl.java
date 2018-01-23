@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
-
 import uk.ac.man.cs.mdsd.webgen.webui.AssociationReference;
 import uk.ac.man.cs.mdsd.webgen.webui.ChildPath;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePathAssociation;

@@ -169,6 +169,11 @@ public class SelectActionItemProvider
 			(createChildParameter
 				(WafPackage.Literals.SELECT_ACTION__VALUE_PATH,
 				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.SELECT_ACTION__VALUE_PATH,
+				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 	}
 
 }

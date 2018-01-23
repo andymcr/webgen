@@ -15,9 +15,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePathAssociation;
-import uk.ac.man.cs.mdsd.webgen.webui.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
@@ -77,15 +75,8 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof FeaturePathAssociation) {
-						final InlineActionContainer action = getActionContext(object); 
-						if (action != null) { 
-							return getAssociations(action); 
-						} 
- 
-						final DynamicUnit unit = getDynamicUnitContext(object);
-						if (unit != null) {
-							return getAssociations(unit);
-						}
+						final FeaturePathAssociation path = (FeaturePathAssociation) object;
+						return getTarget(path).getAllAssociations();
 					}
 
 					return Collections.emptySet();

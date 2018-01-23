@@ -18,6 +18,7 @@ import uk.ac.man.cs.mdsd.orm.DataType
 import uk.ac.man.cs.mdsd.orm.DateDetails
 import uk.ac.man.cs.mdsd.orm.EntityOrView
 import uk.ac.man.cs.mdsd.orm.Label
+import uk.ac.man.cs.mdsd.orm.ModelLabel
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
 import uk.ac.man.cs.mdsd.orm.NamedElement
 import uk.ac.man.cs.mdsd.orm.OrmModel
@@ -336,6 +337,14 @@ class FeaturePathAttribute extends FeaturePath {
 }
 
 class FeaturePathAssociation extends FeaturePath, AssociationReference {
+}
+
+class FeaturePathLabel extends FeaturePath {
+	derived String name get {
+		if (label != null)
+			label.name
+	}
+	refers ModelLabel[1] label
 }
 
 abstract class InterfaceField extends NamedElement, UnitField {

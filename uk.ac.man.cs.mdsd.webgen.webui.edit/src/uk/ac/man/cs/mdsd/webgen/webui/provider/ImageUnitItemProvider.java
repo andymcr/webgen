@@ -766,6 +766,11 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(WebuiPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
+				 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(WebuiPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
 				 WebuiFactory.eINSTANCE.createFeaturePathAttribute()));
 
@@ -773,6 +778,11 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			(createChildParameter
 				(WebuiPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
 				 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
+				 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
 	}
 
 	/**

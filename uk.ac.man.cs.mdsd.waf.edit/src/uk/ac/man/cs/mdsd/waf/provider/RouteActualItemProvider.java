@@ -189,6 +189,11 @@ public class RouteActualItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
+				 WafFactory.eINSTANCE.createFeaturePathLabel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.ROUTE_ACTUAL__VALUE,
 				 ServiceFactory.eINSTANCE.createConstantReference()));
 
 		newChildDescriptors.add

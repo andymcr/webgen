@@ -91,7 +91,7 @@ public interface AssociationReference extends EObject {
 	 * @return the value of the '<em>Value Display</em>' reference.
 	 * @see #setValueDisplay(Label)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getAssociationReference_ValueDisplay()
-	 * @model
+	 * @model ordered="false"
 	 * @generated
 	 */
 	Label getValueDisplay();

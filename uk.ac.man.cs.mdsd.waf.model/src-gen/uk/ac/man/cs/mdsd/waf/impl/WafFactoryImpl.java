@@ -80,6 +80,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.CHILD_PATH_ASSOCIATION: return createChildPathAssociation();
 			case WafPackage.FEATURE_PATH_ATTRIBUTE: return createFeaturePathAttribute();
 			case WafPackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
+			case WafPackage.FEATURE_PATH_LABEL: return createFeaturePathLabel();
 			case WafPackage.DATA_TYPE_FIELD: return createDataTypeField();
 			case WafPackage.DATE_FIELD: return createDateField();
 			case WafPackage.CAPTCHA_FIELD: return createCaptchaField();
@@ -388,6 +389,16 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public FeaturePathAssociation createFeaturePathAssociation() {
 		FeaturePathAssociationImpl featurePathAssociation = new FeaturePathAssociationImpl();
 		return featurePathAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FeaturePathLabel createFeaturePathLabel() {
+		FeaturePathLabelImpl featurePathLabel = new FeaturePathLabelImpl();
+		return featurePathLabel;
 	}
 
 	/**

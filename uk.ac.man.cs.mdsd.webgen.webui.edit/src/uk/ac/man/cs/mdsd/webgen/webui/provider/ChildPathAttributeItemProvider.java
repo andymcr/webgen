@@ -70,7 +70,8 @@ public class ChildPathAttributeItemProvider extends ChildPathItemProvider {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof ChildPathAttribute) {
-						return getAttributes((ChildPathAttribute) object);
+						final ChildPathAttribute child = (ChildPathAttribute) object;
+						return getParentType(child).getAttributes();
 					}
 
 					return Collections.emptyList();

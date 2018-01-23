@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
-
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 
 import uk.ac.man.cs.mdsd.webgen.webui.AssociationReference;

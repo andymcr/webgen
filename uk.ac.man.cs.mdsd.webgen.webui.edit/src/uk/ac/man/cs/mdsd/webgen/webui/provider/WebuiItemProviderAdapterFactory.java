@@ -763,6 +763,29 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.FeaturePathLabel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FeaturePathLabelItemProvider featurePathLabelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.FeaturePathLabel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFeaturePathLabelAdapter() {
+		if (featurePathLabelItemProvider == null) {
+			featurePathLabelItemProvider = new FeaturePathLabelItemProvider(this);
+		}
+
+		return featurePathLabelItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.ChildPathAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1166,6 +1189,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
 						 WebuiFactory.eINSTANCE.createFeaturePathAttribute()));
 
@@ -1173,6 +1201,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
 						 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
 
 				return null;
 			}
@@ -1196,6 +1229,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
 						 WebuiFactory.eINSTANCE.createFeaturePathAttribute()));
 
@@ -1203,6 +1241,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
 						 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
 
 				return null;
 			}
@@ -1226,6 +1269,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__LEFT,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
 						 WebuiFactory.eINSTANCE.createFeaturePathAttribute()));
 
@@ -1233,6 +1281,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
 						 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IN_OPERATOR__RIGHT,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
 
 				return null;
 			}
@@ -1255,6 +1308,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
 						 WebuiFactory.eINSTANCE.createFeaturePathAttribute()));
 
@@ -1262,6 +1320,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
 						 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
 
 				return null;
 			}
@@ -1285,6 +1348,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 
 				newChildDescriptors.add
 					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
+
+				newChildDescriptors.add
+					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
 						 WebuiFactory.eINSTANCE.createFeaturePathAttribute()));
 
@@ -1292,6 +1360,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
 						 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
 
 				return null;
 			}
@@ -1313,6 +1386,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
 						 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
 
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
+
 				return null;
 			}
  
@@ -1332,6 +1410,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
 						 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
 
 				return null;
 			}
@@ -1425,6 +1508,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 						(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 						 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
 
+				newChildDescriptors.add
+					(createChildParameter
+						(PersistencePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
+
 				return null;
 			}
  
@@ -1517,6 +1605,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 						(ServicePackage.Literals.CONSTANT__VALUE,
 						 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
 
+				newChildDescriptors.add
+					(createChildParameter
+						(ServicePackage.Literals.CONSTANT__VALUE,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
+
 				return null;
 			}
 			/**
@@ -1535,6 +1628,11 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 					(createChildParameter
 						(ServicePackage.Literals.ORDER__PATH,
 						 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ServicePackage.Literals.ORDER__PATH,
+						 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
 
 				return null;
 			}

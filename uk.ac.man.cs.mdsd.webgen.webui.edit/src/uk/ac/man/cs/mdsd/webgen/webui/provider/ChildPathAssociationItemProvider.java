@@ -5,7 +5,9 @@ package uk.ac.man.cs.mdsd.webgen.webui.provider;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -17,6 +19,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 import uk.ac.man.cs.mdsd.webgen.webui.ChildPathAssociation;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -77,7 +81,8 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof ChildPathAssociation) {
-						return getAssociations((ChildPathAssociation) object);
+						final ChildPathAssociation child = (ChildPathAssociation) object;
+						return getTarget(child).getAllAssociations();
 					}
 
 					return Collections.emptyList();
@@ -89,22 +94,35 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 	 * This adds a property descriptor for the Value Display feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addValueDisplayPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AssociationReference_valueDisplay_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_valueDisplay_feature", "_UI_AssociationReference_type"),
-				 WebuiPackage.Literals.ASSOCIATION_REFERENCE__VALUE_DISPLAY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_AssociationReference_valueDisplay_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_valueDisplay_feature", "_UI_AssociationReference_type"),
+			WebuiPackage.Literals.ASSOCIATION_REFERENCE__VALUE_DISPLAY,
+			true, false, true, null,
+			getString("_UI_InterfacePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof ChildPathAssociation) {
+						final ChildPathAssociation child = (ChildPathAssociation) object;
+						final Set<Label> labels = new HashSet<Label>();
+						if (child.getAssociation() != null) {
+							final EntityOrView target = getTarget(child);
+							labels.addAll(target.getAttributes());
+							labels.addAll(target.getLabels());
+						}
+
+						return labels;
+					}
+
+					return Collections.emptySet();
+				}
+			});
 	}
 
 	/**

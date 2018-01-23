@@ -51,6 +51,7 @@ import uk.ac.man.cs.mdsd.waf.EditUnit;
 import uk.ac.man.cs.mdsd.waf.FeaturePath;
 import uk.ac.man.cs.mdsd.waf.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.waf.FeaturePathAttribute;
+import uk.ac.man.cs.mdsd.waf.FeaturePathLabel;
 import uk.ac.man.cs.mdsd.waf.FeatureSupportAction;
 import uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
@@ -356,6 +357,13 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass featurePathAssociationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass featurePathLabelEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2254,6 +2262,33 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFeaturePathLabel() {
+		return featurePathLabelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeaturePathLabel_Name() {
+		return (EAttribute)featurePathLabelEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeaturePathLabel_Label() {
+		return (EReference)featurePathLabelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInterfaceField() {
 		return interfaceFieldEClass;
 	}
@@ -3745,6 +3780,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		featurePathAssociationEClass = createEClass(FEATURE_PATH_ASSOCIATION);
 
+		featurePathLabelEClass = createEClass(FEATURE_PATH_LABEL);
+		createEAttribute(featurePathLabelEClass, FEATURE_PATH_LABEL__NAME);
+		createEReference(featurePathLabelEClass, FEATURE_PATH_LABEL__LABEL);
+
 		interfaceFieldEClass = createEClass(INTERFACE_FIELD);
 		createEAttribute(interfaceFieldEClass, INTERFACE_FIELD__REQUIRED);
 		createEReference(interfaceFieldEClass, INTERFACE_FIELD__DEFAULT_VALUE);
@@ -3992,6 +4031,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		featurePathAttributeEClass.getESuperTypes().add(this.getFeaturePath());
 		featurePathAssociationEClass.getESuperTypes().add(this.getFeaturePath());
 		featurePathAssociationEClass.getESuperTypes().add(this.getAssociationReference());
+		featurePathLabelEClass.getESuperTypes().add(this.getFeaturePath());
 		interfaceFieldEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		interfaceFieldEClass.getESuperTypes().add(this.getUnitField());
 		dataTypeFieldEClass.getESuperTypes().add(this.getInterfaceField());
@@ -4244,6 +4284,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getFeaturePathAttribute_Attribute(), theOrmPackage.getAttribute(), null, "attribute", null, 1, 1, FeaturePathAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featurePathAssociationEClass, FeaturePathAssociation.class, "FeaturePathAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(featurePathLabelEClass, FeaturePathLabel.class, "FeaturePathLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFeaturePathLabel_Name(), theEcorePackage.getEString(), "name", null, 0, 1, FeaturePathLabel.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getFeaturePathLabel_Label(), theOrmPackage.getModelLabel(), null, "label", null, 1, 1, FeaturePathLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceFieldEClass, InterfaceField.class, "InterfaceField", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInterfaceField_Required(), theEcorePackage.getEBoolean(), "required", null, 0, 1, InterfaceField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

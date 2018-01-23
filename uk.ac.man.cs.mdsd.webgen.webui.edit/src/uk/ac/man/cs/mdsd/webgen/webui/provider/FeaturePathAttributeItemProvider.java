@@ -5,7 +5,9 @@ package uk.ac.man.cs.mdsd.webgen.webui.provider;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -15,9 +17,9 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePathAttribute;
-import uk.ac.man.cs.mdsd.webgen.webui.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
 /**
@@ -95,15 +97,12 @@ public class FeaturePathAttributeItemProvider extends FeaturePathItemProvider {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof FeaturePathAttribute) {
-						final InlineActionContainer action = getActionContext(object); 
-						if (action != null) { 
-							return getAttributes(action); 
-						} 
- 
-						final DynamicUnit unit = getDynamicUnitContext(object);
-						if (unit != null) {
-							return getAttributes(unit);
+						final Set<Attribute> attributes = new HashSet<Attribute>();
+						final FeaturePathAttribute path = (FeaturePathAttribute) object;
+						for (EntityOrView entity :  getParentType(path)) {
+							attributes.addAll(entity.getAttributes());
 						}
+						return attributes;
 					}
 
 					return Collections.emptySet();

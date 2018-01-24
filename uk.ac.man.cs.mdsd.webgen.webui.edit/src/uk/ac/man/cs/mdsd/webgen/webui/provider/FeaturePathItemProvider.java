@@ -126,7 +126,7 @@ public class FeaturePathItemProvider
 		return WebuiEditPlugin.INSTANCE;
 	}
 
-	protected Set<EntityOrView> getParentType(final FeaturePath path) {
+	protected Set<EntityOrView> getParentTypes(final FeaturePath path) {
 		if (path.eContainer() instanceof DynamicUnit) {
 			return getContentTypes((DynamicUnit) path.eContainer());
 

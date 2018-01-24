@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 import uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.InlineAction;
 import uk.ac.man.cs.mdsd.webgen.webui.InlineActionContainer;
@@ -28,11 +29,13 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getActions <em>Actions</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#isOverlayTitle <em>Overlay Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getColumnClass <em>Column Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getSizeClass <em>Size Class</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +50,16 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @ordered
 	 */
 	protected EList<InlineAction> actions;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected Label title;
 
 	/**
 	 * The default value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
@@ -116,7 +129,7 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONTENT_CLASS_EDEFAULT = "card";
+	protected static final String CONTENT_CLASS_EDEFAULT = "row";
 
 	/**
 	 * The cached value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
@@ -149,6 +162,26 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	protected String columnClass = COLUMN_CLASS_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getSizeClass() <em>Size Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSizeClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SIZE_CLASS_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getSizeClass() <em>Size Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSizeClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String sizeClass = SIZE_CLASS_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -177,6 +210,44 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			actions = new EObjectContainmentWithInverseEList<InlineAction>(InlineAction.class, this, WebuiPackage.IMAGE_INDEX_UNIT__ACTIONS, WebuiPackage.INLINE_ACTION__USED_BY);
 		}
 		return actions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Label getTitle() {
+		if (title != null && title.eIsProxy()) {
+			InternalEObject oldTitle = (InternalEObject)title;
+			title = (Label)eResolveProxy(oldTitle);
+			if (title != oldTitle) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.IMAGE_INDEX_UNIT__TITLE, oldTitle, title));
+			}
+		}
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Label basicGetTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTitle(Label newTitle) {
+		Label oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_INDEX_UNIT__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -289,6 +360,27 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getSizeClass() {
+		return sizeClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSizeClass(String newSizeClass) {
+		String oldSizeClass = sizeClass;
+		sizeClass = newSizeClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_INDEX_UNIT__SIZE_CLASS, oldSizeClass, sizeClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -323,6 +415,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		switch (featureID) {
 			case WebuiPackage.IMAGE_INDEX_UNIT__ACTIONS:
 				return getActions();
+			case WebuiPackage.IMAGE_INDEX_UNIT__TITLE:
+				if (resolve) return getTitle();
+				return basicGetTitle();
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				return isOmitFieldLabels();
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
@@ -333,6 +428,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return getContentClass();
 			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return getColumnClass();
+			case WebuiPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
+				return getSizeClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -350,6 +447,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				getActions().clear();
 				getActions().addAll((Collection<? extends InlineAction>)newValue);
 				return;
+			case WebuiPackage.IMAGE_INDEX_UNIT__TITLE:
+				setTitle((Label)newValue);
+				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);
 				return;
@@ -364,6 +464,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass((String)newValue);
+				return;
+			case WebuiPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
+				setSizeClass((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -380,6 +483,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WebuiPackage.IMAGE_INDEX_UNIT__ACTIONS:
 				getActions().clear();
 				return;
+			case WebuiPackage.IMAGE_INDEX_UNIT__TITLE:
+				setTitle((Label)null);
+				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels(OMIT_FIELD_LABELS_EDEFAULT);
 				return;
@@ -395,6 +501,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass(COLUMN_CLASS_EDEFAULT);
 				return;
+			case WebuiPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
+				setSizeClass(SIZE_CLASS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -409,6 +518,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		switch (featureID) {
 			case WebuiPackage.IMAGE_INDEX_UNIT__ACTIONS:
 				return actions != null && !actions.isEmpty();
+			case WebuiPackage.IMAGE_INDEX_UNIT__TITLE:
+				return title != null;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
@@ -419,6 +530,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return CONTENT_CLASS_EDEFAULT == null ? contentClass != null : !CONTENT_CLASS_EDEFAULT.equals(contentClass);
 			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return COLUMN_CLASS_EDEFAULT == null ? columnClass != null : !COLUMN_CLASS_EDEFAULT.equals(columnClass);
+			case WebuiPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
+				return SIZE_CLASS_EDEFAULT == null ? sizeClass != null : !SIZE_CLASS_EDEFAULT.equals(sizeClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -475,6 +588,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		result.append(contentClass);
 		result.append(", columnClass: ");
 		result.append(columnClass);
+		result.append(", sizeClass: ");
+		result.append(sizeClass);
 		result.append(')');
 		return result.toString();
 	}

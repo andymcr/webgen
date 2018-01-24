@@ -69,6 +69,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			addLastPageIconNamePropertyDescriptor(object);
 			addPaginationClassPropertyDescriptor(object);
 			addPaginationElementClassPropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 			addTruncateTitlePropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
@@ -558,6 +559,28 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_title_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__TITLE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

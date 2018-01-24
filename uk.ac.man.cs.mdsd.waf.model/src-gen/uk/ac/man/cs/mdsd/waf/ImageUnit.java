@@ -2,6 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
+import uk.ac.man.cs.mdsd.orm.Label;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,6 +13,7 @@ package uk.ac.man.cs.mdsd.waf;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getTitleFeature <em>Title Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateTitle <em>Truncate Title</em>}</li>
@@ -26,6 +28,32 @@ package uk.ac.man.cs.mdsd.waf;
  * @generated
  */
 public interface ImageUnit extends DynamicUnit, CollectionUnit {
+	/**
+	 * Returns the value of the '<em><b>Title</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Title</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Title</em>' reference.
+	 * @see #setTitle(Label)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageUnit_Title()
+	 * @model
+	 * @generated
+	 */
+	Label getTitle();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getTitle <em>Title</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Title</em>' reference.
+	 * @see #getTitle()
+	 * @generated
+	 */
+	void setTitle(Label value);
+
 	/**
 	 * Returns the value of the '<em><b>Image Path Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

@@ -114,7 +114,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
 			WebuiPackage.Literals.COLLECTION_UNIT__SELECTION,
 			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
+			getString("_UI_BusinessPropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {

@@ -468,6 +468,7 @@ class SearchUnit extends ControlUnit {
 }
 
 abstract class ImageUnit extends DynamicUnit, CollectionUnit {
+	refers Label title
 	contains FeaturePath[1] imagePathFeature
 	contains FeaturePath[1] titleFeature
 	boolean truncateTitle
@@ -482,6 +483,7 @@ class ImageIndexUnit extends ImageUnit, InlineActionContainer {
 	boolean omitFieldLabels
 	boolean overlayTitle
 	String columnClass
+	String sizeClass
 }
 
 class SliderUnit extends ImageUnit {

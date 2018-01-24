@@ -1049,9 +1049,16 @@ abstract rule ImageUnit {
 rule ImageIndexUnit {
 	from website : Website!ImageIndexUnit
 	to waf : WAF!ImageIndexUnit (
+		title <-
+			if website.title.oclIsUndefined() then
+				website.title
+			else
+				website.title.findOrmLabel()
+			endif,
 		omitFieldLabels <- website.omitFieldLabels,
 		overlayTitle <- website.overlayTitle,
-		columnClass <- website.columnClass.replaceAll(',', ' ')
+		columnClass <- website.columnClass.replaceAll(',', ' ').trim(),
+		sizeClass <- website.sizeClass.replaceAll(',', ' ').trim()
 	)
 }
 

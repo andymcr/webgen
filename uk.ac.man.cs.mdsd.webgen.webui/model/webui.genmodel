@@ -223,8 +223,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//FeaturePath"/>
     <genClasses ecoreClass="webui.ecore#//FeaturePathAttribute">
-      <genFeatures property="Readonly" createChild="false" propertyCategory="Model"
-          ecoreFeature="ecore:EAttribute webui.ecore#//FeaturePathAttribute/name"/>
+      <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//FeaturePathAttribute/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//FeaturePathAttribute/attribute"/>
     </genClasses>
@@ -237,7 +236,7 @@
           ecoreFeature="ecore:EReference webui.ecore#//FeaturePathAssociation/targetEntity"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//FeaturePathLabel">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//FeaturePathLabel/name"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute webui.ecore#//FeaturePathLabel/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//FeaturePathLabel/label"/>
     </genClasses>
@@ -378,11 +377,14 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/transitionTime"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//ImageIndexUnit">
+      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
+          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//ImageIndexUnit/title"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/omitFieldLabels"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/overlayTitle"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/styleClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/contentClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/columnClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/sizeClass"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//SliderUnit">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//SliderUnit/styleClass"/>

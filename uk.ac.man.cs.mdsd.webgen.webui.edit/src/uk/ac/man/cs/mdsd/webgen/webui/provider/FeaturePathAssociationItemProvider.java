@@ -82,7 +82,7 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 					if (object instanceof FeaturePathAssociation) {
 						final Set<Association> associations = new HashSet<Association>();
 						final FeaturePathAssociation path = (FeaturePathAssociation) object;
-						for (EntityOrView entity :  getTargets(path)) {
+						for (EntityOrView entity :  getParentTypes(path)) {
 							associations.addAll(entity.getAllAssociations());
 						}
 						return associations;

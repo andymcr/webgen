@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
+import uk.ac.man.cs.mdsd.orm.Label;
 
 import uk.ac.man.cs.mdsd.service.Filter;
 import uk.ac.man.cs.mdsd.service.Selection;
@@ -61,6 +62,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getLastPageIconName <em>Last Page Icon Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getPaginationClass <em>Pagination Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getPaginationElementClass <em>Pagination Element Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getTitleFeature <em>Title Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#isTruncateTitle <em>Truncate Title</em>}</li>
@@ -462,6 +464,16 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected String paginationElementClass = PAGINATION_ELEMENT_CLASS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected Label title;
 
 	/**
 	 * The cached value of the '{@link #getImagePathFeature() <em>Image Path Feature</em>}' containment reference.
@@ -1066,6 +1078,44 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Label getTitle() {
+		if (title != null && title.eIsProxy()) {
+			InternalEObject oldTitle = (InternalEObject)title;
+			title = (Label)eResolveProxy(oldTitle);
+			if (title != oldTitle) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.IMAGE_UNIT__TITLE, oldTitle, title));
+			}
+		}
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Label basicGetTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTitle(Label newTitle) {
+		Label oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__TITLE, oldTitle, title));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public FeaturePath getImagePathFeature() {
 		return imagePathFeature;
 	}
@@ -1356,6 +1406,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return getPaginationClass();
 			case WafPackage.IMAGE_UNIT__PAGINATION_ELEMENT_CLASS:
 				return getPaginationElementClass();
+			case WafPackage.IMAGE_UNIT__TITLE:
+				if (resolve) return getTitle();
+				return basicGetTitle();
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				return getImagePathFeature();
 			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:
@@ -1452,6 +1505,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return;
 			case WafPackage.IMAGE_UNIT__PAGINATION_ELEMENT_CLASS:
 				setPaginationElementClass((String)newValue);
+				return;
+			case WafPackage.IMAGE_UNIT__TITLE:
+				setTitle((Label)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				setImagePathFeature((FeaturePath)newValue);
@@ -1552,6 +1608,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__PAGINATION_ELEMENT_CLASS:
 				setPaginationElementClass(PAGINATION_ELEMENT_CLASS_EDEFAULT);
 				return;
+			case WafPackage.IMAGE_UNIT__TITLE:
+				setTitle((Label)null);
+				return;
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				setImagePathFeature((FeaturePath)null);
 				return;
@@ -1629,6 +1688,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return PAGINATION_CLASS_EDEFAULT == null ? paginationClass != null : !PAGINATION_CLASS_EDEFAULT.equals(paginationClass);
 			case WafPackage.IMAGE_UNIT__PAGINATION_ELEMENT_CLASS:
 				return PAGINATION_ELEMENT_CLASS_EDEFAULT == null ? paginationElementClass != null : !PAGINATION_ELEMENT_CLASS_EDEFAULT.equals(paginationElementClass);
+			case WafPackage.IMAGE_UNIT__TITLE:
+				return title != null;
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				return imagePathFeature != null;
 			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:

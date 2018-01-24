@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.webui;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.Label;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -12,11 +14,13 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isOverlayTitle <em>Overlay Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getColumnClass <em>Column Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getSizeClass <em>Size Class</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit()
@@ -24,6 +28,32 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  * @generated
  */
 public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
+	/**
+	 * Returns the value of the '<em><b>Title</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Title</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Title</em>' reference.
+	 * @see #setTitle(Label)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit_Title()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	Label getTitle();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getTitle <em>Title</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Title</em>' reference.
+	 * @see #getTitle()
+	 * @generated
+	 */
+	void setTitle(Label value);
+
 	/**
 	 * Returns the value of the '<em><b>Omit Field Labels</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
@@ -107,7 +137,7 @@ public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Content Class</b></em>' attribute.
-	 * The default value is <code>"card"</code>.
+	 * The default value is <code>"row"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Class</em>' attribute isn't clear,
@@ -117,7 +147,7 @@ public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
 	 * @return the value of the '<em>Content Class</em>' attribute.
 	 * @see #setContentClass(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit_ContentClass()
-	 * @model default="card" ordered="false"
+	 * @model default="row" ordered="false"
 	 * @generated
 	 */
 	String getContentClass();
@@ -158,5 +188,32 @@ public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
 	 * @generated
 	 */
 	void setColumnClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Size Class</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Size Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Size Class</em>' attribute.
+	 * @see #setSizeClass(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit_SizeClass()
+	 * @model default="" ordered="false"
+	 * @generated
+	 */
+	String getSizeClass();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getSizeClass <em>Size Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Size Class</em>' attribute.
+	 * @see #getSizeClass()
+	 * @generated
+	 */
+	void setSizeClass(String value);
 
 } // ImageIndexUnit

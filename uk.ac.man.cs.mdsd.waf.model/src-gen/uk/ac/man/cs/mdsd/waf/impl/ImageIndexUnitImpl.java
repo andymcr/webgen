@@ -34,6 +34,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isOverlayTitle <em>Overlay Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getColumnClass <em>Column Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getSizeClass <em>Size Class</em>}</li>
  * </ul>
  *
  * @generated
@@ -108,6 +109,26 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @ordered
 	 */
 	protected String columnClass = COLUMN_CLASS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSizeClass() <em>Size Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSizeClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SIZE_CLASS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSizeClass() <em>Size Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSizeClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String sizeClass = SIZE_CLASS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,6 +229,27 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getSizeClass() {
+		return sizeClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSizeClass(String newSizeClass) {
+		String oldSizeClass = sizeClass;
+		sizeClass = newSizeClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_INDEX_UNIT__SIZE_CLASS, oldSizeClass, sizeClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -248,6 +290,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return isOverlayTitle();
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return getColumnClass();
+			case WafPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
+				return getSizeClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -274,6 +318,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass((String)newValue);
 				return;
+			case WafPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
+				setSizeClass((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -298,6 +345,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass(COLUMN_CLASS_EDEFAULT);
 				return;
+			case WafPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
+				setSizeClass(SIZE_CLASS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -318,6 +368,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return overlayTitle != OVERLAY_TITLE_EDEFAULT;
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return COLUMN_CLASS_EDEFAULT == null ? columnClass != null : !COLUMN_CLASS_EDEFAULT.equals(columnClass);
+			case WafPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
+				return SIZE_CLASS_EDEFAULT == null ? sizeClass != null : !SIZE_CLASS_EDEFAULT.equals(sizeClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -370,6 +422,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		result.append(overlayTitle);
 		result.append(", columnClass: ");
 		result.append(columnClass);
+		result.append(", sizeClass: ");
+		result.append(sizeClass);
 		result.append(')');
 		return result.toString();
 	}

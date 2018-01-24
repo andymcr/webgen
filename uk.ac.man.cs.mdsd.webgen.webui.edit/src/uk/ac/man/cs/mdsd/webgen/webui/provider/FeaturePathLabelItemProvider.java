@@ -50,32 +50,9 @@ public class FeaturePathLabelItemProvider extends FeaturePathItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FeaturePathLabel_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathLabel_name_feature", "_UI_FeaturePathLabel_type"),
-				 WebuiPackage.Literals.FEATURE_PATH_LABEL__NAME,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -99,7 +76,7 @@ public class FeaturePathLabelItemProvider extends FeaturePathItemProvider {
 					if (object instanceof FeaturePathLabel) {
 						final Set<Label> labels = new HashSet<Label>();
 						final FeaturePathLabel path = (FeaturePathLabel) object;
-						for (EntityOrView entity :  getParentType(path)) {
+						for (EntityOrView entity :  getParentTypes(path)) {
 							labels.addAll(entity.getLabels());
 						}
 						return labels;

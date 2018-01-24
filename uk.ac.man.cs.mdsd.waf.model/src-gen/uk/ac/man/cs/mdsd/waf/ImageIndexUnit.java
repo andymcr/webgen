@@ -15,6 +15,7 @@ package uk.ac.man.cs.mdsd.waf;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOverlayTitle <em>Overlay Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getColumnClass <em>Column Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getSizeClass <em>Size Class</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageIndexUnit()
@@ -99,5 +100,31 @@ public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
 	 * @generated
 	 */
 	void setColumnClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Size Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Size Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Size Class</em>' attribute.
+	 * @see #setSizeClass(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageIndexUnit_SizeClass()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getSizeClass();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getSizeClass <em>Size Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Size Class</em>' attribute.
+	 * @see #getSizeClass()
+	 * @generated
+	 */
+	void setSizeClass(String value);
 
 } // ImageIndexUnit

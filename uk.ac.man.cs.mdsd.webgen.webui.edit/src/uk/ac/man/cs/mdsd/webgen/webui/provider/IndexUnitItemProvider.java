@@ -115,7 +115,7 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
 			WebuiPackage.Literals.COLLECTION_UNIT__SELECTION,
 			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
+			getString("_UI_BusinessPropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
@@ -141,7 +141,7 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_filter_feature", "_UI_CollectionUnit_type"),
 			WebuiPackage.Literals.COLLECTION_UNIT__FILTER,
 			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
+			getString("_UI_BusinessPropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
@@ -170,7 +170,7 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_supportedFilters_feature", "_UI_CollectionUnit_type"),
 			WebuiPackage.Literals.COLLECTION_UNIT__SUPPORTED_FILTERS,
 			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
+			getString("_UI_BusinessPropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {

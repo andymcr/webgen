@@ -1035,9 +1035,15 @@ rule SearchUnit {
 abstract rule ImageUnit {
 	from website : Website!ImageUnit
 	to waf : WAF!ImageUnit (
+		title <-
+			if website.title.oclIsUndefined() then
+				website.title
+			else
+				website.title.findOrmLabel()
+			endif,
 		imagePathFeature <- website.imagePathFeature,
-		titleFeature <- website.titleFeature,
-		truncateTitle <- website.truncateTitle,
+		imageTitleFeature <- website.imageTitleFeature,
+		truncateImageTitle <- website.truncateImageTitle,
 		missingImagePath <- website.missingImagePath,
 		imageFilter <- website.imageFilter,
 		showTime <- website.showTime,
@@ -1049,16 +1055,10 @@ abstract rule ImageUnit {
 rule ImageIndexUnit {
 	from website : Website!ImageIndexUnit
 	to waf : WAF!ImageIndexUnit (
-		title <-
-			if website.title.oclIsUndefined() then
-				website.title
-			else
-				website.title.findOrmLabel()
-			endif,
 		omitFieldLabels <- website.omitFieldLabels,
 		overlayTitle <- website.overlayTitle,
 		columnClass <- website.columnClass.replaceAll(',', ' ').trim(),
-		sizeClass <- website.sizeClass.replaceAll(',', ' ').trim()
+		cardClass <- website.cardClass.replaceAll(',', ' ').trim()
 	)
 }
 

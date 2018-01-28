@@ -7863,31 +7863,40 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_UNIT__PAGINATION_ELEMENT_CLASS = DYNAMIC_UNIT_FEATURE_COUNT + 20;
 
 	/**
+	 * The feature id for the '<em><b>Title</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 21;
+
+	/**
 	 * The feature id for the '<em><b>Image Path Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__IMAGE_PATH_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 21;
+	int IMAGE_UNIT__IMAGE_PATH_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 22;
 
 	/**
-	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * The feature id for the '<em><b>Image Title Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__TITLE_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 22;
+	int IMAGE_UNIT__IMAGE_TITLE_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 23;
 
 	/**
-	 * The feature id for the '<em><b>Truncate Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Truncate Image Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__TRUNCATE_TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 23;
+	int IMAGE_UNIT__TRUNCATE_IMAGE_TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
@@ -7896,7 +7905,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__MISSING_IMAGE_PATH = DYNAMIC_UNIT_FEATURE_COUNT + 24;
+	int IMAGE_UNIT__MISSING_IMAGE_PATH = DYNAMIC_UNIT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Image Filter</b></em>' reference.
@@ -7905,7 +7914,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__IMAGE_FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 25;
+	int IMAGE_UNIT__IMAGE_FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
@@ -7914,7 +7923,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__SHOW_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 26;
+	int IMAGE_UNIT__SHOW_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Transition Time</b></em>' attribute.
@@ -7923,7 +7932,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__TRANSITION_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 27;
+	int IMAGE_UNIT__TRANSITION_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 28;
 
 	/**
 	 * The number of structural features of the '<em>Image Unit</em>' class.
@@ -7932,7 +7941,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 28;
+	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 29;
 
 	/**
 	 * The number of operations of the '<em>Image Unit</em>' class.
@@ -8341,6 +8350,15 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__PAGINATION_ELEMENT_CLASS = IMAGE_UNIT__PAGINATION_ELEMENT_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Title</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__TITLE = IMAGE_UNIT__TITLE;
+
+	/**
 	 * The feature id for the '<em><b>Image Path Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8350,22 +8368,22 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__IMAGE_PATH_FEATURE = IMAGE_UNIT__IMAGE_PATH_FEATURE;
 
 	/**
-	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * The feature id for the '<em><b>Image Title Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+	int IMAGE_INDEX_UNIT__IMAGE_TITLE_FEATURE = IMAGE_UNIT__IMAGE_TITLE_FEATURE;
 
 	/**
-	 * The feature id for the '<em><b>Truncate Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Truncate Image Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__TRUNCATE_TITLE = IMAGE_UNIT__TRUNCATE_TITLE;
+	int IMAGE_INDEX_UNIT__TRUNCATE_IMAGE_TITLE = IMAGE_UNIT__TRUNCATE_IMAGE_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
@@ -8413,13 +8431,13 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__ACTIONS = IMAGE_UNIT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' reference.
+	 * The feature id for the '<em><b>Overlay Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__TITLE = IMAGE_UNIT_FEATURE_COUNT + 1;
+	int IMAGE_INDEX_UNIT__OVERLAY_TITLE = IMAGE_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Omit Field Labels</b></em>' attribute.
@@ -8431,22 +8449,13 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS = IMAGE_UNIT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Overlay Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_INDEX_UNIT__OVERLAY_TITLE = IMAGE_UNIT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__STYLE_CLASS = IMAGE_UNIT_FEATURE_COUNT + 4;
+	int IMAGE_INDEX_UNIT__STYLE_CLASS = IMAGE_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -8455,7 +8464,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__CONTENT_CLASS = IMAGE_UNIT_FEATURE_COUNT + 5;
+	int IMAGE_INDEX_UNIT__CONTENT_CLASS = IMAGE_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Column Class</b></em>' attribute.
@@ -8464,16 +8473,16 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__COLUMN_CLASS = IMAGE_UNIT_FEATURE_COUNT + 6;
+	int IMAGE_INDEX_UNIT__COLUMN_CLASS = IMAGE_UNIT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Size Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Card Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__SIZE_CLASS = IMAGE_UNIT_FEATURE_COUNT + 7;
+	int IMAGE_INDEX_UNIT__CARD_CLASS = IMAGE_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Image Index Unit</em>' class.
@@ -8482,7 +8491,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 8;
+	int IMAGE_INDEX_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Image Index Unit</em>' class.
@@ -8891,6 +8900,15 @@ public interface WebuiPackage extends EPackage {
 	int SLIDER_UNIT__PAGINATION_ELEMENT_CLASS = IMAGE_UNIT__PAGINATION_ELEMENT_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Title</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__TITLE = IMAGE_UNIT__TITLE;
+
+	/**
 	 * The feature id for the '<em><b>Image Path Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8900,22 +8918,22 @@ public interface WebuiPackage extends EPackage {
 	int SLIDER_UNIT__IMAGE_PATH_FEATURE = IMAGE_UNIT__IMAGE_PATH_FEATURE;
 
 	/**
-	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * The feature id for the '<em><b>Image Title Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+	int SLIDER_UNIT__IMAGE_TITLE_FEATURE = IMAGE_UNIT__IMAGE_TITLE_FEATURE;
 
 	/**
-	 * The feature id for the '<em><b>Truncate Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Truncate Image Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__TRUNCATE_TITLE = IMAGE_UNIT__TRUNCATE_TITLE;
+	int SLIDER_UNIT__TRUNCATE_IMAGE_TITLE = IMAGE_UNIT__TRUNCATE_IMAGE_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
@@ -9387,6 +9405,15 @@ public interface WebuiPackage extends EPackage {
 	int GALLERY_UNIT__PAGINATION_ELEMENT_CLASS = IMAGE_UNIT__PAGINATION_ELEMENT_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Title</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__TITLE = IMAGE_UNIT__TITLE;
+
+	/**
 	 * The feature id for the '<em><b>Image Path Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9396,22 +9423,22 @@ public interface WebuiPackage extends EPackage {
 	int GALLERY_UNIT__IMAGE_PATH_FEATURE = IMAGE_UNIT__IMAGE_PATH_FEATURE;
 
 	/**
-	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * The feature id for the '<em><b>Image Title Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+	int GALLERY_UNIT__IMAGE_TITLE_FEATURE = IMAGE_UNIT__IMAGE_TITLE_FEATURE;
 
 	/**
-	 * The feature id for the '<em><b>Truncate Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Truncate Image Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__TRUNCATE_TITLE = IMAGE_UNIT__TRUNCATE_TITLE;
+	int GALLERY_UNIT__TRUNCATE_IMAGE_TITLE = IMAGE_UNIT__TRUNCATE_IMAGE_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
@@ -13344,6 +13371,17 @@ public interface WebuiPackage extends EPackage {
 	EClass getImageUnit();
 
 	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Title</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getTitle()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EReference getImageUnit_Title();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getImagePathFeature <em>Image Path Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13355,26 +13393,26 @@ public interface WebuiPackage extends EPackage {
 	EReference getImageUnit_ImagePathFeature();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getTitleFeature <em>Title Feature</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getImageTitleFeature <em>Image Title Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Title Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getTitleFeature()
+	 * @return the meta object for the containment reference '<em>Image Title Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getImageTitleFeature()
 	 * @see #getImageUnit()
 	 * @generated
 	 */
-	EReference getImageUnit_TitleFeature();
+	EReference getImageUnit_ImageTitleFeature();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#isTruncateTitle <em>Truncate Title</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#isTruncateImageTitle <em>Truncate Image Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Truncate Title</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#isTruncateTitle()
+	 * @return the meta object for the attribute '<em>Truncate Image Title</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#isTruncateImageTitle()
 	 * @see #getImageUnit()
 	 * @generated
 	 */
-	EAttribute getImageUnit_TruncateTitle();
+	EAttribute getImageUnit_TruncateImageTitle();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}'.
@@ -13644,17 +13682,6 @@ public interface WebuiPackage extends EPackage {
 	EClass getImageIndexUnit();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getTitle <em>Title</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Title</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getTitle()
-	 * @see #getImageIndexUnit()
-	 * @generated
-	 */
-	EReference getImageIndexUnit_Title();
-
-	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isOmitFieldLabels <em>Omit Field Labels</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13710,15 +13737,15 @@ public interface WebuiPackage extends EPackage {
 	EAttribute getImageIndexUnit_ColumnClass();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getSizeClass <em>Size Class</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getCardClass <em>Card Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size Class</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getSizeClass()
+	 * @return the meta object for the attribute '<em>Card Class</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getCardClass()
 	 * @see #getImageIndexUnit()
 	 * @generated
 	 */
-	EAttribute getImageIndexUnit_SizeClass();
+	EAttribute getImageIndexUnit_CardClass();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.SliderUnit <em>Slider Unit</em>}'.
@@ -16051,6 +16078,14 @@ public interface WebuiPackage extends EPackage {
 		EClass IMAGE_UNIT = eINSTANCE.getImageUnit();
 
 		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMAGE_UNIT__TITLE = eINSTANCE.getImageUnit_Title();
+
+		/**
 		 * The meta object literal for the '<em><b>Image Path Feature</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16059,20 +16094,20 @@ public interface WebuiPackage extends EPackage {
 		EReference IMAGE_UNIT__IMAGE_PATH_FEATURE = eINSTANCE.getImageUnit_ImagePathFeature();
 
 		/**
-		 * The meta object literal for the '<em><b>Title Feature</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Image Title Feature</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IMAGE_UNIT__TITLE_FEATURE = eINSTANCE.getImageUnit_TitleFeature();
+		EReference IMAGE_UNIT__IMAGE_TITLE_FEATURE = eINSTANCE.getImageUnit_ImageTitleFeature();
 
 		/**
-		 * The meta object literal for the '<em><b>Truncate Title</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Truncate Image Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute IMAGE_UNIT__TRUNCATE_TITLE = eINSTANCE.getImageUnit_TruncateTitle();
+		EAttribute IMAGE_UNIT__TRUNCATE_IMAGE_TITLE = eINSTANCE.getImageUnit_TruncateImageTitle();
 
 		/**
 		 * The meta object literal for the '<em><b>Missing Image Path</b></em>' attribute feature.
@@ -16291,14 +16326,6 @@ public interface WebuiPackage extends EPackage {
 		EClass IMAGE_INDEX_UNIT = eINSTANCE.getImageIndexUnit();
 
 		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IMAGE_INDEX_UNIT__TITLE = eINSTANCE.getImageIndexUnit_Title();
-
-		/**
 		 * The meta object literal for the '<em><b>Omit Field Labels</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16339,12 +16366,12 @@ public interface WebuiPackage extends EPackage {
 		EAttribute IMAGE_INDEX_UNIT__COLUMN_CLASS = eINSTANCE.getImageIndexUnit_ColumnClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Size Class</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Card Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute IMAGE_INDEX_UNIT__SIZE_CLASS = eINSTANCE.getImageIndexUnit_SizeClass();
+		EAttribute IMAGE_INDEX_UNIT__CARD_CLASS = eINSTANCE.getImageIndexUnit_CardClass();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.SliderUnitImpl <em>Slider Unit</em>}' class.

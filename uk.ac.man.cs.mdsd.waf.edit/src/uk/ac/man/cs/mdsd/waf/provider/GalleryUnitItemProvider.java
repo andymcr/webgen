@@ -132,7 +132,7 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 
 		boolean qualify =
 			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE ||
-			childFeature == WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE;
+			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE;
 
 		if (qualify) {
 			return getString

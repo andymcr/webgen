@@ -15,7 +15,7 @@ package uk.ac.man.cs.mdsd.waf;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOverlayTitle <em>Overlay Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getColumnClass <em>Column Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getSizeClass <em>Size Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getCardClass <em>Card Class</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageIndexUnit()
@@ -102,29 +102,29 @@ public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
 	void setColumnClass(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Size Class</b></em>' attribute.
+	 * Returns the value of the '<em><b>Card Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Size Class</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Card Class</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Size Class</em>' attribute.
-	 * @see #setSizeClass(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageIndexUnit_SizeClass()
+	 * @return the value of the '<em>Card Class</em>' attribute.
+	 * @see #setCardClass(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageIndexUnit_CardClass()
 	 * @model unique="false"
 	 * @generated
 	 */
-	String getSizeClass();
+	String getCardClass();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getSizeClass <em>Size Class</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getCardClass <em>Card Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Size Class</em>' attribute.
-	 * @see #getSizeClass()
+	 * @param value the new value of the '<em>Card Class</em>' attribute.
+	 * @see #getCardClass()
 	 * @generated
 	 */
-	void setSizeClass(String value);
+	void setCardClass(String value);
 
 } // ImageIndexUnit

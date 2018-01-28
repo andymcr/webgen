@@ -15,8 +15,8 @@ import uk.ac.man.cs.mdsd.orm.Label;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImagePathFeature <em>Image Path Feature</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getTitleFeature <em>Title Feature</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateTitle <em>Truncate Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImageTitleFeature <em>Image Title Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateImageTitle <em>Truncate Image Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImageFilter <em>Image Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getShowTime <em>Show Time</em>}</li>
@@ -81,56 +81,56 @@ public interface ImageUnit extends DynamicUnit, CollectionUnit {
 	void setImagePathFeature(FeaturePath value);
 
 	/**
-	 * Returns the value of the '<em><b>Title Feature</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Image Title Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Title Feature</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Image Title Feature</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Title Feature</em>' containment reference.
-	 * @see #setTitleFeature(FeaturePath)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageUnit_TitleFeature()
+	 * @return the value of the '<em>Image Title Feature</em>' containment reference.
+	 * @see #setImageTitleFeature(FeaturePath)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageUnit_ImageTitleFeature()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	FeaturePath getTitleFeature();
+	FeaturePath getImageTitleFeature();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getTitleFeature <em>Title Feature</em>}' containment reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImageTitleFeature <em>Image Title Feature</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Title Feature</em>' containment reference.
-	 * @see #getTitleFeature()
+	 * @param value the new value of the '<em>Image Title Feature</em>' containment reference.
+	 * @see #getImageTitleFeature()
 	 * @generated
 	 */
-	void setTitleFeature(FeaturePath value);
+	void setImageTitleFeature(FeaturePath value);
 
 	/**
-	 * Returns the value of the '<em><b>Truncate Title</b></em>' attribute.
+	 * Returns the value of the '<em><b>Truncate Image Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Truncate Title</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Truncate Image Title</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Truncate Title</em>' attribute.
-	 * @see #setTruncateTitle(boolean)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageUnit_TruncateTitle()
+	 * @return the value of the '<em>Truncate Image Title</em>' attribute.
+	 * @see #setTruncateImageTitle(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageUnit_TruncateImageTitle()
 	 * @model unique="false"
 	 * @generated
 	 */
-	boolean isTruncateTitle();
+	boolean isTruncateImageTitle();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateTitle <em>Truncate Title</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateImageTitle <em>Truncate Image Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Truncate Title</em>' attribute.
-	 * @see #isTruncateTitle()
+	 * @param value the new value of the '<em>Truncate Image Title</em>' attribute.
+	 * @see #isTruncateImageTitle()
 	 * @generated
 	 */
-	void setTruncateTitle(boolean value);
+	void setTruncateImageTitle(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Missing Image Path</b></em>' attribute.

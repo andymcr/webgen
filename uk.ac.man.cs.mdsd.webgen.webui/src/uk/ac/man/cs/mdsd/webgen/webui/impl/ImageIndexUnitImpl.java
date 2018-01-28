@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 import uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.InlineAction;
 import uk.ac.man.cs.mdsd.webgen.webui.InlineActionContainer;
@@ -29,13 +27,12 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getActions <em>Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#isOverlayTitle <em>Overlay Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getColumnClass <em>Column Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getSizeClass <em>Size Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getCardClass <em>Card Class</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,36 +47,6 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @ordered
 	 */
 	protected EList<InlineAction> actions;
-
-	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected Label title;
-
-	/**
-	 * The default value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOmitFieldLabels()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean OMIT_FIELD_LABELS_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOmitFieldLabels()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean omitFieldLabels = OMIT_FIELD_LABELS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isOverlayTitle() <em>Overlay Title</em>}' attribute.
@@ -100,6 +67,26 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @ordered
 	 */
 	protected boolean overlayTitle = OVERLAY_TITLE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOmitFieldLabels()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OMIT_FIELD_LABELS_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOmitFieldLabels()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean omitFieldLabels = OMIT_FIELD_LABELS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -162,24 +149,24 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	protected String columnClass = COLUMN_CLASS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSizeClass() <em>Size Class</em>}' attribute.
+	 * The default value of the '{@link #getCardClass() <em>Card Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSizeClass()
+	 * @see #getCardClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SIZE_CLASS_EDEFAULT = "";
+	protected static final String CARD_CLASS_EDEFAULT = "card";
 
 	/**
-	 * The cached value of the '{@link #getSizeClass() <em>Size Class</em>}' attribute.
+	 * The cached value of the '{@link #getCardClass() <em>Card Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSizeClass()
+	 * @see #getCardClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected String sizeClass = SIZE_CLASS_EDEFAULT;
+	protected String cardClass = CARD_CLASS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,44 +197,6 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			actions = new EObjectContainmentWithInverseEList<InlineAction>(InlineAction.class, this, WebuiPackage.IMAGE_INDEX_UNIT__ACTIONS, WebuiPackage.INLINE_ACTION__USED_BY);
 		}
 		return actions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Label getTitle() {
-		if (title != null && title.eIsProxy()) {
-			InternalEObject oldTitle = (InternalEObject)title;
-			title = (Label)eResolveProxy(oldTitle);
-			if (title != oldTitle) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.IMAGE_INDEX_UNIT__TITLE, oldTitle, title));
-			}
-		}
-		return title;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Label basicGetTitle() {
-		return title;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTitle(Label newTitle) {
-		Label oldTitle = title;
-		title = newTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_INDEX_UNIT__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -360,8 +309,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getSizeClass() {
-		return sizeClass;
+	public String getCardClass() {
+		return cardClass;
 	}
 
 	/**
@@ -369,11 +318,11 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSizeClass(String newSizeClass) {
-		String oldSizeClass = sizeClass;
-		sizeClass = newSizeClass;
+	public void setCardClass(String newCardClass) {
+		String oldCardClass = cardClass;
+		cardClass = newCardClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_INDEX_UNIT__SIZE_CLASS, oldSizeClass, sizeClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_INDEX_UNIT__CARD_CLASS, oldCardClass, cardClass));
 	}
 
 	/**
@@ -415,21 +364,18 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		switch (featureID) {
 			case WebuiPackage.IMAGE_INDEX_UNIT__ACTIONS:
 				return getActions();
-			case WebuiPackage.IMAGE_INDEX_UNIT__TITLE:
-				if (resolve) return getTitle();
-				return basicGetTitle();
-			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
-				return isOmitFieldLabels();
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				return isOverlayTitle();
+			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
+				return isOmitFieldLabels();
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 				return getStyleClass();
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
 				return getContentClass();
 			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return getColumnClass();
-			case WebuiPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
-				return getSizeClass();
+			case WebuiPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
+				return getCardClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -447,14 +393,11 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				getActions().clear();
 				getActions().addAll((Collection<? extends InlineAction>)newValue);
 				return;
-			case WebuiPackage.IMAGE_INDEX_UNIT__TITLE:
-				setTitle((Label)newValue);
+			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
+				setOverlayTitle((Boolean)newValue);
 				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);
-				return;
-			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
-				setOverlayTitle((Boolean)newValue);
 				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
@@ -465,8 +408,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass((String)newValue);
 				return;
-			case WebuiPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
-				setSizeClass((String)newValue);
+			case WebuiPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
+				setCardClass((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -483,14 +426,11 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WebuiPackage.IMAGE_INDEX_UNIT__ACTIONS:
 				getActions().clear();
 				return;
-			case WebuiPackage.IMAGE_INDEX_UNIT__TITLE:
-				setTitle((Label)null);
+			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
+				setOverlayTitle(OVERLAY_TITLE_EDEFAULT);
 				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels(OMIT_FIELD_LABELS_EDEFAULT);
-				return;
-			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
-				setOverlayTitle(OVERLAY_TITLE_EDEFAULT);
 				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
@@ -501,8 +441,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass(COLUMN_CLASS_EDEFAULT);
 				return;
-			case WebuiPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
-				setSizeClass(SIZE_CLASS_EDEFAULT);
+			case WebuiPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
+				setCardClass(CARD_CLASS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -518,20 +458,18 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		switch (featureID) {
 			case WebuiPackage.IMAGE_INDEX_UNIT__ACTIONS:
 				return actions != null && !actions.isEmpty();
-			case WebuiPackage.IMAGE_INDEX_UNIT__TITLE:
-				return title != null;
-			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
-				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				return overlayTitle != OVERLAY_TITLE_EDEFAULT;
+			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
+				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
 				return CONTENT_CLASS_EDEFAULT == null ? contentClass != null : !CONTENT_CLASS_EDEFAULT.equals(contentClass);
 			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return COLUMN_CLASS_EDEFAULT == null ? columnClass != null : !COLUMN_CLASS_EDEFAULT.equals(columnClass);
-			case WebuiPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
-				return SIZE_CLASS_EDEFAULT == null ? sizeClass != null : !SIZE_CLASS_EDEFAULT.equals(sizeClass);
+			case WebuiPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
+				return CARD_CLASS_EDEFAULT == null ? cardClass != null : !CARD_CLASS_EDEFAULT.equals(cardClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -578,18 +516,18 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (omitFieldLabels: ");
-		result.append(omitFieldLabels);
-		result.append(", overlayTitle: ");
+		result.append(" (overlayTitle: ");
 		result.append(overlayTitle);
+		result.append(", omitFieldLabels: ");
+		result.append(omitFieldLabels);
 		result.append(", styleClass: ");
 		result.append(styleClass);
 		result.append(", contentClass: ");
 		result.append(contentClass);
 		result.append(", columnClass: ");
 		result.append(columnClass);
-		result.append(", sizeClass: ");
-		result.append(sizeClass);
+		result.append(", cardClass: ");
+		result.append(cardClass);
 		result.append(')');
 		return result.toString();
 	}

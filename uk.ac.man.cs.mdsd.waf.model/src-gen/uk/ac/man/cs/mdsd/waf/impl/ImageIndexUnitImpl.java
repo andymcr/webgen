@@ -34,7 +34,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isOverlayTitle <em>Overlay Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getColumnClass <em>Column Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getSizeClass <em>Size Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getCardClass <em>Card Class</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,24 +111,24 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	protected String columnClass = COLUMN_CLASS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSizeClass() <em>Size Class</em>}' attribute.
+	 * The default value of the '{@link #getCardClass() <em>Card Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSizeClass()
+	 * @see #getCardClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SIZE_CLASS_EDEFAULT = null;
+	protected static final String CARD_CLASS_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getSizeClass() <em>Size Class</em>}' attribute.
+	 * The cached value of the '{@link #getCardClass() <em>Card Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSizeClass()
+	 * @see #getCardClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected String sizeClass = SIZE_CLASS_EDEFAULT;
+	protected String cardClass = CARD_CLASS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,8 +229,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getSizeClass() {
-		return sizeClass;
+	public String getCardClass() {
+		return cardClass;
 	}
 
 	/**
@@ -238,11 +238,11 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSizeClass(String newSizeClass) {
-		String oldSizeClass = sizeClass;
-		sizeClass = newSizeClass;
+	public void setCardClass(String newCardClass) {
+		String oldCardClass = cardClass;
+		cardClass = newCardClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_INDEX_UNIT__SIZE_CLASS, oldSizeClass, sizeClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_INDEX_UNIT__CARD_CLASS, oldCardClass, cardClass));
 	}
 
 	/**
@@ -290,8 +290,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return isOverlayTitle();
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return getColumnClass();
-			case WafPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
-				return getSizeClass();
+			case WafPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
+				return getCardClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -318,8 +318,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass((String)newValue);
 				return;
-			case WafPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
-				setSizeClass((String)newValue);
+			case WafPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
+				setCardClass((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -345,8 +345,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass(COLUMN_CLASS_EDEFAULT);
 				return;
-			case WafPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
-				setSizeClass(SIZE_CLASS_EDEFAULT);
+			case WafPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
+				setCardClass(CARD_CLASS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -368,8 +368,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return overlayTitle != OVERLAY_TITLE_EDEFAULT;
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return COLUMN_CLASS_EDEFAULT == null ? columnClass != null : !COLUMN_CLASS_EDEFAULT.equals(columnClass);
-			case WafPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
-				return SIZE_CLASS_EDEFAULT == null ? sizeClass != null : !SIZE_CLASS_EDEFAULT.equals(sizeClass);
+			case WafPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
+				return CARD_CLASS_EDEFAULT == null ? cardClass != null : !CARD_CLASS_EDEFAULT.equals(cardClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -422,8 +422,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		result.append(overlayTitle);
 		result.append(", columnClass: ");
 		result.append(columnClass);
-		result.append(", sizeClass: ");
-		result.append(sizeClass);
+		result.append(", cardClass: ");
+		result.append(cardClass);
 		result.append(')');
 		return result.toString();
 	}

@@ -365,26 +365,26 @@
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//SearchUnit/styleClass"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//ImageUnit">
-      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
+          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//ImageUnit/title"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Image"
           ecoreFeature="ecore:EReference webui.ecore#//ImageUnit/imagePathFeature"/>
-      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
-          ecoreFeature="ecore:EReference webui.ecore#//ImageUnit/titleFeature"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/truncateTitle"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/missingImagePath"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Image"
+          ecoreFeature="ecore:EReference webui.ecore#//ImageUnit/imageTitleFeature"/>
+      <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/truncateImageTitle"/>
+      <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/missingImagePath"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Image" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//ImageUnit/imageFilter"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/showTime"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/transitionTime"/>
+      <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/showTime"/>
+      <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/transitionTime"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//ImageIndexUnit">
-      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
-          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//ImageIndexUnit/title"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/omitFieldLabels"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/overlayTitle"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/omitFieldLabels"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/styleClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/contentClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/columnClass"/>
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/sizeClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/cardClass"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//SliderUnit">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//SliderUnit/styleClass"/>

@@ -5,7 +5,9 @@ package uk.ac.man.cs.mdsd.webgen.webui.provider;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -16,6 +18,11 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.persistence.Label;
+import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.ImageUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -69,7 +76,8 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			addLastPageIconNamePropertyDescriptor(object);
 			addPaginationClassPropertyDescriptor(object);
 			addPaginationElementClassPropertyDescriptor(object);
-			addTruncateTitlePropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
+			addTruncateImageTitlePropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
@@ -545,24 +553,70 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Truncate Title feature.
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_ImageUnit_title_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_title_feature", "_UI_ImageUnit_type"),
+			WebuiPackage.Literals.IMAGE_UNIT__TITLE,
+			true, false, true, null,
+			getString("_UI_ImagePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof CollectionUnit) {
+						final CollectionUnit unit = (CollectionUnit) object;
+						final Set<EntityOrView> entities
+							= new HashSet<EntityOrView>(unit.getContentType());
+						final Set<Label> labels = new HashSet<Label>();
+						for (EntityOrView entity : unit.getContentType()) {
+							labels.addAll(entity.getAttributes());
+							labels.addAll(entity.getLabels());
+						}
+						if (unit.getSelection() != null) {
+							for (EntityAssociation association : unit.getSelection().getSelectPath()) {
+								if (entities.contains(association.getSourceEntityX())) {
+									labels.addAll(association.getTargetEntityX().getAttributes());
+									labels.addAll(association.getTargetEntityX().getLabels());
+								} else {
+									labels.addAll(association.getSourceEntityX().getAttributes());
+									labels.addAll(association.getSourceEntityX().getLabels());
+								}
+							}
+						}
+						return labels;
+					}
+
+					return Collections.emptySet();
+				}
+		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Truncate Image Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTruncateTitlePropertyDescriptor(Object object) {
+	protected void addTruncateImageTitlePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ImageUnit_truncateTitle_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_truncateTitle_feature", "_UI_ImageUnit_type"),
-				 WebuiPackage.Literals.IMAGE_UNIT__TRUNCATE_TITLE,
+				 getString("_UI_ImageUnit_truncateImageTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_truncateImageTitle_feature", "_UI_ImageUnit_type"),
+				 WebuiPackage.Literals.IMAGE_UNIT__TRUNCATE_IMAGE_TITLE,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -584,7 +638,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -606,7 +660,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 getString("_UI_ModelPropertyCategory"),
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -628,7 +682,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -650,7 +704,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -667,7 +721,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebuiPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE);
-			childrenFeatures.add(WebuiPackage.Literals.IMAGE_UNIT__TITLE_FEATURE);
+			childrenFeatures.add(WebuiPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -729,14 +783,14 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			case WebuiPackage.IMAGE_UNIT__LAST_PAGE_ICON_NAME:
 			case WebuiPackage.IMAGE_UNIT__PAGINATION_CLASS:
 			case WebuiPackage.IMAGE_UNIT__PAGINATION_ELEMENT_CLASS:
-			case WebuiPackage.IMAGE_UNIT__TRUNCATE_TITLE:
+			case WebuiPackage.IMAGE_UNIT__TRUNCATE_IMAGE_TITLE:
 			case WebuiPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 			case WebuiPackage.IMAGE_UNIT__SHOW_TIME:
 			case WebuiPackage.IMAGE_UNIT__TRANSITION_TIME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebuiPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
-			case WebuiPackage.IMAGE_UNIT__TITLE_FEATURE:
+			case WebuiPackage.IMAGE_UNIT__IMAGE_TITLE_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -771,17 +825,17 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
+				(WebuiPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE,
 				 WebuiFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
+				(WebuiPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE,
 				 WebuiFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
+				(WebuiPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE,
 				 WebuiFactory.eINSTANCE.createFeaturePathLabel()));
 	}
 
@@ -798,7 +852,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 
 		boolean qualify =
 			childFeature == WebuiPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE ||
-			childFeature == WebuiPackage.Literals.IMAGE_UNIT__TITLE_FEATURE;
+			childFeature == WebuiPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE;
 
 		if (qualify) {
 			return getString

@@ -2,9 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.webgen.webui;
 
-import uk.ac.man.cs.mdsd.webgen.persistence.Label;
-
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Image Index Unit</b></em>'.
@@ -14,13 +11,12 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Label;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getTitle <em>Title</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isOverlayTitle <em>Overlay Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getColumnClass <em>Column Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getSizeClass <em>Size Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getCardClass <em>Card Class</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit()
@@ -28,32 +24,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Label;
  * @generated
  */
 public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
-	/**
-	 * Returns the value of the '<em><b>Title</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Title</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Title</em>' reference.
-	 * @see #setTitle(Label)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit_Title()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	Label getTitle();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getTitle <em>Title</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Title</em>' reference.
-	 * @see #getTitle()
-	 * @generated
-	 */
-	void setTitle(Label value);
-
 	/**
 	 * Returns the value of the '<em><b>Omit Field Labels</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
@@ -190,30 +160,30 @@ public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
 	void setColumnClass(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Size Class</b></em>' attribute.
-	 * The default value is <code>""</code>.
+	 * Returns the value of the '<em><b>Card Class</b></em>' attribute.
+	 * The default value is <code>"card"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Size Class</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Card Class</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Size Class</em>' attribute.
-	 * @see #setSizeClass(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit_SizeClass()
-	 * @model default="" ordered="false"
+	 * @return the value of the '<em>Card Class</em>' attribute.
+	 * @see #setCardClass(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit_CardClass()
+	 * @model default="card" ordered="false"
 	 * @generated
 	 */
-	String getSizeClass();
+	String getCardClass();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getSizeClass <em>Size Class</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getCardClass <em>Card Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Size Class</em>' attribute.
-	 * @see #getSizeClass()
+	 * @param value the new value of the '<em>Card Class</em>' attribute.
+	 * @see #getCardClass()
 	 * @generated
 	 */
-	void setSizeClass(String value);
+	void setCardClass(String value);
 
 } // ImageIndexUnit

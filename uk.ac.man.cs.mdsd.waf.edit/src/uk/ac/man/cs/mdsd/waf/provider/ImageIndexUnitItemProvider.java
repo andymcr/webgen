@@ -50,7 +50,7 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 			addOmitFieldLabelsPropertyDescriptor(object);
 			addOverlayTitlePropertyDescriptor(object);
 			addColumnClassPropertyDescriptor(object);
-			addSizeClassPropertyDescriptor(object);
+			addCardClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -122,19 +122,19 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Size Class feature.
+	 * This adds a property descriptor for the Card Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSizeClassPropertyDescriptor(Object object) {
+	protected void addCardClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ImageIndexUnit_sizeClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_sizeClass_feature", "_UI_ImageIndexUnit_type"),
-				 WafPackage.Literals.IMAGE_INDEX_UNIT__SIZE_CLASS,
+				 getString("_UI_ImageIndexUnit_cardClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_cardClass_feature", "_UI_ImageIndexUnit_type"),
+				 WafPackage.Literals.IMAGE_INDEX_UNIT__CARD_CLASS,
 				 true,
 				 false,
 				 false,
@@ -214,7 +214,7 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 			case WafPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
-			case WafPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
+			case WafPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.IMAGE_INDEX_UNIT__ACTIONS:
@@ -264,7 +264,7 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 
 		boolean qualify =
 			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE ||
-			childFeature == WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE;
+			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE;
 
 		if (qualify) {
 			return getString

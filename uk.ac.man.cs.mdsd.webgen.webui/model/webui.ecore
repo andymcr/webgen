@@ -613,11 +613,13 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,search_unit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImageUnit" abstract="true" eSuperTypes="#//DynamicUnit #//CollectionUnit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="title" ordered="false"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Label"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imagePathFeature" lowerBound="1"
         eType="#//FeaturePath" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="titleFeature" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imageTitleFeature" lowerBound="1"
         eType="#//FeaturePath" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="truncateTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="truncateImageTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="missingImagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imageFilter" lowerBound="1"
@@ -628,20 +630,18 @@
         defaultValueLiteral="-1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImageIndexUnit" eSuperTypes="#//ImageUnit #//InlineActionContainer">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="title" ordered="false"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Label"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitFieldLabels" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="overlayTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitFieldLabels" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,image_index_unit"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="row"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="col s12 m6 l3"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sizeClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardClass" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="card"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SliderUnit" eSuperTypes="#//ImageUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"

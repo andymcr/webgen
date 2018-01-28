@@ -9625,22 +9625,22 @@ public interface WafPackage extends EPackage {
 	int IMAGE_UNIT__IMAGE_PATH_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 23;
 
 	/**
-	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * The feature id for the '<em><b>Image Title Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__TITLE_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 24;
+	int IMAGE_UNIT__IMAGE_TITLE_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 24;
 
 	/**
-	 * The feature id for the '<em><b>Truncate Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Truncate Image Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__TRUNCATE_TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 25;
+	int IMAGE_UNIT__TRUNCATE_IMAGE_TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
@@ -10121,22 +10121,22 @@ public interface WafPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__IMAGE_PATH_FEATURE = IMAGE_UNIT__IMAGE_PATH_FEATURE;
 
 	/**
-	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * The feature id for the '<em><b>Image Title Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+	int IMAGE_INDEX_UNIT__IMAGE_TITLE_FEATURE = IMAGE_UNIT__IMAGE_TITLE_FEATURE;
 
 	/**
-	 * The feature id for the '<em><b>Truncate Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Truncate Image Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__TRUNCATE_TITLE = IMAGE_UNIT__TRUNCATE_TITLE;
+	int IMAGE_INDEX_UNIT__TRUNCATE_IMAGE_TITLE = IMAGE_UNIT__TRUNCATE_IMAGE_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
@@ -10211,13 +10211,13 @@ public interface WafPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__COLUMN_CLASS = IMAGE_UNIT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Size Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Card Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__SIZE_CLASS = IMAGE_UNIT_FEATURE_COUNT + 4;
+	int IMAGE_INDEX_UNIT__CARD_CLASS = IMAGE_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Image Index Unit</em>' class.
@@ -10662,22 +10662,22 @@ public interface WafPackage extends EPackage {
 	int SLIDER_UNIT__IMAGE_PATH_FEATURE = IMAGE_UNIT__IMAGE_PATH_FEATURE;
 
 	/**
-	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * The feature id for the '<em><b>Image Title Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+	int SLIDER_UNIT__IMAGE_TITLE_FEATURE = IMAGE_UNIT__IMAGE_TITLE_FEATURE;
 
 	/**
-	 * The feature id for the '<em><b>Truncate Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Truncate Image Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__TRUNCATE_TITLE = IMAGE_UNIT__TRUNCATE_TITLE;
+	int SLIDER_UNIT__TRUNCATE_IMAGE_TITLE = IMAGE_UNIT__TRUNCATE_IMAGE_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
@@ -11158,22 +11158,22 @@ public interface WafPackage extends EPackage {
 	int GALLERY_UNIT__IMAGE_PATH_FEATURE = IMAGE_UNIT__IMAGE_PATH_FEATURE;
 
 	/**
-	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * The feature id for the '<em><b>Image Title Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+	int GALLERY_UNIT__IMAGE_TITLE_FEATURE = IMAGE_UNIT__IMAGE_TITLE_FEATURE;
 
 	/**
-	 * The feature id for the '<em><b>Truncate Title</b></em>' attribute.
+	 * The feature id for the '<em><b>Truncate Image Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__TRUNCATE_TITLE = IMAGE_UNIT__TRUNCATE_TITLE;
+	int GALLERY_UNIT__TRUNCATE_IMAGE_TITLE = IMAGE_UNIT__TRUNCATE_IMAGE_TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
@@ -15593,26 +15593,26 @@ public interface WafPackage extends EPackage {
 	EReference getImageUnit_ImagePathFeature();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getTitleFeature <em>Title Feature</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImageTitleFeature <em>Image Title Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Title Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getTitleFeature()
+	 * @return the meta object for the containment reference '<em>Image Title Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getImageTitleFeature()
 	 * @see #getImageUnit()
 	 * @generated
 	 */
-	EReference getImageUnit_TitleFeature();
+	EReference getImageUnit_ImageTitleFeature();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateTitle <em>Truncate Title</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateImageTitle <em>Truncate Image Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Truncate Title</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateTitle()
+	 * @return the meta object for the attribute '<em>Truncate Image Title</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateImageTitle()
 	 * @see #getImageUnit()
 	 * @generated
 	 */
-	EAttribute getImageUnit_TruncateTitle();
+	EAttribute getImageUnit_TruncateImageTitle();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}'.
@@ -15702,15 +15702,15 @@ public interface WafPackage extends EPackage {
 	EAttribute getImageIndexUnit_ColumnClass();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getSizeClass <em>Size Class</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getCardClass <em>Card Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size Class</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getSizeClass()
+	 * @return the meta object for the attribute '<em>Card Class</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getCardClass()
 	 * @see #getImageIndexUnit()
 	 * @generated
 	 */
-	EAttribute getImageIndexUnit_SizeClass();
+	EAttribute getImageIndexUnit_CardClass();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.SliderUnit <em>Slider Unit</em>}'.
@@ -18426,20 +18426,20 @@ public interface WafPackage extends EPackage {
 		EReference IMAGE_UNIT__IMAGE_PATH_FEATURE = eINSTANCE.getImageUnit_ImagePathFeature();
 
 		/**
-		 * The meta object literal for the '<em><b>Title Feature</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Image Title Feature</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IMAGE_UNIT__TITLE_FEATURE = eINSTANCE.getImageUnit_TitleFeature();
+		EReference IMAGE_UNIT__IMAGE_TITLE_FEATURE = eINSTANCE.getImageUnit_ImageTitleFeature();
 
 		/**
-		 * The meta object literal for the '<em><b>Truncate Title</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Truncate Image Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute IMAGE_UNIT__TRUNCATE_TITLE = eINSTANCE.getImageUnit_TruncateTitle();
+		EAttribute IMAGE_UNIT__TRUNCATE_IMAGE_TITLE = eINSTANCE.getImageUnit_TruncateImageTitle();
 
 		/**
 		 * The meta object literal for the '<em><b>Missing Image Path</b></em>' attribute feature.
@@ -18508,12 +18508,12 @@ public interface WafPackage extends EPackage {
 		EAttribute IMAGE_INDEX_UNIT__COLUMN_CLASS = eINSTANCE.getImageIndexUnit_ColumnClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Size Class</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Card Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute IMAGE_INDEX_UNIT__SIZE_CLASS = eINSTANCE.getImageIndexUnit_SizeClass();
+		EAttribute IMAGE_INDEX_UNIT__CARD_CLASS = eINSTANCE.getImageIndexUnit_CardClass();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.SliderUnitImpl <em>Slider Unit</em>}' class.

@@ -3036,7 +3036,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getImageUnit_TitleFeature() {
+	public EReference getImageUnit_ImageTitleFeature() {
 		return (EReference)imageUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3045,7 +3045,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageUnit_TruncateTitle() {
+	public EAttribute getImageUnit_TruncateImageTitle() {
 		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -3126,7 +3126,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageIndexUnit_SizeClass() {
+	public EAttribute getImageIndexUnit_CardClass() {
 		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -3905,8 +3905,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		imageUnitEClass = createEClass(IMAGE_UNIT);
 		createEReference(imageUnitEClass, IMAGE_UNIT__TITLE);
 		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_PATH_FEATURE);
-		createEReference(imageUnitEClass, IMAGE_UNIT__TITLE_FEATURE);
-		createEAttribute(imageUnitEClass, IMAGE_UNIT__TRUNCATE_TITLE);
+		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_TITLE_FEATURE);
+		createEAttribute(imageUnitEClass, IMAGE_UNIT__TRUNCATE_IMAGE_TITLE);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__MISSING_IMAGE_PATH);
 		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_FILTER);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__SHOW_TIME);
@@ -3916,7 +3916,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS);
 		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__OVERLAY_TITLE);
 		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__COLUMN_CLASS);
-		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__SIZE_CLASS);
+		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__CARD_CLASS);
 
 		sliderUnitEClass = createEClass(SLIDER_UNIT);
 
@@ -4412,8 +4412,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(imageUnitEClass, ImageUnit.class, "ImageUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getImageUnit_Title(), theOrmPackage.getLabel(), null, "title", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImageUnit_ImagePathFeature(), this.getFeaturePath(), null, "imagePathFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getImageUnit_TitleFeature(), this.getFeaturePath(), null, "titleFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImageUnit_TruncateTitle(), theEcorePackage.getEBoolean(), "truncateTitle", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImageUnit_ImageTitleFeature(), this.getFeaturePath(), null, "imageTitleFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImageUnit_TruncateImageTitle(), theEcorePackage.getEBoolean(), "truncateImageTitle", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_MissingImagePath(), theEcorePackage.getEString(), "missingImagePath", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImageUnit_ImageFilter(), this.getImageManipulation(), null, "imageFilter", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_ShowTime(), theEcorePackage.getEInt(), "showTime", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4423,7 +4423,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getImageIndexUnit_OmitFieldLabels(), theEcorePackage.getEBoolean(), "omitFieldLabels", null, 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageIndexUnit_OverlayTitle(), theEcorePackage.getEBoolean(), "overlayTitle", null, 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageIndexUnit_ColumnClass(), theEcorePackage.getEString(), "columnClass", null, 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImageIndexUnit_SizeClass(), theEcorePackage.getEString(), "sizeClass", null, 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImageIndexUnit_CardClass(), theEcorePackage.getEString(), "cardClass", null, 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sliderUnitEClass, SliderUnit.class, "SliderUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

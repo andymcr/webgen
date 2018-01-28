@@ -64,8 +64,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getPaginationElementClass <em>Pagination Element Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getImagePathFeature <em>Image Path Feature</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getTitleFeature <em>Title Feature</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#isTruncateTitle <em>Truncate Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getImageTitleFeature <em>Image Title Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#isTruncateImageTitle <em>Truncate Image Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getMissingImagePath <em>Missing Image Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getImageFilter <em>Image Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getShowTime <em>Show Time</em>}</li>
@@ -486,34 +486,34 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	protected FeaturePath imagePathFeature;
 
 	/**
-	 * The cached value of the '{@link #getTitleFeature() <em>Title Feature</em>}' containment reference.
+	 * The cached value of the '{@link #getImageTitleFeature() <em>Image Title Feature</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitleFeature()
+	 * @see #getImageTitleFeature()
 	 * @generated
 	 * @ordered
 	 */
-	protected FeaturePath titleFeature;
+	protected FeaturePath imageTitleFeature;
 
 	/**
-	 * The default value of the '{@link #isTruncateTitle() <em>Truncate Title</em>}' attribute.
+	 * The default value of the '{@link #isTruncateImageTitle() <em>Truncate Image Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isTruncateTitle()
+	 * @see #isTruncateImageTitle()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean TRUNCATE_TITLE_EDEFAULT = false;
+	protected static final boolean TRUNCATE_IMAGE_TITLE_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isTruncateTitle() <em>Truncate Title</em>}' attribute.
+	 * The cached value of the '{@link #isTruncateImageTitle() <em>Truncate Image Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isTruncateTitle()
+	 * @see #isTruncateImageTitle()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean truncateTitle = TRUNCATE_TITLE_EDEFAULT;
+	protected boolean truncateImageTitle = TRUNCATE_IMAGE_TITLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMissingImagePath() <em>Missing Image Path</em>}' attribute.
@@ -1159,8 +1159,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeaturePath getTitleFeature() {
-		return titleFeature;
+	public FeaturePath getImageTitleFeature() {
+		return imageTitleFeature;
 	}
 
 	/**
@@ -1168,11 +1168,11 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTitleFeature(FeaturePath newTitleFeature, NotificationChain msgs) {
-		FeaturePath oldTitleFeature = titleFeature;
-		titleFeature = newTitleFeature;
+	public NotificationChain basicSetImageTitleFeature(FeaturePath newImageTitleFeature, NotificationChain msgs) {
+		FeaturePath oldImageTitleFeature = imageTitleFeature;
+		imageTitleFeature = newImageTitleFeature;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__TITLE_FEATURE, oldTitleFeature, newTitleFeature);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__IMAGE_TITLE_FEATURE, oldImageTitleFeature, newImageTitleFeature);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -1183,18 +1183,18 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTitleFeature(FeaturePath newTitleFeature) {
-		if (newTitleFeature != titleFeature) {
+	public void setImageTitleFeature(FeaturePath newImageTitleFeature) {
+		if (newImageTitleFeature != imageTitleFeature) {
 			NotificationChain msgs = null;
-			if (titleFeature != null)
-				msgs = ((InternalEObject)titleFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.IMAGE_UNIT__TITLE_FEATURE, null, msgs);
-			if (newTitleFeature != null)
-				msgs = ((InternalEObject)newTitleFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.IMAGE_UNIT__TITLE_FEATURE, null, msgs);
-			msgs = basicSetTitleFeature(newTitleFeature, msgs);
+			if (imageTitleFeature != null)
+				msgs = ((InternalEObject)imageTitleFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.IMAGE_UNIT__IMAGE_TITLE_FEATURE, null, msgs);
+			if (newImageTitleFeature != null)
+				msgs = ((InternalEObject)newImageTitleFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.IMAGE_UNIT__IMAGE_TITLE_FEATURE, null, msgs);
+			msgs = basicSetImageTitleFeature(newImageTitleFeature, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__TITLE_FEATURE, newTitleFeature, newTitleFeature));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__IMAGE_TITLE_FEATURE, newImageTitleFeature, newImageTitleFeature));
 	}
 
 	/**
@@ -1202,8 +1202,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isTruncateTitle() {
-		return truncateTitle;
+	public boolean isTruncateImageTitle() {
+		return truncateImageTitle;
 	}
 
 	/**
@@ -1211,11 +1211,11 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTruncateTitle(boolean newTruncateTitle) {
-		boolean oldTruncateTitle = truncateTitle;
-		truncateTitle = newTruncateTitle;
+	public void setTruncateImageTitle(boolean newTruncateImageTitle) {
+		boolean oldTruncateImageTitle = truncateImageTitle;
+		truncateImageTitle = newTruncateImageTitle;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__TRUNCATE_TITLE, oldTruncateTitle, truncateTitle));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__TRUNCATE_IMAGE_TITLE, oldTruncateImageTitle, truncateImageTitle));
 	}
 
 	/**
@@ -1346,8 +1346,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return ((InternalEList<?>)getSelectors()).basicRemove(otherEnd, msgs);
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				return basicSetImagePathFeature(null, msgs);
-			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:
-				return basicSetTitleFeature(null, msgs);
+			case WafPackage.IMAGE_UNIT__IMAGE_TITLE_FEATURE:
+				return basicSetImageTitleFeature(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1411,10 +1411,10 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return basicGetTitle();
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				return getImagePathFeature();
-			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:
-				return getTitleFeature();
-			case WafPackage.IMAGE_UNIT__TRUNCATE_TITLE:
-				return isTruncateTitle();
+			case WafPackage.IMAGE_UNIT__IMAGE_TITLE_FEATURE:
+				return getImageTitleFeature();
+			case WafPackage.IMAGE_UNIT__TRUNCATE_IMAGE_TITLE:
+				return isTruncateImageTitle();
 			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				return getMissingImagePath();
 			case WafPackage.IMAGE_UNIT__IMAGE_FILTER:
@@ -1512,11 +1512,11 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				setImagePathFeature((FeaturePath)newValue);
 				return;
-			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:
-				setTitleFeature((FeaturePath)newValue);
+			case WafPackage.IMAGE_UNIT__IMAGE_TITLE_FEATURE:
+				setImageTitleFeature((FeaturePath)newValue);
 				return;
-			case WafPackage.IMAGE_UNIT__TRUNCATE_TITLE:
-				setTruncateTitle((Boolean)newValue);
+			case WafPackage.IMAGE_UNIT__TRUNCATE_IMAGE_TITLE:
+				setTruncateImageTitle((Boolean)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				setMissingImagePath((String)newValue);
@@ -1614,11 +1614,11 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				setImagePathFeature((FeaturePath)null);
 				return;
-			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:
-				setTitleFeature((FeaturePath)null);
+			case WafPackage.IMAGE_UNIT__IMAGE_TITLE_FEATURE:
+				setImageTitleFeature((FeaturePath)null);
 				return;
-			case WafPackage.IMAGE_UNIT__TRUNCATE_TITLE:
-				setTruncateTitle(TRUNCATE_TITLE_EDEFAULT);
+			case WafPackage.IMAGE_UNIT__TRUNCATE_IMAGE_TITLE:
+				setTruncateImageTitle(TRUNCATE_IMAGE_TITLE_EDEFAULT);
 				return;
 			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				setMissingImagePath(MISSING_IMAGE_PATH_EDEFAULT);
@@ -1692,10 +1692,10 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return title != null;
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 				return imagePathFeature != null;
-			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:
-				return titleFeature != null;
-			case WafPackage.IMAGE_UNIT__TRUNCATE_TITLE:
-				return truncateTitle != TRUNCATE_TITLE_EDEFAULT;
+			case WafPackage.IMAGE_UNIT__IMAGE_TITLE_FEATURE:
+				return imageTitleFeature != null;
+			case WafPackage.IMAGE_UNIT__TRUNCATE_IMAGE_TITLE:
+				return truncateImageTitle != TRUNCATE_IMAGE_TITLE_EDEFAULT;
 			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				return MISSING_IMAGE_PATH_EDEFAULT == null ? missingImagePath != null : !MISSING_IMAGE_PATH_EDEFAULT.equals(missingImagePath);
 			case WafPackage.IMAGE_UNIT__IMAGE_FILTER:
@@ -1836,8 +1836,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		result.append(paginationClass);
 		result.append(", paginationElementClass: ");
 		result.append(paginationElementClass);
-		result.append(", truncateTitle: ");
-		result.append(truncateTitle);
+		result.append(", truncateImageTitle: ");
+		result.append(truncateImageTitle);
 		result.append(", missingImagePath: ");
 		result.append(missingImagePath);
 		result.append(", showTime: ");

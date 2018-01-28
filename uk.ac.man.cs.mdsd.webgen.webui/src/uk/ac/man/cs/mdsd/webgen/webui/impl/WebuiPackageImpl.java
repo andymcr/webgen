@@ -2580,7 +2580,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getImageUnit_ImagePathFeature() {
+	public EReference getImageUnit_Title() {
 		return (EReference)imageUnitEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -2589,7 +2589,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getImageUnit_TitleFeature() {
+	public EReference getImageUnit_ImagePathFeature() {
 		return (EReference)imageUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2598,8 +2598,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageUnit_TruncateTitle() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(2);
+	public EReference getImageUnit_ImageTitleFeature() {
+		return (EReference)imageUnitEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2607,7 +2607,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageUnit_MissingImagePath() {
+	public EAttribute getImageUnit_TruncateImageTitle() {
 		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -2616,8 +2616,17 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getImageUnit_MissingImagePath() {
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getImageUnit_ImageFilter() {
-		return (EReference)imageUnitEClass.getEStructuralFeatures().get(4);
+		return (EReference)imageUnitEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2626,7 +2635,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getImageUnit_ShowTime() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -2635,7 +2644,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getImageUnit_TransitionTime() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -2832,15 +2841,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getImageIndexUnit_Title() {
-		return (EReference)imageIndexUnitEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getImageIndexUnit_OmitFieldLabels() {
 		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(1);
 	}
@@ -2851,7 +2851,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getImageIndexUnit_OverlayTitle() {
-		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2860,7 +2860,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getImageIndexUnit_StyleClass() {
-		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2869,7 +2869,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getImageIndexUnit_ContentClass() {
-		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2878,7 +2878,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getImageIndexUnit_ColumnClass() {
-		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2886,8 +2886,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageIndexUnit_SizeClass() {
-		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(6);
+	public EAttribute getImageIndexUnit_CardClass() {
+		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3625,22 +3625,22 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		createEAttribute(searchUnitEClass, SEARCH_UNIT__STYLE_CLASS);
 
 		imageUnitEClass = createEClass(IMAGE_UNIT);
+		createEReference(imageUnitEClass, IMAGE_UNIT__TITLE);
 		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_PATH_FEATURE);
-		createEReference(imageUnitEClass, IMAGE_UNIT__TITLE_FEATURE);
-		createEAttribute(imageUnitEClass, IMAGE_UNIT__TRUNCATE_TITLE);
+		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_TITLE_FEATURE);
+		createEAttribute(imageUnitEClass, IMAGE_UNIT__TRUNCATE_IMAGE_TITLE);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__MISSING_IMAGE_PATH);
 		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_FILTER);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__SHOW_TIME);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__TRANSITION_TIME);
 
 		imageIndexUnitEClass = createEClass(IMAGE_INDEX_UNIT);
-		createEReference(imageIndexUnitEClass, IMAGE_INDEX_UNIT__TITLE);
-		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS);
 		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__OVERLAY_TITLE);
+		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS);
 		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__STYLE_CLASS);
 		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__CONTENT_CLASS);
 		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__COLUMN_CLASS);
-		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__SIZE_CLASS);
+		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__CARD_CLASS);
 
 		sliderUnitEClass = createEClass(SLIDER_UNIT);
 		createEAttribute(sliderUnitEClass, SLIDER_UNIT__STYLE_CLASS);
@@ -4095,22 +4095,22 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEAttribute(getSearchUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,search_unit", 0, 1, SearchUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(imageUnitEClass, ImageUnit.class, "ImageUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getImageUnit_Title(), thePersistencePackage.getLabel(), null, "title", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getImageUnit_ImagePathFeature(), this.getFeaturePath(), null, "imagePathFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getImageUnit_TitleFeature(), this.getFeaturePath(), null, "titleFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImageUnit_TruncateTitle(), ecorePackage.getEBoolean(), "truncateTitle", "false", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImageUnit_ImageTitleFeature(), this.getFeaturePath(), null, "imageTitleFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImageUnit_TruncateImageTitle(), ecorePackage.getEBoolean(), "truncateImageTitle", "false", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_MissingImagePath(), ecorePackage.getEString(), "missingImagePath", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImageUnit_ImageFilter(), theImagePackage.getImageManipulation(), null, "imageFilter", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_ShowTime(), ecorePackage.getEInt(), "showTime", "-1", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_TransitionTime(), ecorePackage.getEInt(), "transitionTime", "-1", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(imageIndexUnitEClass, ImageIndexUnit.class, "ImageIndexUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getImageIndexUnit_Title(), thePersistencePackage.getLabel(), null, "title", null, 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getImageIndexUnit_OmitFieldLabels(), ecorePackage.getEBoolean(), "omitFieldLabels", "false", 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getImageIndexUnit_OverlayTitle(), ecorePackage.getEBoolean(), "overlayTitle", "false", 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImageIndexUnit_OmitFieldLabels(), ecorePackage.getEBoolean(), "omitFieldLabels", "false", 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getImageIndexUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,image_index_unit", 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getImageIndexUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "row", 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getImageIndexUnit_ColumnClass(), ecorePackage.getEString(), "columnClass", "col s12 m6 l3", 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getImageIndexUnit_SizeClass(), ecorePackage.getEString(), "sizeClass", "", 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getImageIndexUnit_CardClass(), ecorePackage.getEString(), "cardClass", "card", 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(sliderUnitEClass, SliderUnit.class, "SliderUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSliderUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,slider_unit", 0, 1, SliderUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

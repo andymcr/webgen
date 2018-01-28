@@ -4,11 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.webui.provider;
 
 
 import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -19,11 +15,6 @@ import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.persistence.Label;
-import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -56,61 +47,14 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTitlePropertyDescriptor(object);
-			addOmitFieldLabelsPropertyDescriptor(object);
 			addOverlayTitlePropertyDescriptor(object);
+			addOmitFieldLabelsPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
 			addColumnClassPropertyDescriptor(object);
-			addSizeClassPropertyDescriptor(object);
+			addCardClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Title feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_ImageIndexUnit_title_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_title_feature", "_UI_ImageIndexUnit_type"),
-			WebuiPackage.Literals.IMAGE_INDEX_UNIT__TITLE,
-			true, false, true, null,
-			getString("_UI_InterfacePropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof CollectionUnit) {
-						final CollectionUnit unit = (CollectionUnit) object;
-						final Set<EntityOrView> entities
-							= new HashSet<EntityOrView>(unit.getContentType());
-						final Set<Label> labels = new HashSet<Label>();
-						for (EntityOrView entity : unit.getContentType()) {
-							labels.addAll(entity.getAttributes());
-							labels.addAll(entity.getLabels());
-						}
-						if (unit.getSelection() != null) {
-							for (EntityAssociation association : unit.getSelection().getSelectPath()) {
-								if (entities.contains(association.getSourceEntityX())) {
-									labels.addAll(association.getTargetEntityX().getAttributes());
-									labels.addAll(association.getTargetEntityX().getLabels());
-								} else {
-									labels.addAll(association.getSourceEntityX().getAttributes());
-									labels.addAll(association.getSourceEntityX().getLabels());
-								}
-							}
-						}
-						return labels;
-					}
-
-					return Collections.emptySet();
-				}
-		});
 	}
 
 	/**
@@ -224,19 +168,19 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Size Class feature.
+	 * This adds a property descriptor for the Card Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSizeClassPropertyDescriptor(Object object) {
+	protected void addCardClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ImageIndexUnit_sizeClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_sizeClass_feature", "_UI_ImageIndexUnit_type"),
-				 WebuiPackage.Literals.IMAGE_INDEX_UNIT__SIZE_CLASS,
+				 getString("_UI_ImageIndexUnit_cardClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_cardClass_feature", "_UI_ImageIndexUnit_type"),
+				 WebuiPackage.Literals.IMAGE_INDEX_UNIT__CARD_CLASS,
 				 true,
 				 false,
 				 false,
@@ -322,12 +266,12 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ImageIndexUnit.class)) {
-			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
+			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
 			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
-			case WebuiPackage.IMAGE_INDEX_UNIT__SIZE_CLASS:
+			case WebuiPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__ACTIONS:
@@ -377,7 +321,7 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 
 		boolean qualify =
 			childFeature == WebuiPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE ||
-			childFeature == WebuiPackage.Literals.IMAGE_UNIT__TITLE_FEATURE;
+			childFeature == WebuiPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE;
 
 		if (qualify) {
 			return getString

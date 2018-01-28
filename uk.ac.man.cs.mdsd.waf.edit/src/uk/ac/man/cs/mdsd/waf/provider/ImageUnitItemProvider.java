@@ -70,7 +70,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			addPaginationClassPropertyDescriptor(object);
 			addPaginationElementClassPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
-			addTruncateTitlePropertyDescriptor(object);
+			addTruncateImageTitlePropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
@@ -586,19 +586,19 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Truncate Title feature.
+	 * This adds a property descriptor for the Truncate Image Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTruncateTitlePropertyDescriptor(Object object) {
+	protected void addTruncateImageTitlePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ImageUnit_truncateTitle_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_truncateTitle_feature", "_UI_ImageUnit_type"),
-				 WafPackage.Literals.IMAGE_UNIT__TRUNCATE_TITLE,
+				 getString("_UI_ImageUnit_truncateImageTitle_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_truncateImageTitle_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__TRUNCATE_IMAGE_TITLE,
 				 true,
 				 false,
 				 false,
@@ -708,7 +708,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE);
-			childrenFeatures.add(WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE);
+			childrenFeatures.add(WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -770,14 +770,14 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			case WafPackage.IMAGE_UNIT__LAST_PAGE_ICON_NAME:
 			case WafPackage.IMAGE_UNIT__PAGINATION_CLASS:
 			case WafPackage.IMAGE_UNIT__PAGINATION_ELEMENT_CLASS:
-			case WafPackage.IMAGE_UNIT__TRUNCATE_TITLE:
+			case WafPackage.IMAGE_UNIT__TRUNCATE_IMAGE_TITLE:
 			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 			case WafPackage.IMAGE_UNIT__SHOW_TIME:
 			case WafPackage.IMAGE_UNIT__TRANSITION_TIME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
-			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:
+			case WafPackage.IMAGE_UNIT__IMAGE_TITLE_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -812,17 +812,17 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
+				(WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE,
 				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
+				(WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE,
 				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
+				(WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE,
 				 WafFactory.eINSTANCE.createFeaturePathLabel()));
 	}
 
@@ -839,7 +839,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 
 		boolean qualify =
 			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE ||
-			childFeature == WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE;
+			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE;
 
 		if (qualify) {
 			return getString

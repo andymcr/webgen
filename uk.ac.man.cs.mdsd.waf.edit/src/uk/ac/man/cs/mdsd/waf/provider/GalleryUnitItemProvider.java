@@ -10,6 +10,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.waf.GalleryUnit;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -42,6 +44,8 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addFullSizeFilterPropertyDescriptor(object);
+			addShowTimePropertyDescriptor(object);
+			addTransitionTimePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -64,6 +68,50 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Show Time feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addShowTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GalleryUnit_showTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_showTime_feature", "_UI_GalleryUnit_type"),
+				 WafPackage.Literals.GALLERY_UNIT__SHOW_TIME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Transition Time feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTransitionTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GalleryUnit_transitionTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_transitionTime_feature", "_UI_GalleryUnit_type"),
+				 WafPackage.Literals.GALLERY_UNIT__TRANSITION_TIME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -104,6 +152,13 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(GalleryUnit.class)) {
+			case WafPackage.GALLERY_UNIT__SHOW_TIME:
+			case WafPackage.GALLERY_UNIT__TRANSITION_TIME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

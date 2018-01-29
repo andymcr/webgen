@@ -60,8 +60,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#isTruncateImageTitle <em>Truncate Image Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getMissingImagePath <em>Missing Image Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getImageFilter <em>Image Filter</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getShowTime <em>Show Time</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageUnitImpl#getTransitionTime <em>Transition Time</em>}</li>
  * </ul>
  *
  * @generated
@@ -526,46 +524,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected ImageManipulation imageFilter;
-
-	/**
-	 * The default value of the '{@link #getShowTime() <em>Show Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShowTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int SHOW_TIME_EDEFAULT = -1;
-
-	/**
-	 * The cached value of the '{@link #getShowTime() <em>Show Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShowTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected int showTime = SHOW_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTransitionTime() <em>Transition Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransitionTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int TRANSITION_TIME_EDEFAULT = -1;
-
-	/**
-	 * The cached value of the '{@link #getTransitionTime() <em>Transition Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransitionTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected int transitionTime = TRANSITION_TIME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1252,48 +1210,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getShowTime() {
-		return showTime;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setShowTime(int newShowTime) {
-		int oldShowTime = showTime;
-		showTime = newShowTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_UNIT__SHOW_TIME, oldShowTime, showTime));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getTransitionTime() {
-		return transitionTime;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTransitionTime(int newTransitionTime) {
-		int oldTransitionTime = transitionTime;
-		transitionTime = newTransitionTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_UNIT__TRANSITION_TIME, oldTransitionTime, transitionTime));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -1371,10 +1287,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebuiPackage.IMAGE_UNIT__IMAGE_FILTER:
 				if (resolve) return getImageFilter();
 				return basicGetImageFilter();
-			case WebuiPackage.IMAGE_UNIT__SHOW_TIME:
-				return getShowTime();
-			case WebuiPackage.IMAGE_UNIT__TRANSITION_TIME:
-				return getTransitionTime();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1471,12 +1383,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebuiPackage.IMAGE_UNIT__IMAGE_FILTER:
 				setImageFilter((ImageManipulation)newValue);
 				return;
-			case WebuiPackage.IMAGE_UNIT__SHOW_TIME:
-				setShowTime((Integer)newValue);
-				return;
-			case WebuiPackage.IMAGE_UNIT__TRANSITION_TIME:
-				setTransitionTime((Integer)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1570,12 +1476,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebuiPackage.IMAGE_UNIT__IMAGE_FILTER:
 				setImageFilter((ImageManipulation)null);
 				return;
-			case WebuiPackage.IMAGE_UNIT__SHOW_TIME:
-				setShowTime(SHOW_TIME_EDEFAULT);
-				return;
-			case WebuiPackage.IMAGE_UNIT__TRANSITION_TIME:
-				setTransitionTime(TRANSITION_TIME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1642,10 +1542,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return MISSING_IMAGE_PATH_EDEFAULT == null ? missingImagePath != null : !MISSING_IMAGE_PATH_EDEFAULT.equals(missingImagePath);
 			case WebuiPackage.IMAGE_UNIT__IMAGE_FILTER:
 				return imageFilter != null;
-			case WebuiPackage.IMAGE_UNIT__SHOW_TIME:
-				return showTime != SHOW_TIME_EDEFAULT;
-			case WebuiPackage.IMAGE_UNIT__TRANSITION_TIME:
-				return transitionTime != TRANSITION_TIME_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1780,10 +1676,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		result.append(truncateImageTitle);
 		result.append(", missingImagePath: ");
 		result.append(missingImagePath);
-		result.append(", showTime: ");
-		result.append(showTime);
-		result.append(", transitionTime: ");
-		result.append(transitionTime);
 		result.append(')');
 		return result.toString();
 	}

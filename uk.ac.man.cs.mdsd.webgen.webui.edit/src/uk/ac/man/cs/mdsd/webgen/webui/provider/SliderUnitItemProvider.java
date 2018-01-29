@@ -46,10 +46,56 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addShowTimePropertyDescriptor(object);
+			addTransitionTimePropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Show Time feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addShowTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SliderUnit_showTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_showTime_feature", "_UI_SliderUnit_type"),
+				 WebuiPackage.Literals.SLIDER_UNIT__SHOW_TIME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_ImagePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Transition Time feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTransitionTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SliderUnit_transitionTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SliderUnit_transitionTime_feature", "_UI_SliderUnit_type"),
+				 WebuiPackage.Literals.SLIDER_UNIT__TRANSITION_TIME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_ImagePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -143,6 +189,8 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SliderUnit.class)) {
+			case WebuiPackage.SLIDER_UNIT__SHOW_TIME:
+			case WebuiPackage.SLIDER_UNIT__TRANSITION_TIME:
 			case WebuiPackage.SLIDER_UNIT__STYLE_CLASS:
 			case WebuiPackage.SLIDER_UNIT__CONTENT_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

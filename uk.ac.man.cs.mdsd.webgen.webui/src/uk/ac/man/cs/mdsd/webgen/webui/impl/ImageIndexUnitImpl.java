@@ -29,6 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#isOverlayTitle <em>Overlay Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#isOverlaySingleSelectAction <em>Overlay Single Select Action</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getColumnClass <em>Column Class</em>}</li>
@@ -87,6 +88,26 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @ordered
 	 */
 	protected boolean omitFieldLabels = OMIT_FIELD_LABELS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isOverlaySingleSelectAction() <em>Overlay Single Select Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOverlaySingleSelectAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOverlaySingleSelectAction() <em>Overlay Single Select Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOverlaySingleSelectAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean overlaySingleSelectAction = OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -218,6 +239,27 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		omitFieldLabels = newOmitFieldLabels;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS, oldOmitFieldLabels, omitFieldLabels));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOverlaySingleSelectAction() {
+		return overlaySingleSelectAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOverlaySingleSelectAction(boolean newOverlaySingleSelectAction) {
+		boolean oldOverlaySingleSelectAction = overlaySingleSelectAction;
+		overlaySingleSelectAction = newOverlaySingleSelectAction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION, oldOverlaySingleSelectAction, overlaySingleSelectAction));
 	}
 
 	/**
@@ -368,6 +410,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return isOverlayTitle();
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				return isOmitFieldLabels();
+			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
+				return isOverlaySingleSelectAction();
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 				return getStyleClass();
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
@@ -398,6 +442,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);
+				return;
+			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
+				setOverlaySingleSelectAction((Boolean)newValue);
 				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
@@ -432,6 +479,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels(OMIT_FIELD_LABELS_EDEFAULT);
 				return;
+			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
+				setOverlaySingleSelectAction(OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT);
+				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
 				return;
@@ -462,6 +512,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return overlayTitle != OVERLAY_TITLE_EDEFAULT;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
+			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
+				return overlaySingleSelectAction != OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT;
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
@@ -520,6 +572,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		result.append(overlayTitle);
 		result.append(", omitFieldLabels: ");
 		result.append(omitFieldLabels);
+		result.append(", overlaySingleSelectAction: ");
+		result.append(overlaySingleSelectAction);
 		result.append(", styleClass: ");
 		result.append(styleClass);
 		result.append(", contentClass: ");

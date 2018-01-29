@@ -14,6 +14,7 @@ package uk.ac.man.cs.mdsd.waf;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOverlayTitle <em>Overlay Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOverlaySingleSelectAction <em>Overlay Single Select Action</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getColumnClass <em>Column Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getCardClass <em>Card Class</em>}</li>
  * </ul>
@@ -74,6 +75,32 @@ public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
 	 * @generated
 	 */
 	void setOverlayTitle(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Overlay Single Select Action</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Overlay Single Select Action</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Overlay Single Select Action</em>' attribute.
+	 * @see #setOverlaySingleSelectAction(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageIndexUnit_OverlaySingleSelectAction()
+	 * @model unique="false"
+	 * @generated
+	 */
+	boolean isOverlaySingleSelectAction();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOverlaySingleSelectAction <em>Overlay Single Select Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Overlay Single Select Action</em>' attribute.
+	 * @see #isOverlaySingleSelectAction()
+	 * @generated
+	 */
+	void setOverlaySingleSelectAction(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Column Class</b></em>' attribute.

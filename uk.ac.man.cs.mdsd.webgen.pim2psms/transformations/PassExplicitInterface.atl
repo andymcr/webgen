@@ -1045,9 +1045,7 @@ abstract rule ImageUnit {
 		imageTitleFeature <- website.imageTitleFeature,
 		truncateImageTitle <- website.truncateImageTitle,
 		missingImagePath <- website.missingImagePath,
-		imageFilter <- website.imageFilter,
-		showTime <- website.showTime,
-		transitionTime <- website.transitionTime
+		imageFilter <- website.imageFilter
 	)
 }
 
@@ -1057,6 +1055,7 @@ rule ImageIndexUnit {
 	to waf : WAF!ImageIndexUnit (
 		omitFieldLabels <- website.omitFieldLabels,
 		overlayTitle <- website.overlayTitle,
+		overlaySingleSelectAction <- website.overlaySingleSelectAction,
 		columnClass <- website.columnClass.replaceAll(',', ' ').trim(),
 		cardClass <- website.cardClass.replaceAll(',', ' ').trim()
 	)
@@ -1066,6 +1065,8 @@ rule ImageIndexUnit {
 rule SliderUnit {
 	from website : Website!SliderUnit
 	to waf : WAF!SliderUnit (
+		showTime <- website.showTime,
+		transitionTime <- website.transitionTime
 	)
 }
 
@@ -1073,7 +1074,9 @@ rule SliderUnit {
 rule GalleryUnit {
 	from website : Website!GalleryUnit
 	to waf : WAF!GalleryUnit (
-		fullSizeFilter <- website.fullSizeFilter
+		fullSizeFilter <- website.fullSizeFilter,
+		showTime <- website.showTime,
+		transitionTime <- website.transitionTime
 	)
 }
 

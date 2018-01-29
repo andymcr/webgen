@@ -49,6 +49,7 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 
 			addOverlayTitlePropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
+			addOverlaySingleSelectActionPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
 			addColumnClassPropertyDescriptor(object);
@@ -80,6 +81,28 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Overlay Single Select Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOverlaySingleSelectActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageIndexUnit_overlaySingleSelectAction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_overlaySingleSelectAction_feature", "_UI_ImageIndexUnit_type"),
+				 WebuiPackage.Literals.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ImagePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Overlay Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,7 +120,7 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 
@@ -268,6 +291,7 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 		switch (notification.getFeatureID(ImageIndexUnit.class)) {
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
+			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
 			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:

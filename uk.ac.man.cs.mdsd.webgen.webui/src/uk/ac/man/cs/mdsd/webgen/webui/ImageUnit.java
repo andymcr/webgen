@@ -20,8 +20,6 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Label;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#isTruncateImageTitle <em>Truncate Image Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getImageFilter <em>Image Filter</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getShowTime <em>Show Time</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getTransitionTime <em>Transition Time</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageUnit()
@@ -171,7 +169,7 @@ public interface ImageUnit extends DynamicUnit, CollectionUnit {
 	 * @return the value of the '<em>Image Filter</em>' reference.
 	 * @see #setImageFilter(ImageManipulation)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageUnit_ImageFilter()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	ImageManipulation getImageFilter();
@@ -185,59 +183,5 @@ public interface ImageUnit extends DynamicUnit, CollectionUnit {
 	 * @generated
 	 */
 	void setImageFilter(ImageManipulation value);
-
-	/**
-	 * Returns the value of the '<em><b>Show Time</b></em>' attribute.
-	 * The default value is <code>"-1"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Show Time</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Show Time</em>' attribute.
-	 * @see #setShowTime(int)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageUnit_ShowTime()
-	 * @model default="-1"
-	 * @generated
-	 */
-	int getShowTime();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getShowTime <em>Show Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Show Time</em>' attribute.
-	 * @see #getShowTime()
-	 * @generated
-	 */
-	void setShowTime(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Transition Time</b></em>' attribute.
-	 * The default value is <code>"-1"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Transition Time</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Transition Time</em>' attribute.
-	 * @see #setTransitionTime(int)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageUnit_TransitionTime()
-	 * @model default="-1"
-	 * @generated
-	 */
-	int getTransitionTime();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getTransitionTime <em>Transition Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Transition Time</em>' attribute.
-	 * @see #getTransitionTime()
-	 * @generated
-	 */
-	void setTransitionTime(int value);
 
 } // ImageUnit

@@ -73,8 +73,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			addTruncateImageTitlePropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
-			addShowTimePropertyDescriptor(object);
-			addTransitionTimePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -652,50 +650,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Show Time feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addShowTimePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageUnit_showTime_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_showTime_feature", "_UI_ImageUnit_type"),
-				 WafPackage.Literals.IMAGE_UNIT__SHOW_TIME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Transition Time feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTransitionTimePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageUnit_transitionTime_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_transitionTime_feature", "_UI_ImageUnit_type"),
-				 WafPackage.Literals.IMAGE_UNIT__TRANSITION_TIME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -772,8 +726,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			case WafPackage.IMAGE_UNIT__PAGINATION_ELEMENT_CLASS:
 			case WafPackage.IMAGE_UNIT__TRUNCATE_IMAGE_TITLE:
 			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
-			case WafPackage.IMAGE_UNIT__SHOW_TIME:
-			case WafPackage.IMAGE_UNIT__TRANSITION_TIME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:

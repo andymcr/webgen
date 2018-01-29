@@ -49,6 +49,7 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 
 			addOmitFieldLabelsPropertyDescriptor(object);
 			addOverlayTitlePropertyDescriptor(object);
+			addOverlaySingleSelectActionPropertyDescriptor(object);
 			addColumnClassPropertyDescriptor(object);
 			addCardClassPropertyDescriptor(object);
 		}
@@ -91,6 +92,28 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 				 getString("_UI_ImageIndexUnit_overlayTitle_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_overlayTitle_feature", "_UI_ImageIndexUnit_type"),
 				 WafPackage.Literals.IMAGE_INDEX_UNIT__OVERLAY_TITLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Overlay Single Select Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOverlaySingleSelectActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageIndexUnit_overlaySingleSelectAction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_overlaySingleSelectAction_feature", "_UI_ImageIndexUnit_type"),
+				 WafPackage.Literals.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION,
 				 true,
 				 false,
 				 false,
@@ -213,6 +236,7 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 		switch (notification.getFeatureID(ImageIndexUnit.class)) {
 			case WafPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
+			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 			case WafPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

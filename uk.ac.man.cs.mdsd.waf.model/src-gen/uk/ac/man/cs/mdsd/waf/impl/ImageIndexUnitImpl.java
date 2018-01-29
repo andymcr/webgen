@@ -33,6 +33,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isOverlayTitle <em>Overlay Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isOverlaySingleSelectAction <em>Overlay Single Select Action</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getColumnClass <em>Column Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getCardClass <em>Card Class</em>}</li>
  * </ul>
@@ -89,6 +90,26 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @ordered
 	 */
 	protected boolean overlayTitle = OVERLAY_TITLE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isOverlaySingleSelectAction() <em>Overlay Single Select Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOverlaySingleSelectAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOverlaySingleSelectAction() <em>Overlay Single Select Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOverlaySingleSelectAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean overlaySingleSelectAction = OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getColumnClass() <em>Column Class</em>}' attribute.
@@ -208,6 +229,27 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isOverlaySingleSelectAction() {
+		return overlaySingleSelectAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOverlaySingleSelectAction(boolean newOverlaySingleSelectAction) {
+		boolean oldOverlaySingleSelectAction = overlaySingleSelectAction;
+		overlaySingleSelectAction = newOverlaySingleSelectAction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION, oldOverlaySingleSelectAction, overlaySingleSelectAction));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getColumnClass() {
 		return columnClass;
 	}
@@ -288,6 +330,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return isOmitFieldLabels();
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				return isOverlayTitle();
+			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
+				return isOverlaySingleSelectAction();
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return getColumnClass();
 			case WafPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
@@ -314,6 +358,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return;
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				setOverlayTitle((Boolean)newValue);
+				return;
+			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
+				setOverlaySingleSelectAction((Boolean)newValue);
 				return;
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass((String)newValue);
@@ -342,6 +389,9 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				setOverlayTitle(OVERLAY_TITLE_EDEFAULT);
 				return;
+			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
+				setOverlaySingleSelectAction(OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT);
+				return;
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass(COLUMN_CLASS_EDEFAULT);
 				return;
@@ -366,6 +416,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				return overlayTitle != OVERLAY_TITLE_EDEFAULT;
+			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
+				return overlaySingleSelectAction != OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT;
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return COLUMN_CLASS_EDEFAULT == null ? columnClass != null : !COLUMN_CLASS_EDEFAULT.equals(columnClass);
 			case WafPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
@@ -420,6 +472,8 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		result.append(omitFieldLabels);
 		result.append(", overlayTitle: ");
 		result.append(overlayTitle);
+		result.append(", overlaySingleSelectAction: ");
+		result.append(overlaySingleSelectAction);
 		result.append(", columnClass: ");
 		result.append(columnClass);
 		result.append(", cardClass: ");

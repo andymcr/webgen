@@ -3072,24 +3072,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageUnit_ShowTime() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getImageUnit_TransitionTime() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getImageIndexUnit() {
 		return imageIndexUnitEClass;
 	}
@@ -3117,7 +3099,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageIndexUnit_ColumnClass() {
+	public EAttribute getImageIndexUnit_OverlaySingleSelectAction() {
 		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3126,8 +3108,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageIndexUnit_CardClass() {
+	public EAttribute getImageIndexUnit_ColumnClass() {
 		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getImageIndexUnit_CardClass() {
+		return (EAttribute)imageIndexUnitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3137,6 +3128,24 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EClass getSliderUnit() {
 		return sliderUnitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSliderUnit_ShowTime() {
+		return (EAttribute)sliderUnitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSliderUnit_TransitionTime() {
+		return (EAttribute)sliderUnitEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3155,6 +3164,24 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EReference getGalleryUnit_FullSizeFilter() {
 		return (EReference)galleryUnitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGalleryUnit_ShowTime() {
+		return (EAttribute)galleryUnitEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGalleryUnit_TransitionTime() {
+		return (EAttribute)galleryUnitEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3909,19 +3936,22 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__TRUNCATE_IMAGE_TITLE);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__MISSING_IMAGE_PATH);
 		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_FILTER);
-		createEAttribute(imageUnitEClass, IMAGE_UNIT__SHOW_TIME);
-		createEAttribute(imageUnitEClass, IMAGE_UNIT__TRANSITION_TIME);
 
 		imageIndexUnitEClass = createEClass(IMAGE_INDEX_UNIT);
 		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS);
 		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__OVERLAY_TITLE);
+		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION);
 		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__COLUMN_CLASS);
 		createEAttribute(imageIndexUnitEClass, IMAGE_INDEX_UNIT__CARD_CLASS);
 
 		sliderUnitEClass = createEClass(SLIDER_UNIT);
+		createEAttribute(sliderUnitEClass, SLIDER_UNIT__SHOW_TIME);
+		createEAttribute(sliderUnitEClass, SLIDER_UNIT__TRANSITION_TIME);
 
 		galleryUnitEClass = createEClass(GALLERY_UNIT);
 		createEReference(galleryUnitEClass, GALLERY_UNIT__FULL_SIZE_FILTER);
+		createEAttribute(galleryUnitEClass, GALLERY_UNIT__SHOW_TIME);
+		createEAttribute(galleryUnitEClass, GALLERY_UNIT__TRANSITION_TIME);
 
 		authenticationUnitEClass = createEClass(AUTHENTICATION_UNIT);
 
@@ -4415,20 +4445,23 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getImageUnit_ImageTitleFeature(), this.getFeaturePath(), null, "imageTitleFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_TruncateImageTitle(), theEcorePackage.getEBoolean(), "truncateImageTitle", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_MissingImagePath(), theEcorePackage.getEString(), "missingImagePath", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getImageUnit_ImageFilter(), this.getImageManipulation(), null, "imageFilter", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImageUnit_ShowTime(), theEcorePackage.getEInt(), "showTime", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImageUnit_TransitionTime(), theEcorePackage.getEInt(), "transitionTime", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImageUnit_ImageFilter(), this.getImageManipulation(), null, "imageFilter", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(imageIndexUnitEClass, ImageIndexUnit.class, "ImageIndexUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getImageIndexUnit_OmitFieldLabels(), theEcorePackage.getEBoolean(), "omitFieldLabels", null, 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageIndexUnit_OverlayTitle(), theEcorePackage.getEBoolean(), "overlayTitle", null, 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImageIndexUnit_OverlaySingleSelectAction(), theEcorePackage.getEBoolean(), "overlaySingleSelectAction", null, 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageIndexUnit_ColumnClass(), theEcorePackage.getEString(), "columnClass", null, 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageIndexUnit_CardClass(), theEcorePackage.getEString(), "cardClass", null, 0, 1, ImageIndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sliderUnitEClass, SliderUnit.class, "SliderUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSliderUnit_ShowTime(), theEcorePackage.getEInt(), "showTime", null, 0, 1, SliderUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSliderUnit_TransitionTime(), theEcorePackage.getEInt(), "transitionTime", null, 0, 1, SliderUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(galleryUnitEClass, GalleryUnit.class, "GalleryUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGalleryUnit_FullSizeFilter(), this.getImageManipulation(), null, "fullSizeFilter", null, 0, 1, GalleryUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGalleryUnit_ShowTime(), theEcorePackage.getEInt(), "showTime", null, 0, 1, GalleryUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGalleryUnit_TransitionTime(), theEcorePackage.getEInt(), "transitionTime", null, 0, 1, GalleryUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationUnitEClass, AuthenticationUnit.class, "AuthenticationUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -9661,31 +9661,13 @@ public interface WafPackage extends EPackage {
 	int IMAGE_UNIT__IMAGE_FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 27;
 
 	/**
-	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_UNIT__SHOW_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 28;
-
-	/**
-	 * The feature id for the '<em><b>Transition Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_UNIT__TRANSITION_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 29;
-
-	/**
 	 * The number of structural features of the '<em>Image Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 30;
+	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 28;
 
 	/**
 	 * The number of operations of the '<em>Image Unit</em>' class.
@@ -10157,24 +10139,6 @@ public interface WafPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__IMAGE_FILTER = IMAGE_UNIT__IMAGE_FILTER;
 
 	/**
-	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_INDEX_UNIT__SHOW_TIME = IMAGE_UNIT__SHOW_TIME;
-
-	/**
-	 * The feature id for the '<em><b>Transition Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_INDEX_UNIT__TRANSITION_TIME = IMAGE_UNIT__TRANSITION_TIME;
-
-	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10202,13 +10166,22 @@ public interface WafPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__OVERLAY_TITLE = IMAGE_UNIT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Overlay Single Select Action</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION = IMAGE_UNIT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Column Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__COLUMN_CLASS = IMAGE_UNIT_FEATURE_COUNT + 3;
+	int IMAGE_INDEX_UNIT__COLUMN_CLASS = IMAGE_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Card Class</b></em>' attribute.
@@ -10217,7 +10190,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__CARD_CLASS = IMAGE_UNIT_FEATURE_COUNT + 4;
+	int IMAGE_INDEX_UNIT__CARD_CLASS = IMAGE_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Image Index Unit</em>' class.
@@ -10226,7 +10199,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 5;
+	int IMAGE_INDEX_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Image Index Unit</em>' class.
@@ -10704,7 +10677,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__SHOW_TIME = IMAGE_UNIT__SHOW_TIME;
+	int SLIDER_UNIT__SHOW_TIME = IMAGE_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Transition Time</b></em>' attribute.
@@ -10713,7 +10686,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__TRANSITION_TIME = IMAGE_UNIT__TRANSITION_TIME;
+	int SLIDER_UNIT__TRANSITION_TIME = IMAGE_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Slider Unit</em>' class.
@@ -10722,7 +10695,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 0;
+	int SLIDER_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Slider Unit</em>' class.
@@ -11194,24 +11167,6 @@ public interface WafPackage extends EPackage {
 	int GALLERY_UNIT__IMAGE_FILTER = IMAGE_UNIT__IMAGE_FILTER;
 
 	/**
-	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GALLERY_UNIT__SHOW_TIME = IMAGE_UNIT__SHOW_TIME;
-
-	/**
-	 * The feature id for the '<em><b>Transition Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GALLERY_UNIT__TRANSITION_TIME = IMAGE_UNIT__TRANSITION_TIME;
-
-	/**
 	 * The feature id for the '<em><b>Full Size Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11221,13 +11176,31 @@ public interface WafPackage extends EPackage {
 	int GALLERY_UNIT__FULL_SIZE_FILTER = IMAGE_UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__SHOW_TIME = IMAGE_UNIT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Transition Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__TRANSITION_TIME = IMAGE_UNIT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Gallery Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 1;
+	int GALLERY_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Gallery Unit</em>' class.
@@ -15637,28 +15610,6 @@ public interface WafPackage extends EPackage {
 	EReference getImageUnit_ImageFilter();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getShowTime <em>Show Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Show Time</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getShowTime()
-	 * @see #getImageUnit()
-	 * @generated
-	 */
-	EAttribute getImageUnit_ShowTime();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getTransitionTime <em>Transition Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Transition Time</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getTransitionTime()
-	 * @see #getImageUnit()
-	 * @generated
-	 */
-	EAttribute getImageUnit_TransitionTime();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit <em>Image Index Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15689,6 +15640,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getImageIndexUnit_OverlayTitle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOverlaySingleSelectAction <em>Overlay Single Select Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Overlay Single Select Action</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageIndexUnit#isOverlaySingleSelectAction()
+	 * @see #getImageIndexUnit()
+	 * @generated
+	 */
+	EAttribute getImageIndexUnit_OverlaySingleSelectAction();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit#getColumnClass <em>Column Class</em>}'.
@@ -15723,6 +15685,28 @@ public interface WafPackage extends EPackage {
 	EClass getSliderUnit();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.SliderUnit#getShowTime <em>Show Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Show Time</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.SliderUnit#getShowTime()
+	 * @see #getSliderUnit()
+	 * @generated
+	 */
+	EAttribute getSliderUnit_ShowTime();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.SliderUnit#getTransitionTime <em>Transition Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Transition Time</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.SliderUnit#getTransitionTime()
+	 * @see #getSliderUnit()
+	 * @generated
+	 */
+	EAttribute getSliderUnit_TransitionTime();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.GalleryUnit <em>Gallery Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15742,6 +15726,28 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGalleryUnit_FullSizeFilter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.GalleryUnit#getShowTime <em>Show Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Show Time</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.GalleryUnit#getShowTime()
+	 * @see #getGalleryUnit()
+	 * @generated
+	 */
+	EAttribute getGalleryUnit_ShowTime();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.GalleryUnit#getTransitionTime <em>Transition Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Transition Time</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.GalleryUnit#getTransitionTime()
+	 * @see #getGalleryUnit()
+	 * @generated
+	 */
+	EAttribute getGalleryUnit_TransitionTime();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.AuthenticationUnit <em>Authentication Unit</em>}'.
@@ -18458,22 +18464,6 @@ public interface WafPackage extends EPackage {
 		EReference IMAGE_UNIT__IMAGE_FILTER = eINSTANCE.getImageUnit_ImageFilter();
 
 		/**
-		 * The meta object literal for the '<em><b>Show Time</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IMAGE_UNIT__SHOW_TIME = eINSTANCE.getImageUnit_ShowTime();
-
-		/**
-		 * The meta object literal for the '<em><b>Transition Time</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IMAGE_UNIT__TRANSITION_TIME = eINSTANCE.getImageUnit_TransitionTime();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl <em>Image Index Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -18498,6 +18488,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute IMAGE_INDEX_UNIT__OVERLAY_TITLE = eINSTANCE.getImageIndexUnit_OverlayTitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Overlay Single Select Action</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION = eINSTANCE.getImageIndexUnit_OverlaySingleSelectAction();
 
 		/**
 		 * The meta object literal for the '<em><b>Column Class</b></em>' attribute feature.
@@ -18526,6 +18524,22 @@ public interface WafPackage extends EPackage {
 		EClass SLIDER_UNIT = eINSTANCE.getSliderUnit();
 
 		/**
+		 * The meta object literal for the '<em><b>Show Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLIDER_UNIT__SHOW_TIME = eINSTANCE.getSliderUnit_ShowTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Transition Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLIDER_UNIT__TRANSITION_TIME = eINSTANCE.getSliderUnit_TransitionTime();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.GalleryUnitImpl <em>Gallery Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -18542,6 +18556,22 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GALLERY_UNIT__FULL_SIZE_FILTER = eINSTANCE.getGalleryUnit_FullSizeFilter();
+
+		/**
+		 * The meta object literal for the '<em><b>Show Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GALLERY_UNIT__SHOW_TIME = eINSTANCE.getGalleryUnit_ShowTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Transition Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GALLERY_UNIT__TRANSITION_TIME = eINSTANCE.getGalleryUnit_TransitionTime();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationUnit <em>Authentication Unit</em>}' class.

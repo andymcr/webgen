@@ -473,24 +473,27 @@ abstract class ImageUnit extends DynamicUnit, CollectionUnit {
 	contains FeaturePath[1] imageTitleFeature
 	boolean truncateImageTitle
 	String missingImagePath
-	refers ImageManipulation[1] imageFilter
-	int showTime
-	int transitionTime
+	refers ImageManipulation imageFilter
 }
 
 
 class ImageIndexUnit extends ImageUnit, InlineActionContainer {
 	boolean omitFieldLabels
 	boolean overlayTitle
+	boolean overlaySingleSelectAction
 	String columnClass
 	String cardClass
 }
 
 class SliderUnit extends ImageUnit {
+	int showTime
+	int transitionTime
 }
 
 class GalleryUnit extends ImageUnit {
 	refers ImageManipulation fullSizeFilter
+	int showTime
+	int transitionTime
 }
 
 interface AuthenticationUnit {

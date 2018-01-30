@@ -279,6 +279,7 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/filter"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Business"
           propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/supportedFilters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/badges"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/emptyMessage"/>
       <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/defaultPaginationSize"/>
       <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/maximumPaginationSize"/>
@@ -448,6 +449,12 @@
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Security"
           ecoreFeature="ecore:EReference webui.ecore#//FeatureSupportAction/enableWhen"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute webui.ecore#//FeatureSupportAction/uriElement"/>
+    </genClasses>
+    <genClasses ecoreClass="webui.ecore#//Badge">
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//Badge/iconName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//Badge/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//Badge/displayWhen"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//Badge/newWhen"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

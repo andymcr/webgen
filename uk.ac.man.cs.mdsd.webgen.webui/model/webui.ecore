@@ -456,6 +456,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="filter" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Filter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="supportedFilters" upperBound="-1"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Filter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="badges" upperBound="-1"
+        eType="#//Badge" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="emptyMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultPaginationSize"
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -734,5 +736,14 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Badge">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iconName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="displayWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

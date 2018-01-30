@@ -819,6 +819,7 @@ abstract rule CollectionUnit {
 				website.filter.findFilter()
 			endif,
 		supportedFilters <-	website.supportedFilters->collect(f | f.findFilter()),
+		badges <- website.badges,
 		defaultPaginationSize <- website.defaultPaginationSize,
 		maximumPaginationSize <- website.maximumPaginationSize,
 		emptyMessage <- website.emptyMessage,
@@ -1194,6 +1195,16 @@ rule FeatureSupportAction {
 	)
 }
 
+
+rule Badge {
+	from website : Website!Badge
+	to waf : WAF!Badge (
+		iconName <- website.iconName,
+		value <- website.value,
+		displayWhen <- website.displayWhen,
+		newWhen <- website.newWhen
+	)
+}
 
 rule ConstantReference {
 	from website : Website!ConstantReference (website.isInterfaceExpression())

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -18,6 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.service.Filter;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
 
+import uk.ac.man.cs.mdsd.webgen.webui.Badge;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.IndexDisplayOption;
 import uk.ac.man.cs.mdsd.webgen.webui.IndexUnit;
@@ -38,6 +40,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getBadges <em>Badges</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getMaximumPaginationSize <em>Maximum Pagination Size</em>}</li>
@@ -105,6 +108,16 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected EList<Filter> supportedFilters;
+
+	/**
+	 * The cached value of the '{@link #getBadges() <em>Badges</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBadges()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Badge> badges;
 
 	/**
 	 * The default value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
@@ -680,6 +693,18 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Badge> getBadges() {
+		if (badges == null) {
+			badges = new EObjectContainmentEList<Badge>(Badge.class, this, WebuiPackage.INDEX_UNIT__BADGES);
+		}
+		return badges;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getEmptyMessage() {
 		return emptyMessage;
 	}
@@ -1172,6 +1197,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebuiPackage.INDEX_UNIT__BADGES:
+				return ((InternalEList<?>)getBadges()).basicRemove(otherEnd, msgs);
 			case WebuiPackage.INDEX_UNIT__ACTIONS:
 				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
 		}
@@ -1196,6 +1223,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return basicGetFilter();
 			case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				return getSupportedFilters();
+			case WebuiPackage.INDEX_UNIT__BADGES:
+				return getBadges();
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				return getEmptyMessage();
 			case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
@@ -1268,6 +1297,10 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
 				getSupportedFilters().addAll((Collection<? extends Filter>)newValue);
+				return;
+			case WebuiPackage.INDEX_UNIT__BADGES:
+				getBadges().clear();
+				getBadges().addAll((Collection<? extends Badge>)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage((String)newValue);
@@ -1363,6 +1396,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
 				return;
+			case WebuiPackage.INDEX_UNIT__BADGES:
+				getBadges().clear();
+				return;
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage(EMPTY_MESSAGE_EDEFAULT);
 				return;
@@ -1452,6 +1488,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return filter != null;
 			case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				return supportedFilters != null && !supportedFilters.isEmpty();
+			case WebuiPackage.INDEX_UNIT__BADGES:
+				return badges != null && !badges.isEmpty();
 			case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				return EMPTY_MESSAGE_EDEFAULT == null ? emptyMessage != null : !EMPTY_MESSAGE_EDEFAULT.equals(emptyMessage);
 			case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
@@ -1520,6 +1558,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WebuiPackage.INDEX_UNIT__SELECTION: return WebuiPackage.COLLECTION_UNIT__SELECTION;
 				case WebuiPackage.INDEX_UNIT__FILTER: return WebuiPackage.COLLECTION_UNIT__FILTER;
 				case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS: return WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
+				case WebuiPackage.INDEX_UNIT__BADGES: return WebuiPackage.COLLECTION_UNIT__BADGES;
 				case WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE: return WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE;
 				case WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE: return WebuiPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE;
 				case WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE: return WebuiPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE;
@@ -1567,6 +1606,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WebuiPackage.COLLECTION_UNIT__SELECTION: return WebuiPackage.INDEX_UNIT__SELECTION;
 				case WebuiPackage.COLLECTION_UNIT__FILTER: return WebuiPackage.INDEX_UNIT__FILTER;
 				case WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS;
+				case WebuiPackage.COLLECTION_UNIT__BADGES: return WebuiPackage.INDEX_UNIT__BADGES;
 				case WebuiPackage.COLLECTION_UNIT__EMPTY_MESSAGE: return WebuiPackage.INDEX_UNIT__EMPTY_MESSAGE;
 				case WebuiPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE: return WebuiPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE;
 				case WebuiPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE: return WebuiPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE;

@@ -640,6 +640,7 @@ public class IndexUnitItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.Literals.COLLECTION_UNIT__BADGES);
 			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
 		}
 		return childrenFeatures;
@@ -705,6 +706,7 @@ public class IndexUnitItemProvider
 			case WafPackage.INDEX_UNIT__ROW_CLASSES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WafPackage.INDEX_UNIT__BADGES:
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -722,6 +724,11 @@ public class IndexUnitItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.COLLECTION_UNIT__BADGES,
+				 WafFactory.eINSTANCE.createBadge()));
 
 		newChildDescriptors.add
 			(createChildParameter

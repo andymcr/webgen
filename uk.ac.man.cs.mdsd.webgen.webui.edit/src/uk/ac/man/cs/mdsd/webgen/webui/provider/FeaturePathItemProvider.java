@@ -28,6 +28,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.webui.Badge;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.FeaturePath;
@@ -211,6 +212,20 @@ public class FeaturePathItemProvider
 		return entities;
 	}
 
+	protected Set<EntityOrView> getEntities(final Badge badge) {
+		final Set<EntityOrView> entities = new HashSet<EntityOrView>();
+		if (badge.eContainer() instanceof CollectionUnit) {
+			entities.addAll(((CollectionUnit) badge.eContainer()).getContentType());
+		} else if (badge.eContainer() instanceof UnitElement) {
+			entities.add(getParentType(
+				((UnitElement) badge.eContainer()).getAttribute()));
+		} else if (badge.eContainer() instanceof UnitAssociation) {
+			entities.add(((UnitAssociation) badge.eContainer()).getAssociation().getSourceEntityX());
+		}
+
+		return entities;
+	}
+
 	protected Set<EntityOrView> getEntities(final Expression expression) {
 		final DynamicUnit unit = getDynamicUnitContext(expression);
 		if (unit != null) {
@@ -220,6 +235,11 @@ public class FeaturePathItemProvider
 		final InlineActionContainer action = getActionContext(expression);
 		if (action != null) {
 			return getEntities(action);
+		}
+
+		final Badge badge = getBadgeContext(expression);
+		if (badge != null) {
+			return getEntities(badge);
 		}
 
 		return Collections.emptySet();
@@ -271,6 +291,18 @@ public class FeaturePathItemProvider
  		while (container != null) { 
  			if (container instanceof InlineActionContainer) { 
  				return (InlineActionContainer) container; 
+ 			} 
+ 			container = getContext(container); 
+ 		} 
+ 
+ 		return null; 
+	}
+ 
+	protected Badge getBadgeContext(final Object object) { 
+	Object container = getContext(object); 
+ 		while (container != null) { 
+ 			if (container instanceof Badge) { 
+ 				return (Badge) container; 
  			} 
  			container = getContext(container); 
  		} 

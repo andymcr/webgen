@@ -20,6 +20,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getSupportedFilters <em>Supported Filters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getBadges <em>Badges</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getMaximumPaginationSize <em>Maximum Pagination Size</em>}</li>
@@ -127,6 +128,22 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	EList<Filter> getSupportedFilters();
+
+	/**
+	 * Returns the value of the '<em><b>Badges</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.Badge}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Badges</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Badges</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_Badges()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Badge> getBadges();
 
 	/**
 	 * Returns the value of the '<em><b>Empty Message</b></em>' attribute.

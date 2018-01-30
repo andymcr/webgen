@@ -98,6 +98,7 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 			case WebuiPackage.SELECT_ACTION: return createSelectAction();
 			case WebuiPackage.DELETE_ACTION: return createDeleteAction();
 			case WebuiPackage.FEATURE_SUPPORT_ACTION: return createFeatureSupportAction();
+			case WebuiPackage.BADGE: return createBadge();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -557,6 +558,16 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 	public FeatureSupportAction createFeatureSupportAction() {
 		FeatureSupportActionImpl featureSupportAction = new FeatureSupportActionImpl();
 		return featureSupportAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Badge createBadge() {
+		BadgeImpl badge = new BadgeImpl();
+		return badge;
 	}
 
 	/**

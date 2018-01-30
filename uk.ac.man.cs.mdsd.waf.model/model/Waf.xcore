@@ -385,6 +385,7 @@ interface CollectionUnit extends SelectableUnit {
 	refers Selection selection
 	refers Filter filter
 	refers Filter[] supportedFilters
+	contains Badge[] badges
 	String emptyMessage
 	int defaultPaginationSize
 	int maximumPaginationSize
@@ -551,4 +552,11 @@ class FeatureSupportAction extends InlineAction {
 	contains Predicate enableWhen
 	String[1] uriElement
 	String fileExtension
+}
+
+class Badge {
+	String iconName
+	contains Expression value
+	contains Predicate displayWhen
+	contains Predicate newWhen
 }

@@ -681,6 +681,7 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebuiPackage.Literals.COLLECTION_UNIT__BADGES);
 			childrenFeatures.add(WebuiPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
 		}
 		return childrenFeatures;
@@ -770,6 +771,7 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			case WebuiPackage.INDEX_UNIT__ROW_CLASSES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WebuiPackage.INDEX_UNIT__BADGES:
 			case WebuiPackage.INDEX_UNIT__ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -787,6 +789,11 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.COLLECTION_UNIT__BADGES,
+				 WebuiFactory.eINSTANCE.createBadge()));
 
 		newChildDescriptors.add
 			(createChildParameter

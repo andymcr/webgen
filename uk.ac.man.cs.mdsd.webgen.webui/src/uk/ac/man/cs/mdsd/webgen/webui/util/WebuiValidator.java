@@ -220,6 +220,8 @@ public class WebuiValidator extends EObjectValidator {
 				return validateDeleteAction((DeleteAction)value, diagnostics, context);
 			case WebuiPackage.FEATURE_SUPPORT_ACTION:
 				return validateFeatureSupportAction((FeatureSupportAction)value, diagnostics, context);
+			case WebuiPackage.BADGE:
+				return validateBadge((Badge)value, diagnostics, context);
 			case WebuiPackage.INPUT_TECHNOLOGIES:
 				return validateInputTechnologies((InputTechnologies)value, diagnostics, context);
 			case WebuiPackage.AJAX_TECHNOLOGIES:
@@ -1888,6 +1890,15 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(featureSupportAction, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(featureSupportAction, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateBadge(Badge badge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(badge, diagnostics, context);
 	}
 
 	/**

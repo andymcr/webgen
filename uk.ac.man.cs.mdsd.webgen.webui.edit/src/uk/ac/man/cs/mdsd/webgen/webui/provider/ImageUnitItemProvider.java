@@ -158,22 +158,29 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	 * This adds a property descriptor for the Supported Filters feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addSupportedFiltersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnit_supportedFilters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_supportedFilters_feature", "_UI_CollectionUnit_type"),
-				 WebuiPackage.Literals.COLLECTION_UNIT__SUPPORTED_FILTERS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_BusinessPropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_CollectionUnit_supportedFilters_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_supportedFilters_feature", "_UI_CollectionUnit_type"),
+			WebuiPackage.Literals.COLLECTION_UNIT__SUPPORTED_FILTERS,
+			true, false, true, null,
+			getString("_UI_BusinessPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof ImageUnit) {
+						final ImageUnit unit = (ImageUnit) object;
+						if (unit.getSelection() != null) {
+							return unit.getSelection().getFilters();
+						}
+					}
+					return Collections.emptySet();
+				}
+		});
 	}
 
 	/**
@@ -674,6 +681,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebuiPackage.Literals.COLLECTION_UNIT__BADGES);
 			childrenFeatures.add(WebuiPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE);
 			childrenFeatures.add(WebuiPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE);
 		}
@@ -741,6 +749,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			case WebuiPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WebuiPackage.IMAGE_UNIT__BADGES:
 			case WebuiPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 			case WebuiPackage.IMAGE_UNIT__IMAGE_TITLE_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -759,6 +768,11 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebuiPackage.Literals.COLLECTION_UNIT__BADGES,
+				 WebuiFactory.eINSTANCE.createBadge()));
 
 		newChildDescriptors.add
 			(createChildParameter

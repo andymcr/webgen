@@ -1156,6 +1156,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Badge} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BadgeItemProvider badgeItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.Badge}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBadgeAdapter() {
+		if (badgeItemProvider == null) {
+			badgeItemProvider = new BadgeItemProvider(this);
+		}
+
+		return badgeItemProvider;
+	}
+
+		/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1308,6 +1331,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (selectActionItemProvider != null) selectActionItemProvider.dispose();
 		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
 		if (featureSupportActionItemProvider != null) featureSupportActionItemProvider.dispose();
+		if (badgeItemProvider != null) badgeItemProvider.dispose();
 	}
 
 		/**

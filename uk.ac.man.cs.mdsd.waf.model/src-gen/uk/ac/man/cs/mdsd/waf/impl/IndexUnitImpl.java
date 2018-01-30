@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
@@ -24,6 +25,7 @@ import uk.ac.man.cs.mdsd.orm.EntityOrView;
 import uk.ac.man.cs.mdsd.service.Filter;
 import uk.ac.man.cs.mdsd.service.Selection;
 
+import uk.ac.man.cs.mdsd.waf.Badge;
 import uk.ac.man.cs.mdsd.waf.CollectionUnit;
 import uk.ac.man.cs.mdsd.waf.IndexUnit;
 import uk.ac.man.cs.mdsd.waf.InlineAction;
@@ -46,6 +48,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getBadges <em>Badges</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getMaximumPaginationSize <em>Maximum Pagination Size</em>}</li>
@@ -121,6 +124,16 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected EList<Filter> supportedFilters;
+
+	/**
+	 * The cached value of the '{@link #getBadges() <em>Badges</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBadges()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Badge> badges;
 
 	/**
 	 * The default value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
@@ -658,6 +671,18 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Badge> getBadges() {
+		if (badges == null) {
+			badges = new EObjectContainmentEList<Badge>(Badge.class, this, WafPackage.INDEX_UNIT__BADGES);
+		}
+		return badges;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getEmptyMessage() {
 		return emptyMessage;
 	}
@@ -1155,6 +1180,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		switch (featureID) {
 			case WafPackage.INDEX_UNIT__SELECTORS:
 				return ((InternalEList<?>)getSelectors()).basicRemove(otherEnd, msgs);
+			case WafPackage.INDEX_UNIT__BADGES:
+				return ((InternalEList<?>)getBadges()).basicRemove(otherEnd, msgs);
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
 			case WafPackage.INDEX_UNIT__TARGETTING_SEARCHES:
@@ -1183,6 +1210,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return basicGetFilter();
 			case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				return getSupportedFilters();
+			case WafPackage.INDEX_UNIT__BADGES:
+				return getBadges();
 			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				return getEmptyMessage();
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
@@ -1256,6 +1285,10 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
 				getSupportedFilters().addAll((Collection<? extends Filter>)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__BADGES:
+				getBadges().clear();
+				getBadges().addAll((Collection<? extends Badge>)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage((String)newValue);
@@ -1348,6 +1381,9 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				getSupportedFilters().clear();
 				return;
+			case WafPackage.INDEX_UNIT__BADGES:
+				getBadges().clear();
+				return;
 			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				setEmptyMessage(EMPTY_MESSAGE_EDEFAULT);
 				return;
@@ -1433,6 +1469,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return filter != null;
 			case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS:
 				return supportedFilters != null && !supportedFilters.isEmpty();
+			case WafPackage.INDEX_UNIT__BADGES:
+				return badges != null && !badges.isEmpty();
 			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
 				return EMPTY_MESSAGE_EDEFAULT == null ? emptyMessage != null : !EMPTY_MESSAGE_EDEFAULT.equals(emptyMessage);
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
@@ -1498,6 +1536,7 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WafPackage.INDEX_UNIT__SELECTION: return WafPackage.COLLECTION_UNIT__SELECTION;
 				case WafPackage.INDEX_UNIT__FILTER: return WafPackage.COLLECTION_UNIT__FILTER;
 				case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS: return WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
+				case WafPackage.INDEX_UNIT__BADGES: return WafPackage.COLLECTION_UNIT__BADGES;
 				case WafPackage.INDEX_UNIT__EMPTY_MESSAGE: return WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE;
 				case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE: return WafPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE;
 				case WafPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE: return WafPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE;
@@ -1546,6 +1585,7 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WafPackage.COLLECTION_UNIT__SELECTION: return WafPackage.INDEX_UNIT__SELECTION;
 				case WafPackage.COLLECTION_UNIT__FILTER: return WafPackage.INDEX_UNIT__FILTER;
 				case WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WafPackage.INDEX_UNIT__SUPPORTED_FILTERS;
+				case WafPackage.COLLECTION_UNIT__BADGES: return WafPackage.INDEX_UNIT__BADGES;
 				case WafPackage.COLLECTION_UNIT__EMPTY_MESSAGE: return WafPackage.INDEX_UNIT__EMPTY_MESSAGE;
 				case WafPackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE: return WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE;
 				case WafPackage.COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE: return WafPackage.INDEX_UNIT__MAXIMUM_PAGINATION_SIZE;

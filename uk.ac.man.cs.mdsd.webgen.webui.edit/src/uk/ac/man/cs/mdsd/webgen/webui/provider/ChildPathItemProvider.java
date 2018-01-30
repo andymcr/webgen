@@ -4,6 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.webui.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -12,6 +13,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -20,10 +22,12 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import uk.ac.man.cs.mdsd.webgen.expression.Expression;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.webui.Badge;
 import uk.ac.man.cs.mdsd.webgen.webui.ChildPath;
 import uk.ac.man.cs.mdsd.webgen.webui.ChildPathAssociation;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
@@ -34,6 +38,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.webui.SingletonUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitElement;
+import uk.ac.man.cs.mdsd.webgen.webui.UnitField;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.ChildPath} object.
@@ -144,7 +149,7 @@ public class ChildPathItemProvider
 	}
 
 	protected EntityOrView getTarget(final UnitAssociation association) {
-		final Set<EntityOrView> entities = getContentType(association.getDisplayedOn());
+		final Set<EntityOrView> entities = getContentTypes(association.getDisplayedOn());
 		if (entities.contains(association.getAssociation().getSourceEntityX())) {
 			return association.getAssociation().getTargetEntityX();
 		} else{
@@ -152,7 +157,7 @@ public class ChildPathItemProvider
 		}
 	}
 
-	protected Set<EntityOrView> getContentType(final DynamicUnit unit) {
+	protected Set<EntityOrView> getContentTypes(final DynamicUnit unit) {
 		final Set<EntityOrView> contentType = new HashSet<EntityOrView>();
 
 		if (unit instanceof SingletonUnit) {
@@ -177,7 +182,7 @@ public class ChildPathItemProvider
 	protected EntityOrView getTarget(final FeaturePathAssociation path) {
 		if (path.eContainer() instanceof DynamicUnit) {
 			final Set<EntityOrView> contentType
-				= getContentType((DynamicUnit) path.eContainer());
+				= getContentTypes((DynamicUnit) path.eContainer());
 			if (contentType.contains(path.getAssociation().getSourceEntityX())) {
 				return path.getAssociation().getTargetEntityX();
 			} else{
@@ -187,6 +192,15 @@ public class ChildPathItemProvider
 		} else if (path.eContainer() instanceof InlineAction) {
 			final Set<EntityOrView> entities
 				= getEntities((InlineActionContainer) path.eContainer());
+			if (entities.contains(path.getAssociation().getSourceEntityX())) {
+				return path.getAssociation().getTargetEntityX();
+			} else{
+				return path.getAssociation().getSourceEntityX();
+			}
+
+		} else if (path.eContainer() instanceof Expression) {
+			final Set<EntityOrView> entities
+				= getEntities((Expression) path.eContainer());
 			if (entities.contains(path.getAssociation().getSourceEntityX())) {
 				return path.getAssociation().getTargetEntityX();
 			} else{
@@ -212,6 +226,39 @@ public class ChildPathItemProvider
 		return entities;
 	}
 
+	protected Set<EntityOrView> getEntities(final Badge badge) {
+		final Set<EntityOrView> entities = new HashSet<EntityOrView>();
+		if (badge.eContainer() instanceof CollectionUnit) {
+			entities.addAll(((CollectionUnit) badge.eContainer()).getContentType());
+		} else if (badge.eContainer() instanceof UnitElement) {
+			entities.add(getParentType(
+				((UnitElement) badge.eContainer()).getAttribute()));
+		} else if (badge.eContainer() instanceof UnitAssociation) {
+			entities.add(((UnitAssociation) badge.eContainer()).getAssociation().getSourceEntityX());
+		}
+
+		return entities;
+	}
+
+	protected Set<EntityOrView> getEntities(final Expression expression) {
+		final DynamicUnit unit = getDynamicUnitContext(expression);
+		if (unit != null) {
+			return getContentTypes(unit);
+		}
+
+		final InlineActionContainer action = getActionContext(expression);
+		if (action != null) {
+			return getEntities(action);
+		}
+
+		final Badge badge = getBadgeContext(expression);
+		if (badge != null) {
+			return getEntities(badge);
+		}
+
+		return Collections.emptySet();
+	}
+
 	protected EntityOrView getParentType(final Attribute attribute) {
 		if (attribute instanceof EntityAttribute) {
 			return ((EntityAttribute) attribute).getPartOf();
@@ -221,4 +268,60 @@ public class ChildPathItemProvider
 		}
 	}
 
+	protected Object getContext(final Object object) {
+		if (object instanceof EObject) {
+			return ((EObject) object).eContainer();
+		} else {
+			return null;
+		}
+	}
+
+	protected DynamicUnit getDynamicUnitContext(final Object object) {
+		Object container = getContext(object);
+		while (container != null) {
+			if (container instanceof DynamicUnit) {
+				return (DynamicUnit) container;
+			}
+			container = getContext(container);
+		}
+
+		return null;
+	}
+
+	protected UnitField getUnitFieldContext(final Object object) {
+		Object container = getContext(object);
+		while (container != null) {
+			if (container instanceof UnitField) {
+				return (UnitField) container;
+			}
+			container = getContext(container);
+		}
+
+		return null;
+	}
+
+	protected InlineActionContainer getActionContext(final Object object) { 
+	Object container = getContext(object); 
+ 		while (container != null) { 
+ 			if (container instanceof InlineActionContainer) { 
+ 				return (InlineActionContainer) container; 
+ 			} 
+ 			container = getContext(container); 
+ 		} 
+ 
+ 		return null; 
+	}
+ 
+	protected Badge getBadgeContext(final Object object) { 
+	Object container = getContext(object); 
+ 		while (container != null) { 
+ 			if (container instanceof Badge) { 
+ 				return (Badge) container; 
+ 			} 
+ 			container = getContext(container); 
+ 		} 
+ 
+ 		return null; 
+	}
+ 
 }

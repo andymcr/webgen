@@ -22,6 +22,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.ActionMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.webgen.webui.AssociationReference;
 import uk.ac.man.cs.mdsd.webgen.webui.AuthenticationUnit;
+import uk.ac.man.cs.mdsd.webgen.webui.Badge;
 import uk.ac.man.cs.mdsd.webgen.webui.CaptchaField;
 import uk.ac.man.cs.mdsd.webgen.webui.ChildPath;
 import uk.ac.man.cs.mdsd.webgen.webui.ChildPathAssociation;
@@ -530,6 +531,13 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	private EClass featureSupportActionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass badgeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2004,8 +2012,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_EmptyMessage() {
-		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(4);
+	public EReference getCollectionUnit_Badges() {
+		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2013,7 +2021,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_DefaultPaginationSize() {
+	public EAttribute getCollectionUnit_EmptyMessage() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -2022,7 +2030,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_MaximumPaginationSize() {
+	public EAttribute getCollectionUnit_DefaultPaginationSize() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -2031,7 +2039,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_NextNpages() {
+	public EAttribute getCollectionUnit_MaximumPaginationSize() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -2040,7 +2048,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_PreviousNpages() {
+	public EAttribute getCollectionUnit_NextNpages() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -2049,7 +2057,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_NextPageLabel() {
+	public EAttribute getCollectionUnit_PreviousNpages() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -2058,7 +2066,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_NextPageIconName() {
+	public EAttribute getCollectionUnit_NextPageLabel() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -2067,7 +2075,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_PreviousPageLabel() {
+	public EAttribute getCollectionUnit_NextPageIconName() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -2076,7 +2084,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_PreviousPageIconName() {
+	public EAttribute getCollectionUnit_PreviousPageLabel() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -2085,7 +2093,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_UseDisabledPageLinks() {
+	public EAttribute getCollectionUnit_PreviousPageIconName() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -2094,7 +2102,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_UseFirstLastPageLinks() {
+	public EAttribute getCollectionUnit_UseDisabledPageLinks() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -2103,7 +2111,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_FirstPageLabel() {
+	public EAttribute getCollectionUnit_UseFirstLastPageLinks() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(15);
 	}
 
@@ -2112,7 +2120,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_FirstPageIconName() {
+	public EAttribute getCollectionUnit_FirstPageLabel() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -2121,7 +2129,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_LastPageLabel() {
+	public EAttribute getCollectionUnit_FirstPageIconName() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -2130,7 +2138,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_LastPageIconName() {
+	public EAttribute getCollectionUnit_LastPageLabel() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(18);
 	}
 
@@ -2139,7 +2147,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_PaginationClass() {
+	public EAttribute getCollectionUnit_LastPageIconName() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(19);
 	}
 
@@ -2148,8 +2156,17 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCollectionUnit_PaginationElementClass() {
+	public EAttribute getCollectionUnit_PaginationClass() {
 		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCollectionUnit_PaginationElementClass() {
+		return (EAttribute)collectionUnitEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -3273,6 +3290,51 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getBadge() {
+		return badgeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBadge_IconName() {
+		return (EAttribute)badgeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBadge_Value() {
+		return (EReference)badgeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBadge_DisplayWhen() {
+		return (EReference)badgeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBadge_NewWhen() {
+		return (EReference)badgeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getFeatureSupportAction_FileExtension() {
 		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(2);
 	}
@@ -3577,6 +3639,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__SELECTION);
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__FILTER);
 		createEReference(collectionUnitEClass, COLLECTION_UNIT__SUPPORTED_FILTERS);
+		createEReference(collectionUnitEClass, COLLECTION_UNIT__BADGES);
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__EMPTY_MESSAGE);
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE);
 		createEAttribute(collectionUnitEClass, COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE);
@@ -3724,6 +3787,12 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__REQUIRES_ROLE);
 		createEReference(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__ENABLE_WHEN);
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__URI_ELEMENT);
+
+		badgeEClass = createEClass(BADGE);
+		createEAttribute(badgeEClass, BADGE__ICON_NAME);
+		createEReference(badgeEClass, BADGE__VALUE);
+		createEReference(badgeEClass, BADGE__DISPLAY_WHEN);
+		createEReference(badgeEClass, BADGE__NEW_WHEN);
 
 		// Create enums
 		inputTechnologiesEEnum = createEEnum(INPUT_TECHNOLOGIES);
@@ -4050,6 +4119,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEReference(getCollectionUnit_Selection(), theServicePackage.getSelection(), null, "selection", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_Filter(), theServicePackage.getFilter(), null, "filter", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCollectionUnit_SupportedFilters(), theServicePackage.getFilter(), null, "supportedFilters", null, 0, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCollectionUnit_Badges(), this.getBadge(), null, "badges", null, 0, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_EmptyMessage(), ecorePackage.getEString(), "emptyMessage", null, 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCollectionUnit_DefaultPaginationSize(), ecorePackage.getEInt(), "defaultPaginationSize", "10", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCollectionUnit_MaximumPaginationSize(), ecorePackage.getEInt(), "maximumPaginationSize", "100", 0, 1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -4197,6 +4267,12 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEAttribute(getFeatureSupportAction_RequiresRole(), ecorePackage.getEString(), "requiresRole", "", 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeatureSupportAction_EnableWhen(), theExpressionPackage.getPredicate(), null, "enableWhen", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeatureSupportAction_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(badgeEClass, Badge.class, "Badge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBadge_IconName(), ecorePackage.getEString(), "iconName", null, 0, 1, Badge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBadge_Value(), theExpressionPackage.getExpression(), null, "value", null, 0, 1, Badge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBadge_DisplayWhen(), theExpressionPackage.getPredicate(), null, "displayWhen", null, 0, 1, Badge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBadge_NewWhen(), theExpressionPackage.getPredicate(), null, "newWhen", null, 0, 1, Badge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(inputTechnologiesEEnum, InputTechnologies.class, "InputTechnologies");

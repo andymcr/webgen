@@ -17,11 +17,13 @@ helper context Website!Expression def: isInterfaceExpression() : Boolean
 			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!InlineAction) then
 			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!Badge) then
+			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!Expression) then
 			self.refImmediateComposite().isInterfaceExpression()
 		else
 			false
-		endif endif endif endif endif endif;
+		endif endif endif endif endif endif endif;
 
 
 rule NullLiteral {

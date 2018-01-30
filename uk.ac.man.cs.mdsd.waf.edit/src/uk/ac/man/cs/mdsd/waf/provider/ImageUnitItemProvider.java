@@ -661,6 +661,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.Literals.COLLECTION_UNIT__BADGES);
 			childrenFeatures.add(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE);
 			childrenFeatures.add(WafPackage.Literals.IMAGE_UNIT__IMAGE_TITLE_FEATURE);
 		}
@@ -728,6 +729,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WafPackage.IMAGE_UNIT__BADGES:
 			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 			case WafPackage.IMAGE_UNIT__IMAGE_TITLE_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -746,6 +748,11 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.COLLECTION_UNIT__BADGES,
+				 WafFactory.eINSTANCE.createBadge()));
 
 		newChildDescriptors.add
 			(createChildParameter

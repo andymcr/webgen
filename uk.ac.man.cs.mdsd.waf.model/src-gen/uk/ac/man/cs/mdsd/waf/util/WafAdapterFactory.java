@@ -354,6 +354,10 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createFeatureSupportActionAdapter();
 			}
 			@Override
+			public Adapter caseBadge(Badge object) {
+				return createBadgeAdapter();
+			}
+			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
 			}
@@ -1366,6 +1370,20 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFeatureSupportActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.Badge <em>Badge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.Badge
+	 * @generated
+	 */
+	public Adapter createBadgeAdapter() {
 		return null;
 	}
 

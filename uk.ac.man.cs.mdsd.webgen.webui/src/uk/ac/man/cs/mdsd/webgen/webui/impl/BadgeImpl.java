@@ -42,7 +42,7 @@ public class BadgeImpl extends MinimalEObjectImpl.Container implements Badge {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ICON_NAME_EDEFAULT = null;
+	protected static final String ICON_NAME_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getIconName() <em>Icon Name</em>}' attribute.

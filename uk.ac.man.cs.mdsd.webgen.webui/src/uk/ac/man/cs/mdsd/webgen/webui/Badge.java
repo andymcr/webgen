@@ -29,6 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 public interface Badge extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Icon Name</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Icon Name</em>' attribute isn't clear,
@@ -38,7 +39,7 @@ public interface Badge extends EObject {
 	 * @return the value of the '<em>Icon Name</em>' attribute.
 	 * @see #setIconName(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getBadge_IconName()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	String getIconName();

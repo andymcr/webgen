@@ -102,7 +102,7 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 

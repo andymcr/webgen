@@ -143,7 +143,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			getString("_UI_PropertyDescriptor_description", "_UI_Selection_joins_feature", "_UI_Selection_type"),
 			ServicePackage.Literals.SELECTION__JOINS,
 			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
+			getString("_UI_BusinessPropertyCategory"),
 			null) {
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
@@ -221,7 +221,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			getString("_UI_PropertyDescriptor_description", "_UI_Selection_selectVia_feature", "_UI_Selection_type"),
 			ServicePackage.Literals.SELECTION__SELECT_PATH,
 			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
+			getString("_UI_BusinessPropertyCategory"),
 			null) {
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {

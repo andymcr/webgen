@@ -812,6 +812,18 @@ abstract rule CollectionUnit {
 			else
 				website.selection.findServiceSelection()
 			endif,
+		findContainerSelection <-
+			if website.findContainerSelection.oclIsUndefined() then
+				website.findContainerSelection
+			else
+				website.findContainerSelection.findServiceSelection()
+			endif,
+		findElementSelection <-
+			if website.findElementSelection.oclIsUndefined() then
+				website.findElementSelection
+			else
+				website.findElementSelection.findServiceSelection()
+			endif,
 		filter <-
 			if website.filter.oclIsUndefined() then
 				website.filter
@@ -1171,7 +1183,7 @@ rule DeleteAction {
 rule FeatureSupportAction {
 	from website : Website!FeatureSupportAction 
 	to waf : WAF!FeatureSupportAction (
-		operation <- thisModule.findServiceBusinessOperation(website.operation.name),
+		operation <- website.operation.findBusinessOperation(),
 		confirmMessage <-
 			if not website.confirmMessage.oclIsUndefined() and website.confirmMessage <> '' then
 				website.confirmMessage

@@ -70,6 +70,7 @@
     <genClasses ecoreClass="service.ecore#//Asc"/>
     <genClasses ecoreClass="service.ecore#//Desc"/>
     <genClasses ecoreClass="service.ecore#//BusinessOperation">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference service.ecore#//BusinessOperation/definedBy"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Business"
           propertySortChoices="true" ecoreFeature="ecore:EReference service.ecore#//BusinessOperation/uses"/>
       <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute service.ecore#//BusinessOperation/resultType"/>

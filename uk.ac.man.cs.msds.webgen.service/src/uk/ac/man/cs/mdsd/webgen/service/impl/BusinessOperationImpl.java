@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 import uk.ac.man.cs.mdsd.webgen.base.FormalParameter;
@@ -37,6 +38,7 @@ import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.BusinessOperationImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.BusinessOperationImpl#getDefinedBy <em>Defined By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.BusinessOperationImpl#getUses <em>Uses</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.BusinessOperationImpl#getResultType <em>Result Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.impl.BusinessOperationImpl#getResultMimeType <em>Result Mime Type</em>}</li>
@@ -141,6 +143,47 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Service getDefinedBy() {
+		if (eContainerFeatureID() != ServicePackage.BUSINESS_OPERATION__DEFINED_BY) return null;
+		return (Service)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDefinedBy(Service newDefinedBy, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newDefinedBy, ServicePackage.BUSINESS_OPERATION__DEFINED_BY, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefinedBy(Service newDefinedBy) {
+		if (newDefinedBy != eInternalContainer() || (eContainerFeatureID() != ServicePackage.BUSINESS_OPERATION__DEFINED_BY && newDefinedBy != null)) {
+			if (EcoreUtil.isAncestor(this, newDefinedBy))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newDefinedBy != null)
+				msgs = ((InternalEObject)newDefinedBy).eInverseAdd(this, ServicePackage.SERVICE__OPERATIONS, Service.class, msgs);
+			msgs = basicSetDefinedBy(newDefinedBy, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ServicePackage.BUSINESS_OPERATION__DEFINED_BY, newDefinedBy, newDefinedBy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Service> getUses() {
 		if (uses == null) {
 			uses = new EObjectResolvingEList<Service>(Service.class, this, ServicePackage.BUSINESS_OPERATION__USES);
@@ -201,6 +244,10 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 		switch (featureID) {
 			case ServicePackage.BUSINESS_OPERATION__PARAMETERS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParameters()).basicAdd(otherEnd, msgs);
+			case ServicePackage.BUSINESS_OPERATION__DEFINED_BY:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetDefinedBy((Service)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -215,8 +262,24 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 		switch (featureID) {
 			case ServicePackage.BUSINESS_OPERATION__PARAMETERS:
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+			case ServicePackage.BUSINESS_OPERATION__DEFINED_BY:
+				return basicSetDefinedBy(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case ServicePackage.BUSINESS_OPERATION__DEFINED_BY:
+				return eInternalContainer().eInverseRemove(this, ServicePackage.SERVICE__OPERATIONS, Service.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -229,6 +292,8 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 		switch (featureID) {
 			case ServicePackage.BUSINESS_OPERATION__PARAMETERS:
 				return getParameters();
+			case ServicePackage.BUSINESS_OPERATION__DEFINED_BY:
+				return getDefinedBy();
 			case ServicePackage.BUSINESS_OPERATION__USES:
 				return getUses();
 			case ServicePackage.BUSINESS_OPERATION__RESULT_TYPE:
@@ -251,6 +316,9 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 			case ServicePackage.BUSINESS_OPERATION__PARAMETERS:
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends FormalParameter>)newValue);
+				return;
+			case ServicePackage.BUSINESS_OPERATION__DEFINED_BY:
+				setDefinedBy((Service)newValue);
 				return;
 			case ServicePackage.BUSINESS_OPERATION__USES:
 				getUses().clear();
@@ -277,6 +345,9 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 			case ServicePackage.BUSINESS_OPERATION__PARAMETERS:
 				getParameters().clear();
 				return;
+			case ServicePackage.BUSINESS_OPERATION__DEFINED_BY:
+				setDefinedBy((Service)null);
+				return;
 			case ServicePackage.BUSINESS_OPERATION__USES:
 				getUses().clear();
 				return;
@@ -300,6 +371,8 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 		switch (featureID) {
 			case ServicePackage.BUSINESS_OPERATION__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
+			case ServicePackage.BUSINESS_OPERATION__DEFINED_BY:
+				return getDefinedBy() != null;
 			case ServicePackage.BUSINESS_OPERATION__USES:
 				return uses != null && !uses.isEmpty();
 			case ServicePackage.BUSINESS_OPERATION__RESULT_TYPE:

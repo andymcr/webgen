@@ -148,6 +148,7 @@ public interface Service extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.BusinessOperation}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.service.BusinessOperation#getDefinedBy <em>Defined By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Operations</em>' containment reference list isn't clear,
@@ -156,7 +157,8 @@ public interface Service extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Operations</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getService_Operations()
-	 * @model containment="true"
+	 * @see uk.ac.man.cs.mdsd.webgen.service.BusinessOperation#getDefinedBy
+	 * @model opposite="definedBy" containment="true"
 	 * @generated
 	 */
 	EList<BusinessOperation> getOperations();

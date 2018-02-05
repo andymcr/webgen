@@ -19,7 +19,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="findAll" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="findOne" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
-        eType="#//BusinessOperation" containment="true"/>
+        eType="#//BusinessOperation" containment="true" eOpposite="#//BusinessOperation/definedBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Service"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement">
@@ -81,6 +81,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Asc" eSuperTypes="#//Order"/>
   <eClassifiers xsi:type="ecore:EClass" name="Desc" eSuperTypes="#//Order"/>
   <eClassifiers xsi:type="ecore:EClass" name="BusinessOperation" eSuperTypes="../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//NamedElement ../../uk.ac.man.cs.mdsd.webgen.base/model/base.ecore#//FormalParameterList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definedBy" eType="#//Service"
+        eOpposite="#//Service/operations"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Service"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="resultType" lowerBound="1"
         eType="#//OperationResultTypes"/>

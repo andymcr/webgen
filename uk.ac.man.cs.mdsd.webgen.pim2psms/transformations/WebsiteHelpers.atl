@@ -286,8 +286,11 @@ helper context Service!Selection def: getServiceFormalParameter(name : String) :
 helper context Website!FormalParameter def: findServiceFormalParameter() : Service!FormalParameter
 	= self.formalFor.findServiceSelection().getServiceFormalParameter(self.name);
 
-helper def: findServiceBusinessOperation(name : String) : Service!Service
-	= Service!BusinessOperation.allInstancesFrom('service')->any(bo | bo.name = name);
+helper context Service!Service def: getBusinessOperation(name : String) : Service!Selection
+	= self.operations->any(s | s.name = name);
+
+helper context Website!BusinessOperation def: findBusinessOperation() : Service!Selection
+	= self.definedBy.findService().getBusinessOperation(self.name);
 
 
 helper context ORM!EntityOrView def: getOrmLabel(labelName : String) : ORM!ModelLabel

@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -283,7 +281,7 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 */
 	public EList<BusinessOperation> getOperations() {
 		if (operations == null) {
-			operations = new EObjectContainmentEList<BusinessOperation>(BusinessOperation.class, this, ServicePackage.SERVICE__OPERATIONS);
+			operations = new EObjectContainmentWithInverseEList<BusinessOperation>(BusinessOperation.class, this, ServicePackage.SERVICE__OPERATIONS, ServicePackage.BUSINESS_OPERATION__DEFINED_BY);
 		}
 		return operations;
 	}
@@ -313,6 +311,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstants()).basicAdd(otherEnd, msgs);
 			case ServicePackage.SERVICE__SELECTIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSelections()).basicAdd(otherEnd, msgs);
+			case ServicePackage.SERVICE__OPERATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOperations()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

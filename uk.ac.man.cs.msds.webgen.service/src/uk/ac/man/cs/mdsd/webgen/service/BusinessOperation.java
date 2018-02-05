@@ -16,6 +16,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.BusinessOperation#getDefinedBy <em>Defined By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.BusinessOperation#getUses <em>Uses</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.BusinessOperation#getResultType <em>Result Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.service.BusinessOperation#getResultMimeType <em>Result Mime Type</em>}</li>
@@ -26,6 +27,34 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
  * @generated
  */
 public interface BusinessOperation extends NamedElement, FormalParameterList {
+	/**
+	 * Returns the value of the '<em><b>Defined By</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.service.Service#getOperations <em>Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Defined By</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Defined By</em>' container reference.
+	 * @see #setDefinedBy(Service)
+	 * @see uk.ac.man.cs.mdsd.webgen.service.ServicePackage#getBusinessOperation_DefinedBy()
+	 * @see uk.ac.man.cs.mdsd.webgen.service.Service#getOperations
+	 * @model opposite="operations" transient="false"
+	 * @generated
+	 */
+	Service getDefinedBy();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.service.BusinessOperation#getDefinedBy <em>Defined By</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Defined By</em>' container reference.
+	 * @see #getDefinedBy()
+	 * @generated
+	 */
+	void setDefinedBy(Service value);
+
 	/**
 	 * Returns the value of the '<em><b>Uses</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.service.Service}.

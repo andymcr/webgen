@@ -51,6 +51,8 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 
 			addContentTypePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
+			addFindContainerSelectionPropertyDescriptor(object);
+			addFindElementSelectionPropertyDescriptor(object);
 			addFilterPropertyDescriptor(object);
 			addSupportedFiltersPropertyDescriptor(object);
 			addEmptyMessagePropertyDescriptor(object);
@@ -114,6 +116,58 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			getString("_UI_CollectionUnit_selection_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
 			WebuiPackage.Literals.COLLECTION_UNIT__SELECTION,
+			true, false, true, null,
+			getString("_UI_BusinessPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof IndexUnit) {
+						return getSelections((IndexUnit) object);
+					}
+					return Collections.emptySet();
+				}
+		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Find Container Selection feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addFindContainerSelectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_CollectionUnit_findContainerSelection_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_findContainerSelection_feature", "_UI_CollectionUnit_type"),
+			WebuiPackage.Literals.COLLECTION_UNIT__FIND_CONTAINER_SELECTION,
+			true, false, true, null,
+			getString("_UI_BusinessPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof IndexUnit) {
+						return getSelections((IndexUnit) object);
+					}
+					return Collections.emptySet();
+				}
+		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Find Element Selection feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addFindElementSelectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_CollectionUnit_findElementSelection_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_findElementSelection_feature", "_UI_CollectionUnit_type"),
+			WebuiPackage.Literals.COLLECTION_UNIT__FIND_ELEMENT_SELECTION,
 			true, false, true, null,
 			getString("_UI_BusinessPropertyCategory"),
 			null) {

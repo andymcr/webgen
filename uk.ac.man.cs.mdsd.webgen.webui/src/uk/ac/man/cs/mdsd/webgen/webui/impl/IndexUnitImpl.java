@@ -38,6 +38,8 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFindContainerSelection <em>Find Container Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFindElementSelection <em>Find Element Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getBadges <em>Badges</em>}</li>
@@ -88,6 +90,26 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected Selection selection;
+
+	/**
+	 * The cached value of the '{@link #getFindContainerSelection() <em>Find Container Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFindContainerSelection()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection findContainerSelection;
+
+	/**
+	 * The cached value of the '{@link #getFindElementSelection() <em>Find Element Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFindElementSelection()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection findElementSelection;
 
 	/**
 	 * The cached value of the '{@link #getFilter() <em>Filter</em>}' reference.
@@ -636,6 +658,82 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		selection = newSelection;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__SELECTION, oldSelection, selection));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection getFindContainerSelection() {
+		if (findContainerSelection != null && findContainerSelection.eIsProxy()) {
+			InternalEObject oldFindContainerSelection = (InternalEObject)findContainerSelection;
+			findContainerSelection = (Selection)eResolveProxy(oldFindContainerSelection);
+			if (findContainerSelection != oldFindContainerSelection) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION, oldFindContainerSelection, findContainerSelection));
+			}
+		}
+		return findContainerSelection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetFindContainerSelection() {
+		return findContainerSelection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFindContainerSelection(Selection newFindContainerSelection) {
+		Selection oldFindContainerSelection = findContainerSelection;
+		findContainerSelection = newFindContainerSelection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION, oldFindContainerSelection, findContainerSelection));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection getFindElementSelection() {
+		if (findElementSelection != null && findElementSelection.eIsProxy()) {
+			InternalEObject oldFindElementSelection = (InternalEObject)findElementSelection;
+			findElementSelection = (Selection)eResolveProxy(oldFindElementSelection);
+			if (findElementSelection != oldFindElementSelection) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION, oldFindElementSelection, findElementSelection));
+			}
+		}
+		return findElementSelection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetFindElementSelection() {
+		return findElementSelection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFindElementSelection(Selection newFindElementSelection) {
+		Selection oldFindElementSelection = findElementSelection;
+		findElementSelection = newFindElementSelection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION, oldFindElementSelection, findElementSelection));
 	}
 
 	/**
@@ -1218,6 +1316,12 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
+			case WebuiPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION:
+				if (resolve) return getFindContainerSelection();
+				return basicGetFindContainerSelection();
+			case WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION:
+				if (resolve) return getFindElementSelection();
+				return basicGetFindElementSelection();
 			case WebuiPackage.INDEX_UNIT__FILTER:
 				if (resolve) return getFilter();
 				return basicGetFilter();
@@ -1290,6 +1394,12 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return;
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)newValue);
+				return;
+			case WebuiPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION:
+				setFindContainerSelection((Selection)newValue);
+				return;
+			case WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION:
+				setFindElementSelection((Selection)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__FILTER:
 				setFilter((Filter)newValue);
@@ -1390,6 +1500,12 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
+			case WebuiPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION:
+				setFindContainerSelection((Selection)null);
+				return;
+			case WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION:
+				setFindElementSelection((Selection)null);
+				return;
 			case WebuiPackage.INDEX_UNIT__FILTER:
 				setFilter((Filter)null);
 				return;
@@ -1484,6 +1600,10 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return contentType != null && !contentType.isEmpty();
 			case WebuiPackage.INDEX_UNIT__SELECTION:
 				return selection != null;
+			case WebuiPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION:
+				return findContainerSelection != null;
+			case WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION:
+				return findElementSelection != null;
 			case WebuiPackage.INDEX_UNIT__FILTER:
 				return filter != null;
 			case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS:
@@ -1556,6 +1676,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			switch (derivedFeatureID) {
 				case WebuiPackage.INDEX_UNIT__CONTENT_TYPE: return WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WebuiPackage.INDEX_UNIT__SELECTION: return WebuiPackage.COLLECTION_UNIT__SELECTION;
+				case WebuiPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION: return WebuiPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION;
+				case WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION: return WebuiPackage.COLLECTION_UNIT__FIND_ELEMENT_SELECTION;
 				case WebuiPackage.INDEX_UNIT__FILTER: return WebuiPackage.COLLECTION_UNIT__FILTER;
 				case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS: return WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
 				case WebuiPackage.INDEX_UNIT__BADGES: return WebuiPackage.COLLECTION_UNIT__BADGES;
@@ -1604,6 +1726,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			switch (baseFeatureID) {
 				case WebuiPackage.COLLECTION_UNIT__CONTENT_TYPE: return WebuiPackage.INDEX_UNIT__CONTENT_TYPE;
 				case WebuiPackage.COLLECTION_UNIT__SELECTION: return WebuiPackage.INDEX_UNIT__SELECTION;
+				case WebuiPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION: return WebuiPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION;
+				case WebuiPackage.COLLECTION_UNIT__FIND_ELEMENT_SELECTION: return WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION;
 				case WebuiPackage.COLLECTION_UNIT__FILTER: return WebuiPackage.INDEX_UNIT__FILTER;
 				case WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS;
 				case WebuiPackage.COLLECTION_UNIT__BADGES: return WebuiPackage.INDEX_UNIT__BADGES;

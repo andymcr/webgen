@@ -18,6 +18,8 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFindContainerSelection <em>Find Container Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFindElementSelection <em>Find Element Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getBadges <em>Badges</em>}</li>
@@ -86,6 +88,58 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	void setSelection(Selection value);
+
+	/**
+	 * Returns the value of the '<em><b>Find Container Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Find Container Selection</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Find Container Selection</em>' reference.
+	 * @see #setFindContainerSelection(Selection)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_FindContainerSelection()
+	 * @model
+	 * @generated
+	 */
+	Selection getFindContainerSelection();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFindContainerSelection <em>Find Container Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Find Container Selection</em>' reference.
+	 * @see #getFindContainerSelection()
+	 * @generated
+	 */
+	void setFindContainerSelection(Selection value);
+
+	/**
+	 * Returns the value of the '<em><b>Find Element Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Find Element Selection</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Find Element Selection</em>' reference.
+	 * @see #setFindElementSelection(Selection)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_FindElementSelection()
+	 * @model
+	 * @generated
+	 */
+	Selection getFindElementSelection();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFindElementSelection <em>Find Element Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Find Element Selection</em>' reference.
+	 * @see #getFindElementSelection()
+	 * @generated
+	 */
+	void setFindElementSelection(Selection value);
 
 	/**
 	 * Returns the value of the '<em><b>Filter</b></em>' reference.

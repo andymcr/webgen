@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
+import uk.ac.man.cs.mdsd.service.Selection;
+
 import uk.ac.man.cs.mdsd.waf.DetailsUnit;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
 import uk.ac.man.cs.mdsd.waf.SelectableUnit;
@@ -35,6 +37,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#getSelectors <em>Selectors</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  * </ul>
  *
@@ -60,6 +63,16 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * @ordered
 	 */
 	protected EList<SelectAction> selectors;
+
+	/**
+	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelection()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection selection;
 
 	/**
 	 * The default value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
@@ -155,6 +168,44 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Selection getSelection() {
+		if (selection != null && selection.eIsProxy()) {
+			InternalEObject oldSelection = (InternalEObject)selection;
+			selection = (Selection)eResolveProxy(oldSelection);
+			if (selection != oldSelection) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.DETAILS_UNIT__SELECTION, oldSelection, selection));
+			}
+		}
+		return selection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetSelection() {
+		return selection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelection(Selection newSelection) {
+		Selection oldSelection = selection;
+		selection = newSelection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DETAILS_UNIT__SELECTION, oldSelection, selection));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isOmitFieldLabels() {
 		return omitFieldLabels;
 	}
@@ -213,6 +264,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				return basicGetContentType();
 			case WafPackage.DETAILS_UNIT__SELECTORS:
 				return getSelectors();
+			case WafPackage.DETAILS_UNIT__SELECTION:
+				if (resolve) return getSelection();
+				return basicGetSelection();
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return isOmitFieldLabels();
 		}
@@ -235,6 +289,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				getSelectors().clear();
 				getSelectors().addAll((Collection<? extends SelectAction>)newValue);
 				return;
+			case WafPackage.DETAILS_UNIT__SELECTION:
+				setSelection((Selection)newValue);
+				return;
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);
 				return;
@@ -256,6 +313,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WafPackage.DETAILS_UNIT__SELECTORS:
 				getSelectors().clear();
 				return;
+			case WafPackage.DETAILS_UNIT__SELECTION:
+				setSelection((Selection)null);
+				return;
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels(OMIT_FIELD_LABELS_EDEFAULT);
 				return;
@@ -275,6 +335,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				return contentType != null;
 			case WafPackage.DETAILS_UNIT__SELECTORS:
 				return selectors != null && !selectors.isEmpty();
+			case WafPackage.DETAILS_UNIT__SELECTION:
+				return selection != null;
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
 		}

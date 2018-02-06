@@ -6198,22 +6198,13 @@ public interface WebuiPackage extends EPackage {
 	int DATA_UNIT__ERROR_CLASS = DYNAMIC_UNIT__ERROR_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_UNIT__DEFAULT_SELECTION = DYNAMIC_UNIT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_UNIT__TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 1;
+	int DATA_UNIT__TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Data Unit</em>' class.
@@ -6222,7 +6213,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+	int DATA_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Data Unit</em>' class.
@@ -6432,15 +6423,6 @@ public interface WebuiPackage extends EPackage {
 	int DETAILS_UNIT__ERROR_CLASS = DATA_UNIT__ERROR_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__DEFAULT_SELECTION = DATA_UNIT__DEFAULT_SELECTION;
-
-	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6459,13 +6441,22 @@ public interface WebuiPackage extends EPackage {
 	int DETAILS_UNIT__CONTENT_TYPE = DATA_UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__SELECTION = DATA_UNIT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Omit Field Labels</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__OMIT_FIELD_LABELS = DATA_UNIT_FEATURE_COUNT + 1;
+	int DETAILS_UNIT__OMIT_FIELD_LABELS = DATA_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -6474,7 +6465,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__STYLE_CLASS = DATA_UNIT_FEATURE_COUNT + 2;
+	int DETAILS_UNIT__STYLE_CLASS = DATA_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -6483,7 +6474,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__CONTENT_CLASS = DATA_UNIT_FEATURE_COUNT + 3;
+	int DETAILS_UNIT__CONTENT_CLASS = DATA_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Details Unit</em>' class.
@@ -6492,7 +6483,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 4;
+	int DETAILS_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Details Unit</em>' class.
@@ -6700,15 +6691,6 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__ERROR_CLASS = DATA_UNIT__ERROR_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__DEFAULT_SELECTION = DATA_UNIT__DEFAULT_SELECTION;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -13377,17 +13359,6 @@ public interface WebuiPackage extends EPackage {
 	EClass getDataUnit();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.DataUnit#getDefaultSelection <em>Default Selection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Default Selection</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.DataUnit#getDefaultSelection()
-	 * @see #getDataUnit()
-	 * @generated
-	 */
-	EReference getDataUnit_DefaultSelection();
-
-	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.DataUnit#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13407,6 +13378,17 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDetailsUnit();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.DetailsUnit#getSelection <em>Selection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Selection</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.DetailsUnit#getSelection()
+	 * @see #getDetailsUnit()
+	 * @generated
+	 */
+	EReference getDetailsUnit_Selection();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.DetailsUnit#isOmitFieldLabels <em>Omit Field Labels</em>}'.
@@ -16243,14 +16225,6 @@ public interface WebuiPackage extends EPackage {
 		EClass DATA_UNIT = eINSTANCE.getDataUnit();
 
 		/**
-		 * The meta object literal for the '<em><b>Default Selection</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_UNIT__DEFAULT_SELECTION = eINSTANCE.getDataUnit_DefaultSelection();
-
-		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16267,6 +16241,14 @@ public interface WebuiPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DETAILS_UNIT = eINSTANCE.getDetailsUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DETAILS_UNIT__SELECTION = eINSTANCE.getDetailsUnit_Selection();
 
 		/**
 		 * The meta object literal for the '<em><b>Omit Field Labels</b></em>' attribute feature.

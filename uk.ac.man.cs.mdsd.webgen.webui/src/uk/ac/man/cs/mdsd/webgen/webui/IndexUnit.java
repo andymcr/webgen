@@ -19,8 +19,7 @@ package uk.ac.man.cs.mdsd.webgen.webui;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getIndexUnit()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='selectionMustNotBeSingleton'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionMustNotBeSingleton='not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit <> 1'"
+ * @model
  * @generated
  */
 public interface IndexUnit extends DataUnit, CollectionUnit, InlineActionContainer {

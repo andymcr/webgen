@@ -46,6 +46,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSelectors <em>Selectors</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFindContainerSelection <em>Find Container Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFindElementSelection <em>Find Element Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getBadges <em>Badges</em>}</li>
@@ -104,6 +106,26 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected Selection selection;
+
+	/**
+	 * The cached value of the '{@link #getFindContainerSelection() <em>Find Container Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFindContainerSelection()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection findContainerSelection;
+
+	/**
+	 * The cached value of the '{@link #getFindElementSelection() <em>Find Element Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFindElementSelection()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection findElementSelection;
 
 	/**
 	 * The cached value of the '{@link #getFilter() <em>Filter</em>}' reference.
@@ -614,6 +636,82 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		selection = newSelection;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__SELECTION, oldSelection, selection));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection getFindContainerSelection() {
+		if (findContainerSelection != null && findContainerSelection.eIsProxy()) {
+			InternalEObject oldFindContainerSelection = (InternalEObject)findContainerSelection;
+			findContainerSelection = (Selection)eResolveProxy(oldFindContainerSelection);
+			if (findContainerSelection != oldFindContainerSelection) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION, oldFindContainerSelection, findContainerSelection));
+			}
+		}
+		return findContainerSelection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetFindContainerSelection() {
+		return findContainerSelection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFindContainerSelection(Selection newFindContainerSelection) {
+		Selection oldFindContainerSelection = findContainerSelection;
+		findContainerSelection = newFindContainerSelection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION, oldFindContainerSelection, findContainerSelection));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection getFindElementSelection() {
+		if (findElementSelection != null && findElementSelection.eIsProxy()) {
+			InternalEObject oldFindElementSelection = (InternalEObject)findElementSelection;
+			findElementSelection = (Selection)eResolveProxy(oldFindElementSelection);
+			if (findElementSelection != oldFindElementSelection) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION, oldFindElementSelection, findElementSelection));
+			}
+		}
+		return findElementSelection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetFindElementSelection() {
+		return findElementSelection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFindElementSelection(Selection newFindElementSelection) {
+		Selection oldFindElementSelection = findElementSelection;
+		findElementSelection = newFindElementSelection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION, oldFindElementSelection, findElementSelection));
 	}
 
 	/**
@@ -1205,6 +1303,12 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
+			case WafPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION:
+				if (resolve) return getFindContainerSelection();
+				return basicGetFindContainerSelection();
+			case WafPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION:
+				if (resolve) return getFindElementSelection();
+				return basicGetFindElementSelection();
 			case WafPackage.INDEX_UNIT__FILTER:
 				if (resolve) return getFilter();
 				return basicGetFilter();
@@ -1278,6 +1382,12 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return;
 			case WafPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION:
+				setFindContainerSelection((Selection)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION:
+				setFindElementSelection((Selection)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__FILTER:
 				setFilter((Filter)newValue);
@@ -1375,6 +1485,12 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
+			case WafPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION:
+				setFindContainerSelection((Selection)null);
+				return;
+			case WafPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION:
+				setFindElementSelection((Selection)null);
+				return;
 			case WafPackage.INDEX_UNIT__FILTER:
 				setFilter((Filter)null);
 				return;
@@ -1465,6 +1581,10 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return contentType != null && !contentType.isEmpty();
 			case WafPackage.INDEX_UNIT__SELECTION:
 				return selection != null;
+			case WafPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION:
+				return findContainerSelection != null;
+			case WafPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION:
+				return findElementSelection != null;
 			case WafPackage.INDEX_UNIT__FILTER:
 				return filter != null;
 			case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS:
@@ -1534,6 +1654,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			switch (derivedFeatureID) {
 				case WafPackage.INDEX_UNIT__CONTENT_TYPE: return WafPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WafPackage.INDEX_UNIT__SELECTION: return WafPackage.COLLECTION_UNIT__SELECTION;
+				case WafPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION: return WafPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION;
+				case WafPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION: return WafPackage.COLLECTION_UNIT__FIND_ELEMENT_SELECTION;
 				case WafPackage.INDEX_UNIT__FILTER: return WafPackage.COLLECTION_UNIT__FILTER;
 				case WafPackage.INDEX_UNIT__SUPPORTED_FILTERS: return WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
 				case WafPackage.INDEX_UNIT__BADGES: return WafPackage.COLLECTION_UNIT__BADGES;
@@ -1583,6 +1705,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			switch (baseFeatureID) {
 				case WafPackage.COLLECTION_UNIT__CONTENT_TYPE: return WafPackage.INDEX_UNIT__CONTENT_TYPE;
 				case WafPackage.COLLECTION_UNIT__SELECTION: return WafPackage.INDEX_UNIT__SELECTION;
+				case WafPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION: return WafPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION;
+				case WafPackage.COLLECTION_UNIT__FIND_ELEMENT_SELECTION: return WafPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION;
 				case WafPackage.COLLECTION_UNIT__FILTER: return WafPackage.INDEX_UNIT__FILTER;
 				case WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WafPackage.INDEX_UNIT__SUPPORTED_FILTERS;
 				case WafPackage.COLLECTION_UNIT__BADGES: return WafPackage.INDEX_UNIT__BADGES;

@@ -2426,17 +2426,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataUnit_DefaultSelection() {
-		return (EReference)dataUnitEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getDataUnit_Title() {
-		return (EReference)dataUnitEClass.getEStructuralFeatures().get(1);
+		return (EReference)dataUnitEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2453,8 +2444,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDetailsUnit_OmitFieldLabels() {
-		return (EAttribute)detailsUnitEClass.getEStructuralFeatures().get(0);
+	public EReference getDetailsUnit_Selection() {
+		return (EReference)detailsUnitEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2462,7 +2453,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDetailsUnit_StyleClass() {
+	public EAttribute getDetailsUnit_OmitFieldLabels() {
 		return (EAttribute)detailsUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2471,8 +2462,17 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDetailsUnit_ContentClass() {
+	public EAttribute getDetailsUnit_StyleClass() {
 		return (EAttribute)detailsUnitEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDetailsUnit_ContentClass() {
+		return (EAttribute)detailsUnitEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3709,10 +3709,10 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		createEReference(mapUnitEClass, MAP_UNIT__PLACE_NAME);
 
 		dataUnitEClass = createEClass(DATA_UNIT);
-		createEReference(dataUnitEClass, DATA_UNIT__DEFAULT_SELECTION);
 		createEReference(dataUnitEClass, DATA_UNIT__TITLE);
 
 		detailsUnitEClass = createEClass(DETAILS_UNIT);
+		createEReference(detailsUnitEClass, DETAILS_UNIT__SELECTION);
 		createEAttribute(detailsUnitEClass, DETAILS_UNIT__OMIT_FIELD_LABELS);
 		createEAttribute(detailsUnitEClass, DETAILS_UNIT__STYLE_CLASS);
 		createEAttribute(detailsUnitEClass, DETAILS_UNIT__CONTENT_CLASS);
@@ -4191,10 +4191,10 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEReference(getMapUnit_PlaceName(), thePersistencePackage.getAttribute(), null, "placeName", null, 0, 1, MapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataUnitEClass, DataUnit.class, "DataUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataUnit_DefaultSelection(), theServicePackage.getSelection(), null, "defaultSelection", null, 0, 1, DataUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataUnit_Title(), thePersistencePackage.getLabel(), null, "title", null, 0, 1, DataUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(detailsUnitEClass, DetailsUnit.class, "DetailsUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDetailsUnit_Selection(), theServicePackage.getSelection(), null, "selection", null, 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDetailsUnit_OmitFieldLabels(), ecorePackage.getEBoolean(), "omitFieldLabels", "false", 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDetailsUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,details_unit", 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDetailsUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "details_content", 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -4383,6 +4383,12 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 			 "constraints", "selectionValidChoice"
 		   });	
 		addAnnotation
+		  (collectionUnitEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "selectionMustNotBeSingleton"
+		   });	
+		addAnnotation
 		  (editUnitEClass, 
 		   source, 
 		   new String[] {
@@ -4399,12 +4405,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "selectionValidChoice selectionMustBeSingleton"
-		   });	
-		addAnnotation
-		  (indexUnitEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "selectionMustNotBeSingleton"
 		   });	
 		addAnnotation
 		  (inlineActionContainerEClass, 
@@ -4561,6 +4561,12 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 			 "derivation", "if label.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tlabel.name\r\nendif\r\n"
 		   });	
 		addAnnotation
+		  (collectionUnitEClass, 
+		   source, 
+		   new String[] {
+			 "selectionMustNotBeSingleton", "not selection.oclIsUndefined() implies\r\n\tselection.limit <> 1"
+		   });	
+		addAnnotation
 		  (editUnitEClass, 
 		   source, 
 		   new String[] {
@@ -4576,14 +4582,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		  (detailsUnitEClass, 
 		   source, 
 		   new String[] {
-			 "selectionMustBeSingleton", "not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit = 1",
-			 "selectionValidChoice", "not defaultSelection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | not s.serves.oclIsUndefined())\r\n\t\t->select(s : service::Service | contentType = s.serves)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(defaultSelection)"
-		   });	
-		addAnnotation
-		  (indexUnitEClass, 
-		   source, 
-		   new String[] {
-			 "selectionMustNotBeSingleton", "not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit <> 1"
+			 "selectionMustBeSingleton", "not selection.oclIsUndefined() implies\r\n\tselection.limit = 1",
+			 "selectionValidChoice", "not selection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | not s.serves.oclIsUndefined())\r\n\t\t->select(s : service::Service | contentType = s.serves)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(selection)"
 		   });	
 		addAnnotation
 		  (inlineActionContainerEClass, 

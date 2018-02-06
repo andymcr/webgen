@@ -153,8 +153,9 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof ImageUnit) {
-						return getSelections((ImageUnit) object);
+						return getContainerSelections((ImageUnit) object);
 					}
+
 					return Collections.emptySet();
 				}
 		});

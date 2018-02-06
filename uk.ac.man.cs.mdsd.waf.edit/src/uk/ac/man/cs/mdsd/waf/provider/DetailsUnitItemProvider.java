@@ -49,6 +49,7 @@ public class DetailsUnitItemProvider
 
 			addContentTypePropertyDescriptor(object);
 			addSelectorsPropertyDescriptor(object);
+			addSelectionPropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -90,6 +91,28 @@ public class DetailsUnitItemProvider
 				 getString("_UI_SelectableUnit_selectors_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SelectableUnit_selectors_feature", "_UI_SelectableUnit_type"),
 				 WafPackage.Literals.SELECTABLE_UNIT__SELECTORS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Selection feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_selection_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_selection_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.Literals.DETAILS_UNIT__SELECTION,
 				 true,
 				 false,
 				 true,

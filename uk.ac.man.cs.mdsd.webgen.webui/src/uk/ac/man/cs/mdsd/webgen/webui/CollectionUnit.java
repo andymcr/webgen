@@ -44,6 +44,8 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit()
  * @model interface="true" abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='selectionMustNotBeSingleton'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionMustNotBeSingleton='not selection.oclIsUndefined() implies\r\n\tselection.limit <> 1'"
  * @generated
  */
 public interface CollectionUnit extends SelectableUnit {

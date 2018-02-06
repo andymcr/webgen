@@ -383,6 +383,8 @@ interface SingletonUnit {
 interface CollectionUnit extends SelectableUnit {
 	refers EntityOrView[1..*] contentType
 	refers Selection selection
+	refers Selection findContainerSelection
+	refers Selection findElementSelection
 	refers Filter filter
 	refers Filter[] supportedFilters
 	contains Badge[] badges
@@ -435,11 +437,11 @@ class UpdateUnit extends EditUnit, SelectableUnit {
 }
 
 abstract class DataUnit extends DynamicUnit {
-	refers Selection defaultSelection
 	refers Label title
 }
 
 class DetailsUnit extends DataUnit, SingletonUnit, SelectableUnit {
+	refers Selection selection
 	boolean omitFieldLabels
 }
 

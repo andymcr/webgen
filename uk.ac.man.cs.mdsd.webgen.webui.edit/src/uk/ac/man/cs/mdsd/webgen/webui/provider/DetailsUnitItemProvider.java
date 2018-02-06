@@ -4,6 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.webui.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -15,6 +16,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.webui.DataUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DetailsUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
@@ -47,6 +49,7 @@ public class DetailsUnitItemProvider extends DataUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addContentTypePropertyDescriptor(object);
+			addSelectionPropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
@@ -74,6 +77,32 @@ public class DetailsUnitItemProvider extends DataUnitItemProvider {
 				 null,
 				 getString("_UI_ModelPropertyCategory"),
 				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Selection feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addSelectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_DetailsUnit_selection_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_selection_feature", "_UI_DetailsUnit_type"),
+			WebuiPackage.Literals.DETAILS_UNIT__SELECTION,
+			true, false, true, null,
+			getString("_UI_BusinessPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof DataUnit) {
+						return getSelections((DataUnit) object);
+					}
+					return Collections.emptySet();
+				}
+		});
 	}
 
 	/**

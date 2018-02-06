@@ -451,13 +451,23 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		return associations;
 	}
 
-	protected Association getContainingAssociation(final DynamicUnit unit) {
-		for (Association association : getAssociations(unit)) {
+	protected AssociationWithContainment getContainingAssociation(final EntityOrView type) {
+		for (Association association : type.getAllAssociations()) {
 			if (association instanceof AssociationWithContainment) {
-				if (!getContentType(unit).contains(
-						(AssociationWithContainment) association.getSourceEntityX())) {
-					return association;
+				if (!type.getAssociations().contains(association)) {
+					return (AssociationWithContainment) association;
 				}
+			}
+		}
+
+		return null;
+	}
+
+	protected AssociationWithContainment getContainingAssociation(final DynamicUnit unit) {
+		for (EntityOrView type : getContentType(unit)) {
+			final AssociationWithContainment association = getContainingAssociation(type);
+			if (association != null) {
+				return association;
 			}
 		}
 
@@ -489,6 +499,19 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 		if (!contentType.isEmpty()) {
 			final WebUI webUI = unit.getPageDisplayedOn().getWebUI();
 			selections.addAll(getSelections(webUI, contentType.get(0)));
+		}
+
+		return selections;
+	}
+
+	protected Set<Selection> getContainerSelections(final DynamicUnit unit) {
+		final Set<Selection> selections = new HashSet<Selection>();
+		final WebUI webUI = unit.getPageDisplayedOn().getWebUI();
+		for (EntityOrView type : getContentType(unit)) {
+			final AssociationWithContainment association = getContainingAssociation(type);
+			if (association != null) {
+				selections.addAll(getSelections(webUI, association.getPartOf()));
+			}
 		}
 
 		return selections;

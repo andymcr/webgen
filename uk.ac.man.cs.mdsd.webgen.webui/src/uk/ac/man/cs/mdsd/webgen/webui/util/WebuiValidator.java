@@ -1123,7 +1123,47 @@ public class WebuiValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCollectionUnit(CollectionUnit collectionUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(collectionUnit, diagnostics, context);
+		if (!validate_NoCircularContainment(collectionUnit, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(collectionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(collectionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(collectionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(collectionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(collectionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(collectionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(collectionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(collectionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCollectionUnit_selectionMustNotBeSingleton(collectionUnit, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the selectionMustNotBeSingleton constraint of '<em>Collection Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COLLECTION_UNIT__SELECTION_MUST_NOT_BE_SINGLETON__EEXPRESSION = "not selection.oclIsUndefined() implies\r\n" +
+		"\tselection.limit <> 1";
+
+	/**
+	 * Validates the selectionMustNotBeSingleton constraint of '<em>Collection Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCollectionUnit_selectionMustNotBeSingleton(CollectionUnit collectionUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebuiPackage.Literals.COLLECTION_UNIT,
+				 collectionUnit,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "selectionMustNotBeSingleton",
+				 COLLECTION_UNIT__SELECTION_MUST_NOT_BE_SINGLETON__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1353,12 +1393,12 @@ public class WebuiValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DETAILS_UNIT__SELECTION_VALID_CHOICE__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
+	protected static final String DETAILS_UNIT__SELECTION_VALID_CHOICE__EEXPRESSION = "not selection.oclIsUndefined() implies\r\n" +
 		"\tpageDisplayedOn.webUI.services.services\r\n" +
 		"\t\t->select(s : service::Service | not s.serves.oclIsUndefined())\r\n" +
 		"\t\t->select(s : service::Service | contentType = s.serves)\r\n" +
 		"\t\t->collect(s : service::Service | s.selections)\r\n" +
-		"\t\t->includes(defaultSelection)";
+		"\t\t->includes(selection)";
 
 	/**
 	 * Validates the selectionValidChoice constraint of '<em>Details Unit</em>'.
@@ -1387,8 +1427,8 @@ public class WebuiValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DETAILS_UNIT__SELECTION_MUST_BE_SINGLETON__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
-		"\tdefaultSelection.limit = 1";
+	protected static final String DETAILS_UNIT__SELECTION_MUST_BE_SINGLETON__EEXPRESSION = "not selection.oclIsUndefined() implies\r\n" +
+		"\tselection.limit = 1";
 
 	/**
 	 * Validates the selectionMustBeSingleton constraint of '<em>Details Unit</em>'.
@@ -1429,39 +1469,9 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletons(indexUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCollectionUnit_selectionMustNotBeSingleton(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(indexUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIndexUnit_selectionMustNotBeSingleton(indexUnit, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the selectionMustNotBeSingleton constraint of '<em>Index Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String INDEX_UNIT__SELECTION_MUST_NOT_BE_SINGLETON__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
-		"\tdefaultSelection.limit <> 1";
-
-	/**
-	 * Validates the selectionMustNotBeSingleton constraint of '<em>Index Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateIndexUnit_selectionMustNotBeSingleton(IndexUnit indexUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebuiPackage.Literals.INDEX_UNIT,
-				 indexUnit,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "selectionMustNotBeSingleton",
-				 INDEX_UNIT__SELECTION_MUST_NOT_BE_SINGLETON__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**
@@ -1521,6 +1531,7 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(imageUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(imageUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(imageUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCollectionUnit_selectionMustNotBeSingleton(imageUnit, diagnostics, context);
 		return result;
 	}
 
@@ -1604,6 +1615,7 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(imageIndexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(imageIndexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(imageIndexUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCollectionUnit_selectionMustNotBeSingleton(imageIndexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(imageIndexUnit, diagnostics, context);
 		return result;
 	}
@@ -1625,6 +1637,7 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(sliderUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(sliderUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(sliderUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCollectionUnit_selectionMustNotBeSingleton(sliderUnit, diagnostics, context);
 		return result;
 	}
 
@@ -1645,6 +1658,7 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(galleryUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(galleryUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(galleryUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCollectionUnit_selectionMustNotBeSingleton(galleryUnit, diagnostics, context);
 		return result;
 	}
 

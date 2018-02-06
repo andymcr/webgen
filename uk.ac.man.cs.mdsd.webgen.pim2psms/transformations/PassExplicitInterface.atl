@@ -958,12 +958,6 @@ rule UpdateUnit {
 abstract rule DataUnit {
 	from website : Website!DataUnit
 	to waf : WAF!DataUnit (
-		defaultSelection <-
-			if website.defaultSelection.oclIsUndefined() then
-				website.defaultSelection
-			else
-				website.defaultSelection.findServiceSelection()
-			endif,
 		title <-
 			if website.title.oclIsUndefined() then
 				website.title
@@ -977,6 +971,12 @@ abstract rule DataUnit {
 rule DetailsUnit {
 	from website : Website!DetailsUnit
 	to waf : WAF!DetailsUnit (
+		selection <-
+			if website.selection.oclIsUndefined() then
+				website.selection
+			else
+				website.selection.findServiceSelection()
+			endif,
 		omitFieldLabels <- website.omitFieldLabels
 	)
 }

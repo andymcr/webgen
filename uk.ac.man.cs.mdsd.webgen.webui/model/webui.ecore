@@ -450,6 +450,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CollectionUnit" abstract="true" interface="true"
       eSuperTypes="#//SelectableUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="selectionMustNotBeSingleton"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="selectionMustNotBeSingleton" value="not selection.oclIsUndefined() implies&#xD;&#xA;&#x9;selection.limit &lt;> 1"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contentType" lowerBound="1"
         upperBound="-1" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
@@ -559,7 +565,6 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="canOnlyTitleWithSingletons" value="not title.oclIsUndefined() implies &#xD;&#xA;&#x9;if title.oclIsKindOf(persistence::EntityAttribute) then&#xD;&#xA;&#x9;&#x9;title.oclAsType(persistence::EntityAttribute).cardinality &lt;> persistence::Cardinality::Many&#xD;&#xA;&#x9;else if title.oclIsKindOf(persistence::EncapsulatedAttribute) then&#xD;&#xA;&#x9;&#x9;title.oclAsType(persistence::EncapsulatedAttribute).cardinality &lt;> persistence::Cardinality::Many&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif endif"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" ordered="false"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Label"/>
   </eClassifiers>
@@ -568,9 +573,10 @@
       <details key="constraints" value="selectionValidChoice selectionMustBeSingleton"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="selectionMustBeSingleton" value="not defaultSelection.oclIsUndefined() implies&#xD;&#xA;&#x9;defaultSelection.limit = 1"/>
-      <details key="selectionValidChoice" value="not defaultSelection.oclIsUndefined() implies&#xD;&#xA;&#x9;pageDisplayedOn.webUI.services.services&#xD;&#xA;&#x9;&#x9;->select(s : service::Service | not s.serves.oclIsUndefined())&#xD;&#xA;&#x9;&#x9;->select(s : service::Service | contentType = s.serves)&#xD;&#xA;&#x9;&#x9;->collect(s : service::Service | s.selections)&#xD;&#xA;&#x9;&#x9;->includes(defaultSelection)"/>
+      <details key="selectionMustBeSingleton" value="not selection.oclIsUndefined() implies&#xD;&#xA;&#x9;selection.limit = 1"/>
+      <details key="selectionValidChoice" value="not selection.oclIsUndefined() implies&#xD;&#xA;&#x9;pageDisplayedOn.webUI.services.services&#xD;&#xA;&#x9;&#x9;->select(s : service::Service | not s.serves.oclIsUndefined())&#xD;&#xA;&#x9;&#x9;->select(s : service::Service | contentType = s.serves)&#xD;&#xA;&#x9;&#x9;->collect(s : service::Service | s.selections)&#xD;&#xA;&#x9;&#x9;->includes(selection)"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitFieldLabels" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
@@ -584,12 +590,6 @@
     <eLiterals name="LineDirection" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IndexUnit" eSuperTypes="#//DataUnit #//CollectionUnit #//InlineActionContainer">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="selectionMustNotBeSingleton"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="selectionMustNotBeSingleton" value="not defaultSelection.oclIsUndefined() implies&#xD;&#xA;&#x9;defaultSelection.limit &lt;> 1"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayOption" ordered="false"
         eType="#//IndexDisplayOption" defaultValueLiteral="Grid"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitColumnLabels" ordered="false"

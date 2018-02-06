@@ -340,12 +340,12 @@
           ecoreFeature="ecore:EReference webui.ecore#//MapUnit/placeName"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//DataUnit">
-      <genFeatures notify="false" createChild="false" propertyCategory="Business"
-          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//DataUnit/defaultSelection"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//DataUnit/title"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//DetailsUnit">
+      <genFeatures notify="false" createChild="false" propertyCategory="Business"
+          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//DetailsUnit/selection"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//DetailsUnit/omitFieldLabels"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//DetailsUnit/styleClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//DetailsUnit/contentClass"/>

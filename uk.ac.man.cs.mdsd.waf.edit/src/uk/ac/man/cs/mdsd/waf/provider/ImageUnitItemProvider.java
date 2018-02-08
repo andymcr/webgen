@@ -51,6 +51,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			addContentTypePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addFindContainerSelectionPropertyDescriptor(object);
+			addOmitContainerLoadPropertyDescriptor(object);
 			addFindElementSelectionPropertyDescriptor(object);
 			addFilterPropertyDescriptor(object);
 			addSupportedFiltersPropertyDescriptor(object);
@@ -163,6 +164,28 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Omit Container Load feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOmitContainerLoadPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_omitContainerLoad_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_omitContainerLoad_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__OMIT_CONTAINER_LOAD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -754,6 +777,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ImageUnit.class)) {
+			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
 			case WafPackage.IMAGE_UNIT__EMPTY_MESSAGE:
 			case WafPackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE:
 			case WafPackage.IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE:

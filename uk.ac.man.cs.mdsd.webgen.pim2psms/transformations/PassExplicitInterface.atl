@@ -818,6 +818,7 @@ abstract rule CollectionUnit {
 			else
 				website.findContainerSelection.findServiceSelection()
 			endif,
+		omitContainerLoad <- website.omitContainerLoad,
 		findElementSelection <-
 			if website.findElementSelection.oclIsUndefined() then
 				website.findElementSelection

@@ -384,6 +384,7 @@ interface CollectionUnit extends SelectableUnit {
 	refers EntityOrView[1..*] contentType
 	refers Selection selection
 	refers Selection findContainerSelection
+	boolean omitContainerLoad
 	refers Selection findElementSelection
 	refers Filter filter
 	refers Filter[] supportedFilters

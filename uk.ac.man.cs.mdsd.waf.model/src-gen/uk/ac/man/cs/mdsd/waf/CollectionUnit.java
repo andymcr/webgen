@@ -21,6 +21,7 @@ import uk.ac.man.cs.mdsd.service.Selection;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFindContainerSelection <em>Find Container Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#isOmitContainerLoad <em>Omit Container Load</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFindElementSelection <em>Find Element Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getSupportedFilters <em>Supported Filters</em>}</li>
@@ -116,6 +117,32 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	void setFindContainerSelection(Selection value);
+
+	/**
+	 * Returns the value of the '<em><b>Omit Container Load</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Omit Container Load</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Omit Container Load</em>' attribute.
+	 * @see #setOmitContainerLoad(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_OmitContainerLoad()
+	 * @model unique="false"
+	 * @generated
+	 */
+	boolean isOmitContainerLoad();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#isOmitContainerLoad <em>Omit Container Load</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Omit Container Load</em>' attribute.
+	 * @see #isOmitContainerLoad()
+	 * @generated
+	 */
+	void setOmitContainerLoad(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Find Element Selection</b></em>' reference.

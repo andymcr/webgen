@@ -19,10 +19,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithContainment;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
-import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.ImageUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiFactory;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -653,24 +653,22 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof CollectionUnit) {
-						final CollectionUnit unit = (CollectionUnit) object;
-						final Set<EntityOrView> entities
-							= new HashSet<EntityOrView>(unit.getContentType());
-						final Set<Label> labels = new HashSet<Label>();
-						for (EntityOrView entity : unit.getContentType()) {
-							labels.addAll(entity.getAttributes());
-							labels.addAll(entity.getLabels());
+					if (object instanceof ImageUnit) {
+						final ImageUnit unit = (ImageUnit) object;
+						if (unit.isOmitContainerLoad()) {
+							return Collections.emptySet();
 						}
-						if (unit.getSelection() != null) {
-							for (EntityAssociation association : unit.getSelection().getSelectPath()) {
-								if (entities.contains(association.getSourceEntityX())) {
-									labels.addAll(association.getTargetEntityX().getAttributes());
-									labels.addAll(association.getTargetEntityX().getLabels());
-								} else {
-									labels.addAll(association.getSourceEntityX().getAttributes());
-									labels.addAll(association.getSourceEntityX().getLabels());
-								}
+						final Set<Label> labels = new HashSet<Label>();
+						final EntityOrView selectType = getSelectType(unit);
+						if (selectType != null) {
+							labels.addAll(selectType.getAttributes());
+							labels.addAll(selectType.getLabels());
+						} else if (unit.getContentType().size() > 0){
+							final AssociationWithContainment containingAssociation
+								= getContainingAssociation(unit.getContentType().get(0));
+							if (containingAssociation != null) {
+								labels.addAll(containingAssociation.getPartOf().getAttributes());
+								labels.addAll(containingAssociation.getPartOf().getLabels());
 							}
 						}
 						return labels;
@@ -905,6 +903,24 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
+	}
+
+	protected EntityOrView getSelectType(final ImageUnit unit) {
+		if (unit.getSelection() == null) {
+			return null;
+		}
+		EntityOrView pathType = null;
+		Set<EntityOrView> entities = new HashSet<EntityOrView>(unit.getContentType());
+		for (EntityAssociation element : unit.getSelection().getSelectPath()) {
+			if (entities.contains(element.getPartOf())) {
+				pathType = element.getTargetEntity();
+			} else {
+				pathType = element.getPartOf();
+			}
+			entities.add(element.getPartOf());
+			entities.add(element.getTargetEntity());
+		}
+		return pathType;
 	}
 
 }

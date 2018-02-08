@@ -15,6 +15,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+
+import uk.ac.man.cs.mdsd.webgen.persistence.AssociationWithContainment;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
@@ -83,22 +85,20 @@ public class DataUnitItemProvider extends DynamicUnitItemProvider {
 					}
 					if (object instanceof CollectionUnit) {
 						final CollectionUnit unit = (CollectionUnit) object;
-						final Set<EntityOrView> entities
-							= new HashSet<EntityOrView>(unit.getContentType());
-						final Set<Label> labels = new HashSet<Label>();
-						for (EntityOrView entity : unit.getContentType()) {
-							labels.addAll(entity.getAttributes());
-							labels.addAll(entity.getLabels());
+						if (unit.isOmitContainerLoad()) {
+							return Collections.emptySet();
 						}
-						if (unit.getSelection() != null) {
-							for (EntityAssociation association : unit.getSelection().getSelectPath()) {
-								if (entities.contains(association.getSourceEntityX())) {
-									labels.addAll(association.getTargetEntityX().getAttributes());
-									labels.addAll(association.getTargetEntityX().getLabels());
-								} else {
-									labels.addAll(association.getSourceEntityX().getAttributes());
-									labels.addAll(association.getSourceEntityX().getLabels());
-								}
+						final Set<Label> labels = new HashSet<Label>();
+						final EntityOrView selectType = getSelectType(unit);
+						if (selectType != null) {
+							labels.addAll(selectType.getAttributes());
+							labels.addAll(selectType.getLabels());
+						} else if (unit.getContentType().size() > 0){
+							final AssociationWithContainment containingAssociation
+								= getContainingAssociation(unit.getContentType().get(0));
+							if (containingAssociation != null) {
+								labels.addAll(containingAssociation.getPartOf().getAttributes());
+								labels.addAll(containingAssociation.getPartOf().getLabels());
 							}
 						}
 						return labels;
@@ -147,6 +147,24 @@ public class DataUnitItemProvider extends DynamicUnitItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	protected EntityOrView getSelectType(final CollectionUnit unit) {
+		if (unit.getSelection() == null) {
+			return null;
+		}
+		EntityOrView pathType = null;
+		Set<EntityOrView> entities = new HashSet<EntityOrView>(unit.getContentType());
+		for (EntityAssociation element : unit.getSelection().getSelectPath()) {
+			if (entities.contains(element.getPartOf())) {
+				pathType = element.getTargetEntity();
+			} else {
+				pathType = element.getPartOf();
+			}
+			entities.add(element.getPartOf());
+			entities.add(element.getTargetEntity());
+		}
+		return pathType;
 	}
 
 }

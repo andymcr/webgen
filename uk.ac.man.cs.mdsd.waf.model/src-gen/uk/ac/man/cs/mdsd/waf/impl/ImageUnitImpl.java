@@ -47,6 +47,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getFindContainerSelection <em>Find Container Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#isOmitContainerLoad <em>Omit Container Load</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getPaginationParent <em>Pagination Parent</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getFindElementSelection <em>Find Element Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
@@ -138,6 +139,16 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected boolean omitContainerLoad = OMIT_CONTAINER_LOAD_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPaginationParent() <em>Pagination Parent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaginationParent()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityOrView paginationParent;
 
 	/**
 	 * The cached value of the '{@link #getFindElementSelection() <em>Find Element Selection</em>}' reference.
@@ -737,6 +748,44 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		omitContainerLoad = newOmitContainerLoad;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD, oldOmitContainerLoad, omitContainerLoad));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView getPaginationParent() {
+		if (paginationParent != null && paginationParent.eIsProxy()) {
+			InternalEObject oldPaginationParent = (InternalEObject)paginationParent;
+			paginationParent = (EntityOrView)eResolveProxy(oldPaginationParent);
+			if (paginationParent != oldPaginationParent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.IMAGE_UNIT__PAGINATION_PARENT, oldPaginationParent, paginationParent));
+			}
+		}
+		return paginationParent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetPaginationParent() {
+		return paginationParent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaginationParent(EntityOrView newPaginationParent) {
+		EntityOrView oldPaginationParent = paginationParent;
+		paginationParent = newPaginationParent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__PAGINATION_PARENT, oldPaginationParent, paginationParent));
 	}
 
 	/**
@@ -1455,6 +1504,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return basicGetFindContainerSelection();
 			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
 				return isOmitContainerLoad();
+			case WafPackage.IMAGE_UNIT__PAGINATION_PARENT:
+				if (resolve) return getPaginationParent();
+				return basicGetPaginationParent();
 			case WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION:
 				if (resolve) return getFindElementSelection();
 				return basicGetFindElementSelection();
@@ -1542,6 +1594,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return;
 			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
 				setOmitContainerLoad((Boolean)newValue);
+				return;
+			case WafPackage.IMAGE_UNIT__PAGINATION_PARENT:
+				setPaginationParent((EntityOrView)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION:
 				setFindElementSelection((Selection)newValue);
@@ -1653,6 +1708,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
 				setOmitContainerLoad(OMIT_CONTAINER_LOAD_EDEFAULT);
 				return;
+			case WafPackage.IMAGE_UNIT__PAGINATION_PARENT:
+				setPaginationParent((EntityOrView)null);
+				return;
 			case WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION:
 				setFindElementSelection((Selection)null);
 				return;
@@ -1756,6 +1814,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return findContainerSelection != null;
 			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
 				return omitContainerLoad != OMIT_CONTAINER_LOAD_EDEFAULT;
+			case WafPackage.IMAGE_UNIT__PAGINATION_PARENT:
+				return paginationParent != null;
 			case WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION:
 				return findElementSelection != null;
 			case WafPackage.IMAGE_UNIT__FILTER:
@@ -1833,6 +1893,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WafPackage.IMAGE_UNIT__SELECTION: return WafPackage.COLLECTION_UNIT__SELECTION;
 				case WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION: return WafPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION;
 				case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD: return WafPackage.COLLECTION_UNIT__OMIT_CONTAINER_LOAD;
+				case WafPackage.IMAGE_UNIT__PAGINATION_PARENT: return WafPackage.COLLECTION_UNIT__PAGINATION_PARENT;
 				case WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION: return WafPackage.COLLECTION_UNIT__FIND_ELEMENT_SELECTION;
 				case WafPackage.IMAGE_UNIT__FILTER: return WafPackage.COLLECTION_UNIT__FILTER;
 				case WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS: return WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
@@ -1879,6 +1940,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WafPackage.COLLECTION_UNIT__SELECTION: return WafPackage.IMAGE_UNIT__SELECTION;
 				case WafPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION: return WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION;
 				case WafPackage.COLLECTION_UNIT__OMIT_CONTAINER_LOAD: return WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD;
+				case WafPackage.COLLECTION_UNIT__PAGINATION_PARENT: return WafPackage.IMAGE_UNIT__PAGINATION_PARENT;
 				case WafPackage.COLLECTION_UNIT__FIND_ELEMENT_SELECTION: return WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION;
 				case WafPackage.COLLECTION_UNIT__FILTER: return WafPackage.IMAGE_UNIT__FILTER;
 				case WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS;

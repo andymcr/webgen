@@ -98,8 +98,7 @@
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//Page/styleClass"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//PageLink">
-      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
-          ecoreFeature="ecore:EReference webui.ecore#//PageLink/targetPage"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//PageLink/targetPage"/>
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//UnitContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//UnitContainer/units"/>
@@ -278,6 +277,8 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Business"
           propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/findContainerSelection"/>
       <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute webui.ecore#//CollectionUnit/omitContainerLoad"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Pagination"
+          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/paginationParent"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Business"
           propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//CollectionUnit/findElementSelection"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Business"

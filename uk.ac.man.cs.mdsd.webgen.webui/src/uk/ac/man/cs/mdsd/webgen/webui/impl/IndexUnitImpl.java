@@ -40,6 +40,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFindContainerSelection <em>Find Container Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#isOmitContainerLoad <em>Omit Container Load</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getPaginationParent <em>Pagination Parent</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFindElementSelection <em>Find Element Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.IndexUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
@@ -121,6 +122,16 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected boolean omitContainerLoad = OMIT_CONTAINER_LOAD_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPaginationParent() <em>Pagination Parent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaginationParent()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityOrView paginationParent;
 
 	/**
 	 * The cached value of the '{@link #getFindElementSelection() <em>Find Element Selection</em>}' reference.
@@ -738,6 +749,44 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		omitContainerLoad = newOmitContainerLoad;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__OMIT_CONTAINER_LOAD, oldOmitContainerLoad, omitContainerLoad));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView getPaginationParent() {
+		if (paginationParent != null && paginationParent.eIsProxy()) {
+			InternalEObject oldPaginationParent = (InternalEObject)paginationParent;
+			paginationParent = (EntityOrView)eResolveProxy(oldPaginationParent);
+			if (paginationParent != oldPaginationParent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.INDEX_UNIT__PAGINATION_PARENT, oldPaginationParent, paginationParent));
+			}
+		}
+		return paginationParent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetPaginationParent() {
+		return paginationParent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaginationParent(EntityOrView newPaginationParent) {
+		EntityOrView oldPaginationParent = paginationParent;
+		paginationParent = newPaginationParent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.INDEX_UNIT__PAGINATION_PARENT, oldPaginationParent, paginationParent));
 	}
 
 	/**
@@ -1363,6 +1412,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return basicGetFindContainerSelection();
 			case WebuiPackage.INDEX_UNIT__OMIT_CONTAINER_LOAD:
 				return isOmitContainerLoad();
+			case WebuiPackage.INDEX_UNIT__PAGINATION_PARENT:
+				if (resolve) return getPaginationParent();
+				return basicGetPaginationParent();
 			case WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION:
 				if (resolve) return getFindElementSelection();
 				return basicGetFindElementSelection();
@@ -1444,6 +1496,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return;
 			case WebuiPackage.INDEX_UNIT__OMIT_CONTAINER_LOAD:
 				setOmitContainerLoad((Boolean)newValue);
+				return;
+			case WebuiPackage.INDEX_UNIT__PAGINATION_PARENT:
+				setPaginationParent((EntityOrView)newValue);
 				return;
 			case WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION:
 				setFindElementSelection((Selection)newValue);
@@ -1553,6 +1608,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebuiPackage.INDEX_UNIT__OMIT_CONTAINER_LOAD:
 				setOmitContainerLoad(OMIT_CONTAINER_LOAD_EDEFAULT);
 				return;
+			case WebuiPackage.INDEX_UNIT__PAGINATION_PARENT:
+				setPaginationParent((EntityOrView)null);
+				return;
 			case WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION:
 				setFindElementSelection((Selection)null);
 				return;
@@ -1654,6 +1712,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return findContainerSelection != null;
 			case WebuiPackage.INDEX_UNIT__OMIT_CONTAINER_LOAD:
 				return omitContainerLoad != OMIT_CONTAINER_LOAD_EDEFAULT;
+			case WebuiPackage.INDEX_UNIT__PAGINATION_PARENT:
+				return paginationParent != null;
 			case WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION:
 				return findElementSelection != null;
 			case WebuiPackage.INDEX_UNIT__FILTER:
@@ -1730,6 +1790,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WebuiPackage.INDEX_UNIT__SELECTION: return WebuiPackage.COLLECTION_UNIT__SELECTION;
 				case WebuiPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION: return WebuiPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION;
 				case WebuiPackage.INDEX_UNIT__OMIT_CONTAINER_LOAD: return WebuiPackage.COLLECTION_UNIT__OMIT_CONTAINER_LOAD;
+				case WebuiPackage.INDEX_UNIT__PAGINATION_PARENT: return WebuiPackage.COLLECTION_UNIT__PAGINATION_PARENT;
 				case WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION: return WebuiPackage.COLLECTION_UNIT__FIND_ELEMENT_SELECTION;
 				case WebuiPackage.INDEX_UNIT__FILTER: return WebuiPackage.COLLECTION_UNIT__FILTER;
 				case WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS: return WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
@@ -1781,6 +1842,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WebuiPackage.COLLECTION_UNIT__SELECTION: return WebuiPackage.INDEX_UNIT__SELECTION;
 				case WebuiPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION: return WebuiPackage.INDEX_UNIT__FIND_CONTAINER_SELECTION;
 				case WebuiPackage.COLLECTION_UNIT__OMIT_CONTAINER_LOAD: return WebuiPackage.INDEX_UNIT__OMIT_CONTAINER_LOAD;
+				case WebuiPackage.COLLECTION_UNIT__PAGINATION_PARENT: return WebuiPackage.INDEX_UNIT__PAGINATION_PARENT;
 				case WebuiPackage.COLLECTION_UNIT__FIND_ELEMENT_SELECTION: return WebuiPackage.INDEX_UNIT__FIND_ELEMENT_SELECTION;
 				case WebuiPackage.COLLECTION_UNIT__FILTER: return WebuiPackage.INDEX_UNIT__FILTER;
 				case WebuiPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WebuiPackage.INDEX_UNIT__SUPPORTED_FILTERS;

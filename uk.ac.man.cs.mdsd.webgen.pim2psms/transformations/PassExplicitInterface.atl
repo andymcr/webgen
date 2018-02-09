@@ -819,6 +819,12 @@ abstract rule CollectionUnit {
 				website.findContainerSelection.findServiceSelection()
 			endif,
 		omitContainerLoad <- website.omitContainerLoad,
+		paginationParent <-
+			if website.paginationParent.oclIsUndefined() then
+				website.paginationParent
+			else
+				thisModule.findOrmEntityOrView(website.paginationParent.name)
+			endif,
 		findElementSelection <-
 			if website.findElementSelection.oclIsUndefined() then
 				website.findElementSelection

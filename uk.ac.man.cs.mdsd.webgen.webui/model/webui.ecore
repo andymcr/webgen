@@ -463,6 +463,7 @@
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitContainerLoad" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paginationParent" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//EntityOrView"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="findElementSelection" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filter" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Filter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="supportedFilters" upperBound="-1"

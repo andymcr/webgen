@@ -26,12 +26,21 @@ helper context Website!Expression def: isInterfaceExpression() : Boolean
 		endif endif endif endif endif endif endif;
 
 
+abstract rule Expression {
+	from website : Website!Expression (website.isInterfaceExpression())
+	to waf : WAF!Expression (
+		suffixes <- website.suffixes
+	)
+}
+
+-- @extends Expression
 rule NullLiteral {
 	from website : Website!NullLiteral (website.isInterfaceExpression())
 	to waf : WAF!NullLiteral (
 	)
 }
 
+-- @extends Expression
 rule BooleanLiteral {
 	from website : Website!BooleanLiteral (website.isInterfaceExpression())
 	to waf : WAF!BooleanLiteral (
@@ -39,6 +48,7 @@ rule BooleanLiteral {
 	)
 }
 
+-- @extends Expression
 rule IntegerLiteral {
 	from website : Website!IntegerLiteral (website.isInterfaceExpression())
 	to waf : WAF!IntegerLiteral (
@@ -46,6 +56,7 @@ rule IntegerLiteral {
 	)
 }
 
+-- @extends Expression
 rule StringLiteral {
 	from website : Website!StringLiteral (website.isInterfaceExpression())
 	to waf : WAF!StringLiteral (
@@ -53,6 +64,7 @@ rule StringLiteral {
 	)
 }
 
+-- @extends Expression
 rule TimeLiteral {
 	from website : Website!TimeLiteral (website.isInterfaceExpression())
 	to waf : WAF!TimeLiteral (
@@ -61,12 +73,14 @@ rule TimeLiteral {
 }
 
 
+-- @extends Expression
 rule CurrentTime {
 	from website : Website!CurrentTime (website.isInterfaceExpression())
 	to waf : WAF!CurrentTime (
 	)
 }
 
+-- @extends Expression
 rule CurrentUser {
 	from website : Website!CurrentUser (website.isInterfaceExpression())
 	to waf : WAF!CurrentUser (
@@ -74,6 +88,7 @@ rule CurrentUser {
 }
 
 
+-- @extends Expression
 abstract rule Predicate {
 	from website : Website!Predicate
 	to waf : WAF!Predicate (

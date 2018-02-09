@@ -437,6 +437,15 @@ public interface ServicePackage extends EPackage {
 	int CONSTANT_REFERENCE = 5;
 
 	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANT_REFERENCE__SUFFIXES = ExpressionPackage.VARIABLE__SUFFIXES;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -481,6 +490,15 @@ public interface ServicePackage extends EPackage {
 	 * @generated
 	 */
 	int SERVICE_FEATURE_REFERENCE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_FEATURE_REFERENCE__SUFFIXES = ExpressionPackage.VARIABLE__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

@@ -14,15 +14,19 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.expression.Expression;
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAttribute;
@@ -39,6 +43,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.SingletonUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitElement;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitField;
+import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.FeaturePath} object.
@@ -75,8 +80,31 @@ public class FeaturePathItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSuffixesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Suffixes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSuffixesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Expression_suffixes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Expression_suffixes_feature", "_UI_Expression_type"),
+				 ExpressionPackage.Literals.EXPRESSION__SUFFIXES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_ExpressionPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -101,6 +129,12 @@ public class FeaturePathItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(FeaturePath.class)) {
+			case WebuiPackage.FEATURE_PATH__SUFFIXES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

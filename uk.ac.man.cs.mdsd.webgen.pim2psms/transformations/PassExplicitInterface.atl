@@ -701,6 +701,7 @@ rule ChildPathAssociation {
 	)
 }
 
+-- @extends Expression
 abstract rule FeaturePath {
 	from website : Website!FeaturePath
 	to waf : WAF!FeaturePath (

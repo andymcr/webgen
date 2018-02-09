@@ -21,6 +21,7 @@ enum ComparisionOperator {
 }
 
 interface Expression {
+	String[] suffixes
 }
 
 interface Literal extends Expression {

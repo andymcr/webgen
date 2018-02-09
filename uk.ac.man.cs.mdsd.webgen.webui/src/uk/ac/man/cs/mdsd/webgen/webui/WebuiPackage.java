@@ -3191,6 +3191,15 @@ public interface WebuiPackage extends EPackage {
 	int CHILD_PATH_ASSOCIATION_OPERATION_COUNT = CHILD_PATH_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH__SUFFIXES = ExpressionPackage.VARIABLE__SUFFIXES;
+
+	/**
 	 * The number of structural features of the '<em>Feature Path</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3207,6 +3216,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE_PATH_OPERATION_COUNT = ExpressionPackage.VARIABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE__SUFFIXES = FEATURE_PATH__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3243,6 +3261,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE_PATH_ATTRIBUTE_OPERATION_COUNT = FEATURE_PATH_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__SUFFIXES = FEATURE_PATH__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3334,6 +3361,15 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 */
 	int FEATURE_PATH_LABEL = 30;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_LABEL__SUFFIXES = FEATURE_PATH__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

@@ -68,13 +68,22 @@ public interface ExpressionPackage extends EPackage {
 	int EXPRESSION = 0;
 
 	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION__SUFFIXES = 0;
+
+	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPRESSION_FEATURE_COUNT = 0;
+	int EXPRESSION_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Expression</em>' class.
@@ -94,6 +103,15 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	int LITERAL = 1;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL__SUFFIXES = EXPRESSION__SUFFIXES;
 
 	/**
 	 * The number of structural features of the '<em>Literal</em>' class.
@@ -124,6 +142,15 @@ public interface ExpressionPackage extends EPackage {
 	int NULL_LITERAL = 2;
 
 	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NULL_LITERAL__SUFFIXES = LITERAL__SUFFIXES;
+
+	/**
 	 * The number of structural features of the '<em>Null Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -150,6 +177,15 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	int BOOLEAN_LITERAL = 3;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_LITERAL__SUFFIXES = LITERAL__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -189,6 +225,15 @@ public interface ExpressionPackage extends EPackage {
 	int INTEGER_LITERAL = 4;
 
 	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_LITERAL__SUFFIXES = LITERAL__SUFFIXES;
+
+	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -224,6 +269,15 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	int STRING_LITERAL = 5;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_LITERAL__SUFFIXES = LITERAL__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -263,6 +317,15 @@ public interface ExpressionPackage extends EPackage {
 	int TIME_LITERAL = 6;
 
 	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_LITERAL__SUFFIXES = LITERAL__SUFFIXES;
+
+	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -300,6 +363,15 @@ public interface ExpressionPackage extends EPackage {
 	int VARIABLE = 7;
 
 	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__SUFFIXES = EXPRESSION__SUFFIXES;
+
+	/**
 	 * The number of structural features of the '<em>Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -326,6 +398,15 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	int PREDICATE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE__SUFFIXES = EXPRESSION__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -363,6 +444,15 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	int PREDICATE_BOOLEAN_OPERATOR = 9;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE_BOOLEAN_OPERATOR__SUFFIXES = PREDICATE__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -420,6 +510,15 @@ public interface ExpressionPackage extends EPackage {
 	int PREDICATE_EQUALITY_OPERATOR = 10;
 
 	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE_EQUALITY_OPERATOR__SUFFIXES = PREDICATE__SUFFIXES;
+
+	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -473,6 +572,15 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	int PREDICATE_COMPARISON_OPERATOR = 11;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE_COMPARISON_OPERATOR__SUFFIXES = PREDICATE__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -539,6 +647,15 @@ public interface ExpressionPackage extends EPackage {
 	int PREDICATE_IN_OPERATOR = 12;
 
 	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE_IN_OPERATOR__SUFFIXES = PREDICATE__SUFFIXES;
+
+	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -592,6 +709,15 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	int PREDICATE_IS_OPERATOR = 13;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE_IS_OPERATOR__SUFFIXES = PREDICATE__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -649,6 +775,15 @@ public interface ExpressionPackage extends EPackage {
 	int PREDICATE_LIKE_OPERATOR = 14;
 
 	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE_LIKE_OPERATOR__SUFFIXES = PREDICATE__SUFFIXES;
+
+	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -704,6 +839,15 @@ public interface ExpressionPackage extends EPackage {
 	int PREDICATE_IS_EMPTY = 15;
 
 	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE_IS_EMPTY__SUFFIXES = PREDICATE__SUFFIXES;
+
+	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -748,6 +892,15 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	int PREDICATE_IS_NULL = 16;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREDICATE_IS_NULL__SUFFIXES = PREDICATE__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Negated</b></em>' attribute.
@@ -814,6 +967,17 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getExpression();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link uk.ac.man.cs.mdsd.webgen.expression.Expression#getSuffixes <em>Suffixes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Suffixes</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.expression.Expression#getSuffixes()
+	 * @see #getExpression()
+	 * @generated
+	 */
+	EAttribute getExpression_Suffixes();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.expression.Literal <em>Literal</em>}'.
@@ -1247,6 +1411,14 @@ public interface ExpressionPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EXPRESSION = eINSTANCE.getExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Suffixes</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXPRESSION__SUFFIXES = eINSTANCE.getExpression_Suffixes();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.expression.Literal <em>Literal</em>}' class.

@@ -2,13 +2,16 @@
  */
 package uk.ac.man.cs.mdsd.webgen.expression.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
 
@@ -20,12 +23,23 @@ import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.expression.impl.PredicateImpl#getSuffixes <em>Suffixes</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.expression.impl.PredicateImpl#isNegated <em>Negated</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class PredicateImpl extends MinimalEObjectImpl.Container implements Predicate {
+	/**
+	 * The cached value of the '{@link #getSuffixes() <em>Suffixes</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSuffixes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> suffixes;
+
 	/**
 	 * The default value of the '{@link #isNegated() <em>Negated</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,6 +84,18 @@ public abstract class PredicateImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<String> getSuffixes() {
+		if (suffixes == null) {
+			suffixes = new EDataTypeUniqueEList<String>(String.class, this, ExpressionPackage.PREDICATE__SUFFIXES);
+		}
+		return suffixes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isNegated() {
 		return negated;
 	}
@@ -94,6 +120,8 @@ public abstract class PredicateImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ExpressionPackage.PREDICATE__SUFFIXES:
+				return getSuffixes();
 			case ExpressionPackage.PREDICATE__NEGATED:
 				return isNegated();
 		}
@@ -105,9 +133,14 @@ public abstract class PredicateImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ExpressionPackage.PREDICATE__SUFFIXES:
+				getSuffixes().clear();
+				getSuffixes().addAll((Collection<? extends String>)newValue);
+				return;
 			case ExpressionPackage.PREDICATE__NEGATED:
 				setNegated((Boolean)newValue);
 				return;
@@ -123,6 +156,9 @@ public abstract class PredicateImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ExpressionPackage.PREDICATE__SUFFIXES:
+				getSuffixes().clear();
+				return;
 			case ExpressionPackage.PREDICATE__NEGATED:
 				setNegated(NEGATED_EDEFAULT);
 				return;
@@ -138,6 +174,8 @@ public abstract class PredicateImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ExpressionPackage.PREDICATE__SUFFIXES:
+				return suffixes != null && !suffixes.isEmpty();
 			case ExpressionPackage.PREDICATE__NEGATED:
 				return negated != NEGATED_EDEFAULT;
 		}
@@ -154,7 +192,9 @@ public abstract class PredicateImpl extends MinimalEObjectImpl.Container impleme
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (negated: ");
+		result.append(" (suffixes: ");
+		result.append(suffixes);
+		result.append(", negated: ");
 		result.append(negated);
 		result.append(')');
 		return result.toString();

@@ -3391,6 +3391,15 @@ public interface WafPackage extends EPackage {
 	int FEATURE_PATH = 33;
 
 	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH__SUFFIXES = ExpressionPackage.VARIABLE__SUFFIXES;
+
+	/**
 	 * The number of structural features of the '<em>Feature Path</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3417,6 +3426,15 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	int FEATURE_PATH_ATTRIBUTE = 34;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE__SUFFIXES = FEATURE_PATH__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3463,6 +3481,15 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	int FEATURE_PATH_ASSOCIATION = 35;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__SUFFIXES = FEATURE_PATH__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3527,6 +3554,15 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	int FEATURE_PATH_LABEL = 36;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_LABEL__SUFFIXES = FEATURE_PATH__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

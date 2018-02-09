@@ -2,13 +2,16 @@
  */
 package uk.ac.man.cs.mdsd.webgen.expression.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.expression.TimeLiteral;
 
@@ -20,12 +23,23 @@ import uk.ac.man.cs.mdsd.webgen.expression.TimeLiteral;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.expression.impl.TimeLiteralImpl#getSuffixes <em>Suffixes</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.expression.impl.TimeLiteralImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TimeLiteralImpl extends MinimalEObjectImpl.Container implements TimeLiteral {
+	/**
+	 * The cached value of the '{@link #getSuffixes() <em>Suffixes</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSuffixes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> suffixes;
+
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,6 +84,18 @@ public class TimeLiteralImpl extends MinimalEObjectImpl.Container implements Tim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<String> getSuffixes() {
+		if (suffixes == null) {
+			suffixes = new EDataTypeUniqueEList<String>(String.class, this, ExpressionPackage.TIME_LITERAL__SUFFIXES);
+		}
+		return suffixes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getValue() {
 		return value;
 	}
@@ -94,6 +120,8 @@ public class TimeLiteralImpl extends MinimalEObjectImpl.Container implements Tim
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ExpressionPackage.TIME_LITERAL__SUFFIXES:
+				return getSuffixes();
 			case ExpressionPackage.TIME_LITERAL__VALUE:
 				return getValue();
 		}
@@ -105,9 +133,14 @@ public class TimeLiteralImpl extends MinimalEObjectImpl.Container implements Tim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ExpressionPackage.TIME_LITERAL__SUFFIXES:
+				getSuffixes().clear();
+				getSuffixes().addAll((Collection<? extends String>)newValue);
+				return;
 			case ExpressionPackage.TIME_LITERAL__VALUE:
 				setValue((String)newValue);
 				return;
@@ -123,6 +156,9 @@ public class TimeLiteralImpl extends MinimalEObjectImpl.Container implements Tim
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ExpressionPackage.TIME_LITERAL__SUFFIXES:
+				getSuffixes().clear();
+				return;
 			case ExpressionPackage.TIME_LITERAL__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
@@ -138,6 +174,8 @@ public class TimeLiteralImpl extends MinimalEObjectImpl.Container implements Tim
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ExpressionPackage.TIME_LITERAL__SUFFIXES:
+				return suffixes != null && !suffixes.isEmpty();
 			case ExpressionPackage.TIME_LITERAL__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
@@ -154,7 +192,9 @@ public class TimeLiteralImpl extends MinimalEObjectImpl.Container implements Tim
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (value: ");
+		result.append(" (suffixes: ");
+		result.append(suffixes);
+		result.append(", value: ");
 		result.append(value);
 		result.append(')');
 		return result.toString();

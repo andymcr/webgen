@@ -10,7 +10,10 @@
     <eLiterals name="GreaterThan"/>
     <eLiterals name="LessThan" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="suffixes" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Literal" abstract="true" interface="true"
       eSuperTypes="#//Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="NullLiteral" eSuperTypes="#//Literal"/>

@@ -15,7 +15,9 @@
       <genEnumLiterals ecoreEnumLiteral="expression.ecore#//ComparisionOperator/GreaterThan"/>
       <genEnumLiterals ecoreEnumLiteral="expression.ecore#//ComparisionOperator/LessThan"/>
     </genEnums>
-    <genClasses image="false" ecoreClass="expression.ecore#//Expression"/>
+    <genClasses image="false" ecoreClass="expression.ecore#//Expression">
+      <genFeatures createChild="false" propertyCategory="Expression" ecoreFeature="ecore:EAttribute expression.ecore#//Expression/suffixes"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="expression.ecore#//Literal"/>
     <genClasses ecoreClass="expression.ecore#//NullLiteral"/>
     <genClasses ecoreClass="expression.ecore#//BooleanLiteral">

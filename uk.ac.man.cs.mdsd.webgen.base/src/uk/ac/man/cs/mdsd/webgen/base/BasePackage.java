@@ -435,6 +435,15 @@ public interface BasePackage extends EPackage {
 	int CURRENT_TIME = 6;
 
 	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_TIME__SUFFIXES = ExpressionPackage.EXPRESSION__SUFFIXES;
+
+	/**
 	 * The feature id for the '<em><b>Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -470,6 +479,15 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	int CURRENT_USER = 7;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_USER__SUFFIXES = ExpressionPackage.EXPRESSION__SUFFIXES;
 
 	/**
 	 * The number of structural features of the '<em>Current User</em>' class.
@@ -617,6 +635,15 @@ public interface BasePackage extends EPackage {
 	 * @generated
 	 */
 	int PARAMETER_REFERENCE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_REFERENCE__SUFFIXES = ExpressionPackage.VARIABLE__SUFFIXES;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

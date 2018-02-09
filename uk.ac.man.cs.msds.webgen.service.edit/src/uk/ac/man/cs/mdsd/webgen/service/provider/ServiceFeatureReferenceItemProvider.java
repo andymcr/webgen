@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Feature;
@@ -66,9 +67,32 @@ public class ServiceFeatureReferenceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSuffixesPropertyDescriptor(object);
 			addFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Suffixes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSuffixesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Expression_suffixes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Expression_suffixes_feature", "_UI_Expression_type"),
+				 ExpressionPackage.Literals.EXPRESSION__SUFFIXES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_ExpressionPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -143,6 +167,7 @@ public class ServiceFeatureReferenceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ServiceFeatureReference.class)) {
+			case ServicePackage.SERVICE_FEATURE_REFERENCE__SUFFIXES:
 			case ServicePackage.SERVICE_FEATURE_REFERENCE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

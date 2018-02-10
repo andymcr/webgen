@@ -58,11 +58,10 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case WebuiPackage.WEB_UI: return createWebUI();
-			case WebuiPackage.GLOBAL_MENU: return createGlobalMenu();
+			case WebuiPackage.MENU: return createMenu();
 			case WebuiPackage.SUBMENU_ENTRY: return createSubmenuEntry();
 			case WebuiPackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
 			case WebuiPackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
-			case WebuiPackage.DYNAMIC_MENU: return createDynamicMenu();
 			case WebuiPackage.MENU_FEATURE: return createMenuFeature();
 			case WebuiPackage.QUERY: return createQuery();
 			case WebuiPackage.QUERY_PARAMETER: return createQueryParameter();
@@ -165,9 +164,9 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GlobalMenu createGlobalMenu() {
-		GlobalMenuImpl globalMenu = new GlobalMenuImpl();
-		return globalMenu;
+	public Menu createMenu() {
+		MenuImpl menu = new MenuImpl();
+		return menu;
 	}
 
 	/**
@@ -198,16 +197,6 @@ public class WebuiFactoryImpl extends EFactoryImpl implements WebuiFactory {
 	public EditStaticTextMenuEntry createEditStaticTextMenuEntry() {
 		EditStaticTextMenuEntryImpl editStaticTextMenuEntry = new EditStaticTextMenuEntryImpl();
 		return editStaticTextMenuEntry;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DynamicMenu createDynamicMenu() {
-		DynamicMenuImpl dynamicMenu = new DynamicMenuImpl();
-		return dynamicMenu;
 	}
 
 	/**

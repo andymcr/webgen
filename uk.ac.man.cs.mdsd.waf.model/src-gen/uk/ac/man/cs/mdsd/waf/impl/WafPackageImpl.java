@@ -45,7 +45,6 @@ import uk.ac.man.cs.mdsd.waf.DateField;
 import uk.ac.man.cs.mdsd.waf.DeleteAction;
 import uk.ac.man.cs.mdsd.waf.DetailsUnit;
 import uk.ac.man.cs.mdsd.waf.DisplayElement;
-import uk.ac.man.cs.mdsd.waf.DynamicMenu;
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
 import uk.ac.man.cs.mdsd.waf.EditStaticTextMenuEntry;
 import uk.ac.man.cs.mdsd.waf.EditUnit;
@@ -57,7 +56,6 @@ import uk.ac.man.cs.mdsd.waf.FeatureSupportAction;
 import uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.waf.GalleryUnit;
-import uk.ac.man.cs.mdsd.waf.GlobalMenu;
 import uk.ac.man.cs.mdsd.waf.ImageFilter;
 import uk.ac.man.cs.mdsd.waf.ImageIndexUnit;
 import uk.ac.man.cs.mdsd.waf.ImageManipulation;
@@ -176,20 +174,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass menuEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass globalMenuEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dynamicMenuEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -767,7 +751,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWafModel_GlobalMenus() {
+	public EReference getWafModel_Menus() {
 		return (EReference)wafModelEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -776,7 +760,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWafModel_DynamicMenus() {
+	public EReference getWafModel_Api() {
 		return (EReference)wafModelEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -785,17 +769,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWafModel_Api() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getWafModel_SiteName() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -804,7 +779,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_SiteTitle() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -813,7 +788,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_WebmasterEmail() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -822,7 +797,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_CopyrightText() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -831,7 +806,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_MetaDescription() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -840,7 +815,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_LogoImage() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -849,7 +824,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EReference getWafModel_LogoFilters() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(13);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -858,7 +833,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_FrameworkTechnology() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -867,7 +842,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_InputTechnology() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -876,7 +851,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_AjaxTechnology() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -885,7 +860,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EReference getWafModel_Authentication() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(17);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -894,7 +869,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_CaptchaSiteKey() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(18);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -903,7 +878,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_CaptchaSecretKey() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(19);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -912,7 +887,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_TextEditorURL() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(20);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -921,7 +896,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_TopNavigationId() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(21);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -930,7 +905,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EReference getWafModel_SideMenu() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(22);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -939,7 +914,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_SiteTemplate() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(23);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -948,7 +923,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_StaticUnitsEditable() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(24);
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -1325,51 +1300,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getGlobalMenu() {
-		return globalMenuEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDynamicMenu() {
-		return dynamicMenuEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDynamicMenu_EntityOrView() {
-		return (EReference)dynamicMenuEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDynamicMenu_Selection() {
-		return (EReference)dynamicMenuEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDynamicMenu_Title() {
-		return (EReference)dynamicMenuEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMenuEntry() {
 		return menuEntryEClass;
 	}
@@ -1388,15 +1318,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMenuEntry_RequiresRole() {
-		return (EAttribute)menuEntryEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSubmenuEntry() {
 		return submenuEntryEClass;
 	}
@@ -1406,8 +1327,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubmenuEntry_Submenu() {
-		return (EReference)submenuEntryEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSubmenuEntry_RequiresRole() {
+		return (EAttribute)submenuEntryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1487,17 +1408,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPage_ContextMenu() {
-		return (EReference)pageEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getPage_UriElement() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1506,7 +1418,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getPage_StyleClass() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3720,8 +3632,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(wafModelEClass, WAF_MODEL__BUSINESS);
 		createEReference(wafModelEClass, WAF_MODEL__IMAGE_MANIPULATIONS);
 		createEReference(wafModelEClass, WAF_MODEL__PAGES);
-		createEReference(wafModelEClass, WAF_MODEL__GLOBAL_MENUS);
-		createEReference(wafModelEClass, WAF_MODEL__DYNAMIC_MENUS);
+		createEReference(wafModelEClass, WAF_MODEL__MENUS);
 		createEReference(wafModelEClass, WAF_MODEL__API);
 		createEAttribute(wafModelEClass, WAF_MODEL__SITE_NAME);
 		createEAttribute(wafModelEClass, WAF_MODEL__SITE_TITLE);
@@ -3792,19 +3703,11 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(menuEClass, MENU__STYLE_CLASS);
 		createEAttribute(menuEClass, MENU__LAYOUT_CLASS);
 
-		globalMenuEClass = createEClass(GLOBAL_MENU);
-
-		dynamicMenuEClass = createEClass(DYNAMIC_MENU);
-		createEReference(dynamicMenuEClass, DYNAMIC_MENU__ENTITY_OR_VIEW);
-		createEReference(dynamicMenuEClass, DYNAMIC_MENU__SELECTION);
-		createEReference(dynamicMenuEClass, DYNAMIC_MENU__TITLE);
-
 		menuEntryEClass = createEClass(MENU_ENTRY);
 		createEReference(menuEntryEClass, MENU_ENTRY__PART_OF);
-		createEAttribute(menuEntryEClass, MENU_ENTRY__REQUIRES_ROLE);
 
 		submenuEntryEClass = createEClass(SUBMENU_ENTRY);
-		createEReference(submenuEntryEClass, SUBMENU_ENTRY__SUBMENU);
+		createEAttribute(submenuEntryEClass, SUBMENU_ENTRY__REQUIRES_ROLE);
 
 		actionMenuEntryEClass = createEClass(ACTION_MENU_ENTRY);
 		createEReference(actionMenuEntryEClass, ACTION_MENU_ENTRY__ACTION);
@@ -3816,7 +3719,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(pageEClass, PAGE__PART_OF);
 		createEReference(pageEClass, PAGE__PARENT_PAGE);
 		createEReference(pageEClass, PAGE__CHILD_PAGES);
-		createEReference(pageEClass, PAGE__CONTEXT_MENU);
 		createEAttribute(pageEClass, PAGE__URI_ELEMENT);
 		createEAttribute(pageEClass, PAGE__STYLE_CLASS);
 
@@ -4160,10 +4062,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		backgroundFilterEClass.getESuperTypes().add(this.getImageFilter());
 		thumbnailFilterEClass.getESuperTypes().add(this.getImageFilter());
 		menuEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
-		globalMenuEClass.getESuperTypes().add(this.getMenu());
-		dynamicMenuEClass.getESuperTypes().add(this.getMenu());
+		submenuEntryEClass.getESuperTypes().add(this.getMenu());
 		submenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
-		submenuEntryEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		actionMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
 		actionMenuEntryEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		editStaticTextMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
@@ -4241,8 +4141,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getWafModel_Business(), theServicePackage.getServiceModel(), null, "business", null, 1, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_ImageManipulations(), this.getImageManipulation(), null, "imageManipulations", null, 0, -1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_Pages(), this.getPage(), this.getPage_PartOf(), "pages", null, 0, -1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWafModel_GlobalMenus(), this.getGlobalMenu(), null, "globalMenus", null, 0, -1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWafModel_DynamicMenus(), this.getDynamicMenu(), null, "dynamicMenus", null, 0, -1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWafModel_Menus(), this.getMenu(), null, "menus", null, 0, -1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_Api(), theApiPackage.getAPI(), null, "api", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_SiteName(), theEcorePackage.getEString(), "siteName", null, 1, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_SiteTitle(), theEcorePackage.getEString(), "siteTitle", null, 1, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4306,26 +4205,18 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getThumbnailFilter_Height(), theEcorePackage.getEInt(), "height", null, 0, 1, ThumbnailFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getThumbnailFilter_Mode(), this.getThumbnailModes(), "mode", null, 0, 1, ThumbnailFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(menuEClass, Menu.class, "Menu", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(menuEClass, Menu.class, "Menu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMenu_Entries(), this.getMenuEntry(), this.getMenuEntry_PartOf(), "entries", null, 0, -1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMenu_OmitCaption(), theEcorePackage.getEBoolean(), "omitCaption", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMenu_CaptionClass(), theEcorePackage.getEString(), "captionClass", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMenu_StyleClass(), theEcorePackage.getEString(), "styleClass", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMenu_LayoutClass(), theEcorePackage.getEString(), "layoutClass", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(globalMenuEClass, GlobalMenu.class, "GlobalMenu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(dynamicMenuEClass, DynamicMenu.class, "DynamicMenu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDynamicMenu_EntityOrView(), theOrmPackage.getEntityOrView(), null, "entityOrView", null, 1, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDynamicMenu_Selection(), theServicePackage.getSelection(), null, "selection", null, 1, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDynamicMenu_Title(), theOrmPackage.getLabel(), null, "title", null, 0, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(menuEntryEClass, MenuEntry.class, "MenuEntry", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMenuEntry_PartOf(), this.getMenu(), this.getMenu_Entries(), "partOf", null, 1, 1, MenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMenuEntry_RequiresRole(), theEcorePackage.getEString(), "requiresRole", null, 0, 1, MenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(submenuEntryEClass, SubmenuEntry.class, "SubmenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSubmenuEntry_Submenu(), this.getMenu(), null, "submenu", null, 1, 1, SubmenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSubmenuEntry_RequiresRole(), theEcorePackage.getEString(), "requiresRole", null, 0, 1, SubmenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionMenuEntryEClass, ActionMenuEntry.class, "ActionMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActionMenuEntry_Action(), this.getContentUnit(), null, "action", null, 1, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4337,7 +4228,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getPage_PartOf(), this.getWafModel(), this.getWafModel_Pages(), "partOf", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_ParentPage(), this.getPage(), this.getPage_ChildPages(), "parentPage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_ChildPages(), this.getPage(), this.getPage_ParentPage(), "childPages", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPage_ContextMenu(), this.getGlobalMenu(), null, "contextMenu", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_UriElement(), theEcorePackage.getEString(), "uriElement", "", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_StyleClass(), theEcorePackage.getEString(), "styleClass", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -235,53 +235,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.GlobalMenu} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Menu} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GlobalMenuItemProvider globalMenuItemProvider;
+	protected MenuItemProvider menuItemProvider;
 
 		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.GlobalMenu}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.Menu}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createGlobalMenuAdapter() {
-		if (globalMenuItemProvider == null) {
-			globalMenuItemProvider = new GlobalMenuItemProvider(this);
+	public Adapter createMenuAdapter() {
+		if (menuItemProvider == null) {
+			menuItemProvider = new MenuItemProvider(this);
 		}
 
-		return globalMenuItemProvider;
+		return menuItemProvider;
 	}
 
 		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DynamicMenu} instances.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected DynamicMenuItemProvider dynamicMenuItemProvider;
-
-  /**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.DynamicMenu}.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public Adapter createDynamicMenuAdapter()
-  {
-		if (dynamicMenuItemProvider == null) {
-			dynamicMenuItemProvider = new DynamicMenuItemProvider(this);
-		}
-
-		return dynamicMenuItemProvider;
-	}
-
-  /**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.SubmenuEntry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1292,8 +1268,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
 		if (backgroundFilterItemProvider != null) backgroundFilterItemProvider.dispose();
 		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();
-		if (globalMenuItemProvider != null) globalMenuItemProvider.dispose();
-		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
+		if (menuItemProvider != null) menuItemProvider.dispose();
 		if (submenuEntryItemProvider != null) submenuEntryItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();

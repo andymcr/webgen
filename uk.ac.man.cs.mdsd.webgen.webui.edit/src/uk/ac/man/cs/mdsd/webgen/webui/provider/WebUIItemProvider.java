@@ -239,8 +239,7 @@ public class WebUIItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebuiPackage.Literals.WEB_UI__GLOBAL_MENUS);
-			childrenFeatures.add(WebuiPackage.Literals.WEB_UI__DYNAMIC_MENUS);
+			childrenFeatures.add(WebuiPackage.Literals.WEB_UI__MENUS);
 			childrenFeatures.add(WebuiPackage.Literals.WEB_UI__PAGES);
 		}
 		return childrenFeatures;
@@ -305,8 +304,7 @@ public class WebUIItemProvider
 			case WebuiPackage.WEB_UI__AJAX_TECHNOLOGY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebuiPackage.WEB_UI__GLOBAL_MENUS:
-			case WebuiPackage.WEB_UI__DYNAMIC_MENUS:
+			case WebuiPackage.WEB_UI__MENUS:
 			case WebuiPackage.WEB_UI__PAGES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -327,13 +325,13 @@ public class WebUIItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.WEB_UI__GLOBAL_MENUS,
-				 WebuiFactory.eINSTANCE.createGlobalMenu()));
+				(WebuiPackage.Literals.WEB_UI__MENUS,
+				 WebuiFactory.eINSTANCE.createMenu()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebuiPackage.Literals.WEB_UI__DYNAMIC_MENUS,
-				 WebuiFactory.eINSTANCE.createDynamicMenu()));
+				(WebuiPackage.Literals.WEB_UI__MENUS,
+				 WebuiFactory.eINSTANCE.createSubmenuEntry()));
 
 		newChildDescriptors.add
 			(createChildParameter

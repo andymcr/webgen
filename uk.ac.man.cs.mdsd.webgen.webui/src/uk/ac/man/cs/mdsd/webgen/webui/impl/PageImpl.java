@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.base.impl.NamedDisplayElementImpl;
 import uk.ac.man.cs.mdsd.webgen.webui.ContentUnit;
-import uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu;
 import uk.ac.man.cs.mdsd.webgen.webui.Page;
 import uk.ac.man.cs.mdsd.webgen.webui.PageLink;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitContainer;
@@ -38,7 +37,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getChildPages <em>Child Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.PageImpl#getStyleClass <em>Style Class</em>}</li>
  * </ul>
  *
@@ -94,16 +92,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @ordered
 	 */
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getContextMenu() <em>Context Menu</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContextMenu()
-	 * @generated
-	 * @ordered
-	 */
-	protected GlobalMenu contextMenu;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -278,44 +266,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GlobalMenu getContextMenu() {
-		if (contextMenu != null && contextMenu.eIsProxy()) {
-			InternalEObject oldContextMenu = (InternalEObject)contextMenu;
-			contextMenu = (GlobalMenu)eResolveProxy(oldContextMenu);
-			if (contextMenu != oldContextMenu) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebuiPackage.PAGE__CONTEXT_MENU, oldContextMenu, contextMenu));
-			}
-		}
-		return contextMenu;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GlobalMenu basicGetContextMenu() {
-		return contextMenu;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setContextMenu(GlobalMenu newContextMenu) {
-		GlobalMenu oldContextMenu = contextMenu;
-		contextMenu = newContextMenu;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.PAGE__CONTEXT_MENU, oldContextMenu, contextMenu));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getStyleClass() {
 		return styleClass;
 	}
@@ -405,9 +355,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return getChildPages();
 			case WebuiPackage.PAGE__URI_ELEMENT:
 				return getUriElement();
-			case WebuiPackage.PAGE__CONTEXT_MENU:
-				if (resolve) return getContextMenu();
-				return basicGetContextMenu();
 			case WebuiPackage.PAGE__STYLE_CLASS:
 				return getStyleClass();
 		}
@@ -440,9 +387,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WebuiPackage.PAGE__URI_ELEMENT:
 				setUriElement((String)newValue);
 				return;
-			case WebuiPackage.PAGE__CONTEXT_MENU:
-				setContextMenu((GlobalMenu)newValue);
-				return;
 			case WebuiPackage.PAGE__STYLE_CLASS:
 				setStyleClass((String)newValue);
 				return;
@@ -473,9 +417,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WebuiPackage.PAGE__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
-			case WebuiPackage.PAGE__CONTEXT_MENU:
-				setContextMenu((GlobalMenu)null);
-				return;
 			case WebuiPackage.PAGE__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
 				return;
@@ -501,8 +442,6 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return childPages != null && !childPages.isEmpty();
 			case WebuiPackage.PAGE__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
-			case WebuiPackage.PAGE__CONTEXT_MENU:
-				return contextMenu != null;
 			case WebuiPackage.PAGE__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 		}

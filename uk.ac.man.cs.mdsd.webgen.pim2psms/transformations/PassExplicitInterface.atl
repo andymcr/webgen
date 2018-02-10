@@ -18,16 +18,6 @@ helper context String def: createName() : String
 			self.trim().lowercaseFirst().replaceAll('([A-Z])', '_$1')
 		endif;
 
-helper context Website!Page def: pageContextMenu() : Website!Menu
-	= if not self.contextMenu.oclIsUndefined() then
-			self.contextMenu
-		else if not self.parentPage.oclIsUndefined() then
-			self.parentPage.targetPage.pageContextMenu()
-		else
-			OclUndefined
-		endif endif;
-
-
 helper context Website!Attribute def: attributeLabel() : String
 	= if not self.displayLabel.oclIsUndefined() and self.displayLabel <> '' then
 			self.displayLabel
@@ -249,8 +239,7 @@ rule WafModel {
 				Sequence{}
 			endif,
 		api <- api,
-		globalMenus <- website.webUI.globalMenus,
-		dynamicMenus <- website.webUI.dynamicMenus,
+		menus <- website.webUI.menus,
 		pages <- website.webUI.pages,
 		siteName <- '?',
 		siteTitle <- website.websiteProperties.siteTitle,
@@ -341,7 +330,7 @@ rule ThumbnailFilter {
 
 
 -- @extends NamedDisplayElement
-abstract rule Menu {
+rule Menu {
 	from website : Website!Menu
 	to waf : WAF!Menu (
 		entries <- website.entries,
@@ -360,22 +349,14 @@ abstract rule Menu {
 abstract rule MenuEntry {
 	from website : Website!MenuEntry
 	to waf : WAF!MenuEntry (
-		requiresRole <- website.requiresRole
 	)
 }
 
--- @extends Menu
-rule GlobalMenu {
-	from website : Website!GlobalMenu
-	to waf : WAF!GlobalMenu (
-	)
-}
-
--- @extends MenuEntry, NamedDisplayElement
+-- @extends MenuEntry, Menu
 rule SubmenuEntry {
 	from website : Website!SubmenuEntry
 	to waf : WAF!SubmenuEntry (
-		submenu <- website.submenu
+		requiresRole <- website.requiresRole
 	)
 }
 
@@ -395,26 +376,6 @@ rule EditStaticTextMenuEntry {
 	)
 }
 
--- @extends Menu
-rule DynamicMenu {
-	from website : Website!DynamicMenu
-	to waf : WAF!DynamicMenu (
-		entityOrView <-
-			if website.entityOrView.oclIsUndefined() then
-				OclUndefined
-			else
-				website.entityOrView.findOrmEntityOrView()
-			endif,
-		selection <- website.selection,
-		title <-
-			if website.title.oclIsUndefined() then
-				website.title
-			else
-				website.title.findOrmLabel()
-			endif
-	)
-}
-
 -- @extends NamedDisplayElement, UnitContainer
 rule Page {
 	from website : Website!Page
@@ -426,7 +387,6 @@ rule Page {
 			else
 				website.parentPage.targetPage
 			endif,
-		contextMenu <- website.pageContextMenu(),
 		styleClass <-
 			if website.styleClass.oclIsUndefined() then
 				OclUndefined

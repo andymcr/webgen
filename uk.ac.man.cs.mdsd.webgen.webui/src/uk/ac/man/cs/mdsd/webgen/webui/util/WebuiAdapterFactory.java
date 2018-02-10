@@ -85,10 +85,6 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 				return createMenuEntryAdapter();
 			}
 			@Override
-			public Adapter caseGlobalMenu(GlobalMenu object) {
-				return createGlobalMenuAdapter();
-			}
-			@Override
 			public Adapter caseSubmenuEntry(SubmenuEntry object) {
 				return createSubmenuEntryAdapter();
 			}
@@ -99,10 +95,6 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEditStaticTextMenuEntry(EditStaticTextMenuEntry object) {
 				return createEditStaticTextMenuEntryAdapter();
-			}
-			@Override
-			public Adapter caseDynamicMenu(DynamicMenu object) {
-				return createDynamicMenuAdapter();
 			}
 			@Override
 			public Adapter caseMenuFeature(MenuFeature object) {
@@ -403,20 +395,6 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu <em>Global Menu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu
-	 * @generated
-	 */
-	public Adapter createGlobalMenuAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.webui.SubmenuEntry <em>Submenu Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -455,20 +433,6 @@ public class WebuiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEditStaticTextMenuEntryAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu <em>Dynamic Menu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu
-	 * @generated
-	 */
-	public Adapter createDynamicMenuAdapter() {
 		return null;
 	}
 

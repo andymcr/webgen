@@ -17,8 +17,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Services;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getServices <em>Services</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getGlobalMenus <em>Global Menus</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDynamicMenus <em>Dynamic Menus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getMenus <em>Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getPages <em>Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDefaultDateFormat <em>Default Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.WebUI#getDefaultTimeFormat <em>Default Time Format</em>}</li>
@@ -61,38 +60,20 @@ public interface WebUI extends EObject {
 	void setServices(Services value);
 
 	/**
-	 * Returns the value of the '<em><b>Global Menus</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu}.
+	 * Returns the value of the '<em><b>Menus</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.Menu}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Global Menus</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Menus</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Global Menus</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getWebUI_GlobalMenus()
+	 * @return the value of the '<em>Menus</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getWebUI_Menus()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<GlobalMenu> getGlobalMenus();
-
-	/**
-	 * Returns the value of the '<em><b>Dynamic Menus</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu#getWebUI <em>Web UI</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Dynamic Menus</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dynamic Menus</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getWebUI_DynamicMenus()
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu#getWebUI
-	 * @model opposite="webUI" containment="true"
-	 * @generated
-	 */
-	EList<DynamicMenu> getDynamicMenus();
+	EList<Menu> getMenus();
 
 	/**
 	 * Returns the value of the '<em><b>Pages</b></em>' containment reference list.

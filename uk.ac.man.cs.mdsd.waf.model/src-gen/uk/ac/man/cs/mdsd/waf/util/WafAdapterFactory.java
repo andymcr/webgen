@@ -114,14 +114,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createMenuAdapter();
 			}
 			@Override
-			public Adapter caseGlobalMenu(GlobalMenu object) {
-				return createGlobalMenuAdapter();
-			}
-			@Override
-			public Adapter caseDynamicMenu(DynamicMenu object) {
-				return createDynamicMenuAdapter();
-			}
-			@Override
 			public Adapter caseMenuEntry(MenuEntry object) {
 				return createMenuEntryAdapter();
 			}
@@ -530,34 +522,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMenuAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.GlobalMenu <em>Global Menu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.GlobalMenu
-	 * @generated
-	 */
-	public Adapter createGlobalMenuAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.DynamicMenu <em>Dynamic Menu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.DynamicMenu
-	 * @generated
-	 */
-	public Adapter createDynamicMenuAdapter() {
 		return null;
 	}
 

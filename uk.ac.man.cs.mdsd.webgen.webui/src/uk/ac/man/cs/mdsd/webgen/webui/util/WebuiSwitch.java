@@ -91,18 +91,10 @@ public class WebuiSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebuiPackage.GLOBAL_MENU: {
-				GlobalMenu globalMenu = (GlobalMenu)theEObject;
-				T result = caseGlobalMenu(globalMenu);
-				if (result == null) result = caseMenu(globalMenu);
-				if (result == null) result = caseNamedDisplayElement(globalMenu);
-				if (result == null) result = caseNamedElement(globalMenu);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WebuiPackage.SUBMENU_ENTRY: {
 				SubmenuEntry submenuEntry = (SubmenuEntry)theEObject;
 				T result = caseSubmenuEntry(submenuEntry);
+				if (result == null) result = caseMenu(submenuEntry);
 				if (result == null) result = caseMenuEntry(submenuEntry);
 				if (result == null) result = caseNamedDisplayElement(submenuEntry);
 				if (result == null) result = caseNamedElement(submenuEntry);
@@ -124,15 +116,6 @@ public class WebuiSwitch<T> extends Switch<T> {
 				if (result == null) result = caseMenuEntry(editStaticTextMenuEntry);
 				if (result == null) result = caseNamedDisplayElement(editStaticTextMenuEntry);
 				if (result == null) result = caseNamedElement(editStaticTextMenuEntry);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebuiPackage.DYNAMIC_MENU: {
-				DynamicMenu dynamicMenu = (DynamicMenu)theEObject;
-				T result = caseDynamicMenu(dynamicMenu);
-				if (result == null) result = caseMenu(dynamicMenu);
-				if (result == null) result = caseNamedDisplayElement(dynamicMenu);
-				if (result == null) result = caseNamedElement(dynamicMenu);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -691,21 +674,6 @@ public class WebuiSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Global Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Global Menu</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGlobalMenu(GlobalMenu object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Submenu Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -747,21 +715,6 @@ public class WebuiSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEditStaticTextMenuEntry(EditStaticTextMenuEntry object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dynamic Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dynamic Menu</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDynamicMenu(DynamicMenu object) {
 		return null;
 	}
 

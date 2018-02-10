@@ -19,7 +19,6 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getChildPages <em>Child Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getStyleClass <em>Style Class</em>}</li>
  * </ul>
  *
@@ -127,32 +126,6 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * @generated
 	 */
 	void setUriElement(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Context Menu</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Context Menu</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context Menu</em>' reference.
-	 * @see #setContextMenu(GlobalMenu)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getPage_ContextMenu()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	GlobalMenu getContextMenu();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.Page#getContextMenu <em>Context Menu</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Context Menu</em>' reference.
-	 * @see #getContextMenu()
-	 * @generated
-	 */
-	void setContextMenu(GlobalMenu value);
 
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.

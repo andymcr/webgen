@@ -25,8 +25,7 @@ import uk.ac.man.cs.mdsd.service.ServiceModel;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getBusiness <em>Business</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getImageManipulations <em>Image Manipulations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getPages <em>Pages</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getGlobalMenus <em>Global Menus</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getDynamicMenus <em>Dynamic Menus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getMenus <em>Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getApi <em>Api</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteName <em>Site Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteTitle <em>Site Title</em>}</li>
@@ -140,36 +139,20 @@ public interface WafModel extends EObject {
 	EList<Page> getPages();
 
 	/**
-	 * Returns the value of the '<em><b>Global Menus</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.GlobalMenu}.
+	 * Returns the value of the '<em><b>Menus</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.Menu}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Global Menus</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Menus</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Global Menus</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_GlobalMenus()
+	 * @return the value of the '<em>Menus</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_Menus()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<GlobalMenu> getGlobalMenus();
-
-	/**
-	 * Returns the value of the '<em><b>Dynamic Menus</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.DynamicMenu}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Dynamic Menus</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dynamic Menus</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_DynamicMenus()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<DynamicMenu> getDynamicMenus();
+	EList<Menu> getMenus();
 
 	/**
 	 * Returns the value of the '<em><b>Api</b></em>' reference.

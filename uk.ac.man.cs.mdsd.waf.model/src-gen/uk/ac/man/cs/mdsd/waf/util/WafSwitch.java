@@ -139,24 +139,6 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.GLOBAL_MENU: {
-				GlobalMenu globalMenu = (GlobalMenu)theEObject;
-				T result = caseGlobalMenu(globalMenu);
-				if (result == null) result = caseMenu(globalMenu);
-				if (result == null) result = caseNamedDisplayElement(globalMenu);
-				if (result == null) result = caseNamedElement(globalMenu);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.DYNAMIC_MENU: {
-				DynamicMenu dynamicMenu = (DynamicMenu)theEObject;
-				T result = caseDynamicMenu(dynamicMenu);
-				if (result == null) result = caseMenu(dynamicMenu);
-				if (result == null) result = caseNamedDisplayElement(dynamicMenu);
-				if (result == null) result = caseNamedElement(dynamicMenu);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WafPackage.MENU_ENTRY: {
 				MenuEntry menuEntry = (MenuEntry)theEObject;
 				T result = caseMenuEntry(menuEntry);
@@ -166,6 +148,7 @@ public class WafSwitch<T> extends Switch<T> {
 			case WafPackage.SUBMENU_ENTRY: {
 				SubmenuEntry submenuEntry = (SubmenuEntry)theEObject;
 				T result = caseSubmenuEntry(submenuEntry);
+				if (result == null) result = caseMenu(submenuEntry);
 				if (result == null) result = caseMenuEntry(submenuEntry);
 				if (result == null) result = caseNamedDisplayElement(submenuEntry);
 				if (result == null) result = caseNamedElement(submenuEntry);
@@ -876,36 +859,6 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMenu(Menu object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Global Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Global Menu</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGlobalMenu(GlobalMenu object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dynamic Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dynamic Menu</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDynamicMenu(DynamicMenu object) {
 		return null;
 	}
 

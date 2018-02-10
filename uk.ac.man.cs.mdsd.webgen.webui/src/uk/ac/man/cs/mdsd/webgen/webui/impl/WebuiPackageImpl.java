@@ -39,7 +39,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.DataUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DateField;
 import uk.ac.man.cs.mdsd.webgen.webui.DeleteAction;
 import uk.ac.man.cs.mdsd.webgen.webui.DetailsUnit;
-import uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.EditStaticTextMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.webui.EditUnit;
@@ -50,7 +49,6 @@ import uk.ac.man.cs.mdsd.webgen.webui.FeaturePathLabel;
 import uk.ac.man.cs.mdsd.webgen.webui.FeatureSupportAction;
 import uk.ac.man.cs.mdsd.webgen.webui.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.GalleryUnit;
-import uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu;
 import uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.ImageUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.IndexDisplayOption;
@@ -124,13 +122,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass globalMenuEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass submenuEntryEClass = null;
 
 	/**
@@ -146,13 +137,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	private EClass editStaticTextMenuEntryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dynamicMenuEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -671,7 +655,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebUI_GlobalMenus() {
+	public EReference getWebUI_Menus() {
 		return (EReference)webUIEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -680,7 +664,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebUI_DynamicMenus() {
+	public EReference getWebUI_Pages() {
 		return (EReference)webUIEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -689,17 +673,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWebUI_Pages() {
-		return (EReference)webUIEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getWebUI_DefaultDateFormat() {
-		return (EAttribute)webUIEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)webUIEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -708,7 +683,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getWebUI_DefaultTimeFormat() {
-		return (EAttribute)webUIEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)webUIEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -717,7 +692,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getWebUI_DefaultDateTimeFormat() {
-		return (EAttribute)webUIEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)webUIEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -726,7 +701,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getWebUI_DefaultMaximumUploadSize() {
-		return (EAttribute)webUIEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)webUIEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -735,7 +710,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getWebUI_InputTechnology() {
-		return (EAttribute)webUIEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)webUIEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -744,7 +719,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * @generated
 	 */
 	public EAttribute getWebUI_AjaxTechnology() {
-		return (EAttribute)webUIEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)webUIEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -824,24 +799,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMenuEntry_RequiresRole() {
-		return (EAttribute)menuEntryEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getGlobalMenu() {
-		return globalMenuEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSubmenuEntry() {
 		return submenuEntryEClass;
 	}
@@ -851,8 +808,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubmenuEntry_Submenu() {
-		return (EReference)submenuEntryEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSubmenuEntry_RequiresRole() {
+		return (EAttribute)submenuEntryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -889,51 +846,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 */
 	public EClass getEditStaticTextMenuEntry() {
 		return editStaticTextMenuEntryEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDynamicMenu() {
-		return dynamicMenuEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDynamicMenu_WebUI() {
-		return (EReference)dynamicMenuEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDynamicMenu_EntityOrView() {
-		return (EReference)dynamicMenuEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDynamicMenu_Selection() {
-		return (EReference)dynamicMenuEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDynamicMenu_Title() {
-		return (EReference)dynamicMenuEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1040,17 +952,8 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPage_ContextMenu() {
-		return (EReference)pageEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getPage_StyleClass() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3468,8 +3371,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		// Create classes and their features
 		webUIEClass = createEClass(WEB_UI);
 		createEReference(webUIEClass, WEB_UI__SERVICES);
-		createEReference(webUIEClass, WEB_UI__GLOBAL_MENUS);
-		createEReference(webUIEClass, WEB_UI__DYNAMIC_MENUS);
+		createEReference(webUIEClass, WEB_UI__MENUS);
 		createEReference(webUIEClass, WEB_UI__PAGES);
 		createEAttribute(webUIEClass, WEB_UI__DEFAULT_DATE_FORMAT);
 		createEAttribute(webUIEClass, WEB_UI__DEFAULT_TIME_FORMAT);
@@ -3487,24 +3389,15 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 
 		menuEntryEClass = createEClass(MENU_ENTRY);
 		createEReference(menuEntryEClass, MENU_ENTRY__PART_OF);
-		createEAttribute(menuEntryEClass, MENU_ENTRY__REQUIRES_ROLE);
-
-		globalMenuEClass = createEClass(GLOBAL_MENU);
 
 		submenuEntryEClass = createEClass(SUBMENU_ENTRY);
-		createEReference(submenuEntryEClass, SUBMENU_ENTRY__SUBMENU);
+		createEAttribute(submenuEntryEClass, SUBMENU_ENTRY__REQUIRES_ROLE);
 
 		actionMenuEntryEClass = createEClass(ACTION_MENU_ENTRY);
 		createEReference(actionMenuEntryEClass, ACTION_MENU_ENTRY__DESTINATION);
 		createEReference(actionMenuEntryEClass, ACTION_MENU_ENTRY__QUERY);
 
 		editStaticTextMenuEntryEClass = createEClass(EDIT_STATIC_TEXT_MENU_ENTRY);
-
-		dynamicMenuEClass = createEClass(DYNAMIC_MENU);
-		createEReference(dynamicMenuEClass, DYNAMIC_MENU__WEB_UI);
-		createEReference(dynamicMenuEClass, DYNAMIC_MENU__ENTITY_OR_VIEW);
-		createEReference(dynamicMenuEClass, DYNAMIC_MENU__SELECTION);
-		createEReference(dynamicMenuEClass, DYNAMIC_MENU__TITLE);
 
 		menuFeatureEClass = createEClass(MENU_FEATURE);
 
@@ -3520,7 +3413,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		createEReference(pageEClass, PAGE__PARENT_PAGE);
 		createEReference(pageEClass, PAGE__CHILD_PAGES);
 		createEAttribute(pageEClass, PAGE__URI_ELEMENT);
-		createEReference(pageEClass, PAGE__CONTEXT_MENU);
 		createEAttribute(pageEClass, PAGE__STYLE_CLASS);
 
 		pageLinkEClass = createEClass(PAGE_LINK);
@@ -3878,14 +3770,12 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 
 		// Add supertypes to classes
 		menuEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
-		globalMenuEClass.getESuperTypes().add(this.getMenu());
+		submenuEntryEClass.getESuperTypes().add(this.getMenu());
 		submenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
-		submenuEntryEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
 		actionMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
 		actionMenuEntryEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
 		editStaticTextMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
 		editStaticTextMenuEntryEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
-		dynamicMenuEClass.getESuperTypes().add(this.getMenu());
 		menuFeatureEClass.getESuperTypes().add(this.getMenuEntry());
 		pageEClass.getESuperTypes().add(theBasePackage.getNamedDisplayElement());
 		pageEClass.getESuperTypes().add(this.getUnitContainer());
@@ -3952,8 +3842,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(webUIEClass, WebUI.class, "WebUI", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWebUI_Services(), theServicePackage.getServices(), null, "services", null, 0, 1, WebUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWebUI_GlobalMenus(), this.getGlobalMenu(), null, "globalMenus", null, 0, -1, WebUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWebUI_DynamicMenus(), this.getDynamicMenu(), this.getDynamicMenu_WebUI(), "dynamicMenus", null, 0, -1, WebUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebUI_Menus(), this.getMenu(), null, "menus", null, 0, -1, WebUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebUI_Pages(), this.getPage(), this.getPage_WebUI(), "pages", null, 0, -1, WebUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebUI_DefaultDateFormat(), ecorePackage.getEString(), "defaultDateFormat", "jS F Y", 0, 1, WebUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebUI_DefaultTimeFormat(), ecorePackage.getEString(), "defaultTimeFormat", "G.i", 0, 1, WebUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -3962,7 +3851,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEAttribute(getWebUI_InputTechnology(), this.getInputTechnologies(), "inputTechnology", "Html", 0, 1, WebUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebUI_AjaxTechnology(), this.getAjaxTechnologies(), "ajaxTechnology", "None", 0, 1, WebUI.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(menuEClass, Menu.class, "Menu", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(menuEClass, Menu.class, "Menu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMenu_Entries(), this.getMenuEntry(), this.getMenuEntry_PartOf(), "entries", null, 0, -1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMenu_OmitCaption(), ecorePackage.getEBoolean(), "omitCaption", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMenu_CaptionClass(), ecorePackage.getEString(), "captionClass", "menu_caption", 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3971,24 +3860,15 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 
 		initEClass(menuEntryEClass, MenuEntry.class, "MenuEntry", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMenuEntry_PartOf(), this.getMenu(), this.getMenu_Entries(), "partOf", null, 1, 1, MenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getMenuEntry_RequiresRole(), ecorePackage.getEString(), "requiresRole", "", 0, 1, MenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(globalMenuEClass, GlobalMenu.class, "GlobalMenu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(submenuEntryEClass, SubmenuEntry.class, "SubmenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSubmenuEntry_Submenu(), this.getMenu(), null, "submenu", null, 1, 1, SubmenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSubmenuEntry_RequiresRole(), ecorePackage.getEString(), "requiresRole", "", 0, 1, SubmenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionMenuEntryEClass, ActionMenuEntry.class, "ActionMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActionMenuEntry_Destination(), this.getContentUnit(), null, "destination", null, 1, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getActionMenuEntry_Query(), this.getQuery(), null, "query", null, 0, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(editStaticTextMenuEntryEClass, EditStaticTextMenuEntry.class, "EditStaticTextMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(dynamicMenuEClass, DynamicMenu.class, "DynamicMenu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDynamicMenu_WebUI(), this.getWebUI(), this.getWebUI_DynamicMenus(), "webUI", null, 1, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDynamicMenu_EntityOrView(), thePersistencePackage.getEntityOrView(), null, "entityOrView", null, 1, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDynamicMenu_Selection(), theServicePackage.getSelection(), null, "selection", null, 1, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDynamicMenu_Title(), thePersistencePackage.getLabel(), null, "title", null, 0, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(menuFeatureEClass, MenuFeature.class, "MenuFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -4004,7 +3884,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		initEReference(getPage_ParentPage(), this.getPageLink(), null, "parentPage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getPage_ChildPages(), this.getPageLink(), this.getPageLink_TargetPage(), "childPages", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPage_ContextMenu(), this.getGlobalMenu(), null, "contextMenu", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPage_StyleClass(), ecorePackage.getEString(), "styleClass", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(pageLinkEClass, PageLink.class, "PageLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4375,12 +4254,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 			 "constraints", "pageNameUnique menuNameUnique "
 		   });	
 		addAnnotation
-		  (dynamicMenuEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "entriesMustBeFromSource onlyIncludeFeaturesOnce mustSelectSingleton titleFromEntityOrView canOnlyTitleWithSingletons"
-		   });	
-		addAnnotation
 		  (pageEClass, 
 		   source, 
 		   new String[] {
@@ -4456,16 +4329,6 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		   new String[] {
 			 "pageNameUnique", "pages->isUnique(name)",
 			 "menuNameUnique", "globalMenus->isUnique(name)"
-		   });	
-		addAnnotation
-		  (dynamicMenuEClass, 
-		   source, 
-		   new String[] {
-			 "entriesMustBeFromSource", "true",
-			 "onlyIncludeFeaturesOnce", "true",
-			 "mustSelectSingleton", "not selection.oclIsUndefined() implies selection.limit = 1",
-			 "titleFromEntityOrView", "not title.oclIsUndefined() and not entityOrView.oclIsUndefined() implies\r\n\tentityOrView.features->includes(title)",
-			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies\r\n\tif title.oclIsKindOf(persistence::EntityFeature) then\r\n\t\ttitle.oclAsType(persistence::EntityFeature).cardinality <> persistence::Cardinality::Many\r\n\telse if title.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n\telse if title.oclIsKindOf(persistence::EncapsulatedAssociation) then\r\n\t\ttitle.oclAsType(persistence::EncapsulatedAssociation).cardinality <> persistence::Cardinality::Many\r\n\telse\r\n\t\tfalse\r\n\tendif endif endif"
 		   });	
 		addAnnotation
 		  (pageEClass, 

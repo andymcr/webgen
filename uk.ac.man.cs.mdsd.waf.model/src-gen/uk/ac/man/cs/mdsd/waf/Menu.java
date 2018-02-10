@@ -23,7 +23,7 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getMenu()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Menu extends NamedDisplayElement {

@@ -119,26 +119,26 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.Menu} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GlobalMenuItemProvider globalMenuItemProvider;
+	protected MenuItemProvider menuItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.Menu}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createGlobalMenuAdapter() {
-		if (globalMenuItemProvider == null) {
-			globalMenuItemProvider = new GlobalMenuItemProvider(this);
+	public Adapter createMenuAdapter() {
+		if (menuItemProvider == null) {
+			menuItemProvider = new MenuItemProvider(this);
 		}
 
-		return globalMenuItemProvider;
+		return menuItemProvider;
 	}
 
 	/**
@@ -208,29 +208,6 @@ public class WebuiItemProviderAdapterFactory extends WebuiAdapterFactory impleme
 		}
 
 		return editStaticTextMenuEntryItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DynamicMenuItemProvider dynamicMenuItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDynamicMenuAdapter() {
-		if (dynamicMenuItemProvider == null) {
-			dynamicMenuItemProvider = new DynamicMenuItemProvider(this);
-		}
-
-		return dynamicMenuItemProvider;
 	}
 
 	/**

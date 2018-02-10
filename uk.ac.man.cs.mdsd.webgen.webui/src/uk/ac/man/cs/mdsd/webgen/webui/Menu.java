@@ -23,7 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getMenu()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Menu extends NamedDisplayElement {

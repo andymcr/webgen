@@ -109,22 +109,13 @@ public interface WafPackage extends EPackage {
 	int WAF_MODEL__PAGES = 3;
 
 	/**
-	 * The feature id for the '<em><b>Global Menus</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Menus</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__GLOBAL_MENUS = 4;
-
-	/**
-	 * The feature id for the '<em><b>Dynamic Menus</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WAF_MODEL__DYNAMIC_MENUS = 5;
+	int WAF_MODEL__MENUS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Api</b></em>' reference.
@@ -133,7 +124,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__API = 6;
+	int WAF_MODEL__API = 5;
 
 	/**
 	 * The feature id for the '<em><b>Site Name</b></em>' attribute.
@@ -142,7 +133,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__SITE_NAME = 7;
+	int WAF_MODEL__SITE_NAME = 6;
 
 	/**
 	 * The feature id for the '<em><b>Site Title</b></em>' attribute.
@@ -151,7 +142,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__SITE_TITLE = 8;
+	int WAF_MODEL__SITE_TITLE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Webmaster Email</b></em>' attribute.
@@ -160,7 +151,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__WEBMASTER_EMAIL = 9;
+	int WAF_MODEL__WEBMASTER_EMAIL = 8;
 
 	/**
 	 * The feature id for the '<em><b>Copyright Text</b></em>' attribute.
@@ -169,7 +160,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__COPYRIGHT_TEXT = 10;
+	int WAF_MODEL__COPYRIGHT_TEXT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Meta Description</b></em>' attribute.
@@ -178,7 +169,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__META_DESCRIPTION = 11;
+	int WAF_MODEL__META_DESCRIPTION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Logo Image</b></em>' attribute.
@@ -187,7 +178,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__LOGO_IMAGE = 12;
+	int WAF_MODEL__LOGO_IMAGE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Logo Filters</b></em>' reference.
@@ -196,7 +187,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__LOGO_FILTERS = 13;
+	int WAF_MODEL__LOGO_FILTERS = 12;
 
 	/**
 	 * The feature id for the '<em><b>Framework Technology</b></em>' attribute.
@@ -205,7 +196,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__FRAMEWORK_TECHNOLOGY = 14;
+	int WAF_MODEL__FRAMEWORK_TECHNOLOGY = 13;
 
 	/**
 	 * The feature id for the '<em><b>Input Technology</b></em>' attribute.
@@ -214,7 +205,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__INPUT_TECHNOLOGY = 15;
+	int WAF_MODEL__INPUT_TECHNOLOGY = 14;
 
 	/**
 	 * The feature id for the '<em><b>Ajax Technology</b></em>' attribute.
@@ -223,7 +214,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__AJAX_TECHNOLOGY = 16;
+	int WAF_MODEL__AJAX_TECHNOLOGY = 15;
 
 	/**
 	 * The feature id for the '<em><b>Authentication</b></em>' containment reference.
@@ -232,7 +223,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__AUTHENTICATION = 17;
+	int WAF_MODEL__AUTHENTICATION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
@@ -241,7 +232,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__CAPTCHA_SITE_KEY = 18;
+	int WAF_MODEL__CAPTCHA_SITE_KEY = 17;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
@@ -250,7 +241,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__CAPTCHA_SECRET_KEY = 19;
+	int WAF_MODEL__CAPTCHA_SECRET_KEY = 18;
 
 	/**
 	 * The feature id for the '<em><b>Text Editor URL</b></em>' attribute.
@@ -259,7 +250,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__TEXT_EDITOR_URL = 20;
+	int WAF_MODEL__TEXT_EDITOR_URL = 19;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -268,7 +259,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__TOP_NAVIGATION_ID = 21;
+	int WAF_MODEL__TOP_NAVIGATION_ID = 20;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -277,7 +268,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__SIDE_MENU = 22;
+	int WAF_MODEL__SIDE_MENU = 21;
 
 	/**
 	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
@@ -286,7 +277,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__SITE_TEMPLATE = 23;
+	int WAF_MODEL__SITE_TEMPLATE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -295,7 +286,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__STATIC_UNITS_EDITABLE = 24;
+	int WAF_MODEL__STATIC_UNITS_EDITABLE = 23;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -304,7 +295,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL_FEATURE_COUNT = 25;
+	int WAF_MODEL_FEATURE_COUNT = 24;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -973,215 +964,6 @@ public interface WafPackage extends EPackage {
 	int MENU_OPERATION_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.GlobalMenuImpl <em>Global Menu</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.GlobalMenuImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getGlobalMenu()
-	 * @generated
-	 */
-	int GLOBAL_MENU = 10;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GLOBAL_MENU__NAME = MENU__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GLOBAL_MENU__DISPLAY_LABEL = MENU__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Entries</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GLOBAL_MENU__ENTRIES = MENU__ENTRIES;
-
-	/**
-	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GLOBAL_MENU__OMIT_CAPTION = MENU__OMIT_CAPTION;
-
-	/**
-	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GLOBAL_MENU__CAPTION_CLASS = MENU__CAPTION_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GLOBAL_MENU__STYLE_CLASS = MENU__STYLE_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GLOBAL_MENU__LAYOUT_CLASS = MENU__LAYOUT_CLASS;
-
-	/**
-	 * The number of structural features of the '<em>Global Menu</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GLOBAL_MENU_FEATURE_COUNT = MENU_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Global Menu</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GLOBAL_MENU_OPERATION_COUNT = MENU_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.DynamicMenuImpl <em>Dynamic Menu</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.DynamicMenuImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDynamicMenu()
-	 * @generated
-	 */
-	int DYNAMIC_MENU = 11;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__NAME = MENU__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__DISPLAY_LABEL = MENU__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Entries</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__ENTRIES = MENU__ENTRIES;
-
-	/**
-	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__OMIT_CAPTION = MENU__OMIT_CAPTION;
-
-	/**
-	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__CAPTION_CLASS = MENU__CAPTION_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__STYLE_CLASS = MENU__STYLE_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__LAYOUT_CLASS = MENU__LAYOUT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Entity Or View</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__ENTITY_OR_VIEW = MENU_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Selection</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__SELECTION = MENU_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Title</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__TITLE = MENU_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Dynamic Menu</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU_FEATURE_COUNT = MENU_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Dynamic Menu</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU_OPERATION_COUNT = MENU_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.MenuEntryImpl <em>Menu Entry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1189,7 +971,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getMenuEntry()
 	 * @generated
 	 */
-	int MENU_ENTRY = 12;
+	int MENU_ENTRY = 10;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1201,22 +983,13 @@ public interface WafPackage extends EPackage {
 	int MENU_ENTRY__PART_OF = 0;
 
 	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MENU_ENTRY__REQUIRES_ROLE = 1;
-
-	/**
 	 * The number of structural features of the '<em>Menu Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_ENTRY_FEATURE_COUNT = 2;
+	int MENU_ENTRY_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Menu Entry</em>' class.
@@ -1235,25 +1008,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSubmenuEntry()
 	 * @generated
 	 */
-	int SUBMENU_ENTRY = 13;
-
-	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBMENU_ENTRY__PART_OF = MENU_ENTRY__PART_OF;
-
-	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBMENU_ENTRY__REQUIRES_ROLE = MENU_ENTRY__REQUIRES_ROLE;
+	int SUBMENU_ENTRY = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1262,7 +1017,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBMENU_ENTRY__NAME = MENU_ENTRY_FEATURE_COUNT + 0;
+	int SUBMENU_ENTRY__NAME = MENU__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -1271,16 +1026,70 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBMENU_ENTRY__DISPLAY_LABEL = MENU_ENTRY_FEATURE_COUNT + 1;
+	int SUBMENU_ENTRY__DISPLAY_LABEL = MENU__DISPLAY_LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Submenu</b></em>' containment reference.
+	 * The feature id for the '<em><b>Entries</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBMENU_ENTRY__SUBMENU = MENU_ENTRY_FEATURE_COUNT + 2;
+	int SUBMENU_ENTRY__ENTRIES = MENU__ENTRIES;
+
+	/**
+	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBMENU_ENTRY__OMIT_CAPTION = MENU__OMIT_CAPTION;
+
+	/**
+	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBMENU_ENTRY__CAPTION_CLASS = MENU__CAPTION_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBMENU_ENTRY__STYLE_CLASS = MENU__STYLE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBMENU_ENTRY__LAYOUT_CLASS = MENU__LAYOUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBMENU_ENTRY__PART_OF = MENU_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBMENU_ENTRY__REQUIRES_ROLE = MENU_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Submenu Entry</em>' class.
@@ -1289,7 +1098,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBMENU_ENTRY_FEATURE_COUNT = MENU_ENTRY_FEATURE_COUNT + 3;
+	int SUBMENU_ENTRY_FEATURE_COUNT = MENU_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Submenu Entry</em>' class.
@@ -1298,7 +1107,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBMENU_ENTRY_OPERATION_COUNT = MENU_ENTRY_OPERATION_COUNT + 0;
+	int SUBMENU_ENTRY_OPERATION_COUNT = MENU_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ActionMenuEntryImpl <em>Action Menu Entry</em>}' class.
@@ -1308,7 +1117,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getActionMenuEntry()
 	 * @generated
 	 */
-	int ACTION_MENU_ENTRY = 14;
+	int ACTION_MENU_ENTRY = 12;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1318,15 +1127,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTION_MENU_ENTRY__PART_OF = MENU_ENTRY__PART_OF;
-
-	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_MENU_ENTRY__REQUIRES_ROLE = MENU_ENTRY__REQUIRES_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1390,7 +1190,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getEditStaticTextMenuEntry()
 	 * @generated
 	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY = 15;
+	int EDIT_STATIC_TEXT_MENU_ENTRY = 13;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1400,15 +1200,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int EDIT_STATIC_TEXT_MENU_ENTRY__PART_OF = MENU_ENTRY__PART_OF;
-
-	/**
-	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY__REQUIRES_ROLE = MENU_ENTRY__REQUIRES_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1454,7 +1245,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPage()
 	 * @generated
 	 */
-	int PAGE = 16;
+	int PAGE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1511,22 +1302,13 @@ public interface WafPackage extends EPackage {
 	int PAGE__CHILD_PAGES = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Context Menu</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__CONTEXT_MENU = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__URI_ELEMENT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int PAGE__URI_ELEMENT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -1535,7 +1317,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int PAGE__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Page</em>' class.
@@ -1544,7 +1326,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int PAGE_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Page</em>' class.
@@ -1563,7 +1345,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getQuery()
 	 * @generated
 	 */
-	int QUERY = 17;
+	int QUERY = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1618,7 +1400,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getQueryParameter()
 	 * @generated
 	 */
-	int QUERY_PARAMETER = 18;
+	int QUERY_PARAMETER = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1673,7 +1455,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitContainer()
 	 * @generated
 	 */
-	int UNIT_CONTAINER = 19;
+	int UNIT_CONTAINER = 17;
 
 	/**
 	 * The feature id for the '<em><b>Units</b></em>' containment reference list.
@@ -1710,7 +1492,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getContentUnit()
 	 * @generated
 	 */
-	int CONTENT_UNIT = 20;
+	int CONTENT_UNIT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1846,7 +1628,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRouteActual()
 	 * @generated
 	 */
-	int ROUTE_ACTUAL = 21;
+	int ROUTE_ACTUAL = 19;
 
 	/**
 	 * The feature id for the '<em><b>Route Parameter</b></em>' reference.
@@ -1892,7 +1674,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getStaticUnit()
 	 * @generated
 	 */
-	int STATIC_UNIT = 22;
+	int STATIC_UNIT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2046,7 +1828,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDynamicUnit()
 	 * @generated
 	 */
-	int DYNAMIC_UNIT = 23;
+	int DYNAMIC_UNIT = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2272,7 +2054,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitSupportAction()
 	 * @generated
 	 */
-	int UNIT_SUPPORT_ACTION = 24;
+	int UNIT_SUPPORT_ACTION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2336,7 +2118,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitField()
 	 * @generated
 	 */
-	int UNIT_FIELD = 25;
+	int UNIT_FIELD = 23;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2445,7 +2227,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitFeature()
 	 * @generated
 	 */
-	int UNIT_FEATURE = 26;
+	int UNIT_FEATURE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2653,7 +2435,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitAttribute()
 	 * @generated
 	 */
-	int UNIT_ATTRIBUTE = 27;
+	int UNIT_ATTRIBUTE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2915,7 +2697,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitAssociation()
 	 * @generated
 	 */
-	int UNIT_ASSOCIATION = 28;
+	int UNIT_ASSOCIATION = 26;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -3186,7 +2968,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAssociationReference()
 	 * @generated
 	 */
-	int ASSOCIATION_REFERENCE = 29;
+	int ASSOCIATION_REFERENCE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3250,7 +3032,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPath()
 	 * @generated
 	 */
-	int CHILD_PATH = 30;
+	int CHILD_PATH = 28;
 
 	/**
 	 * The number of structural features of the '<em>Child Path</em>' class.
@@ -3278,7 +3060,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAttribute()
 	 * @generated
 	 */
-	int CHILD_PATH_ATTRIBUTE = 31;
+	int CHILD_PATH_ATTRIBUTE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3324,7 +3106,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathAssociation()
 	 * @generated
 	 */
-	int CHILD_PATH_ASSOCIATION = 32;
+	int CHILD_PATH_ASSOCIATION = 30;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3388,7 +3170,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePath()
 	 * @generated
 	 */
-	int FEATURE_PATH = 33;
+	int FEATURE_PATH = 31;
 
 	/**
 	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
@@ -3425,7 +3207,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAttribute()
 	 * @generated
 	 */
-	int FEATURE_PATH_ATTRIBUTE = 34;
+	int FEATURE_PATH_ATTRIBUTE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
@@ -3480,7 +3262,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAssociation()
 	 * @generated
 	 */
-	int FEATURE_PATH_ASSOCIATION = 35;
+	int FEATURE_PATH_ASSOCIATION = 33;
 
 	/**
 	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
@@ -3553,7 +3335,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathLabel()
 	 * @generated
 	 */
-	int FEATURE_PATH_LABEL = 36;
+	int FEATURE_PATH_LABEL = 34;
 
 	/**
 	 * The feature id for the '<em><b>Suffixes</b></em>' attribute list.
@@ -3608,7 +3390,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInterfaceField()
 	 * @generated
 	 */
-	int INTERFACE_FIELD = 37;
+	int INTERFACE_FIELD = 35;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3789,7 +3571,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDataTypeField()
 	 * @generated
 	 */
-	int DATA_TYPE_FIELD = 38;
+	int DATA_TYPE_FIELD = 36;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4006,7 +3788,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDateField()
 	 * @generated
 	 */
-	int DATE_FIELD = 39;
+	int DATE_FIELD = 37;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4205,7 +3987,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCaptchaField()
 	 * @generated
 	 */
-	int CAPTCHA_FIELD = 40;
+	int CAPTCHA_FIELD = 38;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4386,7 +4168,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectableUnit()
 	 * @generated
 	 */
-	int SELECTABLE_UNIT = 41;
+	int SELECTABLE_UNIT = 39;
 
 	/**
 	 * The feature id for the '<em><b>Selectors</b></em>' reference list.
@@ -4423,7 +4205,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSingletonUnit()
 	 * @generated
 	 */
-	int SINGLETON_UNIT = 42;
+	int SINGLETON_UNIT = 40;
 
 	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference.
@@ -4460,7 +4242,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionUnit()
 	 * @generated
 	 */
-	int COLLECTION_UNIT = 43;
+	int COLLECTION_UNIT = 41;
 
 	/**
 	 * The feature id for the '<em><b>Selectors</b></em>' reference list.
@@ -4731,7 +4513,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getEditUnit()
 	 * @generated
 	 */
-	int EDIT_UNIT = 44;
+	int EDIT_UNIT = 42;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5038,7 +4820,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCreateUnit()
 	 * @generated
 	 */
-	int CREATE_UNIT = 45;
+	int CREATE_UNIT = 43;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5345,7 +5127,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCreateUpdateUnit()
 	 * @generated
 	 */
-	int CREATE_UPDATE_UNIT = 46;
+	int CREATE_UPDATE_UNIT = 44;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5679,7 +5461,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getMapUnit()
 	 * @generated
 	 */
-	int MAP_UNIT = 47;
+	int MAP_UNIT = 45;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6031,7 +5813,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUpdateUnit()
 	 * @generated
 	 */
-	int UPDATE_UNIT = 48;
+	int UPDATE_UNIT = 46;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6347,7 +6129,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDataUnit()
 	 * @generated
 	 */
-	int DATA_UNIT = 49;
+	int DATA_UNIT = 47;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6582,7 +6364,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDetailsUnit()
 	 * @generated
 	 */
-	int DETAILS_UNIT = 50;
+	int DETAILS_UNIT = 48;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6853,7 +6635,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexUnit()
 	 * @generated
 	 */
-	int INDEX_UNIT = 51;
+	int INDEX_UNIT = 49;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7367,7 +7149,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexGridUnit()
 	 * @generated
 	 */
-	int INDEX_GRID_UNIT = 52;
+	int INDEX_GRID_UNIT = 50;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7881,7 +7663,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexPageDirectionUnit()
 	 * @generated
 	 */
-	int INDEX_PAGE_DIRECTION_UNIT = 53;
+	int INDEX_PAGE_DIRECTION_UNIT = 51;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8395,7 +8177,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexLineDirectionUnit()
 	 * @generated
 	 */
-	int INDEX_LINE_DIRECTION_UNIT = 54;
+	int INDEX_LINE_DIRECTION_UNIT = 52;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8909,7 +8691,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getControlUnit()
 	 * @generated
 	 */
-	int CONTROL_UNIT = 55;
+	int CONTROL_UNIT = 53;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9162,7 +8944,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSearchUnit()
 	 * @generated
 	 */
-	int SEARCH_UNIT = 56;
+	int SEARCH_UNIT = 54;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9424,7 +9206,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getImageUnit()
 	 * @generated
 	 */
-	int IMAGE_UNIT = 57;
+	int IMAGE_UNIT = 55;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9947,7 +9729,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getImageIndexUnit()
 	 * @generated
 	 */
-	int IMAGE_INDEX_UNIT = 58;
+	int IMAGE_INDEX_UNIT = 56;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10524,7 +10306,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSliderUnit()
 	 * @generated
 	 */
-	int SLIDER_UNIT = 59;
+	int SLIDER_UNIT = 57;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11065,7 +10847,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getGalleryUnit()
 	 * @generated
 	 */
-	int GALLERY_UNIT = 60;
+	int GALLERY_UNIT = 58;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11615,7 +11397,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 61;
+	int AUTHENTICATION_UNIT = 59;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
@@ -11643,7 +11425,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 62;
+	int REGISTRATION_UNIT = 60;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11959,7 +11741,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 63;
+	int LOGIN_UNIT = 61;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -12257,7 +12039,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 64;
+	int FORGOTTEN_PASSWORD_UNIT = 62;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -12528,7 +12310,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 65;
+	int INLINE_ACTION_CONTAINER = 63;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -12565,7 +12347,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 66;
+	int INLINE_ACTION = 64;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -12674,7 +12456,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 67;
+	int SELECT_ACTION = 65;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -12801,7 +12583,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 68;
+	int DELETE_ACTION = 66;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -12955,7 +12737,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 69;
+	int FEATURE_SUPPORT_ACTION = 67;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -13118,7 +12900,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getBadge()
 	 * @generated
 	 */
-	int BADGE = 70;
+	int BADGE = 68;
 
 	/**
 	 * The feature id for the '<em><b>Icon Name</b></em>' attribute.
@@ -13182,7 +12964,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 71;
+	int FRAMEWORK_TECHNOLOGIES = 69;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.InputTechnologies <em>Input Technologies</em>}' enum.
@@ -13192,7 +12974,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInputTechnologies()
 	 * @generated
 	 */
-	int INPUT_TECHNOLOGIES = 72;
+	int INPUT_TECHNOLOGIES = 70;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -13202,7 +12984,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 73;
+	int AJAX_TECHNOLOGIES = 71;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
@@ -13212,7 +12994,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPES = 74;
+	int AUTHENTICATION_KEY_TYPES = 72;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.BackgroundPositions <em>Background Positions</em>}' enum.
@@ -13222,7 +13004,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getBackgroundPositions()
 	 * @generated
 	 */
-	int BACKGROUND_POSITIONS = 75;
+	int BACKGROUND_POSITIONS = 73;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.ThumbnailModes <em>Thumbnail Modes</em>}' enum.
@@ -13232,7 +13014,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getThumbnailModes()
 	 * @generated
 	 */
-	int THUMBNAIL_MODES = 76;
+	int THUMBNAIL_MODES = 74;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -13242,7 +13024,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 77;
+	int COLLECTION_DISPLAY_OPTIONS = 75;
 
 
 	/**
@@ -13300,26 +13082,15 @@ public interface WafPackage extends EPackage {
 	EReference getWafModel_Pages();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.WafModel#getGlobalMenus <em>Global Menus</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.WafModel#getMenus <em>Menus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Global Menus</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.WafModel#getGlobalMenus()
+	 * @return the meta object for the containment reference list '<em>Menus</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.WafModel#getMenus()
 	 * @see #getWafModel()
 	 * @generated
 	 */
-	EReference getWafModel_GlobalMenus();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.WafModel#getDynamicMenus <em>Dynamic Menus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Dynamic Menus</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.WafModel#getDynamicMenus()
-	 * @see #getWafModel()
-	 * @generated
-	 */
-	EReference getWafModel_DynamicMenus();
+	EReference getWafModel_Menus();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.WafModel#getApi <em>Api</em>}'.
@@ -13973,59 +13744,6 @@ public interface WafPackage extends EPackage {
 	EAttribute getMenu_LayoutClass();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.GlobalMenu <em>Global Menu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Global Menu</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.GlobalMenu
-	 * @generated
-	 */
-	EClass getGlobalMenu();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.DynamicMenu <em>Dynamic Menu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Dynamic Menu</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.DynamicMenu
-	 * @generated
-	 */
-	EClass getDynamicMenu();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.DynamicMenu#getEntityOrView <em>Entity Or View</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Entity Or View</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.DynamicMenu#getEntityOrView()
-	 * @see #getDynamicMenu()
-	 * @generated
-	 */
-	EReference getDynamicMenu_EntityOrView();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.DynamicMenu#getSelection <em>Selection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Selection</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.DynamicMenu#getSelection()
-	 * @see #getDynamicMenu()
-	 * @generated
-	 */
-	EReference getDynamicMenu_Selection();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.DynamicMenu#getTitle <em>Title</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Title</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.DynamicMenu#getTitle()
-	 * @see #getDynamicMenu()
-	 * @generated
-	 */
-	EReference getDynamicMenu_Title();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.MenuEntry <em>Menu Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14047,17 +13765,6 @@ public interface WafPackage extends EPackage {
 	EReference getMenuEntry_PartOf();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.MenuEntry#getRequiresRole <em>Requires Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Requires Role</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.MenuEntry#getRequiresRole()
-	 * @see #getMenuEntry()
-	 * @generated
-	 */
-	EAttribute getMenuEntry_RequiresRole();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.SubmenuEntry <em>Submenu Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14068,15 +13775,15 @@ public interface WafPackage extends EPackage {
 	EClass getSubmenuEntry();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.SubmenuEntry#getSubmenu <em>Submenu</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.SubmenuEntry#getRequiresRole <em>Requires Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Submenu</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.SubmenuEntry#getSubmenu()
+	 * @return the meta object for the attribute '<em>Requires Role</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.SubmenuEntry#getRequiresRole()
 	 * @see #getSubmenuEntry()
 	 * @generated
 	 */
-	EReference getSubmenuEntry_Submenu();
+	EAttribute getSubmenuEntry_RequiresRole();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ActionMenuEntry <em>Action Menu Entry</em>}'.
@@ -14162,17 +13869,6 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPage_ChildPages();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.Page#getContextMenu <em>Context Menu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Context Menu</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.Page#getContextMenu()
-	 * @see #getPage()
-	 * @generated
-	 */
-	EReference getPage_ContextMenu();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.Page#getUriElement <em>Uri Element</em>}'.
@@ -16863,20 +16559,12 @@ public interface WafPackage extends EPackage {
 		EReference WAF_MODEL__PAGES = eINSTANCE.getWafModel_Pages();
 
 		/**
-		 * The meta object literal for the '<em><b>Global Menus</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Menus</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WAF_MODEL__GLOBAL_MENUS = eINSTANCE.getWafModel_GlobalMenus();
-
-		/**
-		 * The meta object literal for the '<em><b>Dynamic Menus</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference WAF_MODEL__DYNAMIC_MENUS = eINSTANCE.getWafModel_DynamicMenus();
+		EReference WAF_MODEL__MENUS = eINSTANCE.getWafModel_Menus();
 
 		/**
 		 * The meta object literal for the '<em><b>Api</b></em>' reference feature.
@@ -17377,50 +17065,6 @@ public interface WafPackage extends EPackage {
 		EAttribute MENU__LAYOUT_CLASS = eINSTANCE.getMenu_LayoutClass();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.GlobalMenuImpl <em>Global Menu</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.GlobalMenuImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getGlobalMenu()
-		 * @generated
-		 */
-		EClass GLOBAL_MENU = eINSTANCE.getGlobalMenu();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.DynamicMenuImpl <em>Dynamic Menu</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.DynamicMenuImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDynamicMenu()
-		 * @generated
-		 */
-		EClass DYNAMIC_MENU = eINSTANCE.getDynamicMenu();
-
-		/**
-		 * The meta object literal for the '<em><b>Entity Or View</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DYNAMIC_MENU__ENTITY_OR_VIEW = eINSTANCE.getDynamicMenu_EntityOrView();
-
-		/**
-		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DYNAMIC_MENU__SELECTION = eINSTANCE.getDynamicMenu_Selection();
-
-		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DYNAMIC_MENU__TITLE = eINSTANCE.getDynamicMenu_Title();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.MenuEntryImpl <em>Menu Entry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -17439,14 +17083,6 @@ public interface WafPackage extends EPackage {
 		EReference MENU_ENTRY__PART_OF = eINSTANCE.getMenuEntry_PartOf();
 
 		/**
-		 * The meta object literal for the '<em><b>Requires Role</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MENU_ENTRY__REQUIRES_ROLE = eINSTANCE.getMenuEntry_RequiresRole();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.SubmenuEntryImpl <em>Submenu Entry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -17457,12 +17093,12 @@ public interface WafPackage extends EPackage {
 		EClass SUBMENU_ENTRY = eINSTANCE.getSubmenuEntry();
 
 		/**
-		 * The meta object literal for the '<em><b>Submenu</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Requires Role</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SUBMENU_ENTRY__SUBMENU = eINSTANCE.getSubmenuEntry_Submenu();
+		EAttribute SUBMENU_ENTRY__REQUIRES_ROLE = eINSTANCE.getSubmenuEntry_RequiresRole();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ActionMenuEntryImpl <em>Action Menu Entry</em>}' class.
@@ -17533,14 +17169,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PAGE__CHILD_PAGES = eINSTANCE.getPage_ChildPages();
-
-		/**
-		 * The meta object literal for the '<em><b>Context Menu</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PAGE__CONTEXT_MENU = eINSTANCE.getPage_ContextMenu();
 
 		/**
 		 * The meta object literal for the '<em><b>Uri Element</b></em>' attribute feature.

@@ -19,9 +19,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.service.Services;
 import uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies;
-import uk.ac.man.cs.mdsd.webgen.webui.DynamicMenu;
-import uk.ac.man.cs.mdsd.webgen.webui.GlobalMenu;
 import uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies;
+import uk.ac.man.cs.mdsd.webgen.webui.Menu;
 import uk.ac.man.cs.mdsd.webgen.webui.Page;
 import uk.ac.man.cs.mdsd.webgen.webui.WebUI;
 import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
@@ -35,8 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebUIImpl#getServices <em>Services</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebUIImpl#getGlobalMenus <em>Global Menus</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebUIImpl#getDynamicMenus <em>Dynamic Menus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebUIImpl#getMenus <em>Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebUIImpl#getPages <em>Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebUIImpl#getDefaultDateFormat <em>Default Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.WebUIImpl#getDefaultTimeFormat <em>Default Time Format</em>}</li>
@@ -60,24 +58,14 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	protected Services services;
 
 	/**
-	 * The cached value of the '{@link #getGlobalMenus() <em>Global Menus</em>}' containment reference list.
+	 * The cached value of the '{@link #getMenus() <em>Menus</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGlobalMenus()
+	 * @see #getMenus()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<GlobalMenu> globalMenus;
-
-	/**
-	 * The cached value of the '{@link #getDynamicMenus() <em>Dynamic Menus</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDynamicMenus()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DynamicMenu> dynamicMenus;
+	protected EList<Menu> menus;
 
 	/**
 	 * The cached value of the '{@link #getPages() <em>Pages</em>}' containment reference list.
@@ -271,23 +259,11 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<GlobalMenu> getGlobalMenus() {
-		if (globalMenus == null) {
-			globalMenus = new EObjectContainmentEList<GlobalMenu>(GlobalMenu.class, this, WebuiPackage.WEB_UI__GLOBAL_MENUS);
+	public EList<Menu> getMenus() {
+		if (menus == null) {
+			menus = new EObjectContainmentEList<Menu>(Menu.class, this, WebuiPackage.WEB_UI__MENUS);
 		}
-		return globalMenus;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<DynamicMenu> getDynamicMenus() {
-		if (dynamicMenus == null) {
-			dynamicMenus = new EObjectContainmentWithInverseEList<DynamicMenu>(DynamicMenu.class, this, WebuiPackage.WEB_UI__DYNAMIC_MENUS, WebuiPackage.DYNAMIC_MENU__WEB_UI);
-		}
-		return dynamicMenus;
+		return menus;
 	}
 
 	/**
@@ -437,8 +413,6 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebuiPackage.WEB_UI__DYNAMIC_MENUS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDynamicMenus()).basicAdd(otherEnd, msgs);
 			case WebuiPackage.WEB_UI__PAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPages()).basicAdd(otherEnd, msgs);
 		}
@@ -453,10 +427,8 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebuiPackage.WEB_UI__GLOBAL_MENUS:
-				return ((InternalEList<?>)getGlobalMenus()).basicRemove(otherEnd, msgs);
-			case WebuiPackage.WEB_UI__DYNAMIC_MENUS:
-				return ((InternalEList<?>)getDynamicMenus()).basicRemove(otherEnd, msgs);
+			case WebuiPackage.WEB_UI__MENUS:
+				return ((InternalEList<?>)getMenus()).basicRemove(otherEnd, msgs);
 			case WebuiPackage.WEB_UI__PAGES:
 				return ((InternalEList<?>)getPages()).basicRemove(otherEnd, msgs);
 		}
@@ -474,10 +446,8 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 			case WebuiPackage.WEB_UI__SERVICES:
 				if (resolve) return getServices();
 				return basicGetServices();
-			case WebuiPackage.WEB_UI__GLOBAL_MENUS:
-				return getGlobalMenus();
-			case WebuiPackage.WEB_UI__DYNAMIC_MENUS:
-				return getDynamicMenus();
+			case WebuiPackage.WEB_UI__MENUS:
+				return getMenus();
 			case WebuiPackage.WEB_UI__PAGES:
 				return getPages();
 			case WebuiPackage.WEB_UI__DEFAULT_DATE_FORMAT:
@@ -508,13 +478,9 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 			case WebuiPackage.WEB_UI__SERVICES:
 				setServices((Services)newValue);
 				return;
-			case WebuiPackage.WEB_UI__GLOBAL_MENUS:
-				getGlobalMenus().clear();
-				getGlobalMenus().addAll((Collection<? extends GlobalMenu>)newValue);
-				return;
-			case WebuiPackage.WEB_UI__DYNAMIC_MENUS:
-				getDynamicMenus().clear();
-				getDynamicMenus().addAll((Collection<? extends DynamicMenu>)newValue);
+			case WebuiPackage.WEB_UI__MENUS:
+				getMenus().clear();
+				getMenus().addAll((Collection<? extends Menu>)newValue);
 				return;
 			case WebuiPackage.WEB_UI__PAGES:
 				getPages().clear();
@@ -553,11 +519,8 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 			case WebuiPackage.WEB_UI__SERVICES:
 				setServices((Services)null);
 				return;
-			case WebuiPackage.WEB_UI__GLOBAL_MENUS:
-				getGlobalMenus().clear();
-				return;
-			case WebuiPackage.WEB_UI__DYNAMIC_MENUS:
-				getDynamicMenus().clear();
+			case WebuiPackage.WEB_UI__MENUS:
+				getMenus().clear();
 				return;
 			case WebuiPackage.WEB_UI__PAGES:
 				getPages().clear();
@@ -594,10 +557,8 @@ public class WebUIImpl extends MinimalEObjectImpl.Container implements WebUI {
 		switch (featureID) {
 			case WebuiPackage.WEB_UI__SERVICES:
 				return services != null;
-			case WebuiPackage.WEB_UI__GLOBAL_MENUS:
-				return globalMenus != null && !globalMenus.isEmpty();
-			case WebuiPackage.WEB_UI__DYNAMIC_MENUS:
-				return dynamicMenus != null && !dynamicMenus.isEmpty();
+			case WebuiPackage.WEB_UI__MENUS:
+				return menus != null && !menus.isEmpty();
 			case WebuiPackage.WEB_UI__PAGES:
 				return pages != null && !pages.isEmpty();
 			case WebuiPackage.WEB_UI__DEFAULT_DATE_FORMAT:

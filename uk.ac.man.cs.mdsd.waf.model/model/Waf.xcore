@@ -57,8 +57,7 @@ class WafModel {
 	refers ServiceModel[1] business
 	contains ImageManipulation[] imageManipulations
 	contains Page[] pages opposite partOf
-	contains GlobalMenu[] globalMenus
-	contains DynamicMenu[] dynamicMenus
+	contains Menu[] menus
 	refers API api
 	String[1] siteName
 	String[1] siteTitle
@@ -158,7 +157,7 @@ class ThumbnailFilter extends ImageFilter {
 }
 
 
-abstract class Menu extends NamedDisplayElement {
+class Menu extends NamedDisplayElement {
 	contains MenuEntry[] entries opposite partOf
 	boolean omitCaption
 	String captionClass
@@ -166,22 +165,12 @@ abstract class Menu extends NamedDisplayElement {
 	String layoutClass
 }
 
-class GlobalMenu extends Menu {
-}
-
-class DynamicMenu extends Menu {
-	refers EntityOrView[1] entityOrView
-	refers Selection[1] selection
-	refers Label title
-}
-
 abstract class MenuEntry {
 	container Menu[1] partOf opposite entries
-	String requiresRole
 }
 
-class SubmenuEntry extends MenuEntry, NamedDisplayElement {
-	contains Menu[1] submenu
+class SubmenuEntry extends Menu, MenuEntry {
+	String requiresRole
 }
 
 class ActionMenuEntry extends MenuEntry, NamedDisplayElement {
@@ -196,7 +185,6 @@ class Page extends NamedDisplayElement, UnitContainer {
 	container WafModel partOf opposite pages
 	refers Page parentPage opposite childPages
 	refers Page[] childPages opposite parentPage
-	refers GlobalMenu contextMenu
 	String uriElement = ""
 	String styleClass
 }

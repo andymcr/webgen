@@ -63,8 +63,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.IMAGE_MANIPULATION: return createImageManipulation();
 			case WafPackage.BACKGROUND_FILTER: return createBackgroundFilter();
 			case WafPackage.THUMBNAIL_FILTER: return createThumbnailFilter();
-			case WafPackage.GLOBAL_MENU: return createGlobalMenu();
-			case WafPackage.DYNAMIC_MENU: return createDynamicMenu();
+			case WafPackage.MENU: return createMenu();
 			case WafPackage.SUBMENU_ENTRY: return createSubmenuEntry();
 			case WafPackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
 			case WafPackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
@@ -227,19 +226,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GlobalMenu createGlobalMenu() {
-		GlobalMenuImpl globalMenu = new GlobalMenuImpl();
-		return globalMenu;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DynamicMenu createDynamicMenu() {
-		DynamicMenuImpl dynamicMenu = new DynamicMenuImpl();
-		return dynamicMenu;
+	public Menu createMenu() {
+		MenuImpl menu = new MenuImpl();
+		return menu;
 	}
 
 	/**

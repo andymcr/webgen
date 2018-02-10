@@ -40,7 +40,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *
  * @generated
  */
-public abstract class MenuImpl extends NamedDisplayElementImpl implements Menu {
+public class MenuImpl extends NamedDisplayElementImpl implements Menu {
 	/**
 	 * The cached value of the '{@link #getEntries() <em>Entries</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

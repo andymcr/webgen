@@ -18,10 +18,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-import uk.ac.man.cs.mdsd.waf.MenuEntry;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -60,7 +57,6 @@ public class MenuEntryItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPartOfPropertyDescriptor(object);
-			addRequiresRolePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,28 +85,6 @@ public class MenuEntryItemProvider
 	}
 
   /**
-	 * This adds a property descriptor for the Requires Role feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequiresRolePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MenuEntry_requiresRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MenuEntry_requiresRole_feature", "_UI_MenuEntry_type"),
-				 WafPackage.Literals.MENU_ENTRY__REQUIRES_ROLE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-		/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,10 +92,7 @@ public class MenuEntryItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MenuEntry)object).getRequiresRole();
-		return label == null || label.length() == 0 ?
-			getString("_UI_MenuEntry_type") :
-			getString("_UI_MenuEntry_type") + " " + label;
+		return getString("_UI_MenuEntry_type");
 	}
 
 	/**
@@ -134,12 +105,6 @@ public class MenuEntryItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(MenuEntry.class)) {
-			case WafPackage.MENU_ENTRY__REQUIRES_ROLE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

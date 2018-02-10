@@ -102,16 +102,12 @@ public class WebuiValidator extends EObjectValidator {
 				return validateMenu((Menu)value, diagnostics, context);
 			case WebuiPackage.MENU_ENTRY:
 				return validateMenuEntry((MenuEntry)value, diagnostics, context);
-			case WebuiPackage.GLOBAL_MENU:
-				return validateGlobalMenu((GlobalMenu)value, diagnostics, context);
 			case WebuiPackage.SUBMENU_ENTRY:
 				return validateSubmenuEntry((SubmenuEntry)value, diagnostics, context);
 			case WebuiPackage.ACTION_MENU_ENTRY:
 				return validateActionMenuEntry((ActionMenuEntry)value, diagnostics, context);
 			case WebuiPackage.EDIT_STATIC_TEXT_MENU_ENTRY:
 				return validateEditStaticTextMenuEntry((EditStaticTextMenuEntry)value, diagnostics, context);
-			case WebuiPackage.DYNAMIC_MENU:
-				return validateDynamicMenu((DynamicMenu)value, diagnostics, context);
 			case WebuiPackage.MENU_FEATURE:
 				return validateMenuFeature((MenuFeature)value, diagnostics, context);
 			case WebuiPackage.QUERY:
@@ -348,25 +344,6 @@ public class WebuiValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateGlobalMenu(GlobalMenu globalMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(globalMenu, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(globalMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(globalMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(globalMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(globalMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(globalMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(globalMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(globalMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(globalMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(globalMenu, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateSubmenuEntry(SubmenuEntry submenuEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(submenuEntry, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(submenuEntry, diagnostics, context);
@@ -417,185 +394,6 @@ public class WebuiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(editStaticTextMenuEntry, diagnostics, context);
 		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(editStaticTextMenuEntry, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDynamicMenu(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(dynamicMenu, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= baseValidator.validateNamedElement_nameNeedsAtLeastOneCharacter(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicMenu_entriesMustBeFromSource(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicMenu_onlyIncludeFeaturesOnce(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicMenu_mustSelectSingleton(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicMenu_titleFromEntityOrView(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicMenu_canOnlyTitleWithSingletons(dynamicMenu, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the entriesMustBeFromSource constraint of '<em>Dynamic Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DYNAMIC_MENU__ENTRIES_MUST_BE_FROM_SOURCE__EEXPRESSION = "true";
-
-	/**
-	 * Validates the entriesMustBeFromSource constraint of '<em>Dynamic Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDynamicMenu_entriesMustBeFromSource(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebuiPackage.Literals.DYNAMIC_MENU,
-				 dynamicMenu,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "entriesMustBeFromSource",
-				 DYNAMIC_MENU__ENTRIES_MUST_BE_FROM_SOURCE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the onlyIncludeFeaturesOnce constraint of '<em>Dynamic Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DYNAMIC_MENU__ONLY_INCLUDE_FEATURES_ONCE__EEXPRESSION = "true";
-
-	/**
-	 * Validates the onlyIncludeFeaturesOnce constraint of '<em>Dynamic Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDynamicMenu_onlyIncludeFeaturesOnce(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebuiPackage.Literals.DYNAMIC_MENU,
-				 dynamicMenu,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "onlyIncludeFeaturesOnce",
-				 DYNAMIC_MENU__ONLY_INCLUDE_FEATURES_ONCE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the mustSelectSingleton constraint of '<em>Dynamic Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DYNAMIC_MENU__MUST_SELECT_SINGLETON__EEXPRESSION = "not selection.oclIsUndefined() implies selection.limit = 1";
-
-	/**
-	 * Validates the mustSelectSingleton constraint of '<em>Dynamic Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDynamicMenu_mustSelectSingleton(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebuiPackage.Literals.DYNAMIC_MENU,
-				 dynamicMenu,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "mustSelectSingleton",
-				 DYNAMIC_MENU__MUST_SELECT_SINGLETON__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the titleFromEntityOrView constraint of '<em>Dynamic Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DYNAMIC_MENU__TITLE_FROM_ENTITY_OR_VIEW__EEXPRESSION = "not title.oclIsUndefined() and not entityOrView.oclIsUndefined() implies\r\n" +
-		"\tentityOrView.features->includes(title)";
-
-	/**
-	 * Validates the titleFromEntityOrView constraint of '<em>Dynamic Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDynamicMenu_titleFromEntityOrView(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebuiPackage.Literals.DYNAMIC_MENU,
-				 dynamicMenu,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "titleFromEntityOrView",
-				 DYNAMIC_MENU__TITLE_FROM_ENTITY_OR_VIEW__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the canOnlyTitleWithSingletons constraint of '<em>Dynamic Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DYNAMIC_MENU__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION = "not title.oclIsUndefined() implies\r\n" +
-		"\tif title.oclIsKindOf(persistence::EntityFeature) then\r\n" +
-		"\t\ttitle.oclAsType(persistence::EntityFeature).cardinality <> persistence::Cardinality::Many\r\n" +
-		"\telse if title.oclIsKindOf(persistence::EncapsulatedAttribute) then\r\n" +
-		"\t\ttitle.oclAsType(persistence::EncapsulatedAttribute).cardinality <> persistence::Cardinality::Many\r\n" +
-		"\telse if title.oclIsKindOf(persistence::EncapsulatedAssociation) then\r\n" +
-		"\t\ttitle.oclAsType(persistence::EncapsulatedAssociation).cardinality <> persistence::Cardinality::Many\r\n" +
-		"\telse\r\n" +
-		"\t\tfalse\r\n" +
-		"\tendif endif endif";
-
-	/**
-	 * Validates the canOnlyTitleWithSingletons constraint of '<em>Dynamic Menu</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDynamicMenu_canOnlyTitleWithSingletons(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebuiPackage.Literals.DYNAMIC_MENU,
-				 dynamicMenu,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "canOnlyTitleWithSingletons",
-				 DYNAMIC_MENU__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**

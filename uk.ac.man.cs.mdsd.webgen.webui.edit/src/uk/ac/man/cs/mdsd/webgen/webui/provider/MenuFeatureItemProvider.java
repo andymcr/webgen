@@ -11,8 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import uk.ac.man.cs.mdsd.webgen.webui.MenuFeature;
-
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.webui.MenuFeature} object.
  * <!-- begin-user-doc -->
@@ -64,10 +62,7 @@ public class MenuFeatureItemProvider extends MenuEntryItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MenuFeature)object).getRequiresRole();
-		return label == null || label.length() == 0 ?
-			getString("_UI_MenuFeature_type") :
-			getString("_UI_MenuFeature_type") + " " + label;
+		return getString("_UI_MenuFeature_type");
 	}
 	
 

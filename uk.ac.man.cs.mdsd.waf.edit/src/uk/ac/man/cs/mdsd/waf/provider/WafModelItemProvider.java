@@ -558,8 +558,7 @@ public class WafModelItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__IMAGE_MANIPULATIONS);
 			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__PAGES);
-			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__GLOBAL_MENUS);
-			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__DYNAMIC_MENUS);
+			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__MENUS);
 			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__AUTHENTICATION);
 		}
 		return childrenFeatures;
@@ -638,8 +637,7 @@ public class WafModelItemProvider
 				return;
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 			case WafPackage.WAF_MODEL__PAGES:
-			case WafPackage.WAF_MODEL__GLOBAL_MENUS:
-			case WafPackage.WAF_MODEL__DYNAMIC_MENUS:
+			case WafPackage.WAF_MODEL__MENUS:
 			case WafPackage.WAF_MODEL__AUTHENTICATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -671,13 +669,13 @@ public class WafModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.WAF_MODEL__GLOBAL_MENUS,
-				 WafFactory.eINSTANCE.createGlobalMenu()));
+				(WafPackage.Literals.WAF_MODEL__MENUS,
+				 WafFactory.eINSTANCE.createMenu()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.WAF_MODEL__DYNAMIC_MENUS,
-				 WafFactory.eINSTANCE.createDynamicMenu()));
+				(WafPackage.Literals.WAF_MODEL__MENUS,
+				 WafFactory.eINSTANCE.createSubmenuEntry()));
 
 		newChildDescriptors.add
 			(createChildParameter

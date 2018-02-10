@@ -2,7 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,38 +12,38 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.SubmenuEntry#getSubmenu <em>Submenu</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.SubmenuEntry#getRequiresRole <em>Requires Role</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSubmenuEntry()
  * @model
  * @generated
  */
-public interface SubmenuEntry extends MenuEntry, NamedDisplayElement {
+public interface SubmenuEntry extends Menu, MenuEntry {
 	/**
-	 * Returns the value of the '<em><b>Submenu</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Requires Role</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Submenu</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Requires Role</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Submenu</em>' containment reference.
-	 * @see #setSubmenu(Menu)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSubmenuEntry_Submenu()
-	 * @model containment="true" required="true"
+	 * @return the value of the '<em>Requires Role</em>' attribute.
+	 * @see #setRequiresRole(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSubmenuEntry_RequiresRole()
+	 * @model unique="false"
 	 * @generated
 	 */
-	Menu getSubmenu();
+	String getRequiresRole();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.SubmenuEntry#getSubmenu <em>Submenu</em>}' containment reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.SubmenuEntry#getRequiresRole <em>Requires Role</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Submenu</em>' containment reference.
-	 * @see #getSubmenu()
+	 * @param value the new value of the '<em>Requires Role</em>' attribute.
+	 * @see #getRequiresRole()
 	 * @generated
 	 */
-	void setSubmenu(Menu value);
+	void setRequiresRole(String value);
 
 } // SubmenuEntry

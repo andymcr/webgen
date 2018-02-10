@@ -18,7 +18,6 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getChildPages <em>Child Pages</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getContextMenu <em>Context Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getStyleClass <em>Style Class</em>}</li>
  * </ul>
@@ -101,32 +100,6 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * @generated
 	 */
 	EList<Page> getChildPages();
-
-	/**
-	 * Returns the value of the '<em><b>Context Menu</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Context Menu</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context Menu</em>' reference.
-	 * @see #setContextMenu(GlobalMenu)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getPage_ContextMenu()
-	 * @model
-	 * @generated
-	 */
-	GlobalMenu getContextMenu();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Page#getContextMenu <em>Context Menu</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Context Menu</em>' reference.
-	 * @see #getContextMenu()
-	 * @generated
-	 */
-	void setContextMenu(GlobalMenu value);
 
 	/**
 	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.

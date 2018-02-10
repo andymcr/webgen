@@ -52,7 +52,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addUriElementPropertyDescriptor(object);
-			addContextMenuPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -77,28 +76,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Context Menu feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContextMenuPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_contextMenu_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_contextMenu_feature", "_UI_Page_type"),
-				 WebuiPackage.Literals.PAGE__CONTEXT_MENU,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
 				 null));
 	}
 

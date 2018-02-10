@@ -54,7 +54,6 @@ public class PageItemProvider
 			addPartOfPropertyDescriptor(object);
 			addParentPagePropertyDescriptor(object);
 			addChildPagesPropertyDescriptor(object);
-			addContextMenuPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 		}
@@ -120,28 +119,6 @@ public class PageItemProvider
 				 getString("_UI_Page_childPages_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Page_childPages_feature", "_UI_Page_type"),
 				 WafPackage.Literals.PAGE__CHILD_PAGES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Context Menu feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContextMenuPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_contextMenu_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_contextMenu_feature", "_UI_Page_type"),
-				 WafPackage.Literals.PAGE__CONTEXT_MENU,
 				 true,
 				 false,
 				 true,

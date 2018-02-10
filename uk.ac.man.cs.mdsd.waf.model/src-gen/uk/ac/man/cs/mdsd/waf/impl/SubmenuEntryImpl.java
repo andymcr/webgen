@@ -10,11 +10,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
-import uk.ac.man.cs.mdsd.orm.NamedElement;
-import uk.ac.man.cs.mdsd.orm.OrmPackage;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import uk.ac.man.cs.mdsd.waf.Menu;
+import uk.ac.man.cs.mdsd.waf.MenuEntry;
 import uk.ac.man.cs.mdsd.waf.SubmenuEntry;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -26,63 +25,32 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SubmenuEntryImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SubmenuEntryImpl#getDisplayLabel <em>Display Label</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SubmenuEntryImpl#getSubmenu <em>Submenu</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SubmenuEntryImpl#getPartOf <em>Part Of</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SubmenuEntryImpl#getRequiresRole <em>Requires Role</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
+public class SubmenuEntryImpl extends MenuImpl implements SubmenuEntry {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getRequiresRole()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String REQUIRES_ROLE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getRequiresRole()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DISPLAY_LABEL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected String displayLabel = DISPLAY_LABEL_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSubmenu() <em>Submenu</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSubmenu()
-	 * @generated
-	 * @ordered
-	 */
-	protected Menu submenu;
+	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,8 +76,9 @@ public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public Menu getPartOf() {
+		if (eContainerFeatureID() != WafPackage.SUBMENU_ENTRY__PART_OF) return null;
+		return (Menu)eContainer();
 	}
 
 	/**
@@ -117,11 +86,9 @@ public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SUBMENU_ENTRY__NAME, oldName, name));
+	public Menu basicGetPartOf() {
+		if (eContainerFeatureID() != WafPackage.SUBMENU_ENTRY__PART_OF) return null;
+		return (Menu)eInternalContainer();
 	}
 
 	/**
@@ -129,43 +96,8 @@ public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getDisplayLabel() {
-		return displayLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDisplayLabel(String newDisplayLabel) {
-		String oldDisplayLabel = displayLabel;
-		displayLabel = newDisplayLabel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL, oldDisplayLabel, displayLabel));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Menu getSubmenu() {
-		return submenu;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSubmenu(Menu newSubmenu, NotificationChain msgs) {
-		Menu oldSubmenu = submenu;
-		submenu = newSubmenu;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.SUBMENU_ENTRY__SUBMENU, oldSubmenu, newSubmenu);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+	public NotificationChain basicSetPartOf(Menu newPartOf, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newPartOf, WafPackage.SUBMENU_ENTRY__PART_OF, msgs);
 		return msgs;
 	}
 
@@ -174,18 +106,57 @@ public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSubmenu(Menu newSubmenu) {
-		if (newSubmenu != submenu) {
+	public void setPartOf(Menu newPartOf) {
+		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WafPackage.SUBMENU_ENTRY__PART_OF && newPartOf != null)) {
+			if (EcoreUtil.isAncestor(this, newPartOf))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (submenu != null)
-				msgs = ((InternalEObject)submenu).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.SUBMENU_ENTRY__SUBMENU, null, msgs);
-			if (newSubmenu != null)
-				msgs = ((InternalEObject)newSubmenu).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.SUBMENU_ENTRY__SUBMENU, null, msgs);
-			msgs = basicSetSubmenu(newSubmenu, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newPartOf != null)
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WafPackage.MENU__ENTRIES, Menu.class, msgs);
+			msgs = basicSetPartOf(newPartOf, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SUBMENU_ENTRY__SUBMENU, newSubmenu, newSubmenu));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SUBMENU_ENTRY__PART_OF, newPartOf, newPartOf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRequiresRole() {
+		return requiresRole;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequiresRole(String newRequiresRole) {
+		String oldRequiresRole = requiresRole;
+		requiresRole = newRequiresRole;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SUBMENU_ENTRY__REQUIRES_ROLE, oldRequiresRole, requiresRole));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WafPackage.SUBMENU_ENTRY__PART_OF:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetPartOf((Menu)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -196,8 +167,8 @@ public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.SUBMENU_ENTRY__SUBMENU:
-				return basicSetSubmenu(null, msgs);
+			case WafPackage.SUBMENU_ENTRY__PART_OF:
+				return basicSetPartOf(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -208,14 +179,27 @@ public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case WafPackage.SUBMENU_ENTRY__PART_OF:
+				return eInternalContainer().eInverseRemove(this, WafPackage.MENU__ENTRIES, Menu.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.SUBMENU_ENTRY__NAME:
-				return getName();
-			case WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL:
-				return getDisplayLabel();
-			case WafPackage.SUBMENU_ENTRY__SUBMENU:
-				return getSubmenu();
+			case WafPackage.SUBMENU_ENTRY__PART_OF:
+				if (resolve) return getPartOf();
+				return basicGetPartOf();
+			case WafPackage.SUBMENU_ENTRY__REQUIRES_ROLE:
+				return getRequiresRole();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -228,14 +212,11 @@ public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.SUBMENU_ENTRY__NAME:
-				setName((String)newValue);
+			case WafPackage.SUBMENU_ENTRY__PART_OF:
+				setPartOf((Menu)newValue);
 				return;
-			case WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL:
-				setDisplayLabel((String)newValue);
-				return;
-			case WafPackage.SUBMENU_ENTRY__SUBMENU:
-				setSubmenu((Menu)newValue);
+			case WafPackage.SUBMENU_ENTRY__REQUIRES_ROLE:
+				setRequiresRole((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -249,14 +230,11 @@ public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.SUBMENU_ENTRY__NAME:
-				setName(NAME_EDEFAULT);
+			case WafPackage.SUBMENU_ENTRY__PART_OF:
+				setPartOf((Menu)null);
 				return;
-			case WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL:
-				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
-				return;
-			case WafPackage.SUBMENU_ENTRY__SUBMENU:
-				setSubmenu((Menu)null);
+			case WafPackage.SUBMENU_ENTRY__REQUIRES_ROLE:
+				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -270,12 +248,10 @@ public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.SUBMENU_ENTRY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL:
-				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
-			case WafPackage.SUBMENU_ENTRY__SUBMENU:
-				return submenu != null;
+			case WafPackage.SUBMENU_ENTRY__PART_OF:
+				return basicGetPartOf() != null;
+			case WafPackage.SUBMENU_ENTRY__REQUIRES_ROLE:
+				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -287,15 +263,9 @@ public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == NamedElement.class) {
+		if (baseClass == MenuEntry.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.SUBMENU_ENTRY__NAME: return OrmPackage.NAMED_ELEMENT__NAME;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedDisplayElement.class) {
-			switch (derivedFeatureID) {
-				case WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL: return OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
+				case WafPackage.SUBMENU_ENTRY__PART_OF: return WafPackage.MENU_ENTRY__PART_OF;
 				default: return -1;
 			}
 		}
@@ -309,15 +279,9 @@ public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == NamedElement.class) {
+		if (baseClass == MenuEntry.class) {
 			switch (baseFeatureID) {
-				case OrmPackage.NAMED_ELEMENT__NAME: return WafPackage.SUBMENU_ENTRY__NAME;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedDisplayElement.class) {
-			switch (baseFeatureID) {
-				case OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL: return WafPackage.SUBMENU_ENTRY__DISPLAY_LABEL;
+				case WafPackage.MENU_ENTRY__PART_OF: return WafPackage.SUBMENU_ENTRY__PART_OF;
 				default: return -1;
 			}
 		}
@@ -334,10 +298,8 @@ public class SubmenuEntryImpl extends MenuEntryImpl implements SubmenuEntry {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", displayLabel: ");
-		result.append(displayLabel);
+		result.append(" (requiresRole: ");
+		result.append(requiresRole);
 		result.append(')');
 		return result.toString();
 	}

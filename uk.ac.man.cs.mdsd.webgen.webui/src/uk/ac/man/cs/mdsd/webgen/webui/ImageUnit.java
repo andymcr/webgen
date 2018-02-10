@@ -90,7 +90,7 @@ public interface ImageUnit extends DynamicUnit, CollectionUnit {
 	 * @return the value of the '<em>Image Title Feature</em>' containment reference.
 	 * @see #setImageTitleFeature(FeaturePath)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageUnit_ImageTitleFeature()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	FeaturePath getImageTitleFeature();

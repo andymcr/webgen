@@ -288,7 +288,7 @@ public class WebuiValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String WEB_UI__MENU_NAME_UNIQUE__EEXPRESSION = "globalMenus->isUnique(name)";
+	protected static final String WEB_UI__MENU_NAME_UNIQUE__EEXPRESSION = "menus->isUnique(name)";
 
 	/**
 	 * Validates the menuNameUnique constraint of '<em>Web UI</em>'.

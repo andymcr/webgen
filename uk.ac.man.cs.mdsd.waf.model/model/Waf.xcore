@@ -463,7 +463,7 @@ class SearchUnit extends ControlUnit {
 abstract class ImageUnit extends DynamicUnit, CollectionUnit {
 	refers Label title
 	contains FeaturePath[1] imagePathFeature
-	contains FeaturePath[1] imageTitleFeature
+	contains FeaturePath imageTitleFeature
 	boolean truncateImageTitle
 	String missingImagePath
 	refers ImageManipulation imageFilter

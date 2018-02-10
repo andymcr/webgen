@@ -12,7 +12,7 @@
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="pageNameUnique" value="pages->isUnique(name)"/>
-      <details key="menuNameUnique" value="globalMenus->isUnique(name)"/>
+      <details key="menuNameUnique" value="menus->isUnique(name)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Services"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="menus" upperBound="-1"
@@ -598,8 +598,8 @@
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.presistence/model/persistence.ecore#//Label"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imagePathFeature" lowerBound="1"
         eType="#//FeaturePath" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imageTitleFeature" lowerBound="1"
-        eType="#//FeaturePath" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imageTitleFeature" eType="#//FeaturePath"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="truncateImageTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="missingImagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -33,6 +33,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#isTruncate <em>Truncate</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.UnitFieldImpl#isDisableInput <em>Disable Input</em>}</li>
  * </ul>
@@ -129,6 +130,26 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected int maximumDisplaySize = MAXIMUM_DISPLAY_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isTruncate() <em>Truncate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTruncate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean TRUNCATE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isTruncate() <em>Truncate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTruncate()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean truncate = TRUNCATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
@@ -362,6 +383,27 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isTruncate() {
+		return truncate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTruncate(boolean newTruncate) {
+		boolean oldTruncate = truncate;
+		truncate = newTruncate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.UNIT_FIELD__TRUNCATE, oldTruncate, truncate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getDateFormat() {
 		return dateFormat;
 	}
@@ -465,6 +507,8 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 				return getCollectionDisplayOption();
 			case WebuiPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return getMaximumDisplaySize();
+			case WebuiPackage.UNIT_FIELD__TRUNCATE:
+				return isTruncate();
 			case WebuiPackage.UNIT_FIELD__DATE_FORMAT:
 				return getDateFormat();
 			case WebuiPackage.UNIT_FIELD__DISABLE_INPUT:
@@ -498,6 +542,9 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 				return;
 			case WebuiPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize((Integer)newValue);
+				return;
+			case WebuiPackage.UNIT_FIELD__TRUNCATE:
+				setTruncate((Boolean)newValue);
 				return;
 			case WebuiPackage.UNIT_FIELD__DATE_FORMAT:
 				setDateFormat((String)newValue);
@@ -535,6 +582,9 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 			case WebuiPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
 				return;
+			case WebuiPackage.UNIT_FIELD__TRUNCATE:
+				setTruncate(TRUNCATE_EDEFAULT);
+				return;
 			case WebuiPackage.UNIT_FIELD__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
@@ -565,6 +615,8 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
 			case WebuiPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
+			case WebuiPackage.UNIT_FIELD__TRUNCATE:
+				return truncate != TRUNCATE_EDEFAULT;
 			case WebuiPackage.UNIT_FIELD__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 			case WebuiPackage.UNIT_FIELD__DISABLE_INPUT:
@@ -591,6 +643,8 @@ public abstract class UnitFieldImpl extends MinimalEObjectImpl.Container impleme
 		result.append(collectionDisplayOption);
 		result.append(", maximumDisplaySize: ");
 		result.append(maximumDisplaySize);
+		result.append(", truncate: ");
+		result.append(truncate);
 		result.append(", dateFormat: ");
 		result.append(dateFormat);
 		result.append(", disableInput: ");

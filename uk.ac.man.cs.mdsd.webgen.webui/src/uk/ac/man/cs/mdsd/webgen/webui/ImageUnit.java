@@ -18,8 +18,9 @@ import uk.ac.man.cs.mdsd.webgen.persistence.Label;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getImageTitleFeature <em>Image Title Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#isTruncateImageTitle <em>Truncate Image Title</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getImageFilter <em>Image Filter</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getMissingImageFilter <em>Missing Image Filter</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageUnit()
@@ -183,5 +184,31 @@ public interface ImageUnit extends DynamicUnit, CollectionUnit {
 	 * @generated
 	 */
 	void setImageFilter(ImageManipulation value);
+
+	/**
+	 * Returns the value of the '<em><b>Missing Image Filter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Missing Image Filter</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Missing Image Filter</em>' reference.
+	 * @see #setMissingImageFilter(ImageManipulation)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageUnit_MissingImageFilter()
+	 * @model
+	 * @generated
+	 */
+	ImageManipulation getMissingImageFilter();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getMissingImageFilter <em>Missing Image Filter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Missing Image Filter</em>' reference.
+	 * @see #getMissingImageFilter()
+	 * @generated
+	 */
+	void setMissingImageFilter(ImageManipulation value);
 
 } // ImageUnit

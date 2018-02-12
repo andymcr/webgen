@@ -1648,13 +1648,22 @@ public interface WebuiPackage extends EPackage {
 	int UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = 5;
 
 	/**
+	 * The feature id for the '<em><b>Truncate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FIELD__TRUNCATE = 6;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__DATE_FORMAT = 6;
+	int UNIT_FIELD__DATE_FORMAT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
@@ -1663,7 +1672,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__DISABLE_INPUT = 7;
+	int UNIT_FIELD__DISABLE_INPUT = 8;
 
 	/**
 	 * The number of structural features of the '<em>Unit Field</em>' class.
@@ -1672,7 +1681,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD_FEATURE_COUNT = 8;
+	int UNIT_FIELD_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Unit Field</em>' class.
@@ -1746,6 +1755,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE = UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Truncate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__TRUNCATE = UNIT_FIELD__TRUNCATE;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -1963,6 +1981,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ELEMENT__MAXIMUM_DISPLAY_SIZE = UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Truncate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__TRUNCATE = UNIT_FEATURE__TRUNCATE;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -2234,6 +2261,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE = UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Truncate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__TRUNCATE = UNIT_FEATURE__TRUNCATE;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -3244,13 +3280,22 @@ public interface WebuiPackage extends EPackage {
 	int INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Truncate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_FIELD__TRUNCATE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DATE_FORMAT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int INTERFACE_FIELD__DATE_FORMAT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Disable Input</b></em>' attribute.
@@ -3259,7 +3304,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DISABLE_INPUT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int INTERFACE_FIELD__DISABLE_INPUT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -3268,7 +3313,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__REQUIRED = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int INTERFACE_FIELD__REQUIRED = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -3277,7 +3322,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DEFAULT_VALUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int INTERFACE_FIELD__DEFAULT_VALUE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Must Match</b></em>' reference.
@@ -3286,7 +3331,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__MUST_MATCH = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int INTERFACE_FIELD__MUST_MATCH = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -3295,7 +3340,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__INPUT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int INTERFACE_FIELD__INPUT_CLASS = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -3304,7 +3349,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__PLACEHOLDER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int INTERFACE_FIELD__PLACEHOLDER = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -3313,7 +3358,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__VALIDATION_PATTERN = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int INTERFACE_FIELD__VALIDATION_PATTERN = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Interface Field</em>' class.
@@ -3322,7 +3367,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int INTERFACE_FIELD_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of operations of the '<em>Interface Field</em>' class.
@@ -3404,6 +3449,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_FIELD__MAXIMUM_DISPLAY_SIZE = INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Truncate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_FIELD__TRUNCATE = INTERFACE_FIELD__TRUNCATE;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -3604,6 +3658,15 @@ public interface WebuiPackage extends EPackage {
 	int DATE_FIELD__MAXIMUM_DISPLAY_SIZE = INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
 
 	/**
+	 * The feature id for the '<em><b>Truncate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_FIELD__TRUNCATE = INTERFACE_FIELD__TRUNCATE;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3782,6 +3845,15 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int CAPTCHA_FIELD__MAXIMUM_DISPLAY_SIZE = INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Truncate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPTCHA_FIELD__TRUNCATE = INTERFACE_FIELD__TRUNCATE;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -7816,22 +7888,31 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_UNIT__TRUNCATE_IMAGE_TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 29;
 
 	/**
-	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_UNIT__MISSING_IMAGE_PATH = DYNAMIC_UNIT_FEATURE_COUNT + 30;
-
-	/**
 	 * The feature id for the '<em><b>Image Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__IMAGE_FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 31;
+	int IMAGE_UNIT__IMAGE_FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 30;
+
+	/**
+	 * The feature id for the '<em><b>Missing Image Filter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__MISSING_IMAGE_FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 31;
+
+	/**
+	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__MISSING_IMAGE_PATH = DYNAMIC_UNIT_FEATURE_COUNT + 32;
 
 	/**
 	 * The number of structural features of the '<em>Image Unit</em>' class.
@@ -7840,7 +7921,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 32;
+	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 33;
 
 	/**
 	 * The number of operations of the '<em>Image Unit</em>' class.
@@ -8330,15 +8411,6 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__TRUNCATE_IMAGE_TITLE = IMAGE_UNIT__TRUNCATE_IMAGE_TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_INDEX_UNIT__MISSING_IMAGE_PATH = IMAGE_UNIT__MISSING_IMAGE_PATH;
-
-	/**
 	 * The feature id for the '<em><b>Image Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8346,6 +8418,24 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_INDEX_UNIT__IMAGE_FILTER = IMAGE_UNIT__IMAGE_FILTER;
+
+	/**
+	 * The feature id for the '<em><b>Missing Image Filter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__MISSING_IMAGE_FILTER = IMAGE_UNIT__MISSING_IMAGE_FILTER;
+
+	/**
+	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__MISSING_IMAGE_PATH = IMAGE_UNIT__MISSING_IMAGE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -8366,13 +8456,22 @@ public interface WebuiPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__OVERLAY_TITLE = IMAGE_UNIT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Enable Image Enlargement</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT = IMAGE_UNIT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Omit Field Labels</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS = IMAGE_UNIT_FEATURE_COUNT + 2;
+	int IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS = IMAGE_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Overlay Single Select Action</b></em>' attribute.
@@ -8381,7 +8480,16 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION = IMAGE_UNIT_FEATURE_COUNT + 3;
+	int IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION = IMAGE_UNIT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Reveal Untruncated Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT = IMAGE_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -8390,7 +8498,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__STYLE_CLASS = IMAGE_UNIT_FEATURE_COUNT + 4;
+	int IMAGE_INDEX_UNIT__STYLE_CLASS = IMAGE_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -8399,7 +8507,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__CONTENT_CLASS = IMAGE_UNIT_FEATURE_COUNT + 5;
+	int IMAGE_INDEX_UNIT__CONTENT_CLASS = IMAGE_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Column Class</b></em>' attribute.
@@ -8408,7 +8516,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__COLUMN_CLASS = IMAGE_UNIT_FEATURE_COUNT + 6;
+	int IMAGE_INDEX_UNIT__COLUMN_CLASS = IMAGE_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Card Class</b></em>' attribute.
@@ -8417,7 +8525,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT__CARD_CLASS = IMAGE_UNIT_FEATURE_COUNT + 7;
+	int IMAGE_INDEX_UNIT__CARD_CLASS = IMAGE_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Image Index Unit</em>' class.
@@ -8426,7 +8534,7 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_INDEX_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 8;
+	int IMAGE_INDEX_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Image Index Unit</em>' class.
@@ -8916,15 +9024,6 @@ public interface WebuiPackage extends EPackage {
 	int SLIDER_UNIT__TRUNCATE_IMAGE_TITLE = IMAGE_UNIT__TRUNCATE_IMAGE_TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLIDER_UNIT__MISSING_IMAGE_PATH = IMAGE_UNIT__MISSING_IMAGE_PATH;
-
-	/**
 	 * The feature id for the '<em><b>Image Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8932,6 +9031,24 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int SLIDER_UNIT__IMAGE_FILTER = IMAGE_UNIT__IMAGE_FILTER;
+
+	/**
+	 * The feature id for the '<em><b>Missing Image Filter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__MISSING_IMAGE_FILTER = IMAGE_UNIT__MISSING_IMAGE_FILTER;
+
+	/**
+	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__MISSING_IMAGE_PATH = IMAGE_UNIT__MISSING_IMAGE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
@@ -9466,15 +9583,6 @@ public interface WebuiPackage extends EPackage {
 	int GALLERY_UNIT__TRUNCATE_IMAGE_TITLE = IMAGE_UNIT__TRUNCATE_IMAGE_TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GALLERY_UNIT__MISSING_IMAGE_PATH = IMAGE_UNIT__MISSING_IMAGE_PATH;
-
-	/**
 	 * The feature id for the '<em><b>Image Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9482,6 +9590,24 @@ public interface WebuiPackage extends EPackage {
 	 * @ordered
 	 */
 	int GALLERY_UNIT__IMAGE_FILTER = IMAGE_UNIT__IMAGE_FILTER;
+
+	/**
+	 * The feature id for the '<em><b>Missing Image Filter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__MISSING_IMAGE_FILTER = IMAGE_UNIT__MISSING_IMAGE_FILTER;
+
+	/**
+	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__MISSING_IMAGE_PATH = IMAGE_UNIT__MISSING_IMAGE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Full Size Filter</b></em>' reference.
@@ -12022,6 +12148,17 @@ public interface WebuiPackage extends EPackage {
 	EAttribute getUnitField_MaximumDisplaySize();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#isTruncate <em>Truncate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Truncate</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.UnitField#isTruncate()
+	 * @see #getUnitField()
+	 * @generated
+	 */
+	EAttribute getUnitField_Truncate();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getDateFormat <em>Date Format</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13484,6 +13621,17 @@ public interface WebuiPackage extends EPackage {
 	EReference getImageUnit_ImageFilter();
 
 	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getMissingImageFilter <em>Missing Image Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Missing Image Filter</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.ImageUnit#getMissingImageFilter()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EReference getImageUnit_MissingImageFilter();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.webui.FeaturePath <em>Feature Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13729,6 +13877,17 @@ public interface WebuiPackage extends EPackage {
 	EAttribute getImageIndexUnit_OverlaySingleSelectAction();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isRevealUntruncatedContent <em>Reveal Untruncated Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reveal Untruncated Content</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isRevealUntruncatedContent()
+	 * @see #getImageIndexUnit()
+	 * @generated
+	 */
+	EAttribute getImageIndexUnit_RevealUntruncatedContent();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isOverlayTitle <em>Overlay Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13738,6 +13897,17 @@ public interface WebuiPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getImageIndexUnit_OverlayTitle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isEnableImageEnlargement <em>Enable Image Enlargement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Enable Image Enlargement</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#isEnableImageEnlargement()
+	 * @see #getImageIndexUnit()
+	 * @generated
+	 */
+	EAttribute getImageIndexUnit_EnableImageEnlargement();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.webui.ImageIndexUnit#getStyleClass <em>Style Class</em>}'.
@@ -15098,6 +15268,14 @@ public interface WebuiPackage extends EPackage {
 		EAttribute UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = eINSTANCE.getUnitField_MaximumDisplaySize();
 
 		/**
+		 * The meta object literal for the '<em><b>Truncate</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FIELD__TRUNCATE = eINSTANCE.getUnitField_Truncate();
+
+		/**
 		 * The meta object literal for the '<em><b>Date Format</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16224,6 +16402,14 @@ public interface WebuiPackage extends EPackage {
 		EReference IMAGE_UNIT__IMAGE_FILTER = eINSTANCE.getImageUnit_ImageFilter();
 
 		/**
+		 * The meta object literal for the '<em><b>Missing Image Filter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMAGE_UNIT__MISSING_IMAGE_FILTER = eINSTANCE.getImageUnit_MissingImageFilter();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.webui.impl.FeaturePathImpl <em>Feature Path</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16424,12 +16610,28 @@ public interface WebuiPackage extends EPackage {
 		EAttribute IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION = eINSTANCE.getImageIndexUnit_OverlaySingleSelectAction();
 
 		/**
+		 * The meta object literal for the '<em><b>Reveal Untruncated Content</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT = eINSTANCE.getImageIndexUnit_RevealUntruncatedContent();
+
+		/**
 		 * The meta object literal for the '<em><b>Overlay Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute IMAGE_INDEX_UNIT__OVERLAY_TITLE = eINSTANCE.getImageIndexUnit_OverlayTitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Enable Image Enlargement</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT = eINSTANCE.getImageIndexUnit_EnableImageEnlargement();
 
 		/**
 		 * The meta object literal for the '<em><b>Style Class</b></em>' attribute feature.

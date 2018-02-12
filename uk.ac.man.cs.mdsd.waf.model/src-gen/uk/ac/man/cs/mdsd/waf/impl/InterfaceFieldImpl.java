@@ -39,6 +39,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getTruncate <em>Truncate</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisableInput <em>Disable Input</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#isRequired <em>Required</em>}</li>
@@ -162,6 +163,26 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	 * @ordered
 	 */
 	protected int maximumDisplaySize = MAXIMUM_DISPLAY_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTruncate() <em>Truncate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTruncate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Boolean TRUNCATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTruncate() <em>Truncate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTruncate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Boolean truncate = TRUNCATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
@@ -546,6 +567,27 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Boolean getTruncate() {
+		return truncate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTruncate(Boolean newTruncate) {
+		Boolean oldTruncate = truncate;
+		truncate = newTruncate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__TRUNCATE, oldTruncate, truncate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getDateFormat() {
 		return dateFormat;
 	}
@@ -840,6 +882,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return getCollectionDisplayOption();
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return getMaximumDisplaySize();
+			case WafPackage.INTERFACE_FIELD__TRUNCATE:
+				return getTruncate();
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				return getDateFormat();
 			case WafPackage.INTERFACE_FIELD__DISABLE_INPUT:
@@ -891,6 +935,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return;
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize((Integer)newValue);
+				return;
+			case WafPackage.INTERFACE_FIELD__TRUNCATE:
+				setTruncate((Boolean)newValue);
 				return;
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				setDateFormat((String)newValue);
@@ -952,6 +999,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
 				return;
+			case WafPackage.INTERFACE_FIELD__TRUNCATE:
+				setTruncate(TRUNCATE_EDEFAULT);
+				return;
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
@@ -1005,6 +1055,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
+			case WafPackage.INTERFACE_FIELD__TRUNCATE:
+				return TRUNCATE_EDEFAULT == null ? truncate != null : !TRUNCATE_EDEFAULT.equals(truncate);
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 			case WafPackage.INTERFACE_FIELD__DISABLE_INPUT:
@@ -1048,6 +1100,7 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				case WafPackage.INTERFACE_FIELD__TITLE: return WafPackage.UNIT_FIELD__TITLE;
 				case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION: return WafPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
+				case WafPackage.INTERFACE_FIELD__TRUNCATE: return WafPackage.UNIT_FIELD__TRUNCATE;
 				case WafPackage.INTERFACE_FIELD__DATE_FORMAT: return WafPackage.UNIT_FIELD__DATE_FORMAT;
 				case WafPackage.INTERFACE_FIELD__DISABLE_INPUT: return WafPackage.UNIT_FIELD__DISABLE_INPUT;
 				default: return -1;
@@ -1077,6 +1130,7 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				case WafPackage.UNIT_FIELD__TITLE: return WafPackage.INTERFACE_FIELD__TITLE;
 				case WafPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION: return WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
+				case WafPackage.UNIT_FIELD__TRUNCATE: return WafPackage.INTERFACE_FIELD__TRUNCATE;
 				case WafPackage.UNIT_FIELD__DATE_FORMAT: return WafPackage.INTERFACE_FIELD__DATE_FORMAT;
 				case WafPackage.UNIT_FIELD__DISABLE_INPUT: return WafPackage.INTERFACE_FIELD__DISABLE_INPUT;
 				default: return -1;
@@ -1105,6 +1159,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		result.append(collectionDisplayOption);
 		result.append(", maximumDisplaySize: ");
 		result.append(maximumDisplaySize);
+		result.append(", truncate: ");
+		result.append(truncate);
 		result.append(", dateFormat: ");
 		result.append(dateFormat);
 		result.append(", disableInput: ");

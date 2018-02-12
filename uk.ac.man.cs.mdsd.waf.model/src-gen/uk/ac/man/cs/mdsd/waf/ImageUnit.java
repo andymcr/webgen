@@ -17,8 +17,9 @@ import uk.ac.man.cs.mdsd.orm.Label;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImageTitleFeature <em>Image Title Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#isTruncateImageTitle <em>Truncate Image Title</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImageFilter <em>Image Filter</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getMissingImageFilter <em>Missing Image Filter</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageUnit()
@@ -131,32 +132,6 @@ public interface ImageUnit extends DynamicUnit, CollectionUnit {
 	void setTruncateImageTitle(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Missing Image Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Missing Image Path</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Missing Image Path</em>' attribute.
-	 * @see #setMissingImagePath(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageUnit_MissingImagePath()
-	 * @model unique="false"
-	 * @generated
-	 */
-	String getMissingImagePath();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Missing Image Path</em>' attribute.
-	 * @see #getMissingImagePath()
-	 * @generated
-	 */
-	void setMissingImagePath(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Image Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -181,5 +156,57 @@ public interface ImageUnit extends DynamicUnit, CollectionUnit {
 	 * @generated
 	 */
 	void setImageFilter(ImageManipulation value);
+
+	/**
+	 * Returns the value of the '<em><b>Missing Image Filter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Missing Image Filter</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Missing Image Filter</em>' reference.
+	 * @see #setMissingImageFilter(ImageManipulation)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageUnit_MissingImageFilter()
+	 * @model
+	 * @generated
+	 */
+	ImageManipulation getMissingImageFilter();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getMissingImageFilter <em>Missing Image Filter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Missing Image Filter</em>' reference.
+	 * @see #getMissingImageFilter()
+	 * @generated
+	 */
+	void setMissingImageFilter(ImageManipulation value);
+
+	/**
+	 * Returns the value of the '<em><b>Missing Image Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Missing Image Path</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Missing Image Path</em>' attribute.
+	 * @see #setMissingImagePath(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageUnit_MissingImagePath()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getMissingImagePath();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Missing Image Path</em>' attribute.
+	 * @see #getMissingImagePath()
+	 * @generated
+	 */
+	void setMissingImagePath(String value);
 
 } // ImageUnit

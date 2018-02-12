@@ -32,8 +32,10 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isEnableImageEnlargement <em>Enable Image Enlargement</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isOverlayTitle <em>Overlay Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isOverlaySingleSelectAction <em>Overlay Single Select Action</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#isRevealUntruncatedContent <em>Reveal Untruncated Content</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getColumnClass <em>Column Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageIndexUnitImpl#getCardClass <em>Card Class</em>}</li>
  * </ul>
@@ -70,6 +72,26 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @ordered
 	 */
 	protected boolean omitFieldLabels = OMIT_FIELD_LABELS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isEnableImageEnlargement() <em>Enable Image Enlargement</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEnableImageEnlargement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ENABLE_IMAGE_ENLARGEMENT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isEnableImageEnlargement() <em>Enable Image Enlargement</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEnableImageEnlargement()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean enableImageEnlargement = ENABLE_IMAGE_ENLARGEMENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isOverlayTitle() <em>Overlay Title</em>}' attribute.
@@ -110,6 +132,26 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @ordered
 	 */
 	protected boolean overlaySingleSelectAction = OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isRevealUntruncatedContent() <em>Reveal Untruncated Content</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRevealUntruncatedContent()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean REVEAL_UNTRUNCATED_CONTENT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isRevealUntruncatedContent() <em>Reveal Untruncated Content</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRevealUntruncatedContent()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean revealUntruncatedContent = REVEAL_UNTRUNCATED_CONTENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getColumnClass() <em>Column Class</em>}' attribute.
@@ -208,6 +250,27 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isEnableImageEnlargement() {
+		return enableImageEnlargement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEnableImageEnlargement(boolean newEnableImageEnlargement) {
+		boolean oldEnableImageEnlargement = enableImageEnlargement;
+		enableImageEnlargement = newEnableImageEnlargement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT, oldEnableImageEnlargement, enableImageEnlargement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isOverlayTitle() {
 		return overlayTitle;
 	}
@@ -243,6 +306,27 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		overlaySingleSelectAction = newOverlaySingleSelectAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION, oldOverlaySingleSelectAction, overlaySingleSelectAction));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isRevealUntruncatedContent() {
+		return revealUntruncatedContent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRevealUntruncatedContent(boolean newRevealUntruncatedContent) {
+		boolean oldRevealUntruncatedContent = revealUntruncatedContent;
+		revealUntruncatedContent = newRevealUntruncatedContent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT, oldRevealUntruncatedContent, revealUntruncatedContent));
 	}
 
 	/**
@@ -328,10 +412,14 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return getActions();
 			case WafPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				return isOmitFieldLabels();
+			case WafPackage.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT:
+				return isEnableImageEnlargement();
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				return isOverlayTitle();
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
 				return isOverlaySingleSelectAction();
+			case WafPackage.IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT:
+				return isRevealUntruncatedContent();
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return getColumnClass();
 			case WafPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
@@ -356,11 +444,17 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WafPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);
 				return;
+			case WafPackage.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT:
+				setEnableImageEnlargement((Boolean)newValue);
+				return;
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				setOverlayTitle((Boolean)newValue);
 				return;
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
 				setOverlaySingleSelectAction((Boolean)newValue);
+				return;
+			case WafPackage.IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT:
+				setRevealUntruncatedContent((Boolean)newValue);
 				return;
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass((String)newValue);
@@ -386,11 +480,17 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WafPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels(OMIT_FIELD_LABELS_EDEFAULT);
 				return;
+			case WafPackage.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT:
+				setEnableImageEnlargement(ENABLE_IMAGE_ENLARGEMENT_EDEFAULT);
+				return;
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				setOverlayTitle(OVERLAY_TITLE_EDEFAULT);
 				return;
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
 				setOverlaySingleSelectAction(OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT);
+				return;
+			case WafPackage.IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT:
+				setRevealUntruncatedContent(REVEAL_UNTRUNCATED_CONTENT_EDEFAULT);
 				return;
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				setColumnClass(COLUMN_CLASS_EDEFAULT);
@@ -414,10 +514,14 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return actions != null && !actions.isEmpty();
 			case WafPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
+			case WafPackage.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT:
+				return enableImageEnlargement != ENABLE_IMAGE_ENLARGEMENT_EDEFAULT;
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				return overlayTitle != OVERLAY_TITLE_EDEFAULT;
 			case WafPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
 				return overlaySingleSelectAction != OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT;
+			case WafPackage.IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT:
+				return revealUntruncatedContent != REVEAL_UNTRUNCATED_CONTENT_EDEFAULT;
 			case WafPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:
 				return COLUMN_CLASS_EDEFAULT == null ? columnClass != null : !COLUMN_CLASS_EDEFAULT.equals(columnClass);
 			case WafPackage.IMAGE_INDEX_UNIT__CARD_CLASS:
@@ -470,10 +574,14 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (omitFieldLabels: ");
 		result.append(omitFieldLabels);
+		result.append(", enableImageEnlargement: ");
+		result.append(enableImageEnlargement);
 		result.append(", overlayTitle: ");
 		result.append(overlayTitle);
 		result.append(", overlaySingleSelectAction: ");
 		result.append(overlaySingleSelectAction);
+		result.append(", revealUntruncatedContent: ");
+		result.append(revealUntruncatedContent);
 		result.append(", columnClass: ");
 		result.append(columnClass);
 		result.append(", cardClass: ");

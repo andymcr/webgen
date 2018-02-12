@@ -54,6 +54,7 @@ public class InterfaceFieldItemProvider extends NamedDisplayElementItemProvider 
 			addTitlePropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
+			addTruncatePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addDisableInputPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
@@ -150,6 +151,28 @@ public class InterfaceFieldItemProvider extends NamedDisplayElementItemProvider 
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Truncate feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTruncatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_truncate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_truncate_feature", "_UI_UnitField_type"),
+				 WebuiPackage.Literals.UNIT_FIELD__TRUNCATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
@@ -391,6 +414,7 @@ public class InterfaceFieldItemProvider extends NamedDisplayElementItemProvider 
 			case WebuiPackage.INTERFACE_FIELD__TITLE:
 			case WebuiPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 			case WebuiPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
+			case WebuiPackage.INTERFACE_FIELD__TRUNCATE:
 			case WebuiPackage.INTERFACE_FIELD__DATE_FORMAT:
 			case WebuiPackage.INTERFACE_FIELD__DISABLE_INPUT:
 			case WebuiPackage.INTERFACE_FIELD__REQUIRED:

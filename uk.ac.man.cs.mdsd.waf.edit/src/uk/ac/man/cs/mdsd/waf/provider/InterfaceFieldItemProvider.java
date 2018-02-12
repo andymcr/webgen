@@ -55,6 +55,7 @@ public class InterfaceFieldItemProvider
 			addTitlePropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
+			addTruncatePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addDisableInputPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
@@ -196,6 +197,28 @@ public class InterfaceFieldItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Truncate feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTruncatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_truncate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_truncate_feature", "_UI_UnitField_type"),
+				 WafPackage.Literals.UNIT_FIELD__TRUNCATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -440,6 +463,7 @@ public class InterfaceFieldItemProvider
 			case WafPackage.INTERFACE_FIELD__TITLE:
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
+			case WafPackage.INTERFACE_FIELD__TRUNCATE:
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 			case WafPackage.INTERFACE_FIELD__DISABLE_INPUT:
 			case WafPackage.INTERFACE_FIELD__REQUIRED:

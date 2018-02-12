@@ -55,6 +55,7 @@ public class UnitFeatureItemProvider
 			addTitlePropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
+			addTruncatePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addDisableInputPropertyDescriptor(object);
 			addCollectionUiAllowAddPropertyDescriptor(object);
@@ -409,6 +410,28 @@ public class UnitFeatureItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Truncate feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTruncatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_truncate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_truncate_feature", "_UI_UnitField_type"),
+				 WafPackage.Literals.UNIT_FIELD__TRUNCATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Autofocus feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -497,6 +520,7 @@ public class UnitFeatureItemProvider
 			case WafPackage.UNIT_FEATURE__TITLE:
 			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
+			case WafPackage.UNIT_FEATURE__TRUNCATE:
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
 			case WafPackage.UNIT_FEATURE__DISABLE_INPUT:
 			case WafPackage.UNIT_FEATURE__COLLECTION_UI_ALLOW_ADD:

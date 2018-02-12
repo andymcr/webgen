@@ -75,8 +75,9 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			addPaginationElementClassPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addTruncateImageTitlePropertyDescriptor(object);
-			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
+			addMissingImageFilterPropertyDescriptor(object);
+			addMissingImagePathPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -733,6 +734,28 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 getString("_UI_ImageUnit_imageFilter_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageFilter_feature", "_UI_ImageUnit_type"),
 				 WafPackage.Literals.IMAGE_UNIT__IMAGE_FILTER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Missing Image Filter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMissingImageFilterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_missingImageFilter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_missingImageFilter_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__MISSING_IMAGE_FILTER,
 				 true,
 				 false,
 				 true,

@@ -255,6 +255,7 @@ interface UnitField extends DisplayElement {
 	String title = ""
 	CollectionDisplayOptions collectionDisplayOption
 	int maximumDisplaySize = "-1"
+	Boolean truncate
 	String dateFormat
 	Boolean disableInput = "false"
 }
@@ -465,15 +466,18 @@ abstract class ImageUnit extends DynamicUnit, CollectionUnit {
 	contains FeaturePath[1] imagePathFeature
 	contains FeaturePath imageTitleFeature
 	boolean truncateImageTitle
-	String missingImagePath
 	refers ImageManipulation imageFilter
+	refers ImageManipulation missingImageFilter
+	String missingImagePath
 }
 
 
 class ImageIndexUnit extends ImageUnit, InlineActionContainer {
 	boolean omitFieldLabels
+	boolean enableImageEnlargement
 	boolean overlayTitle
 	boolean overlaySingleSelectAction
+	boolean revealUntruncatedContent
 	String columnClass
 	String cardClass
 }

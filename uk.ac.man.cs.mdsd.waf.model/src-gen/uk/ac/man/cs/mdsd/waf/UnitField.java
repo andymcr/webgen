@@ -19,6 +19,7 @@ import uk.ac.man.cs.mdsd.expression.Predicate;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getTruncate <em>Truncate</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getDisableInput <em>Disable Input</em>}</li>
  * </ul>
@@ -191,6 +192,32 @@ public interface UnitField extends DisplayElement {
 	 * @generated
 	 */
 	void setMaximumDisplaySize(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Truncate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Truncate</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Truncate</em>' attribute.
+	 * @see #setTruncate(Boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitField_Truncate()
+	 * @model unique="false"
+	 * @generated
+	 */
+	Boolean getTruncate();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitField#getTruncate <em>Truncate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Truncate</em>' attribute.
+	 * @see #getTruncate()
+	 * @generated
+	 */
+	void setTruncate(Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Date Format</b></em>' attribute.

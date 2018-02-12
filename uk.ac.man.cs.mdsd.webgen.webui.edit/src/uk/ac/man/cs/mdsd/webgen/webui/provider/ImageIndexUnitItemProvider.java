@@ -48,8 +48,10 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOverlayTitlePropertyDescriptor(object);
+			addEnableImageEnlargementPropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
 			addOverlaySingleSelectActionPropertyDescriptor(object);
+			addRevealUntruncatedContentPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
 			addColumnClassPropertyDescriptor(object);
@@ -103,6 +105,28 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Reveal Untruncated Content feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRevealUntruncatedContentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageIndexUnit_revealUntruncatedContent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_revealUntruncatedContent_feature", "_UI_ImageIndexUnit_type"),
+				 WebuiPackage.Literals.IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Overlay Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,6 +140,28 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 				 getString("_UI_ImageIndexUnit_overlayTitle_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_overlayTitle_feature", "_UI_ImageIndexUnit_type"),
 				 WebuiPackage.Literals.IMAGE_INDEX_UNIT__OVERLAY_TITLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ImagePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Enable Image Enlargement feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEnableImageEnlargementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageIndexUnit_enableImageEnlargement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageIndexUnit_enableImageEnlargement_feature", "_UI_ImageIndexUnit_type"),
+				 WebuiPackage.Literals.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT,
 				 true,
 				 false,
 				 false,
@@ -290,8 +336,10 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 
 		switch (notification.getFeatureID(ImageIndexUnit.class)) {
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
+			case WebuiPackage.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT:
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
+			case WebuiPackage.IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT:
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
 			case WebuiPackage.IMAGE_INDEX_UNIT__COLUMN_CLASS:

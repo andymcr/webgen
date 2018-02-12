@@ -145,6 +145,7 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitField/title"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitField/collectionDisplayOption"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitField/maximumDisplaySize"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitField/truncate"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//UnitField/dateFormat"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute webui.ecore#//UnitField/disableInput"/>
     </genClasses>
@@ -367,14 +368,18 @@
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Image"
           ecoreFeature="ecore:EReference webui.ecore#//ImageUnit/imageTitleFeature"/>
       <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/truncateImageTitle"/>
-      <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/missingImagePath"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Image" propertySortChoices="true"
           ecoreFeature="ecore:EReference webui.ecore#//ImageUnit/imageFilter"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Image" propertySortChoices="true"
+          ecoreFeature="ecore:EReference webui.ecore#//ImageUnit/missingImageFilter"/>
+      <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute webui.ecore#//ImageUnit/missingImagePath"/>
     </genClasses>
     <genClasses ecoreClass="webui.ecore#//ImageIndexUnit">
       <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/overlayTitle"/>
+      <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/enableImageEnlargement"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/omitFieldLabels"/>
       <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/overlaySingleSelectAction"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/revealUntruncatedContent"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/styleClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/contentClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute webui.ecore#//ImageIndexUnit/columnClass"/>

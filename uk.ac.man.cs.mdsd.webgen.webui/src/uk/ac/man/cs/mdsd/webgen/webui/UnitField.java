@@ -20,6 +20,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#isTruncate <em>Truncate</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#isDisableInput <em>Disable Input</em>}</li>
  * </ul>
@@ -193,6 +194,33 @@ public interface UnitField extends EObject {
 	 * @generated
 	 */
 	void setMaximumDisplaySize(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Truncate</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Truncate</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Truncate</em>' attribute.
+	 * @see #setTruncate(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitField_Truncate()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isTruncate();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.UnitField#isTruncate <em>Truncate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Truncate</em>' attribute.
+	 * @see #isTruncate()
+	 * @generated
+	 */
+	void setTruncate(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Date Format</b></em>' attribute.

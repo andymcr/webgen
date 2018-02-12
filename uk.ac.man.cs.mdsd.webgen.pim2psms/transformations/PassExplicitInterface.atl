@@ -491,6 +491,7 @@ abstract rule UnitField {
 		title <- website.title(),
 		collectionDisplayOption <- website.collectionDisplayOption,
 		maximumDisplaySize <- website.maximumDisplaySize,
+		truncate <- website.truncate,
 		dateFormat <- website.dateFormat(),
 		disableInput <- website.disableInput
 	)
@@ -1025,8 +1026,9 @@ abstract rule ImageUnit {
 		imagePathFeature <- website.imagePathFeature,
 		imageTitleFeature <- website.imageTitleFeature,
 		truncateImageTitle <- website.truncateImageTitle,
-		missingImagePath <- website.missingImagePath,
-		imageFilter <- website.imageFilter
+		imageFilter <- website.imageFilter,
+		missingImageFilter <- website.missingImageFilter,
+		missingImagePath <- website.missingImagePath
 	)
 }
 
@@ -1035,8 +1037,10 @@ rule ImageIndexUnit {
 	from website : Website!ImageIndexUnit
 	to waf : WAF!ImageIndexUnit (
 		omitFieldLabels <- website.omitFieldLabels,
+		enableImageEnlargement <- website.enableImageEnlargement,
 		overlayTitle <- website.overlayTitle,
 		overlaySingleSelectAction <- website.overlaySingleSelectAction,
+		revealUntruncatedContent <- website.revealUntruncatedContent,
 		columnClass <- website.columnClass.replaceAll(',', ' ').trim(),
 		cardClass <- website.cardClass.replaceAll(',', ' ').trim()
 	)

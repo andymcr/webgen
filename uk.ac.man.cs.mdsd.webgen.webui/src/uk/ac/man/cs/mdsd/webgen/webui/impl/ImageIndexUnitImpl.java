@@ -28,8 +28,10 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#isOverlayTitle <em>Overlay Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#isEnableImageEnlargement <em>Enable Image Enlargement</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#isOverlaySingleSelectAction <em>Overlay Single Select Action</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#isRevealUntruncatedContent <em>Reveal Untruncated Content</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ImageIndexUnitImpl#getColumnClass <em>Column Class</em>}</li>
@@ -70,6 +72,26 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	protected boolean overlayTitle = OVERLAY_TITLE_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isEnableImageEnlargement() <em>Enable Image Enlargement</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEnableImageEnlargement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ENABLE_IMAGE_ENLARGEMENT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isEnableImageEnlargement() <em>Enable Image Enlargement</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEnableImageEnlargement()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean enableImageEnlargement = ENABLE_IMAGE_ENLARGEMENT_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -108,6 +130,26 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @ordered
 	 */
 	protected boolean overlaySingleSelectAction = OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isRevealUntruncatedContent() <em>Reveal Untruncated Content</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRevealUntruncatedContent()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean REVEAL_UNTRUNCATED_CONTENT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isRevealUntruncatedContent() <em>Reveal Untruncated Content</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRevealUntruncatedContent()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean revealUntruncatedContent = REVEAL_UNTRUNCATED_CONTENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -267,6 +309,27 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isRevealUntruncatedContent() {
+		return revealUntruncatedContent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRevealUntruncatedContent(boolean newRevealUntruncatedContent) {
+		boolean oldRevealUntruncatedContent = revealUntruncatedContent;
+		revealUntruncatedContent = newRevealUntruncatedContent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT, oldRevealUntruncatedContent, revealUntruncatedContent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isOverlayTitle() {
 		return overlayTitle;
 	}
@@ -281,6 +344,27 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		overlayTitle = newOverlayTitle;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE, oldOverlayTitle, overlayTitle));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isEnableImageEnlargement() {
+		return enableImageEnlargement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEnableImageEnlargement(boolean newEnableImageEnlargement) {
+		boolean oldEnableImageEnlargement = enableImageEnlargement;
+		enableImageEnlargement = newEnableImageEnlargement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebuiPackage.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT, oldEnableImageEnlargement, enableImageEnlargement));
 	}
 
 	/**
@@ -408,10 +492,14 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return getActions();
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				return isOverlayTitle();
+			case WebuiPackage.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT:
+				return isEnableImageEnlargement();
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				return isOmitFieldLabels();
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
 				return isOverlaySingleSelectAction();
+			case WebuiPackage.IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT:
+				return isRevealUntruncatedContent();
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 				return getStyleClass();
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
@@ -440,11 +528,17 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				setOverlayTitle((Boolean)newValue);
 				return;
+			case WebuiPackage.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT:
+				setEnableImageEnlargement((Boolean)newValue);
+				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);
 				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
 				setOverlaySingleSelectAction((Boolean)newValue);
+				return;
+			case WebuiPackage.IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT:
+				setRevealUntruncatedContent((Boolean)newValue);
 				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
@@ -476,11 +570,17 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				setOverlayTitle(OVERLAY_TITLE_EDEFAULT);
 				return;
+			case WebuiPackage.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT:
+				setEnableImageEnlargement(ENABLE_IMAGE_ENLARGEMENT_EDEFAULT);
+				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels(OMIT_FIELD_LABELS_EDEFAULT);
 				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
 				setOverlaySingleSelectAction(OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT);
+				return;
+			case WebuiPackage.IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT:
+				setRevealUntruncatedContent(REVEAL_UNTRUNCATED_CONTENT_EDEFAULT);
 				return;
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
@@ -510,10 +610,14 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 				return actions != null && !actions.isEmpty();
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_TITLE:
 				return overlayTitle != OVERLAY_TITLE_EDEFAULT;
+			case WebuiPackage.IMAGE_INDEX_UNIT__ENABLE_IMAGE_ENLARGEMENT:
+				return enableImageEnlargement != ENABLE_IMAGE_ENLARGEMENT_EDEFAULT;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OMIT_FIELD_LABELS:
 				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
 			case WebuiPackage.IMAGE_INDEX_UNIT__OVERLAY_SINGLE_SELECT_ACTION:
 				return overlaySingleSelectAction != OVERLAY_SINGLE_SELECT_ACTION_EDEFAULT;
+			case WebuiPackage.IMAGE_INDEX_UNIT__REVEAL_UNTRUNCATED_CONTENT:
+				return revealUntruncatedContent != REVEAL_UNTRUNCATED_CONTENT_EDEFAULT;
 			case WebuiPackage.IMAGE_INDEX_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 			case WebuiPackage.IMAGE_INDEX_UNIT__CONTENT_CLASS:
@@ -570,10 +674,14 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (overlayTitle: ");
 		result.append(overlayTitle);
+		result.append(", enableImageEnlargement: ");
+		result.append(enableImageEnlargement);
 		result.append(", omitFieldLabels: ");
 		result.append(omitFieldLabels);
 		result.append(", overlaySingleSelectAction: ");
 		result.append(overlaySingleSelectAction);
+		result.append(", revealUntruncatedContent: ");
+		result.append(revealUntruncatedContent);
 		result.append(", styleClass: ");
 		result.append(styleClass);
 		result.append(", contentClass: ");

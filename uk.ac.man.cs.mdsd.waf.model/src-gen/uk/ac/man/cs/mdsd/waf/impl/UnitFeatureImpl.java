@@ -42,6 +42,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getTruncate <em>Truncate</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDisableInput <em>Disable Input</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getActions <em>Actions</em>}</li>
@@ -149,6 +150,26 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 	 * @ordered
 	 */
 	protected int maximumDisplaySize = MAXIMUM_DISPLAY_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTruncate() <em>Truncate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTruncate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Boolean TRUNCATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTruncate() <em>Truncate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTruncate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Boolean truncate = TRUNCATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
@@ -592,6 +613,27 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Boolean getTruncate() {
+		return truncate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTruncate(Boolean newTruncate) {
+		Boolean oldTruncate = truncate;
+		truncate = newTruncate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__TRUNCATE, oldTruncate, truncate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getDateFormat() {
 		return dateFormat;
 	}
@@ -947,6 +989,8 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return getCollectionDisplayOption();
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 				return getMaximumDisplaySize();
+			case WafPackage.UNIT_FEATURE__TRUNCATE:
+				return getTruncate();
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
 				return getDateFormat();
 			case WafPackage.UNIT_FEATURE__DISABLE_INPUT:
@@ -1003,6 +1047,9 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return;
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize((Integer)newValue);
+				return;
+			case WafPackage.UNIT_FEATURE__TRUNCATE:
+				setTruncate((Boolean)newValue);
 				return;
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
 				setDateFormat((String)newValue);
@@ -1074,6 +1121,9 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
 				return;
+			case WafPackage.UNIT_FEATURE__TRUNCATE:
+				setTruncate(TRUNCATE_EDEFAULT);
+				return;
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
@@ -1137,6 +1187,8 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
+			case WafPackage.UNIT_FEATURE__TRUNCATE:
+				return TRUNCATE_EDEFAULT == null ? truncate != null : !TRUNCATE_EDEFAULT.equals(truncate);
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 			case WafPackage.UNIT_FEATURE__DISABLE_INPUT:
@@ -1217,6 +1269,8 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		result.append(collectionDisplayOption);
 		result.append(", maximumDisplaySize: ");
 		result.append(maximumDisplaySize);
+		result.append(", truncate: ");
+		result.append(truncate);
 		result.append(", dateFormat: ");
 		result.append(dateFormat);
 		result.append(", disableInput: ");

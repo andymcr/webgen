@@ -254,6 +254,7 @@ rule WafModel {
 		logoImage <- website.websiteProperties.logoImage,
 		logoFilters <- website.websiteProperties.logoFilters,
 		frameworkTechnology <- website.frameworkTechnology,
+		useDbSessionStorage <- website.websiteProperties.useDbSessionStorage,
 		inputTechnology <- thisModule.findWebsiteUI().inputTechnology,
 		ajaxTechnology <- thisModule.findWebsiteUI().ajaxTechnology,
 		captchaSiteKey <- thisModule.findWebsiteSecurity().captchaSiteKey,

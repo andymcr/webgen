@@ -38,6 +38,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.Menu;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getLogoImage <em>Logo Image</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getLogoFilters <em>Logo Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isUseDbSessionStorage <em>Use Db Session Storage</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTextEditorURL <em>Text Editor URL</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getSiteTemplate <em>Site Template</em>}</li>
@@ -176,6 +177,26 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @ordered
 	 */
 	protected FrameworkTechnologies frameworkTechnology = FRAMEWORK_TECHNOLOGY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isUseDbSessionStorage() <em>Use Db Session Storage</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseDbSessionStorage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean USE_DB_SESSION_STORAGE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isUseDbSessionStorage() <em>Use Db Session Storage</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseDbSessionStorage()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean useDbSessionStorage = USE_DB_SESSION_STORAGE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTextEditorURL() <em>Text Editor URL</em>}' attribute.
@@ -445,6 +466,27 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isUseDbSessionStorage() {
+		return useDbSessionStorage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUseDbSessionStorage(boolean newUseDbSessionStorage) {
+		boolean oldUseDbSessionStorage = useDbSessionStorage;
+		useDbSessionStorage = newUseDbSessionStorage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__USE_DB_SESSION_STORAGE, oldUseDbSessionStorage, useDbSessionStorage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTextEditorURL() {
 		return textEditorURL;
 	}
@@ -547,6 +589,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return basicGetLogoFilters();
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return getFrameworkTechnology();
+			case WebsitePackage.WEBSITE_PROPERTIES__USE_DB_SESSION_STORAGE:
+				return isUseDbSessionStorage();
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 				return getTextEditorURL();
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
@@ -588,6 +632,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__USE_DB_SESSION_STORAGE:
+				setUseDbSessionStorage((Boolean)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 				setTextEditorURL((String)newValue);
@@ -634,6 +681,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
 				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__USE_DB_SESSION_STORAGE:
+				setUseDbSessionStorage(USE_DB_SESSION_STORAGE_EDEFAULT);
+				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 				setTextEditorURL(TEXT_EDITOR_URL_EDEFAULT);
 				return;
@@ -672,6 +722,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return logoFilters != null;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
+			case WebsitePackage.WEBSITE_PROPERTIES__USE_DB_SESSION_STORAGE:
+				return useDbSessionStorage != USE_DB_SESSION_STORAGE_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 				return TEXT_EDITOR_URL_EDEFAULT == null ? textEditorURL != null : !TEXT_EDITOR_URL_EDEFAULT.equals(textEditorURL);
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
@@ -706,6 +758,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		result.append(logoImage);
 		result.append(", frameworkTechnology: ");
 		result.append(frameworkTechnology);
+		result.append(", useDbSessionStorage: ");
+		result.append(useDbSessionStorage);
 		result.append(", textEditorURL: ");
 		result.append(textEditorURL);
 		result.append(", topNavigationId: ");

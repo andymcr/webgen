@@ -29,6 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.Menu;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getLogoImage <em>Logo Image</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getLogoFilters <em>Logo Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isUseDbSessionStorage <em>Use Db Session Storage</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTextEditorURL <em>Text Editor URL</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getSiteTemplate <em>Site Template</em>}</li>
@@ -225,6 +226,32 @@ public interface WebsiteProperties extends EObject {
 	 * @generated
 	 */
 	void setFrameworkTechnology(FrameworkTechnologies value);
+
+	/**
+	 * Returns the value of the '<em><b>Use Db Session Storage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Use Db Session Storage</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Use Db Session Storage</em>' attribute.
+	 * @see #setUseDbSessionStorage(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_UseDbSessionStorage()
+	 * @model
+	 * @generated
+	 */
+	boolean isUseDbSessionStorage();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isUseDbSessionStorage <em>Use Db Session Storage</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Use Db Session Storage</em>' attribute.
+	 * @see #isUseDbSessionStorage()
+	 * @generated
+	 */
+	void setUseDbSessionStorage(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Text Editor URL</b></em>' attribute.

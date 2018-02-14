@@ -199,13 +199,22 @@ public interface WafPackage extends EPackage {
 	int WAF_MODEL__FRAMEWORK_TECHNOLOGY = 13;
 
 	/**
+	 * The feature id for the '<em><b>Use Db Session Storage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAF_MODEL__USE_DB_SESSION_STORAGE = 14;
+
+	/**
 	 * The feature id for the '<em><b>Input Technology</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__INPUT_TECHNOLOGY = 14;
+	int WAF_MODEL__INPUT_TECHNOLOGY = 15;
 
 	/**
 	 * The feature id for the '<em><b>Ajax Technology</b></em>' attribute.
@@ -214,7 +223,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__AJAX_TECHNOLOGY = 15;
+	int WAF_MODEL__AJAX_TECHNOLOGY = 16;
 
 	/**
 	 * The feature id for the '<em><b>Authentication</b></em>' containment reference.
@@ -223,7 +232,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__AUTHENTICATION = 16;
+	int WAF_MODEL__AUTHENTICATION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
@@ -232,7 +241,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__CAPTCHA_SITE_KEY = 17;
+	int WAF_MODEL__CAPTCHA_SITE_KEY = 18;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
@@ -241,7 +250,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__CAPTCHA_SECRET_KEY = 18;
+	int WAF_MODEL__CAPTCHA_SECRET_KEY = 19;
 
 	/**
 	 * The feature id for the '<em><b>Text Editor URL</b></em>' attribute.
@@ -250,7 +259,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__TEXT_EDITOR_URL = 19;
+	int WAF_MODEL__TEXT_EDITOR_URL = 20;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -259,7 +268,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__TOP_NAVIGATION_ID = 20;
+	int WAF_MODEL__TOP_NAVIGATION_ID = 21;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -268,7 +277,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__SIDE_MENU = 21;
+	int WAF_MODEL__SIDE_MENU = 22;
 
 	/**
 	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
@@ -277,7 +286,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__SITE_TEMPLATE = 22;
+	int WAF_MODEL__SITE_TEMPLATE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -286,7 +295,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__STATIC_UNITS_EDITABLE = 23;
+	int WAF_MODEL__STATIC_UNITS_EDITABLE = 24;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -295,7 +304,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL_FEATURE_COUNT = 24;
+	int WAF_MODEL_FEATURE_COUNT = 25;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -13318,6 +13327,17 @@ public interface WafPackage extends EPackage {
 	EAttribute getWafModel_FrameworkTechnology();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#isUseDbSessionStorage <em>Use Db Session Storage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Use Db Session Storage</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.WafModel#isUseDbSessionStorage()
+	 * @see #getWafModel()
+	 * @generated
+	 */
+	EAttribute getWafModel_UseDbSessionStorage();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#getInputTechnology <em>Input Technology</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16807,6 +16827,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WAF_MODEL__FRAMEWORK_TECHNOLOGY = eINSTANCE.getWafModel_FrameworkTechnology();
+
+		/**
+		 * The meta object literal for the '<em><b>Use Db Session Storage</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WAF_MODEL__USE_DB_SESSION_STORAGE = eINSTANCE.getWafModel_UseDbSessionStorage();
 
 		/**
 		 * The meta object literal for the '<em><b>Input Technology</b></em>' attribute feature.

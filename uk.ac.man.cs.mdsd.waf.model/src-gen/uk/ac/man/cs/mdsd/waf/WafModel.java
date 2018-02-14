@@ -35,6 +35,7 @@ import uk.ac.man.cs.mdsd.service.ServiceModel;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getLogoImage <em>Logo Image</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getLogoFilters <em>Logo Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#isUseDbSessionStorage <em>Use Db Session Storage</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getInputTechnology <em>Input Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getAuthentication <em>Authentication</em>}</li>
@@ -390,6 +391,32 @@ public interface WafModel extends EObject {
 	 * @generated
 	 */
 	void setFrameworkTechnology(FrameworkTechnologies value);
+
+	/**
+	 * Returns the value of the '<em><b>Use Db Session Storage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Use Db Session Storage</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Use Db Session Storage</em>' attribute.
+	 * @see #setUseDbSessionStorage(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_UseDbSessionStorage()
+	 * @model unique="false"
+	 * @generated
+	 */
+	boolean isUseDbSessionStorage();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#isUseDbSessionStorage <em>Use Db Session Storage</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Use Db Session Storage</em>' attribute.
+	 * @see #isUseDbSessionStorage()
+	 * @generated
+	 */
+	void setUseDbSessionStorage(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Input Technology</b></em>' attribute.

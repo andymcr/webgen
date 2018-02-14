@@ -77,6 +77,7 @@ public class WafModelItemProvider
 			addLogoImagePropertyDescriptor(object);
 			addLogoFiltersPropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
+			addUseDbSessionStoragePropertyDescriptor(object);
 			addInputTechnologyPropertyDescriptor(object);
 			addAjaxTechnologyPropertyDescriptor(object);
 			addCaptchaSiteKeyPropertyDescriptor(object);
@@ -340,6 +341,28 @@ public class WafModelItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Use Db Session Storage feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUseDbSessionStoragePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_useDbSessionStorage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_useDbSessionStorage_feature", "_UI_WafModel_type"),
+				 WafPackage.Literals.WAF_MODEL__USE_DB_SESSION_STORAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Input Technology feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -625,6 +648,7 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__META_DESCRIPTION:
 			case WafPackage.WAF_MODEL__LOGO_IMAGE:
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
+			case WafPackage.WAF_MODEL__USE_DB_SESSION_STORAGE:
 			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
 			case WafPackage.WAF_MODEL__AJAX_TECHNOLOGY:
 			case WafPackage.WAF_MODEL__CAPTCHA_SITE_KEY:

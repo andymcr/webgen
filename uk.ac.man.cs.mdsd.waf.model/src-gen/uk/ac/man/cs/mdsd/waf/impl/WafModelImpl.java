@@ -57,6 +57,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getLogoImage <em>Logo Image</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getLogoFilters <em>Logo Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#isUseDbSessionStorage <em>Use Db Session Storage</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getInputTechnology <em>Input Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getAuthentication <em>Authentication</em>}</li>
@@ -281,6 +282,26 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * @ordered
 	 */
 	protected FrameworkTechnologies frameworkTechnology = FRAMEWORK_TECHNOLOGY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isUseDbSessionStorage() <em>Use Db Session Storage</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseDbSessionStorage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean USE_DB_SESSION_STORAGE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isUseDbSessionStorage() <em>Use Db Session Storage</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseDbSessionStorage()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean useDbSessionStorage = USE_DB_SESSION_STORAGE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getInputTechnology() <em>Input Technology</em>}' attribute.
@@ -821,6 +842,27 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isUseDbSessionStorage() {
+		return useDbSessionStorage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUseDbSessionStorage(boolean newUseDbSessionStorage) {
+		boolean oldUseDbSessionStorage = useDbSessionStorage;
+		useDbSessionStorage = newUseDbSessionStorage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__USE_DB_SESSION_STORAGE, oldUseDbSessionStorage, useDbSessionStorage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public InputTechnologies getInputTechnology() {
 		return inputTechnology;
 	}
@@ -1144,6 +1186,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return basicGetLogoFilters();
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 				return getFrameworkTechnology();
+			case WafPackage.WAF_MODEL__USE_DB_SESSION_STORAGE:
+				return isUseDbSessionStorage();
 			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
 				return getInputTechnology();
 			case WafPackage.WAF_MODEL__AJAX_TECHNOLOGY:
@@ -1222,6 +1266,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return;
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
+				return;
+			case WafPackage.WAF_MODEL__USE_DB_SESSION_STORAGE:
+				setUseDbSessionStorage((Boolean)newValue);
 				return;
 			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
 				setInputTechnology((InputTechnologies)newValue);
@@ -1307,6 +1354,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
 				return;
+			case WafPackage.WAF_MODEL__USE_DB_SESSION_STORAGE:
+				setUseDbSessionStorage(USE_DB_SESSION_STORAGE_EDEFAULT);
+				return;
 			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
 				setInputTechnology(INPUT_TECHNOLOGY_EDEFAULT);
 				return;
@@ -1377,6 +1427,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return logoFilters != null;
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
+			case WafPackage.WAF_MODEL__USE_DB_SESSION_STORAGE:
+				return useDbSessionStorage != USE_DB_SESSION_STORAGE_EDEFAULT;
 			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
 				return inputTechnology != INPUT_TECHNOLOGY_EDEFAULT;
 			case WafPackage.WAF_MODEL__AJAX_TECHNOLOGY:
@@ -1425,6 +1477,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 		result.append(logoImage);
 		result.append(", frameworkTechnology: ");
 		result.append(frameworkTechnology);
+		result.append(", useDbSessionStorage: ");
+		result.append(useDbSessionStorage);
 		result.append(", inputTechnology: ");
 		result.append(inputTechnology);
 		result.append(", ajaxTechnology: ");

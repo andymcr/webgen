@@ -287,7 +287,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_TextEditorURL() {
+	public EAttribute getWebsiteProperties_UseDbSessionStorage() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -296,7 +296,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_TopNavigationId() {
+	public EAttribute getWebsiteProperties_TextEditorURL() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -305,7 +305,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_SiteTemplate() {
+	public EAttribute getWebsiteProperties_TopNavigationId() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -314,8 +314,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_StaticUnitsEditable() {
+	public EAttribute getWebsiteProperties_SiteTemplate() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWebsiteProperties_StaticUnitsEditable() {
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -374,6 +383,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__LOGO_IMAGE);
 		createEReference(websitePropertiesEClass, WEBSITE_PROPERTIES__LOGO_FILTERS);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY);
+		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__USE_DB_SESSION_STORAGE);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__TEXT_EDITOR_URL);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__TOP_NAVIGATION_ID);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__SITE_TEMPLATE);
@@ -440,6 +450,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getWebsiteProperties_LogoImage(), ecorePackage.getEString(), "logoImage", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWebsiteProperties_LogoFilters(), theImagePackage.getImageManipulation(), null, "logoFilters", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_FrameworkTechnology(), this.getFrameworkTechnologies(), "frameworkTechnology", "Kohana", 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getWebsiteProperties_UseDbSessionStorage(), ecorePackage.getEBoolean(), "useDbSessionStorage", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_TextEditorURL(), ecorePackage.getEString(), "textEditorURL", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_TopNavigationId(), ecorePackage.getEString(), "topNavigationId", "topnav", 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_SiteTemplate(), ecorePackage.getEString(), "siteTemplate", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

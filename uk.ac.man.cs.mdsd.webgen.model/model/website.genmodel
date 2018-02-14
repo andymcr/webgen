@@ -38,6 +38,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/logoImage"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//WebsiteProperties/logoFilters"/>
       <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/frameworkTechnology"/>
+      <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/useDbSessionStorage"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/textEditorURL"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/topNavigationId"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/siteTemplate"/>

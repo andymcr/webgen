@@ -67,6 +67,7 @@ class WafModel {
 	String logoImage
 	refers ImageManipulation logoFilters
 	FrameworkTechnologies frameworkTechnology
+	boolean useDbSessionStorage
 	InputTechnologies inputTechnology
 	AjaxTechnologies ajaxTechnology
 	contains Authentication authentication opposite authorises

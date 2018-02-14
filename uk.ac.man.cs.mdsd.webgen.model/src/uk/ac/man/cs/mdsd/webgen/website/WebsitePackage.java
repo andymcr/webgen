@@ -235,13 +235,22 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 6;
 
 	/**
+	 * The feature id for the '<em><b>Use Db Session Storage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__USE_DB_SESSION_STORAGE = 7;
+
+	/**
 	 * The feature id for the '<em><b>Text Editor URL</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 7;
+	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 8;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -250,7 +259,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 8;
+	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 9;
 
 	/**
 	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
@@ -259,7 +268,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SITE_TEMPLATE = 9;
+	int WEBSITE_PROPERTIES__SITE_TEMPLATE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -268,7 +277,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 10;
+	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 11;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -277,7 +286,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES_FEATURE_COUNT = 11;
+	int WEBSITE_PROPERTIES_FEATURE_COUNT = 12;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies <em>Framework Technologies</em>}' enum.
@@ -484,6 +493,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWebsiteProperties_FrameworkTechnology();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isUseDbSessionStorage <em>Use Db Session Storage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Use Db Session Storage</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isUseDbSessionStorage()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EAttribute getWebsiteProperties_UseDbSessionStorage();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTextEditorURL <em>Text Editor URL</em>}'.
@@ -708,6 +728,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = eINSTANCE.getWebsiteProperties_FrameworkTechnology();
+
+		/**
+		 * The meta object literal for the '<em><b>Use Db Session Storage</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEBSITE_PROPERTIES__USE_DB_SESSION_STORAGE = eINSTANCE.getWebsiteProperties_UseDbSessionStorage();
 
 		/**
 		 * The meta object literal for the '<em><b>Text Editor URL</b></em>' attribute feature.

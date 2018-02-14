@@ -91,6 +91,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.INDEX_GRID_UNIT: return createIndexGridUnit();
 			case WafPackage.INDEX_PAGE_DIRECTION_UNIT: return createIndexPageDirectionUnit();
 			case WafPackage.INDEX_LINE_DIRECTION_UNIT: return createIndexLineDirectionUnit();
+			case WafPackage.INDEX_CARDS_UNIT: return createIndexCardsUnit();
 			case WafPackage.SEARCH_UNIT: return createSearchUnit();
 			case WafPackage.IMAGE_INDEX_UNIT: return createImageIndexUnit();
 			case WafPackage.SLIDER_UNIT: return createSliderUnit();
@@ -499,6 +500,16 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public IndexLineDirectionUnit createIndexLineDirectionUnit() {
 		IndexLineDirectionUnitImpl indexLineDirectionUnit = new IndexLineDirectionUnitImpl();
 		return indexLineDirectionUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IndexCardsUnit createIndexCardsUnit() {
+		IndexCardsUnitImpl indexCardsUnit = new IndexCardsUnitImpl();
+		return indexCardsUnit;
 	}
 
 	/**

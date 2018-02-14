@@ -545,6 +545,21 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.INDEX_CARDS_UNIT: {
+				IndexCardsUnit indexCardsUnit = (IndexCardsUnit)theEObject;
+				T result = caseIndexCardsUnit(indexCardsUnit);
+				if (result == null) result = caseIndexUnit(indexCardsUnit);
+				if (result == null) result = caseDataUnit(indexCardsUnit);
+				if (result == null) result = caseCollectionUnit(indexCardsUnit);
+				if (result == null) result = caseInlineActionContainer(indexCardsUnit);
+				if (result == null) result = caseDynamicUnit(indexCardsUnit);
+				if (result == null) result = caseSelectableUnit(indexCardsUnit);
+				if (result == null) result = caseContentUnit(indexCardsUnit);
+				if (result == null) result = caseNamedDisplayElement(indexCardsUnit);
+				if (result == null) result = caseNamedElement(indexCardsUnit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.CONTROL_UNIT: {
 				ControlUnit controlUnit = (ControlUnit)theEObject;
 				T result = caseControlUnit(controlUnit);
@@ -1504,6 +1519,21 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIndexLineDirectionUnit(IndexLineDirectionUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Index Cards Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Index Cards Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIndexCardsUnit(IndexCardsUnit object) {
 		return null;
 	}
 

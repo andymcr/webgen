@@ -46,7 +46,15 @@ public enum IndexDisplayOption implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LINE_DIRECTION(2, "LineDirection", "LineDirection");
+	LINE_DIRECTION(2, "LineDirection", "LineDirection"), /**
+	 * The '<em><b>Cards</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CARDS_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	CARDS(3, "Cards", "Cards");
 
 	/**
 	 * The '<em><b>Grid</b></em>' literal value.
@@ -94,6 +102,21 @@ public enum IndexDisplayOption implements Enumerator {
 	public static final int LINE_DIRECTION_VALUE = 2;
 
 	/**
+	 * The '<em><b>Cards</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Cards</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #CARDS
+	 * @model name="Cards"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CARDS_VALUE = 3;
+
+	/**
 	 * An array of all the '<em><b>Index Display Option</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,6 +127,7 @@ public enum IndexDisplayOption implements Enumerator {
 			GRID,
 			PAGE_DIRECTION,
 			LINE_DIRECTION,
+			CARDS,
 		};
 
 	/**
@@ -163,6 +187,7 @@ public enum IndexDisplayOption implements Enumerator {
 			case GRID_VALUE: return GRID;
 			case PAGE_DIRECTION_VALUE: return PAGE_DIRECTION;
 			case LINE_DIRECTION_VALUE: return LINE_DIRECTION;
+			case CARDS_VALUE: return CARDS;
 		}
 		return null;
 	}

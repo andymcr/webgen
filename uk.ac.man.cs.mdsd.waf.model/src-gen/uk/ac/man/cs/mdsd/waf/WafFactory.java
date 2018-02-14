@@ -328,6 +328,15 @@ public interface WafFactory extends EFactory {
 	IndexLineDirectionUnit createIndexLineDirectionUnit();
 
 	/**
+	 * Returns a new object of class '<em>Index Cards Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Index Cards Unit</em>'.
+	 * @generated
+	 */
+	IndexCardsUnit createIndexCardsUnit();
+
+	/**
 	 * Returns a new object of class '<em>Search Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -286,6 +286,10 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createIndexLineDirectionUnitAdapter();
 			}
 			@Override
+			public Adapter caseIndexCardsUnit(IndexCardsUnit object) {
+				return createIndexCardsUnitAdapter();
+			}
+			@Override
 			public Adapter caseControlUnit(ControlUnit object) {
 				return createControlUnitAdapter();
 			}
@@ -1124,6 +1128,20 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIndexLineDirectionUnitAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.IndexCardsUnit <em>Index Cards Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.IndexCardsUnit
+	 * @generated
+	 */
+	public Adapter createIndexCardsUnitAdapter() {
 		return null;
 	}
 

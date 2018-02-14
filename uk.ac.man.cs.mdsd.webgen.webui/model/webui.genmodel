@@ -30,6 +30,7 @@
       <genEnumLiterals ecoreEnumLiteral="webui.ecore#//IndexDisplayOption/Grid"/>
       <genEnumLiterals ecoreEnumLiteral="webui.ecore#//IndexDisplayOption/PageDirection"/>
       <genEnumLiterals ecoreEnumLiteral="webui.ecore#//IndexDisplayOption/LineDirection"/>
+      <genEnumLiterals ecoreEnumLiteral="webui.ecore#//IndexDisplayOption/Cards"/>
     </genEnums>
     <genClasses ecoreClass="webui.ecore#//WebUI">
       <genFeatures notify="false" createChild="false" propertyCategory="Business"

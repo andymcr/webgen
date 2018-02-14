@@ -566,6 +566,7 @@
     <eLiterals name="Grid"/>
     <eLiterals name="PageDirection" value="1"/>
     <eLiterals name="LineDirection" value="2"/>
+    <eLiterals name="Cards" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IndexUnit" eSuperTypes="#//DataUnit #//CollectionUnit #//InlineActionContainer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayOption" ordered="false"

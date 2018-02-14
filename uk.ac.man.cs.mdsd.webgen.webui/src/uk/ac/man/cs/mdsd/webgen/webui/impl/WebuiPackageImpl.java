@@ -4264,6 +4264,7 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		addEEnumLiteral(indexDisplayOptionEEnum, IndexDisplayOption.GRID);
 		addEEnumLiteral(indexDisplayOptionEEnum, IndexDisplayOption.PAGE_DIRECTION);
 		addEEnumLiteral(indexDisplayOptionEEnum, IndexDisplayOption.LINE_DIRECTION);
+		addEEnumLiteral(indexDisplayOptionEEnum, IndexDisplayOption.CARDS);
 
 		// Create resource
 		createResource(eNS_URI);

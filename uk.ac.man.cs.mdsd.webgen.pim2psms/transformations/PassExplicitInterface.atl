@@ -981,6 +981,13 @@ rule IndexLineDirectionUnit {
 	)
 }
 
+-- @extends IndexUnit
+rule IndexCardsUnit {
+	from website : Website!IndexUnit (website.displayOption = #Cards)
+	to waf : WAF!IndexCardsUnit (
+	)
+}
+
 -- @extends DynamicUnit
 abstract rule ControlUnit {
 	from website : Website!ControlUnit

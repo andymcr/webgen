@@ -452,6 +452,9 @@ class IndexPageDirectionUnit extends IndexUnit {
 class IndexLineDirectionUnit extends IndexUnit {
 }
 
+class IndexCardsUnit extends IndexUnit {
+}
+
 abstract class ControlUnit extends DynamicUnit {
 	String[1] submitLabel
 	refers Page cancelDestination

@@ -221,7 +221,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int MAXIMUM_PAGINATION_SIZE_EDEFAULT = 100;
+	protected static final int MAXIMUM_PAGINATION_SIZE_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getMaximumPaginationSize() <em>Maximum Pagination Size</em>}' attribute.

@@ -311,7 +311,7 @@ public interface CollectionUnit extends SelectableUnit {
 
 	/**
 	 * Returns the value of the '<em><b>Maximum Pagination Size</b></em>' attribute.
-	 * The default value is <code>"100"</code>.
+	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Maximum Pagination Size</em>' attribute isn't clear,
@@ -321,7 +321,7 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @return the value of the '<em>Maximum Pagination Size</em>' attribute.
 	 * @see #setMaximumPaginationSize(int)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_MaximumPaginationSize()
-	 * @model default="100" ordered="false"
+	 * @model default="0" ordered="false"
 	 * @generated
 	 */
 	int getMaximumPaginationSize();

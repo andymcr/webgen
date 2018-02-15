@@ -6,12 +6,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
-import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
-import uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies;
-import uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies;
-import uk.ac.man.cs.mdsd.webgen.webui.Menu;
 
 /**
  * <!-- begin-user-doc -->

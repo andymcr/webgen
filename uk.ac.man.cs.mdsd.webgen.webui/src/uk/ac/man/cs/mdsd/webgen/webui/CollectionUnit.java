@@ -47,7 +47,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit()
  * @model interface="true" abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='selectionMustNotBeSingleton'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionMustNotBeSingleton='not selection.oclIsUndefined() implies\r\n\tselection.limit <> 1'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionMustNotBeSingleton='not selection.oclIsUndefined() implies\r\n\tselection.limit &lt;&gt; 1'"
  * @generated
  */
 public interface CollectionUnit extends SelectableUnit {
@@ -402,7 +402,7 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @return the value of the '<em>Next Page Label</em>' attribute.
 	 * @see #setNextPageLabel(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_NextPageLabel()
-	 * @model default="&gt;" ordered="false"
+	 * @model default="&amp;gt;" ordered="false"
 	 * @generated
 	 */
 	String getNextPageLabel();
@@ -456,7 +456,7 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @return the value of the '<em>Previous Page Label</em>' attribute.
 	 * @see #setPreviousPageLabel(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_PreviousPageLabel()
-	 * @model default="&lt;" ordered="false"
+	 * @model default="&amp;lt;" ordered="false"
 	 * @generated
 	 */
 	String getPreviousPageLabel();
@@ -564,7 +564,7 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @return the value of the '<em>First Page Label</em>' attribute.
 	 * @see #setFirstPageLabel(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_FirstPageLabel()
-	 * @model default="<<" ordered="false"
+	 * @model default="&lt;&lt;" ordered="false"
 	 * @generated
 	 */
 	String getFirstPageLabel();
@@ -618,7 +618,7 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @return the value of the '<em>Last Page Label</em>' attribute.
 	 * @see #setLastPageLabel(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_LastPageLabel()
-	 * @model default=">>" ordered="false"
+	 * @model default="&gt;&gt;" ordered="false"
 	 * @generated
 	 */
 	String getLastPageLabel();

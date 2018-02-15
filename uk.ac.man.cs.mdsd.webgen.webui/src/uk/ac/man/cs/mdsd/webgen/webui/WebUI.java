@@ -29,7 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Services;
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getWebUI()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='pageNameUnique menuNameUnique '"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL pageNameUnique='pages->isUnique(name)' menuNameUnique='menus->isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL pageNameUnique='pages-&gt;isUnique(name)' menuNameUnique='menus-&gt;isUnique(name)'"
  * @generated
  */
 public interface WebUI extends EObject {

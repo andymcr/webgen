@@ -32,7 +32,7 @@ import uk.ac.man.cs.mdsd.webgen.base.DataType;
  *
  * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getPersistence()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='classifierNameUnique'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL classifierNameUnique='dataTypes->isUnique(name) and entities->isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL classifierNameUnique='dataTypes-&gt;isUnique(name) and entities-&gt;isUnique(name)'"
  * @generated
  */
 public interface Persistence extends EObject {

@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntity()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='featureNameUniqueWithinEntity'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featureNameUniqueWithinEntity='entityFeatures->isUnique(f | f.name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featureNameUniqueWithinEntity='entityFeatures-&gt;isUnique(f | f.name)'"
  * @generated
  */
 public interface Entity extends EntityOrView {

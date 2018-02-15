@@ -605,7 +605,10 @@ public class WebuiPackageImpl extends EPackageImpl implements WebuiPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
+		BasePackage.eINSTANCE.eClass();
+		ExpressionPackage.eINSTANCE.eClass();
 		ImagePackage.eINSTANCE.eClass();
+		PersistencePackage.eINSTANCE.eClass();
 		ServicePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

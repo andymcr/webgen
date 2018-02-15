@@ -24,7 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getPage()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='contentUnitNameUniqueWithinPage'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL contentUnitNameUniqueWithinPage='units->isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL contentUnitNameUniqueWithinPage='units-&gt;isUnique(name)'"
  * @generated
  */
 public interface Page extends NamedDisplayElement, UnitContainer {

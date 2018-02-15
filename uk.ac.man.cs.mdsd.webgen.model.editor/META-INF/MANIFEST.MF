@@ -14,6 +14,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
+ uk.ac.man.cs.mdsd.webgen.api.edit;visibility:=reexport,
  uk.ac.man.cs.mdsd.webgen.expression.edit;visibility:=reexport,
  uk.ac.man.cs.mdsd.webgen.base.edit;visibility:=reexport,
  uk.ac.man.cs.mdsd.webgen.presistence.edit;visibility:=reexport,
@@ -21,8 +22,6 @@ Require-Bundle: org.eclipse.core.runtime,
  uk.ac.man.cs.mdsd.webgen.image.edit;visibility:=reexport,
  uk.ac.man.cs.mdsd.webgen.webui.edit;visibility:=reexport,
  uk.ac.man.cs.mdsd.webgen.security.edit;visibility:=reexport,
- uk.ac.man.cs.mdsd.webgen.model.edit;visibility:=reexport,
- org.eclipse.emf.edapt.migration
+ uk.ac.man.cs.mdsd.webgen.model.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Import-Package: org.eclipse.emf.edapt.migration.execution,
- org.eclipse.emf.edapt.spi.history;version="1.2.1"
+

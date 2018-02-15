@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see uk.ac.man.cs.mdsd.webgen.base.BasePackage#getNamedElement()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='nameNeedsAtLeastOneCharacter'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL nameNeedsAtLeastOneCharacter='not name.oclIsUndefined() implies name.size() > 0'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL nameNeedsAtLeastOneCharacter='not name.oclIsUndefined() implies name.size() &gt; 0'"
  * @generated
  */
 public interface NamedElement extends EObject {

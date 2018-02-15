@@ -11,6 +11,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import uk.ac.man.cs.mdsd.webgen.api.provider.ApiEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.base.provider.BaseEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.expression.provider.ExpressionEditPlugin;
 import uk.ac.man.cs.mdsd.webgen.image.provider.ImageEditPlugin;
@@ -51,6 +52,7 @@ public final class WebsiteEditorPlugin extends EMFPlugin {
 	public WebsiteEditorPlugin() {
 		super
 			(new ResourceLocator [] {
+				ApiEditPlugin.INSTANCE,
 				BaseEditPlugin.INSTANCE,
 				ExpressionEditPlugin.INSTANCE,
 				ImageEditPlugin.INSTANCE,

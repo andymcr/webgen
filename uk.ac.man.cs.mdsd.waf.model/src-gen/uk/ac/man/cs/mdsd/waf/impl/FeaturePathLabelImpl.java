@@ -2,8 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.waf.impl;
 
-import com.google.common.base.Objects;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -78,10 +76,9 @@ public class FeaturePathLabelImpl extends FeaturePathImpl implements FeaturePath
 	public String getName() {
 		String _xifexpression = null;
 		ModelLabel _label = this.getLabel();
-		boolean _notEquals = (!Objects.equal(_label, null));
-		if (_notEquals) {
-			ModelLabel _label_1 = this.getLabel();
-			_xifexpression = _label_1.getName();
+		boolean _tripleNotEquals = (_label != null);
+		if (_tripleNotEquals) {
+			_xifexpression = this.getLabel().getName();
 		}
 		return _xifexpression;
 	}

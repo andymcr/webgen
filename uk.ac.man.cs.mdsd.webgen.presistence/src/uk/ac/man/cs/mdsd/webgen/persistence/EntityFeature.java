@@ -26,7 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='primaryKeyRequired'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL primaryKeyRequired='primaryKey implies cardinality <> Cardinality::Optional'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL primaryKeyRequired='primaryKey implies cardinality &lt;&gt; Cardinality::Optional'"
  * @generated
  */
 public interface EntityFeature extends NamedDisplayElement, Feature {

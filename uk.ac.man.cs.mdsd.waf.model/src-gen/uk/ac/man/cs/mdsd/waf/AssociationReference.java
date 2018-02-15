@@ -38,7 +38,7 @@ public interface AssociationReference extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getAssociationReference_Name()
 	 * @model unique="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='<%java.lang.String%> _xifexpression = null;\n<%uk.ac.man.cs.mdsd.orm.Association%> _association = this.getAssociation();\nboolean _notEquals = (!<%com.google.common.base.Objects%>.equal(_association, null));\nif (_notEquals)\n{\n\t<%uk.ac.man.cs.mdsd.orm.Association%> _association_1 = this.getAssociation();\n\t_xifexpression = _association_1.getName();\n}\nreturn _xifexpression;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='&lt;%java.lang.String%&gt; _xifexpression = null;\n&lt;%uk.ac.man.cs.mdsd.orm.Association%&gt; _association = this.getAssociation();\nboolean _tripleNotEquals = (_association != null);\nif (_tripleNotEquals)\n{\n\t_xifexpression = this.getAssociation().getName();\n}\nreturn _xifexpression;'"
 	 * @generated
 	 */
 	String getName();

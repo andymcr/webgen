@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 
 import uk.ac.man.cs.mdsd.webgen.security.Authentication;
@@ -111,6 +113,8 @@ public class SecurityPackageImpl extends EPackageImpl implements SecurityPackage
 		isInited = true;
 
 		// Initialize simple dependencies
+		BasePackage.eINSTANCE.eClass();
+		ExpressionPackage.eINSTANCE.eClass();
 		PersistencePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

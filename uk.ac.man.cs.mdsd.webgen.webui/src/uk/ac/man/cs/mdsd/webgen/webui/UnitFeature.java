@@ -30,7 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.expression.Expression;
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getUnitFeature()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='atMostOneSelectAction noDeleteActions'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL atMostOneSelectAction='actions->select(a | a.oclIsKindOf(SelectAction))->size() < 2' noDeleteActions='actions->select(a | a.oclIsKindOf(DeleteAction))->isEmpty()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL atMostOneSelectAction='actions-&gt;select(a | a.oclIsKindOf(SelectAction))-&gt;size() &lt; 2' noDeleteActions='actions-&gt;select(a | a.oclIsKindOf(DeleteAction))-&gt;isEmpty()'"
  * @generated
  */
 public interface UnitFeature extends UnitField, InlineActionContainer {

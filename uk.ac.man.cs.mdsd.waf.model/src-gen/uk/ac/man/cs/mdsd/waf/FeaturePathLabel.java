@@ -33,7 +33,7 @@ public interface FeaturePathLabel extends FeaturePath {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFeaturePathLabel_Name()
 	 * @model unique="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='<%java.lang.String%> _xifexpression = null;\n<%uk.ac.man.cs.mdsd.orm.ModelLabel%> _label = this.getLabel();\nboolean _notEquals = (!<%com.google.common.base.Objects%>.equal(_label, null));\nif (_notEquals)\n{\n\t<%uk.ac.man.cs.mdsd.orm.ModelLabel%> _label_1 = this.getLabel();\n\t_xifexpression = _label_1.getName();\n}\nreturn _xifexpression;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='&lt;%java.lang.String%&gt; _xifexpression = null;\n&lt;%uk.ac.man.cs.mdsd.orm.ModelLabel%&gt; _label = this.getLabel();\nboolean _tripleNotEquals = (_label != null);\nif (_tripleNotEquals)\n{\n\t_xifexpression = this.getLabel().getName();\n}\nreturn _xifexpression;'"
 	 * @generated
 	 */
 	String getName();

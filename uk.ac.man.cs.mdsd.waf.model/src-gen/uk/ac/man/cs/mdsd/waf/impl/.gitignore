@@ -64,3 +64,8 @@
 /WafModelImpl.java
 /GlobalMenuImpl.java
 /RouteActualImpl.java
+/BackgroundFilterImpl.java
+/FeaturePathLabelImpl.java
+/SubmenuEntryImpl.java
+/BadgeImpl.java
+/IndexCardsUnitImpl.java

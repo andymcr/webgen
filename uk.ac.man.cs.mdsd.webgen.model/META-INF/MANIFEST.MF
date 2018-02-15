@@ -20,6 +20,5 @@ Require-Bundle: org.eclipse.core.runtime,
  uk.ac.man.cs.mdsd.webgen.security;visibility:=reexport,
  uk.ac.man.cs.mdsd.webgen.service;visibility:=reexport,
  uk.ac.man.cs.mdsd.webgen.webui;visibility:=reexport,
- uk.ac.man.cs.mdsd.webgen.image;visibility:=reexport,
- org.eclipse.emf.edapt.history
+ uk.ac.man.cs.mdsd.webgen.image;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getInlineActionContainer()
  * @model interface="true" abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='atMostOneDeleteAction'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL atMostOneDeleteAction='actions->select(a | a.oclIsKindOf(DeleteAction))->size() < 2'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL atMostOneDeleteAction='actions-&gt;select(a | a.oclIsKindOf(DeleteAction))-&gt;size() &lt; 2'"
  * @generated
  */
 public interface InlineActionContainer extends EObject {

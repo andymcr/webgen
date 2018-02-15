@@ -397,7 +397,7 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @return the value of the '<em>Next Page Label</em>' attribute.
 	 * @see #setNextPageLabel(String)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_NextPageLabel()
-	 * @model default=">" unique="false"
+	 * @model default="&gt;" unique="false"
 	 * @generated
 	 */
 	String getNextPageLabel();
@@ -451,7 +451,7 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @return the value of the '<em>Previous Page Label</em>' attribute.
 	 * @see #setPreviousPageLabel(String)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_PreviousPageLabel()
-	 * @model default="<" unique="false"
+	 * @model default="&lt;" unique="false"
 	 * @generated
 	 */
 	String getPreviousPageLabel();
@@ -557,7 +557,7 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @return the value of the '<em>First Page Label</em>' attribute.
 	 * @see #setFirstPageLabel(String)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_FirstPageLabel()
-	 * @model default="<<" unique="false"
+	 * @model default="&lt;&lt;" unique="false"
 	 * @generated
 	 */
 	String getFirstPageLabel();
@@ -611,7 +611,7 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @return the value of the '<em>Last Page Label</em>' attribute.
 	 * @see #setLastPageLabel(String)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_LastPageLabel()
-	 * @model default=">>" unique="false"
+	 * @model default="&gt;&gt;" unique="false"
 	 * @generated
 	 */
 	String getLastPageLabel();

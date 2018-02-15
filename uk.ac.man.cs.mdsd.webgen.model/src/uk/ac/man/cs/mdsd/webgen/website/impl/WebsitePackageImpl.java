@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import uk.ac.man.cs.mdsd.webgen.api.ApiPackage;
+import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.image.ImagePackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.security.SecurityPackage;
@@ -102,7 +104,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		// Initialize simple dependencies
 		ApiPackage.eINSTANCE.eClass();
+		BasePackage.eINSTANCE.eClass();
+		ExpressionPackage.eINSTANCE.eClass();
+		ImagePackage.eINSTANCE.eClass();
+		PersistencePackage.eINSTANCE.eClass();
 		SecurityPackage.eINSTANCE.eClass();
+		ServicePackage.eINSTANCE.eClass();
 		WebuiPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

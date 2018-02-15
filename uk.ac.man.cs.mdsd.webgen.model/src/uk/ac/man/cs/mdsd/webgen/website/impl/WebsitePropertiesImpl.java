@@ -6,22 +6,15 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
-import java.util.Collection;
-import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import uk.ac.man.cs.mdsd.webgen.image.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
-import uk.ac.man.cs.mdsd.webgen.webui.AjaxTechnologies;
-import uk.ac.man.cs.mdsd.webgen.webui.InputTechnologies;
-import uk.ac.man.cs.mdsd.webgen.webui.Menu;
 
 /**
  * <!-- begin-user-doc -->
@@ -608,7 +601,6 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

@@ -21,7 +21,7 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  *
  * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getDetailsUnit()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='selectionValidChoice selectionMustBeSingleton'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionMustBeSingleton='not selection.oclIsUndefined() implies\r\n\tselection.limit = 1' selectionValidChoice='not selection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t->select(s : service::Service | not s.serves.oclIsUndefined())\r\n\t\t->select(s : service::Service | contentType = s.serves)\r\n\t\t->collect(s : service::Service | s.selections)\r\n\t\t->includes(selection)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionMustBeSingleton='not selection.oclIsUndefined() implies\r\n\tselection.limit = 1' selectionValidChoice='not selection.oclIsUndefined() implies\r\n\tpageDisplayedOn.webUI.services.services\r\n\t\t-&gt;select(s : service::Service | not s.serves.oclIsUndefined())\r\n\t\t-&gt;select(s : service::Service | contentType = s.serves)\r\n\t\t-&gt;collect(s : service::Service | s.selections)\r\n\t\t-&gt;includes(selection)'"
  * @generated
  */
 public interface DetailsUnit extends DataUnit, SingletonUnit, SelectableUnit {

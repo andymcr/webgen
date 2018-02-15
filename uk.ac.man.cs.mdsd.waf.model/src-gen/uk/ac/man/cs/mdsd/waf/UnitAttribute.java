@@ -65,7 +65,7 @@ public interface UnitAttribute extends UnitFeature {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAttribute_Name()
 	 * @model unique="false" required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='<%java.lang.String%> _xifexpression = null;\n<%uk.ac.man.cs.mdsd.orm.Attribute%> _attribute = this.getAttribute();\nboolean _notEquals = (!<%com.google.common.base.Objects%>.equal(_attribute, null));\nif (_notEquals)\n{\n\t<%uk.ac.man.cs.mdsd.orm.Attribute%> _attribute_1 = this.getAttribute();\n\t_xifexpression = _attribute_1.getName();\n}\nreturn _xifexpression;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='&lt;%java.lang.String%&gt; _xifexpression = null;\n&lt;%uk.ac.man.cs.mdsd.orm.Attribute%&gt; _attribute = this.getAttribute();\nboolean _tripleNotEquals = (_attribute != null);\nif (_tripleNotEquals)\n{\n\t_xifexpression = this.getAttribute().getName();\n}\nreturn _xifexpression;'"
 	 * @generated
 	 */
 	String getName();

@@ -386,6 +386,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 
 		// Initialize simple dependencies
 		BasePackage.eINSTANCE.eClass();
+		ExpressionPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		thePersistencePackage.createPackageContents();

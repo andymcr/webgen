@@ -37,7 +37,7 @@ import uk.ac.man.cs.mdsd.webgen.base.Classifier;
  * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='keysFromLocalFeatures'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL keysFromLocalFeatures='allFeatures->includesAll(keys)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL keysFromLocalFeatures='allFeatures-&gt;includesAll(keys)'"
  * @generated
  */
 public interface EntityOrView extends Classifier {
@@ -294,7 +294,7 @@ public interface EntityOrView extends Classifier {
 	 * @return the value of the '<em>All Features</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_AllFeatures()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsTypeOf(Entity) then\r\n\tself.oclAsType(Entity).entityFeatures->union(self.oclAsType(Entity).associationEnds->select(e | e.bidirectional))->asOrderedSet()\r\nelse\r\n\tself.oclAsType(View).viewFeatures\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsTypeOf(Entity) then\r\n\tself.oclAsType(Entity).entityFeatures-&gt;union(self.oclAsType(Entity).associationEnds-&gt;select(e | e.bidirectional))-&gt;asOrderedSet()\r\nelse\r\n\tself.oclAsType(View).viewFeatures\r\nendif'"
 	 * @generated
 	 */
 	EList<Feature> getAllFeatures();
@@ -311,7 +311,7 @@ public interface EntityOrView extends Classifier {
 	 * @return the value of the '<em>Attributes</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_Attributes()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='features->select(f | f.oclIsKindOf(Attribute)).oclAsType(Attribute)->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='features-&gt;select(f | f.oclIsKindOf(Attribute)).oclAsType(Attribute)-&gt;asOrderedSet()'"
 	 * @generated
 	 */
 	EList<Attribute> getAttributes();
@@ -328,7 +328,7 @@ public interface EntityOrView extends Classifier {
 	 * @return the value of the '<em>Associations</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_Associations()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='features->select(f | f.oclIsKindOf(Association)).oclAsType(Association)->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='features-&gt;select(f | f.oclIsKindOf(Association)).oclAsType(Association)-&gt;asOrderedSet()'"
 	 * @generated
 	 */
 	EList<Association> getAssociations();
@@ -345,7 +345,7 @@ public interface EntityOrView extends Classifier {
 	 * @return the value of the '<em>All Associations</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityOrView_AllAssociations()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='allFeatures->select(f | f.oclIsKindOf(Association)).oclAsType(Association)->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='allFeatures-&gt;select(f | f.oclIsKindOf(Association)).oclAsType(Association)-&gt;asOrderedSet()'"
 	 * @generated
 	 */
 	EList<Association> getAllAssociations();

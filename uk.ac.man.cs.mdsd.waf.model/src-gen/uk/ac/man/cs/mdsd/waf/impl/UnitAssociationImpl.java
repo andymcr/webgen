@@ -2,8 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.waf.impl;
 
-import com.google.common.base.Objects;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -160,10 +158,9 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	public String getName() {
 		String _xifexpression = null;
 		Association _association = this.getAssociation();
-		boolean _notEquals = (!Objects.equal(_association, null));
-		if (_notEquals) {
-			Association _association_1 = this.getAssociation();
-			_xifexpression = _association_1.getName();
+		boolean _tripleNotEquals = (_association != null);
+		if (_tripleNotEquals) {
+			_xifexpression = this.getAssociation().getName();
 		}
 		return _xifexpression;
 	}

@@ -14,6 +14,8 @@ import uk.ac.man.cs.mdsd.webgen.api.ApiPackage;
 import uk.ac.man.cs.mdsd.webgen.api.Resource;
 
 import uk.ac.man.cs.mdsd.webgen.api.ResourceSelection;
+import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
+import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
 import uk.ac.man.cs.mdsd.webgen.service.ServicePackage;
 
@@ -92,6 +94,9 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
+		BasePackage.eINSTANCE.eClass();
+		ExpressionPackage.eINSTANCE.eClass();
+		PersistencePackage.eINSTANCE.eClass();
 		ServicePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

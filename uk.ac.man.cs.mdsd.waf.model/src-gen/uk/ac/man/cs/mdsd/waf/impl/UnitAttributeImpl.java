@@ -2,8 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.waf.impl;
 
-import com.google.common.base.Objects;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -193,10 +191,9 @@ public class UnitAttributeImpl extends UnitFeatureImpl implements UnitAttribute 
 	public String getName() {
 		String _xifexpression = null;
 		Attribute _attribute = this.getAttribute();
-		boolean _notEquals = (!Objects.equal(_attribute, null));
-		if (_notEquals) {
-			Attribute _attribute_1 = this.getAttribute();
-			_xifexpression = _attribute_1.getName();
+		boolean _tripleNotEquals = (_attribute != null);
+		if (_tripleNotEquals) {
+			_xifexpression = this.getAttribute().getName();
 		}
 		return _xifexpression;
 	}

@@ -692,7 +692,11 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
+		OrmPackage.eINSTANCE.eClass();
+		ServicePackage.eINSTANCE.eClass();
 		ApiPackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
+		ExpressionPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theWafPackage.createPackageContents();

@@ -277,7 +277,7 @@ abstract class UnitFeature extends UnitField, InlineActionContainer {
 class UnitAttribute extends UnitFeature {
 	refers Attribute[1] attribute
 	derived String[1] name get {
-		if (attribute != null)
+		if (attribute !== null)
 			attribute.name
 	}
 	contains Expression defaultValue
@@ -293,7 +293,7 @@ class UnitAssociation extends UnitFeature, UnitContainer, AssociationReference {
 
 abstract class AssociationReference {
 	derived String name get {
-		if (association != null)
+		if (association !== null)
 			association.name
 	}
 	refers Association[1] association
@@ -306,7 +306,7 @@ abstract class ChildPath {
 
 class ChildPathAttribute extends ChildPath {
 	derived String name get {
-		if (attribute != null)
+		if (attribute !== null)
 			attribute.name
 	}
 	refers Attribute[1] attribute
@@ -320,7 +320,7 @@ abstract class FeaturePath extends Variable {
 
 class FeaturePathAttribute extends FeaturePath {
 	derived String name get {
-		if (attribute != null)
+		if (attribute !== null)
 			attribute.name
 	}
 	refers Attribute[1] attribute
@@ -331,7 +331,7 @@ class FeaturePathAssociation extends FeaturePath, AssociationReference {
 
 class FeaturePathLabel extends FeaturePath {
 	derived String name get {
-		if (label != null)
+		if (label !== null)
 			label.name
 	}
 	refers ModelLabel[1] label

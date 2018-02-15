@@ -85,7 +85,7 @@ public interface ModelLabelAssociation extends ModelLabelFeature {
 	 * @return the value of the '<em>Is Source Association</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabelAssociation_IsSourceAssociation()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tpartOf.labelFor.features->includes(association)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tpartOf.labelFor.features-&gt;includes(association)'"
 	 * @generated
 	 */
 	boolean isIsSourceAssociation();

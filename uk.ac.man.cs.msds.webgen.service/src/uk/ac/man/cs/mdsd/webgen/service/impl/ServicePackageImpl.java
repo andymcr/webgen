@@ -169,6 +169,8 @@ public class ServicePackageImpl extends EPackageImpl implements ServicePackage {
 		isInited = true;
 
 		// Initialize simple dependencies
+		BasePackage.eINSTANCE.eClass();
+		ExpressionPackage.eINSTANCE.eClass();
 		PersistencePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

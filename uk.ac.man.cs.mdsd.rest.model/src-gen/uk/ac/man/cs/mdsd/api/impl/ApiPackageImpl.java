@@ -15,6 +15,8 @@ import uk.ac.man.cs.mdsd.api.ApiPackage;
 import uk.ac.man.cs.mdsd.api.Resource;
 import uk.ac.man.cs.mdsd.api.ResourceSelection;
 
+import uk.ac.man.cs.mdsd.expression.ExpressionPackage;
+
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
 import uk.ac.man.cs.mdsd.service.ServicePackage;
@@ -95,6 +97,9 @@ public class ApiPackageImpl extends EPackageImpl implements ApiPackage {
 
 		// Initialize simple dependencies
 		ServicePackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
+		OrmPackage.eINSTANCE.eClass();
+		ExpressionPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theApiPackage.createPackageContents();

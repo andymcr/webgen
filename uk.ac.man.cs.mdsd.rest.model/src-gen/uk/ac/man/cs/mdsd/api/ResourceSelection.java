@@ -96,7 +96,7 @@ public interface ResourceSelection extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.api.ApiPackage#getResourceSelection_Name()
 	 * @model unique="false" required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='<%java.lang.String%> _xifexpression = null;\n<%uk.ac.man.cs.mdsd.service.Selection%> _selection = this.getSelection();\nboolean _notEquals = (!<%com.google.common.base.Objects%>.equal(_selection, null));\nif (_notEquals)\n{\n\t<%uk.ac.man.cs.mdsd.service.Selection%> _selection_1 = this.getSelection();\n\t_xifexpression = _selection_1.getName();\n}\nreturn _xifexpression;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='&lt;%java.lang.String%&gt; _xifexpression = null;\n&lt;%uk.ac.man.cs.mdsd.service.Selection%&gt; _selection = this.getSelection();\nboolean _notEquals = (!&lt;%com.google.common.base.Objects%&gt;.equal(_selection, null));\nif (_notEquals)\n{\n\t_xifexpression = this.getSelection().getName();\n}\nreturn _xifexpression;'"
 	 * @generated
 	 */
 	String getName();

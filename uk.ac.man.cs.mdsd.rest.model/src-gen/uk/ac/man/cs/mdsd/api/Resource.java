@@ -103,7 +103,7 @@ public interface Resource extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.api.ApiPackage#getResource_Name()
 	 * @model unique="false" required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='<%java.lang.String%> _xifexpression = null;\n<%uk.ac.man.cs.mdsd.service.Service%> _service = this.getService();\nboolean _notEquals = (!<%com.google.common.base.Objects%>.equal(_service, null));\nif (_notEquals)\n{\n\t<%uk.ac.man.cs.mdsd.service.Service%> _service_1 = this.getService();\n\t_xifexpression = _service_1.getName();\n}\nreturn _xifexpression;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='&lt;%java.lang.String%&gt; _xifexpression = null;\n&lt;%uk.ac.man.cs.mdsd.service.Service%&gt; _service = this.getService();\nboolean _notEquals = (!&lt;%com.google.common.base.Objects%&gt;.equal(_service, null));\nif (_notEquals)\n{\n\t_xifexpression = this.getService().getName();\n}\nreturn _xifexpression;'"
 	 * @generated
 	 */
 	String getName();

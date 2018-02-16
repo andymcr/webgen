@@ -214,8 +214,7 @@ public class ResourceSelectionImpl extends MinimalEObjectImpl.Container implemen
 		Selection _selection = this.getSelection();
 		boolean _notEquals = (!Objects.equal(_selection, null));
 		if (_notEquals) {
-			Selection _selection_1 = this.getSelection();
-			_xifexpression = _selection_1.getName();
+			_xifexpression = this.getSelection().getName();
 		}
 		return _xifexpression;
 	}

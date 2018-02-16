@@ -303,8 +303,7 @@ public class ResourceImpl extends MinimalEObjectImpl.Container implements Resour
 		Service _service = this.getService();
 		boolean _notEquals = (!Objects.equal(_service, null));
 		if (_notEquals) {
-			Service _service_1 = this.getService();
-			_xifexpression = _service_1.getName();
+			_xifexpression = this.getService().getName();
 		}
 		return _xifexpression;
 	}

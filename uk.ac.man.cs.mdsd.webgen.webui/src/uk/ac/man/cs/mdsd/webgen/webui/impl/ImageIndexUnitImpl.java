@@ -219,7 +219,7 @@ public class ImageIndexUnitImpl extends ImageUnitImpl implements ImageIndexUnit 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CARD_CLASS_EDEFAULT = "card";
+	protected static final String CARD_CLASS_EDEFAULT = "card hoverable";
 
 	/**
 	 * The cached value of the '{@link #getCardClass() <em>Card Class</em>}' attribute.

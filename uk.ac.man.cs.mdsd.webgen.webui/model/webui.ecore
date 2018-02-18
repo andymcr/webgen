@@ -627,7 +627,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="col s12 m6 l3"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="card"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="card hoverable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SliderUnit" eSuperTypes="#//ImageUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="showTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"

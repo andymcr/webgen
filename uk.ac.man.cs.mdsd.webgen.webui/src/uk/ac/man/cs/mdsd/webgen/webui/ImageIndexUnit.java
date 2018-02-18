@@ -243,7 +243,7 @@ public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Card Class</b></em>' attribute.
-	 * The default value is <code>"card"</code>.
+	 * The default value is <code>"card hoverable"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Card Class</em>' attribute isn't clear,
@@ -253,7 +253,7 @@ public interface ImageIndexUnit extends ImageUnit, InlineActionContainer {
 	 * @return the value of the '<em>Card Class</em>' attribute.
 	 * @see #setCardClass(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getImageIndexUnit_CardClass()
-	 * @model default="card" ordered="false"
+	 * @model default="card hoverable" ordered="false"
 	 * @generated
 	 */
 	String getCardClass();

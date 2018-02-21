@@ -191,7 +191,7 @@ public class ChildPathItemProvider
 
 		} else if (path.eContainer() instanceof InlineAction) {
 			final Set<EntityOrView> entities
-				= getEntities((InlineActionContainer) path.eContainer());
+				= getEntities((InlineActionContainer) path.eContainer().eContainer());
 			if (entities.contains(path.getAssociation().getSourceEntityX())) {
 				return path.getAssociation().getTargetEntityX();
 			} else{

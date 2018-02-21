@@ -166,7 +166,7 @@ public class FeaturePathItemProvider
 			return getContentTypes((DynamicUnit) path.eContainer());
 
 		} else if (path.eContainer() instanceof InlineAction) {
-			return getEntities((InlineActionContainer) path.eContainer());
+			return getEntities((InlineActionContainer) path.eContainer().eContainer());
 
 		} else if (path.eContainer() instanceof Expression) {
 			return getEntities((Expression) path.eContainer());
@@ -185,7 +185,7 @@ public class FeaturePathItemProvider
 		} else if (path.eContainer() instanceof InlineAction) {
 			final Set<EntityOrView> targets = new HashSet<EntityOrView>();
 			final Set<EntityOrView> entities
-				= getEntities((InlineActionContainer) path.eContainer());
+				= getEntities((InlineActionContainer) path.eContainer().eContainer());
 			if (entities.contains(path.getAssociation().getSourceEntityX())) {
 				targets.add(path.getAssociation().getTargetEntityX());
 			} else{

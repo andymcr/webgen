@@ -32,7 +32,7 @@ helper context Website!Feature def: findOrmFeature(reference : Website!ServiceFe
 				else
 					if reference.findContainingSelection().usedBy.serves = self.partOf then
 						self.findOrmSourceAssociation()
-					else if reference.findContainingSelection().usedBy.serves = self.getTarget() then
+					else if reference.findContainingSelection().usedBy.serves = self.targetEntity then
 						self.findOrmTargetAssociation()
 					else if selection.joins->includes(self.partOf) then
 						self.findOrmSourceAssociation()

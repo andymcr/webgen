@@ -233,27 +233,102 @@ helper context Website!Feature def: findOrmFeature() : ORM!Feature
 helper context Website!Attribute def: findOrmAttribute() : ORM!Attribute
 	= self.findOrmEntityOrView().getOrmFeature(self.name);
 
-helper context Website!Association def: findOrmAssociation(entityOrView : Website!EntityOrView) : ORM!Association
-	= let name : String
-		= if entityOrView.features->includes(self) then
-				self.name
-			else
-				self.targetFeatureName()
-			endif
-		in thisModule.findOrmEntityOrView(entityOrView.name).getOrmFeature(name);
-
 helper context Website!Association def: findOrmSourceAssociation() : ORM!Association
-	= self.findOrmAssociation(self.partOf);
-
-helper context Website!Association def: getTarget(): Website!EntityOrView
-	= if self.oclIsTypeOf(Website!EncapsulatedAssociation) then
-			self.association.getTarget()
-		else
-			self.targetEntity
-		endif;
+	= thisModule.findOrmEntityOrView(self.partOf.name).getOrmFeature(self.name);
 
 helper context Website!Association def: findOrmTargetAssociation() : ORM!Association
-	= self.findOrmAssociation(self.getTarget());
+	= thisModule.findOrmEntityOrView(self.targetEntity.name).getOrmFeature(self.targetFeatureName());
+
+helper context Website!UnitAssociation def: findOrmAssociation() : ORM!Association
+	= if self.association.oclIsUndefined() then
+			OclUndefined
+		else 
+			if self.isSourceAssociation then
+				self.association.findOrmSourceAssociation()
+			else
+				self.association.findOrmTargetAssociation()
+			endif
+		endif;
+
+helper context Website!FeaturePathAssociation def: findOrmAssociation() : ORM!Association
+	= if self.association.oclIsUndefined() then
+			OclUndefined
+		else
+			if self.getSourceTypes()->includes(self.association.partOf) then
+				self.association.findOrmSourceAssociation()
+			else
+				self.association.findOrmTargetAssociation()
+			endif
+		endif;
+
+helper context Website!ChildPathAssociation def: findOrmAssociation() : ORM!Association
+	= if self.association.oclIsUndefined() then
+			OclUndefined
+		else
+			if self.getSourceTypes()->includes(self.association.partOf) then
+				self.association.findOrmSourceAssociation()
+			else
+				self.association.findOrmTargetAssociation()
+			endif
+		endif;
+
+helper context Website!UnitAssociation def: getSourceTypes() : Sequence(Website!EntityOrView)
+	= Sequence{ self.association.sourceEntityX };
+
+helper context Website!FeaturePathAssociation def: getSourceTypes() : Sequence(Website!EntityOrView)
+	= if self.eContainer().oclIsKindOf(Website!CollectionUnit) then
+			self.eContainer().contentType
+		else if self.eContainer().oclIsKindOf(Website!SingletonUnit) then
+			Sequence{ self.eContainer().contentType }
+		else if self.eContainer().oclIsKindOf(Website!InlineAction) then
+			self.eContainer().getSourceTypes()
+		else if self.eContainer().oclIsKindOf(Website!Expression) then
+			self.eContainer().getSourceTypes()
+		else
+			Sequence{}
+		endif endif endif endif;
+
+helper context Website!ChildPathAssociation def: getSourceTypes() : Sequence(Website!EntityOrView)
+	= if self.eContainer().getSourceTypes()->includes(self.eContainer().association.partOf) then
+			Sequence{ self.eContainer().association.targetEntity }
+		else
+			Sequence{ self.eContainer().association.partOf }
+		endif;
+
+helper context Website!InlineAction def: getSourceTypes() : Sequence(Website!EntityOrView)
+	= if self.eContainer().oclIsKindOf(Website!CollectionUnit) then
+			self.eContainer().contentType
+		else if self.eContainer().oclIsKindOf(Website!UnitElement) then
+			Sequence{ self.eContainer().partOf }
+		else if self.eContainer().oclIsKindOf(Website!UnitAssociation) then
+			self.eContainer().getSourceTypes()
+		else
+			Sequence{}
+		endif endif endif;
+
+helper context Website!Badge def: getSourceTypes() : Sequence(Website!EntityOrView)
+	= if self.eContainer().oclIsKindOf(Website!CollectionUnit) then
+			self.eContainer().contentType
+		else if self.eContainer().oclIsKindOf(Website!UnitElement) then
+			Sequence{ self.eContainer().partOf }
+		else if self.eContainer().oclIsKindOf(Website!UnitAssociation) then
+			self.eContainer().getSourceTypes()
+		else
+			Sequence{}
+		endif endif endif;
+
+helper context Website!Expression def: getSourceTypes() : Sequence(Website!EntityOrView)
+	= if self.eContainer().oclIsKindOf(Website!CollectionUnit) then
+			self.eContainer().contentType
+		else if self.eContainer().oclIsKindOf(Website!SingletonUnit) then
+			Sequence{ self.eContainer().contentType }
+		else if self.eContainer().oclIsKindOf(Website!InlineAction) then
+			self.eContainer().getSourceTypes()
+		else if self.eContainer().oclIsKindOf(Website!Badge) then
+			self.eContainer().getSourceTypes()
+		else
+			self.eContainer().getSourceTypes()
+		endif endif endif endif;
 
 
 helper def: findService(name : String) : Service!Service

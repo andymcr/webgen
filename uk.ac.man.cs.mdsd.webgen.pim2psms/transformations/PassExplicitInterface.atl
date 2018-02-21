@@ -196,17 +196,6 @@ helper context Website!Expression def: findContainingSelection() : Website!Selec
 			OclUndefined
 		endif endif endif ;
 
-helper context Website!AssociationReference def: findOrmAssociation() : ORM!Association
-	= if self.association.oclIsUndefined() then
-			OclUndefined
-		else
-			if self.isSourceAssociation then
-				self.association.findOrmSourceAssociation()
-			else
-				self.association.findOrmTargetAssociation()
-			endif
-		endif;
-
 helper context Website!Label def: findOrmLabel() : ORM!Label
 	= if self.oclIsKindOf(Website!Attribute) then
 		self.findOrmEntityOrView().getOrmFeature(self.name)

@@ -82,7 +82,7 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof ChildPathAssociation) {
 						final ChildPathAssociation child = (ChildPathAssociation) object;
-						return getTarget(child).getAllAssociations();
+						return getParentType(child).getAllAssociations();
 					}
 
 					return Collections.emptyList();
@@ -112,7 +112,12 @@ public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 						final ChildPathAssociation child = (ChildPathAssociation) object;
 						final Set<Label> labels = new HashSet<Label>();
 						if (child.getAssociation() != null) {
-							final EntityOrView target = getTarget(child);
+							EntityOrView target;
+							if (getParentType(child).equals(child.getAssociation().getSourceEntityX())) {
+								target = child.getAssociation().getTargetEntityX();
+							} else {
+								target = child.getAssociation().getSourceEntityX();
+							}
 							labels.addAll(target.getAttributes());
 							labels.addAll(target.getLabels());
 						}

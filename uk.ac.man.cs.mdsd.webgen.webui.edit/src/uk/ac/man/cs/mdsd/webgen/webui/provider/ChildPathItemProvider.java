@@ -134,18 +134,14 @@ public class ChildPathItemProvider
 		} else if (child.getPartOf() instanceof FeaturePathAssociation) {
 			parentTarget = getTarget((FeaturePathAssociation) child.getPartOf());
 		} else {
-			parentTarget = getTarget((ChildPathAssociation) child.getPartOf());
+			final ChildPathAssociation parent = (ChildPathAssociation) child.getPartOf();
+			if (getParentType(parent).equals(parent.getAssociation().getSourceEntityX())) {
+				parentTarget = parent.getAssociation().getTargetEntityX();
+			} else {
+				parentTarget = parent.getAssociation().getSourceEntityX();
+			}
 		}
 		return parentTarget;
-	}
-
-	protected EntityOrView getTarget(final ChildPathAssociation child) {
-		final EntityOrView parentTarget = getParentType(child);
-		if (child.getAssociation().getSourceEntityX().equals(parentTarget)) {
-			return child.getAssociation().getTargetEntityX();
-		} else {
-			return child.getAssociation().getSourceEntityX();
-		}
 	}
 
 	protected EntityOrView getTarget(final UnitAssociation association) {
@@ -170,10 +166,8 @@ public class ChildPathItemProvider
 
 		if (unit instanceof CollectionUnit) {
 			final CollectionUnit collection = (CollectionUnit) unit;
-			if (collection.getContentType().size() > 0) {
-				contentType.addAll(collection.getContentType());
-				return contentType;
-			}
+			contentType.addAll(collection.getContentType());
+			return contentType;
 		}
 
 		return contentType;

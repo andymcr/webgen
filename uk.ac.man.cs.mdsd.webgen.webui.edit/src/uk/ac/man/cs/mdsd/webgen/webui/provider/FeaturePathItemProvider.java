@@ -30,8 +30,10 @@ import uk.ac.man.cs.mdsd.webgen.expression.ExpressionPackage;
 import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.Attribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EncapsulatedAttribute;
+import uk.ac.man.cs.mdsd.webgen.persistence.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.service.Selection;
 import uk.ac.man.cs.mdsd.webgen.webui.Badge;
 import uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
@@ -223,13 +225,38 @@ public class FeaturePathItemProvider
 
 		if (unit instanceof CollectionUnit) {
 			final CollectionUnit collection = (CollectionUnit) unit;
-			if (collection.getContentType().size() > 0) {
+			if (collection.getSelection() == null) {
 				contentType.addAll(collection.getContentType());
-				return contentType;
+			} else if (collection.getSelection().getSelectPath().size() > 0) {
+				contentType.add(getSelectType(collection.getSelection(), collection.getContentType()));
 			}
+			return contentType;
 		}
 
 		return contentType;
+	}
+
+	protected EntityOrView getSelectType(final Selection selection, final List<EntityOrView> parentTypes) {
+		EntityOrView type = null;
+		boolean first = true;
+		for (EntityAssociation association : selection.getSelectPath()) {
+			if (first) {
+				if (parentTypes.contains(association.getSourceEntityX())) {
+					type = association.getTargetEntityX();
+				} else {
+					type = association.getSourceEntityX();
+				}
+			} else {
+				if (association.getSourceEntityX().equals(type)) {
+					type = association.getTargetEntityX();
+				} else {
+					type = association.getSourceEntityX();
+				}
+			}
+			first = false;
+		}
+
+		return type;
 	}
 
 	protected Set<EntityOrView> getEntities(final InlineActionContainer container) {

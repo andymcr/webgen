@@ -8,6 +8,7 @@ import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
 import uk.ac.man.cs.mdsd.service.Filter;
 import uk.ac.man.cs.mdsd.service.Selection;
+import uk.ac.man.cs.mdsd.service.Service;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,8 +21,9 @@ import uk.ac.man.cs.mdsd.service.Selection;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getSelection <em>Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFindContainerSelection <em>Find Container Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#isOmitContainerLoad <em>Omit Container Load</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContainerService <em>Container Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFindContainerSelection <em>Find Container Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFindElementSelection <em>Find Element Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getSupportedFilters <em>Supported Filters</em>}</li>
@@ -93,32 +95,6 @@ public interface CollectionUnit extends SelectableUnit {
 	void setSelection(Selection value);
 
 	/**
-	 * Returns the value of the '<em><b>Find Container Selection</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Find Container Selection</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Find Container Selection</em>' reference.
-	 * @see #setFindContainerSelection(Selection)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_FindContainerSelection()
-	 * @model
-	 * @generated
-	 */
-	Selection getFindContainerSelection();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFindContainerSelection <em>Find Container Selection</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Find Container Selection</em>' reference.
-	 * @see #getFindContainerSelection()
-	 * @generated
-	 */
-	void setFindContainerSelection(Selection value);
-
-	/**
 	 * Returns the value of the '<em><b>Omit Container Load</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -143,6 +119,58 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	void setOmitContainerLoad(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Container Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Container Service</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Container Service</em>' reference.
+	 * @see #setContainerService(Service)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_ContainerService()
+	 * @model
+	 * @generated
+	 */
+	Service getContainerService();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContainerService <em>Container Service</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Container Service</em>' reference.
+	 * @see #getContainerService()
+	 * @generated
+	 */
+	void setContainerService(Service value);
+
+	/**
+	 * Returns the value of the '<em><b>Find Container Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Find Container Selection</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Find Container Selection</em>' reference.
+	 * @see #setFindContainerSelection(Selection)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_FindContainerSelection()
+	 * @model
+	 * @generated
+	 */
+	Selection getFindContainerSelection();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFindContainerSelection <em>Find Container Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Find Container Selection</em>' reference.
+	 * @see #getFindContainerSelection()
+	 * @generated
+	 */
+	void setFindContainerSelection(Selection value);
 
 	/**
 	 * Returns the value of the '<em><b>Find Element Selection</b></em>' reference.

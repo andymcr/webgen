@@ -50,8 +50,9 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			addSelectorsPropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
-			addFindContainerSelectionPropertyDescriptor(object);
 			addOmitContainerLoadPropertyDescriptor(object);
+			addContainerServicePropertyDescriptor(object);
+			addFindContainerSelectionPropertyDescriptor(object);
 			addFindElementSelectionPropertyDescriptor(object);
 			addFilterPropertyDescriptor(object);
 			addSupportedFiltersPropertyDescriptor(object);
@@ -187,6 +188,28 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Container Service feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainerServicePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_containerService_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_containerService_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__CONTAINER_SERVICE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

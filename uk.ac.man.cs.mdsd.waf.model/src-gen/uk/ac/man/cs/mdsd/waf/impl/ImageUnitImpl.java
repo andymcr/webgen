@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.orm.Label;
 
 import uk.ac.man.cs.mdsd.service.Filter;
 import uk.ac.man.cs.mdsd.service.Selection;
+import uk.ac.man.cs.mdsd.service.Service;
 
 import uk.ac.man.cs.mdsd.waf.Badge;
 import uk.ac.man.cs.mdsd.waf.CollectionUnit;
@@ -45,8 +46,9 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getSelectors <em>Selectors</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getSelection <em>Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getFindContainerSelection <em>Find Container Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#isOmitContainerLoad <em>Omit Container Load</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getContainerService <em>Container Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getFindContainerSelection <em>Find Container Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getFindElementSelection <em>Find Element Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getSupportedFilters <em>Supported Filters</em>}</li>
@@ -111,16 +113,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	protected Selection selection;
 
 	/**
-	 * The cached value of the '{@link #getFindContainerSelection() <em>Find Container Selection</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFindContainerSelection()
-	 * @generated
-	 * @ordered
-	 */
-	protected Selection findContainerSelection;
-
-	/**
 	 * The default value of the '{@link #isOmitContainerLoad() <em>Omit Container Load</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,6 +131,26 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected boolean omitContainerLoad = OMIT_CONTAINER_LOAD_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContainerService() <em>Container Service</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainerService()
+	 * @generated
+	 * @ordered
+	 */
+	protected Service containerService;
+
+	/**
+	 * The cached value of the '{@link #getFindContainerSelection() <em>Find Container Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFindContainerSelection()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection findContainerSelection;
 
 	/**
 	 * The cached value of the '{@link #getFindElementSelection() <em>Find Element Selection</em>}' reference.
@@ -696,6 +708,65 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isOmitContainerLoad() {
+		return omitContainerLoad;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOmitContainerLoad(boolean newOmitContainerLoad) {
+		boolean oldOmitContainerLoad = omitContainerLoad;
+		omitContainerLoad = newOmitContainerLoad;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD, oldOmitContainerLoad, omitContainerLoad));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Service getContainerService() {
+		if (containerService != null && containerService.eIsProxy()) {
+			InternalEObject oldContainerService = (InternalEObject)containerService;
+			containerService = (Service)eResolveProxy(oldContainerService);
+			if (containerService != oldContainerService) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.IMAGE_UNIT__CONTAINER_SERVICE, oldContainerService, containerService));
+			}
+		}
+		return containerService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Service basicGetContainerService() {
+		return containerService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainerService(Service newContainerService) {
+		Service oldContainerService = containerService;
+		containerService = newContainerService;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__CONTAINER_SERVICE, oldContainerService, containerService));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Selection getFindContainerSelection() {
 		if (findContainerSelection != null && findContainerSelection.eIsProxy()) {
 			InternalEObject oldFindContainerSelection = (InternalEObject)findContainerSelection;
@@ -727,27 +798,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		findContainerSelection = newFindContainerSelection;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION, oldFindContainerSelection, findContainerSelection));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isOmitContainerLoad() {
-		return omitContainerLoad;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOmitContainerLoad(boolean newOmitContainerLoad) {
-		boolean oldOmitContainerLoad = omitContainerLoad;
-		omitContainerLoad = newOmitContainerLoad;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD, oldOmitContainerLoad, omitContainerLoad));
 	}
 
 	/**
@@ -1499,11 +1549,14 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
+			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
+				return isOmitContainerLoad();
+			case WafPackage.IMAGE_UNIT__CONTAINER_SERVICE:
+				if (resolve) return getContainerService();
+				return basicGetContainerService();
 			case WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION:
 				if (resolve) return getFindContainerSelection();
 				return basicGetFindContainerSelection();
-			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
-				return isOmitContainerLoad();
 			case WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION:
 				if (resolve) return getFindElementSelection();
 				return basicGetFindElementSelection();
@@ -1589,11 +1642,14 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__SELECTION:
 				setSelection((Selection)newValue);
 				return;
-			case WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION:
-				setFindContainerSelection((Selection)newValue);
-				return;
 			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
 				setOmitContainerLoad((Boolean)newValue);
+				return;
+			case WafPackage.IMAGE_UNIT__CONTAINER_SERVICE:
+				setContainerService((Service)newValue);
+				return;
+			case WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION:
+				setFindContainerSelection((Selection)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION:
 				setFindElementSelection((Selection)newValue);
@@ -1702,11 +1758,14 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
-			case WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION:
-				setFindContainerSelection((Selection)null);
-				return;
 			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
 				setOmitContainerLoad(OMIT_CONTAINER_LOAD_EDEFAULT);
+				return;
+			case WafPackage.IMAGE_UNIT__CONTAINER_SERVICE:
+				setContainerService((Service)null);
+				return;
+			case WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION:
+				setFindContainerSelection((Selection)null);
 				return;
 			case WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION:
 				setFindElementSelection((Selection)null);
@@ -1810,10 +1869,12 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return contentType != null && !contentType.isEmpty();
 			case WafPackage.IMAGE_UNIT__SELECTION:
 				return selection != null;
-			case WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION:
-				return findContainerSelection != null;
 			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
 				return omitContainerLoad != OMIT_CONTAINER_LOAD_EDEFAULT;
+			case WafPackage.IMAGE_UNIT__CONTAINER_SERVICE:
+				return containerService != null;
+			case WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION:
+				return findContainerSelection != null;
 			case WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION:
 				return findElementSelection != null;
 			case WafPackage.IMAGE_UNIT__FILTER:
@@ -1891,8 +1952,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			switch (derivedFeatureID) {
 				case WafPackage.IMAGE_UNIT__CONTENT_TYPE: return WafPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WafPackage.IMAGE_UNIT__SELECTION: return WafPackage.COLLECTION_UNIT__SELECTION;
-				case WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION: return WafPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION;
 				case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD: return WafPackage.COLLECTION_UNIT__OMIT_CONTAINER_LOAD;
+				case WafPackage.IMAGE_UNIT__CONTAINER_SERVICE: return WafPackage.COLLECTION_UNIT__CONTAINER_SERVICE;
+				case WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION: return WafPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION;
 				case WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION: return WafPackage.COLLECTION_UNIT__FIND_ELEMENT_SELECTION;
 				case WafPackage.IMAGE_UNIT__FILTER: return WafPackage.COLLECTION_UNIT__FILTER;
 				case WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS: return WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS;
@@ -1937,8 +1999,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			switch (baseFeatureID) {
 				case WafPackage.COLLECTION_UNIT__CONTENT_TYPE: return WafPackage.IMAGE_UNIT__CONTENT_TYPE;
 				case WafPackage.COLLECTION_UNIT__SELECTION: return WafPackage.IMAGE_UNIT__SELECTION;
-				case WafPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION: return WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION;
 				case WafPackage.COLLECTION_UNIT__OMIT_CONTAINER_LOAD: return WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD;
+				case WafPackage.COLLECTION_UNIT__CONTAINER_SERVICE: return WafPackage.IMAGE_UNIT__CONTAINER_SERVICE;
+				case WafPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION: return WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION;
 				case WafPackage.COLLECTION_UNIT__FIND_ELEMENT_SELECTION: return WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION;
 				case WafPackage.COLLECTION_UNIT__FILTER: return WafPackage.IMAGE_UNIT__FILTER;
 				case WafPackage.COLLECTION_UNIT__SUPPORTED_FILTERS: return WafPackage.IMAGE_UNIT__SUPPORTED_FILTERS;

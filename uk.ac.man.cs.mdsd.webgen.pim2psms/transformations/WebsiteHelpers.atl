@@ -465,20 +465,30 @@ helper context Website!CollectionUnit def: getContainerType() : ORM!EntityOrView
 			directContainer
 		endif endif;
 
+helper context Website!CollectionUnit def: findContainerService() : Service!Service
+	= if self.contentType->isEmpty() then
+			OclUndefined
+		else
+			let container : Website!EntityOrView = self.getContainerType()
+				in if container.oclIsUndefined() or self.omitContainerLoad then
+						OclUndefined
+					else
+						container.findService()
+					endif
+		endif;
+
 helper context Website!CollectionUnit def: findServicesUsed() : Sequence(Service!Service)
 	= self.servicesUsed->collect(s | s.findService())
 		->union(if self.contentType->isEmpty() then
 						Sequence{}
 					else
 						Sequence{ self.contentType->first().findService() }
-						->union(let container : Website!EntityOrView = self.getContainerType()
-									in if container.oclIsUndefined() then
-											Sequence{}
-										else if self.omitContainerLoad then
+						->union(let containerService : Service!Service = self.findContainerService()
+									in if containerService.oclIsUndefined() then
 											Sequence{}
 										else
-											Sequence{ container.findService() }
-										endif endif)
+											Sequence{ containerService }
+										endif)
 					endif);
 
 helper context Website!DetailsUnit def: findServicesUsed() : Sequence(Service!Service)

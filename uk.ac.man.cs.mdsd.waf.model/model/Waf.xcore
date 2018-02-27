@@ -374,8 +374,9 @@ interface SingletonUnit {
 interface CollectionUnit extends SelectableUnit {
 	refers EntityOrView[1..*] contentType
 	refers Selection selection
-	refers Selection findContainerSelection
 	boolean omitContainerLoad
+	refers Service containerService
+	refers Selection findContainerSelection
 	refers Selection findElementSelection
 	refers Filter filter
 	refers Filter[] supportedFilters

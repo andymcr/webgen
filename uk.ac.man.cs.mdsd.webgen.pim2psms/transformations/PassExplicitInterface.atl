@@ -771,12 +771,6 @@ abstract rule CollectionUnit {
 				website.findContainerSelection.findServiceSelection()
 			endif,
 		omitContainerLoad <- website.omitContainerLoad,
-		paginationParent <-
-			if website.paginationParent.oclIsUndefined() then
-				website.paginationParent
-			else
-				thisModule.findOrmEntityOrView(website.paginationParent.name)
-			endif,
 		findElementSelection <-
 			if website.findElementSelection.oclIsUndefined() then
 				website.findElementSelection
@@ -1133,10 +1127,10 @@ rule DeleteAction {
 				website.name.createLabel().concat('?')
 			endif endif,
 		requiresRole <-
-			if website.requiresRole <> '' then
-				website.requiresRole
+			if website.requiresRole.trim() <> '' then
+				website.requiresRole.trim()
 			else
-				website.usedBy.requiresRole
+				website.usedBy.requiresRole.trim()
 			endif,
 		enableWhen <- website.enableWhen,
 		uriElement <-
@@ -1160,10 +1154,10 @@ rule FeatureSupportAction {
 				OclUndefined
 			endif,
 		requiresRole <-
-			if website.requiresRole <> '' then
-				website.requiresRole
+			if website.requiresRole.trim() <> '' then
+				website.requiresRole.trim()
 			else
-				website.usedBy.requiresRole
+				website.usedBy.requiresRole.trim()
 			endif,
 		enableWhen <- website.enableWhen,
 		uriElement <-

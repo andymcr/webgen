@@ -20,7 +20,6 @@ import uk.ac.man.cs.mdsd.webgen.service.Selection;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFindContainerSelection <em>Find Container Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#isOmitContainerLoad <em>Omit Container Load</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getPaginationParent <em>Pagination Parent</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFindElementSelection <em>Find Element Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getSupportedFilters <em>Supported Filters</em>}</li>
@@ -145,32 +144,6 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	void setOmitContainerLoad(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Pagination Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Pagination Parent</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pagination Parent</em>' reference.
-	 * @see #setPaginationParent(EntityOrView)
-	 * @see uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage#getCollectionUnit_PaginationParent()
-	 * @model
-	 * @generated
-	 */
-	EntityOrView getPaginationParent();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.webui.CollectionUnit#getPaginationParent <em>Pagination Parent</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pagination Parent</em>' reference.
-	 * @see #getPaginationParent()
-	 * @generated
-	 */
-	void setPaginationParent(EntityOrView value);
 
 	/**
 	 * Returns the value of the '<em><b>Find Element Selection</b></em>' reference.

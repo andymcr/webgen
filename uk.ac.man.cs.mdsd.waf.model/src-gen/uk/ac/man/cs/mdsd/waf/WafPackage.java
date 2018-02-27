@@ -4371,22 +4371,13 @@ public interface WafPackage extends EPackage {
 	int COLLECTION_UNIT__OMIT_CONTAINER_LOAD = SELECTABLE_UNIT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Pagination Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION_UNIT__PAGINATION_PARENT = SELECTABLE_UNIT_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Find Element Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__FIND_ELEMENT_SELECTION = SELECTABLE_UNIT_FEATURE_COUNT + 5;
+	int COLLECTION_UNIT__FIND_ELEMENT_SELECTION = SELECTABLE_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' reference.
@@ -4395,7 +4386,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__FILTER = SELECTABLE_UNIT_FEATURE_COUNT + 6;
+	int COLLECTION_UNIT__FILTER = SELECTABLE_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Supported Filters</b></em>' reference list.
@@ -4404,7 +4395,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__SUPPORTED_FILTERS = SELECTABLE_UNIT_FEATURE_COUNT + 7;
+	int COLLECTION_UNIT__SUPPORTED_FILTERS = SELECTABLE_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Badges</b></em>' containment reference list.
@@ -4413,7 +4404,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__BADGES = SELECTABLE_UNIT_FEATURE_COUNT + 8;
+	int COLLECTION_UNIT__BADGES = SELECTABLE_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Empty Message</b></em>' attribute.
@@ -4422,7 +4413,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__EMPTY_MESSAGE = SELECTABLE_UNIT_FEATURE_COUNT + 9;
+	int COLLECTION_UNIT__EMPTY_MESSAGE = SELECTABLE_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Default Pagination Size</b></em>' attribute.
@@ -4431,7 +4422,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE = SELECTABLE_UNIT_FEATURE_COUNT + 10;
+	int COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE = SELECTABLE_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Pagination Size</b></em>' attribute.
@@ -4440,7 +4431,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE = SELECTABLE_UNIT_FEATURE_COUNT + 11;
+	int COLLECTION_UNIT__MAXIMUM_PAGINATION_SIZE = SELECTABLE_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
@@ -4449,7 +4440,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__NEXT_NPAGES = SELECTABLE_UNIT_FEATURE_COUNT + 12;
+	int COLLECTION_UNIT__NEXT_NPAGES = SELECTABLE_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Previous Npages</b></em>' attribute.
@@ -4458,7 +4449,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__PREVIOUS_NPAGES = SELECTABLE_UNIT_FEATURE_COUNT + 13;
+	int COLLECTION_UNIT__PREVIOUS_NPAGES = SELECTABLE_UNIT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Next Page Label</b></em>' attribute.
@@ -4467,7 +4458,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__NEXT_PAGE_LABEL = SELECTABLE_UNIT_FEATURE_COUNT + 14;
+	int COLLECTION_UNIT__NEXT_PAGE_LABEL = SELECTABLE_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Next Page Icon Name</b></em>' attribute.
@@ -4476,7 +4467,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__NEXT_PAGE_ICON_NAME = SELECTABLE_UNIT_FEATURE_COUNT + 15;
+	int COLLECTION_UNIT__NEXT_PAGE_ICON_NAME = SELECTABLE_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Previous Page Label</b></em>' attribute.
@@ -4485,7 +4476,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__PREVIOUS_PAGE_LABEL = SELECTABLE_UNIT_FEATURE_COUNT + 16;
+	int COLLECTION_UNIT__PREVIOUS_PAGE_LABEL = SELECTABLE_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Previous Page Icon Name</b></em>' attribute.
@@ -4494,7 +4485,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__PREVIOUS_PAGE_ICON_NAME = SELECTABLE_UNIT_FEATURE_COUNT + 17;
+	int COLLECTION_UNIT__PREVIOUS_PAGE_ICON_NAME = SELECTABLE_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Use Disabled Page Links</b></em>' attribute.
@@ -4503,7 +4494,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__USE_DISABLED_PAGE_LINKS = SELECTABLE_UNIT_FEATURE_COUNT + 18;
+	int COLLECTION_UNIT__USE_DISABLED_PAGE_LINKS = SELECTABLE_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Use First Last Page Links</b></em>' attribute.
@@ -4512,7 +4503,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__USE_FIRST_LAST_PAGE_LINKS = SELECTABLE_UNIT_FEATURE_COUNT + 19;
+	int COLLECTION_UNIT__USE_FIRST_LAST_PAGE_LINKS = SELECTABLE_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>First Page Label</b></em>' attribute.
@@ -4521,7 +4512,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__FIRST_PAGE_LABEL = SELECTABLE_UNIT_FEATURE_COUNT + 20;
+	int COLLECTION_UNIT__FIRST_PAGE_LABEL = SELECTABLE_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>First Page Icon Name</b></em>' attribute.
@@ -4530,7 +4521,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__FIRST_PAGE_ICON_NAME = SELECTABLE_UNIT_FEATURE_COUNT + 21;
+	int COLLECTION_UNIT__FIRST_PAGE_ICON_NAME = SELECTABLE_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Last Page Label</b></em>' attribute.
@@ -4539,7 +4530,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__LAST_PAGE_LABEL = SELECTABLE_UNIT_FEATURE_COUNT + 22;
+	int COLLECTION_UNIT__LAST_PAGE_LABEL = SELECTABLE_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Last Page Icon Name</b></em>' attribute.
@@ -4548,7 +4539,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__LAST_PAGE_ICON_NAME = SELECTABLE_UNIT_FEATURE_COUNT + 23;
+	int COLLECTION_UNIT__LAST_PAGE_ICON_NAME = SELECTABLE_UNIT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Pagination Class</b></em>' attribute.
@@ -4557,7 +4548,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__PAGINATION_CLASS = SELECTABLE_UNIT_FEATURE_COUNT + 24;
+	int COLLECTION_UNIT__PAGINATION_CLASS = SELECTABLE_UNIT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Pagination Element Class</b></em>' attribute.
@@ -4566,7 +4557,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__PAGINATION_ELEMENT_CLASS = SELECTABLE_UNIT_FEATURE_COUNT + 25;
+	int COLLECTION_UNIT__PAGINATION_ELEMENT_CLASS = SELECTABLE_UNIT_FEATURE_COUNT + 24;
 
 	/**
 	 * The number of structural features of the '<em>Collection Unit</em>' class.
@@ -4575,7 +4566,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT_FEATURE_COUNT = SELECTABLE_UNIT_FEATURE_COUNT + 26;
+	int COLLECTION_UNIT_FEATURE_COUNT = SELECTABLE_UNIT_FEATURE_COUNT + 25;
 
 	/**
 	 * The number of operations of the '<em>Collection Unit</em>' class.
@@ -6971,22 +6962,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__OMIT_CONTAINER_LOAD = DATA_UNIT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Pagination Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__PAGINATION_PARENT = DATA_UNIT_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Find Element Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__FIND_ELEMENT_SELECTION = DATA_UNIT_FEATURE_COUNT + 6;
+	int INDEX_UNIT__FIND_ELEMENT_SELECTION = DATA_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' reference.
@@ -6995,7 +6977,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__FILTER = DATA_UNIT_FEATURE_COUNT + 7;
+	int INDEX_UNIT__FILTER = DATA_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Supported Filters</b></em>' reference list.
@@ -7004,7 +6986,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__SUPPORTED_FILTERS = DATA_UNIT_FEATURE_COUNT + 8;
+	int INDEX_UNIT__SUPPORTED_FILTERS = DATA_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Badges</b></em>' containment reference list.
@@ -7013,7 +6995,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__BADGES = DATA_UNIT_FEATURE_COUNT + 9;
+	int INDEX_UNIT__BADGES = DATA_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Empty Message</b></em>' attribute.
@@ -7022,7 +7004,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__EMPTY_MESSAGE = DATA_UNIT_FEATURE_COUNT + 10;
+	int INDEX_UNIT__EMPTY_MESSAGE = DATA_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Default Pagination Size</b></em>' attribute.
@@ -7031,7 +7013,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__DEFAULT_PAGINATION_SIZE = DATA_UNIT_FEATURE_COUNT + 11;
+	int INDEX_UNIT__DEFAULT_PAGINATION_SIZE = DATA_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Pagination Size</b></em>' attribute.
@@ -7040,7 +7022,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__MAXIMUM_PAGINATION_SIZE = DATA_UNIT_FEATURE_COUNT + 12;
+	int INDEX_UNIT__MAXIMUM_PAGINATION_SIZE = DATA_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
@@ -7049,7 +7031,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__NEXT_NPAGES = DATA_UNIT_FEATURE_COUNT + 13;
+	int INDEX_UNIT__NEXT_NPAGES = DATA_UNIT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Previous Npages</b></em>' attribute.
@@ -7058,7 +7040,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__PREVIOUS_NPAGES = DATA_UNIT_FEATURE_COUNT + 14;
+	int INDEX_UNIT__PREVIOUS_NPAGES = DATA_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Next Page Label</b></em>' attribute.
@@ -7067,7 +7049,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__NEXT_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 15;
+	int INDEX_UNIT__NEXT_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Next Page Icon Name</b></em>' attribute.
@@ -7076,7 +7058,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__NEXT_PAGE_ICON_NAME = DATA_UNIT_FEATURE_COUNT + 16;
+	int INDEX_UNIT__NEXT_PAGE_ICON_NAME = DATA_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Previous Page Label</b></em>' attribute.
@@ -7085,7 +7067,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__PREVIOUS_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 17;
+	int INDEX_UNIT__PREVIOUS_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Previous Page Icon Name</b></em>' attribute.
@@ -7094,7 +7076,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME = DATA_UNIT_FEATURE_COUNT + 18;
+	int INDEX_UNIT__PREVIOUS_PAGE_ICON_NAME = DATA_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Use Disabled Page Links</b></em>' attribute.
@@ -7103,7 +7085,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__USE_DISABLED_PAGE_LINKS = DATA_UNIT_FEATURE_COUNT + 19;
+	int INDEX_UNIT__USE_DISABLED_PAGE_LINKS = DATA_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Use First Last Page Links</b></em>' attribute.
@@ -7112,7 +7094,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS = DATA_UNIT_FEATURE_COUNT + 20;
+	int INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS = DATA_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>First Page Label</b></em>' attribute.
@@ -7121,7 +7103,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__FIRST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 21;
+	int INDEX_UNIT__FIRST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>First Page Icon Name</b></em>' attribute.
@@ -7130,7 +7112,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__FIRST_PAGE_ICON_NAME = DATA_UNIT_FEATURE_COUNT + 22;
+	int INDEX_UNIT__FIRST_PAGE_ICON_NAME = DATA_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Last Page Label</b></em>' attribute.
@@ -7139,7 +7121,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__LAST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 23;
+	int INDEX_UNIT__LAST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Last Page Icon Name</b></em>' attribute.
@@ -7148,7 +7130,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__LAST_PAGE_ICON_NAME = DATA_UNIT_FEATURE_COUNT + 24;
+	int INDEX_UNIT__LAST_PAGE_ICON_NAME = DATA_UNIT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Pagination Class</b></em>' attribute.
@@ -7157,7 +7139,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__PAGINATION_CLASS = DATA_UNIT_FEATURE_COUNT + 25;
+	int INDEX_UNIT__PAGINATION_CLASS = DATA_UNIT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Pagination Element Class</b></em>' attribute.
@@ -7166,7 +7148,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__PAGINATION_ELEMENT_CLASS = DATA_UNIT_FEATURE_COUNT + 26;
+	int INDEX_UNIT__PAGINATION_ELEMENT_CLASS = DATA_UNIT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -7175,7 +7157,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__ACTIONS = DATA_UNIT_FEATURE_COUNT + 27;
+	int INDEX_UNIT__ACTIONS = DATA_UNIT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Omit Column Labels</b></em>' attribute.
@@ -7184,7 +7166,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__OMIT_COLUMN_LABELS = DATA_UNIT_FEATURE_COUNT + 28;
+	int INDEX_UNIT__OMIT_COLUMN_LABELS = DATA_UNIT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Targetting Searches</b></em>' reference.
@@ -7193,7 +7175,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__TARGETTING_SEARCHES = DATA_UNIT_FEATURE_COUNT + 29;
+	int INDEX_UNIT__TARGETTING_SEARCHES = DATA_UNIT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Row Classes</b></em>' attribute.
@@ -7202,7 +7184,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__ROW_CLASSES = DATA_UNIT_FEATURE_COUNT + 30;
+	int INDEX_UNIT__ROW_CLASSES = DATA_UNIT_FEATURE_COUNT + 29;
 
 	/**
 	 * The number of structural features of the '<em>Index Unit</em>' class.
@@ -7211,7 +7193,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 31;
+	int INDEX_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 30;
 
 	/**
 	 * The number of operations of the '<em>Index Unit</em>' class.
@@ -7483,15 +7465,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_GRID_UNIT__OMIT_CONTAINER_LOAD = INDEX_UNIT__OMIT_CONTAINER_LOAD;
-
-	/**
-	 * The feature id for the '<em><b>Pagination Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_GRID_UNIT__PAGINATION_PARENT = INDEX_UNIT__PAGINATION_PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Find Element Selection</b></em>' reference.
@@ -7999,15 +7972,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__OMIT_CONTAINER_LOAD = INDEX_UNIT__OMIT_CONTAINER_LOAD;
 
 	/**
-	 * The feature id for the '<em><b>Pagination Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_PAGE_DIRECTION_UNIT__PAGINATION_PARENT = INDEX_UNIT__PAGINATION_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Find Element Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8513,15 +8477,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__OMIT_CONTAINER_LOAD = INDEX_UNIT__OMIT_CONTAINER_LOAD;
 
 	/**
-	 * The feature id for the '<em><b>Pagination Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_LINE_DIRECTION_UNIT__PAGINATION_PARENT = INDEX_UNIT__PAGINATION_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Find Element Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9025,15 +8980,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_CARDS_UNIT__OMIT_CONTAINER_LOAD = INDEX_UNIT__OMIT_CONTAINER_LOAD;
-
-	/**
-	 * The feature id for the '<em><b>Pagination Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_CARDS_UNIT__PAGINATION_PARENT = INDEX_UNIT__PAGINATION_PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Find Element Selection</b></em>' reference.
@@ -10047,22 +9993,13 @@ public interface WafPackage extends EPackage {
 	int IMAGE_UNIT__OMIT_CONTAINER_LOAD = DYNAMIC_UNIT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Pagination Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_UNIT__PAGINATION_PARENT = DYNAMIC_UNIT_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Find Element Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__FIND_ELEMENT_SELECTION = DYNAMIC_UNIT_FEATURE_COUNT + 6;
+	int IMAGE_UNIT__FIND_ELEMENT_SELECTION = DYNAMIC_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' reference.
@@ -10071,7 +10008,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 7;
+	int IMAGE_UNIT__FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Supported Filters</b></em>' reference list.
@@ -10080,7 +10017,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__SUPPORTED_FILTERS = DYNAMIC_UNIT_FEATURE_COUNT + 8;
+	int IMAGE_UNIT__SUPPORTED_FILTERS = DYNAMIC_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Badges</b></em>' containment reference list.
@@ -10089,7 +10026,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__BADGES = DYNAMIC_UNIT_FEATURE_COUNT + 9;
+	int IMAGE_UNIT__BADGES = DYNAMIC_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Empty Message</b></em>' attribute.
@@ -10098,7 +10035,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__EMPTY_MESSAGE = DYNAMIC_UNIT_FEATURE_COUNT + 10;
+	int IMAGE_UNIT__EMPTY_MESSAGE = DYNAMIC_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Default Pagination Size</b></em>' attribute.
@@ -10107,7 +10044,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__DEFAULT_PAGINATION_SIZE = DYNAMIC_UNIT_FEATURE_COUNT + 11;
+	int IMAGE_UNIT__DEFAULT_PAGINATION_SIZE = DYNAMIC_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Pagination Size</b></em>' attribute.
@@ -10116,7 +10053,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE = DYNAMIC_UNIT_FEATURE_COUNT + 12;
+	int IMAGE_UNIT__MAXIMUM_PAGINATION_SIZE = DYNAMIC_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
@@ -10125,7 +10062,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__NEXT_NPAGES = DYNAMIC_UNIT_FEATURE_COUNT + 13;
+	int IMAGE_UNIT__NEXT_NPAGES = DYNAMIC_UNIT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Previous Npages</b></em>' attribute.
@@ -10134,7 +10071,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__PREVIOUS_NPAGES = DYNAMIC_UNIT_FEATURE_COUNT + 14;
+	int IMAGE_UNIT__PREVIOUS_NPAGES = DYNAMIC_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Next Page Label</b></em>' attribute.
@@ -10143,7 +10080,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__NEXT_PAGE_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 15;
+	int IMAGE_UNIT__NEXT_PAGE_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Next Page Icon Name</b></em>' attribute.
@@ -10152,7 +10089,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__NEXT_PAGE_ICON_NAME = DYNAMIC_UNIT_FEATURE_COUNT + 16;
+	int IMAGE_UNIT__NEXT_PAGE_ICON_NAME = DYNAMIC_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Previous Page Label</b></em>' attribute.
@@ -10161,7 +10098,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__PREVIOUS_PAGE_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 17;
+	int IMAGE_UNIT__PREVIOUS_PAGE_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Previous Page Icon Name</b></em>' attribute.
@@ -10170,7 +10107,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__PREVIOUS_PAGE_ICON_NAME = DYNAMIC_UNIT_FEATURE_COUNT + 18;
+	int IMAGE_UNIT__PREVIOUS_PAGE_ICON_NAME = DYNAMIC_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Use Disabled Page Links</b></em>' attribute.
@@ -10179,7 +10116,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__USE_DISABLED_PAGE_LINKS = DYNAMIC_UNIT_FEATURE_COUNT + 19;
+	int IMAGE_UNIT__USE_DISABLED_PAGE_LINKS = DYNAMIC_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Use First Last Page Links</b></em>' attribute.
@@ -10188,7 +10125,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__USE_FIRST_LAST_PAGE_LINKS = DYNAMIC_UNIT_FEATURE_COUNT + 20;
+	int IMAGE_UNIT__USE_FIRST_LAST_PAGE_LINKS = DYNAMIC_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>First Page Label</b></em>' attribute.
@@ -10197,7 +10134,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__FIRST_PAGE_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 21;
+	int IMAGE_UNIT__FIRST_PAGE_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>First Page Icon Name</b></em>' attribute.
@@ -10206,7 +10143,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__FIRST_PAGE_ICON_NAME = DYNAMIC_UNIT_FEATURE_COUNT + 22;
+	int IMAGE_UNIT__FIRST_PAGE_ICON_NAME = DYNAMIC_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Last Page Label</b></em>' attribute.
@@ -10215,7 +10152,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__LAST_PAGE_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 23;
+	int IMAGE_UNIT__LAST_PAGE_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Last Page Icon Name</b></em>' attribute.
@@ -10224,7 +10161,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__LAST_PAGE_ICON_NAME = DYNAMIC_UNIT_FEATURE_COUNT + 24;
+	int IMAGE_UNIT__LAST_PAGE_ICON_NAME = DYNAMIC_UNIT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Pagination Class</b></em>' attribute.
@@ -10233,7 +10170,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__PAGINATION_CLASS = DYNAMIC_UNIT_FEATURE_COUNT + 25;
+	int IMAGE_UNIT__PAGINATION_CLASS = DYNAMIC_UNIT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Pagination Element Class</b></em>' attribute.
@@ -10242,7 +10179,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__PAGINATION_ELEMENT_CLASS = DYNAMIC_UNIT_FEATURE_COUNT + 26;
+	int IMAGE_UNIT__PAGINATION_ELEMENT_CLASS = DYNAMIC_UNIT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -10251,7 +10188,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 27;
+	int IMAGE_UNIT__TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Image Path Feature</b></em>' containment reference.
@@ -10260,7 +10197,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__IMAGE_PATH_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 28;
+	int IMAGE_UNIT__IMAGE_PATH_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Image Title Feature</b></em>' containment reference.
@@ -10269,7 +10206,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__IMAGE_TITLE_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 29;
+	int IMAGE_UNIT__IMAGE_TITLE_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Truncate Image Title</b></em>' attribute.
@@ -10278,7 +10215,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__TRUNCATE_IMAGE_TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 30;
+	int IMAGE_UNIT__TRUNCATE_IMAGE_TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Image Filter</b></em>' reference.
@@ -10287,7 +10224,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__IMAGE_FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 31;
+	int IMAGE_UNIT__IMAGE_FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Missing Image Filter</b></em>' reference.
@@ -10296,7 +10233,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__MISSING_IMAGE_FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 32;
+	int IMAGE_UNIT__MISSING_IMAGE_FILTER = DYNAMIC_UNIT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
@@ -10305,7 +10242,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__MISSING_IMAGE_PATH = DYNAMIC_UNIT_FEATURE_COUNT + 33;
+	int IMAGE_UNIT__MISSING_IMAGE_PATH = DYNAMIC_UNIT_FEATURE_COUNT + 32;
 
 	/**
 	 * The number of structural features of the '<em>Image Unit</em>' class.
@@ -10314,7 +10251,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 34;
+	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 33;
 
 	/**
 	 * The number of operations of the '<em>Image Unit</em>' class.
@@ -10577,15 +10514,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_INDEX_UNIT__OMIT_CONTAINER_LOAD = IMAGE_UNIT__OMIT_CONTAINER_LOAD;
-
-	/**
-	 * The feature id for the '<em><b>Pagination Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_INDEX_UNIT__PAGINATION_PARENT = IMAGE_UNIT__PAGINATION_PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Find Element Selection</b></em>' reference.
@@ -11183,15 +11111,6 @@ public interface WafPackage extends EPackage {
 	int SLIDER_UNIT__OMIT_CONTAINER_LOAD = IMAGE_UNIT__OMIT_CONTAINER_LOAD;
 
 	/**
-	 * The feature id for the '<em><b>Pagination Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLIDER_UNIT__PAGINATION_PARENT = IMAGE_UNIT__PAGINATION_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Find Element Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11731,15 +11650,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int GALLERY_UNIT__OMIT_CONTAINER_LOAD = IMAGE_UNIT__OMIT_CONTAINER_LOAD;
-
-	/**
-	 * The feature id for the '<em><b>Pagination Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GALLERY_UNIT__PAGINATION_PARENT = IMAGE_UNIT__PAGINATION_PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Find Element Selection</b></em>' reference.
@@ -15780,17 +15690,6 @@ public interface WafPackage extends EPackage {
 	EAttribute getCollectionUnit_OmitContainerLoad();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getPaginationParent <em>Pagination Parent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Pagination Parent</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.CollectionUnit#getPaginationParent()
-	 * @see #getCollectionUnit()
-	 * @generated
-	 */
-	EReference getCollectionUnit_PaginationParent();
-
-	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFindElementSelection <em>Find Element Selection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -18873,14 +18772,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COLLECTION_UNIT__OMIT_CONTAINER_LOAD = eINSTANCE.getCollectionUnit_OmitContainerLoad();
-
-		/**
-		 * The meta object literal for the '<em><b>Pagination Parent</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COLLECTION_UNIT__PAGINATION_PARENT = eINSTANCE.getCollectionUnit_PaginationParent();
 
 		/**
 		 * The meta object literal for the '<em><b>Find Element Selection</b></em>' reference feature.

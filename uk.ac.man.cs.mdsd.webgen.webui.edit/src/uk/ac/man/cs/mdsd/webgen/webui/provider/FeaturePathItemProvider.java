@@ -225,9 +225,9 @@ public class FeaturePathItemProvider
 
 		if (unit instanceof CollectionUnit) {
 			final CollectionUnit collection = (CollectionUnit) unit;
-			if (collection.getSelection() == null) {
-				contentType.addAll(collection.getContentType());
-			} else if (collection.getSelection().getSelectPath().size() > 0) {
+			contentType.addAll(collection.getContentType());
+			if ((collection.getSelection() != null)
+					&& (collection.getSelection().getSelectPath().size() > 0)) {
 				contentType.add(getSelectType(collection.getSelection(), collection.getContentType()));
 			}
 			return contentType;

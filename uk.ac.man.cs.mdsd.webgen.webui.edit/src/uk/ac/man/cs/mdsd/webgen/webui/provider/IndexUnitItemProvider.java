@@ -53,7 +53,6 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			addSelectionPropertyDescriptor(object);
 			addFindContainerSelectionPropertyDescriptor(object);
 			addOmitContainerLoadPropertyDescriptor(object);
-			addPaginationParentPropertyDescriptor(object);
 			addFindElementSelectionPropertyDescriptor(object);
 			addFilterPropertyDescriptor(object);
 			addSupportedFiltersPropertyDescriptor(object);
@@ -176,28 +175,6 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_BusinessPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Pagination Parent feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPaginationParentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnit_paginationParent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_paginationParent_feature", "_UI_CollectionUnit_type"),
-				 WebuiPackage.Literals.COLLECTION_UNIT__PAGINATION_PARENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_PaginationPropertyCategory"),
 				 null));
 	}
 

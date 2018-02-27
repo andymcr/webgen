@@ -346,7 +346,7 @@ abstract rule MenuEntry {
 rule SubmenuEntry {
 	from website : Website!SubmenuEntry
 	to waf : WAF!SubmenuEntry (
-		requiresRole <- website.requiresRole
+		requiresRole <- website.requiresRole.trim()
 	)
 }
 
@@ -461,6 +461,7 @@ abstract rule DynamicUnit {
 	from website : Website!DynamicUnit
 	to waf : WAF!DynamicUnit (
 		displayFields <- website.displayFields,
+		servicesUsed <- website.findServicesUsed(),
 		hideWhen <- website.hideWhen,
 		messageWhenHidden <- website.messageWhenHidden.trim(),
 		supportActions <- website.supportActions,
@@ -476,7 +477,7 @@ abstract rule DynamicUnit {
 abstract rule UnitField {
 	from website : Website!UnitField
 	to waf : WAF!UnitField (
-		requiresRole <- website.requiresRole,
+		requiresRole <- website.requiresRole.trim(),
 		hideWhen <- website.hideWhen,
 		title <- website.title(),
 		collectionDisplayOption <- website.collectionDisplayOption,

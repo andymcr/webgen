@@ -127,6 +127,8 @@
     </genClasses>
     <genClasses image="false" ecoreClass="webui.ecore#//DynamicUnit">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference webui.ecore#//DynamicUnit/displayFields"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Business"
+          propertySortChoices="true" ecoreFeature="ecore:EReference webui.ecore#//DynamicUnit/servicesUsed"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Business"
           ecoreFeature="ecore:EReference webui.ecore#//DynamicUnit/hideWhen"/>
       <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute webui.ecore#//DynamicUnit/messageWhenHidden"/>

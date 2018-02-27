@@ -13,8 +13,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
+import uk.ac.man.cs.mdsd.webgen.service.Service;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitField;
 import uk.ac.man.cs.mdsd.webgen.webui.UnitSupportAction;
@@ -29,6 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicUnitImpl#getServicesUsed <em>Services Used</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicUnitImpl#getHideWhen <em>Hide When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicUnitImpl#getMessageWhenHidden <em>Message When Hidden</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
@@ -52,6 +55,16 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * @ordered
 	 */
 	protected EList<UnitField> displayFields;
+
+	/**
+	 * The cached value of the '{@link #getServicesUsed() <em>Services Used</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServicesUsed()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Service> servicesUsed;
 
 	/**
 	 * The cached value of the '{@link #getHideWhen() <em>Hide When</em>}' containment reference.
@@ -242,6 +255,18 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			displayFields = new EObjectContainmentWithInverseEList<UnitField>(UnitField.class, this, WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS, WebuiPackage.UNIT_FIELD__DISPLAYED_ON);
 		}
 		return displayFields;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Service> getServicesUsed() {
+		if (servicesUsed == null) {
+			servicesUsed = new EObjectResolvingEList<Service>(Service.class, this, WebuiPackage.DYNAMIC_UNIT__SERVICES_USED);
+		}
+		return servicesUsed;
 	}
 
 	/**
@@ -489,6 +514,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
+			case WebuiPackage.DYNAMIC_UNIT__SERVICES_USED:
+				return getServicesUsed();
 			case WebuiPackage.DYNAMIC_UNIT__HIDE_WHEN:
 				return getHideWhen();
 			case WebuiPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN:
@@ -523,6 +550,10 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				getDisplayFields().addAll((Collection<? extends UnitField>)newValue);
+				return;
+			case WebuiPackage.DYNAMIC_UNIT__SERVICES_USED:
+				getServicesUsed().clear();
+				getServicesUsed().addAll((Collection<? extends Service>)newValue);
 				return;
 			case WebuiPackage.DYNAMIC_UNIT__HIDE_WHEN:
 				setHideWhen((Predicate)newValue);
@@ -567,6 +598,9 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
+			case WebuiPackage.DYNAMIC_UNIT__SERVICES_USED:
+				getServicesUsed().clear();
+				return;
 			case WebuiPackage.DYNAMIC_UNIT__HIDE_WHEN:
 				setHideWhen((Predicate)null);
 				return;
@@ -608,6 +642,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
+			case WebuiPackage.DYNAMIC_UNIT__SERVICES_USED:
+				return servicesUsed != null && !servicesUsed.isEmpty();
 			case WebuiPackage.DYNAMIC_UNIT__HIDE_WHEN:
 				return hideWhen != null;
 			case WebuiPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN:

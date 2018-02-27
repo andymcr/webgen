@@ -331,8 +331,19 @@ helper context Website!Expression def: getSourceTypes() : Sequence(Website!Entit
 		endif endif endif endif;
 
 
+helper def: findServiceFor(name : String) : Service!Service
+	= Service!Service.allInstancesFrom('service')
+		->select(s | not s.serves.oclIsUndefined())
+		->any(s | s.serves.name = name);
+
 helper def: findService(name : String) : Service!Service
 	= Service!Service.allInstancesFrom('service')->any(s | s.name = name);
+
+helper context Website!EntityOrView def: findService() : Service!Service
+	= thisModule.findServiceFor(self.name);
+
+helper context ORM!EntityOrView def: findService() : Service!Service
+	= thisModule.findServiceFor(self.name);
 
 helper context Website!Service def: findService() : Service!Service
 	= thisModule.findService(self.name);
@@ -428,3 +439,60 @@ helper context Website!ChildPath def: dateFormat() : String
 
 helper def: findWafMenu(name : String) : WAF!Menu
 	= WAF!Menu.allInstancesFrom('waf')->select(m | m.name = name)->first();
+
+
+helper context Website!EntityOrView def: getContainer() : ORM!EntityOrView
+	= if self.associationEnds->isEmpty() then
+			OclUndefined
+		else if self.associationEnds->exists(a | a.oclIsKindOf(Website!AssociationWithContainment)) then
+			self.associationEnds->any(a | a.oclIsKindOf(Website!AssociationWithContainment)).partOf.findOrmEntityOrView()
+		else
+			OclUndefined
+		endif endif;
+
+helper context Website!CollectionUnit def: getContainerType() : ORM!EntityOrView
+	= let directContainer : ORM!EntityOrView
+			= if self.contentType->isEmpty() then
+					OclUndefined
+				else
+					self.contentType->first().getContainer()
+				endif
+		in if self.selection.oclIsUndefined() then
+			directContainer
+		else if self.selection.selectPath->notEmpty() then
+			self.selection.findServiceSelection().selectPath->last().opposite.partOf
+		else
+			directContainer
+		endif endif;
+
+helper context Website!CollectionUnit def: findServicesUsed() : Sequence(Service!Service)
+	= self.servicesUsed->collect(s | s.findService())
+		->union(if self.contentType->isEmpty() then
+						Sequence{}
+					else
+						Sequence{ self.contentType->first().findService() }
+						->union(let container : Website!EntityOrView = self.getContainerType()
+									in if container.oclIsUndefined() then
+											Sequence{}
+										else if self.omitContainerLoad then
+											Sequence{}
+										else
+											Sequence{ container.findService() }
+										endif endif)
+					endif);
+
+helper context Website!DetailsUnit def: findServicesUsed() : Sequence(Service!Service)
+	= self.servicesUsed->collect(s | s.findService())
+		->union(if self.contentType.oclIsUndefined() then
+				Sequence{}
+			else
+				Sequence{ self.contentType.findService() }
+			endif);
+
+helper context Website!EditUnit def: findServicesUsed() : Sequence(Service!Service)
+	= self.servicesUsed->collect(s | s.findService())
+		->union(if self.contentType.oclIsUndefined() then
+				Sequence{}
+			else
+				Sequence{ self.contentType.findService() }
+			endif);

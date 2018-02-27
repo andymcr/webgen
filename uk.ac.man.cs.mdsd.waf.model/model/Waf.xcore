@@ -228,6 +228,7 @@ class StaticUnit extends ContentUnit {
 
 abstract class DynamicUnit extends ContentUnit {
 	contains UnitField[] displayFields opposite displayedOn
+	refers Service[] servicesUsed
 	contains Predicate hideWhen
 	String messageWhenHidden
 	contains UnitSupportAction[] supportActions

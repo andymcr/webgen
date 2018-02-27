@@ -16,9 +16,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.expression.Predicate;
+
+import uk.ac.man.cs.mdsd.service.Service;
 
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
 import uk.ac.man.cs.mdsd.waf.UnitField;
@@ -34,6 +37,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getServicesUsed <em>Services Used</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getHideWhen <em>Hide When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getMessageWhenHidden <em>Message When Hidden</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
@@ -57,6 +61,16 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * @ordered
 	 */
 	protected EList<UnitField> displayFields;
+
+	/**
+	 * The cached value of the '{@link #getServicesUsed() <em>Services Used</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServicesUsed()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Service> servicesUsed;
 
 	/**
 	 * The cached value of the '{@link #getHideWhen() <em>Hide When</em>}' containment reference.
@@ -247,6 +261,18 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			displayFields = new EObjectContainmentWithInverseEList<UnitField>(UnitField.class, this, WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS, WafPackage.UNIT_FIELD__DISPLAYED_ON);
 		}
 		return displayFields;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Service> getServicesUsed() {
+		if (servicesUsed == null) {
+			servicesUsed = new EObjectResolvingEList<Service>(Service.class, this, WafPackage.DYNAMIC_UNIT__SERVICES_USED);
+		}
+		return servicesUsed;
 	}
 
 	/**
@@ -494,6 +520,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
+			case WafPackage.DYNAMIC_UNIT__SERVICES_USED:
+				return getServicesUsed();
 			case WafPackage.DYNAMIC_UNIT__HIDE_WHEN:
 				return getHideWhen();
 			case WafPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN:
@@ -528,6 +556,10 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				getDisplayFields().addAll((Collection<? extends UnitField>)newValue);
+				return;
+			case WafPackage.DYNAMIC_UNIT__SERVICES_USED:
+				getServicesUsed().clear();
+				getServicesUsed().addAll((Collection<? extends Service>)newValue);
 				return;
 			case WafPackage.DYNAMIC_UNIT__HIDE_WHEN:
 				setHideWhen((Predicate)newValue);
@@ -572,6 +604,9 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
+			case WafPackage.DYNAMIC_UNIT__SERVICES_USED:
+				getServicesUsed().clear();
+				return;
 			case WafPackage.DYNAMIC_UNIT__HIDE_WHEN:
 				setHideWhen((Predicate)null);
 				return;
@@ -613,6 +648,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
+			case WafPackage.DYNAMIC_UNIT__SERVICES_USED:
+				return servicesUsed != null && !servicesUsed.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__HIDE_WHEN:
 				return hideWhen != null;
 			case WafPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN:

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -22,6 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.base.BasePackage;
 import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.expression.Predicate;
+import uk.ac.man.cs.mdsd.webgen.service.Service;
 import uk.ac.man.cs.mdsd.webgen.webui.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.webui.DynamicUnit;
@@ -54,6 +56,7 @@ import uk.ac.man.cs.mdsd.webgen.webui.WebuiPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getPageDisplayedOn <em>Page Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getServicesUsed <em>Services Used</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getHideWhen <em>Hide When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getMessageWhenHidden <em>Message When Hidden</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.webui.impl.ForgottenPasswordUnitImpl#getSupportActions <em>Support Actions</em>}</li>
@@ -282,6 +285,16 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected EList<UnitField> displayFields;
+
+	/**
+	 * The cached value of the '{@link #getServicesUsed() <em>Services Used</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServicesUsed()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Service> servicesUsed;
 
 	/**
 	 * The cached value of the '{@link #getHideWhen() <em>Hide When</em>}' containment reference.
@@ -838,6 +851,18 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Service> getServicesUsed() {
+		if (servicesUsed == null) {
+			servicesUsed = new EObjectResolvingEList<Service>(Service.class, this, WebuiPackage.FORGOTTEN_PASSWORD_UNIT__SERVICES_USED);
+		}
+		return servicesUsed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Predicate getHideWhen() {
 		return hideWhen;
 	}
@@ -1249,6 +1274,8 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 				return basicGetPageDisplayedOn();
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__SERVICES_USED:
+				return getServicesUsed();
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__HIDE_WHEN:
 				return getHideWhen();
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__MESSAGE_WHEN_HIDDEN:
@@ -1328,6 +1355,10 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				getDisplayFields().addAll((Collection<? extends UnitField>)newValue);
+				return;
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__SERVICES_USED:
+				getServicesUsed().clear();
+				getServicesUsed().addAll((Collection<? extends Service>)newValue);
 				return;
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__HIDE_WHEN:
 				setHideWhen((Predicate)newValue);
@@ -1420,6 +1451,9 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__SERVICES_USED:
+				getServicesUsed().clear();
+				return;
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__HIDE_WHEN:
 				setHideWhen((Predicate)null);
 				return;
@@ -1500,6 +1534,8 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 				return isSetPageDisplayedOn();
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
+			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__SERVICES_USED:
+				return servicesUsed != null && !servicesUsed.isEmpty();
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__HIDE_WHEN:
 				return hideWhen != null;
 			case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__MESSAGE_WHEN_HIDDEN:
@@ -1569,6 +1605,7 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 		if (baseClass == DynamicUnit.class) {
 			switch (derivedFeatureID) {
 				case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS: return WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
+				case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__SERVICES_USED: return WebuiPackage.DYNAMIC_UNIT__SERVICES_USED;
 				case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__HIDE_WHEN: return WebuiPackage.DYNAMIC_UNIT__HIDE_WHEN;
 				case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__MESSAGE_WHEN_HIDDEN: return WebuiPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN;
 				case WebuiPackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS: return WebuiPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
@@ -1630,6 +1667,7 @@ public class ForgottenPasswordUnitImpl extends MinimalEObjectImpl.Container impl
 		if (baseClass == DynamicUnit.class) {
 			switch (baseFeatureID) {
 				case WebuiPackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebuiPackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS;
+				case WebuiPackage.DYNAMIC_UNIT__SERVICES_USED: return WebuiPackage.FORGOTTEN_PASSWORD_UNIT__SERVICES_USED;
 				case WebuiPackage.DYNAMIC_UNIT__HIDE_WHEN: return WebuiPackage.FORGOTTEN_PASSWORD_UNIT__HIDE_WHEN;
 				case WebuiPackage.DYNAMIC_UNIT__MESSAGE_WHEN_HIDDEN: return WebuiPackage.FORGOTTEN_PASSWORD_UNIT__MESSAGE_WHEN_HIDDEN;
 				case WebuiPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebuiPackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS;

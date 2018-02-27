@@ -6,6 +6,8 @@ import org.eclipse.emf.common.util.EList;
 
 import uk.ac.man.cs.mdsd.expression.Predicate;
 
+import uk.ac.man.cs.mdsd.service.Service;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Dynamic Unit</b></em>'.
@@ -16,6 +18,7 @@ import uk.ac.man.cs.mdsd.expression.Predicate;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getServicesUsed <em>Services Used</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHideWhen <em>Hide When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getMessageWhenHidden <em>Message When Hidden</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
@@ -49,6 +52,22 @@ public interface DynamicUnit extends ContentUnit {
 	 * @generated
 	 */
 	EList<UnitField> getDisplayFields();
+
+	/**
+	 * Returns the value of the '<em><b>Services Used</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.service.Service}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Services Used</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Services Used</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDynamicUnit_ServicesUsed()
+	 * @model
+	 * @generated
+	 */
+	EList<Service> getServicesUsed();
 
 	/**
 	 * Returns the value of the '<em><b>Hide When</b></em>' containment reference.

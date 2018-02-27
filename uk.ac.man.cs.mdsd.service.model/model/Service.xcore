@@ -41,7 +41,7 @@ class ServiceModel {
 class Service extends NamedElement {
 	refers ServiceModel[1] partOf opposite services
 	contains Constant[] constants opposite definedBy
-	refers EntityOrView[1] serves
+	refers EntityOrView serves
 	contains Selection[] selections opposite partOf
 	refers Selection findAll
 	refers Selection findOne

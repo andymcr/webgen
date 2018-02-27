@@ -169,6 +169,8 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayFields" upperBound="-1"
         eType="#//UnitField" containment="true" eOpposite="#//UnitField/displayedOn"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="servicesUsed" upperBound="-1"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.service/model/service.ecore#//Service"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hideWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.webgen.expression/model/expression.ecore#//Predicate"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageWhenHidden" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

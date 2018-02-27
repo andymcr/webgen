@@ -441,7 +441,7 @@ helper def: findWafMenu(name : String) : WAF!Menu
 	= WAF!Menu.allInstancesFrom('waf')->select(m | m.name = name)->first();
 
 
-helper context Website!EntityOrView def: getContainer() : ORM!EntityOrView
+helper context Website!Entity def: getContainer() : ORM!Entity
 	= if self.associationEnds->isEmpty() then
 			OclUndefined
 		else if self.associationEnds->exists(a | a.oclIsKindOf(Website!AssociationWithContainment)) then
@@ -450,8 +450,8 @@ helper context Website!EntityOrView def: getContainer() : ORM!EntityOrView
 			OclUndefined
 		endif endif;
 
-helper context Website!CollectionUnit def: getContainerType() : ORM!EntityOrView
-	= let directContainer : ORM!EntityOrView
+helper context Website!CollectionUnit def: findContainerType() : ORM!Entity
+	= let directContainer : ORM!Entity
 			= if self.contentType->isEmpty() then
 					OclUndefined
 				else
@@ -469,7 +469,7 @@ helper context Website!CollectionUnit def: findContainerService() : Service!Serv
 	= if self.contentType->isEmpty() then
 			OclUndefined
 		else
-			let container : Website!EntityOrView = self.getContainerType()
+			let container : Website!Entity = self.findContainerType()
 				in if container.oclIsUndefined() or self.omitContainerLoad then
 						OclUndefined
 					else

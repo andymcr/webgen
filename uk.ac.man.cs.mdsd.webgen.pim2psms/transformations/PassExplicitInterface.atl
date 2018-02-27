@@ -766,6 +766,7 @@ abstract rule CollectionUnit {
 				website.selection.findServiceSelection()
 			endif,
 		omitContainerLoad <- website.omitContainerLoad,
+		containerType <- website.findContainerType(),
 		containerService <- website.findContainerService(),
 		findContainerSelection <-
 			if website.findContainerSelection.oclIsUndefined() then

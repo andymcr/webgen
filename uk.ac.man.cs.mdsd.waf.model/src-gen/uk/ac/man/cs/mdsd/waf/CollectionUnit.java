@@ -4,7 +4,7 @@ package uk.ac.man.cs.mdsd.waf;
 
 import org.eclipse.emf.common.util.EList;
 
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
+import uk.ac.man.cs.mdsd.orm.Entity;
 
 import uk.ac.man.cs.mdsd.service.Filter;
 import uk.ac.man.cs.mdsd.service.Selection;
@@ -22,6 +22,7 @@ import uk.ac.man.cs.mdsd.service.Service;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#isOmitContainerLoad <em>Omit Container Load</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContainerType <em>Container Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContainerService <em>Container Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFindContainerSelection <em>Find Container Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getFindElementSelection <em>Find Element Selection</em>}</li>
@@ -54,7 +55,7 @@ import uk.ac.man.cs.mdsd.service.Service;
 public interface CollectionUnit extends SelectableUnit {
 	/**
 	 * Returns the value of the '<em><b>Content Type</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.EntityOrView}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.Entity}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Type</em>' reference list isn't clear,
@@ -66,7 +67,7 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<EntityOrView> getContentType();
+	EList<Entity> getContentType();
 
 	/**
 	 * Returns the value of the '<em><b>Selection</b></em>' reference.
@@ -119,6 +120,32 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	void setOmitContainerLoad(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Container Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Container Type</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Container Type</em>' reference.
+	 * @see #setContainerType(Entity)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit_ContainerType()
+	 * @model
+	 * @generated
+	 */
+	Entity getContainerType();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContainerType <em>Container Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Container Type</em>' reference.
+	 * @see #getContainerType()
+	 * @generated
+	 */
+	void setContainerType(Entity value);
 
 	/**
 	 * Returns the value of the '<em><b>Container Service</b></em>' reference.

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
+import uk.ac.man.cs.mdsd.orm.Entity;
 import uk.ac.man.cs.mdsd.orm.Label;
 
 import uk.ac.man.cs.mdsd.service.Filter;
@@ -47,6 +47,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#isOmitContainerLoad <em>Omit Container Load</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getContainerType <em>Container Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getContainerService <em>Container Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getFindContainerSelection <em>Find Container Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getFindElementSelection <em>Find Element Selection</em>}</li>
@@ -100,7 +101,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntityOrView> contentType;
+	protected EList<Entity> contentType;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -131,6 +132,16 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected boolean omitContainerLoad = OMIT_CONTAINER_LOAD_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContainerType() <em>Container Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainerType()
+	 * @generated
+	 * @ordered
+	 */
+	protected Entity containerType;
 
 	/**
 	 * The cached value of the '{@link #getContainerService() <em>Container Service</em>}' reference.
@@ -658,9 +669,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EntityOrView> getContentType() {
+	public EList<Entity> getContentType() {
 		if (contentType == null) {
-			contentType = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WafPackage.IMAGE_UNIT__CONTENT_TYPE);
+			contentType = new EObjectResolvingEList<Entity>(Entity.class, this, WafPackage.IMAGE_UNIT__CONTENT_TYPE);
 		}
 		return contentType;
 	}
@@ -722,6 +733,44 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		omitContainerLoad = newOmitContainerLoad;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD, oldOmitContainerLoad, omitContainerLoad));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity getContainerType() {
+		if (containerType != null && containerType.eIsProxy()) {
+			InternalEObject oldContainerType = (InternalEObject)containerType;
+			containerType = (Entity)eResolveProxy(oldContainerType);
+			if (containerType != oldContainerType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.IMAGE_UNIT__CONTAINER_TYPE, oldContainerType, containerType));
+			}
+		}
+		return containerType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity basicGetContainerType() {
+		return containerType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainerType(Entity newContainerType) {
+		Entity oldContainerType = containerType;
+		containerType = newContainerType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__CONTAINER_TYPE, oldContainerType, containerType));
 	}
 
 	/**
@@ -1551,6 +1600,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return basicGetSelection();
 			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
 				return isOmitContainerLoad();
+			case WafPackage.IMAGE_UNIT__CONTAINER_TYPE:
+				if (resolve) return getContainerType();
+				return basicGetContainerType();
 			case WafPackage.IMAGE_UNIT__CONTAINER_SERVICE:
 				if (resolve) return getContainerService();
 				return basicGetContainerService();
@@ -1637,13 +1689,16 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return;
 			case WafPackage.IMAGE_UNIT__CONTENT_TYPE:
 				getContentType().clear();
-				getContentType().addAll((Collection<? extends EntityOrView>)newValue);
+				getContentType().addAll((Collection<? extends Entity>)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__SELECTION:
 				setSelection((Selection)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
 				setOmitContainerLoad((Boolean)newValue);
+				return;
+			case WafPackage.IMAGE_UNIT__CONTAINER_TYPE:
+				setContainerType((Entity)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__CONTAINER_SERVICE:
 				setContainerService((Service)newValue);
@@ -1761,6 +1816,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
 				setOmitContainerLoad(OMIT_CONTAINER_LOAD_EDEFAULT);
 				return;
+			case WafPackage.IMAGE_UNIT__CONTAINER_TYPE:
+				setContainerType((Entity)null);
+				return;
 			case WafPackage.IMAGE_UNIT__CONTAINER_SERVICE:
 				setContainerService((Service)null);
 				return;
@@ -1871,6 +1929,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return selection != null;
 			case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD:
 				return omitContainerLoad != OMIT_CONTAINER_LOAD_EDEFAULT;
+			case WafPackage.IMAGE_UNIT__CONTAINER_TYPE:
+				return containerType != null;
 			case WafPackage.IMAGE_UNIT__CONTAINER_SERVICE:
 				return containerService != null;
 			case WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION:
@@ -1953,6 +2013,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WafPackage.IMAGE_UNIT__CONTENT_TYPE: return WafPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WafPackage.IMAGE_UNIT__SELECTION: return WafPackage.COLLECTION_UNIT__SELECTION;
 				case WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD: return WafPackage.COLLECTION_UNIT__OMIT_CONTAINER_LOAD;
+				case WafPackage.IMAGE_UNIT__CONTAINER_TYPE: return WafPackage.COLLECTION_UNIT__CONTAINER_TYPE;
 				case WafPackage.IMAGE_UNIT__CONTAINER_SERVICE: return WafPackage.COLLECTION_UNIT__CONTAINER_SERVICE;
 				case WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION: return WafPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION;
 				case WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION: return WafPackage.COLLECTION_UNIT__FIND_ELEMENT_SELECTION;
@@ -2000,6 +2061,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				case WafPackage.COLLECTION_UNIT__CONTENT_TYPE: return WafPackage.IMAGE_UNIT__CONTENT_TYPE;
 				case WafPackage.COLLECTION_UNIT__SELECTION: return WafPackage.IMAGE_UNIT__SELECTION;
 				case WafPackage.COLLECTION_UNIT__OMIT_CONTAINER_LOAD: return WafPackage.IMAGE_UNIT__OMIT_CONTAINER_LOAD;
+				case WafPackage.COLLECTION_UNIT__CONTAINER_TYPE: return WafPackage.IMAGE_UNIT__CONTAINER_TYPE;
 				case WafPackage.COLLECTION_UNIT__CONTAINER_SERVICE: return WafPackage.IMAGE_UNIT__CONTAINER_SERVICE;
 				case WafPackage.COLLECTION_UNIT__FIND_CONTAINER_SELECTION: return WafPackage.IMAGE_UNIT__FIND_CONTAINER_SELECTION;
 				case WafPackage.COLLECTION_UNIT__FIND_ELEMENT_SELECTION: return WafPackage.IMAGE_UNIT__FIND_ELEMENT_SELECTION;

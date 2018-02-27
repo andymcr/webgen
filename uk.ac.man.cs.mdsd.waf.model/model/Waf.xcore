@@ -16,6 +16,7 @@ import uk.ac.man.cs.mdsd.orm.Association
 import uk.ac.man.cs.mdsd.orm.Attribute
 import uk.ac.man.cs.mdsd.orm.DataType
 import uk.ac.man.cs.mdsd.orm.DateDetails
+import uk.ac.man.cs.mdsd.orm.Entity
 import uk.ac.man.cs.mdsd.orm.EntityOrView
 import uk.ac.man.cs.mdsd.orm.Label
 import uk.ac.man.cs.mdsd.orm.ModelLabel
@@ -372,9 +373,10 @@ interface SingletonUnit {
 }
 
 interface CollectionUnit extends SelectableUnit {
-	refers EntityOrView[1..*] contentType
+	refers Entity[1..*] contentType
 	refers Selection selection
 	boolean omitContainerLoad
+	refers Entity containerType
 	refers Service containerService
 	refers Selection findContainerSelection
 	refers Selection findElementSelection

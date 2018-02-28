@@ -4,7 +4,7 @@ package uk.ac.man.cs.mdsd.waf;
 
 import org.eclipse.emf.ecore.EObject;
 
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
+import uk.ac.man.cs.mdsd.orm.Entity;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,12 +32,12 @@ public interface SingletonUnit extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Content Type</em>' reference.
-	 * @see #setContentType(EntityOrView)
+	 * @see #setContentType(Entity)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSingletonUnit_ContentType()
 	 * @model required="true"
 	 * @generated
 	 */
-	EntityOrView getContentType();
+	Entity getContentType();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.SingletonUnit#getContentType <em>Content Type</em>}' reference.
@@ -47,6 +47,6 @@ public interface SingletonUnit extends EObject {
 	 * @see #getContentType()
 	 * @generated
 	 */
-	void setContentType(EntityOrView value);
+	void setContentType(Entity value);
 
 } // SingletonUnit

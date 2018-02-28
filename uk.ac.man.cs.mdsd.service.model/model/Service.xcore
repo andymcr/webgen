@@ -14,8 +14,8 @@ import uk.ac.man.cs.mdsd.expression.Predicate
 import uk.ac.man.cs.mdsd.expression.Variable
 import uk.ac.man.cs.mdsd.orm.Association
 import uk.ac.man.cs.mdsd.orm.DataType
+import uk.ac.man.cs.mdsd.orm.Entity
 import uk.ac.man.cs.mdsd.orm.EntityAssociation
-import uk.ac.man.cs.mdsd.orm.EntityOrView
 import uk.ac.man.cs.mdsd.orm.Feature
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
 import uk.ac.man.cs.mdsd.orm.NamedElement
@@ -41,7 +41,7 @@ class ServiceModel {
 class Service extends NamedElement {
 	refers ServiceModel[1] partOf opposite services
 	contains Constant[] constants opposite definedBy
-	refers EntityOrView serves
+	refers Entity serves
 	contains Selection[] selections opposite partOf
 	refers Selection findAll
 	refers Selection findOne

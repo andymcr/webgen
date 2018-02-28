@@ -17,7 +17,6 @@ import uk.ac.man.cs.mdsd.orm.Attribute
 import uk.ac.man.cs.mdsd.orm.DataType
 import uk.ac.man.cs.mdsd.orm.DateDetails
 import uk.ac.man.cs.mdsd.orm.Entity
-import uk.ac.man.cs.mdsd.orm.EntityOrView
 import uk.ac.man.cs.mdsd.orm.Label
 import uk.ac.man.cs.mdsd.orm.ModelLabel
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
@@ -84,7 +83,7 @@ class WafModel {
 
 abstract class Authentication {
 	refers WafModel[1] authorises opposite authentication
-	refers EntityOrView[1] user
+	refers Entity[1] user
 	refers Attribute[1] userKey
 	String[1] loginLabel = ""
 	String logoutLabel = ""
@@ -96,10 +95,10 @@ enum AuthenticationKeyTypes {
 }
 
 class LocalAuthenticationSystem extends Authentication {
-	refers EntityOrView authentication
+	refers Entity authentication
 	AuthenticationKeyTypes[1] authenticationKey
-	refers EntityOrView loginAttempt
-	refers EntityOrView autoLogin
+	refers Entity loginAttempt
+	refers Entity autoLogin
 	boolean useCaptcha
 	boolean allowRememberMe
 	boolean allowSelfRegistration
@@ -369,7 +368,7 @@ interface SelectableUnit {
 }
 
 interface SingletonUnit {
-	refers EntityOrView[1] contentType
+	refers Entity[1] contentType
 }
 
 interface CollectionUnit extends SelectableUnit {

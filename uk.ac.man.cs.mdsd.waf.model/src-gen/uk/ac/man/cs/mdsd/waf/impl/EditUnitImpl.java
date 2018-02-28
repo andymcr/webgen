@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.expression.Predicate;
 
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
+import uk.ac.man.cs.mdsd.orm.Entity;
 import uk.ac.man.cs.mdsd.orm.Label;
 
 import uk.ac.man.cs.mdsd.waf.EditUnit;
@@ -50,7 +50,7 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityOrView contentType;
+	protected Entity contentType;
 
 	/**
 	 * The default value of the '{@link #isOnSaveContinueEditing() <em>On Save Continue Editing</em>}' attribute.
@@ -196,10 +196,10 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView getContentType() {
+	public Entity getContentType() {
 		if (contentType != null && contentType.eIsProxy()) {
 			InternalEObject oldContentType = (InternalEObject)contentType;
-			contentType = (EntityOrView)eResolveProxy(oldContentType);
+			contentType = (Entity)eResolveProxy(oldContentType);
 			if (contentType != oldContentType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.EDIT_UNIT__CONTENT_TYPE, oldContentType, contentType));
@@ -213,7 +213,7 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView basicGetContentType() {
+	public Entity basicGetContentType() {
 		return contentType;
 	}
 
@@ -222,8 +222,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContentType(EntityOrView newContentType) {
-		EntityOrView oldContentType = contentType;
+	public void setContentType(Entity newContentType) {
+		Entity oldContentType = contentType;
 		contentType = newContentType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.EDIT_UNIT__CONTENT_TYPE, oldContentType, contentType));
@@ -527,7 +527,7 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WafPackage.EDIT_UNIT__CONTENT_TYPE:
-				setContentType((EntityOrView)newValue);
+				setContentType((Entity)newValue);
 				return;
 			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
 				setOnSaveContinueEditing((Boolean)newValue);
@@ -566,7 +566,7 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WafPackage.EDIT_UNIT__CONTENT_TYPE:
-				setContentType((EntityOrView)null);
+				setContentType((Entity)null);
 				return;
 			case WafPackage.EDIT_UNIT__ON_SAVE_CONTINUE_EDITING:
 				setOnSaveContinueEditing(ON_SAVE_CONTINUE_EDITING_EDEFAULT);

@@ -2,7 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
+import uk.ac.man.cs.mdsd.orm.Entity;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,12 +41,12 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Authentication</em>' reference.
-	 * @see #setAuthentication(EntityOrView)
+	 * @see #setAuthentication(Entity)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLocalAuthenticationSystem_Authentication()
 	 * @model
 	 * @generated
 	 */
-	EntityOrView getAuthentication();
+	Entity getAuthentication();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAuthentication <em>Authentication</em>}' reference.
@@ -56,7 +56,7 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @see #getAuthentication()
 	 * @generated
 	 */
-	void setAuthentication(EntityOrView value);
+	void setAuthentication(Entity value);
 
 	/**
 	 * Returns the value of the '<em><b>Authentication Key</b></em>' attribute.
@@ -96,12 +96,12 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Login Attempt</em>' reference.
-	 * @see #setLoginAttempt(EntityOrView)
+	 * @see #setLoginAttempt(Entity)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLocalAuthenticationSystem_LoginAttempt()
 	 * @model
 	 * @generated
 	 */
-	EntityOrView getLoginAttempt();
+	Entity getLoginAttempt();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getLoginAttempt <em>Login Attempt</em>}' reference.
@@ -111,7 +111,7 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @see #getLoginAttempt()
 	 * @generated
 	 */
-	void setLoginAttempt(EntityOrView value);
+	void setLoginAttempt(Entity value);
 
 	/**
 	 * Returns the value of the '<em><b>Auto Login</b></em>' reference.
@@ -122,12 +122,12 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Auto Login</em>' reference.
-	 * @see #setAutoLogin(EntityOrView)
+	 * @see #setAutoLogin(Entity)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLocalAuthenticationSystem_AutoLogin()
 	 * @model
 	 * @generated
 	 */
-	EntityOrView getAutoLogin();
+	Entity getAutoLogin();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAutoLogin <em>Auto Login</em>}' reference.
@@ -137,7 +137,7 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @see #getAutoLogin()
 	 * @generated
 	 */
-	void setAutoLogin(EntityOrView value);
+	void setAutoLogin(Entity value);
 
 	/**
 	 * Returns the value of the '<em><b>Use Captcha</b></em>' attribute.

@@ -5,7 +5,7 @@ package uk.ac.man.cs.mdsd.waf;
 import org.eclipse.emf.ecore.EObject;
 
 import uk.ac.man.cs.mdsd.orm.Attribute;
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
+import uk.ac.man.cs.mdsd.orm.Entity;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,12 +65,12 @@ public interface Authentication extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User</em>' reference.
-	 * @see #setUser(EntityOrView)
+	 * @see #setUser(Entity)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getAuthentication_User()
 	 * @model required="true"
 	 * @generated
 	 */
-	EntityOrView getUser();
+	Entity getUser();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Authentication#getUser <em>User</em>}' reference.
@@ -80,7 +80,7 @@ public interface Authentication extends EObject {
 	 * @see #getUser()
 	 * @generated
 	 */
-	void setUser(EntityOrView value);
+	void setUser(Entity value);
 
 	/**
 	 * Returns the value of the '<em><b>User Key</b></em>' reference.

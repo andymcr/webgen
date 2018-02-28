@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import uk.ac.man.cs.mdsd.orm.Attribute;
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
+import uk.ac.man.cs.mdsd.orm.Entity;
 
 import uk.ac.man.cs.mdsd.waf.Authentication;
 import uk.ac.man.cs.mdsd.waf.WafModel;
@@ -46,7 +46,7 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityOrView user;
+	protected Entity user;
 
 	/**
 	 * The cached value of the '{@link #getUserKey() <em>User Key</em>}' reference.
@@ -173,10 +173,10 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView getUser() {
+	public Entity getUser() {
 		if (user != null && user.eIsProxy()) {
 			InternalEObject oldUser = (InternalEObject)user;
-			user = (EntityOrView)eResolveProxy(oldUser);
+			user = (Entity)eResolveProxy(oldUser);
 			if (user != oldUser) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.AUTHENTICATION__USER, oldUser, user));
@@ -190,7 +190,7 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView basicGetUser() {
+	public Entity basicGetUser() {
 		return user;
 	}
 
@@ -199,8 +199,8 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUser(EntityOrView newUser) {
-		EntityOrView oldUser = user;
+	public void setUser(Entity newUser) {
+		Entity oldUser = user;
 		user = newUser;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.AUTHENTICATION__USER, oldUser, user));
@@ -367,7 +367,7 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 				setAuthorises((WafModel)newValue);
 				return;
 			case WafPackage.AUTHENTICATION__USER:
-				setUser((EntityOrView)newValue);
+				setUser((Entity)newValue);
 				return;
 			case WafPackage.AUTHENTICATION__USER_KEY:
 				setUserKey((Attribute)newValue);
@@ -394,7 +394,7 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 				setAuthorises((WafModel)null);
 				return;
 			case WafPackage.AUTHENTICATION__USER:
-				setUser((EntityOrView)null);
+				setUser((Entity)null);
 				return;
 			case WafPackage.AUTHENTICATION__USER_KEY:
 				setUserKey((Attribute)null);

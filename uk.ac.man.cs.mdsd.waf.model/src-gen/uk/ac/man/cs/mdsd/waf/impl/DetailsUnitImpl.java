@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
+import uk.ac.man.cs.mdsd.orm.Entity;
 
 import uk.ac.man.cs.mdsd.service.Selection;
 
@@ -52,7 +52,7 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityOrView contentType;
+	protected Entity contentType;
 
 	/**
 	 * The cached value of the '{@link #getSelectors() <em>Selectors</em>}' reference list.
@@ -118,10 +118,10 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView getContentType() {
+	public Entity getContentType() {
 		if (contentType != null && contentType.eIsProxy()) {
 			InternalEObject oldContentType = (InternalEObject)contentType;
-			contentType = (EntityOrView)eResolveProxy(oldContentType);
+			contentType = (Entity)eResolveProxy(oldContentType);
 			if (contentType != oldContentType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.DETAILS_UNIT__CONTENT_TYPE, oldContentType, contentType));
@@ -135,7 +135,7 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView basicGetContentType() {
+	public Entity basicGetContentType() {
 		return contentType;
 	}
 
@@ -144,8 +144,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContentType(EntityOrView newContentType) {
-		EntityOrView oldContentType = contentType;
+	public void setContentType(Entity newContentType) {
+		Entity oldContentType = contentType;
 		contentType = newContentType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DETAILS_UNIT__CONTENT_TYPE, oldContentType, contentType));
@@ -283,7 +283,7 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WafPackage.DETAILS_UNIT__CONTENT_TYPE:
-				setContentType((EntityOrView)newValue);
+				setContentType((Entity)newValue);
 				return;
 			case WafPackage.DETAILS_UNIT__SELECTORS:
 				getSelectors().clear();
@@ -308,7 +308,7 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WafPackage.DETAILS_UNIT__CONTENT_TYPE:
-				setContentType((EntityOrView)null);
+				setContentType((Entity)null);
 				return;
 			case WafPackage.DETAILS_UNIT__SELECTORS:
 				getSelectors().clear();

@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
+import uk.ac.man.cs.mdsd.orm.Entity;
 
 import uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes;
 import uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit;
@@ -52,7 +52,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityOrView authentication;
+	protected Entity authentication;
 
 	/**
 	 * The default value of the '{@link #getAuthenticationKey() <em>Authentication Key</em>}' attribute.
@@ -82,7 +82,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityOrView loginAttempt;
+	protected Entity loginAttempt;
 
 	/**
 	 * The cached value of the '{@link #getAutoLogin() <em>Auto Login</em>}' reference.
@@ -92,7 +92,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityOrView autoLogin;
+	protected Entity autoLogin;
 
 	/**
 	 * The default value of the '{@link #isUseCaptcha() <em>Use Captcha</em>}' attribute.
@@ -248,10 +248,10 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView getAuthentication() {
+	public Entity getAuthentication() {
 		if (authentication != null && authentication.eIsProxy()) {
 			InternalEObject oldAuthentication = (InternalEObject)authentication;
-			authentication = (EntityOrView)eResolveProxy(oldAuthentication);
+			authentication = (Entity)eResolveProxy(oldAuthentication);
 			if (authentication != oldAuthentication) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION, oldAuthentication, authentication));
@@ -265,7 +265,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView basicGetAuthentication() {
+	public Entity basicGetAuthentication() {
 		return authentication;
 	}
 
@@ -274,8 +274,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAuthentication(EntityOrView newAuthentication) {
-		EntityOrView oldAuthentication = authentication;
+	public void setAuthentication(Entity newAuthentication) {
+		Entity oldAuthentication = authentication;
 		authentication = newAuthentication;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION, oldAuthentication, authentication));
@@ -307,10 +307,10 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView getLoginAttempt() {
+	public Entity getLoginAttempt() {
 		if (loginAttempt != null && loginAttempt.eIsProxy()) {
 			InternalEObject oldLoginAttempt = (InternalEObject)loginAttempt;
-			loginAttempt = (EntityOrView)eResolveProxy(oldLoginAttempt);
+			loginAttempt = (Entity)eResolveProxy(oldLoginAttempt);
 			if (loginAttempt != oldLoginAttempt) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT, oldLoginAttempt, loginAttempt));
@@ -324,7 +324,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView basicGetLoginAttempt() {
+	public Entity basicGetLoginAttempt() {
 		return loginAttempt;
 	}
 
@@ -333,8 +333,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLoginAttempt(EntityOrView newLoginAttempt) {
-		EntityOrView oldLoginAttempt = loginAttempt;
+	public void setLoginAttempt(Entity newLoginAttempt) {
+		Entity oldLoginAttempt = loginAttempt;
 		loginAttempt = newLoginAttempt;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT, oldLoginAttempt, loginAttempt));
@@ -345,10 +345,10 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView getAutoLogin() {
+	public Entity getAutoLogin() {
 		if (autoLogin != null && autoLogin.eIsProxy()) {
 			InternalEObject oldAutoLogin = (InternalEObject)autoLogin;
-			autoLogin = (EntityOrView)eResolveProxy(oldAutoLogin);
+			autoLogin = (Entity)eResolveProxy(oldAutoLogin);
 			if (autoLogin != oldAutoLogin) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN, oldAutoLogin, autoLogin));
@@ -362,7 +362,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView basicGetAutoLogin() {
+	public Entity basicGetAutoLogin() {
 		return autoLogin;
 	}
 
@@ -371,8 +371,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAutoLogin(EntityOrView newAutoLogin) {
-		EntityOrView oldAutoLogin = autoLogin;
+	public void setAutoLogin(Entity newAutoLogin) {
+		Entity oldAutoLogin = autoLogin;
 		autoLogin = newAutoLogin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN, oldAutoLogin, autoLogin));
@@ -756,16 +756,16 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
-				setAuthentication((EntityOrView)newValue);
+				setAuthentication((Entity)newValue);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
 				setAuthenticationKey((AuthenticationKeyTypes)newValue);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT:
-				setLoginAttempt((EntityOrView)newValue);
+				setLoginAttempt((Entity)newValue);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN:
-				setAutoLogin((EntityOrView)newValue);
+				setAutoLogin((Entity)newValue);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				setUseCaptcha((Boolean)newValue);
@@ -804,16 +804,16 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
-				setAuthentication((EntityOrView)null);
+				setAuthentication((Entity)null);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
 				setAuthenticationKey(AUTHENTICATION_KEY_EDEFAULT);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT:
-				setLoginAttempt((EntityOrView)null);
+				setLoginAttempt((Entity)null);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN:
-				setAutoLogin((EntityOrView)null);
+				setAutoLogin((Entity)null);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				setUseCaptcha(USE_CAPTCHA_EDEFAULT);

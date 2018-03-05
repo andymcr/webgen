@@ -471,7 +471,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPersistence_DatabasePrefix() {
+	public EAttribute getPersistence_TimestampCreation() {
 		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -480,62 +480,8 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPersistence_DatabaseHost() {
-		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPersistence_DatabaseName() {
-		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPersistence_DatabasePort() {
-		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPersistence_DatabaseUsername() {
-		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPersistence_DatabasePassword() {
-		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPersistence_TimestampCreation() {
-		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getPersistence_TimestampUpdates() {
-		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)persistenceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1931,12 +1877,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		createEReference(persistenceEClass, PERSISTENCE__ENTITIES);
 		createEAttribute(persistenceEClass, PERSISTENCE__ORM_TECHNOLOGY);
 		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_TECHNOLOGY);
-		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_PREFIX);
-		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_HOST);
-		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_NAME);
-		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_PORT);
-		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_USERNAME);
-		createEAttribute(persistenceEClass, PERSISTENCE__DATABASE_PASSWORD);
 		createEAttribute(persistenceEClass, PERSISTENCE__TIMESTAMP_CREATION);
 		createEAttribute(persistenceEClass, PERSISTENCE__TIMESTAMP_UPDATES);
 
@@ -2204,12 +2144,6 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEReference(getPersistence_Entities(), this.getEntityOrView(), null, "entities", null, 0, -1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersistence_OrmTechnology(), this.getOrmTechnologies(), "ormTechnology", "Kohana", 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersistence_DatabaseTechnology(), this.getDatabaseTechnologies(), "databaseTechnology", "MySql", 1, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getPersistence_DatabasePrefix(), ecorePackage.getEString(), "databasePrefix", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPersistence_DatabaseHost(), ecorePackage.getEString(), "databaseHost", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPersistence_DatabaseName(), ecorePackage.getEString(), "databaseName", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPersistence_DatabasePort(), ecorePackage.getEString(), "databasePort", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPersistence_DatabaseUsername(), ecorePackage.getEString(), "databaseUsername", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPersistence_DatabasePassword(), ecorePackage.getEString(), "databasePassword", null, 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersistence_TimestampCreation(), ecorePackage.getEBoolean(), "timestampCreation", "true", 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersistence_TimestampUpdates(), ecorePackage.getEBoolean(), "timestampUpdates", "true", 0, 1, Persistence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

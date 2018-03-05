@@ -116,67 +116,13 @@ public interface PersistencePackage extends EPackage {
 	int PERSISTENCE__DATABASE_TECHNOLOGY = 4;
 
 	/**
-	 * The feature id for the '<em><b>Database Prefix</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSISTENCE__DATABASE_PREFIX = 5;
-
-	/**
-	 * The feature id for the '<em><b>Database Host</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSISTENCE__DATABASE_HOST = 6;
-
-	/**
-	 * The feature id for the '<em><b>Database Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSISTENCE__DATABASE_NAME = 7;
-
-	/**
-	 * The feature id for the '<em><b>Database Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSISTENCE__DATABASE_PORT = 8;
-
-	/**
-	 * The feature id for the '<em><b>Database Username</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSISTENCE__DATABASE_USERNAME = 9;
-
-	/**
-	 * The feature id for the '<em><b>Database Password</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSISTENCE__DATABASE_PASSWORD = 10;
-
-	/**
 	 * The feature id for the '<em><b>Timestamp Creation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__TIMESTAMP_CREATION = 11;
+	int PERSISTENCE__TIMESTAMP_CREATION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp Updates</b></em>' attribute.
@@ -185,7 +131,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE__TIMESTAMP_UPDATES = 12;
+	int PERSISTENCE__TIMESTAMP_UPDATES = 6;
 
 	/**
 	 * The number of structural features of the '<em>Persistence</em>' class.
@@ -194,7 +140,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSISTENCE_FEATURE_COUNT = 13;
+	int PERSISTENCE_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Persistence</em>' class.
@@ -6700,72 +6646,6 @@ public interface PersistencePackage extends EPackage {
 	EAttribute getPersistence_DatabaseTechnology();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabasePrefix <em>Database Prefix</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Database Prefix</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabasePrefix()
-	 * @see #getPersistence()
-	 * @generated
-	 */
-	EAttribute getPersistence_DatabasePrefix();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseHost <em>Database Host</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Database Host</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseHost()
-	 * @see #getPersistence()
-	 * @generated
-	 */
-	EAttribute getPersistence_DatabaseHost();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseName <em>Database Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Database Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseName()
-	 * @see #getPersistence()
-	 * @generated
-	 */
-	EAttribute getPersistence_DatabaseName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabasePort <em>Database Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Database Port</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabasePort()
-	 * @see #getPersistence()
-	 * @generated
-	 */
-	EAttribute getPersistence_DatabasePort();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseUsername <em>Database Username</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Database Username</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabaseUsername()
-	 * @see #getPersistence()
-	 * @generated
-	 */
-	EAttribute getPersistence_DatabaseUsername();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabasePassword <em>Database Password</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Database Password</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.persistence.Persistence#getDatabasePassword()
-	 * @see #getPersistence()
-	 * @generated
-	 */
-	EAttribute getPersistence_DatabasePassword();
-
-	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.Persistence#isTimestampCreation <em>Timestamp Creation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8482,54 +8362,6 @@ public interface PersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PERSISTENCE__DATABASE_TECHNOLOGY = eINSTANCE.getPersistence_DatabaseTechnology();
-
-		/**
-		 * The meta object literal for the '<em><b>Database Prefix</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERSISTENCE__DATABASE_PREFIX = eINSTANCE.getPersistence_DatabasePrefix();
-
-		/**
-		 * The meta object literal for the '<em><b>Database Host</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERSISTENCE__DATABASE_HOST = eINSTANCE.getPersistence_DatabaseHost();
-
-		/**
-		 * The meta object literal for the '<em><b>Database Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERSISTENCE__DATABASE_NAME = eINSTANCE.getPersistence_DatabaseName();
-
-		/**
-		 * The meta object literal for the '<em><b>Database Port</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERSISTENCE__DATABASE_PORT = eINSTANCE.getPersistence_DatabasePort();
-
-		/**
-		 * The meta object literal for the '<em><b>Database Username</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERSISTENCE__DATABASE_USERNAME = eINSTANCE.getPersistence_DatabaseUsername();
-
-		/**
-		 * The meta object literal for the '<em><b>Database Password</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERSISTENCE__DATABASE_PASSWORD = eINSTANCE.getPersistence_DatabasePassword();
 
 		/**
 		 * The meta object literal for the '<em><b>Timestamp Creation</b></em>' attribute feature.

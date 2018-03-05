@@ -22,12 +22,6 @@ class OrmModel {
 	contains EntityOrView[] entitiesAndViews opposite partOf
 	contains CollectionType[] collectionTypes
 	DatabaseTechnologies databaseTechnology = "MySql"
-	String databasePrefix
-	String databaseHost
-	String databasePort
-	String databaseName
-	String databaseUsername
-	String databasePassword
 	OrmTechnologies ormTechnology
 	boolean timestampCreation
 	boolean timestampUpdates

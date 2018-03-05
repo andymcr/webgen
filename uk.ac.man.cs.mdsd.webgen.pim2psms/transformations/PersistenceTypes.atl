@@ -57,12 +57,6 @@ rule Website {
 					endif)
 				->collect(e | thisModule.InverseCollectionType(e))),
 		databaseTechnology <- website.databaseTechnology,
-		databasePrefix <- website.databasePrefix,
-		databaseHost <- website.databaseHost,
-		databasePort <- website.databasePort,
-		databaseName <- website.databaseName,
-		databaseUsername <- website.databaseUsername,
-		databasePassword <- website.databasePassword,
 		ormTechnology <- website.ormTechnology,
 		timestampCreation <- website.timestampCreation,
 		timestampUpdates <- website.timestampUpdates,

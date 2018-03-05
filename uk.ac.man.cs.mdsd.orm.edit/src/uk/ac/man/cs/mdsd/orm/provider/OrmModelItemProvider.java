@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import uk.ac.man.cs.mdsd.orm.DatabaseTechnologies;
 import uk.ac.man.cs.mdsd.orm.OrmFactory;
 import uk.ac.man.cs.mdsd.orm.OrmModel;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
@@ -63,12 +64,6 @@ public class OrmModelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDatabaseTechnologyPropertyDescriptor(object);
-			addDatabasePrefixPropertyDescriptor(object);
-			addDatabaseHostPropertyDescriptor(object);
-			addDatabasePortPropertyDescriptor(object);
-			addDatabaseNamePropertyDescriptor(object);
-			addDatabaseUsernamePropertyDescriptor(object);
-			addDatabasePasswordPropertyDescriptor(object);
 			addOrmTechnologyPropertyDescriptor(object);
 			addTimestampCreationPropertyDescriptor(object);
 			addTimestampUpdatesPropertyDescriptor(object);
@@ -91,138 +86,6 @@ public class OrmModelItemProvider
 				 getString("_UI_OrmModel_databaseTechnology_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_databaseTechnology_feature", "_UI_OrmModel_type"),
 				 OrmPackage.Literals.ORM_MODEL__DATABASE_TECHNOLOGY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Prefix feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabasePrefixPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OrmModel_databasePrefix_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_databasePrefix_feature", "_UI_OrmModel_type"),
-				 OrmPackage.Literals.ORM_MODEL__DATABASE_PREFIX,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Host feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabaseHostPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OrmModel_databaseHost_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_databaseHost_feature", "_UI_OrmModel_type"),
-				 OrmPackage.Literals.ORM_MODEL__DATABASE_HOST,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Port feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabasePortPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OrmModel_databasePort_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_databasePort_feature", "_UI_OrmModel_type"),
-				 OrmPackage.Literals.ORM_MODEL__DATABASE_PORT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabaseNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OrmModel_databaseName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_databaseName_feature", "_UI_OrmModel_type"),
-				 OrmPackage.Literals.ORM_MODEL__DATABASE_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Username feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabaseUsernamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OrmModel_databaseUsername_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_databaseUsername_feature", "_UI_OrmModel_type"),
-				 OrmPackage.Literals.ORM_MODEL__DATABASE_USERNAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Password feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabasePasswordPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OrmModel_databasePassword_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_databasePassword_feature", "_UI_OrmModel_type"),
-				 OrmPackage.Literals.ORM_MODEL__DATABASE_PASSWORD,
 				 true,
 				 false,
 				 false,
@@ -371,7 +234,8 @@ public class OrmModelItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((OrmModel)object).getDatabaseName();
+		DatabaseTechnologies labelValue = ((OrmModel)object).getDatabaseTechnology();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_OrmModel_type") :
 			getString("_UI_OrmModel_type") + " " + label;
@@ -390,12 +254,6 @@ public class OrmModelItemProvider
 
 		switch (notification.getFeatureID(OrmModel.class)) {
 			case OrmPackage.ORM_MODEL__DATABASE_TECHNOLOGY:
-			case OrmPackage.ORM_MODEL__DATABASE_PREFIX:
-			case OrmPackage.ORM_MODEL__DATABASE_HOST:
-			case OrmPackage.ORM_MODEL__DATABASE_PORT:
-			case OrmPackage.ORM_MODEL__DATABASE_NAME:
-			case OrmPackage.ORM_MODEL__DATABASE_USERNAME:
-			case OrmPackage.ORM_MODEL__DATABASE_PASSWORD:
 			case OrmPackage.ORM_MODEL__ORM_TECHNOLOGY:
 			case OrmPackage.ORM_MODEL__TIMESTAMP_CREATION:
 			case OrmPackage.ORM_MODEL__TIMESTAMP_UPDATES:

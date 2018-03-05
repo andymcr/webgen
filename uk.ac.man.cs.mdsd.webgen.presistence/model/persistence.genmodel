@@ -41,12 +41,6 @@
           ecoreFeature="ecore:EReference persistence.ecore#//Persistence/entities"/>
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/ormTechnology"/>
       <genFeatures createChild="false" propertyCategory="Database" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databaseTechnology"/>
-      <genFeatures createChild="false" propertyCategory="Database" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databasePrefix"/>
-      <genFeatures createChild="false" propertyCategory="Database" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databaseHost"/>
-      <genFeatures createChild="false" propertyCategory="Database" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databaseName"/>
-      <genFeatures createChild="false" propertyCategory="Database" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databasePort"/>
-      <genFeatures createChild="false" propertyCategory="Database" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databaseUsername"/>
-      <genFeatures createChild="false" propertyCategory="Database" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/databasePassword"/>
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/timestampCreation"/>
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//Persistence/timestampUpdates"/>
     </genClasses>

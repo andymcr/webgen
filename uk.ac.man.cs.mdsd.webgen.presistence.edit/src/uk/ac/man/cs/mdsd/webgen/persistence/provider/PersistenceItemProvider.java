@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.base.BaseFactory;
+import uk.ac.man.cs.mdsd.webgen.persistence.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.persistence.Persistence;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistenceFactory;
 import uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage;
@@ -64,12 +65,6 @@ public class PersistenceItemProvider
 
 			addOrmTechnologyPropertyDescriptor(object);
 			addDatabaseTechnologyPropertyDescriptor(object);
-			addDatabasePrefixPropertyDescriptor(object);
-			addDatabaseHostPropertyDescriptor(object);
-			addDatabaseNamePropertyDescriptor(object);
-			addDatabasePortPropertyDescriptor(object);
-			addDatabaseUsernamePropertyDescriptor(object);
-			addDatabasePasswordPropertyDescriptor(object);
 			addTimestampCreationPropertyDescriptor(object);
 			addTimestampUpdatesPropertyDescriptor(object);
 		}
@@ -112,138 +107,6 @@ public class PersistenceItemProvider
 				 getString("_UI_Persistence_databaseTechnology_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databaseTechnology_feature", "_UI_Persistence_type"),
 				 PersistencePackage.Literals.PERSISTENCE__DATABASE_TECHNOLOGY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DatabasePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Prefix feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabasePrefixPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Persistence_databasePrefix_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databasePrefix_feature", "_UI_Persistence_type"),
-				 PersistencePackage.Literals.PERSISTENCE__DATABASE_PREFIX,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DatabasePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Host feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabaseHostPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Persistence_databaseHost_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databaseHost_feature", "_UI_Persistence_type"),
-				 PersistencePackage.Literals.PERSISTENCE__DATABASE_HOST,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DatabasePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabaseNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Persistence_databaseName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databaseName_feature", "_UI_Persistence_type"),
-				 PersistencePackage.Literals.PERSISTENCE__DATABASE_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DatabasePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Port feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabasePortPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Persistence_databasePort_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databasePort_feature", "_UI_Persistence_type"),
-				 PersistencePackage.Literals.PERSISTENCE__DATABASE_PORT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DatabasePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Username feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabaseUsernamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Persistence_databaseUsername_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databaseUsername_feature", "_UI_Persistence_type"),
-				 PersistencePackage.Literals.PERSISTENCE__DATABASE_USERNAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_DatabasePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Database Password feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatabasePasswordPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Persistence_databasePassword_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Persistence_databasePassword_feature", "_UI_Persistence_type"),
-				 PersistencePackage.Literals.PERSISTENCE__DATABASE_PASSWORD,
 				 true,
 				 false,
 				 false,
@@ -347,7 +210,8 @@ public class PersistenceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Persistence)object).getDatabaseName();
+		OrmTechnologies labelValue = ((Persistence)object).getOrmTechnology();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Persistence_type") :
 			getString("_UI_Persistence_type") + " " + label;
@@ -368,12 +232,6 @@ public class PersistenceItemProvider
 		switch (notification.getFeatureID(Persistence.class)) {
 			case PersistencePackage.PERSISTENCE__ORM_TECHNOLOGY:
 			case PersistencePackage.PERSISTENCE__DATABASE_TECHNOLOGY:
-			case PersistencePackage.PERSISTENCE__DATABASE_PREFIX:
-			case PersistencePackage.PERSISTENCE__DATABASE_HOST:
-			case PersistencePackage.PERSISTENCE__DATABASE_NAME:
-			case PersistencePackage.PERSISTENCE__DATABASE_PORT:
-			case PersistencePackage.PERSISTENCE__DATABASE_USERNAME:
-			case PersistencePackage.PERSISTENCE__DATABASE_PASSWORD:
 			case PersistencePackage.PERSISTENCE__TIMESTAMP_CREATION:
 			case PersistencePackage.PERSISTENCE__TIMESTAMP_UPDATES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

@@ -28,6 +28,7 @@ rule ModelLabel {
 	from website : Website!ModelLabel
 	to orm : ORM!ModelLabel (
 		format <- website.format,
+		customise <- website.customise,
 		features <- website.features
 	)
 }
@@ -44,7 +45,7 @@ rule ModelLabelAttribute {
 	to orm : ORM!ModelLabelAttribute (
 		attribute <-
 			if website.attribute.oclIsKindOf(Website!EntityAttribute) then
-				website.attribute.findOrmFeature()
+				website.attribute.findOrmAttribute()
 			else
 				website.attribute
 			endif,

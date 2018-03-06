@@ -73,7 +73,7 @@ abstract rule Authentication {
 					or website.userKey.oclIsUndefined() then
 				OclUndefined
 			else
-				website.userKey.findOrmFeature()
+				website.userKey.findOrmAttribute()
 			endif,
 		loginLabel <- website.loginLabel,
 		logoutLabel <- website.logoutLabel

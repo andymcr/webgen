@@ -664,7 +664,7 @@ abstract rule FeaturePath {
 rule FeaturePathAttribute {
 	from website : Website!FeaturePathAttribute
 	to waf : WAF!FeaturePathAttribute (
-		attribute <- website.attribute.findOrmFeature()
+		attribute <- website.attribute.findOrmAttribute()
 	)
 }
 

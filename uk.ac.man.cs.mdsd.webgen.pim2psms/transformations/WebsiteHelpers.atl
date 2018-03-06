@@ -227,7 +227,7 @@ helper context Website!Feature def: findOrmFeature() : ORM!Feature
 	= if self.oclIsKindOf(Website!Attribute) then
 			self.findOrmAttribute()
 		else
-			self.findOrmAssociation(self.partOf)
+			self.findOrmSourceAssociation()
 		endif;
 
 helper context Website!Attribute def: findOrmAttribute() : ORM!Attribute

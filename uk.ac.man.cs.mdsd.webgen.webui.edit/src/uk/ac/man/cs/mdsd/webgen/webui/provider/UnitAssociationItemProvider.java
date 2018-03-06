@@ -19,6 +19,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.persistence.Association;
 import uk.ac.man.cs.mdsd.webgen.persistence.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.persistence.Label;
 import uk.ac.man.cs.mdsd.webgen.service.Selection;
@@ -87,7 +88,11 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitAssociation) {
 						final UnitAssociation association = (UnitAssociation) object;
-						return getTarget(association).getAllAssociations();
+						final Set<Association> associations = new HashSet<Association>();
+						for (EntityOrView entity : getTarget(association)) {
+							associations.addAll(entity.getAllAssociations());
+						}
+						return associations;
 					}
 
 					return Collections.emptySet();
@@ -117,9 +122,10 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 						final UnitAssociation association = (UnitAssociation) object;
 						final Set<Label> labels = new HashSet<Label>();
 						if (association.getAssociation() != null) {
-							final EntityOrView target = getTarget(association);
-							labels.addAll(target.getAttributes());
-							labels.addAll(target.getLabels());
+							for (EntityOrView target : getTarget(association)) {
+								labels.addAll(target.getAttributes());
+								labels.addAll(target.getLabels());
+							}
 						}
 
 						return labels;
@@ -219,7 +225,11 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 						if (association.getAssociation() != null) {
 							final WebUI webUI
 								= association.getDisplayedOn().getPageDisplayedOn().getWebUI();
-							return getSelections(webUI, getTarget(association));
+							final Set<Selection> selections = new HashSet<Selection>();
+							for (EntityOrView entity : getTarget(association)) {
+								selections.addAll(getSelections(webUI, entity));
+							}
+							return selections;
 						}
 					}
 					return Collections.emptySet();
@@ -450,12 +460,18 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
-	protected EntityOrView getTarget(final UnitAssociation association) {
+	protected Set<EntityOrView> getTarget(final UnitAssociation association) {
 		final Set<EntityOrView> entities = getContentType(association.getDisplayedOn());
-		if (entities.contains(association.getAssociation().getSourceEntityX())) {
-			return association.getAssociation().getTargetEntityX();
-		} else{
-			return association.getAssociation().getSourceEntityX();
+		if (association.getAssociation() == null) {
+			return entities;
+		} else {
+			final Set<EntityOrView> target = new HashSet<EntityOrView>();
+			if (entities.contains(association.getAssociation().getSourceEntityX())) {
+				target.add(association.getAssociation().getTargetEntityX());
+			} else{
+				target.add(association.getAssociation().getSourceEntityX());
+			}
+			return target;
 		}
 	}
 

@@ -52,6 +52,7 @@ public class ModelLabelItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addFormatPropertyDescriptor(object);
+			addCustomisePropertyDescriptor(object);
 			addSerializationGroupsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -76,6 +77,28 @@ public class ModelLabelItemProvider extends NamedElementItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Customise feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCustomisePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ModelLabel_customise_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabel_customise_feature", "_UI_ModelLabel_type"),
+				 PersistencePackage.Literals.MODEL_LABEL__CUSTOMISE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
 				 null));
 	}
 
@@ -170,6 +193,7 @@ public class ModelLabelItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(ModelLabel.class)) {
 			case PersistencePackage.MODEL_LABEL__FORMAT:
+			case PersistencePackage.MODEL_LABEL__CUSTOMISE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PersistencePackage.MODEL_LABEL__FEATURES:

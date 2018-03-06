@@ -138,6 +138,7 @@ interface Label {
 class ModelLabel extends NamedElement, Label {
 	container EntityOrView[1] labelFor opposite labels
 	String[1] format
+	boolean customise
 	contains ModelLabelFeature[] features
 }
 

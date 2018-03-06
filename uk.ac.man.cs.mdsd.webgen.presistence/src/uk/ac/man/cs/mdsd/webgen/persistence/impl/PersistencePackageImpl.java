@@ -894,8 +894,17 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getModelLabel_Customise() {
+		return (EAttribute)modelLabelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getModelLabel_Features() {
-		return (EReference)modelLabelEClass.getEStructuralFeatures().get(2);
+		return (EReference)modelLabelEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -904,7 +913,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 	 * @generated
 	 */
 	public EReference getModelLabel_SerializationGroups() {
-		return (EReference)modelLabelEClass.getEStructuralFeatures().get(3);
+		return (EReference)modelLabelEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1931,6 +1940,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		modelLabelEClass = createEClass(MODEL_LABEL);
 		createEReference(modelLabelEClass, MODEL_LABEL__LABEL_FOR);
 		createEAttribute(modelLabelEClass, MODEL_LABEL__FORMAT);
+		createEAttribute(modelLabelEClass, MODEL_LABEL__CUSTOMISE);
 		createEReference(modelLabelEClass, MODEL_LABEL__FEATURES);
 		createEReference(modelLabelEClass, MODEL_LABEL__SERIALIZATION_GROUPS);
 
@@ -2198,6 +2208,7 @@ public class PersistencePackageImpl extends EPackageImpl implements PersistenceP
 		initEClass(modelLabelEClass, ModelLabel.class, "ModelLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModelLabel_LabelFor(), this.getEntityOrView(), this.getEntityOrView_Labels(), "labelFor", null, 1, 1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModelLabel_Format(), ecorePackage.getEString(), "format", null, 1, 1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelLabel_Customise(), ecorePackage.getEBoolean(), "customise", "false", 0, 1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModelLabel_Features(), this.getModelLabelFeature(), this.getModelLabelFeature_PartOf(), "features", null, 0, -1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModelLabel_SerializationGroups(), this.getSerializationGroup(), null, "serializationGroups", null, 0, -1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

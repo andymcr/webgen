@@ -50,6 +50,7 @@ public class ModelLabelItemProvider extends NamedElementItemProvider {
 
 			addLabelForPropertyDescriptor(object);
 			addFormatPropertyDescriptor(object);
+			addCustomisePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -94,6 +95,28 @@ public class ModelLabelItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Customise feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCustomisePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ModelLabel_customise_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabel_customise_feature", "_UI_ModelLabel_type"),
+				 OrmPackage.Literals.MODEL_LABEL__CUSTOMISE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -167,6 +190,7 @@ public class ModelLabelItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(ModelLabel.class)) {
 			case OrmPackage.MODEL_LABEL__FORMAT:
+			case OrmPackage.MODEL_LABEL__CUSTOMISE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OrmPackage.MODEL_LABEL__FEATURES:

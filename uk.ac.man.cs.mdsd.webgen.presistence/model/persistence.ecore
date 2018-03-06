@@ -160,6 +160,8 @@
         eType="#//EntityOrView" eOpposite="#//EntityOrView/labels"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customise" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//ModelLabelFeature" containment="true" eOpposite="#//ModelLabelFeature/partOf"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serializationGroups" upperBound="-1"

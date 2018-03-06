@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedElement;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getLabelFor <em>Label For</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getFormat <em>Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#isCustomise <em>Customise</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getSerializationGroups <em>Serialization Groups</em>}</li>
  * </ul>
@@ -79,6 +80,33 @@ public interface ModelLabel extends NamedElement, Label {
 	 * @generated
 	 */
 	void setFormat(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Customise</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Customise</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Customise</em>' attribute.
+	 * @see #setCustomise(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getModelLabel_Customise()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isCustomise();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#isCustomise <em>Customise</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Customise</em>' attribute.
+	 * @see #isCustomise()
+	 * @generated
+	 */
+	void setCustomise(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Features</b></em>' containment reference list.

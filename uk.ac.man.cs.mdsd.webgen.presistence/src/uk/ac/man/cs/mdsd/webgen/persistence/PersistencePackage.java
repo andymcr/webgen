@@ -888,13 +888,22 @@ public interface PersistencePackage extends EPackage {
 	int MODEL_LABEL__FORMAT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Customise</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_LABEL__CUSTOMISE = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL__FEATURES = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MODEL_LABEL__FEATURES = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' reference list.
@@ -903,7 +912,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL__SERIALIZATION_GROUPS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int MODEL_LABEL__SERIALIZATION_GROUPS = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Model Label</em>' class.
@@ -912,7 +921,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int MODEL_LABEL_FEATURE_COUNT = BasePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Model Label</em>' class.
@@ -7156,6 +7165,17 @@ public interface PersistencePackage extends EPackage {
 	EAttribute getModelLabel_Format();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#isCustomise <em>Customise</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Customise</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#isCustomise()
+	 * @see #getModelLabel()
+	 * @generated
+	 */
+	EAttribute getModelLabel_Customise();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.persistence.ModelLabel#getFeatures <em>Features</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8752,6 +8772,14 @@ public interface PersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MODEL_LABEL__FORMAT = eINSTANCE.getModelLabel_Format();
+
+		/**
+		 * The meta object literal for the '<em><b>Customise</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL_LABEL__CUSTOMISE = eINSTANCE.getModelLabel_Customise();
 
 		/**
 		 * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.

@@ -37,6 +37,7 @@ import uk.ac.man.cs.mdsd.webgen.persistence.SerializationGroup;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ModelLabelImpl#getLabelFor <em>Label For</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ModelLabelImpl#getFormat <em>Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ModelLabelImpl#isCustomise <em>Customise</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ModelLabelImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.ModelLabelImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
  * </ul>
@@ -63,6 +64,26 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 * @ordered
 	 */
 	protected String format = FORMAT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCustomise() <em>Customise</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCustomise()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CUSTOMISE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCustomise() <em>Customise</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCustomise()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean customise = CUSTOMISE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
@@ -170,6 +191,27 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isCustomise() {
+		return customise;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCustomise(boolean newCustomise) {
+		boolean oldCustomise = customise;
+		customise = newCustomise;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.MODEL_LABEL__CUSTOMISE, oldCustomise, customise));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<ModelLabelFeature> getFeatures() {
 		if (features == null) {
 			features = new EObjectContainmentWithInverseEList<ModelLabelFeature>(ModelLabelFeature.class, this, PersistencePackage.MODEL_LABEL__FEATURES, PersistencePackage.MODEL_LABEL_FEATURE__PART_OF);
@@ -250,6 +292,8 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 				return getLabelFor();
 			case PersistencePackage.MODEL_LABEL__FORMAT:
 				return getFormat();
+			case PersistencePackage.MODEL_LABEL__CUSTOMISE:
+				return isCustomise();
 			case PersistencePackage.MODEL_LABEL__FEATURES:
 				return getFeatures();
 			case PersistencePackage.MODEL_LABEL__SERIALIZATION_GROUPS:
@@ -272,6 +316,9 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 				return;
 			case PersistencePackage.MODEL_LABEL__FORMAT:
 				setFormat((String)newValue);
+				return;
+			case PersistencePackage.MODEL_LABEL__CUSTOMISE:
+				setCustomise((Boolean)newValue);
 				return;
 			case PersistencePackage.MODEL_LABEL__FEATURES:
 				getFeatures().clear();
@@ -299,6 +346,9 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 			case PersistencePackage.MODEL_LABEL__FORMAT:
 				setFormat(FORMAT_EDEFAULT);
 				return;
+			case PersistencePackage.MODEL_LABEL__CUSTOMISE:
+				setCustomise(CUSTOMISE_EDEFAULT);
+				return;
 			case PersistencePackage.MODEL_LABEL__FEATURES:
 				getFeatures().clear();
 				return;
@@ -321,6 +371,8 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 				return getLabelFor() != null;
 			case PersistencePackage.MODEL_LABEL__FORMAT:
 				return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
+			case PersistencePackage.MODEL_LABEL__CUSTOMISE:
+				return customise != CUSTOMISE_EDEFAULT;
 			case PersistencePackage.MODEL_LABEL__FEATURES:
 				return features != null && !features.isEmpty();
 			case PersistencePackage.MODEL_LABEL__SERIALIZATION_GROUPS:
@@ -341,6 +393,8 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (format: ");
 		result.append(format);
+		result.append(", customise: ");
+		result.append(customise);
 		result.append(')');
 		return result.toString();
 	}

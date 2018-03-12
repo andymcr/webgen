@@ -17,6 +17,8 @@ import uk.ac.man.cs.mdsd.webgen.base.NamedDisplayElement;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isOrdered <em>Ordered</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isPrimaryKey <em>Primary Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isDerived <em>Derived</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isCustomiseSet <em>Customise Set</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getBooleanIsHasChoice <em>Boolean Is Has Choice</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getSingletonName <em>Singleton Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getPluralisedName <em>Pluralised Name</em>}</li>
@@ -140,6 +142,60 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * @generated
 	 */
 	void setPrimaryKey(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Derived</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Derived</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Derived</em>' attribute.
+	 * @see #setDerived(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature_Derived()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isDerived();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isDerived <em>Derived</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Derived</em>' attribute.
+	 * @see #isDerived()
+	 * @generated
+	 */
+	void setDerived(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Customise Set</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Customise Set</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Customise Set</em>' attribute.
+	 * @see #setCustomiseSet(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityFeature_CustomiseSet()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isCustomiseSet();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isCustomiseSet <em>Customise Set</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Customise Set</em>' attribute.
+	 * @see #isCustomiseSet()
+	 * @generated
+	 */
+	void setCustomiseSet(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Boolean Is Has Choice</b></em>' attribute.

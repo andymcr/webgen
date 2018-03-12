@@ -77,6 +77,8 @@ abstract rule EntityFeature {
 	to orm : ORM!EntityFeature (
 		partOf <- thisModule.findOrmEntityOrView(website.partOf.name),
 		primaryKey <- website.primaryKey,
+		"derived" <- website."derived",
+		customiseSet <- website.customiseSet,
 		singletonName <-
 			if website.singletonName.oclIsUndefined() or website.singletonName = '' then
 				website.name
@@ -98,6 +100,7 @@ abstract rule EntityFeature {
 abstract rule EntityAttribute {
 	from website : Website!EntityAttribute
 	to orm : ORM!EntityAttribute (
+		hidden <- website.hidden,
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
 				website.columnName.createAttributeColumnName()

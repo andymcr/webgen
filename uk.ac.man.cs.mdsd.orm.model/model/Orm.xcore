@@ -163,12 +163,15 @@ abstract class EntityFeature extends Feature {
 	String[1] singletonName
 	String[1] pluralisedName
 	boolean primaryKey
+	boolean ^derived
+	boolean customiseSet
 	Cardinality cardinality
 	IsHasChoices booleanIsHasChoice
 	String[1] columnName
 }
 
 abstract class EntityAttribute extends EntityFeature, Attribute {
+	boolean hidden
 	String[1] persistentType
 	String[1] ormType
 	refers Attribute[] slugFields

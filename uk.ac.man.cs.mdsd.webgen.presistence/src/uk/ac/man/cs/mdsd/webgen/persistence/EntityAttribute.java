@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#isHidden <em>Hidden</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#isContainerUnique <em>Container Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#getPersistentType <em>Persistent Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#getOrmType <em>Orm Type</em>}</li>
@@ -26,6 +27,33 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface EntityAttribute extends EntityFeature, Attribute {
+	/**
+	 * Returns the value of the '<em><b>Hidden</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Hidden</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hidden</em>' attribute.
+	 * @see #setHidden(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.PersistencePackage#getEntityAttribute_Hidden()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isHidden();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#isHidden <em>Hidden</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hidden</em>' attribute.
+	 * @see #isHidden()
+	 * @generated
+	 */
+	void setHidden(boolean value);
+
 	/**
 	 * Returns the value of the '<em><b>Container Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->

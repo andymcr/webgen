@@ -47,6 +47,8 @@ public class EntityFeatureItemProvider
 			addSingletonNamePropertyDescriptor(object);
 			addPluralisedNamePropertyDescriptor(object);
 			addPrimaryKeyPropertyDescriptor(object);
+			addDerivedPropertyDescriptor(object);
+			addCustomiseSetPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addBooleanIsHasChoicePropertyDescriptor(object);
 			addColumnNamePropertyDescriptor(object);
@@ -112,6 +114,50 @@ public class EntityFeatureItemProvider
 				 getString("_UI_EntityFeature_primaryKey_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_primaryKey_feature", "_UI_EntityFeature_type"),
 				 OrmPackage.Literals.ENTITY_FEATURE__PRIMARY_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Derived feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDerivedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityFeature_derived_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_derived_feature", "_UI_EntityFeature_type"),
+				 OrmPackage.Literals.ENTITY_FEATURE__DERIVED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Customise Set feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCustomiseSetPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityFeature_customiseSet_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_customiseSet_feature", "_UI_EntityFeature_type"),
+				 OrmPackage.Literals.ENTITY_FEATURE__CUSTOMISE_SET,
 				 true,
 				 false,
 				 false,
@@ -216,6 +262,8 @@ public class EntityFeatureItemProvider
 			case OrmPackage.ENTITY_FEATURE__SINGLETON_NAME:
 			case OrmPackage.ENTITY_FEATURE__PLURALISED_NAME:
 			case OrmPackage.ENTITY_FEATURE__PRIMARY_KEY:
+			case OrmPackage.ENTITY_FEATURE__DERIVED:
+			case OrmPackage.ENTITY_FEATURE__CUSTOMISE_SET:
 			case OrmPackage.ENTITY_FEATURE__CARDINALITY:
 			case OrmPackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 			case OrmPackage.ENTITY_FEATURE__COLUMN_NAME:

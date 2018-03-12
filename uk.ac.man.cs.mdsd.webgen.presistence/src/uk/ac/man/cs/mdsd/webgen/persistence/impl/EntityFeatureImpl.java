@@ -48,6 +48,8 @@ import uk.ac.man.cs.mdsd.webgen.persistence.isHasChoices;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isOrdered <em>Ordered</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isPrimaryKey <em>Primary Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isDerived <em>Derived</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#isCustomiseSet <em>Customise Set</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getBooleanIsHasChoice <em>Boolean Is Has Choice</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getSingletonName <em>Singleton Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.persistence.impl.EntityFeatureImpl#getPluralisedName <em>Pluralised Name</em>}</li>
@@ -306,6 +308,46 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * @ordered
 	 */
 	protected boolean primaryKey = PRIMARY_KEY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isDerived() <em>Derived</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDerived()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DERIVED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDerived() <em>Derived</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDerived()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean derived = DERIVED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCustomiseSet() <em>Customise Set</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCustomiseSet()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CUSTOMISE_SET_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCustomiseSet() <em>Customise Set</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCustomiseSet()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean customiseSet = CUSTOMISE_SET_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBooleanIsHasChoice() <em>Boolean Is Has Choice</em>}' attribute.
@@ -716,6 +758,48 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isDerived() {
+		return derived;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDerived(boolean newDerived) {
+		boolean oldDerived = derived;
+		derived = newDerived;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__DERIVED, oldDerived, derived));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCustomiseSet() {
+		return customiseSet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCustomiseSet(boolean newCustomiseSet) {
+		boolean oldCustomiseSet = customiseSet;
+		customiseSet = newCustomiseSet;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PersistencePackage.ENTITY_FEATURE__CUSTOMISE_SET, oldCustomiseSet, customiseSet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public isHasChoices getBooleanIsHasChoice() {
 		return booleanIsHasChoice;
 	}
@@ -875,6 +959,10 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return isOrdered();
 			case PersistencePackage.ENTITY_FEATURE__PRIMARY_KEY:
 				return isPrimaryKey();
+			case PersistencePackage.ENTITY_FEATURE__DERIVED:
+				return isDerived();
+			case PersistencePackage.ENTITY_FEATURE__CUSTOMISE_SET:
+				return isCustomiseSet();
 			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				return getBooleanIsHasChoice();
 			case PersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
@@ -938,6 +1026,12 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return;
 			case PersistencePackage.ENTITY_FEATURE__PRIMARY_KEY:
 				setPrimaryKey((Boolean)newValue);
+				return;
+			case PersistencePackage.ENTITY_FEATURE__DERIVED:
+				setDerived((Boolean)newValue);
+				return;
+			case PersistencePackage.ENTITY_FEATURE__CUSTOMISE_SET:
+				setCustomiseSet((Boolean)newValue);
 				return;
 			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				setBooleanIsHasChoice((isHasChoices)newValue);
@@ -1005,6 +1099,12 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case PersistencePackage.ENTITY_FEATURE__PRIMARY_KEY:
 				setPrimaryKey(PRIMARY_KEY_EDEFAULT);
 				return;
+			case PersistencePackage.ENTITY_FEATURE__DERIVED:
+				setDerived(DERIVED_EDEFAULT);
+				return;
+			case PersistencePackage.ENTITY_FEATURE__CUSTOMISE_SET:
+				setCustomiseSet(CUSTOMISE_SET_EDEFAULT);
+				return;
 			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				setBooleanIsHasChoice(BOOLEAN_IS_HAS_CHOICE_EDEFAULT);
 				return;
@@ -1057,6 +1157,10 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return ordered != ORDERED_EDEFAULT;
 			case PersistencePackage.ENTITY_FEATURE__PRIMARY_KEY:
 				return primaryKey != PRIMARY_KEY_EDEFAULT;
+			case PersistencePackage.ENTITY_FEATURE__DERIVED:
+				return derived != DERIVED_EDEFAULT;
+			case PersistencePackage.ENTITY_FEATURE__CUSTOMISE_SET:
+				return customiseSet != CUSTOMISE_SET_EDEFAULT;
 			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				return booleanIsHasChoice != BOOLEAN_IS_HAS_CHOICE_EDEFAULT;
 			case PersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
@@ -1153,6 +1257,10 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		result.append(ordered);
 		result.append(", primaryKey: ");
 		result.append(primaryKey);
+		result.append(", derived: ");
+		result.append(derived);
+		result.append(", customiseSet: ");
+		result.append(customiseSet);
 		result.append(", booleanIsHasChoice: ");
 		result.append(booleanIsHasChoice);
 		result.append(", singletonName: ");

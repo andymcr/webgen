@@ -61,6 +61,8 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			addCardinalityPropertyDescriptor(object);
 			addOrderedPropertyDescriptor(object);
 			addPrimaryKeyPropertyDescriptor(object);
+			addDerivedPropertyDescriptor(object);
+			addCustomiseSetPropertyDescriptor(object);
 			addBooleanIsHasChoicePropertyDescriptor(object);
 			addSingletonNamePropertyDescriptor(object);
 			addPluralisedNamePropertyDescriptor(object);
@@ -356,6 +358,50 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Derived feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDerivedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityFeature_derived_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_derived_feature", "_UI_EntityFeature_type"),
+				 PersistencePackage.Literals.ENTITY_FEATURE__DERIVED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Customise Set feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCustomiseSetPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityFeature_customiseSet_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_customiseSet_feature", "_UI_EntityFeature_type"),
+				 PersistencePackage.Literals.ENTITY_FEATURE__CUSTOMISE_SET,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_OrmPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Boolean Is Has Choice feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -483,6 +529,8 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			case PersistencePackage.ENTITY_FEATURE__CARDINALITY:
 			case PersistencePackage.ENTITY_FEATURE__ORDERED:
 			case PersistencePackage.ENTITY_FEATURE__PRIMARY_KEY:
+			case PersistencePackage.ENTITY_FEATURE__DERIVED:
+			case PersistencePackage.ENTITY_FEATURE__CUSTOMISE_SET:
 			case PersistencePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 			case PersistencePackage.ENTITY_FEATURE__SINGLETON_NAME:
 			case PersistencePackage.ENTITY_FEATURE__PLURALISED_NAME:

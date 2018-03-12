@@ -1460,13 +1460,31 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_FEATURE__PRIMARY_KEY = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__DERIVED = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Customise Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__CUSTOMISE_SET = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
+
+	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
@@ -1475,7 +1493,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__SINGLETON_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
+	int ENTITY_FEATURE__SINGLETON_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
@@ -1484,7 +1502,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PLURALISED_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
+	int ENTITY_FEATURE__PLURALISED_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -1493,7 +1511,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__COLUMN_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
+	int ENTITY_FEATURE__COLUMN_NAME = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The number of structural features of the '<em>Entity Feature</em>' class.
@@ -1502,7 +1520,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
+	int ENTITY_FEATURE_FEATURE_COUNT = BasePackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The number of operations of the '<em>Entity Feature</em>' class.
@@ -1668,6 +1686,24 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_ATTRIBUTE__PRIMARY_KEY = ENTITY_FEATURE__PRIMARY_KEY;
 
 	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__DERIVED = ENTITY_FEATURE__DERIVED;
+
+	/**
+	 * The feature id for the '<em><b>Customise Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__CUSTOMISE_SET = ENTITY_FEATURE__CUSTOMISE_SET;
+
+	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1731,13 +1767,22 @@ public interface PersistencePackage extends EPackage {
 	int ENTITY_ATTRIBUTE__INPUT_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__HIDDEN = ENTITY_FEATURE_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Container Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__CONTAINER_UNIQUE = ENTITY_FEATURE_FEATURE_COUNT + 3;
+	int ENTITY_ATTRIBUTE__CONTAINER_UNIQUE = ENTITY_FEATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
@@ -1746,7 +1791,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__PERSISTENT_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 4;
+	int ENTITY_ATTRIBUTE__PERSISTENT_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
@@ -1755,7 +1800,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__ORM_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 5;
+	int ENTITY_ATTRIBUTE__ORM_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
@@ -1764,7 +1809,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__INTERFACE_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 6;
+	int ENTITY_ATTRIBUTE__INTERFACE_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Slug Fields</b></em>' reference list.
@@ -1773,7 +1818,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__SLUG_FIELDS = ENTITY_FEATURE_FEATURE_COUNT + 7;
+	int ENTITY_ATTRIBUTE__SLUG_FIELDS = ENTITY_FEATURE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
@@ -1782,7 +1827,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__UNIQUE = ENTITY_FEATURE_FEATURE_COUNT + 8;
+	int ENTITY_ATTRIBUTE__UNIQUE = ENTITY_FEATURE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Entity Attribute</em>' class.
@@ -1791,7 +1836,7 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 9;
+	int ENTITY_ATTRIBUTE_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Entity Attribute</em>' class.
@@ -1957,6 +2002,24 @@ public interface PersistencePackage extends EPackage {
 	int DATA_TYPE_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__DERIVED = ENTITY_ATTRIBUTE__DERIVED;
+
+	/**
+	 * The feature id for the '<em><b>Customise Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__CUSTOMISE_SET = ENTITY_ATTRIBUTE__CUSTOMISE_SET;
+
+	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2018,6 +2081,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_ATTRIBUTE__INPUT_CLASS = ENTITY_ATTRIBUTE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__HIDDEN = ENTITY_ATTRIBUTE__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Container Unique</b></em>' attribute.
@@ -2282,6 +2354,24 @@ public interface PersistencePackage extends EPackage {
 	int DATE_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__DERIVED = ENTITY_ATTRIBUTE__DERIVED;
+
+	/**
+	 * The feature id for the '<em><b>Customise Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__CUSTOMISE_SET = ENTITY_ATTRIBUTE__CUSTOMISE_SET;
+
+	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2343,6 +2433,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATE_ATTRIBUTE__INPUT_CLASS = ENTITY_ATTRIBUTE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__HIDDEN = ENTITY_ATTRIBUTE__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Container Unique</b></em>' attribute.
@@ -2589,6 +2688,24 @@ public interface PersistencePackage extends EPackage {
 	int URL_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__DERIVED = ENTITY_ATTRIBUTE__DERIVED;
+
+	/**
+	 * The feature id for the '<em><b>Customise Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__CUSTOMISE_SET = ENTITY_ATTRIBUTE__CUSTOMISE_SET;
+
+	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2650,6 +2767,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int URL_ATTRIBUTE__INPUT_CLASS = ENTITY_ATTRIBUTE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__HIDDEN = ENTITY_ATTRIBUTE__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Container Unique</b></em>' attribute.
@@ -2887,6 +3013,24 @@ public interface PersistencePackage extends EPackage {
 	int RESOURCE_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__DERIVED = ENTITY_ATTRIBUTE__DERIVED;
+
+	/**
+	 * The feature id for the '<em><b>Customise Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__CUSTOMISE_SET = ENTITY_ATTRIBUTE__CUSTOMISE_SET;
+
+	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2948,6 +3092,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_ATTRIBUTE__INPUT_CLASS = ENTITY_ATTRIBUTE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__HIDDEN = ENTITY_ATTRIBUTE__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Container Unique</b></em>' attribute.
@@ -3323,6 +3476,24 @@ public interface PersistencePackage extends EPackage {
 	int FILE_ATTRIBUTE__PRIMARY_KEY = RESOURCE_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__DERIVED = RESOURCE_ATTRIBUTE__DERIVED;
+
+	/**
+	 * The feature id for the '<em><b>Customise Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__CUSTOMISE_SET = RESOURCE_ATTRIBUTE__CUSTOMISE_SET;
+
+	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3384,6 +3555,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int FILE_ATTRIBUTE__INPUT_CLASS = RESOURCE_ATTRIBUTE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__HIDDEN = RESOURCE_ATTRIBUTE__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Container Unique</b></em>' attribute.
@@ -3657,6 +3837,24 @@ public interface PersistencePackage extends EPackage {
 	int IMAGE_ATTRIBUTE__PRIMARY_KEY = RESOURCE_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__DERIVED = RESOURCE_ATTRIBUTE__DERIVED;
+
+	/**
+	 * The feature id for the '<em><b>Customise Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__CUSTOMISE_SET = RESOURCE_ATTRIBUTE__CUSTOMISE_SET;
+
+	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3718,6 +3916,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_ATTRIBUTE__INPUT_CLASS = RESOURCE_ATTRIBUTE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__HIDDEN = RESOURCE_ATTRIBUTE__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Container Unique</b></em>' attribute.
@@ -3991,6 +4198,24 @@ public interface PersistencePackage extends EPackage {
 	int LOCATION_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__DERIVED = ENTITY_ATTRIBUTE__DERIVED;
+
+	/**
+	 * The feature id for the '<em><b>Customise Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__CUSTOMISE_SET = ENTITY_ATTRIBUTE__CUSTOMISE_SET;
+
+	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4052,6 +4277,15 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int LOCATION_ATTRIBUTE__INPUT_CLASS = ENTITY_ATTRIBUTE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Hidden</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__HIDDEN = ENTITY_ATTRIBUTE__HIDDEN;
 
 	/**
 	 * The feature id for the '<em><b>Container Unique</b></em>' attribute.
@@ -4278,6 +4512,24 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ASSOCIATION__PRIMARY_KEY = ENTITY_FEATURE__PRIMARY_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__DERIVED = ENTITY_FEATURE__DERIVED;
+
+	/**
+	 * The feature id for the '<em><b>Customise Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__CUSTOMISE_SET = ENTITY_FEATURE__CUSTOMISE_SET;
 
 	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
@@ -4657,6 +4909,24 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITHOUT_CONTAINMENT__PRIMARY_KEY = ENTITY_ASSOCIATION__PRIMARY_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__DERIVED = ENTITY_ASSOCIATION__DERIVED;
+
+	/**
+	 * The feature id for the '<em><b>Customise Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__CUSTOMISE_SET = ENTITY_ASSOCIATION__CUSTOMISE_SET;
 
 	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
@@ -5054,6 +5324,24 @@ public interface PersistencePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITH_CONTAINMENT__PRIMARY_KEY = ENTITY_ASSOCIATION__PRIMARY_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__DERIVED = ENTITY_ASSOCIATION__DERIVED;
+
+	/**
+	 * The feature id for the '<em><b>Customise Set</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__CUSTOMISE_SET = ENTITY_ASSOCIATION__CUSTOMISE_SET;
 
 	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
@@ -7380,6 +7668,28 @@ public interface PersistencePackage extends EPackage {
 	EAttribute getEntityFeature_PrimaryKey();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isDerived <em>Derived</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Derived</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isDerived()
+	 * @see #getEntityFeature()
+	 * @generated
+	 */
+	EAttribute getEntityFeature_Derived();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isCustomiseSet <em>Customise Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Customise Set</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#isCustomiseSet()
+	 * @see #getEntityFeature()
+	 * @generated
+	 */
+	EAttribute getEntityFeature_CustomiseSet();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityFeature#getBooleanIsHasChoice <em>Boolean Is Has Choice</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7432,6 +7742,17 @@ public interface PersistencePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntityAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#isHidden <em>Hidden</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Hidden</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#isHidden()
+	 * @see #getEntityAttribute()
+	 * @generated
+	 */
+	EAttribute getEntityAttribute_Hidden();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.persistence.EntityAttribute#isContainerUnique <em>Container Unique</em>}'.
@@ -8944,6 +9265,22 @@ public interface PersistencePackage extends EPackage {
 		EAttribute ENTITY_FEATURE__PRIMARY_KEY = eINSTANCE.getEntityFeature_PrimaryKey();
 
 		/**
+		 * The meta object literal for the '<em><b>Derived</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_FEATURE__DERIVED = eINSTANCE.getEntityFeature_Derived();
+
+		/**
+		 * The meta object literal for the '<em><b>Customise Set</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_FEATURE__CUSTOMISE_SET = eINSTANCE.getEntityFeature_CustomiseSet();
+
+		/**
 		 * The meta object literal for the '<em><b>Boolean Is Has Choice</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8984,6 +9321,14 @@ public interface PersistencePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY_ATTRIBUTE = eINSTANCE.getEntityAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Hidden</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_ATTRIBUTE__HIDDEN = eINSTANCE.getEntityAttribute_Hidden();
 
 		/**
 		 * The meta object literal for the '<em><b>Container Unique</b></em>' attribute feature.

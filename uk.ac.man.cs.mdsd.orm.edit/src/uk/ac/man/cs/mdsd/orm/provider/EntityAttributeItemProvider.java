@@ -48,6 +48,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addValidationPatternPropertyDescriptor(object);
+			addHiddenPropertyDescriptor(object);
 			addPersistentTypePropertyDescriptor(object);
 			addOrmTypePropertyDescriptor(object);
 			addSlugFieldsPropertyDescriptor(object);
@@ -73,6 +74,28 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Hidden feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHiddenPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityAttribute_hidden_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_hidden_feature", "_UI_EntityAttribute_type"),
+				 OrmPackage.Literals.ENTITY_ATTRIBUTE__HIDDEN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -201,6 +224,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 
 		switch (notification.getFeatureID(EntityAttribute.class)) {
 			case OrmPackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
+			case OrmPackage.ENTITY_ATTRIBUTE__HIDDEN:
 			case OrmPackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
 			case OrmPackage.ENTITY_ATTRIBUTE__ORM_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

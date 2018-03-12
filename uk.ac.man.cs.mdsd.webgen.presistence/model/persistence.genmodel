@@ -138,12 +138,15 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/cardinality"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/ordered"/>
       <genFeatures createChild="false" propertyCategory="Database" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/primaryKey"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/derived"/>
+      <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/customiseSet"/>
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/booleanIsHasChoice"/>
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/singletonName"/>
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/pluralisedName"/>
       <genFeatures createChild="false" propertyCategory="Database" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityFeature/columnName"/>
     </genClasses>
     <genClasses image="false" ecoreClass="persistence.ecore#//EntityAttribute">
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAttribute/hidden"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAttribute/containerUnique"/>
       <genFeatures createChild="false" propertyCategory="Database" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAttribute/persistentType"/>
       <genFeatures createChild="false" propertyCategory="Orm" ecoreFeature="ecore:EAttribute persistence.ecore#//EntityAttribute/ormType"/>

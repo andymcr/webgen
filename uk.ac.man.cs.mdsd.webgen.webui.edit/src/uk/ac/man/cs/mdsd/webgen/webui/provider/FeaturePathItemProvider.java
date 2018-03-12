@@ -173,6 +173,9 @@ public class FeaturePathItemProvider
 		} else if (path.eContainer() instanceof Expression) {
 			return getEntities((Expression) path.eContainer());
 
+		} else if (path.eContainer() instanceof Badge) {
+			return getEntities((Badge) path.eContainer());
+
 		} else {
 			return Collections.emptySet();
 		}
